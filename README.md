@@ -25,7 +25,7 @@ apt-get install php php-gmp php-mbstring php-mcrypt
 
 ```php
 <?php
-require("../src/Tatum.php");
+require("src/Tatum.php");
 
 $Tatum = new Tatum\Tatum();
 $coin = "BTC";
@@ -47,7 +47,7 @@ echo "<hr/>";
 
 ```php
 <?php
-require("../src/Tatum.php");
+require("src/Tatum.php");
 
 $Tatum = new Tatum\Tatum();
 $mnemonic = 'book review judge pelican powder talk onion shuffle panda foot scheme rail rather pond logic private month sure harsh leader double zero pave happy';
