@@ -12,24 +12,30 @@
         "ext-openssl": "*",
         "ext-mcrypt": "^1.0.4",
         "ext-mbstring": "^7.2",
-        "bitwasp/bitcoin": "^1.0"
+        "kornrunner/keccak": "^1.1.0",
+        "btccom/bitwasp-bitcoin-bch-addon": "dev-master",
+        "mbezhanov/ethereum-converter": "dev-master",
+        "web3p/ethereum-tx": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "Tatum\\": "src"
-        }
+        },
+        "classmap": [
+            "src/Tatum.php"
+        ]
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Adeleye Benjamin Adesanoye.",
-            "email": "benjamin.adesanoye@tatum.io",
+            "name": "Adeleye Benjamin Adesanoye",
+            "email": "adeleye.benjamin@highbreedtech.com",
             "role": "Author"
         },
         {
-            "name": "High Breed Technology Limited Team.",
+            "name": "High Breed Technology Limited",
             "email": "support@highbreedtech.com",
-            "role": "Team"
+            "role": "Author's Team"
         },
         {   
             "name": "Tatum",

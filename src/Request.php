@@ -1,15 +1,44 @@
 <?php
 /**
- * @author Adeleye Benjamin Adesanoye <benjamin.adesanoye@tatum.io>
+ * @author Adeleye Benjamin Adesanoye <adeleye.benjamin@highbreedtech.com>
  */
 
 namespace Tatum;
+if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
+throw new \RuntimeException("Access Denied!");
+}
 
 trait Request{
 
+/** Make A GET Request to Tatum Api Endpoint **/
+protected function curlGet($url){
+
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+  ));
+  
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  
+  curl_close($curl);
+  
+  if ($err) {
+      $this->LogException("cURL Error #:" . $err);
+  } else {
+    return $response;
+  }
+  }
+
 /** Make A POST Request to Tatum Api Endpoint **/
 protected function post($data, $path){
-
+$data = json_encode($data);
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => $this->TatumApiUrl.$path,
@@ -67,7 +96,7 @@ protected function get($path){
             }
             }
 
-        /** Make A GET Request to Tatum Api Endpoint **/
+        /** Make A PUT Request to Tatum Api Endpoint **/
         protected function put($path){
 
             $curl = curl_init();
@@ -95,6 +124,36 @@ protected function get($path){
               return $response;
             }
             }
+
+           /** Make A PUT Request to Tatum Api Endpoint **/
+        protected function putData($data, $path){
+          $data = json_encode($data);
+          $curl = curl_init();
+          curl_setopt_array($curl, array(
+            CURLOPT_URL => $this->TatumApiUrl.$path,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_POSTFIELDS => $data,
+            CURLOPT_HTTPHEADER => array(
+            "x-api-key: {$this->apiKey}"
+            ),
+          ));
+          
+          $response = curl_exec($curl);
+          $err = curl_error($curl);
+          
+          curl_close($curl);
+          
+          if ($err) {
+              $this->LogException("cURL Error #:" . $err);
+          } else {
+            return $response;
+          }
+          }
 
         /** Make A GET Request to Tatum Api Endpoint **/
         protected function delete($path){

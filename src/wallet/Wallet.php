@@ -1,9 +1,13 @@
 <?php
 /**
- * @author Adeleye Benjamin Adesanoye <benjamin.adesanoye@tatum.io>
+ * @author Adeleye Benjamin Adesanoye <adeleye.benjamin@highbreedtech.com>
  */
 
 namespace Tatum;
+if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
+throw new \TatumException("Access Denied!");
+}
+
 use BitWasp\Bitcoin\Crypto\Random\Random;
 use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
 use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39Mnemonic;
@@ -11,8 +15,15 @@ use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
 use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
 use BitWasp\Bitcoin\Bitcoin;
 use BitWasp\Bitcoin\Network\NetworkFactory;
+use Btccom\BitcoinCash\Network\Networks\BitcoinCash;
+use Btccom\BitcoinCash\Network\Networks\BitcoinCashTestnet;
 
 trait WalletOperation{
+
+/**
+ * Generate mnemonic seed to use
+ * @returns bip39 mnemonic
+ */
 
 function generateMnemonic(){
  // Generate a mnemonic
@@ -22,7 +33,13 @@ function generateMnemonic(){
 return $bip39->entropyToMnemonic($entropy);
 }
 
-function generateBtcWallet($mnemonic = ""){
+/**
+ * Generate Bitcoin wallet
+ * @param $mnemonic mnemonic seed to use
+ * @returns wallet
+ */
+
+function generateBtcWallet(string $mnemonic = ""){
     $path = $this->getPath("BTC");
     $Bitcoin = new Bitcoin();
     $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::bitcoin() : NetworkFactory::bitcoinTestnet());
@@ -34,11 +51,17 @@ function generateBtcWallet($mnemonic = ""){
     $root = $factory->fromEntropy($seed);
     $hdwallet = $root->derivePath($path);
 
-  $array = array("mnemonic" => $mnemonic, "xpub" => $hdwallet->toExtendedPublicKey());
+  $array = array("mnemonic" => $mnemonic, "xpub" => $hdwallet->toExtendedPublicKey($network));
   return json_encode($array);
 }
 
-function generateEthWallet($mnemonic = ""){
+/**
+ * Generate Ethereum or any other ERC20 wallet
+ * @param $mnemonic mnemonic seed to use
+ * @returns wallet
+ */
+
+function generateEthWallet(string $mnemonic = ""){
     $path = $this->getPath("ETH");
     $mnemonic = $mnemonic != "" ? $mnemonic : $this->generateMnemonic();
     $seedGenerator = new Bip39SeedGenerator();
@@ -51,7 +74,13 @@ function generateEthWallet($mnemonic = ""){
     return json_encode($array);
  }
 
- function generateLtcWallet($mnemonic = ""){
+ /**
+ * Generate Litecoin wallet
+ * @param $mnemonic mnemonic seed to use
+ * @returns wallet
+ */
+
+ function generateLtcWallet(string $mnemonic = ""){
     $path = $this->getPath("LTC");
     $Bitcoin = new Bitcoin();
     $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::litecoin() : NetworkFactory::litecoinTestnet());
@@ -63,11 +92,20 @@ function generateEthWallet($mnemonic = ""){
     $root = $factory->fromEntropy($seed);
     $hdwallet = $root->derivePath($path);
   
-    $array = array("mnemonic" => $mnemonic, "xpub" => $hdwallet->toExtendedPublicKey());
+    $array = array("mnemonic" => $mnemonic, "xpub" => $hdwallet->toExtendedPublicKey($network));
     return json_encode($array);
   }
 
-  function generateBchWallet($mnemonic = ""){
+/**
+ * Generate Bitcoin Cash wallet
+ * @param $mnemonic mnemonic seed to use
+ * @returns wallet
+ */
+  function generateBchWallet(string $mnemonic = ""){
+    if($this->isMainNet()){
+    $Bitcoin = new Bitcoin();
+    $Bitcoin->setNetwork($this->isMainNet() ? new BitcoinCash() : new BitcoinCashTestnet());
+    $network = $Bitcoin->getNetwork();
     $path = $this->getPath("BCH");
     $mnemonic = $mnemonic != "" ? $mnemonic : $this->generateMnemonic();
     $seedGenerator = new Bip39SeedGenerator();
@@ -76,15 +114,26 @@ function generateEthWallet($mnemonic = ""){
     $root = $factory->fromEntropy($seed);
     $hdwallet = $root->derivePath($path);
   
-    $array = array("mnemonic" => $mnemonic, "xpub" => $hdwallet->toExtendedPublicKey());
+    $array = array("mnemonic" => $mnemonic, "xpub" => $hdwallet->toExtendedPublicKey($network));
     return json_encode($array);
+    }
+    else{
+      $ext = $mnemonic != "" ? "?mnemonic=".rawurlencode($mnemonic) : "";
+    return $this->get("/{$this->getRoute("BCH")}/wallet".$ext);
+    }
   }
 
-function generateWalletOperation($coin, $mnemonic = ""){
+ /**
+ * Generate wallet
+ * @param $coin blockchain to generate wallet for
+ * @param $mnemonic mnemonic seed to use. If not present, new one will be generated
+ * @returns wallet or a combination of address and xpub
+ */
+
+function generateWalletOperation(string $coin, string $mnemonic = ""){
 if($this->network !== 'testnet' && $this->network !== 'mainnet'){
     throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
 }
-$testnet = $this->network === 'testnet' ? true : false;
 if($this->in_arrayi($coin, $this->supportedBlockchain)){
     switch($coin){
         case 'btc':

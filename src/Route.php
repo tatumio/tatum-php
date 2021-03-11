@@ -1,10 +1,13 @@
 <?php
 /**
- * @author Adeleye Benjamin Adesanoye <benjamin.adesanoye@tatum.io>
+ * @author Adeleye Benjamin Adesanoye <adeleye.benjamin@highbreedtech.com>
  */
 
 namespace Tatum;
-use Exception;
+if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
+throw new \RuntimeException("Access Denied!");
+}
+
 trait Route{
 
 public static function getRoute($code){
@@ -58,8 +61,7 @@ public static function getRoute($code){
     return "scrypta";
     break;
     default:
-    //throw new Exception("Unsupported Blockchain ".$code." !");
-    return "tatum";
+    throw new \Exception("Unsupported Blockchain ".$code." !");
     break;
     }
 }

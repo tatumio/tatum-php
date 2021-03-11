@@ -1,28 +1,36 @@
 <?php
 /**
- * @author Adeleye Benjamin Adesanoye <benjamin.adesanoye@tatum.io>
+ * @author Adeleye Benjamin Adesanoye <adeleye.benjamin@highbreedtech.com>
  */
 
 namespace Tatum;
-use BitWasp\Bitcoin\Crypto\Random\Random;
+if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
+throw new \RuntimeException("Access Denied!");
+}
+
 use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
-use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39Mnemonic;
-use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
-use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
-use BitWasp\Bitcoin\Key\Factory\PublicKeyFactory;
-use BitWasp\Bitcoin\Address\PayToPubKeyHashAddress;
 use BitWasp\Bitcoin\Key\Factory\PrivateKeyFactory;
+use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
+use BitWasp\Bitcoin\Address\PayToPubKeyHashAddress;
 use BitWasp\Bitcoin\Bitcoin;
 use BitWasp\Bitcoin\Network\NetworkFactory;
-
-use BitWasp\Bitcoin\Address\AddressCreator;
-use BitWasp\Bitcoin\Key\Deterministic\HierarchicalKey;
-use BitWasp\Bitcoin\Script\P2shScript;
-use BitWasp\Bitcoin\Script\ScriptFactory;
+use BitWasp\Bitcoin\Script\ScriptType;
+use Btccom\BitcoinCash\Network\Networks\BitcoinCash;
+use Btccom\BitcoinCash\Network\Networks\BitcoinCashTestnet;
+use Btccom\BitcoinCash\Address\CashAddress;
 
 trait AddressOperation{
 
-function generateBtcPrivateKey($mnemonic, $index){
+/**
+ * Generate Bitcoin private key from mnemonic seed
+ * @param $mnemonic mnemonic to generate private key from
+ * @param $index derivation index of private key to generate.
+ * @returns blockchain private key to the address
+ */
+    
+function generateBtcPrivateKey(string $mnemonic, int $index){
+    $this->checkIndex($index);
+    $this->checkMnemonic($mnemonic);
     $Bitcoin = new Bitcoin();
     $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::bitcoin() : NetworkFactory::bitcoinTestnet());
     $network = $Bitcoin->getNetwork();
@@ -36,21 +44,36 @@ function generateBtcPrivateKey($mnemonic, $index){
     return json_encode($array);
 }
 
-function generateEthPrivateKey($mnemonic, $index){
-    $Bitcoin = new Bitcoin();
-    $Bitcoin->setNetwork(NetworkFactory::bitcoin());
-    $network = $Bitcoin->getNetwork();
+/**
+ * Generate Ethereum or any other ERC20 private key from mnemonic seed
+ * @param $mnemonic mnemonic to generate private key from
+ * @param $index derivation index of private key to generate.
+ * @returns blockchain private key to the address
+ */
+
+function generateEthPrivateKey(string $mnemonic, int $index){
+    $this->checkIndex($index);
+    $this->checkMnemonic($mnemonic);
     $path = $this->getPath("ETH");
     $seedGenerator = new Bip39SeedGenerator();
     $seed = $seedGenerator->getSeed($mnemonic);
     $factory = new HierarchicalKeyFactory();
     $root = $factory->fromEntropy($seed);
     $hdwallet = $root->derivePath($path."/".$index)->getPrivateKey();
-    $array = array("key" => $hdwallet->toWif($network));
+    $array = array("key" => '0x' .$hdwallet->getHex());
     return json_encode($array);
 }
 
-function generateLtcPrivateKey($mnemonic, $index){
+/**
+ * Generate Litecoin private key from mnemonic seed
+ * @param $mnemonic mnemonic to generate private key from
+ * @param $index derivation index of private key to generate.
+ * @returns blockchain private key to the address
+ */
+
+function generateLtcPrivateKey(string $mnemonic, int $index){
+    $this->checkIndex($index);
+    $this->checkMnemonic($mnemonic);
     $Bitcoin = new Bitcoin();
     $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::litecoin() : NetworkFactory::litecoinTestnet());
     $network = $Bitcoin->getNetwork();
@@ -64,9 +87,19 @@ function generateLtcPrivateKey($mnemonic, $index){
     return json_encode($array);
 }
 
-function generateBchPrivateKey($mnemonic, $index){
+/**
+ * Generate Bitcoin Cash private key from mnemonic seed
+ * @param $mnemonic mnemonic to generate private key from
+ * @param $index derivation index of private key to generate.
+ * @returns blockchain private key to the address
+ */
+
+function generateBchPrivateKey(string $mnemonic, int $index){
+    $this->checkIndex($index);
+    $this->checkMnemonic($mnemonic);
+    if($this->isMainNet()){
     $Bitcoin = new Bitcoin();
-    $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::bitcoin() : NetworkFactory::bitcoinTestnet());
+    $Bitcoin->setNetwork($this->isMainNet() ? new BitcoinCash() : new BitcoinCashTestnet());
     $network = $Bitcoin->getNetwork();
     $path = $this->getPath("BCH");
     $seedGenerator = new Bip39SeedGenerator();
@@ -76,9 +109,83 @@ function generateBchPrivateKey($mnemonic, $index){
     $hdwallet = $root->derivePath($path."/".$index)->getPrivateKey();
     $array = array("key" => $hdwallet->toWif($network));
     return json_encode($array);
+    }
+    else{
+    $data = json_encode(array('index' => (int) $index, 'mnemonic' => $mnemonic));
+    return $this->post($data, "/{$this->getRoute("BCH")}/wallet/priv");
+    }
 }
 
-function generateBtcAddress($xpub, $index){
+/**
+ * Convert Bitcoin Private Key to Address
+ * @param $privateKey private key to use
+ * @returns blockchain address
+ */
+
+function convertBtcPrivateKey(string $privateKey){
+    $privateKey = (new PrivateKeyFactory())->fromWif($privateKey);
+    $publicKey = $privateKey->getPublicKey();
+    $hdaddress = new PayToPubKeyHashAddress($publicKey->getPubKeyHash());
+     $array = array("address" => $hdaddress->getAddress());
+     return json_encode($array);
+}
+
+/**
+ * Convert Ethereum or any other ERC20 Private Key to Address
+ * @param $privateKey private key to use
+ * @returns blockchain address
+ */
+
+function convertEthPrivateKey(string $privateKey){
+    $privateKey = (new PrivateKeyFactory())->fromHexUncompressed(substr($privateKey, 2));
+    $publicKey = $privateKey->getPublicKey();
+    $hdaddress = $this->getEthereumAddress($publicKey);
+     $array = array("address" => $hdaddress);
+     return json_encode($array);
+}
+
+/**
+ * Convert Litecoin Private Key to Address
+ * @param $privateKey private key to use
+ * @returns blockchain address
+ */
+
+function convertLtcPrivateKey(string $privateKey){
+    $privateKey = (new PrivateKeyFactory())->fromWif($privateKey);
+    $publicKey = $privateKey->getPublicKey();
+    $hdaddress = new PayToPubKeyHashAddress($publicKey->getPubKeyHash());
+     $array = array("address" => $hdaddress->getAddress());
+     return json_encode($array);
+}
+
+/**
+ * Convert Bitcoin Cash Private Key to Address
+ * @param $privateKey private key to use
+ * @returns blockchain address
+ */
+
+function convertBchPrivateKey(string $privateKey){
+    $Bitcoin = new Bitcoin();
+    $Bitcoin->setNetwork($this->isMainNet() ? new BitcoinCash() : new BitcoinCashTestnet());
+    $network = $Bitcoin->getNetwork();
+    $privateKey = (new PrivateKeyFactory())->fromWif($privateKey);
+    $publicKey = $privateKey->getPublicKey();
+    $legacy_address = new PayToPubKeyHashAddress($publicKey->getPubKeyHash());
+    $hdaddress = new CashAddress(ScriptType::P2PKH, $publicKey->getPubKeyHash());
+     $array = array("address" => $hdaddress->getAddress($network));
+     return json_encode($array);
+}
+
+/**
+ * Generate Bitcoin address
+ * @param $xpub extended public key to generate address from
+ * @param $index derivation index of address to generate. Up to 2^31 addresses can be generated.
+ * @returns blockchain address
+ */
+
+function generateBtcAddress(string $xpub, int $index){
+    $this->checkIndex($index);
+    $this->checkXpub($xpub);
     $Bitcoin = new Bitcoin();
     $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::bitcoin() : NetworkFactory::bitcoinTestnet());
     $network = $Bitcoin->getNetwork();
@@ -92,25 +199,36 @@ function generateBtcAddress($xpub, $index){
      return json_encode($array);
 }
 
-function generateEthAddress($xpub, $index){
-    $this->ThrowTestNetException('ETH');
-    $coin = $testnet && $testnet != "" ? "ETH-test" : "ETH";
-    $col = 'address';
-    $data = "--coin={$coin} --path=m -g --startindex={$index} --index={$index} --numderive=1 --key={$xpub} --cols={$col} --format=json";
-    $return = $this->cli($data);
-    if($return !== false && $return !== null && $return !== ""){
-        $returnData = json_decode($return);
-        $array = array("address" => $returnData->address);
-        //$array = array("address" => $returnData[$index]->address);
-        return json_encode($array);
-    }
-    else{
-     $array = array("error" => true, "address" => null);
+/**
+ * Generate Ethereum or any other ERC20 address
+ * @param $xpub extended public key to generate address from
+ * @param $index derivation index of address to generate. Up to 2^31 addresses can be generated.
+ * @returns blockchain address
+ */
+
+function generateEthAddress(string $xpub, int $index){
+    $this->checkIndex($index);
+    $this->checkXpub($xpub);
+    $factory = new HierarchicalKeyFactory();
+    $root = $factory->fromExtended($xpub)
+    ->withoutPrivateKey()
+    ->derivePath($index);
+    $pubkey = $root->getPublicKey();
+    $hdaddress = $this->getEthereumAddress($pubkey);
+     $array = array("address" => $hdaddress);
      return json_encode($array);
-    }
 }
 
-function generateLtcAddress($xpub, $index){
+/**
+ * Generate Litecoin address
+ * @param $xpub extended public key to generate address from
+ * @param $index derivation index of address to generate. Up to 2^31 addresses can be generated.
+ * @returns blockchain address
+ */
+
+function generateLtcAddress(string $xpub, int $index){
+    $this->checkIndex($index);
+    $this->checkXpub($xpub);
     $Bitcoin = new Bitcoin();
     $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::litecoin() : NetworkFactory::litecoinTestnet());
     $network = $Bitcoin->getNetwork();
@@ -124,27 +242,42 @@ function generateLtcAddress($xpub, $index){
      return json_encode($array);
 }
 
-function generateBchAddress($xpub, $index){
-    $coin = $testnet && $testnet != "" ? "BCH-test" : "BCH";
-    $col = 'address';
-    $data = "--coin={$coin} --path=m -g --startindex={$index} --index={$index} --numderive=1 --key={$xpub} --cols={$col} --format=json";
-    $return = $this->cli($data);
-    if($return !== false && $return !== null && $return !== ""){
-        $returnData = json_decode($return);
-        $array = array("address" => $returnData->address);
-        return json_encode($array);
-    }
-    else{
-     $array = array("error" => true, "address" => null);
+/**
+ * Generate Bitcoin Cash address
+ * @param $xpub extended public key to generate address from
+ * @param $index derivation index of address to generate. Up to 2^31 addresses can be generated.
+ * @returns blockchain address
+ */
+
+function generateBchAddress(string $xpub, int $index){
+    $this->checkIndex($index);
+    $this->checkXpub($xpub);
+    $Bitcoin = new Bitcoin();
+    $Bitcoin->setNetwork($this->isMainNet() ? new BitcoinCash() : new BitcoinCashTestnet());
+    $network = $Bitcoin->getNetwork();
+    $factory = new HierarchicalKeyFactory();
+    $root = $factory->fromExtended($xpub)
+    ->withoutPrivateKey()
+    ->derivePath($index);
+    $pubkey = $root->getPublicKey($network);
+    $legacy_address = new PayToPubKeyHashAddress($pubkey->getPubKeyHash());
+    $hdaddress = new CashAddress(ScriptType::P2PKH, $pubkey->getPubKeyHash());
+     $array = array("address" => $hdaddress->getAddress($network));
      return json_encode($array);
-    }
 }
 
-function generatePrivateKeyFromMnemonic($coin, $mnemonic, $index){
+/**
+ * Generate private key from mnemonic seed
+ * @param $coin type of blockchain
+ * @param $mnemonic mnemonic to generate private key from
+ * @param $index derivation index of private key to generate.
+ * @returns blockchain private key to the address
+ */
+
+function generatePrivateKeyFromMnemonic(string $coin, string $mnemonic, int $index){
     if($this->network !== 'testnet' && $this->network !== 'mainnet'){
         throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
     }
-    $testnet = $this->network === 'testnet' ? true : false;
     if($this->in_arrayi($coin, $this->supportedBlockchain)){
         switch($coin){
             case 'btc':
@@ -204,12 +337,19 @@ function generatePrivateKeyFromMnemonic($coin, $mnemonic, $index){
         }
     }
 
-    function generateAddressFromXPubOperation($coin, $xpub, $index){
-        if($this->network !== 'testnet' && $this->network !== 'mainnet'){
-            throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
-        }
-        $testnet = $this->network === 'testnet' ? true : false;
-        if($this->in_arrayi($coin, $this->supportedBlockchain)){
+/**
+ * Generate address
+ * @param $coin type of blockchain
+ * @param $xpub extended public key to generate address from
+ * @param $index derivation index of address to generate. Up to 2^31 addresses can be generated.
+ * @returns blockchain address
+ */
+
+    function generateAddressFromXPubOperation(string $coin, string $xpub, int $index){
+    if($this->network !== 'testnet' && $this->network !== 'mainnet'){
+    throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
+    }
+    if($this->in_arrayi($coin, $this->supportedBlockchain)){
             switch($coin){
                 case 'btc':
                 return $this->generateBtcAddress($xpub, $index);
@@ -268,15 +408,21 @@ function generatePrivateKeyFromMnemonic($coin, $mnemonic, $index){
             }
         }
 
-        function generateAddressFromPrivatekeyOperation($coin, $privateKey){
-            if($this->network !== 'testnet' && $this->network !== 'mainnet'){
-                throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
-            }
-            $testnet = $this->network === 'testnet' ? true : false;
-            if($this->in_arrayi($coin, $this->supportedBlockchain)){
+/**
+ * Generate address from private key
+ * @param $coin type of blockchain
+ * @param $privateKey private key to use
+ * @returns blockchain address to the private key
+ */
+
+function generateAddressFromPrivatekeyOperation(string $coin, string $privateKey){
+if($this->network !== 'testnet' && $this->network !== 'mainnet'){
+  throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
+}
+ if($this->in_arrayi($coin, $this->supportedBlockchain)){
                 switch($coin){
                     case 'btc':
-                    return $this->generateBtcWallet($testnet, $privateKey);
+                    return $this->convertBtcPrivateKey($privateKey);
                     break;
                     case 'eth':
                     case 'usdt':
@@ -293,34 +439,34 @@ function generatePrivateKeyFromMnemonic($coin, $mnemonic, $index){
                     case 'pltc':
                     case 'xcon':
                     case 'mmy':
-                    return $this->generateEthWallet($testnet, $mnemonic);
+                    return $this->convertEthPrivateKey($privateKey);
                     break;
                     case 'bch':
-                    return $this->generateBchWallet($coin, $mnemonic);
+                    return $this->convertBchPrivateKey($privateKey);
                     break;
                     case 'ltc':
-                    return $this->generateLtcWallet($coin, $mnemonic);
+                    return $this->convertLtcPrivateKey($privateKey);
                     break;
                     case 'xrp':
-                    return "xrp";
+                        throw new \UnexpectedValueException(sprintf('Unsupported PrivateKey to Address on %s Blockchain!', strtoupper($coin)));
                     break;
                     case 'xlm':
-                    return "xlm";
+                        throw new \UnexpectedValueException(sprintf('Unsupported PrivateKey to Address on %s Blockchain!', strtoupper($coin)));
                     break;
                     case 'bnb':
-                    return "bnb";
+                        throw new \UnexpectedValueException(sprintf('Unsupported PrivateKey to Address on %s Blockchain!', strtoupper($coin)));
                     break;
                     case 'vet':
-                    return "vet";
+                        throw new \UnexpectedValueException(sprintf('Unsupported PrivateKey to Address on %s Blockchain!', strtoupper($coin)));
                     break;
                     case 'neo':
-                    return "neo";
+                        throw new \UnexpectedValueException(sprintf('Unsupported PrivateKey to Address on %s Blockchain!', strtoupper($coin)));
                     break;
                     case 'libra':
-                    return "libra";
+                        throw new \UnexpectedValueException(sprintf('Unsupported PrivateKey to Address on %s Blockchain!', strtoupper($coin)));
                     break;
                     case 'scrypta':
-                    return "scrypta";
+                        throw new \UnexpectedValueException(sprintf('Unsupported PrivateKey to Address on %s Blockchain!', strtoupper($coin)));
                     break;
                     default:
                     throw new \UnexpectedValueException(sprintf('Unsupported Blockchain %s!', strtoupper($coin)));

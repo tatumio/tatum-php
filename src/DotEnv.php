@@ -1,6 +1,9 @@
 <?php
 
 namespace Tatum;
+if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
+throw new \RuntimeException("Access Denied!");
+}
 
 class DotEnv
 {

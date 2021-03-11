@@ -1,9 +1,17 @@
 <?php
 /**
- * @author Adeleye Benjamin Adesanoye <benjamin.adesanoye@tatum.io>
+ * @author Adeleye Benjamin Adesanoye <adeleye.benjamin@highbreedtech.com>
  */
 
 namespace Tatum;
+define("TATUM", true);
+define("TATUMIO", true);
+define("TATUMPHP", true);
+define("TATUMLIB", true);
+
+if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
+throw new \RuntimeException("Access Denied!");
+}
 
 require('../vendor/autoload.php');
 require(__DIR__."/Constant.php");
@@ -16,6 +24,7 @@ require(__DIR__."/Wallet.php");
 require(__DIR__."/Address.php");
 require(__DIR__."/Offchain.php");
 require(__DIR__."/Ledger.php");
+require(__DIR__."/Security.php");
 require(__DIR__."/Transaction.php");
 require(__DIR__."/Contract.php");
 require(__DIR__."/Record.php");
@@ -23,21 +32,26 @@ require(__DIR__."/KMS.php");
 require(__DIR__."/Service.php");
 
 class Tatum{
-use Base, Route, Request, Blockchain, Wallet, Address, Offchain, Ledger, Transaction, Contract, Record, KMS, Service;
+use Base, Route, Request, Blockchain, BitcoinBlockchain, BitcoinTransaction, EthereumBlockchain,
+EthereumTransaction, BcashBlockchain, BcashTransaction, LitecoinBlockchain, LitecoinTransaction, 
+addressExtended, Wallet, Address, Offchain, Ledger, Transaction, Contract, Record, KMS, Service,
+LedgerVirtualCurrency, LedgerTransaction, LedgerSubscription, LedgerOrderBook, LedgerCustomer, LedgerAccount,
+SecurityAddress, SecurityKMS, OffchainCommon, OffchainBitcoin, OffchainBcash, OffchainEthereum, OffchainLitecoin, OffchainKMS;
 
 public function __construct() {
     $this->network = getenv('NETWORK');
     $this->apiKey = $this->network === 'mainnet' ? getenv('TATUM_API_KEY') : getenv('TATUM_TESTNET_API_KEY');
-    $this->LogException = getenv('LOG_EXCEPTION');
+    $this->doLogException = getenv('LOG_EXCEPTION');
     $this->TatumApiUrl = TATUM_API_URL;
     $this->TestVETUrl = TEST_VET_URL;
     $this->VETUrl = VET_URL;
     $this->supportedBlockchain = ['BTC', 'ETH', 'BCH', 'LTC', 'XRP', 'XLM', 'BNB', 
     'VET', 'NEO', 'GAS', 'MMY', 'PLTC', 'BAT', 'USDT', 'USDC', 'TUSD', 'MKR', 
     'LINK', 'PAX', 'PAXG', 'UNI', 'LEO', 'FREE', 'XCON'];
+    $this->supportedETHBlockchain = ['ETH', 'MMY', 'PLTC', 'BAT', 'USDT', 'USDC', 'TUSD', 'MKR', 'LINK', 'PAX', 'PAXG', 'UNI', 'LEO', 'FREE', 'XCON'];
 }
 
-function getPath($coin){
+function getPath(string $coin){
 if($this->network !== 'testnet' && $this->network !== 'mainnet'){
 throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
 }
@@ -64,12 +78,38 @@ if(Base::in_arrayi($coin, $this->supportedBlockchain)){
     }
     }
     else{
-        return TESTNET_DERIVATION_PATH;
+      return TESTNET_DERIVATION_PATH;
     }
 }
 else{
 throw new \UnexpectedValueException(sprintf('Unsupported Blockchain %s!', strtoupper($coin)));
   }
+}
+
+function isLiteCoinAddress($address){
+if($this->isTestNet()){
+if(substr($address, 0) === '2' || substr($address, 0) == 'M'){
+  //throw new \UnexpectedValueException('Unsupported Litecoin Address provided!');
+}
+}
+}
+
+function checkXpub($xpub){
+if(!isset($xpub) || $xpub == "" || $xpub == '0'){
+throw new \UnexpectedValueException('Xpub is required to be passed as must be valid string!'); 
+}
+}
+
+function checkIndex(int $index){
+if(!isset($index) || !is_numeric($index)){
+throw new \UnexpectedValueException(sprintf('Index Must be a valid integer, given %s!', $index)); 
+}
+}
+
+function checkMnemonic(string $mnemonic){
+if(!isset($mnemonic) || $mnemonic == "" || count(explode(" ",$mnemonic)) != 24){
+throw new \UnexpectedValueException(sprintf('Mnemonic must be exactly 24 words to be parsed, given '.count(explode(" ",$mnemonic)).' words!', $mnemonic)); 
+}
 }
 
 function getNetwork(){
@@ -105,7 +145,7 @@ $return = false;
 return $return;
 }
 
-function ThrowMnemonicException($mnemonic){
+function ThrowMnemonicException(string $mnemonic){
     if($mnemonic !== "" && count(explode(" ", $mnemonic)) != 24){
         throw new \UnexpectedValueException(sprintf('Mnemonic must be exactly 24 words to be parsed!'));
     }
