@@ -57,5 +57,5 @@
         "Ethereum",
         "Tron"
       ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
