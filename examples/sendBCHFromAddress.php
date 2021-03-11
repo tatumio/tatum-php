@@ -17,7 +17,7 @@ array(
 ),
 
 array(
-'fee' => 0.00020,
+'fee' => 0.000200,
 'addresses' => array(
 array('address' => 'bchtest:qpmqf8ewkam0muwqz3evu42pg6sph74mmyzzchx4j3', 'value' => 0.0001521),
 /*array('address' => 'mwfzsJbzygUEvTUzLzkhhuBfb6jCsg1svp', 'value' => 0.000151),

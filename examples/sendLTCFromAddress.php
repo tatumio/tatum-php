@@ -22,7 +22,7 @@ array(
 ),
 
 array(
-'fee' => 0.0000065,
+'fee' => 0.00000650,
 'addresses' => array(
 array('address' => 'mqiD9peRUMxyDT1yZHsX7CQBVXQNSBEq8t', 'value' => 0.0000152),
 array('address' => 'QZ25e25uGBhtWVmjttQRyY46ZmRqYNw8zb', 'value' => 0.0000151),

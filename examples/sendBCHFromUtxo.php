@@ -16,7 +16,7 @@ array('privateKey' => 'cUUzSdfSzbSmHu2fbSAfVcdvYmrqHn7nPDrg9AvFBSdj3puiUULd',
 '',
 
 array(
-'fee' => 0.00020,
+'fee' => 0.000200,
 'addresses' => array(
 array('address' => 'mmQZsRQMMaPEBSNWskPas1XsQKSaje9Wrs', 'value' => 0.0001521),
 )

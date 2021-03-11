@@ -4,3 +4,4 @@ composer.phar
 .env
 .env.local
 .idea
+exception.log
