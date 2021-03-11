@@ -1,6 +1,6 @@
 {
     "name": "tatumio/tatum-php",
-    "description": "PHP SDK to Tatum API client, examples and tests",
+    "description": "PHP SDK to Tatum.io API client, with examples",
     "type": "library",
     "homepage": "https://tatum.io",
     "version": "1.0.0",
