@@ -56,5 +56,6 @@
         "XRP",
         "Ethereum",
         "Tron"
-      ]
+      ],
+    "minimum-stability": "stable"
 }
