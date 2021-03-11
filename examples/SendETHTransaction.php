@@ -18,5 +18,5 @@ echo $Tatum->sendEthereumTransaction($body);
 
 echo "<hr/>";
 
-//echo "<textarea>".$Tatum->prepareSignedEthereumTransaction($body)."</textarea>";
+echo "<textarea>".$Tatum->prepareSignedEthereumTransaction($body)."</textarea>";
 //echo $Tatum->sendEthereumTransaction($body);

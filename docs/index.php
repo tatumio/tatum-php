@@ -4,5 +4,5 @@
  */
 
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+throw new \TatumException("Access Denied!");
 }

@@ -8,7 +8,6 @@ $priv = json_decode($Tatum->generatePrivateKey("BTC", $mnemo, '10'));
 $priv2 = json_decode($Tatum->generatePrivateKey("BTC", $mnemo, '11'));
 $priv3 = json_decode($Tatum->generatePrivateKey("BTC", $mnemo, '12'));
 
-//die($priv->key);
 $body = array(
 '', 
 array(
@@ -33,4 +32,4 @@ array('address' => 'QbBDbwmefNQxmD1whFv9XfsphcMm64gEog', 'value' => 0.0000150),
 );
 
 echo "<textarea>".$Tatum->prepareSignedLitecoinTransaction($body)."</textarea>";
-echo $Tatum->sendLitecoinTransaction($body);
+//echo $Tatum->sendLitecoinTransaction($body);

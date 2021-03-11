@@ -5,7 +5,7 @@
 
 namespace Tatum;
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+throw new \TatumExceptionAccess Denied!");
 }
 
 trait LedgerOrderBook{

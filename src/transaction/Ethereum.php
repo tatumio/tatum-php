@@ -5,7 +5,7 @@
 
 namespace Tatum;
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+    throw new \TatumException("Access Denied!");
 }
 
 trait EthereumTransaction{
@@ -25,7 +25,7 @@ function ethGetGasPriceInWei(){
     return $converter->toWei(($data->fast / 10), 'gwei');
     }
     else{
-        throw new \Exception("Can't get Gas Price at the moment!");
+        throw new \TatumException("Can't get Gas Price at the moment!");
     }
 }
 
@@ -118,7 +118,7 @@ if($currency === 'ETH'){
 ]);
     }
     else{
-      throw new \Exception("Token Transfer not yet supported");
+      throw new \TatumException("Token Transfer not yet supported");
     }
 
 $signedTransaction = $transaction->sign($fromPrivateKey);

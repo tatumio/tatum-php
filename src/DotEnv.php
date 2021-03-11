@@ -2,7 +2,7 @@
 
 namespace Tatum;
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+throw new \TatumException("Access Denied!");
 }
 
 class DotEnv
@@ -26,7 +26,7 @@ class DotEnv
     public function load() :void
     {
         if (!is_readable($this->path)) {
-            throw new \RuntimeException(sprintf('%s file is not readable', $this->path));
+            throw new \TatumException(sprintf('%s file is not readable', $this->path));
         }
 
         $lines = file($this->path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);

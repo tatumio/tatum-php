@@ -114,12 +114,12 @@ function prepareSignedBitcoinTransaction($body){
                         array_push($privateKeysToSignArr, $fromAddress['privateKeys'][$ikno]);
                         //}
                         }
-                    } catch (\Exception $e) {
+                    } catch (\TatumException $e) {
                         $msg = $e->getMessage();  
-                        throw new \Exception(sprintf("%s", $msg)); 
+                        throw new \TatumException(sprintf("%s", $msg)); 
                     }
                     }
-                    } catch (\Exception $e) {
+                    } catch (\TatumException $e) {
                   $msg = $e->getMessage();
                     }
                   }
@@ -204,11 +204,11 @@ function prepareSignedBitcoinTransaction($body){
     }
 
     if($BalanceSatoshi < $spendingTotal){
-        throw new \Exception(sprintf("Balance %s must be greater than amount to spend %s", $BalanceSatoshi, $spendingTotal)); 
+        throw new \TatumException(sprintf("Balance %s must be greater than amount to spend %s", $BalanceSatoshi, $spendingTotal)); 
     }
 
     if($TotalUtxo < $spendingTotal){
-        throw new \Exception(sprintf("Utxo %s must be greater than amount to spend %s", $TotalUtxo, $spendingTotal)); 
+        throw new \TatumException(sprintf("Utxo %s must be greater than amount to spend %s", $TotalUtxo, $spendingTotal)); 
     }
     
     for($utiii=0; $utiii < count($keyPairInputArr); $utiii++){

@@ -9,7 +9,7 @@
 
 namespace Tatum;
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+throw new \TatumException("Access Denied!");
 }
 
 use BitWasp\Bitcoin\Bitcoin;
@@ -34,7 +34,7 @@ function getEthereumAddress(PublicKeyInterface $publicKey){
     }
 
     $pubKey = $pubkey_serializer->parse($publicKey->getBuffer());
-    $point = $pubKey->getPoint();
+    $point = $publicKey->getPoint();
     $upk = $point_serializer->serialize($point);
     $upk = hex2bin(substr($upk, 2));
 

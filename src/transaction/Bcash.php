@@ -5,7 +5,7 @@
 
 namespace Tatum;
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+throw new \TatumException("Access Denied!");
 }
 
 use BitWasp\Bitcoin\Key\Factory\PrivateKeyFactory;
@@ -86,12 +86,12 @@ function prepareSignedBcashTransaction(array $body){
                         array_push($utxoAmountArr, $utxoX->value);
                         array_push($privateKeysToSignArr, $fromAddress['privateKeys'][$ikno]);
                         }
-                    } catch (\Exception $e) {
+                    } catch (\TatumException $e) {
                         $msg = $e->getMessage();  
-                        throw new \Exception(sprintf("%s", $msg)); 
+                        throw new \TatumException(sprintf("%s", $msg)); 
                     }
                     }
-                    } catch (\Exception $e) {
+                    } catch (\TatumException $e) {
                   $msg = $e->getMessage();
                     }
                   }
@@ -122,9 +122,9 @@ function prepareSignedBcashTransaction(array $body){
                 array_push($privateKeysToSignArr, $item['privateKey']);
                 array_push($UtxoAddressArr, $utxoX->address);
                 }
-            } catch (\Exception $e) {
+            } catch (\TatumException $e) {
                 $msg = $e->getMessage();  
-                throw new \Exception(sprintf("%s", $msg)); 
+                throw new \TatumException(sprintf("%s", $msg)); 
             }
             $ikno++;
           }
@@ -180,11 +180,11 @@ function prepareSignedBcashTransaction(array $body){
 
 
     if($BalanceSatoshi < $spendingTotal){
-        throw new \Exception(sprintf("Balance %s must be greater than amount to spend %s", $BalanceSatoshi, $spendingTotal)); 
+        throw new \TatumException(sprintf("Balance %s must be greater than amount to spend %s", $BalanceSatoshi, $spendingTotal)); 
     }
 
     if($TotalUtxo < $spendingTotal){
-        throw new \Exception(sprintf("Utxo %s must be greater than amount to spend %s", $TotalUtxo, $spendingTotal)); 
+        throw new \TatumException(sprintf("Utxo %s must be greater than amount to spend %s", $TotalUtxo, $spendingTotal)); 
     }
 
     $signed = $signer->get();

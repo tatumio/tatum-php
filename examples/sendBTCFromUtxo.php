@@ -23,5 +23,5 @@ array('address' => 'mxNdvFA436U9nUTZUtTbmfezuvdFaibi3w', 'value' => 0.0001521),
 )
 );
 
-//echo "<textarea>".$Tatum->prepareSignedBitcoinTransaction($body)."</textarea>";
+echo "<textarea>".$Tatum->prepareSignedBitcoinTransaction($body)."</textarea>";
 //echo $Tatum->sendBitcoinTransaction($body);

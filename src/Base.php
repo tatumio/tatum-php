@@ -5,7 +5,7 @@
 
 namespace Tatum;
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+throw new \TatumException("Access Denied!");
 }
 
 trait Base{
@@ -70,15 +70,13 @@ trait Base{
         function shortNum(){
          $nos = rand(10, 99).rand(100, 999).rand(1, 9).(time() + microtime() + rand(1000,9000) + rand(1000,9000) + rand(1000,9000) + time());
          $nos = filter_var($nos,FILTER_SANITIZE_NUMBER_INT);
-         $nos = substr($nos,2,12);
-         return $nos;
+         return substr($nos,2,12);
         }
         
         function shortNumX(){
          $nos = rand(10, 99).rand(100, 999).rand(1, 9).(time() + microtime() + rand(1000,9000) + rand(1000,9000) + rand(1000,9000) + time());
          $nos = filter_var($nos,FILTER_SANITIZE_NUMBER_INT);
-         $nos = substr($nos,2,8);
-         return $nos;
+         return substr($nos,2,8);
         }
 
 }

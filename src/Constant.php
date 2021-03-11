@@ -4,7 +4,7 @@
  */
 
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \RuntimeException("Access Denied!");
+throw new \TatumException("Access Denied!");
 }
 
 const TATUM_API_URL = 'https://api-eu1.tatum.io/v3';

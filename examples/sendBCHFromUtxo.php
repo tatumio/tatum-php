@@ -23,5 +23,5 @@ array('address' => 'mmQZsRQMMaPEBSNWskPas1XsQKSaje9Wrs', 'value' => 0.0001521),
 )
 );
 
-//echo "<textarea>".$Tatum->prepareSignedBcashTransaction($body)."</textarea>";
+echo "<textarea>".$Tatum->prepareSignedBcashTransaction($body)."</textarea>";
 //echo $Tatum->sendBcashTransaction($body);
