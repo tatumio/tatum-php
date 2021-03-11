@@ -13,7 +13,7 @@
         "ext-mcrypt": "^1.0.4",
         "ext-mbstring": "^7.2",
         "kornrunner/keccak": "^1.1.0",
-        "btccom/bitwasp-bitcoin-bch-addon": "#5c9496f58fe83b7ad74930bcae7c783d3526bfb0",
+        "btccom/bitwasp-bitcoin-bch-addon": "master",
         "mbezhanov/ethereum-converter": "dev-master",
         "web3p/ethereum-tx": "dev-master"
     },
