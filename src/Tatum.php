@@ -55,6 +55,7 @@ function getPath(string $coin){
 if($this->network !== 'testnet' && $this->network !== 'mainnet'){
 throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
 }
+
 $coin = strtoupper($coin);
 if(Base::in_arrayi($coin, $this->supportedBlockchain)){
    if($this->network === 'mainnet'){
