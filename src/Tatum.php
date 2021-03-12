@@ -39,6 +39,7 @@ LedgerVirtualCurrency, LedgerTransaction, LedgerSubscription, LedgerOrderBook, L
 SecurityAddress, SecurityKMS, OffchainCommon, OffchainBitcoin, OffchainBcash, OffchainEthereum, OffchainLitecoin, OffchainKMS;
 
 public function __construct() {
+    $this->InitTatum();
     $this->network = getenv('NETWORK');
     $this->apiKey = $this->network === 'mainnet' ? getenv('TATUM_API_KEY') : getenv('TATUM_TESTNET_API_KEY');
     $this->doLogException = getenv('LOG_EXCEPTION');
@@ -51,11 +52,20 @@ public function __construct() {
     $this->supportedETHBlockchain = ['ETH', 'MMY', 'PLTC', 'BAT', 'USDT', 'USDC', 'TUSD', 'MKR', 'LINK', 'PAX', 'PAXG', 'UNI', 'LEO', 'FREE', 'XCON'];
 }
 
+public function InitTatum(){
+  if(!getenv('NETWORK')){
+    throw new \TatumException("You need to set your Network from your .env file!");
+  }else if(!getenv('TATUM_API_KEY')){
+    throw new \TatumException("You need to set your Tatum Mainnet Api Key from your .env file!");
+  }else if(!getenv('TATUM_TESTNET_API_KEY')){
+    throw new \TatumException("You need to set your Tatum Testnet Api Key from your .env file!");
+  }
+}
+
 function getPath(string $coin){
 if($this->network !== 'testnet' && $this->network !== 'mainnet'){
 throw new \TypeError(sprintf('Unsupported Network Type %s!', $this->network));
 }
-
 $coin = strtoupper($coin);
 if(Base::in_arrayi($coin, $this->supportedBlockchain)){
    if($this->network === 'mainnet'){
