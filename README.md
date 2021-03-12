@@ -11,14 +11,26 @@ apt-get install php php-gmp php-mbstring php-mcrypt
 ```
 
 <h4> To Install this Lib</h4>
-
+<h4> Create a file called <b>composer.json</b> and insert below code into it</h4>
 ```bash
- git clone https://github.com/HighBreedTech/tatum-php
- cd tatum-php
- php -r "readfile('https://getcomposer.org/installer');" | php
- php composer.phar install
+ {
+     "require": {
+         "tatumio/tatum-php": "dev-master"
+      },
+     "minimum-stability": "dev"
+}
+ 
+ ```
+
+ <h6>save it and go to your project folder and run:</h6>
+
+ ```bash
+composer install
  ```
  
+ <i>After done install it will generate a vendor folder inside the vendor folder locate tatomio/tatum-php/src/ when you get to this folder create .env file and copy example from example.env and you are good to go
+ </i>
+
 <h3>Try an example</h3>
 
 <h6>To let Library generate mnemonic</h6>
