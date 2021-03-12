@@ -12,7 +12,6 @@
         "ext-openssl": "*",
         "ext-mcrypt": "^1.0.4",
         "ext-mbstring": "^7.2",
-        "kornrunner/keccak": "dev-master",
         "btccom/bitwasp-bitcoin-bch-addon": "dev-master",
         "mbezhanov/ethereum-converter": "dev-master",
         "web3p/ethereum-tx": "dev-master"
