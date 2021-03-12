@@ -5,7 +5,7 @@
 
 namespace Tatum;
 if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined('TATUMLIB')){
-throw new \TatumExceptionAccess Denied!");
+throw new \TatumException("Accessss Denied!");
 }
 
 trait LedgerVirtualCurrency{
