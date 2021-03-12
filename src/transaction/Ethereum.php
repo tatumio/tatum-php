@@ -102,7 +102,7 @@ function prepareSignedEthereumTransaction(array $body){
     $gasPrice = $gasPrice && $gasPrice != "" && $gasPrice > 0 ? $this->ethWeiToHex($this->ethConvertGweiToWei($gasPrice)) : $this->ethWeiToHex($this->ethGetGasPriceInWei());
     $data = $data != "" ? $this->stringToHex($data) : $this->stringToHex("Transaction from: {$from} to: {$to} amount of {$amount} {$currency} with Gas Fee of {$this->ethHexToWei($gasPrice)}");
     $gasLimit = $gasLimit && $gasLimit != "" && $gasLimit > 0 ? $this->ethWeiToHex($this->ethConvertGweiToWei($gasLimit)) : $this->ethWeiToHex(strlen($data) * 68 + 21000);
-    $nonce = $nonce != "" ? $nonce : ($this->ethGetTransactionsCount($from) + 0);
+    $nonce = $nonce != "" ? (int) $nonce : ((int) $this->ethGetTransactionsCount($from) + 0);
     $amount = $this->ethToHex($amount);
     $chainID = $this->isMainNet() ? 1 : 3;
 if($currency === 'ETH'){
