@@ -12,11 +12,15 @@
         "ext-openssl": "*",
         "ext-mcrypt": "^1.0.4",
         "ext-mbstring": "^7.2",
-        "kornrunner/keccak": "^1.1.0",
-        "btccom/bitwasp-bitcoin-bch-addon": "master",
+        "kornrunner/keccak": "^dev-master",
+        "btccom/bitwasp-bitcoin-bch-addon": "dev-master",
         "mbezhanov/ethereum-converter": "dev-master",
         "web3p/ethereum-tx": "dev-master"
     },
+    "support": {
+        "issues": "https://github.com/tatumio/tatum-php/issues",
+        "source": "https://github.com/tatumio/tatum-php"
+      },
     "autoload": {
         "psr-4": {
             "Tatum\\": "src"
@@ -57,5 +61,6 @@
         "Ethereum",
         "Tron"
       ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
