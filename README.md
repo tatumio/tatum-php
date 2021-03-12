@@ -12,6 +12,7 @@ apt-get install php php-gmp php-mbstring php-mcrypt
 
 <h4> To Install this Lib</h4>
 <h4> Create a file called <b>composer.json</b> and insert below code into it</h4>
+
 ```bash
  {
      "require": {
