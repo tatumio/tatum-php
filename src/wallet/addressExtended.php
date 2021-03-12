@@ -34,7 +34,7 @@ function getEthereumAddress(PublicKeyInterface $publicKey){
     }
 
     $pubKey = $pubkey_serializer->parse($publicKey->getBuffer());
-    $point = $publicKey->getPoint();
+    $point = $pubKey->getPoint();
     $upk = $point_serializer->serialize($point);
     $upk = hex2bin(substr($upk, 2));
 
