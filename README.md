@@ -10,10 +10,36 @@ Linux Ubuntu 16.04 requirements:
 apt-get install php php-gmp php-mbstring php-mcrypt
 ```
 
+MacoS GMP installation:
+
+find your right php version with below code to install gmp
+
+```bash
+php -v
+```
+
+<i> Replace 7.4 with your real php version </i>
+
+```bash
+brew reinstall php@7.4
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+brew services restart php@7.4
+php -info | grep "GMP"
+
+```
+
+it should return result like 
+
+```bash
+GMP version => 6.2.1
+```
+
+then you are good to go.
+
 <h4> To Install this Lib</h4>
 <h4> Create a file called <b>composer.json</b> and insert below code into it</h4>
 
-```bash
+```json
  {
      "require": {
          "tatumio/tatum-php": "dev-master"
