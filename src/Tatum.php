@@ -13,7 +13,6 @@ if(!defined('TATUM') || !defined('TATUMIO') || !defined('TATUMPHP') || !defined(
 throw new \TatumException("Access Denied!");
 }
 
-require('../vendor/autoload.php');
 require(__DIR__."/exception/TatumException.php");
 require(__DIR__."/Constant.php");
 require(__DIR__."/DotEnv.php");
