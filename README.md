@@ -28,7 +28,7 @@ apt-get install php php-gmp php-mbstring php-mcrypt
 composer install
  ```
  
- <i>After done install it will generate a vendor folder inside the vendor folder locate tatomio/tatum-php/src/ when you get to this folder create .env file and copy example from example.env and you are good to go
+ <i>After done installing the Lib it will generate a vendor folder inside your project, then inside the vendor folder locate tatomio/tatum-php/src when you get into this folder create .env file and copy example from example.env and fill this details with your tatum api key you are good to go.
  </i>
 
 <h3>Try an example</h3>
