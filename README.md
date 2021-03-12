@@ -54,7 +54,7 @@ then you are good to go.
 composer install
  ```
 
- and to update your Lib use 
+ and to update the Lib if you already have it installed use 
 
 
  ```bash
