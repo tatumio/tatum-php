@@ -92,7 +92,7 @@ $body = array(
     '0x309981C7302e9f650880fbc6282E28A87384eE39', // From Address
     '0x83214dd08f7995ad436b1bfda15dffe985485e42', //To Address
     '0.0328', // Amount in ETH
-    '1', // Fee in Gwei
+    '1', // Fee in Gwei if empty the Lib will get best fee
     '', //Gas Limit minimum is 21000
     '', //Data
     '' // Nonce

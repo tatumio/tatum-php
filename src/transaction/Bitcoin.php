@@ -86,7 +86,10 @@ function prepareSignedBitcoinTransaction(array $body){
     $balance = 0;
     $transaction = \BitWasp\Bitcoin\Transaction\TransactionFactory::build()->version(1)->locktime(0);
 
-    
+    if(!isset($to['fee']) || $to['fee'] == '' || $to['fee'] <= 0){
+        throw new \TatumException("Tx Fee must be specified and must be greater than 0!"); 
+    }
+
     if (isset($fromAddress['addresses']) && is_array($fromAddress['addresses'])) {
         $spendingType = 'address';
         $ikno = 0;
