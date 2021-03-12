@@ -54,7 +54,7 @@ then you are good to go.
 composer install
  ```
  
- <i>After done installing the Lib it will generate a vendor folder inside your project, then inside the vendor folder locate tatomio/tatum-php/src when you get into this folder create .env file and copy example from example.env and fill this details with your tatum api key you are good to go.
+ <i>After done installing the Lib it will generate a vendor folder inside your project, then inside the vendor folder locate tatomio/tatum-php/src when you get into this folder you will see example.env create .env file inside your root folder and copy the example.env content from example.env to the .env created on your root folder and fill this details with your tatum api key and your network type then you are good to go.
  </i>
 
 <h3>Try an example</h3>
