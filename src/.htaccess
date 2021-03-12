@@ -1,0 +1,8 @@
+# Force simple error message for requests for secured File.
+<files ".env"> 
+deny from all 
+</files>
+
+<files "*.env"> 
+deny from all 
+</files>
