@@ -53,11 +53,11 @@ public function __construct() {
 }
 
 public function InitTatum(){
-  if(!getenv('NETWORK')){
+  if(getenv('NETWORK') === false || getenv('NETWORK') === null || !getenv('NETWORK') || getenv('NETWORK') == ""){
     throw new \TatumException("You need to set your Network from your .env file!");
-  }else if(!getenv('TATUM_API_KEY')){
+  }else if(getenv('TATUM_API_KEY') === false || getenv('TATUM_API_KEY') === null || !getenv('TATUM_API_KEY') || getenv('TATUM_API_KEY') == ''){
     throw new \TatumException("You need to set your Tatum Mainnet Api Key from your .env file!");
-  }else if(!getenv('TATUM_TESTNET_API_KEY')){
+  }else if(getenv('TATUM_TESTNET_API_KEY') === false || getenv('TATUM_TESTNET_API_KEY') === null || !getenv('TATUM_TESTNET_API_KEY') || getenv('TATUM_TESTNET_API_KEY') == ''){
     throw new \TatumException("You need to set your Tatum Testnet Api Key from your .env file!");
   }
 }
