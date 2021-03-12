@@ -77,8 +77,6 @@ function prepareSignedBitcoinTransaction(array $body){
     $utxoAmountValue = 0;
     $spendingValue = 0;
     $spendingValueArr = [];
-    $txHashArr = [];
-    $txIndexArr = [];
     $privateKeysToSignArr = [];
     $outpointArr = [];
     $txOutArr = [];

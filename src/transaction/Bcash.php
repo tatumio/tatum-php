@@ -44,8 +44,6 @@ function prepareSignedBcashTransaction(array $body){
     $utxoAmountValue = 800100;
     $spendingValue = 0;
     $spendingValueArr = [];
-    $txHashArr = [];
-    $txIndexArr = [];
     $privateKeysToSignArr = [];
     $outpointArr = [];
     $txOutArr = [];

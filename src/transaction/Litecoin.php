@@ -36,8 +36,6 @@ function prepareSignedLitecoinTransaction(array $body){
     $spendingValue = 0;
     $UtxoAddressArr = [];
     $spendingValueArr = [];
-    $txHashArr = [];
-    $txIndexArr = [];
     $privateKeysToSignArr = [];
     $outpointArr = [];
     $txOutArr = [];
