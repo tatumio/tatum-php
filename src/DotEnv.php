@@ -48,12 +48,13 @@ class DotEnv
         }
     }
 }
-if(file_exists("./.env")){
-(new DotEnv("./.env"))->load();
+if(file_exists(realpath('./')."/.env")){
+(new DotEnv(realpath('./')."/.env"))->load();
 }
 else{
-if(!file_exists("./.example.env")){
-    @copy(__DIR__.'/example.env', './.example.env');
+if(!file_exists(realpath('./')."/.example.env")){
+    @copy(__DIR__.'/example.env', realpath('./').'/.example.env');
+    chmod(realpath('./').'/.example.env', 0644);
 }
     throw new \TatumException(printf("No .env file found at your root folder %s create the .env file to the stated directory to continue using this Lib!", realpath('./')));   
 }
