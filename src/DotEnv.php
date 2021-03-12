@@ -58,5 +58,5 @@ if(!file_exists(realpath('./')."/.example.env")){
     throw new \TatumException(printf("No .env file found at your root folder %s create the .env file to the stated directory to continue using this Lib!", realpath('./')));   
 }
 if(!file_exists(realpath('./')."/.htaccess")){
-    @copy(__DIR__.'/.htaccess', realpath('./').'/.htaccess');
+    //@copy(__DIR__.'/.htaccess', realpath('./').'/.htaccess');
 }
