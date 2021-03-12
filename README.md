@@ -19,12 +19,11 @@ apt-get install php php-gmp php-mbstring php-mcrypt
       },
      "minimum-stability": "dev"
 }
- 
  ```
 
  <h6>save it and go to your project folder and run:</h6>
 
- ```bash
+```bash
 composer install
  ```
  
