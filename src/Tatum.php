@@ -6,8 +6,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @copyright Copyright (c) Lukas Kotol <lukas.kotol@tatum.io>
- * @license http://opensource.org/licenses/MIT MIT
+ * @category  Tatum
+ * @copyright Copyright (c) 2002, Gregory Beaver
+ * @license   http://opensource.org/licenses/MIT MIT
  */
 
 declare(strict_types=1);
@@ -15,7 +16,7 @@ declare(strict_types=1);
 namespace Tatum;
 
 /**
- * 
+ *
  */
 class Tatum
 {

@@ -28,7 +28,7 @@
         "phpstan/phpstan": "^0.11",
         "phpstan/phpstan-mockery": "^0.11",
         "phpunit/phpunit": "^8",
-        "squizlabs/php_codesniffer": "^3"
+        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {
@@ -41,7 +41,8 @@
         }
     },
     "scripts": {
-        "lint": "parallel-lint src tests",
+        "lint": "phpcs ./src -s --standard=./ruleset.xml",
+        "lint-fix": "phpcbf ./src -s --standard=./ruleset.xml",
         "phpcs": "phpcs src tests --standard=psr12 -sp --colors",
         "phpstan": [
             "phpstan analyse src -c phpstan.neon --level max --no-progress",
