@@ -1,0 +1,69 @@
+{
+    "name": "tatumio\/tatum\u002Dphp",
+    "description": "",
+    "type": "library",
+    "keywords": [""],
+    "homepage": "https://github.com/tatumio/tatum\u002Dphp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lukas\u0020Kotol",
+            "email": "lukas.kotol\u0040tatum.io",
+            "homepage": "https://tatum.io"
+        }
+    ],
+    "support": {
+        "docs": "https://tatumio.github.io/tatum\u002Dphp/",
+        "issues": "https://github.com/tatumio/tatum\u002Dphp/issues",
+        "rss": "https://github.com/tatumio/tatum\u002Dphp/releases.atom",
+        "source": "https://github.com/tatumio/tatum\u002Dphp.git",
+        "wiki": "https://github.com/tatumio/tatum\u002Dphp/wiki"
+    },
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "^1",
+        "mockery/mockery": "^1",
+        "phpstan/phpstan": "^0.11",
+        "phpstan/phpstan-mockery": "^0.11",
+        "phpunit/phpunit": "^8",
+        "squizlabs/php_codesniffer": "^3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tatum\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tatum\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "parallel-lint src tests",
+        "phpcs": "phpcs src tests --standard=psr12 -sp --colors",
+        "phpstan": [
+            "phpstan analyse src -c phpstan.neon --level max --no-progress",
+            "phpstan analyse tests -c phpstan.neon --level 4 --no-progress"
+        ],
+        "phpunit": "phpunit --verbose --colors=always",
+        "phpunit-ci": "phpunit --verbose --coverage-clover build/logs/clover.xml",
+        "phpunit-coverage": "phpunit --verbose --colors=always --coverage-html build/coverage",
+        "test": [
+            "@lint",
+            "@phpcs",
+            "@phpstan",
+            "@phpunit"
+        ],
+        "test-ci": [
+            "@lint",
+            "@phpcs",
+            "@phpstan",
+            "@phpunit-ci"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
