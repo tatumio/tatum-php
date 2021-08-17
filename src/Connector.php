@@ -2,17 +2,12 @@
 
 namespace Tatum;
 
-use phpDocumentor\Reflection\Types\Mixed_;
 use Requests;
+use Dotenv\Dotenv;
 
 class Connector
 {
     private const BASE_URL = 'https://api-eu1.tatum.io/v3/';
-
-    private const HEADERS = [
-        'x-api-key' => '7dd5bcaf-f22c-4be8-8cf7-43175828c8aa',
-        'Accept' => 'application/json'
-    ];
 
     /**
      * @param string $url
@@ -20,7 +15,7 @@ class Connector
      */
     public static function get(string $url)
     {
-        $body = Requests::get(self::BASE_URL . $url, self::HEADERS)->body;
+        $body = Requests::get(self::BASE_URL . $url, self::headers())->body;
         return self::response($body);
     }
 
@@ -33,5 +28,19 @@ class Connector
     private static function response(string $body)
     {
         return json_decode($body);
+    }
+
+    /**
+     * @return array<string>
+     */
+    private static function headers(): array
+    {
+        $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+        $dotenv->load();
+
+        return [
+            'x-api-key' => $_ENV['TATUM_API_KEY'],
+            'Accept' => 'application/json'
+        ];
     }
 }

@@ -23,8 +23,9 @@
   },
   "require": {
     "php": "^7.3",
+    "ext-json": "*",
     "rmccue/requests": "^1.8",
-    "ext-json": "*"
+    "vlucas/phpdotenv": "^5.3"
   },
   "require-dev": {
     "jakub-onderka/php-parallel-lint": "^1",
