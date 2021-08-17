@@ -5,5 +5,7 @@
         <exclude name="Generic.Commenting.DocComment" />
         <exclude name="PEAR.Commenting.FileComment" />
         <exclude name="PEAR.Commenting.ClassComment" />
+        <exclude name="PEAR.Commenting.FunctionComment.MissingParamComment" />
+        <exclude name="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore" />
     </rule>
 </ruleset>
