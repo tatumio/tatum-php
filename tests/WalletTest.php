@@ -7,8 +7,9 @@ use Tatum\Wallet\Wallet;
 
 class WalletTest extends TestCase
 {
-    public function generateWallet()
+    public function testGenerateWallet()
     {
-        print_r(Wallet::generateWallet(Currency::BTC));
+        $wallet = new Wallet();
+        print_r($wallet->generateWallet());
     }
 }

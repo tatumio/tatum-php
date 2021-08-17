@@ -13,31 +13,21 @@ class Address
 {
     /**
      * @param string $xpub
-     * @param int $index
+     * @param int    $index
      * @return string
      * @throws \BitWasp\Bitcoin\Exceptions\Base58ChecksumFailure
      * @throws \BitWasp\Buffertools\Exceptions\ParserOutOfRange
      */
-    private function generateBtcAddress(string $xpub, int $index): string
+    private static function generateBtcAddress(string $xpub, int $index): string
     {
-        $Bitcoin = new Bitcoin();
-        $Bitcoin->setNetwork($this->isMainNet() ? NetworkFactory::bitcoin() : NetworkFactory::bitcoinTestnet());
-        $network = $Bitcoin->getNetwork();
-        $factory = new HierarchicalKeyFactory();
-        $root = $factory->fromExtended($xpub)
-            ->withoutPrivateKey()
-            ->derivePath($index);
-        $pubkey = $root->getPublicKey();
-        $hdaddress = new PayToPubKeyHashAddress($pubkey->getPubKeyHash());
-        $array = array("address" => $hdaddress->getAddress());
-        return json_encode($array);
+        return $xpub . $index;
     }
 
 
 
     /**
      * @param string $currency
-     * @param bool $testnet
+     * @param bool   $testnet
      * @return string
      * @throws \BitWasp\Bitcoin\Exceptions\RandomBytesFailure
      */
@@ -47,7 +37,7 @@ class Address
     ): string {
         switch ($currency) {
             case Currency::BTC:
-                return self::generateBtcAddress();
+                return self::generateBtcAddress('a', 1);
             default:
                 throw new \UnexpectedValueException(
                     sprintf('Unsupported Blockchain %s!', strtoupper($currency))
