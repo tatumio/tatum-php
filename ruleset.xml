@@ -7,5 +7,6 @@
         <exclude name="PEAR.Commenting.ClassComment" />
         <exclude name="PEAR.Commenting.FunctionComment.MissingParamComment" />
         <exclude name="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore" />
+        <exclude name="PEAR.WhiteSpace.ScopeIndent.IncorrectExact" />
     </rule>
 </ruleset>

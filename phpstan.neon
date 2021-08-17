@@ -1,2 +1,4 @@
 includes:
 	- vendor/phpstan/phpstan-mockery/extension.neon
+parameters:
+    checkGenericClassInNonGenericObjectType: false
