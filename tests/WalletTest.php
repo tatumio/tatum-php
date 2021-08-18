@@ -7,35 +7,37 @@ use Tatum\Wallet\Wallet;
 
 class WalletTest extends TestCase
 {
-    public function testBtcWallet()
+    public function testGenerateWallets()
     {
-        $wallet = new Wallet(Currency::BTC);
-        $generatedWallet = $wallet->generateWallet();
-        self::assertWallet($generatedWallet);
+        $currencies = Currency::keys();
+        foreach ($currencies as $currency) {
+            $wallet = new Wallet($currency);
+            $generatedWallet = $wallet->generateWallet();
+            self::assertWallet($generatedWallet);
+        }
     }
 
-    public function testLtcWallet()
+    public function testGeneratePrivateKeys()
     {
-        $wallet = new Wallet(Currency::LTC);
-        $generatedWallet = $wallet->generateWallet();
-        self::assertWallet($generatedWallet);
+        $currencies = Currency::keys();
+        foreach ($currencies as $currency) {
+            $wallet = new Wallet($currency);
+            $generatedWallet = $wallet->generateWallet();
+            $privateKey = $wallet->generatePrivateKey($generatedWallet['mnemonic'], 1);
+            self::assertPrivateKey($privateKey);
+        }
     }
 
-    public function testDogeWallet()
+    public function testGenerateAddresses()
     {
-        $wallet = new Wallet(Currency::DOGE);
-        $generatedWallet = $wallet->generateWallet();
-        self::assertWallet($generatedWallet);
+        $currencies = Currency::keys();
+        foreach ($currencies as $currency) {
+            $wallet = new Wallet($currency);
+            $generatedWallet = $wallet->generateWallet();
+            $address = $wallet->generateAddress($generatedWallet['xpub'], 1);
+            self::assertAddress($address);
+        }
     }
-
-    public function testEthWallet()
-    {
-        $wallet = new Wallet(Currency::ETH);
-        $generatedWallet = $wallet->generateWallet();
-        self::assertWallet($generatedWallet);
-    }
-
-//    public function testPrivateKey
 
     /**
      * @param array<string> $walet
@@ -48,5 +50,27 @@ class WalletTest extends TestCase
         self::assertArrayHasKey('mnemonic', $walet);
         self::assertIsString($walet['xpub']);
         self::assertIsString($walet['mnemonic']);
+    }
+
+    /**
+     * @param array<string> $privateKey
+     */
+    private static function assertPrivateKey($privateKey)
+    {
+        self::assertNotNull($privateKey);
+        self::assertIsArray($privateKey);
+        self::assertArrayHasKey('key', $privateKey);
+        self::assertIsString($privateKey['key']);
+    }
+
+    /**
+     * @param array<string> $address
+     */
+    private static function assertAddress($address)
+    {
+        self::assertNotNull($address);
+        self::assertIsArray($address);
+        self::assertArrayHasKey('address', $address);
+        self::assertIsString($address['address']);
     }
 }

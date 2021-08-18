@@ -2,6 +2,7 @@
 
 namespace Tatum\Wallet;
 
+use BitWasp\Bitcoin\Address\PayToPubKeyHashAddress;
 use BitWasp\Bitcoin\Crypto\Random\Random;
 use BitWasp\Bitcoin\Key\Factory\HierarchicalKeyFactory;
 use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39Mnemonic;
@@ -12,8 +13,13 @@ use BitWasp\Bitcoin\Network\NetworkInterface;
 use BitWasp\Bitcoin\Bitcoin;
 use Tatum\Utils\Currency;
 use Tatum\Utils\Constant;
-use Tatum\Utils\Validation;
 use UnexpectedValueException;
+use kornrunner\Keccak;
+use BitWasp\Bitcoin\Crypto\EcAdapter\Key\PublicKeyInterface;
+use BitWasp\Bitcoin\Crypto\EcAdapter\Impl\PhpEcc\Serializer\Key\PublicKeySerializer;
+use BitWasp\Bitcoin\Crypto\EcAdapter\EcAdapterFactory;
+use Mdanter\Ecc\Serializer\Point\UncompressedPointSerializer;
+use Mdanter\Ecc\EccFactory;
 
 class Wallet
 {
@@ -133,7 +139,7 @@ class Wallet
      * @return array<string>
      * @throws \Exception
      */
-    public function generateBtcBasedPrivateKey(string $mnemonic, int $index)
+    private function generateBtcBasedPrivateKey(string $mnemonic, int $index)
     {
         $network = $this->generateBitcoinWithNetwork();
         $hierarchicalKey = $this->generateHierarchicalKey($mnemonic);
@@ -141,6 +147,97 @@ class Wallet
             ->derivePath(Constant::DERIVATION_PATH[$this->currency] . "/" . $index)
             ->getPrivateKey();
         return ["key" => $privateKey->toWif($network)];
+    }
+
+    /**
+     * @param string $mnemonic
+     * @param int $index
+     * @return array<string>
+     * @throws \Exception
+     */
+    private function generateEthPrivateKey(string $mnemonic, int $index)
+    {
+        $root = $this->generateHierarchicalKey($mnemonic);
+        $privateKey = $root->derivePath(Constant::DERIVATION_PATH[$this->currency] . "/" . $index)->getPrivateKey();
+        return ["key" => '0x' . $privateKey->getHex()];
+    }
+
+    /**
+     * @param string $xpub
+     * @param int $index
+     * @return array<string>
+     * @throws \BitWasp\Bitcoin\Exceptions\Base58ChecksumFailure
+     * @throws \BitWasp\Buffertools\Exceptions\ParserOutOfRange
+     */
+    private function generateBtcBasedAddress(string $xpub, int $index)
+    {
+        $factory = new HierarchicalKeyFactory();
+        $publicKeyHash = $factory->fromExtended($xpub)
+            ->withoutPrivateKey()
+            ->derivePath(strval($index))
+            ->getPublicKey()
+            ->getPubKeyHash();
+        $publicKey = new PayToPubKeyHashAddress($publicKeyHash);
+        return ["address" => $publicKey->getAddress()];
+    }
+
+    /**
+     * @param string $xpub
+     * @param int $index
+     * @return array<string>
+     * @throws \BitWasp\Bitcoin\Exceptions\Base58ChecksumFailure
+     * @throws \BitWasp\Buffertools\Exceptions\ParserOutOfRange
+     */
+    private function generateEthAddress(string $xpub, int $index)
+    {
+        $factory = new HierarchicalKeyFactory();
+        $root = $factory->fromExtended($xpub)
+            ->withoutPrivateKey()
+            ->derivePath(strval($index));
+        $pubkey = $root->getPublicKey();
+        $address = $this->generateEthAddressFromPubKey($pubkey);
+        return ["address" => $address];
+    }
+
+    /**
+     * @param PublicKeyInterface $publicKey
+     * @return string
+     * @throws \Exception
+     */
+    private function generateEthAddressFromPubKey(PublicKeyInterface $publicKey): string
+    {
+        static $pubkey_serializer = null;
+        static $point_serializer = null;
+        if (!$pubkey_serializer) {
+            $adapter = EcAdapterFactory::getPhpEcc(Bitcoin::getMath(), Bitcoin::getGenerator());
+            $pubkey_serializer = new PublicKeySerializer($adapter);
+            $point_serializer = new UncompressedPointSerializer();
+        }
+
+        $pubKey = $pubkey_serializer->parse($publicKey->getBuffer());
+        $point = $pubKey->getPoint();
+        $upk = $point_serializer->serialize($point);
+        $upk = hex2bin(substr($upk, 2));
+
+        $keccak = Keccak::hash($upk, 256);
+        $eth_address_lower = strtolower(substr($keccak, -40));
+
+        $hash = Keccak::hash($eth_address_lower, 256);
+        $eth_address = '';
+        for ($i = 0; $i < 40; $i++) {
+            // the nth letter should be uppercase if the nth digit of casemap is 1
+            $char = substr($eth_address_lower, $i, 1);
+
+            if (ctype_digit($char)) {
+                $eth_address .= $char;
+            } elseif ('0' <= $hash[$i] && $hash[$i] <= '7') {
+                $eth_address .= strtolower($char);
+            } else {
+                $eth_address .= strtoupper($char);
+            }
+        }
+
+        return '0x' . $eth_address;
     }
 
     /**
@@ -152,7 +249,6 @@ class Wallet
         string $mnemonic = null
     ): array {
         $mnemonic = $mnemonic ? $mnemonic : $this->generateMnemonic();
-        Validation::isNotEmpty($this->currency, 'Param $currency must be set.');
 
         switch ($this->currency) {
             case Currency::BTC:
@@ -167,22 +263,41 @@ class Wallet
     }
 
     /**
-     * @param string|null $mnemonic
+     * @param string $mnemonic
      * @param int $index
      * @return array<string>
      * @throws \Exception
      */
     public function generatePrivateKey(string $mnemonic, int $index): array
     {
-        Validation::isNotEmpty($this->currency, 'Param $currency must be set.');
-
         switch ($this->currency) {
             case Currency::BTC:
             case Currency::LTC:
             case Currency::DOGE:
                 return $this->generateBtcBasedPrivateKey($mnemonic, $index);
             case Currency::ETH:
-                return ['asd' => 'dsa'];
+                return $this->generateEthPrivateKey($mnemonic, $index);
+            default:
+                throw new UnexpectedValueException('Unsupported Blockchain' . $this->currency . '.');
+        }
+    }
+
+    /**
+     * @param string $xpub
+     * @param int $index
+     * @return array<string>
+     * @throws \BitWasp\Bitcoin\Exceptions\Base58ChecksumFailure
+     * @throws \BitWasp\Buffertools\Exceptions\ParserOutOfRange
+     */
+    public function generateAddress(string $xpub, int $index): array
+    {
+        switch ($this->currency) {
+            case Currency::BTC:
+            case Currency::LTC:
+            case Currency::DOGE:
+                return $this->generateBtcBasedAddress($xpub, $index);
+            case Currency::ETH:
+                return $this->generateEthAddress($xpub, $index);
             default:
                 throw new UnexpectedValueException('Unsupported Blockchain' . $this->currency . '.');
         }
