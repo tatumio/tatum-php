@@ -9,31 +9,33 @@ class WalletTest extends TestCase
 {
     public function testBtcWallet()
     {
-        $wallet = new Wallet();
-        $generatedWallet = $wallet->generateWallet(Currency::BTC);
+        $wallet = new Wallet(Currency::BTC);
+        $generatedWallet = $wallet->generateWallet();
         self::assertWallet($generatedWallet);
     }
 
     public function testLtcWallet()
     {
-        $wallet = new Wallet();
-        $generatedWallet = $wallet->generateWallet(Currency::LTC);
+        $wallet = new Wallet(Currency::LTC);
+        $generatedWallet = $wallet->generateWallet();
         self::assertWallet($generatedWallet);
     }
 
     public function testDogeWallet()
     {
-        $wallet = new Wallet();
-        $generatedWallet = $wallet->generateWallet(Currency::DOGE);
+        $wallet = new Wallet(Currency::DOGE);
+        $generatedWallet = $wallet->generateWallet();
         self::assertWallet($generatedWallet);
     }
 
     public function testEthWallet()
     {
-        $wallet = new Wallet();
-        $generatedWallet = $wallet->generateWallet(Currency::ETH);
+        $wallet = new Wallet(Currency::ETH);
+        $generatedWallet = $wallet->generateWallet();
         self::assertWallet($generatedWallet);
     }
+
+//    public function testPrivateKey
 
     /**
      * @param array<string> $walet

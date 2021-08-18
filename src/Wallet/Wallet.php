@@ -30,13 +30,24 @@ class Wallet
 
     /**
      * Wallet constructor.
-     * @param string|null $currency
+     * @param string $currency
      * @param bool $isTestnet
      */
-    public function __construct(string $currency = null, bool $isTestnet = false)
+    public function __construct(string $currency, bool $isTestnet = false)
     {
         $this->isTestnet = $isTestnet;
         $this->currency = $currency;
+    }
+
+    /**
+     * @return NetworkInterface
+     * @throws \Exception
+     */
+    private function generateBitcoinWithNetwork()
+    {
+        $Bitcoin = new Bitcoin();
+        $Bitcoin->setNetwork($this->getBtcBasedNetwork());
+        return $Bitcoin->getNetwork();
     }
 
     /**
@@ -51,34 +62,40 @@ class Wallet
     }
 
     /**
-     * @param string $currency
+     * @param string $mnemonic
+     * @return \BitWasp\Bitcoin\Key\Deterministic\HierarchicalKey
+     * @throws \Exception
+     */
+    private function generateHierarchicalKey(string $mnemonic)
+    {
+        $factory = new HierarchicalKeyFactory();
+        $seedGenerator = new Bip39SeedGenerator();
+        $seed = $seedGenerator->getSeed($mnemonic);
+        return $factory->fromEntropy($seed);
+    }
+
+    /**
      * @param string $mnemonic
      * @param NetworkInterface|null $network
      * @return string
      * @throws \Exception
      */
-    private function generateXpub(string $currency, string $mnemonic, NetworkInterface $network = null): string
+    private function generateXpub(string $mnemonic, NetworkInterface $network = null): string
     {
-        $factory = new HierarchicalKeyFactory();
-        $seedGenerator = new Bip39SeedGenerator();
-        $seed = $seedGenerator->getSeed($mnemonic);
-        $root = $factory->fromEntropy($seed);
-        $hdWallet = $root->derivePath(Constant::DERIVATION_PATH[$currency]);
+        $hierarchicalKey = $this->generateHierarchicalKey($mnemonic);
+        $hdWallet = $hierarchicalKey->derivePath(Constant::DERIVATION_PATH[$this->currency]);
         return $hdWallet->toExtendedPublicKey($network);
     }
 
     /**
      * @param string $mnemonic
-     * @param bool $isTestnet
      * @return array<string>
      * @throws \Exception
      */
-    private function generateBtcWallet(string $mnemonic, bool $isTestnet = false): array
+    private function generateBtcBasedWallet(string $mnemonic): array
     {
-        $Bitcoin = new Bitcoin();
-        $Bitcoin->setNetwork($isTestnet ? NetworkFactory::bitcoinTestnet() : NetworkFactory::bitcoin());
-        $network = $Bitcoin->getNetwork();
-        $xpub = $this->generateXpub(Currency::BTC, $mnemonic, $network);
+        $network = $this->generateBitcoinWithNetwork();
+        $xpub = $this->generateXpub($mnemonic, $network);
         return ["mnemonic" => $mnemonic, "xpub" => $xpub];
     }
 
@@ -88,68 +105,86 @@ class Wallet
      */
     private function generateEthWallet(string $mnemonic): array
     {
-        $xpub = $this->generateXpub(Currency::ETH, $mnemonic);
+        $xpub = $this->generateXpub($mnemonic);
         return ["mnemonic" => $mnemonic, "xpub" => $xpub];
+    }
+
+    /**
+     * @return NetworkInterface|\BitWasp\Bitcoin\Network\Networks\Dogecoin|\BitWasp\Bitcoin\Network\Networks\DogecoinTestnet|\BitWasp\Bitcoin\Network\Networks\LitecoinTestnet
+     * @throws \Exception
+     */
+    private function getBtcBasedNetwork()
+    {
+        switch ($this->currency) {
+            case Currency::BTC:
+                return $this->isTestnet ? NetworkFactory::bitcoinTestnet() : NetworkFactory::bitcoin();
+            case Currency::LTC:
+                return $this->isTestnet ? NetworkFactory::litecoinTestnet() : NetworkFactory::litecoin();
+            case Currency::DOGE:
+                return $this->isTestnet ? NetworkFactory::dogecoinTestnet() : NetworkFactory::dogecoin();
+            default:
+                throw new UnexpectedValueException('Unsupported Blockchain' . $this->currency . '.');
+        }
     }
 
     /**
      * @param string $mnemonic
-     * @param bool $isTestnet
+     * @param int $index
      * @return array<string>
      * @throws \Exception
      */
-    private function generateLtcWallet(string $mnemonic, bool $isTestnet = false): array
+    public function generateBtcBasedPrivateKey(string $mnemonic, int $index)
     {
-        $Bitcoin = new Bitcoin();
-        $Bitcoin->setNetwork($isTestnet ? NetworkFactory::litecoinTestnet() : NetworkFactory::litecoin());
-        $network = $Bitcoin->getNetwork();
-        $xpub = $this->generateXpub(Currency::LTC, $mnemonic, $network);
-        return ["mnemonic" => $mnemonic, "xpub" => $xpub];
+        $network = $this->generateBitcoinWithNetwork();
+        $hierarchicalKey = $this->generateHierarchicalKey($mnemonic);
+        $privateKey = $hierarchicalKey
+            ->derivePath(Constant::DERIVATION_PATH[$this->currency] . "/" . $index)
+            ->getPrivateKey();
+        return ["key" => $privateKey->toWif($network)];
     }
 
     /**
-     * @param string $mnemonic
-     * @param bool $isTestnet
-     * @return array<string>
-     * @throws \Exception
-     */
-    private function generateDogeWallet(string $mnemonic, bool $isTestnet = false): array
-    {
-        $Bitcoin = new Bitcoin();
-        $Bitcoin->setNetwork($isTestnet ? NetworkFactory::dogecoinTestnet() : NetworkFactory::dogecoin());
-        $network = $Bitcoin->getNetwork();
-        $xpub = $this->generateXpub(Currency::DOGE, $mnemonic, $network);
-        return ["mnemonic" => $mnemonic, "xpub" => $xpub];
-    }
-
-    /**
-     * @param string|null $currency
-     * @param bool|null $isTestnet
      * @param string|null $mnemonic
      * @return array<string>
      * @throws \Exception
      */
     public function generateWallet(
-        string $currency = null,
-        bool $isTestnet = null,
         string $mnemonic = null
     ): array {
         $mnemonic = $mnemonic ? $mnemonic : $this->generateMnemonic();
-        $isTestnet = $isTestnet ? $isTestnet : $this->isTestnet;
-        $currency = $currency ? $currency : $this->currency;
-        Validation::isNotEmpty($currency, 'Param $currency must be set.');
+        Validation::isNotEmpty($this->currency, 'Param $currency must be set.');
 
-        switch ($currency) {
+        switch ($this->currency) {
             case Currency::BTC:
-                return $this->generateBtcWallet($mnemonic, $isTestnet);
             case Currency::LTC:
-                return $this->generateLtcWallet($mnemonic, $isTestnet);
             case Currency::DOGE:
-                return $this->generateDogeWallet($mnemonic, $isTestnet);
+                return $this->generateBtcBasedWallet($mnemonic);
             case Currency::ETH:
                 return $this->generateEthWallet($mnemonic);
             default:
-                throw new UnexpectedValueException('Unsupported Blockchain' . $currency . '.');
+                throw new UnexpectedValueException('Unsupported Blockchain' . $this->currency . '.');
+        }
+    }
+
+    /**
+     * @param string|null $mnemonic
+     * @param int $index
+     * @return array<string>
+     * @throws \Exception
+     */
+    public function generatePrivateKey(string $mnemonic, int $index): array
+    {
+        Validation::isNotEmpty($this->currency, 'Param $currency must be set.');
+
+        switch ($this->currency) {
+            case Currency::BTC:
+            case Currency::LTC:
+            case Currency::DOGE:
+                return $this->generateBtcBasedPrivateKey($mnemonic, $index);
+            case Currency::ETH:
+                return ['asd' => 'dsa'];
+            default:
+                throw new UnexpectedValueException('Unsupported Blockchain' . $this->currency . '.');
         }
     }
 }
