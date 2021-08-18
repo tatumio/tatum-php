@@ -56,7 +56,7 @@
       "phpstan analyse src -c phpstan.neon --level max --no-progress",
       "phpstan analyse tests -c phpstan.neon --level 4 --no-progress"
     ],
-    "phpunit": "phpunit --verbose --colors=always",
+    "phpunit": "phpunit --verbose --colors=always --testdox",
     "phpunit-ci": "phpunit --verbose --coverage-clover build/logs/clover.xml",
     "phpunit-coverage": "phpunit --verbose --colors=always --coverage-html build/coverage",
     "test": [

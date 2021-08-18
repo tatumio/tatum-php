@@ -13,4 +13,6 @@ class Currency extends Enum
 {
     public const BTC = 'BTC';
     public const ETH = 'ETH';
+    public const LTC = 'LTC';
+    public const DOGE = 'DOGE';
 }

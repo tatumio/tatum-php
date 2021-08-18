@@ -17,6 +17,7 @@ class Constant
         'BCH' => "44'/145'/0'/0",
         'LYRA' => "44'/497'/0'/0",
         'TESTNET' => "44'/1'/0'/0",
+        'DOGE' => "44'/3'/0'/0",
     ];
 
     public const CONTRACT_ADDRESSES = array(

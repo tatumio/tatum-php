@@ -12,8 +12,8 @@ use BitWasp\Bitcoin\Network\NetworkInterface;
 use BitWasp\Bitcoin\Bitcoin;
 use Tatum\Utils\Currency;
 use Tatum\Utils\Constant;
+use Tatum\Utils\Validation;
 use UnexpectedValueException;
-use Respect\Validation\Validator as v;
 
 class Wallet
 {
@@ -51,13 +51,13 @@ class Wallet
     }
 
     /**
-     * @param string            $currency
-     * @param string            $mnemonic
-     * @param NetworkInterface  $network
+     * @param string $currency
+     * @param string $mnemonic
+     * @param NetworkInterface|null $network
      * @return string
      * @throws \Exception
      */
-    private function generateXpub(string $currency, string $mnemonic, NetworkInterface $network): string
+    private function generateXpub(string $currency, string $mnemonic, NetworkInterface $network = null): string
     {
         $factory = new HierarchicalKeyFactory();
         $seedGenerator = new Bip39SeedGenerator();
@@ -83,32 +83,73 @@ class Wallet
     }
 
     /**
-     * @param bool|null $isTestnet
+     * @param string $mnemonic
+     * @return array<string>
+     */
+    private function generateEthWallet(string $mnemonic): array
+    {
+        $xpub = $this->generateXpub(Currency::ETH, $mnemonic);
+        return ["mnemonic" => $mnemonic, "xpub" => $xpub];
+    }
+
+    /**
+     * @param string $mnemonic
+     * @param bool $isTestnet
+     * @return array<string>
+     * @throws \Exception
+     */
+    private function generateLtcWallet(string $mnemonic, bool $isTestnet = false): array
+    {
+        $Bitcoin = new Bitcoin();
+        $Bitcoin->setNetwork($isTestnet ? NetworkFactory::litecoinTestnet() : NetworkFactory::litecoin());
+        $network = $Bitcoin->getNetwork();
+        $xpub = $this->generateXpub(Currency::LTC, $mnemonic, $network);
+        return ["mnemonic" => $mnemonic, "xpub" => $xpub];
+    }
+
+    /**
+     * @param string $mnemonic
+     * @param bool $isTestnet
+     * @return array<string>
+     * @throws \Exception
+     */
+    private function generateDogeWallet(string $mnemonic, bool $isTestnet = false): array
+    {
+        $Bitcoin = new Bitcoin();
+        $Bitcoin->setNetwork($isTestnet ? NetworkFactory::dogecoinTestnet() : NetworkFactory::dogecoin());
+        $network = $Bitcoin->getNetwork();
+        $xpub = $this->generateXpub(Currency::DOGE, $mnemonic, $network);
+        return ["mnemonic" => $mnemonic, "xpub" => $xpub];
+    }
+
+    /**
      * @param string|null $currency
+     * @param bool|null $isTestnet
      * @param string|null $mnemonic
      * @return array<string>
      * @throws \Exception
      */
     public function generateWallet(
-        bool $isTestnet = null,
         string $currency = null,
+        bool $isTestnet = null,
         string $mnemonic = null
     ): array {
         $mnemonic = $mnemonic ? $mnemonic : $this->generateMnemonic();
         $isTestnet = $isTestnet ? $isTestnet : $this->isTestnet;
         $currency = $currency ? $currency : $this->currency;
-
-        if (!v::boolType()->validate($currency)) {
-            throw new UnexpectedValueException('Param $currency must be set.');
-        }
+        Validation::isNotEmpty($currency, 'Param $currency must be set.');
 
         switch ($currency) {
             case Currency::BTC:
-                return self::generateBtcWallet($mnemonic, $isTestnet);
+                return $this->generateBtcWallet($mnemonic, $isTestnet);
+            case Currency::LTC:
+                return $this->generateLtcWallet($mnemonic, $isTestnet);
+            case Currency::DOGE:
+                return $this->generateDogeWallet($mnemonic, $isTestnet);
+            case Currency::ETH:
+                return $this->generateEthWallet($mnemonic);
             default:
-                throw new UnexpectedValueException(
-                    sprintf('Unsupported Blockchain %s!', strtoupper($currency))
-                );
+                throw new UnexpectedValueException('Unsupported Blockchain' . $currency . '.');
         }
     }
 }
