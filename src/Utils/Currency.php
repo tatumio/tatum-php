@@ -15,4 +15,5 @@ class Currency extends Enum
     public const ETH = 'ETH';
     public const LTC = 'LTC';
     public const DOGE = 'DOGE';
+    public const ADA = 'ADA';
 }

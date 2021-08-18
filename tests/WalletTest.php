@@ -13,6 +13,8 @@ class WalletTest extends TestCase
         foreach ($currencies as $currency) {
             $wallet = new Wallet($currency);
             $generatedWallet = $wallet->generateWallet();
+            print_r($generatedWallet);
+            print_r($currency);
             self::assertWallet($generatedWallet);
         }
     }

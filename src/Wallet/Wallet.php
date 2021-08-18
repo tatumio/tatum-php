@@ -68,6 +68,15 @@ class Wallet
     }
 
     /**
+     * @param $mnemonic
+     */
+    private function generateEntropyFromMnemonic($mnemonic): \BitWasp\Buffertools\BufferInterface
+    {
+        $bip39 = MnemonicFactory::bip39();
+        return $bip39->mnemonicToEntropy($mnemonic);
+    }
+
+    /**
      * @param string $mnemonic
      * @return \BitWasp\Bitcoin\Key\Deterministic\HierarchicalKey
      * @throws \Exception
@@ -256,6 +265,7 @@ class Wallet
             case Currency::DOGE:
                 return $this->generateBtcBasedWallet($mnemonic);
             case Currency::ETH:
+            case Currency::ADA:
                 return $this->generateEthWallet($mnemonic);
             default:
                 throw new UnexpectedValueException('Unsupported Blockchain' . $this->currency . '.');
