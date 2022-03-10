@@ -1,4 +1,4 @@
-# tatum-php
+# [Community only]: tatum-php
 Tatum.io Official PHP SDK for dev
 
 To Install This SDK clone to a folder eg: tatum-php
