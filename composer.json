@@ -1,5 +1,5 @@
 {
-  "name": "tatumio\/tatum\u002Dphp",
+  "name": "mynftcar/tatum-php",
   "description": "",
   "type": "library",
   "keywords": [
@@ -7,6 +7,12 @@
   ],
   "homepage": "https://github.com/tatumio/tatum\u002Dphp",
   "license": "MIT",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:mynftcar/bitcoin-php.git"
+    }
+  ],
   "authors": [
     {
       "name": "Lukas\u0020Kotol",
@@ -22,9 +28,9 @@
     "wiki": "https://github.com/tatumio/tatum\u002Dphp/wiki"
   },
   "require": {
-    "php": "^7.3",
+    "php": "^7.3|^8.0",
     "ext-json": "*",
-    "bitwasp/bitcoin": "^1.0",
+    "mynftcar/bitcoin": "^1.1",
     "kornrunner/keccak": "^1.1",
     "myclabs/php-enum": "^1.8",
     "respect/validation": "^2.2",
@@ -32,7 +38,6 @@
     "vlucas/phpdotenv": "^5.3"
   },
   "require-dev": {
-    "jakub-onderka/php-parallel-lint": "^1",
     "mockery/mockery": "^1",
     "phpstan/phpstan": "^0.12",
     "phpstan/phpstan-mockery": "^0.12",
