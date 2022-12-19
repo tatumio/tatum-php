@@ -3,7 +3,7 @@
 /**
  * TransferAlgo Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -27,7 +27,6 @@ class TransferAlgo extends AbstractModel {
     protected static $_name = "TransferAlgo";
     protected static $_definition = [
         "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
         "address" => ["address", "string", null, "getAddress", "setAddress"], 
         "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
         "fee" => ["fee", "string", null, "getFee", "setFee"], 
@@ -43,7 +42,7 @@ class TransferAlgo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "account"=>null, "address"=>null, "amount"=>null, "fee"=>null, "private_key"=>null, "compliant"=>null, "payment_id"=>null, "sender_note"=>null] as $k => $v) {
+        foreach(["sender_account_id"=>null, "address"=>null, "amount"=>null, "fee"=>null, "private_key"=>null, "compliant"=>null, "payment_id"=>null, "sender_note"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -62,15 +61,6 @@ class TransferAlgo extends AbstractModel {
         }
         if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
             $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
         }
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
@@ -141,33 +131,6 @@ class TransferAlgo extends AbstractModel {
             throw new IAE('TransferAlgo.setSenderAccountId: $sender_account_id length must be >= 24');
         }
         $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
-    }
-
-    /**
-     * Get account
-     *
-     * @return string
-     */
-    public function getAccount(): string {
-        return $this->_data["account"];
-    }
-
-    /**
-     * Set account
-     * 
-     * @param string $account The blockchain address of the Algorand wallet (account) associated with the virtual account
-     * @return $this
-     */
-    public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('TransferAlgo.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('TransferAlgo.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
 
         return $this;
     }

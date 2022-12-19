@@ -3,7 +3,7 @@
 /**
  * TransferXdcBlockchain Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -117,7 +117,7 @@ class TransferXdcBlockchain extends AbstractModel {
     /**
      * Set data
      * 
-     * @param string|null $data Additional data, that can be passed to blockchain transaction as data property. Only for XDC transactions.
+     * @param string|null $data Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
      * @return $this
      */
     public function setData(?string $data) {

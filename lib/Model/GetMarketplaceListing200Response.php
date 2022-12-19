@@ -3,7 +3,7 @@
 /**
  * GetMarketplaceListing_200_response Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -37,7 +37,11 @@ class GetMarketplaceListing200Response extends AbstractModel {
         "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress"], 
         "price" => ["price", "string", null, "getPrice", "setPrice"], 
         "seller" => ["seller", "string", null, "getSeller", "setSeller"], 
-        "state" => ["state", "string", null, "getState", "setState"]
+        "state" => ["state", "string", null, "getState", "setState"], 
+        "nft" => ["nft", "\Tatum\Model\SolanaListingDataNft", null, "getNft", "setNft"], 
+        "created_at" => ["createdAt", "float", null, "getCreatedAt", "setCreatedAt"], 
+        "purchased_at" => ["purchasedAt", "float", null, "getPurchasedAt", "setPurchasedAt"], 
+        "cancelled_at" => ["cancelledAt", "float", null, "getCancelledAt", "setCancelledAt"]
     ];
 
     /**
@@ -46,7 +50,7 @@ class GetMarketplaceListing200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["amount"=>null, "buyer"=>null, "erc20_address"=>null, "is_erc721"=>null, "listing_id"=>null, "nft_address"=>null, "price"=>null, "seller"=>null, "state"=>null] as $k => $v) {
+        foreach(["amount"=>null, "buyer"=>null, "erc20_address"=>null, "is_erc721"=>null, "listing_id"=>null, "nft_address"=>null, "price"=>null, "seller"=>null, "state"=>null, "nft"=>null, "created_at"=>null, "purchased_at"=>null, "cancelled_at"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -57,10 +61,31 @@ class GetMarketplaceListing200Response extends AbstractModel {
     public function listInvalidProperties(): array {
         $ip = [];
 
+        if (is_null($this->_data['amount'])) {
+            $ip[] = "'amount' can't be null";
+        }
+        if (is_null($this->_data['listing_id'])) {
+            $ip[] = "'listing_id' can't be null";
+        }
+        if (is_null($this->_data['price'])) {
+            $ip[] = "'price' can't be null";
+        }
+        if (is_null($this->_data['seller'])) {
+            $ip[] = "'seller' can't be null";
+        }
+        if (is_null($this->_data['state'])) {
+            $ip[] = "'state' can't be null";
+        }
         $allowed = $this->getStateAllowableValues();
         $value = $this->_data['state'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'state' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
+        }
+        if (is_null($this->_data['nft'])) {
+            $ip[] = "'nft' can't be null";
+        }
+        if (is_null($this->_data['created_at'])) {
+            $ip[] = "'created_at' can't be null";
         }
         
         return $ip;
@@ -81,19 +106,19 @@ class GetMarketplaceListing200Response extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string|null
+     * @return string
      */
-    public function getAmount(): ?string {
+    public function getAmount(): string {
         return $this->_data["amount"];
     }
 
     /**
      * Set amount
      * 
-     * @param string|null $amount Amount of NFTs to sold in this listing. Valid only for ERC1155 listings.
+     * @param string $amount Amount of NFTs to sold in this listing.
      * @return $this
      */
-    public function setAmount(?string $amount) {
+    public function setAmount(string $amount) {
         $this->_data['amount'] = $amount;
 
         return $this;
@@ -132,7 +157,7 @@ class GetMarketplaceListing200Response extends AbstractModel {
     /**
      * Set erc20_address
      * 
-     * @param string|null $erc20_address Address of the ERC20 token smart contract, which should be used for paying for the asset..
+     * @param string|null $erc20_address Address of the ERC20 token smart contract, which should be used for paying for the asset
      * @return $this
      */
     public function setErc20Address(?string $erc20_address) {
@@ -153,7 +178,7 @@ class GetMarketplaceListing200Response extends AbstractModel {
     /**
      * Set is_erc721
      * 
-     * @param bool|null $is_erc721 If the listing is for ERC721 or ERC1155 token.
+     * @param bool|null $is_erc721 True if asset is NFT of type ERC721, false if ERC1155
      * @return $this
      */
     public function setIsErc721(?bool $is_erc721) {
@@ -165,19 +190,19 @@ class GetMarketplaceListing200Response extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string|null
+     * @return string
      */
-    public function getListingId(): ?string {
+    public function getListingId(): string {
         return $this->_data["listing_id"];
     }
 
     /**
      * Set listing_id
      * 
-     * @param string|null $listing_id ID of the listing.
+     * @param string $listing_id ID of the listing
      * @return $this
      */
-    public function setListingId(?string $listing_id) {
+    public function setListingId(string $listing_id) {
         $this->_data['listing_id'] = $listing_id;
 
         return $this;
@@ -207,19 +232,19 @@ class GetMarketplaceListing200Response extends AbstractModel {
     /**
      * Get price
      *
-     * @return string|null
+     * @return string
      */
-    public function getPrice(): ?string {
+    public function getPrice(): string {
         return $this->_data["price"];
     }
 
     /**
      * Set price
      * 
-     * @param string|null $price Price of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field.
+     * @param string $price Price of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field.
      * @return $this
      */
-    public function setPrice(?string $price) {
+    public function setPrice(string $price) {
         $this->_data['price'] = $price;
 
         return $this;
@@ -228,19 +253,19 @@ class GetMarketplaceListing200Response extends AbstractModel {
     /**
      * Get seller
      *
-     * @return string|null
+     * @return string
      */
-    public function getSeller(): ?string {
+    public function getSeller(): string {
         return $this->_data["seller"];
     }
 
     /**
      * Set seller
      * 
-     * @param string|null $seller Address of the seller.
+     * @param string $seller Address of the seller.
      * @return $this
      */
-    public function setSeller(?string $seller) {
+    public function setSeller(string $seller) {
         $this->_data['seller'] = $seller;
 
         return $this;
@@ -249,24 +274,108 @@ class GetMarketplaceListing200Response extends AbstractModel {
     /**
      * Get state
      *
-     * @return string|null
+     * @return string
      */
-    public function getState(): ?string {
+    public function getState(): string {
         return $this->_data["state"];
     }
 
     /**
      * Set state
      * 
-     * @param string|null $state State of the listing. 0 - available, 1 - sold, 2 - cancelled
+     * @param string $state State of the listing. 0 - available, 1 - sold, 2 - cancelled
      * @return $this
      */
-    public function setState(?string $state) {
+    public function setState(string $state) {
         $allowed = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowed, true)) {
+        if (!in_array($state, $allowed, true)) {
             throw new IAE(sprintf("GetMarketplaceListing200Response.setState: state invalid value '%s', must be one of '%s'", $state, implode("', '", $allowed)));
         }
         $this->_data['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get nft
+     *
+     * @return \Tatum\Model\SolanaListingDataNft
+     */
+    public function getNft(): \Tatum\Model\SolanaListingDataNft {
+        return $this->_data["nft"];
+    }
+
+    /**
+     * Set nft
+     * 
+     * @param \Tatum\Model\SolanaListingDataNft $nft nft
+     * @return $this
+     */
+    public function setNft(\Tatum\Model\SolanaListingDataNft $nft) {
+        $this->_data['nft'] = $nft;
+
+        return $this;
+    }
+
+    /**
+     * Get created_at
+     *
+     * @return float
+     */
+    public function getCreatedAt(): float {
+        return $this->_data["created_at"];
+    }
+
+    /**
+     * Set created_at
+     * 
+     * @param float $created_at Timestamp when this listing was created
+     * @return $this
+     */
+    public function setCreatedAt(float $created_at) {
+        $this->_data['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Get purchased_at
+     *
+     * @return float|null
+     */
+    public function getPurchasedAt(): ?float {
+        return $this->_data["purchased_at"];
+    }
+
+    /**
+     * Set purchased_at
+     * 
+     * @param float|null $purchased_at Timestamp when this listing was purchased
+     * @return $this
+     */
+    public function setPurchasedAt(?float $purchased_at) {
+        $this->_data['purchased_at'] = $purchased_at;
+
+        return $this;
+    }
+
+    /**
+     * Get cancelled_at
+     *
+     * @return float|null
+     */
+    public function getCancelledAt(): ?float {
+        return $this->_data["cancelled_at"];
+    }
+
+    /**
+     * Set cancelled_at
+     * 
+     * @param float|null $cancelled_at Timestamp when this listing was cancelled
+     * @return $this
+     */
+    public function setCancelledAt(?float $cancelled_at) {
+        $this->_data['cancelled_at'] = $cancelled_at;
 
         return $this;
     }

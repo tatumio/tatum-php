@@ -3,7 +3,7 @@
 /**
  * SellAssetOnMarketplace_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -24,7 +24,7 @@ use InvalidArgumentException as IAE;
 class SellAssetOnMarketplaceRequest extends AbstractModel {
 
     public const DISCRIMINATOR = null;
-    public const CHAIN_CELO = 'CELO';
+    public const CHAIN_SOL = 'SOL';
     public const FEE_CURRENCY_CELO = 'CELO';
     public const FEE_CURRENCY_CUSD = 'CUSD';
     public const FEE_CURRENCY_CEUR = 'CEUR';
@@ -45,7 +45,10 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
         "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
         "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
+        "from" => ["from", "mixed", null, "getFrom", "setFrom"], 
+        "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey"], 
+        "authority_signature_id" => ["authoritySignatureId", "string", 'uuid', "getAuthoritySignatureId", "setAuthoritySignatureId"]
     ];
 
     /**
@@ -54,7 +57,7 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "nft_address"=>null, "seller"=>null, "erc20_address"=>null, "listing_id"=>null, "amount"=>null, "token_id"=>null, "price"=>null, "is_erc721"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null] as $k => $v) {
+        foreach(["chain"=>null, "contract_address"=>null, "nft_address"=>null, "seller"=>null, "erc20_address"=>null, "listing_id"=>null, "amount"=>null, "token_id"=>null, "price"=>null, "is_erc721"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null, "from"=>null, "authority_private_key"=>null, "authority_signature_id"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -76,20 +79,20 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
         if (is_null($this->_data['contract_address'])) {
             $ip[] = "'contract_address' can't be null";
         }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
+        if ((mb_strlen($this->_data['contract_address']) > 44)) {
+            $ip[] = "'contract_address' length must be <= 44";
         }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
+        if ((mb_strlen($this->_data['contract_address']) < 44)) {
+            $ip[] = "'contract_address' length must be >= 44";
         }
         if (is_null($this->_data['nft_address'])) {
             $ip[] = "'nft_address' can't be null";
         }
-        if ((mb_strlen($this->_data['nft_address']) > 42)) {
-            $ip[] = "'nft_address' length must be <= 42";
+        if ((mb_strlen($this->_data['nft_address']) > 44)) {
+            $ip[] = "'nft_address' length must be <= 44";
         }
-        if ((mb_strlen($this->_data['nft_address']) < 42)) {
-            $ip[] = "'nft_address' length must be >= 42";
+        if ((mb_strlen($this->_data['nft_address']) < 44)) {
+            $ip[] = "'nft_address' length must be >= 44";
         }
         if (is_null($this->_data['seller'])) {
             $ip[] = "'seller' can't be null";
@@ -136,11 +139,11 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
         }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
+        if ((mb_strlen($this->_data['from_private_key']) > 128)) {
+            $ip[] = "'from_private_key' length must be <= 128";
         }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
+        if ((mb_strlen($this->_data['from_private_key']) < 87)) {
+            $ip[] = "'from_private_key' length must be >= 87";
         }
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
@@ -156,6 +159,21 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
+        if (is_null($this->_data['from'])) {
+            $ip[] = "'from' can't be null";
+        }
+        if ((mb_strlen($this->_data['from']) > 44)) {
+            $ip[] = "'from' length must be <= 44";
+        }
+        if ((mb_strlen($this->_data['from']) < 44)) {
+            $ip[] = "'from' length must be >= 44";
+        }
+        if (!is_null($this->_data['authority_private_key']) && (mb_strlen($this->_data['authority_private_key']) > 128)) {
+            $ip[] = "'authority_private_key' length must be <= 128";
+        }
+        if (!is_null($this->_data['authority_private_key']) && (mb_strlen($this->_data['authority_private_key']) < 87)) {
+            $ip[] = "'authority_private_key' length must be >= 87";
+        }
         
         return $ip;
     }
@@ -166,7 +184,7 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
      */
     public function getChainAllowableValues(): array {
         return [
-            self::CHAIN_CELO,
+            self::CHAIN_SOL,
         ];
     }
     /**
@@ -219,15 +237,15 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address Address of the marketplace smart contract.
+     * @param string $contract_address Blockchain address of the smart contract
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('SellAssetOnMarketplaceRequest.setContractAddress: $contract_address length must be <= 42');
+        if ((mb_strlen($contract_address) > 44)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setContractAddress: $contract_address length must be <= 44');
         }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('SellAssetOnMarketplaceRequest.setContractAddress: $contract_address length must be >= 42');
+        if ((mb_strlen($contract_address) < 44)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setContractAddress: $contract_address length must be >= 44');
         }
         $this->_data['contract_address'] = $contract_address;
 
@@ -246,15 +264,15 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
     /**
      * Set nft_address
      * 
-     * @param string $nft_address Address of the NFT asset to sell smart contract.
+     * @param string $nft_address Blockchain address of the asset to sell
      * @return $this
      */
     public function setNftAddress(string $nft_address) {
-        if ((mb_strlen($nft_address) > 42)) {
-            throw new IAE('SellAssetOnMarketplaceRequest.setNftAddress: $nft_address length must be <= 42');
+        if ((mb_strlen($nft_address) > 44)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setNftAddress: $nft_address length must be <= 44');
         }
-        if ((mb_strlen($nft_address) < 42)) {
-            throw new IAE('SellAssetOnMarketplaceRequest.setNftAddress: $nft_address length must be >= 42');
+        if ((mb_strlen($nft_address) < 44)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setNftAddress: $nft_address length must be >= 44');
         }
         $this->_data['nft_address'] = $nft_address;
 
@@ -447,15 +465,15 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
     /**
      * Set from_private_key
      * 
-     * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @param string $from_private_key The private key of the seller
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('SellAssetOnMarketplaceRequest.setFromPrivateKey: $from_private_key length must be <= 66');
+        if ((mb_strlen($from_private_key) > 128)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setFromPrivateKey: $from_private_key length must be <= 128');
         }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('SellAssetOnMarketplaceRequest.setFromPrivateKey: $from_private_key length must be >= 66');
+        if ((mb_strlen($from_private_key) < 87)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setFromPrivateKey: $from_private_key length must be >= 87');
         }
         $this->_data['from_private_key'] = $from_private_key;
 
@@ -474,7 +492,7 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
     /**
      * Set nonce
      * 
-     * @param float|null $nonce Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
      * @return $this
      */
     public function setNonce(?float $nonce) {
@@ -516,7 +534,7 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
     /**
      * Set signature_id
      * 
-     * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @param string $signature_id The KMS identifier of the private key of the seller
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
@@ -561,7 +579,7 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency Currency to pay for transaction gas
+     * @param string $fee_currency The currency in which the transaction fee will be paid
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
@@ -570,6 +588,81 @@ class SellAssetOnMarketplaceRequest extends AbstractModel {
             throw new IAE(sprintf("SellAssetOnMarketplaceRequest.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
         }
         $this->_data['fee_currency'] = $fee_currency;
+
+        return $this;
+    }
+
+    /**
+     * Get from
+     *
+     * @return mixed
+     */
+    public function getFrom(): mixed {
+        return $this->_data["from"];
+    }
+
+    /**
+     * Set from
+     * 
+     * @param mixed $from Blockchain address of the seller
+     * @return $this
+     */
+    public function setFrom(mixed $from) {
+        if ((mb_strlen($from) > 44)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setFrom: $from length must be <= 44');
+        }
+        if ((mb_strlen($from) < 44)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setFrom: $from length must be >= 44');
+        }
+        $this->_data['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Get authority_private_key
+     *
+     * @return string|null
+     */
+    public function getAuthorityPrivateKey(): ?string {
+        return $this->_data["authority_private_key"];
+    }
+
+    /**
+     * Set authority_private_key
+     * 
+     * @param string|null $authority_private_key The private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to \"true\" for the marketplace
+     * @return $this
+     */
+    public function setAuthorityPrivateKey(?string $authority_private_key) {
+        if (!is_null($authority_private_key) && (mb_strlen($authority_private_key) > 128)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setAuthorityPrivateKey: $authority_private_key length must be <= 128');
+        }
+        if (!is_null($authority_private_key) && (mb_strlen($authority_private_key) < 87)) {
+            throw new IAE('SellAssetOnMarketplaceRequest.setAuthorityPrivateKey: $authority_private_key length must be >= 87');
+        }
+        $this->_data['authority_private_key'] = $authority_private_key;
+
+        return $this;
+    }
+
+    /**
+     * Get authority_signature_id
+     *
+     * @return string|null
+     */
+    public function getAuthoritySignatureId(): ?string {
+        return $this->_data["authority_signature_id"];
+    }
+
+    /**
+     * Set authority_signature_id
+     * 
+     * @param string|null $authority_signature_id The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to \"true\" for the marketplace
+     * @return $this
+     */
+    public function setAuthoritySignatureId(?string $authority_signature_id) {
+        $this->_data['authority_signature_id'] = $authority_signature_id;
 
         return $this;
     }

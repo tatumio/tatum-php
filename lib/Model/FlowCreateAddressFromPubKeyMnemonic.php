@@ -3,7 +3,7 @@
 /**
  * FlowCreateAddressFromPubKeyMnemonic Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -28,7 +28,6 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
     protected static $_definition = [
         "account" => ["account", "string", null, "getAccount", "setAccount"], 
         "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey"], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight"], 
         "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
         "index" => ["index", "float", null, "getIndex", "setIndex"]
     ];
@@ -39,7 +38,7 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "public_key"=>null, "weight"=>null, "mnemonic"=>null, "index"=>null] as $k => $v) {
+        foreach(["account"=>null, "public_key"=>null, "mnemonic"=>null, "index"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -67,12 +66,6 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
         }
         if ((mb_strlen($this->_data['public_key']) < 128)) {
             $ip[] = "'public_key' length must be >= 128";
-        }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] > 1000)) {
-            $ip[] = "'weight' must be <= 1000";
-        }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] < 0)) {
-            $ip[] = "'weight' must be >= 0";
         }
         if (is_null($this->_data['mnemonic'])) {
             $ip[] = "'mnemonic' can't be null";
@@ -132,7 +125,7 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
     /**
      * Set public_key
      * 
-     * @param string $public_key Public key to be used
+     * @param string $public_key Public key to be used; will be assigned to a newly created address and will have a weight of 1000
      * @return $this
      */
     public function setPublicKey(string $public_key) {
@@ -143,33 +136,6 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
             throw new IAE('FlowCreateAddressFromPubKeyMnemonic.setPublicKey: $public_key length must be >= 128');
         }
         $this->_data['public_key'] = $public_key;
-
-        return $this;
-    }
-
-    /**
-     * Get weight
-     *
-     * @return float|null
-     */
-    public function getWeight(): ?float {
-        return $this->_data["weight"];
-    }
-
-    /**
-     * Set weight
-     * 
-     * @param float|null $weight Weight of the key. If not set, default 1000 will be used.
-     * @return $this
-     */
-    public function setWeight(?float $weight) {
-        if (!is_null($weight) && ($weight > 1000)) {
-            throw new IAE('FlowCreateAddressFromPubKeyMnemonic.setWeight: $weight must be <=1000');
-        }
-        if (!is_null($weight) && ($weight < 0)) {
-            throw new IAE('FlowCreateAddressFromPubKeyMnemonic.setWeight: $weight must be >=0');
-        }
-        $this->_data['weight'] = $weight;
 
         return $this;
     }

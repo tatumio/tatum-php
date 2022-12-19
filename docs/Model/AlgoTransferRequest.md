@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sender_account_id** | **string** | The ID of the virtual account to send Algos from |
-**account** | **string** | The blockchain address of the Algorand wallet (account) associated with the virtual account |
 **address** | **string** | The blockchain address to send Algos to |
 **amount** | **string** | The amount to send in Algos |
 **fee** | **string** | The transaction fee in Algos |

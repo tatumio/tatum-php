@@ -1,9 +1,9 @@
 <?php
 
 /**
- * SolanaBroadcastConfirm_options Model
+ * SolanaBroadcastConfirmOptions Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -19,7 +19,7 @@ namespace Tatum\Model;
 use InvalidArgumentException as IAE;
 
 /**
- * SolanaBroadcastConfirm_options Model
+ * SolanaBroadcastConfirmOptions Model
  * 
  * @description Options for sending and waiting for a transaction
  */
@@ -35,7 +35,7 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
     public const PREFLIGHT_COMMITMENT_SINGLE = 'single';
     public const PREFLIGHT_COMMITMENT_SINGLE_GOSSIP = 'singleGossip';
     public const PREFLIGHT_COMMITMENT_MAX = 'max';
-    protected static $_name = "SolanaBroadcastConfirm_options";
+    protected static $_name = "SolanaBroadcastConfirmOptions";
     protected static $_definition = [
         "commitment" => ["commitment", "string", null, "getCommitment", "setCommitment"], 
         "preflight_commitment" => ["preflightCommitment", "string", null, "getPreflightCommitment", "setPreflightCommitment"]

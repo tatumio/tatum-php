@@ -3,7 +3,7 @@
 /**
  * SolanaBlock Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -31,8 +31,8 @@ class SolanaBlock extends AbstractModel {
         "blockhash" => ["blockhash", "string", null, "getBlockhash", "setBlockhash"], 
         "parent_slot" => ["parentSlot", "float", null, "getParentSlot", "setParentSlot"], 
         "previous_blockhash" => ["previousBlockhash", "string", null, "getPreviousBlockhash", "setPreviousBlockhash"], 
-        "rewards" => ["rewards", "\Tatum\Model\SolanaBlockRewardsInner[]", null, "getRewards", "setRewards"], 
-        "transactions" => ["transactions", "\Tatum\Model\SolanaBlockTransactionsInner[]", null, "getTransactions", "setTransactions"]
+        "rewards" => ["rewards", "\Tatum\Model\SolanaBlockReward[]", null, "getRewards", "setRewards"], 
+        "transactions" => ["transactions", "\Tatum\Model\SolanaBlockTx[]", null, "getTransactions", "setTransactions"]
     ];
 
     /**
@@ -164,7 +164,7 @@ class SolanaBlock extends AbstractModel {
     /**
      * Get rewards
      *
-     * @return \Tatum\Model\SolanaBlockRewardsInner[]|null
+     * @return \Tatum\Model\SolanaBlockReward[]|null
      */
     public function getRewards(): ?array {
         return $this->_data["rewards"];
@@ -173,7 +173,7 @@ class SolanaBlock extends AbstractModel {
     /**
      * Set rewards
      * 
-     * @param \Tatum\Model\SolanaBlockRewardsInner[]|null $rewards rewards
+     * @param \Tatum\Model\SolanaBlockReward[]|null $rewards rewards
      * @return $this
      */
     public function setRewards(?array $rewards) {
@@ -185,7 +185,7 @@ class SolanaBlock extends AbstractModel {
     /**
      * Get transactions
      *
-     * @return \Tatum\Model\SolanaBlockTransactionsInner[]|null
+     * @return \Tatum\Model\SolanaBlockTx[]|null
      */
     public function getTransactions(): ?array {
         return $this->_data["transactions"];
@@ -194,7 +194,7 @@ class SolanaBlock extends AbstractModel {
     /**
      * Set transactions
      * 
-     * @param \Tatum\Model\SolanaBlockTransactionsInner[]|null $transactions transactions
+     * @param \Tatum\Model\SolanaBlockTx[]|null $transactions transactions
      * @return $this
      */
     public function setTransactions(?array $transactions) {

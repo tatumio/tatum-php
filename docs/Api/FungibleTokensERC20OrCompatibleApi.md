@@ -4,11 +4,11 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**erc20Approve()**](#erc20Approve) | **POST** /v3/blockchain/token/approve | Approve spending of fungible tokens
+[**erc20Approve()**](#erc20Approve) | **POST** /v3/blockchain/token/approve | Allow a blockchain address to transfer and burn fungible tokens
 [**erc20Burn()**](#erc20Burn) | **POST** /v3/blockchain/token/burn | Burn fungible tokens
 [**erc20Deploy()**](#erc20Deploy) | **POST** /v3/blockchain/token/deploy | Deploy a fungible token smart contract
-[**erc20GetBalance()**](#erc20GetBalance) | **GET** /v3/blockchain/token/balance/{chain}/{contractAddress}/{address} | Get the number of fungible tokens from a specific smart contract that a blockchain address holds
-[**erc20GetBalanceAddress()**](#erc20GetBalanceAddress) | **GET** /v3/blockchain/token/address/{chain}/{address} | Get the number of fungible tokens that a blockchain address holds across a blockchain
+[**erc20GetBalance()**](#erc20GetBalance) | **GET** /v3/blockchain/token/balance/{chain}/{contractAddress}/{address} | Get the number of fungible tokens that a blockchain address holds in a smart contract
+[**erc20GetBalanceAddress()**](#erc20GetBalanceAddress) | **GET** /v3/blockchain/token/address/{chain}/{address} | Get the total number of fungible tokens that a blockchain address holds
 [**erc20GetTransactionByAddress()**](#erc20GetTransactionByAddress) | **GET** /v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress} | Get fungible token transactions on a blockchain address
 [**erc20Mint()**](#erc20Mint) | **POST** /v3/blockchain/token/mint | Mint fungible tokens
 [**erc20Transfer()**](#erc20Transfer) | **POST** /v3/blockchain/token/transaction | Transfer fungible tokens
@@ -23,9 +23,9 @@ api()->fungibleTokensERC20OrCompatible()->erc20Approve(
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Approve spending of fungible tokens
+Allow a blockchain address to transfer and burn fungible tokens
 
-<p><b>2 credits per API call</b></p> <p>Allow another blockchain address (the <code>spender</code> parameter in the request body) to spend and burn fungible tokens on behalf of the smart contract owner.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When approving spending of fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Allow a blockchain address (the <code>spender</code> parameter in the request body) to transfer and burn fungible tokens on behalf of the smart contract owner.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When allowing a blockchain address to transfer and burn fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -199,10 +199,10 @@ api()->fungibleTokensERC20OrCompatible()->erc20GetBalance(
     ?string $address, 
     ?string $contract_address, 
     ?string $x_testnet_type
-): \Tatum\Model\Erc20GetBalance200Response
+): \Tatum\Model\Erc20Balance
 ```
 
-Get the number of fungible tokens from a specific smart contract that a blockchain address holds
+Get the number of fungible tokens that a blockchain address holds in a smart contract
 
 <p><b>1 credit per API call</b></p> <p>Get the number of the fungible tokens minted on a specific smart contract (the <code>contractAddress</code> path parameter in the request endpoint URL) that a blockchain address holds.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>XinFin</li> </ul>
 
@@ -229,7 +229,7 @@ $contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
 $x_testnet_type = 'ethereum-sepolia';
 
 try {
-    /** @var \Tatum\Model\Erc20GetBalance200Response $response */
+    /** @var \Tatum\Model\Erc20Balance $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Erc20GetBalance200Response**](../Model/Erc20GetBalance200Response.md)
+[**\Tatum\Model\Erc20Balance**](../Model/Erc20Balance.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
@@ -267,12 +267,12 @@ Name | Type | Description  | Notes
 api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(
     ?string $chain, 
     ?string $address
-): \Tatum\Model\Erc20GetBalanceAddress200ResponseInner[]
+): \Tatum\Model\Erc20BalanceForAddress[]
 ```
 
-Get the number of fungible tokens that a blockchain address holds across a blockchain
+Get the total number of fungible tokens that a blockchain address holds
 
-<p><b>1 credit per API call</b></p> <p>Get the number of fungible tokens that a blockchain address holds across a blockchain. The tokens are returned grouped by the smart contracts they were minted on.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>Algorand</li> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> <li>Solana</li> </ul>
+<p><b>1 credit per API call</b></p> <p>Get the number of all fungible tokens that a blockchain address holds across a blockchain. The tokens are returned grouped by the smart contracts they were minted on.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>Algorand</li> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> <li>Solana</li> </ul>
 
 ### Example
 
@@ -291,7 +291,7 @@ $chain = 'CELO';
 $address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
 
 try {
-    /** @var \Tatum\Model\Erc20GetBalanceAddress200ResponseInner[] $response */
+    /** @var \Tatum\Model\Erc20BalanceForAddress[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Erc20GetBalanceAddress200ResponseInner[]**](../Model/Erc20GetBalanceAddress200ResponseInner.md)
+[**\Tatum\Model\Erc20BalanceForAddress[]**](../Model/Erc20BalanceForAddress.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 

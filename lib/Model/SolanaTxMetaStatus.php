@@ -1,9 +1,9 @@
 <?php
 
 /**
- * SolanaTx_meta_status Model
+ * SolanaTxMeta_status Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -19,12 +19,12 @@ namespace Tatum\Model;
 use InvalidArgumentException as IAE;
 
 /**
- * SolanaTx_meta_status Model
+ * SolanaTxMeta_status Model
  */
 class SolanaTxMetaStatus extends AbstractModel {
 
     public const DISCRIMINATOR = null;
-    protected static $_name = "SolanaTx_meta_status";
+    protected static $_name = "SolanaTxMeta_status";
     protected static $_definition = [
         "ok" => ["Ok", "string", 'nullable', "getOk", "setOk"]
     ];

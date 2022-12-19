@@ -3,7 +3,7 @@
 /**
  * Implementation of BlockchainFees API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -399,6 +399,70 @@ class BlockchainFeesApi extends AbstractApi {
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
                     "\Tatum\Model\EthGasEstimationBatch",
+                    $this->_caller->config()->getTempFolderPath(),
+                    $e->getResponseHeaders()
+                )
+            );
+            throw $e;
+        }
+        return $model;
+    }
+    
+    /**
+     * Get recommended blockchain fee / gas price
+     *
+     * @param string $chain Chain
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BlockchainFee
+     */
+    public function getBlockchainFee(string $chain) { 
+        // Resource path
+        $resourcePath = "/v3/blockchain/fee/{chain}";
+        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
+
+        // Prepare request headers
+        $headers = [
+            "User-Agent" => $this->_caller->config()->getUserAgent()
+        ];
+
+        // Set the API key
+        if ($this->_caller->config()->getApiKey()) {
+            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
+        }
+
+        // Accept and content-type
+        $headers = array_merge(
+            $headers, 
+            $this->_headerSelector->selectHeaders(["application/json"], [])
+        );
+
+        // Prepare the query parameters
+        $queryParams = [];
+
+        // Free Testnet call
+        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
+            $queryParams["type"] = "testnet";
+        }
+
+        try {
+            /** @var \Tatum\Model\BlockchainFee $model */ $model = $this->_makeRequest(
+                ObjectSerializer::createRequest(
+                    "GET",
+                    $this->_caller->config()->getHost() . $resourcePath,
+                    $queryParams,
+                    array_merge([], $headers),
+                    [],
+                    ""
+                ),
+                "\Tatum\Model\BlockchainFee"
+            );
+        } catch (ApiException $e) {
+            $e->setResponseObject(
+                ObjectSerializer::deserialize(
+                    $e->getResponseBody() ?? "",
+                    "\Tatum\Model\BlockchainFee",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

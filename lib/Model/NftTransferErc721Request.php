@@ -3,7 +3,7 @@
 /**
  * NftTransferErc721_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -400,7 +400,7 @@ class NftTransferErc721Request extends AbstractModel {
     /**
      * Set from_private_key
      * 
-     * @param string $from_private_key Private key of sender address.
+     * @param string $from_private_key The private key of the sender's blockchain address
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
@@ -542,7 +542,7 @@ class NftTransferErc721Request extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param float|null $amount The total amount of NFT fractions to transfer. Defaults to 1 - which means 1 fraction of NFT will be transferred. This is only valid for <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">Fractional NFTs.</a>
+     * @param float|null $amount (For <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional NFTs</a> only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred
      * @return $this
      */
     public function setAmount(?float $amount) {

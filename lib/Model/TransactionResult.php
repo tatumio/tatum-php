@@ -3,7 +3,7 @@
 /**
  * TransactionResult Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -62,7 +62,7 @@ class TransactionResult extends AbstractModel {
     /**
      * Set reference
      * 
-     * @param string|null $reference Transaction internal reference - unique identifier within Tatum ledger. In order of failure, use this value to search for problems.
+     * @param string|null $reference The internal reference to the transaction (a unique identifier of the transaction within the virtual account); if the transaction fails, use this reference to search through the logs
      * @return $this
      */
     public function setReference(?string $reference) {

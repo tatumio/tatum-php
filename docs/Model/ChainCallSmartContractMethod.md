@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **params** | **string[]** | Parameters of the method to be invoked. |
 **from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**fee** | [**\Tatum\Model\ApproveTransferCustodialWalletFee**](ApproveTransferCustodialWalletFee.md) |  | [optional]
+**fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

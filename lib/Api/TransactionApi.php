@@ -3,7 +3,7 @@
 /**
  * Implementation of Transaction API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -402,7 +402,7 @@ class TransactionApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\BatchTransactionResultInner[]
+     * @return string[]
      */
     public function sendTransactionBatch(\Tatum\Model\BatchCreateTransaction $batch_create_transaction) { 
         // Resource path
@@ -433,7 +433,7 @@ class TransactionApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\BatchTransactionResultInner[] $model */ $model = $this->_makeRequest(
+            /** @var string[] $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "POST",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -442,13 +442,13 @@ class TransactionApi extends AbstractApi {
                     [],
                     $batch_create_transaction
                 ),
-                "\Tatum\Model\BatchTransactionResultInner[]"
+                "string[]"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BatchTransactionResultInner[]",
+                    "string[]",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

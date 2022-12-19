@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **to** | **string** | The blockchain address to send the NFT to |
 **url** | **string** | The URL pointing to the NFT metadata; for more information, see &lt;a href&#x3D;\&quot;https://eips.ethereum.org/EIPS/eip-721#specification\&quot; target&#x3D;\&quot;_blank\&quot;&gt;EIP-721&lt;/a&gt; |
 **name** | **string** | The name of the NFT |
-**attr** | [**\Tatum\Model\MintNftAlgorandAttr**](MintNftAlgorandAttr.md) |  | [optional]
+**attr** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](MintNftExpressAlgorandAttr.md) |  | [optional]
 **metadata** | [**\Tatum\Model\SolanaNftMetadataKMS**](SolanaNftMetadataKMS.md) |  |
 **contract_address** | **string** | The blockchain address of the smart contract to build the NFT on |
 **minter** | **string** | The blockchain address of the Tatum NFT minter; this is the address that you added as an NFT minter to your NFT smart contract |
-**token_id** | **string** | The ID of the NFT. |
+**token_id** | **string** | The ID of the NFT |
 **from_private_key** | **string** | The private key of the blockchain address that will pay the fee for the transaction |
 **erc20** | **string** | The blockchain address of the custom fungible token | [optional]
 **provenance** | **bool** | Set to \&quot;true\&quot; if the NFT smart contract is of the &lt;a href&#x3D;\&quot;#operation/NftDeployErc721\&quot;&gt;provenance type&lt;/a&gt;; otherwise, set to \&quot;false\&quot;. | [optional]

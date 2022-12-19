@@ -3,7 +3,7 @@
 /**
  * StoreLog_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -33,8 +33,12 @@ class StoreLogRequest extends AbstractModel {
         "data" => ["data", "string", null, "getData", "setData"], 
         "chain" => ["chain", "string", null, "getChain", "setChain"], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
+        "from" => ["from", "string", null, "getFrom", "setFrom"], 
         "to" => ["to", "string", null, "getTo", "setTo"], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
+        "from_shard_id" => ["fromShardID", "float", null, "getFromShardId", "setFromShardId"], 
+        "to_shard_id" => ["toShardID", "float", null, "getToShardId", "setToShardId"], 
+        "eth_fee" => ["ethFee", "\Tatum\Model\CustomFee", null, "getEthFee", "setEthFee"], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
     ];
 
@@ -44,7 +48,7 @@ class StoreLogRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null, "chain"=>null, "from_private_key"=>null, "nonce"=>null, "to"=>null, "fee_currency"=>null] as $k => $v) {
+        foreach(["data"=>null, "chain"=>null, "from_private_key"=>null, "from"=>null, "to"=>null, "nonce"=>null, "from_shard_id"=>null, "to_shard_id"=>null, "eth_fee"=>null, "fee_currency"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -72,20 +76,41 @@ class StoreLogRequest extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        if (!is_null($this->_data['from_private_key']) && (mb_strlen($this->_data['from_private_key']) > 66)) {
+        if (is_null($this->_data['from_private_key'])) {
+            $ip[] = "'from_private_key' can't be null";
+        }
+        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
             $ip[] = "'from_private_key' length must be <= 66";
         }
-        if (!is_null($this->_data['from_private_key']) && (mb_strlen($this->_data['from_private_key']) < 66)) {
+        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
             $ip[] = "'from_private_key' length must be >= 66";
         }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
+        if (!is_null($this->_data['from']) && (mb_strlen($this->_data['from']) > 62)) {
+            $ip[] = "'from' length must be <= 62";
+        }
+        if (!is_null($this->_data['from']) && (mb_strlen($this->_data['from']) < 42)) {
+            $ip[] = "'from' length must be >= 42";
         }
         if (!is_null($this->_data['to']) && (mb_strlen($this->_data['to']) > 42)) {
             $ip[] = "'to' length must be <= 42";
         }
         if (!is_null($this->_data['to']) && (mb_strlen($this->_data['to']) < 42)) {
             $ip[] = "'to' length must be >= 42";
+        }
+        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
+            $ip[] = "'nonce' must be >= 0";
+        }
+        if (!is_null($this->_data['from_shard_id']) && ($this->_data['from_shard_id'] > 4)) {
+            $ip[] = "'from_shard_id' must be <= 4";
+        }
+        if (!is_null($this->_data['from_shard_id']) && ($this->_data['from_shard_id'] < 0)) {
+            $ip[] = "'from_shard_id' must be >= 0";
+        }
+        if (!is_null($this->_data['to_shard_id']) && ($this->_data['to_shard_id'] > 4)) {
+            $ip[] = "'to_shard_id' must be <= 4";
+        }
+        if (!is_null($this->_data['to_shard_id']) && ($this->_data['to_shard_id'] < 0)) {
+            $ip[] = "'to_shard_id' must be >= 0";
         }
         if (is_null($this->_data['fee_currency'])) {
             $ip[] = "'fee_currency' can't be null";
@@ -133,7 +158,7 @@ class StoreLogRequest extends AbstractModel {
     /**
      * Set data
      * 
-     * @param string $data Log data to be stored on a blockchain.
+     * @param string $data The data to be stored on the blockchain
      * @return $this
      */
     public function setData(string $data) {
@@ -160,7 +185,7 @@ class StoreLogRequest extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain, where to store log data.
+     * @param string $chain The blockchain to store the data on
      * @return $this
      */
     public function setChain(string $chain) {
@@ -176,23 +201,23 @@ class StoreLogRequest extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string|null
+     * @return string
      */
-    public function getFromPrivateKey(): ?string {
+    public function getFromPrivateKey(): string {
         return $this->_data["from_private_key"];
     }
 
     /**
      * Set from_private_key
      * 
-     * @param string|null $from_private_key Private key of account, from which the transaction will be initiated. If not present, transaction fee will be debited from Tatum internal account and additional credits will be charged.
+     * @param string $from_private_key The private key of the blockchain address from which the transaction will be made and the transaction fee will be deducted
      * @return $this
      */
-    public function setFromPrivateKey(?string $from_private_key) {
-        if (!is_null($from_private_key) && (mb_strlen($from_private_key) > 66)) {
+    public function setFromPrivateKey(string $from_private_key) {
+        if ((mb_strlen($from_private_key) > 66)) {
             throw new IAE('StoreLogRequest.setFromPrivateKey: $from_private_key length must be <= 66');
         }
-        if (!is_null($from_private_key) && (mb_strlen($from_private_key) < 66)) {
+        if ((mb_strlen($from_private_key) < 66)) {
             throw new IAE('StoreLogRequest.setFromPrivateKey: $from_private_key length must be >= 66');
         }
         $this->_data['from_private_key'] = $from_private_key;
@@ -201,25 +226,28 @@ class StoreLogRequest extends AbstractModel {
     }
 
     /**
-     * Get nonce
+     * Get from
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getNonce(): ?float {
-        return $this->_data["nonce"];
+    public function getFrom(): ?string {
+        return $this->_data["from"];
     }
 
     /**
-     * Set nonce
+     * Set from
      * 
-     * @param float|null $nonce Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
+     * @param string|null $from (Elrond only; required) The blockchain address from which the transaction will be made<br/>This is a mandatory parameter for Elrond. Do not use it with any other blockchain.
      * @return $this
      */
-    public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('StoreLogRequest.setNonce: $nonce must be >=0');
+    public function setFrom(?string $from) {
+        if (!is_null($from) && (mb_strlen($from) > 62)) {
+            throw new IAE('StoreLogRequest.setFrom: $from length must be <= 62');
         }
-        $this->_data['nonce'] = $nonce;
+        if (!is_null($from) && (mb_strlen($from) < 42)) {
+            throw new IAE('StoreLogRequest.setFrom: $from length must be >= 42');
+        }
+        $this->_data['from'] = $from;
 
         return $this;
     }
@@ -236,7 +264,7 @@ class StoreLogRequest extends AbstractModel {
     /**
      * Set to
      * 
-     * @param string|null $to Blockchain address to store log on. If not defined, it will be stored on an address, from which the transaction was being made.
+     * @param string|null $to The blockchain address to store the data on<br/>If not provided, the data will be stored on the address from which the transaction is made.
      * @return $this
      */
     public function setTo(?string $to) {
@@ -247,6 +275,105 @@ class StoreLogRequest extends AbstractModel {
             throw new IAE('StoreLogRequest.setTo: $to length must be >= 42');
         }
         $this->_data['to'] = $to;
+
+        return $this;
+    }
+
+    /**
+     * Get nonce
+     *
+     * @return float|null
+     */
+    public function getNonce(): ?float {
+        return $this->_data["nonce"];
+    }
+
+    /**
+     * Set nonce
+     * 
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @return $this
+     */
+    public function setNonce(?float $nonce) {
+        if (!is_null($nonce) && ($nonce < 0)) {
+            throw new IAE('StoreLogRequest.setNonce: $nonce must be >=0');
+        }
+        $this->_data['nonce'] = $nonce;
+
+        return $this;
+    }
+
+    /**
+     * Get from_shard_id
+     *
+     * @return float|null
+     */
+    public function getFromShardId(): ?float {
+        return $this->_data["from_shard_id"];
+    }
+
+    /**
+     * Set from_shard_id
+     * 
+     * @param float|null $from_shard_id (Harmony only) The ID of the shard from which the data should be read
+     * @return $this
+     */
+    public function setFromShardId(?float $from_shard_id) {
+        if (!is_null($from_shard_id) && ($from_shard_id > 4)) {
+            throw new IAE('StoreLogRequest.setFromShardId: $from_shard_id must be <=4');
+        }
+        if (!is_null($from_shard_id) && ($from_shard_id < 0)) {
+            throw new IAE('StoreLogRequest.setFromShardId: $from_shard_id must be >=0');
+        }
+        $this->_data['from_shard_id'] = $from_shard_id;
+
+        return $this;
+    }
+
+    /**
+     * Get to_shard_id
+     *
+     * @return float|null
+     */
+    public function getToShardId(): ?float {
+        return $this->_data["to_shard_id"];
+    }
+
+    /**
+     * Set to_shard_id
+     * 
+     * @param float|null $to_shard_id (Harmony only) The ID of the shard to which the data should be recorded
+     * @return $this
+     */
+    public function setToShardId(?float $to_shard_id) {
+        if (!is_null($to_shard_id) && ($to_shard_id > 4)) {
+            throw new IAE('StoreLogRequest.setToShardId: $to_shard_id must be <=4');
+        }
+        if (!is_null($to_shard_id) && ($to_shard_id < 0)) {
+            throw new IAE('StoreLogRequest.setToShardId: $to_shard_id must be >=0');
+        }
+        $this->_data['to_shard_id'] = $to_shard_id;
+
+        return $this;
+    }
+
+    /**
+     * Get eth_fee
+     *
+     * @return \Tatum\Model\CustomFee|null
+     */
+    public function getEthFee(): ?\Tatum\Model\CustomFee {
+        return $this->_data["eth_fee"];
+    }
+
+    /**
+     * Set eth_fee
+     * 
+     * @param \Tatum\Model\CustomFee|null $eth_fee eth_fee
+     * @return $this
+     */
+    public function setEthFee(?\Tatum\Model\CustomFee $eth_fee) {
+        $this->_data['eth_fee'] = $eth_fee;
 
         return $this;
     }
@@ -263,7 +390,7 @@ class StoreLogRequest extends AbstractModel {
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency Currency to pay for transaction gas
+     * @param string $fee_currency The currency in which the transaction fee will be paid
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {

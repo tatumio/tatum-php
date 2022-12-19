@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **chain** | **string** | Blockchain to work with. |
-**fee_currency** | **string** | Currency to pay for transaction gas |
+**fee_currency** | **string** | The currency in which the transaction fee will be paid |
 **contract_address** | **string** | Address of the marketplace smart contract. |
 **nft_address** | **string** | Address of the NFT asset to sell smart contract. |
 **seller** | **string** | Address of the seller of the NFT asset. |
@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **token_id** | **string** | ID of token, if transaction is for ERC-721 or ERC-1155. |
 **price** | **string** | Price of the asset to sell. Marketplace fee will be obtained on top of this price. |
 **is_erc721** | **bool** | True if asset is NFT of type ERC721, false if ERC1155. |
-**signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
+**signature_id** | **string** | The KMS identifier of the private key of the seller&#39;s blockchain address |
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **fee** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

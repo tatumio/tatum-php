@@ -3,7 +3,7 @@
 /**
  * NftTokenByAddressErc721 Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -76,7 +76,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address On Algorand, this is the asset ID (the ID of the NFT); on the other blockchains, this is the address of the NFT smart contract
+     * @param string $contract_address On Algorand, this is the asset ID (the ID of the NFT); on the other blockchains, this is the address of the NFT smart contract.
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
@@ -97,7 +97,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Set balances
      * 
-     * @param string[] $balances On Algorand, an array of \"1\" to indicate that the NFTs with the specified IDs exist, or array with amount of fractions for <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">Fractional NFTs.</a>; on the other blockchains, this is an array of the IDs of the NFTs.
+     * @param string[] $balances On Algorand, this is either an array of \"1\" to indicate that the NFTs with the specified IDs exist, or an array with the number of NFT fractions if the NFTs are <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional</a>; on the other blockchains, this is an array of the IDs of the NFTs.
      * @return $this
      */
     public function setBalances(array $balances) {
@@ -118,7 +118,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Set block_number
      * 
-     * @param float[]|null $block_number (EVM-based blockchains only) On EVM-based blockchains like Celo, Polygon or Ethereum, this is an array of block numbers, in which the NFT was received by the address
+     * @param float[]|null $block_number (EVM-based blockchains only) An array of the numbers of the blocks in which the NFT was received by the address
      * @return $this
      */
     public function setBlockNumber(?array $block_number) {
@@ -160,7 +160,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Set supply
      * 
-     * @param float|null $supply Only on Algorand, shows supply of <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">Fractional NFTs.</a>
+     * @param float|null $supply (Algorand only) The number of fractions in the NFT if the NFT is <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional</a>
      * @return $this
      */
     public function setSupply(?float $supply) {
@@ -181,7 +181,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Set decimals
      * 
-     * @param float|null $decimals Only on Algorand, shows decimals of <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">Fractional NFTs.</a>
+     * @param float|null $decimals (Algorand only) The number of decimal places in an NFT fraction if the NFT is <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional</a>
      * @return $this
      */
     public function setDecimals(?float $decimals) {

@@ -3,7 +3,7 @@
 /**
  * Implementation of NFTERC721OrCompatible API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -445,7 +445,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      *
      * @param string $chain The blockchain to work with
      * @param string $contract_address The blockchain address of the NFT to get provenance information for
-     * @param string $token_id The ID of the NFT to get provenance information for.
+     * @param string $token_id The ID of the NFT to get provenance information for
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException

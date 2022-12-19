@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **address** | **string** | Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both. |
 **mnemonic** | **string** | Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both. |
 **index** | **int** | derivation index of address to pay for deployment of ERC20 |
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
-**fee_currency** | **string** | Currency to pay for transaction gas |
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**fee_currency** | **string** | The currency in which the transaction fee will be paid |
 
 [[Back to API list]](../../README.md#api-endpoints)

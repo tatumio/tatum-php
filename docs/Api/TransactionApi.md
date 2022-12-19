@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 ```php
 api()->transaction()->sendTransactionBatch(
     ?\Tatum\Model\BatchCreateTransaction $batch_create_transaction
-): \Tatum\Model\BatchTransactionResultInner[]
+): string[]
 ```
 
 Send payment in batch
@@ -352,7 +352,7 @@ $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 $batch_create_transaction = new \Tatum\Model\BatchCreateTransaction();
 
 try {
-    /** @var \Tatum\Model\BatchTransactionResultInner[] $response */
+    /** @var string[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -377,6 +377,6 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BatchTransactionResultInner[]**](../Model/BatchTransactionResultInner.md)
+**string[]**
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)

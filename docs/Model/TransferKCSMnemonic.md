@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nonce** | **float** | Nonce to be set to KCS transaction. If not present, last known nonce will be used. | [optional]
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **address** | **string** | Blockchain address to send assets |
 **amount** | **string** | Amount to be sent in KCS. |
 **compliant** | **bool** | Compliance check, if withdrawal is not compliant, it will not be processed. | [optional]

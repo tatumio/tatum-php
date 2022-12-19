@@ -3,7 +3,7 @@
 /**
  * Implementation of Flow API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -90,13 +90,13 @@ class FlowApi extends AbstractApi {
     /**
      * Create Flow address from public key
      *
-     * @param \Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request 
+     * @param \Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
      * @return \Tatum\Model\FlowCreateAddressFromPubKey200Response
      */
-    public function flowCreateAddressFromPubKey(\Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request) { 
+    public function flowCreateAddressFromPubKey(\Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request) { 
         // Resource path
         $resourcePath = "/v3/flow/account";
 
@@ -132,7 +132,7 @@ class FlowApi extends AbstractApi {
                     $queryParams,
                     array_merge([], $headers),
                     [],
-                    $flow_add_pub_key_to_address_request
+                    $flow_create_address_from_pub_key_request
                 ),
                 "\Tatum\Model\FlowCreateAddressFromPubKey200Response"
             );
@@ -415,7 +415,7 @@ class FlowApi extends AbstractApi {
     }
     
     /**
-     * Get Flow account
+     * Get the balance of a Flow account
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response

@@ -3,7 +3,7 @@
 /**
  * Implementation of Marketplace API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -157,7 +157,7 @@ class MarketplaceApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\GenerateMarketplace200Response
      */
     public function generateMarketplace(\Tatum\Model\GenerateMarketplaceRequest $generate_marketplace_request) { 
         // Resource path
@@ -188,7 +188,7 @@ class MarketplaceApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\GenerateMarketplace200Response $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "POST",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -197,13 +197,13 @@ class MarketplaceApi extends AbstractApi {
                     [],
                     $generate_marketplace_request
                 ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
+                "\Tatum\Model\GenerateMarketplace200Response"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
+                    "\Tatum\Model\GenerateMarketplace200Response",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -336,6 +336,72 @@ class MarketplaceApi extends AbstractApi {
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
                     "\Tatum\Model\GetMarketplaceFeeRecipient200Response",
+                    $this->_caller->config()->getTempFolderPath(),
+                    $e->getResponseHeaders()
+                )
+            );
+            throw $e;
+        }
+        return $model;
+    }
+    
+    /**
+     * Get information about an NFT marketplace on Solana
+     *
+     * @param string $chain Blockchain to work with
+     * @param string $contract_address Contract address
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * 
+     * @return \Tatum\Model\GetMarketplaceInfo200Response
+     */
+    public function getMarketplaceInfo(string $chain, string $contract_address) { 
+        // Resource path
+        $resourcePath = "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}";
+        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
+        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
+
+        // Prepare request headers
+        $headers = [
+            "User-Agent" => $this->_caller->config()->getUserAgent()
+        ];
+
+        // Set the API key
+        if ($this->_caller->config()->getApiKey()) {
+            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
+        }
+
+        // Accept and content-type
+        $headers = array_merge(
+            $headers, 
+            $this->_headerSelector->selectHeaders(["application/json"], [])
+        );
+
+        // Prepare the query parameters
+        $queryParams = [];
+
+        // Free Testnet call
+        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
+            $queryParams["type"] = "testnet";
+        }
+
+        try {
+            /** @var \Tatum\Model\GetMarketplaceInfo200Response $model */ $model = $this->_makeRequest(
+                ObjectSerializer::createRequest(
+                    "GET",
+                    $this->_caller->config()->getHost() . $resourcePath,
+                    $queryParams,
+                    array_merge([], $headers),
+                    [],
+                    ""
+                ),
+                "\Tatum\Model\GetMarketplaceInfo200Response"
+            );
+        } catch (ApiException $e) {
+            $e->setResponseObject(
+                ObjectSerializer::deserialize(
+                    $e->getResponseBody() ?? "",
+                    "\Tatum\Model\GetMarketplaceInfo200Response",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -488,7 +554,7 @@ class MarketplaceApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\SellAssetOnMarketplace200Response
      */
     public function sellAssetOnMarketplace(\Tatum\Model\SellAssetOnMarketplaceRequest $sell_asset_on_marketplace_request) { 
         // Resource path
@@ -519,7 +585,7 @@ class MarketplaceApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\SellAssetOnMarketplace200Response $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "POST",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -528,13 +594,13 @@ class MarketplaceApi extends AbstractApi {
                     [],
                     $sell_asset_on_marketplace_request
                 ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
+                "\Tatum\Model\SellAssetOnMarketplace200Response"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
+                    "\Tatum\Model\SellAssetOnMarketplace200Response",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -653,6 +719,195 @@ class MarketplaceApi extends AbstractApi {
                     array_merge([], $headers),
                     [],
                     $update_fee_recipient_request
+                ),
+                "\Tatum\Model\BtcTransferBlockchain200Response"
+            );
+        } catch (ApiException $e) {
+            $e->setResponseObject(
+                ObjectSerializer::deserialize(
+                    $e->getResponseBody() ?? "",
+                    "\Tatum\Model\BtcTransferBlockchain200Response",
+                    $this->_caller->config()->getTempFolderPath(),
+                    $e->getResponseHeaders()
+                )
+            );
+            throw $e;
+        }
+        return $model;
+    }
+    
+    /**
+     * Update an NFT marketplace on Solana
+     *
+     * @param \Tatum\Model\UpdateMarketplaceRequest $update_marketplace_request 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     */
+    public function updateMarketplace(\Tatum\Model\UpdateMarketplaceRequest $update_marketplace_request) { 
+        // Resource path
+        $resourcePath = "/v3/blockchain/marketplace/listing";
+
+        // Prepare request headers
+        $headers = [
+            "User-Agent" => $this->_caller->config()->getUserAgent()
+        ];
+
+        // Set the API key
+        if ($this->_caller->config()->getApiKey()) {
+            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
+        }
+
+        // Accept and content-type
+        $headers = array_merge(
+            $headers, 
+            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        );
+
+        // Prepare the query parameters
+        $queryParams = [];
+
+        // Free Testnet call
+        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
+            $queryParams["type"] = "testnet";
+        }
+
+        try {
+            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
+                ObjectSerializer::createRequest(
+                    "PUT",
+                    $this->_caller->config()->getHost() . $resourcePath,
+                    $queryParams,
+                    array_merge([], $headers),
+                    [],
+                    $update_marketplace_request
+                ),
+                "\Tatum\Model\BtcTransferBlockchain200Response"
+            );
+        } catch (ApiException $e) {
+            $e->setResponseObject(
+                ObjectSerializer::deserialize(
+                    $e->getResponseBody() ?? "",
+                    "\Tatum\Model\BtcTransferBlockchain200Response",
+                    $this->_caller->config()->getTempFolderPath(),
+                    $e->getResponseHeaders()
+                )
+            );
+            throw $e;
+        }
+        return $model;
+    }
+    
+    /**
+     * Withdraw funds from the marketplace fee account on Solana
+     *
+     * @param \Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     */
+    public function withdrawFeeFromMarketplace(\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request) { 
+        // Resource path
+        $resourcePath = "/v3/blockchain/marketplace/withdraw/fee";
+
+        // Prepare request headers
+        $headers = [
+            "User-Agent" => $this->_caller->config()->getUserAgent()
+        ];
+
+        // Set the API key
+        if ($this->_caller->config()->getApiKey()) {
+            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
+        }
+
+        // Accept and content-type
+        $headers = array_merge(
+            $headers, 
+            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        );
+
+        // Prepare the query parameters
+        $queryParams = [];
+
+        // Free Testnet call
+        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
+            $queryParams["type"] = "testnet";
+        }
+
+        try {
+            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
+                ObjectSerializer::createRequest(
+                    "POST",
+                    $this->_caller->config()->getHost() . $resourcePath,
+                    $queryParams,
+                    array_merge([], $headers),
+                    [],
+                    $withdraw_fee_from_marketplace_request
+                ),
+                "\Tatum\Model\BtcTransferBlockchain200Response"
+            );
+        } catch (ApiException $e) {
+            $e->setResponseObject(
+                ObjectSerializer::deserialize(
+                    $e->getResponseBody() ?? "",
+                    "\Tatum\Model\BtcTransferBlockchain200Response",
+                    $this->_caller->config()->getTempFolderPath(),
+                    $e->getResponseHeaders()
+                )
+            );
+            throw $e;
+        }
+        return $model;
+    }
+    
+    /**
+     * Withdraw funds from the marketplace treasury account on Solana
+     *
+     * @param \Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     */
+    public function withdrawTreasuryFromMarketplace(\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request) { 
+        // Resource path
+        $resourcePath = "/v3/blockchain/marketplace/withdraw/treasury";
+
+        // Prepare request headers
+        $headers = [
+            "User-Agent" => $this->_caller->config()->getUserAgent()
+        ];
+
+        // Set the API key
+        if ($this->_caller->config()->getApiKey()) {
+            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
+        }
+
+        // Accept and content-type
+        $headers = array_merge(
+            $headers, 
+            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        );
+
+        // Prepare the query parameters
+        $queryParams = [];
+
+        // Free Testnet call
+        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
+            $queryParams["type"] = "testnet";
+        }
+
+        try {
+            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
+                ObjectSerializer::createRequest(
+                    "POST",
+                    $this->_caller->config()->getHost() . $resourcePath,
+                    $queryParams,
+                    array_merge([], $headers),
+                    [],
+                    $withdraw_fee_from_marketplace_request
                 ),
                 "\Tatum\Model\BtcTransferBlockchain200Response"
             );

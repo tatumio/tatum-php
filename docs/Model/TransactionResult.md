@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reference** | **string** | Transaction internal reference - unique identifier within Tatum ledger. In order of failure, use this value to search for problems. | [optional]
+**reference** | **string** | The internal reference to the transaction (a unique identifier of the transaction within the virtual account); if the transaction fails, use this reference to search through the logs | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

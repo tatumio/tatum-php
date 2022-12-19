@@ -3,7 +3,7 @@
 /**
  * TronTx_rawData_contract_inner_parameter_value Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum

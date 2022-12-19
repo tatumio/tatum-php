@@ -3,7 +3,7 @@
 /**
  * Configuration
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -234,7 +234,7 @@ class Config {
         $report  = 'PHP SDK (Tatum) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 3.17.0' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 3.17.1' . PHP_EOL;
         $report .= '    SDK Package Version: 2.0.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . $this->getTempFolderPath() . PHP_EOL;
 

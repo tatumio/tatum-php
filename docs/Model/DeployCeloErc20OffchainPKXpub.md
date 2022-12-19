@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **xpub** | **string** | Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both. |
 **derivation_index** | **int** | Derivation index for xpub to generate specific deposit address. |
 **private_key** | **string** | Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Private key, mnemonic or signature Id must be present. |
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
-**fee_currency** | **string** | Currency to pay for transaction gas |
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**fee_currency** | **string** | The currency in which the transaction fee will be paid |
 
 [[Back to API list]](../../README.md#api-endpoints)

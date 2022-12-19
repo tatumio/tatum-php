@@ -3,7 +3,7 @@
 /**
  * Implementation of BlockchainStorage API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -25,10 +25,10 @@ use Tatum\Sdk\ObjectSerializer;
  */
 class BlockchainStorageApi extends AbstractApi {
     /**
-     * Get log record
+     * Get a log record
      *
      * @param string $chain The blockchain to get the log record from
-     * @param string $id ID of the log record / transaction on the blockchain
+     * @param string $id The ID of the log record or transaction to get from the blockchain
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
@@ -100,7 +100,7 @@ class BlockchainStorageApi extends AbstractApi {
     }
     
     /**
-     * Store log record
+     * Store a log record
      *
      * @param \Tatum\Model\StoreLogRequest $store_log_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

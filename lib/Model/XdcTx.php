@@ -3,7 +3,7 @@
 /**
  * XdcTx Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -41,7 +41,7 @@ class XdcTx extends AbstractModel {
         "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
         "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed"], 
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "logs" => ["logs", "\Tatum\Model\BscTxLogsInner[]", null, "getLogs", "setLogs"], 
+        "logs" => ["logs", "\Tatum\Model\KlaytnTxLogsInner[]", null, "getLogs", "setLogs"], 
         "logs_bloom" => ["logsBloom", "string", 'DATA, 256 Bytes', "getLogsBloom", "setLogsBloom"], 
         "root" => ["root", "string", null, "getRoot", "setRoot"]
     ];
@@ -385,7 +385,7 @@ class XdcTx extends AbstractModel {
     /**
      * Get logs
      *
-     * @return \Tatum\Model\BscTxLogsInner[]|null
+     * @return \Tatum\Model\KlaytnTxLogsInner[]|null
      */
     public function getLogs(): ?array {
         return $this->_data["logs"];
@@ -394,7 +394,7 @@ class XdcTx extends AbstractModel {
     /**
      * Set logs
      * 
-     * @param \Tatum\Model\BscTxLogsInner[]|null $logs Log events, that happened in this transaction.
+     * @param \Tatum\Model\KlaytnTxLogsInner[]|null $logs Log events, that happened in this transaction.
      * @return $this
      */
     public function setLogs(?array $logs) {

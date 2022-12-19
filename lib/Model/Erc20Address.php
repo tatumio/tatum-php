@@ -3,7 +3,7 @@
 /**
  * Erc20Address Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -400,11 +400,11 @@ class Erc20Address extends AbstractModel {
         "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
         "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
         "description" => ["description", "string", null, "getDescription", "setDescription"], 
+        "address" => ["address", "string", null, "getAddress", "setAddress"], 
         "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
         "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
         "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"]
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"]
     ];
 
     /**
@@ -413,7 +413,7 @@ class Erc20Address extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "supply"=>null, "decimals"=>null, "description"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "accounting_currency"=>null, "address"=>null] as $k => $v) {
+        foreach(["symbol"=>null, "supply"=>null, "decimals"=>null, "description"=>null, "address"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "accounting_currency"=>'EUR'] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -460,6 +460,15 @@ class Erc20Address extends AbstractModel {
         if ((mb_strlen($this->_data['description']) < 1)) {
             $ip[] = "'description' length must be >= 1";
         }
+        if (is_null($this->_data['address'])) {
+            $ip[] = "'address' can't be null";
+        }
+        if ((mb_strlen($this->_data['address']) > 44)) {
+            $ip[] = "'address' length must be <= 44";
+        }
+        if ((mb_strlen($this->_data['address']) < 42)) {
+            $ip[] = "'address' length must be >= 42";
+        }
         if (is_null($this->_data['base_pair'])) {
             $ip[] = "'base_pair' can't be null";
         }
@@ -487,15 +496,6 @@ class Erc20Address extends AbstractModel {
         }
         if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
             $ip[] = "'accounting_currency' length must be >= 3";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 44)) {
-            $ip[] = "'address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['address']) < 42)) {
-            $ip[] = "'address' length must be >= 42";
         }
         
         return $ip;
@@ -901,7 +901,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set symbol
      * 
-     * @param string $symbol ERC20/BEP20/SPL token name. Used as a identifier within Tatum system and also in blockchain as a currency symbol.
+     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
      * @return $this
      */
     public function setSymbol(string $symbol) {
@@ -931,7 +931,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set supply
      * 
-     * @param string $supply Supply of ERC20/BEP20/SPL token.
+     * @param string $supply The supply of the token
      * @return $this
      */
     public function setSupply(string $supply) {
@@ -958,7 +958,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set decimals
      * 
-     * @param float $decimals Decimals of ERC20/BEP20/SPL token.
+     * @param float $decimals The number of decimal places that the token has
      * @return $this
      */
     public function setDecimals(float $decimals) {
@@ -982,7 +982,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string $description Used as a description within Tatum system and in blockchain as a currency name.
+     * @param string $description The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain
      * @return $this
      */
     public function setDescription(string $description) {
@@ -993,6 +993,33 @@ class Erc20Address extends AbstractModel {
             throw new IAE('Erc20Address.setDescription: $description length must be >= 1');
         }
         $this->_data['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress(): string {
+        return $this->_data["address"];
+    }
+
+    /**
+     * Set address
+     * 
+     * @param string $address The blockchain address to be assigned to the virtual account as a deposit address; the supply of the token will be stored on this address
+     * @return $this
+     */
+    public function setAddress(string $address) {
+        if ((mb_strlen($address) > 44)) {
+            throw new IAE('Erc20Address.setAddress: $address length must be <= 44');
+        }
+        if ((mb_strlen($address) < 42)) {
+            throw new IAE('Erc20Address.setAddress: $address length must be >= 42');
+        }
+        $this->_data['address'] = $address;
 
         return $this;
     }
@@ -1009,7 +1036,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set base_pair
      * 
-     * @param string $base_pair Base pair for ERC20/BEP20/SPL token. Transaction value will be calculated according to this base pair.
+     * @param string $base_pair The base pair for the virtual currency that represents the token; used to calculate the value of a transaction
      * @return $this
      */
     public function setBasePair(string $base_pair) {
@@ -1040,7 +1067,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set base_rate
      * 
-     * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @param float|null $base_rate The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
@@ -1085,7 +1112,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set accounting_currency
      * 
-     * @param string|null $accounting_currency All transaction will be billed in this currency for created account associated with this currency. If not set, EUR is used. ISO-4217
+     * @param string|null $accounting_currency AThe ISO 4217 code of the currency in which all transactions for the created virtual account will be billed
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
@@ -1100,33 +1127,6 @@ class Erc20Address extends AbstractModel {
             throw new IAE('Erc20Address.setAccountingCurrency: $accounting_currency length must be >= 3');
         }
         $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
-    }
-
-    /**
-     * Get address
-     *
-     * @return string
-     */
-    public function getAddress(): string {
-        return $this->_data["address"];
-    }
-
-    /**
-     * Set address
-     * 
-     * @param string $address Address on the blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both. For Solana, only address can be used.
-     * @return $this
-     */
-    public function setAddress(string $address) {
-        if ((mb_strlen($address) > 44)) {
-            throw new IAE('Erc20Address.setAddress: $address length must be <= 44');
-        }
-        if ((mb_strlen($address) < 42)) {
-            throw new IAE('Erc20Address.setAddress: $address length must be >= 42');
-        }
-        $this->_data['address'] = $address;
 
         return $this;
     }

@@ -3,7 +3,7 @@
 /**
  * ChainDeployAlgoErc20 Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -36,7 +36,7 @@ class ChainDeployAlgoErc20 extends AbstractModel {
         "address" => ["address", "string", null, "getAddress", "setAddress"], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee"]
+        "fee" => ["fee", "string", null, "getFee", "setFee"]
     ];
 
     /**
@@ -129,6 +129,9 @@ class ChainDeployAlgoErc20 extends AbstractModel {
         }
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
+        }
+        if (is_null($this->_data['fee'])) {
+            $ip[] = "'fee' can't be null";
         }
         
         return $ip;
@@ -388,19 +391,19 @@ class ChainDeployAlgoErc20 extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\ApproveTransferCustodialWalletFee|null
+     * @return string
      */
-    public function getFee(): ?\Tatum\Model\ApproveTransferCustodialWalletFee {
+    public function getFee(): string {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\ApproveTransferCustodialWalletFee|null $fee fee
+     * @param string $fee The transaction fee in ALGO
      * @return $this
      */
-    public function setFee(?\Tatum\Model\ApproveTransferCustodialWalletFee $fee) {
+    public function setFee(string $fee) {
         $this->_data['fee'] = $fee;
 
         return $this;

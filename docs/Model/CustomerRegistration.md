@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounting_currency** | **string** | All transaction will be accounted in this currency for all accounts. Currency can be overridden per account level. If not set, EUR is used. ISO-4217 | [optional]
-**customer_country** | **string** | Country customer has to be compliant with. ISO-3166-1 | [optional]
-**external_id** | **string** | Customer external ID. Use only anonymized identification you have in your system. If customer with externalId does not exists new customer is created. If customer with specified externalId already exists it is updated. |
-**provider_country** | **string** | Country service provider has to be compliant with. ISO-3166-1 | [optional]
+**accounting_currency** | **string** | The ISO 4217 code of the currency in which all transactions for all virtual accounts of the customer will be billed; to overwrite the currency for this specific virtual account, set the &lt;code&gt;accountingCurrency&lt;/code&gt; parameter at the account level. | [optional] [default to 'EUR']
+**customer_country** | **string** | The ISO 3166-1 code of the country that the customer has to be compliant with | [optional]
+**external_id** | **string** | The external ID of the customer; use only anonymized identification that you have in your system&lt;br/&gt;If a customer with the specified external ID does not exist, a new customer is created. If a customer with the specified external ID exists, it is updated with the provided information. |
+**provider_country** | **string** | The ISO 3166-1 code of the country that the service provider has to be compliant with | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

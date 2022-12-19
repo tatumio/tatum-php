@@ -3,7 +3,7 @@
 /**
  * Implementation of Auction API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -25,7 +25,7 @@ use Tatum\Sdk\ObjectSerializer;
  */
 class AuctionApi extends AbstractApi {
     /**
-     * Approve NFT token spending for the Auction / Marketplace
+     * Allow the NFT auction or marketplace to transfer an asset
      *
      * @param \Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -88,7 +88,7 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Bid for asset on the NFT Auction
+     * Bid for an asset at the NFT auction
      *
      * @param \Tatum\Model\BidOnAuctionRequest $bid_on_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -151,7 +151,7 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Cancel auction of the asset on the NFT Auction
+     * Cancel the selling of an asset at the NFT auction
      *
      * @param \Tatum\Model\CancelAuctionRequest $cancel_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -214,7 +214,7 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Sell asset on the NFT Auction
+     * Sell an asset at the NFT auction
      *
      * @param \Tatum\Model\CreateAuctionRequest $create_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -277,7 +277,7 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Create NFT Auction
+     * Create an NFT auction
      *
      * @param \Tatum\Model\GenerateAuctionRequest $generate_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -340,7 +340,7 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Get auction details from the NFT Auction
+     * Get information about an auctioned asset at the NFT auction
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -408,7 +408,7 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Get NFT Auction fee
+     * Get the NFT auction fee
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -474,7 +474,7 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Get NFT Auction fee recipient
+     * Get the recipient of the NFT auction fee
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -540,15 +540,15 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Settle auction of the asset on the NFT Auction
+     * Settle an NFT auction
      *
-     * @param \Tatum\Model\CancelAuctionRequest $cancel_auction_request 
+     * @param \Tatum\Model\SettleAuctionRequest $settle_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function settleAuction(\Tatum\Model\CancelAuctionRequest $cancel_auction_request) { 
+    public function settleAuction(\Tatum\Model\SettleAuctionRequest $settle_auction_request) { 
         // Resource path
         $resourcePath = "/v3/blockchain/auction/settle";
 
@@ -584,7 +584,7 @@ class AuctionApi extends AbstractApi {
                     $queryParams,
                     array_merge([], $headers),
                     [],
-                    $cancel_auction_request
+                    $settle_auction_request
                 ),
                 "\Tatum\Model\BtcTransferBlockchain200Response"
             );
@@ -603,15 +603,15 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Update NFT Auction fee
+     * Update the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeRequest $update_fee_request 
+     * @param \Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function updateAuctionFee(\Tatum\Model\UpdateFeeRequest $update_fee_request) { 
+    public function updateAuctionFee(\Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request) { 
         // Resource path
         $resourcePath = "/v3/blockchain/auction/fee";
 
@@ -647,7 +647,7 @@ class AuctionApi extends AbstractApi {
                     $queryParams,
                     array_merge([], $headers),
                     [],
-                    $update_fee_request
+                    $update_auction_fee_request
                 ),
                 "\Tatum\Model\BtcTransferBlockchain200Response"
             );
@@ -666,15 +666,15 @@ class AuctionApi extends AbstractApi {
     }
     
     /**
-     * Update NFT Auction fee recipient
+     * Update the recipient of the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeRecipientRequest $update_fee_recipient_request 
+     * @param \Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function updateAuctionFeeRecipient(\Tatum\Model\UpdateFeeRecipientRequest $update_fee_recipient_request) { 
+    public function updateAuctionFeeRecipient(\Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request) { 
         // Resource path
         $resourcePath = "/v3/blockchain/auction/recipient";
 
@@ -710,7 +710,7 @@ class AuctionApi extends AbstractApi {
                     $queryParams,
                     array_merge([], $headers),
                     [],
-                    $update_fee_recipient_request
+                    $update_auction_fee_recipient_request
                 ),
                 "\Tatum\Model\BtcTransferBlockchain200Response"
             );

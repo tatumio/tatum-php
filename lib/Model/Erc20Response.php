@@ -3,7 +3,7 @@
 /**
  * Erc20Response Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -63,7 +63,7 @@ class Erc20Response extends AbstractModel {
     /**
      * Set account_id
      * 
-     * @param string|null $account_id Account ID with the type of currency as created ERC20/BEP20 token symbol. Supply of ERC20/BEP20 token will be credited as soon as ERC20/BEP20 token is deployed to the Ethereum blockchain.
+     * @param string|null $account_id The ID of the created virtual account with the currency set to the token name (the <code>symbol</code> parameter of the request body)<br/>The token supply will be created as soon as the token smart contract is deployed on the blockchain.
      * @return $this
      */
     public function setAccountId(?string $account_id) {
@@ -84,7 +84,7 @@ class Erc20Response extends AbstractModel {
     /**
      * Set address
      * 
-     * @param string|null $address Initial address of new created ERC20/BEP20 token. On this address, all tokens will be minted.
+     * @param string|null $address The deposit address of the virtual account
      * @return $this
      */
     public function setAddress(?string $address) {

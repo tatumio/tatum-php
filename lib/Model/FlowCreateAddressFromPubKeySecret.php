@@ -3,7 +3,7 @@
 /**
  * FlowCreateAddressFromPubKeySecret Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -118,7 +118,7 @@ class FlowCreateAddressFromPubKeySecret extends AbstractModel {
     /**
      * Set public_key
      * 
-     * @param string $public_key Public key to be used
+     * @param string $public_key Public key to be used; will be assigned to a newly created address and will have a weight of 1000
      * @return $this
      */
     public function setPublicKey(string $public_key) {

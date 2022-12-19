@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **customer** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
 **address** | **string** | Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both. |
 **signature_id** | **string** | Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present. |
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
-**fee_currency** | **string** | Currency to pay for transaction gas |
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**fee_currency** | **string** | The currency in which the transaction fee will be paid |
 
 [[Back to API list]](../../README.md#api-endpoints)

@@ -3,7 +3,7 @@
 /**
  * Erc20 Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -400,12 +400,12 @@ class Erc20 extends AbstractModel {
         "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
         "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
         "description" => ["description", "string", null, "getDescription", "setDescription"], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
+        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex"], 
         "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
         "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
         "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"]
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"]
     ];
 
     /**
@@ -414,7 +414,7 @@ class Erc20 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "supply"=>null, "decimals"=>null, "description"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "accounting_currency"=>null, "derivation_index"=>null, "xpub"=>null] as $k => $v) {
+        foreach(["symbol"=>null, "supply"=>null, "decimals"=>null, "description"=>null, "xpub"=>null, "derivation_index"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "accounting_currency"=>'EUR'] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -461,6 +461,21 @@ class Erc20 extends AbstractModel {
         if ((mb_strlen($this->_data['description']) < 1)) {
             $ip[] = "'description' length must be >= 1";
         }
+        if (is_null($this->_data['xpub'])) {
+            $ip[] = "'xpub' can't be null";
+        }
+        if ((mb_strlen($this->_data['xpub']) > 150)) {
+            $ip[] = "'xpub' length must be <= 150";
+        }
+        if ((mb_strlen($this->_data['xpub']) < 1)) {
+            $ip[] = "'xpub' length must be >= 1";
+        }
+        if (is_null($this->_data['derivation_index'])) {
+            $ip[] = "'derivation_index' can't be null";
+        }
+        if (($this->_data['derivation_index'] > 2147483647)) {
+            $ip[] = "'derivation_index' must be <= 2147483647";
+        }
         if (is_null($this->_data['base_pair'])) {
             $ip[] = "'base_pair' can't be null";
         }
@@ -488,21 +503,6 @@ class Erc20 extends AbstractModel {
         }
         if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
             $ip[] = "'accounting_currency' length must be >= 3";
-        }
-        if (is_null($this->_data['derivation_index'])) {
-            $ip[] = "'derivation_index' can't be null";
-        }
-        if (($this->_data['derivation_index'] > 2147483647)) {
-            $ip[] = "'derivation_index' must be <= 2147483647";
-        }
-        if (is_null($this->_data['xpub'])) {
-            $ip[] = "'xpub' can't be null";
-        }
-        if ((mb_strlen($this->_data['xpub']) > 150)) {
-            $ip[] = "'xpub' length must be <= 150";
-        }
-        if ((mb_strlen($this->_data['xpub']) < 1)) {
-            $ip[] = "'xpub' length must be >= 1";
         }
         
         return $ip;
@@ -908,7 +908,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set symbol
      * 
-     * @param string $symbol ERC20/BEP20 token name. Used as a identifier within Tatum system and also in blockchain as a currency symbol.
+     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
      * @return $this
      */
     public function setSymbol(string $symbol) {
@@ -938,7 +938,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set supply
      * 
-     * @param string $supply Supply of ERC20/BEP20 token.
+     * @param string $supply The supply of the token
      * @return $this
      */
     public function setSupply(string $supply) {
@@ -965,7 +965,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set decimals
      * 
-     * @param float $decimals Decimals of ERC20/BEP20 token.
+     * @param float $decimals The number of decimal places that the token has
      * @return $this
      */
     public function setDecimals(float $decimals) {
@@ -989,7 +989,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string $description Used as a description within Tatum system and in blockchain as a currency name.
+     * @param string $description The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain
      * @return $this
      */
     public function setDescription(string $description) {
@@ -1000,6 +1000,57 @@ class Erc20 extends AbstractModel {
             throw new IAE('Erc20.setDescription: $description length must be >= 1');
         }
         $this->_data['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get xpub
+     *
+     * @return string
+     */
+    public function getXpub(): string {
+        return $this->_data["xpub"];
+    }
+
+    /**
+     * Set xpub
+     * 
+     * @param string $xpub The extended public key of the wallet from which a deposit address for the virtual account will be generated; the supply of the token will be stored on this address<br/><b>NOTE:</b>On Solana, you only can assign an existing address to the virtual account; use the <code>Erc20Address</code> schema of this API.
+     * @return $this
+     */
+    public function setXpub(string $xpub) {
+        if ((mb_strlen($xpub) > 150)) {
+            throw new IAE('Erc20.setXpub: $xpub length must be <= 150');
+        }
+        if ((mb_strlen($xpub) < 1)) {
+            throw new IAE('Erc20.setXpub: $xpub length must be >= 1');
+        }
+        $this->_data['xpub'] = $xpub;
+
+        return $this;
+    }
+
+    /**
+     * Get derivation_index
+     *
+     * @return int
+     */
+    public function getDerivationIndex(): int {
+        return $this->_data["derivation_index"];
+    }
+
+    /**
+     * Set derivation_index
+     * 
+     * @param int $derivation_index The derivation index to use together with the extended public key to generate the deposit address
+     * @return $this
+     */
+    public function setDerivationIndex(int $derivation_index) {
+        if (($derivation_index > 2147483647)) {
+            throw new IAE('Erc20.setDerivationIndex: $derivation_index must be <=2147483647');
+        }
+        $this->_data['derivation_index'] = $derivation_index;
 
         return $this;
     }
@@ -1016,7 +1067,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set base_pair
      * 
-     * @param string $base_pair Base pair for ERC20/BEP20 token. Transaction value will be calculated according to this base pair.
+     * @param string $base_pair The base pair for the virtual currency that represents the token; used to calculate the value of a transaction
      * @return $this
      */
     public function setBasePair(string $base_pair) {
@@ -1047,7 +1098,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set base_rate
      * 
-     * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @param float|null $base_rate The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
@@ -1092,7 +1143,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set accounting_currency
      * 
-     * @param string|null $accounting_currency All transaction will be billed in this currency for created account associated with this currency. If not set, EUR is used. ISO-4217
+     * @param string|null $accounting_currency The ISO 4217 code of the currency in which all transactions for the created virtual account will be billed
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
@@ -1107,57 +1158,6 @@ class Erc20 extends AbstractModel {
             throw new IAE('Erc20.setAccountingCurrency: $accounting_currency length must be >= 3');
         }
         $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
-    }
-
-    /**
-     * Get derivation_index
-     *
-     * @return int
-     */
-    public function getDerivationIndex(): int {
-        return $this->_data["derivation_index"];
-    }
-
-    /**
-     * Set derivation_index
-     * 
-     * @param int $derivation_index Derivation index for xpub to generate specific deposit address.
-     * @return $this
-     */
-    public function setDerivationIndex(int $derivation_index) {
-        if (($derivation_index > 2147483647)) {
-            throw new IAE('Erc20.setDerivationIndex: $derivation_index must be <=2147483647');
-        }
-        $this->_data['derivation_index'] = $derivation_index;
-
-        return $this;
-    }
-
-    /**
-     * Get xpub
-     *
-     * @return string
-     */
-    public function getXpub(): string {
-        return $this->_data["xpub"];
-    }
-
-    /**
-     * Set xpub
-     * 
-     * @param string $xpub Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both.
-     * @return $this
-     */
-    public function setXpub(string $xpub) {
-        if ((mb_strlen($xpub) > 150)) {
-            throw new IAE('Erc20.setXpub: $xpub length must be <= 150');
-        }
-        if ((mb_strlen($xpub) < 1)) {
-            throw new IAE('Erc20.setXpub: $xpub length must be >= 1');
-        }
-        $this->_data['xpub'] = $xpub;
 
         return $this;
     }

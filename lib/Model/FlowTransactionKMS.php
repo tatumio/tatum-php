@@ -3,7 +3,7 @@
 /**
  * FlowTransactionKMS Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -70,10 +70,13 @@ class FlowTransactionKMS extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        if (!is_null($this->_data['to']) && (mb_strlen($this->_data['to']) > 18)) {
+        if (is_null($this->_data['to'])) {
+            $ip[] = "'to' can't be null";
+        }
+        if ((mb_strlen($this->_data['to']) > 18)) {
             $ip[] = "'to' length must be <= 18";
         }
-        if (!is_null($this->_data['to']) && (mb_strlen($this->_data['to']) < 18)) {
+        if ((mb_strlen($this->_data['to']) < 18)) {
             $ip[] = "'to' length must be >= 18";
         }
         if (is_null($this->_data['amount'])) {
@@ -161,23 +164,23 @@ class FlowTransactionKMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return string|null
+     * @return string
      */
-    public function getTo(): ?string {
+    public function getTo(): string {
         return $this->_data["to"];
     }
 
     /**
      * Set to
      * 
-     * @param string|null $to Blockchain address to send assets
+     * @param string $to Blockchain address to send assets
      * @return $this
      */
-    public function setTo(?string $to) {
-        if (!is_null($to) && (mb_strlen($to) > 18)) {
+    public function setTo(string $to) {
+        if ((mb_strlen($to) > 18)) {
             throw new IAE('FlowTransactionKMS.setTo: $to length must be <= 18');
         }
-        if (!is_null($to) && (mb_strlen($to) < 18)) {
+        if ((mb_strlen($to) < 18)) {
             throw new IAE('FlowTransactionKMS.setTo: $to length must be >= 18');
         }
         $this->_data['to'] = $to;

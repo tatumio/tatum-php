@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 ```php
 api()->orderBook()->storeTrade(
-    ?\Tatum\Model\CreateTrade $create_trade
+    ?\Tatum\Model\StoreTradeRequest $store_trade_request
 ): \Tatum\Model\Id
 ```
 
@@ -719,7 +719,7 @@ require_once(__DIR__ . '/autoload.php');
 // @see https://apidoc.tatum.io/#section/Authentication
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
-$create_trade = new \Tatum\Model\CreateTrade();
+$store_trade_request = new \Tatum\Model\StoreTradeRequest();
 
 try {
     /** @var \Tatum\Model\Id $response */
@@ -727,7 +727,7 @@ try {
         ->mainnet()
         ->api()
         ->orderBook()
-        ->storeTrade($create_trade);
+        ->storeTrade($store_trade_request);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
@@ -743,7 +743,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_trade** | [**\Tatum\Model\CreateTrade**](../Model/CreateTrade.md)|  |
+ **$store_trade_request** | [**\Tatum\Model\StoreTradeRequest**](../Model/StoreTradeRequest.md)|  |
 
 ### Return type
 

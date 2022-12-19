@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **string** | Account ID with the type of currency as created ERC20/BEP20 token symbol. Supply of ERC20/BEP20 token will be credited as soon as ERC20/BEP20 token is deployed to the Ethereum blockchain. | [optional]
-**address** | **string** | Initial address of new created ERC20/BEP20 token. On this address, all tokens will be minted. | [optional]
+**account_id** | **string** | The ID of the created virtual account with the currency set to the token name (the &lt;code&gt;symbol&lt;/code&gt; parameter of the request body)&lt;br/&gt;The token supply will be created as soon as the token smart contract is deployed on the blockchain. | [optional]
+**address** | **string** | The deposit address of the virtual account | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

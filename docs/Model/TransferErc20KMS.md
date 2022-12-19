@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **gas_price** | **string** | Gas price in Gwei. If not set, automatic calculation will be used. | [optional]
 **signature_id** | **string** | Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present. |
 **index** | **int** | Derivation index of sender address. | [optional]
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **payment_id** | **string** | Identifier of the payment, shown for created Transaction within Tatum sender account. | [optional]
 **sender_note** | **string** | Note visible to owner of withdrawing account | [optional]
 

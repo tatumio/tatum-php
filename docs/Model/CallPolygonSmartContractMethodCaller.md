@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **method_name** | **string** | Name of the method to invoke on smart contract. |
 **method_abi** | **object** | ABI of the method to invoke. |
 **params** | **string[]** |  |
-**fee** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
+**fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

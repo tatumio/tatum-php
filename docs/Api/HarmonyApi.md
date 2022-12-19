@@ -30,7 +30,7 @@ api()->harmony()->oneBlockchainSmartContractInvocation(
 
 Invoke a method in a smart contract on Harmony
 
-<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Harmony.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Signing a transaction</b></p> <p>When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Harmony.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ```php
 api()->harmony()->oneFormatAddress(
     ?string $address
-): \Tatum\Model\OneFormatAddress200Response
+): \Tatum\Model\GeneratedAddressOne
 ```
 
 Transform HEX address to Bech32 ONE address format
@@ -222,7 +222,7 @@ $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 $address = '0xa7673161CbfE0116A4De9E341f8465940c2211d4';
 
 try {
-    /** @var \Tatum\Model\OneFormatAddress200Response $response */
+    /** @var \Tatum\Model\GeneratedAddressOne $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OneFormatAddress200Response**](../Model/OneFormatAddress200Response.md)
+[**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 api()->harmony()->oneGenerateAddress(
     ?string $xpub, 
     ?float $index
-): \Tatum\Model\OneGenerateAddress200Response
+): \Tatum\Model\GeneratedAddressOne
 ```
 
 Generate ONE account address from Extended public key
@@ -281,7 +281,7 @@ $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jF
 $index = 1;
 
 try {
-    /** @var \Tatum\Model\OneGenerateAddress200Response $response */
+    /** @var \Tatum\Model\GeneratedAddressOne $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OneGenerateAddress200Response**](../Model/OneGenerateAddress200Response.md)
+[**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 api()->harmony()->oneGetBalance(
     ?string $address, 
     ?float $shard_id
-): \Tatum\Model\OneGetBalance200Response
+): \Tatum\Model\OneBalance
 ```
 
 Get ONE Account balance
@@ -450,7 +450,7 @@ $address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
 $shard_id = 0;
 
 try {
-    /** @var \Tatum\Model\OneGetBalance200Response $response */
+    /** @var \Tatum\Model\OneBalance $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OneGetBalance200Response**](../Model/OneGetBalance200Response.md)
+[**\Tatum\Model\OneBalance**](../Model/OneBalance.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ```php
 api()->harmony()->oneGetCurrentBlock(
-): \Tatum\Model\OneGetCurrentBlock200ResponseInner[]
+): \Tatum\Model\OneBlockCurrent[]
 ```
 
 Get current block number
@@ -562,7 +562,7 @@ require_once(__DIR__ . '/autoload.php');
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
 try {
-    /** @var \Tatum\Model\OneGetCurrentBlock200ResponseInner[] $response */
+    /** @var \Tatum\Model\OneBlockCurrent[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -585,7 +585,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\OneGetCurrentBlock200ResponseInner[]**](../Model/OneGetCurrentBlock200ResponseInner.md)
+[**\Tatum\Model\OneBlockCurrent[]**](../Model/OneBlockCurrent.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * SolanaTx_meta Model
+ * SolanaTxMeta Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -19,21 +19,21 @@ namespace Tatum\Model;
 use InvalidArgumentException as IAE;
 
 /**
- * SolanaTx_meta Model
+ * SolanaTxMeta Model
  */
 class SolanaTxMeta extends AbstractModel {
 
     public const DISCRIMINATOR = null;
-    protected static $_name = "SolanaTx_meta";
+    protected static $_name = "SolanaTxMeta";
     protected static $_definition = [
-        "err" => ["err", "string", 'nullable', "getErr", "setErr"], 
+        "err" => ["err", "object", null, "getErr", "setErr"], 
         "fee" => ["fee", "float", null, "getFee", "setFee"], 
         "inner_instructions" => ["innerInstructions", "object[]", null, "getInnerInstructions", "setInnerInstructions"], 
         "log_messages" => ["logMessages", "string[]", null, "getLogMessages", "setLogMessages"], 
         "post_balances" => ["postBalances", "float[]", null, "getPostBalances", "setPostBalances"], 
-        "post_token_balances" => ["postTokenBalances", "float[]", null, "getPostTokenBalances", "setPostTokenBalances"], 
+        "post_token_balances" => ["postTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPostTokenBalances", "setPostTokenBalances"], 
         "pre_balances" => ["preBalances", "float[]", null, "getPreBalances", "setPreBalances"], 
-        "pre_token_balances" => ["preTokenBalances", "float[]", null, "getPreTokenBalances", "setPreTokenBalances"], 
+        "pre_token_balances" => ["preTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPreTokenBalances", "setPreTokenBalances"], 
         "rewards" => ["rewards", "object[]", null, "getRewards", "setRewards"], 
         "status" => ["status", "\Tatum\Model\SolanaTxMetaStatus", null, "getStatus", "setStatus"]
     ];
@@ -62,19 +62,19 @@ class SolanaTxMeta extends AbstractModel {
     /**
      * Get err
      *
-     * @return string|null
+     * @return object|null
      */
-    public function getErr(): ?string {
+    public function getErr(): ?object {
         return $this->_data["err"];
     }
 
     /**
      * Set err
      * 
-     * @param string|null $err err
+     * @param object|null $err err
      * @return $this
      */
-    public function setErr(?string $err) {
+    public function setErr(?object $err) {
         $this->_data['err'] = $err;
 
         return $this;
@@ -167,7 +167,7 @@ class SolanaTxMeta extends AbstractModel {
     /**
      * Get post_token_balances
      *
-     * @return float[]|null
+     * @return \Tatum\Model\TokenBalance[]|null
      */
     public function getPostTokenBalances(): ?array {
         return $this->_data["post_token_balances"];
@@ -176,7 +176,7 @@ class SolanaTxMeta extends AbstractModel {
     /**
      * Set post_token_balances
      * 
-     * @param float[]|null $post_token_balances post_token_balances
+     * @param \Tatum\Model\TokenBalance[]|null $post_token_balances post_token_balances
      * @return $this
      */
     public function setPostTokenBalances(?array $post_token_balances) {
@@ -209,7 +209,7 @@ class SolanaTxMeta extends AbstractModel {
     /**
      * Get pre_token_balances
      *
-     * @return float[]|null
+     * @return \Tatum\Model\TokenBalance[]|null
      */
     public function getPreTokenBalances(): ?array {
         return $this->_data["pre_token_balances"];
@@ -218,7 +218,7 @@ class SolanaTxMeta extends AbstractModel {
     /**
      * Set pre_token_balances
      * 
-     * @param float[]|null $pre_token_balances pre_token_balances
+     * @param \Tatum\Model\TokenBalance[]|null $pre_token_balances pre_token_balances
      * @return $this
      */
     public function setPreTokenBalances(?array $pre_token_balances) {

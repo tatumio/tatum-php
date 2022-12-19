@@ -3,7 +3,7 @@
 /**
  * ApproveNftAuctionSpending_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -25,9 +25,6 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
 
     public const DISCRIMINATOR = null;
     public const CHAIN_CELO = 'CELO';
-    public const FEE_CURRENCY_CELO = 'CELO';
-    public const FEE_CURRENCY_CUSD = 'CUSD';
-    public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "ApproveNftAuctionSpending_request";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain"], 
@@ -37,7 +34,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
         "index" => ["index", "float", null, "getIndex", "setIndex"], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
@@ -113,11 +110,6 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
         if (is_null($this->_data['fee_currency'])) {
             $ip[] = "'fee_currency' can't be null";
         }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
         
         return $ip;
     }
@@ -129,18 +121,6 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     public function getChainAllowableValues(): array {
         return [
             self::CHAIN_CELO,
-        ];
-    }
-    /**
-     * Get allowable values
-     *
-     * @return scalar[]
-     */
-    public function getFeeCurrencyAllowableValues(): array {
-        return [
-            self::FEE_CURRENCY_CELO,
-            self::FEE_CURRENCY_CUSD,
-            self::FEE_CURRENCY_CEUR,
         ];
     }
 
@@ -156,7 +136,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to work with.
+     * @param string $chain The blockchain to work with
      * @return $this
      */
     public function setChain(string $chain) {
@@ -181,7 +161,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set spender
      * 
-     * @param string $spender Address of the auction smart contract - new spender.
+     * @param string $spender The blockchain address of the auction/marketplace smart contract
      * @return $this
      */
     public function setSpender(string $spender) {
@@ -208,7 +188,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set is_erc721
      * 
-     * @param bool $is_erc721 True if asset is NFT of type ERC721, false if ERC1155.
+     * @param bool $is_erc721 Set to \"true\" if the asset is an NFT; set to \"false\" is the asset is a Multi Token
      * @return $this
      */
     public function setIsErc721(bool $is_erc721) {
@@ -229,7 +209,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set token_id
      * 
-     * @param string $token_id ID of token, if transaction is for ERC-721 or ERC-1155.
+     * @param string $token_id The ID of the asset (NFT or Multi Token)
      * @return $this
      */
     public function setTokenId(string $token_id) {
@@ -253,7 +233,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address Address of the ERC20 token, which is used for buying NFT asset from the marketplace.
+     * @param string $contract_address The blockchain address of the smart contract from which the asset (NFT or Multi Token) was minted
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
@@ -280,7 +260,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set from_private_key
      * 
-     * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @param string $from_private_key The private key of the blockchain address from which the fee will be deducted
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
@@ -307,7 +287,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set nonce
      * 
-     * @param float|null $nonce Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
      * @return $this
      */
     public function setNonce(?float $nonce) {
@@ -319,19 +299,19 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\DeployErc20Fee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\DeployErc20Fee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @return $this
      */
-    public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         $this->_data['fee'] = $fee;
 
         return $this;
@@ -349,7 +329,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set signature_id
      * 
-     * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @param string $signature_id The KMS identifier of the private key of the blockchain address from which the fee will be deducted
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
@@ -370,7 +350,7 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
      * @return $this
      */
     public function setIndex(?float $index) {
@@ -394,14 +374,10 @@ class ApproveNftAuctionSpendingRequest extends AbstractModel {
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency Currency to pay for transaction gas
+     * @param string $fee_currency The currency in which the transaction fee will be paid - CELO - CUSD - CEUR
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("ApproveNftAuctionSpendingRequest.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
         $this->_data['fee_currency'] = $fee_currency;
 
         return $this;

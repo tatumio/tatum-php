@@ -3,7 +3,7 @@
 /**
  * DeployErc20OffchainPKAddress Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -755,7 +755,7 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
     /**
      * Set nonce
      * 
-     * @param float|null $nonce Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
      * @return $this
      */
     public function setNonce(?float $nonce) {

@@ -3,7 +3,7 @@
 /**
  * Implementation of Solana API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -155,7 +155,7 @@ class SolanaApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\SolanaGenerateWallet200Response
+     * @return \Tatum\Model\SolanaWallet
      */
     public function solanaGenerateWallet() { 
         // Resource path
@@ -186,7 +186,7 @@ class SolanaApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\SolanaGenerateWallet200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\SolanaWallet $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -195,13 +195,13 @@ class SolanaApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\SolanaGenerateWallet200Response"
+                "\Tatum\Model\SolanaWallet"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\SolanaGenerateWallet200Response",
+                    "\Tatum\Model\SolanaWallet",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -218,7 +218,7 @@ class SolanaApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\SolanaGetBalance200Response
+     * @return \Tatum\Model\SolBalance
      */
     public function solanaGetBalance(string $address) { 
         // Resource path
@@ -250,7 +250,7 @@ class SolanaApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\SolanaGetBalance200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\SolBalance $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -259,13 +259,13 @@ class SolanaApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\SolanaGetBalance200Response"
+                "\Tatum\Model\SolBalance"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\SolanaGetBalance200Response",
+                    "\Tatum\Model\SolBalance",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

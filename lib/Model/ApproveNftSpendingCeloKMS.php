@@ -3,7 +3,7 @@
 /**
  * ApproveNftSpendingCeloKMS Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -25,21 +25,18 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
 
     public const DISCRIMINATOR = null;
     public const CHAIN_CELO = 'CELO';
-    public const FEE_CURRENCY_CELO = 'CELO';
-    public const FEE_CURRENCY_CUSD = 'CUSD';
-    public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "ApproveNftSpendingCeloKMS";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
         "spender" => ["spender", "string", null, "getSpender", "setSpender"], 
         "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721"], 
         "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
         "index" => ["index", "float", null, "getIndex", "setIndex"], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"]
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
     ];
 
     /**
@@ -48,7 +45,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "fee_currency"=>null, "contract_address"=>null, "spender"=>null, "is_erc721"=>null, "token_id"=>null, "signature_id"=>null, "index"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
+        foreach(["chain"=>null, "spender"=>null, "is_erc721"=>null, "token_id"=>null, "contract_address"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -66,23 +63,6 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
         $value = $this->_data['chain'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
         }
         if (is_null($this->_data['spender'])) {
             $ip[] = "'spender' can't be null";
@@ -102,11 +82,23 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
         if ((mb_strlen($this->_data['token_id']) > 256)) {
             $ip[] = "'token_id' length must be <= 256";
         }
+        if (is_null($this->_data['contract_address'])) {
+            $ip[] = "'contract_address' can't be null";
+        }
+        if ((mb_strlen($this->_data['contract_address']) > 42)) {
+            $ip[] = "'contract_address' length must be <= 42";
+        }
+        if ((mb_strlen($this->_data['contract_address']) < 42)) {
+            $ip[] = "'contract_address' length must be >= 42";
+        }
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
+        }
+        if (is_null($this->_data['fee_currency'])) {
+            $ip[] = "'fee_currency' can't be null";
         }
         
         return $ip;
@@ -119,18 +111,6 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     public function getChainAllowableValues(): array {
         return [
             self::CHAIN_CELO,
-        ];
-    }
-    /**
-     * Get allowable values
-     *
-     * @return scalar[]
-     */
-    public function getFeeCurrencyAllowableValues(): array {
-        return [
-            self::FEE_CURRENCY_CELO,
-            self::FEE_CURRENCY_CUSD,
-            self::FEE_CURRENCY_CEUR,
         ];
     }
 
@@ -146,7 +126,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to work with.
+     * @param string $chain The blockchain to work with
      * @return $this
      */
     public function setChain(string $chain) {
@@ -155,58 +135,6 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
             throw new IAE(sprintf("ApproveNftSpendingCeloKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
         }
         $this->_data['chain'] = $chain;
-
-        return $this;
-    }
-
-    /**
-     * Get fee_currency
-     *
-     * @return string
-     */
-    public function getFeeCurrency(): string {
-        return $this->_data["fee_currency"];
-    }
-
-    /**
-     * Set fee_currency
-     * 
-     * @param string $fee_currency Currency to pay for transaction gas
-     * @return $this
-     */
-    public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("ApproveNftSpendingCeloKMS.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
-    }
-
-    /**
-     * Get contract_address
-     *
-     * @return string
-     */
-    public function getContractAddress(): string {
-        return $this->_data["contract_address"];
-    }
-
-    /**
-     * Set contract_address
-     * 
-     * @param string $contract_address Address of the ERC20 token, which is used for buying NFT asset from the marketplace.
-     * @return $this
-     */
-    public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('ApproveNftSpendingCeloKMS.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('ApproveNftSpendingCeloKMS.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
 
         return $this;
     }
@@ -223,7 +151,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Set spender
      * 
-     * @param string $spender Address of the auction smart contract - new spender.
+     * @param string $spender The blockchain address of the auction/marketplace smart contract
      * @return $this
      */
     public function setSpender(string $spender) {
@@ -250,7 +178,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Set is_erc721
      * 
-     * @param bool $is_erc721 True if asset is NFT of type ERC721, false if ERC1155.
+     * @param bool $is_erc721 Set to \"true\" if the asset is an NFT; set to \"false\" is the asset is a Multi Token
      * @return $this
      */
     public function setIsErc721(bool $is_erc721) {
@@ -271,7 +199,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Set token_id
      * 
-     * @param string $token_id ID of token, if transaction is for ERC-721 or ERC-1155.
+     * @param string $token_id The ID of the asset (NFT or Multi Token)
      * @return $this
      */
     public function setTokenId(string $token_id) {
@@ -279,6 +207,33 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
             throw new IAE('ApproveNftSpendingCeloKMS.setTokenId: $token_id length must be <= 256');
         }
         $this->_data['token_id'] = $token_id;
+
+        return $this;
+    }
+
+    /**
+     * Get contract_address
+     *
+     * @return string
+     */
+    public function getContractAddress(): string {
+        return $this->_data["contract_address"];
+    }
+
+    /**
+     * Set contract_address
+     * 
+     * @param string $contract_address The blockchain address of the smart contract from which the asset (NFT or Multi Token) was minted
+     * @return $this
+     */
+    public function setContractAddress(string $contract_address) {
+        if ((mb_strlen($contract_address) > 42)) {
+            throw new IAE('ApproveNftSpendingCeloKMS.setContractAddress: $contract_address length must be <= 42');
+        }
+        if ((mb_strlen($contract_address) < 42)) {
+            throw new IAE('ApproveNftSpendingCeloKMS.setContractAddress: $contract_address length must be >= 42');
+        }
+        $this->_data['contract_address'] = $contract_address;
 
         return $this;
     }
@@ -295,7 +250,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Set signature_id
      * 
-     * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @param string $signature_id The KMS identifier of the private key of the blockchain address from which the fee will be deducted
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
@@ -316,7 +271,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
      * @return $this
      */
     public function setIndex(?float $index) {
@@ -324,6 +279,27 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
             throw new IAE('ApproveNftSpendingCeloKMS.setIndex: $index must be >=0');
         }
         $this->_data['index'] = $index;
+
+        return $this;
+    }
+
+    /**
+     * Get fee_currency
+     *
+     * @return string
+     */
+    public function getFeeCurrency(): string {
+        return $this->_data["fee_currency"];
+    }
+
+    /**
+     * Set fee_currency
+     * 
+     * @param string $fee_currency The currency in which the transaction fee will be paid - CELO - CUSD - CEUR
+     * @return $this
+     */
+    public function setFeeCurrency(string $fee_currency) {
+        $this->_data['fee_currency'] = $fee_currency;
 
         return $this;
     }
@@ -340,7 +316,7 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Set nonce
      * 
-     * @param float|null $nonce Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
      * @return $this
      */
     public function setNonce(?float $nonce) {
@@ -352,19 +328,19 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\DeployErc20Fee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\DeployErc20Fee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @return $this
      */
-    public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         $this->_data['fee'] = $fee;
 
         return $this;

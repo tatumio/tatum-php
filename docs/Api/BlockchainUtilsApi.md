@@ -79,7 +79,7 @@ api()->blockchainUtils()->sCGetContractAddress(
 
 Get the blockchain address of a smart contract by the deployment transaction ID
 
-<p><b>1 credit per API call</b></p> <p>Get the blockchain address of a smart contract by the ID of its deployment transaction.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFix</li> </ul>
+<p><b>1 credit per API call</b></p> <p>Get the blockchain address of a smart contract by the ID of its deployment transaction.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
 
 ### Example
 

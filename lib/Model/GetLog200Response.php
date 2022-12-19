@@ -3,7 +3,7 @@
 /**
  * GetLog_200_response Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -65,7 +65,7 @@ class GetLog200Response extends AbstractModel {
     /**
      * Set data
      * 
-     * @param string $data Data stored in the record.
+     * @param string $data The data stored in the requested record
      * @return $this
      */
     public function setData(string $data) {

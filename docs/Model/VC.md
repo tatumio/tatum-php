@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **supply** | **string** | Supply of virtual currency. |
 **account_id** | **string** | Virtual currency account. |
 **base_rate** | **float** | Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair. | [default to 1]
+**precision** | **float** | Number of decimal places of this virtual currency. | [optional]
+**trc_type** | **string** | Type of Tron token. | [optional]
 **base_pair** | **string** | Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC. |
 **customer_id** | **string** | ID of customer associated with virtual currency. | [optional]
 **description** | **string** | Used as a description within Tatum system. | [optional]

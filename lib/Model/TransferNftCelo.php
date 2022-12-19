@@ -3,7 +3,7 @@
 /**
  * TransferNftCelo Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -103,6 +103,9 @@ class TransferNftCelo extends AbstractModel {
         }
         if ((mb_strlen($this->_data['from_private_key']) < 66)) {
             $ip[] = "'from_private_key' length must be >= 66";
+        }
+        if (is_null($this->_data['fee_currency'])) {
+            $ip[] = "'fee_currency' can't be null";
         }
         $allowed = $this->getFeeCurrencyAllowableValues();
         $value = $this->_data['fee_currency'];
@@ -376,21 +379,21 @@ class TransferNftCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string|null
+     * @return string
      */
-    public function getFeeCurrency(): ?string {
+    public function getFeeCurrency(): string {
         return $this->_data["fee_currency"];
     }
 
     /**
      * Set fee_currency
      * 
-     * @param string|null $fee_currency The currency in which the transaction fee will be paid
+     * @param string $fee_currency The currency in which the transaction fee will be paid
      * @return $this
      */
-    public function setFeeCurrency(?string $fee_currency) {
+    public function setFeeCurrency(string $fee_currency) {
         $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!is_null($fee_currency) && !in_array($fee_currency, $allowed, true)) {
+        if (!in_array($fee_currency, $allowed, true)) {
             throw new IAE(sprintf("TransferNftCelo.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
         }
         $this->_data['fee_currency'] = $fee_currency;

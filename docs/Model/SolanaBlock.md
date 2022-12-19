@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **blockhash** | **string** |  | [optional]
 **parent_slot** | **float** |  | [optional]
 **previous_blockhash** | **string** |  | [optional]
-**rewards** | [**\Tatum\Model\SolanaBlockRewardsInner[]**](SolanaBlockRewardsInner.md) |  | [optional]
-**transactions** | [**\Tatum\Model\SolanaBlockTransactionsInner[]**](SolanaBlockTransactionsInner.md) |  | [optional]
+**rewards** | [**\Tatum\Model\SolanaBlockReward[]**](SolanaBlockReward.md) |  | [optional]
+**transactions** | [**\Tatum\Model\SolanaBlockTx[]**](SolanaBlockTx.md) |  | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

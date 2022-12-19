@@ -3,7 +3,7 @@
 /**
  * SolanaTx Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -28,8 +28,8 @@ class SolanaTx extends AbstractModel {
     protected static $_definition = [
         "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime"], 
         "meta" => ["meta", "\Tatum\Model\SolanaTxMeta", null, "getMeta", "setMeta"], 
-        "slot" => ["slot", "float", null, "getSlot", "setSlot"], 
-        "transaction" => ["transaction", "\Tatum\Model\SolanaTxTransaction", null, "getTransaction", "setTransaction"]
+        "transaction" => ["transaction", "\Tatum\Model\SolanaTxTransaction", null, "getTransaction", "setTransaction"], 
+        "slot" => ["slot", "float", null, "getSlot", "setSlot"]
     ];
 
     /**
@@ -38,7 +38,7 @@ class SolanaTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_time"=>null, "meta"=>null, "slot"=>null, "transaction"=>null] as $k => $v) {
+        foreach(["block_time"=>null, "meta"=>null, "transaction"=>null, "slot"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -96,27 +96,6 @@ class SolanaTx extends AbstractModel {
     }
 
     /**
-     * Get slot
-     *
-     * @return float|null
-     */
-    public function getSlot(): ?float {
-        return $this->_data["slot"];
-    }
-
-    /**
-     * Set slot
-     * 
-     * @param float|null $slot slot
-     * @return $this
-     */
-    public function setSlot(?float $slot) {
-        $this->_data['slot'] = $slot;
-
-        return $this;
-    }
-
-    /**
      * Get transaction
      *
      * @return \Tatum\Model\SolanaTxTransaction|null
@@ -133,6 +112,27 @@ class SolanaTx extends AbstractModel {
      */
     public function setTransaction(?\Tatum\Model\SolanaTxTransaction $transaction) {
         $this->_data['transaction'] = $transaction;
+
+        return $this;
+    }
+
+    /**
+     * Get slot
+     *
+     * @return float|null
+     */
+    public function getSlot(): ?float {
+        return $this->_data["slot"];
+    }
+
+    /**
+     * Set slot
+     * 
+     * @param float|null $slot slot
+     * @return $this
+     */
+    public function setSlot(?float $slot) {
+        $this->_data['slot'] = $slot;
 
         return $this;
     }

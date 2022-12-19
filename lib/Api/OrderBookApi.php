@@ -3,7 +3,7 @@
 /**
  * Implementation of OrderBook API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -815,13 +815,13 @@ class OrderBookApi extends AbstractApi {
     /**
      * Store buy / sell trade
      *
-     * @param \Tatum\Model\CreateTrade $create_trade 
+     * @param \Tatum\Model\StoreTradeRequest $store_trade_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
      * @return \Tatum\Model\Id
      */
-    public function storeTrade(\Tatum\Model\CreateTrade $create_trade) { 
+    public function storeTrade(\Tatum\Model\StoreTradeRequest $store_trade_request) { 
         // Resource path
         $resourcePath = "/v3/trade";
 
@@ -857,7 +857,7 @@ class OrderBookApi extends AbstractApi {
                     $queryParams,
                     array_merge([], $headers),
                     [],
-                    $create_trade
+                    $store_trade_request
                 ),
                 "\Tatum\Model\Id"
             );

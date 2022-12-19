@@ -3,7 +3,7 @@
 /**
  * OneTx Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -28,7 +28,7 @@ class OneTx extends AbstractModel {
     protected static $_definition = [
         "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
         "status" => ["status", "bool", null, "getStatus", "setStatus"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
+        "block_number" => ["blockNumber", "mixed", null, "getBlockNumber", "setBlockNumber"], 
         "from" => ["from", "string", null, "getFrom", "setFrom"], 
         "gas" => ["gas", "float", null, "getGas", "setGas"], 
         "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"], 
@@ -36,12 +36,12 @@ class OneTx extends AbstractModel {
         "input" => ["input", "string", null, "getInput", "setInput"], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
         "to" => ["to", "string", null, "getTo", "setTo"], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex"], 
+        "transaction_index" => ["transactionIndex", "mixed", null, "getTransactionIndex", "setTransactionIndex"], 
         "value" => ["value", "string", null, "getValue", "setValue"], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
-        "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed"], 
+        "gas_used" => ["gasUsed", "mixed", null, "getGasUsed", "setGasUsed"], 
+        "cumulative_gas_used" => ["cumulativeGasUsed", "mixed", null, "getCumulativeGasUsed", "setCumulativeGasUsed"], 
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "logs" => ["logs", "\Tatum\Model\BscTxLogsInner[]", null, "getLogs", "setLogs"]
+        "logs" => ["logs", "\Tatum\Model\OneTxLog[]", null, "getLogs", "setLogs"]
     ];
 
     /**
@@ -110,19 +110,19 @@ class OneTx extends AbstractModel {
     /**
      * Get block_number
      *
-     * @return float|null
+     * @return mixed|null
      */
-    public function getBlockNumber(): ?float {
+    public function getBlockNumber(): ?mixed {
         return $this->_data["block_number"];
     }
 
     /**
      * Set block_number
      * 
-     * @param float|null $block_number Block number where this transaction was in.
+     * @param mixed|null $block_number The number of the block that the transaction is included in; if not returned, the transaction has not been included in a block yet.
      * @return $this
      */
-    public function setBlockNumber(?float $block_number) {
+    public function setBlockNumber(?mixed $block_number) {
         $this->_data['block_number'] = $block_number;
 
         return $this;
@@ -278,19 +278,19 @@ class OneTx extends AbstractModel {
     /**
      * Get transaction_index
      *
-     * @return float|null
+     * @return mixed|null
      */
-    public function getTransactionIndex(): ?float {
+    public function getTransactionIndex(): ?mixed {
         return $this->_data["transaction_index"];
     }
 
     /**
      * Set transaction_index
      * 
-     * @param float|null $transaction_index Integer of the transactions index position in the block.
+     * @param mixed|null $transaction_index The integer of the transactions index position in the block; if not returned, the transaction has not been included in a block yet.
      * @return $this
      */
-    public function setTransactionIndex(?float $transaction_index) {
+    public function setTransactionIndex(?mixed $transaction_index) {
         $this->_data['transaction_index'] = $transaction_index;
 
         return $this;
@@ -320,19 +320,19 @@ class OneTx extends AbstractModel {
     /**
      * Get gas_used
      *
-     * @return float|null
+     * @return mixed|null
      */
-    public function getGasUsed(): ?float {
+    public function getGasUsed(): ?mixed {
         return $this->_data["gas_used"];
     }
 
     /**
      * Set gas_used
      * 
-     * @param float|null $gas_used The amount of gas used by this specific transaction alone.
+     * @param mixed|null $gas_used The amount of gas used by this specific transaction alone; if not returned, the transaction has not been included in a block yet.
      * @return $this
      */
-    public function setGasUsed(?float $gas_used) {
+    public function setGasUsed(?mixed $gas_used) {
         $this->_data['gas_used'] = $gas_used;
 
         return $this;
@@ -341,19 +341,19 @@ class OneTx extends AbstractModel {
     /**
      * Get cumulative_gas_used
      *
-     * @return float|null
+     * @return mixed|null
      */
-    public function getCumulativeGasUsed(): ?float {
+    public function getCumulativeGasUsed(): ?mixed {
         return $this->_data["cumulative_gas_used"];
     }
 
     /**
      * Set cumulative_gas_used
      * 
-     * @param float|null $cumulative_gas_used The total amount of gas used when this transaction was executed in the block.
+     * @param mixed|null $cumulative_gas_used The total amount of gas used when this transaction was executed in the block; if not returned, the transaction has not been included in a block yet.
      * @return $this
      */
-    public function setCumulativeGasUsed(?float $cumulative_gas_used) {
+    public function setCumulativeGasUsed(?mixed $cumulative_gas_used) {
         $this->_data['cumulative_gas_used'] = $cumulative_gas_used;
 
         return $this;
@@ -383,7 +383,7 @@ class OneTx extends AbstractModel {
     /**
      * Get logs
      *
-     * @return \Tatum\Model\BscTxLogsInner[]|null
+     * @return \Tatum\Model\OneTxLog[]|null
      */
     public function getLogs(): ?array {
         return $this->_data["logs"];
@@ -392,7 +392,7 @@ class OneTx extends AbstractModel {
     /**
      * Set logs
      * 
-     * @param \Tatum\Model\BscTxLogsInner[]|null $logs Log events, that happened in this transaction.
+     * @param \Tatum\Model\OneTxLog[]|null $logs Log events, that happened in this transaction.
      * @return $this
      */
     public function setLogs(?array $logs) {

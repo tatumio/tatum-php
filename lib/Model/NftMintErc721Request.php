@@ -3,7 +3,7 @@
 /**
  * NftMintErc721_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -34,7 +34,7 @@ class NftMintErc721Request extends AbstractModel {
         "to" => ["to", "string", null, "getTo", "setTo"], 
         "url" => ["url", "string", null, "getUrl", "setUrl"], 
         "name" => ["name", "string", null, "getName", "setName"], 
-        "attr" => ["attr", "\Tatum\Model\MintNftAlgorandAttr", null, "getAttr", "setAttr"], 
+        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr"], 
         "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadataKMS", null, "getMetadata", "setMetadata"], 
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
         "minter" => ["minter", "string", null, "getMinter", "setMinter"], 
@@ -346,19 +346,19 @@ class NftMintErc721Request extends AbstractModel {
     /**
      * Get attr
      *
-     * @return \Tatum\Model\MintNftAlgorandAttr|null
+     * @return \Tatum\Model\MintNftExpressAlgorandAttr|null
      */
-    public function getAttr(): ?\Tatum\Model\MintNftAlgorandAttr {
+    public function getAttr(): ?\Tatum\Model\MintNftExpressAlgorandAttr {
         return $this->_data["attr"];
     }
 
     /**
      * Set attr
      * 
-     * @param \Tatum\Model\MintNftAlgorandAttr|null $attr attr
+     * @param \Tatum\Model\MintNftExpressAlgorandAttr|null $attr attr
      * @return $this
      */
-    public function setAttr(?\Tatum\Model\MintNftAlgorandAttr $attr) {
+    public function setAttr(?\Tatum\Model\MintNftExpressAlgorandAttr $attr) {
         $this->_data['attr'] = $attr;
 
         return $this;
@@ -451,7 +451,7 @@ class NftMintErc721Request extends AbstractModel {
     /**
      * Set token_id
      * 
-     * @param string $token_id The ID of the NFT.
+     * @param string $token_id The ID of the NFT
      * @return $this
      */
     public function setTokenId(string $token_id) {

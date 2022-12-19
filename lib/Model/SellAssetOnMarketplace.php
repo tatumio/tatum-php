@@ -3,7 +3,7 @@
 /**
  * SellAssetOnMarketplace Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -423,7 +423,7 @@ class SellAssetOnMarketplace extends AbstractModel {
     /**
      * Set from_private_key
      * 
-     * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @param string $from_private_key The private key of the seller's blockchain address
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
@@ -450,7 +450,7 @@ class SellAssetOnMarketplace extends AbstractModel {
     /**
      * Set nonce
      * 
-     * @param float|null $nonce Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
      * @return $this
      */
     public function setNonce(?float $nonce) {

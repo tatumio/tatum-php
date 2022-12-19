@@ -3,7 +3,7 @@
 /**
  * CallPolygonSmartContractMethodCaller Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -32,7 +32,7 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
         "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName"], 
         "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi"], 
         "params" => ["params", "string[]", null, "getParams", "setParams"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"]
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
     ];
 
     /**
@@ -242,19 +242,19 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\DeployErc20Fee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\DeployErc20Fee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @return $this
      */
-    public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         $this->_data['fee'] = $fee;
 
         return $this;

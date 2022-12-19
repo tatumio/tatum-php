@@ -3,7 +3,7 @@
 /**
  * MintNftKMSCelo Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -243,7 +243,7 @@ class MintNftKMSCelo extends AbstractModel {
     /**
      * Set token_id
      * 
-     * @param string $token_id The ID of the NFT.
+     * @param string $token_id The ID of the NFT
      * @return $this
      */
     public function setTokenId(string $token_id) {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **string** | Additional data, that can be passed to blockchain transaction as data property. Only for XDC transactions. | [optional]
+**data** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
 **nonce** | **float** | Nonce to be set to XDC transaction. If not present, last known nonce will be used. | [optional]
 **currency** | **string** | Currency of the transfer. |
 **to** | **string** | Blockchain address to send assets |

@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**approveNftAuctionSpending()**](#approveNftAuctionSpending) | **POST** /v3/blockchain/auction/approve | Approve NFT token spending for the Auction / Marketplace
-[**bidOnAuction()**](#bidOnAuction) | **POST** /v3/blockchain/auction/bid | Bid for asset on the NFT Auction
-[**cancelAuction()**](#cancelAuction) | **POST** /v3/blockchain/auction/cancel | Cancel auction of the asset on the NFT Auction
-[**createAuction()**](#createAuction) | **POST** /v3/blockchain/auction/sell | Sell asset on the NFT Auction
-[**generateAuction()**](#generateAuction) | **POST** /v3/blockchain/auction | Create NFT Auction
-[**getAuction()**](#getAuction) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/{id} | Get auction details from the NFT Auction
-[**getAuctionFee()**](#getAuctionFee) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/fee | Get NFT Auction fee
-[**getAuctionFeeRecipient()**](#getAuctionFeeRecipient) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/recipient | Get NFT Auction fee recipient
-[**settleAuction()**](#settleAuction) | **POST** /v3/blockchain/auction/settle | Settle auction of the asset on the NFT Auction
-[**updateAuctionFee()**](#updateAuctionFee) | **PUT** /v3/blockchain/auction/fee | Update NFT Auction fee
-[**updateAuctionFeeRecipient()**](#updateAuctionFeeRecipient) | **PUT** /v3/blockchain/auction/recipient | Update NFT Auction fee recipient
+[**approveNftAuctionSpending()**](#approveNftAuctionSpending) | **POST** /v3/blockchain/auction/approve | Allow the NFT auction or marketplace to transfer an asset
+[**bidOnAuction()**](#bidOnAuction) | **POST** /v3/blockchain/auction/bid | Bid for an asset at the NFT auction
+[**cancelAuction()**](#cancelAuction) | **POST** /v3/blockchain/auction/cancel | Cancel the selling of an asset at the NFT auction
+[**createAuction()**](#createAuction) | **POST** /v3/blockchain/auction/sell | Sell an asset at the NFT auction
+[**generateAuction()**](#generateAuction) | **POST** /v3/blockchain/auction | Create an NFT auction
+[**getAuction()**](#getAuction) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/{id} | Get information about an auctioned asset at the NFT auction
+[**getAuctionFee()**](#getAuctionFee) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/fee | Get the NFT auction fee
+[**getAuctionFeeRecipient()**](#getAuctionFeeRecipient) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/recipient | Get the recipient of the NFT auction fee
+[**settleAuction()**](#settleAuction) | **POST** /v3/blockchain/auction/settle | Settle an NFT auction
+[**updateAuctionFee()**](#updateAuctionFee) | **PUT** /v3/blockchain/auction/fee | Update the NFT auction fee
+[**updateAuctionFeeRecipient()**](#updateAuctionFeeRecipient) | **PUT** /v3/blockchain/auction/recipient | Update the recipient of the NFT auction fee
 
 
 ## `approveNftAuctionSpending()`
@@ -25,9 +25,9 @@ api()->auction()->approveNftAuctionSpending(
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Approve NFT token spending for the Auction / Marketplace
+Allow the NFT auction or marketplace to transfer an asset
 
-<h4>2 credits per API call.</h4><br/> <p>Approve NFT transfer for auction to perform listing of the asset.<br/> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> </p>
+<p><b>2 credits per API call</b></p> <p>Allow the NFT auction/marketplace smart contract to transfer the asset (NFT or Multi Token) that is listed for selling.<br/>The auction/marketplace smart contract will transfer the asset to the buyer after the asset is purchased.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When allowing the NFT auction/marketplace smart contract to transfer the asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -79,9 +79,9 @@ api()->auction()->bidOnAuction(
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Bid for asset on the NFT Auction
+Bid for an asset at the NFT auction
 
-<h4>2 credits per API call.</h4><br/> <p>Bid on the auction. Buyer must either send native assets with this operation, or <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">approve ERC20 token spending</a> in advance.</p> <p>After auction is sold, it's in a pending state to be processed by the auction. Noone receives the assets unless the auction operator processes that.</p> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p>
+<p><b>2 credits per API call</b></p> <p>Bid for an asset listed on the NFT auction.</p> <p>You can buy the asset either for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</p> <ul> <li>If you want to pay for the asset with the <b>native assets</b>, send the required amount of the assets with the API call.</li> <li>If you want to pay with the <b>fungible tokens</b>, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the auction smart contract to access your tokens</a> before bidding for the asset. When you make the API call, the auction smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul> <p>After you have purchased the asset, it is in a pending state until <a href="#operation/SettleAuction" target="_blank">the auction is settled</a>. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.</p> For the complete information about how the bidding/purchase process at an auction works, see the API for <a href="#operation/GenerateAuction" target="_blank">creating an NFT auction</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When bidding for an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -133,9 +133,9 @@ api()->auction()->cancelAuction(
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Cancel auction of the asset on the NFT Auction
+Cancel the selling of an asset at the NFT auction
 
-<h4>2 credits per API call.</h4><br/> <p>Cancel auction on the auction. Only possible for the seller or the operator. There must be no buyer present for that auction. NFT asset is sent back to the seller.<br/> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p>
+<p><b>2 credits per API call</b></p> <p>Cancel the selling of an asset at the NFT auction.</p> <p>You can cancel the selling only if you are the seller of the asset or the auction operator. Once the selling is canceled, the asset is returned to the seller.</p> <p>You cannot cancel the selling if the asset has already been purchased.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When cancelling the selling of an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -187,9 +187,9 @@ api()->auction()->createAuction(
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Sell asset on the NFT Auction
+Sell an asset at the NFT auction
 
-<h4>2 credits per API call.</h4><br/> <p>Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="#operation/ApproveNftAuctionSpending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset.<br/> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> </p>
+<p><b>2 credits per API call</b></p> <p>Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="#operation/ApproveNftAuctionSpending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset. <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When selling an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -241,9 +241,9 @@ api()->auction()->generateAuction(
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Create NFT Auction
+Create an NFT auction
 
-<h4>2 credits per API call.</h4><br/> <p>Deploy new smart contract for NFT auction logic. Smart contract enables auction operator to create new auction for NFT (ERC-721/1155). Operator can set a fee in percentage, which will be paid on top of the price of the asset. can be offered for native asset - ETH, BSC, etc. - or any ERC20 token - this is configurable during auction creation. Before auction is created, seller must approve transfer of the NFT to the auction contract. Buyer will bid for the asset from the auction using native asset - send assets along the gid() smart contract call, or via ERC20 token. Buyer of the auction must perform approval for the smart contract to access ERC20 token, before the actual bid() method is called. Once there is higher bid then the actual one, the previous bidder's funds will be returned to him and new bidder will be the current winning one. When auction ends, anyone can settle the auction - NFT will be sent to the bidder, assets to the seller and fee to the operator.<br/> This operation deploys a smart contract on the blockchain.<br/> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> </p>
+<p><b>2 credits per API call</b></p> <p>Deploy new smart contract for NFT auction logic. Smart contract enables auction operator to create new auction for NFT (ERC-721/1155). Operator can set a fee in percentage, which will be paid on top of the price of the asset. can be offered for native asset - ETH, BSC, etc. - or any ERC20 token - this is configurable during auction creation. Before auction is created, seller must approve transfer of the NFT to the auction contract. Buyer will bid for the asset from the auction using native asset - send assets along the gid() smart contract call, or via ERC20 token. Buyer of the auction must perform approval for the smart contract to access ERC20 token, before the actual bid() method is called. Once there is higher bid then the actual one, the previous bidder's funds will be returned to him and new bidder will be the current winning one. When auction ends, anyone can settle the auction - NFT will be sent to the bidder, assets to the seller and fee to the operator.<br/> This operation deploys a smart contract on the blockchain. <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When creating an NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -297,9 +297,9 @@ api()->auction()->getAuction(
 ): \Tatum\Model\GetAuction200Response
 ```
 
-Get auction details from the NFT Auction
+Get information about an auctioned asset at the NFT auction
 
-<h4>1 credit per API call.</h4><br/><p>Get detail of the specific auction.</p>
+<p><b>1 credit per API call</b></p> <p>Get information about a specific auctioned asset at the NFT auction.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
 
 ### Example
 
@@ -361,9 +361,9 @@ api()->auction()->getAuctionFee(
 ): float
 ```
 
-Get NFT Auction fee
+Get the NFT auction fee
 
-<h4>1 credit per API call.</h4><br/><p>Get fee of the auction.</p>
+<p><b>1 credit per API call</b></p> <p>Get the NFT auction fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
 
 ### Example
 
@@ -421,9 +421,9 @@ api()->auction()->getAuctionFeeRecipient(
 ): \Tatum\Model\GetAuctionFeeRecipient200Response
 ```
 
-Get NFT Auction fee recipient
+Get the recipient of the NFT auction fee
 
-<h4>1 credit per API call.</h4><br/><p>Get fee recipient of the auction.</p>
+<p><b>1 credit per API call</b></p> <p>Get the recipient of the NFT auction fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
 
 ### Example
 
@@ -476,13 +476,13 @@ Name | Type | Description  | Notes
 
 ```php
 api()->auction()->settleAuction(
-    ?\Tatum\Model\CancelAuctionRequest $cancel_auction_request
+    ?\Tatum\Model\SettleAuctionRequest $settle_auction_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Settle auction of the asset on the NFT Auction
+Settle an NFT auction
 
-<h4>2 credits per API call.</h4><br/> <p>Settle auction. There must be buyer present for that auction. NFT will be sent to the bidder, assets to the seller and fee to the operator.<br/> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p>
+<p><b>2 credits per API call</b></p> <p>Settle an auction once it has ended and there is a buyer of the asset at this auction. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.<br/>Both seller and buyer can settle the auction.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When settling the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -494,7 +494,7 @@ require_once(__DIR__ . '/autoload.php');
 // @see https://apidoc.tatum.io/#section/Authentication
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
-$cancel_auction_request = new \Tatum\Model\CancelAuctionRequest();
+$settle_auction_request = new \Tatum\Model\SettleAuctionRequest();
 
 try {
     /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
@@ -502,7 +502,7 @@ try {
         ->mainnet()
         ->api()
         ->auction()
-        ->settleAuction($cancel_auction_request);
+        ->settleAuction($settle_auction_request);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
@@ -518,7 +518,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction_request** | [**\Tatum\Model\CancelAuctionRequest**](../Model/CancelAuctionRequest.md)|  |
+ **$settle_auction_request** | [**\Tatum\Model\SettleAuctionRequest**](../Model/SettleAuctionRequest.md)|  |
 
 ### Return type
 
@@ -530,13 +530,13 @@ Name | Type | Description  | Notes
 
 ```php
 api()->auction()->updateAuctionFee(
-    ?\Tatum\Model\UpdateFeeRequest $update_fee_request
+    ?\Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Update NFT Auction fee
+Update the NFT auction fee
 
-<h4>2 credits per API call.</h4><br/> <p>Update fee of the auction.<br/> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> </p>
+<p><b>2 credits per API call</b></p> <p>Update the NFT auction fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When updating the NFT auction fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -548,7 +548,7 @@ require_once(__DIR__ . '/autoload.php');
 // @see https://apidoc.tatum.io/#section/Authentication
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
-$update_fee_request = new \Tatum\Model\UpdateFeeRequest();
+$update_auction_fee_request = new \Tatum\Model\UpdateAuctionFeeRequest();
 
 try {
     /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
@@ -556,7 +556,7 @@ try {
         ->mainnet()
         ->api()
         ->auction()
-        ->updateAuctionFee($update_fee_request);
+        ->updateAuctionFee($update_auction_fee_request);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
@@ -572,7 +572,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_request** | [**\Tatum\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md)|  |
+ **$update_auction_fee_request** | [**\Tatum\Model\UpdateAuctionFeeRequest**](../Model/UpdateAuctionFeeRequest.md)|  |
 
 ### Return type
 
@@ -584,13 +584,13 @@ Name | Type | Description  | Notes
 
 ```php
 api()->auction()->updateAuctionFeeRecipient(
-    ?\Tatum\Model\UpdateFeeRecipientRequest $update_fee_recipient_request
+    ?\Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
-Update NFT Auction fee recipient
+Update the recipient of the NFT auction fee
 
-<h4>2 credits per API call.</h4><br/> <p>Update fee recipient of the auction.<br/> Supported blockchains: <ul> <li>Binance Smart Chain</li> <li>Harmony.ONE</li> <li>Ethereum</li> <li>Celo</li> <li>Polygon (Matic)</li> <li>Klaytn</li> </ul> </p>
+<p><b>2 credits per API call</b></p> <p>Update the recipient of the NFT auction fee.<br/> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When updating the recipient of the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -602,7 +602,7 @@ require_once(__DIR__ . '/autoload.php');
 // @see https://apidoc.tatum.io/#section/Authentication
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
-$update_fee_recipient_request = new \Tatum\Model\UpdateFeeRecipientRequest();
+$update_auction_fee_recipient_request = new \Tatum\Model\UpdateAuctionFeeRecipientRequest();
 
 try {
     /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
@@ -610,7 +610,7 @@ try {
         ->mainnet()
         ->api()
         ->auction()
-        ->updateAuctionFeeRecipient($update_fee_recipient_request);
+        ->updateAuctionFeeRecipient($update_auction_fee_recipient_request);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
@@ -626,7 +626,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_request** | [**\Tatum\Model\UpdateFeeRecipientRequest**](../Model/UpdateFeeRecipientRequest.md)|  |
+ **$update_auction_fee_recipient_request** | [**\Tatum\Model\UpdateAuctionFeeRecipientRequest**](../Model/UpdateAuctionFeeRecipientRequest.md)|  |
 
 ### Return type
 

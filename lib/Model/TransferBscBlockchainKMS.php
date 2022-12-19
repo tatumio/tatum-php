@@ -3,7 +3,7 @@
 /**
  * TransferBscBlockchainKMS Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -39,7 +39,7 @@ class TransferBscBlockchainKMS extends AbstractModel {
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
         "to" => ["to", "string", null, "getTo", "setTo"], 
         "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
         "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
         "index" => ["index", "float", null, "getIndex", "setIndex"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
@@ -222,19 +222,19 @@ class TransferBscBlockchainKMS extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\DeployErc20Fee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\DeployErc20Fee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @return $this
      */
-    public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         $this->_data['fee'] = $fee;
 
         return $this;

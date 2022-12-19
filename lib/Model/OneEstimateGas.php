@@ -3,7 +3,7 @@
 /**
  * OneEstimateGas Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -75,9 +75,6 @@ class OneEstimateGas extends AbstractModel {
         }
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 50000)) {
             $ip[] = "'data' length must be <= 50000";
-        }
-        if (!is_null($this->_data['data']) && !preg_match("/^(0x|0h)?[0-9A-F]+$/", $this->_data['data'])) {
-            $ip[] = "'data' must match /^(0x|0h)?[0-9A-F]+$/";
         }
         
         return $ip;
@@ -173,15 +170,12 @@ class OneEstimateGas extends AbstractModel {
     /**
      * Set data
      * 
-     * @param string|null $data Additional data, that can be passed to blockchain transaction as data property.
+     * @param string|null $data Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
      * @return $this
      */
     public function setData(?string $data) {
         if (!is_null($data) && (mb_strlen($data) > 50000)) {
             throw new IAE('OneEstimateGas.setData: $data length must be <= 50000');
-        }
-        if (!is_null($data) && (!preg_match("/^(0x|0h)?[0-9A-F]+$/", $data))) {
-            throw new IAE('OneEstimateGas.setData: $data must match /^(0x|0h)?[0-9A-F]+$/, ' . var_export($data, true) . ' given');
         }
         $this->_data['data'] = $data;
 

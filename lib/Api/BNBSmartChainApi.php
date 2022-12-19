@@ -3,7 +3,7 @@
 /**
  * Implementation of BNBSmartChain API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -221,7 +221,7 @@ class BNBSmartChainApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\BscGenerateAddress200Response
+     * @return \Tatum\Model\GeneratedAddressBsc
      */
     public function bscGenerateAddress(string $xpub, float $index) { 
         // Resource path
@@ -254,7 +254,7 @@ class BNBSmartChainApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\BscGenerateAddress200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\GeneratedAddressBsc $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -263,13 +263,13 @@ class BNBSmartChainApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\BscGenerateAddress200Response"
+                "\Tatum\Model\GeneratedAddressBsc"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BscGenerateAddress200Response",
+                    "\Tatum\Model\GeneratedAddressBsc",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -418,7 +418,7 @@ class BNBSmartChainApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\BscGetBalance200Response
+     * @return \Tatum\Model\BscBalance
      */
     public function bscGetBalance(string $address) { 
         // Resource path
@@ -450,7 +450,7 @@ class BNBSmartChainApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\BscGetBalance200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\BscBalance $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -459,13 +459,13 @@ class BNBSmartChainApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\BscGetBalance200Response"
+                "\Tatum\Model\BscBalance"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BscGetBalance200Response",
+                    "\Tatum\Model\BscBalance",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

@@ -3,7 +3,7 @@
 /**
  * CancelAuction_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -32,11 +32,11 @@ class CancelAuctionRequest extends AbstractModel {
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain"], 
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address"], 
         "id" => ["id", "string", null, "getId", "setId"], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
         "index" => ["index", "float", null, "getIndex", "setIndex"], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
@@ -48,7 +48,7 @@ class CancelAuctionRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "erc20_address"=>null, "id"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null] as $k => $v) {
+        foreach(["chain"=>null, "contract_address"=>null, "id"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "erc20_address"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -76,12 +76,6 @@ class CancelAuctionRequest extends AbstractModel {
         if ((mb_strlen($this->_data['contract_address']) < 42)) {
             $ip[] = "'contract_address' length must be >= 42";
         }
-        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) > 42)) {
-            $ip[] = "'erc20_address' length must be <= 42";
-        }
-        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) < 42)) {
-            $ip[] = "'erc20_address' length must be >= 42";
-        }
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -99,6 +93,12 @@ class CancelAuctionRequest extends AbstractModel {
         }
         if ((mb_strlen($this->_data['from_private_key']) < 66)) {
             $ip[] = "'from_private_key' length must be >= 66";
+        }
+        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) > 42)) {
+            $ip[] = "'erc20_address' length must be <= 42";
+        }
+        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) < 42)) {
+            $ip[] = "'erc20_address' length must be >= 42";
         }
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
@@ -152,7 +152,7 @@ class CancelAuctionRequest extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to work with.
+     * @param string $chain The blockchain to work with
      * @return $this
      */
     public function setChain(string $chain) {
@@ -177,7 +177,7 @@ class CancelAuctionRequest extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address Address of the marketplace smart contract.
+     * @param string $contract_address The blockchain address of the auction smart contract
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
@@ -188,6 +188,102 @@ class CancelAuctionRequest extends AbstractModel {
             throw new IAE('CancelAuctionRequest.setContractAddress: $contract_address length must be >= 42');
         }
         $this->_data['contract_address'] = $contract_address;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return string
+     */
+    public function getId(): string {
+        return $this->_data["id"];
+    }
+
+    /**
+     * Set id
+     * 
+     * @param string $id The ID of the auction
+     * @return $this
+     */
+    public function setId(string $id) {
+        if ((mb_strlen($id) > 200)) {
+            throw new IAE('CancelAuctionRequest.setId: $id length must be <= 200');
+        }
+        if ((mb_strlen($id) < 1)) {
+            throw new IAE('CancelAuctionRequest.setId: $id length must be >= 1');
+        }
+        $this->_data['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get from_private_key
+     *
+     * @return string
+     */
+    public function getFromPrivateKey(): string {
+        return $this->_data["from_private_key"];
+    }
+
+    /**
+     * Set from_private_key
+     * 
+     * @param string $from_private_key The private key of the blockchain address from which the fee will be deducted
+     * @return $this
+     */
+    public function setFromPrivateKey(string $from_private_key) {
+        if ((mb_strlen($from_private_key) > 66)) {
+            throw new IAE('CancelAuctionRequest.setFromPrivateKey: $from_private_key length must be <= 66');
+        }
+        if ((mb_strlen($from_private_key) < 66)) {
+            throw new IAE('CancelAuctionRequest.setFromPrivateKey: $from_private_key length must be >= 66');
+        }
+        $this->_data['from_private_key'] = $from_private_key;
+
+        return $this;
+    }
+
+    /**
+     * Get nonce
+     *
+     * @return float|null
+     */
+    public function getNonce(): ?float {
+        return $this->_data["nonce"];
+    }
+
+    /**
+     * Set nonce
+     * 
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @return $this
+     */
+    public function setNonce(?float $nonce) {
+        $this->_data['nonce'] = $nonce;
+
+        return $this;
+    }
+
+    /**
+     * Get fee
+     *
+     * @return \Tatum\Model\CustomFee|null
+     */
+    public function getFee(): ?\Tatum\Model\CustomFee {
+        return $this->_data["fee"];
+    }
+
+    /**
+     * Set fee
+     * 
+     * @param \Tatum\Model\CustomFee|null $fee fee
+     * @return $this
+     */
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
+        $this->_data['fee'] = $fee;
 
         return $this;
     }
@@ -220,102 +316,6 @@ class CancelAuctionRequest extends AbstractModel {
     }
 
     /**
-     * Get id
-     *
-     * @return string
-     */
-    public function getId(): string {
-        return $this->_data["id"];
-    }
-
-    /**
-     * Set id
-     * 
-     * @param string $id ID of the auction.
-     * @return $this
-     */
-    public function setId(string $id) {
-        if ((mb_strlen($id) > 200)) {
-            throw new IAE('CancelAuctionRequest.setId: $id length must be <= 200');
-        }
-        if ((mb_strlen($id) < 1)) {
-            throw new IAE('CancelAuctionRequest.setId: $id length must be >= 1');
-        }
-        $this->_data['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get from_private_key
-     *
-     * @return string
-     */
-    public function getFromPrivateKey(): string {
-        return $this->_data["from_private_key"];
-    }
-
-    /**
-     * Set from_private_key
-     * 
-     * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
-     * @return $this
-     */
-    public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('CancelAuctionRequest.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('CancelAuctionRequest.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
-    }
-
-    /**
-     * Get nonce
-     *
-     * @return float|null
-     */
-    public function getNonce(): ?float {
-        return $this->_data["nonce"];
-    }
-
-    /**
-     * Set nonce
-     * 
-     * @param float|null $nonce Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
-     * @return $this
-     */
-    public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
-    }
-
-    /**
-     * Get fee
-     *
-     * @return \Tatum\Model\DeployErc20Fee|null
-     */
-    public function getFee(): ?\Tatum\Model\DeployErc20Fee {
-        return $this->_data["fee"];
-    }
-
-    /**
-     * Set fee
-     * 
-     * @param \Tatum\Model\DeployErc20Fee|null $fee fee
-     * @return $this
-     */
-    public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
-    }
-
-    /**
      * Get signature_id
      *
      * @return string
@@ -327,7 +327,7 @@ class CancelAuctionRequest extends AbstractModel {
     /**
      * Set signature_id
      * 
-     * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @param string $signature_id The KMS identifier of the private key of the blockchain address from which the fee will be deducted
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
@@ -348,7 +348,7 @@ class CancelAuctionRequest extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
      * @return $this
      */
     public function setIndex(?float $index) {
@@ -372,7 +372,7 @@ class CancelAuctionRequest extends AbstractModel {
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency Currency to pay for transaction gas
+     * @param string $fee_currency The currency in which the transaction fee will be paid
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {

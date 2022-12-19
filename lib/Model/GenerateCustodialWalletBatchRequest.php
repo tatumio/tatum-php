@@ -3,7 +3,7 @@
 /**
  * GenerateCustodialWalletBatch_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -299,7 +299,7 @@ class GenerateCustodialWalletBatchRequest extends AbstractModel {
     /**
      * Set nonce
      * 
-     * @param float|null $nonce Nonce to be set to the transaction. If not present, last known nonce will be used.
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
      * @return $this
      */
     public function setNonce(?float $nonce) {
@@ -368,7 +368,7 @@ class GenerateCustodialWalletBatchRequest extends AbstractModel {
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency Currency to pay for transaction gas
+     * @param string $fee_currency The currency in which the transaction fee will be paid
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {

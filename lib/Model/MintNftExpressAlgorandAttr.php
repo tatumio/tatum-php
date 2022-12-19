@@ -3,7 +3,7 @@
 /**
  * MintNftExpressAlgorand_attr Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -27,12 +27,12 @@ class MintNftExpressAlgorandAttr extends AbstractModel {
     protected static $_name = "MintNftExpressAlgorand_attr";
     protected static $_definition = [
         "asset_unit" => ["assetUnit", "string", null, "getAssetUnit", "setAssetUnit"], 
-        "total" => ["total", "float", null, "getTotal", "setTotal"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
         "clawback" => ["clawback", "string", null, "getClawback", "setClawback"], 
         "manager" => ["manager", "string", null, "getManager", "setManager"], 
         "reserve" => ["reserve", "string", null, "getReserve", "setReserve"], 
-        "freeze" => ["freeze", "string", null, "getFreeze", "setFreeze"]
+        "freeze" => ["freeze", "string", null, "getFreeze", "setFreeze"], 
+        "total" => ["total", "float", null, "getTotal", "setTotal"], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"]
     ];
 
     /**
@@ -41,7 +41,7 @@ class MintNftExpressAlgorandAttr extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["asset_unit"=>null, "total"=>1, "decimals"=>0, "clawback"=>null, "manager"=>null, "reserve"=>null, "freeze"=>null] as $k => $v) {
+        foreach(["asset_unit"=>null, "clawback"=>null, "manager"=>null, "reserve"=>null, "freeze"=>null, "total"=>1, "decimals"=>0] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -57,15 +57,6 @@ class MintNftExpressAlgorandAttr extends AbstractModel {
         }
         if (!is_null($this->_data['asset_unit']) && (mb_strlen($this->_data['asset_unit']) < 1)) {
             $ip[] = "'asset_unit' length must be >= 1";
-        }
-        if (!is_null($this->_data['total']) && ($this->_data['total'] < 10)) {
-            $ip[] = "'total' must be >= 10";
-        }
-        if (!is_null($this->_data['decimals']) && ($this->_data['decimals'] > 15)) {
-            $ip[] = "'decimals' must be <= 15";
-        }
-        if (!is_null($this->_data['decimals']) && ($this->_data['decimals'] < 1)) {
-            $ip[] = "'decimals' must be >= 1";
         }
         if (!is_null($this->_data['clawback']) && (mb_strlen($this->_data['clawback']) > 58)) {
             $ip[] = "'clawback' length must be <= 58";
@@ -90,6 +81,15 @@ class MintNftExpressAlgorandAttr extends AbstractModel {
         }
         if (!is_null($this->_data['freeze']) && (mb_strlen($this->_data['freeze']) < 58)) {
             $ip[] = "'freeze' length must be >= 58";
+        }
+        if (!is_null($this->_data['total']) && ($this->_data['total'] < 10)) {
+            $ip[] = "'total' must be >= 10";
+        }
+        if (!is_null($this->_data['decimals']) && ($this->_data['decimals'] > 15)) {
+            $ip[] = "'decimals' must be <= 15";
+        }
+        if (!is_null($this->_data['decimals']) && ($this->_data['decimals'] < 1)) {
+            $ip[] = "'decimals' must be >= 1";
         }
         
         return $ip;
@@ -118,57 +118,6 @@ class MintNftExpressAlgorandAttr extends AbstractModel {
             throw new IAE('MintNftExpressAlgorandAttr.setAssetUnit: $asset_unit length must be >= 1');
         }
         $this->_data['asset_unit'] = $asset_unit;
-
-        return $this;
-    }
-
-    /**
-     * Get total
-     *
-     * @return float|null
-     */
-    public function getTotal(): ?float {
-        return $this->_data["total"];
-    }
-
-    /**
-     * Set total
-     * 
-     * @param float|null $total The total amount of the NFTs to mint. Defaults to 1 - which means 1 NFT will be minted.<br/>Value above 1 means, you are going to mint <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">Fractional NFTs.</a>In this case value must be a power of 10 larger than 1 e.g. 10, 100, 1000...
-     * @return $this
-     */
-    public function setTotal(?float $total) {
-        if (!is_null($total) && ($total < 10)) {
-            throw new IAE('MintNftExpressAlgorandAttr.setTotal: $total must be >=10');
-        }
-        $this->_data['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Get decimals
-     *
-     * @return float|null
-     */
-    public function getDecimals(): ?float {
-        return $this->_data["decimals"];
-    }
-
-    /**
-     * Set decimals
-     * 
-     * @param float|null $decimals The decimal places of the NFT to mint. Defaults to 0 - which means 1 NFT will be minted.<br/>Value above 0 means, you are going to mint <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">Fractional NFTs.</a>In this case value must be equal to the logarithm in base 10 of total number of units (e.g. for total = 10, decimal will be 1)
-     * @return $this
-     */
-    public function setDecimals(?float $decimals) {
-        if (!is_null($decimals) && ($decimals > 15)) {
-            throw new IAE('MintNftExpressAlgorandAttr.setDecimals: $decimals must be <=15');
-        }
-        if (!is_null($decimals) && ($decimals < 1)) {
-            throw new IAE('MintNftExpressAlgorandAttr.setDecimals: $decimals must be >=1');
-        }
-        $this->_data['decimals'] = $decimals;
 
         return $this;
     }
@@ -277,6 +226,57 @@ class MintNftExpressAlgorandAttr extends AbstractModel {
             throw new IAE('MintNftExpressAlgorandAttr.setFreeze: $freeze length must be >= 58');
         }
         $this->_data['freeze'] = $freeze;
+
+        return $this;
+    }
+
+    /**
+     * Get total
+     *
+     * @return float|null
+     */
+    public function getTotal(): ?float {
+        return $this->_data["total"];
+    }
+
+    /**
+     * Set total
+     * 
+     * @param float|null $total (For minting the NFT as a <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional NFT</a>) The number of fractions that the minted NFT should be divided into<br/>The number must be a power of 10 and greater that 1, for example, 10, 100, 1000...<br/>If not set, the parameter defaults to 1, which means that one regular (not fractional) NFT will be minted.
+     * @return $this
+     */
+    public function setTotal(?float $total) {
+        if (!is_null($total) && ($total < 10)) {
+            throw new IAE('MintNftExpressAlgorandAttr.setTotal: $total must be >=10');
+        }
+        $this->_data['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Get decimals
+     *
+     * @return float|null
+     */
+    public function getDecimals(): ?float {
+        return $this->_data["decimals"];
+    }
+
+    /**
+     * Set decimals
+     * 
+     * @param float|null $decimals (For minting the NFT as a <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional NFT</a>) The number of decimal places in a fraction of the minted NFT<br/>The number must be greater that 0 and equal to the logarithm in base 10 of the number of the fractions (see the <code>total</code> parameter); for example, if <code>total</code> is set to 10, <code>decimals</code> must be set to 1.<br/>If not set, the parameter defaults to 0, which means that one regular (not fractional) NFT will be minted.
+     * @return $this
+     */
+    public function setDecimals(?float $decimals) {
+        if (!is_null($decimals) && ($decimals > 15)) {
+            throw new IAE('MintNftExpressAlgorandAttr.setDecimals: $decimals must be <=15');
+        }
+        if (!is_null($decimals) && ($decimals < 1)) {
+            throw new IAE('MintNftExpressAlgorandAttr.setDecimals: $decimals must be >=1');
+        }
+        $this->_data['decimals'] = $decimals;
 
         return $this;
     }

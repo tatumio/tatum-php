@@ -3,7 +3,7 @@
 /**
  * EstimateFeeBatchMintNft Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -88,10 +88,13 @@ class EstimateFeeBatchMintNft extends AbstractModel {
         if (is_null($this->_data['recipients'])) {
             $ip[] = "'recipients' can't be null";
         }
-        if (!is_null($this->_data['contract_address']) && (mb_strlen($this->_data['contract_address']) > 42)) {
+        if (is_null($this->_data['contract_address'])) {
+            $ip[] = "'contract_address' can't be null";
+        }
+        if ((mb_strlen($this->_data['contract_address']) > 42)) {
             $ip[] = "'contract_address' length must be <= 42";
         }
-        if (!is_null($this->_data['contract_address']) && (mb_strlen($this->_data['contract_address']) < 43)) {
+        if ((mb_strlen($this->_data['contract_address']) < 43)) {
             $ip[] = "'contract_address' length must be >= 43";
         }
         if (is_null($this->_data['token_ids'])) {
@@ -231,23 +234,23 @@ class EstimateFeeBatchMintNft extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string|null
+     * @return string
      */
-    public function getContractAddress(): ?string {
+    public function getContractAddress(): string {
         return $this->_data["contract_address"];
     }
 
     /**
      * Set contract_address
      * 
-     * @param string|null $contract_address Contract address of NFT token
+     * @param string $contract_address Contract address of NFT token
      * @return $this
      */
-    public function setContractAddress(?string $contract_address) {
-        if (!is_null($contract_address) && (mb_strlen($contract_address) > 42)) {
+    public function setContractAddress(string $contract_address) {
+        if ((mb_strlen($contract_address) > 42)) {
             throw new IAE('EstimateFeeBatchMintNft.setContractAddress: $contract_address length must be <= 42');
         }
-        if (!is_null($contract_address) && (mb_strlen($contract_address) < 43)) {
+        if ((mb_strlen($contract_address) < 43)) {
             throw new IAE('EstimateFeeBatchMintNft.setContractAddress: $contract_address length must be >= 43');
         }
         $this->_data['contract_address'] = $contract_address;

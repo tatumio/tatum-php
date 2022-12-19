@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ```php
 api()->solana()->solanaGenerateWallet(
-): \Tatum\Model\SolanaGenerateWallet200Response
+): \Tatum\Model\SolanaWallet
 ```
 
 Generate Solana wallet
@@ -144,7 +144,7 @@ require_once(__DIR__ . '/autoload.php');
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
 try {
-    /** @var \Tatum\Model\SolanaGenerateWallet200Response $response */
+    /** @var \Tatum\Model\SolanaWallet $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -167,7 +167,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\SolanaGenerateWallet200Response**](../Model/SolanaGenerateWallet200Response.md)
+[**\Tatum\Model\SolanaWallet**](../Model/SolanaWallet.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
@@ -176,7 +176,7 @@ This endpoint does not need any parameter.
 ```php
 api()->solana()->solanaGetBalance(
     ?string $address
-): \Tatum\Model\SolanaGetBalance200Response
+): \Tatum\Model\SolBalance
 ```
 
 Get Solana Account balance
@@ -197,7 +197,7 @@ $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 $address = 'FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ';
 
 try {
-    /** @var \Tatum\Model\SolanaGetBalance200Response $response */
+    /** @var \Tatum\Model\SolBalance $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\SolanaGetBalance200Response**](../Model/SolanaGetBalance200Response.md)
+[**\Tatum\Model\SolBalance**](../Model/SolBalance.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 

@@ -3,7 +3,7 @@
 /**
  * Implementation of BlockchainOperations API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -151,7 +151,7 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Send Algos from a virtual account to the blockchain
+     * Send ALGO from a virtual account to the blockchain
      *
      * @param \Tatum\Model\AlgoTransferRequest $algo_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -964,13 +964,13 @@ class BlockchainOperationsApi extends AbstractApi {
     /**
      * Register a new TRON TRC-10 or TRC-20 token in the virtual account
      *
-     * @param \Tatum\Model\Trc $trc 
+     * @param \Tatum\Model\CreateTrcRequest $create_trc_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\Erc20Response
+     * @return \Tatum\Model\Trc20Response
      */
-    public function createTrc(\Tatum\Model\Trc $trc) { 
+    public function createTrc(\Tatum\Model\CreateTrcRequest $create_trc_request) { 
         // Resource path
         $resourcePath = "/v3/offchain/tron/trc";
 
@@ -999,22 +999,22 @@ class BlockchainOperationsApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\Erc20Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\Trc20Response $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "POST",
                     $this->_caller->config()->getHost() . $resourcePath,
                     $queryParams,
                     array_merge([], $headers),
                     [],
-                    $trc
+                    $create_trc_request
                 ),
-                "\Tatum\Model\Erc20Response"
+                "\Tatum\Model\Trc20Response"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Response",
+                    "\Tatum\Model\Trc20Response",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

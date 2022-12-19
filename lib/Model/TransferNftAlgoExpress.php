@@ -3,7 +3,7 @@
 /**
  * TransferNftAlgoExpress Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -127,7 +127,7 @@ class TransferNftAlgoExpress extends AbstractModel {
     /**
      * Set to
      * 
-     * @param string $to Blockchain address to send NFT token to
+     * @param string $to The blockchain address to transfer the NFT to
      * @return $this
      */
     public function setTo(string $to) {
@@ -154,7 +154,7 @@ class TransferNftAlgoExpress extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address AssetID of token.
+     * @param string $contract_address The asset ID (the ID of the NFT)
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
@@ -178,7 +178,7 @@ class TransferNftAlgoExpress extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param float|null $amount The total amount of NFT fractions to transfer. Defaults to 1 - which means 1 fraction of NFT will be transferred. This is only valid for <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">Fractional NFTs.</a>
+     * @param float|null $amount (For <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional NFTs</a> only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred
      * @return $this
      */
     public function setAmount(?float $amount) {

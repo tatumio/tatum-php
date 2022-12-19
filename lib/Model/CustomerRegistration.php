@@ -3,7 +3,7 @@
 /**
  * CustomerRegistration Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -21,7 +21,7 @@ use InvalidArgumentException as IAE;
 /**
  * CustomerRegistration Model
  * 
- * @description If customer is filled then is created or updated.
+ * @description If a customer with the specified external ID does not exist, a new customer is created. If a customer with the specified external ID exists, it is updated with the provided information.
  */
 class CustomerRegistration extends AbstractModel {
 
@@ -210,7 +210,7 @@ class CustomerRegistration extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["accounting_currency"=>null, "customer_country"=>null, "external_id"=>null, "provider_country"=>null] as $k => $v) {
+        foreach(["accounting_currency"=>'EUR', "customer_country"=>null, "external_id"=>null, "provider_country"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -448,7 +448,7 @@ class CustomerRegistration extends AbstractModel {
     /**
      * Set accounting_currency
      * 
-     * @param string|null $accounting_currency All transaction will be accounted in this currency for all accounts. Currency can be overridden per account level. If not set, EUR is used. ISO-4217
+     * @param string|null $accounting_currency The ISO 4217 code of the currency in which all transactions for all virtual accounts of the customer will be billed; to overwrite the currency for this specific virtual account, set the <code>accountingCurrency</code> parameter at the account level.
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
@@ -479,7 +479,7 @@ class CustomerRegistration extends AbstractModel {
     /**
      * Set customer_country
      * 
-     * @param string|null $customer_country Country customer has to be compliant with. ISO-3166-1
+     * @param string|null $customer_country The ISO 3166-1 code of the country that the customer has to be compliant with
      * @return $this
      */
     public function setCustomerCountry(?string $customer_country) {
@@ -506,7 +506,7 @@ class CustomerRegistration extends AbstractModel {
     /**
      * Set external_id
      * 
-     * @param string $external_id Customer external ID. Use only anonymized identification you have in your system. If customer with externalId does not exists new customer is created. If customer with specified externalId already exists it is updated.
+     * @param string $external_id The external ID of the customer; use only anonymized identification that you have in your system<br/>If a customer with the specified external ID does not exist, a new customer is created. If a customer with the specified external ID exists, it is updated with the provided information.
      * @return $this
      */
     public function setExternalId(string $external_id) {
@@ -533,7 +533,7 @@ class CustomerRegistration extends AbstractModel {
     /**
      * Set provider_country
      * 
-     * @param string|null $provider_country Country service provider has to be compliant with. ISO-3166-1
+     * @param string|null $provider_country The ISO 3166-1 code of the country that the service provider has to be compliant with
      * @return $this
      */
     public function setProviderCountry(?string $provider_country) {

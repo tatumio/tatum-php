@@ -3,7 +3,7 @@
 /**
  * CreateTrade Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -26,8 +26,6 @@ class CreateTrade extends AbstractModel {
     public const DISCRIMINATOR = null;
     public const TYPE_BUY = 'BUY';
     public const TYPE_SELL = 'SELL';
-    public const TYPE_FUTURE_BUY = 'FUTURE_BUY';
-    public const TYPE_FUTURE_SELL = 'FUTURE_SELL';
     protected static $_name = "CreateTrade";
     protected static $_definition = [
         "type" => ["type", "string", null, "getType", "setType"], 
@@ -37,8 +35,7 @@ class CreateTrade extends AbstractModel {
         "currency1_account_id" => ["currency1AccountId", "string", null, "getCurrency1AccountId", "setCurrency1AccountId"], 
         "currency2_account_id" => ["currency2AccountId", "string", null, "getCurrency2AccountId", "setCurrency2AccountId"], 
         "fee_account_id" => ["feeAccountId", "string", null, "getFeeAccountId", "setFeeAccountId"], 
-        "fee" => ["fee", "float", null, "getFee", "setFee"], 
-        "attr" => ["attr", "\Tatum\Model\CreateTradeAttr", null, "getAttr", "setAttr"]
+        "fee" => ["fee", "float", null, "getFee", "setFee"]
     ];
 
     /**
@@ -47,7 +44,7 @@ class CreateTrade extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "price"=>null, "amount"=>null, "pair"=>null, "currency1_account_id"=>null, "currency2_account_id"=>null, "fee_account_id"=>null, "fee"=>null, "attr"=>null] as $k => $v) {
+        foreach(["type"=>null, "price"=>null, "amount"=>null, "pair"=>null, "currency1_account_id"=>null, "currency2_account_id"=>null, "fee_account_id"=>null, "fee"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -126,9 +123,6 @@ class CreateTrade extends AbstractModel {
         if (!is_null($this->_data['fee']) && ($this->_data['fee'] < 0)) {
             $ip[] = "'fee' must be >= 0";
         }
-        if (is_null($this->_data['attr'])) {
-            $ip[] = "'attr' can't be null";
-        }
         
         return $ip;
     }
@@ -141,8 +135,6 @@ class CreateTrade extends AbstractModel {
         return [
             self::TYPE_BUY,
             self::TYPE_SELL,
-            self::TYPE_FUTURE_BUY,
-            self::TYPE_FUTURE_SELL,
         ];
     }
 
@@ -158,7 +150,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Set type
      * 
-     * @param string $type Type of the trade, BUY, SELL, FUTURE_BUY, FUTURE_SELL
+     * @param string $type Type of the regular trade, BUY, SELL
      * @return $this
      */
     public function setType(string $type) {
@@ -359,27 +351,6 @@ class CreateTrade extends AbstractModel {
             throw new IAE('CreateTrade.setFee: $fee must be >=0');
         }
         $this->_data['fee'] = $fee;
-
-        return $this;
-    }
-
-    /**
-     * Get attr
-     *
-     * @return \Tatum\Model\CreateTradeAttr
-     */
-    public function getAttr(): \Tatum\Model\CreateTradeAttr {
-        return $this->_data["attr"];
-    }
-
-    /**
-     * Set attr
-     * 
-     * @param \Tatum\Model\CreateTradeAttr $attr attr
-     * @return $this
-     */
-    public function setAttr(\Tatum\Model\CreateTradeAttr $attr) {
-        $this->_data['attr'] = $attr;
 
         return $this;
     }

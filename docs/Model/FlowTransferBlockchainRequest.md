@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | **string** | Blockchain account to send from |
 **currency** | **string** | Type of asset to send |
-**to** | **string** | Blockchain address to send assets | [optional]
+**to** | **string** | Blockchain address to send assets |
 **amount** | **string** | Amount to be sent, in Flow. |
 **mnemonic** | **string** | Mnemonic to generate private key. |
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. |

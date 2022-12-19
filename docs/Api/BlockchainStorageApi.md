@@ -4,8 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLog()**](#getLog) | **GET** /v3/record | Get log record
-[**storeLog()**](#storeLog) | **POST** /v3/record | Store log record
+[**getLog()**](#getLog) | **GET** /v3/record | Get a log record
+[**storeLog()**](#storeLog) | **POST** /v3/record | Store a log record
 
 
 ## `getLog()`
@@ -17,9 +17,9 @@ api()->blockchainStorage()->getLog(
 ): \Tatum\Model\GetLog200Response
 ```
 
-Get log record
+Get a log record
 
-<h4>1 credit per API call.</h4><br/><p>Gets log data from the Ethereum blockchain.</p>
+<p><b>1 credit per API call</b></p> <p>Get a log data record from the Ethereum blockchain (only the mainnet or the Sepolia testnet).</p>
 
 ### Example
 
@@ -34,7 +34,7 @@ $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 // The blockchain to get the log record from
 $chain = 'ETH';
 
-// ID of the log record / transaction on the blockchain
+// The ID of the log record or transaction to get from the blockchain
 $id = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
 
 try {
@@ -60,7 +60,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| The blockchain to get the log record from |
- **$id** | **string**| ID of the log record / transaction on the blockchain |
+ **$id** | **string**| The ID of the log record or transaction to get from the blockchain |
 
 ### Return type
 
@@ -76,9 +76,9 @@ api()->blockchainStorage()->storeLog(
 ): \Tatum\Model\TransactionHash
 ```
 
-Store log record
+Store a log record
 
-<h4>2 credits per API call. Additional credits are debited based on the size of the stored data and the type of blockchain.</h4><br/> <p>Stores record data on blockchain. Tatum currently supports the Ethereum, CELO, MATIC, ONE, XDC, BSC, KLAY and EGLD to store data.<br/> The total cost of the transaction (in credits) on the Ethereum blockchain is dependent on the size of the data. Data are stored as a HEX string and the maximum data size is approximatelly 130 kB on mainnet, 30 kB on testnet.<br/> Every 5 characters of data costs 1 credit, so an API call with a data of length 1 kB = 1024 characters and would cost 205 credits. </p>
+<p><b>2 credits per API call + additional credits based on the size of the stored data and the type of the blockchain</b></p> <p>Store data on the blockchain.</p> <p>The total cost of a transaction on Ethereum (in credits) depends on the size of the data. The data is stored as a string in the hexadecimal format, and the maximum size of the data is approximately 130 kB on the mainnet and 30 kB on testnet. Every 5 characters cost 1 credit.<br/> Therefore, one API call with 1 kB of data (1024 characters) would cost 205 credits.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum (only the mainnet or the Sepolia testnet)</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
 
 ### Example
 

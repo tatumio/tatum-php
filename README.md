@@ -15,7 +15,7 @@
 
 ## Welcome!
 
-This is the official Tatum SDK for PHP version `2.0.0` based on API version `3.17.0`.
+This is the official Tatum SDK for PHP version `2.0.0` based on API version `3.17.1`.
 
 ### What is Tatum?
 
@@ -154,17 +154,17 @@ API | Method | Description
 *algorand()* | [**algorandGetCurrentBlock()**](docs/Api/AlgorandApi.md#algorandgetcurrentblock) | Get current block number
 *algorand()* | [**algorandGetPayTransactionsByFromTo()**](docs/Api/AlgorandApi.md#algorandgetpaytransactionsbyfromto) | Get Algorand Transactions between from and to
 *algorand()* | [**algorandGetTransaction()**](docs/Api/AlgorandApi.md#algorandgettransaction) | Get Algorand Transaction
-*auction()* | [**approveNftAuctionSpending()**](docs/Api/AuctionApi.md#approvenftauctionspending) | Approve NFT token spending for the Auction / Marketplace
-*auction()* | [**bidOnAuction()**](docs/Api/AuctionApi.md#bidonauction) | Bid for asset on the NFT Auction
-*auction()* | [**cancelAuction()**](docs/Api/AuctionApi.md#cancelauction) | Cancel auction of the asset on the NFT Auction
-*auction()* | [**createAuction()**](docs/Api/AuctionApi.md#createauction) | Sell asset on the NFT Auction
-*auction()* | [**generateAuction()**](docs/Api/AuctionApi.md#generateauction) | Create NFT Auction
-*auction()* | [**getAuction()**](docs/Api/AuctionApi.md#getauction) | Get auction details from the NFT Auction
-*auction()* | [**getAuctionFee()**](docs/Api/AuctionApi.md#getauctionfee) | Get NFT Auction fee
-*auction()* | [**getAuctionFeeRecipient()**](docs/Api/AuctionApi.md#getauctionfeerecipient) | Get NFT Auction fee recipient
-*auction()* | [**settleAuction()**](docs/Api/AuctionApi.md#settleauction) | Settle auction of the asset on the NFT Auction
-*auction()* | [**updateAuctionFee()**](docs/Api/AuctionApi.md#updateauctionfee) | Update NFT Auction fee
-*auction()* | [**updateAuctionFeeRecipient()**](docs/Api/AuctionApi.md#updateauctionfeerecipient) | Update NFT Auction fee recipient
+*auction()* | [**approveNftAuctionSpending()**](docs/Api/AuctionApi.md#approvenftauctionspending) | Allow the NFT auction or marketplace to transfer an asset
+*auction()* | [**bidOnAuction()**](docs/Api/AuctionApi.md#bidonauction) | Bid for an asset at the NFT auction
+*auction()* | [**cancelAuction()**](docs/Api/AuctionApi.md#cancelauction) | Cancel the selling of an asset at the NFT auction
+*auction()* | [**createAuction()**](docs/Api/AuctionApi.md#createauction) | Sell an asset at the NFT auction
+*auction()* | [**generateAuction()**](docs/Api/AuctionApi.md#generateauction) | Create an NFT auction
+*auction()* | [**getAuction()**](docs/Api/AuctionApi.md#getauction) | Get information about an auctioned asset at the NFT auction
+*auction()* | [**getAuctionFee()**](docs/Api/AuctionApi.md#getauctionfee) | Get the NFT auction fee
+*auction()* | [**getAuctionFeeRecipient()**](docs/Api/AuctionApi.md#getauctionfeerecipient) | Get the recipient of the NFT auction fee
+*auction()* | [**settleAuction()**](docs/Api/AuctionApi.md#settleauction) | Settle an NFT auction
+*auction()* | [**updateAuctionFee()**](docs/Api/AuctionApi.md#updateauctionfee) | Update the NFT auction fee
+*auction()* | [**updateAuctionFeeRecipient()**](docs/Api/AuctionApi.md#updateauctionfeerecipient) | Update the recipient of the NFT auction fee
 *bNBBeaconChain()* | [**bnbBlockchainTransfer()**](docs/Api/BNBBeaconChainApi.md#bnbblockchaintransfer) | Send Binance / Binance Token from account to account
 *bNBBeaconChain()* | [**bnbBroadcast()**](docs/Api/BNBBeaconChainApi.md#bnbbroadcast) | Broadcast signed BNB transaction
 *bNBBeaconChain()* | [**bnbGenerateWallet()**](docs/Api/BNBBeaconChainApi.md#bnbgeneratewallet) | Generate Binance wallet
@@ -222,6 +222,7 @@ API | Method | Description
 *blockchainFees()* | [**estimateFeeBlockchain()**](docs/Api/BlockchainFeesApi.md#estimatefeeblockchain) | Estimate the fee for a transaction
 *blockchainFees()* | [**ethEstimateGas()**](docs/Api/BlockchainFeesApi.md#ethestimategas) | Estimate Ethereum transaction fees
 *blockchainFees()* | [**ethEstimateGasBatch()**](docs/Api/BlockchainFeesApi.md#ethestimategasbatch) | Estimate multiple Ethereum transaction fees
+*blockchainFees()* | [**getBlockchainFee()**](docs/Api/BlockchainFeesApi.md#getblockchainfee) | Get recommended blockchain fee / gas price
 *blockchainFees()* | [**kcsEstimateGas()**](docs/Api/BlockchainFeesApi.md#kcsestimategas) | Estimate KuCoin Community Chain transaction fees
 *blockchainFees()* | [**klaytnEstimateGas()**](docs/Api/BlockchainFeesApi.md#klaytnestimategas) | Estimate Klaytn transaction fees
 *blockchainFees()* | [**polygonEstimateGas()**](docs/Api/BlockchainFeesApi.md#polygonestimategas) | Estimate Polygon transaction fees
@@ -229,7 +230,7 @@ API | Method | Description
 *blockchainFees()* | [**xdcEstimateGas()**](docs/Api/BlockchainFeesApi.md#xdcestimategas) | Estimate XinFin transaction fees
 *blockchainOperations()* | [**adaTransferOffchain()**](docs/Api/BlockchainOperationsApi.md#adatransferoffchain) | Send ADA from a virtual account to the blockchain
 *blockchainOperations()* | [**algoDeployErc20Ledger()**](docs/Api/BlockchainOperationsApi.md#algodeployerc20ledger) | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-*blockchainOperations()* | [**algoTransfer()**](docs/Api/BlockchainOperationsApi.md#algotransfer) | Send Algos from a virtual account to the blockchain
+*blockchainOperations()* | [**algoTransfer()**](docs/Api/BlockchainOperationsApi.md#algotransfer) | Send ALGO from a virtual account to the blockchain
 *blockchainOperations()* | [**bchTransfer()**](docs/Api/BlockchainOperationsApi.md#bchtransfer) | Send BCH from a virtual account to the blockchain
 *blockchainOperations()* | [**bnbAssetOffchain()**](docs/Api/BlockchainOperationsApi.md#bnbassetoffchain) | Create a BNB-based asset
 *blockchainOperations()* | [**bnbTransfer()**](docs/Api/BlockchainOperationsApi.md#bnbtransfer) | Send BNB from a virtual account to the blockchain
@@ -271,8 +272,8 @@ API | Method | Description
 *blockchainOperations()* | [**xlmTransfer()**](docs/Api/BlockchainOperationsApi.md#xlmtransfer) | Send XLM from a virtual account to the blockchain
 *blockchainOperations()* | [**xrpAssetOffchain()**](docs/Api/BlockchainOperationsApi.md#xrpassetoffchain) | Create XRP based Asset
 *blockchainOperations()* | [**xrpTransfer()**](docs/Api/BlockchainOperationsApi.md#xrptransfer) | Send XRP from a virtual account to the blockchain
-*blockchainStorage()* | [**getLog()**](docs/Api/BlockchainStorageApi.md#getlog) | Get log record
-*blockchainStorage()* | [**storeLog()**](docs/Api/BlockchainStorageApi.md#storelog) | Store log record
+*blockchainStorage()* | [**getLog()**](docs/Api/BlockchainStorageApi.md#getlog) | Get a log record
+*blockchainStorage()* | [**storeLog()**](docs/Api/BlockchainStorageApi.md#storelog) | Store a log record
 *blockchainUtils()* | [**getAuctionEstimatedTime()**](docs/Api/BlockchainUtilsApi.md#getauctionestimatedtime) | Estimate the block height for a future point in time
 *blockchainUtils()* | [**sCGetContractAddress()**](docs/Api/BlockchainUtilsApi.md#scgetcontractaddress) | Get the blockchain address of a smart contract by the deployment transaction ID
 *cardano()* | [**adaBroadcast()**](docs/Api/CardanoApi.md#adabroadcast) | Broadcast signed Ada transaction
@@ -344,7 +345,7 @@ API | Method | Description
 *ethereum()* | [**ethGenerateAddress()**](docs/Api/EthereumApi.md#ethgenerateaddress) | Generate Ethereum account address from Extended public key
 *ethereum()* | [**ethGenerateAddressPrivateKey()**](docs/Api/EthereumApi.md#ethgenerateaddressprivatekey) | Generate Ethereum private key
 *ethereum()* | [**ethGenerateWallet()**](docs/Api/EthereumApi.md#ethgeneratewallet) | Generate Ethereum wallet
-*ethereum()* | [**ethGetBalance()**](docs/Api/EthereumApi.md#ethgetbalance) | Get Ethereum account balance
+*ethereum()* | [**ethGetBalance()**](docs/Api/EthereumApi.md#ethgetbalance) | Get the ETH balance of an Ethereum account
 *ethereum()* | [**ethGetBlock()**](docs/Api/EthereumApi.md#ethgetblock) | Get Ethereum block by hash
 *ethereum()* | [**ethGetCurrentBlock()**](docs/Api/EthereumApi.md#ethgetcurrentblock) | Get current block number
 *ethereum()* | [**ethGetInternalTransactionByAddress()**](docs/Api/EthereumApi.md#ethgetinternaltransactionbyaddress) | Get Ethereum internal transactions by address
@@ -359,18 +360,18 @@ API | Method | Description
 *flow()* | [**flowGeneratePubKey()**](docs/Api/FlowApi.md#flowgeneratepubkey) | Generate Flow public key from Extended public key
 *flow()* | [**flowGeneratePubKeyPrivateKey()**](docs/Api/FlowApi.md#flowgeneratepubkeyprivatekey) | Generate Flow private key
 *flow()* | [**flowGenerateWallet()**](docs/Api/FlowApi.md#flowgeneratewallet) | Generate Flow wallet
-*flow()* | [**flowGetAccount()**](docs/Api/FlowApi.md#flowgetaccount) | Get Flow account
+*flow()* | [**flowGetAccount()**](docs/Api/FlowApi.md#flowgetaccount) | Get the balance of a Flow account
 *flow()* | [**flowGetBlock()**](docs/Api/FlowApi.md#flowgetblock) | Get Flow Block by hash or height
 *flow()* | [**flowGetBlockChainInfo()**](docs/Api/FlowApi.md#flowgetblockchaininfo) | Get Flow current block number
 *flow()* | [**flowGetBlockEvents()**](docs/Api/FlowApi.md#flowgetblockevents) | Get Flow events from blocks
 *flow()* | [**flowGetRawTransaction()**](docs/Api/FlowApi.md#flowgetrawtransaction) | Get Flow Transaction by hash
 *flow()* | [**flowTransferBlockchain()**](docs/Api/FlowApi.md#flowtransferblockchain) | Send Flow to blockchain addresses
 *flow()* | [**flowTransferCustomBlockchain()**](docs/Api/FlowApi.md#flowtransfercustomblockchain) | Send arbitrary transaction to blockchain
-*fungibleTokensERC20OrCompatible()* | [**erc20Approve()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20approve) | Approve spending of fungible tokens
+*fungibleTokensERC20OrCompatible()* | [**erc20Approve()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20approve) | Allow a blockchain address to transfer and burn fungible tokens
 *fungibleTokensERC20OrCompatible()* | [**erc20Burn()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20burn) | Burn fungible tokens
 *fungibleTokensERC20OrCompatible()* | [**erc20Deploy()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20deploy) | Deploy a fungible token smart contract
-*fungibleTokensERC20OrCompatible()* | [**erc20GetBalance()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20getbalance) | Get the number of fungible tokens from a specific smart contract that a blockchain address holds
-*fungibleTokensERC20OrCompatible()* | [**erc20GetBalanceAddress()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20getbalanceaddress) | Get the number of fungible tokens that a blockchain address holds across a blockchain
+*fungibleTokensERC20OrCompatible()* | [**erc20GetBalance()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20getbalance) | Get the number of fungible tokens that a blockchain address holds in a smart contract
+*fungibleTokensERC20OrCompatible()* | [**erc20GetBalanceAddress()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20getbalanceaddress) | Get the total number of fungible tokens that a blockchain address holds
 *fungibleTokensERC20OrCompatible()* | [**erc20GetTransactionByAddress()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20gettransactionbyaddress) | Get fungible token transactions on a blockchain address
 *fungibleTokensERC20OrCompatible()* | [**erc20Mint()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20mint) | Mint fungible tokens
 *fungibleTokensERC20OrCompatible()* | [**erc20Transfer()**](docs/Api/FungibleTokensERC20OrCompatibleApi.md#erc20transfer) | Transfer fungible tokens
@@ -448,11 +449,15 @@ API | Method | Description
 *marketplace()* | [**generateMarketplace()**](docs/Api/MarketplaceApi.md#generatemarketplace) | Create an NFT marketplace
 *marketplace()* | [**getMarketplaceFee()**](docs/Api/MarketplaceApi.md#getmarketplacefee) | Get the NFT marketplace fee
 *marketplace()* | [**getMarketplaceFeeRecipient()**](docs/Api/MarketplaceApi.md#getmarketplacefeerecipient) | Get the recipient of the NFT marketplace fee
+*marketplace()* | [**getMarketplaceInfo()**](docs/Api/MarketplaceApi.md#getmarketplaceinfo) | Get information about an NFT marketplace on Solana
 *marketplace()* | [**getMarketplaceListing()**](docs/Api/MarketplaceApi.md#getmarketplacelisting) | Get information about a listing on the NFT marketplace
 *marketplace()* | [**getMarketplaceListings()**](docs/Api/MarketplaceApi.md#getmarketplacelistings) | Get the listings of a certain type from the NFT marketplace
 *marketplace()* | [**sellAssetOnMarketplace()**](docs/Api/MarketplaceApi.md#sellassetonmarketplace) | Sell an asset on the NFT marketplace
 *marketplace()* | [**updateFee()**](docs/Api/MarketplaceApi.md#updatefee) | Update the NFT marketplace fee
 *marketplace()* | [**updateFeeRecipient()**](docs/Api/MarketplaceApi.md#updatefeerecipient) | Update the recipient of the NFT marketplace fee
+*marketplace()* | [**updateMarketplace()**](docs/Api/MarketplaceApi.md#updatemarketplace) | Update an NFT marketplace on Solana
+*marketplace()* | [**withdrawFeeFromMarketplace()**](docs/Api/MarketplaceApi.md#withdrawfeefrommarketplace) | Withdraw funds from the marketplace fee account on Solana
+*marketplace()* | [**withdrawTreasuryFromMarketplace()**](docs/Api/MarketplaceApi.md#withdrawtreasuryfrommarketplace) | Withdraw funds from the marketplace treasury account on Solana
 *multiTokensERC1155OrCompatible()* | [**addMultiTokenMinter()**](docs/Api/MultiTokensERC1155OrCompatibleApi.md#addmultitokenminter) | Add a Multi Token minter
 *multiTokensERC1155OrCompatible()* | [**burnMultiToken()**](docs/Api/MultiTokensERC1155OrCompatibleApi.md#burnmultitoken) | Burn a Multi Token
 *multiTokensERC1155OrCompatible()* | [**burnMultiTokenBatch()**](docs/Api/MultiTokensERC1155OrCompatibleApi.md#burnmultitokenbatch) | Burn multiple Multi Tokens
@@ -728,6 +733,6 @@ vendor/bin/phpunit
 
 This PHP SDK is automatically generated by the [Tatum SDK Generator](https://github.com/tatumio):
 
-- API version: `3.17.0`
+- API version: `3.17.1`
 - Package version: `2.0.0`
 - PHP [Versions](https://www.php.net/supported-versions.php): `7.3`, `7.4`, `8.0`, `8.1`, `8.2`

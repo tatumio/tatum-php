@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **address** | **string** | Address on Ethereum blockchain, where all created ERC20 tokens will be transferred. |
 **from_private_key** | **string** | Private key of Ethereum account address, from which the fee for the deployment of ERC20 will be paid. Private key, or signature Id must be present. |
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**fee** | [**\Tatum\Model\ApproveTransferCustodialWalletFee**](ApproveTransferCustodialWalletFee.md) |  | [optional]
+**fee** | **string** | The transaction fee in ALGO |
 **from** | **string** | Address on Solana blockchain, from which the fee for the deployment of SPL will be paid. |
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |

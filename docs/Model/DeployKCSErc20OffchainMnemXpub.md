@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **derivation_index** | **int** | Derivation index for xpub to generate specific deposit address. |
 **mnemonic** | **string** | Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both. |
 **index** | **int** | derivation index of address to pay for deployment of ERC20 |
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

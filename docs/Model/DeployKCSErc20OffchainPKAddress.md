@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **customer** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
 **address** | **string** | Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both. |
 **private_key** | **string** | Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Private key, mnemonic or signature Id must be present. |
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

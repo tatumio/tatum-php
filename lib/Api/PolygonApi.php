@@ -3,7 +3,7 @@
 /**
  * Implementation of Polygon API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -221,7 +221,7 @@ class PolygonApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\PolygonGenerateAddress200Response
+     * @return \Tatum\Model\GeneratedAddressMatic
      */
     public function polygonGenerateAddress(string $xpub, float $index) { 
         // Resource path
@@ -254,7 +254,7 @@ class PolygonApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\PolygonGenerateAddress200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\GeneratedAddressMatic $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -263,13 +263,13 @@ class PolygonApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\PolygonGenerateAddress200Response"
+                "\Tatum\Model\GeneratedAddressMatic"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PolygonGenerateAddress200Response",
+                    "\Tatum\Model\GeneratedAddressMatic",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -418,7 +418,7 @@ class PolygonApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\PolygonGetBalance200Response
+     * @return \Tatum\Model\MaticBalance
      */
     public function polygonGetBalance(string $address) { 
         // Resource path
@@ -450,7 +450,7 @@ class PolygonApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\PolygonGetBalance200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\MaticBalance $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -459,13 +459,13 @@ class PolygonApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\PolygonGetBalance200Response"
+                "\Tatum\Model\MaticBalance"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PolygonGetBalance200Response",
+                    "\Tatum\Model\MaticBalance",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

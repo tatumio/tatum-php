@@ -3,7 +3,7 @@
 /**
  * UpdateCashbackValueForAuthorNftCelo Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -165,7 +165,7 @@ class UpdateCashbackValueForAuthorNftCelo extends AbstractModel {
     /**
      * Set token_id
      * 
-     * @param string $token_id The ID of the NFT to update royalty information for.
+     * @param string $token_id The ID of the NFT to update royalty information for
      * @return $this
      */
     public function setTokenId(string $token_id) {

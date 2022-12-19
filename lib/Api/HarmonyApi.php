@@ -3,7 +3,7 @@
 /**
  * Implementation of Harmony API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -229,7 +229,7 @@ class HarmonyApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\OneFormatAddress200Response
+     * @return \Tatum\Model\GeneratedAddressOne
      */
     public function oneFormatAddress(string $address) { 
         // Resource path
@@ -261,7 +261,7 @@ class HarmonyApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\OneFormatAddress200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\GeneratedAddressOne $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -270,13 +270,13 @@ class HarmonyApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\OneFormatAddress200Response"
+                "\Tatum\Model\GeneratedAddressOne"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\OneFormatAddress200Response",
+                    "\Tatum\Model\GeneratedAddressOne",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -294,7 +294,7 @@ class HarmonyApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\OneGenerateAddress200Response
+     * @return \Tatum\Model\GeneratedAddressOne
      */
     public function oneGenerateAddress(string $xpub, float $index) { 
         // Resource path
@@ -327,7 +327,7 @@ class HarmonyApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\OneGenerateAddress200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\GeneratedAddressOne $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -336,13 +336,13 @@ class HarmonyApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\OneGenerateAddress200Response"
+                "\Tatum\Model\GeneratedAddressOne"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\OneGenerateAddress200Response",
+                    "\Tatum\Model\GeneratedAddressOne",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -492,7 +492,7 @@ class HarmonyApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\OneGetBalance200Response
+     * @return \Tatum\Model\OneBalance
      */
     public function oneGetBalance(string $address, float $shard_id = 0) { 
         // Resource path
@@ -526,7 +526,7 @@ class HarmonyApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\OneGetBalance200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\OneBalance $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -535,13 +535,13 @@ class HarmonyApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\OneGetBalance200Response"
+                "\Tatum\Model\OneBalance"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\OneGetBalance200Response",
+                    "\Tatum\Model\OneBalance",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -623,7 +623,7 @@ class HarmonyApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\OneGetCurrentBlock200ResponseInner[]
+     * @return \Tatum\Model\OneBlockCurrent[]
      */
     public function oneGetCurrentBlock() { 
         // Resource path
@@ -654,7 +654,7 @@ class HarmonyApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\OneGetCurrentBlock200ResponseInner[] $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\OneBlockCurrent[] $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -663,13 +663,13 @@ class HarmonyApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\OneGetCurrentBlock200ResponseInner[]"
+                "\Tatum\Model\OneBlockCurrent[]"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\OneGetCurrentBlock200ResponseInner[]",
+                    "\Tatum\Model\OneBlockCurrent[]",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

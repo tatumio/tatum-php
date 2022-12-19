@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **name** | **string** | The name of the NFT |
 **from** | **string** | The address of the minting account |
 **signature_id** | **string** | The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account |
-**attr** | [**\Tatum\Model\MintNftAlgorandAttr**](MintNftAlgorandAttr.md) |  | [optional]
+**attr** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](MintNftExpressAlgorandAttr.md) |  | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

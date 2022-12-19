@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **address** | **string** | Address on Ethereum blockchain, where all created ERC20 tokens will be transferred. |
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**fee** | [**\Tatum\Model\ApproveTransferCustodialWalletFee**](ApproveTransferCustodialWalletFee.md) |  | [optional]
+**fee** | **string** | The transaction fee in ALGO |
 
 [[Back to API list]](../../README.md#api-endpoints)

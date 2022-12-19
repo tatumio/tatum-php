@@ -3,7 +3,7 @@
 /**
  * ChainBurnKcsErc20KMS Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -31,7 +31,7 @@ class ChainBurnKcsErc20KMS extends AbstractModel {
         "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee"], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce"]
     ];
 
@@ -195,19 +195,19 @@ class ChainBurnKcsErc20KMS extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\ApproveTransferCustodialWalletFee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\ApproveTransferCustodialWalletFee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\ApproveTransferCustodialWalletFee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @return $this
      */
-    public function setFee(?\Tatum\Model\ApproveTransferCustodialWalletFee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         $this->_data['fee'] = $fee;
 
         return $this;

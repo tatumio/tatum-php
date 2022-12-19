@@ -3,7 +3,7 @@
 /**
  * NftTokenByAddressErc721TokenMetadata Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -67,7 +67,7 @@ class NftTokenByAddressErc721TokenMetadata extends AbstractModel {
     /**
      * Set token_id
      * 
-     * @param string|null $token_id (EVM-based blockchains only) The ID of the NFT owned by this address.
+     * @param string|null $token_id (EVM-based blockchains only) The ID of the NFT owned by this address
      * @return $this
      */
     public function setTokenId(?string $token_id) {

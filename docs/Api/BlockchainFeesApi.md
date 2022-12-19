@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**estimateFeeBlockchain()**](#estimateFeeBlockchain) | **POST** /v3/blockchain/estimate | Estimate the fee for a transaction
 [**ethEstimateGas()**](#ethEstimateGas) | **POST** /v3/ethereum/gas | Estimate Ethereum transaction fees
 [**ethEstimateGasBatch()**](#ethEstimateGasBatch) | **POST** /v3/ethereum/gas/batch | Estimate multiple Ethereum transaction fees
+[**getBlockchainFee()**](#getBlockchainFee) | **GET** /v3/blockchain/fee/{chain} | Get recommended blockchain fee / gas price
 [**kcsEstimateGas()**](#kcsEstimateGas) | **POST** /v3/kcs/gas | Estimate KuCoin Community Chain transaction fees
 [**klaytnEstimateGas()**](#klaytnEstimateGas) | **POST** /v3/klaytn/gas | Estimate Klaytn transaction fees
 [**polygonEstimateGas()**](#polygonEstimateGas) | **POST** /v3/polygon/gas | Estimate Polygon transaction fees
@@ -348,6 +349,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Tatum\Model\EthGasEstimationBatch**](../Model/EthGasEstimationBatch.md)
+
+[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+
+## `getBlockchainFee()`
+
+```php
+api()->blockchainFees()->getBlockchainFee(
+    ?string $chain
+): \Tatum\Model\BlockchainFee
+```
+
+Get recommended blockchain fee / gas price
+
+<p><b>1 credit per API call</b></p> <p>Get recommended blockchain fee / gas price</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/autoload.php');
+
+// Set your optional Tatum API keys
+// @see https://apidoc.tatum.io/#section/Authentication
+$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+
+// Chain
+$chain = 'BTC';
+
+try {
+    /** @var \Tatum\Model\BlockchainFee $response */
+    $response = $sdk
+        ->mainnet()
+        ->api()
+        ->blockchainFees()
+        ->getBlockchainFee($chain);
+    
+    var_dump($response);
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling blockchainFees()->getBlockchainFee(): ",
+        var_export($apiExc->getResponseObject(), true),
+        PHP_EOL;
+} catch (\Exception $exc) {
+    echo "Exception when calling blockchainFees()->getBlockchainFee(): " . $exc->getMessage() . PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Chain |
+
+### Return type
+
+[**\Tatum\Model\BlockchainFee**](../Model/BlockchainFee.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 

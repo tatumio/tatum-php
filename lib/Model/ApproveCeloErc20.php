@@ -3,7 +3,7 @@
 /**
  * ApproveCeloErc20 Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -31,13 +31,13 @@ class ApproveCeloErc20 extends AbstractModel {
     protected static $_name = "ApproveCeloErc20";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "spender" => ["spender", "string", null, "getSpender", "setSpender"], 
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
+        "spender" => ["spender", "string", null, "getSpender", "setSpender"], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"]
     ];
 
     /**
@@ -46,7 +46,7 @@ class ApproveCeloErc20 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "amount"=>null, "spender"=>null, "contract_address"=>null, "from_private_key"=>null, "fee"=>null, "nonce"=>null, "fee_currency"=>null] as $k => $v) {
+        foreach(["chain"=>null, "contract_address"=>null, "spender"=>null, "amount"=>null, "from_private_key"=>null, "fee_currency"=>null, "fee"=>null, "nonce"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -65,11 +65,14 @@ class ApproveCeloErc20 extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
+        if (is_null($this->_data['contract_address'])) {
+            $ip[] = "'contract_address' can't be null";
         }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
+        if ((mb_strlen($this->_data['contract_address']) > 42)) {
+            $ip[] = "'contract_address' length must be <= 42";
+        }
+        if ((mb_strlen($this->_data['contract_address']) < 42)) {
+            $ip[] = "'contract_address' length must be >= 42";
         }
         if (is_null($this->_data['spender'])) {
             $ip[] = "'spender' can't be null";
@@ -80,14 +83,11 @@ class ApproveCeloErc20 extends AbstractModel {
         if ((mb_strlen($this->_data['spender']) < 42)) {
             $ip[] = "'spender' length must be >= 42";
         }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
+        if (is_null($this->_data['amount'])) {
+            $ip[] = "'amount' can't be null";
         }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
+        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
+            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
@@ -98,9 +98,6 @@ class ApproveCeloErc20 extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 66)) {
             $ip[] = "'from_private_key' length must be >= 66";
         }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
         if (is_null($this->_data['fee_currency'])) {
             $ip[] = "'fee_currency' can't be null";
         }
@@ -108,6 +105,9 @@ class ApproveCeloErc20 extends AbstractModel {
         $value = $this->_data['fee_currency'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
+        }
+        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
+            $ip[] = "'nonce' must be >= 0";
         }
         
         return $ip;
@@ -161,25 +161,28 @@ class ApproveCeloErc20 extends AbstractModel {
     }
 
     /**
-     * Get amount
+     * Get contract_address
      *
      * @return string
      */
-    public function getAmount(): string {
-        return $this->_data["amount"];
+    public function getContractAddress(): string {
+        return $this->_data["contract_address"];
     }
 
     /**
-     * Set amount
+     * Set contract_address
      * 
-     * @param string $amount Amount to be approved for the spender.
+     * @param string $contract_address The address of the smart contract
      * @return $this
      */
-    public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('ApproveCeloErc20.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
+    public function setContractAddress(string $contract_address) {
+        if ((mb_strlen($contract_address) > 42)) {
+            throw new IAE('ApproveCeloErc20.setContractAddress: $contract_address length must be <= 42');
         }
-        $this->_data['amount'] = $amount;
+        if ((mb_strlen($contract_address) < 42)) {
+            throw new IAE('ApproveCeloErc20.setContractAddress: $contract_address length must be >= 42');
+        }
+        $this->_data['contract_address'] = $contract_address;
 
         return $this;
     }
@@ -196,7 +199,7 @@ class ApproveCeloErc20 extends AbstractModel {
     /**
      * Set spender
      * 
-     * @param string $spender Blockchain address of the new spender.
+     * @param string $spender The blockchain address to be allowed to transfer or burn the fungible tokens
      * @return $this
      */
     public function setSpender(string $spender) {
@@ -212,28 +215,25 @@ class ApproveCeloErc20 extends AbstractModel {
     }
 
     /**
-     * Get contract_address
+     * Get amount
      *
      * @return string
      */
-    public function getContractAddress(): string {
-        return $this->_data["contract_address"];
+    public function getAmount(): string {
+        return $this->_data["amount"];
     }
 
     /**
-     * Set contract_address
+     * Set amount
      * 
-     * @param string $contract_address Address of ERC-20 token
+     * @param string $amount The amount of the tokens allowed to be transferred or burnt
      * @return $this
      */
-    public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('ApproveCeloErc20.setContractAddress: $contract_address length must be <= 42');
+    public function setAmount(string $amount) {
+        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
+            throw new IAE('ApproveCeloErc20.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
         }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('ApproveCeloErc20.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
+        $this->_data['amount'] = $amount;
 
         return $this;
     }
@@ -250,7 +250,7 @@ class ApproveCeloErc20 extends AbstractModel {
     /**
      * Set from_private_key
      * 
-     * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @param string $from_private_key The private key of the smart contract's owner; the fee will be deducted from the owner's address
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
@@ -261,51 +261,6 @@ class ApproveCeloErc20 extends AbstractModel {
             throw new IAE('ApproveCeloErc20.setFromPrivateKey: $from_private_key length must be >= 66');
         }
         $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
-    }
-
-    /**
-     * Get fee
-     *
-     * @return \Tatum\Model\ApproveTransferCustodialWalletFee|null
-     */
-    public function getFee(): ?\Tatum\Model\ApproveTransferCustodialWalletFee {
-        return $this->_data["fee"];
-    }
-
-    /**
-     * Set fee
-     * 
-     * @param \Tatum\Model\ApproveTransferCustodialWalletFee|null $fee fee
-     * @return $this
-     */
-    public function setFee(?\Tatum\Model\ApproveTransferCustodialWalletFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
-    }
-
-    /**
-     * Get nonce
-     *
-     * @return float|null
-     */
-    public function getNonce(): ?float {
-        return $this->_data["nonce"];
-    }
-
-    /**
-     * Set nonce
-     * 
-     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
-     * @return $this
-     */
-    public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('ApproveCeloErc20.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
 
         return $this;
     }
@@ -331,6 +286,51 @@ class ApproveCeloErc20 extends AbstractModel {
             throw new IAE(sprintf("ApproveCeloErc20.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
         }
         $this->_data['fee_currency'] = $fee_currency;
+
+        return $this;
+    }
+
+    /**
+     * Get fee
+     *
+     * @return \Tatum\Model\CustomFee|null
+     */
+    public function getFee(): ?\Tatum\Model\CustomFee {
+        return $this->_data["fee"];
+    }
+
+    /**
+     * Set fee
+     * 
+     * @param \Tatum\Model\CustomFee|null $fee fee
+     * @return $this
+     */
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
+        $this->_data['fee'] = $fee;
+
+        return $this;
+    }
+
+    /**
+     * Get nonce
+     *
+     * @return float|null
+     */
+    public function getNonce(): ?float {
+        return $this->_data["nonce"];
+    }
+
+    /**
+     * Set nonce
+     * 
+     * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @return $this
+     */
+    public function setNonce(?float $nonce) {
+        if (!is_null($nonce) && ($nonce < 0)) {
+            throw new IAE('ApproveCeloErc20.setNonce: $nonce must be >=0');
+        }
+        $this->_data['nonce'] = $nonce;
 
         return $this;
     }

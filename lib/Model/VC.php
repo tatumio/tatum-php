@@ -3,7 +3,7 @@
 /**
  * VC Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -24,6 +24,8 @@ use InvalidArgumentException as IAE;
 class VC extends AbstractModel {
 
     public const DISCRIMINATOR = null;
+    public const TRC_TYPE_TRC10 = 'TRC10';
+    public const TRC_TYPE_TRC20 = 'TRC20';
     public const BASE_PAIR_AED = 'AED';
     public const BASE_PAIR_AFN = 'AFN';
     public const BASE_PAIR_ALL = 'ALL';
@@ -230,6 +232,8 @@ class VC extends AbstractModel {
         "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
         "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
         "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
+        "precision" => ["precision", "float", null, "getPrecision", "setPrecision"], 
+        "trc_type" => ["trcType", "string", null, "getTrcType", "setTrcType"], 
         "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
         "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId"], 
         "description" => ["description", "string", null, "getDescription", "setDescription"], 
@@ -245,7 +249,7 @@ class VC extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["name"=>null, "supply"=>null, "account_id"=>null, "base_rate"=>1, "base_pair"=>null, "customer_id"=>null, "description"=>null, "erc20_address"=>null, "issuer_account"=>null, "chain"=>null, "initial_address"=>null] as $k => $v) {
+        foreach(["name"=>null, "supply"=>null, "account_id"=>null, "base_rate"=>1, "precision"=>null, "trc_type"=>null, "base_pair"=>null, "customer_id"=>null, "description"=>null, "erc20_address"=>null, "issuer_account"=>null, "chain"=>null, "initial_address"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -268,6 +272,11 @@ class VC extends AbstractModel {
         if (is_null($this->_data['base_rate'])) {
             $ip[] = "'base_rate' can't be null";
         }
+        $allowed = $this->getTrcTypeAllowableValues();
+        $value = $this->_data['trc_type'];
+        if (!is_null($value) && !in_array($value, $allowed, true)) {
+            $ip[] = sprintf("'trc_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
+        }
         if (is_null($this->_data['base_pair'])) {
             $ip[] = "'base_pair' can't be null";
         }
@@ -283,6 +292,17 @@ class VC extends AbstractModel {
         }
         
         return $ip;
+    }
+    /**
+     * Get allowable values
+     *
+     * @return scalar[]
+     */
+    public function getTrcTypeAllowableValues(): array {
+        return [
+            self::TRC_TYPE_TRC10,
+            self::TRC_TYPE_TRC20,
+        ];
     }
     /**
      * Get allowable values
@@ -583,6 +603,52 @@ class VC extends AbstractModel {
      */
     public function setBaseRate(float $base_rate) {
         $this->_data['base_rate'] = $base_rate;
+
+        return $this;
+    }
+
+    /**
+     * Get precision
+     *
+     * @return float|null
+     */
+    public function getPrecision(): ?float {
+        return $this->_data["precision"];
+    }
+
+    /**
+     * Set precision
+     * 
+     * @param float|null $precision Number of decimal places of this virtual currency.
+     * @return $this
+     */
+    public function setPrecision(?float $precision) {
+        $this->_data['precision'] = $precision;
+
+        return $this;
+    }
+
+    /**
+     * Get trc_type
+     *
+     * @return string|null
+     */
+    public function getTrcType(): ?string {
+        return $this->_data["trc_type"];
+    }
+
+    /**
+     * Set trc_type
+     * 
+     * @param string|null $trc_type Type of Tron token.
+     * @return $this
+     */
+    public function setTrcType(?string $trc_type) {
+        $allowed = $this->getTrcTypeAllowableValues();
+        if (!is_null($trc_type) && !in_array($trc_type, $allowed, true)) {
+            throw new IAE(sprintf("VC.setTrcType: trc_type invalid value '%s', must be one of '%s'", $trc_type, implode("', '", $allowed)));
+        }
+        $this->_data['trc_type'] = $trc_type;
 
         return $this;
     }

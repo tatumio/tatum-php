@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**flowGeneratePubKey()**](#flowGeneratePubKey) | **GET** /v3/flow/pubkey/{xpub}/{index} | Generate Flow public key from Extended public key
 [**flowGeneratePubKeyPrivateKey()**](#flowGeneratePubKeyPrivateKey) | **POST** /v3/flow/wallet/priv | Generate Flow private key
 [**flowGenerateWallet()**](#flowGenerateWallet) | **GET** /v3/flow/wallet | Generate Flow wallet
-[**flowGetAccount()**](#flowGetAccount) | **GET** /v3/flow/account/{address} | Get Flow account
+[**flowGetAccount()**](#flowGetAccount) | **GET** /v3/flow/account/{address} | Get the balance of a Flow account
 [**flowGetBlock()**](#flowGetBlock) | **GET** /v3/flow/block/{hash} | Get Flow Block by hash or height
 [**flowGetBlockChainInfo()**](#flowGetBlockChainInfo) | **GET** /v3/flow/block/current | Get Flow current block number
 [**flowGetBlockEvents()**](#flowGetBlockEvents) | **GET** /v3/flow/block/events | Get Flow events from blocks
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ```php
 api()->flow()->flowCreateAddressFromPubKey(
-    ?\Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request
+    ?\Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request
 ): \Tatum\Model\FlowCreateAddressFromPubKey200Response
 ```
 
@@ -95,7 +95,7 @@ require_once(__DIR__ . '/autoload.php');
 // @see https://apidoc.tatum.io/#section/Authentication
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
-$flow_add_pub_key_to_address_request = new \Tatum\Model\FlowAddPubKeyToAddressRequest();
+$flow_create_address_from_pub_key_request = new \Tatum\Model\FlowCreateAddressFromPubKeyRequest();
 
 try {
     /** @var \Tatum\Model\FlowCreateAddressFromPubKey200Response $response */
@@ -103,7 +103,7 @@ try {
         ->mainnet()
         ->api()
         ->flow()
-        ->flowCreateAddressFromPubKey($flow_add_pub_key_to_address_request);
+        ->flowCreateAddressFromPubKey($flow_create_address_from_pub_key_request);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
@@ -119,7 +119,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_add_pub_key_to_address_request** | [**\Tatum\Model\FlowAddPubKeyToAddressRequest**](../Model/FlowAddPubKeyToAddressRequest.md)|  |
+ **$flow_create_address_from_pub_key_request** | [**\Tatum\Model\FlowCreateAddressFromPubKeyRequest**](../Model/FlowCreateAddressFromPubKeyRequest.md)|  |
 
 ### Return type
 
@@ -364,7 +364,7 @@ api()->flow()->flowGetAccount(
 ): \Tatum\Model\FlowAccount
 ```
 
-Get Flow account
+Get the balance of a Flow account
 
 <h4>1 credit per API call.</h4><br/><p>Get Flow account details.</p>
 

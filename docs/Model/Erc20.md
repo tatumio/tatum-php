@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol** | **string** | ERC20/BEP20 token name. Used as a identifier within Tatum system and also in blockchain as a currency symbol. |
-**supply** | **string** | Supply of ERC20/BEP20 token. |
-**decimals** | **float** | Decimals of ERC20/BEP20 token. |
-**description** | **string** | Used as a description within Tatum system and in blockchain as a currency name. |
-**base_pair** | **string** | Base pair for ERC20/BEP20 token. Transaction value will be calculated according to this base pair. |
-**base_rate** | **float** | Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair. | [optional] [default to 1]
+**symbol** | **string** | The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain |
+**supply** | **string** | The supply of the token |
+**decimals** | **float** | The number of decimal places that the token has |
+**description** | **string** | The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain |
+**xpub** | **string** | The extended public key of the wallet from which a deposit address for the virtual account will be generated; the supply of the token will be stored on this address&lt;br/&gt;&lt;b&gt;NOTE:&lt;/b&gt;On Solana, you only can assign an existing address to the virtual account; use the &lt;code&gt;Erc20Address&lt;/code&gt; schema of this API. |
+**derivation_index** | **int** | The derivation index to use together with the extended public key to generate the deposit address |
+**base_pair** | **string** | The base pair for the virtual currency that represents the token; used to calculate the value of a transaction |
+**base_rate** | **float** | The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of &lt;code&gt;basePair&lt;/code&gt;*&lt;code&gt;baseRate&lt;/code&gt; | [optional] [default to 1]
 **customer** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
-**accounting_currency** | **string** | All transaction will be billed in this currency for created account associated with this currency. If not set, EUR is used. ISO-4217 | [optional]
-**derivation_index** | **int** | Derivation index for xpub to generate specific deposit address. |
-**xpub** | **string** | Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both. |
+**accounting_currency** | **string** | The ISO 4217 code of the currency in which all transactions for the created virtual account will be billed | [optional] [default to 'EUR']
 
 [[Back to API list]](../../README.md#api-endpoints)

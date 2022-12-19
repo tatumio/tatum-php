@@ -3,7 +3,7 @@
 /**
  * FlowCreateAddressFromPubKey_200_response Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -26,9 +26,9 @@ class FlowCreateAddressFromPubKey200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowCreateAddressFromPubKey_200_response";
     protected static $_definition = [
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
         "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"]
+        "address" => ["address", "string", null, "getAddress", "setAddress"], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
     ];
 
     /**
@@ -37,7 +37,7 @@ class FlowCreateAddressFromPubKey200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["signature_id"=>null, "tx_id"=>null, "address"=>null] as $k => $v) {
+        foreach(["tx_id"=>null, "address"=>null, "signature_id"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -48,11 +48,59 @@ class FlowCreateAddressFromPubKey200Response extends AbstractModel {
     public function listInvalidProperties(): array {
         $ip = [];
 
+        if (is_null($this->_data['tx_id'])) {
+            $ip[] = "'tx_id' can't be null";
+        }
+        if (is_null($this->_data['address'])) {
+            $ip[] = "'address' can't be null";
+        }
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
         
         return $ip;
+    }
+
+    /**
+     * Get tx_id
+     *
+     * @return string
+     */
+    public function getTxId(): string {
+        return $this->_data["tx_id"];
+    }
+
+    /**
+     * Set tx_id
+     * 
+     * @param string $tx_id The ID of the transaction
+     * @return $this
+     */
+    public function setTxId(string $tx_id) {
+        $this->_data['tx_id'] = $tx_id;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress(): string {
+        return $this->_data["address"];
+    }
+
+    /**
+     * Set address
+     * 
+     * @param string $address The generated blockchain address
+     * @return $this
+     */
+    public function setAddress(string $address) {
+        $this->_data['address'] = $address;
+
+        return $this;
     }
 
     /**
@@ -72,48 +120,6 @@ class FlowCreateAddressFromPubKey200Response extends AbstractModel {
      */
     public function setSignatureId(string $signature_id) {
         $this->_data['signature_id'] = $signature_id;
-
-        return $this;
-    }
-
-    /**
-     * Get tx_id
-     *
-     * @return string|null
-     */
-    public function getTxId(): ?string {
-        return $this->_data["tx_id"];
-    }
-
-    /**
-     * Set tx_id
-     * 
-     * @param string|null $tx_id Id of the transaction
-     * @return $this
-     */
-    public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
-    }
-
-    /**
-     * Get address
-     *
-     * @return string|null
-     */
-    public function getAddress(): ?string {
-        return $this->_data["address"];
-    }
-
-    /**
-     * Set address
-     * 
-     * @param string|null $address Generated blockchain address
-     * @return $this
-     */
-    public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
 
         return $this;
     }

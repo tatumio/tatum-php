@@ -9,11 +9,15 @@ Method | HTTP request | Description
 [**generateMarketplace()**](#generateMarketplace) | **POST** /v3/blockchain/marketplace/listing | Create an NFT marketplace
 [**getMarketplaceFee()**](#getMarketplaceFee) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee | Get the NFT marketplace fee
 [**getMarketplaceFeeRecipient()**](#getMarketplaceFeeRecipient) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient | Get the recipient of the NFT marketplace fee
+[**getMarketplaceInfo()**](#getMarketplaceInfo) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress} | Get information about an NFT marketplace on Solana
 [**getMarketplaceListing()**](#getMarketplaceListing) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id} | Get information about a listing on the NFT marketplace
 [**getMarketplaceListings()**](#getMarketplaceListings) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type} | Get the listings of a certain type from the NFT marketplace
 [**sellAssetOnMarketplace()**](#sellAssetOnMarketplace) | **POST** /v3/blockchain/marketplace/listing/sell | Sell an asset on the NFT marketplace
 [**updateFee()**](#updateFee) | **PUT** /v3/blockchain/marketplace/listing/fee | Update the NFT marketplace fee
 [**updateFeeRecipient()**](#updateFeeRecipient) | **PUT** /v3/blockchain/marketplace/listing/recipient | Update the recipient of the NFT marketplace fee
+[**updateMarketplace()**](#updateMarketplace) | **PUT** /v3/blockchain/marketplace/listing | Update an NFT marketplace on Solana
+[**withdrawFeeFromMarketplace()**](#withdrawFeeFromMarketplace) | **POST** /v3/blockchain/marketplace/withdraw/fee | Withdraw funds from the marketplace fee account on Solana
+[**withdrawTreasuryFromMarketplace()**](#withdrawTreasuryFromMarketplace) | **POST** /v3/blockchain/marketplace/withdraw/treasury | Withdraw funds from the marketplace treasury account on Solana
 
 
 ## `buyAssetOnMarketplace()`
@@ -26,7 +30,7 @@ api()->marketplace()->buyAssetOnMarketplace(
 
 Buy an asset on the NFT marketplace
 
-<p><b>2 credits per API call</b></p> <p>Buy an asset listed on the NFT marketplace.</p> <p>You can buy the asset either for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</p> <ul> <li>If you want to pay for the asset with the <b>native assets</b>, send the required amount of the assets with the API call.</li> <li>If you want to pay with the <b>fungible tokens</b>, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access your tokens</a> before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b></p> <p>When buying an asset on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Buy an asset listed on the NFT marketplace.</p> <p>You can buy the asset either for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</p> <ul> <li>If you want to pay for the asset with the <b>native assets</b>, send the required amount of the assets with the API call.</li> <li>If you want to pay with the <b>fungible tokens</b>, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access your tokens</a> before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When buying an asset on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -80,7 +84,7 @@ api()->marketplace()->cancelSellMarketplaceListing(
 
 Cancel the selling of an asset on the NFT marketplace
 
-<p><b>2 credits per API call</b></p> <p>Cancel the selling of an asset on the NFT marketplace.</p> <p>You can cancel the selling only if you are the seller of the asset or the marketplace operator. Once the selling is canceled, the asset is returned to the seller.</p> <p>You cannot cancel the selling if the asset has already been purchased.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b></p> <p>When cancelling the selling of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Cancel the selling of an asset on the NFT marketplace.</p> <p>You can cancel the selling only if you are the seller of the asset or the marketplace operator. Once the selling is canceled, the asset is returned to the seller.</p> <p>You cannot cancel the selling if the asset has already been purchased.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When cancelling the selling of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -129,12 +133,12 @@ Name | Type | Description  | Notes
 ```php
 api()->marketplace()->generateMarketplace(
     ?\Tatum\Model\GenerateMarketplaceRequest $generate_marketplace_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\GenerateMarketplace200Response
 ```
 
 Create an NFT marketplace
 
-<p><b>2 credits per API call</b></p> <p>Deploy an NFT marketplace smart contract on the blockchain. With a deployed marketplace smart contract, you and your customers can create new  listings for assets such as non-fungible tokens and combinations of token types as described by the ERC-721 and ERC-1155 standards on the Ethereum blockchain or by the equivalent standards on the other blockchains. As the marketplace operator, you can set a fee as a percentage of the asset price that will be paid on top of the asset price.</p> <p>The purchase process looks like the following:</p> <ol> <li>The seller <a href="#operation/SellAssetOnMarketplace">creates a listing for an asset on the NFT marketplace</a>. The listing can be offered for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</li> <li>The seller <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allows the marketplace smart contract to transfer the asset that they are selling</a>.</li> <li>A buyer buys the asset. <ul><li>If the buyer wants to pay with the <b>native blockchain assets</b>, they <a href="#operation/BuyAssetOnMarketplace">make the purchase</a> (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract) and send the required amount of the native assets to the marketplace smart contract.</li> <li>If the buyer wants to pay with the <b>fungible tokens</b>: <ol><li>The buyer <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allows the marketplace smart contract to access their tokens</a> and makes the purchase (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract).</li> <li>The marketplace smart contract deducts the required amount of tokens from the smart contract where the buyer holds the tokens.</li></ol></li></ul></li> <li>The marketplace smart contract transfers the asset to the buyer, transfers the asset price to the seller, and sends the fee to the marketplace fee recipient.</li> </ol> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When deploying an NFT marketplace smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Deploy an NFT marketplace smart contract on the blockchain. With a deployed marketplace smart contract, you and your customers can create new  listings for assets such as non-fungible tokens and combinations of token types as described by the ERC-721 and ERC-1155 standards on the Ethereum blockchain or by the equivalent standards on the other blockchains. As the marketplace operator, you can set a fee as a percentage of the asset price that will be paid on top of the asset price.</p> <p>The purchase process looks like the following:</p> <ol> <li>The seller <a href="#operation/SellAssetOnMarketplace">creates a listing for an asset on the NFT marketplace</a>. The listing can be offered for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</li> <li>The seller <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allows the marketplace smart contract to transfer the asset that they are selling</a>.</li> <li>A buyer buys the asset. <ul><li>If the buyer wants to pay with the <b>native blockchain assets</b>, they <a href="#operation/BuyAssetOnMarketplace">make the purchase</a> (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract) and send the required amount of the native assets to the marketplace smart contract.</li> <li>If the buyer wants to pay with the <b>fungible tokens</b>: <ol><li>The buyer <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allows the marketplace smart contract to access their tokens</a> and makes the purchase (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract).</li> <li>The marketplace smart contract deducts the required amount of tokens from the smart contract where the buyer holds the tokens.</li></ol></li></ul></li> <li>The marketplace smart contract transfers the asset to the buyer, transfers the asset price to the seller, and sends the fee to the marketplace fee recipient.</li> </ol> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>Signing a transaction</b><br/> When deploying an NFT marketplace smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -149,7 +153,7 @@ $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 $generate_marketplace_request = new \Tatum\Model\GenerateMarketplaceRequest();
 
 try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
+    /** @var \Tatum\Model\GenerateMarketplace200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -174,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
@@ -189,7 +193,7 @@ api()->marketplace()->getMarketplaceFee(
 
 Get the NFT marketplace fee
 
-<p><b>1 credit per API call</b></p> <p>Get the NFT marketplace fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
+<p><b>1 credit per API call</b></p> <p>Get the NFT marketplace fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul>
 
 ### Example
 
@@ -249,7 +253,7 @@ api()->marketplace()->getMarketplaceFeeRecipient(
 
 Get the recipient of the NFT marketplace fee
 
-<p><b>1 credit per API call</b></p> <p>Get the recipient of the NFT marketplace fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
+<p><b>1 credit per API call</b></p> <p>Get the recipient of the NFT marketplace fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul>
 
 ### Example
 
@@ -298,6 +302,66 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
+## `getMarketplaceInfo()`
+
+```php
+api()->marketplace()->getMarketplaceInfo(
+    ?string $chain, 
+    ?string $contract_address
+): \Tatum\Model\GetMarketplaceInfo200Response
+```
+
+Get information about an NFT marketplace on Solana
+
+<p><b>1 credit per API call</b></p> <p>Get information about an NFT marketplace on Solana.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/autoload.php');
+
+// Set your optional Tatum API keys
+// @see https://apidoc.tatum.io/#section/Authentication
+$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+
+// Blockchain to work with
+$chain = 'SOL';
+
+// Contract address
+$contract_address = '3MgkEwYY4b8iSX2yMLnbQ7n8KzNRKNAgTGJwVbEcKkUz';
+
+try {
+    /** @var \Tatum\Model\GetMarketplaceInfo200Response $response */
+    $response = $sdk
+        ->mainnet()
+        ->api()
+        ->marketplace()
+        ->getMarketplaceInfo($chain, $contract_address);
+    
+    var_dump($response);
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling marketplace()->getMarketplaceInfo(): ",
+        var_export($apiExc->getResponseObject(), true),
+        PHP_EOL;
+} catch (\Exception $exc) {
+    echo "Exception when calling marketplace()->getMarketplaceInfo(): " . $exc->getMessage() . PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$contract_address** | **string**| Contract address |
+
+### Return type
+
+[**\Tatum\Model\GetMarketplaceInfo200Response**](../Model/GetMarketplaceInfo200Response.md)
+
+[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+
 ## `getMarketplaceListing()`
 
 ```php
@@ -310,7 +374,7 @@ api()->marketplace()->getMarketplaceListing(
 
 Get information about a listing on the NFT marketplace
 
-<p><b>1 credit per API call</b></p> <p>Get information about a specific listing on the NFT marketplace.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
+<p><b>1 credit per API call</b></p> <p>Get information about a specific listing on the NFT marketplace.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul>
 
 ### Example
 
@@ -375,7 +439,7 @@ api()->marketplace()->getMarketplaceListings(
 
 Get the listings of a certain type from the NFT marketplace
 
-<p><b>1 credit per API call</b></p> <p>Get the open, sold, or cancelled listings from the NFT marketplace.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
+<p><b>1 credit per API call</b></p> <p>Get the open, sold, or cancelled listings from the NFT marketplace.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul>
 
 ### Example
 
@@ -433,12 +497,12 @@ Name | Type | Description  | Notes
 ```php
 api()->marketplace()->sellAssetOnMarketplace(
     ?\Tatum\Model\SellAssetOnMarketplaceRequest $sell_asset_on_marketplace_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
 
 Sell an asset on the NFT marketplace
 
-<p><b>2 credits per API call</b></p> <p>Create a new listing for an asset on the NFT marketplace. The listing can be offered for the native blockchain assets (for example, ETH, BSC, and so on) or for any fungible tokens.</p> <p>After the listing is created, <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allow the marketplace smart contract to transfer the asset that you are selling</a>.</p> <p>You can create a listing only for an existing asset that you own (you must be the owner of the asset).</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b></p> <p>When creating a new listing on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Create a new listing for an asset on the NFT marketplace. The listing can be offered for the native blockchain assets (for example, ETH, MATIC, and so on) or for any fungible tokens.</p> <p>After the listing is created, <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allow the marketplace smart contract to transfer the asset that you are selling</a>.</p> <p>You can create a listing only for an existing asset that you own (you must be the owner of the asset).</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When creating a new listing on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -453,7 +517,7 @@ $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 $sell_asset_on_marketplace_request = new \Tatum\Model\SellAssetOnMarketplaceRequest();
 
 try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
+    /** @var \Tatum\Model\SellAssetOnMarketplace200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
@@ -478,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
 
 [[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
 
@@ -492,7 +556,7 @@ api()->marketplace()->updateFee(
 
 Update the NFT marketplace fee
 
-<p><b>2 credits per API call</b></p> <p>Update the NFT marketplace fee.</p> <p>You can update the marketplace fee only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When updating the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Update the NFT marketplace fee.</p> <p>You can update the marketplace fee only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>Signing a transaction</b><br/> When updating the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -546,7 +610,7 @@ api()->marketplace()->updateFeeRecipient(
 
 Update the recipient of the NFT marketplace fee
 
-<p><b>2 credits per API call</b></p> <p>Update the recipient of the NFT marketplace fee.</p> <p>You can update the fee recipient only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When updating the recipient of the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Update the recipient of the NFT marketplace fee.</p> <p>You can update the fee recipient only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>Signing a transaction</b><br/> When updating the recipient of the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -583,6 +647,168 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$update_fee_recipient_request** | [**\Tatum\Model\UpdateFeeRecipientRequest**](../Model/UpdateFeeRecipientRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+
+## `updateMarketplace()`
+
+```php
+api()->marketplace()->updateMarketplace(
+    ?\Tatum\Model\UpdateMarketplaceRequest $update_marketplace_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
+Update an NFT marketplace on Solana
+
+<p><b>2 credits per API call</b></p> <p>Update an NFT marketplace on Solana.</p> <p>You can update it only if you are the marketplace operator.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When updating an NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/autoload.php');
+
+// Set your optional Tatum API keys
+// @see https://apidoc.tatum.io/#section/Authentication
+$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+
+$update_marketplace_request = new \Tatum\Model\UpdateMarketplaceRequest();
+
+try {
+    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
+    $response = $sdk
+        ->mainnet()
+        ->api()
+        ->marketplace()
+        ->updateMarketplace($update_marketplace_request);
+    
+    var_dump($response);
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling marketplace()->updateMarketplace(): ",
+        var_export($apiExc->getResponseObject(), true),
+        PHP_EOL;
+} catch (\Exception $exc) {
+    echo "Exception when calling marketplace()->updateMarketplace(): " . $exc->getMessage() . PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_marketplace_request** | [**\Tatum\Model\UpdateMarketplaceRequest**](../Model/UpdateMarketplaceRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+
+## `withdrawFeeFromMarketplace()`
+
+```php
+api()->marketplace()->withdrawFeeFromMarketplace(
+    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
+Withdraw funds from the marketplace fee account on Solana
+
+<p><b>2 credits per API call</b></p> <p>Withdraw funds from the NFT marketplace fee account on Solana.</p> <p>You can withdraw the funds only if you are the marketplace fee recipient.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/autoload.php');
+
+// Set your optional Tatum API keys
+// @see https://apidoc.tatum.io/#section/Authentication
+$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+
+$withdraw_fee_from_marketplace_request = new \Tatum\Model\WithdrawFeeFromMarketplaceRequest();
+
+try {
+    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
+    $response = $sdk
+        ->mainnet()
+        ->api()
+        ->marketplace()
+        ->withdrawFeeFromMarketplace($withdraw_fee_from_marketplace_request);
+    
+    var_dump($response);
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling marketplace()->withdrawFeeFromMarketplace(): ",
+        var_export($apiExc->getResponseObject(), true),
+        PHP_EOL;
+} catch (\Exception $exc) {
+    echo "Exception when calling marketplace()->withdrawFeeFromMarketplace(): " . $exc->getMessage() . PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+
+## `withdrawTreasuryFromMarketplace()`
+
+```php
+api()->marketplace()->withdrawTreasuryFromMarketplace(
+    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
+Withdraw funds from the marketplace treasury account on Solana
+
+<p><b>2 credits per API call</b></p> <p>Withdraw funds from the NFT marketplace treasury account on Solana.</p> <p>You can withdraw the funds only if you are the marketplace fee recipient.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/autoload.php');
+
+// Set your optional Tatum API keys
+// @see https://apidoc.tatum.io/#section/Authentication
+$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+
+$withdraw_fee_from_marketplace_request = new \Tatum\Model\WithdrawFeeFromMarketplaceRequest();
+
+try {
+    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
+    $response = $sdk
+        ->mainnet()
+        ->api()
+        ->marketplace()
+        ->withdrawTreasuryFromMarketplace($withdraw_fee_from_marketplace_request);
+    
+    var_dump($response);
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling marketplace()->withdrawTreasuryFromMarketplace(): ",
+        var_export($apiExc->getResponseObject(), true),
+        PHP_EOL;
+} catch (\Exception $exc) {
+    echo "Exception when calling marketplace()->withdrawTreasuryFromMarketplace(): " . $exc->getMessage() . PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md)|  |
 
 ### Return type
 

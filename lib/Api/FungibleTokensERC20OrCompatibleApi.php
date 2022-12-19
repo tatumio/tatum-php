@@ -3,7 +3,7 @@
 /**
  * Implementation of FungibleTokensERC20OrCompatible API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -25,7 +25,7 @@ use Tatum\Sdk\ObjectSerializer;
  */
 class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     /**
-     * Approve spending of fungible tokens
+     * Allow a blockchain address to transfer and burn fungible tokens
      *
      * @param \Tatum\Model\Erc20ApproveRequest $erc20_approve_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -223,7 +223,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     }
     
     /**
-     * Get the number of fungible tokens from a specific smart contract that a blockchain address holds
+     * Get the number of fungible tokens that a blockchain address holds in a smart contract
      *
      * @param string $chain Network name
      * @param string $address The blockchain address that you want to get the token balance of
@@ -232,7 +232,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\Erc20GetBalance200Response
+     * @return \Tatum\Model\Erc20Balance
      */
     public function erc20GetBalance(string $chain, string $address, string $contract_address, string $x_testnet_type = 'ethereum-sepolia') { 
         // Resource path
@@ -266,7 +266,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\Erc20GetBalance200Response $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\Erc20Balance $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -277,13 +277,13 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\Erc20GetBalance200Response"
+                "\Tatum\Model\Erc20Balance"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20GetBalance200Response",
+                    "\Tatum\Model\Erc20Balance",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )
@@ -294,14 +294,14 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     }
     
     /**
-     * Get the number of fungible tokens that a blockchain address holds across a blockchain
+     * Get the total number of fungible tokens that a blockchain address holds
      *
      * @param string $chain Network name
      * @param string $address The blockchain address that you want to get the token balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException
      * 
-     * @return \Tatum\Model\Erc20GetBalanceAddress200ResponseInner[]
+     * @return \Tatum\Model\Erc20BalanceForAddress[]
      */
     public function erc20GetBalanceAddress(string $chain, string $address) { 
         // Resource path
@@ -334,7 +334,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         }
 
         try {
-            /** @var \Tatum\Model\Erc20GetBalanceAddress200ResponseInner[] $model */ $model = $this->_makeRequest(
+            /** @var \Tatum\Model\Erc20BalanceForAddress[] $model */ $model = $this->_makeRequest(
                 ObjectSerializer::createRequest(
                     "GET",
                     $this->_caller->config()->getHost() . $resourcePath,
@@ -343,13 +343,13 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
                     [],
                     ""
                 ),
-                "\Tatum\Model\Erc20GetBalanceAddress200ResponseInner[]"
+                "\Tatum\Model\Erc20BalanceForAddress[]"
             );
         } catch (ApiException $e) {
             $e->setResponseObject(
                 ObjectSerializer::deserialize(
                     $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20GetBalanceAddress200ResponseInner[]",
+                    "\Tatum\Model\Erc20BalanceForAddress[]",
                     $this->_caller->config()->getTempFolderPath(),
                     $e->getResponseHeaders()
                 )

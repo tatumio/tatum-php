@@ -3,7 +3,7 @@
 /**
  * MintNftAlgorandKMS Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -34,7 +34,7 @@ class MintNftAlgorandKMS extends AbstractModel {
         "name" => ["name", "string", null, "getName", "setName"], 
         "from" => ["from", "string", null, "getFrom", "setFrom"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "attr" => ["attr", "\Tatum\Model\MintNftAlgorandAttr", null, "getAttr", "setAttr"]
+        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr"]
     ];
 
     /**
@@ -230,19 +230,19 @@ class MintNftAlgorandKMS extends AbstractModel {
     /**
      * Get attr
      *
-     * @return \Tatum\Model\MintNftAlgorandAttr|null
+     * @return \Tatum\Model\MintNftExpressAlgorandAttr|null
      */
-    public function getAttr(): ?\Tatum\Model\MintNftAlgorandAttr {
+    public function getAttr(): ?\Tatum\Model\MintNftExpressAlgorandAttr {
         return $this->_data["attr"];
     }
 
     /**
      * Set attr
      * 
-     * @param \Tatum\Model\MintNftAlgorandAttr|null $attr attr
+     * @param \Tatum\Model\MintNftExpressAlgorandAttr|null $attr attr
      * @return $this
      */
-    public function setAttr(?\Tatum\Model\MintNftAlgorandAttr $attr) {
+    public function setAttr(?\Tatum\Model\MintNftExpressAlgorandAttr $attr) {
         $this->_data['attr'] = $attr;
 
         return $this;

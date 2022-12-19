@@ -7,11 +7,17 @@ Name | Type | Description | Notes
 **chain** | **string** | Blockchain to work with. |
 **fee_recipient** | **string** | Address of the recipient of the fee for the trade. |
 **marketplace_fee** | **float** | The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to &lt;code&gt;100&lt;/code&gt;; to set 10%, set this parameter to &lt;code&gt;1000&lt;/code&gt;; to set 50%, set this parameter to &lt;code&gt;5000&lt;/code&gt;, and so on. |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**nonce** | **float** | Nonce to be set to Ethereum transaction. If not present, last known nonce will be used. | [optional]
+**from_private_key** | **string** | The private key of the blockchain address from which the fee will be deducted |
+**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **fee** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
-**signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
+**signature_id** | **string** | The KMS identifier of the private key of the blockchain address from which the fee will be deducted |
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
-**fee_currency** | **string** | Currency to pay for transaction gas |
+**fee_currency** | **string** | The currency in which the transaction fee will be paid |
+**from** | **string** | The address that will be the owner of the marketplace |
+**treasury_mint** | **string** | Address of a SPL token contract | [optional]
+**treasury_withdrawal_destination** | **string** | The address that will be able to withdraw funds from the marketplace treasury account to own address | [optional]
+**fee_withdrawal_destination** | **string** | The address that will be able to withdraw funds from the marketplace fee account to own address | [optional]
+**requires_sign_off** | **bool** | Set to \&quot;false\&quot; if you do not want the marketplace to sign all operations related to the listings and sales; if not set, defaults to \&quot;true\&quot; (the marketplace must sign all the operations) | [optional]
+**can_change_sale_price** | **bool** | Set to \&quot;true\&quot; to allow the marketplace to change the sale price that the seller intentionally set to 0; if not set, defaults to \&quot;false\&quot; (the marketplace cannot change the sale price) | [optional]
 
 [[Back to API list]](../../README.md#api-endpoints)

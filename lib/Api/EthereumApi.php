@@ -3,7 +3,7 @@
 /**
  * Implementation of Ethereum API
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -430,7 +430,7 @@ class EthereumApi extends AbstractApi {
     }
     
     /**
-     * Get Ethereum account balance
+     * Get the ETH balance of an Ethereum account
      *
      * @param string $address Account address you want to get balance of
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.

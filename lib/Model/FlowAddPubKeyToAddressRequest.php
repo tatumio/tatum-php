@@ -3,7 +3,7 @@
 /**
  * FlowAddPubKeyToAddress_request Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -28,9 +28,9 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
     protected static $_definition = [
         "account" => ["account", "string", null, "getAccount", "setAccount"], 
         "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey"], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight"], 
         "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
         "index" => ["index", "float", null, "getIndex", "setIndex"], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight"], 
         "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
     ];
@@ -41,7 +41,7 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "public_key"=>null, "weight"=>null, "mnemonic"=>null, "index"=>null, "private_key"=>null, "signature_id"=>null] as $k => $v) {
+        foreach(["account"=>null, "public_key"=>null, "mnemonic"=>null, "index"=>null, "weight"=>null, "private_key"=>null, "signature_id"=>null] as $k => $v) {
             $this->_data[$k] = $data[$k] ?? $v;
         }
     }
@@ -70,12 +70,6 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
         if ((mb_strlen($this->_data['public_key']) < 128)) {
             $ip[] = "'public_key' length must be >= 128";
         }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] > 1000)) {
-            $ip[] = "'weight' must be <= 1000";
-        }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] < 0)) {
-            $ip[] = "'weight' must be >= 0";
-        }
         if (is_null($this->_data['mnemonic'])) {
             $ip[] = "'mnemonic' can't be null";
         }
@@ -90,6 +84,12 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
         }
         if (($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
+        }
+        if (!is_null($this->_data['weight']) && ($this->_data['weight'] > 1000)) {
+            $ip[] = "'weight' must be <= 1000";
+        }
+        if (!is_null($this->_data['weight']) && ($this->_data['weight'] < 0)) {
+            $ip[] = "'weight' must be >= 0";
         }
         if (is_null($this->_data['private_key'])) {
             $ip[] = "'private_key' can't be null";
@@ -162,33 +162,6 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
     }
 
     /**
-     * Get weight
-     *
-     * @return float|null
-     */
-    public function getWeight(): ?float {
-        return $this->_data["weight"];
-    }
-
-    /**
-     * Set weight
-     * 
-     * @param float|null $weight Weight of the key. If not set, default 1000 will be used.
-     * @return $this
-     */
-    public function setWeight(?float $weight) {
-        if (!is_null($weight) && ($weight > 1000)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setWeight: $weight must be <=1000');
-        }
-        if (!is_null($weight) && ($weight < 0)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setWeight: $weight must be >=0');
-        }
-        $this->_data['weight'] = $weight;
-
-        return $this;
-    }
-
-    /**
      * Get mnemonic
      *
      * @return string
@@ -235,6 +208,33 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
             throw new IAE('FlowAddPubKeyToAddressRequest.setIndex: $index must be >=0');
         }
         $this->_data['index'] = $index;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return float|null
+     */
+    public function getWeight(): ?float {
+        return $this->_data["weight"];
+    }
+
+    /**
+     * Set weight
+     * 
+     * @param float|null $weight Weight of the key. If not set, default 1000 will be used.
+     * @return $this
+     */
+    public function setWeight(?float $weight) {
+        if (!is_null($weight) && ($weight > 1000)) {
+            throw new IAE('FlowAddPubKeyToAddressRequest.setWeight: $weight must be <=1000');
+        }
+        if (!is_null($weight) && ($weight < 0)) {
+            throw new IAE('FlowAddPubKeyToAddressRequest.setWeight: $weight must be >=0');
+        }
+        $this->_data['weight'] = $weight;
 
         return $this;
     }

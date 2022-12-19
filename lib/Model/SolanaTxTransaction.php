@@ -1,9 +1,9 @@
 <?php
 
 /**
- * SolanaTx_transaction Model
+ * SolanaTxTransaction Model
  *
- * @version   3.17.0
+ * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum
@@ -19,14 +19,14 @@ namespace Tatum\Model;
 use InvalidArgumentException as IAE;
 
 /**
- * SolanaTx_transaction Model
+ * SolanaTxTransaction Model
  */
 class SolanaTxTransaction extends AbstractModel {
 
     public const DISCRIMINATOR = null;
-    protected static $_name = "SolanaTx_transaction";
+    protected static $_name = "SolanaTxTransaction";
     protected static $_definition = [
-        "message" => ["message", "\Tatum\Model\SolanaTxTransactionMessage", null, "getMessage", "setMessage"], 
+        "message" => ["message", "\Tatum\Model\SolanaTxMessage", null, "getMessage", "setMessage"], 
         "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures"]
     ];
 
@@ -54,19 +54,19 @@ class SolanaTxTransaction extends AbstractModel {
     /**
      * Get message
      *
-     * @return \Tatum\Model\SolanaTxTransactionMessage|null
+     * @return \Tatum\Model\SolanaTxMessage|null
      */
-    public function getMessage(): ?\Tatum\Model\SolanaTxTransactionMessage {
+    public function getMessage(): ?\Tatum\Model\SolanaTxMessage {
         return $this->_data["message"];
     }
 
     /**
      * Set message
      * 
-     * @param \Tatum\Model\SolanaTxTransactionMessage|null $message message
+     * @param \Tatum\Model\SolanaTxMessage|null $message message
      * @return $this
      */
-    public function setMessage(?\Tatum\Model\SolanaTxTransactionMessage $message) {
+    public function setMessage(?\Tatum\Model\SolanaTxMessage $message) {
         $this->_data['message'] = $message;
 
         return $this;
