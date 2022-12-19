@@ -8,4 +8,4 @@ This project is generated automatically from the latest [OpenAPI specification](
 so contributing directly is not encouraged. 
 
 You can, however, contact us through [this form](https://support.tatum.io/support/tickets/new) or [on Discord](http://discord.gg/tatum)
-with any suggestions.
+with any suggestions or feedback.
