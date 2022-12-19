@@ -1,65 +1,48 @@
 {
     "name": "tatumio/tatum-php",
-    "description": "PHP SDK to Tatum.io API client, with examples",
+    "version": "2.0.0",
     "type": "library",
-    "homepage": "https://tatum.io",
-    "version": "1.0.0",
-    "require": {
-        "php": "^7.2",
-        "ext-json": "*",
-        "ext-curl": "*",
-        "ext-gmp": "^7.2",
-        "ext-openssl": "*",
-        "ext-mcrypt": "^1.0.4",
-        "ext-mbstring": "^7.2",
-        "btccom/bitwasp-bitcoin-bch-addon": "dev-master",
-        "mbezhanov/ethereum-converter": "dev-master",
-        "web3p/ethereum-tx": "dev-master"
-    },
-    "support": {
-        "issues": "https://github.com/tatumio/tatum-php/issues",
-        "source": "https://github.com/tatumio/tatum-php"
-      },
-    "autoload": {
-        "psr-4": {
-            "Tatum\\": "src"
-        },
-        "classmap": [
-            "src/Tatum.php"
-        ]
-    },
+    "description": "# Welcome to the Tatum API Reference!  ## What is Tatum?  Tatum offers a flexible framework to build, run, and scale blockchain apps fast. To learn more about the Tatum blockchain development framework, visit [our website](https://tatum.io/framework).  The Tatum API features powerful endpoints that simplify a complex blockchain into single API requests. Code for all supported blockchains using unified API calls.  ## Need help?  To chat with other developers, get help from the Support team, and engage with the thriving Tatum community, join  our [Discord server](https://discord.com/invite/tatum). For more information about how to work with Tatum, review the [online documentation](https://docs.tatum.io/).  ## About this API Reference  The Tatum API Reference is based on OpenAPI Specification v3.1.0 with a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md) applied.  # Authentication  When using the Tatum API, you authenticate yourself with an **API key**. <SecurityDefinitions />",
+    "keywords": [
+        "web3", "openapi", "php", "sdk", "tatum", "tatum.io",
+        "blockchain", "bitcoin", "bitcoin-cash", "litecoin",
+        "stellar", "xrp", "ethereum", "ETH", "tron", "nft"
+    ],
+    "homepage": "https://tatum.io/",
     "license": "MIT",
     "authors": [
         {
-            "name": "Adeleye Benjamin Adesanoye",
-            "email": "adeleye.benjamin@highbreedtech.com",
-            "role": "Author"
-        },
-        {
-            "name": "High Breed Technology Limited",
-            "email": "support@highbreedtech.com",
-            "role": "Author's Team"
+            "name": "Tatum",
+            "homepage": "https://tatum.io/",
+            "role": "Team"
         },
         {   
-            "name": "Tatum",
-            "email": "hello@tatum.io",
-            "role": "Team"
+            "name": "Mark Jivko",
+            "homepage": "https://markjivko.com",
+            "role": "Author"
         }
     ],
-    "keywords": [
-        "Tatum",
-        "Tatumio",
-        "Tatum.io",
-        "Blockchain",
-        "Building Blocks",
-        "Bitcoin",
-        "Litecoin",
-        "Stellar",
-        "Tatum API",
-        "XRP",
-        "Ethereum",
-        "Tron"
-      ],
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "support": {
+        "issues": "https://github.com/tatumio/tatum-php/issues",
+        "source": "https://github.com/tatumio/tatum-php"
+    },
+    "require": {
+        "php": ">=7.3",
+        "ext-dom": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-gmp": "*",
+        "ext-bcmath": "*",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1",
+        "phpspec/prophecy-phpunit": "^2.0.1"
+    },
+    "autoload": {
+        "psr-4": { "Tatum\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Tatum\\Test\\" : "test/" }
+    }
 }
