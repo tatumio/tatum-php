@@ -18,6 +18,8 @@ Tree branches are populated as needed just-in-time so the memory footprint is ti
 You can access any of the API endpoints with the following syntax:
 
 ```php
+<?php
+
 // TestNet
 (new \Tatum\Sdk())->testnet()->api();
 
