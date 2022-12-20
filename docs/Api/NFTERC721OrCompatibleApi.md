@@ -41,6 +41,7 @@ Add an NFT minter to an NFT smart contract
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -100,6 +101,7 @@ Burn an NFT
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -159,6 +161,7 @@ Deploy an NFT smart contract
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -220,6 +223,7 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -289,6 +293,7 @@ Get the address of an NFT smart contract by its transaction hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -356,6 +361,7 @@ Get NFT metadata
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -430,6 +436,7 @@ Get NFT provenance information
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -500,6 +507,7 @@ Get NFT royalty information
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -568,6 +576,7 @@ Get all NFTs that a blockchain address holds
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -630,6 +639,7 @@ Get all NFTs from a collection
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -699,6 +709,7 @@ Get an NFT transaction by its hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -768,6 +779,7 @@ Get NFT transactions on a blockchain address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -853,6 +865,7 @@ Get NFT transactions for an NFT
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -933,6 +946,7 @@ Mint an NFT
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -992,6 +1006,7 @@ Mint multiple NFTs
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1051,6 +1066,7 @@ Transfer an NFT
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1110,6 +1126,7 @@ Update NFT royalty information
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1168,6 +1185,7 @@ Verify an NFT in an NFT collection on Solana
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

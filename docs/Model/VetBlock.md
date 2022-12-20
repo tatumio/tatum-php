@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **gas_limit** | **int** | block gas limit (max allowed accumulative gas usage of transactions) | [optional]
 **beneficiary** | **string** | Address of account to receive block reward | [optional]
 **gas_used** | **int** | accumulative gas usage of transactions | [optional]
-**total_score** | **int** | sum of all ancestral blocks&#39; score | [optional]
+**total_score** | **int** | sum of all ancestral blocks' score | [optional]
 **txs_root** | **string** | root hash of transactions in the block | [optional]
 **txs_features** | **int** | supported txs features bitset | [optional]
 **state_root** | **string** | root hash of accounts state | [optional]

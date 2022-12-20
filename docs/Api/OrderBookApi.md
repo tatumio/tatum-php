@@ -34,6 +34,7 @@ Obtain chart data from historical closed trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -88,6 +89,7 @@ Cancel all existing trades for account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -140,6 +142,7 @@ Cancel existing trade
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -198,6 +201,7 @@ List all active buy trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -277,6 +281,7 @@ List all active buy trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -336,6 +341,7 @@ List all historical trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -411,6 +417,7 @@ List all historical trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -465,6 +472,7 @@ List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -525,6 +533,7 @@ List all active sell trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -604,6 +613,7 @@ List all active sell trades
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -658,6 +668,7 @@ Get existing trade
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -713,6 +724,7 @@ Store buy / sell trade
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

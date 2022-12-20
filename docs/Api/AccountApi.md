@@ -40,6 +40,7 @@ Activate account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -93,6 +94,7 @@ Block an amount in an account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -151,6 +153,7 @@ Create a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -205,6 +208,7 @@ Create multiple accounts in a batch call
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -259,6 +263,7 @@ Deactivate account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -311,6 +316,7 @@ Unblock all blocked amounts in an account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -363,6 +369,7 @@ Unblock a blocked amount in an account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -415,6 +422,7 @@ Freeze account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -467,6 +475,7 @@ Get account balance
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -522,6 +531,7 @@ Get account by ID
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -585,6 +595,7 @@ List all accounts
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -675,6 +686,7 @@ List all customer accounts
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -750,6 +762,7 @@ Count of found entities for get accounts request
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -839,6 +852,7 @@ Get blocked amounts in an account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -902,6 +916,7 @@ Get blocked amount by ID
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -958,6 +973,7 @@ Unblock an amount in an account and perform a transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1016,6 +1032,7 @@ Unfreeze account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1069,6 +1086,7 @@ Update account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

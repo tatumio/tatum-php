@@ -30,6 +30,7 @@ Send SOL from account to account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -84,6 +85,7 @@ Broadcast and confirm signed Solana transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -137,6 +139,7 @@ Generate Solana wallet
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -187,6 +190,7 @@ Get Solana Account balance
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -242,6 +246,7 @@ Get Solana block by number
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -296,6 +301,7 @@ Get current block number
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -347,6 +353,7 @@ Get Solana Transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -407,6 +414,7 @@ JSON RPC HTTP driver
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

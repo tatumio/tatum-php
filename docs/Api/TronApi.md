@@ -39,6 +39,7 @@ Generate a TRON wallet
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -95,6 +96,7 @@ Get all transactions for a TRON account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -155,6 +157,7 @@ Get TRC-20 transactions for a TRON account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -214,6 +217,7 @@ Broadcast a TRON transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -268,6 +272,7 @@ Create a TRC-10 token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -322,6 +327,7 @@ Create a TRC-20 token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -376,6 +382,7 @@ Freeze the balance of a TRON account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -431,6 +438,7 @@ Generate a TRON address from the wallet's extended public key
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -490,6 +498,7 @@ Generate the private key for a TRON address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -544,6 +553,7 @@ Get the TRON account by its address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -599,6 +609,7 @@ Get a TRON block by its hash or height
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -653,6 +664,7 @@ Get the current TRON block
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -703,6 +715,7 @@ Get a TRON transaction by its hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -758,6 +771,7 @@ Send TRX to a TRON account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -812,6 +826,7 @@ Send TRC-10 tokens to a TRON account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -866,6 +881,7 @@ Send TRC-20 tokens to a TRON account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -920,6 +936,7 @@ Get information about a TRC-10 token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

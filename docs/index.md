@@ -539,6 +539,8 @@ Local Wallet operations
 You can access any of the Local Wallet endpoints with the following syntax:
 
 ```php
+<?php
+
 // TestNet
 (new \Tatum\Sdk())->testnet()->local()->wallet();
 
@@ -613,6 +615,8 @@ Local Transaction Signing
 You can access any of the Local Transaction endpoints with the following syntax:
 
 ```php
+<?php
+
 // TestNet
 (new \Tatum\Sdk())->testnet()->local()->transaction();
 

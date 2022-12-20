@@ -199,7 +199,7 @@ class EthTransferRequest extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param string $amount Amount to be sent in Ether | MATIC | XDC | KCS.
+     * @param string $amount Amount to be sent in Ether / MATIC / XDC / KCS.
      * @return $this
      */
     public function setAmount(string $amount) {

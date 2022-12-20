@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **merkleroot** | **string** | The root node of a merkle tree, a descendant of all the hashed pairs in the tree. | [optional]
 **tx** | [**\Tatum\Model\BchTx[]**](BchTx.md) | List of transactions present in the block. | [optional]
 **time** | **float** | Time of the block. | [optional]
-**nonce** | **float** | Arbitrary number that is used in Bitcoin&#39;s proof of work consensus algorithm. | [optional]
+**nonce** | **float** | Arbitrary number that is used in Bitcoin's proof of work consensus algorithm. | [optional]
 **difficulty** | **float** |  | [optional]
 **confirmations** | **float** | Number of blocks mined after this block. | [optional]
 **previousblockhash** | **string** | Hash of the previous block. | [optional]

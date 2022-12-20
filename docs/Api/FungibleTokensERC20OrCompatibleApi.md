@@ -31,6 +31,7 @@ Allow a blockchain address to transfer and burn fungible tokens
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -90,6 +91,7 @@ Burn fungible tokens
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -149,6 +151,7 @@ Deploy a fungible token smart contract
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -210,6 +213,7 @@ Get the number of fungible tokens that a blockchain address holds in a smart con
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -278,6 +282,7 @@ Get the total number of fungible tokens that a blockchain address holds
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -344,6 +349,7 @@ Get fungible token transactions on a blockchain address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -428,6 +434,7 @@ Mint fungible tokens
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -487,6 +494,7 @@ Transfer fungible tokens
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

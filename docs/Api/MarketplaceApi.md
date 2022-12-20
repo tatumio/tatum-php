@@ -36,6 +36,7 @@ Buy an asset on the NFT marketplace
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -90,6 +91,7 @@ Cancel the selling of an asset on the NFT marketplace
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -144,6 +146,7 @@ Create an NFT marketplace
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -199,6 +202,7 @@ Get the NFT marketplace fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -259,6 +263,7 @@ Get the recipient of the NFT marketplace fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -319,6 +324,7 @@ Get information about an NFT marketplace on Solana
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -380,6 +386,7 @@ Get information about a listing on the NFT marketplace
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -445,6 +452,7 @@ Get the listings of a certain type from the NFT marketplace
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -508,6 +516,7 @@ Sell an asset on the NFT marketplace
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -562,6 +571,7 @@ Update the NFT marketplace fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -616,6 +626,7 @@ Update the recipient of the NFT marketplace fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -670,6 +681,7 @@ Update an NFT marketplace on Solana
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -724,6 +736,7 @@ Withdraw funds from the marketplace fee account on Solana
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -778,6 +791,7 @@ Withdraw funds from the marketplace treasury account on Solana
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

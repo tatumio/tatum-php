@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **transaction_hash** | **string** | Hash of the transaction. | [optional]
 **input** | **string** | The data sent along with the transaction. | [optional]
 **nonce** | **float** | The number of transactions made by the sender prior to this one. | [optional]
-**to** | **string** | Address of the receiver. &#39;null&#39; when its a contract creation transaction. | [optional]
+**to** | **string** | Address of the receiver. 'null' when its a contract creation transaction. | [optional]
 **transaction_index** | **mixed** | The integer of the transactions index position in the block; if not returned, the transaction has not been included in a block yet. | [optional]
 **value** | **string** | Value transferred in wei. | [optional]
 **gas_used** | **mixed** | The amount of gas used by this specific transaction alone; if not returned, the transaction has not been included in a block yet. | [optional]

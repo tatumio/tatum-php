@@ -24,6 +24,7 @@ Get the current exchange rate for exchanging fiat/crypto assets
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

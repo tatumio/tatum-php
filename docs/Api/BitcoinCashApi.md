@@ -33,6 +33,7 @@ Broadcast signed Bitcoin Cash transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -88,6 +89,7 @@ Generate Bitcoin Cash deposit address from Extended public key
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -147,6 +149,7 @@ Generate Bitcoin Cash private key
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -201,6 +204,7 @@ Generate Bitcoin Cash wallet
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -256,6 +260,7 @@ Get Bitcoin Cash Block by hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -310,6 +315,7 @@ Get Bitcoin Cash Blockchain Information
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -360,6 +366,7 @@ Get Bitcoin Cash Block hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -415,6 +422,7 @@ Get Bitcoin Cash Transaction by hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -471,6 +479,7 @@ Get Bitcoin Cash Transactions by address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -530,6 +539,7 @@ JSON RPC HTTP driver
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -584,6 +594,7 @@ Send BCH to Bitcoin Cash addresses
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

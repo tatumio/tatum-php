@@ -46,6 +46,7 @@ Please follow the [installation procedure](#installation--usage) then create an 
 
 ```php
 <?php
+
 // Import a PSR-4 autoloader
 require_once(__DIR__ . '/autoload.php');
 

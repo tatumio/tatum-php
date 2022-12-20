@@ -30,6 +30,7 @@ Check whether a blockchain address is assigned to a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -95,6 +96,7 @@ Assign a blockchain address to a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -159,6 +161,7 @@ Create a deposit address for a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -218,6 +221,7 @@ Create multiple deposit addresses for a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -272,6 +276,7 @@ Get all deposit addresses for a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -329,6 +334,7 @@ Remove a deposit address from a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

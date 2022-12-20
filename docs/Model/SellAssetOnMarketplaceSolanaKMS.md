@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **nft_address** | **string** | Blockchain address of the asset to sell |
 **from** | **mixed** | Blockchain address of the seller |
 **price** | **string** | Price of the asset to sell. Marketplace fee will be obtained on top of this price. |
-**authority_signature_id** | **string** | The KMS identifier of the private key used for signing transactions as authority; required if &lt;code&gt;requiresSignOff&lt;/code&gt; is set to \&quot;true\&quot; for the marketplace | [optional]
+**authority_signature_id** | **string** | The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace | [optional]
 **signature_id** | **string** | The KMS identifier of the private key of the seller |
 
 [[Back to Index]](../index.md)

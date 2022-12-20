@@ -80,7 +80,7 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
     /**
      * Set fast
      * 
-     * @param string $fast Transaction fee in BTC|LTC to be paid, if transaction should be included in next 1-2 blocks.
+     * @param string $fast Transaction fee in BTC/LTC to be paid, if transaction should be included in next 1-2 blocks.
      * @return $this
      */
     public function setFast(string $fast) {
@@ -101,7 +101,7 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
     /**
      * Set medium
      * 
-     * @param string $medium Transaction fee in BTC|LTC to be paid, if transaction should be included in next 5-6 blocks.
+     * @param string $medium Transaction fee in BTC/LTC to be paid, if transaction should be included in next 5-6 blocks.
      * @return $this
      */
     public function setMedium(string $medium) {
@@ -122,7 +122,7 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
     /**
      * Set slow
      * 
-     * @param string $slow Transaction fee in BTC|LTC to be paid, if transaction should be included in next 7+ blocks.
+     * @param string $slow Transaction fee in BTC/LTC to be paid, if transaction should be included in next 7+ blocks.
      * @return $this
      */
     public function setSlow(string $slow) {

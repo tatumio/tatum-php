@@ -33,6 +33,7 @@ Allow the NFT auction or marketplace to transfer an asset
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -87,6 +88,7 @@ Bid for an asset at the NFT auction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -141,6 +143,7 @@ Cancel the selling of an asset at the NFT auction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -195,6 +198,7 @@ Sell an asset at the NFT auction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -249,6 +253,7 @@ Create an NFT auction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -305,6 +310,7 @@ Get information about an auctioned asset at the NFT auction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -369,6 +375,7 @@ Get the NFT auction fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -429,6 +436,7 @@ Get the recipient of the NFT auction fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -488,6 +496,7 @@ Settle an NFT auction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -542,6 +551,7 @@ Update the NFT auction fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -596,6 +606,7 @@ Update the recipient of the NFT auction fee
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

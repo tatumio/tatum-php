@@ -38,6 +38,7 @@ Add a Multi Token minter
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -97,6 +98,7 @@ Burn a Multi Token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -156,6 +158,7 @@ Burn multiple Multi Tokens
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -215,6 +218,7 @@ Deploy a Multi Token smart contract
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -274,6 +278,7 @@ Mint a Multi Token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -333,6 +338,7 @@ Mint multiple Multi Tokens
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -393,6 +399,7 @@ Get all Multi Tokens that a blockchain address holds
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -460,6 +467,7 @@ Get the amount of a specific MultiToken that a blockchain address holds
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -535,6 +543,7 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -608,6 +617,7 @@ Get the address of a Multi Token smart contract by its transaction hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -674,6 +684,7 @@ Get Multi Token metadata
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -743,6 +754,7 @@ Get a Multi Token transaction by its hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -812,6 +824,7 @@ Get Multi Token transactions on a blockchain address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -892,6 +905,7 @@ Transfer a Multi Token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -951,6 +965,7 @@ Transfer multiple Multi Tokens
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

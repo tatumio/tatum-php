@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **to** | **string** | The blockchain address to send the NFT to |
 **contract_address** | **string** | The blockchain address of the smart contract to build the NFT on |
 **token_id** | **string** | The ID of the NFT |
-**url** | **string** | The URL pointing to the NFT metadata; for more information, see &lt;a href&#x3D;\&quot;https://eips.ethereum.org/EIPS/eip-721#specification\&quot; target&#x3D;\&quot;_blank\&quot;&gt;EIP-721&lt;/a&gt; |
+**url** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
 **fee_limit** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
 **from_private_key** | **string** | The private key of the blockchain address that will pay the fee for the transaction |
 **author_addresses** | **string[]** | The blockchain addresses where the royalties will be sent every time the minted NFT is transferred; the royalties are paid in the native blockchain currency, TRX | [optional]

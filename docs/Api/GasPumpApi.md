@@ -32,6 +32,7 @@ Activate gas pump addresses
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -87,6 +88,7 @@ Get the results of the address activation transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -146,6 +148,7 @@ Approve the transfer of an asset from a gas pump address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -202,6 +205,7 @@ Check whether the gas pump address with a specified index is activated
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -265,6 +269,7 @@ Generate a custodial wallet address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -320,6 +325,7 @@ Generate a gas pump wallet address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -378,6 +384,7 @@ Precalculate gas pump addresses
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -433,6 +440,7 @@ Get the custodial wallet address from the transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -492,6 +500,7 @@ Transfer an asset from a gas pump address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -546,6 +555,7 @@ Transfer multiple assets from a gas pump address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

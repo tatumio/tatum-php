@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 **from** | **mixed** | Blockchain address of the asset owner |
-**authority_private_key** | **string** | The private key used for signing transactions as authority; required if &lt;code&gt;requiresSignOff&lt;/code&gt; is set to \&quot;true\&quot; for the marketplace | [optional]
-**authority_signature_id** | **string** | The KMS identifier of the private key used for signing transactions as authority; required if &lt;code&gt;requiresSignOff&lt;/code&gt; is set to \&quot;true\&quot; for the marketplace | [optional]
+**authority_private_key** | **string** | The private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace | [optional]
+**authority_signature_id** | **string** | The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace | [optional]
 
 [[Back to Index]](../index.md)

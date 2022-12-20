@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **error_code** | **string** | subscription.attr.pending.invalid |
-**message** | **string** | Invalid subscription attribute &#39;id&#39; or &#39;url&#39;. |
+**message** | **string** | Invalid subscription attribute 'id' or 'url'. |
 **status_code** | **float** | 403 |
 
 [[Back to Index]](../index.md)

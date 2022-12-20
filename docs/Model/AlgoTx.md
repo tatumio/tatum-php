@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **payment_transaction** | **object** | payment Transaction | [optional]
 **receiver_rewards** | **float** | rewards applied to receiver account. | [optional]
 **round_time** | **float** | Time when the block this transaction is in was confirmed. | [optional]
-**sender** | **string** | Sender&#39;s address | [optional]
+**sender** | **string** | Sender's address | [optional]
 **sender_rewards** | **float** | rewards applied to sender account. | [optional]
 **signature** | **object** | signature | [optional]
 **tx_type** | **string** | indicates what type of transaction this is. Different types have differnet fields. | [optional]

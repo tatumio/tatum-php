@@ -25,6 +25,7 @@ Estimate the block height for a future point in time
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -85,6 +86,7 @@ Get the blockchain address of a smart contract by the deployment transaction ID
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

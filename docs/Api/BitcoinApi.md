@@ -36,6 +36,7 @@ Broadcast a signed Bitcoin transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -91,6 +92,7 @@ Generate a Bitcoin address from the wallet's extended public key
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -150,6 +152,7 @@ Generate the private key for a Bitcoin address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -204,6 +207,7 @@ Generate a Bitcoin wallet
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -259,6 +263,7 @@ Get the balance of a Bitcoin address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -314,6 +319,7 @@ Get a Bitcoin block by its hash or height
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -368,6 +374,7 @@ Get Bitcoin blockchain information
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -418,6 +425,7 @@ Get the hash of a Bitcoin block
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -472,6 +480,7 @@ Get transactions from the Bitcoin mempool
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -522,6 +531,7 @@ Get a Bitcoin transaction by its hash
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -579,6 +589,7 @@ Get all transactions for a Bitcoin address
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -643,6 +654,7 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -702,6 +714,7 @@ Connect to a Bitcoin node through an RPC driver
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -756,6 +769,7 @@ Send BTC to Bitcoin addresses
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

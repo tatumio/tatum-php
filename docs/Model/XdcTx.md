@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **block_number** | **float** | Block number where this transaction was in. | [optional]
 **transaction_index** | **float** | Integer of the transactions index position in the block. | [optional]
 **from** | **string** | Address of the sender. | [optional]
-**to** | **string** | Address of the receiver. &#39;null&#39; when its a contract creation transaction. | [optional]
+**to** | **string** | Address of the receiver. 'null' when its a contract creation transaction. | [optional]
 **value** | **string** | Value transferred in wei. | [optional]
 **gas** | **float** | Gas provided by the sender. | [optional]
 **gas_price** | **string** | Gas price provided by the sender in wei. | [optional]

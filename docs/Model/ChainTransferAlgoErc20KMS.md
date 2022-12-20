@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **contract_address** | **string** | The asset ID (the ID of the fungible tokens) |
 **amount** | **string** | The amount of the fungible tokens to be sent |
 **digits** | **float** | The number of decimal places that the fungible tokens have |
-**signature_id** | **string** | The KMS identifier of the private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the &lt;code&gt;from&lt;/code&gt; parameter); the transaction fee will be deducted from this address |
+**signature_id** | **string** | The KMS identifier of the private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the <code>from</code> parameter); the transaction fee will be deducted from this address |
 
 [[Back to Index]](../index.md)

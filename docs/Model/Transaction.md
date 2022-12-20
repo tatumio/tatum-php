@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **account_id** | **string** | Source account - source of transaction(s) |
 **counter_account_id** | **string** | Counter account - transaction(s) destination account. In case of blockchain recipient, this is addess of blockchain account. | [optional]
 **currency** | **string** | Transaction currency |
-**amount** | **string** | Amount in account&#39;s currency |
+**amount** | **string** | Amount in account's currency |
 **anonymous** | **bool** | Whether the transaction is anonymous. If true, counter account owner does not see source account. |
 **created** | **float** | Time in UTC of transaction. |
 **market_value** | [**\Tatum\Model\MarketValue**](MarketValue.md) |  |

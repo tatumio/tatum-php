@@ -31,6 +31,7 @@ Connect to the blockchain node through an RPC driver
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -112,6 +113,7 @@ Connect to the blockchain node through an RPC driver
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -183,6 +185,7 @@ Connect to the blockchain node through an RPC driver
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

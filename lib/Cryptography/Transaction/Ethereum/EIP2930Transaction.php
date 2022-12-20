@@ -8,13 +8,7 @@
 
 namespace Tatum\Cryptography\Transaction\Ethereum;
 
-use ArrayAccess;
 use RuntimeException;
-use InvalidArgumentException;
-use Tatum\Cryptography\Util\Ethereum\RLP;
-use Tatum\Cryptography\Elliptic\EC;
-use Tatum\Cryptography\Elliptic\EC\KeyPair;
-use Tatum\Cryptography\Util\Ethereum\Util;
 use Tatum\Cryptography\Transaction\Ethereum\TypeTransaction;
 
 /**

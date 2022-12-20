@@ -288,7 +288,7 @@ class TransferXlm extends AbstractModel {
     /**
      * Set attr
      * 
-     * @param string|null $attr Short message to recipient. Usually used as an account discriminator. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number. When using as an account disciminator in Tatum Offchain ledger, can be in format of destination_acc|source_acc.
+     * @param string|null $attr Short message to recipient. Usually used as an account discriminator. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number. When using as an account disciminator in Tatum Offchain ledger, can be in format of destination_acc/source_acc.
      * @return $this
      */
     public function setAttr(?string $attr) {

@@ -93,7 +93,7 @@ class Error403TxAmountBtcOffchain extends AbstractModel {
     /**
      * Set message
      * 
-     * @param string $message BTC|LTC|BCH payment amount must be at least 0.00000001, not ${transaction.amount}.
+     * @param string $message BTC/LTC/BCH payment amount must be at least 0.00000001, not ${transaction.amount}.
      * @return $this
      */
     public function setMessage(string $message) {

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **transaction_code** | **string** | For bookkeeping to distinct transaction purpose. | [optional]
 **payment_id** | **string** | Payment ID, External identifier of the payment, which can be used to pair transactions within Tatum accounts. | [optional]
 **recipient_note** | **string** | Note visible to both, sender and recipient | [optional]
-**base_rate** | **float** | Exchange rate of the base pair. Only applicable for Tatum&#39;s Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency. | [optional] [default to 1]
+**base_rate** | **float** | Exchange rate of the base pair. Only applicable for Tatum's Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency. | [optional] [default to 1]
 **sender_note** | **string** | Note visible to sender | [optional]
 
 [[Back to Index]](../index.md)

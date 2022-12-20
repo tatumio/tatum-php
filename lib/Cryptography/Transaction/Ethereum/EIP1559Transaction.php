@@ -8,14 +8,9 @@
 
 namespace Tatum\Cryptography\Transaction\Ethereum;
 
-use ArrayAccess;
 use RuntimeException;
 use InvalidArgumentException;
 use Tatum\Cryptography\Transaction\Ethereum\TypeTransaction;
-use Tatum\Cryptography\Util\Ethereum\RLP;
-use Tatum\Cryptography\Elliptic\EC;
-use Tatum\Cryptography\Elliptic\EC\KeyPair;
-use Tatum\Cryptography\Util\Ethereum\Util;
 
 /**
  * It's a instance for generating/serializing ethereum eip1559 transaction.

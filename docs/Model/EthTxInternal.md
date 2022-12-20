@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **from** | **string** | Address of the sender. | [optional]
-**to** | **string** | Address of the receiver. &#39;null&#39; when its a contract creation transaction. | [optional]
+**to** | **string** | Address of the receiver. 'null' when its a contract creation transaction. | [optional]
 **value** | **string** | Value transferred in wei. | [optional]
 **block_number** | **float** | Block number where this transaction was in. | [optional]
 **time_stamp** | **string** | Time of the transaction in seconds. | [optional]

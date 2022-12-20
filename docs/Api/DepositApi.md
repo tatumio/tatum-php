@@ -31,6 +31,7 @@ List all deposits for product
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -121,6 +122,7 @@ Count of found entities for get deposits request
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys

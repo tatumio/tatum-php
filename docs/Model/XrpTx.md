@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **hash** | **string** | The SHA-512 hash of the transaction | [optional]
 **ledger_index** | **float** | The ledger index of the ledger that includes this transaction. | [optional]
 **account** | **string** | The unique address of the account that initiated the transaction. | [optional]
-**amount** | **string** | Amount of transaction, in drops. 1 drop &#x3D; 0.000001 XRP. | [optional]
+**amount** | **string** | Amount of transaction, in drops. 1 drop = 0.000001 XRP. | [optional]
 **destination** | **string** | Recipient account address. | [optional]
 **fee** | **string** | Integer amount of XRP, in drops, to be destroyed as a cost for distributing this transaction to the network. Some transaction types have different minimum requirements. | [optional]
 **transaction_type** | **string** | Type of the transaction. XRp supports more than 18 transaction types. For the payment, Payment type is used. | [optional]

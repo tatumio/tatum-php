@@ -66,6 +66,7 @@ Send ADA from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -120,6 +121,7 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -174,6 +176,7 @@ Send ALGO from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -228,6 +231,7 @@ Send BCH from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -282,6 +286,7 @@ Create a BNB-based asset
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -333,6 +338,7 @@ Send BNB from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -387,6 +393,7 @@ Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual a
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -441,6 +448,7 @@ Send BSC from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -495,6 +503,7 @@ Send BTC from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -549,6 +558,7 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -603,6 +613,7 @@ Send CELO from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -657,6 +668,7 @@ Register a new BNB Smart Chain BEP-20 token in the virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -711,6 +723,7 @@ Register a new Celo ERC-20-equivalent token in the virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -765,6 +778,7 @@ Register a new Ethereum ERC-20 token in the virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -819,6 +833,7 @@ Register a new Harmony HRM-20 token in the virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -873,6 +888,7 @@ Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -927,6 +943,7 @@ Register a new XinFin ERC-20-equivalent token in the virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -981,6 +998,7 @@ Send DOGE from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1035,6 +1053,7 @@ Send EGLD from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1089,6 +1108,7 @@ Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1143,6 +1163,7 @@ Send ETH from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1197,6 +1218,7 @@ Send Ethereum ERC-20 tokens from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1251,6 +1273,7 @@ Send FLOW from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1305,6 +1328,7 @@ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the bl
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1359,6 +1383,7 @@ Send KCS from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1413,6 +1438,7 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1467,6 +1493,7 @@ Send KLAY from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1521,6 +1548,7 @@ Send LTC from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1576,6 +1604,7 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1635,6 +1664,7 @@ Send ONE from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1693,6 +1723,7 @@ Send MATIC from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1748,6 +1779,7 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1806,6 +1838,7 @@ Send SOL from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1861,6 +1894,7 @@ Set the contract address of a Celo ERC-20-equivalent token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1918,6 +1952,7 @@ Set the contract address of an ERC-20 or ERC-20-equivalent token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -1975,6 +2010,7 @@ Set the contract address of a TRC-10 or TRC-20 token
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2031,6 +2067,7 @@ Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual ac
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2085,6 +2122,7 @@ Send TRON from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2139,6 +2177,7 @@ Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2193,6 +2232,7 @@ Send XDC from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2247,6 +2287,7 @@ Create an XLM-based asset
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2298,6 +2339,7 @@ Send XLM from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2352,6 +2394,7 @@ Create XRP based Asset
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
@@ -2403,6 +2446,7 @@ Send XRP from a virtual account to the blockchain
 
 ```php
 <?php
+
 require_once(__DIR__ . '/autoload.php');
 
 // Set your optional Tatum API keys
