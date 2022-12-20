@@ -1,4 +1,4 @@
-# Tatum - PHP SDK
+# [Tatum - PHP SDK](https://github.com/tatumio/tatum-php)
 
 ## Table of Contents
 - [API Endpoints](#api-endpoints)
