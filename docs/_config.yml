@@ -1,5 +1,3 @@
-remote_theme: rundocs/jekyll-rtd-theme
-plugins:
-- jekyll-remote-theme
+remote_theme: just-the-docs/just-the-docs
 title: Tatum - PHP SDK
 description: PHP SDK for Web3 by Tatum
