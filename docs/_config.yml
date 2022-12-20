@@ -1,4 +1,4 @@
-remote_theme: just-the-docs/just-the-docs@main
+remote_theme: sighingnow/jekyll-gitbook@main
 plugins:
 - jekyll-remote-theme
 title: Tatum - PHP SDK
