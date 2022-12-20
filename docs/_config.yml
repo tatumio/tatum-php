@@ -1,4 +1,4 @@
-remote_theme: zendesk/jekyll-theme-zendesk-garden@main
+remote_theme: rundocs/jekyll-rtd-theme
 plugins:
 - jekyll-remote-theme
 title: Tatum - PHP SDK
