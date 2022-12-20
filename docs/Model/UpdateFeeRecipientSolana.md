@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **from** | **string** | The blockchain address of the marketplace authority |
 **from_private_key** | **string** | The private key of the marketspace authority |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

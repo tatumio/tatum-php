@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **net_limit** | **float** | Extra usage limit of the network. | [optional]
 **bandwidth** | **float** | Remaining usage of the network, equal to freeNetLimit - freeNetUsed + netLimit - netUsed. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

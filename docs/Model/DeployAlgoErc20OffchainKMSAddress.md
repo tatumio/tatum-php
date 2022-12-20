@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **address** | **string** | Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both. |
 **signature_id** | **string** | Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

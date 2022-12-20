@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | BTC|LTC|BCH payment amount must be at least 0.00000000000001, not ${transaction.amount}. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

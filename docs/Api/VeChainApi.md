@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**vetBlockchainTransfer()**](#vetBlockchainTransfer) | **POST** /v3/vet/transaction | Send VeChain from account to account
-[**vetBroadcast()**](#vetBroadcast) | **POST** /v3/vet/broadcast | Broadcast signed VeChain transaction
-[**vetGenerateAddress()**](#vetGenerateAddress) | **GET** /v3/vet/address/{xpub}/{index} | Generate VeChain account address from Extended public key
-[**vetGenerateAddressPrivateKey()**](#vetGenerateAddressPrivateKey) | **POST** /v3/vet/wallet/priv | Generate VeChain private key
-[**vetGenerateWallet()**](#vetGenerateWallet) | **GET** /v3/vet/wallet | Generate VeChain wallet
-[**vetGetBalance()**](#vetGetBalance) | **GET** /v3/vet/account/balance/{address} | Get VeChain Account balance
-[**vetGetBlock()**](#vetGetBlock) | **GET** /v3/vet/block/{hash} | Get VeChain Block by hash
-[**vetGetCurrentBlock()**](#vetGetCurrentBlock) | **GET** /v3/vet/block/current | Get VeChain current block
-[**vetGetEnergy()**](#vetGetEnergy) | **GET** /v3/vet/account/energy/{address} | Get VeChain Account energy (VTHO)
-[**vetGetTransaction()**](#vetGetTransaction) | **GET** /v3/vet/transaction/{hash} | Get VeChain Transaction
-[**vetGetTransactionReceipt()**](#vetGetTransactionReceipt) | **GET** /v3/vet/transaction/{hash}/receipt | Get VeChain Transaction Receipt
+[**vetBlockchainTransfer()**](#vetblockchaintransfer) | **POST** /v3/vet/transaction | Send VeChain from account to account
+[**vetBroadcast()**](#vetbroadcast) | **POST** /v3/vet/broadcast | Broadcast signed VeChain transaction
+[**vetGenerateAddress()**](#vetgenerateaddress) | **GET** /v3/vet/address/{xpub}/{index} | Generate VeChain account address from Extended public key
+[**vetGenerateAddressPrivateKey()**](#vetgenerateaddressprivatekey) | **POST** /v3/vet/wallet/priv | Generate VeChain private key
+[**vetGenerateWallet()**](#vetgeneratewallet) | **GET** /v3/vet/wallet | Generate VeChain wallet
+[**vetGetBalance()**](#vetgetbalance) | **GET** /v3/vet/account/balance/{address} | Get VeChain Account balance
+[**vetGetBlock()**](#vetgetblock) | **GET** /v3/vet/block/{hash} | Get VeChain Block by hash
+[**vetGetCurrentBlock()**](#vetgetcurrentblock) | **GET** /v3/vet/block/current | Get VeChain current block
+[**vetGetEnergy()**](#vetgetenergy) | **GET** /v3/vet/account/energy/{address} | Get VeChain Account energy (VTHO)
+[**vetGetTransaction()**](#vetgettransaction) | **GET** /v3/vet/transaction/{hash} | Get VeChain Transaction
+[**vetGetTransactionReceipt()**](#vetgettransactionreceipt) | **GET** /v3/vet/transaction/{hash}/receipt | Get VeChain Transaction Receipt
 
 
 ## `vetBlockchainTransfer()`
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetBroadcast()`
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGenerateAddress()`
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\VetGenerateAddress200Response**](../Model/VetGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGenerateAddressPrivateKey()`
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGenerateWallet()`
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGetBalance()`
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\VetGetBalance200Response**](../Model/VetGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGetBlock()`
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\VetBlock**](../Model/VetBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGetCurrentBlock()`
 
@@ -451,7 +451,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGetEnergy()`
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\VetGetEnergy200Response**](../Model/VetGetEnergy200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGetTransaction()`
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\VetTx**](../Model/VetTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetGetTransactionReceipt()`
 
@@ -616,4 +616,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\VetTxReceipt**](../Model/VetTxReceipt.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

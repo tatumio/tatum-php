@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **fee_limit** | **float** | Fee in TRX to be paid. |
 **from** | **string** | Sender address of TRON account in Base58 format. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

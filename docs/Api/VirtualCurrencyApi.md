@@ -4,11 +4,11 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCurrency()**](#createCurrency) | **POST** /v3/ledger/virtualCurrency | Create new virtual currency
-[**getCurrency()**](#getCurrency) | **GET** /v3/ledger/virtualCurrency/{name} | Get virtual currency
-[**mintCurrency()**](#mintCurrency) | **PUT** /v3/ledger/virtualCurrency/mint | Create new supply of virtual currency
-[**revokeCurrency()**](#revokeCurrency) | **PUT** /v3/ledger/virtualCurrency/revoke | Destroy supply of virtual currency
-[**updateCurrency()**](#updateCurrency) | **PUT** /v3/ledger/virtualCurrency | Update virtual currency
+[**createCurrency()**](#createcurrency) | **POST** /v3/ledger/virtualCurrency | Create new virtual currency
+[**getCurrency()**](#getcurrency) | **GET** /v3/ledger/virtualCurrency/{name} | Get virtual currency
+[**mintCurrency()**](#mintcurrency) | **PUT** /v3/ledger/virtualCurrency/mint | Create new supply of virtual currency
+[**revokeCurrency()**](#revokecurrency) | **PUT** /v3/ledger/virtualCurrency/revoke | Destroy supply of virtual currency
+[**updateCurrency()**](#updatecurrency) | **PUT** /v3/ledger/virtualCurrency | Update virtual currency
 
 
 ## `createCurrency()`
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Account**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getCurrency()`
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\VC**](../Model/VC.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `mintCurrency()`
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `revokeCurrency()`
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateCurrency()`
 
@@ -276,4 +276,4 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

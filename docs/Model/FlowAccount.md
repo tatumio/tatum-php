@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **contracts** | **object** |  | [optional]
 **keys** | [**\Tatum\Model\FlowAccountKeysInner[]**](FlowAccountKeysInner.md) | Array of public keys assigned. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -4,20 +4,20 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**buyAssetOnMarketplace()**](#buyAssetOnMarketplace) | **POST** /v3/blockchain/marketplace/listing/buy | Buy an asset on the NFT marketplace
-[**cancelSellMarketplaceListing()**](#cancelSellMarketplaceListing) | **POST** /v3/blockchain/marketplace/listing/cancel | Cancel the selling of an asset on the NFT marketplace
-[**generateMarketplace()**](#generateMarketplace) | **POST** /v3/blockchain/marketplace/listing | Create an NFT marketplace
-[**getMarketplaceFee()**](#getMarketplaceFee) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee | Get the NFT marketplace fee
-[**getMarketplaceFeeRecipient()**](#getMarketplaceFeeRecipient) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient | Get the recipient of the NFT marketplace fee
-[**getMarketplaceInfo()**](#getMarketplaceInfo) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress} | Get information about an NFT marketplace on Solana
-[**getMarketplaceListing()**](#getMarketplaceListing) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id} | Get information about a listing on the NFT marketplace
-[**getMarketplaceListings()**](#getMarketplaceListings) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type} | Get the listings of a certain type from the NFT marketplace
-[**sellAssetOnMarketplace()**](#sellAssetOnMarketplace) | **POST** /v3/blockchain/marketplace/listing/sell | Sell an asset on the NFT marketplace
-[**updateFee()**](#updateFee) | **PUT** /v3/blockchain/marketplace/listing/fee | Update the NFT marketplace fee
-[**updateFeeRecipient()**](#updateFeeRecipient) | **PUT** /v3/blockchain/marketplace/listing/recipient | Update the recipient of the NFT marketplace fee
-[**updateMarketplace()**](#updateMarketplace) | **PUT** /v3/blockchain/marketplace/listing | Update an NFT marketplace on Solana
-[**withdrawFeeFromMarketplace()**](#withdrawFeeFromMarketplace) | **POST** /v3/blockchain/marketplace/withdraw/fee | Withdraw funds from the marketplace fee account on Solana
-[**withdrawTreasuryFromMarketplace()**](#withdrawTreasuryFromMarketplace) | **POST** /v3/blockchain/marketplace/withdraw/treasury | Withdraw funds from the marketplace treasury account on Solana
+[**buyAssetOnMarketplace()**](#buyassetonmarketplace) | **POST** /v3/blockchain/marketplace/listing/buy | Buy an asset on the NFT marketplace
+[**cancelSellMarketplaceListing()**](#cancelsellmarketplacelisting) | **POST** /v3/blockchain/marketplace/listing/cancel | Cancel the selling of an asset on the NFT marketplace
+[**generateMarketplace()**](#generatemarketplace) | **POST** /v3/blockchain/marketplace/listing | Create an NFT marketplace
+[**getMarketplaceFee()**](#getmarketplacefee) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee | Get the NFT marketplace fee
+[**getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient | Get the recipient of the NFT marketplace fee
+[**getMarketplaceInfo()**](#getmarketplaceinfo) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress} | Get information about an NFT marketplace on Solana
+[**getMarketplaceListing()**](#getmarketplacelisting) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id} | Get information about a listing on the NFT marketplace
+[**getMarketplaceListings()**](#getmarketplacelistings) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type} | Get the listings of a certain type from the NFT marketplace
+[**sellAssetOnMarketplace()**](#sellassetonmarketplace) | **POST** /v3/blockchain/marketplace/listing/sell | Sell an asset on the NFT marketplace
+[**updateFee()**](#updatefee) | **PUT** /v3/blockchain/marketplace/listing/fee | Update the NFT marketplace fee
+[**updateFeeRecipient()**](#updatefeerecipient) | **PUT** /v3/blockchain/marketplace/listing/recipient | Update the recipient of the NFT marketplace fee
+[**updateMarketplace()**](#updatemarketplace) | **PUT** /v3/blockchain/marketplace/listing | Update an NFT marketplace on Solana
+[**withdrawFeeFromMarketplace()**](#withdrawfeefrommarketplace) | **POST** /v3/blockchain/marketplace/withdraw/fee | Withdraw funds from the marketplace fee account on Solana
+[**withdrawTreasuryFromMarketplace()**](#withdrawtreasuryfrommarketplace) | **POST** /v3/blockchain/marketplace/withdraw/treasury | Withdraw funds from the marketplace treasury account on Solana
 
 
 ## `buyAssetOnMarketplace()`
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `cancelSellMarketplaceListing()`
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `generateMarketplace()`
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getMarketplaceFee()`
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getMarketplaceFeeRecipient()`
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetMarketplaceFeeRecipient200Response**](../Model/GetMarketplaceFeeRecipient200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getMarketplaceInfo()`
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetMarketplaceInfo200Response**](../Model/GetMarketplaceInfo200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getMarketplaceListing()`
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetMarketplaceListing200Response**](../Model/GetMarketplaceListing200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getMarketplaceListings()`
 
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `sellAssetOnMarketplace()`
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateFee()`
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateFeeRecipient()`
 
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateMarketplace()`
 
@@ -706,7 +706,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `withdrawFeeFromMarketplace()`
 
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `withdrawTreasuryFromMarketplace()`
 
@@ -814,4 +814,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

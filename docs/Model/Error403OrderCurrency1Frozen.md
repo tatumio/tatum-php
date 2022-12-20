@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Currency1 account ${trade.currency1AccountId} is frozen, unable to perform trade. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

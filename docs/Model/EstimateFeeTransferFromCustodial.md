@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **amount** | **string** | Amount to be sent in native asset, ERC20 or ERC1155 |
 **token_type** | **float** | Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

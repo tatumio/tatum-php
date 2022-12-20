@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **issuer_account** | **string** | Blockchain address of the issuer of the assets to send, if not native XLM asset. |
 **signature_id** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

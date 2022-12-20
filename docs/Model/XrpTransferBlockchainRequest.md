@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **token** | **string** | Asset name. Must be 160bit HEX string, e.g. SHA1. |
 **signature_id** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **owner_address_base58** | **string** | Address of the sender in Base58 encoding. | [optional]
 **to_address_base58** | **string** | Address of the recipient in Base58 encoding. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

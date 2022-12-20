@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **event_index** | **float** |  | [optional]
 **data** | **object** | Event specific data. May vary. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

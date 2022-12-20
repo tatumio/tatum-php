@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**klaytnBlockchainSmartContractInvocation()**](#klaytnBlockchainSmartContractInvocation) | **POST** /v3/klaytn/smartcontract | Invoke a method in a smart contract on Klaytn
-[**klaytnBlockchainTransfer()**](#klaytnBlockchainTransfer) | **POST** /v3/klaytn/transaction | Send KLAY from account to account
-[**klaytnBroadcast()**](#klaytnBroadcast) | **POST** /v3/klaytn/broadcast | Broadcast signed Klaytn transaction
-[**klaytnGenerateAddress()**](#klaytnGenerateAddress) | **GET** /v3/klaytn/address/{xpub}/{index} | Generate Klaytn account address from Extended public key
-[**klaytnGenerateAddressPrivateKey()**](#klaytnGenerateAddressPrivateKey) | **POST** /v3/klaytn/wallet/priv | Generate Klaytn private key
-[**klaytnGenerateWallet()**](#klaytnGenerateWallet) | **GET** /v3/klaytn/wallet | Generate Klaytn wallet
-[**klaytnGetBalance()**](#klaytnGetBalance) | **GET** /v3/klaytn/account/balance/{address} | Get Klaytn Account balance
-[**klaytnGetBlock()**](#klaytnGetBlock) | **GET** /v3/klaytn/block/{hash} | Get Klaytn block by hash
-[**klaytnGetCurrentBlock()**](#klaytnGetCurrentBlock) | **GET** /v3/klaytn/block/current | Get current block number
-[**klaytnGetTransaction()**](#klaytnGetTransaction) | **GET** /v3/klaytn/transaction/{hash} | Get Klaytn Transaction
-[**klaytnGetTransactionCount()**](#klaytnGetTransactionCount) | **GET** /v3/klaytn/transaction/count/{address} | Get count of outgoing Klaytn transactions
-[**klaytnWeb3Driver()**](#klaytnWeb3Driver) | **POST** /v3/klaytn/web3/{xApiKey} | Web3 HTTP driver
+[**klaytnBlockchainSmartContractInvocation()**](#klaytnblockchainsmartcontractinvocation) | **POST** /v3/klaytn/smartcontract | Invoke a method in a smart contract on Klaytn
+[**klaytnBlockchainTransfer()**](#klaytnblockchaintransfer) | **POST** /v3/klaytn/transaction | Send KLAY from account to account
+[**klaytnBroadcast()**](#klaytnbroadcast) | **POST** /v3/klaytn/broadcast | Broadcast signed Klaytn transaction
+[**klaytnGenerateAddress()**](#klaytngenerateaddress) | **GET** /v3/klaytn/address/{xpub}/{index} | Generate Klaytn account address from Extended public key
+[**klaytnGenerateAddressPrivateKey()**](#klaytngenerateaddressprivatekey) | **POST** /v3/klaytn/wallet/priv | Generate Klaytn private key
+[**klaytnGenerateWallet()**](#klaytngeneratewallet) | **GET** /v3/klaytn/wallet | Generate Klaytn wallet
+[**klaytnGetBalance()**](#klaytngetbalance) | **GET** /v3/klaytn/account/balance/{address} | Get Klaytn Account balance
+[**klaytnGetBlock()**](#klaytngetblock) | **GET** /v3/klaytn/block/{hash} | Get Klaytn block by hash
+[**klaytnGetCurrentBlock()**](#klaytngetcurrentblock) | **GET** /v3/klaytn/block/current | Get current block number
+[**klaytnGetTransaction()**](#klaytngettransaction) | **GET** /v3/klaytn/transaction/{hash} | Get Klaytn Transaction
+[**klaytnGetTransactionCount()**](#klaytngettransactioncount) | **GET** /v3/klaytn/transaction/count/{address} | Get count of outgoing Klaytn transactions
+[**klaytnWeb3Driver()**](#klaytnweb3driver) | **POST** /v3/klaytn/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `klaytnBlockchainSmartContractInvocation()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnBlockchainTransfer()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnBroadcast()`
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGenerateAddress()`
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KlaytnGenerateAddress200Response**](../Model/KlaytnGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGenerateAddressPrivateKey()`
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGenerateWallet()`
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGetBalance()`
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KlaytnGetBalance200Response**](../Model/KlaytnGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGetBlock()`
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KlaytnBlock**](../Model/KlaytnBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGetCurrentBlock()`
 
@@ -506,7 +506,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGetTransaction()`
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KlaytnTx**](../Model/KlaytnTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnGetTransactionCount()`
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnWeb3Driver()`
 
@@ -675,4 +675,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

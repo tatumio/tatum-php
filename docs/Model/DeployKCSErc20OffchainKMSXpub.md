@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present. |
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

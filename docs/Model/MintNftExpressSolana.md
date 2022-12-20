@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **to** | **string** | The blockchain address to send the NFT to |
 **metadata** | [**\Tatum\Model\SolanaNftExpressMetadata**](SolanaNftExpressMetadata.md) |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

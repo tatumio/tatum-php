@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **requires_sign_off** | **bool** | If set to \&quot;true\&quot;, the marketplace must sign all operations related to the listings and sales. |
 **can_change_sale_price** | **bool** | If set to \&quot;true\&quot;, the marketplace can change the sale price that the seller intentionally set to 0. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

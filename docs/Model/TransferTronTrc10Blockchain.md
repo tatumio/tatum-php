@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **token_id** | **string** | ID of the token to transfer. |
 **amount** | **string** | Amount to be sent in TRX. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

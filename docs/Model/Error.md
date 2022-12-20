@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Payment amount must be greater than 0. |
 **status_code** | **float** | 403 | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

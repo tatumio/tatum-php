@@ -4,8 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDeposits()**](#getDeposits) | **GET** /v3/ledger/deposits | List all deposits for product
-[**getDepositsCount()**](#getDepositsCount) | **GET** /v3/ledger/deposits/count | Count of found entities for get deposits request
+[**getDeposits()**](#getdeposits) | **GET** /v3/ledger/deposits | List all deposits for product
+[**getDepositsCount()**](#getdepositscount) | **GET** /v3/ledger/deposits/count | Count of found entities for get deposits request
 
 
 ## `getDeposits()`
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Deposit[]**](../Model/Deposit.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getDepositsCount()`
 
@@ -186,4 +186,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

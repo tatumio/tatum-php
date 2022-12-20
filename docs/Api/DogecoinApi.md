@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**dogeBroadcast()**](#dogeBroadcast) | **POST** /v3/dogecoin/broadcast | Broadcast signed Dogecoin transaction
-[**dogeGenerateAddress()**](#dogeGenerateAddress) | **GET** /v3/dogecoin/address/{xpub}/{index} | Generate Dogecoin deposit address from Extended public key
-[**dogeGenerateAddressPrivateKey()**](#dogeGenerateAddressPrivateKey) | **POST** /v3/dogecoin/wallet/priv | Generate Dogecoin private key
-[**dogeGenerateWallet()**](#dogeGenerateWallet) | **GET** /v3/dogecoin/wallet | Generate Dogecoin wallet
-[**dogeGetBlock()**](#dogeGetBlock) | **GET** /v3/dogecoin/block/{hash} | Get Dogecoin Block by hash or height
-[**dogeGetBlockChainInfo()**](#dogeGetBlockChainInfo) | **GET** /v3/dogecoin/info | Get Dogecoin Blockchain Information
-[**dogeGetBlockHash()**](#dogeGetBlockHash) | **GET** /v3/dogecoin/block/hash/{i} | Get Dogecoin Block hash
-[**dogeGetMempool()**](#dogeGetMempool) | **GET** /v3/dogecoin/mempool | Get Mempool Transactions
-[**dogeGetRawTransaction()**](#dogeGetRawTransaction) | **GET** /v3/dogecoin/transaction/{hash} | Get Dogecoin Transaction by hash
-[**dogeGetUTXO()**](#dogeGetUTXO) | **GET** /v3/dogecoin/utxo/{hash}/{index} | Get information about a transaction output (UTXO) in a Dogecoin transaction
-[**dogeRpcDriver()**](#dogeRpcDriver) | **POST** /v3/dogecoin/node | JSON RPC HTTP driver
-[**dogeTransferBlockchain()**](#dogeTransferBlockchain) | **POST** /v3/dogecoin/transaction | Send DOGE to Dogecoin addresses
+[**dogeBroadcast()**](#dogebroadcast) | **POST** /v3/dogecoin/broadcast | Broadcast signed Dogecoin transaction
+[**dogeGenerateAddress()**](#dogegenerateaddress) | **GET** /v3/dogecoin/address/{xpub}/{index} | Generate Dogecoin deposit address from Extended public key
+[**dogeGenerateAddressPrivateKey()**](#dogegenerateaddressprivatekey) | **POST** /v3/dogecoin/wallet/priv | Generate Dogecoin private key
+[**dogeGenerateWallet()**](#dogegeneratewallet) | **GET** /v3/dogecoin/wallet | Generate Dogecoin wallet
+[**dogeGetBlock()**](#dogegetblock) | **GET** /v3/dogecoin/block/{hash} | Get Dogecoin Block by hash or height
+[**dogeGetBlockChainInfo()**](#dogegetblockchaininfo) | **GET** /v3/dogecoin/info | Get Dogecoin Blockchain Information
+[**dogeGetBlockHash()**](#dogegetblockhash) | **GET** /v3/dogecoin/block/hash/{i} | Get Dogecoin Block hash
+[**dogeGetMempool()**](#dogegetmempool) | **GET** /v3/dogecoin/mempool | Get Mempool Transactions
+[**dogeGetRawTransaction()**](#dogegetrawtransaction) | **GET** /v3/dogecoin/transaction/{hash} | Get Dogecoin Transaction by hash
+[**dogeGetUTXO()**](#dogegetutxo) | **GET** /v3/dogecoin/utxo/{hash}/{index} | Get information about a transaction output (UTXO) in a Dogecoin transaction
+[**dogeRpcDriver()**](#dogerpcdriver) | **POST** /v3/dogecoin/node | JSON RPC HTTP driver
+[**dogeTransferBlockchain()**](#dogetransferblockchain) | **POST** /v3/dogecoin/transaction | Send DOGE to Dogecoin addresses
 
 
 ## `dogeBroadcast()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGenerateAddress()`
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\DogeGenerateAddress200Response**](../Model/DogeGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGenerateAddressPrivateKey()`
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGenerateWallet()`
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGetBlock()`
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\DogeBlock**](../Model/DogeBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGetBlockChainInfo()`
 
@@ -343,7 +343,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\DogeInfo**](../Model/DogeInfo.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGetBlockHash()`
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGetMempool()`
 
@@ -447,7 +447,7 @@ This endpoint does not need any parameter.
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGetRawTransaction()`
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\DogeTx**](../Model/DogeTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeGetUTXO()`
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\DogeUTXO**](../Model/DogeUTXO.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeRpcDriver()`
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeTransferBlockchain()`
 
@@ -670,4 +670,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

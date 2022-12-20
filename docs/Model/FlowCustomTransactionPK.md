@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **args** | [**\Tatum\Model\FlowCustomTransactionPKArgsInner[]**](FlowCustomTransactionPKArgsInner.md) |  |
 **private_key** | **string** | Secret for account. Secret, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

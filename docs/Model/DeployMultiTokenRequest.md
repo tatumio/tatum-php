@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **fee_currency** | **string** | Currency to pay for transaction gas |
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

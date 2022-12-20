@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from** | **string** | Sender |
 **to** | **string** | recipient |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

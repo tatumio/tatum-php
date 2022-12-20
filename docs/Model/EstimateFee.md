@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **contract_address** | **string** | Contract address of ERC20 token, if type is TRANSFER_ERC20 | [optional]
 **amount** | **string** | Amount to be sent in ERC20, if type is TRANSFER_ERC20 | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

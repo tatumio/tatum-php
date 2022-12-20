@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **fee_limit** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

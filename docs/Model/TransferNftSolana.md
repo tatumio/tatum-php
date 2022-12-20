@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **contract_address** | **string** | The blockchain address of the NFT; this is the address from the &lt;code&gt;nftAddress&lt;/code&gt; parameter returned in the response body of the &lt;a href&#x3D;\&quot;#operation/NftMintErc721\&quot;&gt;minting call&lt;/a&gt; |
 **from_private_key** | **string** | The private key of the blockchain address that you are sending the NFT from (the address that you specified in the &lt;code&gt;from&lt;/code&gt; parameter) |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

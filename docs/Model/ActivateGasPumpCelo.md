@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **fee_currency** | **string** | The currency to pay for the gas fee; if not set, defaults to CELO | [optional]
 **from_private_key** | **string** | The private key of the blockchain address that will pay the gas fee for the activation transaction |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

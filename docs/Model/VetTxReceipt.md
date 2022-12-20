@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **transaction_hash** | **string** |  | [optional]
 **status** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

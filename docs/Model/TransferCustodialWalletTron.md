@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | The private key of the blockchain address that owns the gas pump address (\&quot;master address\&quot;) |
 **fee_limit** | **float** | The maximum amount to be paid as the gas fee (in TRX) |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

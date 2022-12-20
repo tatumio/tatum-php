@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **amount** | **string** | Amount to be sent in Ether or ERC20. |
 **data** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

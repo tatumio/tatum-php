@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **memo** | **string** | In case of BNB, message is the distinguisher of the account. | [optional]
 **message** | **string** | In case of XLM, message is the distinguisher of the account. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

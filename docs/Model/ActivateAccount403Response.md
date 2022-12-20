@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Unable to activate account, customer inactive. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

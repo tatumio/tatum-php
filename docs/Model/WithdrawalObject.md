@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **payment_id** | **string** | Identifier of the payment, shown for created Transaction within Tatum sender account. | [optional]
 **sender_note** | **string** | Note visible to owner of withdrawing account | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

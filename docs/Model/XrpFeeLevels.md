@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **open_ledger_level** | **string** | The minimum transaction cost required to be included in the current open ledger, represented in fee levels. | [optional]
 **reference_level** | **string** | The equivalent of the minimum transaction cost, represented in fee levels. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

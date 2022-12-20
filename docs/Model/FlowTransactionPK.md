@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **amount** | **string** | Amount to be sent, in Flow. |
 **private_key** | **string** | Secret for account. Secret, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

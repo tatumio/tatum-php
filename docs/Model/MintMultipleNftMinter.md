@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **contract_address** | **string** | Address of NFT token |
 **fee_currency** | **string** | (Celo only) The currency in which the transaction fee will be paid | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

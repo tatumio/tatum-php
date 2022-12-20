@@ -4,14 +4,14 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**solanaBlockchainTransfer()**](#solanaBlockchainTransfer) | **POST** /v3/solana/transaction | Send SOL from account to account
-[**solanaBroadcastConfirm()**](#solanaBroadcastConfirm) | **POST** /v3/solana/broadcast/confirm | Broadcast and confirm signed Solana transaction
-[**solanaGenerateWallet()**](#solanaGenerateWallet) | **GET** /v3/solana/wallet | Generate Solana wallet
-[**solanaGetBalance()**](#solanaGetBalance) | **GET** /v3/solana/account/balance/{address} | Get Solana Account balance
-[**solanaGetBlock()**](#solanaGetBlock) | **GET** /v3/solana/block/{height} | Get Solana block by number
-[**solanaGetCurrentBlock()**](#solanaGetCurrentBlock) | **GET** /v3/solana/block/current | Get current block number
-[**solanaGetTransaction()**](#solanaGetTransaction) | **GET** /v3/solana/transaction/{hash} | Get Solana Transaction
-[**solanaWeb3Driver()**](#solanaWeb3Driver) | **POST** /v3/solana/web3/{xApiKey} | JSON RPC HTTP driver
+[**solanaBlockchainTransfer()**](#solanablockchaintransfer) | **POST** /v3/solana/transaction | Send SOL from account to account
+[**solanaBroadcastConfirm()**](#solanabroadcastconfirm) | **POST** /v3/solana/broadcast/confirm | Broadcast and confirm signed Solana transaction
+[**solanaGenerateWallet()**](#solanageneratewallet) | **GET** /v3/solana/wallet | Generate Solana wallet
+[**solanaGetBalance()**](#solanagetbalance) | **GET** /v3/solana/account/balance/{address} | Get Solana Account balance
+[**solanaGetBlock()**](#solanagetblock) | **GET** /v3/solana/block/{height} | Get Solana block by number
+[**solanaGetCurrentBlock()**](#solanagetcurrentblock) | **GET** /v3/solana/block/current | Get current block number
+[**solanaGetTransaction()**](#solanagettransaction) | **GET** /v3/solana/transaction/{hash} | Get Solana Transaction
+[**solanaWeb3Driver()**](#solanaweb3driver) | **POST** /v3/solana/web3/{xApiKey} | JSON RPC HTTP driver
 
 
 ## `solanaBlockchainTransfer()`
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solanaBroadcastConfirm()`
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\SolanaTransactionHashWithConfirm**](../Model/SolanaTransactionHashWithConfirm.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solanaGenerateWallet()`
 
@@ -169,7 +169,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\SolanaWallet**](../Model/SolanaWallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solanaGetBalance()`
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\SolBalance**](../Model/SolBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solanaGetBlock()`
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\SolanaBlock**](../Model/SolanaBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solanaGetCurrentBlock()`
 
@@ -328,7 +328,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solanaGetTransaction()`
 
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\SolanaTx**](../Model/SolanaTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solanaWeb3Driver()`
 
@@ -447,4 +447,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | The private key of the sender&#39;s blockchain address |
 **amount** | **float** | (For &lt;a href&#x3D;\&quot;https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;fractional NFTs&lt;/a&gt; only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred | [optional] [default to 1]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

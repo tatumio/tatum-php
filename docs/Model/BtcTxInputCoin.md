@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **address** | **string** | Sender address. | [optional]
 **coinbase** | **bool** | Coinbase transaction - miner fee. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

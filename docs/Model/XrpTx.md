@@ -21,4 +21,4 @@ Name | Type | Description | Notes
 **meta** | [**\Tatum\Model\XrpTxMeta**](XrpTxMeta.md) |  | [optional]
 **validated** | **bool** | Whether or not the transaction is included in a validated ledger. Any transaction not yet in a validated ledger is subject to change. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

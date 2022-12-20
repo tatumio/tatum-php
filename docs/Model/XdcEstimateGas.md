@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **to** | **string** | Blockchain address to send assets |
 **amount** | **string** | Amount to be sent in XDC. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

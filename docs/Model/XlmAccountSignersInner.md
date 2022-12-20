@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **key** | **string** | A hash of characters dependent on the signer type. | [optional]
 **type** | **string** | The type of hash for this signer. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

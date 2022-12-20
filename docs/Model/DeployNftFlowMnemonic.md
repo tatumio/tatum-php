@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **mnemonic** | **string** | Mnemonic to generate private key of sender address. |
 **index** | **int** | Derivation index of sender address. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

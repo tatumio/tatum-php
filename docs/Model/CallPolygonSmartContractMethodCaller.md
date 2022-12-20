@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **params** | **string[]** |  |
 **fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

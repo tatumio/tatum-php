@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **private_key** | **string** | Secret for account. Secret, or signature Id must be present. |
 **weight** | **float** | Weight of the key. If not set, default 1000 will be used. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

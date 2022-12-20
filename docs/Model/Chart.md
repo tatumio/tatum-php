@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **close** | **string** | Close trade value in the current interval. |
 **volume** | **string** | Total volume of assets traded in the current interval. Volume is in currency1 asset. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

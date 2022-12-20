@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 **fee_limit** | **float** | Fee in TRX to be paid. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

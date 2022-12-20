@@ -6,4 +6,4 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contract_address** | **string** | Address of the NFT token. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

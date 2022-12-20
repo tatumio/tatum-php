@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **index** | **float** | (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic | [optional]
 **fee_limit** | **float** | The maximum amount to be paid as the gas fee (in TRX) |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

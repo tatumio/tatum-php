@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **to** | [**\Tatum\Model\EstimateFeeFromAddressToInner[]**](EstimateFeeFromAddressToInner.md) | Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee. |
 **from_utxo** | [**\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]**](EstimateFeeFromUTXOFromUTXOInner.md) | Array of transaction hashes, index of UTXO in it and corresponding private keys. Use this option if you want to calculate amount to send manually. Either fromUTXO or fromAddress must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

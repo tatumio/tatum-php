@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chartRequest()**](#chartRequest) | **POST** /v3/trade/chart | Obtain chart data from historical closed trades
-[**deleteAccountTrades()**](#deleteAccountTrades) | **DELETE** /v3/trade/account/{id} | Cancel all existing trades for account
-[**deleteTrade()**](#deleteTrade) | **DELETE** /v3/trade/{id} | Cancel existing trade
-[**getBuyTrades()**](#getBuyTrades) | **GET** /v3/trade/buy | List all active buy trades
-[**getBuyTradesBody()**](#getBuyTradesBody) | **POST** /v3/trade/buy | List all active buy trades
-[**getHistoricalTrades()**](#getHistoricalTrades) | **GET** /v3/trade/history | List all historical trades
-[**getHistoricalTradesBody()**](#getHistoricalTradesBody) | **POST** /v3/trade/history | List all historical trades
-[**getMatchedTrades()**](#getMatchedTrades) | **POST** /v3/trade/matched | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-[**getSellTrades()**](#getSellTrades) | **GET** /v3/trade/sell | List all active sell trades
-[**getSellTradesBody()**](#getSellTradesBody) | **POST** /v3/trade/sell | List all active sell trades
-[**getTradeById()**](#getTradeById) | **GET** /v3/trade/{id} | Get existing trade
-[**storeTrade()**](#storeTrade) | **POST** /v3/trade | Store buy / sell trade
+[**chartRequest()**](#chartrequest) | **POST** /v3/trade/chart | Obtain chart data from historical closed trades
+[**deleteAccountTrades()**](#deleteaccounttrades) | **DELETE** /v3/trade/account/{id} | Cancel all existing trades for account
+[**deleteTrade()**](#deletetrade) | **DELETE** /v3/trade/{id} | Cancel existing trade
+[**getBuyTrades()**](#getbuytrades) | **GET** /v3/trade/buy | List all active buy trades
+[**getBuyTradesBody()**](#getbuytradesbody) | **POST** /v3/trade/buy | List all active buy trades
+[**getHistoricalTrades()**](#gethistoricaltrades) | **GET** /v3/trade/history | List all historical trades
+[**getHistoricalTradesBody()**](#gethistoricaltradesbody) | **POST** /v3/trade/history | List all historical trades
+[**getMatchedTrades()**](#getmatchedtrades) | **POST** /v3/trade/matched | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
+[**getSellTrades()**](#getselltrades) | **GET** /v3/trade/sell | List all active sell trades
+[**getSellTradesBody()**](#getselltradesbody) | **POST** /v3/trade/sell | List all active sell trades
+[**getTradeById()**](#gettradebyid) | **GET** /v3/trade/{id} | Get existing trade
+[**storeTrade()**](#storetrade) | **POST** /v3/trade | Store buy / sell trade
 
 
 ## `chartRequest()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Chart[]**](../Model/Chart.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deleteAccountTrades()`
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deleteTrade()`
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getBuyTrades()`
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getBuyTradesBody()`
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getHistoricalTrades()`
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getHistoricalTradesBody()`
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getMatchedTrades()`
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getSellTrades()`
 
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getSellTradesBody()`
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getTradeById()`
 
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trade**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `storeTrade()`
 
@@ -749,4 +749,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Id**](../Model/Id.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

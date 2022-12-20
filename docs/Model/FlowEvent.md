@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **event_index** | **float** |  | [optional]
 **payload** | [**\Tatum\Model\FlowEventPayload**](FlowEventPayload.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

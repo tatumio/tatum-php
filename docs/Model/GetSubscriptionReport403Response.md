@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Unsupported report type. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **fee_limit** | **float** | Fee in TRX to be paid. |
 **amount** | **string** | Amount to be sent in TRX. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

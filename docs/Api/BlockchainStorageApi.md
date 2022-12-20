@@ -4,8 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLog()**](#getLog) | **GET** /v3/record | Get a log record
-[**storeLog()**](#storeLog) | **POST** /v3/record | Store a log record
+[**getLog()**](#getlog) | **GET** /v3/record | Get a log record
+[**storeLog()**](#storelog) | **POST** /v3/record | Store a log record
 
 
 ## `getLog()`
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetLog200Response**](../Model/GetLog200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `storeLog()`
 
@@ -120,4 +120,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

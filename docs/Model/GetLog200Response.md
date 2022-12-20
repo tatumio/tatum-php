@@ -6,4 +6,4 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | **string** | The data stored in the requested record |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

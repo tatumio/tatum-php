@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **mnemonic** | **string** | Mnemonic to generate private key. |
 **index** | **float** | Index to the specific address from mnemonic. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

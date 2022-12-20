@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **total_supply** | **float** | Total supply of the tokens. |
 **decimals** | **float** | Number of decimal places of the token. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

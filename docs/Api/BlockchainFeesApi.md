@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bscEstimateGas()**](#bscEstimateGas) | **POST** /v3/bsc/gas | Estimate BNB Smart Chain transaction fees
-[**celoEstimateGas()**](#celoEstimateGas) | **POST** /v3/celo/gas | Estimate Celo Chain transaction fees
-[**egldEstimateGas()**](#egldEstimateGas) | **POST** /v3/egld/gas | Estimate EGLD transaction fees
-[**estimateFeeBlockchain()**](#estimateFeeBlockchain) | **POST** /v3/blockchain/estimate | Estimate the fee for a transaction
-[**ethEstimateGas()**](#ethEstimateGas) | **POST** /v3/ethereum/gas | Estimate Ethereum transaction fees
-[**ethEstimateGasBatch()**](#ethEstimateGasBatch) | **POST** /v3/ethereum/gas/batch | Estimate multiple Ethereum transaction fees
-[**getBlockchainFee()**](#getBlockchainFee) | **GET** /v3/blockchain/fee/{chain} | Get recommended blockchain fee / gas price
-[**kcsEstimateGas()**](#kcsEstimateGas) | **POST** /v3/kcs/gas | Estimate KuCoin Community Chain transaction fees
-[**klaytnEstimateGas()**](#klaytnEstimateGas) | **POST** /v3/klaytn/gas | Estimate Klaytn transaction fees
-[**polygonEstimateGas()**](#polygonEstimateGas) | **POST** /v3/polygon/gas | Estimate Polygon transaction fees
-[**vetEstimateGas()**](#vetEstimateGas) | **POST** /v3/vet/transaction/gas | Estimate VeChain Gas for transaction
-[**xdcEstimateGas()**](#xdcEstimateGas) | **POST** /v3/xdc/gas | Estimate XinFin transaction fees
+[**bscEstimateGas()**](#bscestimategas) | **POST** /v3/bsc/gas | Estimate BNB Smart Chain transaction fees
+[**celoEstimateGas()**](#celoestimategas) | **POST** /v3/celo/gas | Estimate Celo Chain transaction fees
+[**egldEstimateGas()**](#egldestimategas) | **POST** /v3/egld/gas | Estimate EGLD transaction fees
+[**estimateFeeBlockchain()**](#estimatefeeblockchain) | **POST** /v3/blockchain/estimate | Estimate the fee for a transaction
+[**ethEstimateGas()**](#ethestimategas) | **POST** /v3/ethereum/gas | Estimate Ethereum transaction fees
+[**ethEstimateGasBatch()**](#ethestimategasbatch) | **POST** /v3/ethereum/gas/batch | Estimate multiple Ethereum transaction fees
+[**getBlockchainFee()**](#getblockchainfee) | **GET** /v3/blockchain/fee/{chain} | Get recommended blockchain fee / gas price
+[**kcsEstimateGas()**](#kcsestimategas) | **POST** /v3/kcs/gas | Estimate KuCoin Community Chain transaction fees
+[**klaytnEstimateGas()**](#klaytnestimategas) | **POST** /v3/klaytn/gas | Estimate Klaytn transaction fees
+[**polygonEstimateGas()**](#polygonestimategas) | **POST** /v3/polygon/gas | Estimate Polygon transaction fees
+[**vetEstimateGas()**](#vetestimategas) | **POST** /v3/vet/transaction/gas | Estimate VeChain Gas for transaction
+[**xdcEstimateGas()**](#xdcestimategas) | **POST** /v3/xdc/gas | Estimate XinFin transaction fees
 
 
 ## `bscEstimateGas()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoEstimateGas()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CeloEstimateGas200Response**](../Model/CeloEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldEstimateGas()`
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EgldEstimateGas200Response**](../Model/EgldEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `estimateFeeBlockchain()`
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EstimateFeeBlockchain200Response**](../Model/EstimateFeeBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethEstimateGas()`
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthGasEstimation**](../Model/EthGasEstimation.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethEstimateGasBatch()`
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthGasEstimationBatch**](../Model/EthGasEstimationBatch.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getBlockchainFee()`
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BlockchainFee**](../Model/BlockchainFee.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsEstimateGas()`
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klaytnEstimateGas()`
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KlaytnEstimateGas200Response**](../Model/KlaytnEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonEstimateGas()`
 
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `vetEstimateGas()`
 
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcEstimateGas()`
 
@@ -675,4 +675,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XdcEstimateGas200Response**](../Model/XdcEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

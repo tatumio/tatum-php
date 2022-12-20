@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **chain** | **string** | Blockchain, on which this virtual currency is paired on. Not present, when Tatum&#39;s private ledger is used as a base ledger. | [optional]
 **initial_address** | **string** | Ethereum address, where initial supply was minted, when virtual currency is based on the Ethereum blockchain. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

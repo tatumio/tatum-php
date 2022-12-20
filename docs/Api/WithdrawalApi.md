@@ -4,11 +4,11 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**broadcastBlockchainTransaction()**](#broadcastBlockchainTransaction) | **POST** /v3/offchain/withdrawal/broadcast | Broadcast signed transaction and complete withdrawal
-[**cancelInProgressWithdrawal()**](#cancelInProgressWithdrawal) | **DELETE** /v3/offchain/withdrawal/{id} | Cancel withdrawal
-[**completeWithdrawal()**](#completeWithdrawal) | **PUT** /v3/offchain/withdrawal/{id}/{txId} | Complete withdrawal
-[**getWithdrawals()**](#getWithdrawals) | **GET** /v3/offchain/withdrawal | Get withdrawals
-[**storeWithdrawal()**](#storeWithdrawal) | **POST** /v3/offchain/withdrawal | Store withdrawal
+[**broadcastBlockchainTransaction()**](#broadcastblockchaintransaction) | **POST** /v3/offchain/withdrawal/broadcast | Broadcast signed transaction and complete withdrawal
+[**cancelInProgressWithdrawal()**](#cancelinprogresswithdrawal) | **DELETE** /v3/offchain/withdrawal/{id} | Cancel withdrawal
+[**completeWithdrawal()**](#completewithdrawal) | **PUT** /v3/offchain/withdrawal/{id}/{txId} | Complete withdrawal
+[**getWithdrawals()**](#getwithdrawals) | **GET** /v3/offchain/withdrawal | Get withdrawals
+[**storeWithdrawal()**](#storewithdrawal) | **POST** /v3/offchain/withdrawal | Store withdrawal
 
 
 ## `broadcastBlockchainTransaction()`
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BroadcastResponse**](../Model/BroadcastResponse.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `cancelInProgressWithdrawal()`
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `completeWithdrawal()`
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getWithdrawals()`
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\WithdrawalObject[]**](../Model/WithdrawalObject.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `storeWithdrawal()`
 
@@ -301,4 +301,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\WithdrawalResponse**](../Model/WithdrawalResponse.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

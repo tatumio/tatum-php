@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **marker** | [**\Tatum\Model\XrpAccountTxMarker**](XrpAccountTxMarker.md) |  | [optional]
 **transactions** | [**\Tatum\Model\XrpAccountTxTransactionsInner[]**](XrpAccountTxTransactionsInner.md) | Array of transactions matching the request&#39;s criteria, as explained below. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

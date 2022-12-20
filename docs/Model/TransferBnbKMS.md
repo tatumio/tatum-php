@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **from_address** | **string** | Blockchain address to send from. |
 **sender_note** | **string** | Note visible to owner of withdrawing account. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Insufficient balance for account ${transaction.senderAccountId} and payment amount ${transaction.amount}. Sender balance is ${senderAccount.balance.availableBalance as string}, amount is ${amount} |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

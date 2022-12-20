@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **block_height** | **float** |  | [optional]
 **tx** | [**\Tatum\Model\BnbTransaction[]**](BnbTransaction.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

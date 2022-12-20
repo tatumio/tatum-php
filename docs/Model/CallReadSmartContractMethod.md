@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **method_abi** | **object** | ABI of the method to invoke. |
 **params** | **object[]** | Parameters of the method to be invoked. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Sender account ${transaction.senderAccountId} is frozen, unable to perform payment. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

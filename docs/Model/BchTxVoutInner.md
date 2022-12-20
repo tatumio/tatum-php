@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **n** | **float** |  | [optional]
 **script_pub_key** | [**\Tatum\Model\BchTxVoutInnerScriptPubKey**](BchTxVoutInnerScriptPubKey.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

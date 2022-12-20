@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **expiration** | **float** | Expiration of the transaction. |
 **timestamp** | **float** | Time of the transaction. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

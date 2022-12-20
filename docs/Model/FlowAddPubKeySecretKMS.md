@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 **weight** | **float** | Weight of the key. If not set, default 1000 will be used. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

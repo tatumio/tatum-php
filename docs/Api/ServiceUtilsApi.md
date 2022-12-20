@@ -4,10 +4,10 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**freezeApiKey()**](#freezeApiKey) | **PUT** /v3/tatum/freeze | Freeze API Key
-[**getCredits()**](#getCredits) | **GET** /v3/tatum/usage | Get information about your credit consumption for the last month
-[**getVersion()**](#getVersion) | **GET** /v3/tatum/version | Get API version
-[**unfreezeApiKey()**](#unfreezeApiKey) | **DELETE** /v3/tatum/freeze | Unfreeze API Key
+[**freezeApiKey()**](#freezeapikey) | **PUT** /v3/tatum/freeze | Freeze API Key
+[**getCredits()**](#getcredits) | **GET** /v3/tatum/usage | Get information about your credit consumption for the last month
+[**getVersion()**](#getversion) | **GET** /v3/tatum/version | Get API version
+[**unfreezeApiKey()**](#unfreezeapikey) | **DELETE** /v3/tatum/freeze | Unfreeze API Key
 
 
 ## `freezeApiKey()`
@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getCredits()`
 
@@ -103,7 +103,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\Consumption[]**](../Model/Consumption.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getVersion()`
 
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\GetVersion200Response**](../Model/GetVersion200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `unfreezeApiKey()`
 
@@ -198,4 +198,4 @@ This endpoint does not need any parameter.
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

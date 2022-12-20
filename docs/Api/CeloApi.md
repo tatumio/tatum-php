@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**celoBlockchainSmartContractInvocation()**](#celoBlockchainSmartContractInvocation) | **POST** /v3/celo/smartcontract | Invoke a method in a smart contract on Celo
-[**celoBlockchainTransfer()**](#celoBlockchainTransfer) | **POST** /v3/celo/transaction | Send Celo / ERC20 from account to account
-[**celoBroadcast()**](#celoBroadcast) | **POST** /v3/celo/broadcast | Broadcast signed Celo transaction
-[**celoGenerateAddress()**](#celoGenerateAddress) | **GET** /v3/celo/address/{xpub}/{index} | Generate Celo account address from Extended public key
-[**celoGenerateAddressPrivateKey()**](#celoGenerateAddressPrivateKey) | **POST** /v3/celo/wallet/priv | Generate Celo private key
-[**celoGenerateWallet()**](#celoGenerateWallet) | **GET** /v3/celo/wallet | Generate Celo wallet
-[**celoGetBalance()**](#celoGetBalance) | **GET** /v3/celo/account/balance/{address} | Get Celo Account balance
-[**celoGetBlock()**](#celoGetBlock) | **GET** /v3/celo/block/{hash} | Get Celo block by hash
-[**celoGetCurrentBlock()**](#celoGetCurrentBlock) | **GET** /v3/celo/block/current | Get current block number
-[**celoGetTransaction()**](#celoGetTransaction) | **GET** /v3/celo/transaction/{hash} | Get Celo Transaction
-[**celoGetTransactionByAddress()**](#celoGetTransactionByAddress) | **GET** /v3/celo/account/transaction/{address} | Get Celo transactions by address
-[**celoGetTransactionCount()**](#celoGetTransactionCount) | **GET** /v3/celo/transaction/count/{address} | Get count of outgoing Celo transactions
-[**celoWeb3Driver()**](#celoWeb3Driver) | **POST** /v3/celo/web3/{xApiKey} | Web3 HTTP driver
+[**celoBlockchainSmartContractInvocation()**](#celoblockchainsmartcontractinvocation) | **POST** /v3/celo/smartcontract | Invoke a method in a smart contract on Celo
+[**celoBlockchainTransfer()**](#celoblockchaintransfer) | **POST** /v3/celo/transaction | Send Celo / ERC20 from account to account
+[**celoBroadcast()**](#celobroadcast) | **POST** /v3/celo/broadcast | Broadcast signed Celo transaction
+[**celoGenerateAddress()**](#celogenerateaddress) | **GET** /v3/celo/address/{xpub}/{index} | Generate Celo account address from Extended public key
+[**celoGenerateAddressPrivateKey()**](#celogenerateaddressprivatekey) | **POST** /v3/celo/wallet/priv | Generate Celo private key
+[**celoGenerateWallet()**](#celogeneratewallet) | **GET** /v3/celo/wallet | Generate Celo wallet
+[**celoGetBalance()**](#celogetbalance) | **GET** /v3/celo/account/balance/{address} | Get Celo Account balance
+[**celoGetBlock()**](#celogetblock) | **GET** /v3/celo/block/{hash} | Get Celo block by hash
+[**celoGetCurrentBlock()**](#celogetcurrentblock) | **GET** /v3/celo/block/current | Get current block number
+[**celoGetTransaction()**](#celogettransaction) | **GET** /v3/celo/transaction/{hash} | Get Celo Transaction
+[**celoGetTransactionByAddress()**](#celogettransactionbyaddress) | **GET** /v3/celo/account/transaction/{address} | Get Celo transactions by address
+[**celoGetTransactionCount()**](#celogettransactioncount) | **GET** /v3/celo/transaction/count/{address} | Get count of outgoing Celo transactions
+[**celoWeb3Driver()**](#celoweb3driver) | **POST** /v3/celo/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `celoBlockchainSmartContractInvocation()`
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoBlockchainTransfer()`
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoBroadcast()`
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGenerateAddress()`
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CeloGenerateAddress200Response**](../Model/CeloGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGenerateAddressPrivateKey()`
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGenerateWallet()`
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGetBalance()`
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CeloGetBalance200Response**](../Model/CeloGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGetBlock()`
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CeloBlock**](../Model/CeloBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGetCurrentBlock()`
 
@@ -507,7 +507,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGetTransaction()`
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CeloTx**](../Model/CeloTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGetTransactionByAddress()`
 
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CeloTx[]**](../Model/CeloTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoGetTransactionCount()`
 
@@ -697,7 +697,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoWeb3Driver()`
 
@@ -756,4 +756,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

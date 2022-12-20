@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **account** | **string** | Blockchain address of the sender account. |
 **private_key** | **string** | Private key of sender address. Private key, mnemonic and index or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

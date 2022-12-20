@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Either UTXO, or addresses must be present. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

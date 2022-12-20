@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Invalid subscription attribute &#39;interval&#39;. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

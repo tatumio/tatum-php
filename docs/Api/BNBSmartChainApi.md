@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bscBlockchainSmartContractInvocation()**](#bscBlockchainSmartContractInvocation) | **POST** /v3/bsc/smartcontract | Invoke a method in a smart contract on BNB Smart Chain
-[**bscBlockchainTransfer()**](#bscBlockchainTransfer) | **POST** /v3/bsc/transaction | Send BSC / BEP20 from account to account
-[**bscBroadcast()**](#bscBroadcast) | **POST** /v3/bsc/broadcast | Broadcast signed BSC transaction
-[**bscGenerateAddress()**](#bscGenerateAddress) | **GET** /v3/bsc/address/{xpub}/{index} | Generate BSC account address from Extended public key
-[**bscGenerateAddressPrivateKey()**](#bscGenerateAddressPrivateKey) | **POST** /v3/bsc/wallet/priv | Generate BSC private key
-[**bscGenerateWallet()**](#bscGenerateWallet) | **GET** /v3/bsc/wallet | Generate BSC wallet
-[**bscGetBalance()**](#bscGetBalance) | **GET** /v3/bsc/account/balance/{address} | Get BSC Account balance
-[**bscGetBlock()**](#bscGetBlock) | **GET** /v3/bsc/block/{hash} | Get BSC block by hash
-[**bscGetCurrentBlock()**](#bscGetCurrentBlock) | **GET** /v3/bsc/block/current | Get current block number
-[**bscGetTransaction()**](#bscGetTransaction) | **GET** /v3/bsc/transaction/{hash} | Get BSC Transaction
-[**bscGetTransactionCount()**](#bscGetTransactionCount) | **GET** /v3/bsc/transaction/count/{address} | Get count of outgoing BSC transactions
-[**bscWeb3Driver()**](#bscWeb3Driver) | **POST** /v3/bsc/web3/{xApiKey} | Web3 HTTP driver
+[**bscBlockchainSmartContractInvocation()**](#bscblockchainsmartcontractinvocation) | **POST** /v3/bsc/smartcontract | Invoke a method in a smart contract on BNB Smart Chain
+[**bscBlockchainTransfer()**](#bscblockchaintransfer) | **POST** /v3/bsc/transaction | Send BSC / BEP20 from account to account
+[**bscBroadcast()**](#bscbroadcast) | **POST** /v3/bsc/broadcast | Broadcast signed BSC transaction
+[**bscGenerateAddress()**](#bscgenerateaddress) | **GET** /v3/bsc/address/{xpub}/{index} | Generate BSC account address from Extended public key
+[**bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) | **POST** /v3/bsc/wallet/priv | Generate BSC private key
+[**bscGenerateWallet()**](#bscgeneratewallet) | **GET** /v3/bsc/wallet | Generate BSC wallet
+[**bscGetBalance()**](#bscgetbalance) | **GET** /v3/bsc/account/balance/{address} | Get BSC Account balance
+[**bscGetBlock()**](#bscgetblock) | **GET** /v3/bsc/block/{hash} | Get BSC block by hash
+[**bscGetCurrentBlock()**](#bscgetcurrentblock) | **GET** /v3/bsc/block/current | Get current block number
+[**bscGetTransaction()**](#bscgettransaction) | **GET** /v3/bsc/transaction/{hash} | Get BSC Transaction
+[**bscGetTransactionCount()**](#bscgettransactioncount) | **GET** /v3/bsc/transaction/count/{address} | Get count of outgoing BSC transactions
+[**bscWeb3Driver()**](#bscweb3driver) | **POST** /v3/bsc/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `bscBlockchainSmartContractInvocation()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscBlockchainTransfer()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscBroadcast()`
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGenerateAddress()`
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GeneratedAddressBsc**](../Model/GeneratedAddressBsc.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGenerateAddressPrivateKey()`
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGenerateWallet()`
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGetBalance()`
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BscBalance**](../Model/BscBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGetBlock()`
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGetCurrentBlock()`
 
@@ -506,7 +506,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGetTransaction()`
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BscTx**](../Model/BscTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscGetTransactionCount()`
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscWeb3Driver()`
 
@@ -675,4 +675,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

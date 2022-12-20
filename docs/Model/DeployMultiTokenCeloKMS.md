@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **nonce** | **float** |  | [optional]
 **fee_currency** | **string** | Currency to pay for transaction gas |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -4,9 +4,9 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**nodeJsonPostRpcDriver()**](#nodeJsonPostRpcDriver) | **POST** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
-[**nodeJsonRpcGetDriver()**](#nodeJsonRpcGetDriver) | **GET** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
-[**nodeJsonRpcPutDriver()**](#nodeJsonRpcPutDriver) | **PUT** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
+[**nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) | **POST** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
+[**nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) | **GET** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
+[**nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) | **PUT** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
 
 
 ## `nodeJsonPostRpcDriver()`
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nodeJsonRpcGetDriver()`
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nodeJsonRpcPutDriver()`
 
@@ -235,4 +235,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **index** | **float** | (Only if the signature ID is mnemonic-based) The index of the NFT author&#39;s address that was generated from the mnemonic | [optional]
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

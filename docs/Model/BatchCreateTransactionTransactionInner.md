@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **base_rate** | **float** | Exchange rate of the base pair. Only applicable for Tatum&#39;s Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency. | [optional] [default to 1]
 **sender_note** | **string** | Note visible to sender | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

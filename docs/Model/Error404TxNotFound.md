@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Transaction not found. Possible not exists or is still pending. |
 **status_code** | **float** | 404 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

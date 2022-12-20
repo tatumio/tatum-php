@@ -4,15 +4,15 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSubscription()**](#createSubscription) | **POST** /v3/subscription | Create a subscription
-[**deleteSubscription()**](#deleteSubscription) | **DELETE** /v3/subscription/{id} | Cancel existing subscription
-[**disableWebHookHmac()**](#disableWebHookHmac) | **DELETE** /v3/subscription | Disable HMAC webhook digest
-[**enableWebHookHmac()**](#enableWebHookHmac) | **PUT** /v3/subscription | Enable HMAC webhook digest
-[**getAllWebhooks()**](#getAllWebhooks) | **GET** /v3/subscription/webhook | List all executed webhooks
-[**getAllWebhooksCount()**](#getAllWebhooksCount) | **GET** /v3/subscription/webhook/count | Count of found entities for get webhook request
-[**getSubscriptionReport()**](#getSubscriptionReport) | **GET** /v3/subscription/report/{id} | Obtain report for subscription
-[**getSubscriptions()**](#getSubscriptions) | **GET** /v3/subscription | List all active subscriptions
-[**getSubscriptionsCount()**](#getSubscriptionsCount) | **GET** /v3/subscription/count | Count of found entities for get webhook request
+[**createSubscription()**](#createsubscription) | **POST** /v3/subscription | Create a subscription
+[**deleteSubscription()**](#deletesubscription) | **DELETE** /v3/subscription/{id} | Cancel existing subscription
+[**disableWebHookHmac()**](#disablewebhookhmac) | **DELETE** /v3/subscription | Disable HMAC webhook digest
+[**enableWebHookHmac()**](#enablewebhookhmac) | **PUT** /v3/subscription | Enable HMAC webhook digest
+[**getAllWebhooks()**](#getallwebhooks) | **GET** /v3/subscription/webhook | List all executed webhooks
+[**getAllWebhooksCount()**](#getallwebhookscount) | **GET** /v3/subscription/webhook/count | Count of found entities for get webhook request
+[**getSubscriptionReport()**](#getsubscriptionreport) | **GET** /v3/subscription/report/{id} | Obtain report for subscription
+[**getSubscriptions()**](#getsubscriptions) | **GET** /v3/subscription | List all active subscriptions
+[**getSubscriptionsCount()**](#getsubscriptionscount) | **GET** /v3/subscription/count | Count of found entities for get webhook request
 
 
 ## `createSubscription()`
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Id**](../Model/Id.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deleteSubscription()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `disableWebHookHmac()`
 
@@ -170,7 +170,7 @@ This endpoint does not need any parameter.
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `enableWebHookHmac()`
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAllWebhooks()`
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\WebHook[]**](../Model/WebHook.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAllWebhooksCount()`
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getSubscriptionReport()`
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetSubscriptionReport200Response**](../Model/GetSubscriptionReport200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getSubscriptions()`
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Subscription[]**](../Model/Subscription.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getSubscriptionsCount()`
 
@@ -546,4 +546,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

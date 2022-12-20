@@ -6,4 +6,4 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **string** | Address of the marketplace fee recipient. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **recipient_note** | **string** | Recipient note defined in payment order by sender. | [optional]
 **sender_note** | **string** | Sender note defined in payment order by sender. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

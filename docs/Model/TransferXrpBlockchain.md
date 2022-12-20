@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **source_tag** | **int** | Source tag of sender account, if any. | [optional]
 **destination_tag** | **int** | Destination tag of recipient account, if any. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

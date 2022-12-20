@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **to_address** | **string** | Recipient address. |
 **from_address** | **string** | Sender address. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

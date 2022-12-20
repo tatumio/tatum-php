@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **amount** | **string** | Amount of funds to withdraw. |
 **signature_id** | **string** | The KMS identifier of the private key of the marketplace fee recipient |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

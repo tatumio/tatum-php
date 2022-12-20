@@ -4,7 +4,7 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getExchangeRate()**](#getExchangeRate) | **GET** /v3/tatum/rate/{currency} | Get the current exchange rate for exchanging fiat/crypto assets
+[**getExchangeRate()**](#getexchangerate) | **GET** /v3/tatum/rate/{currency} | Get the current exchange rate for exchanging fiat/crypto assets
 
 
 ## `getExchangeRate()`
@@ -65,4 +65,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\ExchangeRate**](../Model/ExchangeRate.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 **fee_currency** | **string** | (Celo only) The currency in which the transaction fee will be paid | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

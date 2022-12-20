@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **fixed_values** | **string[]** | The fixed amounts of the native blockchain currency to which the cashback royalty amounts will be compared to; if the fixed amount specified in this parameter is greater than the amount of the cashback royalties, this fixed amount will be sent to the NFT authors instead of the cashback royalties | [optional]
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

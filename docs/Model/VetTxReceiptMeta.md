@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **tx_id** | **string** |  | [optional]
 **tx_origin** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

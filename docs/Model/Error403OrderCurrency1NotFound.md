@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Unable to find currency1 account ${trade.currency1AccountId}. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

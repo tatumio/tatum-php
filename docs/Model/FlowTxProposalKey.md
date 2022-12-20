@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **key_id** | **float** |  | [optional]
 **sequence_number** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **hash** | **string** | Block hash. | [optional]
 **testnet** | **bool** | Wether the block is from mainnet of Shasta testnet | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

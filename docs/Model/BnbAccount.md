@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **flags** | **float** |  | [optional]
 **sequence** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

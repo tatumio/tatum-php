@@ -6,4 +6,4 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **string** | VeChain addres | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

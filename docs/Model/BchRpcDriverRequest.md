@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **method** | **string** | Method to invoke on the node. | [optional]
 **params** | **array** | Params to the method call, if required. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

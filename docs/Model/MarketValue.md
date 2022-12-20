@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **source_date** | **float** | Date of validity of rate in UTC. |
 **source** | **string** | Source of base pair. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

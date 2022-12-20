@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **revoked** | **bool** |  | [optional]
 **weight** | **float** | Weight of the key. 1000 means single signature necessary. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

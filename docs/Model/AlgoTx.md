@@ -23,4 +23,4 @@ Name | Type | Description | Notes
 **signature** | **object** | signature | [optional]
 **tx_type** | **string** | indicates what type of transaction this is. Different types have differnet fields. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

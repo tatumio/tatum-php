@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **instructions** | [**\Tatum\Model\SolanaTxMessageInstruction[]**](SolanaTxMessageInstruction.md) |  | [optional]
 **index_to_program_ids** | **object** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

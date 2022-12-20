@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **nonce** | **float** | Arbitrary number that is used in Litecoin&#39;s proof of work consensus algorithm. | [optional]
 **txs** | [**\Tatum\Model\LtcTx[]**](LtcTx.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

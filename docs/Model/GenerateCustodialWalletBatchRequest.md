@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **fee_limit** | **float** | Fee limit to be set, in TRX |
 **from** | **string** | Sender address. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

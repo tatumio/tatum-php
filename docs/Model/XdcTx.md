@@ -23,4 +23,4 @@ Name | Type | Description | Notes
 **logs_bloom** | **string** | Bloom filter for light clients to quickly retrieve related logs. | [optional]
 **root** | **string** | 32 bytes of post-transaction stateroot (pre Byzantium) | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

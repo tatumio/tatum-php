@@ -4,12 +4,12 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTransactions()**](#getTransactions) | **POST** /v3/ledger/transaction/ledger | Find transactions within the ledger.
-[**getTransactionsByAccountId()**](#getTransactionsByAccountId) | **POST** /v3/ledger/transaction/account | Find transactions for account.
-[**getTransactionsByCustomerId()**](#getTransactionsByCustomerId) | **POST** /v3/ledger/transaction/customer | Find transactions for a customer across all of the customer's accounts.
-[**getTransactionsByReference()**](#getTransactionsByReference) | **GET** /v3/ledger/transaction/reference/{reference} | Find transactions with a given reference across all accounts.
-[**sendTransaction()**](#sendTransaction) | **POST** /v3/ledger/transaction | Send payment
-[**sendTransactionBatch()**](#sendTransactionBatch) | **POST** /v3/ledger/transaction/batch | Send payment in batch
+[**getTransactions()**](#gettransactions) | **POST** /v3/ledger/transaction/ledger | Find transactions within the ledger.
+[**getTransactionsByAccountId()**](#gettransactionsbyaccountid) | **POST** /v3/ledger/transaction/account | Find transactions for account.
+[**getTransactionsByCustomerId()**](#gettransactionsbycustomerid) | **POST** /v3/ledger/transaction/customer | Find transactions for a customer across all of the customer's accounts.
+[**getTransactionsByReference()**](#gettransactionsbyreference) | **GET** /v3/ledger/transaction/reference/{reference} | Find transactions with a given reference across all accounts.
+[**sendTransaction()**](#sendtransaction) | **POST** /v3/ledger/transaction | Send payment
+[**sendTransactionBatch()**](#sendtransactionbatch) | **POST** /v3/ledger/transaction/batch | Send payment in batch
 
 
 ## `getTransactions()`
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getTransactionsByAccountId()`
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getTransactionsByCustomerId()`
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getTransactionsByReference()`
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Transaction[]**](../Model/Transaction.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `sendTransaction()`
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `sendTransactionBatch()`
 
@@ -379,4 +379,4 @@ Name | Type | Description  | Notes
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

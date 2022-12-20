@@ -6,4 +6,4 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pub_key** | **string** | Flow public key | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **amount** | **string** | Amount of funds to withdraw. |
 **from_private_key** | **string** | The private key of the marketplace fee recipient |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

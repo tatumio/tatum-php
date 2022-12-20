@@ -4,23 +4,23 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateTronwallet()**](#generateTronwallet) | **GET** /v3/tron/wallet | Generate a TRON wallet
-[**tronAccountTx()**](#tronAccountTx) | **GET** /v3/tron/transaction/account/{address} | Get all transactions for a TRON account
-[**tronAccountTx20()**](#tronAccountTx20) | **GET** /v3/tron/transaction/account/{address}/trc20 | Get TRC-20 transactions for a TRON account
-[**tronBroadcast()**](#tronBroadcast) | **POST** /v3/tron/broadcast | Broadcast a TRON transaction
-[**tronCreateTrc10()**](#tronCreateTrc10) | **POST** /v3/tron/trc10/deploy | Create a TRC-10 token
-[**tronCreateTrc20()**](#tronCreateTrc20) | **POST** /v3/tron/trc20/deploy | Create a TRC-20 token
-[**tronFreeze()**](#tronFreeze) | **POST** /v3/tron/freezeBalance | Freeze the balance of a TRON account
-[**tronGenerateAddress()**](#tronGenerateAddress) | **GET** /v3/tron/address/{xpub}/{index} | Generate a TRON address from the wallet's extended public key
-[**tronGenerateAddressPrivateKey()**](#tronGenerateAddressPrivateKey) | **POST** /v3/tron/wallet/priv | Generate the private key for a TRON address
-[**tronGetAccount()**](#tronGetAccount) | **GET** /v3/tron/account/{address} | Get the TRON account by its address
-[**tronGetBlock()**](#tronGetBlock) | **GET** /v3/tron/block/{hash} | Get a TRON block by its hash or height
-[**tronGetCurrentBlock()**](#tronGetCurrentBlock) | **GET** /v3/tron/info | Get the current TRON block
-[**tronGetTransaction()**](#tronGetTransaction) | **GET** /v3/tron/transaction/{hash} | Get a TRON transaction by its hash
-[**tronTransfer()**](#tronTransfer) | **POST** /v3/tron/transaction | Send TRX to a TRON account
-[**tronTransferTrc10()**](#tronTransferTrc10) | **POST** /v3/tron/trc10/transaction | Send TRC-10 tokens to a TRON account
-[**tronTransferTrc20()**](#tronTransferTrc20) | **POST** /v3/tron/trc20/transaction | Send TRC-20 tokens to a TRON account
-[**tronTrc10Detail()**](#tronTrc10Detail) | **GET** /v3/tron/trc10/detail/{idOrOwnerAddress} | Get information about a TRC-10 token
+[**generateTronwallet()**](#generatetronwallet) | **GET** /v3/tron/wallet | Generate a TRON wallet
+[**tronAccountTx()**](#tronaccounttx) | **GET** /v3/tron/transaction/account/{address} | Get all transactions for a TRON account
+[**tronAccountTx20()**](#tronaccounttx20) | **GET** /v3/tron/transaction/account/{address}/trc20 | Get TRC-20 transactions for a TRON account
+[**tronBroadcast()**](#tronbroadcast) | **POST** /v3/tron/broadcast | Broadcast a TRON transaction
+[**tronCreateTrc10()**](#troncreatetrc10) | **POST** /v3/tron/trc10/deploy | Create a TRC-10 token
+[**tronCreateTrc20()**](#troncreatetrc20) | **POST** /v3/tron/trc20/deploy | Create a TRC-20 token
+[**tronFreeze()**](#tronfreeze) | **POST** /v3/tron/freezeBalance | Freeze the balance of a TRON account
+[**tronGenerateAddress()**](#trongenerateaddress) | **GET** /v3/tron/address/{xpub}/{index} | Generate a TRON address from the wallet's extended public key
+[**tronGenerateAddressPrivateKey()**](#trongenerateaddressprivatekey) | **POST** /v3/tron/wallet/priv | Generate the private key for a TRON address
+[**tronGetAccount()**](#trongetaccount) | **GET** /v3/tron/account/{address} | Get the TRON account by its address
+[**tronGetBlock()**](#trongetblock) | **GET** /v3/tron/block/{hash} | Get a TRON block by its hash or height
+[**tronGetCurrentBlock()**](#trongetcurrentblock) | **GET** /v3/tron/info | Get the current TRON block
+[**tronGetTransaction()**](#trongettransaction) | **GET** /v3/tron/transaction/{hash} | Get a TRON transaction by its hash
+[**tronTransfer()**](#trontransfer) | **POST** /v3/tron/transaction | Send TRX to a TRON account
+[**tronTransferTrc10()**](#trontransfertrc10) | **POST** /v3/tron/trc10/transaction | Send TRC-10 tokens to a TRON account
+[**tronTransferTrc20()**](#trontransfertrc20) | **POST** /v3/tron/trc20/transaction | Send TRC-20 tokens to a TRON account
+[**tronTrc10Detail()**](#trontrc10detail) | **GET** /v3/tron/trc10/detail/{idOrOwnerAddress} | Get information about a TRC-10 token
 
 
 ## `generateTronwallet()`
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronWallet**](../Model/TronWallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronAccountTx()`
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronAccountTx200Response**](../Model/TronAccountTx200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronAccountTx20()`
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronAccountTx20200Response**](../Model/TronAccountTx20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronBroadcast()`
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronCreateTrc10()`
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronCreateTrc20()`
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronFreeze()`
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronGenerateAddress()`
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronGenerateAddress200Response**](../Model/TronGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronGenerateAddressPrivateKey()`
 
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronGetAccount()`
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronAccount**](../Model/TronAccount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronGetBlock()`
 
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronBlock**](../Model/TronBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronGetCurrentBlock()`
 
@@ -685,7 +685,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\TronGetCurrentBlock200Response**](../Model/TronGetCurrentBlock200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronGetTransaction()`
 
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronTx**](../Model/TronTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronTransfer()`
 
@@ -794,7 +794,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronTransferTrc10()`
 
@@ -848,7 +848,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronTransferTrc20()`
 
@@ -902,7 +902,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronTrc10Detail()`
 
@@ -957,4 +957,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TronTrc10Detail**](../Model/TronTrc10Detail.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

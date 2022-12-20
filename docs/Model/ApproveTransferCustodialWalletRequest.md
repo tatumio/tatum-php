@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **index** | **float** | (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic | [optional]
 **fee_currency** | **string** | The currency to pay for the gas fee |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **chain** | **string** | Blockchain of the address |
 **private_key** | **string** | Private key of the address. Not present by default. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

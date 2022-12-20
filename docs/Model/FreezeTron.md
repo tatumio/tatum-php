@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **resource** | **string** | Resource to obtain, BANDWIDTH or ENERGY. |
 **amount** | **string** | Amount to be frozen in TRX. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

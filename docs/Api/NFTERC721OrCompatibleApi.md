@@ -4,24 +4,24 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**nftAddMinter()**](#nftAddMinter) | **POST** /v3/nft/mint/add | Add an NFT minter to an NFT smart contract
-[**nftBurnErc721()**](#nftBurnErc721) | **POST** /v3/nft/burn | Burn an NFT
-[**nftDeployErc721()**](#nftDeployErc721) | **POST** /v3/nft/deploy | Deploy an NFT smart contract
-[**nftGetBalanceErc721()**](#nftGetBalanceErc721) | **GET** /v3/nft/balance/{chain}/{contractAddress}/{address} | Get the NFTs from a specific smart contract that a blockchain address holds
-[**nftGetContractAddress()**](#nftGetContractAddress) | **GET** /v3/nft/address/{chain}/{hash} | Get the address of an NFT smart contract by its transaction hash
-[**nftGetMetadataErc721()**](#nftGetMetadataErc721) | **GET** /v3/nft/metadata/{chain}/{contractAddress}/{tokenId} | Get NFT metadata
-[**nftGetProvenanceDataErc721()**](#nftGetProvenanceDataErc721) | **GET** /v3/nft/provenance/{chain}/{contractAddress}/{tokenId} | Get NFT provenance information
-[**nftGetRoyaltyErc721()**](#nftGetRoyaltyErc721) | **GET** /v3/nft/royalty/{chain}/{contractAddress}/{tokenId} | Get NFT royalty information
-[**nftGetTokensByAddressErc721()**](#nftGetTokensByAddressErc721) | **GET** /v3/nft/address/balance/{chain}/{address} | Get all NFTs that a blockchain address holds
-[**nftGetTokensByCollectionErc721()**](#nftGetTokensByCollectionErc721) | **GET** /v3/nft/collection/{chain}/{address} | Get all NFTs from a collection
-[**nftGetTransactErc721()**](#nftGetTransactErc721) | **GET** /v3/nft/transaction/{chain}/{hash} | Get an NFT transaction by its hash
-[**nftGetTransactionByAddress()**](#nftGetTransactionByAddress) | **GET** /v3/nft/transaction/{chain}/{address}/{tokenAddress} | Get NFT transactions on a blockchain address
-[**nftGetTransactionByToken()**](#nftGetTransactionByToken) | **GET** /v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId} | Get NFT transactions for an NFT
-[**nftMintErc721()**](#nftMintErc721) | **POST** /v3/nft/mint | Mint an NFT
-[**nftMintMultipleErc721()**](#nftMintMultipleErc721) | **POST** /v3/nft/mint/batch | Mint multiple NFTs
-[**nftTransferErc721()**](#nftTransferErc721) | **POST** /v3/nft/transaction | Transfer an NFT
-[**nftUpdateCashbackErc721()**](#nftUpdateCashbackErc721) | **PUT** /v3/nft/royalty | Update NFT royalty information
-[**nftVerifyInCollection()**](#nftVerifyInCollection) | **POST** /v3/nft/verify | Verify an NFT in an NFT collection on Solana
+[**nftAddMinter()**](#nftaddminter) | **POST** /v3/nft/mint/add | Add an NFT minter to an NFT smart contract
+[**nftBurnErc721()**](#nftburnerc721) | **POST** /v3/nft/burn | Burn an NFT
+[**nftDeployErc721()**](#nftdeployerc721) | **POST** /v3/nft/deploy | Deploy an NFT smart contract
+[**nftGetBalanceErc721()**](#nftgetbalanceerc721) | **GET** /v3/nft/balance/{chain}/{contractAddress}/{address} | Get the NFTs from a specific smart contract that a blockchain address holds
+[**nftGetContractAddress()**](#nftgetcontractaddress) | **GET** /v3/nft/address/{chain}/{hash} | Get the address of an NFT smart contract by its transaction hash
+[**nftGetMetadataErc721()**](#nftgetmetadataerc721) | **GET** /v3/nft/metadata/{chain}/{contractAddress}/{tokenId} | Get NFT metadata
+[**nftGetProvenanceDataErc721()**](#nftgetprovenancedataerc721) | **GET** /v3/nft/provenance/{chain}/{contractAddress}/{tokenId} | Get NFT provenance information
+[**nftGetRoyaltyErc721()**](#nftgetroyaltyerc721) | **GET** /v3/nft/royalty/{chain}/{contractAddress}/{tokenId} | Get NFT royalty information
+[**nftGetTokensByAddressErc721()**](#nftgettokensbyaddresserc721) | **GET** /v3/nft/address/balance/{chain}/{address} | Get all NFTs that a blockchain address holds
+[**nftGetTokensByCollectionErc721()**](#nftgettokensbycollectionerc721) | **GET** /v3/nft/collection/{chain}/{address} | Get all NFTs from a collection
+[**nftGetTransactErc721()**](#nftgettransacterc721) | **GET** /v3/nft/transaction/{chain}/{hash} | Get an NFT transaction by its hash
+[**nftGetTransactionByAddress()**](#nftgettransactionbyaddress) | **GET** /v3/nft/transaction/{chain}/{address}/{tokenAddress} | Get NFT transactions on a blockchain address
+[**nftGetTransactionByToken()**](#nftgettransactionbytoken) | **GET** /v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId} | Get NFT transactions for an NFT
+[**nftMintErc721()**](#nftminterc721) | **POST** /v3/nft/mint | Mint an NFT
+[**nftMintMultipleErc721()**](#nftmintmultipleerc721) | **POST** /v3/nft/mint/batch | Mint multiple NFTs
+[**nftTransferErc721()**](#nfttransfererc721) | **POST** /v3/nft/transaction | Transfer an NFT
+[**nftUpdateCashbackErc721()**](#nftupdatecashbackerc721) | **PUT** /v3/nft/royalty | Update NFT royalty information
+[**nftVerifyInCollection()**](#nftverifyincollection) | **POST** /v3/nft/verify | Verify an NFT in an NFT collection on Solana
 
 
 ## `nftAddMinter()`
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftBurnErc721()`
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftDeployErc721()`
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetBalanceErc721()`
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftGetBalanceErc721200Response**](../Model/NftGetBalanceErc721200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetContractAddress()`
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftGetContractAddress200Response**](../Model/NftGetContractAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetMetadataErc721()`
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftMetadataErc721**](../Model/NftMetadataErc721.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetProvenanceDataErc721()`
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftProvenanceDataErc721[]**](../Model/NftProvenanceDataErc721.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetRoyaltyErc721()`
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftRoyaltyErc721**](../Model/NftRoyaltyErc721.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetTokensByAddressErc721()`
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftTokenByAddressErc721[]**](../Model/NftTokenByAddressErc721.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetTokensByCollectionErc721()`
 
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftTokenByCollectionErc721[]**](../Model/NftTokenByCollectionErc721.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetTransactErc721()`
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftGetTransactErc721200Response**](../Model/NftGetTransactErc721200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetTransactionByAddress()`
 
@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftTx[]**](../Model/NftTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftGetTransactionByToken()`
 
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftTx[]**](../Model/NftTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftMintErc721()`
 
@@ -973,7 +973,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftMintErc721200Response**](../Model/NftMintErc721200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftMintMultipleErc721()`
 
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\NftMintMultipleErc721200Response**](../Model/NftMintMultipleErc721200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftTransferErc721()`
 
@@ -1091,7 +1091,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftUpdateCashbackErc721()`
 
@@ -1150,7 +1150,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `nftVerifyInCollection()`
 
@@ -1204,4 +1204,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

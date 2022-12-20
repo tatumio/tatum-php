@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Offchain not supported for account with ${account.currency} currency. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

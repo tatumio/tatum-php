@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**kcsBlockchainSmartContractInvocation()**](#kcsBlockchainSmartContractInvocation) | **POST** /v3/kcs/smartcontract | Invoke a method in a smart contract on KuCoin Community Chain
-[**kcsBlockchainTransfer()**](#kcsBlockchainTransfer) | **POST** /v3/kcs/transaction | Send KCS from account to account
-[**kcsBroadcast()**](#kcsBroadcast) | **POST** /v3/kcs/broadcast | Broadcast signed Kcs transaction
-[**kcsGenerateAddress()**](#kcsGenerateAddress) | **GET** /v3/kcs/address/{xpub}/{index} | Generate Kcs account address from Extended public key
-[**kcsGenerateAddressPrivateKey()**](#kcsGenerateAddressPrivateKey) | **POST** /v3/kcs/wallet/priv | Generate Kcs private key
-[**kcsGenerateWallet()**](#kcsGenerateWallet) | **GET** /v3/kcs/wallet | Generate Kcs wallet
-[**kcsGetBalance()**](#kcsGetBalance) | **GET** /v3/kcs/account/balance/{address} | Get Kcs Account balance
-[**kcsGetBlock()**](#kcsGetBlock) | **GET** /v3/kcs/block/{hash} | Get Kcs block by hash
-[**kcsGetCurrentBlock()**](#kcsGetCurrentBlock) | **GET** /v3/kcs/block/current | Get current block number
-[**kcsGetTransaction()**](#kcsGetTransaction) | **GET** /v3/kcs/transaction/{hash} | Get Kcs Transaction
-[**kcsGetTransactionCount()**](#kcsGetTransactionCount) | **GET** /v3/kcs/transaction/count/{address} | Get count of outgoing Kcs transactions
-[**kcsWeb3Driver()**](#kcsWeb3Driver) | **POST** /v3/kcs/web3/{xApiKey} | Web3 HTTP driver
+[**kcsBlockchainSmartContractInvocation()**](#kcsblockchainsmartcontractinvocation) | **POST** /v3/kcs/smartcontract | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsBlockchainTransfer()**](#kcsblockchaintransfer) | **POST** /v3/kcs/transaction | Send KCS from account to account
+[**kcsBroadcast()**](#kcsbroadcast) | **POST** /v3/kcs/broadcast | Broadcast signed Kcs transaction
+[**kcsGenerateAddress()**](#kcsgenerateaddress) | **GET** /v3/kcs/address/{xpub}/{index} | Generate Kcs account address from Extended public key
+[**kcsGenerateAddressPrivateKey()**](#kcsgenerateaddressprivatekey) | **POST** /v3/kcs/wallet/priv | Generate Kcs private key
+[**kcsGenerateWallet()**](#kcsgeneratewallet) | **GET** /v3/kcs/wallet | Generate Kcs wallet
+[**kcsGetBalance()**](#kcsgetbalance) | **GET** /v3/kcs/account/balance/{address} | Get Kcs Account balance
+[**kcsGetBlock()**](#kcsgetblock) | **GET** /v3/kcs/block/{hash} | Get Kcs block by hash
+[**kcsGetCurrentBlock()**](#kcsgetcurrentblock) | **GET** /v3/kcs/block/current | Get current block number
+[**kcsGetTransaction()**](#kcsgettransaction) | **GET** /v3/kcs/transaction/{hash} | Get Kcs Transaction
+[**kcsGetTransactionCount()**](#kcsgettransactioncount) | **GET** /v3/kcs/transaction/count/{address} | Get count of outgoing Kcs transactions
+[**kcsWeb3Driver()**](#kcsweb3driver) | **POST** /v3/kcs/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `kcsBlockchainSmartContractInvocation()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsBlockchainTransfer()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsBroadcast()`
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGenerateAddress()`
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KcsGenerateAddress200Response**](../Model/KcsGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGenerateAddressPrivateKey()`
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGenerateWallet()`
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGetBalance()`
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KcsGetBalance200Response**](../Model/KcsGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGetBlock()`
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGetCurrentBlock()`
 
@@ -506,7 +506,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGetTransaction()`
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\KcsTx**](../Model/KcsTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsGetTransactionCount()`
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsWeb3Driver()`
 
@@ -675,4 +675,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

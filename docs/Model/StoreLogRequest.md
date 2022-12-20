@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **eth_fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

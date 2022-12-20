@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **bestblockhash** | **string** | Hash of the last block. | [optional]
 **difficulty** | **float** | Difficulty of the PoW algorithm. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | The KMS identifier of the private key of the NFT author&#39;s address |
 **index** | **float** | (Only if the signature ID is mnemonic-based) The index of the NFT author&#39;s address that was generated from the mnemonic | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

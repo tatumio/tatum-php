@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **locked** | **string** |  | [optional]
 **symbol** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

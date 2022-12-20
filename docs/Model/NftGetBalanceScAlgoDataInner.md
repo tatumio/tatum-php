@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **balances** | **string[]** | The array returning &lt;code&gt;1&lt;/code&gt; to indicate that the NFT with the specified ID exists | [optional]
 **metadata** | [**\Tatum\Model\NftGetBalanceScAlgoDataInnerMetadataInner[]**](NftGetBalanceScAlgoDataInnerMetadataInner.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 **erc20_address** | **string** | Optional address of the ERC20 token, which will be used as a selling currency of the NFT. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

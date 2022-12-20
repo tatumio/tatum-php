@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **accounting_currency** | **string** | AThe ISO 4217 code of the currency in which all transactions for the created virtual account will be billed | [optional] [default to 'EUR']
 **address** | **string** | The blockchain address to be assigned to the virtual account as a deposit address; the supply of the token will be stored on this address |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

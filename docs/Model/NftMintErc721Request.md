@@ -31,4 +31,4 @@ Name | Type | Description | Notes
 **collection_verifier_private_key** | **string** | The private key of the collection verifier (owner) who will verify the NFT in the NFT collection where the NFT is minted in. The blockchain address of this collection is specified in the &lt;code&gt;collection&lt;/code&gt; parameter in the &lt;code&gt;metadata&lt;/code&gt; section of the request body. To know more about Solana collections and verification, refer to the &lt;a href&#x3D;\&quot;https://docs.metaplex.com/programs/token-metadata/certified-collections\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Solana user documentation&lt;/a&gt;. | [optional]
 **fee_limit** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

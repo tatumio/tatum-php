@@ -4,13 +4,13 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activateCustomer()**](#activateCustomer) | **PUT** /v3/ledger/customer/{id}/activate | Activate customer
-[**deactivateCustomer()**](#deactivateCustomer) | **PUT** /v3/ledger/customer/{id}/deactivate | Deactivate customer
-[**disableCustomer()**](#disableCustomer) | **PUT** /v3/ledger/customer/{id}/disable | Disable customer
-[**enableCustomer()**](#enableCustomer) | **PUT** /v3/ledger/customer/{id}/enable | Enable customer
-[**findAllCustomers()**](#findAllCustomers) | **GET** /v3/ledger/customer | List all customers
-[**getCustomerByExternalOrInternalId()**](#getCustomerByExternalOrInternalId) | **GET** /v3/ledger/customer/{id} | Get customer details
-[**updateCustomer()**](#updateCustomer) | **PUT** /v3/ledger/customer/{id} | Update customer
+[**activateCustomer()**](#activatecustomer) | **PUT** /v3/ledger/customer/{id}/activate | Activate customer
+[**deactivateCustomer()**](#deactivatecustomer) | **PUT** /v3/ledger/customer/{id}/deactivate | Deactivate customer
+[**disableCustomer()**](#disablecustomer) | **PUT** /v3/ledger/customer/{id}/disable | Disable customer
+[**enableCustomer()**](#enablecustomer) | **PUT** /v3/ledger/customer/{id}/enable | Enable customer
+[**findAllCustomers()**](#findallcustomers) | **GET** /v3/ledger/customer | List all customers
+[**getCustomerByExternalOrInternalId()**](#getcustomerbyexternalorinternalid) | **GET** /v3/ledger/customer/{id} | Get customer details
+[**updateCustomer()**](#updatecustomer) | **PUT** /v3/ledger/customer/{id} | Update customer
 
 
 ## `activateCustomer()`
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deactivateCustomer()`
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `disableCustomer()`
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `enableCustomer()`
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `findAllCustomers()`
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Customer[]**](../Model/Customer.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getCustomerByExternalOrInternalId()`
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Customer**](../Model/Customer.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateCustomer()`
 
@@ -393,4 +393,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Customer**](../Model/Customer.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

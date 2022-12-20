@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **data** | **string** | Data to send to Smart Contract | [optional]
 **nonce** | **float** | Nonce | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

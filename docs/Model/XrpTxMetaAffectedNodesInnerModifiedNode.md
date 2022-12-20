@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **previous_txn_id** | **string** |  | [optional]
 **previous_txn_lgr_seq** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

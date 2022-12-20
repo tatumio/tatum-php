@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **rippling** | **bool** | Should be true, if an account is the issuer of assets. | [optional]
 **require_destination_tag** | **bool** | Should be true, if an account should support off-chain processing. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

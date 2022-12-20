@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | The private key of the marketplace authority |
 **signature_id** | **string** | The KMS identifier of the private key of the marketplace authority |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **operator** | **string** | Operator |
 **to** | **string** | recipient |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

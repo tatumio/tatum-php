@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **witness_signature** | **string** | Witness signature. | [optional]
 **transactions** | [**\Tatum\Model\TronTx[]**](TronTx.md) | Transactions that occurs in this block. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

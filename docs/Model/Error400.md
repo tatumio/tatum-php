@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **status_code** | **float** | 400 |
 **data** | [**\Tatum\Model\Error400DataInner[]**](Error400DataInner.md) |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

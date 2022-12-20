@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **seller** | **string** | Address of the seller. | [optional]
 **highest_bid** | **string** | Current highest bid of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

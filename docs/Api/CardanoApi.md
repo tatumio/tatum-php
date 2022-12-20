@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adaBroadcast()**](#adaBroadcast) | **POST** /v3/ada/broadcast | Broadcast signed Ada transaction
-[**adaGenerateAddress()**](#adaGenerateAddress) | **GET** /v3/ada/address/{xpub}/{index} | Generate Ada deposit address from Extended public key
-[**adaGenerateAddressPrivateKey()**](#adaGenerateAddressPrivateKey) | **POST** /v3/ada/wallet/priv | Generate Ada private key
-[**adaGenerateWallet()**](#adaGenerateWallet) | **GET** /v3/ada/wallet | Generate Ada wallet
-[**adaGetAccount()**](#adaGetAccount) | **GET** /v3/ada/account/{address} | Gets a Ada account by address
-[**adaGetBlock()**](#adaGetBlock) | **GET** /v3/ada/block/{hash} | Get Block by hash or height
-[**adaGetBlockChainInfo()**](#adaGetBlockChainInfo) | **GET** /v3/ada/info | Get Blockchain information
-[**adaGetRawTransaction()**](#adaGetRawTransaction) | **GET** /v3/ada/transaction/{hash} | Get transaction by hash
-[**adaGetTxByAddress()**](#adaGetTxByAddress) | **GET** /v3/ada/transaction/address/{address} | Get transactions by address
-[**adaGetUTXOByAddress()**](#adaGetUTXOByAddress) | **GET** /v3/ada/{address}/utxos | Get UTXOs by address
-[**adaTransferBlockchain()**](#adaTransferBlockchain) | **POST** /v3/ada/transaction | Send ADA to Cardano addresses
+[**adaBroadcast()**](#adabroadcast) | **POST** /v3/ada/broadcast | Broadcast signed Ada transaction
+[**adaGenerateAddress()**](#adagenerateaddress) | **GET** /v3/ada/address/{xpub}/{index} | Generate Ada deposit address from Extended public key
+[**adaGenerateAddressPrivateKey()**](#adagenerateaddressprivatekey) | **POST** /v3/ada/wallet/priv | Generate Ada private key
+[**adaGenerateWallet()**](#adageneratewallet) | **GET** /v3/ada/wallet | Generate Ada wallet
+[**adaGetAccount()**](#adagetaccount) | **GET** /v3/ada/account/{address} | Gets a Ada account by address
+[**adaGetBlock()**](#adagetblock) | **GET** /v3/ada/block/{hash} | Get Block by hash or height
+[**adaGetBlockChainInfo()**](#adagetblockchaininfo) | **GET** /v3/ada/info | Get Blockchain information
+[**adaGetRawTransaction()**](#adagetrawtransaction) | **GET** /v3/ada/transaction/{hash} | Get transaction by hash
+[**adaGetTxByAddress()**](#adagettxbyaddress) | **GET** /v3/ada/transaction/address/{address} | Get transactions by address
+[**adaGetUTXOByAddress()**](#adagetutxobyaddress) | **GET** /v3/ada/{address}/utxos | Get UTXOs by address
+[**adaTransferBlockchain()**](#adatransferblockchain) | **POST** /v3/ada/transaction | Send ADA to Cardano addresses
 
 
 ## `adaBroadcast()`
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGenerateAddress()`
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AdaGenerateAddress200Response**](../Model/AdaGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGenerateAddressPrivateKey()`
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGenerateWallet()`
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGetAccount()`
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 **array[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGetBlock()`
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AdaBlock**](../Model/AdaBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGetBlockChainInfo()`
 
@@ -397,7 +397,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\AdaInfo**](../Model/AdaInfo.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGetRawTransaction()`
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AdaTx**](../Model/AdaTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGetTxByAddress()`
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AdaTx[]**](../Model/AdaTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaGetUTXOByAddress()`
 
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AdaUTXO[]**](../Model/AdaUTXO.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `adaTransferBlockchain()`
 
@@ -626,4 +626,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

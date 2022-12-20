@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Unable to create account, unsupported testnet blockchain. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

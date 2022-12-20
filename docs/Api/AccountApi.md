@@ -4,24 +4,24 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activateAccount()**](#activateAccount) | **PUT** /v3/ledger/account/{id}/activate | Activate account
-[**blockAmount()**](#blockAmount) | **POST** /v3/ledger/account/block/{id} | Block an amount in an account
-[**createAccount()**](#createAccount) | **POST** /v3/ledger/account | Create a virtual account
-[**createAccountBatch()**](#createAccountBatch) | **POST** /v3/ledger/account/batch | Create multiple accounts in a batch call
-[**deactivateAccount()**](#deactivateAccount) | **PUT** /v3/ledger/account/{id}/deactivate | Deactivate account
-[**deleteAllBlockAmount()**](#deleteAllBlockAmount) | **DELETE** /v3/ledger/account/block/account/{id} | Unblock all blocked amounts in an account
-[**deleteBlockAmount()**](#deleteBlockAmount) | **DELETE** /v3/ledger/account/block/{id} | Unblock a blocked amount in an account
-[**freezeAccount()**](#freezeAccount) | **PUT** /v3/ledger/account/{id}/freeze | Freeze account
-[**getAccountBalance()**](#getAccountBalance) | **GET** /v3/ledger/account/{id}/balance | Get account balance
-[**getAccountByAccountId()**](#getAccountByAccountId) | **GET** /v3/ledger/account/{id} | Get account by ID
-[**getAccounts()**](#getAccounts) | **GET** /v3/ledger/account | List all accounts
-[**getAccountsByCustomerId()**](#getAccountsByCustomerId) | **GET** /v3/ledger/account/customer/{id} | List all customer accounts
-[**getAccountsCount()**](#getAccountsCount) | **GET** /v3/ledger/account/count | Count of found entities for get accounts request
-[**getBlockAmount()**](#getBlockAmount) | **GET** /v3/ledger/account/block/{id} | Get blocked amounts in an account
-[**getBlockAmountById()**](#getBlockAmountById) | **GET** /v3/ledger/account/block/{id}/detail | Get blocked amount by ID
-[**unblockAmountWithTransaction()**](#unblockAmountWithTransaction) | **PUT** /v3/ledger/account/block/{id} | Unblock an amount in an account and perform a transaction
-[**unfreezeAccount()**](#unfreezeAccount) | **PUT** /v3/ledger/account/{id}/unfreeze | Unfreeze account
-[**updateAccountByAccountId()**](#updateAccountByAccountId) | **PUT** /v3/ledger/account/{id} | Update account
+[**activateAccount()**](#activateaccount) | **PUT** /v3/ledger/account/{id}/activate | Activate account
+[**blockAmount()**](#blockamount) | **POST** /v3/ledger/account/block/{id} | Block an amount in an account
+[**createAccount()**](#createaccount) | **POST** /v3/ledger/account | Create a virtual account
+[**createAccountBatch()**](#createaccountbatch) | **POST** /v3/ledger/account/batch | Create multiple accounts in a batch call
+[**deactivateAccount()**](#deactivateaccount) | **PUT** /v3/ledger/account/{id}/deactivate | Deactivate account
+[**deleteAllBlockAmount()**](#deleteallblockamount) | **DELETE** /v3/ledger/account/block/account/{id} | Unblock all blocked amounts in an account
+[**deleteBlockAmount()**](#deleteblockamount) | **DELETE** /v3/ledger/account/block/{id} | Unblock a blocked amount in an account
+[**freezeAccount()**](#freezeaccount) | **PUT** /v3/ledger/account/{id}/freeze | Freeze account
+[**getAccountBalance()**](#getaccountbalance) | **GET** /v3/ledger/account/{id}/balance | Get account balance
+[**getAccountByAccountId()**](#getaccountbyaccountid) | **GET** /v3/ledger/account/{id} | Get account by ID
+[**getAccounts()**](#getaccounts) | **GET** /v3/ledger/account | List all accounts
+[**getAccountsByCustomerId()**](#getaccountsbycustomerid) | **GET** /v3/ledger/account/customer/{id} | List all customer accounts
+[**getAccountsCount()**](#getaccountscount) | **GET** /v3/ledger/account/count | Count of found entities for get accounts request
+[**getBlockAmount()**](#getblockamount) | **GET** /v3/ledger/account/block/{id} | Get blocked amounts in an account
+[**getBlockAmountById()**](#getblockamountbyid) | **GET** /v3/ledger/account/block/{id}/detail | Get blocked amount by ID
+[**unblockAmountWithTransaction()**](#unblockamountwithtransaction) | **PUT** /v3/ledger/account/block/{id} | Unblock an amount in an account and perform a transaction
+[**unfreezeAccount()**](#unfreezeaccount) | **PUT** /v3/ledger/account/{id}/unfreeze | Unfreeze account
+[**updateAccountByAccountId()**](#updateaccountbyaccountid) | **PUT** /v3/ledger/account/{id} | Update account
 
 
 ## `activateAccount()`
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `blockAmount()`
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Id**](../Model/Id.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createAccount()`
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Account**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createAccountBatch()`
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Account[]**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deactivateAccount()`
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deleteAllBlockAmount()`
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deleteBlockAmount()`
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `freezeAccount()`
 
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAccountBalance()`
 
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AccountBalance**](../Model/AccountBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAccountByAccountId()`
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Account**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAccounts()`
 
@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Account[]**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAccountsByCustomerId()`
 
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Account[]**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAccountsCount()`
 
@@ -819,7 +819,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getBlockAmount()`
 
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Blockage[]**](../Model/Blockage.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getBlockAmountById()`
 
@@ -939,7 +939,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Blockage**](../Model/Blockage.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `unblockAmountWithTransaction()`
 
@@ -998,7 +998,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `unfreezeAccount()`
 
@@ -1050,7 +1050,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateAccountByAccountId()`
 
@@ -1106,4 +1106,4 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

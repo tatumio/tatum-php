@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **token_ids** | **string[]** | Token IDs |
 **urls** | **string[]** | Metadata URLs |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

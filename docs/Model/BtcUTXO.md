@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **hash** | **string** | The hash of the transaction | [optional]
 **index** | **float** | The index of the transaction output checked for the UTXO | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

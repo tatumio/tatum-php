@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **supply** | **float** | (Algorand only) The number of fractions in the NFT if the NFT is &lt;a href&#x3D;\&quot;https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;fractional&lt;/a&gt; | [optional]
 **decimals** | **float** | (Algorand only) The number of decimal places in an NFT fraction if the NFT is &lt;a href&#x3D;\&quot;https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;fractional&lt;/a&gt; | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

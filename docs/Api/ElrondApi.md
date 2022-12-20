@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eGldGetCurrentBlock()**](#eGldGetCurrentBlock) | **GET** /v3/egld/block/current | Get current block number
-[**egldBlockchainTransfer()**](#egldBlockchainTransfer) | **POST** /v3/egld/transaction | Send EGLD from account to account
-[**egldBroadcast()**](#egldBroadcast) | **POST** /v3/egld/broadcast | Broadcast signed EGLD transaction
-[**egldGenerateAddress()**](#egldGenerateAddress) | **GET** /v3/egld/address/{mnemonic}/{index} | Generate EGLD account address from mnemonic
-[**egldGenerateAddressPrivateKey()**](#egldGenerateAddressPrivateKey) | **POST** /v3/egld/wallet/priv | Generate EGLD private key
-[**egldGenerateWallet()**](#egldGenerateWallet) | **GET** /v3/egld/wallet | Generate EGLD wallet
-[**egldGetBalance()**](#egldGetBalance) | **GET** /v3/egld/account/balance/{address} | Get EGLD Account balance
-[**egldGetBlock()**](#egldGetBlock) | **GET** /v3/egld/block/{hash} | Get EGLD block by hash
-[**egldGetTransaction()**](#egldGetTransaction) | **GET** /v3/egld/transaction/{hash} | Get EGLD Transaction
-[**egldGetTransactionAddress()**](#egldGetTransactionAddress) | **GET** /v3/egld/transaction/address/{address} | Get count of outgoing EGLD transactions
-[**egldGetTransactionCount()**](#egldGetTransactionCount) | **GET** /v3/egld/transaction/count/{address} | Get count of outgoing EGLD transactions
-[**egldNodeGet()**](#egldNodeGet) | **GET** /v3/egld/node/{xApiKey}/* | Node HTTP driver
-[**egldNodePost()**](#egldNodePost) | **POST** /v3/egld/node/{xApiKey}/* | Node HTTP driver
+[**eGldGetCurrentBlock()**](#egldgetcurrentblock) | **GET** /v3/egld/block/current | Get current block number
+[**egldBlockchainTransfer()**](#egldblockchaintransfer) | **POST** /v3/egld/transaction | Send EGLD from account to account
+[**egldBroadcast()**](#egldbroadcast) | **POST** /v3/egld/broadcast | Broadcast signed EGLD transaction
+[**egldGenerateAddress()**](#egldgenerateaddress) | **GET** /v3/egld/address/{mnemonic}/{index} | Generate EGLD account address from mnemonic
+[**egldGenerateAddressPrivateKey()**](#egldgenerateaddressprivatekey) | **POST** /v3/egld/wallet/priv | Generate EGLD private key
+[**egldGenerateWallet()**](#egldgeneratewallet) | **GET** /v3/egld/wallet | Generate EGLD wallet
+[**egldGetBalance()**](#egldgetbalance) | **GET** /v3/egld/account/balance/{address} | Get EGLD Account balance
+[**egldGetBlock()**](#egldgetblock) | **GET** /v3/egld/block/{hash} | Get EGLD block by hash
+[**egldGetTransaction()**](#egldgettransaction) | **GET** /v3/egld/transaction/{hash} | Get EGLD Transaction
+[**egldGetTransactionAddress()**](#egldgettransactionaddress) | **GET** /v3/egld/transaction/address/{address} | Get count of outgoing EGLD transactions
+[**egldGetTransactionCount()**](#egldgettransactioncount) | **GET** /v3/egld/transaction/count/{address} | Get count of outgoing EGLD transactions
+[**egldNodeGet()**](#egldnodeget) | **GET** /v3/egld/node/{xApiKey}/* | Node HTTP driver
+[**egldNodePost()**](#egldnodepost) | **POST** /v3/egld/node/{xApiKey}/* | Node HTTP driver
 
 
 ## `eGldGetCurrentBlock()`
@@ -66,7 +66,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldBlockchainTransfer()`
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldBroadcast()`
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGenerateAddress()`
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EgldGenerateAddress200Response**](../Model/EgldGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGenerateAddressPrivateKey()`
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGenerateWallet()`
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EgldGenerateWallet200Response**](../Model/EgldGenerateWallet200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGetBalance()`
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EgldGetBalance200Response**](../Model/EgldGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGetBlock()`
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EgldBlock**](../Model/EgldBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGetTransaction()`
 
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EgldTx**](../Model/EgldTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGetTransactionAddress()`
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 **object[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldGetTransactionCount()`
 
@@ -618,7 +618,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldNodeGet()`
 
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldNodePost()`
 
@@ -732,4 +732,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

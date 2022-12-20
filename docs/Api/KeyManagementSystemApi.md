@@ -4,11 +4,11 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**completePendingSignature()**](#completePendingSignature) | **PUT** /v3/kms/{id}/{txId} | Complete pending transaction to sign
-[**deletePendingTransactionToSign()**](#deletePendingTransactionToSign) | **DELETE** /v3/kms/{id} | Delete transaction
-[**getPendingTransactionToSign()**](#getPendingTransactionToSign) | **GET** /v3/kms/{id} | Get transaction details
-[**getPendingTransactionsToSign()**](#getPendingTransactionsToSign) | **GET** /v3/kms/pending/{chain} | Get pending transactions to sign
-[**receivePendingTransactionsToSign()**](#receivePendingTransactionsToSign) | **POST** /v3/kms/pending/{chain} | Get pending transactions to sign
+[**completePendingSignature()**](#completependingsignature) | **PUT** /v3/kms/{id}/{txId} | Complete pending transaction to sign
+[**deletePendingTransactionToSign()**](#deletependingtransactiontosign) | **DELETE** /v3/kms/{id} | Delete transaction
+[**getPendingTransactionToSign()**](#getpendingtransactiontosign) | **GET** /v3/kms/{id} | Get transaction details
+[**getPendingTransactionsToSign()**](#getpendingtransactionstosign) | **GET** /v3/kms/pending/{chain} | Get pending transactions to sign
+[**receivePendingTransactionsToSign()**](#receivependingtransactionstosign) | **POST** /v3/kms/pending/{chain} | Get pending transactions to sign
 
 
 ## `completePendingSignature()`
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deletePendingTransactionToSign()`
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getPendingTransactionToSign()`
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PendingTransaction**](../Model/PendingTransaction.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getPendingTransactionsToSign()`
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PendingTransaction[]**](../Model/PendingTransaction.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `receivePendingTransactionsToSign()`
 
@@ -298,4 +298,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PendingTransaction[]**](../Model/PendingTransaction.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

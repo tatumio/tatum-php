@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **index** | **float** | (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic | [optional]
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

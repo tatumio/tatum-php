@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from** | **string** | Address on Solana blockchain, from which the fee for the deployment of SPL will be paid. |
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

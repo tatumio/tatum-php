@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **fee_limit** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
 **from_private_key** | **string** | The private key of the NFT author&#39;s address |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

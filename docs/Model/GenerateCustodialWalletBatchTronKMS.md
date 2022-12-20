@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **owner** | **string** | Owner of the addresses. |
 **fee_limit** | **float** | Fee limit to be set, in TRX |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

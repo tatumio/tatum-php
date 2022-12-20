@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **created** | **float** | Creation date, UTC millis | [optional]
 **attr** | [**\Tatum\Model\TradeAttr**](TradeAttr.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

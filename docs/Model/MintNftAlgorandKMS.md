@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account |
 **attr** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](MintNftExpressAlgorandAttr.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

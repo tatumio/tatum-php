@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from_address** | **string** | Blockchain address to send from |
 **message** | **string** | Message to recipient. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

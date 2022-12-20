@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **pubkey** | **string** |  | [optional]
 **reward_type** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **fee** | **float** | Percentage of the trade amount to be paid as a fee. | [optional]
 **attr** | [**\Tatum\Model\CreateFutureTradeAttr**](CreateFutureTradeAttr.md) |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

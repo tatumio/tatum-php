@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**polygonBlockchainSmartContractInvocation()**](#polygonBlockchainSmartContractInvocation) | **POST** /v3/polygon/smartcontract | Invoke a method in a smart contract on Polygon
-[**polygonBlockchainTransfer()**](#polygonBlockchainTransfer) | **POST** /v3/polygon/transaction | Send MATIC from account to account
-[**polygonBroadcast()**](#polygonBroadcast) | **POST** /v3/polygon/broadcast | Broadcast signed Polygon transaction
-[**polygonGenerateAddress()**](#polygonGenerateAddress) | **GET** /v3/polygon/address/{xpub}/{index} | Generate Polygon account address from Extended public key
-[**polygonGenerateAddressPrivateKey()**](#polygonGenerateAddressPrivateKey) | **POST** /v3/polygon/wallet/priv | Generate Polygon private key
-[**polygonGenerateWallet()**](#polygonGenerateWallet) | **GET** /v3/polygon/wallet | Generate Polygon wallet
-[**polygonGetBalance()**](#polygonGetBalance) | **GET** /v3/polygon/account/balance/{address} | Get Polygon Account balance
-[**polygonGetBlock()**](#polygonGetBlock) | **GET** /v3/polygon/block/{hash} | Get Polygon block by hash
-[**polygonGetCurrentBlock()**](#polygonGetCurrentBlock) | **GET** /v3/polygon/block/current | Get current block number
-[**polygonGetTransaction()**](#polygonGetTransaction) | **GET** /v3/polygon/transaction/{hash} | Get Polygon Transaction
-[**polygonGetTransactionByAddress()**](#polygonGetTransactionByAddress) | **GET** /v3/polygon/account/transaction/{address} | Get Polygon transactions by address
-[**polygonGetTransactionCount()**](#polygonGetTransactionCount) | **GET** /v3/polygon/transaction/count/{address} | Get count of outgoing Polygon transactions
-[**polygonWeb3Driver()**](#polygonWeb3Driver) | **POST** /v3/polygon/web3/{xApiKey} | Web3 HTTP driver
+[**polygonBlockchainSmartContractInvocation()**](#polygonblockchainsmartcontractinvocation) | **POST** /v3/polygon/smartcontract | Invoke a method in a smart contract on Polygon
+[**polygonBlockchainTransfer()**](#polygonblockchaintransfer) | **POST** /v3/polygon/transaction | Send MATIC from account to account
+[**polygonBroadcast()**](#polygonbroadcast) | **POST** /v3/polygon/broadcast | Broadcast signed Polygon transaction
+[**polygonGenerateAddress()**](#polygongenerateaddress) | **GET** /v3/polygon/address/{xpub}/{index} | Generate Polygon account address from Extended public key
+[**polygonGenerateAddressPrivateKey()**](#polygongenerateaddressprivatekey) | **POST** /v3/polygon/wallet/priv | Generate Polygon private key
+[**polygonGenerateWallet()**](#polygongeneratewallet) | **GET** /v3/polygon/wallet | Generate Polygon wallet
+[**polygonGetBalance()**](#polygongetbalance) | **GET** /v3/polygon/account/balance/{address} | Get Polygon Account balance
+[**polygonGetBlock()**](#polygongetblock) | **GET** /v3/polygon/block/{hash} | Get Polygon block by hash
+[**polygonGetCurrentBlock()**](#polygongetcurrentblock) | **GET** /v3/polygon/block/current | Get current block number
+[**polygonGetTransaction()**](#polygongettransaction) | **GET** /v3/polygon/transaction/{hash} | Get Polygon Transaction
+[**polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) | **GET** /v3/polygon/account/transaction/{address} | Get Polygon transactions by address
+[**polygonGetTransactionCount()**](#polygongettransactioncount) | **GET** /v3/polygon/transaction/count/{address} | Get count of outgoing Polygon transactions
+[**polygonWeb3Driver()**](#polygonweb3driver) | **POST** /v3/polygon/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `polygonBlockchainSmartContractInvocation()`
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonBlockchainTransfer()`
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonBroadcast()`
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGenerateAddress()`
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GeneratedAddressMatic**](../Model/GeneratedAddressMatic.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGenerateAddressPrivateKey()`
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGenerateWallet()`
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGetBalance()`
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\MaticBalance**](../Model/MaticBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGetBlock()`
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGetCurrentBlock()`
 
@@ -507,7 +507,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGetTransaction()`
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PolygonTx**](../Model/PolygonTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGetTransactionByAddress()`
 
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PolygonTx[]**](../Model/PolygonTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonGetTransactionCount()`
 
@@ -697,7 +697,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonWeb3Driver()`
 
@@ -756,4 +756,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

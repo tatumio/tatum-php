@@ -4,7 +4,7 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**offchainEstimateFee()**](#offchainEstimateFee) | **POST** /v3/offchain/blockchain/estimate | Estimate ledger to blockchain transaction fee
+[**offchainEstimateFee()**](#offchainestimatefee) | **POST** /v3/offchain/blockchain/estimate | Estimate ledger to blockchain transaction fee
 
 
 ## `offchainEstimateFee()`
@@ -59,4 +59,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FeeBtc**](../Model/FeeBtc.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

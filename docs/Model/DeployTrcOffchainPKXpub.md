@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **derivation_index** | **int** | Derivation index for xpub to generate specific deposit address. |
 **private_key** | **string** | Private key of Tron account address, from which gas for deployment of TRC will be paid. Private key, mnemonic or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

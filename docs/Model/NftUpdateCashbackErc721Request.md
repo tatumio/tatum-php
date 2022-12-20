@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **index** | **float** | (Only if the signature ID is mnemonic-based) The index of the NFT author&#39;s address that was generated from the mnemonic | [optional]
 **account** | **string** | The blockchain address of the NFT author from which the transaction will be performed |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **batch_count** | **float** | Number of addresses to generate. |
 **owner** | **string** | Owner of the addresses. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

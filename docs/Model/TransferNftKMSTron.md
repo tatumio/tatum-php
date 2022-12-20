@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 **fee_limit** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

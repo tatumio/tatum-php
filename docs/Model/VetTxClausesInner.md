@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **value** | **string** |  | [optional]
 **data** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

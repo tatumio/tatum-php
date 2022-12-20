@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **enable_semi_fungible_tokens** | **bool** | If address should support ERC1155 tokens, it should be marked as true. Not supported for TRON. |
 **enable_batch_transactions** | **bool** | If address should support batch transfers of the assets, it should be marked as true. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

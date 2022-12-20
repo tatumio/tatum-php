@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **confirmed** | **bool** | If transaction was not confirmed within 5 rounds, result is false. | [optional] [default to false]
 **failed** | **bool** | In case of the transaction was broadcast to the blockchain, but it was not possible to complete Tatum KMS signature, reponse is marked as failed and must be marked manually. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

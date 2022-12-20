@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **fee** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

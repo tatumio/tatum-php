@@ -4,20 +4,20 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ltcBroadcast()**](#ltcBroadcast) | **POST** /v3/litecoin/broadcast | Broadcast signed Litecoin transaction
-[**ltcGenerateAddress()**](#ltcGenerateAddress) | **GET** /v3/litecoin/address/{xpub}/{index} | Generate Litecoin deposit address from Extended public key
-[**ltcGenerateAddressPrivateKey()**](#ltcGenerateAddressPrivateKey) | **POST** /v3/litecoin/wallet/priv | Generate Litecoin private key
-[**ltcGenerateWallet()**](#ltcGenerateWallet) | **GET** /v3/litecoin/wallet | Generate Litecoin wallet
-[**ltcGetBalanceOfAddress()**](#ltcGetBalanceOfAddress) | **GET** /v3/litecoin/address/balance/{address} | Get the balance of a Litecoin address
-[**ltcGetBlock()**](#ltcGetBlock) | **GET** /v3/litecoin/block/{hash} | Get Litecoin Block by hash or height
-[**ltcGetBlockChainInfo()**](#ltcGetBlockChainInfo) | **GET** /v3/litecoin/info | Get Litecoin Blockchain Information
-[**ltcGetBlockHash()**](#ltcGetBlockHash) | **GET** /v3/litecoin/block/hash/{i} | Get Litecoin Block hash
-[**ltcGetMempool()**](#ltcGetMempool) | **GET** /v3/litecoin/mempool | Get Mempool Transactions
-[**ltcGetRawTransaction()**](#ltcGetRawTransaction) | **GET** /v3/litecoin/transaction/{hash} | Get Litecoin Transaction by hash
-[**ltcGetTxByAddress()**](#ltcGetTxByAddress) | **GET** /v3/litecoin/transaction/address/{address} | Get Litecoin Transactions by address
-[**ltcGetUTXO()**](#ltcGetUTXO) | **GET** /v3/litecoin/utxo/{hash}/{index} | Get information about a transaction output (UTXO) in a Litecoin transaction
-[**ltcRpcDriver()**](#ltcRpcDriver) | **POST** /v3/litecoin/node | JSON RPC HTTP driver
-[**ltcTransferBlockchain()**](#ltcTransferBlockchain) | **POST** /v3/litecoin/transaction | Send LTC to Litecoin addresses
+[**ltcBroadcast()**](#ltcbroadcast) | **POST** /v3/litecoin/broadcast | Broadcast signed Litecoin transaction
+[**ltcGenerateAddress()**](#ltcgenerateaddress) | **GET** /v3/litecoin/address/{xpub}/{index} | Generate Litecoin deposit address from Extended public key
+[**ltcGenerateAddressPrivateKey()**](#ltcgenerateaddressprivatekey) | **POST** /v3/litecoin/wallet/priv | Generate Litecoin private key
+[**ltcGenerateWallet()**](#ltcgeneratewallet) | **GET** /v3/litecoin/wallet | Generate Litecoin wallet
+[**ltcGetBalanceOfAddress()**](#ltcgetbalanceofaddress) | **GET** /v3/litecoin/address/balance/{address} | Get the balance of a Litecoin address
+[**ltcGetBlock()**](#ltcgetblock) | **GET** /v3/litecoin/block/{hash} | Get Litecoin Block by hash or height
+[**ltcGetBlockChainInfo()**](#ltcgetblockchaininfo) | **GET** /v3/litecoin/info | Get Litecoin Blockchain Information
+[**ltcGetBlockHash()**](#ltcgetblockhash) | **GET** /v3/litecoin/block/hash/{i} | Get Litecoin Block hash
+[**ltcGetMempool()**](#ltcgetmempool) | **GET** /v3/litecoin/mempool | Get Mempool Transactions
+[**ltcGetRawTransaction()**](#ltcgetrawtransaction) | **GET** /v3/litecoin/transaction/{hash} | Get Litecoin Transaction by hash
+[**ltcGetTxByAddress()**](#ltcgettxbyaddress) | **GET** /v3/litecoin/transaction/address/{address} | Get Litecoin Transactions by address
+[**ltcGetUTXO()**](#ltcgetutxo) | **GET** /v3/litecoin/utxo/{hash}/{index} | Get information about a transaction output (UTXO) in a Litecoin transaction
+[**ltcRpcDriver()**](#ltcrpcdriver) | **POST** /v3/litecoin/node | JSON RPC HTTP driver
+[**ltcTransferBlockchain()**](#ltctransferblockchain) | **POST** /v3/litecoin/transaction | Send LTC to Litecoin addresses
 
 
 ## `ltcBroadcast()`
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGenerateAddress()`
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\LtcGenerateAddress200Response**](../Model/LtcGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGenerateAddressPrivateKey()`
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGenerateWallet()`
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetBalanceOfAddress()`
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetBlock()`
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\LtcBlock**](../Model/LtcBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetBlockChainInfo()`
 
@@ -400,7 +400,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\LtcInfo**](../Model/LtcInfo.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetBlockHash()`
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetMempool()`
 
@@ -504,7 +504,7 @@ This endpoint does not need any parameter.
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetRawTransaction()`
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\LtcTx**](../Model/LtcTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetTxByAddress()`
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\LtcTx[]**](../Model/LtcTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcGetUTXO()`
 
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\LtcUTXO**](../Model/LtcUTXO.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcRpcDriver()`
 
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcTransferBlockchain()`
 
@@ -792,4 +792,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

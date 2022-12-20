@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **tx_id** | **string** | TX hash of successful transaction. | [optional]
 **withdrawal_responses** | [**\Tatum\Model\ResponseData[]**](ResponseData.md) | Additional information used for BTC, LTC, DOGE and BCH off-chain to blockchain transactions. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

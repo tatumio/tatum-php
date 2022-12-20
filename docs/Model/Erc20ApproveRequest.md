@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | The KMS identifier of the private key of the smart contract&#39;s owner; the fee will be deducted from the owner&#39;s address |
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

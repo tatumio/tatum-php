@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **ui_amount** | **mixed** | Token amount as a float, accounting for decimals. | [optional]
 **ui_amount_string** | **string** | Token amount as a string, accounting for decimals. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

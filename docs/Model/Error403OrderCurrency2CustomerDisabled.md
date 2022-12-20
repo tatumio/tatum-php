@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Currency2 account&#39;s customer ${currency2Account.customerId} is disabled, unable to perform exchange trade. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **time** | **string** | Last time fees were recalculated |
 **block** | **float** | Last used to calculate fee from |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

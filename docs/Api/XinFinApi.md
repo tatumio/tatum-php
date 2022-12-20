@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xdcBlockchainSmartContractInvocation()**](#xdcBlockchainSmartContractInvocation) | **POST** /v3/xdc/smartcontract | Invoke a method in a smart contract on XinFin
-[**xdcBlockchainTransfer()**](#xdcBlockchainTransfer) | **POST** /v3/xdc/transaction | Send XDC / ERC20 from account to account
-[**xdcBroadcast()**](#xdcBroadcast) | **POST** /v3/xdc/broadcast | Broadcast signed XDC transaction
-[**xdcGenerateAddress()**](#xdcGenerateAddress) | **GET** /v3/xdc/address/{xpub}/{index} | Generate XDC account address from Extended public key
-[**xdcGenerateAddressPrivateKey()**](#xdcGenerateAddressPrivateKey) | **POST** /v3/xdc/wallet/priv | Generate XDC private key
-[**xdcGenerateWallet()**](#xdcGenerateWallet) | **GET** /v3/xdc/wallet | Generate XDC wallet
-[**xdcGetBalance()**](#xdcGetBalance) | **GET** /v3/xdc/account/balance/{address} | Get XDC Account balance
-[**xdcGetBlock()**](#xdcGetBlock) | **GET** /v3/xdc/block/{hash} | Get XDC block by hash
-[**xdcGetCurrentBlock()**](#xdcGetCurrentBlock) | **GET** /v3/xdc/block/current | Get current block number
-[**xdcGetTransaction()**](#xdcGetTransaction) | **GET** /v3/xdc/transaction/{hash} | Get XDC Transaction
-[**xdcGetTransactionCount()**](#xdcGetTransactionCount) | **GET** /v3/xdc/transaction/count/{address} | Get count of outgoing XDC transactions
-[**xdcWeb3Driver()**](#xdcWeb3Driver) | **POST** /v3/xdc/web3/{xApiKey} | Web3 HTTP driver
+[**xdcBlockchainSmartContractInvocation()**](#xdcblockchainsmartcontractinvocation) | **POST** /v3/xdc/smartcontract | Invoke a method in a smart contract on XinFin
+[**xdcBlockchainTransfer()**](#xdcblockchaintransfer) | **POST** /v3/xdc/transaction | Send XDC / ERC20 from account to account
+[**xdcBroadcast()**](#xdcbroadcast) | **POST** /v3/xdc/broadcast | Broadcast signed XDC transaction
+[**xdcGenerateAddress()**](#xdcgenerateaddress) | **GET** /v3/xdc/address/{xpub}/{index} | Generate XDC account address from Extended public key
+[**xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) | **POST** /v3/xdc/wallet/priv | Generate XDC private key
+[**xdcGenerateWallet()**](#xdcgeneratewallet) | **GET** /v3/xdc/wallet | Generate XDC wallet
+[**xdcGetBalance()**](#xdcgetbalance) | **GET** /v3/xdc/account/balance/{address} | Get XDC Account balance
+[**xdcGetBlock()**](#xdcgetblock) | **GET** /v3/xdc/block/{hash} | Get XDC block by hash
+[**xdcGetCurrentBlock()**](#xdcgetcurrentblock) | **GET** /v3/xdc/block/current | Get current block number
+[**xdcGetTransaction()**](#xdcgettransaction) | **GET** /v3/xdc/transaction/{hash} | Get XDC Transaction
+[**xdcGetTransactionCount()**](#xdcgettransactioncount) | **GET** /v3/xdc/transaction/count/{address} | Get count of outgoing XDC transactions
+[**xdcWeb3Driver()**](#xdcweb3driver) | **POST** /v3/xdc/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `xdcBlockchainSmartContractInvocation()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcBlockchainTransfer()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcBroadcast()`
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGenerateAddress()`
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XdcGenerateAddress200Response**](../Model/XdcGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGenerateAddressPrivateKey()`
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGenerateWallet()`
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGetBalance()`
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XdcGetBalance200Response**](../Model/XdcGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGetBlock()`
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XdcBlock**](../Model/XdcBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGetCurrentBlock()`
 
@@ -506,7 +506,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGetTransaction()`
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XdcTx**](../Model/XdcTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcGetTransactionCount()`
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcWeb3Driver()`
 
@@ -675,4 +675,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

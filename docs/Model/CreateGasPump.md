@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **from** | **int** | The start index of the range of gas pump addresses to precalculate |
 **to** | **int** | The end index of the range of gas pump addresses to precalculate; must be greater than or equal to the value in the &lt;code&gt;from&lt;/code&gt; parameter |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

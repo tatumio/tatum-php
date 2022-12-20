@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **public_mint** | **bool** | True if the contract is publicMint type. False by default. | [optional]
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

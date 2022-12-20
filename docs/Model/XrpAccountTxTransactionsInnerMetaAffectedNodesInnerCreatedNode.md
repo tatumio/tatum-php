@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **ledger_index** | **string** |  | [optional]
 **new_fields** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields**](XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

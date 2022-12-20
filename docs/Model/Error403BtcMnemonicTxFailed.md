@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **program_id** | **string** | Pubkey of the Token program that owns the account. | [optional]
 **ui_token_amount** | [**\Tatum\Model\UiTokenAmount**](UiTokenAmount.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

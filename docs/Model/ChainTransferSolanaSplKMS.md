@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **fee_payer** | **string** | The blockchain address from which the fee will be deducted; if not set, defaults to the address that you specified in the &lt;code&gt;from&lt;/code&gt; parameter | [optional]
 **fee_payer_signature_id** | **string** | The KMS identifier of the private key of the blockchain address that you specified in the &lt;code&gt;feePayer&lt;/code&gt; parameter; if not set, defaults to the signature ID that you specified in the &lt;code&gt;signatureId&lt;/code&gt; parameter | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

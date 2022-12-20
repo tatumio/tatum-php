@@ -24,4 +24,4 @@ Name | Type | Description | Notes
 **transactions** | [**\Tatum\Model\EthTx[]**](EthTx.md) | Array of transactions. | [optional]
 **transactions_root** | **string** | The root of the transaction trie of the block. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

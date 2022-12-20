@@ -21,4 +21,4 @@ Name | Type | Description | Notes
 **private_key** | **string** | Private key of sender address. Private key, mnemonic and index or signature Id must be present. |
 **mnemonic** | **string** | Mnemonic to generate private key of sender address. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

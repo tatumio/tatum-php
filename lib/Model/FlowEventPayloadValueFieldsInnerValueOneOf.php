@@ -3,7 +3,6 @@
 /**
  * FlowEvent_payload_value_fields_inner_value_oneOf Model
  *
- * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum

@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **signatures** | **string[]** | Array of signatures. | [optional]
 **block_seals** | [**\Tatum\Model\FlowBlockBlockSealsInner[]**](FlowBlockBlockSealsInner.md) | Array of block seals. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | It is possible to set 1 parameter at a time. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

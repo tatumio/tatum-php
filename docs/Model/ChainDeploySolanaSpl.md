@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from** | **string** | Address on Solana blockchain, from which the fee for the deployment of SPL will be paid. |
 **from_private_key** | **string** | Private key of Solana account address, from which the fee for the deployment of SPL will be paid. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

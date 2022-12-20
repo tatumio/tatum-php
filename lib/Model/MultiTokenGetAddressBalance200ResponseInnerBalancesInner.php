@@ -3,7 +3,6 @@
 /**
  * MultiTokenGetAddressBalance_200_response_inner_balances_inner Model
  *
- * @version   3.17.1
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
  * @package   Tatum

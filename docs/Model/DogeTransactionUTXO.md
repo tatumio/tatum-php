@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **fee** | **string** | The fee to be paid for the transaction (in DOGE); if you are using this parameter, you have to also use the &lt;code&gt;changeAddress&lt;/code&gt; parameter because these two parameters only work together. | [optional]
 **change_address** | **string** | The blockchain address to send any extra assets remaning after covering the fee to; if you are using this parameter, you have to also use the &lt;code&gt;fee&lt;/code&gt; parameter because these two parameters only work together. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

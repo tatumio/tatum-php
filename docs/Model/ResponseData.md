@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **v_in_index** | **int** | Index of last used unprocessed transaction output in raw transaction, that can be used. Bitcoin, Litecoin, Bitcoin Cash only. | [optional]
 **script_pub_key** | **string** | Script of last unprocessed UTXO. Bitcoin SV only. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

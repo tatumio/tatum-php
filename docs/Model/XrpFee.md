@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **levels** | [**\Tatum\Model\XrpFeeLevels**](XrpFeeLevels.md) |  | [optional]
 **max_queue_size** | **string** | The maximum number of transactions that the transaction queue can currently hold. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

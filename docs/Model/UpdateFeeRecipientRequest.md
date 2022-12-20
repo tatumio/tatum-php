@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **treasury_withdrawal_destination** | **string** | The blockchain address of the new marketplace fee recipient |
 **from** | **string** | The blockchain address of the marketplace authority |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

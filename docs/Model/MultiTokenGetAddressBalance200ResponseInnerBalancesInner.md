@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **amount** | **string** | Number of tokens held by the address. | [optional]
 **block_number** | **float** | Block number when the token was received by the address. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

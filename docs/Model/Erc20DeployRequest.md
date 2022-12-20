@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

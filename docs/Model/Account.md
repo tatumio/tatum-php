@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **accounting_currency** | **string** | The currency in which all the transactions for all accounts will be accounted | [optional]
 **xpub** | **string** | The extended public key of the blockchain wallet associated with the virtual account; used to generate deposit addresses for the virtual account | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

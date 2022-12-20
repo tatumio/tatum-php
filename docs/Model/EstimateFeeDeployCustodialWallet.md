@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **type** | **string** | Type of transaction |
 **batch_count** | **float** | Number of addresses to create |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

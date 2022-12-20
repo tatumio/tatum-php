@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **transaction_result** | **string** |  | [optional]
 **delivered_amount** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

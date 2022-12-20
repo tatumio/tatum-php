@@ -4,8 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getIPFSData()**](#getIPFSData) | **GET** /v3/ipfs/{id} | Get file from IPFS
-[**storeIPFS()**](#storeIPFS) | **POST** /v3/ipfs | Store data to IPFS
+[**getIPFSData()**](#getipfsdata) | **GET** /v3/ipfs/{id} | Get file from IPFS
+[**storeIPFS()**](#storeipfs) | **POST** /v3/ipfs | Store data to IPFS
 
 
 ## `getIPFSData()`
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 **\SplFileObject**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `storeIPFS()`
 
@@ -116,4 +116,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\StoreIPFS200Response**](../Model/StoreIPFS200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

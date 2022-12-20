@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **signatures** | [**\Tatum\Model\BnbTxTxValueSignaturesInner[]**](BnbTxTxValueSignaturesInner.md) |  | [optional]
 **source** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

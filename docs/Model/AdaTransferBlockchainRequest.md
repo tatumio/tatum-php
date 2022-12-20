@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **change_address** | **string** | The blockchain address to send any extra assets remaning after covering the fee; if you are using this parameter, you have to also use the &lt;code&gt;fee&lt;/code&gt; parameter because these two parameters only work together. | [optional]
 **from_utxo** | [**\Tatum\Model\AdaTransactionFromUTXOKMSFromUTXOInner[]**](AdaTransactionFromUTXOKMSFromUTXOInner.md) | The array of transaction hashes, indexes of its UTXOs, and the signature IDs of the associated blockchain addresses |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

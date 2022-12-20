@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **can_change_sale_price** | **bool** | Set to \&quot;true\&quot; to allow the marketplace to change the sale price that the seller intentionally set to 0; if not set, defaults to \&quot;false\&quot; (the marketplace cannot change the sale price) | [optional]
 **signature_id** | **string** | The KMS identifier of the private key of the marketplace authority |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **transaction** | [**\Tatum\Model\SolanaTxTransaction**](SolanaTxTransaction.md) |  | [optional]
 **slot** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

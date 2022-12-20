@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **amount** | **string** | Amount to be sent in One. |
 **from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

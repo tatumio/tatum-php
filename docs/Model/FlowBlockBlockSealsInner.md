@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **execution_receipt_id** | **string** |  | [optional]
 **result_approval_signatures** | **string[]** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

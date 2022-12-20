@@ -19,4 +19,4 @@ Name | Type | Description | Notes
 **gas_used** | **float** | The amount of gas used by this specific transaction alone. | [optional]
 **contract_address** | **string** | The contract address created, if the transaction was a contract creation, otherwise null. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

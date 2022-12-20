@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | ERC20 address was already set. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

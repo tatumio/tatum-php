@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **require_destination_tag** | **bool** | Should be true, if an account should support off-chain processing. | [optional]
 **signature_id** | **string** | Identifier of the private key associated in signing application. Secret or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

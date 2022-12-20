@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **index** | **float** | Index to the specific address from mnemonic. |
 **weight** | **float** | Weight of the key. If not set, default 1000 will be used. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -19,4 +19,4 @@ Name | Type | Description | Notes
 **sender_note** | **string** | Sender note defined in payment order by sender. | [optional]
 **to** | **int** | Date until to search for transactions in UTC millis. If not present, search up till now. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **purchased_at** | **float** | Timestamp when this listing was purchased | [optional]
 **cancelled_at** | **float** | Timestamp when this listing was cancelled | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

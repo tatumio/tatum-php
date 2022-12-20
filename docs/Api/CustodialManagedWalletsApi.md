@@ -4,11 +4,11 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**custodialCreateWallet()**](#custodialCreateWallet) | **POST** /v3/custodial/wallet | Create managed address
-[**custodialDeleteWallet()**](#custodialDeleteWallet) | **DELETE** /v3/custodial/wallet/{id} | Delete managed address
-[**custodialGetWallet()**](#custodialGetWallet) | **GET** /v3/custodial/wallet/{id} | Get managed address
-[**custodialGetWallets()**](#custodialGetWallets) | **GET** /v3/custodial/wallet | Get managed addresses
-[**custodialTransferManagedAddress()**](#custodialTransferManagedAddress) | **POST** /v3/custodial/transaction | Sign and transfer using managed address
+[**custodialCreateWallet()**](#custodialcreatewallet) | **POST** /v3/custodial/wallet | Create managed address
+[**custodialDeleteWallet()**](#custodialdeletewallet) | **DELETE** /v3/custodial/wallet/{id} | Delete managed address
+[**custodialGetWallet()**](#custodialgetwallet) | **GET** /v3/custodial/wallet/{id} | Get managed address
+[**custodialGetWallets()**](#custodialgetwallets) | **GET** /v3/custodial/wallet | Get managed addresses
+[**custodialTransferManagedAddress()**](#custodialtransfermanagedaddress) | **POST** /v3/custodial/transaction | Sign and transfer using managed address
 
 
 ## `custodialCreateWallet()`
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CustodialManagedAddress**](../Model/CustodialManagedAddress.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `custodialDeleteWallet()`
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `custodialGetWallet()`
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\CustodialManagedAddress[]**](../Model/CustodialManagedAddress.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `custodialGetWallets()`
 
@@ -224,7 +224,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\CustodialManagedAddress[]**](../Model/CustodialManagedAddress.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `custodialTransferManagedAddress()`
 
@@ -278,4 +278,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

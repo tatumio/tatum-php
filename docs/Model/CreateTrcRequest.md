@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **xpub** | **string** | The extended public key of the TRON wallet from which a deposit address for the virtual account will be generated; the supply of the token will be stored on this address |
 **derivation_index** | **int** | The derivation index to use together with the extended public key to generate the deposit address |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

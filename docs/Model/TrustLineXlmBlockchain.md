@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **from_secret** | **string** | Secret for account. Secret, or signature Id must be present. |
 **limit** | **string** | Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line. When no limit is specified, maximum amount available is permitted. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

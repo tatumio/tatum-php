@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Incompatible currencies for sender account ${transaction.senderAccountId} and recipient account ${transaction.recipientAccountId}. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

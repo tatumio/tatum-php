@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **private_key** | **string** | Secret for account. Secret, or signature Id must be present. |
 **signature_id** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

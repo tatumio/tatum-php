@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **rewards** | **object[]** |  | [optional]
 **status** | [**\Tatum\Model\SolanaTxMetaStatus**](SolanaTxMetaStatus.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

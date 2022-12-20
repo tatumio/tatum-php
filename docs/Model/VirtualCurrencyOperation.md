@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **counter_account** | **string** | External account identifier. By default, there is no counterAccount present in the transaction. | [optional]
 **sender_note** | **string** | Note visible to sender. Available in Revoke operation. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

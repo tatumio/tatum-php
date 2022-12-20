@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | The private key of the minting account; the transaction fee will be paid from this account |
 **attr** | [**\Tatum\Model\MintNftAlgorandAttr**](MintNftAlgorandAttr.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **coinbase** | **bool** | If set to \&quot;true\&quot;, the transaction is a coinbase transaction (a transaction created by a Bitcoin miner to collect their reward) | [optional]
 **bestblock** | **string** | The block hash | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

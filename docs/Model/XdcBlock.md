@@ -24,4 +24,4 @@ Name | Type | Description | Notes
 **transactions** | [**\Tatum\Model\XdcTx[]**](XdcTx.md) | Array of transactions. | [optional]
 **uncles** | **string[]** | Array of uncle hashes. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

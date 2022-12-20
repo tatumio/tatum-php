@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**algoNodeGetDriver()**](#algoNodeGetDriver) | **GET** /v3/algorand/node/algod/{xApiKey}/{algodPath} | Access Algorand Algod GET node endpoints
-[**algoNodeIndexerGetDriver()**](#algoNodeIndexerGetDriver) | **GET** /v3/algorand/node/indexer/{xApiKey}/{indexerPath} | Access Algorand Indexer GET node endpoints
-[**algoNodePostDriver()**](#algoNodePostDriver) | **POST** /v3/algorand/node/algod/{xApiKey}/{algodPath} | Access Algorand Algod POST node endpoints
-[**algoandBroadcast()**](#algoandBroadcast) | **POST** /v3/algorand/broadcast | Broadcast signed Algorand transaction
-[**algorandBlockchainReceiveAsset()**](#algorandBlockchainReceiveAsset) | **POST** /v3/algorand/asset/receive | Enable receiving asset on account
-[**algorandBlockchainTransfer()**](#algorandBlockchainTransfer) | **POST** /v3/algorand/transaction | Send Algos to an Algorand account
-[**algorandGenerateAddress()**](#algorandGenerateAddress) | **GET** /v3/algorand/address/{priv} | Generate Algorand account address from private key
-[**algorandGenerateWallet()**](#algorandGenerateWallet) | **GET** /v3/algorand/wallet | Generate Algorand wallet
-[**algorandGetBalance()**](#algorandGetBalance) | **GET** /v3/algorand/account/balance/{address} | Get Algorand Account balance
-[**algorandGetBlock()**](#algorandGetBlock) | **GET** /v3/algorand/block/{roundNumber} | Get Algorand block by block round number
-[**algorandGetCurrentBlock()**](#algorandGetCurrentBlock) | **GET** /v3/algorand/block/current | Get current block number
-[**algorandGetPayTransactionsByFromTo()**](#algorandGetPayTransactionsByFromTo) | **GET** /v3/algorand/transactions/{from}/{to} | Get Algorand Transactions between from and to
-[**algorandGetTransaction()**](#algorandGetTransaction) | **GET** /v3/algorand/transaction/{txid} | Get Algorand Transaction
+[**algoNodeGetDriver()**](#algonodegetdriver) | **GET** /v3/algorand/node/algod/{xApiKey}/{algodPath} | Access Algorand Algod GET node endpoints
+[**algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) | **GET** /v3/algorand/node/indexer/{xApiKey}/{indexerPath} | Access Algorand Indexer GET node endpoints
+[**algoNodePostDriver()**](#algonodepostdriver) | **POST** /v3/algorand/node/algod/{xApiKey}/{algodPath} | Access Algorand Algod POST node endpoints
+[**algoandBroadcast()**](#algoandbroadcast) | **POST** /v3/algorand/broadcast | Broadcast signed Algorand transaction
+[**algorandBlockchainReceiveAsset()**](#algorandblockchainreceiveasset) | **POST** /v3/algorand/asset/receive | Enable receiving asset on account
+[**algorandBlockchainTransfer()**](#algorandblockchaintransfer) | **POST** /v3/algorand/transaction | Send Algos to an Algorand account
+[**algorandGenerateAddress()**](#algorandgenerateaddress) | **GET** /v3/algorand/address/{priv} | Generate Algorand account address from private key
+[**algorandGenerateWallet()**](#algorandgeneratewallet) | **GET** /v3/algorand/wallet | Generate Algorand wallet
+[**algorandGetBalance()**](#algorandgetbalance) | **GET** /v3/algorand/account/balance/{address} | Get Algorand Account balance
+[**algorandGetBlock()**](#algorandgetblock) | **GET** /v3/algorand/block/{roundNumber} | Get Algorand block by block round number
+[**algorandGetCurrentBlock()**](#algorandgetcurrentblock) | **GET** /v3/algorand/block/current | Get current block number
+[**algorandGetPayTransactionsByFromTo()**](#algorandgetpaytransactionsbyfromto) | **GET** /v3/algorand/transactions/{from}/{to} | Get Algorand Transactions between from and to
+[**algorandGetTransaction()**](#algorandgettransaction) | **GET** /v3/algorand/transaction/{txid} | Get Algorand Transaction
 
 
 ## `algoNodeGetDriver()`
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algoNodeIndexerGetDriver()`
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algoNodePostDriver()`
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoNodePostDriver200Response**](../Model/AlgoNodePostDriver200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algoandBroadcast()`
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoTransactionHashKMS**](../Model/AlgoTransactionHashKMS.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandBlockchainReceiveAsset()`
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandBlockchainTransfer()`
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandGenerateAddress()`
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgorandGenerateAddress200Response**](../Model/AlgorandGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandGenerateWallet()`
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoWallet**](../Model/AlgoWallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandGetBalance()`
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgorandGetBalance200Response**](../Model/AlgorandGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandGetBlock()`
 
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandGetCurrentBlock()`
 
@@ -632,7 +632,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandGetPayTransactionsByFromTo()`
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoTxsWithPagination**](../Model/AlgoTxsWithPagination.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algorandGetTransaction()`
 
@@ -757,4 +757,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

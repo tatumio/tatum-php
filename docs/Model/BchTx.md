@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **vin** | [**\Tatum\Model\BchTxVinInner[]**](BchTxVinInner.md) |  | [optional]
 **vout** | [**\Tatum\Model\BchTxVoutInner[]**](BchTxVoutInner.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**flowAddPubKeyToAddress()**](#flowAddPubKeyToAddress) | **PUT** /v3/flow/account | Add public key to Flow address
-[**flowCreateAddressFromPubKey()**](#flowCreateAddressFromPubKey) | **POST** /v3/flow/account | Create Flow address from public key
-[**flowGenerateAddress()**](#flowGenerateAddress) | **GET** /v3/flow/address/{xpub}/{index} | Generate Flow address from Extended public key
-[**flowGeneratePubKey()**](#flowGeneratePubKey) | **GET** /v3/flow/pubkey/{xpub}/{index} | Generate Flow public key from Extended public key
-[**flowGeneratePubKeyPrivateKey()**](#flowGeneratePubKeyPrivateKey) | **POST** /v3/flow/wallet/priv | Generate Flow private key
-[**flowGenerateWallet()**](#flowGenerateWallet) | **GET** /v3/flow/wallet | Generate Flow wallet
-[**flowGetAccount()**](#flowGetAccount) | **GET** /v3/flow/account/{address} | Get the balance of a Flow account
-[**flowGetBlock()**](#flowGetBlock) | **GET** /v3/flow/block/{hash} | Get Flow Block by hash or height
-[**flowGetBlockChainInfo()**](#flowGetBlockChainInfo) | **GET** /v3/flow/block/current | Get Flow current block number
-[**flowGetBlockEvents()**](#flowGetBlockEvents) | **GET** /v3/flow/block/events | Get Flow events from blocks
-[**flowGetRawTransaction()**](#flowGetRawTransaction) | **GET** /v3/flow/transaction/{hash} | Get Flow Transaction by hash
-[**flowTransferBlockchain()**](#flowTransferBlockchain) | **POST** /v3/flow/transaction | Send Flow to blockchain addresses
-[**flowTransferCustomBlockchain()**](#flowTransferCustomBlockchain) | **POST** /v3/flow/transaction/custom | Send arbitrary transaction to blockchain
+[**flowAddPubKeyToAddress()**](#flowaddpubkeytoaddress) | **PUT** /v3/flow/account | Add public key to Flow address
+[**flowCreateAddressFromPubKey()**](#flowcreateaddressfrompubkey) | **POST** /v3/flow/account | Create Flow address from public key
+[**flowGenerateAddress()**](#flowgenerateaddress) | **GET** /v3/flow/address/{xpub}/{index} | Generate Flow address from Extended public key
+[**flowGeneratePubKey()**](#flowgeneratepubkey) | **GET** /v3/flow/pubkey/{xpub}/{index} | Generate Flow public key from Extended public key
+[**flowGeneratePubKeyPrivateKey()**](#flowgeneratepubkeyprivatekey) | **POST** /v3/flow/wallet/priv | Generate Flow private key
+[**flowGenerateWallet()**](#flowgeneratewallet) | **GET** /v3/flow/wallet | Generate Flow wallet
+[**flowGetAccount()**](#flowgetaccount) | **GET** /v3/flow/account/{address} | Get the balance of a Flow account
+[**flowGetBlock()**](#flowgetblock) | **GET** /v3/flow/block/{hash} | Get Flow Block by hash or height
+[**flowGetBlockChainInfo()**](#flowgetblockchaininfo) | **GET** /v3/flow/block/current | Get Flow current block number
+[**flowGetBlockEvents()**](#flowgetblockevents) | **GET** /v3/flow/block/events | Get Flow events from blocks
+[**flowGetRawTransaction()**](#flowgetrawtransaction) | **GET** /v3/flow/transaction/{hash} | Get Flow Transaction by hash
+[**flowTransferBlockchain()**](#flowtransferblockchain) | **POST** /v3/flow/transaction | Send Flow to blockchain addresses
+[**flowTransferCustomBlockchain()**](#flowtransfercustomblockchain) | **POST** /v3/flow/transaction/custom | Send arbitrary transaction to blockchain
 
 
 ## `flowAddPubKeyToAddress()`
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowCreateAddressFromPubKey()`
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FlowCreateAddressFromPubKey200Response**](../Model/FlowCreateAddressFromPubKey200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGenerateAddress()`
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FlowGenerateAddress200Response**](../Model/FlowGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGeneratePubKey()`
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FlowGeneratePubKey200Response**](../Model/FlowGeneratePubKey200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGeneratePubKeyPrivateKey()`
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGenerateWallet()`
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGetAccount()`
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FlowAccount**](../Model/FlowAccount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGetBlock()`
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FlowBlock**](../Model/FlowBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGetBlockChainInfo()`
 
@@ -513,7 +513,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGetBlockEvents()`
 
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FlowEvent[]**](../Model/FlowEvent.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowGetRawTransaction()`
 
@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FlowTx**](../Model/FlowTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowTransferBlockchain()`
 
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowTransferCustomBlockchain()`
 
@@ -741,4 +741,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

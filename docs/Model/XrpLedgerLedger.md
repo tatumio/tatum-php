@@ -22,4 +22,4 @@ Name | Type | Description | Notes
 **transaction_hash** | **string** | Hash of the transaction information included in this ledger, as hex. | [optional]
 **transactions** | [**\Tatum\Model\XrpTx[]**](XrpTx.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

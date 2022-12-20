@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 **fee_payer_signature_id** | **string** | Identifier of the private key used for paying the gas costs in signing application. Defaults to the signatureId. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

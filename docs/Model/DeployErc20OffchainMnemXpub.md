@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **index** | **int** | derivation index of address to pay for deployment of ERC20 |
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -24,4 +24,4 @@ Name | Type | Description | Notes
 **memo_type** | **string** | The type of memo. | [optional]
 **signatures** | **string[]** | An array of signatures used to sign this transaction. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

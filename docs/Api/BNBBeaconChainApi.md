@@ -4,14 +4,14 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bnbBlockchainTransfer()**](#bnbBlockchainTransfer) | **POST** /v3/bnb/transaction | Send Binance / Binance Token from account to account
-[**bnbBroadcast()**](#bnbBroadcast) | **POST** /v3/bnb/broadcast | Broadcast signed BNB transaction
-[**bnbGenerateWallet()**](#bnbGenerateWallet) | **GET** /v3/bnb/account | Generate Binance wallet
-[**bnbGetAccount()**](#bnbGetAccount) | **GET** /v3/bnb/account/{address} | Get Binance Account
-[**bnbGetBlock()**](#bnbGetBlock) | **GET** /v3/bnb/block/{height} | Get Binance Transactions in Block
-[**bnbGetCurrentBlock()**](#bnbGetCurrentBlock) | **GET** /v3/bnb/block/current | Get Binance current block
-[**bnbGetTransaction()**](#bnbGetTransaction) | **GET** /v3/bnb/transaction/{hash} | Get Binance Transaction
-[**bnbGetTxByAccount()**](#bnbGetTxByAccount) | **GET** /v3/bnb/account/transaction/{address} | Get Binance Transactions By Address
+[**bnbBlockchainTransfer()**](#bnbblockchaintransfer) | **POST** /v3/bnb/transaction | Send Binance / Binance Token from account to account
+[**bnbBroadcast()**](#bnbbroadcast) | **POST** /v3/bnb/broadcast | Broadcast signed BNB transaction
+[**bnbGenerateWallet()**](#bnbgeneratewallet) | **GET** /v3/bnb/account | Generate Binance wallet
+[**bnbGetAccount()**](#bnbgetaccount) | **GET** /v3/bnb/account/{address} | Get Binance Account
+[**bnbGetBlock()**](#bnbgetblock) | **GET** /v3/bnb/block/{height} | Get Binance Transactions in Block
+[**bnbGetCurrentBlock()**](#bnbgetcurrentblock) | **GET** /v3/bnb/block/current | Get Binance current block
+[**bnbGetTransaction()**](#bnbgettransaction) | **GET** /v3/bnb/transaction/{hash} | Get Binance Transaction
+[**bnbGetTxByAccount()**](#bnbgettxbyaccount) | **GET** /v3/bnb/account/transaction/{address} | Get Binance Transactions By Address
 
 
 ## `bnbBlockchainTransfer()`
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbBroadcast()`
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbGenerateWallet()`
 
@@ -169,7 +169,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\BnbWallet**](../Model/BnbWallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbGetAccount()`
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BnbAccount**](../Model/BnbAccount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbGetBlock()`
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BnbBlock**](../Model/BnbBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbGetCurrentBlock()`
 
@@ -328,7 +328,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbGetTransaction()`
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BnbTx**](../Model/BnbTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbGetTxByAccount()`
 
@@ -468,4 +468,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BnbTxInAccount**](../Model/BnbTxInAccount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **transaction_index** | **float** | Integer of the transaction’s index position, the event was created in. | [optional]
 **transaction_hash** | **string** | Hash of the transaction this event was created in. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

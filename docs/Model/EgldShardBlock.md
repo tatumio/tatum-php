@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **nonce** | **float** | The block height. | [optional]
 **shard** | **float** | The shard number. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

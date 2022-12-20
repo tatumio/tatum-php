@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | No such block. |
 **status_code** | **float** | 404 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **from** | **string** | The blockchain address of the collection verifier on behalf of whom the transaction will be originated. The transaction fee will be paid from this address. |
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

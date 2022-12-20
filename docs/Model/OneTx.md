@@ -21,4 +21,4 @@ Name | Type | Description | Notes
 **contract_address** | **string** | The contract address created, if the transaction was a contract creation, otherwise null. | [optional]
 **logs** | [**\Tatum\Model\OneTxLog[]**](OneTxLog.md) | Log events, that happened in this transaction. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

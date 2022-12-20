@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Unable to perform operation on virtual currency, account does not exists. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

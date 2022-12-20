@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **name** | **string** | The name of the NFT |
 **attr** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](MintNftExpressAlgorandAttr.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Transaction not compliant, recipient account customer country is not defined. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

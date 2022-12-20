@@ -57,4 +57,4 @@ Name | Type | Description  | Notes
 
 Signed transaction hex (`string`)
 
-[[Back to top]](#) | [[Back to Local Transaction]](../../../README.md#local-transaction)
+[[Back to top]](#) | [[Back to Local Transaction]](../../index.md#local-transaction)

@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **fee_currency** | **string** | The currency to pay for the gas fee; if not set, defaults to CELO | [optional]
 **fee_limit** | **float** | The maximum amount to be paid as the gas fee (in TRX) |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

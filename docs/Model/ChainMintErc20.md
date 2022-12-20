@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **note** | **string** | The note for the recipient; must not contain spaces | [optional]
 **from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

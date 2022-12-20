@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**approveNftAuctionSpending()**](#approveNftAuctionSpending) | **POST** /v3/blockchain/auction/approve | Allow the NFT auction or marketplace to transfer an asset
-[**bidOnAuction()**](#bidOnAuction) | **POST** /v3/blockchain/auction/bid | Bid for an asset at the NFT auction
-[**cancelAuction()**](#cancelAuction) | **POST** /v3/blockchain/auction/cancel | Cancel the selling of an asset at the NFT auction
-[**createAuction()**](#createAuction) | **POST** /v3/blockchain/auction/sell | Sell an asset at the NFT auction
-[**generateAuction()**](#generateAuction) | **POST** /v3/blockchain/auction | Create an NFT auction
-[**getAuction()**](#getAuction) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/{id} | Get information about an auctioned asset at the NFT auction
-[**getAuctionFee()**](#getAuctionFee) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/fee | Get the NFT auction fee
-[**getAuctionFeeRecipient()**](#getAuctionFeeRecipient) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/recipient | Get the recipient of the NFT auction fee
-[**settleAuction()**](#settleAuction) | **POST** /v3/blockchain/auction/settle | Settle an NFT auction
-[**updateAuctionFee()**](#updateAuctionFee) | **PUT** /v3/blockchain/auction/fee | Update the NFT auction fee
-[**updateAuctionFeeRecipient()**](#updateAuctionFeeRecipient) | **PUT** /v3/blockchain/auction/recipient | Update the recipient of the NFT auction fee
+[**approveNftAuctionSpending()**](#approvenftauctionspending) | **POST** /v3/blockchain/auction/approve | Allow the NFT auction or marketplace to transfer an asset
+[**bidOnAuction()**](#bidonauction) | **POST** /v3/blockchain/auction/bid | Bid for an asset at the NFT auction
+[**cancelAuction()**](#cancelauction) | **POST** /v3/blockchain/auction/cancel | Cancel the selling of an asset at the NFT auction
+[**createAuction()**](#createauction) | **POST** /v3/blockchain/auction/sell | Sell an asset at the NFT auction
+[**generateAuction()**](#generateauction) | **POST** /v3/blockchain/auction | Create an NFT auction
+[**getAuction()**](#getauction) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/{id} | Get information about an auctioned asset at the NFT auction
+[**getAuctionFee()**](#getauctionfee) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/fee | Get the NFT auction fee
+[**getAuctionFeeRecipient()**](#getauctionfeerecipient) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/recipient | Get the recipient of the NFT auction fee
+[**settleAuction()**](#settleauction) | **POST** /v3/blockchain/auction/settle | Settle an NFT auction
+[**updateAuctionFee()**](#updateauctionfee) | **PUT** /v3/blockchain/auction/fee | Update the NFT auction fee
+[**updateAuctionFeeRecipient()**](#updateauctionfeerecipient) | **PUT** /v3/blockchain/auction/recipient | Update the recipient of the NFT auction fee
 
 
 ## `approveNftAuctionSpending()`
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bidOnAuction()`
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `cancelAuction()`
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createAuction()`
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `generateAuction()`
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAuction()`
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetAuction200Response**](../Model/GetAuction200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAuctionFee()`
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAuctionFeeRecipient()`
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetAuctionFeeRecipient200Response**](../Model/GetAuctionFeeRecipient200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `settleAuction()`
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateAuctionFee()`
 
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `updateAuctionFeeRecipient()`
 
@@ -632,4 +632,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

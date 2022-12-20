@@ -4,21 +4,21 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultiTokenMinter()**](#addMultiTokenMinter) | **POST** /v3/multitoken/mint/add | Add a Multi Token minter
-[**burnMultiToken()**](#burnMultiToken) | **POST** /v3/multitoken/burn | Burn a Multi Token
-[**burnMultiTokenBatch()**](#burnMultiTokenBatch) | **POST** /v3/multitoken/burn/batch | Burn multiple Multi Tokens
-[**deployMultiToken()**](#deployMultiToken) | **POST** /v3/multitoken/deploy | Deploy a Multi Token smart contract
-[**mintMultiToken()**](#mintMultiToken) | **POST** /v3/multitoken/mint | Mint a Multi Token
-[**mintMultiTokenBatch()**](#mintMultiTokenBatch) | **POST** /v3/multitoken/mint/batch | Mint multiple Multi Tokens
-[**multiTokenGetAddressBalance()**](#multiTokenGetAddressBalance) | **GET** /v3/multitoken/address/balance/{chain}/{address} | Get all Multi Tokens that a blockchain address holds
-[**multiTokenGetBalance()**](#multiTokenGetBalance) | **GET** /v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId} | Get the amount of a specific MultiToken that a blockchain address holds
-[**multiTokenGetBalanceBatch()**](#multiTokenGetBalanceBatch) | **GET** /v3/multitoken/balance/batch/{chain}/{contractAddress} | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-[**multiTokenGetContractAddress()**](#multiTokenGetContractAddress) | **GET** /v3/multitoken/address/{chain}/{hash} | Get the address of a Multi Token smart contract by its transaction hash
-[**multiTokenGetMetadata()**](#multiTokenGetMetadata) | **GET** /v3/multitoken/metadata/{chain}/{contractAddress}/{token} | Get Multi Token metadata
-[**multiTokenGetTransaction()**](#multiTokenGetTransaction) | **GET** /v3/multitoken/transaction/{chain}/{hash} | Get a Multi Token transaction by its hash
-[**multiTokenGetTransactionByAddress()**](#multiTokenGetTransactionByAddress) | **GET** /v3/multitoken/transaction/{chain}/{address}/{tokenAddress} | Get Multi Token transactions on a blockchain address
-[**transferMultiToken()**](#transferMultiToken) | **POST** /v3/multitoken/transaction | Transfer a Multi Token
-[**transferMultiTokenBatch()**](#transferMultiTokenBatch) | **POST** /v3/multitoken/transaction/batch | Transfer multiple Multi Tokens
+[**addMultiTokenMinter()**](#addmultitokenminter) | **POST** /v3/multitoken/mint/add | Add a Multi Token minter
+[**burnMultiToken()**](#burnmultitoken) | **POST** /v3/multitoken/burn | Burn a Multi Token
+[**burnMultiTokenBatch()**](#burnmultitokenbatch) | **POST** /v3/multitoken/burn/batch | Burn multiple Multi Tokens
+[**deployMultiToken()**](#deploymultitoken) | **POST** /v3/multitoken/deploy | Deploy a Multi Token smart contract
+[**mintMultiToken()**](#mintmultitoken) | **POST** /v3/multitoken/mint | Mint a Multi Token
+[**mintMultiTokenBatch()**](#mintmultitokenbatch) | **POST** /v3/multitoken/mint/batch | Mint multiple Multi Tokens
+[**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | **GET** /v3/multitoken/address/balance/{chain}/{address} | Get all Multi Tokens that a blockchain address holds
+[**multiTokenGetBalance()**](#multitokengetbalance) | **GET** /v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId} | Get the amount of a specific MultiToken that a blockchain address holds
+[**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | **GET** /v3/multitoken/balance/batch/{chain}/{contractAddress} | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
+[**multiTokenGetContractAddress()**](#multitokengetcontractaddress) | **GET** /v3/multitoken/address/{chain}/{hash} | Get the address of a Multi Token smart contract by its transaction hash
+[**multiTokenGetMetadata()**](#multitokengetmetadata) | **GET** /v3/multitoken/metadata/{chain}/{contractAddress}/{token} | Get Multi Token metadata
+[**multiTokenGetTransaction()**](#multitokengettransaction) | **GET** /v3/multitoken/transaction/{chain}/{hash} | Get a Multi Token transaction by its hash
+[**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | **GET** /v3/multitoken/transaction/{chain}/{address}/{tokenAddress} | Get Multi Token transactions on a blockchain address
+[**transferMultiToken()**](#transfermultitoken) | **POST** /v3/multitoken/transaction | Transfer a Multi Token
+[**transferMultiTokenBatch()**](#transfermultitokenbatch) | **POST** /v3/multitoken/transaction/batch | Transfer multiple Multi Tokens
 
 
 ## `addMultiTokenMinter()`
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `burnMultiToken()`
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `burnMultiTokenBatch()`
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `deployMultiToken()`
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `mintMultiToken()`
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `mintMultiTokenBatch()`
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `multiTokenGetAddressBalance()`
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]**](../Model/MultiTokenGetAddressBalance200ResponseInner.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `multiTokenGetBalance()`
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\MultiTokenGetBalance200Response**](../Model/MultiTokenGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `multiTokenGetBalanceBatch()`
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `multiTokenGetContractAddress()`
 
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\MultiTokenGetContractAddress200Response**](../Model/MultiTokenGetContractAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `multiTokenGetMetadata()`
 
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\MultiTokenGetMetadata200Response**](../Model/MultiTokenGetMetadata200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `multiTokenGetTransaction()`
 
@@ -788,7 +788,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\MultiTokenGetTransaction200Response**](../Model/MultiTokenGetTransaction200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `multiTokenGetTransactionByAddress()`
 
@@ -873,7 +873,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]**](../Model/MultiTokenGetTransactionByAddress200ResponseInner.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `transferMultiToken()`
 
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `transferMultiTokenBatch()`
 
@@ -991,4 +991,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

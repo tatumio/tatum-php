@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **to** | **string** | The blockchain address to store the data on&lt;br/&gt;If not provided, the data will be stored on the address from which the transaction is made. | [optional]
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

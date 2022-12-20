@@ -19,4 +19,4 @@ Name | Type | Description | Notes
 **outputs** | [**\Tatum\Model\BtcTxOutput[]**](BtcTxOutput.md) | List of recipient addresses and amounts to send to each of them. | [optional]
 **locktime** | **float** | Block this transaction was included in. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **from** | **string** | The blockchain address of the marketplace authority |
 **signature_id** | **string** | The KMS identifier of the private key of the marketspace authority |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

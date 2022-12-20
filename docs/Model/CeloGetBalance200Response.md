@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **c_usd** | **string** | Balance of cUSD | [optional]
 **c_eur** | **string** | Balance of cEUR | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

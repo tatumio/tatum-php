@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **customer** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
 **accounting_currency** | **string** | The ISO 4217 code of the currency in which all transactions for the created virtual account will be billed | [optional] [default to 'EUR']
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

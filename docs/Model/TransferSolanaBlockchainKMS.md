@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **fee_payer** | **string** | Blockchain address to pay the fee for the transaction from | [optional]
 **fee_payer_signature_id** | **string** | Identifier of the private key used for paying the gas costs in signing application. Defaults to the signatureId. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

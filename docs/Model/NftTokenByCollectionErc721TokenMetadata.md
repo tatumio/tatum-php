@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **url** | **string** | Metadata URL of the TokenID. This data don&#39;t have to be present, safest way (if not present) is to obtain them from the NFT Contract.tokenURI() method call. | [optional]
 **metadata** | **object** | Metadata scheme obtained from the url. This data don&#39;t have to be present, safest way (if not present) is to obtain them from the NFT Contract.tokenURI() method call. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

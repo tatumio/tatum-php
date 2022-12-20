@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **script_sig** | [**\Tatum\Model\DogeTxVinInnerScriptSig**](DogeTxVinInnerScriptSig.md) |  | [optional]
 **sequence** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

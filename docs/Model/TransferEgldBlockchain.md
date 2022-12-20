@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **data** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
 **from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

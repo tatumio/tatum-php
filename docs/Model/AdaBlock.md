@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **forged_at** | **string** | Time of the block. | [optional]
 **transactions** | [**\Tatum\Model\AdaTx[]**](AdaTx.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

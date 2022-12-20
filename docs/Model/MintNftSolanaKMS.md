@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | The KMS identifier of the private key of the blockchain address that will pay the fee for the transaction |
 **metadata** | [**\Tatum\Model\SolanaNftMetadataKMS**](SolanaNftMetadataKMS.md) |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

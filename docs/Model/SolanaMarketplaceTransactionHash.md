@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **fee_account** | **string** | The blockchain address of the fee account |
 **treasury_account** | **string** | The blockchain address of the treasury account |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

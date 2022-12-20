@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **value** | **string** | Value of the transaction, in Lovelace - 1/1000000 of ADA. | [optional]
 **address** | **string** | Sender address. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **tx_hash** | **string** | Transaction hash. | [optional]
 **address** | **string** | Recipient address. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

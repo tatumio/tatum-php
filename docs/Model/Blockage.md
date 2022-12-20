@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **type** | **string** | Type of blockage. | [optional]
 **description** | **string** | Description of blockage. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

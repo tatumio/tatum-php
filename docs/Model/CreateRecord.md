@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **to_shard_id** | **float** | (Harmony only) The ID of the shard to which the data should be recorded | [optional]
 **eth_fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

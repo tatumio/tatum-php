@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **rewards** | [**\Tatum\Model\SolanaBlockReward[]**](SolanaBlockReward.md) |  | [optional]
 **transactions** | [**\Tatum\Model\SolanaBlockTx[]**](SolanaBlockTx.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

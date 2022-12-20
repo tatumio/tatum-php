@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **sequence** | **float** |  | [optional]
 **coin** | [**\Tatum\Model\LtcTxInputsInnerCoin**](LtcTxInputsInnerCoin.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

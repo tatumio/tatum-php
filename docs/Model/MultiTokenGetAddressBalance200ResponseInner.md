@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **balances** | [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]**](MultiTokenGetAddressBalance200ResponseInnerBalancesInner.md) |  | [optional]
 **metadata** | [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]**](MultiTokenGetAddressBalance200ResponseInnerMetadataInner.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

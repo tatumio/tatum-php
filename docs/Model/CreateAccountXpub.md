@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **accounting_currency** | **string** | All transaction will be accounted in this currency for all accounts. Currency can be overridden per account level. If not set, customer accountingCurrency is used or EUR by default. ISO-4217 | [optional]
 **account_number** | **string** | Account number from external system. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

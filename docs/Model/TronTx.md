@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **net_usage** | **float** | Usage of the network. | [optional]
 **raw_data** | [**\Tatum\Model\TronTxRawData**](TronTxRawData.md) |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

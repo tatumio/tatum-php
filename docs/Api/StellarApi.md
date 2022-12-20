@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xlmBroadcast()**](#xlmBroadcast) | **POST** /v3/xlm/broadcast | Broadcast signed XLM transaction
-[**xlmGetAccountInfo()**](#xlmGetAccountInfo) | **GET** /v3/xlm/account/{account} | Get XLM Account info
-[**xlmGetAccountTx()**](#xlmGetAccountTx) | **GET** /v3/xlm/account/tx/{account} | Get XLM Account transactions
-[**xlmGetFee()**](#xlmGetFee) | **GET** /v3/xlm/fee | Get actual XLM fee
-[**xlmGetLastClosedLedger()**](#xlmGetLastClosedLedger) | **GET** /v3/xlm/info | Get XLM Blockchain Information
-[**xlmGetLedger()**](#xlmGetLedger) | **GET** /v3/xlm/ledger/{sequence} | Get XLM Blockchain Ledger by sequence
-[**xlmGetLedgerTx()**](#xlmGetLedgerTx) | **GET** /v3/xlm/ledger/{sequence}/transaction | Get XLM Blockchain Transactions in Ledger
-[**xlmGetTransaction()**](#xlmGetTransaction) | **GET** /v3/xlm/transaction/{hash} | Get XLM Transaction by hash
-[**xlmTransferBlockchain()**](#xlmTransferBlockchain) | **POST** /v3/xlm/transaction | Send XLM from address to address
-[**xlmTrustLineBlockchain()**](#xlmTrustLineBlockchain) | **POST** /v3/xlm/trust | Create / Update / Delete XLM trust line
-[**xlmWallet()**](#xlmWallet) | **GET** /v3/xlm/account | Generate XLM account
+[**xlmBroadcast()**](#xlmbroadcast) | **POST** /v3/xlm/broadcast | Broadcast signed XLM transaction
+[**xlmGetAccountInfo()**](#xlmgetaccountinfo) | **GET** /v3/xlm/account/{account} | Get XLM Account info
+[**xlmGetAccountTx()**](#xlmgetaccounttx) | **GET** /v3/xlm/account/tx/{account} | Get XLM Account transactions
+[**xlmGetFee()**](#xlmgetfee) | **GET** /v3/xlm/fee | Get actual XLM fee
+[**xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) | **GET** /v3/xlm/info | Get XLM Blockchain Information
+[**xlmGetLedger()**](#xlmgetledger) | **GET** /v3/xlm/ledger/{sequence} | Get XLM Blockchain Ledger by sequence
+[**xlmGetLedgerTx()**](#xlmgetledgertx) | **GET** /v3/xlm/ledger/{sequence}/transaction | Get XLM Blockchain Transactions in Ledger
+[**xlmGetTransaction()**](#xlmgettransaction) | **GET** /v3/xlm/transaction/{hash} | Get XLM Transaction by hash
+[**xlmTransferBlockchain()**](#xlmtransferblockchain) | **POST** /v3/xlm/transaction | Send XLM from address to address
+[**xlmTrustLineBlockchain()**](#xlmtrustlineblockchain) | **POST** /v3/xlm/trust | Create / Update / Delete XLM trust line
+[**xlmWallet()**](#xlmwallet) | **GET** /v3/xlm/account | Generate XLM account
 
 
 ## `xlmBroadcast()`
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmGetAccountInfo()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XlmAccount**](../Model/XlmAccount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmGetAccountTx()`
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmGetFee()`
 
@@ -233,7 +233,7 @@ This endpoint does not need any parameter.
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmGetLastClosedLedger()`
 
@@ -282,7 +282,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\XlmLedger**](../Model/XlmLedger.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmGetLedger()`
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XlmLedger**](../Model/XlmLedger.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmGetLedgerTx()`
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmGetTransaction()`
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XlmTx**](../Model/XlmTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmTransferBlockchain()`
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmTrustLineBlockchain()`
 
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmWallet()`
 
@@ -604,4 +604,4 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\XlmWallet**](../Model/XlmWallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

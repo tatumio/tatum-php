@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **previousblockhash** | **string** | Hash of the previous block. | [optional]
 **nextblockhash** | **string** | Hash of the next block. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

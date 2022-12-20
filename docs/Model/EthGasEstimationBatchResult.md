@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **data** | [**\Tatum\Model\EthGasEstimationBatchResultData**](EthGasEstimationBatchResultData.md) |  | [optional]
 **msg** | **string** | Error message. Present only if error - true. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

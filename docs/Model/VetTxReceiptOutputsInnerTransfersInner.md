@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **recipient** | **string** |  | [optional]
 **amount** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

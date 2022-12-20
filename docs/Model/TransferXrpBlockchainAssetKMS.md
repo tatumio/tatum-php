@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **issuer_account** | **string** | Blockchain address of the issuer of the assets to create trust line for. |
 **token** | **string** | Asset name. Must be 160bit HEX string, e.g. SHA1. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

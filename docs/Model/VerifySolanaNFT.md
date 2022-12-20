@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **from** | **string** | The blockchain address of the collection verifier on behalf of whom the transaction will be originated. The transaction fee will be paid from this address. |
 **from_private_key** | **string** | The private key of the collection verifier&#39;s address |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

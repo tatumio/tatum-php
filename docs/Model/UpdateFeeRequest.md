@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **fee_currency** | **string** | The currency in which the transaction fee will be paid |
 **from** | **string** | The blockchain address of the marketplace authority |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

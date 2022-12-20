@@ -32,4 +32,4 @@ Name | Type | Description | Notes
 **error_message** | **string** |  | [optional]
 **events** | [**\Tatum\Model\FlowTxEventsInner[]**](FlowTxEventsInner.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

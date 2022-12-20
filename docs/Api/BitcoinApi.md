@@ -4,20 +4,20 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**btcBroadcast()**](#btcBroadcast) | **POST** /v3/bitcoin/broadcast | Broadcast a signed Bitcoin transaction
-[**btcGenerateAddress()**](#btcGenerateAddress) | **GET** /v3/bitcoin/address/{xpub}/{index} | Generate a Bitcoin address from the wallet's extended public key
-[**btcGenerateAddressPrivateKey()**](#btcGenerateAddressPrivateKey) | **POST** /v3/bitcoin/wallet/priv | Generate the private key for a Bitcoin address
-[**btcGenerateWallet()**](#btcGenerateWallet) | **GET** /v3/bitcoin/wallet | Generate a Bitcoin wallet
-[**btcGetBalanceOfAddress()**](#btcGetBalanceOfAddress) | **GET** /v3/bitcoin/address/balance/{address} | Get the balance of a Bitcoin address
-[**btcGetBlock()**](#btcGetBlock) | **GET** /v3/bitcoin/block/{hash} | Get a Bitcoin block by its hash or height
-[**btcGetBlockChainInfo()**](#btcGetBlockChainInfo) | **GET** /v3/bitcoin/info | Get Bitcoin blockchain information
-[**btcGetBlockHash()**](#btcGetBlockHash) | **GET** /v3/bitcoin/block/hash/{i} | Get the hash of a Bitcoin block
-[**btcGetMempool()**](#btcGetMempool) | **GET** /v3/bitcoin/mempool | Get transactions from the Bitcoin mempool
-[**btcGetRawTransaction()**](#btcGetRawTransaction) | **GET** /v3/bitcoin/transaction/{hash} | Get a Bitcoin transaction by its hash
-[**btcGetTxByAddress()**](#btcGetTxByAddress) | **GET** /v3/bitcoin/transaction/address/{address} | Get all transactions for a Bitcoin address
-[**btcGetUTXO()**](#btcGetUTXO) | **GET** /v3/bitcoin/utxo/{hash}/{index} | Get information about a transaction output (UTXO) in a Bitcoin transaction
-[**btcRpcDriver()**](#btcRpcDriver) | **POST** /v3/bitcoin/node | Connect to a Bitcoin node through an RPC driver
-[**btcTransferBlockchain()**](#btcTransferBlockchain) | **POST** /v3/bitcoin/transaction | Send BTC to Bitcoin addresses
+[**btcBroadcast()**](#btcbroadcast) | **POST** /v3/bitcoin/broadcast | Broadcast a signed Bitcoin transaction
+[**btcGenerateAddress()**](#btcgenerateaddress) | **GET** /v3/bitcoin/address/{xpub}/{index} | Generate a Bitcoin address from the wallet's extended public key
+[**btcGenerateAddressPrivateKey()**](#btcgenerateaddressprivatekey) | **POST** /v3/bitcoin/wallet/priv | Generate the private key for a Bitcoin address
+[**btcGenerateWallet()**](#btcgeneratewallet) | **GET** /v3/bitcoin/wallet | Generate a Bitcoin wallet
+[**btcGetBalanceOfAddress()**](#btcgetbalanceofaddress) | **GET** /v3/bitcoin/address/balance/{address} | Get the balance of a Bitcoin address
+[**btcGetBlock()**](#btcgetblock) | **GET** /v3/bitcoin/block/{hash} | Get a Bitcoin block by its hash or height
+[**btcGetBlockChainInfo()**](#btcgetblockchaininfo) | **GET** /v3/bitcoin/info | Get Bitcoin blockchain information
+[**btcGetBlockHash()**](#btcgetblockhash) | **GET** /v3/bitcoin/block/hash/{i} | Get the hash of a Bitcoin block
+[**btcGetMempool()**](#btcgetmempool) | **GET** /v3/bitcoin/mempool | Get transactions from the Bitcoin mempool
+[**btcGetRawTransaction()**](#btcgetrawtransaction) | **GET** /v3/bitcoin/transaction/{hash} | Get a Bitcoin transaction by its hash
+[**btcGetTxByAddress()**](#btcgettxbyaddress) | **GET** /v3/bitcoin/transaction/address/{address} | Get all transactions for a Bitcoin address
+[**btcGetUTXO()**](#btcgetutxo) | **GET** /v3/bitcoin/utxo/{hash}/{index} | Get information about a transaction output (UTXO) in a Bitcoin transaction
+[**btcRpcDriver()**](#btcrpcdriver) | **POST** /v3/bitcoin/node | Connect to a Bitcoin node through an RPC driver
+[**btcTransferBlockchain()**](#btctransferblockchain) | **POST** /v3/bitcoin/transaction | Send BTC to Bitcoin addresses
 
 
 ## `btcBroadcast()`
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGenerateAddress()`
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GeneratedAddressBtc**](../Model/GeneratedAddressBtc.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGenerateAddressPrivateKey()`
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGenerateWallet()`
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetBalanceOfAddress()`
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetBlock()`
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcBlock**](../Model/BtcBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetBlockChainInfo()`
 
@@ -400,7 +400,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\BtcInfo**](../Model/BtcInfo.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetBlockHash()`
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcBlockHash**](../Model/BtcBlockHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetMempool()`
 
@@ -504,7 +504,7 @@ This endpoint does not need any parameter.
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetRawTransaction()`
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTx**](../Model/BtcTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetTxByAddress()`
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTx[]**](../Model/BtcTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcGetUTXO()`
 
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcUTXO**](../Model/BtcUTXO.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcRpcDriver()`
 
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcTransferBlockchain()`
 
@@ -792,4 +792,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

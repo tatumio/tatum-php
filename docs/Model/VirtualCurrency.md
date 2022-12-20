@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **account_number** | **string** | Account number from external system. | [optional]
 **accounting_currency** | **string** | All transaction will be billed in this currency for created account associated with this currency. If not set, EUR is used. ISO-4217 | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

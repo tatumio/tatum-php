@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **property** | **string** | Property name of the target object which validation is wrong | [optional]
 **constraints** | **array<string,mixed>** | Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

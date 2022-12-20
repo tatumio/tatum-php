@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **failed** | **bool** | Flag indicating whether this webhook was successful or not |
 **response** | [**\Tatum\Model\WebHookResponse**](WebHookResponse.md) |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

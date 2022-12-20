@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **signers** | [**\Tatum\Model\XlmAccountSignersInner[]**](XlmAccountSignersInner.md) | The public keys and associated weights that can be used to authorize transactions for this account. Used for multi-sig. | [optional]
 **data** | **object** | An array of account data fields. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xrpAccountSettings()**](#xrpAccountSettings) | **POST** /v3/xrp/account/settings | Modify XRP account
-[**xrpBroadcast()**](#xrpBroadcast) | **POST** /v3/xrp/broadcast | Broadcast signed XRP transaction
-[**xrpGetAccountBalance()**](#xrpGetAccountBalance) | **GET** /v3/xrp/account/{account}/balance | Get Account Balance
-[**xrpGetAccountInfo()**](#xrpGetAccountInfo) | **GET** /v3/xrp/account/{account} | Get Account info
-[**xrpGetAccountTx()**](#xrpGetAccountTx) | **GET** /v3/xrp/account/tx/{account} | Get Account transactions
-[**xrpGetFee()**](#xrpGetFee) | **GET** /v3/xrp/fee | Get actual Blockchain fee
-[**xrpGetLastClosedLedger()**](#xrpGetLastClosedLedger) | **GET** /v3/xrp/info | Get XRP Blockchain Information
-[**xrpGetLedger()**](#xrpGetLedger) | **GET** /v3/xrp/ledger/{i} | Get Ledger
-[**xrpGetTransaction()**](#xrpGetTransaction) | **GET** /v3/xrp/transaction/{hash} | Get XRP Transaction by hash
-[**xrpTransferBlockchain()**](#xrpTransferBlockchain) | **POST** /v3/xrp/transaction | Send XRP from address to address
-[**xrpTrustLineBlockchain()**](#xrpTrustLineBlockchain) | **POST** /v3/xrp/trust | Create / Update / Delete XRP trust line
-[**xrpWallet()**](#xrpWallet) | **GET** /v3/xrp/account | Generate XRP account
+[**xrpAccountSettings()**](#xrpaccountsettings) | **POST** /v3/xrp/account/settings | Modify XRP account
+[**xrpBroadcast()**](#xrpbroadcast) | **POST** /v3/xrp/broadcast | Broadcast signed XRP transaction
+[**xrpGetAccountBalance()**](#xrpgetaccountbalance) | **GET** /v3/xrp/account/{account}/balance | Get Account Balance
+[**xrpGetAccountInfo()**](#xrpgetaccountinfo) | **GET** /v3/xrp/account/{account} | Get Account info
+[**xrpGetAccountTx()**](#xrpgetaccounttx) | **GET** /v3/xrp/account/tx/{account} | Get Account transactions
+[**xrpGetFee()**](#xrpgetfee) | **GET** /v3/xrp/fee | Get actual Blockchain fee
+[**xrpGetLastClosedLedger()**](#xrpgetlastclosedledger) | **GET** /v3/xrp/info | Get XRP Blockchain Information
+[**xrpGetLedger()**](#xrpgetledger) | **GET** /v3/xrp/ledger/{i} | Get Ledger
+[**xrpGetTransaction()**](#xrpgettransaction) | **GET** /v3/xrp/transaction/{hash} | Get XRP Transaction by hash
+[**xrpTransferBlockchain()**](#xrptransferblockchain) | **POST** /v3/xrp/transaction | Send XRP from address to address
+[**xrpTrustLineBlockchain()**](#xrptrustlineblockchain) | **POST** /v3/xrp/trust | Create / Update / Delete XRP trust line
+[**xrpWallet()**](#xrpwallet) | **GET** /v3/xrp/account | Generate XRP account
 
 
 ## `xrpAccountSettings()`
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpBroadcast()`
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpGetAccountBalance()`
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XrpAccountBalance**](../Model/XrpAccountBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpGetAccountInfo()`
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XrpAccount**](../Model/XrpAccount.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpGetAccountTx()`
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XrpAccountTx**](../Model/XrpAccountTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpGetFee()`
 
@@ -348,7 +348,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\XrpFee**](../Model/XrpFee.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpGetLastClosedLedger()`
 
@@ -397,7 +397,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\XrpInfo**](../Model/XrpInfo.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpGetLedger()`
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XrpLedger**](../Model/XrpLedger.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpGetTransaction()`
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\XrpTx**](../Model/XrpTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpTransferBlockchain()`
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpTrustLineBlockchain()`
 
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpWallet()`
 
@@ -664,4 +664,4 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\XrpWallet**](../Model/XrpWallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

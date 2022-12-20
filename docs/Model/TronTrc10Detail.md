@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **precision** | **float** | The number of decimal places | [optional]
 **id** | **float** | The ID of the TRC-10 token | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

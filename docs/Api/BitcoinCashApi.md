@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bchBroadcast()**](#bchBroadcast) | **POST** /v3/bcash/broadcast | Broadcast signed Bitcoin Cash transaction
-[**bchGenerateAddress()**](#bchGenerateAddress) | **GET** /v3/bcash/address/{xpub}/{index} | Generate Bitcoin Cash deposit address from Extended public key
-[**bchGenerateAddressPrivateKey()**](#bchGenerateAddressPrivateKey) | **POST** /v3/bcash/wallet/priv | Generate Bitcoin Cash private key
-[**bchGenerateWallet()**](#bchGenerateWallet) | **GET** /v3/bcash/wallet | Generate Bitcoin Cash wallet
-[**bchGetBlock()**](#bchGetBlock) | **GET** /v3/bcash/block/{hash} | Get Bitcoin Cash Block by hash
-[**bchGetBlockChainInfo()**](#bchGetBlockChainInfo) | **GET** /v3/bcash/info | Get Bitcoin Cash Blockchain Information
-[**bchGetBlockHash()**](#bchGetBlockHash) | **GET** /v3/bcash/block/hash/{i} | Get Bitcoin Cash Block hash
-[**bchGetRawTransaction()**](#bchGetRawTransaction) | **GET** /v3/bcash/transaction/{hash} | Get Bitcoin Cash Transaction by hash
-[**bchGetTxByAddress()**](#bchGetTxByAddress) | **GET** /v3/bcash/transaction/address/{address} | Get Bitcoin Cash Transactions by address
-[**bchRpcDriver()**](#bchRpcDriver) | **POST** /v3/bcash/node | JSON RPC HTTP driver
-[**bchTransferBlockchain()**](#bchTransferBlockchain) | **POST** /v3/bcash/transaction | Send BCH to Bitcoin Cash addresses
+[**bchBroadcast()**](#bchbroadcast) | **POST** /v3/bcash/broadcast | Broadcast signed Bitcoin Cash transaction
+[**bchGenerateAddress()**](#bchgenerateaddress) | **GET** /v3/bcash/address/{xpub}/{index} | Generate Bitcoin Cash deposit address from Extended public key
+[**bchGenerateAddressPrivateKey()**](#bchgenerateaddressprivatekey) | **POST** /v3/bcash/wallet/priv | Generate Bitcoin Cash private key
+[**bchGenerateWallet()**](#bchgeneratewallet) | **GET** /v3/bcash/wallet | Generate Bitcoin Cash wallet
+[**bchGetBlock()**](#bchgetblock) | **GET** /v3/bcash/block/{hash} | Get Bitcoin Cash Block by hash
+[**bchGetBlockChainInfo()**](#bchgetblockchaininfo) | **GET** /v3/bcash/info | Get Bitcoin Cash Blockchain Information
+[**bchGetBlockHash()**](#bchgetblockhash) | **GET** /v3/bcash/block/hash/{i} | Get Bitcoin Cash Block hash
+[**bchGetRawTransaction()**](#bchgetrawtransaction) | **GET** /v3/bcash/transaction/{hash} | Get Bitcoin Cash Transaction by hash
+[**bchGetTxByAddress()**](#bchgettxbyaddress) | **GET** /v3/bcash/transaction/address/{address} | Get Bitcoin Cash Transactions by address
+[**bchRpcDriver()**](#bchrpcdriver) | **POST** /v3/bcash/node | JSON RPC HTTP driver
+[**bchTransferBlockchain()**](#bchtransferblockchain) | **POST** /v3/bcash/transaction | Send BCH to Bitcoin Cash addresses
 
 
 ## `bchBroadcast()`
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGenerateAddress()`
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BchGenerateAddress200Response**](../Model/BchGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGenerateAddressPrivateKey()`
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGenerateWallet()`
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGetBlock()`
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BchBlock**](../Model/BchBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGetBlockChainInfo()`
 
@@ -342,7 +342,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\BchInfo**](../Model/BchInfo.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGetBlockHash()`
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BchGetBlockHash200Response**](../Model/BchGetBlockHash200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGetRawTransaction()`
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BchTx**](../Model/BchTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchGetTxByAddress()`
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BchTx[]**](../Model/BchTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchRpcDriver()`
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchTransferBlockchain()`
 
@@ -620,4 +620,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

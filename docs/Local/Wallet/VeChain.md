@@ -4,10 +4,10 @@ VeChain HD Wallet
 
 Method | Description
 ------------- | -------------
-[**generateWallet()**](#generateWallet) | Generate wallet
-[**generateAddressFromXpub()**](#generateAddressFromXpub) | Generate address from xPub and index
-[**generateAddressFromPrivateKey()**](#generateAddressFromPrivateKey) | Generate address from xPub and index
-[**generatePrivateKey()**](#generatePrivateKey) | Generate private key from mnemonic and index
+[**generateWallet()**](#generatewallet) | Generate wallet
+[**generateAddressFromXpub()**](#generateaddressfromxpub) | Generate address from xPub and index
+[**generateAddressFromPrivateKey()**](#generateaddressfromprivatekey) | Generate address from xPub and index
+[**generatePrivateKey()**](#generateprivatekey) | Generate private key from mnemonic and index
 
 ## `generateWallet()`
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 Wallet Model ([**\Tatum\Model\Wallet**](../../Model/Wallet.md))
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../../README.md#local-wallet)
+[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
 ## `generateAddressFromXpub()`
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc.md))
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../../README.md#local-wallet)
+[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
 ## `generateAddressFromPrivateKey()`
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc.md))
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../../README.md#local-wallet)
+[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
 ## `generatePrivateKey()`
 
@@ -209,4 +209,4 @@ Name | Type | Description  | Notes
 
 Private Key ([**\Tatum\Model\PrivKey**](../../Model/PrivKey.md))
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../../README.md#local-wallet)
+[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)

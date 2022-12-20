@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **digits** | **float** | The number of decimal places that the fungible tokens have |
 **from_private_key** | **string** | The private key of the blockchain address from which the fee will be deducted |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | The private key of the collection verifier&#39;s address |
 **signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

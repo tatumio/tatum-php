@@ -4,16 +4,16 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activateGasPumpAddresses()**](#activateGasPumpAddresses) | **POST** /v3/gas-pump/activate | Activate gas pump addresses
-[**activatedNotActivatedGasPumpAddresses()**](#activatedNotActivatedGasPumpAddresses) | **GET** /v3/gas-pump/address/{chain}/{txId} | Get the results of the address activation transaction
-[**approveTransferCustodialWallet()**](#approveTransferCustodialWallet) | **POST** /v3/blockchain/sc/custodial/approve | Approve the transfer of an asset from a gas pump address
-[**gasPumpAddressesActivatedOrNot()**](#gasPumpAddressesActivatedOrNot) | **GET** /v3/gas-pump/activated/{chain}/{owner}/{index} | Check whether the gas pump address with a specified index is activated
-[**generateCustodialWallet()**](#generateCustodialWallet) | **POST** /v3/blockchain/sc/custodial | Generate a custodial wallet address
-[**generateCustodialWalletBatch()**](#generateCustodialWalletBatch) | **POST** /v3/blockchain/sc/custodial/batch | Generate a gas pump wallet address
-[**precalculateGasPumpAddresses()**](#precalculateGasPumpAddresses) | **POST** /v3/gas-pump | Precalculate gas pump addresses
-[**sCGetCustodialAddresses()**](#sCGetCustodialAddresses) | **GET** /v3/blockchain/sc/custodial/{chain}/{hash} | Get the custodial wallet address from the transaction
-[**transferCustodialWallet()**](#transferCustodialWallet) | **POST** /v3/blockchain/sc/custodial/transfer | Transfer an asset from a gas pump address
-[**transferCustodialWalletBatch()**](#transferCustodialWalletBatch) | **POST** /v3/blockchain/sc/custodial/transfer/batch | Transfer multiple assets from a gas pump address
+[**activateGasPumpAddresses()**](#activategaspumpaddresses) | **POST** /v3/gas-pump/activate | Activate gas pump addresses
+[**activatedNotActivatedGasPumpAddresses()**](#activatednotactivatedgaspumpaddresses) | **GET** /v3/gas-pump/address/{chain}/{txId} | Get the results of the address activation transaction
+[**approveTransferCustodialWallet()**](#approvetransfercustodialwallet) | **POST** /v3/blockchain/sc/custodial/approve | Approve the transfer of an asset from a gas pump address
+[**gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) | **GET** /v3/gas-pump/activated/{chain}/{owner}/{index} | Check whether the gas pump address with a specified index is activated
+[**generateCustodialWallet()**](#generatecustodialwallet) | **POST** /v3/blockchain/sc/custodial | Generate a custodial wallet address
+[**generateCustodialWalletBatch()**](#generatecustodialwalletbatch) | **POST** /v3/blockchain/sc/custodial/batch | Generate a gas pump wallet address
+[**precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) | **POST** /v3/gas-pump | Precalculate gas pump addresses
+[**sCGetCustodialAddresses()**](#scgetcustodialaddresses) | **GET** /v3/blockchain/sc/custodial/{chain}/{hash} | Get the custodial wallet address from the transaction
+[**transferCustodialWallet()**](#transfercustodialwallet) | **POST** /v3/blockchain/sc/custodial/transfer | Transfer an asset from a gas pump address
+[**transferCustodialWalletBatch()**](#transfercustodialwalletbatch) | **POST** /v3/blockchain/sc/custodial/transfer/batch | Transfer multiple assets from a gas pump address
 
 
 ## `activateGasPumpAddresses()`
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `activatedNotActivatedGasPumpAddresses()`
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GasPumpTrxOut**](../Model/GasPumpTrxOut.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `approveTransferCustodialWallet()`
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `gasPumpAddressesActivatedOrNot()`
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Activated**](../Model/Activated.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `generateCustodialWallet()`
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `generateCustodialWalletBatch()`
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `precalculateGasPumpAddresses()`
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `sCGetCustodialAddresses()`
 
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 **string[]**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `transferCustodialWallet()`
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `transferCustodialWalletBatch()`
 
@@ -582,4 +582,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

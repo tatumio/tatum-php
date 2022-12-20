@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oneBlockchainSmartContractInvocation()**](#oneBlockchainSmartContractInvocation) | **POST** /v3/one/smartcontract | Invoke a method in a smart contract on Harmony
-[**oneBlockchainTransfer()**](#oneBlockchainTransfer) | **POST** /v3/one/transaction | Send ONE / HRM20 from account to account
-[**oneBroadcast()**](#oneBroadcast) | **POST** /v3/one/broadcast | Broadcast signed ONE transaction
-[**oneFormatAddress()**](#oneFormatAddress) | **GET** /v3/one/address/format/{address} | Transform HEX address to Bech32 ONE address format
-[**oneGenerateAddress()**](#oneGenerateAddress) | **GET** /v3/one/address/{xpub}/{index} | Generate ONE account address from Extended public key
-[**oneGenerateAddressPrivateKey()**](#oneGenerateAddressPrivateKey) | **POST** /v3/one/wallet/priv | Generate ONE private key
-[**oneGenerateWallet()**](#oneGenerateWallet) | **GET** /v3/one/wallet | Generate ONE wallet
-[**oneGetBalance()**](#oneGetBalance) | **GET** /v3/one/account/balance/{address} | Get ONE Account balance
-[**oneGetBlock()**](#oneGetBlock) | **GET** /v3/one/block/{hash} | Get ONE block by hash
-[**oneGetCurrentBlock()**](#oneGetCurrentBlock) | **GET** /v3/one/block/current | Get current block number
-[**oneGetTransaction()**](#oneGetTransaction) | **GET** /v3/one/transaction/{hash} | Get ONE Transaction
-[**oneGetTransactionCount()**](#oneGetTransactionCount) | **GET** /v3/one/transaction/count/{address} | Get count of outgoing ONE transactions
-[**oneWeb3Driver()**](#oneWeb3Driver) | **POST** /v3/one/web3/{xApiKey} | Web3 HTTP driver
+[**oneBlockchainSmartContractInvocation()**](#oneblockchainsmartcontractinvocation) | **POST** /v3/one/smartcontract | Invoke a method in a smart contract on Harmony
+[**oneBlockchainTransfer()**](#oneblockchaintransfer) | **POST** /v3/one/transaction | Send ONE / HRM20 from account to account
+[**oneBroadcast()**](#onebroadcast) | **POST** /v3/one/broadcast | Broadcast signed ONE transaction
+[**oneFormatAddress()**](#oneformataddress) | **GET** /v3/one/address/format/{address} | Transform HEX address to Bech32 ONE address format
+[**oneGenerateAddress()**](#onegenerateaddress) | **GET** /v3/one/address/{xpub}/{index} | Generate ONE account address from Extended public key
+[**oneGenerateAddressPrivateKey()**](#onegenerateaddressprivatekey) | **POST** /v3/one/wallet/priv | Generate ONE private key
+[**oneGenerateWallet()**](#onegeneratewallet) | **GET** /v3/one/wallet | Generate ONE wallet
+[**oneGetBalance()**](#onegetbalance) | **GET** /v3/one/account/balance/{address} | Get ONE Account balance
+[**oneGetBlock()**](#onegetblock) | **GET** /v3/one/block/{hash} | Get ONE block by hash
+[**oneGetCurrentBlock()**](#onegetcurrentblock) | **GET** /v3/one/block/current | Get current block number
+[**oneGetTransaction()**](#onegettransaction) | **GET** /v3/one/transaction/{hash} | Get ONE Transaction
+[**oneGetTransactionCount()**](#onegettransactioncount) | **GET** /v3/one/transaction/count/{address} | Get count of outgoing ONE transactions
+[**oneWeb3Driver()**](#oneweb3driver) | **POST** /v3/one/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `oneBlockchainSmartContractInvocation()`
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneBlockchainTransfer()`
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneBroadcast()`
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneFormatAddress()`
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGenerateAddress()`
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGenerateAddressPrivateKey()`
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGenerateWallet()`
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGetBalance()`
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\OneBalance**](../Model/OneBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGetBlock()`
 
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGetCurrentBlock()`
 
@@ -587,7 +587,7 @@ This endpoint does not need any parameter.
 
 [**\Tatum\Model\OneBlockCurrent[]**](../Model/OneBlockCurrent.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGetTransaction()`
 
@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\OneTx**](../Model/OneTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneGetTransactionCount()`
 
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneWeb3Driver()`
 
@@ -771,4 +771,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **issuer_account** | **string** | Blockchain address of the issuer of the assets to send, if not native XLM asset. |
 **message** | **string** | Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

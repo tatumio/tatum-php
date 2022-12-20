@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **sequence** | **float** | The sequence number of the next valid transaction for this account. (Each account starts with Sequence &#x3D; 1 and increases each time a transaction is made.) | [optional]
 **index** | **string** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

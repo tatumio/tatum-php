@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **vout** | [**\Tatum\Model\DogeTxVoutInner[]**](DogeTxVoutInner.md) | List of recipient addresses and amounts to send to each of them. | [optional]
 **locktime** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

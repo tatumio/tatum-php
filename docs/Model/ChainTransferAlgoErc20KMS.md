@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **digits** | **float** | The number of decimal places that the fungible tokens have |
 **signature_id** | **string** | The KMS identifier of the private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the &lt;code&gt;from&lt;/code&gt; parameter); the transaction fee will be deducted from this address |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

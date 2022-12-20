@@ -25,4 +25,4 @@ Name | Type | Description | Notes
 **hyperblock_nonce** | **float** | Nonce of the hyperblockwhere this transaction was in. | [optional]
 **hyperblock_hash** | **string** | Hash of the hyperblock where this transaction was in. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **to** | **string** | Recipient address of TRON account in Base58 format. |
 **amount** | **string** | Amount to be sent in TRX. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

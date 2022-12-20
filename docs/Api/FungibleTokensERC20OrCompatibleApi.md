@@ -4,14 +4,14 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**erc20Approve()**](#erc20Approve) | **POST** /v3/blockchain/token/approve | Allow a blockchain address to transfer and burn fungible tokens
-[**erc20Burn()**](#erc20Burn) | **POST** /v3/blockchain/token/burn | Burn fungible tokens
-[**erc20Deploy()**](#erc20Deploy) | **POST** /v3/blockchain/token/deploy | Deploy a fungible token smart contract
-[**erc20GetBalance()**](#erc20GetBalance) | **GET** /v3/blockchain/token/balance/{chain}/{contractAddress}/{address} | Get the number of fungible tokens that a blockchain address holds in a smart contract
-[**erc20GetBalanceAddress()**](#erc20GetBalanceAddress) | **GET** /v3/blockchain/token/address/{chain}/{address} | Get the total number of fungible tokens that a blockchain address holds
-[**erc20GetTransactionByAddress()**](#erc20GetTransactionByAddress) | **GET** /v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress} | Get fungible token transactions on a blockchain address
-[**erc20Mint()**](#erc20Mint) | **POST** /v3/blockchain/token/mint | Mint fungible tokens
-[**erc20Transfer()**](#erc20Transfer) | **POST** /v3/blockchain/token/transaction | Transfer fungible tokens
+[**erc20Approve()**](#erc20approve) | **POST** /v3/blockchain/token/approve | Allow a blockchain address to transfer and burn fungible tokens
+[**erc20Burn()**](#erc20burn) | **POST** /v3/blockchain/token/burn | Burn fungible tokens
+[**erc20Deploy()**](#erc20deploy) | **POST** /v3/blockchain/token/deploy | Deploy a fungible token smart contract
+[**erc20GetBalance()**](#erc20getbalance) | **GET** /v3/blockchain/token/balance/{chain}/{contractAddress}/{address} | Get the number of fungible tokens that a blockchain address holds in a smart contract
+[**erc20GetBalanceAddress()**](#erc20getbalanceaddress) | **GET** /v3/blockchain/token/address/{chain}/{address} | Get the total number of fungible tokens that a blockchain address holds
+[**erc20GetTransactionByAddress()**](#erc20gettransactionbyaddress) | **GET** /v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress} | Get fungible token transactions on a blockchain address
+[**erc20Mint()**](#erc20mint) | **POST** /v3/blockchain/token/mint | Mint fungible tokens
+[**erc20Transfer()**](#erc20transfer) | **POST** /v3/blockchain/token/transaction | Transfer fungible tokens
 
 
 ## `erc20Approve()`
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `erc20Burn()`
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `erc20Deploy()`
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `erc20GetBalance()`
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Balance**](../Model/Erc20Balance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `erc20GetBalanceAddress()`
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20BalanceForAddress[]**](../Model/Erc20BalanceForAddress.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `erc20GetTransactionByAddress()`
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\FungibleTx[]**](../Model/FungibleTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `erc20Mint()`
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `erc20Transfer()`
 
@@ -527,4 +527,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

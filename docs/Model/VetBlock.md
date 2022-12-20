@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **signer** | **string** | the one who signed this block | [optional]
 **transactions** | **string[]** | transactions IDs | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

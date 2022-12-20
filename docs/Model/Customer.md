@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **customer_country** | **string** | Country customer has to be compliant with | [optional]
 **provider_country** | **string** | Country service provider has to be compliant with | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

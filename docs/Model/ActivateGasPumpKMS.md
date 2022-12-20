@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | The KMS identifier of the private key of the blockchain address that will pay the gas fee for the activation transaction |
 **index** | **float** | (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

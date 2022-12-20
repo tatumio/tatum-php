@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **usage** | **float** |  | [optional]
 **rollover_day** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

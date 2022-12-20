@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **data** | [**\Tatum\Model\ResponseData[]**](ResponseData.md) |  | [optional]
 **id** | **string** | ID of withdrawal | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

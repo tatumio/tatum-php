@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **seller** | **string** | Address of the seller. | [optional]
 **state** | **string** | State of the listing. 0 - available, 1 - sold, 2 - cancelled | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

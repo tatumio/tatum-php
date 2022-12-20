@@ -4,20 +4,20 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ethBlockchainSmartContractInvocation()**](#ethBlockchainSmartContractInvocation) | **POST** /v3/ethereum/smartcontract | Invoke a method in a smart contract on Ethereum
-[**ethBlockchainTransfer()**](#ethBlockchainTransfer) | **POST** /v3/ethereum/transaction | Send Ethereum / ERC20 from account to account
-[**ethBroadcast()**](#ethBroadcast) | **POST** /v3/ethereum/broadcast | Broadcast signed Ethereum transaction
-[**ethGenerateAddress()**](#ethGenerateAddress) | **GET** /v3/ethereum/address/{xpub}/{index} | Generate Ethereum account address from Extended public key
-[**ethGenerateAddressPrivateKey()**](#ethGenerateAddressPrivateKey) | **POST** /v3/ethereum/wallet/priv | Generate Ethereum private key
-[**ethGenerateWallet()**](#ethGenerateWallet) | **GET** /v3/ethereum/wallet | Generate Ethereum wallet
-[**ethGetBalance()**](#ethGetBalance) | **GET** /v3/ethereum/account/balance/{address} | Get the ETH balance of an Ethereum account
-[**ethGetBlock()**](#ethGetBlock) | **GET** /v3/ethereum/block/{hash} | Get Ethereum block by hash
-[**ethGetCurrentBlock()**](#ethGetCurrentBlock) | **GET** /v3/ethereum/block/current | Get current block number
-[**ethGetInternalTransactionByAddress()**](#ethGetInternalTransactionByAddress) | **GET** /v3/ethereum/account/transaction/erc20/internal/{address} | Get Ethereum internal transactions by address
-[**ethGetTransaction()**](#ethGetTransaction) | **GET** /v3/ethereum/transaction/{hash} | Get Ethereum Transaction
-[**ethGetTransactionByAddress()**](#ethGetTransactionByAddress) | **GET** /v3/ethereum/account/transaction/{address} | Get Ethereum transactions by address
-[**ethGetTransactionCount()**](#ethGetTransactionCount) | **GET** /v3/ethereum/transaction/count/{address} | Get count of outgoing Ethereum transactions
-[**ethWeb3Driver()**](#ethWeb3Driver) | **POST** /v3/ethereum/web3/{xApiKey} | Web3 HTTP driver
+[**ethBlockchainSmartContractInvocation()**](#ethblockchainsmartcontractinvocation) | **POST** /v3/ethereum/smartcontract | Invoke a method in a smart contract on Ethereum
+[**ethBlockchainTransfer()**](#ethblockchaintransfer) | **POST** /v3/ethereum/transaction | Send Ethereum / ERC20 from account to account
+[**ethBroadcast()**](#ethbroadcast) | **POST** /v3/ethereum/broadcast | Broadcast signed Ethereum transaction
+[**ethGenerateAddress()**](#ethgenerateaddress) | **GET** /v3/ethereum/address/{xpub}/{index} | Generate Ethereum account address from Extended public key
+[**ethGenerateAddressPrivateKey()**](#ethgenerateaddressprivatekey) | **POST** /v3/ethereum/wallet/priv | Generate Ethereum private key
+[**ethGenerateWallet()**](#ethgeneratewallet) | **GET** /v3/ethereum/wallet | Generate Ethereum wallet
+[**ethGetBalance()**](#ethgetbalance) | **GET** /v3/ethereum/account/balance/{address} | Get the ETH balance of an Ethereum account
+[**ethGetBlock()**](#ethgetblock) | **GET** /v3/ethereum/block/{hash} | Get Ethereum block by hash
+[**ethGetCurrentBlock()**](#ethgetcurrentblock) | **GET** /v3/ethereum/block/current | Get current block number
+[**ethGetInternalTransactionByAddress()**](#ethgetinternaltransactionbyaddress) | **GET** /v3/ethereum/account/transaction/erc20/internal/{address} | Get Ethereum internal transactions by address
+[**ethGetTransaction()**](#ethgettransaction) | **GET** /v3/ethereum/transaction/{hash} | Get Ethereum Transaction
+[**ethGetTransactionByAddress()**](#ethgettransactionbyaddress) | **GET** /v3/ethereum/account/transaction/{address} | Get Ethereum transactions by address
+[**ethGetTransactionCount()**](#ethgettransactioncount) | **GET** /v3/ethereum/transaction/count/{address} | Get count of outgoing Ethereum transactions
+[**ethWeb3Driver()**](#ethweb3driver) | **POST** /v3/ethereum/web3/{xApiKey} | Web3 HTTP driver
 
 
 ## `ethBlockchainSmartContractInvocation()`
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethBlockchainTransfer()`
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethBroadcast()`
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGenerateAddress()`
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GeneratedAddressEth**](../Model/GeneratedAddressEth.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGenerateAddressPrivateKey()`
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGenerateWallet()`
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGetBalance()`
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBalance**](../Model/EthBalance.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGetBlock()`
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGetCurrentBlock()`
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGetInternalTransactionByAddress()`
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthTxInternal[]**](../Model/EthTxInternal.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGetTransaction()`
 
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthTx**](../Model/EthTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGetTransactionByAddress()`
 
@@ -769,7 +769,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthTx[]**](../Model/EthTx.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethGetTransactionCount()`
 
@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 
 **float**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethWeb3Driver()`
 
@@ -893,4 +893,4 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

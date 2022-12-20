@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **decimals** | **float** |  |
 **name** | **string** |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

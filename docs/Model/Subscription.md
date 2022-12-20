@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **id** | **string** | ID of the subscription |
 **attr** | **object** | Additional attributes based on the subscription type. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

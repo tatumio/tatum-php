@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 **nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

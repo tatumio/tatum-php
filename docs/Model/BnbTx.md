@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **ok** | **bool** |  | [optional]
 **tx** | [**\Tatum\Model\BnbTxTx**](BnbTxTx.md) |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **data** | **string** | Response from the server | [optional]
 **network_error** | **bool** | Flag indicating whether an error has been caused by the network |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

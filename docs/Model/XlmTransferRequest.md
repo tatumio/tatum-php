@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **sender_note** | **string** | Note visible to owner of withdrawing account. | [optional]
 **signature_id** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

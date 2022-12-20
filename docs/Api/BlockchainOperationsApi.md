@@ -4,50 +4,50 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adaTransferOffchain()**](#adaTransferOffchain) | **POST** /v3/offchain/ada/transfer | Send ADA from a virtual account to the blockchain
-[**algoDeployErc20Ledger()**](#algoDeployErc20Ledger) | **POST** /v3/offchain/algo/erc20/deploy | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**algoTransfer()**](#algoTransfer) | **POST** /v3/offchain/algorand/transfer | Send ALGO from a virtual account to the blockchain
-[**bchTransfer()**](#bchTransfer) | **POST** /v3/offchain/bcash/transfer | Send BCH from a virtual account to the blockchain
-[**bnbAssetOffchain()**](#bnbAssetOffchain) | **POST** /v3/offchain/bnb/asset | Create a BNB-based asset
-[**bnbTransfer()**](#bnbTransfer) | **POST** /v3/offchain/bnb/transfer | Send BNB from a virtual account to the blockchain
-[**bscDeployBep20()**](#bscDeployBep20) | **POST** /v3/offchain/bsc/bep20/deploy | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**bscOrBepTransfer()**](#bscOrBepTransfer) | **POST** /v3/offchain/bsc/transfer | Send BSC from a virtual account to the blockchain
-[**btcTransfer()**](#btcTransfer) | **POST** /v3/offchain/bitcoin/transfer | Send BTC from a virtual account to the blockchain
-[**celoDeployErc20Ledger()**](#celoDeployErc20Ledger) | **POST** /v3/offchain/celo/erc20/deploy | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**celoOrErc20Transfer()**](#celoOrErc20Transfer) | **POST** /v3/offchain/celo/transfer | Send CELO from a virtual account to the blockchain
-[**createBep20()**](#createBep20) | **POST** /v3/offchain/bsc/bep20 | Register a new BNB Smart Chain BEP-20 token in the virtual account
-[**createCeloErc20()**](#createCeloErc20) | **POST** /v3/offchain/celo/erc20 | Register a new Celo ERC-20-equivalent token in the virtual account
-[**createErc20()**](#createErc20) | **POST** /v3/offchain/ethereum/erc20 | Register a new Ethereum ERC-20 token in the virtual account
-[**createHrm20()**](#createHrm20) | **POST** /v3/offchain/one/hrm20 | Register a new Harmony HRM-20 token in the virtual account
-[**createTrc()**](#createTrc) | **POST** /v3/offchain/tron/trc | Register a new TRON TRC-10 or TRC-20 token in the virtual account
-[**createXdc20()**](#createXdc20) | **POST** /v3/offchain/xdc/erc20 | Register a new XinFin ERC-20-equivalent token in the virtual account
-[**dogeTransfer()**](#dogeTransfer) | **POST** /v3/offchain/dogecoin/transfer | Send DOGE from a virtual account to the blockchain
-[**egldTransfer()**](#egldTransfer) | **POST** /v3/offchain/egld/transfer | Send EGLD from a virtual account to the blockchain
-[**ethDeployErc20()**](#ethDeployErc20) | **POST** /v3/offchain/ethereum/erc20/deploy | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**ethTransfer()**](#ethTransfer) | **POST** /v3/offchain/ethereum/transfer | Send ETH from a virtual account to the blockchain
-[**ethTransferErc20()**](#ethTransferErc20) | **POST** /v3/offchain/ethereum/erc20/transfer | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**flowTransfer()**](#flowTransfer) | **POST** /v3/offchain/flow/transfer | Send FLOW from a virtual account to the blockchain
-[**kcsDeployErc20Ledger()**](#kcsDeployErc20Ledger) | **POST** /v3/offchain/kcs/erc20/deploy | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**kcsTransfer()**](#kcsTransfer) | **POST** /v3/offchain/kcs/transfer | Send KCS from a virtual account to the blockchain
-[**klayDeployErc20()**](#klayDeployErc20) | **POST** /v3/offchain/klaytn/erc20/deploy | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**klayTransfer()**](#klayTransfer) | **POST** /v3/offchain/klaytn/transfer | Send KLAY from a virtual account to the blockchain
-[**ltcTransfer()**](#ltcTransfer) | **POST** /v3/offchain/litecoin/transfer | Send LTC from a virtual account to the blockchain
-[**oneDeployHrm20()**](#oneDeployHrm20) | **POST** /v3/offchain/one/hrm20/deploy | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**oneTransfer()**](#oneTransfer) | **POST** /v3/offchain/one/transfer | Send ONE from a virtual account to the blockchain
-[**polygonTransfer()**](#polygonTransfer) | **POST** /v3/offchain/polygon/transfer | Send MATIC from a virtual account to the blockchain
-[**registerErc20Token()**](#registerErc20Token) | **POST** /v3/offchain/token/{chain} | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-[**solTransfer()**](#solTransfer) | **POST** /v3/offchain/solana/transfer | Send SOL from a virtual account to the blockchain
-[**storeCeloErc20Address()**](#storeCeloErc20Address) | **POST** /v3/offchain/celo/erc20/{name}/{address} | Set the contract address of a Celo ERC-20-equivalent token
-[**storeTokenAddress()**](#storeTokenAddress) | **POST** /v3/offchain/token/{name}/{address} | Set the contract address of an ERC-20 or ERC-20-equivalent token
-[**storeTrcAddress()**](#storeTrcAddress) | **POST** /v3/offchain/tron/trc/{name}/{address} | Set the contract address of a TRC-10 or TRC-20 token
-[**tronDeployTrc()**](#tronDeployTrc) | **POST** /v3/offchain/tron/trc/deploy | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**tronTransferOffchain()**](#tronTransferOffchain) | **POST** /v3/offchain/tron/transfer | Send TRON from a virtual account to the blockchain
-[**xdcDeployErc20()**](#xdcDeployErc20) | **POST** /v3/offchain/xdc/erc20/deploy | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**xdcTransfer()**](#xdcTransfer) | **POST** /v3/offchain/xdc/transfer | Send XDC from a virtual account to the blockchain
-[**xlmAssetOffchain()**](#xlmAssetOffchain) | **POST** /v3/offchain/xlm/asset | Create an XLM-based asset
-[**xlmTransfer()**](#xlmTransfer) | **POST** /v3/offchain/xlm/transfer | Send XLM from a virtual account to the blockchain
-[**xrpAssetOffchain()**](#xrpAssetOffchain) | **POST** /v3/offchain/xrp/asset | Create XRP based Asset
-[**xrpTransfer()**](#xrpTransfer) | **POST** /v3/offchain/xrp/transfer | Send XRP from a virtual account to the blockchain
+[**adaTransferOffchain()**](#adatransferoffchain) | **POST** /v3/offchain/ada/transfer | Send ADA from a virtual account to the blockchain
+[**algoDeployErc20Ledger()**](#algodeployerc20ledger) | **POST** /v3/offchain/algo/erc20/deploy | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**algoTransfer()**](#algotransfer) | **POST** /v3/offchain/algorand/transfer | Send ALGO from a virtual account to the blockchain
+[**bchTransfer()**](#bchtransfer) | **POST** /v3/offchain/bcash/transfer | Send BCH from a virtual account to the blockchain
+[**bnbAssetOffchain()**](#bnbassetoffchain) | **POST** /v3/offchain/bnb/asset | Create a BNB-based asset
+[**bnbTransfer()**](#bnbtransfer) | **POST** /v3/offchain/bnb/transfer | Send BNB from a virtual account to the blockchain
+[**bscDeployBep20()**](#bscdeploybep20) | **POST** /v3/offchain/bsc/bep20/deploy | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**bscOrBepTransfer()**](#bscorbeptransfer) | **POST** /v3/offchain/bsc/transfer | Send BSC from a virtual account to the blockchain
+[**btcTransfer()**](#btctransfer) | **POST** /v3/offchain/bitcoin/transfer | Send BTC from a virtual account to the blockchain
+[**celoDeployErc20Ledger()**](#celodeployerc20ledger) | **POST** /v3/offchain/celo/erc20/deploy | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**celoOrErc20Transfer()**](#celoorerc20transfer) | **POST** /v3/offchain/celo/transfer | Send CELO from a virtual account to the blockchain
+[**createBep20()**](#createbep20) | **POST** /v3/offchain/bsc/bep20 | Register a new BNB Smart Chain BEP-20 token in the virtual account
+[**createCeloErc20()**](#createceloerc20) | **POST** /v3/offchain/celo/erc20 | Register a new Celo ERC-20-equivalent token in the virtual account
+[**createErc20()**](#createerc20) | **POST** /v3/offchain/ethereum/erc20 | Register a new Ethereum ERC-20 token in the virtual account
+[**createHrm20()**](#createhrm20) | **POST** /v3/offchain/one/hrm20 | Register a new Harmony HRM-20 token in the virtual account
+[**createTrc()**](#createtrc) | **POST** /v3/offchain/tron/trc | Register a new TRON TRC-10 or TRC-20 token in the virtual account
+[**createXdc20()**](#createxdc20) | **POST** /v3/offchain/xdc/erc20 | Register a new XinFin ERC-20-equivalent token in the virtual account
+[**dogeTransfer()**](#dogetransfer) | **POST** /v3/offchain/dogecoin/transfer | Send DOGE from a virtual account to the blockchain
+[**egldTransfer()**](#egldtransfer) | **POST** /v3/offchain/egld/transfer | Send EGLD from a virtual account to the blockchain
+[**ethDeployErc20()**](#ethdeployerc20) | **POST** /v3/offchain/ethereum/erc20/deploy | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**ethTransfer()**](#ethtransfer) | **POST** /v3/offchain/ethereum/transfer | Send ETH from a virtual account to the blockchain
+[**ethTransferErc20()**](#ethtransfererc20) | **POST** /v3/offchain/ethereum/erc20/transfer | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+[**flowTransfer()**](#flowtransfer) | **POST** /v3/offchain/flow/transfer | Send FLOW from a virtual account to the blockchain
+[**kcsDeployErc20Ledger()**](#kcsdeployerc20ledger) | **POST** /v3/offchain/kcs/erc20/deploy | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**kcsTransfer()**](#kcstransfer) | **POST** /v3/offchain/kcs/transfer | Send KCS from a virtual account to the blockchain
+[**klayDeployErc20()**](#klaydeployerc20) | **POST** /v3/offchain/klaytn/erc20/deploy | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**klayTransfer()**](#klaytransfer) | **POST** /v3/offchain/klaytn/transfer | Send KLAY from a virtual account to the blockchain
+[**ltcTransfer()**](#ltctransfer) | **POST** /v3/offchain/litecoin/transfer | Send LTC from a virtual account to the blockchain
+[**oneDeployHrm20()**](#onedeployhrm20) | **POST** /v3/offchain/one/hrm20/deploy | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**oneTransfer()**](#onetransfer) | **POST** /v3/offchain/one/transfer | Send ONE from a virtual account to the blockchain
+[**polygonTransfer()**](#polygontransfer) | **POST** /v3/offchain/polygon/transfer | Send MATIC from a virtual account to the blockchain
+[**registerErc20Token()**](#registererc20token) | **POST** /v3/offchain/token/{chain} | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+[**solTransfer()**](#soltransfer) | **POST** /v3/offchain/solana/transfer | Send SOL from a virtual account to the blockchain
+[**storeCeloErc20Address()**](#storeceloerc20address) | **POST** /v3/offchain/celo/erc20/{name}/{address} | Set the contract address of a Celo ERC-20-equivalent token
+[**storeTokenAddress()**](#storetokenaddress) | **POST** /v3/offchain/token/{name}/{address} | Set the contract address of an ERC-20 or ERC-20-equivalent token
+[**storeTrcAddress()**](#storetrcaddress) | **POST** /v3/offchain/tron/trc/{name}/{address} | Set the contract address of a TRC-10 or TRC-20 token
+[**tronDeployTrc()**](#trondeploytrc) | **POST** /v3/offchain/tron/trc/deploy | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**tronTransferOffchain()**](#trontransferoffchain) | **POST** /v3/offchain/tron/transfer | Send TRON from a virtual account to the blockchain
+[**xdcDeployErc20()**](#xdcdeployerc20) | **POST** /v3/offchain/xdc/erc20/deploy | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**xdcTransfer()**](#xdctransfer) | **POST** /v3/offchain/xdc/transfer | Send XDC from a virtual account to the blockchain
+[**xlmAssetOffchain()**](#xlmassetoffchain) | **POST** /v3/offchain/xlm/asset | Create an XLM-based asset
+[**xlmTransfer()**](#xlmtransfer) | **POST** /v3/offchain/xlm/transfer | Send XLM from a virtual account to the blockchain
+[**xrpAssetOffchain()**](#xrpassetoffchain) | **POST** /v3/offchain/xrp/asset | Create XRP based Asset
+[**xrpTransfer()**](#xrptransfer) | **POST** /v3/offchain/xrp/transfer | Send XRP from a virtual account to the blockchain
 
 
 ## `adaTransferOffchain()`
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algoDeployErc20Ledger()`
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\AlgoDeployErc20Ledger200Response**](../Model/AlgoDeployErc20Ledger200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `algoTransfer()`
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bchTransfer()`
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbAssetOffchain()`
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bnbTransfer()`
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscDeployBep20()`
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `bscOrBepTransfer()`
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `btcTransfer()`
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoDeployErc20Ledger()`
 
@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `celoOrErc20Transfer()`
 
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createBep20()`
 
@@ -693,7 +693,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createCeloErc20()`
 
@@ -747,7 +747,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createErc20()`
 
@@ -801,7 +801,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createHrm20()`
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createTrc()`
 
@@ -909,7 +909,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `createXdc20()`
 
@@ -963,7 +963,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `dogeTransfer()`
 
@@ -1017,7 +1017,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `egldTransfer()`
 
@@ -1071,7 +1071,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethDeployErc20()`
 
@@ -1125,7 +1125,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethTransfer()`
 
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ethTransferErc20()`
 
@@ -1233,7 +1233,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `flowTransfer()`
 
@@ -1287,7 +1287,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsDeployErc20Ledger()`
 
@@ -1341,7 +1341,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `kcsTransfer()`
 
@@ -1395,7 +1395,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klayDeployErc20()`
 
@@ -1449,7 +1449,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `klayTransfer()`
 
@@ -1503,7 +1503,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `ltcTransfer()`
 
@@ -1557,7 +1557,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneDeployHrm20()`
 
@@ -1616,7 +1616,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `oneTransfer()`
 
@@ -1675,7 +1675,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `polygonTransfer()`
 
@@ -1729,7 +1729,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `registerErc20Token()`
 
@@ -1788,7 +1788,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `solTransfer()`
 
@@ -1842,7 +1842,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `storeCeloErc20Address()`
 
@@ -1899,7 +1899,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `storeTokenAddress()`
 
@@ -1956,7 +1956,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `storeTrcAddress()`
 
@@ -2013,7 +2013,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronDeployTrc()`
 
@@ -2067,7 +2067,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `tronTransferOffchain()`
 
@@ -2121,7 +2121,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcDeployErc20()`
 
@@ -2175,7 +2175,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xdcTransfer()`
 
@@ -2229,7 +2229,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmAssetOffchain()`
 
@@ -2280,7 +2280,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xlmTransfer()`
 
@@ -2334,7 +2334,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpAssetOffchain()`
 
@@ -2385,7 +2385,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `xrpTransfer()`
 
@@ -2439,4 +2439,4 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

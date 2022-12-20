@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | Unable to deactivate account with non-zero balance. |
 **status_code** | **float** | 403 |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

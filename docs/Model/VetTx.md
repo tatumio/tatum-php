@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **meta** | [**\Tatum\Model\VetTxMeta**](VetTxMeta.md) |  | [optional]
 **block_number** | **float** |  | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

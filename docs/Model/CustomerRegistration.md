@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **external_id** | **string** | The external ID of the customer; use only anonymized identification that you have in your system&lt;br/&gt;If a customer with the specified external ID does not exist, a new customer is created. If a customer with the specified external ID exists, it is updated with the provided information. |
 **provider_country** | **string** | The ISO 3166-1 code of the country that the service provider has to be compliant with | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

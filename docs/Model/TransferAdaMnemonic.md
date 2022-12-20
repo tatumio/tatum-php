@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **sender_account_id** | **string** | Sender account ID |
 **sender_note** | **string** | Note visible to owner of withdrawing account | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

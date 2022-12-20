@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **to** | **float** | End interval in UTC millis. |
 **time_frame** | **string** | Time frame of the chart. |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

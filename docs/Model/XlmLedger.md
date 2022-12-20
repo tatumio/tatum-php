@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **protocol_version** | **float** | The protocol version that the Stellar network was running when this ledger was committed. | [optional]
 **header_xdr** | **string** | A base64 encoded string of the raw LedgerHeader xdr struct for this ledger. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

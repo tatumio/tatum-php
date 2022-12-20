@@ -4,12 +4,12 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addressExists()**](#addressExists) | **GET** /v3/offchain/account/address/{address}/{currency} | Check whether a blockchain address is assigned to a virtual account
-[**assignAddress()**](#assignAddress) | **POST** /v3/offchain/account/{id}/address/{address} | Assign a blockchain address to a virtual account
-[**generateDepositAddress()**](#generateDepositAddress) | **POST** /v3/offchain/account/{id}/address | Create a deposit address for a virtual account
-[**generateDepositAddressesBatch()**](#generateDepositAddressesBatch) | **POST** /v3/offchain/account/address/batch | Create multiple deposit addresses for a virtual account
-[**getAllDepositAddresses()**](#getAllDepositAddresses) | **GET** /v3/offchain/account/{id}/address | Get all deposit addresses for a virtual account
-[**removeAddress()**](#removeAddress) | **DELETE** /v3/offchain/account/{id}/address/{address} | Remove a deposit address from a virtual account
+[**addressExists()**](#addressexists) | **GET** /v3/offchain/account/address/{address}/{currency} | Check whether a blockchain address is assigned to a virtual account
+[**assignAddress()**](#assignaddress) | **POST** /v3/offchain/account/{id}/address/{address} | Assign a blockchain address to a virtual account
+[**generateDepositAddress()**](#generatedepositaddress) | **POST** /v3/offchain/account/{id}/address | Create a deposit address for a virtual account
+[**generateDepositAddressesBatch()**](#generatedepositaddressesbatch) | **POST** /v3/offchain/account/address/batch | Create multiple deposit addresses for a virtual account
+[**getAllDepositAddresses()**](#getalldepositaddresses) | **GET** /v3/offchain/account/{id}/address | Get all deposit addresses for a virtual account
+[**removeAddress()**](#removeaddress) | **DELETE** /v3/offchain/account/{id}/address/{address} | Remove a deposit address from a virtual account
 
 
 ## `addressExists()`
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Account**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `assignAddress()`
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Address**](../Model/Address.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `generateDepositAddress()`
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Address**](../Model/Address.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `generateDepositAddressesBatch()`
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Address[]**](../Model/Address.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `getAllDepositAddresses()`
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Address[]**](../Model/Address.md)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)
 
 ## `removeAddress()`
 
@@ -371,4 +371,4 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to API list]](../../README.md#api-endpoints)
+[[Back to top]](#) | [[Back to Index]](../index.md)

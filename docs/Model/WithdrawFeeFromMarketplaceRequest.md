@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from_private_key** | **string** | The private key of the marketplace fee recipient |
 **signature_id** | **string** | The KMS identifier of the private key of the marketplace fee recipient |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

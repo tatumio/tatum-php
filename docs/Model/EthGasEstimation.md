@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **gas_price** | **string** | Gas price in wei. |
 **estimations** | [**\Tatum\Model\EthGasEstimationDetails**](EthGasEstimationDetails.md) |  |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

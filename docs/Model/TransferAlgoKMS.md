@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **payment_id** | **string** | The identifier of the Algo transfer that is shown on the virtual account for the created transaction | [optional]
 **sender_note** | **string** | The note for the recipient; must not contain spaces | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

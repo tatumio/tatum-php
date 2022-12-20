@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **authority_private_key** | **string** | The private key used for signing transactions as authority; required if &lt;code&gt;requiresSignOff&lt;/code&gt; is set to \&quot;true\&quot; for the marketplace | [optional]
 **from_private_key** | **string** | The private key of the buyer |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

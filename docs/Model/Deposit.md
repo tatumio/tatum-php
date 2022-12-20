@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **block_hash** | **string** | Hash of the block where this transaction was in. | [optional]
 **from** | **string** | Blockchain address. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

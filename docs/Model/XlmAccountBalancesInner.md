@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **asset_code** | **string** | The code for this asset. | [optional]
 **asset_issuer** | **string** | The Stellar address of this asset’s issuer. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

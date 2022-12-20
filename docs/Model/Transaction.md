@@ -22,4 +22,4 @@ Name | Type | Description | Notes
 **address** | **string** | For operationType DEPOSIT it represents address, on which was deposit credited for the account. | [optional]
 **tx_id** | **string** | For operationType DEPOSIT, BLOCKCHAIN_TRANSACTION it represents transaction id, for which deposit occured. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

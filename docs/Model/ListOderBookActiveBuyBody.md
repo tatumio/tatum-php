@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **created** | [**\Tatum\Model\TransactionFilterAmountInner[]**](TransactionFilterAmountInner.md) | Created date of the trade. AND is used between filter options. | [optional]
 **sort** | **string[]** | Sorts the result by selected property. The priority of the items is determined by order of the sort properties in array. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

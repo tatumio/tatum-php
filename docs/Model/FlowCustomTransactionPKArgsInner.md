@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **type** | **string** | Type of the argument |
 **sub_type** | **string** | Type of the argument | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **from_secret** | **string** | Secret for account. Secret, or signature Id must be present. |
 **fee** | **string** | Fee to be paid, in XRP. If omitted, current fee will be calculated. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

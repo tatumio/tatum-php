@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **attr** | **string** | Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr must be used. | [optional]
 **xpub** | **string** | Extended public key (xpub) of the wallet associated with the accounts. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

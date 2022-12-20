@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **customer_country** | **string** | Country customer has to be compliant with. If not set, it will not be updated. ISO-3166-1. | [optional]
 **provider_country** | **string** | Country service provider has to be compliant with. If not set, it will not be updated. ISO-3166-1 | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

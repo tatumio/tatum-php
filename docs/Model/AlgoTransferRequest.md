@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | The identifier of the secret of the Algorand wallet (account) in the signing application. Secret, or signature Id must be present. |
 **index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

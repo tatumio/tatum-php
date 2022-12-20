@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **signature_id** | **string** | Signature hash of the mnemonic, which will be used to sign transactions locally. All signature Ids should be present, which might be used to sign transaction. |
 **from_address** | **string** | Blockchain address to send from |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

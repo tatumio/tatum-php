@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **shard_blocks** | [**\Tatum\Model\EgldShardBlock[]**](EgldShardBlock.md) | Array of shard blocks | [optional]
 **transactions** | [**\Tatum\Model\EgldTx[]**](EgldTx.md) | Array of transactions. | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **upgrade_state** | **object** | upgrade state | [optional]
 **upgrade_vote** | **object** | upgrade vote | [optional]
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)

@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **mnemonic** | **string** | Mnemonic to generate private key for the deploy account of TRC, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both. |
 **index** | **int** | derivation index of address to pay for deployment of TRC |
 
-[[Back to API list]](../../README.md#api-endpoints)
+[[Back to Index]](../index.md)
