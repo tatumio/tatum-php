@@ -1,5 +1,5 @@
-remote_theme: just-the-docs/just-the-docs-template
+remote_theme: zendesk/jekyll-theme-zendesk-garden@main
+plugins:
+- jekyll-remote-theme
 title: Tatum - PHP SDK
 description: PHP SDK for Web3 by Tatum
-plugins:
-  - jekyll-default-layout
