@@ -1,6 +1,5 @@
 {
     "name": "tatumio/tatum-php",
-    "version": "2.0.1",
     "type": "library",
     "description": "Tatum offers a flexible framework to build, run, and scale blockchain apps fast with PHP.",
     "keywords": [
