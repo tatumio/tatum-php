@@ -52,7 +52,7 @@ class Config {
      * 
      * @var string
      */
-    protected $_userAgent = 'Tatum_SDK_PHP/2.0.0';
+    protected $_userAgent = 'Tatum_SDK_PHP/2.0.1';
 
     /**
      * Debug switch (default set to false)
@@ -234,7 +234,7 @@ class Config {
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 3.17.1' . PHP_EOL;
-        $report .= '    SDK Package Version: 2.0.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 2.0.1' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . $this->getTempFolderPath() . PHP_EOL;
 
         return $report;
