@@ -1,5 +1,7 @@
 # Tatum - PHP SDK
 
+[![Packagist](https://img.shields.io/packagist/v/tatumio/tatum-php.svg?style=flat)](https://packagist.org/packages/tatumio/tatum-php)
+
 ## Table of Contents
 - [Welcome!](#welcome)
   - [What is Tatum?](#what-is-tatum)
