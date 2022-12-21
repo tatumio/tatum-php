@@ -1,5 +1,5 @@
 <?php
-define('TATUM', '2.0.1');
+define('TATUM', '2.0.0');
 
 /**
  * Autoloader
