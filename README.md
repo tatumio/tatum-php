@@ -37,7 +37,7 @@ If you're having doubts, you can use the provided `autoload.php` file.
 You can also install the latest version of `Tatum PHP SDK` by issuing the following command:
 
 ```
-composer require tatumio/tatum-php:dev-master
+composer require tatumio/tatum-php
 ```
 
 This SDK has no external dependencies in production. This means you can use this library in any PHP project even when you don't have access to Composer.
