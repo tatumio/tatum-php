@@ -4,9 +4,10 @@
     "type": "library",
     "description": "Tatum offers a flexible framework to build, run, and scale blockchain apps fast with PHP.",
     "keywords": [
-        "web3", "openapi", "php", "sdk", "tatum", "tatum.io",
-        "blockchain", "bitcoin", "bitcoin-cash", "litecoin",
-        "stellar", "xrp", "ethereum", "ETH", "tron", "nft"
+        "web3", "openapi", "php", "sdk", "tatum", "tatum.io", "kcs", "klaytn", "polygon", "vechain", "xdc",
+        "blockchain", "bitcoin", "bitcoin-cash", "litecoin", "dogecoin", "bsc", "celo", "harmony", "harmony.one",
+        "stellar", "xrp", "ethereum", "ETH", "tron", "nft", "generate-wallet", "hd-wallet", "sign", "transaction",
+        "crypto"
     ],
     "homepage": "https://tatum.io/",
     "license": "MIT",
@@ -28,7 +29,6 @@
     },
     "require": {
         "php": ">=7.3",
-        "ext-dom": "*",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-gmp": "*",
@@ -36,8 +36,8 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.1",
-        "phpspec/prophecy-phpunit": "^2.0.1"
+        "ext-dom": "*",
+        "phpunit/phpunit": "^9.1"
     },
     "autoload": {
         "psr-4": { "Tatum\\" : "lib/" }

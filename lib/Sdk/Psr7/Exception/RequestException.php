@@ -24,7 +24,7 @@ class RequestException extends RuntimeException {
      *
      * @var Response
      */
-    protected Response $_response;
+    protected $_response;
 
     /**
      * Request exception
@@ -32,7 +32,7 @@ class RequestException extends RuntimeException {
      * @param Response $response     Response
      * @param string   $errorMessage (optional) Error message
      */
-    public function __construct(Response $response, $errorMessage = "") {
+    public function __construct($response, $errorMessage = "") {
         parent::__construct(
             is_string($errorMessage) && strlen($errorMessage) ? $errorMessage : $response->getReasonPhrase(),
             $response->getStatusCode()
@@ -46,7 +46,7 @@ class RequestException extends RuntimeException {
      *
      * @return Response
      */
-    public function getResponse(): Response {
+    public function getResponse() {
         return $this->_response;
     }
 }

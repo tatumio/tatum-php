@@ -101,7 +101,7 @@ try {
 
 ## Documentation
 
-Learn more about [available methods](https://tatumio.github.io/tatum-php).
+Learn more about [available methods](./docs/index.md).
 
 ## Tests
 

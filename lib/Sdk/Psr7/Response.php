@@ -97,8 +97,6 @@ class Response implements ResponseInterface {
         string $version = "1.1",
         string $reason = null
     ) {
-        $this->assertStatusCodeRange($status);
-
         $this->statusCode = $status;
 
         if ($body !== "" && $body !== null) {

@@ -23,20 +23,24 @@ use Tatum\Model\ModelInterface;
 class ApiException extends \Exception {
     /**
      * The HTTP body of the server response either as Json or string.
+     *
+	 * @var \stdClass|string|null
      */
-    protected \stdClass|string|null $responseBody;
+    protected $responseBody;
 
     /**
      * The HTTP header of the server response.
      *
      * @var string[][]
      */
-    protected array $responseHeaders;
+    protected $responseHeaders;
 
     /**
      * The deserialized response object
+     *
+     * @var \Tatum\Model\ModelInterface|string|null
      */
-    protected ModelInterface|string|null $responseObject = null;
+    protected $responseObject = null;
 
     /**
      * Constructor
@@ -46,13 +50,7 @@ class ApiException extends \Exception {
      * @param string[][]            $responseHeaders HTTP response header
      * @param \stdClass|string|null $responseBody    HTTP decoded body of the server response either as \stdClass or string
      */
-    public function __construct(
-        string $message = "",
-        int $code = 0,
-        array $responseHeaders = [],
-        string|\stdClass $responseBody = null
-    ) {
-        // @TODO should this allow strings so it can accept weird MS codes like 404.1?
+    public function __construct(string $message = "", int $code = 0, array $responseHeaders = [], $responseBody = null) {
         parent::__construct($message, $code);
         $this->responseHeaders = $responseHeaders;
         $this->responseBody = $responseBody;
@@ -63,7 +61,7 @@ class ApiException extends \Exception {
      *
      * @return array<string, string[]> HTTP response header
      */
-    public function getResponseHeaders(): array {
+    public function getResponseHeaders() {
         return $this->responseHeaders;
     }
 
@@ -72,7 +70,7 @@ class ApiException extends \Exception {
      *
      * @return \stdClass|string|null HTTP body of the server response either as \stdClass or string
      */
-    public function getResponseBody(): \stdClass|string|null {
+    public function getResponseBody() {
         return $this->responseBody;
     }
 
@@ -80,10 +78,9 @@ class ApiException extends \Exception {
      * Sets the deserialized response object (during deserialization)
      *
      * @param \Tatum\Model\ModelInterface|string $obj Deserialized response object
-     *
      * @return void
      */
-    public function setResponseObject(ModelInterface|string $obj): void {
+    public function setResponseObject($obj) {
         $this->responseObject = $obj;
     }
 
@@ -92,7 +89,7 @@ class ApiException extends \Exception {
      *
      * @return \Tatum\Model\ModelInterface|string|null the deserialized response object
      */
-    public function getResponseObject(): ModelInterface|string|null {
+    public function getResponseObject() {
         return $this->responseObject;
     }
 }
