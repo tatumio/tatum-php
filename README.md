@@ -34,6 +34,12 @@ review the [online documentation](https://docs.tatum.io/).
 To install the Tatum SDK, simply clone this repository and load it with a [PSR-4](https://www.php-fig.org/psr/psr-4/) autoloader.
 If you're having doubts, you can use the provided `autoload.php` file.
 
+You can also install the `Tatum PHP SDK` by issuing the following command:
+
+```
+composer require tatumio/tatum-php:dev-master
+```
+
 This SDK has no external dependencies in production. This means you can use this library in any PHP project even when you don't have access to Composer.
 
 ### Requirements
