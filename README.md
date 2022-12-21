@@ -1,4 +1,4 @@
-# Tatum - PHP SDK
+# tatumio/tatum-php
 
 [![Source Code][badge-source]][source]
 [![Latest Version][badge-release]][packagist]
