@@ -2178,9 +2178,9 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Set the contract address of an ERC-20 or ERC-20-equivalent token
+     * Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
      *
-     * @param string $address Contract address
+     * @param string $address Contract address or token ID
      * @param string $name Symbol name.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws InvalidArgumentException

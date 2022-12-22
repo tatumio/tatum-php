@@ -38,7 +38,7 @@ Method | HTTP request | Description
 [**registerErc20Token()**](#registererc20token) | **POST** /v3/offchain/token/{chain} | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 [**solTransfer()**](#soltransfer) | **POST** /v3/offchain/solana/transfer | Send SOL from a virtual account to the blockchain
 [**storeCeloErc20Address()**](#storeceloerc20address) | **POST** /v3/offchain/celo/erc20/{name}/{address} | Set the contract address of a Celo ERC-20-equivalent token
-[**storeTokenAddress()**](#storetokenaddress) | **POST** /v3/offchain/token/{name}/{address} | Set the contract address of an ERC-20 or ERC-20-equivalent token
+[**storeTokenAddress()**](#storetokenaddress) | **POST** /v3/offchain/token/{name}/{address} | Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
 [**storeTrcAddress()**](#storetrcaddress) | **POST** /v3/offchain/tron/trc/{name}/{address} | Set the contract address of a TRC-10 or TRC-20 token
 [**tronDeployTrc()**](#trondeploytrc) | **POST** /v3/offchain/tron/trc/deploy | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
 [**tronTransferOffchain()**](#trontransferoffchain) | **POST** /v3/offchain/tron/transfer | Send TRON from a virtual account to the blockchain
@@ -2086,7 +2086,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Contract address |
+ **$address** | **string**| Contract address or token ID |
  **$name** | **string**| Symbol name. |
 
 ### Return type
@@ -2095,9 +2095,9 @@ void (empty response body)
 
 ### Description
 
-Set the contract address of an ERC-20 or ERC-20-equivalent token
+Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
 
-<h4>2 credits per API call.</h4><br/> <p>Set the contract address of an ERC-20 or ERC-20-equivalent token (for example, BEP-20, HRM-20, and so on) to be able to communicate with the smart contract. <br/> <br/> <p>After creating and deploying an ERC-20 or ERC-20-equivalent token to the blockchain, the smart contract address is generated and must be set within Tatum. If the address is not set, the Tatum platform will not be able to detect incoming deposits of the tokens and transfer the tokens from virtual accounts to blockchain addresses.</p> <p><b>NOTE:</b> For Algorand, the contract address should be the token asset ID (AssetID), for example, <code>55351976</code>.</p>
+<h4>2 credits per API call.</h4><br/> <p>Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token (for example, BEP-20, HRM-20, and so on) to be able to communicate with the smart contract. <br/> <br/> <p>After creating and deploying an ERC-20, ERC-20-equivalent or TRC-10 token to the blockchain, the smart contract address is generated and must be set within Tatum. If the address is not set, the Tatum platform will not be able to detect incoming deposits of the tokens and transfer the tokens from virtual accounts to blockchain addresses.</p> <p><b>NOTE:</b> For Algorand, the contract address should be the token asset ID (AssetID), for example, <code>55351976</code>.</p> <p><b>NOTE:</b> For Tron, the contract address should be the token ID (tokenId), for example, <code>1234567</code>.</p>
 
 ### Example
 
@@ -2110,7 +2110,7 @@ require_once(__DIR__ . '/autoload.php');
 // @see https://apidoc.tatum.io/#section/Authentication
 $sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
 
-// Contract address
+// Contract address or token ID
 $address = '0x687422eEA2cB73B5d3e242bA5456b782919AFc85';
 
 // Symbol name.
