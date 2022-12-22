@@ -103,7 +103,7 @@ try {
 
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoin()->btcGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoin()->btcGenerateWallet(): " . $exc->getMessage() . PHP_EOL;

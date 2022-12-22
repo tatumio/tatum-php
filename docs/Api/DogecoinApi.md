@@ -68,7 +68,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -133,7 +133,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -192,7 +192,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -252,7 +252,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -312,7 +312,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -366,7 +366,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
@@ -426,7 +426,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGetBlockHash(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGetBlockHash(): " . $exc->getMessage() . PHP_EOL;
@@ -480,7 +480,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGetMempool(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGetMempool(): " . $exc->getMessage() . PHP_EOL;
@@ -540,7 +540,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGetRawTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -605,7 +605,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeGetUTXO(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeGetUTXO(): " . $exc->getMessage() . PHP_EOL;
@@ -664,7 +664,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeRpcDriver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeRpcDriver(): " . $exc->getMessage() . PHP_EOL;
@@ -723,7 +723,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling dogecoin()->dogeTransferBlockchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling dogecoin()->dogeTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;

@@ -67,7 +67,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -132,7 +132,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -191,7 +191,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -251,7 +251,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -311,7 +311,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGetAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGetAccount(): " . $exc->getMessage() . PHP_EOL;
@@ -371,7 +371,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -425,7 +425,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
@@ -485,7 +485,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGetRawTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -555,7 +555,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGetTxByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -615,7 +615,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaGetUTXOByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaGetUTXOByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -674,7 +674,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling cardano()->adaTransferBlockchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling cardano()->adaTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;

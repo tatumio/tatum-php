@@ -61,7 +61,7 @@ try {
         ->activateCustomer($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling customer()->activateCustomer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling customer()->activateCustomer(): " . $exc->getMessage() . PHP_EOL;
@@ -118,7 +118,7 @@ try {
         ->deactivateCustomer($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling customer()->deactivateCustomer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling customer()->deactivateCustomer(): " . $exc->getMessage() . PHP_EOL;
@@ -175,7 +175,7 @@ try {
         ->disableCustomer($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling customer()->disableCustomer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling customer()->disableCustomer(): " . $exc->getMessage() . PHP_EOL;
@@ -232,7 +232,7 @@ try {
         ->enableCustomer($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling customer()->enableCustomer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling customer()->enableCustomer(): " . $exc->getMessage() . PHP_EOL;
@@ -297,7 +297,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling customer()->findAllCustomers(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling customer()->findAllCustomers(): " . $exc->getMessage() . PHP_EOL;
@@ -357,7 +357,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling customer()->getCustomerByExternalOrInternalId(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling customer()->getCustomerByExternalOrInternalId(): " . $exc->getMessage() . PHP_EOL;
@@ -421,7 +421,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling customer()->updateCustomer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling customer()->updateCustomer(): " . $exc->getMessage() . PHP_EOL;

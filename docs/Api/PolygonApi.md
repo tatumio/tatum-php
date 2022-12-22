@@ -69,7 +69,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
@@ -128,7 +128,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonBlockchainTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -187,7 +187,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -252,7 +252,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -311,7 +311,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -371,7 +371,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -431,7 +431,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGetBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGetBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -491,7 +491,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -545,7 +545,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGetCurrentBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -605,7 +605,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -690,7 +690,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -750,7 +750,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonGetTransactionCount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
@@ -814,7 +814,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling polygon()->polygonWeb3Driver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling polygon()->polygonWeb3Driver(): " . $exc->getMessage() . PHP_EOL;

@@ -67,7 +67,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->approveNftAuctionSpending(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->approveNftAuctionSpending(): " . $exc->getMessage() . PHP_EOL;
@@ -126,7 +126,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->bidOnAuction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->bidOnAuction(): " . $exc->getMessage() . PHP_EOL;
@@ -185,7 +185,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->cancelAuction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->cancelAuction(): " . $exc->getMessage() . PHP_EOL;
@@ -244,7 +244,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->createAuction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->createAuction(): " . $exc->getMessage() . PHP_EOL;
@@ -303,7 +303,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->generateAuction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->generateAuction(): " . $exc->getMessage() . PHP_EOL;
@@ -373,7 +373,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->getAuction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->getAuction(): " . $exc->getMessage() . PHP_EOL;
@@ -438,7 +438,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->getAuctionFee(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->getAuctionFee(): " . $exc->getMessage() . PHP_EOL;
@@ -503,7 +503,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->getAuctionFeeRecipient(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->getAuctionFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
@@ -562,7 +562,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->settleAuction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->settleAuction(): " . $exc->getMessage() . PHP_EOL;
@@ -621,7 +621,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->updateAuctionFee(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->updateAuctionFee(): " . $exc->getMessage() . PHP_EOL;
@@ -680,7 +680,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling auction()->updateAuctionFeeRecipient(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling auction()->updateAuctionFeeRecipient(): " . $exc->getMessage() . PHP_EOL;

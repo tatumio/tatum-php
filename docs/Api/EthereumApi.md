@@ -75,7 +75,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
@@ -139,7 +139,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethBlockchainTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -203,7 +203,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -273,7 +273,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -337,7 +337,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -402,7 +402,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -467,7 +467,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGetBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGetBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -532,7 +532,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -592,7 +592,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGetCurrentBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -667,7 +667,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGetInternalTransactionByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGetInternalTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -732,7 +732,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -822,7 +822,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -887,7 +887,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethGetTransactionCount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
@@ -956,7 +956,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling ethereum()->ethWeb3Driver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling ethereum()->ethWeb3Driver(): " . $exc->getMessage() . PHP_EOL;

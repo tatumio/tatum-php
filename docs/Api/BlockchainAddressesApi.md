@@ -73,7 +73,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainAddresses()->addressExists(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainAddresses()->addressExists(): " . $exc->getMessage() . PHP_EOL;
@@ -143,7 +143,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainAddresses()->assignAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainAddresses()->assignAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -208,7 +208,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainAddresses()->generateDepositAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainAddresses()->generateDepositAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -267,7 +267,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainAddresses()->generateDepositAddressesBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainAddresses()->generateDepositAddressesBatch(): " . $exc->getMessage() . PHP_EOL;
@@ -327,7 +327,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainAddresses()->getAllDepositAddresses(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainAddresses()->getAllDepositAddresses(): " . $exc->getMessage() . PHP_EOL;
@@ -394,7 +394,7 @@ try {
         ->removeAddress($id, $address, $index);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainAddresses()->removeAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainAddresses()->removeAddress(): " . $exc->getMessage() . PHP_EOL;

@@ -67,7 +67,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetBlockchainTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -126,7 +126,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -191,7 +191,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -250,7 +250,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -310,7 +310,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -370,7 +370,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGetBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGetBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -430,7 +430,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -484,7 +484,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGetCurrentBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -544,7 +544,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGetEnergy(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGetEnergy(): " . $exc->getMessage() . PHP_EOL;
@@ -604,7 +604,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -664,7 +664,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling veChain()->vetGetTransactionReceipt(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling veChain()->vetGetTransactionReceipt(): " . $exc->getMessage() . PHP_EOL;

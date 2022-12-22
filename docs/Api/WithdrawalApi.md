@@ -61,7 +61,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling withdrawal()->broadcastBlockchainTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling withdrawal()->broadcastBlockchainTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -123,7 +123,7 @@ try {
         ->cancelInProgressWithdrawal($id, $revert);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling withdrawal()->cancelInProgressWithdrawal(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling withdrawal()->cancelInProgressWithdrawal(): " . $exc->getMessage() . PHP_EOL;
@@ -185,7 +185,7 @@ try {
         ->completeWithdrawal($id, $tx_id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling withdrawal()->completeWithdrawal(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling withdrawal()->completeWithdrawal(): " . $exc->getMessage() . PHP_EOL;
@@ -260,7 +260,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling withdrawal()->getWithdrawals(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling withdrawal()->getWithdrawals(): " . $exc->getMessage() . PHP_EOL;
@@ -319,7 +319,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling withdrawal()->storeWithdrawal(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling withdrawal()->storeWithdrawal(): " . $exc->getMessage() . PHP_EOL;

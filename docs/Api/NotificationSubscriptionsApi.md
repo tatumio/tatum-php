@@ -70,7 +70,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->createSubscription(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->createSubscription(): " . $exc->getMessage() . PHP_EOL;
@@ -127,7 +127,7 @@ try {
         ->deleteSubscription($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->deleteSubscription(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->deleteSubscription(): " . $exc->getMessage() . PHP_EOL;
@@ -178,7 +178,7 @@ try {
         ->disableWebHookHmac();
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->disableWebHookHmac(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->disableWebHookHmac(): " . $exc->getMessage() . PHP_EOL;
@@ -234,7 +234,7 @@ try {
         ->enableWebHookHmac($hmac_web_hook);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->enableWebHookHmac(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->enableWebHookHmac(): " . $exc->getMessage() . PHP_EOL;
@@ -309,7 +309,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->getAllWebhooks(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->getAllWebhooks(): " . $exc->getMessage() . PHP_EOL;
@@ -384,7 +384,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->getAllWebhooksCount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->getAllWebhooksCount(): " . $exc->getMessage() . PHP_EOL;
@@ -444,7 +444,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->getSubscriptionReport(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->getSubscriptionReport(): " . $exc->getMessage() . PHP_EOL;
@@ -514,7 +514,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->getSubscriptions(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->getSubscriptions(): " . $exc->getMessage() . PHP_EOL;
@@ -584,7 +584,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling notificationSubscriptions()->getSubscriptionsCount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling notificationSubscriptions()->getSubscriptionsCount(): " . $exc->getMessage() . PHP_EOL;

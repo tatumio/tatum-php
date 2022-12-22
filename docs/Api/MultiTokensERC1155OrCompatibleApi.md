@@ -76,7 +76,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->addMultiTokenMinter(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->addMultiTokenMinter(): " . $exc->getMessage() . PHP_EOL;
@@ -140,7 +140,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->burnMultiToken(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->burnMultiToken(): " . $exc->getMessage() . PHP_EOL;
@@ -204,7 +204,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->burnMultiTokenBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->burnMultiTokenBatch(): " . $exc->getMessage() . PHP_EOL;
@@ -268,7 +268,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->deployMultiToken(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->deployMultiToken(): " . $exc->getMessage() . PHP_EOL;
@@ -332,7 +332,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->mintMultiToken(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->mintMultiToken(): " . $exc->getMessage() . PHP_EOL;
@@ -396,7 +396,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->mintMultiTokenBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->mintMultiTokenBatch(): " . $exc->getMessage() . PHP_EOL;
@@ -466,7 +466,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -546,7 +546,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -626,7 +626,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): " . $exc->getMessage() . PHP_EOL;
@@ -696,7 +696,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -771,7 +771,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetMetadata(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetMetadata(): " . $exc->getMessage() . PHP_EOL;
@@ -841,7 +841,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -931,7 +931,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -995,7 +995,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->transferMultiToken(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->transferMultiToken(): " . $exc->getMessage() . PHP_EOL;
@@ -1059,7 +1059,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): " . $exc->getMessage() . PHP_EOL;

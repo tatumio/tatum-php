@@ -68,7 +68,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->chartRequest(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->chartRequest(): " . $exc->getMessage() . PHP_EOL;
@@ -125,7 +125,7 @@ try {
         ->deleteAccountTrades($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->deleteAccountTrades(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->deleteAccountTrades(): " . $exc->getMessage() . PHP_EOL;
@@ -182,7 +182,7 @@ try {
         ->deleteTrade($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->deleteTrade(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->deleteTrade(): " . $exc->getMessage() . PHP_EOL;
@@ -272,7 +272,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getBuyTrades(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getBuyTrades(): " . $exc->getMessage() . PHP_EOL;
@@ -331,7 +331,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getBuyTradesBody(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getBuyTradesBody(): " . $exc->getMessage() . PHP_EOL;
@@ -416,7 +416,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getHistoricalTrades(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getHistoricalTrades(): " . $exc->getMessage() . PHP_EOL;
@@ -475,7 +475,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getHistoricalTradesBody(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getHistoricalTradesBody(): " . $exc->getMessage() . PHP_EOL;
@@ -534,7 +534,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getMatchedTrades(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getMatchedTrades(): " . $exc->getMessage() . PHP_EOL;
@@ -624,7 +624,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getSellTrades(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getSellTrades(): " . $exc->getMessage() . PHP_EOL;
@@ -683,7 +683,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getSellTradesBody(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getSellTradesBody(): " . $exc->getMessage() . PHP_EOL;
@@ -743,7 +743,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->getTradeById(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->getTradeById(): " . $exc->getMessage() . PHP_EOL;
@@ -802,7 +802,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling orderBook()->storeTrade(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling orderBook()->storeTrade(): " . $exc->getMessage() . PHP_EOL;

@@ -68,7 +68,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
@@ -127,7 +127,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscBlockchainTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -186,7 +186,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -251,7 +251,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -310,7 +310,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -370,7 +370,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -430,7 +430,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGetBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGetBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -490,7 +490,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -544,7 +544,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGetCurrentBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -604,7 +604,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -664,7 +664,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscGetTransactionCount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
@@ -728,7 +728,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBSmartChain()->bscWeb3Driver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBSmartChain()->bscWeb3Driver(): " . $exc->getMessage() . PHP_EOL;

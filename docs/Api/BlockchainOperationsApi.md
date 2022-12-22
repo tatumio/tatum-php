@@ -100,7 +100,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->adaTransferOffchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->adaTransferOffchain(): " . $exc->getMessage() . PHP_EOL;
@@ -159,7 +159,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->algoDeployErc20Ledger(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->algoDeployErc20Ledger(): " . $exc->getMessage() . PHP_EOL;
@@ -218,7 +218,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->algoTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->algoTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -277,7 +277,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->bchTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->bchTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -333,7 +333,7 @@ try {
         ->bnbAssetOffchain($create_bnb_asset);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->bnbAssetOffchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->bnbAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
@@ -392,7 +392,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->bnbTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->bnbTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -451,7 +451,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->bscDeployBep20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->bscDeployBep20(): " . $exc->getMessage() . PHP_EOL;
@@ -510,7 +510,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->bscOrBepTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->bscOrBepTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -569,7 +569,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->btcTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->btcTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -628,7 +628,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->celoDeployErc20Ledger(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->celoDeployErc20Ledger(): " . $exc->getMessage() . PHP_EOL;
@@ -687,7 +687,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->celoOrErc20Transfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->celoOrErc20Transfer(): " . $exc->getMessage() . PHP_EOL;
@@ -746,7 +746,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->createBep20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->createBep20(): " . $exc->getMessage() . PHP_EOL;
@@ -805,7 +805,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->createCeloErc20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->createCeloErc20(): " . $exc->getMessage() . PHP_EOL;
@@ -864,7 +864,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->createErc20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->createErc20(): " . $exc->getMessage() . PHP_EOL;
@@ -923,7 +923,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->createHrm20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->createHrm20(): " . $exc->getMessage() . PHP_EOL;
@@ -982,7 +982,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->createTrc(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->createTrc(): " . $exc->getMessage() . PHP_EOL;
@@ -1041,7 +1041,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->createXdc20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->createXdc20(): " . $exc->getMessage() . PHP_EOL;
@@ -1100,7 +1100,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->dogeTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->dogeTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1159,7 +1159,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->egldTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->egldTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1218,7 +1218,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->ethDeployErc20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->ethDeployErc20(): " . $exc->getMessage() . PHP_EOL;
@@ -1277,7 +1277,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->ethTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->ethTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1336,7 +1336,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->ethTransferErc20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->ethTransferErc20(): " . $exc->getMessage() . PHP_EOL;
@@ -1395,7 +1395,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->flowTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->flowTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1454,7 +1454,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->kcsDeployErc20Ledger(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->kcsDeployErc20Ledger(): " . $exc->getMessage() . PHP_EOL;
@@ -1513,7 +1513,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->kcsTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->kcsTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1572,7 +1572,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->klayDeployErc20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->klayDeployErc20(): " . $exc->getMessage() . PHP_EOL;
@@ -1631,7 +1631,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->klayTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->klayTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1690,7 +1690,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->ltcTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->ltcTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1754,7 +1754,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->oneDeployHrm20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->oneDeployHrm20(): " . $exc->getMessage() . PHP_EOL;
@@ -1818,7 +1818,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->oneTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->oneTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1877,7 +1877,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->polygonTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->polygonTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -1941,7 +1941,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->registerErc20Token(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->registerErc20Token(): " . $exc->getMessage() . PHP_EOL;
@@ -2000,7 +2000,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->solTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->solTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -2062,7 +2062,7 @@ try {
         ->storeCeloErc20Address($address, $name);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->storeCeloErc20Address(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->storeCeloErc20Address(): " . $exc->getMessage() . PHP_EOL;
@@ -2124,7 +2124,7 @@ try {
         ->storeTokenAddress($address, $name);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->storeTokenAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->storeTokenAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -2186,7 +2186,7 @@ try {
         ->storeTrcAddress($address, $name);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->storeTrcAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->storeTrcAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -2245,7 +2245,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->tronDeployTrc(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->tronDeployTrc(): " . $exc->getMessage() . PHP_EOL;
@@ -2304,7 +2304,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->tronTransferOffchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->tronTransferOffchain(): " . $exc->getMessage() . PHP_EOL;
@@ -2363,7 +2363,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->xdcDeployErc20(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->xdcDeployErc20(): " . $exc->getMessage() . PHP_EOL;
@@ -2422,7 +2422,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->xdcTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->xdcTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -2478,7 +2478,7 @@ try {
         ->xlmAssetOffchain($create_xlm_asset);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->xlmAssetOffchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->xlmAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
@@ -2537,7 +2537,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->xlmTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->xlmTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -2593,7 +2593,7 @@ try {
         ->xrpAssetOffchain($create_xrp_asset);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->xrpAssetOffchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->xrpAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
@@ -2652,7 +2652,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainOperations()->xrpTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainOperations()->xrpTransfer(): " . $exc->getMessage() . PHP_EOL;

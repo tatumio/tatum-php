@@ -68,7 +68,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
@@ -127,7 +127,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnBlockchainTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -186,7 +186,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -251,7 +251,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -310,7 +310,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -370,7 +370,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -430,7 +430,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGetBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGetBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -490,7 +490,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -544,7 +544,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGetCurrentBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -604,7 +604,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -664,7 +664,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnGetTransactionCount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
@@ -728,7 +728,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling klaytn()->klaytnWeb3Driver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling klaytn()->klaytnWeb3Driver(): " . $exc->getMessage() . PHP_EOL;

@@ -67,7 +67,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -127,7 +127,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmGetAccountInfo(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmGetAccountInfo(): " . $exc->getMessage() . PHP_EOL;
@@ -192,7 +192,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmGetAccountTx(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmGetAccountTx(): " . $exc->getMessage() . PHP_EOL;
@@ -246,7 +246,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmGetFee(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmGetFee(): " . $exc->getMessage() . PHP_EOL;
@@ -300,7 +300,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmGetLastClosedLedger(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmGetLastClosedLedger(): " . $exc->getMessage() . PHP_EOL;
@@ -360,7 +360,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmGetLedger(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmGetLedger(): " . $exc->getMessage() . PHP_EOL;
@@ -420,7 +420,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmGetLedgerTx(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmGetLedgerTx(): " . $exc->getMessage() . PHP_EOL;
@@ -480,7 +480,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -539,7 +539,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmTransferBlockchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
@@ -598,7 +598,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmTrustLineBlockchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmTrustLineBlockchain(): " . $exc->getMessage() . PHP_EOL;
@@ -652,7 +652,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling stellar()->xlmWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling stellar()->xlmWallet(): " . $exc->getMessage() . PHP_EOL;

@@ -89,7 +89,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nodeRPC()->nodeJsonPostRpcDriver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nodeRPC()->nodeJsonPostRpcDriver(): " . $exc->getMessage() . PHP_EOL;
@@ -164,7 +164,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nodeRPC()->nodeJsonRpcGetDriver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nodeRPC()->nodeJsonRpcGetDriver(): " . $exc->getMessage() . PHP_EOL;
@@ -243,7 +243,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nodeRPC()->nodeJsonRpcPutDriver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nodeRPC()->nodeJsonRpcPutDriver(): " . $exc->getMessage() . PHP_EOL;

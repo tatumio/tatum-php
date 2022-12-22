@@ -64,7 +64,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbBlockchainTransfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
@@ -123,7 +123,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -177,7 +177,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -237,7 +237,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbGetAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbGetAccount(): " . $exc->getMessage() . PHP_EOL;
@@ -297,7 +297,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -351,7 +351,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbGetCurrentBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -411,7 +411,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbGetTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbGetTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -501,7 +501,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bNBBeaconChain()->bnbGetTxByAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bNBBeaconChain()->bnbGetTxByAccount(): " . $exc->getMessage() . PHP_EOL;

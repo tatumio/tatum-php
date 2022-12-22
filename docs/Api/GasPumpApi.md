@@ -66,7 +66,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->activateGasPumpAddresses(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->activateGasPumpAddresses(): " . $exc->getMessage() . PHP_EOL;
@@ -131,7 +131,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->activatedNotActivatedGasPumpAddresses(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->activatedNotActivatedGasPumpAddresses(): " . $exc->getMessage() . PHP_EOL;
@@ -190,7 +190,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->approveTransferCustodialWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->approveTransferCustodialWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -260,7 +260,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->gasPumpAddressesActivatedOrNot(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->gasPumpAddressesActivatedOrNot(): " . $exc->getMessage() . PHP_EOL;
@@ -319,7 +319,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->generateCustodialWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->generateCustodialWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -383,7 +383,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->generateCustodialWalletBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->generateCustodialWalletBatch(): " . $exc->getMessage() . PHP_EOL;
@@ -442,7 +442,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->precalculateGasPumpAddresses(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->precalculateGasPumpAddresses(): " . $exc->getMessage() . PHP_EOL;
@@ -507,7 +507,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->sCGetCustodialAddresses(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->sCGetCustodialAddresses(): " . $exc->getMessage() . PHP_EOL;
@@ -566,7 +566,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->transferCustodialWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->transferCustodialWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -625,7 +625,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling gasPump()->transferCustodialWalletBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling gasPump()->transferCustodialWalletBatch(): " . $exc->getMessage() . PHP_EOL;

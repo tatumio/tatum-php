@@ -61,7 +61,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling virtualCurrency()->createCurrency(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling virtualCurrency()->createCurrency(): " . $exc->getMessage() . PHP_EOL;
@@ -120,7 +120,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling virtualCurrency()->getCurrency(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling virtualCurrency()->getCurrency(): " . $exc->getMessage() . PHP_EOL;
@@ -179,7 +179,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling virtualCurrency()->mintCurrency(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling virtualCurrency()->mintCurrency(): " . $exc->getMessage() . PHP_EOL;
@@ -238,7 +238,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling virtualCurrency()->revokeCurrency(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling virtualCurrency()->revokeCurrency(): " . $exc->getMessage() . PHP_EOL;
@@ -294,7 +294,7 @@ try {
         ->updateCurrency($virtual_currency_update);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling virtualCurrency()->updateCurrency(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling virtualCurrency()->updateCurrency(): " . $exc->getMessage() . PHP_EOL;

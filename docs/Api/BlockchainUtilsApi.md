@@ -64,7 +64,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainUtils()->getAuctionEstimatedTime(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainUtils()->getAuctionEstimatedTime(): " . $exc->getMessage() . PHP_EOL;
@@ -129,7 +129,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainUtils()->sCGetContractAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainUtils()->sCGetContractAddress(): " . $exc->getMessage() . PHP_EOL;

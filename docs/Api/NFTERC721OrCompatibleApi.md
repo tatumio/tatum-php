@@ -79,7 +79,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftAddMinter(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftAddMinter(): " . $exc->getMessage() . PHP_EOL;
@@ -143,7 +143,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftBurnErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftBurnErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -207,7 +207,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftDeployErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftDeployErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -282,7 +282,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetBalanceErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetBalanceErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -352,7 +352,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetContractAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetContractAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -432,7 +432,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetMetadataErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetMetadataErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -507,7 +507,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetProvenanceDataErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetProvenanceDataErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -582,7 +582,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetRoyaltyErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetRoyaltyErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -647,7 +647,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -722,7 +722,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -792,7 +792,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetTransactErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetTransactErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -882,7 +882,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -972,7 +972,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftGetTransactionByToken(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftGetTransactionByToken(): " . $exc->getMessage() . PHP_EOL;
@@ -1036,7 +1036,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftMintErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftMintErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -1100,7 +1100,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftMintMultipleErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftMintMultipleErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -1164,7 +1164,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftTransferErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftTransferErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -1228,7 +1228,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftUpdateCashbackErc721(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftUpdateCashbackErc721(): " . $exc->getMessage() . PHP_EOL;
@@ -1287,7 +1287,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling nFTERC721OrCompatible()->nftVerifyInCollection(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling nFTERC721OrCompatible()->nftVerifyInCollection(): " . $exc->getMessage() . PHP_EOL;

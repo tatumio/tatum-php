@@ -68,7 +68,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->bscEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->bscEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -127,7 +127,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->celoEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->celoEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -186,7 +186,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->egldEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->egldEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -245,7 +245,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->estimateFeeBlockchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->estimateFeeBlockchain(): " . $exc->getMessage() . PHP_EOL;
@@ -309,7 +309,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->ethEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->ethEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -373,7 +373,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->ethEstimateGasBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->ethEstimateGasBatch(): " . $exc->getMessage() . PHP_EOL;
@@ -433,7 +433,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->getBlockchainFee(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->getBlockchainFee(): " . $exc->getMessage() . PHP_EOL;
@@ -492,7 +492,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->kcsEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->kcsEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -551,7 +551,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->klaytnEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->klaytnEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -610,7 +610,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->polygonEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->polygonEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -669,7 +669,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->vetEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->vetEstimateGas(): " . $exc->getMessage() . PHP_EOL;
@@ -728,7 +728,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling blockchainFees()->xdcEstimateGas(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling blockchainFees()->xdcEstimateGas(): " . $exc->getMessage() . PHP_EOL;

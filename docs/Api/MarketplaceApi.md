@@ -70,7 +70,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->buyAssetOnMarketplace(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->buyAssetOnMarketplace(): " . $exc->getMessage() . PHP_EOL;
@@ -129,7 +129,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->cancelSellMarketplaceListing(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->cancelSellMarketplaceListing(): " . $exc->getMessage() . PHP_EOL;
@@ -188,7 +188,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->generateMarketplace(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->generateMarketplace(): " . $exc->getMessage() . PHP_EOL;
@@ -253,7 +253,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->getMarketplaceFee(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->getMarketplaceFee(): " . $exc->getMessage() . PHP_EOL;
@@ -318,7 +318,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->getMarketplaceFeeRecipient(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->getMarketplaceFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
@@ -383,7 +383,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->getMarketplaceInfo(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->getMarketplaceInfo(): " . $exc->getMessage() . PHP_EOL;
@@ -453,7 +453,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->getMarketplaceListing(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->getMarketplaceListing(): " . $exc->getMessage() . PHP_EOL;
@@ -523,7 +523,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->getMarketplaceListings(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->getMarketplaceListings(): " . $exc->getMessage() . PHP_EOL;
@@ -582,7 +582,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->sellAssetOnMarketplace(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->sellAssetOnMarketplace(): " . $exc->getMessage() . PHP_EOL;
@@ -641,7 +641,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->updateFee(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->updateFee(): " . $exc->getMessage() . PHP_EOL;
@@ -700,7 +700,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->updateFeeRecipient(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->updateFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
@@ -759,7 +759,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->updateMarketplace(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->updateMarketplace(): " . $exc->getMessage() . PHP_EOL;
@@ -818,7 +818,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->withdrawFeeFromMarketplace(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->withdrawFeeFromMarketplace(): " . $exc->getMessage() . PHP_EOL;
@@ -877,7 +877,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling marketplace()->withdrawTreasuryFromMarketplace(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling marketplace()->withdrawTreasuryFromMarketplace(): " . $exc->getMessage() . PHP_EOL;

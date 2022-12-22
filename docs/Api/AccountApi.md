@@ -72,7 +72,7 @@ try {
         ->activateAccount($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->activateAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->activateAccount(): " . $exc->getMessage() . PHP_EOL;
@@ -136,7 +136,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->blockAmount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->blockAmount(): " . $exc->getMessage() . PHP_EOL;
@@ -195,7 +195,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->createAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->createAccount(): " . $exc->getMessage() . PHP_EOL;
@@ -254,7 +254,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->createAccountBatch(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->createAccountBatch(): " . $exc->getMessage() . PHP_EOL;
@@ -311,7 +311,7 @@ try {
         ->deactivateAccount($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->deactivateAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->deactivateAccount(): " . $exc->getMessage() . PHP_EOL;
@@ -368,7 +368,7 @@ try {
         ->deleteAllBlockAmount($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->deleteAllBlockAmount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->deleteAllBlockAmount(): " . $exc->getMessage() . PHP_EOL;
@@ -425,7 +425,7 @@ try {
         ->deleteBlockAmount($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->deleteBlockAmount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->deleteBlockAmount(): " . $exc->getMessage() . PHP_EOL;
@@ -482,7 +482,7 @@ try {
         ->freezeAccount($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->freezeAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->freezeAccount(): " . $exc->getMessage() . PHP_EOL;
@@ -542,7 +542,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->getAccountBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->getAccountBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -602,7 +602,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->getAccountByAccountId(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->getAccountByAccountId(): " . $exc->getMessage() . PHP_EOL;
@@ -702,7 +702,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->getAccounts(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->getAccounts(): " . $exc->getMessage() . PHP_EOL;
@@ -777,7 +777,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->getAccountsByCustomerId(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->getAccountsByCustomerId(): " . $exc->getMessage() . PHP_EOL;
@@ -877,7 +877,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->getAccountsCount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->getAccountsCount(): " . $exc->getMessage() . PHP_EOL;
@@ -947,7 +947,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->getBlockAmount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->getBlockAmount(): " . $exc->getMessage() . PHP_EOL;
@@ -1007,7 +1007,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->getBlockAmountById(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->getBlockAmountById(): " . $exc->getMessage() . PHP_EOL;
@@ -1071,7 +1071,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->unblockAmountWithTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->unblockAmountWithTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -1128,7 +1128,7 @@ try {
         ->unfreezeAccount($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->unfreezeAccount(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->unfreezeAccount(): " . $exc->getMessage() . PHP_EOL;
@@ -1189,7 +1189,7 @@ try {
         ->updateAccountByAccountId($id, $update_account);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling account()->updateAccountByAccountId(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling account()->updateAccountByAccountId(): " . $exc->getMessage() . PHP_EOL;

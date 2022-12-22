@@ -61,7 +61,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling custodialManagedWallets()->custodialCreateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling custodialManagedWallets()->custodialCreateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -118,7 +118,7 @@ try {
         ->custodialDeleteWallet($id);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling custodialManagedWallets()->custodialDeleteWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling custodialManagedWallets()->custodialDeleteWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -183,7 +183,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling custodialManagedWallets()->custodialGetWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling custodialManagedWallets()->custodialGetWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -237,7 +237,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling custodialManagedWallets()->custodialGetWallets(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling custodialManagedWallets()->custodialGetWallets(): " . $exc->getMessage() . PHP_EOL;
@@ -296,7 +296,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling custodialManagedWallets()->custodialTransferManagedAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling custodialManagedWallets()->custodialTransferManagedAddress(): " . $exc->getMessage() . PHP_EOL;

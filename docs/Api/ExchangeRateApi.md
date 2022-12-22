@@ -63,7 +63,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling exchangeRate()->getExchangeRate(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling exchangeRate()->getExchangeRate(): " . $exc->getMessage() . PHP_EOL;

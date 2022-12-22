@@ -67,7 +67,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchBroadcast(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchBroadcast(): " . $exc->getMessage() . PHP_EOL;
@@ -132,7 +132,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGenerateAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -191,7 +191,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
@@ -251,7 +251,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGenerateWallet(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
@@ -311,7 +311,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGetBlock(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGetBlock(): " . $exc->getMessage() . PHP_EOL;
@@ -365,7 +365,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
@@ -425,7 +425,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGetBlockHash(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGetBlockHash(): " . $exc->getMessage() . PHP_EOL;
@@ -485,7 +485,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGetRawTransaction(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
@@ -550,7 +550,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchGetTxByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -609,7 +609,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchRpcDriver(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchRpcDriver(): " . $exc->getMessage() . PHP_EOL;
@@ -668,7 +668,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling bitcoinCash()->bchTransferBlockchain(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling bitcoinCash()->bchTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;

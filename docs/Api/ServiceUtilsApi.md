@@ -52,7 +52,7 @@ try {
         ->freezeApiKey();
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling serviceUtils()->freezeApiKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling serviceUtils()->freezeApiKey(): " . $exc->getMessage() . PHP_EOL;
@@ -106,7 +106,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling serviceUtils()->getCredits(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling serviceUtils()->getCredits(): " . $exc->getMessage() . PHP_EOL;
@@ -160,7 +160,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling serviceUtils()->getVersion(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling serviceUtils()->getVersion(): " . $exc->getMessage() . PHP_EOL;
@@ -211,7 +211,7 @@ try {
         ->unfreezeApiKey();
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling serviceUtils()->unfreezeApiKey(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling serviceUtils()->unfreezeApiKey(): " . $exc->getMessage() . PHP_EOL;

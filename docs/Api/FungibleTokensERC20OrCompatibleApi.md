@@ -69,7 +69,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20Approve(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20Approve(): " . $exc->getMessage() . PHP_EOL;
@@ -133,7 +133,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20Burn(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20Burn(): " . $exc->getMessage() . PHP_EOL;
@@ -197,7 +197,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20Deploy(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20Deploy(): " . $exc->getMessage() . PHP_EOL;
@@ -272,7 +272,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20GetBalance(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20GetBalance(): " . $exc->getMessage() . PHP_EOL;
@@ -337,7 +337,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -432,7 +432,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
@@ -496,7 +496,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20Mint(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20Mint(): " . $exc->getMessage() . PHP_EOL;
@@ -560,7 +560,7 @@ try {
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling fungibleTokensERC20OrCompatible()->erc20Transfer(): ",
-        var_export($apiExc->getResponseObject(), true),
+        var_export($apiExc->getResponseBody(), true),
         PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling fungibleTokensERC20OrCompatible()->erc20Transfer(): " . $exc->getMessage() . PHP_EOL;
