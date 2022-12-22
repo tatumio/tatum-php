@@ -12,10 +12,22 @@ Method | HTTP request | Description
 
 ## `freezeApiKey()`
 
+### Type signature
+
 ```php
-api()->serviceUtils()->freezeApiKey(
+$sdk->{mainnet/testnet}()->api()->serviceUtils()->freezeApiKey(
 )
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Description
 
 Freeze API Key
 
@@ -47,22 +59,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getCredits()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->serviceUtils()->getCredits(
+): \Tatum\Model\Consumption[]
+```
+
 ### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\Consumption[]**](../Model/Consumption.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getCredits()`
-
-```php
-api()->serviceUtils()->getCredits(
-): \Tatum\Model\Consumption[]
-```
+### Description
 
 Get information about your credit consumption for the last month
 
@@ -97,22 +113,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getVersion()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->serviceUtils()->getVersion(
+): \Tatum\Model\GetVersion200Response
+```
+
 ### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\Consumption[]**](../Model/Consumption.md)
+[**\Tatum\Model\GetVersion200Response**](../Model/GetVersion200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getVersion()`
-
-```php
-api()->serviceUtils()->getVersion(
-): \Tatum\Model\GetVersion200Response
-```
+### Description
 
 Get API version
 
@@ -147,22 +167,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `unfreezeApiKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->serviceUtils()->unfreezeApiKey(
+)
+```
+
 ### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\GetVersion200Response**](../Model/GetVersion200Response.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `unfreezeApiKey()`
-
-```php
-api()->serviceUtils()->unfreezeApiKey(
-)
-```
+### Description
 
 Unfreeze API Key
 
@@ -194,12 +218,4 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

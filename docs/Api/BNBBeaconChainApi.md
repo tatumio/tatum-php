@@ -16,11 +16,25 @@ Method | HTTP request | Description
 
 ## `bnbBlockchainTransfer()`
 
+### Type signature
+
 ```php
-api()->bNBBeaconChain()->bnbBlockchainTransfer(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBlockchainTransfer(
     ?\Tatum\Model\BnbBlockchainTransferRequest $bnb_blockchain_transfer_request
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$bnb_blockchain_transfer_request** | [**\Tatum\Model\BnbBlockchainTransferRequest**](../Model/BnbBlockchainTransferRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Send Binance / Binance Token from account to account
 
@@ -57,25 +71,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bnbBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBroadcast(
+    ?\Tatum\Model\Broadcast $broadcast
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bnb_blockchain_transfer_request** | [**\Tatum\Model\BnbBlockchainTransferRequest**](../Model/BnbBlockchainTransferRequest.md)|  |
+ **$broadcast** | [**\Tatum\Model\Broadcast**](../Model/Broadcast.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bnbBroadcast()`
-
-```php
-api()->bNBBeaconChain()->bnbBroadcast(
-    ?\Tatum\Model\Broadcast $broadcast
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed BNB transaction
 
@@ -112,24 +130,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast** | [**\Tatum\Model\Broadcast**](../Model/Broadcast.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bnbGenerateWallet()`
 
+### Type signature
+
 ```php
-api()->bNBBeaconChain()->bnbGenerateWallet(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGenerateWallet(
 ): \Tatum\Model\BnbWallet
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\BnbWallet**](../Model/BnbWallet.md)
+
+### Description
 
 Generate Binance wallet
 
@@ -164,23 +184,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\BnbWallet**](../Model/BnbWallet.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bnbGetAccount()`
 
+### Type signature
+
 ```php
-api()->bNBBeaconChain()->bnbGetAccount(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetAccount(
     ?string $address
 ): \Tatum\Model\BnbAccount
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+
+### Return type
+
+[**\Tatum\Model\BnbAccount**](../Model/BnbAccount.md)
+
+### Description
 
 Get Binance Account
 
@@ -218,25 +244,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bnbGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetBlock(
+    ?float $height
+): \Tatum\Model\BnbBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$height** | **float**| Block height |
 
 ### Return type
 
-[**\Tatum\Model\BnbAccount**](../Model/BnbAccount.md)
+[**\Tatum\Model\BnbBlock**](../Model/BnbBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bnbGetBlock()`
-
-```php
-api()->bNBBeaconChain()->bnbGetBlock(
-    ?float $height
-): \Tatum\Model\BnbBlock
-```
+### Description
 
 Get Binance Transactions in Block
 
@@ -274,24 +304,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$height** | **float**| Block height |
-
-### Return type
-
-[**\Tatum\Model\BnbBlock**](../Model/BnbBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bnbGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->bNBBeaconChain()->bnbGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get Binance current block
 
@@ -326,23 +358,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bnbGetTransaction()`
 
+### Type signature
+
 ```php
-api()->bNBBeaconChain()->bnbGetTransaction(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTransaction(
     ?string $hash
 ): \Tatum\Model\BnbTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\BnbTx**](../Model/BnbTx.md)
+
+### Description
 
 Get Binance Transaction
 
@@ -380,22 +418,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\BnbTx**](../Model/BnbTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bnbGetTxByAccount()`
 
+### Type signature
+
 ```php
-api()->bNBBeaconChain()->bnbGetTxByAccount(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTxByAccount(
     ?string $address, 
     ?float $start_time, 
     ?float $end_time, 
@@ -405,6 +435,24 @@ api()->bNBBeaconChain()->bnbGetTxByAccount(
     ?string $address_type
 ): \Tatum\Model\BnbTxInAccount
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address |
+ **$start_time** | **float**| Start time in milliseconds |
+ **$end_time** | **float**| End time in milliseconds |
+ **$limit** | **float**| Items per page. | [optional]
+ **$offset** | **float**| Pagination offset | [optional]
+ **$asset** | **string**| Asset name | [optional]
+ **$address_type** | **string**| Address type | [optional]
+
+### Return type
+
+[**\Tatum\Model\BnbTxInAccount**](../Model/BnbTxInAccount.md)
+
+### Description
 
 Get Binance Transactions By Address
 
@@ -460,20 +508,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address |
- **$start_time** | **float**| Start time in milliseconds |
- **$end_time** | **float**| End time in milliseconds |
- **$limit** | **float**| Items per page. | [optional]
- **$offset** | **float**| Pagination offset | [optional]
- **$asset** | **string**| Asset name | [optional]
- **$address_type** | **string**| Address type | [optional]
-
-### Return type
-
-[**\Tatum\Model\BnbTxInAccount**](../Model/BnbTxInAccount.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

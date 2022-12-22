@@ -13,11 +13,25 @@ Method | HTTP request | Description
 
 ## `custodialCreateWallet()`
 
+### Type signature
+
 ```php
-api()->custodialManagedWallets()->custodialCreateWallet(
+$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialCreateWallet(
     ?\Tatum\Model\CustodialCreateWalletRequest $custodial_create_wallet_request
 ): \Tatum\Model\CustodialManagedAddress
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$custodial_create_wallet_request** | [**\Tatum\Model\CustodialCreateWalletRequest**](../Model/CustodialCreateWalletRequest.md)|  | [optional]
+
+### Return type
+
+[**\Tatum\Model\CustodialManagedAddress**](../Model/CustodialManagedAddress.md)
+
+### Description
 
 Create managed address
 
@@ -54,25 +68,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `custodialDeleteWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialDeleteWallet(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$custodial_create_wallet_request** | [**\Tatum\Model\CustodialCreateWalletRequest**](../Model/CustodialCreateWalletRequest.md)|  | [optional]
+ **$id** | **string**| WalletID of the managed address |
 
 ### Return type
 
-[**\Tatum\Model\CustodialManagedAddress**](../Model/CustodialManagedAddress.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `custodialDeleteWallet()`
-
-```php
-api()->custodialManagedWallets()->custodialDeleteWallet(
-    ?string $id
-)
-```
+### Description
 
 Delete managed address
 
@@ -107,26 +125,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `custodialGetWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallet(
+    ?string $id, 
+    ?bool $export
+): \Tatum\Model\CustodialManagedAddress[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**| WalletID of the managed address |
+ **$export** | **bool**| If set to \&quot;true\&quot;, returns the private key in the response; if not set, defaults to \&quot;false\&quot; (the private key is not included in the response) | [optional] [default to false]
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\CustodialManagedAddress[]**](../Model/CustodialManagedAddress.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `custodialGetWallet()`
-
-```php
-api()->custodialManagedWallets()->custodialGetWallet(
-    ?string $id, 
-    ?bool $export
-): \Tatum\Model\CustodialManagedAddress[]
-```
+### Description
 
 Get managed address
 
@@ -167,25 +190,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `custodialGetWallets()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallets(
+): \Tatum\Model\CustodialManagedAddress[]
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| WalletID of the managed address |
- **$export** | **bool**| If set to \&quot;true\&quot;, returns the private key in the response; if not set, defaults to \&quot;false\&quot; (the private key is not included in the response) | [optional] [default to false]
+This endpoint does not need any parameter.
 
 ### Return type
 
 [**\Tatum\Model\CustodialManagedAddress[]**](../Model/CustodialManagedAddress.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `custodialGetWallets()`
-
-```php
-api()->custodialManagedWallets()->custodialGetWallets(
-): \Tatum\Model\CustodialManagedAddress[]
-```
+### Description
 
 Get managed addresses
 
@@ -220,23 +244,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\CustodialManagedAddress[]**](../Model/CustodialManagedAddress.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `custodialTransferManagedAddress()`
 
+### Type signature
+
 ```php
-api()->custodialManagedWallets()->custodialTransferManagedAddress(
+$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialTransferManagedAddress(
     ?\Tatum\Model\TransferManagedAddress $transfer_managed_address
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_managed_address** | [**\Tatum\Model\TransferManagedAddress**](../Model/TransferManagedAddress.md)|  | [optional]
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Sign and transfer using managed address
 
@@ -273,14 +303,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_managed_address** | [**\Tatum\Model\TransferManagedAddress**](../Model/TransferManagedAddress.md)|  | [optional]
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

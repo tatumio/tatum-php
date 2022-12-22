@@ -21,11 +21,25 @@ Method | HTTP request | Description
 
 ## `flowAddPubKeyToAddress()`
 
+### Type signature
+
 ```php
-api()->flow()->flowAddPubKeyToAddress(
+$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeyToAddress(
     ?\Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_add_pub_key_to_address_request** | [**\Tatum\Model\FlowAddPubKeyToAddressRequest**](../Model/FlowAddPubKeyToAddressRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Add public key to Flow address
 
@@ -62,25 +76,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowCreateAddressFromPubKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKey(
+    ?\Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request
+): \Tatum\Model\FlowCreateAddressFromPubKey200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_add_pub_key_to_address_request** | [**\Tatum\Model\FlowAddPubKeyToAddressRequest**](../Model/FlowAddPubKeyToAddressRequest.md)|  |
+ **$flow_create_address_from_pub_key_request** | [**\Tatum\Model\FlowCreateAddressFromPubKeyRequest**](../Model/FlowCreateAddressFromPubKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\FlowCreateAddressFromPubKey200Response**](../Model/FlowCreateAddressFromPubKey200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowCreateAddressFromPubKey()`
-
-```php
-api()->flow()->flowCreateAddressFromPubKey(
-    ?\Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request
-): \Tatum\Model\FlowCreateAddressFromPubKey200Response
-```
+### Description
 
 Create Flow address from public key
 
@@ -117,26 +135,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$flow_create_address_from_pub_key_request** | [**\Tatum\Model\FlowCreateAddressFromPubKeyRequest**](../Model/FlowCreateAddressFromPubKeyRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\FlowCreateAddressFromPubKey200Response**](../Model/FlowCreateAddressFromPubKey200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->flow()->flowGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->flow()->flowGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\FlowGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\FlowGenerateAddress200Response**](../Model/FlowGenerateAddress200Response.md)
+
+### Description
 
 Generate Flow address from Extended public key
 
@@ -177,6 +200,19 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowGeneratePubKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKey(
+    ?string $xpub, 
+    ?float $index
+): \Tatum\Model\FlowGeneratePubKey200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -186,18 +222,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowGenerateAddress200Response**](../Model/FlowGenerateAddress200Response.md)
+[**\Tatum\Model\FlowGeneratePubKey200Response**](../Model/FlowGeneratePubKey200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowGeneratePubKey()`
-
-```php
-api()->flow()->flowGeneratePubKey(
-    ?string $xpub, 
-    ?float $index
-): \Tatum\Model\FlowGeneratePubKey200Response
-```
+### Description
 
 Generate Flow public key from Extended public key
 
@@ -238,26 +265,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowGeneratePubKeyPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKeyPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\FlowGeneratePubKey200Response**](../Model/FlowGeneratePubKey200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowGeneratePubKeyPrivateKey()`
-
-```php
-api()->flow()->flowGeneratePubKeyPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Flow private key
 
@@ -294,25 +324,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowGenerateWallet()`
-
-```php
-api()->flow()->flowGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Flow wallet
 
@@ -350,25 +384,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowGetAccount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowGetAccount(
+    ?string $address
+): \Tatum\Model\FlowAccount
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\FlowAccount**](../Model/FlowAccount.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowGetAccount()`
-
-```php
-api()->flow()->flowGetAccount(
-    ?string $address
-): \Tatum\Model\FlowAccount
-```
+### Description
 
 Get the balance of a Flow account
 
@@ -406,25 +444,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowGetBlock(
+    ?string $hash
+): \Tatum\Model\FlowBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or height. |
 
 ### Return type
 
-[**\Tatum\Model\FlowAccount**](../Model/FlowAccount.md)
+[**\Tatum\Model\FlowBlock**](../Model/FlowBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowGetBlock()`
-
-```php
-api()->flow()->flowGetBlock(
-    ?string $hash
-): \Tatum\Model\FlowBlock
-```
+### Description
 
 Get Flow Block by hash or height
 
@@ -462,24 +504,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
-
-### Return type
-
-[**\Tatum\Model\FlowBlock**](../Model/FlowBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGetBlockChainInfo()`
 
+### Type signature
+
 ```php
-api()->flow()->flowGetBlockChainInfo(
+$sdk->{mainnet/testnet}()->api()->flow()->flowGetBlockChainInfo(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get Flow current block number
 
@@ -514,25 +558,33 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGetBlockEvents()`
 
+### Type signature
+
 ```php
-api()->flow()->flowGetBlockEvents(
+$sdk->{mainnet/testnet}()->api()->flow()->flowGetBlockEvents(
     ?string $type, 
     ?float $from, 
     ?float $to
 ): \Tatum\Model\FlowEvent[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$type** | **string**| Event type to search for |
+ **$from** | **float**| Block height to start searching |
+ **$to** | **float**| Block height to end searching |
+
+### Return type
+
+[**\Tatum\Model\FlowEvent[]**](../Model/FlowEvent.md)
+
+### Description
 
 Get Flow events from blocks
 
@@ -576,27 +628,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowGetRawTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowGetRawTransaction(
+    ?string $hash
+): \Tatum\Model\FlowTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$type** | **string**| Event type to search for |
- **$from** | **float**| Block height to start searching |
- **$to** | **float**| Block height to end searching |
+ **$hash** | **string**| Transaction hash |
 
 ### Return type
 
-[**\Tatum\Model\FlowEvent[]**](../Model/FlowEvent.md)
+[**\Tatum\Model\FlowTx**](../Model/FlowTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowGetRawTransaction()`
-
-```php
-api()->flow()->flowGetRawTransaction(
-    ?string $hash
-): \Tatum\Model\FlowTx
-```
+### Description
 
 Get Flow Transaction by hash
 
@@ -634,25 +688,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransferBlockchain(
+    ?\Tatum\Model\FlowTransferBlockchainRequest $flow_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$flow_transfer_blockchain_request** | [**\Tatum\Model\FlowTransferBlockchainRequest**](../Model/FlowTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\FlowTx**](../Model/FlowTx.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowTransferBlockchain()`
-
-```php
-api()->flow()->flowTransferBlockchain(
-    ?\Tatum\Model\FlowTransferBlockchainRequest $flow_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send Flow to blockchain addresses
 
@@ -689,25 +747,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowTransferCustomBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransferCustomBlockchain(
+    ?\Tatum\Model\FlowTransferCustomBlockchainRequest $flow_transfer_custom_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transfer_blockchain_request** | [**\Tatum\Model\FlowTransferBlockchainRequest**](../Model/FlowTransferBlockchainRequest.md)|  |
+ **$flow_transfer_custom_blockchain_request** | [**\Tatum\Model\FlowTransferCustomBlockchainRequest**](../Model/FlowTransferCustomBlockchainRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowTransferCustomBlockchain()`
-
-```php
-api()->flow()->flowTransferCustomBlockchain(
-    ?\Tatum\Model\FlowTransferCustomBlockchainRequest $flow_transfer_custom_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send arbitrary transaction to blockchain
 
@@ -744,14 +806,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$flow_transfer_custom_blockchain_request** | [**\Tatum\Model\FlowTransferCustomBlockchainRequest**](../Model/FlowTransferCustomBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

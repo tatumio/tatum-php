@@ -8,11 +8,26 @@ Method | Description
 
 ## `sign()`
 
+### Type signature
+
 ```php
-local()->transaction()->ethereum()->sign(
+$sdk->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
     ?\Tatum\Model\EthBlockchainTransferRequest $transfer
 ): string
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**$transfer** | [**\Tatum\Model\EthBlockchainTransferRequest**](../../Model/EthBlockchainTransferRequest.md) | Transfer request | 
+
+### Return type
+
+Signed transaction hex (`string`)
+
+### Description
+
 Sign transaction
 
 ### Example
@@ -48,14 +63,5 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**$transfer** | [**\Tatum\Model\EthBlockchainTransferRequest**](../../Model/EthBlockchainTransferRequest.md) | Transfer request | 
-
-### Return type
-
-Signed transaction hex (`string`)
-
 [[Back to top]](#) | [[Back to Local Transaction]](../../index.md#local-transaction)
+

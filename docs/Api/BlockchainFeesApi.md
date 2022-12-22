@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `bscEstimateGas()`
 
+### Type signature
+
 ```php
-api()->blockchainFees()->bscEstimateGas(
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->bscEstimateGas(
     ?\Tatum\Model\BscEstimateGas $bsc_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$bsc_estimate_gas** | [**\Tatum\Model\BscEstimateGas**](../Model/BscEstimateGas.md)|  |
+
+### Return type
+
+[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+
+### Description
 
 Estimate BNB Smart Chain transaction fees
 
@@ -61,25 +75,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoEstimateGas()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->celoEstimateGas(
+    ?\Tatum\Model\CeloEstimateGas $celo_estimate_gas
+): \Tatum\Model\CeloEstimateGas200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_estimate_gas** | [**\Tatum\Model\BscEstimateGas**](../Model/BscEstimateGas.md)|  |
+ **$celo_estimate_gas** | [**\Tatum\Model\CeloEstimateGas**](../Model/CeloEstimateGas.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+[**\Tatum\Model\CeloEstimateGas200Response**](../Model/CeloEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoEstimateGas()`
-
-```php
-api()->blockchainFees()->celoEstimateGas(
-    ?\Tatum\Model\CeloEstimateGas $celo_estimate_gas
-): \Tatum\Model\CeloEstimateGas200Response
-```
+### Description
 
 Estimate Celo Chain transaction fees
 
@@ -116,25 +134,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldEstimateGas()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->egldEstimateGas(
+    ?\Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain
+): \Tatum\Model\EgldEstimateGas200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_estimate_gas** | [**\Tatum\Model\CeloEstimateGas**](../Model/CeloEstimateGas.md)|  |
+ **$transaction_fee_egld_blockchain** | [**\Tatum\Model\TransactionFeeEgldBlockchain**](../Model/TransactionFeeEgldBlockchain.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\CeloEstimateGas200Response**](../Model/CeloEstimateGas200Response.md)
+[**\Tatum\Model\EgldEstimateGas200Response**](../Model/EgldEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldEstimateGas()`
-
-```php
-api()->blockchainFees()->egldEstimateGas(
-    ?\Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain
-): \Tatum\Model\EgldEstimateGas200Response
-```
+### Description
 
 Estimate EGLD transaction fees
 
@@ -171,25 +193,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `estimateFeeBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBlockchain(
+    ?\Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request
+): \Tatum\Model\EstimateFeeBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_fee_egld_blockchain** | [**\Tatum\Model\TransactionFeeEgldBlockchain**](../Model/TransactionFeeEgldBlockchain.md)|  |
+ **$estimate_fee_blockchain_request** | [**\Tatum\Model\EstimateFeeBlockchainRequest**](../Model/EstimateFeeBlockchainRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EgldEstimateGas200Response**](../Model/EgldEstimateGas200Response.md)
+[**\Tatum\Model\EstimateFeeBlockchain200Response**](../Model/EstimateFeeBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `estimateFeeBlockchain()`
-
-```php
-api()->blockchainFees()->estimateFeeBlockchain(
-    ?\Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request
-): \Tatum\Model\EstimateFeeBlockchain200Response
-```
+### Description
 
 Estimate the fee for a transaction
 
@@ -226,26 +252,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee_blockchain_request** | [**\Tatum\Model\EstimateFeeBlockchainRequest**](../Model/EstimateFeeBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\EstimateFeeBlockchain200Response**](../Model/EstimateFeeBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethEstimateGas()`
 
+### Type signature
+
 ```php
-api()->blockchainFees()->ethEstimateGas(
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGas(
     ?\Tatum\Model\EthEstimateGas $eth_estimate_gas, 
     ?string $x_testnet_type
 ): \Tatum\Model\EthGasEstimation
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$eth_estimate_gas** | [**\Tatum\Model\EthEstimateGas**](../Model/EthEstimateGas.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthGasEstimation**](../Model/EthGasEstimation.md)
+
+### Description
 
 Estimate Ethereum transaction fees
 
@@ -285,27 +316,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$eth_estimate_gas** | [**\Tatum\Model\EthEstimateGas**](../Model/EthEstimateGas.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\EthGasEstimation**](../Model/EthGasEstimation.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethEstimateGasBatch()`
 
+### Type signature
+
 ```php
-api()->blockchainFees()->ethEstimateGasBatch(
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGasBatch(
     ?\Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array, 
     ?string $x_testnet_type
 ): \Tatum\Model\EthGasEstimationBatch
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$eth_estimate_gas_array** | [**\Tatum\Model\EthEstimateGasArray**](../Model/EthEstimateGasArray.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthGasEstimationBatch**](../Model/EthGasEstimationBatch.md)
+
+### Description
 
 Estimate multiple Ethereum transaction fees
 
@@ -345,26 +380,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getBlockchainFee()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->getBlockchainFee(
+    ?string $chain
+): \Tatum\Model\BlockchainFee
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_estimate_gas_array** | [**\Tatum\Model\EthEstimateGasArray**](../Model/EthEstimateGasArray.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**| Chain |
 
 ### Return type
 
-[**\Tatum\Model\EthGasEstimationBatch**](../Model/EthGasEstimationBatch.md)
+[**\Tatum\Model\BlockchainFee**](../Model/BlockchainFee.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getBlockchainFee()`
-
-```php
-api()->blockchainFees()->getBlockchainFee(
-    ?string $chain
-): \Tatum\Model\BlockchainFee
-```
+### Description
 
 Get recommended blockchain fee / gas price
 
@@ -402,25 +440,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsEstimateGas()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->kcsEstimateGas(
+    ?\Tatum\Model\KcsEstimateGas $kcs_estimate_gas
+): \Tatum\Model\PolygonEstimateGas200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Chain |
+ **$kcs_estimate_gas** | [**\Tatum\Model\KcsEstimateGas**](../Model/KcsEstimateGas.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BlockchainFee**](../Model/BlockchainFee.md)
+[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsEstimateGas()`
-
-```php
-api()->blockchainFees()->kcsEstimateGas(
-    ?\Tatum\Model\KcsEstimateGas $kcs_estimate_gas
-): \Tatum\Model\PolygonEstimateGas200Response
-```
+### Description
 
 Estimate KuCoin Community Chain transaction fees
 
@@ -457,25 +499,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnEstimateGas()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->klaytnEstimateGas(
+    ?\Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas
+): \Tatum\Model\KlaytnEstimateGas200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_estimate_gas** | [**\Tatum\Model\KcsEstimateGas**](../Model/KcsEstimateGas.md)|  |
+ **$klaytn_estimate_gas** | [**\Tatum\Model\KlaytnEstimateGas**](../Model/KlaytnEstimateGas.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+[**\Tatum\Model\KlaytnEstimateGas200Response**](../Model/KlaytnEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnEstimateGas()`
-
-```php
-api()->blockchainFees()->klaytnEstimateGas(
-    ?\Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas
-): \Tatum\Model\KlaytnEstimateGas200Response
-```
+### Description
 
 Estimate Klaytn transaction fees
 
@@ -512,25 +558,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonEstimateGas()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->polygonEstimateGas(
+    ?\Tatum\Model\PolygonEstimateGas $polygon_estimate_gas
+): \Tatum\Model\PolygonEstimateGas200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$klaytn_estimate_gas** | [**\Tatum\Model\KlaytnEstimateGas**](../Model/KlaytnEstimateGas.md)|  |
+ **$polygon_estimate_gas** | [**\Tatum\Model\PolygonEstimateGas**](../Model/PolygonEstimateGas.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\KlaytnEstimateGas200Response**](../Model/KlaytnEstimateGas200Response.md)
+[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonEstimateGas()`
-
-```php
-api()->blockchainFees()->polygonEstimateGas(
-    ?\Tatum\Model\PolygonEstimateGas $polygon_estimate_gas
-): \Tatum\Model\PolygonEstimateGas200Response
-```
+### Description
 
 Estimate Polygon transaction fees
 
@@ -567,25 +617,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetEstimateGas()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->vetEstimateGas(
+    ?\Tatum\Model\VetEstimateGas $vet_estimate_gas
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$polygon_estimate_gas** | [**\Tatum\Model\PolygonEstimateGas**](../Model/PolygonEstimateGas.md)|  |
+ **$vet_estimate_gas** | [**\Tatum\Model\VetEstimateGas**](../Model/VetEstimateGas.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetEstimateGas()`
-
-```php
-api()->blockchainFees()->vetEstimateGas(
-    ?\Tatum\Model\VetEstimateGas $vet_estimate_gas
-): float
-```
+### Description
 
 Estimate VeChain Gas for transaction
 
@@ -622,25 +676,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcEstimateGas()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->xdcEstimateGas(
+    ?\Tatum\Model\XdcEstimateGas $xdc_estimate_gas
+): \Tatum\Model\XdcEstimateGas200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$vet_estimate_gas** | [**\Tatum\Model\VetEstimateGas**](../Model/VetEstimateGas.md)|  |
+ **$xdc_estimate_gas** | [**\Tatum\Model\XdcEstimateGas**](../Model/XdcEstimateGas.md)|  |
 
 ### Return type
 
-**float**
+[**\Tatum\Model\XdcEstimateGas200Response**](../Model/XdcEstimateGas200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcEstimateGas()`
-
-```php
-api()->blockchainFees()->xdcEstimateGas(
-    ?\Tatum\Model\XdcEstimateGas $xdc_estimate_gas
-): \Tatum\Model\XdcEstimateGas200Response
-```
+### Description
 
 Estimate XinFin transaction fees
 
@@ -677,14 +735,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$xdc_estimate_gas** | [**\Tatum\Model\XdcEstimateGas**](../Model/XdcEstimateGas.md)|  |
-
-### Return type
-
-[**\Tatum\Model\XdcEstimateGas200Response**](../Model/XdcEstimateGas200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

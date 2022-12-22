@@ -22,11 +22,25 @@ Method | HTTP request | Description
 
 ## `btcBroadcast()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcBroadcast(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast a signed Bitcoin transaction
 
@@ -63,26 +77,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\GeneratedAddressBtc
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of a wallet. |
+ **$index** | **float**| Derivation index of the desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\GeneratedAddressBtc**](../Model/GeneratedAddressBtc.md)
+
+### Description
 
 Generate a Bitcoin address from the wallet's extended public key
 
@@ -123,26 +142,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of a wallet. |
- **$index** | **float**| Derivation index of the desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressBtc**](../Model/GeneratedAddressBtc.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `btcGenerateAddressPrivateKey()`
-
-```php
-api()->bitcoin()->btcGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate the private key for a Bitcoin address
 
@@ -179,25 +201,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `btcGenerateWallet()`
-
-```php
-api()->bitcoin()->btcGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate a Bitcoin wallet
 
@@ -235,25 +261,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcGetBalanceOfAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBalanceOfAddress(
+    ?string $address
+): \Tatum\Model\BtcBasedBalance
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| The blockchain address to get the balance for |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `btcGetBalanceOfAddress()`
-
-```php
-api()->bitcoin()->btcGetBalanceOfAddress(
-    ?string $address
-): \Tatum\Model\BtcBasedBalance
-```
+### Description
 
 Get the balance of a Bitcoin address
 
@@ -291,25 +321,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlock(
+    ?string $hash
+): \Tatum\Model\BtcBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| The blockchain address to get the balance for |
+ **$hash** | **string**| Block hash or height. |
 
 ### Return type
 
-[**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
+[**\Tatum\Model\BtcBlock**](../Model/BtcBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `btcGetBlock()`
-
-```php
-api()->bitcoin()->btcGetBlock(
-    ?string $hash
-): \Tatum\Model\BtcBlock
-```
+### Description
 
 Get a Bitcoin block by its hash or height
 
@@ -347,24 +381,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
-
-### Return type
-
-[**\Tatum\Model\BtcBlock**](../Model/BtcBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetBlockChainInfo()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcGetBlockChainInfo(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockChainInfo(
 ): \Tatum\Model\BtcInfo
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\BtcInfo**](../Model/BtcInfo.md)
+
+### Description
 
 Get Bitcoin blockchain information
 
@@ -399,23 +435,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\BtcInfo**](../Model/BtcInfo.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetBlockHash()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcGetBlockHash(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockHash(
     ?float $i
 ): \Tatum\Model\BtcBlockHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$i** | **float**| The number of blocks preceding a particular block on a blockchain. |
+
+### Return type
+
+[**\Tatum\Model\BtcBlockHash**](../Model/BtcBlockHash.md)
+
+### Description
 
 Get the hash of a Bitcoin block
 
@@ -453,24 +495,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$i** | **float**| The number of blocks preceding a particular block on a blockchain. |
-
-### Return type
-
-[**\Tatum\Model\BtcBlockHash**](../Model/BtcBlockHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetMempool()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcGetMempool(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetMempool(
 ): string[]
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**string[]**
+
+### Description
 
 Get transactions from the Bitcoin mempool
 
@@ -505,23 +549,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**string[]**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetRawTransaction()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcGetRawTransaction(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetRawTransaction(
     ?string $hash
 ): \Tatum\Model\BtcTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\BtcTx**](../Model/BtcTx.md)
+
+### Description
 
 Get a Bitcoin transaction by its hash
 
@@ -559,27 +609,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\BtcTx**](../Model/BtcTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetTxByAddress()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcGetTxByAddress(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetTxByAddress(
     ?string $address, 
     ?float $page_size, 
     ?float $offset
 ): \Tatum\Model\BtcTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Address |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+
+### Return type
+
+[**\Tatum\Model\BtcTx[]**](../Model/BtcTx.md)
+
+### Description
 
 Get all transactions for a Bitcoin address
 
@@ -623,28 +679,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
-
-### Return type
-
-[**\Tatum\Model\BtcTx[]**](../Model/BtcTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetUTXO()`
 
+### Type signature
+
 ```php
-api()->bitcoin()->btcGetUTXO(
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetUTXO(
     ?string $hash, 
     ?float $index
 ): \Tatum\Model\BtcUTXO
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| The transaction hash |
+ **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+
+### Return type
+
+[**\Tatum\Model\BtcUTXO**](../Model/BtcUTXO.md)
+
+### Description
 
 Get information about a transaction output (UTXO) in a Bitcoin transaction
 
@@ -685,26 +744,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcRpcDriver()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcRpcDriver(
+    ?\Tatum\Model\BtcRpcDriverRequest $btc_rpc_driver_request
+): object
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| The transaction hash |
- **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+ **$btc_rpc_driver_request** | [**\Tatum\Model\BtcRpcDriverRequest**](../Model/BtcRpcDriverRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcUTXO**](../Model/BtcUTXO.md)
+**object**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `btcRpcDriver()`
-
-```php
-api()->bitcoin()->btcRpcDriver(
-    ?\Tatum\Model\BtcRpcDriverRequest $btc_rpc_driver_request
-): object
-```
+### Description
 
 Connect to a Bitcoin node through an RPC driver
 
@@ -741,25 +803,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransferBlockchain(
+    ?\Tatum\Model\BtcTransferBlockchainRequest $btc_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_rpc_driver_request** | [**\Tatum\Model\BtcRpcDriverRequest**](../Model/BtcRpcDriverRequest.md)|  |
+ **$btc_transfer_blockchain_request** | [**\Tatum\Model\BtcTransferBlockchainRequest**](../Model/BtcTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `btcTransferBlockchain()`
-
-```php
-api()->bitcoin()->btcTransferBlockchain(
-    ?\Tatum\Model\BtcTransferBlockchainRequest $btc_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send BTC to Bitcoin addresses
 
@@ -796,14 +862,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$btc_transfer_blockchain_request** | [**\Tatum\Model\BtcTransferBlockchainRequest**](../Model/BtcTransferBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

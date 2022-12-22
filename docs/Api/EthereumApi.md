@@ -22,12 +22,27 @@ Method | HTTP request | Description
 
 ## `ethBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainSmartContractInvocation(
     ?\Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request, 
     ?string $x_testnet_type
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$eth_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\EthBlockchainSmartContractInvocationRequest**](../Model/EthBlockchainSmartContractInvocationRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on Ethereum
 
@@ -67,27 +82,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$eth_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\EthBlockchainSmartContractInvocationRequest**](../Model/EthBlockchainSmartContractInvocationRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethBlockchainTransfer()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethBlockchainTransfer(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainTransfer(
     ?\Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request, 
     ?string $x_testnet_type
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$eth_blockchain_transfer_request** | [**\Tatum\Model\EthBlockchainTransferRequest**](../Model/EthBlockchainTransferRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Send Ethereum / ERC20 from account to account
 
@@ -127,27 +146,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$eth_blockchain_transfer_request** | [**\Tatum\Model\EthBlockchainTransferRequest**](../Model/EthBlockchainTransferRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethBroadcast()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethBroadcast(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms, 
     ?string $x_testnet_type
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast signed Ethereum transaction
 
@@ -187,28 +210,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddress(
     ?string $xpub, 
     ?float $index, 
     ?string $x_testnet_type
 ): \Tatum\Model\GeneratedAddressEth
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of the address to be generated. |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\GeneratedAddressEth**](../Model/GeneratedAddressEth.md)
+
+### Description
 
 Generate Ethereum account address from Extended public key
 
@@ -252,28 +280,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of the address to be generated. |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\GeneratedAddressEth**](../Model/GeneratedAddressEth.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGenerateAddressPrivateKey()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGenerateAddressPrivateKey(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddressPrivateKey(
     ?\Tatum\Model\PrivKeyRequest $priv_key_request, 
     ?string $x_testnet_type
 ): \Tatum\Model\PrivKey
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+
+### Description
 
 Generate Ethereum private key
 
@@ -313,27 +344,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGenerateWallet()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGenerateWallet(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateWallet(
     ?string $mnemonic, 
     ?string $x_testnet_type
 ): \Tatum\Model\Wallet
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mnemonic** | **string**| Mnemonic to use for generating extended public and private keys. | [optional]
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+
+### Description
 
 Generate Ethereum wallet
 
@@ -374,27 +409,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generating extended public and private keys. | [optional]
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetBalance()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGetBalance(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBalance(
     ?string $address, 
     ?string $x_testnet_type
 ): \Tatum\Model\EthBalance
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthBalance**](../Model/EthBalance.md)
+
+### Description
 
 Get the ETH balance of an Ethereum account
 
@@ -435,27 +474,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\EthBalance**](../Model/EthBalance.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetBlock()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGetBlock(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBlock(
     ?string $hash, 
     ?string $x_testnet_type
 ): \Tatum\Model\EthBlock
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Block hash or block number |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+
+### Description
 
 Get Ethereum block by hash
 
@@ -496,26 +539,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethGetCurrentBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetCurrentBlock(
+    ?string $x_testnet_type
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
  **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ethGetCurrentBlock()`
-
-```php
-api()->ethereum()->ethGetCurrentBlock(
-    ?string $x_testnet_type
-): float
-```
+### Description
 
 Get current block number
 
@@ -553,28 +599,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetInternalTransactionByAddress()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGetInternalTransactionByAddress(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetInternalTransactionByAddress(
     ?string $address, 
     ?float $page_size, 
     ?float $offset, 
     ?string $x_testnet_type
 ): \Tatum\Model\EthTxInternal[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthTxInternal[]**](../Model/EthTxInternal.md)
+
+### Description
 
 Get Ethereum internal transactions by address
 
@@ -621,29 +674,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\EthTxInternal[]**](../Model/EthTxInternal.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetTransaction()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGetTransaction(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransaction(
     ?string $hash, 
     ?string $x_testnet_type
 ): \Tatum\Model\EthTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthTx**](../Model/EthTx.md)
+
+### Description
 
 Get Ethereum Transaction
 
@@ -684,23 +739,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\EthTx**](../Model/EthTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetTransactionByAddress()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGetTransactionByAddress(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionByAddress(
     ?string $address, 
     ?float $page_size, 
     ?float $offset, 
@@ -710,6 +756,24 @@ api()->ethereum()->ethGetTransactionByAddress(
     ?string $x_testnet_type
 ): \Tatum\Model\EthTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$from** | **float**| Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**| Transactions up to this block will be included. | [optional]
+ **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthTx[]**](../Model/EthTx.md)
+
+### Description
 
 Get Ethereum transactions by address
 
@@ -765,32 +829,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
- **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\EthTx[]**](../Model/EthTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetTransactionCount()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethGetTransactionCount(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionCount(
     ?string $address, 
     ?string $x_testnet_type
 ): float
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| address |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+**float**
+
+### Description
 
 Get count of outgoing Ethereum transactions
 
@@ -831,28 +894,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->ethereum()->ethWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethWeb3Driver(
     ?string $x_api_key, 
     ?object $body, 
     ?string $testnet_type
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+ **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -895,16 +963,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
- **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

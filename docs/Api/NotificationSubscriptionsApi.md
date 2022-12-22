@@ -17,12 +17,27 @@ Method | HTTP request | Description
 
 ## `createSubscription()`
 
+### Type signature
+
 ```php
-api()->notificationSubscriptions()->createSubscription(
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscription(
     ?\Tatum\Model\CreateSubscriptionRequest $create_subscription_request, 
     ?string $testnet_type
 ): \Tatum\Model\Id
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_subscription_request** | [**\Tatum\Model\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  |
+ **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\Id**](../Model/Id.md)
+
+### Description
 
 Create a subscription
 
@@ -62,26 +77,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deleteSubscription()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->deleteSubscription(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_request** | [**\Tatum\Model\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  |
- **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$id** | **string**| Subscription ID |
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deleteSubscription()`
-
-```php
-api()->notificationSubscriptions()->deleteSubscription(
-    ?string $id
-)
-```
+### Description
 
 Cancel existing subscription
 
@@ -116,24 +134,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `disableWebHookHmac()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->disableWebHookHmac(
+)
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Subscription ID |
+This endpoint does not need any parameter.
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `disableWebHookHmac()`
-
-```php
-api()->notificationSubscriptions()->disableWebHookHmac(
-)
-```
+### Description
 
 Disable HMAC webhook digest
 
@@ -165,23 +185,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `enableWebHookHmac()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->enableWebHookHmac(
+    ?\Tatum\Model\HmacWebHook $hmac_web_hook
+)
+```
+
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hmac_web_hook** | [**\Tatum\Model\HmacWebHook**](../Model/HmacWebHook.md)|  |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `enableWebHookHmac()`
-
-```php
-api()->notificationSubscriptions()->enableWebHookHmac(
-    ?\Tatum\Model\HmacWebHook $hmac_web_hook
-)
-```
+### Description
 
 Enable HMAC webhook digest
 
@@ -215,28 +241,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hmac_web_hook** | [**\Tatum\Model\HmacWebHook**](../Model/HmacWebHook.md)|  |
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAllWebhooks()`
 
+### Type signature
+
 ```php
-api()->notificationSubscriptions()->getAllWebhooks(
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooks(
     ?float $page_size, 
     ?float $offset, 
     ?string $direction, 
     ?bool $failed
 ): \Tatum\Model\WebHook[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$direction** | **string**| Direction of sorting | [optional]
+ **$failed** | **bool**| Flag indicating whether the webhook was successful or not | [optional]
+
+### Return type
+
+[**\Tatum\Model\WebHook[]**](../Model/WebHook.md)
+
+### Description
 
 List all executed webhooks
 
@@ -283,6 +316,21 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getAllWebhooksCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooksCount(
+    ?float $page_size, 
+    ?float $offset, 
+    ?string $direction, 
+    ?bool $failed
+): \Tatum\Model\EntitiesCount
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -294,20 +342,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\WebHook[]**](../Model/WebHook.md)
+[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getAllWebhooksCount()`
-
-```php
-api()->notificationSubscriptions()->getAllWebhooksCount(
-    ?float $page_size, 
-    ?float $offset, 
-    ?string $direction, 
-    ?bool $failed
-): \Tatum\Model\EntitiesCount
-```
+### Description
 
 Count of found entities for get webhook request
 
@@ -354,28 +391,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getSubscriptionReport()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionReport(
+    ?string $id
+): \Tatum\Model\GetSubscriptionReport200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$direction** | **string**| Direction of sorting | [optional]
- **$failed** | **bool**| Flag indicating whether the webhook was successful or not | [optional]
+ **$id** | **string**| Subscription ID |
 
 ### Return type
 
-[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
+[**\Tatum\Model\GetSubscriptionReport200Response**](../Model/GetSubscriptionReport200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getSubscriptionReport()`
-
-```php
-api()->notificationSubscriptions()->getSubscriptionReport(
-    ?string $id
-): \Tatum\Model\GetSubscriptionReport200Response
-```
+### Description
 
 Obtain report for subscription
 
@@ -413,27 +451,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Subscription ID |
-
-### Return type
-
-[**\Tatum\Model\GetSubscriptionReport200Response**](../Model/GetSubscriptionReport200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getSubscriptions()`
 
+### Type signature
+
 ```php
-api()->notificationSubscriptions()->getSubscriptions(
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptions(
     ?float $page_size, 
     ?float $offset, 
     ?string $address
 ): \Tatum\Model\Subscription[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$address** | **string**| Value for filtering by address | [optional]
+
+### Return type
+
+[**\Tatum\Model\Subscription[]**](../Model/Subscription.md)
+
+### Description
 
 List all active subscriptions
 
@@ -477,6 +521,20 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getSubscriptionsCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionsCount(
+    ?float $page_size, 
+    ?float $offset, 
+    ?string $address
+): \Tatum\Model\EntitiesCount
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -487,19 +545,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Subscription[]**](../Model/Subscription.md)
+[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getSubscriptionsCount()`
-
-```php
-api()->notificationSubscriptions()->getSubscriptionsCount(
-    ?float $page_size, 
-    ?float $offset, 
-    ?string $address
-): \Tatum\Model\EntitiesCount
-```
+### Description
 
 Count of found entities for get webhook request
 
@@ -543,16 +591,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$address** | **string**| Value for filtering by address | [optional]
-
-### Return type
-
-[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

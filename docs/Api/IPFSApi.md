@@ -10,11 +10,25 @@ Method | HTTP request | Description
 
 ## `getIPFSData()`
 
+### Type signature
+
 ```php
-api()->iPFS()->getIPFSData(
+$sdk->{mainnet/testnet}()->api()->iPFS()->getIPFSData(
     ?string $id
 ): \SplFileObject
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| IPFS CID of the file |
+
+### Return type
+
+**\SplFileObject**
+
+### Description
 
 Get file from IPFS
 
@@ -52,25 +66,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `storeIPFS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->iPFS()->storeIPFS(
+    ?\SplFileObject $file
+): \Tatum\Model\StoreIPFS200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| IPFS CID of the file |
+ **$file** | **\SplFileObject****\SplFileObject**| Your file to store | [optional]
 
 ### Return type
 
-**\SplFileObject**
+[**\Tatum\Model\StoreIPFS200Response**](../Model/StoreIPFS200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `storeIPFS()`
-
-```php
-api()->iPFS()->storeIPFS(
-    ?\SplFileObject $file
-): \Tatum\Model\StoreIPFS200Response
-```
+### Description
 
 Store data to IPFS
 
@@ -108,14 +126,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$file** | **\SplFileObject****\SplFileObject**| Your file to store | [optional]
-
-### Return type
-
-[**\Tatum\Model\StoreIPFS200Response**](../Model/StoreIPFS200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

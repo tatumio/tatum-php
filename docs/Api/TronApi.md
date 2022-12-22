@@ -25,11 +25,25 @@ Method | HTTP request | Description
 
 ## `generateTronwallet()`
 
+### Type signature
+
 ```php
-api()->tron()->generateTronwallet(
+$sdk->{mainnet/testnet}()->api()->tron()->generateTronwallet(
     ?string $mnemonic
 ): \Tatum\Model\TronWallet
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+
+### Return type
+
+[**\Tatum\Model\TronWallet**](../Model/TronWallet.md)
+
+### Description
 
 Generate a TRON wallet
 
@@ -67,26 +81,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
-
-### Return type
-
-[**\Tatum\Model\TronWallet**](../Model/TronWallet.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronAccountTx()`
 
+### Type signature
+
 ```php
-api()->tron()->tronAccountTx(
+$sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx(
     ?string $address, 
     ?string $next
 ): \Tatum\Model\TronAccountTx200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| The address of the TRON account to get all transactions for |
+ **$next** | **string**| The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
+
+### Return type
+
+[**\Tatum\Model\TronAccountTx200Response**](../Model/TronAccountTx200Response.md)
+
+### Description
 
 Get all transactions for a TRON account
 
@@ -127,27 +146,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| The address of the TRON account to get all transactions for |
- **$next** | **string**| The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
-
-### Return type
-
-[**\Tatum\Model\TronAccountTx200Response**](../Model/TronAccountTx200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronAccountTx20()`
 
+### Type signature
+
 ```php
-api()->tron()->tronAccountTx20(
+$sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx20(
     ?string $address, 
     ?string $next
 ): \Tatum\Model\TronAccountTx20200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| The address of the TRON account to get TRC-20 transactions for |
+ **$next** | **string**| The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
+
+### Return type
+
+[**\Tatum\Model\TronAccountTx20200Response**](../Model/TronAccountTx20200Response.md)
+
+### Description
 
 Get TRC-20 transactions for a TRON account
 
@@ -188,26 +211,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronBroadcast(
+    ?\Tatum\Model\TronBroadcast $tron_broadcast
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| The address of the TRON account to get TRC-20 transactions for |
- **$next** | **string**| The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
+ **$tron_broadcast** | [**\Tatum\Model\TronBroadcast**](../Model/TronBroadcast.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\TronAccountTx20200Response**](../Model/TronAccountTx20200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronBroadcast()`
-
-```php
-api()->tron()->tronBroadcast(
-    ?\Tatum\Model\TronBroadcast $tron_broadcast
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast a TRON transaction
 
@@ -244,25 +270,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronCreateTrc10()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronCreateTrc10(
+    ?\Tatum\Model\TronCreateTrc10Request $tron_create_trc10_request
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_broadcast** | [**\Tatum\Model\TronBroadcast**](../Model/TronBroadcast.md)|  |
+ **$tron_create_trc10_request** | [**\Tatum\Model\TronCreateTrc10Request**](../Model/TronCreateTrc10Request.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronCreateTrc10()`
-
-```php
-api()->tron()->tronCreateTrc10(
-    ?\Tatum\Model\TronCreateTrc10Request $tron_create_trc10_request
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Create a TRC-10 token
 
@@ -299,25 +329,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronCreateTrc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronCreateTrc20(
+    ?\Tatum\Model\TronCreateTrc20Request $tron_create_trc20_request
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_create_trc10_request** | [**\Tatum\Model\TronCreateTrc10Request**](../Model/TronCreateTrc10Request.md)|  |
+ **$tron_create_trc20_request** | [**\Tatum\Model\TronCreateTrc20Request**](../Model/TronCreateTrc20Request.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronCreateTrc20()`
-
-```php
-api()->tron()->tronCreateTrc20(
-    ?\Tatum\Model\TronCreateTrc20Request $tron_create_trc20_request
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Create a TRC-20 token
 
@@ -354,25 +388,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronFreeze()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronFreeze(
+    ?\Tatum\Model\TronFreezeRequest $tron_freeze_request
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_create_trc20_request** | [**\Tatum\Model\TronCreateTrc20Request**](../Model/TronCreateTrc20Request.md)|  |
+ **$tron_freeze_request** | [**\Tatum\Model\TronFreezeRequest**](../Model/TronFreezeRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronFreeze()`
-
-```php
-api()->tron()->tronFreeze(
-    ?\Tatum\Model\TronFreezeRequest $tron_freeze_request
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Freeze the balance of a TRON account
 
@@ -409,26 +447,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$tron_freeze_request** | [**\Tatum\Model\TronFreezeRequest**](../Model/TronFreezeRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->tron()->tronGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\TronGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters) |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\TronGenerateAddress200Response**](../Model/TronGenerateAddress200Response.md)
+
+### Description
 
 Generate a TRON address from the wallet's extended public key
 
@@ -469,26 +512,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters) |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\TronGenerateAddress200Response**](../Model/TronGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronGenerateAddressPrivateKey()`
-
-```php
-api()->tron()->tronGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate the private key for a TRON address
 
@@ -525,25 +571,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronGetAccount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronGetAccount(
+    ?string $address
+): \Tatum\Model\TronAccount
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$address** | **string**| Account address. |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\TronAccount**](../Model/TronAccount.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronGetAccount()`
-
-```php
-api()->tron()->tronGetAccount(
-    ?string $address
-): \Tatum\Model\TronAccount
-```
+### Description
 
 Get the TRON account by its address
 
@@ -581,25 +631,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronGetBlock(
+    ?string $hash
+): \Tatum\Model\TronBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address. |
+ **$hash** | **string**| Block hash or height. |
 
 ### Return type
 
-[**\Tatum\Model\TronAccount**](../Model/TronAccount.md)
+[**\Tatum\Model\TronBlock**](../Model/TronBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronGetBlock()`
-
-```php
-api()->tron()->tronGetBlock(
-    ?string $hash
-): \Tatum\Model\TronBlock
-```
+### Description
 
 Get a TRON block by its hash or height
 
@@ -637,24 +691,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
-
-### Return type
-
-[**\Tatum\Model\TronBlock**](../Model/TronBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->tron()->tronGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->tron()->tronGetCurrentBlock(
 ): \Tatum\Model\TronGetCurrentBlock200Response
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\TronGetCurrentBlock200Response**](../Model/TronGetCurrentBlock200Response.md)
+
+### Description
 
 Get the current TRON block
 
@@ -689,23 +745,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\TronGetCurrentBlock200Response**](../Model/TronGetCurrentBlock200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGetTransaction()`
 
+### Type signature
+
 ```php
-api()->tron()->tronGetTransaction(
+$sdk->{mainnet/testnet}()->api()->tron()->tronGetTransaction(
     ?string $hash
 ): \Tatum\Model\TronTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash. |
+
+### Return type
+
+[**\Tatum\Model\TronTx**](../Model/TronTx.md)
+
+### Description
 
 Get a TRON transaction by its hash
 
@@ -743,25 +805,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronTransfer(
+    ?\Tatum\Model\TronTransferRequest $tron_transfer_request
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash. |
+ **$tron_transfer_request** | [**\Tatum\Model\TronTransferRequest**](../Model/TronTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\TronTx**](../Model/TronTx.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronTransfer()`
-
-```php
-api()->tron()->tronTransfer(
-    ?\Tatum\Model\TronTransferRequest $tron_transfer_request
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Send TRX to a TRON account
 
@@ -798,25 +864,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronTransferTrc10()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronTransferTrc10(
+    ?\Tatum\Model\TronTransferTrc10Request $tron_transfer_trc10_request
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_request** | [**\Tatum\Model\TronTransferRequest**](../Model/TronTransferRequest.md)|  |
+ **$tron_transfer_trc10_request** | [**\Tatum\Model\TronTransferTrc10Request**](../Model/TronTransferTrc10Request.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronTransferTrc10()`
-
-```php
-api()->tron()->tronTransferTrc10(
-    ?\Tatum\Model\TronTransferTrc10Request $tron_transfer_trc10_request
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Send TRC-10 tokens to a TRON account
 
@@ -853,25 +923,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronTransferTrc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronTransferTrc20(
+    ?\Tatum\Model\TronTransferTrc20Request $tron_transfer_trc20_request
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_trc10_request** | [**\Tatum\Model\TronTransferTrc10Request**](../Model/TronTransferTrc10Request.md)|  |
+ **$tron_transfer_trc20_request** | [**\Tatum\Model\TronTransferTrc20Request**](../Model/TronTransferTrc20Request.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronTransferTrc20()`
-
-```php
-api()->tron()->tronTransferTrc20(
-    ?\Tatum\Model\TronTransferTrc20Request $tron_transfer_trc20_request
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Send TRC-20 tokens to a TRON account
 
@@ -908,25 +982,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronTrc10Detail()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->tronTrc10Detail(
+    ?string $id_or_owner_address
+): \Tatum\Model\TronTrc10Detail
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_trc20_request** | [**\Tatum\Model\TronTransferTrc20Request**](../Model/TronTransferTrc20Request.md)|  |
+ **$id_or_owner_address** | **string**| The ID of the TRC-10 token or the address of the token&#39;s owner |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TronTrc10Detail**](../Model/TronTrc10Detail.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronTrc10Detail()`
-
-```php
-api()->tron()->tronTrc10Detail(
-    ?string $id_or_owner_address
-): \Tatum\Model\TronTrc10Detail
-```
+### Description
 
 Get information about a TRC-10 token
 
@@ -964,14 +1042,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id_or_owner_address** | **string**| The ID of the TRC-10 token or the address of the token&#39;s owner |
-
-### Return type
-
-[**\Tatum\Model\TronTrc10Detail**](../Model/TronTrc10Detail.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

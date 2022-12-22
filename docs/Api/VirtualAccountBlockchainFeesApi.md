@@ -9,11 +9,25 @@ Method | HTTP request | Description
 
 ## `offchainEstimateFee()`
 
+### Type signature
+
 ```php
-api()->virtualAccountBlockchainFees()->offchainEstimateFee(
+$sdk->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()->offchainEstimateFee(
     ?\Tatum\Model\OffchainEstimateFee $offchain_estimate_fee
 ): \Tatum\Model\FeeBtc
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$offchain_estimate_fee** | [**\Tatum\Model\OffchainEstimateFee**](../Model/OffchainEstimateFee.md)|  |
+
+### Return type
+
+[**\Tatum\Model\FeeBtc**](../Model/FeeBtc.md)
+
+### Description
 
 Estimate ledger to blockchain transaction fee
 
@@ -50,14 +64,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$offchain_estimate_fee** | [**\Tatum\Model\OffchainEstimateFee**](../Model/OffchainEstimateFee.md)|  |
-
-### Return type
-
-[**\Tatum\Model\FeeBtc**](../Model/FeeBtc.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

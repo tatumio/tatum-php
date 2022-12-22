@@ -26,11 +26,25 @@ Method | HTTP request | Description
 
 ## `activateAccount()`
 
+### Type signature
+
 ```php
-api()->account()->activateAccount(
+$sdk->{mainnet/testnet}()->api()->account()->activateAccount(
     ?string $id
 )
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| Account ID |
+
+### Return type
+
+void (empty response body)
+
+### Description
 
 Activate account
 
@@ -65,26 +79,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockAmount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->blockAmount(
+    ?string $id, 
+    ?\Tatum\Model\BlockAmount $block_amount
+): \Tatum\Model\Id
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**| Account ID |
+ **$block_amount** | [**\Tatum\Model\BlockAmount**](../Model/BlockAmount.md)|  |
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\Id**](../Model/Id.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `blockAmount()`
-
-```php
-api()->account()->blockAmount(
-    ?string $id, 
-    ?\Tatum\Model\BlockAmount $block_amount
-): \Tatum\Model\Id
-```
+### Description
 
 Block an amount in an account
 
@@ -124,26 +143,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createAccount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->createAccount(
+    ?\Tatum\Model\CreateAccountRequest $create_account_request
+): \Tatum\Model\Account
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$block_amount** | [**\Tatum\Model\BlockAmount**](../Model/BlockAmount.md)|  |
+ **$create_account_request** | [**\Tatum\Model\CreateAccountRequest**](../Model/CreateAccountRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Account**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createAccount()`
-
-```php
-api()->account()->createAccount(
-    ?\Tatum\Model\CreateAccountRequest $create_account_request
-): \Tatum\Model\Account
-```
+### Description
 
 Create a virtual account
 
@@ -180,25 +202,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createAccountBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->createAccountBatch(
+    ?\Tatum\Model\CreateAccountBatch $create_account_batch
+): \Tatum\Model\Account[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_account_request** | [**\Tatum\Model\CreateAccountRequest**](../Model/CreateAccountRequest.md)|  |
+ **$create_account_batch** | [**\Tatum\Model\CreateAccountBatch**](../Model/CreateAccountBatch.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Account**](../Model/Account.md)
+[**\Tatum\Model\Account[]**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createAccountBatch()`
-
-```php
-api()->account()->createAccountBatch(
-    ?\Tatum\Model\CreateAccountBatch $create_account_batch
-): \Tatum\Model\Account[]
-```
+### Description
 
 Create multiple accounts in a batch call
 
@@ -235,25 +261,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deactivateAccount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->deactivateAccount(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_account_batch** | [**\Tatum\Model\CreateAccountBatch**](../Model/CreateAccountBatch.md)|  |
+ **$id** | **string**| Account ID |
 
 ### Return type
 
-[**\Tatum\Model\Account[]**](../Model/Account.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deactivateAccount()`
-
-```php
-api()->account()->deactivateAccount(
-    ?string $id
-)
-```
+### Description
 
 Deactivate account
 
@@ -288,6 +318,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deleteAllBlockAmount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->deleteAllBlockAmount(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -298,15 +340,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deleteAllBlockAmount()`
-
-```php
-api()->account()->deleteAllBlockAmount(
-    ?string $id
-)
-```
+### Description
 
 Unblock all blocked amounts in an account
 
@@ -341,25 +375,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deleteBlockAmount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->deleteBlockAmount(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**| Blockage ID |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deleteBlockAmount()`
-
-```php
-api()->account()->deleteBlockAmount(
-    ?string $id
-)
-```
+### Description
 
 Unblock a blocked amount in an account
 
@@ -394,25 +432,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `freezeAccount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->freezeAccount(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Blockage ID |
+ **$id** | **string**| Account ID |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `freezeAccount()`
-
-```php
-api()->account()->freezeAccount(
-    ?string $id
-)
-```
+### Description
 
 Freeze account
 
@@ -447,6 +489,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getAccountBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->getAccountBalance(
+    ?string $id
+): \Tatum\Model\AccountBalance
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -455,17 +509,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\AccountBalance**](../Model/AccountBalance.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getAccountBalance()`
-
-```php
-api()->account()->getAccountBalance(
-    ?string $id
-): \Tatum\Model\AccountBalance
-```
+### Description
 
 Get account balance
 
@@ -503,6 +549,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getAccountByAccountId()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->getAccountByAccountId(
+    ?string $id
+): \Tatum\Model\Account
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -511,17 +569,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AccountBalance**](../Model/AccountBalance.md)
+[**\Tatum\Model\Account**](../Model/Account.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getAccountByAccountId()`
-
-```php
-api()->account()->getAccountByAccountId(
-    ?string $id
-): \Tatum\Model\Account
-```
+### Description
 
 Get account by ID
 
@@ -559,22 +609,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
-
-### Return type
-
-[**\Tatum\Model\Account**](../Model/Account.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccounts()`
 
+### Type signature
+
 ```php
-api()->account()->getAccounts(
+$sdk->{mainnet/testnet}()->api()->account()->getAccounts(
     ?float $page_size, 
     ?float $page, 
     ?string $sort, 
@@ -586,6 +628,26 @@ api()->account()->getAccounts(
     ?string $account_number
 ): \Tatum\Model\Account[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. | [optional]
+ **$page** | **float**| Page number | [optional]
+ **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
+ **$sort_by** | **string**| Sort by | [optional]
+ **$active** | **bool**| Filter only active or non active accounts | [optional]
+ **$only_non_zero_balance** | **bool**| Filter only accounts with non zero balances | [optional]
+ **$frozen** | **bool**| Filter only frozen or non frozen accounts | [optional]
+ **$currency** | **string**| Filter by currency | [optional]
+ **$account_number** | **string**| Filter by account number | [optional]
+
+### Return type
+
+[**\Tatum\Model\Account[]**](../Model/Account.md)
+
+### Description
 
 List all accounts
 
@@ -647,36 +709,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. | [optional]
- **$page** | **float**| Page number | [optional]
- **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
- **$sort_by** | **string**| Sort by | [optional]
- **$active** | **bool**| Filter only active or non active accounts | [optional]
- **$only_non_zero_balance** | **bool**| Filter only accounts with non zero balances | [optional]
- **$frozen** | **bool**| Filter only frozen or non frozen accounts | [optional]
- **$currency** | **string**| Filter by currency | [optional]
- **$account_number** | **string**| Filter by account number | [optional]
-
-### Return type
-
-[**\Tatum\Model\Account[]**](../Model/Account.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccountsByCustomerId()`
 
+### Type signature
+
 ```php
-api()->account()->getAccountsByCustomerId(
+$sdk->{mainnet/testnet}()->api()->account()->getAccountsByCustomerId(
     ?float $page_size, 
     ?string $id, 
     ?float $offset, 
     ?string $account_code
 ): \Tatum\Model\Account[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$id** | **string**| Internal customer ID |
+ **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$account_code** | **string**| For bookkeeping to distinct account purpose. | [optional]
+
+### Return type
+
+[**\Tatum\Model\Account[]**](../Model/Account.md)
+
+### Description
 
 List all customer accounts
 
@@ -723,25 +784,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Internal customer ID |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$account_code** | **string**| For bookkeeping to distinct account purpose. | [optional]
-
-### Return type
-
-[**\Tatum\Model\Account[]**](../Model/Account.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccountsCount()`
 
+### Type signature
+
 ```php
-api()->account()->getAccountsCount(
+$sdk->{mainnet/testnet}()->api()->account()->getAccountsCount(
     ?float $page_size, 
     ?float $page, 
     ?string $sort, 
@@ -753,6 +803,26 @@ api()->account()->getAccountsCount(
     ?string $account_number
 ): \Tatum\Model\EntitiesCount
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. | [optional]
+ **$page** | **float**| Page number | [optional]
+ **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
+ **$sort_by** | **string**| Sort by | [optional]
+ **$active** | **bool**| Filter only active or non active accounts | [optional]
+ **$only_non_zero_balance** | **bool**| Filter only accounts with non zero balances | [optional]
+ **$frozen** | **bool**| Filter only frozen or non frozen accounts | [optional]
+ **$currency** | **string**| Filter by currency | [optional]
+ **$account_number** | **string**| Filter by account number | [optional]
+
+### Return type
+
+[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
+
+### Description
 
 Count of found entities for get accounts request
 
@@ -814,35 +884,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. | [optional]
- **$page** | **float**| Page number | [optional]
- **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
- **$sort_by** | **string**| Sort by | [optional]
- **$active** | **bool**| Filter only active or non active accounts | [optional]
- **$only_non_zero_balance** | **bool**| Filter only accounts with non zero balances | [optional]
- **$frozen** | **bool**| Filter only frozen or non frozen accounts | [optional]
- **$currency** | **string**| Filter by currency | [optional]
- **$account_number** | **string**| Filter by account number | [optional]
-
-### Return type
-
-[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getBlockAmount()`
 
+### Type signature
+
 ```php
-api()->account()->getBlockAmount(
+$sdk->{mainnet/testnet}()->api()->account()->getBlockAmount(
     ?string $id, 
     ?float $page_size, 
     ?float $offset
 ): \Tatum\Model\Blockage[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| Account ID |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+
+### Return type
+
+[**\Tatum\Model\Blockage[]**](../Model/Blockage.md)
+
+### Description
 
 Get blocked amounts in an account
 
@@ -886,27 +954,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getBlockAmountById()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->getBlockAmountById(
+    ?string $id
+): \Tatum\Model\Blockage
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$id** | **string**| Blocked amount ID |
 
 ### Return type
 
-[**\Tatum\Model\Blockage[]**](../Model/Blockage.md)
+[**\Tatum\Model\Blockage**](../Model/Blockage.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getBlockAmountById()`
-
-```php
-api()->account()->getBlockAmountById(
-    ?string $id
-): \Tatum\Model\Blockage
-```
+### Description
 
 Get blocked amount by ID
 
@@ -944,26 +1014,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Blocked amount ID |
-
-### Return type
-
-[**\Tatum\Model\Blockage**](../Model/Blockage.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `unblockAmountWithTransaction()`
 
+### Type signature
+
 ```php
-api()->account()->unblockAmountWithTransaction(
+$sdk->{mainnet/testnet}()->api()->account()->unblockAmountWithTransaction(
     ?string $id, 
     ?\Tatum\Model\UnblockAmount $unblock_amount
 ): \Tatum\Model\TransactionResult
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| Blockage ID |
+ **$unblock_amount** | [**\Tatum\Model\UnblockAmount**](../Model/UnblockAmount.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+
+### Description
 
 Unblock an amount in an account and perform a transaction
 
@@ -1003,26 +1078,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `unfreezeAccount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->unfreezeAccount(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Blockage ID |
- **$unblock_amount** | [**\Tatum\Model\UnblockAmount**](../Model/UnblockAmount.md)|  |
+ **$id** | **string**| Account ID |
 
 ### Return type
 
-[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `unfreezeAccount()`
-
-```php
-api()->account()->unfreezeAccount(
-    ?string $id
-)
-```
+### Description
 
 Unfreeze account
 
@@ -1057,26 +1135,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateAccountByAccountId()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->account()->updateAccountByAccountId(
+    ?string $id, 
+    ?\Tatum\Model\UpdateAccount $update_account
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**| Account ID |
+ **$update_account** | [**\Tatum\Model\UpdateAccount**](../Model/UpdateAccount.md)|  |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateAccountByAccountId()`
-
-```php
-api()->account()->updateAccountByAccountId(
-    ?string $id, 
-    ?\Tatum\Model\UpdateAccount $update_account
-)
-```
+### Description
 
 Update account
 
@@ -1113,15 +1196,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$update_account** | [**\Tatum\Model\UpdateAccount**](../Model/UpdateAccount.md)|  |
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

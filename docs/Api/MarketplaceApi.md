@@ -22,11 +22,25 @@ Method | HTTP request | Description
 
 ## `buyAssetOnMarketplace()`
 
+### Type signature
+
 ```php
-api()->marketplace()->buyAssetOnMarketplace(
+$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplace(
     ?\Tatum\Model\BuyAssetOnMarketplaceRequest $buy_asset_on_marketplace_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$buy_asset_on_marketplace_request** | [**\Tatum\Model\BuyAssetOnMarketplaceRequest**](../Model/BuyAssetOnMarketplaceRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Buy an asset on the NFT marketplace
 
@@ -63,25 +77,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `cancelSellMarketplaceListing()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellMarketplaceListing(
+    ?\Tatum\Model\CancelSellMarketplaceListingRequest $cancel_sell_marketplace_listing_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace_request** | [**\Tatum\Model\BuyAssetOnMarketplaceRequest**](../Model/BuyAssetOnMarketplaceRequest.md)|  |
+ **$cancel_sell_marketplace_listing_request** | [**\Tatum\Model\CancelSellMarketplaceListingRequest**](../Model/CancelSellMarketplaceListingRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `cancelSellMarketplaceListing()`
-
-```php
-api()->marketplace()->cancelSellMarketplaceListing(
-    ?\Tatum\Model\CancelSellMarketplaceListingRequest $cancel_sell_marketplace_listing_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Cancel the selling of an asset on the NFT marketplace
 
@@ -118,25 +136,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateMarketplace()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplace(
+    ?\Tatum\Model\GenerateMarketplaceRequest $generate_marketplace_request
+): \Tatum\Model\GenerateMarketplace200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_marketplace_listing_request** | [**\Tatum\Model\CancelSellMarketplaceListingRequest**](../Model/CancelSellMarketplaceListingRequest.md)|  |
+ **$generate_marketplace_request** | [**\Tatum\Model\GenerateMarketplaceRequest**](../Model/GenerateMarketplaceRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `generateMarketplace()`
-
-```php
-api()->marketplace()->generateMarketplace(
-    ?\Tatum\Model\GenerateMarketplaceRequest $generate_marketplace_request
-): \Tatum\Model\GenerateMarketplace200Response
-```
+### Description
 
 Create an NFT marketplace
 
@@ -173,26 +195,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_marketplace_request** | [**\Tatum\Model\GenerateMarketplaceRequest**](../Model/GenerateMarketplaceRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getMarketplaceFee()`
 
+### Type signature
+
 ```php
-api()->marketplace()->getMarketplaceFee(
+$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFee(
     ?string $chain, 
     ?string $contract_address
 ): float
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$contract_address** | **string**| Contract address |
+
+### Return type
+
+**float**
+
+### Description
 
 Get the NFT marketplace fee
 
@@ -233,6 +260,19 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getMarketplaceFeeRecipient()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFeeRecipient(
+    ?string $chain, 
+    ?string $contract_address
+): \Tatum\Model\GetMarketplaceFeeRecipient200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -242,18 +282,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**float**
+[**\Tatum\Model\GetMarketplaceFeeRecipient200Response**](../Model/GetMarketplaceFeeRecipient200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getMarketplaceFeeRecipient()`
-
-```php
-api()->marketplace()->getMarketplaceFeeRecipient(
-    ?string $chain, 
-    ?string $contract_address
-): \Tatum\Model\GetMarketplaceFeeRecipient200Response
-```
+### Description
 
 Get the recipient of the NFT marketplace fee
 
@@ -294,6 +325,19 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getMarketplaceInfo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceInfo(
+    ?string $chain, 
+    ?string $contract_address
+): \Tatum\Model\GetMarketplaceInfo200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -303,18 +347,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetMarketplaceFeeRecipient200Response**](../Model/GetMarketplaceFeeRecipient200Response.md)
+[**\Tatum\Model\GetMarketplaceInfo200Response**](../Model/GetMarketplaceInfo200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getMarketplaceInfo()`
-
-```php
-api()->marketplace()->getMarketplaceInfo(
-    ?string $chain, 
-    ?string $contract_address
-): \Tatum\Model\GetMarketplaceInfo200Response
-```
+### Description
 
 Get information about an NFT marketplace on Solana
 
@@ -355,28 +390,33 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getMarketplaceListing()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListing(
+    ?string $chain, 
+    ?string $contract_address, 
+    ?string $id
+): \Tatum\Model\GetMarketplaceListing200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| Blockchain to work with |
  **$contract_address** | **string**| Contract address |
+ **$id** | **string**| Listing ID |
 
 ### Return type
 
-[**\Tatum\Model\GetMarketplaceInfo200Response**](../Model/GetMarketplaceInfo200Response.md)
+[**\Tatum\Model\GetMarketplaceListing200Response**](../Model/GetMarketplaceListing200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getMarketplaceListing()`
-
-```php
-api()->marketplace()->getMarketplaceListing(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $id
-): \Tatum\Model\GetMarketplaceListing200Response
-```
+### Description
 
 Get information about a listing on the NFT marketplace
 
@@ -420,29 +460,33 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getMarketplaceListings()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListings(
+    ?string $chain, 
+    ?string $contract_address, 
+    ?string $type
+): string[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| Blockchain to work with |
  **$contract_address** | **string**| Contract address |
- **$id** | **string**| Listing ID |
+ **$type** | **string**| The type of listings to return |
 
 ### Return type
 
-[**\Tatum\Model\GetMarketplaceListing200Response**](../Model/GetMarketplaceListing200Response.md)
+**string[]**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getMarketplaceListings()`
-
-```php
-api()->marketplace()->getMarketplaceListings(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $type
-): string[]
-```
+### Description
 
 Get the listings of a certain type from the NFT marketplace
 
@@ -486,27 +530,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sellAssetOnMarketplace()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplace(
+    ?\Tatum\Model\SellAssetOnMarketplaceRequest $sell_asset_on_marketplace_request
+): \Tatum\Model\SellAssetOnMarketplace200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
- **$type** | **string**| The type of listings to return |
+ **$sell_asset_on_marketplace_request** | [**\Tatum\Model\SellAssetOnMarketplaceRequest**](../Model/SellAssetOnMarketplaceRequest.md)|  |
 
 ### Return type
 
-**string[]**
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `sellAssetOnMarketplace()`
-
-```php
-api()->marketplace()->sellAssetOnMarketplace(
-    ?\Tatum\Model\SellAssetOnMarketplaceRequest $sell_asset_on_marketplace_request
-): \Tatum\Model\SellAssetOnMarketplace200Response
-```
+### Description
 
 Sell an asset on the NFT marketplace
 
@@ -543,25 +589,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFee()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFee(
+    ?\Tatum\Model\UpdateFeeRequest $update_fee_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_request** | [**\Tatum\Model\SellAssetOnMarketplaceRequest**](../Model/SellAssetOnMarketplaceRequest.md)|  |
+ **$update_fee_request** | [**\Tatum\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateFee()`
-
-```php
-api()->marketplace()->updateFee(
-    ?\Tatum\Model\UpdateFeeRequest $update_fee_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Update the NFT marketplace fee
 
@@ -598,25 +648,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeRecipient()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipient(
+    ?\Tatum\Model\UpdateFeeRecipientRequest $update_fee_recipient_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_request** | [**\Tatum\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md)|  |
+ **$update_fee_recipient_request** | [**\Tatum\Model\UpdateFeeRecipientRequest**](../Model/UpdateFeeRecipientRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateFeeRecipient()`
-
-```php
-api()->marketplace()->updateFeeRecipient(
-    ?\Tatum\Model\UpdateFeeRecipientRequest $update_fee_recipient_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Update the recipient of the NFT marketplace fee
 
@@ -653,25 +707,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateMarketplace()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplace(
+    ?\Tatum\Model\UpdateMarketplaceRequest $update_marketplace_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_request** | [**\Tatum\Model\UpdateFeeRecipientRequest**](../Model/UpdateFeeRecipientRequest.md)|  |
+ **$update_marketplace_request** | [**\Tatum\Model\UpdateMarketplaceRequest**](../Model/UpdateMarketplaceRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateMarketplace()`
-
-```php
-api()->marketplace()->updateMarketplace(
-    ?\Tatum\Model\UpdateMarketplaceRequest $update_marketplace_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Update an NFT marketplace on Solana
 
@@ -708,25 +766,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `withdrawFeeFromMarketplace()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFeeFromMarketplace(
+    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_marketplace_request** | [**\Tatum\Model\UpdateMarketplaceRequest**](../Model/UpdateMarketplaceRequest.md)|  |
+ **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `withdrawFeeFromMarketplace()`
-
-```php
-api()->marketplace()->withdrawFeeFromMarketplace(
-    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Withdraw funds from the marketplace fee account on Solana
 
@@ -763,6 +825,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `withdrawTreasuryFromMarketplace()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->withdrawTreasuryFromMarketplace(
+    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -773,15 +847,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `withdrawTreasuryFromMarketplace()`
-
-```php
-api()->marketplace()->withdrawTreasuryFromMarketplace(
-    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Withdraw funds from the marketplace treasury account on Solana
 
@@ -818,14 +884,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

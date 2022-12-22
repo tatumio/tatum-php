@@ -11,11 +11,26 @@ Method | Description
 
 ## `generateWallet()`
 
+### Type signature
+
 ```php
-local()->wallet()->celo()->generateWallet(
+$sdk->{mainnet/testnet}()->local()->wallet()->celo()->generateWallet(
     ?string $mnemonic
 ): \Tatum\Model\Wallet
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**$mnemonic** | `string` | 24-word mnemonic |  [optional] [default to null]
+
+### Return type
+
+Wallet Model ([**\Tatum\Model\Wallet**](../../Model/Wallet.md))
+
+### Description
+
 Generate wallet
 
 ### Example
@@ -46,26 +61,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**$mnemonic** | `string` | 24-word mnemonic |  [optional] [default to null]
-
-### Return type
-
-Wallet Model ([**\Tatum\Model\Wallet**](../../Model/Wallet.md))
-
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+
 
 ## `generateAddressFromXpub()`
 
+### Type signature
+
 ```php
-local()->wallet()->celo()->generateAddressFromXpub(
+$sdk->{mainnet/testnet}()->local()->wallet()->celo()->generateAddressFromXpub(
     ?string $xpub, 
     ?int $index
 ): \Tatum\Model\GeneratedAddressBtc
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**$xpub** | `string` | Extended public key | 
+**$index** | `int` | Derivation index | 
+
+### Return type
+
+Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc.md))
+
+### Description
+
 Generate address from xPub and index
 
 ### Example
@@ -99,26 +121,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+
+
+## `generateAddressFromPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->celo()->generateAddressFromPrivateKey(
+    ?\Tatum\Model\PrivKey $privateKey
+): \Tatum\Model\GeneratedAddressBtc
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**$xpub** | `string` | Extended public key | 
-**$index** | `int` | Derivation index | 
+**$privateKey** | [**\Tatum\Model\PrivKey**](../../Model/PrivKey.md) | Private Key | 
 
 ### Return type
 
 Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc.md))
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+### Description
 
-## `generateAddressFromPrivateKey()`
-
-```php
-local()->wallet()->celo()->generateAddressFromPrivateKey(
-    ?\Tatum\Model\PrivKey $privateKey
-): \Tatum\Model\GeneratedAddressBtc
-```
 Generate address from xPub and index
 
 ### Example
@@ -149,26 +176,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**$privateKey** | [**\Tatum\Model\PrivKey**](../../Model/PrivKey.md) | Private Key | 
-
-### Return type
-
-Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc.md))
-
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+
 
 ## `generatePrivateKey()`
 
+### Type signature
+
 ```php
-local()->wallet()->celo()->generatePrivateKey(
+$sdk->{mainnet/testnet}()->local()->wallet()->celo()->generatePrivateKey(
     ?string $mnemonic, 
     ?int $index
 ): \Tatum\Model\PrivKey
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**$mnemonic** | `string` | 24-word mnemonic | 
+**$index** | `int` | Derivation index | 
+
+### Return type
+
+Private Key ([**\Tatum\Model\PrivKey**](../../Model/PrivKey.md))
+
+### Description
+
 Generate private key from mnemonic and index
 
 ### Example
@@ -202,15 +236,5 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**$mnemonic** | `string` | 24-word mnemonic | 
-**$index** | `int` | Derivation index | 
-
-### Return type
-
-Private Key ([**\Tatum\Model\PrivKey**](../../Model/PrivKey.md))
-
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+

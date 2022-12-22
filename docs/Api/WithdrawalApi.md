@@ -13,11 +13,25 @@ Method | HTTP request | Description
 
 ## `broadcastBlockchainTransaction()`
 
+### Type signature
+
 ```php
-api()->withdrawal()->broadcastBlockchainTransaction(
+$sdk->{mainnet/testnet}()->api()->withdrawal()->broadcastBlockchainTransaction(
     ?\Tatum\Model\BroadcastWithdrawal $broadcast_withdrawal
 ): \Tatum\Model\BroadcastResponse
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_withdrawal** | [**\Tatum\Model\BroadcastWithdrawal**](../Model/BroadcastWithdrawal.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BroadcastResponse**](../Model/BroadcastResponse.md)
+
+### Description
 
 Broadcast signed transaction and complete withdrawal
 
@@ -54,26 +68,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_withdrawal** | [**\Tatum\Model\BroadcastWithdrawal**](../Model/BroadcastWithdrawal.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BroadcastResponse**](../Model/BroadcastResponse.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelInProgressWithdrawal()`
 
+### Type signature
+
 ```php
-api()->withdrawal()->cancelInProgressWithdrawal(
+$sdk->{mainnet/testnet}()->api()->withdrawal()->cancelInProgressWithdrawal(
     ?string $id, 
     ?bool $revert
 )
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| ID of created withdrawal |
+ **$revert** | **bool**| Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum based currencies when gas was consumed but transaction was reverted. | [optional] [default to true]
+
+### Return type
+
+void (empty response body)
+
+### Description
 
 Cancel withdrawal
 
@@ -111,27 +130,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `completeWithdrawal()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->withdrawal()->completeWithdrawal(
+    ?string $id, 
+    ?string $tx_id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**| ID of created withdrawal |
- **$revert** | **bool**| Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum based currencies when gas was consumed but transaction was reverted. | [optional] [default to true]
+ **$tx_id** | **string**| Blockchain transaction ID of created withdrawal |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `completeWithdrawal()`
-
-```php
-api()->withdrawal()->completeWithdrawal(
-    ?string $id, 
-    ?string $tx_id
-)
-```
+### Description
 
 Complete withdrawal
 
@@ -169,29 +192,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of created withdrawal |
- **$tx_id** | **string**| Blockchain transaction ID of created withdrawal |
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getWithdrawals()`
 
+### Type signature
+
 ```php
-api()->withdrawal()->getWithdrawals(
+$sdk->{mainnet/testnet}()->api()->withdrawal()->getWithdrawals(
     ?float $page_size, 
     ?string $currency, 
     ?string $status, 
     ?float $offset
 ): \Tatum\Model\WithdrawalObject[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$currency** | **string**| Currency of the withdrawal | [optional]
+ **$status** | **string**| Status of the withdrawal | [optional]
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+
+### Return type
+
+[**\Tatum\Model\WithdrawalObject[]**](../Model/WithdrawalObject.md)
+
+### Description
 
 Get withdrawals
 
@@ -238,28 +267,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `storeWithdrawal()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->withdrawal()->storeWithdrawal(
+    ?\Tatum\Model\Withdrawal $withdrawal
+): \Tatum\Model\WithdrawalResponse
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$currency** | **string**| Currency of the withdrawal | [optional]
- **$status** | **string**| Status of the withdrawal | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$withdrawal** | [**\Tatum\Model\Withdrawal**](../Model/Withdrawal.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\WithdrawalObject[]**](../Model/WithdrawalObject.md)
+[**\Tatum\Model\WithdrawalResponse**](../Model/WithdrawalResponse.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `storeWithdrawal()`
-
-```php
-api()->withdrawal()->storeWithdrawal(
-    ?\Tatum\Model\Withdrawal $withdrawal
-): \Tatum\Model\WithdrawalResponse
-```
+### Description
 
 Store withdrawal
 
@@ -296,14 +326,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$withdrawal** | [**\Tatum\Model\Withdrawal**](../Model/Withdrawal.md)|  |
-
-### Return type
-
-[**\Tatum\Model\WithdrawalResponse**](../Model/WithdrawalResponse.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

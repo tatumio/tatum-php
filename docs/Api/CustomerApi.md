@@ -15,11 +15,25 @@ Method | HTTP request | Description
 
 ## `activateCustomer()`
 
+### Type signature
+
 ```php
-api()->customer()->activateCustomer(
+$sdk->{mainnet/testnet}()->api()->customer()->activateCustomer(
     ?string $id
 )
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| Customer internal ID |
+
+### Return type
+
+void (empty response body)
+
+### Description
 
 Activate customer
 
@@ -54,6 +68,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deactivateCustomer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->customer()->deactivateCustomer(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -64,15 +90,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deactivateCustomer()`
-
-```php
-api()->customer()->deactivateCustomer(
-    ?string $id
-)
-```
+### Description
 
 Deactivate customer
 
@@ -107,6 +125,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `disableCustomer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->customer()->disableCustomer(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -117,15 +147,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `disableCustomer()`
-
-```php
-api()->customer()->disableCustomer(
-    ?string $id
-)
-```
+### Description
 
 Disable customer
 
@@ -160,6 +182,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `enableCustomer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->customer()->enableCustomer(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -170,15 +204,7 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `enableCustomer()`
-
-```php
-api()->customer()->enableCustomer(
-    ?string $id
-)
-```
+### Description
 
 Enable customer
 
@@ -213,26 +239,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer internal ID |
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `findAllCustomers()`
 
+### Type signature
+
 ```php
-api()->customer()->findAllCustomers(
+$sdk->{mainnet/testnet}()->api()->customer()->findAllCustomers(
     ?float $page_size, 
     ?float $offset
 ): \Tatum\Model\Customer[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+
+### Return type
+
+[**\Tatum\Model\Customer[]**](../Model/Customer.md)
+
+### Description
 
 List all customers
 
@@ -273,26 +304,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getCustomerByExternalOrInternalId()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->customer()->getCustomerByExternalOrInternalId(
+    ?string $id
+): \Tatum\Model\Customer
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$id** | **string**| Customer external or internal ID |
 
 ### Return type
 
-[**\Tatum\Model\Customer[]**](../Model/Customer.md)
+[**\Tatum\Model\Customer**](../Model/Customer.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getCustomerByExternalOrInternalId()`
-
-```php
-api()->customer()->getCustomerByExternalOrInternalId(
-    ?string $id
-): \Tatum\Model\Customer
-```
+### Description
 
 Get customer details
 
@@ -330,26 +364,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateCustomer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->customer()->updateCustomer(
+    ?string $id, 
+    ?\Tatum\Model\CustomerUpdate $customer_update
+): \Tatum\Model\Customer
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer external or internal ID |
+ **$id** | **string**| Customer internal ID |
+ **$customer_update** | [**\Tatum\Model\CustomerUpdate**](../Model/CustomerUpdate.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\Customer**](../Model/Customer.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateCustomer()`
-
-```php
-api()->customer()->updateCustomer(
-    ?string $id, 
-    ?\Tatum\Model\CustomerUpdate $customer_update
-): \Tatum\Model\Customer
-```
+### Description
 
 Update customer
 
@@ -389,15 +428,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer internal ID |
- **$customer_update** | [**\Tatum\Model\CustomerUpdate**](../Model/CustomerUpdate.md)|  |
-
-### Return type
-
-[**\Tatum\Model\Customer**](../Model/Customer.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

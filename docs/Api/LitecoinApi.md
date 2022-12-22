@@ -22,11 +22,25 @@ Method | HTTP request | Description
 
 ## `ltcBroadcast()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcBroadcast(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast signed Litecoin transaction
 
@@ -63,26 +77,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\LtcGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\LtcGenerateAddress200Response**](../Model/LtcGenerateAddress200Response.md)
+
+### Description
 
 Generate Litecoin deposit address from Extended public key
 
@@ -123,26 +142,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\LtcGenerateAddress200Response**](../Model/LtcGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ltcGenerateAddressPrivateKey()`
-
-```php
-api()->litecoin()->ltcGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Litecoin private key
 
@@ -179,25 +201,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ltcGenerateWallet()`
-
-```php
-api()->litecoin()->ltcGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Litecoin wallet
 
@@ -235,25 +261,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcGetBalanceOfAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBalanceOfAddress(
+    ?string $address
+): \Tatum\Model\BtcBasedBalance
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Address |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ltcGetBalanceOfAddress()`
-
-```php
-api()->litecoin()->ltcGetBalanceOfAddress(
-    ?string $address
-): \Tatum\Model\BtcBasedBalance
-```
+### Description
 
 Get the balance of a Litecoin address
 
@@ -291,25 +321,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlock(
+    ?string $hash
+): \Tatum\Model\LtcBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
+ **$hash** | **string**| Block hash or height. |
 
 ### Return type
 
-[**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
+[**\Tatum\Model\LtcBlock**](../Model/LtcBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ltcGetBlock()`
-
-```php
-api()->litecoin()->ltcGetBlock(
-    ?string $hash
-): \Tatum\Model\LtcBlock
-```
+### Description
 
 Get Litecoin Block by hash or height
 
@@ -347,24 +381,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
-
-### Return type
-
-[**\Tatum\Model\LtcBlock**](../Model/LtcBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcGetBlockChainInfo()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcGetBlockChainInfo(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockChainInfo(
 ): \Tatum\Model\LtcInfo
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\LtcInfo**](../Model/LtcInfo.md)
+
+### Description
 
 Get Litecoin Blockchain Information
 
@@ -399,23 +435,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\LtcInfo**](../Model/LtcInfo.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcGetBlockHash()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcGetBlockHash(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockHash(
     ?float $i
 ): \Tatum\Model\LtcGetBlockHash200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
+
+### Return type
+
+[**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
+
+### Description
 
 Get Litecoin Block hash
 
@@ -453,24 +495,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
-
-### Return type
-
-[**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcGetMempool()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcGetMempool(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetMempool(
 ): string[]
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**string[]**
+
+### Description
 
 Get Mempool Transactions
 
@@ -505,23 +549,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**string[]**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcGetRawTransaction()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcGetRawTransaction(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetRawTransaction(
     ?string $hash
 ): \Tatum\Model\LtcTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\LtcTx**](../Model/LtcTx.md)
+
+### Description
 
 Get Litecoin Transaction by hash
 
@@ -559,27 +609,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\LtcTx**](../Model/LtcTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcGetTxByAddress()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcGetTxByAddress(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetTxByAddress(
     ?string $address, 
     ?float $page_size, 
     ?float $offset
 ): \Tatum\Model\LtcTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Address |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+
+### Return type
+
+[**\Tatum\Model\LtcTx[]**](../Model/LtcTx.md)
+
+### Description
 
 Get Litecoin Transactions by address
 
@@ -623,28 +679,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
-
-### Return type
-
-[**\Tatum\Model\LtcTx[]**](../Model/LtcTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcGetUTXO()`
 
+### Type signature
+
 ```php
-api()->litecoin()->ltcGetUTXO(
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetUTXO(
     ?string $hash, 
     ?float $index
 ): \Tatum\Model\LtcUTXO
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| The transaction hash |
+ **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+
+### Return type
+
+[**\Tatum\Model\LtcUTXO**](../Model/LtcUTXO.md)
+
+### Description
 
 Get information about a transaction output (UTXO) in a Litecoin transaction
 
@@ -685,26 +744,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcRpcDriver()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcRpcDriver(
+    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
+): object
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| The transaction hash |
- **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\LtcUTXO**](../Model/LtcUTXO.md)
+**object**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ltcRpcDriver()`
-
-```php
-api()->litecoin()->ltcRpcDriver(
-    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
-): object
-```
+### Description
 
 JSON RPC HTTP driver
 
@@ -741,25 +803,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransferBlockchain(
+    ?\Tatum\Model\LtcTransferBlockchainRequest $ltc_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
+ **$ltc_transfer_blockchain_request** | [**\Tatum\Model\LtcTransferBlockchainRequest**](../Model/LtcTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ltcTransferBlockchain()`
-
-```php
-api()->litecoin()->ltcTransferBlockchain(
-    ?\Tatum\Model\LtcTransferBlockchainRequest $ltc_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send LTC to Litecoin addresses
 
@@ -796,14 +862,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$ltc_transfer_blockchain_request** | [**\Tatum\Model\LtcTransferBlockchainRequest**](../Model/LtcTransferBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

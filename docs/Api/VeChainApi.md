@@ -19,11 +19,25 @@ Method | HTTP request | Description
 
 ## `vetBlockchainTransfer()`
 
+### Type signature
+
 ```php
-api()->veChain()->vetBlockchainTransfer(
+$sdk->{mainnet/testnet}()->api()->veChain()->vetBlockchainTransfer(
     ?\Tatum\Model\VetBlockchainTransferRequest $vet_blockchain_transfer_request
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$vet_blockchain_transfer_request** | [**\Tatum\Model\VetBlockchainTransferRequest**](../Model/VetBlockchainTransferRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Send VeChain from account to account
 
@@ -60,25 +74,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->vetBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$vet_blockchain_transfer_request** | [**\Tatum\Model\VetBlockchainTransferRequest**](../Model/VetBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetBroadcast()`
-
-```php
-api()->veChain()->vetBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed VeChain transaction
 
@@ -115,26 +133,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->veChain()->vetGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\VetGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\VetGenerateAddress200Response**](../Model/VetGenerateAddress200Response.md)
+
+### Description
 
 Generate VeChain account address from Extended public key
 
@@ -175,26 +198,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\VetGenerateAddress200Response**](../Model/VetGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetGenerateAddressPrivateKey()`
-
-```php
-api()->veChain()->vetGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate VeChain private key
 
@@ -231,25 +257,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetGenerateWallet()`
-
-```php
-api()->veChain()->vetGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate VeChain wallet
 
@@ -287,25 +317,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGetBalance(
+    ?string $address
+): \Tatum\Model\VetGetBalance200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\VetGetBalance200Response**](../Model/VetGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetGetBalance()`
-
-```php
-api()->veChain()->vetGetBalance(
-    ?string $address
-): \Tatum\Model\VetGetBalance200Response
-```
+### Description
 
 Get VeChain Account balance
 
@@ -343,25 +377,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGetBlock(
+    ?string $hash
+): \Tatum\Model\VetBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or block number |
 
 ### Return type
 
-[**\Tatum\Model\VetGetBalance200Response**](../Model/VetGetBalance200Response.md)
+[**\Tatum\Model\VetBlock**](../Model/VetBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetGetBlock()`
-
-```php
-api()->veChain()->vetGetBlock(
-    ?string $hash
-): \Tatum\Model\VetBlock
-```
+### Description
 
 Get VeChain Block by hash
 
@@ -399,24 +437,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
-
-### Return type
-
-[**\Tatum\Model\VetBlock**](../Model/VetBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->veChain()->vetGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get VeChain current block
 
@@ -451,23 +491,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetEnergy()`
 
+### Type signature
+
 ```php
-api()->veChain()->vetGetEnergy(
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGetEnergy(
     ?string $address
 ): \Tatum\Model\VetGetEnergy200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+
+### Return type
+
+[**\Tatum\Model\VetGetEnergy200Response**](../Model/VetGetEnergy200Response.md)
+
+### Description
 
 Get VeChain Account energy (VTHO)
 
@@ -505,25 +551,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetGetTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransaction(
+    ?string $hash
+): \Tatum\Model\VetTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Transaction hash |
 
 ### Return type
 
-[**\Tatum\Model\VetGetEnergy200Response**](../Model/VetGetEnergy200Response.md)
+[**\Tatum\Model\VetTx**](../Model/VetTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetGetTransaction()`
-
-```php
-api()->veChain()->vetGetTransaction(
-    ?string $hash
-): \Tatum\Model\VetTx
-```
+### Description
 
 Get VeChain Transaction
 
@@ -561,6 +611,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `vetGetTransactionReceipt()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransactionReceipt(
+    ?string $hash
+): \Tatum\Model\VetTxReceipt
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -569,17 +631,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VetTx**](../Model/VetTx.md)
+[**\Tatum\Model\VetTxReceipt**](../Model/VetTxReceipt.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `vetGetTransactionReceipt()`
-
-```php
-api()->veChain()->vetGetTransactionReceipt(
-    ?string $hash
-): \Tatum\Model\VetTxReceipt
-```
+### Description
 
 Get VeChain Transaction Receipt
 
@@ -617,14 +671,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\VetTxReceipt**](../Model/VetTxReceipt.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

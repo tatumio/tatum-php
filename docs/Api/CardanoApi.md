@@ -19,11 +19,25 @@ Method | HTTP request | Description
 
 ## `adaBroadcast()`
 
+### Type signature
+
 ```php
-api()->cardano()->adaBroadcast(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast signed Ada transaction
 
@@ -60,26 +74,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->cardano()->adaGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\AdaGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of a wallet. |
+ **$index** | **float**| Derivation index of the desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\AdaGenerateAddress200Response**](../Model/AdaGenerateAddress200Response.md)
+
+### Description
 
 Generate Ada deposit address from Extended public key
 
@@ -120,26 +139,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `adaGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of a wallet. |
- **$index** | **float**| Derivation index of the desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\AdaGenerateAddress200Response**](../Model/AdaGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `adaGenerateAddressPrivateKey()`
-
-```php
-api()->cardano()->adaGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Ada private key
 
@@ -176,25 +198,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `adaGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `adaGenerateWallet()`
-
-```php
-api()->cardano()->adaGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Ada wallet
 
@@ -232,25 +258,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `adaGetAccount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGetAccount(
+    ?string $address
+): array[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Address |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+**array[]**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `adaGetAccount()`
-
-```php
-api()->cardano()->adaGetAccount(
-    ?string $address
-): array[]
-```
+### Description
 
 Gets a Ada account by address
 
@@ -288,25 +318,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `adaGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGetBlock(
+    ?string $hash
+): \Tatum\Model\AdaBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
+ **$hash** | **string**| Block hash or height. |
 
 ### Return type
 
-**array[]**
+[**\Tatum\Model\AdaBlock**](../Model/AdaBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `adaGetBlock()`
-
-```php
-api()->cardano()->adaGetBlock(
-    ?string $hash
-): \Tatum\Model\AdaBlock
-```
+### Description
 
 Get Block by hash or height
 
@@ -344,24 +378,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
-
-### Return type
-
-[**\Tatum\Model\AdaBlock**](../Model/AdaBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetBlockChainInfo()`
 
+### Type signature
+
 ```php
-api()->cardano()->adaGetBlockChainInfo(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGetBlockChainInfo(
 ): \Tatum\Model\AdaInfo
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\AdaInfo**](../Model/AdaInfo.md)
+
+### Description
 
 Get Blockchain information
 
@@ -396,23 +432,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\AdaInfo**](../Model/AdaInfo.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetRawTransaction()`
 
+### Type signature
+
 ```php
-api()->cardano()->adaGetRawTransaction(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGetRawTransaction(
     ?string $hash
 ): \Tatum\Model\AdaTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\AdaTx**](../Model/AdaTx.md)
+
+### Description
 
 Get transaction by hash
 
@@ -450,27 +492,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\AdaTx**](../Model/AdaTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetTxByAddress()`
 
+### Type signature
+
 ```php
-api()->cardano()->adaGetTxByAddress(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGetTxByAddress(
     ?string $address, 
     ?float $page_size, 
     ?float $offset
 ): \Tatum\Model\AdaTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Address |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+
+### Return type
+
+[**\Tatum\Model\AdaTx[]**](../Model/AdaTx.md)
+
+### Description
 
 Get transactions by address
 
@@ -514,27 +562,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `adaGetUTXOByAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->cardano()->adaGetUTXOByAddress(
+    ?string $address
+): \Tatum\Model\AdaUTXO[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$address** | **string**| Address |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\AdaTx[]**](../Model/AdaTx.md)
+[**\Tatum\Model\AdaUTXO[]**](../Model/AdaUTXO.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `adaGetUTXOByAddress()`
-
-```php
-api()->cardano()->adaGetUTXOByAddress(
-    ?string $address
-): \Tatum\Model\AdaUTXO[]
-```
+### Description
 
 Get UTXOs by address
 
@@ -572,25 +622,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `adaTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->cardano()->adaTransferBlockchain(
+    ?\Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
+ **$ada_transfer_blockchain_request** | [**\Tatum\Model\AdaTransferBlockchainRequest**](../Model/AdaTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\AdaUTXO[]**](../Model/AdaUTXO.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `adaTransferBlockchain()`
-
-```php
-api()->cardano()->adaTransferBlockchain(
-    ?\Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send ADA to Cardano addresses
 
@@ -627,14 +681,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$ada_transfer_blockchain_request** | [**\Tatum\Model\AdaTransferBlockchainRequest**](../Model/AdaTransferBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

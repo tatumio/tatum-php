@@ -19,11 +19,25 @@ Method | HTTP request | Description
 
 ## `bchBroadcast()`
 
+### Type signature
+
 ```php
-api()->bitcoinCash()->bchBroadcast(
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast signed Bitcoin Cash transaction
 
@@ -60,26 +74,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->bitcoinCash()->bchGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\BchGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\BchGenerateAddress200Response**](../Model/BchGenerateAddress200Response.md)
+
+### Description
 
 Generate Bitcoin Cash deposit address from Extended public key
 
@@ -120,26 +139,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bchGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BchGenerateAddress200Response**](../Model/BchGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bchGenerateAddressPrivateKey()`
-
-```php
-api()->bitcoinCash()->bchGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Bitcoin Cash private key
 
@@ -176,25 +198,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bchGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bchGenerateWallet()`
-
-```php
-api()->bitcoinCash()->bchGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Bitcoin Cash wallet
 
@@ -232,25 +258,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bchGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlock(
+    ?string $hash
+): \Tatum\Model\BchBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$hash** | **string**| Block hash or height |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\BchBlock**](../Model/BchBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bchGetBlock()`
-
-```php
-api()->bitcoinCash()->bchGetBlock(
-    ?string $hash
-): \Tatum\Model\BchBlock
-```
+### Description
 
 Get Bitcoin Cash Block by hash
 
@@ -288,24 +318,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height |
-
-### Return type
-
-[**\Tatum\Model\BchBlock**](../Model/BchBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetBlockChainInfo()`
 
+### Type signature
+
 ```php
-api()->bitcoinCash()->bchGetBlockChainInfo(
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockChainInfo(
 ): \Tatum\Model\BchInfo
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\BchInfo**](../Model/BchInfo.md)
+
+### Description
 
 Get Bitcoin Cash Blockchain Information
 
@@ -340,23 +372,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\BchInfo**](../Model/BchInfo.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetBlockHash()`
 
+### Type signature
+
 ```php
-api()->bitcoinCash()->bchGetBlockHash(
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockHash(
     ?float $i
 ): \Tatum\Model\BchGetBlockHash200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
+
+### Return type
+
+[**\Tatum\Model\BchGetBlockHash200Response**](../Model/BchGetBlockHash200Response.md)
+
+### Description
 
 Get Bitcoin Cash Block hash
 
@@ -394,25 +432,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bchGetRawTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetRawTransaction(
+    ?string $hash
+): \Tatum\Model\BchTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
+ **$hash** | **string**| Transaction hash |
 
 ### Return type
 
-[**\Tatum\Model\BchGetBlockHash200Response**](../Model/BchGetBlockHash200Response.md)
+[**\Tatum\Model\BchTx**](../Model/BchTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bchGetRawTransaction()`
-
-```php
-api()->bitcoinCash()->bchGetRawTransaction(
-    ?string $hash
-): \Tatum\Model\BchTx
-```
+### Description
 
 Get Bitcoin Cash Transaction by hash
 
@@ -450,26 +492,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\BchTx**](../Model/BchTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetTxByAddress()`
 
+### Type signature
+
 ```php
-api()->bitcoinCash()->bchGetTxByAddress(
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetTxByAddress(
     ?string $address, 
     ?int $skip
 ): \Tatum\Model\BchTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Address |
+ **$skip** | **int**| Define, how much transactions should be skipped to obtain another page. | [optional]
+
+### Return type
+
+[**\Tatum\Model\BchTx[]**](../Model/BchTx.md)
+
+### Description
 
 Get Bitcoin Cash Transactions by address
 
@@ -510,26 +557,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bchRpcDriver()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchRpcDriver(
+    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
+): object
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
- **$skip** | **int**| Define, how much transactions should be skipped to obtain another page. | [optional]
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BchTx[]**](../Model/BchTx.md)
+**object**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bchRpcDriver()`
-
-```php
-api()->bitcoinCash()->bchRpcDriver(
-    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
-): object
-```
+### Description
 
 JSON RPC HTTP driver
 
@@ -566,25 +616,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bchTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchTransferBlockchain(
+    ?\Tatum\Model\BchTransferBlockchainRequest $bch_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
+ **$bch_transfer_blockchain_request** | [**\Tatum\Model\BchTransferBlockchainRequest**](../Model/BchTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bchTransferBlockchain()`
-
-```php
-api()->bitcoinCash()->bchTransferBlockchain(
-    ?\Tatum\Model\BchTransferBlockchainRequest $bch_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send BCH to Bitcoin Cash addresses
 
@@ -621,14 +675,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$bch_transfer_blockchain_request** | [**\Tatum\Model\BchTransferBlockchainRequest**](../Model/BchTransferBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -8,11 +8,26 @@ Method | Description
 
 ## `sign()`
 
+### Type signature
+
 ```php
-local()->transaction()->dogecoin()->sign(
+$sdk->{mainnet/testnet}()->local()->transaction()->dogecoin()->sign(
     ?\Tatum\Local\Transaction\Bitcoin\Transfer $transfer
 ): string
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**$transfer** | `\Tatum\Local\Transaction\Bitcoin\Transfer` | Transfer object | 
+
+### Return type
+
+Signed transaction hex (`string`)
+
+### Description
+
 Sign transaction
 
 ### Example
@@ -47,14 +62,5 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**$transfer** | `\Tatum\Local\Transaction\Bitcoin\Transfer` | Transfer object | 
-
-### Return type
-
-Signed transaction hex (`string`)
-
 [[Back to top]](#) | [[Back to Local Transaction]](../../index.md#local-transaction)
+

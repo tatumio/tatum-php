@@ -21,11 +21,25 @@ Method | HTTP request | Description
 
 ## `celoBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->celo()->celoBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->celo()->celoBlockchainSmartContractInvocation(
     ?\Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$celo_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\CeloBlockchainSmartContractInvocationRequest**](../Model/CeloBlockchainSmartContractInvocationRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on Celo
 
@@ -62,25 +76,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoBlockchainTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->celoBlockchainTransfer(
+    ?\Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\CeloBlockchainSmartContractInvocationRequest**](../Model/CeloBlockchainSmartContractInvocationRequest.md)|  |
+ **$celo_blockchain_transfer_request** | [**\Tatum\Model\CeloBlockchainTransferRequest**](../Model/CeloBlockchainTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoBlockchainTransfer()`
-
-```php
-api()->celo()->celoBlockchainTransfer(
-    ?\Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send Celo / ERC20 from account to account
 
@@ -117,25 +135,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->celoBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_blockchain_transfer_request** | [**\Tatum\Model\CeloBlockchainTransferRequest**](../Model/CeloBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoBroadcast()`
-
-```php
-api()->celo()->celoBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed Celo transaction
 
@@ -172,26 +194,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->celo()->celoGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\CeloGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\CeloGenerateAddress200Response**](../Model/CeloGenerateAddress200Response.md)
+
+### Description
 
 Generate Celo account address from Extended public key
 
@@ -232,26 +259,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\CeloGenerateAddress200Response**](../Model/CeloGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoGenerateAddressPrivateKey()`
-
-```php
-api()->celo()->celoGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Celo private key
 
@@ -288,25 +318,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->celoGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoGenerateWallet()`
-
-```php
-api()->celo()->celoGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Celo wallet
 
@@ -344,25 +378,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->celoGetBalance(
+    ?string $address
+): \Tatum\Model\CeloGetBalance200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\CeloGetBalance200Response**](../Model/CeloGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoGetBalance()`
-
-```php
-api()->celo()->celoGetBalance(
-    ?string $address
-): \Tatum\Model\CeloGetBalance200Response
-```
+### Description
 
 Get Celo Account balance
 
@@ -400,25 +438,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->celoGetBlock(
+    ?string $hash
+): \Tatum\Model\CeloBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or block number |
 
 ### Return type
 
-[**\Tatum\Model\CeloGetBalance200Response**](../Model/CeloGetBalance200Response.md)
+[**\Tatum\Model\CeloBlock**](../Model/CeloBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoGetBlock()`
-
-```php
-api()->celo()->celoGetBlock(
-    ?string $hash
-): \Tatum\Model\CeloBlock
-```
+### Description
 
 Get Celo block by hash
 
@@ -456,24 +498,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
-
-### Return type
-
-[**\Tatum\Model\CeloBlock**](../Model/CeloBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->celo()->celoGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->celo()->celoGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -508,23 +552,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetTransaction()`
 
+### Type signature
+
 ```php
-api()->celo()->celoGetTransaction(
+$sdk->{mainnet/testnet}()->api()->celo()->celoGetTransaction(
     ?string $hash
 ): \Tatum\Model\CeloTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\CeloTx**](../Model/CeloTx.md)
+
+### Description
 
 Get Celo Transaction
 
@@ -562,22 +612,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\CeloTx**](../Model/CeloTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetTransactionByAddress()`
 
+### Type signature
+
 ```php
-api()->celo()->celoGetTransactionByAddress(
+$sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionByAddress(
     ?string $address, 
     ?float $page_size, 
     ?float $offset, 
@@ -586,6 +628,23 @@ api()->celo()->celoGetTransactionByAddress(
     ?string $sort
 ): \Tatum\Model\CeloTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$from** | **float**| Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**| Transactions up to this block will be included. | [optional]
+ **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+
+### Return type
+
+[**\Tatum\Model\CeloTx[]**](../Model/CeloTx.md)
+
+### Description
 
 Get Celo transactions by address
 
@@ -638,30 +697,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoGetTransactionCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionCount(
+    ?string $address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
- **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+ **$address** | **string**| address |
 
 ### Return type
 
-[**\Tatum\Model\CeloTx[]**](../Model/CeloTx.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoGetTransactionCount()`
-
-```php
-api()->celo()->celoGetTransactionCount(
-    ?string $address
-): float
-```
+### Description
 
 Get count of outgoing Celo transactions
 
@@ -699,26 +757,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->celo()->celoWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->celo()->celoWeb3Driver(
     ?string $x_api_key, 
     ?object $body
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -758,15 +821,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

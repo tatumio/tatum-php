@@ -14,13 +14,29 @@ Method | HTTP request | Description
 
 ## `addressExists()`
 
+### Type signature
+
 ```php
-api()->blockchainAddresses()->addressExists(
+$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->addressExists(
     ?string $currency, 
     ?string $address, 
     ?float $index
 ): \Tatum\Model\Account
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$currency** | **string**| The cryptocurrency of the blockchain address to check |
+ **$address** | **string**| The blockchain address to check |
+ **$index** | **float**| In case of XLM or XRP, this is a memo or DestinationTag to search for. | [optional]
+
+### Return type
+
+[**\Tatum\Model\Account**](../Model/Account.md)
+
+### Description
 
 Check whether a blockchain address is assigned to a virtual account
 
@@ -64,29 +80,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$currency** | **string**| The cryptocurrency of the blockchain address to check |
- **$address** | **string**| The blockchain address to check |
- **$index** | **float**| In case of XLM or XRP, this is a memo or DestinationTag to search for. | [optional]
-
-### Return type
-
-[**\Tatum\Model\Account**](../Model/Account.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `assignAddress()`
 
+### Type signature
+
 ```php
-api()->blockchainAddresses()->assignAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->assignAddress(
     ?string $id, 
     ?string $address, 
     ?float $index
 ): \Tatum\Model\Address
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| The ID of the virtual account to assign a blockchain address to |
+ **$address** | **string**| The blockchain address to assign to the virtual account |
+ **$index** | **float**| Destination tag or memo attribute for XRP or XLM addresses | [optional]
+
+### Return type
+
+[**\Tatum\Model\Address**](../Model/Address.md)
+
+### Description
 
 Assign a blockchain address to a virtual account
 
@@ -130,28 +150,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateDepositAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddress(
+    ?string $id, 
+    ?float $index
+): \Tatum\Model\Address
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| The ID of the virtual account to assign a blockchain address to |
- **$address** | **string**| The blockchain address to assign to the virtual account |
- **$index** | **float**| Destination tag or memo attribute for XRP or XLM addresses | [optional]
+ **$id** | **string**| Account ID |
+ **$index** | **float**| &lt;p&gt;Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.&lt;/p&gt; | [optional]
 
 ### Return type
 
 [**\Tatum\Model\Address**](../Model/Address.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `generateDepositAddress()`
-
-```php
-api()->blockchainAddresses()->generateDepositAddress(
-    ?string $id, 
-    ?float $index
-): \Tatum\Model\Address
-```
+### Description
 
 Create a deposit address for a virtual account
 
@@ -192,26 +215,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateDepositAddressesBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddressesBatch(
+    ?\Tatum\Model\OffchainAddresses $offchain_addresses
+): \Tatum\Model\Address[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$index** | **float**| &lt;p&gt;Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.&lt;/p&gt; | [optional]
+ **$offchain_addresses** | [**\Tatum\Model\OffchainAddresses**](../Model/OffchainAddresses.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Address**](../Model/Address.md)
+[**\Tatum\Model\Address[]**](../Model/Address.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `generateDepositAddressesBatch()`
-
-```php
-api()->blockchainAddresses()->generateDepositAddressesBatch(
-    ?\Tatum\Model\OffchainAddresses $offchain_addresses
-): \Tatum\Model\Address[]
-```
+### Description
 
 Create multiple deposit addresses for a virtual account
 
@@ -248,25 +274,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getAllDepositAddresses()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->getAllDepositAddresses(
+    ?string $id
+): \Tatum\Model\Address[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$offchain_addresses** | [**\Tatum\Model\OffchainAddresses**](../Model/OffchainAddresses.md)|  |
+ **$id** | **string**| The ID of the virtual account to get deposit addresses for |
 
 ### Return type
 
 [**\Tatum\Model\Address[]**](../Model/Address.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getAllDepositAddresses()`
-
-```php
-api()->blockchainAddresses()->getAllDepositAddresses(
-    ?string $id
-): \Tatum\Model\Address[]
-```
+### Description
 
 Get all deposit addresses for a virtual account
 
@@ -304,27 +334,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| The ID of the virtual account to get deposit addresses for |
-
-### Return type
-
-[**\Tatum\Model\Address[]**](../Model/Address.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `removeAddress()`
 
+### Type signature
+
 ```php
-api()->blockchainAddresses()->removeAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->removeAddress(
     ?string $id, 
     ?string $address, 
     ?float $index
 )
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| Account ID |
+ **$address** | **string**| Blockchain address |
+ **$index** | **float**| Destination tag or memo attribute for XRP, BNB or XLM addresses | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Description
 
 Remove a deposit address from a virtual account
 
@@ -365,16 +401,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$address** | **string**| Blockchain address |
- **$index** | **float**| Destination tag or memo attribute for XRP, BNB or XLM addresses | [optional]
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

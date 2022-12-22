@@ -10,12 +10,27 @@ Method | HTTP request | Description
 
 ## `getAuctionEstimatedTime()`
 
+### Type signature
+
 ```php
-api()->blockchainUtils()->getAuctionEstimatedTime(
+$sdk->{mainnet/testnet}()->api()->blockchainUtils()->getAuctionEstimatedTime(
     ?string $chain, 
     ?string $date
 ): float
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| The blockchain to work with |
+ **$date** | **string**| The date and time in the ISO 8601 standard format |
+
+### Return type
+
+**float**
+
+### Description
 
 Estimate the block height for a future point in time
 
@@ -56,27 +71,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sCGetContractAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainUtils()->sCGetContractAddress(
+    ?string $chain, 
+    ?string $hash
+): \Tatum\Model\SCGetContractAddress200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| The blockchain to work with |
- **$date** | **string**| The date and time in the ISO 8601 standard format |
+ **$hash** | **string**| The ID (hash) of the deployment transaction |
 
 ### Return type
 
-**float**
+[**\Tatum\Model\SCGetContractAddress200Response**](../Model/SCGetContractAddress200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `sCGetContractAddress()`
-
-```php
-api()->blockchainUtils()->sCGetContractAddress(
-    ?string $chain, 
-    ?string $hash
-): \Tatum\Model\SCGetContractAddress200Response
-```
+### Description
 
 Get the blockchain address of a smart contract by the deployment transaction ID
 
@@ -117,15 +136,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$hash** | **string**| The ID (hash) of the deployment transaction |
-
-### Return type
-
-[**\Tatum\Model\SCGetContractAddress200Response**](../Model/SCGetContractAddress200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

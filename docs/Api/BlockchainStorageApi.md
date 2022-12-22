@@ -10,12 +10,27 @@ Method | HTTP request | Description
 
 ## `getLog()`
 
+### Type signature
+
 ```php
-api()->blockchainStorage()->getLog(
+$sdk->{mainnet/testnet}()->api()->blockchainStorage()->getLog(
     ?string $chain, 
     ?string $id
 ): \Tatum\Model\GetLog200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| The blockchain to get the log record from |
+ **$id** | **string**| The ID of the log record or transaction to get from the blockchain |
+
+### Return type
+
+[**\Tatum\Model\GetLog200Response**](../Model/GetLog200Response.md)
+
+### Description
 
 Get a log record
 
@@ -56,26 +71,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `storeLog()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainStorage()->storeLog(
+    ?\Tatum\Model\StoreLogRequest $store_log_request
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to get the log record from |
- **$id** | **string**| The ID of the log record or transaction to get from the blockchain |
+ **$store_log_request** | [**\Tatum\Model\StoreLogRequest**](../Model/StoreLogRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\GetLog200Response**](../Model/GetLog200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `storeLog()`
-
-```php
-api()->blockchainStorage()->storeLog(
-    ?\Tatum\Model\StoreLogRequest $store_log_request
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Store a log record
 
@@ -112,14 +130,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$store_log_request** | [**\Tatum\Model\StoreLogRequest**](../Model/StoreLogRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

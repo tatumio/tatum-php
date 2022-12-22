@@ -18,11 +18,25 @@ Method | HTTP request | Description
 
 ## `activateGasPumpAddresses()`
 
+### Type signature
+
 ```php
-api()->gasPump()->activateGasPumpAddresses(
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpAddresses(
     ?\Tatum\Model\ActivateGasPumpAddressesRequest $activate_gas_pump_addresses_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump_addresses_request** | [**\Tatum\Model\ActivateGasPumpAddressesRequest**](../Model/ActivateGasPumpAddressesRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Activate gas pump addresses
 
@@ -59,26 +73,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_addresses_request** | [**\Tatum\Model\ActivateGasPumpAddressesRequest**](../Model/ActivateGasPumpAddressesRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `activatedNotActivatedGasPumpAddresses()`
 
+### Type signature
+
 ```php
-api()->gasPump()->activatedNotActivatedGasPumpAddresses(
+$sdk->{mainnet/testnet}()->api()->gasPump()->activatedNotActivatedGasPumpAddresses(
     ?string $chain, 
     ?string $tx_id
 ): \Tatum\Model\GasPumpTrxOut
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| The blockchain to work with |
+ **$tx_id** | **string**| The ID of the address activation transaction |
+
+### Return type
+
+[**\Tatum\Model\GasPumpTrxOut**](../Model/GasPumpTrxOut.md)
+
+### Description
 
 Get the results of the address activation transaction
 
@@ -119,26 +138,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `approveTransferCustodialWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWallet(
+    ?\Tatum\Model\ApproveTransferCustodialWalletRequest $approve_transfer_custodial_wallet_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$tx_id** | **string**| The ID of the address activation transaction |
+ **$approve_transfer_custodial_wallet_request** | [**\Tatum\Model\ApproveTransferCustodialWalletRequest**](../Model/ApproveTransferCustodialWalletRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\GasPumpTrxOut**](../Model/GasPumpTrxOut.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `approveTransferCustodialWallet()`
-
-```php
-api()->gasPump()->approveTransferCustodialWallet(
-    ?\Tatum\Model\ApproveTransferCustodialWalletRequest $approve_transfer_custodial_wallet_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Approve the transfer of an asset from a gas pump address
 
@@ -175,27 +197,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$approve_transfer_custodial_wallet_request** | [**\Tatum\Model\ApproveTransferCustodialWalletRequest**](../Model/ApproveTransferCustodialWalletRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `gasPumpAddressesActivatedOrNot()`
 
+### Type signature
+
 ```php
-api()->gasPump()->gasPumpAddressesActivatedOrNot(
+$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpAddressesActivatedOrNot(
     ?string $chain, 
     ?string $owner, 
     ?float $index
 ): \Tatum\Model\Activated
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| The blockchain to work with |
+ **$owner** | **string**| The blockchain address that owns the gas pump address to check; can be referred to as \&quot;master address\&quot; |
+ **$index** | **float**| The index of the gas pump address to check |
+
+### Return type
+
+[**\Tatum\Model\Activated**](../Model/Activated.md)
+
+### Description
 
 Check whether the gas pump address with a specified index is activated
 
@@ -239,27 +267,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWallet(
+    ?\Tatum\Model\GenerateCustodialWalletRequest $generate_custodial_wallet_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$owner** | **string**| The blockchain address that owns the gas pump address to check; can be referred to as \&quot;master address\&quot; |
- **$index** | **float**| The index of the gas pump address to check |
+ **$generate_custodial_wallet_request** | [**\Tatum\Model\GenerateCustodialWalletRequest**](../Model/GenerateCustodialWalletRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Activated**](../Model/Activated.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `generateCustodialWallet()`
-
-```php
-api()->gasPump()->generateCustodialWallet(
-    ?\Tatum\Model\GenerateCustodialWalletRequest $generate_custodial_wallet_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Generate a custodial wallet address
 
@@ -296,26 +326,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
+    ?\Tatum\Model\GenerateCustodialWalletBatchRequest $generate_custodial_wallet_batch_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_request** | [**\Tatum\Model\GenerateCustodialWalletRequest**](../Model/GenerateCustodialWalletRequest.md)|  |
+ **$generate_custodial_wallet_batch_request** | [**\Tatum\Model\GenerateCustodialWalletBatchRequest**](../Model/GenerateCustodialWalletBatchRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `generateCustodialWalletBatch()`
-
-```php
-api()->gasPump()->generateCustodialWalletBatch(
-    ?\Tatum\Model\GenerateCustodialWalletBatchRequest $generate_custodial_wallet_batch_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Generate a gas pump wallet address
 
@@ -355,26 +390,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `precalculateGasPumpAddresses()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->precalculateGasPumpAddresses(
+    ?\Tatum\Model\CreateGasPump $create_gas_pump
+): string[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_request** | [**\Tatum\Model\GenerateCustodialWalletBatchRequest**](../Model/GenerateCustodialWalletBatchRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$create_gas_pump** | [**\Tatum\Model\CreateGasPump**](../Model/CreateGasPump.md)|  | [optional]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+**string[]**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `precalculateGasPumpAddresses()`
-
-```php
-api()->gasPump()->precalculateGasPumpAddresses(
-    ?\Tatum\Model\CreateGasPump $create_gas_pump
-): string[]
-```
+### Description
 
 Precalculate gas pump addresses
 
@@ -411,26 +449,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sCGetCustodialAddresses()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->sCGetCustodialAddresses(
+    ?string $chain, 
+    ?string $hash
+): string[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_gas_pump** | [**\Tatum\Model\CreateGasPump**](../Model/CreateGasPump.md)|  | [optional]
+ **$chain** | **string**| Blockchain to work with |
+ **$hash** | **string**| Transaction hash |
 
 ### Return type
 
 **string[]**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `sCGetCustodialAddresses()`
-
-```php
-api()->gasPump()->sCGetCustodialAddresses(
-    ?string $chain, 
-    ?string $hash
-): string[]
-```
+### Description
 
 Get the custodial wallet address from the transaction
 
@@ -471,26 +514,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWallet(
+    ?\Tatum\Model\TransferCustodialWalletRequest $transfer_custodial_wallet_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$hash** | **string**| Transaction hash |
+ **$transfer_custodial_wallet_request** | [**\Tatum\Model\TransferCustodialWalletRequest**](../Model/TransferCustodialWalletRequest.md)|  |
 
 ### Return type
 
-**string[]**
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `transferCustodialWallet()`
-
-```php
-api()->gasPump()->transferCustodialWallet(
-    ?\Tatum\Model\TransferCustodialWalletRequest $transfer_custodial_wallet_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Transfer an asset from a gas pump address
 
@@ -527,25 +573,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatch(
+    ?\Tatum\Model\TransferCustodialWalletBatchRequest $transfer_custodial_wallet_batch_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_request** | [**\Tatum\Model\TransferCustodialWalletRequest**](../Model/TransferCustodialWalletRequest.md)|  |
+ **$transfer_custodial_wallet_batch_request** | [**\Tatum\Model\TransferCustodialWalletBatchRequest**](../Model/TransferCustodialWalletBatchRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `transferCustodialWalletBatch()`
-
-```php
-api()->gasPump()->transferCustodialWalletBatch(
-    ?\Tatum\Model\TransferCustodialWalletBatchRequest $transfer_custodial_wallet_batch_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Transfer multiple assets from a gas pump address
 
@@ -582,14 +632,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_request** | [**\Tatum\Model\TransferCustodialWalletBatchRequest**](../Model/TransferCustodialWalletBatchRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

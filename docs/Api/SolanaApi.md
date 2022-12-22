@@ -16,11 +16,25 @@ Method | HTTP request | Description
 
 ## `solanaBlockchainTransfer()`
 
+### Type signature
+
 ```php
-api()->solana()->solanaBlockchainTransfer(
+$sdk->{mainnet/testnet}()->api()->solana()->solanaBlockchainTransfer(
     ?\Tatum\Model\SolanaBlockchainTransferRequest $solana_blockchain_transfer_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$solana_blockchain_transfer_request** | [**\Tatum\Model\SolanaBlockchainTransferRequest**](../Model/SolanaBlockchainTransferRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Send SOL from account to account
 
@@ -57,25 +71,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `solanaBroadcastConfirm()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->solana()->solanaBroadcastConfirm(
+    ?\Tatum\Model\SolanaBroadcastConfirm $solana_broadcast_confirm
+): \Tatum\Model\SolanaTransactionHashWithConfirm
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$solana_blockchain_transfer_request** | [**\Tatum\Model\SolanaBlockchainTransferRequest**](../Model/SolanaBlockchainTransferRequest.md)|  |
+ **$solana_broadcast_confirm** | [**\Tatum\Model\SolanaBroadcastConfirm**](../Model/SolanaBroadcastConfirm.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\SolanaTransactionHashWithConfirm**](../Model/SolanaTransactionHashWithConfirm.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `solanaBroadcastConfirm()`
-
-```php
-api()->solana()->solanaBroadcastConfirm(
-    ?\Tatum\Model\SolanaBroadcastConfirm $solana_broadcast_confirm
-): \Tatum\Model\SolanaTransactionHashWithConfirm
-```
+### Description
 
 Broadcast and confirm signed Solana transaction
 
@@ -112,24 +130,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$solana_broadcast_confirm** | [**\Tatum\Model\SolanaBroadcastConfirm**](../Model/SolanaBroadcastConfirm.md)|  |
-
-### Return type
-
-[**\Tatum\Model\SolanaTransactionHashWithConfirm**](../Model/SolanaTransactionHashWithConfirm.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGenerateWallet()`
 
+### Type signature
+
 ```php
-api()->solana()->solanaGenerateWallet(
+$sdk->{mainnet/testnet}()->api()->solana()->solanaGenerateWallet(
 ): \Tatum\Model\SolanaWallet
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\SolanaWallet**](../Model/SolanaWallet.md)
+
+### Description
 
 Generate Solana wallet
 
@@ -164,23 +184,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\SolanaWallet**](../Model/SolanaWallet.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGetBalance()`
 
+### Type signature
+
 ```php
-api()->solana()->solanaGetBalance(
+$sdk->{mainnet/testnet}()->api()->solana()->solanaGetBalance(
     ?string $address
 ): \Tatum\Model\SolBalance
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+
+### Return type
+
+[**\Tatum\Model\SolBalance**](../Model/SolBalance.md)
+
+### Description
 
 Get Solana Account balance
 
@@ -218,25 +244,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `solanaGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->solana()->solanaGetBlock(
+    ?float $height
+): \Tatum\Model\SolanaBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$height** | **float**| Block number |
 
 ### Return type
 
-[**\Tatum\Model\SolBalance**](../Model/SolBalance.md)
+[**\Tatum\Model\SolanaBlock**](../Model/SolanaBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `solanaGetBlock()`
-
-```php
-api()->solana()->solanaGetBlock(
-    ?float $height
-): \Tatum\Model\SolanaBlock
-```
+### Description
 
 Get Solana block by number
 
@@ -274,24 +304,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$height** | **float**| Block number |
-
-### Return type
-
-[**\Tatum\Model\SolanaBlock**](../Model/SolanaBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->solana()->solanaGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->solana()->solanaGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -326,24 +358,31 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGetTransaction()`
 
+### Type signature
+
 ```php
-api()->solana()->solanaGetTransaction(
+$sdk->{mainnet/testnet}()->api()->solana()->solanaGetTransaction(
     ?string $hash, 
     ?string $commitment
 ): \Tatum\Model\SolanaTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+ **$commitment** | **string**| Commitment of the transaction. If not defined, all transactions are being scanned. | [optional]
+
+### Return type
+
+[**\Tatum\Model\SolanaTx**](../Model/SolanaTx.md)
+
+### Description
 
 Get Solana Transaction
 
@@ -384,27 +423,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
- **$commitment** | **string**| Commitment of the transaction. If not defined, all transactions are being scanned. | [optional]
-
-### Return type
-
-[**\Tatum\Model\SolanaTx**](../Model/SolanaTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->solana()->solanaWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->solana()->solanaWeb3Driver(
     ?string $x_api_key, 
     ?object $body
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+
+### Return type
+
+**object**
+
+### Description
 
 JSON RPC HTTP driver
 
@@ -444,15 +487,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

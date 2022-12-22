@@ -13,11 +13,25 @@ Method | HTTP request | Description
 
 ## `createCurrency()`
 
+### Type signature
+
 ```php
-api()->virtualCurrency()->createCurrency(
+$sdk->{mainnet/testnet}()->api()->virtualCurrency()->createCurrency(
     ?\Tatum\Model\VirtualCurrency $virtual_currency
 ): \Tatum\Model\Account
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$virtual_currency** | [**\Tatum\Model\VirtualCurrency**](../Model/VirtualCurrency.md)|  |
+
+### Return type
+
+[**\Tatum\Model\Account**](../Model/Account.md)
+
+### Description
 
 Create new virtual currency
 
@@ -54,25 +68,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getCurrency()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->virtualCurrency()->getCurrency(
+    ?string $name
+): \Tatum\Model\VC
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency** | [**\Tatum\Model\VirtualCurrency**](../Model/VirtualCurrency.md)|  |
+ **$name** | **string**|  |
 
 ### Return type
 
-[**\Tatum\Model\Account**](../Model/Account.md)
+[**\Tatum\Model\VC**](../Model/VC.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getCurrency()`
-
-```php
-api()->virtualCurrency()->getCurrency(
-    ?string $name
-): \Tatum\Model\VC
-```
+### Description
 
 Get virtual currency
 
@@ -109,25 +127,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `mintCurrency()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->virtualCurrency()->mintCurrency(
+    ?\Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
+): \Tatum\Model\TransactionResult
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$name** | **string**|  |
+ **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\VC**](../Model/VC.md)
+[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `mintCurrency()`
-
-```php
-api()->virtualCurrency()->mintCurrency(
-    ?\Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
-): \Tatum\Model\TransactionResult
-```
+### Description
 
 Create new supply of virtual currency
 
@@ -164,6 +186,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `revokeCurrency()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->virtualCurrency()->revokeCurrency(
+    ?\Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
+): \Tatum\Model\TransactionResult
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -174,15 +208,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `revokeCurrency()`
-
-```php
-api()->virtualCurrency()->revokeCurrency(
-    ?\Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
-): \Tatum\Model\TransactionResult
-```
+### Description
 
 Destroy supply of virtual currency
 
@@ -219,25 +245,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateCurrency()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->virtualCurrency()->updateCurrency(
+    ?\Tatum\Model\VirtualCurrencyUpdate $virtual_currency_update
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md)|  |
+ **$virtual_currency_update** | [**\Tatum\Model\VirtualCurrencyUpdate**](../Model/VirtualCurrencyUpdate.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateCurrency()`
-
-```php
-api()->virtualCurrency()->updateCurrency(
-    ?\Tatum\Model\VirtualCurrencyUpdate $virtual_currency_update
-)
-```
+### Description
 
 Update virtual currency
 
@@ -271,14 +301,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$virtual_currency_update** | [**\Tatum\Model\VirtualCurrencyUpdate**](../Model/VirtualCurrencyUpdate.md)|  |
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

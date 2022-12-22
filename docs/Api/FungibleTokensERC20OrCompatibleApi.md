@@ -16,12 +16,27 @@ Method | HTTP request | Description
 
 ## `erc20Approve()`
 
+### Type signature
+
 ```php
-api()->fungibleTokensERC20OrCompatible()->erc20Approve(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Approve(
     ?\Tatum\Model\Erc20ApproveRequest $erc20_approve_request, 
     ?string $x_testnet_type
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$erc20_approve_request** | [**\Tatum\Model\Erc20ApproveRequest**](../Model/Erc20ApproveRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Allow a blockchain address to transfer and burn fungible tokens
 
@@ -61,27 +76,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `erc20Burn()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Burn(
+    ?\Tatum\Model\Erc20BurnRequest $erc20_burn_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_approve_request** | [**\Tatum\Model\Erc20ApproveRequest**](../Model/Erc20ApproveRequest.md)|  |
+ **$erc20_burn_request** | [**\Tatum\Model\Erc20BurnRequest**](../Model/Erc20BurnRequest.md)|  |
  **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `erc20Burn()`
-
-```php
-api()->fungibleTokensERC20OrCompatible()->erc20Burn(
-    ?\Tatum\Model\Erc20BurnRequest $erc20_burn_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Burn fungible tokens
 
@@ -121,27 +140,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `erc20Deploy()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Deploy(
+    ?\Tatum\Model\Erc20DeployRequest $erc20_deploy_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_burn_request** | [**\Tatum\Model\Erc20BurnRequest**](../Model/Erc20BurnRequest.md)|  |
+ **$erc20_deploy_request** | [**\Tatum\Model\Erc20DeployRequest**](../Model/Erc20DeployRequest.md)|  |
  **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `erc20Deploy()`
-
-```php
-api()->fungibleTokensERC20OrCompatible()->erc20Deploy(
-    ?\Tatum\Model\Erc20DeployRequest $erc20_deploy_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Deploy a fungible token smart contract
 
@@ -181,29 +204,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$erc20_deploy_request** | [**\Tatum\Model\Erc20DeployRequest**](../Model/Erc20DeployRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `erc20GetBalance()`
 
+### Type signature
+
 ```php
-api()->fungibleTokensERC20OrCompatible()->erc20GetBalance(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalance(
     ?string $chain, 
     ?string $address, 
     ?string $contract_address, 
     ?string $x_testnet_type
 ): \Tatum\Model\Erc20Balance
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Network name |
+ **$address** | **string**| The blockchain address that you want to get the token balance of |
+ **$contract_address** | **string**| The address of the fungible token smart contract |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\Erc20Balance**](../Model/Erc20Balance.md)
+
+### Description
 
 Get the number of fungible tokens that a blockchain address holds in a smart contract
 
@@ -250,29 +279,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `erc20GetBalanceAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(
+    ?string $chain, 
+    ?string $address
+): \Tatum\Model\Erc20BalanceForAddress[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| Network name |
  **$address** | **string**| The blockchain address that you want to get the token balance of |
- **$contract_address** | **string**| The address of the fungible token smart contract |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Erc20Balance**](../Model/Erc20Balance.md)
+[**\Tatum\Model\Erc20BalanceForAddress[]**](../Model/Erc20BalanceForAddress.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `erc20GetBalanceAddress()`
-
-```php
-api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(
-    ?string $chain, 
-    ?string $address
-): \Tatum\Model\Erc20BalanceForAddress[]
-```
+### Description
 
 Get the total number of fungible tokens that a blockchain address holds
 
@@ -313,23 +344,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Network name |
- **$address** | **string**| The blockchain address that you want to get the token balance of |
-
-### Return type
-
-[**\Tatum\Model\Erc20BalanceForAddress[]**](../Model/Erc20BalanceForAddress.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `erc20GetTransactionByAddress()`
 
+### Type signature
+
 ```php
-api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(
     ?string $chain, 
     ?string $address, 
     ?string $token_address, 
@@ -340,6 +362,25 @@ api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(
     ?string $sort
 ): \Tatum\Model\FungibleTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| The blockchain to work with |
+ **$address** | **string**| Account address you want to get balance of |
+ **$token_address** | **string**| Address of the token smart contract |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$from** | **float**| Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**| Transactions up to this block will be included. | [optional]
+ **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+
+### Return type
+
+[**\Tatum\Model\FungibleTx[]**](../Model/FungibleTx.md)
+
+### Description
 
 Get fungible token transactions on a blockchain address
 
@@ -398,33 +439,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$address** | **string**| Account address you want to get balance of |
- **$token_address** | **string**| Address of the token smart contract |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
- **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
-
-### Return type
-
-[**\Tatum\Model\FungibleTx[]**](../Model/FungibleTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `erc20Mint()`
 
+### Type signature
+
 ```php
-api()->fungibleTokensERC20OrCompatible()->erc20Mint(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Mint(
     ?\Tatum\Model\Erc20MintRequest $erc20_mint_request, 
     ?string $x_testnet_type
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$erc20_mint_request** | [**\Tatum\Model\Erc20MintRequest**](../Model/Erc20MintRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Mint fungible tokens
 
@@ -464,27 +503,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `erc20Transfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Transfer(
+    ?\Tatum\Model\Erc20TransferRequest $erc20_transfer_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_mint_request** | [**\Tatum\Model\Erc20MintRequest**](../Model/Erc20MintRequest.md)|  |
+ **$erc20_transfer_request** | [**\Tatum\Model\Erc20TransferRequest**](../Model/Erc20TransferRequest.md)|  |
  **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `erc20Transfer()`
-
-```php
-api()->fungibleTokensERC20OrCompatible()->erc20Transfer(
-    ?\Tatum\Model\Erc20TransferRequest $erc20_transfer_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Transfer fungible tokens
 
@@ -524,15 +567,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$erc20_transfer_request** | [**\Tatum\Model\Erc20TransferRequest**](../Model/Erc20TransferRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

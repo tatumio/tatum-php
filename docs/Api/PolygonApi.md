@@ -21,11 +21,25 @@ Method | HTTP request | Description
 
 ## `polygonBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->polygon()->polygonBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonBlockchainSmartContractInvocation(
     ?\Tatum\Model\PolygonBlockchainSmartContractInvocationRequest $polygon_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$polygon_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\PolygonBlockchainSmartContractInvocationRequest**](../Model/PolygonBlockchainSmartContractInvocationRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on Polygon
 
@@ -62,25 +76,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonBlockchainTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonBlockchainTransfer(
+    ?\Tatum\Model\PolygonBlockchainTransferRequest $polygon_blockchain_transfer_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$polygon_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\PolygonBlockchainSmartContractInvocationRequest**](../Model/PolygonBlockchainSmartContractInvocationRequest.md)|  |
+ **$polygon_blockchain_transfer_request** | [**\Tatum\Model\PolygonBlockchainTransferRequest**](../Model/PolygonBlockchainTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonBlockchainTransfer()`
-
-```php
-api()->polygon()->polygonBlockchainTransfer(
-    ?\Tatum\Model\PolygonBlockchainTransferRequest $polygon_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send MATIC from account to account
 
@@ -117,25 +135,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$polygon_blockchain_transfer_request** | [**\Tatum\Model\PolygonBlockchainTransferRequest**](../Model/PolygonBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonBroadcast()`
-
-```php
-api()->polygon()->polygonBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed Polygon transaction
 
@@ -172,26 +194,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `polygonGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->polygon()->polygonGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\GeneratedAddressMatic
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\GeneratedAddressMatic**](../Model/GeneratedAddressMatic.md)
+
+### Description
 
 Generate Polygon account address from Extended public key
 
@@ -232,26 +259,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressMatic**](../Model/GeneratedAddressMatic.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonGenerateAddressPrivateKey()`
-
-```php
-api()->polygon()->polygonGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Polygon private key
 
@@ -288,25 +318,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonGenerateWallet()`
-
-```php
-api()->polygon()->polygonGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Polygon wallet
 
@@ -344,25 +378,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetBalance(
+    ?string $address
+): \Tatum\Model\MaticBalance
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\MaticBalance**](../Model/MaticBalance.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonGetBalance()`
-
-```php
-api()->polygon()->polygonGetBalance(
-    ?string $address
-): \Tatum\Model\MaticBalance
-```
+### Description
 
 Get Polygon Account balance
 
@@ -400,25 +438,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetBlock(
+    ?string $hash
+): \Tatum\Model\EthBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or block number |
 
 ### Return type
 
-[**\Tatum\Model\MaticBalance**](../Model/MaticBalance.md)
+[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonGetBlock()`
-
-```php
-api()->polygon()->polygonGetBlock(
-    ?string $hash
-): \Tatum\Model\EthBlock
-```
+### Description
 
 Get Polygon block by hash
 
@@ -456,24 +498,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
-
-### Return type
-
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `polygonGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->polygon()->polygonGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -508,23 +552,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `polygonGetTransaction()`
 
+### Type signature
+
 ```php
-api()->polygon()->polygonGetTransaction(
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetTransaction(
     ?string $hash
 ): \Tatum\Model\PolygonTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\PolygonTx**](../Model/PolygonTx.md)
+
+### Description
 
 Get Polygon Transaction
 
@@ -562,22 +612,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\PolygonTx**](../Model/PolygonTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `polygonGetTransactionByAddress()`
 
+### Type signature
+
 ```php
-api()->polygon()->polygonGetTransactionByAddress(
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetTransactionByAddress(
     ?string $address, 
     ?float $page_size, 
     ?float $offset, 
@@ -586,6 +628,23 @@ api()->polygon()->polygonGetTransactionByAddress(
     ?string $sort
 ): \Tatum\Model\PolygonTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$from** | **float**| Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**| Transactions up to this block will be included. | [optional]
+ **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+
+### Return type
+
+[**\Tatum\Model\PolygonTx[]**](../Model/PolygonTx.md)
+
+### Description
 
 Get Polygon transactions by address
 
@@ -638,30 +697,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonGetTransactionCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetTransactionCount(
+    ?string $address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
- **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+ **$address** | **string**| address |
 
 ### Return type
 
-[**\Tatum\Model\PolygonTx[]**](../Model/PolygonTx.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonGetTransactionCount()`
-
-```php
-api()->polygon()->polygonGetTransactionCount(
-    ?string $address
-): float
-```
+### Description
 
 Get count of outgoing Polygon transactions
 
@@ -699,26 +757,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `polygonWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->polygon()->polygonWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->polygon()->polygonWeb3Driver(
     ?string $x_api_key, 
     ?object $body
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -758,15 +821,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

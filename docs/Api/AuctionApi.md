@@ -19,11 +19,25 @@ Method | HTTP request | Description
 
 ## `approveNftAuctionSpending()`
 
+### Type signature
+
 ```php
-api()->auction()->approveNftAuctionSpending(
+$sdk->{mainnet/testnet}()->api()->auction()->approveNftAuctionSpending(
     ?\Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$approve_nft_auction_spending_request** | [**\Tatum\Model\ApproveNftAuctionSpendingRequest**](../Model/ApproveNftAuctionSpendingRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Allow the NFT auction or marketplace to transfer an asset
 
@@ -60,25 +74,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bidOnAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->bidOnAuction(
+    ?\Tatum\Model\BidOnAuctionRequest $bid_on_auction_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_nft_auction_spending_request** | [**\Tatum\Model\ApproveNftAuctionSpendingRequest**](../Model/ApproveNftAuctionSpendingRequest.md)|  |
+ **$bid_on_auction_request** | [**\Tatum\Model\BidOnAuctionRequest**](../Model/BidOnAuctionRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bidOnAuction()`
-
-```php
-api()->auction()->bidOnAuction(
-    ?\Tatum\Model\BidOnAuctionRequest $bid_on_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Bid for an asset at the NFT auction
 
@@ -115,25 +133,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `cancelAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->cancelAuction(
+    ?\Tatum\Model\CancelAuctionRequest $cancel_auction_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bid_on_auction_request** | [**\Tatum\Model\BidOnAuctionRequest**](../Model/BidOnAuctionRequest.md)|  |
+ **$cancel_auction_request** | [**\Tatum\Model\CancelAuctionRequest**](../Model/CancelAuctionRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `cancelAuction()`
-
-```php
-api()->auction()->cancelAuction(
-    ?\Tatum\Model\CancelAuctionRequest $cancel_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Cancel the selling of an asset at the NFT auction
 
@@ -170,25 +192,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->createAuction(
+    ?\Tatum\Model\CreateAuctionRequest $create_auction_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction_request** | [**\Tatum\Model\CancelAuctionRequest**](../Model/CancelAuctionRequest.md)|  |
+ **$create_auction_request** | [**\Tatum\Model\CreateAuctionRequest**](../Model/CreateAuctionRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createAuction()`
-
-```php
-api()->auction()->createAuction(
-    ?\Tatum\Model\CreateAuctionRequest $create_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Sell an asset at the NFT auction
 
@@ -225,25 +251,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->generateAuction(
+    ?\Tatum\Model\GenerateAuctionRequest $generate_auction_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_auction_request** | [**\Tatum\Model\CreateAuctionRequest**](../Model/CreateAuctionRequest.md)|  |
+ **$generate_auction_request** | [**\Tatum\Model\GenerateAuctionRequest**](../Model/GenerateAuctionRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `generateAuction()`
-
-```php
-api()->auction()->generateAuction(
-    ?\Tatum\Model\GenerateAuctionRequest $generate_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Create an NFT auction
 
@@ -280,27 +310,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_auction_request** | [**\Tatum\Model\GenerateAuctionRequest**](../Model/GenerateAuctionRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAuction()`
 
+### Type signature
+
 ```php
-api()->auction()->getAuction(
+$sdk->{mainnet/testnet}()->api()->auction()->getAuction(
     ?string $chain, 
     ?string $contract_address, 
     ?string $id
 ): \Tatum\Model\GetAuction200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$contract_address** | **string**| Contract address |
+ **$id** | **string**| Auction ID |
+
+### Return type
+
+[**\Tatum\Model\GetAuction200Response**](../Model/GetAuction200Response.md)
+
+### Description
 
 Get information about an auctioned asset at the NFT auction
 
@@ -344,28 +380,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getAuctionFee()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->getAuctionFee(
+    ?string $chain, 
+    ?string $contract_address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| Blockchain to work with |
  **$contract_address** | **string**| Contract address |
- **$id** | **string**| Auction ID |
 
 ### Return type
 
-[**\Tatum\Model\GetAuction200Response**](../Model/GetAuction200Response.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getAuctionFee()`
-
-```php
-api()->auction()->getAuctionFee(
-    ?string $chain, 
-    ?string $contract_address
-): float
-```
+### Description
 
 Get the NFT auction fee
 
@@ -406,6 +445,19 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getAuctionFeeRecipient()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->getAuctionFeeRecipient(
+    ?string $chain, 
+    ?string $contract_address
+): \Tatum\Model\GetAuctionFeeRecipient200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -415,18 +467,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**float**
+[**\Tatum\Model\GetAuctionFeeRecipient200Response**](../Model/GetAuctionFeeRecipient200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getAuctionFeeRecipient()`
-
-```php
-api()->auction()->getAuctionFeeRecipient(
-    ?string $chain, 
-    ?string $contract_address
-): \Tatum\Model\GetAuctionFeeRecipient200Response
-```
+### Description
 
 Get the recipient of the NFT auction fee
 
@@ -467,26 +510,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `settleAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->settleAuction(
+    ?\Tatum\Model\SettleAuctionRequest $settle_auction_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
+ **$settle_auction_request** | [**\Tatum\Model\SettleAuctionRequest**](../Model/SettleAuctionRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\GetAuctionFeeRecipient200Response**](../Model/GetAuctionFeeRecipient200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `settleAuction()`
-
-```php
-api()->auction()->settleAuction(
-    ?\Tatum\Model\SettleAuctionRequest $settle_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Settle an NFT auction
 
@@ -523,25 +569,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateAuctionFee()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFee(
+    ?\Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$settle_auction_request** | [**\Tatum\Model\SettleAuctionRequest**](../Model/SettleAuctionRequest.md)|  |
+ **$update_auction_fee_request** | [**\Tatum\Model\UpdateAuctionFeeRequest**](../Model/UpdateAuctionFeeRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateAuctionFee()`
-
-```php
-api()->auction()->updateAuctionFee(
-    ?\Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Update the NFT auction fee
 
@@ -578,25 +628,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateAuctionFeeRecipient()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFeeRecipient(
+    ?\Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_auction_fee_request** | [**\Tatum\Model\UpdateAuctionFeeRequest**](../Model/UpdateAuctionFeeRequest.md)|  |
+ **$update_auction_fee_recipient_request** | [**\Tatum\Model\UpdateAuctionFeeRecipientRequest**](../Model/UpdateAuctionFeeRecipientRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `updateAuctionFeeRecipient()`
-
-```php
-api()->auction()->updateAuctionFeeRecipient(
-    ?\Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Update the recipient of the NFT auction fee
 
@@ -633,14 +687,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_auction_fee_recipient_request** | [**\Tatum\Model\UpdateAuctionFeeRecipientRequest**](../Model/UpdateAuctionFeeRecipientRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

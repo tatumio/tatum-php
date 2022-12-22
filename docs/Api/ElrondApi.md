@@ -21,10 +21,22 @@ Method | HTTP request | Description
 
 ## `eGldGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->elrond()->eGldGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->elrond()->eGldGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -59,23 +71,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `egldBlockchainTransfer()`
 
+### Type signature
+
 ```php
-api()->elrond()->egldBlockchainTransfer(
+$sdk->{mainnet/testnet}()->api()->elrond()->egldBlockchainTransfer(
     ?\Tatum\Model\EgldBlockchainTransferRequest $egld_blockchain_transfer_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$egld_blockchain_transfer_request** | [**\Tatum\Model\EgldBlockchainTransferRequest**](../Model/EgldBlockchainTransferRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Send EGLD from account to account
 
@@ -112,25 +130,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$egld_blockchain_transfer_request** | [**\Tatum\Model\EgldBlockchainTransferRequest**](../Model/EgldBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldBroadcast()`
-
-```php
-api()->elrond()->egldBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed EGLD transaction
 
@@ -167,26 +189,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `egldGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->elrond()->egldGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddress(
     ?string $mnemonic, 
     ?float $index
 ): \Tatum\Model\EgldGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mnemonic** | **string**| Mnemonic to use for generation of address. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\EgldGenerateAddress200Response**](../Model/EgldGenerateAddress200Response.md)
+
+### Description
 
 Generate EGLD account address from mnemonic
 
@@ -227,26 +254,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of address. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EgldGenerateAddress200Response**](../Model/EgldGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldGenerateAddressPrivateKey()`
-
-```php
-api()->elrond()->egldGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate EGLD private key
 
@@ -283,25 +313,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\EgldGenerateWallet200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of private key. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\EgldGenerateWallet200Response**](../Model/EgldGenerateWallet200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldGenerateWallet()`
-
-```php
-api()->elrond()->egldGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\EgldGenerateWallet200Response
-```
+### Description
 
 Generate EGLD wallet
 
@@ -339,25 +373,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGetBalance(
+    ?string $address
+): \Tatum\Model\EgldGetBalance200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of private key. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\EgldGenerateWallet200Response**](../Model/EgldGenerateWallet200Response.md)
+[**\Tatum\Model\EgldGetBalance200Response**](../Model/EgldGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldGetBalance()`
-
-```php
-api()->elrond()->egldGetBalance(
-    ?string $address
-): \Tatum\Model\EgldGetBalance200Response
-```
+### Description
 
 Get EGLD Account balance
 
@@ -395,25 +433,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGetBlock(
+    ?string $hash
+): \Tatum\Model\EgldBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or nonce |
 
 ### Return type
 
-[**\Tatum\Model\EgldGetBalance200Response**](../Model/EgldGetBalance200Response.md)
+[**\Tatum\Model\EgldBlock**](../Model/EgldBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldGetBlock()`
-
-```php
-api()->elrond()->egldGetBlock(
-    ?string $hash
-): \Tatum\Model\EgldBlock
-```
+### Description
 
 Get EGLD block by hash
 
@@ -451,25 +493,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldGetTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransaction(
+    ?string $hash
+): \Tatum\Model\EgldTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or nonce |
+ **$hash** | **string**| Transaction hash |
 
 ### Return type
 
-[**\Tatum\Model\EgldBlock**](../Model/EgldBlock.md)
+[**\Tatum\Model\EgldTx**](../Model/EgldTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldGetTransaction()`
-
-```php
-api()->elrond()->egldGetTransaction(
-    ?string $hash
-): \Tatum\Model\EgldTx
-```
+### Description
 
 Get EGLD Transaction
 
@@ -507,25 +553,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldGetTransactionAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionAddress(
+    ?string $address
+): object[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$address** | **string**| address |
 
 ### Return type
 
-[**\Tatum\Model\EgldTx**](../Model/EgldTx.md)
+**object[]**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldGetTransactionAddress()`
-
-```php
-api()->elrond()->egldGetTransactionAddress(
-    ?string $address
-): object[]
-```
+### Description
 
 Get count of outgoing EGLD transactions
 
@@ -563,6 +613,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldGetTransactionCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionCount(
+    ?string $address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -571,17 +633,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object[]**
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldGetTransactionCount()`
-
-```php
-api()->elrond()->egldGetTransactionCount(
-    ?string $address
-): float
-```
+### Description
 
 Get count of outgoing EGLD transactions
 
@@ -619,25 +673,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldNodeGet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldNodeGet(
+    ?string $x_api_key
+): object
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
 
 ### Return type
 
-**float**
+**object**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldNodeGet()`
-
-```php
-api()->elrond()->egldNodeGet(
-    ?string $x_api_key
-): object
-```
+### Description
 
 Node HTTP driver
 
@@ -675,26 +733,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldNodePost()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldNodePost(
+    ?string $x_api_key, 
+    ?object $body
+): object
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
 
 ### Return type
 
 **object**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldNodePost()`
-
-```php
-api()->elrond()->egldNodePost(
-    ?string $x_api_key, 
-    ?object $body
-): object
-```
+### Description
 
 Node HTTP driver
 
@@ -734,15 +797,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

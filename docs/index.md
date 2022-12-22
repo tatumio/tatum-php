@@ -1,10 +1,10 @@
 # [Tatum - PHP SDK](https://github.com/tatumio/tatum-php)
 
 ## Table of Contents
-- [API Endpoints](#api-endpoints)
 - [Local Endpoints](#local-endpoints)
     - [Wallet](#local-wallet)
     - [Transaction](#local-transaction)
+- [API Endpoints](#api-endpoints)
 
 The Tatum SDK uses a [fluent interface](https://en.wikipedia.org/wiki/Fluent_interface) so that you can jump right into 
 building your application without having to go back to the documentation.
@@ -12,6 +12,113 @@ building your application without having to go back to the documentation.
 The SDK is built like a tree with its root in ```new \Tatum\Sdk()```. 
 
 Tree branches are populated as needed just-in-time so the memory footprint is tiny.
+
+## Local Endpoints
+
+You can perform certain operations locally without exposing any private information to Tatum's API.
+
+### Local Wallet
+
+Local Wallet operations
+
+You can access any of the Local Wallet endpoints with the following syntax:
+
+```php
+<?php
+
+// TestNet
+(new \Tatum\Sdk())->testnet()->local()->wallet();
+
+// MainNet
+(new \Tatum\Sdk())->mainnet()->local()->wallet();
+```
+
+Blockchain | Method | Description
+------------ | ------------- | -------------
+*bitcoin()* | [**generateWallet()**](./Local/Wallet/Bitcoin.md#generatewallet) | Generate wallet
+*bitcoin()* | [**generateAddressFromXpub()**](./Local/Wallet/Bitcoin.md#generateaddressfromxpub) | Generate address from xPub and index
+*bitcoin()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Bitcoin.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*bitcoin()* | [**generatePrivateKey()**](./Local/Wallet/Bitcoin.md#generateprivatekey) | Generate private key from mnemonic and index
+*bitcoinCash()* | [**generateWallet()**](./Local/Wallet/BitcoinCash.md#generatewallet) | Generate wallet
+*bitcoinCash()* | [**generateAddressFromXpub()**](./Local/Wallet/BitcoinCash.md#generateaddressfromxpub) | Generate address from xPub and index
+*bitcoinCash()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/BitcoinCash.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*bitcoinCash()* | [**generatePrivateKey()**](./Local/Wallet/BitcoinCash.md#generateprivatekey) | Generate private key from mnemonic and index
+*dogecoin()* | [**generateWallet()**](./Local/Wallet/Dogecoin.md#generatewallet) | Generate wallet
+*dogecoin()* | [**generateAddressFromXpub()**](./Local/Wallet/Dogecoin.md#generateaddressfromxpub) | Generate address from xPub and index
+*dogecoin()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Dogecoin.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*dogecoin()* | [**generatePrivateKey()**](./Local/Wallet/Dogecoin.md#generateprivatekey) | Generate private key from mnemonic and index
+*litecoin()* | [**generateWallet()**](./Local/Wallet/Litecoin.md#generatewallet) | Generate wallet
+*litecoin()* | [**generateAddressFromXpub()**](./Local/Wallet/Litecoin.md#generateaddressfromxpub) | Generate address from xPub and index
+*litecoin()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Litecoin.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*litecoin()* | [**generatePrivateKey()**](./Local/Wallet/Litecoin.md#generateprivatekey) | Generate private key from mnemonic and index
+*ethereum()* | [**generateWallet()**](./Local/Wallet/Ethereum.md#generatewallet) | Generate wallet
+*ethereum()* | [**generateAddressFromXpub()**](./Local/Wallet/Ethereum.md#generateaddressfromxpub) | Generate address from xPub and index
+*ethereum()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Ethereum.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*ethereum()* | [**generatePrivateKey()**](./Local/Wallet/Ethereum.md#generateprivatekey) | Generate private key from mnemonic and index
+*bsc()* | [**generateWallet()**](./Local/Wallet/BSC.md#generatewallet) | Generate wallet
+*bsc()* | [**generateAddressFromXpub()**](./Local/Wallet/BSC.md#generateaddressfromxpub) | Generate address from xPub and index
+*bsc()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/BSC.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*bsc()* | [**generatePrivateKey()**](./Local/Wallet/BSC.md#generateprivatekey) | Generate private key from mnemonic and index
+*celo()* | [**generateWallet()**](./Local/Wallet/Celo.md#generatewallet) | Generate wallet
+*celo()* | [**generateAddressFromXpub()**](./Local/Wallet/Celo.md#generateaddressfromxpub) | Generate address from xPub and index
+*celo()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Celo.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*celo()* | [**generatePrivateKey()**](./Local/Wallet/Celo.md#generateprivatekey) | Generate private key from mnemonic and index
+*harmony()* | [**generateWallet()**](./Local/Wallet/Harmony.md#generatewallet) | Generate wallet
+*harmony()* | [**generateAddressFromXpub()**](./Local/Wallet/Harmony.md#generateaddressfromxpub) | Generate address from xPub and index
+*harmony()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Harmony.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*harmony()* | [**generatePrivateKey()**](./Local/Wallet/Harmony.md#generateprivatekey) | Generate private key from mnemonic and index
+*kcs()* | [**generateWallet()**](./Local/Wallet/KCS.md#generatewallet) | Generate wallet
+*kcs()* | [**generateAddressFromXpub()**](./Local/Wallet/KCS.md#generateaddressfromxpub) | Generate address from xPub and index
+*kcs()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/KCS.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*kcs()* | [**generatePrivateKey()**](./Local/Wallet/KCS.md#generateprivatekey) | Generate private key from mnemonic and index
+*klaytn()* | [**generateWallet()**](./Local/Wallet/Klaytn.md#generatewallet) | Generate wallet
+*klaytn()* | [**generateAddressFromXpub()**](./Local/Wallet/Klaytn.md#generateaddressfromxpub) | Generate address from xPub and index
+*klaytn()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Klaytn.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*klaytn()* | [**generatePrivateKey()**](./Local/Wallet/Klaytn.md#generateprivatekey) | Generate private key from mnemonic and index
+*polygon()* | [**generateWallet()**](./Local/Wallet/Polygon.md#generatewallet) | Generate wallet
+*polygon()* | [**generateAddressFromXpub()**](./Local/Wallet/Polygon.md#generateaddressfromxpub) | Generate address from xPub and index
+*polygon()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Polygon.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*polygon()* | [**generatePrivateKey()**](./Local/Wallet/Polygon.md#generateprivatekey) | Generate private key from mnemonic and index
+*tron()* | [**generateWallet()**](./Local/Wallet/Tron.md#generatewallet) | Generate wallet
+*tron()* | [**generateAddressFromXpub()**](./Local/Wallet/Tron.md#generateaddressfromxpub) | Generate address from xPub and index
+*tron()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Tron.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*tron()* | [**generatePrivateKey()**](./Local/Wallet/Tron.md#generateprivatekey) | Generate private key from mnemonic and index
+*vechain()* | [**generateWallet()**](./Local/Wallet/VeChain.md#generatewallet) | Generate wallet
+*vechain()* | [**generateAddressFromXpub()**](./Local/Wallet/VeChain.md#generateaddressfromxpub) | Generate address from xPub and index
+*vechain()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/VeChain.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*vechain()* | [**generatePrivateKey()**](./Local/Wallet/VeChain.md#generateprivatekey) | Generate private key from mnemonic and index
+*xdc()* | [**generateWallet()**](./Local/Wallet/XDC.md#generatewallet) | Generate wallet
+*xdc()* | [**generateAddressFromXpub()**](./Local/Wallet/XDC.md#generateaddressfromxpub) | Generate address from xPub and index
+*xdc()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/XDC.md#generateaddressfromprivatekey) | Generate address from xPub and index
+*xdc()* | [**generatePrivateKey()**](./Local/Wallet/XDC.md#generateprivatekey) | Generate private key from mnemonic and index
+
+[[Back to top]](#) 
+
+### Local Transaction
+
+Local Transaction Signing
+
+You can access any of the Local Transaction endpoints with the following syntax:
+
+```php
+<?php
+
+// TestNet
+(new \Tatum\Sdk())->testnet()->local()->transaction();
+
+// MainNet
+(new \Tatum\Sdk())->mainnet()->local()->transaction();
+```
+
+Blockchain | Method | Description
+------------ | ------------- | -------------
+*bitcoin()* | [**sign()**](./Local/Transaction/Bitcoin.md#sign) | Sign transaction
+*bitcoinCash()* | [**sign()**](./Local/Transaction/BitcoinCash.md#sign) | Sign transaction
+*dogecoin()* | [**sign()**](./Local/Transaction/Dogecoin.md#sign) | Sign transaction
+*litecoin()* | [**sign()**](./Local/Transaction/Litecoin.md#sign) | Sign transaction
+*ethereum()* | [**sign()**](./Local/Transaction/Ethereum.md#sign) | Sign transaction
+
+[[Back to top]](#) 
 
 ## API Endpoints
 
@@ -526,111 +633,6 @@ API | Method | Description
 *xinFin()* | [**xdcGetTransaction()**](./Api/XinFinApi.md#xdcgettransaction) | Get XDC Transaction
 *xinFin()* | [**xdcGetTransactionCount()**](./Api/XinFinApi.md#xdcgettransactioncount) | Get count of outgoing XDC transactions
 *xinFin()* | [**xdcWeb3Driver()**](./Api/XinFinApi.md#xdcweb3driver) | Web3 HTTP driver
-
-
-## Local Endpoints
-
-You can perform certain operations without exposing any private information to Tatum's API.
-
-### Local Wallet
-
-Local Wallet operations
-
-You can access any of the Local Wallet endpoints with the following syntax:
-
-```php
-<?php
-
-// TestNet
-(new \Tatum\Sdk())->testnet()->local()->wallet();
-
-// MainNet
-(new \Tatum\Sdk())->mainnet()->local()->wallet();
-```
-
-Blockchain | Method | Description
------------- | ------------- | -------------
-*bitcoin()* | [**generateWallet()**](./Local/Wallet/Bitcoin.md#generatewallet) | Generate wallet
-*bitcoin()* | [**generateAddressFromXpub()**](./Local/Wallet/Bitcoin.md#generateaddressfromxpub) | Generate address from xPub and index
-*bitcoin()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Bitcoin.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*bitcoin()* | [**generatePrivateKey()**](./Local/Wallet/Bitcoin.md#generateprivatekey) | Generate private key from mnemonic and index
-*bitcoinCash()* | [**generateWallet()**](./Local/Wallet/BitcoinCash.md#generatewallet) | Generate wallet
-*bitcoinCash()* | [**generateAddressFromXpub()**](./Local/Wallet/BitcoinCash.md#generateaddressfromxpub) | Generate address from xPub and index
-*bitcoinCash()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/BitcoinCash.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*bitcoinCash()* | [**generatePrivateKey()**](./Local/Wallet/BitcoinCash.md#generateprivatekey) | Generate private key from mnemonic and index
-*dogecoin()* | [**generateWallet()**](./Local/Wallet/Dogecoin.md#generatewallet) | Generate wallet
-*dogecoin()* | [**generateAddressFromXpub()**](./Local/Wallet/Dogecoin.md#generateaddressfromxpub) | Generate address from xPub and index
-*dogecoin()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Dogecoin.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*dogecoin()* | [**generatePrivateKey()**](./Local/Wallet/Dogecoin.md#generateprivatekey) | Generate private key from mnemonic and index
-*litecoin()* | [**generateWallet()**](./Local/Wallet/Litecoin.md#generatewallet) | Generate wallet
-*litecoin()* | [**generateAddressFromXpub()**](./Local/Wallet/Litecoin.md#generateaddressfromxpub) | Generate address from xPub and index
-*litecoin()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Litecoin.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*litecoin()* | [**generatePrivateKey()**](./Local/Wallet/Litecoin.md#generateprivatekey) | Generate private key from mnemonic and index
-*ethereum()* | [**generateWallet()**](./Local/Wallet/Ethereum.md#generatewallet) | Generate wallet
-*ethereum()* | [**generateAddressFromXpub()**](./Local/Wallet/Ethereum.md#generateaddressfromxpub) | Generate address from xPub and index
-*ethereum()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Ethereum.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*ethereum()* | [**generatePrivateKey()**](./Local/Wallet/Ethereum.md#generateprivatekey) | Generate private key from mnemonic and index
-*bsc()* | [**generateWallet()**](./Local/Wallet/BSC.md#generatewallet) | Generate wallet
-*bsc()* | [**generateAddressFromXpub()**](./Local/Wallet/BSC.md#generateaddressfromxpub) | Generate address from xPub and index
-*bsc()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/BSC.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*bsc()* | [**generatePrivateKey()**](./Local/Wallet/BSC.md#generateprivatekey) | Generate private key from mnemonic and index
-*celo()* | [**generateWallet()**](./Local/Wallet/Celo.md#generatewallet) | Generate wallet
-*celo()* | [**generateAddressFromXpub()**](./Local/Wallet/Celo.md#generateaddressfromxpub) | Generate address from xPub and index
-*celo()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Celo.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*celo()* | [**generatePrivateKey()**](./Local/Wallet/Celo.md#generateprivatekey) | Generate private key from mnemonic and index
-*harmony()* | [**generateWallet()**](./Local/Wallet/Harmony.md#generatewallet) | Generate wallet
-*harmony()* | [**generateAddressFromXpub()**](./Local/Wallet/Harmony.md#generateaddressfromxpub) | Generate address from xPub and index
-*harmony()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Harmony.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*harmony()* | [**generatePrivateKey()**](./Local/Wallet/Harmony.md#generateprivatekey) | Generate private key from mnemonic and index
-*kcs()* | [**generateWallet()**](./Local/Wallet/KCS.md#generatewallet) | Generate wallet
-*kcs()* | [**generateAddressFromXpub()**](./Local/Wallet/KCS.md#generateaddressfromxpub) | Generate address from xPub and index
-*kcs()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/KCS.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*kcs()* | [**generatePrivateKey()**](./Local/Wallet/KCS.md#generateprivatekey) | Generate private key from mnemonic and index
-*klaytn()* | [**generateWallet()**](./Local/Wallet/Klaytn.md#generatewallet) | Generate wallet
-*klaytn()* | [**generateAddressFromXpub()**](./Local/Wallet/Klaytn.md#generateaddressfromxpub) | Generate address from xPub and index
-*klaytn()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Klaytn.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*klaytn()* | [**generatePrivateKey()**](./Local/Wallet/Klaytn.md#generateprivatekey) | Generate private key from mnemonic and index
-*polygon()* | [**generateWallet()**](./Local/Wallet/Polygon.md#generatewallet) | Generate wallet
-*polygon()* | [**generateAddressFromXpub()**](./Local/Wallet/Polygon.md#generateaddressfromxpub) | Generate address from xPub and index
-*polygon()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Polygon.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*polygon()* | [**generatePrivateKey()**](./Local/Wallet/Polygon.md#generateprivatekey) | Generate private key from mnemonic and index
-*tron()* | [**generateWallet()**](./Local/Wallet/Tron.md#generatewallet) | Generate wallet
-*tron()* | [**generateAddressFromXpub()**](./Local/Wallet/Tron.md#generateaddressfromxpub) | Generate address from xPub and index
-*tron()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/Tron.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*tron()* | [**generatePrivateKey()**](./Local/Wallet/Tron.md#generateprivatekey) | Generate private key from mnemonic and index
-*vechain()* | [**generateWallet()**](./Local/Wallet/VeChain.md#generatewallet) | Generate wallet
-*vechain()* | [**generateAddressFromXpub()**](./Local/Wallet/VeChain.md#generateaddressfromxpub) | Generate address from xPub and index
-*vechain()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/VeChain.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*vechain()* | [**generatePrivateKey()**](./Local/Wallet/VeChain.md#generateprivatekey) | Generate private key from mnemonic and index
-*xdc()* | [**generateWallet()**](./Local/Wallet/XDC.md#generatewallet) | Generate wallet
-*xdc()* | [**generateAddressFromXpub()**](./Local/Wallet/XDC.md#generateaddressfromxpub) | Generate address from xPub and index
-*xdc()* | [**generateAddressFromPrivateKey()**](./Local/Wallet/XDC.md#generateaddressfromprivatekey) | Generate address from xPub and index
-*xdc()* | [**generatePrivateKey()**](./Local/Wallet/XDC.md#generateprivatekey) | Generate private key from mnemonic and index
-
-
-### Local Transaction
-
-Local Transaction Signing
-
-You can access any of the Local Transaction endpoints with the following syntax:
-
-```php
-<?php
-
-// TestNet
-(new \Tatum\Sdk())->testnet()->local()->transaction();
-
-// MainNet
-(new \Tatum\Sdk())->mainnet()->local()->transaction();
-```
-
-Blockchain | Method | Description
------------- | ------------- | -------------
-*bitcoin()* | [**sign()**](./Local/Transaction/Bitcoin.md#sign) | Sign transaction
-*bitcoinCash()* | [**sign()**](./Local/Transaction/BitcoinCash.md#sign) | Sign transaction
-*dogecoin()* | [**sign()**](./Local/Transaction/Dogecoin.md#sign) | Sign transaction
-*litecoin()* | [**sign()**](./Local/Transaction/Litecoin.md#sign) | Sign transaction
-*ethereum()* | [**sign()**](./Local/Transaction/Ethereum.md#sign) | Sign transaction
 
 
 [[Back to top]](#) 

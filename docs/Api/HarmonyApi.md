@@ -21,12 +21,27 @@ Method | HTTP request | Description
 
 ## `oneBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneBlockchainSmartContractInvocation(
     ?\Tatum\Model\OneBlockchainSmartContractInvocationRequest $one_blockchain_smart_contract_invocation_request, 
     ?float $shard_id
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$one_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\OneBlockchainSmartContractInvocationRequest**](../Model/OneBlockchainSmartContractInvocationRequest.md)|  |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on Harmony
 
@@ -66,27 +81,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$one_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\OneBlockchainSmartContractInvocationRequest**](../Model/OneBlockchainSmartContractInvocationRequest.md)|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
-
-### Return type
-
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneBlockchainTransfer()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneBlockchainTransfer(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneBlockchainTransfer(
     ?\Tatum\Model\OneBlockchainTransferRequest $one_blockchain_transfer_request, 
     ?float $shard_id
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$one_blockchain_transfer_request** | [**\Tatum\Model\OneBlockchainTransferRequest**](../Model/OneBlockchainTransferRequest.md)|  |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Send ONE / HRM20 from account to account
 
@@ -126,27 +145,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$one_blockchain_transfer_request** | [**\Tatum\Model\OneBlockchainTransferRequest**](../Model/OneBlockchainTransferRequest.md)|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneBroadcast()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneBroadcast(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms, 
     ?float $shard_id
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast signed ONE transaction
 
@@ -186,26 +209,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `oneFormatAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->harmony()->oneFormatAddress(
+    ?string $address
+): \Tatum\Model\GeneratedAddressOne
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$address** | **string**| Address in HEX (ETH compatible) format. |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `oneFormatAddress()`
-
-```php
-api()->harmony()->oneFormatAddress(
-    ?string $address
-): \Tatum\Model\GeneratedAddressOne
-```
+### Description
 
 Transform HEX address to Bech32 ONE address format
 
@@ -243,26 +269,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `oneGenerateAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddress(
+    ?string $xpub, 
+    ?float $index
+): \Tatum\Model\GeneratedAddressOne
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address in HEX (ETH compatible) format. |
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
 
 ### Return type
 
 [**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `oneGenerateAddress()`
-
-```php
-api()->harmony()->oneGenerateAddress(
-    ?string $xpub, 
-    ?float $index
-): \Tatum\Model\GeneratedAddressOne
-```
+### Description
 
 Generate ONE account address from Extended public key
 
@@ -303,26 +334,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `oneGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `oneGenerateAddressPrivateKey()`
-
-```php
-api()->harmony()->oneGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate ONE private key
 
@@ -359,25 +393,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `oneGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `oneGenerateWallet()`
-
-```php
-api()->harmony()->oneGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate ONE wallet
 
@@ -415,26 +453,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
-
-### Return type
-
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetBalance()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneGetBalance(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGetBalance(
     ?string $address, 
     ?float $shard_id
 ): \Tatum\Model\OneBalance
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Account address you want to get balance of |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\OneBalance**](../Model/OneBalance.md)
+
+### Description
 
 Get ONE Account balance
 
@@ -475,27 +518,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
-
-### Return type
-
-[**\Tatum\Model\OneBalance**](../Model/OneBalance.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetBlock()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneGetBlock(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGetBlock(
     ?string $hash, 
     ?float $shard_id
 ): \Tatum\Model\EthBlock
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Block hash or block number |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+
+### Description
 
 Get ONE block by hash
 
@@ -536,25 +583,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
-
-### Return type
-
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGetCurrentBlock(
 ): \Tatum\Model\OneBlockCurrent[]
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\OneBlockCurrent[]**](../Model/OneBlockCurrent.md)
+
+### Description
 
 Get current block number
 
@@ -589,24 +637,31 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\OneBlockCurrent[]**](../Model/OneBlockCurrent.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetTransaction()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneGetTransaction(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransaction(
     ?string $hash, 
     ?float $shard_id
 ): \Tatum\Model\OneTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\OneTx**](../Model/OneTx.md)
+
+### Description
 
 Get ONE Transaction
 
@@ -647,27 +702,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
-
-### Return type
-
-[**\Tatum\Model\OneTx**](../Model/OneTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetTransactionCount()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneGetTransactionCount(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransactionCount(
     ?string $address, 
     ?float $shard_id
 ): float
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| address |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+**float**
+
+### Description
 
 Get count of outgoing ONE transactions
 
@@ -708,28 +767,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->harmony()->oneWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->harmony()->oneWeb3Driver(
     ?string $x_api_key, 
     ?object $body, 
     ?float $shard_id
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+ **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -772,16 +836,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

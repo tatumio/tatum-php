@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `klaytnBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->klaytn()->klaytnBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnBlockchainSmartContractInvocation(
     ?\Tatum\Model\KlaytnBlockchainSmartContractInvocationRequest $klaytn_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$klaytn_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KlaytnBlockchainSmartContractInvocationRequest**](../Model/KlaytnBlockchainSmartContractInvocationRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on Klaytn
 
@@ -61,25 +75,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnBlockchainTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnBlockchainTransfer(
+    ?\Tatum\Model\KlaytnBlockchainTransferRequest $klaytn_blockchain_transfer_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$klaytn_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KlaytnBlockchainSmartContractInvocationRequest**](../Model/KlaytnBlockchainSmartContractInvocationRequest.md)|  |
+ **$klaytn_blockchain_transfer_request** | [**\Tatum\Model\KlaytnBlockchainTransferRequest**](../Model/KlaytnBlockchainTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnBlockchainTransfer()`
-
-```php
-api()->klaytn()->klaytnBlockchainTransfer(
-    ?\Tatum\Model\KlaytnBlockchainTransferRequest $klaytn_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send KLAY from account to account
 
@@ -116,25 +134,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$klaytn_blockchain_transfer_request** | [**\Tatum\Model\KlaytnBlockchainTransferRequest**](../Model/KlaytnBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnBroadcast()`
-
-```php
-api()->klaytn()->klaytnBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed Klaytn transaction
 
@@ -171,26 +193,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `klaytnGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->klaytn()->klaytnGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\KlaytnGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\KlaytnGenerateAddress200Response**](../Model/KlaytnGenerateAddress200Response.md)
+
+### Description
 
 Generate Klaytn account address from Extended public key
 
@@ -231,26 +258,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\KlaytnGenerateAddress200Response**](../Model/KlaytnGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnGenerateAddressPrivateKey()`
-
-```php
-api()->klaytn()->klaytnGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Klaytn private key
 
@@ -287,25 +317,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnGenerateWallet()`
-
-```php
-api()->klaytn()->klaytnGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Klaytn wallet
 
@@ -343,25 +377,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetBalance(
+    ?string $address
+): \Tatum\Model\KlaytnGetBalance200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\KlaytnGetBalance200Response**](../Model/KlaytnGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnGetBalance()`
-
-```php
-api()->klaytn()->klaytnGetBalance(
-    ?string $address
-): \Tatum\Model\KlaytnGetBalance200Response
-```
+### Description
 
 Get Klaytn Account balance
 
@@ -399,25 +437,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetBlock(
+    ?string $hash
+): \Tatum\Model\KlaytnBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or block number |
 
 ### Return type
 
-[**\Tatum\Model\KlaytnGetBalance200Response**](../Model/KlaytnGetBalance200Response.md)
+[**\Tatum\Model\KlaytnBlock**](../Model/KlaytnBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnGetBlock()`
-
-```php
-api()->klaytn()->klaytnGetBlock(
-    ?string $hash
-): \Tatum\Model\KlaytnBlock
-```
+### Description
 
 Get Klaytn block by hash
 
@@ -455,24 +497,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
-
-### Return type
-
-[**\Tatum\Model\KlaytnBlock**](../Model/KlaytnBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `klaytnGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->klaytn()->klaytnGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -507,23 +551,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `klaytnGetTransaction()`
 
+### Type signature
+
 ```php
-api()->klaytn()->klaytnGetTransaction(
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetTransaction(
     ?string $hash
 ): \Tatum\Model\KlaytnTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\KlaytnTx**](../Model/KlaytnTx.md)
+
+### Description
 
 Get Klaytn Transaction
 
@@ -561,25 +611,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnGetTransactionCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetTransactionCount(
+    ?string $address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$address** | **string**| address |
 
 ### Return type
 
-[**\Tatum\Model\KlaytnTx**](../Model/KlaytnTx.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klaytnGetTransactionCount()`
-
-```php
-api()->klaytn()->klaytnGetTransactionCount(
-    ?string $address
-): float
-```
+### Description
 
 Get count of outgoing Klaytn transactions
 
@@ -617,26 +671,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `klaytnWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->klaytn()->klaytnWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnWeb3Driver(
     ?string $x_api_key, 
     ?object $body
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -676,15 +735,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

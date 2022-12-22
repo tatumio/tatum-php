@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `bscBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->bNBSmartChain()->bscBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainSmartContractInvocation(
     ?\Tatum\Model\BscBlockchainSmartContractInvocationRequest $bsc_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$bsc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\BscBlockchainSmartContractInvocationRequest**](../Model/BscBlockchainSmartContractInvocationRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on BNB Smart Chain
 
@@ -61,25 +75,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscBlockchainTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainTransfer(
+    ?\Tatum\Model\BscBlockchainTransferRequest $bsc_blockchain_transfer_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\BscBlockchainSmartContractInvocationRequest**](../Model/BscBlockchainSmartContractInvocationRequest.md)|  |
+ **$bsc_blockchain_transfer_request** | [**\Tatum\Model\BscBlockchainTransferRequest**](../Model/BscBlockchainTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscBlockchainTransfer()`
-
-```php
-api()->bNBSmartChain()->bscBlockchainTransfer(
-    ?\Tatum\Model\BscBlockchainTransferRequest $bsc_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send BSC / BEP20 from account to account
 
@@ -116,25 +134,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_blockchain_transfer_request** | [**\Tatum\Model\BscBlockchainTransferRequest**](../Model/BscBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscBroadcast()`
-
-```php
-api()->bNBSmartChain()->bscBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed BSC transaction
 
@@ -171,26 +193,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bscGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->bNBSmartChain()->bscGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\GeneratedAddressBsc
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\GeneratedAddressBsc**](../Model/GeneratedAddressBsc.md)
+
+### Description
 
 Generate BSC account address from Extended public key
 
@@ -231,26 +258,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressBsc**](../Model/GeneratedAddressBsc.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscGenerateAddressPrivateKey()`
-
-```php
-api()->bNBSmartChain()->bscGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate BSC private key
 
@@ -287,25 +317,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscGenerateWallet()`
-
-```php
-api()->bNBSmartChain()->bscGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate BSC wallet
 
@@ -343,25 +377,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBalance(
+    ?string $address
+): \Tatum\Model\BscBalance
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\BscBalance**](../Model/BscBalance.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscGetBalance()`
-
-```php
-api()->bNBSmartChain()->bscGetBalance(
-    ?string $address
-): \Tatum\Model\BscBalance
-```
+### Description
 
 Get BSC Account balance
 
@@ -399,25 +437,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBlock(
+    ?string $hash
+): \Tatum\Model\EthBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or block number |
 
 ### Return type
 
-[**\Tatum\Model\BscBalance**](../Model/BscBalance.md)
+[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscGetBlock()`
-
-```php
-api()->bNBSmartChain()->bscGetBlock(
-    ?string $hash
-): \Tatum\Model\EthBlock
-```
+### Description
 
 Get BSC block by hash
 
@@ -455,24 +497,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
-
-### Return type
-
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bscGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->bNBSmartChain()->bscGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -507,23 +551,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bscGetTransaction()`
 
+### Type signature
+
 ```php
-api()->bNBSmartChain()->bscGetTransaction(
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransaction(
     ?string $hash
 ): \Tatum\Model\BscTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\BscTx**](../Model/BscTx.md)
+
+### Description
 
 Get BSC Transaction
 
@@ -561,25 +611,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscGetTransactionCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransactionCount(
+    ?string $address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$address** | **string**| address |
 
 ### Return type
 
-[**\Tatum\Model\BscTx**](../Model/BscTx.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscGetTransactionCount()`
-
-```php
-api()->bNBSmartChain()->bscGetTransactionCount(
-    ?string $address
-): float
-```
+### Description
 
 Get count of outgoing BSC transactions
 
@@ -617,26 +671,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bscWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->bNBSmartChain()->bscWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscWeb3Driver(
     ?string $x_api_key, 
     ?object $body
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -676,15 +735,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

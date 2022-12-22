@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `dogeBroadcast()`
 
+### Type signature
+
 ```php
-api()->dogecoin()->dogeBroadcast(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast signed Dogecoin transaction
 
@@ -61,26 +75,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->dogecoin()->dogeGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\DogeGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\DogeGenerateAddress200Response**](../Model/DogeGenerateAddress200Response.md)
+
+### Description
 
 Generate Dogecoin deposit address from Extended public key
 
@@ -121,26 +140,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `dogeGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\DogeGenerateAddress200Response**](../Model/DogeGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `dogeGenerateAddressPrivateKey()`
-
-```php
-api()->dogecoin()->dogeGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Dogecoin private key
 
@@ -177,25 +199,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `dogeGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `dogeGenerateWallet()`
-
-```php
-api()->dogecoin()->dogeGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Dogecoin wallet
 
@@ -233,25 +259,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `dogeGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlock(
+    ?string $hash
+): \Tatum\Model\DogeBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$hash** | **string**| Block hash or height. |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\DogeBlock**](../Model/DogeBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `dogeGetBlock()`
-
-```php
-api()->dogecoin()->dogeGetBlock(
-    ?string $hash
-): \Tatum\Model\DogeBlock
-```
+### Description
 
 Get Dogecoin Block by hash or height
 
@@ -289,24 +319,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
-
-### Return type
-
-[**\Tatum\Model\DogeBlock**](../Model/DogeBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetBlockChainInfo()`
 
+### Type signature
+
 ```php
-api()->dogecoin()->dogeGetBlockChainInfo(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockChainInfo(
 ): \Tatum\Model\DogeInfo
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\DogeInfo**](../Model/DogeInfo.md)
+
+### Description
 
 Get Dogecoin Blockchain Information
 
@@ -341,23 +373,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\DogeInfo**](../Model/DogeInfo.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetBlockHash()`
 
+### Type signature
+
 ```php
-api()->dogecoin()->dogeGetBlockHash(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockHash(
     ?float $i
 ): \Tatum\Model\LtcGetBlockHash200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
+
+### Return type
+
+[**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
+
+### Description
 
 Get Dogecoin Block hash
 
@@ -395,24 +433,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
-
-### Return type
-
-[**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetMempool()`
 
+### Type signature
+
 ```php
-api()->dogecoin()->dogeGetMempool(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetMempool(
 ): string[]
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**string[]**
+
+### Description
 
 Get Mempool Transactions
 
@@ -447,23 +487,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**string[]**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetRawTransaction()`
 
+### Type signature
+
 ```php
-api()->dogecoin()->dogeGetRawTransaction(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetRawTransaction(
     ?string $hash
 ): \Tatum\Model\DogeTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\DogeTx**](../Model/DogeTx.md)
+
+### Description
 
 Get Dogecoin Transaction by hash
 
@@ -501,26 +547,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
-
-### Return type
-
-[**\Tatum\Model\DogeTx**](../Model/DogeTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetUTXO()`
 
+### Type signature
+
 ```php
-api()->dogecoin()->dogeGetUTXO(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetUTXO(
     ?string $hash, 
     ?float $index
 ): \Tatum\Model\DogeUTXO
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| The transaction hash |
+ **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+
+### Return type
+
+[**\Tatum\Model\DogeUTXO**](../Model/DogeUTXO.md)
+
+### Description
 
 Get information about a transaction output (UTXO) in a Dogecoin transaction
 
@@ -561,26 +612,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `dogeRpcDriver()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeRpcDriver(
+    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
+): object
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| The transaction hash |
- **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\DogeUTXO**](../Model/DogeUTXO.md)
+**object**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `dogeRpcDriver()`
-
-```php
-api()->dogecoin()->dogeRpcDriver(
-    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
-): object
-```
+### Description
 
 JSON RPC HTTP driver
 
@@ -617,25 +671,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `dogeTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransferBlockchain(
+    ?\Tatum\Model\DogeTransferBlockchainRequest $doge_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
+ **$doge_transfer_blockchain_request** | [**\Tatum\Model\DogeTransferBlockchainRequest**](../Model/DogeTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-**object**
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `dogeTransferBlockchain()`
-
-```php
-api()->dogecoin()->dogeTransferBlockchain(
-    ?\Tatum\Model\DogeTransferBlockchainRequest $doge_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send DOGE to Dogecoin addresses
 
@@ -672,14 +730,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$doge_transfer_blockchain_request** | [**\Tatum\Model\DogeTransferBlockchainRequest**](../Model/DogeTransferBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `kcsBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->kuCoin()->kcsBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBlockchainSmartContractInvocation(
     ?\Tatum\Model\KcsBlockchainSmartContractInvocationRequest $kcs_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$kcs_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KcsBlockchainSmartContractInvocationRequest**](../Model/KcsBlockchainSmartContractInvocationRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on KuCoin Community Chain
 
@@ -61,25 +75,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsBlockchainTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBlockchainTransfer(
+    ?\Tatum\Model\KcsBlockchainTransferRequest $kcs_blockchain_transfer_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KcsBlockchainSmartContractInvocationRequest**](../Model/KcsBlockchainSmartContractInvocationRequest.md)|  |
+ **$kcs_blockchain_transfer_request** | [**\Tatum\Model\KcsBlockchainTransferRequest**](../Model/KcsBlockchainTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsBlockchainTransfer()`
-
-```php
-api()->kuCoin()->kcsBlockchainTransfer(
-    ?\Tatum\Model\KcsBlockchainTransferRequest $kcs_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send KCS from account to account
 
@@ -116,25 +134,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_blockchain_transfer_request** | [**\Tatum\Model\KcsBlockchainTransferRequest**](../Model/KcsBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsBroadcast()`
-
-```php
-api()->kuCoin()->kcsBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed Kcs transaction
 
@@ -171,26 +193,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `kcsGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->kuCoin()->kcsGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\KcsGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\KcsGenerateAddress200Response**](../Model/KcsGenerateAddress200Response.md)
+
+### Description
 
 Generate Kcs account address from Extended public key
 
@@ -231,26 +258,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\KcsGenerateAddress200Response**](../Model/KcsGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsGenerateAddressPrivateKey()`
-
-```php
-api()->kuCoin()->kcsGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate Kcs private key
 
@@ -287,25 +317,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsGenerateWallet()`
-
-```php
-api()->kuCoin()->kcsGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate Kcs wallet
 
@@ -343,25 +377,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetBalance(
+    ?string $address
+): \Tatum\Model\KcsGetBalance200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\KcsGetBalance200Response**](../Model/KcsGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsGetBalance()`
-
-```php
-api()->kuCoin()->kcsGetBalance(
-    ?string $address
-): \Tatum\Model\KcsGetBalance200Response
-```
+### Description
 
 Get Kcs Account balance
 
@@ -399,25 +437,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetBlock(
+    ?string $hash
+): \Tatum\Model\EthBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or block number |
 
 ### Return type
 
-[**\Tatum\Model\KcsGetBalance200Response**](../Model/KcsGetBalance200Response.md)
+[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsGetBlock()`
-
-```php
-api()->kuCoin()->kcsGetBlock(
-    ?string $hash
-): \Tatum\Model\EthBlock
-```
+### Description
 
 Get Kcs block by hash
 
@@ -455,24 +497,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
-
-### Return type
-
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `kcsGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->kuCoin()->kcsGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -507,23 +551,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `kcsGetTransaction()`
 
+### Type signature
+
 ```php
-api()->kuCoin()->kcsGetTransaction(
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransaction(
     ?string $hash
 ): \Tatum\Model\KcsTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\KcsTx**](../Model/KcsTx.md)
+
+### Description
 
 Get Kcs Transaction
 
@@ -561,25 +611,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsGetTransactionCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransactionCount(
+    ?string $address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$address** | **string**| address |
 
 ### Return type
 
-[**\Tatum\Model\KcsTx**](../Model/KcsTx.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsGetTransactionCount()`
-
-```php
-api()->kuCoin()->kcsGetTransactionCount(
-    ?string $address
-): float
-```
+### Description
 
 Get count of outgoing Kcs transactions
 
@@ -617,26 +671,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `kcsWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->kuCoin()->kcsWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsWeb3Driver(
     ?string $x_api_key, 
     ?object $body
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -676,15 +735,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

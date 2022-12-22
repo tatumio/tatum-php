@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `chartRequest()`
 
+### Type signature
+
 ```php
-api()->orderBook()->chartRequest(
+$sdk->{mainnet/testnet}()->api()->orderBook()->chartRequest(
     ?\Tatum\Model\ChartRequest $chart_request
 ): \Tatum\Model\Chart[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chart_request** | [**\Tatum\Model\ChartRequest**](../Model/ChartRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\Chart[]**](../Model/Chart.md)
+
+### Description
 
 Obtain chart data from historical closed trades
 
@@ -61,25 +75,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deleteAccountTrades()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->deleteAccountTrades(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chart_request** | [**\Tatum\Model\ChartRequest**](../Model/ChartRequest.md)|  |
+ **$id** | **string**| Account ID |
 
 ### Return type
 
-[**\Tatum\Model\Chart[]**](../Model/Chart.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deleteAccountTrades()`
-
-```php
-api()->orderBook()->deleteAccountTrades(
-    ?string $id
-)
-```
+### Description
 
 Cancel all existing trades for account
 
@@ -114,25 +132,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deleteTrade()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->deleteTrade(
+    ?string $id
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**| Trade ID |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deleteTrade()`
-
-```php
-api()->orderBook()->deleteTrade(
-    ?string $id
-)
-```
+### Description
 
 Cancel existing trade
 
@@ -167,22 +189,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| Trade ID |
-
-### Return type
-
-void (empty response body)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getBuyTrades()`
 
+### Type signature
+
 ```php
-api()->orderBook()->getBuyTrades(
+$sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTrades(
     ?float $page_size, 
     ?string $id, 
     ?string $customer_id, 
@@ -192,6 +206,24 @@ api()->orderBook()->getBuyTrades(
     ?string $trade_type
 ): \Tatum\Model\Trade[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$id** | **string**| Account ID. If present, list current active buy trades for that account. | [optional]
+ **$customer_id** | **string**| Customer ID. If present, list current active buy trades for that customer. | [optional]
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$pair** | **string**| Trade pair. If present, list current active buy trades for that pair. | [optional]
+ **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$trade_type** | **string**| Trade type. | [optional]
+
+### Return type
+
+[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+
+### Description
 
 List all active buy trades
 
@@ -247,31 +279,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getBuyTradesBody()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTradesBody(
+    ?\Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body
+): \Tatum\Model\Trade[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Account ID. If present, list current active buy trades for that account. | [optional]
- **$customer_id** | **string**| Customer ID. If present, list current active buy trades for that customer. | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$pair** | **string**| Trade pair. If present, list current active buy trades for that pair. | [optional]
- **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$trade_type** | **string**| Trade type. | [optional]
+ **$list_oder_book_active_buy_body** | [**\Tatum\Model\ListOderBookActiveBuyBody**](../Model/ListOderBookActiveBuyBody.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getBuyTradesBody()`
-
-```php
-api()->orderBook()->getBuyTradesBody(
-    ?\Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body
-): \Tatum\Model\Trade[]
-```
+### Description
 
 List all active buy trades
 
@@ -308,22 +338,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$list_oder_book_active_buy_body** | [**\Tatum\Model\ListOderBookActiveBuyBody**](../Model/ListOderBookActiveBuyBody.md)|  |
-
-### Return type
-
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getHistoricalTrades()`
 
+### Type signature
+
 ```php
-api()->orderBook()->getHistoricalTrades(
+$sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTrades(
     ?float $page_size, 
     ?string $id, 
     ?string $pair, 
@@ -332,6 +354,23 @@ api()->orderBook()->getHistoricalTrades(
     ?string[] $types
 ): \Tatum\Model\Trade[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$id** | **string**| Account ID. If present, only closed trades for given account will be present. | [optional]
+ **$pair** | **string**| Trade pair. If present, only closed trades on given trade pair will be present. | [optional]
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$types** | [**string[]**](../Model/string.md)| Trade types. | [optional]
+
+### Return type
+
+[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+
+### Description
 
 List all historical trades
 
@@ -384,30 +423,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getHistoricalTradesBody()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTradesBody(
+    ?\Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body
+): \Tatum\Model\Trade[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Account ID. If present, only closed trades for given account will be present. | [optional]
- **$pair** | **string**| Trade pair. If present, only closed trades on given trade pair will be present. | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$types** | [**string[]**](../Model/string.md)| Trade types. | [optional]
+ **$list_oder_book_history_body** | [**\Tatum\Model\ListOderBookHistoryBody**](../Model/ListOderBookHistoryBody.md)|  | [optional]
 
 ### Return type
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getHistoricalTradesBody()`
-
-```php
-api()->orderBook()->getHistoricalTradesBody(
-    ?\Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body
-): \Tatum\Model\Trade[]
-```
+### Description
 
 List all historical trades
 
@@ -444,25 +482,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getMatchedTrades()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->getMatchedTrades(
+    ?\Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body
+): \Tatum\Model\Trade[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_history_body** | [**\Tatum\Model\ListOderBookHistoryBody**](../Model/ListOderBookHistoryBody.md)|  | [optional]
+ **$list_oder_book_matched_body** | [**\Tatum\Model\ListOderBookMatchedBody**](../Model/ListOderBookMatchedBody.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getMatchedTrades()`
-
-```php
-api()->orderBook()->getMatchedTrades(
-    ?\Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body
-): \Tatum\Model\Trade[]
-```
+### Description
 
 List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
@@ -499,22 +541,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$list_oder_book_matched_body** | [**\Tatum\Model\ListOderBookMatchedBody**](../Model/ListOderBookMatchedBody.md)|  |
-
-### Return type
-
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getSellTrades()`
 
+### Type signature
+
 ```php
-api()->orderBook()->getSellTrades(
+$sdk->{mainnet/testnet}()->api()->orderBook()->getSellTrades(
     ?float $page_size, 
     ?string $id, 
     ?string $customer_id, 
@@ -524,6 +558,24 @@ api()->orderBook()->getSellTrades(
     ?string $trade_type
 ): \Tatum\Model\Trade[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$id** | **string**| Account ID. If present, list current active sell trades for that account. | [optional]
+ **$customer_id** | **string**| Customer ID. If present, list current active buy trades for that customer. | [optional]
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$pair** | **string**| Trade pair. If present, list current active sell trades for that pair. | [optional]
+ **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$trade_type** | **string**| Trade type. | [optional]
+
+### Return type
+
+[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+
+### Description
 
 List all active sell trades
 
@@ -579,31 +631,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getSellTradesBody()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->getSellTradesBody(
+    ?\Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body
+): \Tatum\Model\Trade[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Account ID. If present, list current active sell trades for that account. | [optional]
- **$customer_id** | **string**| Customer ID. If present, list current active buy trades for that customer. | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$pair** | **string**| Trade pair. If present, list current active sell trades for that pair. | [optional]
- **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$trade_type** | **string**| Trade type. | [optional]
+ **$list_oder_book_active_sell_body** | [**\Tatum\Model\ListOderBookActiveSellBody**](../Model/ListOderBookActiveSellBody.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\Trade[]**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getSellTradesBody()`
-
-```php
-api()->orderBook()->getSellTradesBody(
-    ?\Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body
-): \Tatum\Model\Trade[]
-```
+### Description
 
 List all active sell trades
 
@@ -640,25 +690,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getTradeById()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->getTradeById(
+    ?string $id
+): \Tatum\Model\Trade
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_active_sell_body** | [**\Tatum\Model\ListOderBookActiveSellBody**](../Model/ListOderBookActiveSellBody.md)|  |
+ **$id** | **string**| Trade ID |
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade**](../Model/Trade.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getTradeById()`
-
-```php
-api()->orderBook()->getTradeById(
-    ?string $id
-): \Tatum\Model\Trade
-```
+### Description
 
 Get existing trade
 
@@ -696,25 +750,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `storeTrade()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->storeTrade(
+    ?\Tatum\Model\StoreTradeRequest $store_trade_request
+): \Tatum\Model\Id
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Trade ID |
+ **$store_trade_request** | [**\Tatum\Model\StoreTradeRequest**](../Model/StoreTradeRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Trade**](../Model/Trade.md)
+[**\Tatum\Model\Id**](../Model/Id.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `storeTrade()`
-
-```php
-api()->orderBook()->storeTrade(
-    ?\Tatum\Model\StoreTradeRequest $store_trade_request
-): \Tatum\Model\Id
-```
+### Description
 
 Store buy / sell trade
 
@@ -751,14 +809,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$store_trade_request** | [**\Tatum\Model\StoreTradeRequest**](../Model/StoreTradeRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\Id**](../Model/Id.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

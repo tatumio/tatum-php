@@ -14,14 +14,31 @@ Method | HTTP request | Description
 
 ## `getTransactions()`
 
+### Type signature
+
 ```php
-api()->transaction()->getTransactions(
+$sdk->{mainnet/testnet}()->api()->transaction()->getTransactions(
     ?\Tatum\Model\TransactionFilterLedger $transaction_filter_ledger, 
     ?float $page_size, 
     ?float $offset, 
     ?bool $count
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transaction_filter_ledger** | [**\Tatum\Model\TransactionFilterLedger**](../Model/TransactionFilterLedger.md)|  |
+ **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
+ **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$count** | **bool**| Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
+
+### Return type
+
+[**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
+
+### Description
 
 Find transactions within the ledger.
 
@@ -67,11 +84,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getTransactionsByAccountId()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByAccountId(
+    ?\Tatum\Model\TransactionFilter $transaction_filter, 
+    ?float $page_size, 
+    ?float $offset, 
+    ?bool $count
+): \Tatum\Model\GetTransactionsByAccountId200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter_ledger** | [**\Tatum\Model\TransactionFilterLedger**](../Model/TransactionFilterLedger.md)|  |
+ **$transaction_filter** | [**\Tatum\Model\TransactionFilter**](../Model/TransactionFilter.md)|  |
  **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
  **$offset** | **float**| Offset to obtain the next page of data. | [optional]
  **$count** | **bool**| Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
@@ -80,18 +112,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getTransactionsByAccountId()`
-
-```php
-api()->transaction()->getTransactionsByAccountId(
-    ?\Tatum\Model\TransactionFilter $transaction_filter, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?bool $count
-): \Tatum\Model\GetTransactionsByAccountId200Response
-```
+### Description
 
 Find transactions for account.
 
@@ -137,31 +158,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transaction_filter** | [**\Tatum\Model\TransactionFilter**](../Model/TransactionFilter.md)|  |
- **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$count** | **bool**| Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
-
-### Return type
-
-[**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getTransactionsByCustomerId()`
 
+### Type signature
+
 ```php
-api()->transaction()->getTransactionsByCustomerId(
+$sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByCustomerId(
     ?\Tatum\Model\TransactionFilterCustomer $transaction_filter_customer, 
     ?float $page_size, 
     ?float $offset, 
     ?bool $count
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transaction_filter_customer** | [**\Tatum\Model\TransactionFilterCustomer**](../Model/TransactionFilterCustomer.md)|  |
+ **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
+ **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$count** | **bool**| Get total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
+
+### Return type
+
+[**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
+
+### Description
 
 Find transactions for a customer across all of the customer's accounts.
 
@@ -207,28 +232,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getTransactionsByReference()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByReference(
+    ?string $reference
+): \Tatum\Model\Transaction[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter_customer** | [**\Tatum\Model\TransactionFilterCustomer**](../Model/TransactionFilterCustomer.md)|  |
- **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$count** | **bool**| Get total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$reference** | **string**|  |
 
 ### Return type
 
-[**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
+[**\Tatum\Model\Transaction[]**](../Model/Transaction.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getTransactionsByReference()`
-
-```php
-api()->transaction()->getTransactionsByReference(
-    ?string $reference
-): \Tatum\Model\Transaction[]
-```
+### Description
 
 Find transactions with a given reference across all accounts.
 
@@ -265,25 +291,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sendTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->transaction()->sendTransaction(
+    ?\Tatum\Model\CreateTransaction $create_transaction
+): \Tatum\Model\TransactionResult
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$reference** | **string**|  |
+ **$create_transaction** | [**\Tatum\Model\CreateTransaction**](../Model/CreateTransaction.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Transaction[]**](../Model/Transaction.md)
+[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `sendTransaction()`
-
-```php
-api()->transaction()->sendTransaction(
-    ?\Tatum\Model\CreateTransaction $create_transaction
-): \Tatum\Model\TransactionResult
-```
+### Description
 
 Send payment
 
@@ -320,25 +350,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sendTransactionBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->transaction()->sendTransactionBatch(
+    ?\Tatum\Model\BatchCreateTransaction $batch_create_transaction
+): string[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_transaction** | [**\Tatum\Model\CreateTransaction**](../Model/CreateTransaction.md)|  |
+ **$batch_create_transaction** | [**\Tatum\Model\BatchCreateTransaction**](../Model/BatchCreateTransaction.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+**string[]**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `sendTransactionBatch()`
-
-```php
-api()->transaction()->sendTransactionBatch(
-    ?\Tatum\Model\BatchCreateTransaction $batch_create_transaction
-): string[]
-```
+### Description
 
 Send payment in batch
 
@@ -375,14 +409,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$batch_create_transaction** | [**\Tatum\Model\BatchCreateTransaction**](../Model/BatchCreateTransaction.md)|  |
-
-### Return type
-
-**string[]**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

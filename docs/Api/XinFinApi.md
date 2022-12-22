@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `xdcBlockchainSmartContractInvocation()`
 
+### Type signature
+
 ```php
-api()->xinFin()->xdcBlockchainSmartContractInvocation(
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcBlockchainSmartContractInvocation(
     ?\Tatum\Model\XdcBlockchainSmartContractInvocationRequest $xdc_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xdc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\XdcBlockchainSmartContractInvocationRequest**](../Model/XdcBlockchainSmartContractInvocationRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+
+### Description
 
 Invoke a method in a smart contract on XinFin
 
@@ -61,25 +75,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcBlockchainTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcBlockchainTransfer(
+    ?\Tatum\Model\XdcBlockchainTransferRequest $xdc_blockchain_transfer_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xdc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\XdcBlockchainSmartContractInvocationRequest**](../Model/XdcBlockchainSmartContractInvocationRequest.md)|  |
+ **$xdc_blockchain_transfer_request** | [**\Tatum\Model\XdcBlockchainTransferRequest**](../Model/XdcBlockchainTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcBlockchainTransfer()`
-
-```php
-api()->xinFin()->xdcBlockchainTransfer(
-    ?\Tatum\Model\XdcBlockchainTransferRequest $xdc_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send XDC / ERC20 from account to account
 
@@ -116,25 +134,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xdc_blockchain_transfer_request** | [**\Tatum\Model\XdcBlockchainTransferRequest**](../Model/XdcBlockchainTransferRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcBroadcast()`
-
-```php
-api()->xinFin()->xdcBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed XDC transaction
 
@@ -171,26 +193,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGenerateAddress()`
 
+### Type signature
+
 ```php
-api()->xinFin()->xdcGenerateAddress(
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddress(
     ?string $xpub, 
     ?float $index
 ): \Tatum\Model\XdcGenerateAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xpub** | **string**| Extended public key of wallet. |
+ **$index** | **float**| Derivation index of desired address to be generated. |
+
+### Return type
+
+[**\Tatum\Model\XdcGenerateAddress200Response**](../Model/XdcGenerateAddress200Response.md)
+
+### Description
 
 Generate XDC account address from Extended public key
 
@@ -231,26 +258,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcGenerateAddressPrivateKey()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddressPrivateKey(
+    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+): \Tatum\Model\PrivKey
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\XdcGenerateAddress200Response**](../Model/XdcGenerateAddress200Response.md)
+[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcGenerateAddressPrivateKey()`
-
-```php
-api()->xinFin()->xdcGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
-): \Tatum\Model\PrivKey
-```
+### Description
 
 Generate XDC private key
 
@@ -287,25 +317,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\Wallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\Wallet**](../Model/Wallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcGenerateWallet()`
-
-```php
-api()->xinFin()->xdcGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\Wallet
-```
+### Description
 
 Generate XDC wallet
 
@@ -343,25 +377,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetBalance(
+    ?string $address
+): \Tatum\Model\XdcGetBalance200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\XdcGetBalance200Response**](../Model/XdcGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcGetBalance()`
-
-```php
-api()->xinFin()->xdcGetBalance(
-    ?string $address
-): \Tatum\Model\XdcGetBalance200Response
-```
+### Description
 
 Get XDC Account balance
 
@@ -399,25 +437,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetBlock(
+    ?string $hash
+): \Tatum\Model\XdcBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$hash** | **string**| Block hash or block number |
 
 ### Return type
 
-[**\Tatum\Model\XdcGetBalance200Response**](../Model/XdcGetBalance200Response.md)
+[**\Tatum\Model\XdcBlock**](../Model/XdcBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcGetBlock()`
-
-```php
-api()->xinFin()->xdcGetBlock(
-    ?string $hash
-): \Tatum\Model\XdcBlock
-```
+### Description
 
 Get XDC block by hash
 
@@ -455,24 +497,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
-
-### Return type
-
-[**\Tatum\Model\XdcBlock**](../Model/XdcBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->xinFin()->xdcGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -507,23 +551,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGetTransaction()`
 
+### Type signature
+
 ```php
-api()->xinFin()->xdcGetTransaction(
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetTransaction(
     ?string $hash
 ): \Tatum\Model\XdcTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$hash** | **string**| Transaction hash |
+
+### Return type
+
+[**\Tatum\Model\XdcTx**](../Model/XdcTx.md)
+
+### Description
 
 Get XDC Transaction
 
@@ -561,25 +611,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcGetTransactionCount()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetTransactionCount(
+    ?string $address
+): float
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$address** | **string**| address |
 
 ### Return type
 
-[**\Tatum\Model\XdcTx**](../Model/XdcTx.md)
+**float**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcGetTransactionCount()`
-
-```php
-api()->xinFin()->xdcGetTransactionCount(
-    ?string $address
-): float
-```
+### Description
 
 Get count of outgoing XDC transactions
 
@@ -617,26 +671,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcWeb3Driver()`
 
+### Type signature
+
 ```php
-api()->xinFin()->xdcWeb3Driver(
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcWeb3Driver(
     ?string $x_api_key, 
     ?object $body
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$body** | **object**|  |
+
+### Return type
+
+**object**
+
+### Description
 
 Web3 HTTP driver
 
@@ -676,15 +735,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

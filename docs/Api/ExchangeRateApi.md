@@ -9,12 +9,27 @@ Method | HTTP request | Description
 
 ## `getExchangeRate()`
 
+### Type signature
+
 ```php
-api()->exchangeRate()->getExchangeRate(
+$sdk->{mainnet/testnet}()->api()->exchangeRate()->getExchangeRate(
     ?string $currency, 
     ?string $base_pair
 ): \Tatum\Model\ExchangeRate
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$currency** | **string**| The fiat or crypto asset to exchange |
+ **$base_pair** | **string**| The target fiat asset to get the exchange rate for | [optional] [default to &#39;EUR&#39;]
+
+### Return type
+
+[**\Tatum\Model\ExchangeRate**](../Model/ExchangeRate.md)
+
+### Description
 
 Get the current exchange rate for exchanging fiat/crypto assets
 
@@ -55,15 +70,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$currency** | **string**| The fiat or crypto asset to exchange |
- **$base_pair** | **string**| The target fiat asset to get the exchange rate for | [optional] [default to &#39;EUR&#39;]
-
-### Return type
-
-[**\Tatum\Model\ExchangeRate**](../Model/ExchangeRate.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

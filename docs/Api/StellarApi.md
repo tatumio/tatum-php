@@ -19,11 +19,25 @@ Method | HTTP request | Description
 
 ## `xlmBroadcast()`
 
+### Type signature
+
 ```php
-api()->stellar()->xlmBroadcast(
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmBroadcast(
     ?\Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
 
 Broadcast signed XLM transaction
 
@@ -60,25 +74,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmGetAccountInfo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountInfo(
+    ?string $account
+): \Tatum\Model\XlmAccount
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$account** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\XlmAccount**](../Model/XlmAccount.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmGetAccountInfo()`
-
-```php
-api()->stellar()->xlmGetAccountInfo(
-    ?string $account
-): \Tatum\Model\XlmAccount
-```
+### Description
 
 Get XLM Account info
 
@@ -116,26 +134,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$account** | **string**| Account address you want to get balance of |
-
-### Return type
-
-[**\Tatum\Model\XlmAccount**](../Model/XlmAccount.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetAccountTx()`
 
+### Type signature
+
 ```php
-api()->stellar()->xlmGetAccountTx(
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountTx(
     ?string $account, 
     ?string $pagination
 ): \Tatum\Model\XlmTx[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$account** | **string**| Address of XLM account. |
+ **$pagination** | **string**| Paging token from the last transaction gives you next page | [optional]
+
+### Return type
+
+[**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
+
+### Description
 
 Get XLM Account transactions
 
@@ -176,25 +199,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$account** | **string**| Address of XLM account. |
- **$pagination** | **string**| Paging token from the last transaction gives you next page | [optional]
-
-### Return type
-
-[**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetFee()`
 
+### Type signature
+
 ```php
-api()->stellar()->xlmGetFee(
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetFee(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get actual XLM fee
 
@@ -229,22 +253,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmGetLastClosedLedger()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLastClosedLedger(
+): \Tatum\Model\XlmLedger
+```
+
 ### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-**float**
+[**\Tatum\Model\XlmLedger**](../Model/XlmLedger.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmGetLastClosedLedger()`
-
-```php
-api()->stellar()->xlmGetLastClosedLedger(
-): \Tatum\Model\XlmLedger
-```
+### Description
 
 Get XLM Blockchain Information
 
@@ -279,23 +307,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmGetLedger()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedger(
+    ?string $sequence
+): \Tatum\Model\XlmLedger
+```
+
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$sequence** | **string**| Sequence of the ledger. |
 
 ### Return type
 
 [**\Tatum\Model\XlmLedger**](../Model/XlmLedger.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmGetLedger()`
-
-```php
-api()->stellar()->xlmGetLedger(
-    ?string $sequence
-): \Tatum\Model\XlmLedger
-```
+### Description
 
 Get XLM Blockchain Ledger by sequence
 
@@ -333,6 +367,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmGetLedgerTx()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedgerTx(
+    ?string $sequence
+): \Tatum\Model\XlmTx[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -341,17 +387,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XlmLedger**](../Model/XlmLedger.md)
+[**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmGetLedgerTx()`
-
-```php
-api()->stellar()->xlmGetLedgerTx(
-    ?string $sequence
-): \Tatum\Model\XlmTx[]
-```
+### Description
 
 Get XLM Blockchain Transactions in Ledger
 
@@ -389,25 +427,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmGetTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetTransaction(
+    ?string $hash
+): \Tatum\Model\XlmTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sequence** | **string**| Sequence of the ledger. |
+ **$hash** | **string**| Transaction hash |
 
 ### Return type
 
-[**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
+[**\Tatum\Model\XlmTx**](../Model/XlmTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmGetTransaction()`
-
-```php
-api()->stellar()->xlmGetTransaction(
-    ?string $hash
-): \Tatum\Model\XlmTx
-```
+### Description
 
 Get XLM Transaction by hash
 
@@ -445,25 +487,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransferBlockchain(
+    ?\Tatum\Model\XlmTransferBlockchainRequest $xlm_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$xlm_transfer_blockchain_request** | [**\Tatum\Model\XlmTransferBlockchainRequest**](../Model/XlmTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\XlmTx**](../Model/XlmTx.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmTransferBlockchain()`
-
-```php
-api()->stellar()->xlmTransferBlockchain(
-    ?\Tatum\Model\XlmTransferBlockchainRequest $xlm_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send XLM from address to address
 
@@ -500,25 +546,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmTrustLineBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineBlockchain(
+    ?\Tatum\Model\XlmTrustLineBlockchainRequest $xlm_trust_line_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xlm_transfer_blockchain_request** | [**\Tatum\Model\XlmTransferBlockchainRequest**](../Model/XlmTransferBlockchainRequest.md)|  |
+ **$xlm_trust_line_blockchain_request** | [**\Tatum\Model\XlmTrustLineBlockchainRequest**](../Model/XlmTrustLineBlockchainRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmTrustLineBlockchain()`
-
-```php
-api()->stellar()->xlmTrustLineBlockchain(
-    ?\Tatum\Model\XlmTrustLineBlockchainRequest $xlm_trust_line_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Create / Update / Delete XLM trust line
 
@@ -555,24 +605,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$xlm_trust_line_blockchain_request** | [**\Tatum\Model\XlmTrustLineBlockchainRequest**](../Model/XlmTrustLineBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmWallet()`
 
+### Type signature
+
 ```php
-api()->stellar()->xlmWallet(
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmWallet(
 ): \Tatum\Model\XlmWallet
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\XlmWallet**](../Model/XlmWallet.md)
+
+### Description
 
 Generate XLM account
 
@@ -607,12 +659,4 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\XlmWallet**](../Model/XlmWallet.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

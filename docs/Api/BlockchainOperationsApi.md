@@ -52,11 +52,25 @@ Method | HTTP request | Description
 
 ## `adaTransferOffchain()`
 
+### Type signature
+
 ```php
-api()->blockchainOperations()->adaTransferOffchain(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->adaTransferOffchain(
     ?\Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$ada_transfer_offchain_request** | [**\Tatum\Model\AdaTransferOffchainRequest**](../Model/AdaTransferOffchainRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+
+### Description
 
 Send ADA from a virtual account to the blockchain
 
@@ -93,25 +107,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algoDeployErc20Ledger()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->algoDeployErc20Ledger(
+    ?\Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request
+): \Tatum\Model\AlgoDeployErc20Ledger200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ada_transfer_offchain_request** | [**\Tatum\Model\AdaTransferOffchainRequest**](../Model/AdaTransferOffchainRequest.md)|  |
+ **$algo_deploy_erc20_ledger_request** | [**\Tatum\Model\AlgoDeployErc20LedgerRequest**](../Model/AlgoDeployErc20LedgerRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\AlgoDeployErc20Ledger200Response**](../Model/AlgoDeployErc20Ledger200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algoDeployErc20Ledger()`
-
-```php
-api()->blockchainOperations()->algoDeployErc20Ledger(
-    ?\Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request
-): \Tatum\Model\AlgoDeployErc20Ledger200Response
-```
+### Description
 
 Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
 
@@ -148,25 +166,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algoTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->algoTransfer(
+    ?\Tatum\Model\AlgoTransferRequest $algo_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algo_deploy_erc20_ledger_request** | [**\Tatum\Model\AlgoDeployErc20LedgerRequest**](../Model/AlgoDeployErc20LedgerRequest.md)|  |
+ **$algo_transfer_request** | [**\Tatum\Model\AlgoTransferRequest**](../Model/AlgoTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\AlgoDeployErc20Ledger200Response**](../Model/AlgoDeployErc20Ledger200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algoTransfer()`
-
-```php
-api()->blockchainOperations()->algoTransfer(
-    ?\Tatum\Model\AlgoTransferRequest $algo_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send ALGO from a virtual account to the blockchain
 
@@ -203,25 +225,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bchTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->bchTransfer(
+    ?\Tatum\Model\BchTransferRequest $bch_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algo_transfer_request** | [**\Tatum\Model\AlgoTransferRequest**](../Model/AlgoTransferRequest.md)|  |
+ **$bch_transfer_request** | [**\Tatum\Model\BchTransferRequest**](../Model/BchTransferRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bchTransfer()`
-
-```php
-api()->blockchainOperations()->bchTransfer(
-    ?\Tatum\Model\BchTransferRequest $bch_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send BCH from a virtual account to the blockchain
 
@@ -258,25 +284,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bnbAssetOffchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbAssetOffchain(
+    ?\Tatum\Model\CreateBnbAsset $create_bnb_asset
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_transfer_request** | [**\Tatum\Model\BchTransferRequest**](../Model/BchTransferRequest.md)|  |
+ **$create_bnb_asset** | [**\Tatum\Model\CreateBnbAsset**](../Model/CreateBnbAsset.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bnbAssetOffchain()`
-
-```php
-api()->blockchainOperations()->bnbAssetOffchain(
-    ?\Tatum\Model\CreateBnbAsset $create_bnb_asset
-)
-```
+### Description
 
 Create a BNB-based asset
 
@@ -310,25 +340,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bnbTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbTransfer(
+    ?\Tatum\Model\BnbTransferRequest $bnb_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_bnb_asset** | [**\Tatum\Model\CreateBnbAsset**](../Model/CreateBnbAsset.md)|  |
+ **$bnb_transfer_request** | [**\Tatum\Model\BnbTransferRequest**](../Model/BnbTransferRequest.md)|  |
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bnbTransfer()`
-
-```php
-api()->blockchainOperations()->bnbTransfer(
-    ?\Tatum\Model\BnbTransferRequest $bnb_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send BNB from a virtual account to the blockchain
 
@@ -365,25 +399,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscDeployBep20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->bscDeployBep20(
+    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+): \Tatum\Model\EthDeployErc20200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bnb_transfer_request** | [**\Tatum\Model\BnbTransferRequest**](../Model/BnbTransferRequest.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscDeployBep20()`
-
-```php
-api()->blockchainOperations()->bscDeployBep20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
-): \Tatum\Model\EthDeployErc20200Response
-```
+### Description
 
 Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
@@ -420,25 +458,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscOrBepTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->bscOrBepTransfer(
+    ?\Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$bsc_or_bep_transfer_request** | [**\Tatum\Model\BscOrBepTransferRequest**](../Model/BscOrBepTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `bscOrBepTransfer()`
-
-```php
-api()->blockchainOperations()->bscOrBepTransfer(
-    ?\Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send BSC from a virtual account to the blockchain
 
@@ -475,25 +517,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->btcTransfer(
+    ?\Tatum\Model\BtcTransferRequest $btc_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_or_bep_transfer_request** | [**\Tatum\Model\BscOrBepTransferRequest**](../Model/BscOrBepTransferRequest.md)|  |
+ **$btc_transfer_request** | [**\Tatum\Model\BtcTransferRequest**](../Model/BtcTransferRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `btcTransfer()`
-
-```php
-api()->blockchainOperations()->btcTransfer(
-    ?\Tatum\Model\BtcTransferRequest $btc_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send BTC from a virtual account to the blockchain
 
@@ -530,25 +576,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoDeployErc20Ledger()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->celoDeployErc20Ledger(
+    ?\Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request
+): \Tatum\Model\EthDeployErc20200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_transfer_request** | [**\Tatum\Model\BtcTransferRequest**](../Model/BtcTransferRequest.md)|  |
+ **$celo_deploy_erc20_ledger_request** | [**\Tatum\Model\CeloDeployErc20LedgerRequest**](../Model/CeloDeployErc20LedgerRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoDeployErc20Ledger()`
-
-```php
-api()->blockchainOperations()->celoDeployErc20Ledger(
-    ?\Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request
-): \Tatum\Model\EthDeployErc20200Response
-```
+### Description
 
 Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
 
@@ -585,25 +635,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `celoOrErc20Transfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->celoOrErc20Transfer(
+    ?\Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_deploy_erc20_ledger_request** | [**\Tatum\Model\CeloDeployErc20LedgerRequest**](../Model/CeloDeployErc20LedgerRequest.md)|  |
+ **$celo_or_erc20_transfer_request** | [**\Tatum\Model\CeloOrErc20TransferRequest**](../Model/CeloOrErc20TransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `celoOrErc20Transfer()`
-
-```php
-api()->blockchainOperations()->celoOrErc20Transfer(
-    ?\Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send CELO from a virtual account to the blockchain
 
@@ -640,25 +694,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createBep20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->createBep20(
+    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+): \Tatum\Model\Erc20Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_or_erc20_transfer_request** | [**\Tatum\Model\CeloOrErc20TransferRequest**](../Model/CeloOrErc20TransferRequest.md)|  |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createBep20()`
-
-```php
-api()->blockchainOperations()->createBep20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
-): \Tatum\Model\Erc20Response
-```
+### Description
 
 Register a new BNB Smart Chain BEP-20 token in the virtual account
 
@@ -695,6 +753,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createCeloErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->createCeloErc20(
+    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+): \Tatum\Model\Erc20Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -705,15 +775,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createCeloErc20()`
-
-```php
-api()->blockchainOperations()->createCeloErc20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
-): \Tatum\Model\Erc20Response
-```
+### Description
 
 Register a new Celo ERC-20-equivalent token in the virtual account
 
@@ -750,6 +812,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->createErc20(
+    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+): \Tatum\Model\Erc20Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -760,15 +834,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createErc20()`
-
-```php
-api()->blockchainOperations()->createErc20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
-): \Tatum\Model\Erc20Response
-```
+### Description
 
 Register a new Ethereum ERC-20 token in the virtual account
 
@@ -805,6 +871,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createHrm20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->createHrm20(
+    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+): \Tatum\Model\Erc20Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -815,15 +893,7 @@ Name | Type | Description  | Notes
 
 [**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createHrm20()`
-
-```php
-api()->blockchainOperations()->createHrm20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
-): \Tatum\Model\Erc20Response
-```
+### Description
 
 Register a new Harmony HRM-20 token in the virtual account
 
@@ -860,25 +930,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createTrc()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->createTrc(
+    ?\Tatum\Model\CreateTrcRequest $create_trc_request
+): \Tatum\Model\Trc20Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$create_trc_request** | [**\Tatum\Model\CreateTrcRequest**](../Model/CreateTrcRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createTrc()`
-
-```php
-api()->blockchainOperations()->createTrc(
-    ?\Tatum\Model\CreateTrcRequest $create_trc_request
-): \Tatum\Model\Trc20Response
-```
+### Description
 
 Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
@@ -915,25 +989,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createXdc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->createXdc20(
+    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+): \Tatum\Model\Erc20Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_trc_request** | [**\Tatum\Model\CreateTrcRequest**](../Model/CreateTrcRequest.md)|  |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
+[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `createXdc20()`
-
-```php
-api()->blockchainOperations()->createXdc20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
-): \Tatum\Model\Erc20Response
-```
+### Description
 
 Register a new XinFin ERC-20-equivalent token in the virtual account
 
@@ -970,25 +1048,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `dogeTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->dogeTransfer(
+    ?\Tatum\Model\DogeTransferRequest $doge_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$doge_transfer_request** | [**\Tatum\Model\DogeTransferRequest**](../Model/DogeTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `dogeTransfer()`
-
-```php
-api()->blockchainOperations()->dogeTransfer(
-    ?\Tatum\Model\DogeTransferRequest $doge_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send DOGE from a virtual account to the blockchain
 
@@ -1025,25 +1107,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->egldTransfer(
+    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$doge_transfer_request** | [**\Tatum\Model\DogeTransferRequest**](../Model/DogeTransferRequest.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `egldTransfer()`
-
-```php
-api()->blockchainOperations()->egldTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send EGLD from a virtual account to the blockchain
 
@@ -1080,25 +1166,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethDeployErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethDeployErc20(
+    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+): \Tatum\Model\EthDeployErc20200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ethDeployErc20()`
-
-```php
-api()->blockchainOperations()->ethDeployErc20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
-): \Tatum\Model\EthDeployErc20200Response
-```
+### Description
 
 Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
@@ -1135,25 +1225,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethTransfer(
+    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ethTransfer()`
-
-```php
-api()->blockchainOperations()->ethTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send ETH from a virtual account to the blockchain
 
@@ -1190,25 +1284,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethTransferErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethTransferErc20(
+    ?\Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$eth_transfer_erc20_request** | [**\Tatum\Model\EthTransferErc20Request**](../Model/EthTransferErc20Request.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ethTransferErc20()`
-
-```php
-api()->blockchainOperations()->ethTransferErc20(
-    ?\Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send Ethereum ERC-20 tokens from a virtual account to the blockchain
 
@@ -1245,25 +1343,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->flowTransfer(
+    ?\Tatum\Model\FlowTransferRequest $flow_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_erc20_request** | [**\Tatum\Model\EthTransferErc20Request**](../Model/EthTransferErc20Request.md)|  |
+ **$flow_transfer_request** | [**\Tatum\Model\FlowTransferRequest**](../Model/FlowTransferRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `flowTransfer()`
-
-```php
-api()->blockchainOperations()->flowTransfer(
-    ?\Tatum\Model\FlowTransferRequest $flow_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send FLOW from a virtual account to the blockchain
 
@@ -1300,25 +1402,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsDeployErc20Ledger()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->kcsDeployErc20Ledger(
+    ?\Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request
+): \Tatum\Model\EthDeployErc20200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transfer_request** | [**\Tatum\Model\FlowTransferRequest**](../Model/FlowTransferRequest.md)|  |
+ **$kcs_deploy_erc20_ledger_request** | [**\Tatum\Model\KcsDeployErc20LedgerRequest**](../Model/KcsDeployErc20LedgerRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsDeployErc20Ledger()`
-
-```php
-api()->blockchainOperations()->kcsDeployErc20Ledger(
-    ?\Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request
-): \Tatum\Model\EthDeployErc20200Response
-```
+### Description
 
 Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
 
@@ -1355,25 +1461,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->kcsTransfer(
+    ?\Tatum\Model\KcsTransferRequest $kcs_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_deploy_erc20_ledger_request** | [**\Tatum\Model\KcsDeployErc20LedgerRequest**](../Model/KcsDeployErc20LedgerRequest.md)|  |
+ **$kcs_transfer_request** | [**\Tatum\Model\KcsTransferRequest**](../Model/KcsTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `kcsTransfer()`
-
-```php
-api()->blockchainOperations()->kcsTransfer(
-    ?\Tatum\Model\KcsTransferRequest $kcs_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send KCS from a virtual account to the blockchain
 
@@ -1410,25 +1520,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klayDeployErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->klayDeployErc20(
+    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+): \Tatum\Model\EthDeployErc20200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_transfer_request** | [**\Tatum\Model\KcsTransferRequest**](../Model/KcsTransferRequest.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klayDeployErc20()`
-
-```php
-api()->blockchainOperations()->klayDeployErc20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
-): \Tatum\Model\EthDeployErc20200Response
-```
+### Description
 
 Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
 
@@ -1465,25 +1579,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klayTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->klayTransfer(
+    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `klayTransfer()`
-
-```php
-api()->blockchainOperations()->klayTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send KLAY from a virtual account to the blockchain
 
@@ -1520,25 +1638,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->ltcTransfer(
+    ?\Tatum\Model\LtcTransferRequest $ltc_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$ltc_transfer_request** | [**\Tatum\Model\LtcTransferRequest**](../Model/LtcTransferRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `ltcTransfer()`
-
-```php
-api()->blockchainOperations()->ltcTransfer(
-    ?\Tatum\Model\LtcTransferRequest $ltc_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send LTC from a virtual account to the blockchain
 
@@ -1575,26 +1697,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$ltc_transfer_request** | [**\Tatum\Model\LtcTransferRequest**](../Model/LtcTransferRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneDeployHrm20()`
 
+### Type signature
+
 ```php
-api()->blockchainOperations()->oneDeployHrm20(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneDeployHrm20(
     ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request, 
     ?float $shard_id
 ): \Tatum\Model\EthDeployErc20200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$shard_id** | **float**| Shard to operate on | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+
+### Description
 
 Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
@@ -1634,27 +1761,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
- **$shard_id** | **float**| Shard to operate on | [optional] [default to 0]
-
-### Return type
-
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneTransfer()`
 
+### Type signature
+
 ```php
-api()->blockchainOperations()->oneTransfer(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneTransfer(
     ?\Tatum\Model\EthTransferRequest $eth_transfer_request, 
     ?float $shard_id
 ): \Tatum\Model\BtcTransfer200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$shard_id** | **float**| Shard to operate on | [optional] [default to 0]
+
+### Return type
+
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+
+### Description
 
 Send ONE from a virtual account to the blockchain
 
@@ -1694,26 +1825,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `polygonTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->polygonTransfer(
+    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
- **$shard_id** | **float**| Shard to operate on | [optional] [default to 0]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `polygonTransfer()`
-
-```php
-api()->blockchainOperations()->polygonTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send MATIC from a virtual account to the blockchain
 
@@ -1750,26 +1884,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `registerErc20Token()`
 
+### Type signature
+
 ```php
-api()->blockchainOperations()->registerErc20Token(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->registerErc20Token(
     ?string $chain, 
     ?\Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+
+### Return type
+
+[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+
+### Description
 
 Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
@@ -1809,26 +1948,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `solTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->solTransfer(
+    ?\Tatum\Model\SolTransferRequest $sol_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$sol_transfer_request** | [**\Tatum\Model\SolTransferRequest**](../Model/SolTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `solTransfer()`
-
-```php
-api()->blockchainOperations()->solTransfer(
-    ?\Tatum\Model\SolTransferRequest $sol_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send SOL from a virtual account to the blockchain
 
@@ -1865,26 +2007,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$sol_transfer_request** | [**\Tatum\Model\SolTransferRequest**](../Model/SolTransferRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `storeCeloErc20Address()`
 
+### Type signature
+
 ```php
-api()->blockchainOperations()->storeCeloErc20Address(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeCeloErc20Address(
     ?string $address, 
     ?string $name
 )
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| ERC-20 contract address |
+ **$name** | **string**| ERC-20 symbol name. |
+
+### Return type
+
+void (empty response body)
+
+### Description
 
 Set the contract address of a Celo ERC-20-equivalent token
 
@@ -1922,27 +2069,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `storeTokenAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
+    ?string $address, 
+    ?string $name
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| ERC-20 contract address |
- **$name** | **string**| ERC-20 symbol name. |
+ **$address** | **string**| Contract address |
+ **$name** | **string**| Symbol name. |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `storeTokenAddress()`
-
-```php
-api()->blockchainOperations()->storeTokenAddress(
-    ?string $address, 
-    ?string $name
-)
-```
+### Description
 
 Set the contract address of an ERC-20 or ERC-20-equivalent token
 
@@ -1980,27 +2131,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `storeTrcAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTrcAddress(
+    ?string $address, 
+    ?string $name
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Contract address |
- **$name** | **string**| Symbol name. |
+ **$address** | **string**| TRC-10 Token ID or TRC-20 contract address |
+ **$name** | **string**| TRC 10/20 symbol name. |
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `storeTrcAddress()`
-
-```php
-api()->blockchainOperations()->storeTrcAddress(
-    ?string $address, 
-    ?string $name
-)
-```
+### Description
 
 Set the contract address of a TRC-10 or TRC-20 token
 
@@ -2038,26 +2193,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronDeployTrc()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->tronDeployTrc(
+    ?\Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request
+): \Tatum\Model\EthDeployErc20200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| TRC-10 Token ID or TRC-20 contract address |
- **$name** | **string**| TRC 10/20 symbol name. |
+ **$tron_deploy_trc_request** | [**\Tatum\Model\TronDeployTrcRequest**](../Model/TronDeployTrcRequest.md)|  |
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronDeployTrc()`
-
-```php
-api()->blockchainOperations()->tronDeployTrc(
-    ?\Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request
-): \Tatum\Model\EthDeployErc20200Response
-```
+### Description
 
 Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
 
@@ -2094,25 +2252,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tronTransferOffchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->tronTransferOffchain(
+    ?\Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_deploy_trc_request** | [**\Tatum\Model\TronDeployTrcRequest**](../Model/TronDeployTrcRequest.md)|  |
+ **$tron_transfer_offchain_request** | [**\Tatum\Model\TronTransferOffchainRequest**](../Model/TronTransferOffchainRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `tronTransferOffchain()`
-
-```php
-api()->blockchainOperations()->tronTransferOffchain(
-    ?\Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send TRON from a virtual account to the blockchain
 
@@ -2149,25 +2311,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcDeployErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xdcDeployErc20(
+    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+): \Tatum\Model\EthDeployErc20200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_offchain_request** | [**\Tatum\Model\TronTransferOffchainRequest**](../Model/TronTransferOffchainRequest.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcDeployErc20()`
-
-```php
-api()->blockchainOperations()->xdcDeployErc20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
-): \Tatum\Model\EthDeployErc20200Response
-```
+### Description
 
 Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
@@ -2204,25 +2370,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xdcTransfer(
+    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\EthDeployErc20200Response**](../Model/EthDeployErc20200Response.md)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xdcTransfer()`
-
-```php
-api()->blockchainOperations()->xdcTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send XDC from a virtual account to the blockchain
 
@@ -2259,25 +2429,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmAssetOffchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmAssetOffchain(
+    ?\Tatum\Model\CreateXlmAsset $create_xlm_asset
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$create_xlm_asset** | [**\Tatum\Model\CreateXlmAsset**](../Model/CreateXlmAsset.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmAssetOffchain()`
-
-```php
-api()->blockchainOperations()->xlmAssetOffchain(
-    ?\Tatum\Model\CreateXlmAsset $create_xlm_asset
-)
-```
+### Description
 
 Create an XLM-based asset
 
@@ -2311,25 +2485,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmTransfer(
+    ?\Tatum\Model\XlmTransferRequest $xlm_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_xlm_asset** | [**\Tatum\Model\CreateXlmAsset**](../Model/CreateXlmAsset.md)|  |
+ **$xlm_transfer_request** | [**\Tatum\Model\XlmTransferRequest**](../Model/XlmTransferRequest.md)|  |
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xlmTransfer()`
-
-```php
-api()->blockchainOperations()->xlmTransfer(
-    ?\Tatum\Model\XlmTransferRequest $xlm_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send XLM from a virtual account to the blockchain
 
@@ -2366,25 +2544,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpAssetOffchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpAssetOffchain(
+    ?\Tatum\Model\CreateXrpAsset $create_xrp_asset
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xlm_transfer_request** | [**\Tatum\Model\XlmTransferRequest**](../Model/XlmTransferRequest.md)|  |
+ **$create_xrp_asset** | [**\Tatum\Model\CreateXrpAsset**](../Model/CreateXrpAsset.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
+void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpAssetOffchain()`
-
-```php
-api()->blockchainOperations()->xrpAssetOffchain(
-    ?\Tatum\Model\CreateXrpAsset $create_xrp_asset
-)
-```
+### Description
 
 Create XRP based Asset
 
@@ -2418,25 +2600,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpTransfer(
+    ?\Tatum\Model\XrpTransferRequest $xrp_transfer_request
+): \Tatum\Model\BtcTransfer200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_xrp_asset** | [**\Tatum\Model\CreateXrpAsset**](../Model/CreateXrpAsset.md)|  |
+ **$xrp_transfer_request** | [**\Tatum\Model\XrpTransferRequest**](../Model/XrpTransferRequest.md)|  |
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpTransfer()`
-
-```php
-api()->blockchainOperations()->xrpTransfer(
-    ?\Tatum\Model\XrpTransferRequest $xrp_transfer_request
-): \Tatum\Model\BtcTransfer200Response
-```
+### Description
 
 Send XRP from a virtual account to the blockchain
 
@@ -2473,14 +2659,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$xrp_transfer_request** | [**\Tatum\Model\XrpTransferRequest**](../Model/XrpTransferRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransfer200Response**](../Model/BtcTransfer200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

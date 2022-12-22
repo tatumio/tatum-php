@@ -21,12 +21,27 @@ Method | HTTP request | Description
 
 ## `algoNodeGetDriver()`
 
+### Type signature
+
 ```php
-api()->algorand()->algoNodeGetDriver(
+$sdk->{mainnet/testnet}()->api()->algorand()->algoNodeGetDriver(
     ?string $x_api_key, 
     ?string $algod_path
 ): \Tatum\Model\AlgoBlock
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$algod_path** | **string**| &#x60;**&#x60; path of algod. |
+
+### Return type
+
+[**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
+
+### Description
 
 Access Algorand Algod GET node endpoints
 
@@ -67,27 +82,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algoNodeIndexerGetDriver()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algoNodeIndexerGetDriver(
+    ?string $x_api_key, 
+    ?string $indexer_path
+): \Tatum\Model\AlgoTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$algod_path** | **string**| &#x60;**&#x60; path of algod. |
+ **$indexer_path** | **string**| &#x60;**&#x60; path of indexer. |
 
 ### Return type
 
-[**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
+[**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algoNodeIndexerGetDriver()`
-
-```php
-api()->algorand()->algoNodeIndexerGetDriver(
-    ?string $x_api_key, 
-    ?string $indexer_path
-): \Tatum\Model\AlgoTx
-```
+### Description
 
 Access Algorand Indexer GET node endpoints
 
@@ -128,28 +147,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$indexer_path** | **string**| &#x60;**&#x60; path of indexer. |
-
-### Return type
-
-[**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algoNodePostDriver()`
 
+### Type signature
+
 ```php
-api()->algorand()->algoNodePostDriver(
+$sdk->{mainnet/testnet}()->api()->algorand()->algoNodePostDriver(
     ?string $x_api_key, 
     ?string $algod_path, 
     ?\Tatum\Model\AlgoNodePostDriverRequest $algo_node_post_driver_request
 ): \Tatum\Model\AlgoNodePostDriver200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$algod_path** | **string**| &#x60;**&#x60; path of algod. |
+ **$algo_node_post_driver_request** | [**\Tatum\Model\AlgoNodePostDriverRequest**](../Model/AlgoNodePostDriverRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\AlgoNodePostDriver200Response**](../Model/AlgoNodePostDriver200Response.md)
+
+### Description
 
 Access Algorand Algod POST node endpoints
 
@@ -192,27 +216,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algoandBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algoandBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\AlgoTransactionHashKMS
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$algod_path** | **string**| &#x60;**&#x60; path of algod. |
- **$algo_node_post_driver_request** | [**\Tatum\Model\AlgoNodePostDriverRequest**](../Model/AlgoNodePostDriverRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\AlgoNodePostDriver200Response**](../Model/AlgoNodePostDriver200Response.md)
+[**\Tatum\Model\AlgoTransactionHashKMS**](../Model/AlgoTransactionHashKMS.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algoandBroadcast()`
-
-```php
-api()->algorand()->algoandBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\AlgoTransactionHashKMS
-```
+### Description
 
 Broadcast signed Algorand transaction
 
@@ -249,25 +275,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandBlockchainReceiveAsset()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainReceiveAsset(
+    ?\Tatum\Model\AlgorandBlockchainReceiveAssetRequest $algorand_blockchain_receive_asset_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$algorand_blockchain_receive_asset_request** | [**\Tatum\Model\AlgorandBlockchainReceiveAssetRequest**](../Model/AlgorandBlockchainReceiveAssetRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\AlgoTransactionHashKMS**](../Model/AlgoTransactionHashKMS.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algorandBlockchainReceiveAsset()`
-
-```php
-api()->algorand()->algorandBlockchainReceiveAsset(
-    ?\Tatum\Model\AlgorandBlockchainReceiveAssetRequest $algorand_blockchain_receive_asset_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Enable receiving asset on account
 
@@ -304,25 +334,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandBlockchainTransfer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainTransfer(
+    ?\Tatum\Model\AlgorandBlockchainTransferRequest $algorand_blockchain_transfer_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algorand_blockchain_receive_asset_request** | [**\Tatum\Model\AlgorandBlockchainReceiveAssetRequest**](../Model/AlgorandBlockchainReceiveAssetRequest.md)|  |
+ **$algorand_blockchain_transfer_request** | [**\Tatum\Model\AlgorandBlockchainTransferRequest**](../Model/AlgorandBlockchainTransferRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algorandBlockchainTransfer()`
-
-```php
-api()->algorand()->algorandBlockchainTransfer(
-    ?\Tatum\Model\AlgorandBlockchainTransferRequest $algorand_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send Algos to an Algorand account
 
@@ -359,25 +393,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandGenerateAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateAddress(
+    ?string $priv
+): \Tatum\Model\AlgorandGenerateAddress200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algorand_blockchain_transfer_request** | [**\Tatum\Model\AlgorandBlockchainTransferRequest**](../Model/AlgorandBlockchainTransferRequest.md)|  |
+ **$priv** | **string**| private key of wallet. |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\AlgorandGenerateAddress200Response**](../Model/AlgorandGenerateAddress200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algorandGenerateAddress()`
-
-```php
-api()->algorand()->algorandGenerateAddress(
-    ?string $priv
-): \Tatum\Model\AlgorandGenerateAddress200Response
-```
+### Description
 
 Generate Algorand account address from private key
 
@@ -415,25 +453,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandGenerateWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateWallet(
+    ?string $mnemonic
+): \Tatum\Model\AlgoWallet
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv** | **string**| private key of wallet. |
+ **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\AlgorandGenerateAddress200Response**](../Model/AlgorandGenerateAddress200Response.md)
+[**\Tatum\Model\AlgoWallet**](../Model/AlgoWallet.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algorandGenerateWallet()`
-
-```php
-api()->algorand()->algorandGenerateWallet(
-    ?string $mnemonic
-): \Tatum\Model\AlgoWallet
-```
+### Description
 
 Generate Algorand wallet
 
@@ -471,25 +513,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandGetBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBalance(
+    ?string $address
+): \Tatum\Model\AlgorandGetBalance200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$address** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\AlgoWallet**](../Model/AlgoWallet.md)
+[**\Tatum\Model\AlgorandGetBalance200Response**](../Model/AlgorandGetBalance200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algorandGetBalance()`
-
-```php
-api()->algorand()->algorandGetBalance(
-    ?string $address
-): \Tatum\Model\AlgorandGetBalance200Response
-```
+### Description
 
 Get Algorand Account balance
 
@@ -527,25 +573,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandGetBlock()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBlock(
+    ?float $round_number
+): \Tatum\Model\AlgoBlock
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$round_number** | **float**| Block round number |
 
 ### Return type
 
-[**\Tatum\Model\AlgorandGetBalance200Response**](../Model/AlgorandGetBalance200Response.md)
+[**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algorandGetBlock()`
-
-```php
-api()->algorand()->algorandGetBlock(
-    ?float $round_number
-): \Tatum\Model\AlgoBlock
-```
+### Description
 
 Get Algorand block by block round number
 
@@ -583,24 +633,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$round_number** | **float**| Block round number |
-
-### Return type
-
-[**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGetCurrentBlock()`
 
+### Type signature
+
 ```php
-api()->algorand()->algorandGetCurrentBlock(
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetCurrentBlock(
 ): float
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**float**
+
+### Description
 
 Get current block number
 
@@ -635,26 +687,35 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**float**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGetPayTransactionsByFromTo()`
 
+### Type signature
+
 ```php
-api()->algorand()->algorandGetPayTransactionsByFromTo(
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetPayTransactionsByFromTo(
     ?string $from, 
     ?string $to, 
     ?string $limit, 
     ?string $next
 ): \Tatum\Model\AlgoTxsWithPagination
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$from** | **string**| Start timestamp in specified period of time |
+ **$to** | **string**| End timestamp in specified period of time |
+ **$limit** | **string**| page size for pagination | [optional]
+ **$next** | **string**| Algorand Next Token for getting the next page results | [optional]
+
+### Return type
+
+[**\Tatum\Model\AlgoTxsWithPagination**](../Model/AlgoTxsWithPagination.md)
+
+### Description
 
 Get Algorand Transactions between from and to
 
@@ -701,28 +762,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandGetTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetTransaction(
+    ?string $txid
+): \Tatum\Model\AlgoTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$from** | **string**| Start timestamp in specified period of time |
- **$to** | **string**| End timestamp in specified period of time |
- **$limit** | **string**| page size for pagination | [optional]
- **$next** | **string**| Algorand Next Token for getting the next page results | [optional]
+ **$txid** | **string**| Transaction id |
 
 ### Return type
 
-[**\Tatum\Model\AlgoTxsWithPagination**](../Model/AlgoTxsWithPagination.md)
+[**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `algorandGetTransaction()`
-
-```php
-api()->algorand()->algorandGetTransaction(
-    ?string $txid
-): \Tatum\Model\AlgoTx
-```
+### Description
 
 Get Algorand Transaction
 
@@ -760,14 +822,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$txid** | **string**| Transaction id |
-
-### Return type
-
-[**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

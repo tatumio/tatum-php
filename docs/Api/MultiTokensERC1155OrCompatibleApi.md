@@ -23,12 +23,27 @@ Method | HTTP request | Description
 
 ## `addMultiTokenMinter()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->addMultiTokenMinter(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiTokenMinter(
     ?\Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request, 
     ?string $x_testnet_type
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$add_multi_token_minter_request** | [**\Tatum\Model\AddMultiTokenMinterRequest**](../Model/AddMultiTokenMinterRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Add a Multi Token minter
 
@@ -68,27 +83,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `burnMultiToken()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiToken(
+    ?\Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$add_multi_token_minter_request** | [**\Tatum\Model\AddMultiTokenMinterRequest**](../Model/AddMultiTokenMinterRequest.md)|  |
+ **$burn_multi_token_request** | [**\Tatum\Model\BurnMultiTokenRequest**](../Model/BurnMultiTokenRequest.md)|  |
  **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `burnMultiToken()`
-
-```php
-api()->multiTokensERC1155OrCompatible()->burnMultiToken(
-    ?\Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Burn a Multi Token
 
@@ -128,27 +147,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `burnMultiTokenBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatch(
+    ?\Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_request** | [**\Tatum\Model\BurnMultiTokenRequest**](../Model/BurnMultiTokenRequest.md)|  |
+ **$burn_multi_token_batch_request** | [**\Tatum\Model\BurnMultiTokenBatchRequest**](../Model/BurnMultiTokenBatchRequest.md)|  |
  **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `burnMultiTokenBatch()`
-
-```php
-api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatch(
-    ?\Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Burn multiple Multi Tokens
 
@@ -188,27 +211,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployMultiToken()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiToken(
+    ?\Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_batch_request** | [**\Tatum\Model\BurnMultiTokenBatchRequest**](../Model/BurnMultiTokenBatchRequest.md)|  |
+ **$deploy_multi_token_request** | [**\Tatum\Model\DeployMultiTokenRequest**](../Model/DeployMultiTokenRequest.md)|  |
  **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deployMultiToken()`
-
-```php
-api()->multiTokensERC1155OrCompatible()->deployMultiToken(
-    ?\Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Deploy a Multi Token smart contract
 
@@ -248,27 +275,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `mintMultiToken()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiToken(
+    ?\Tatum\Model\MintMultiTokenRequest $mint_multi_token_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_multi_token_request** | [**\Tatum\Model\DeployMultiTokenRequest**](../Model/DeployMultiTokenRequest.md)|  |
+ **$mint_multi_token_request** | [**\Tatum\Model\MintMultiTokenRequest**](../Model/MintMultiTokenRequest.md)|  |
  **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `mintMultiToken()`
-
-```php
-api()->multiTokensERC1155OrCompatible()->mintMultiToken(
-    ?\Tatum\Model\MintMultiTokenRequest $mint_multi_token_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Mint a Multi Token
 
@@ -308,27 +339,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `mintMultiTokenBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatch(
+    ?\Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_request** | [**\Tatum\Model\MintMultiTokenRequest**](../Model/MintMultiTokenRequest.md)|  |
+ **$mint_multi_token_batch_request** | [**\Tatum\Model\MintMultiTokenBatchRequest**](../Model/MintMultiTokenBatchRequest.md)|  |
  **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `mintMultiTokenBatch()`
-
-```php
-api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatch(
-    ?\Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Mint multiple Multi Tokens
 
@@ -368,28 +403,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$mint_multi_token_batch_request** | [**\Tatum\Model\MintMultiTokenBatchRequest**](../Model/MintMultiTokenBatchRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetAddressBalance()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(
     ?string $chain, 
     ?string $address, 
     ?string $x_testnet_type
 ): \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$address** | **string**| Blockchain address |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]**](../Model/MultiTokenGetAddressBalance200ResponseInner.md)
+
+### Description
 
 Get all Multi Tokens that a blockchain address holds
 
@@ -433,24 +473,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$address** | **string**| Blockchain address |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]**](../Model/MultiTokenGetAddressBalance200ResponseInner.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetBalance()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->multiTokenGetBalance(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalance(
     ?string $chain, 
     ?string $address, 
     ?string $contract_address, 
@@ -458,6 +488,22 @@ api()->multiTokensERC1155OrCompatible()->multiTokenGetBalance(
     ?string $x_testnet_type
 ): \Tatum\Model\MultiTokenGetBalance200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$address** | **string**| The blockchain address that you want to get the token balance of |
+ **$contract_address** | **string**| The address of the Multi Token smart contract |
+ **$token_id** | **string**| The ID of the Multi Token |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\MultiTokenGetBalance200Response**](../Model/MultiTokenGetBalance200Response.md)
+
+### Description
 
 Get the amount of a specific MultiToken that a blockchain address holds
 
@@ -507,26 +553,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$address** | **string**| The blockchain address that you want to get the token balance of |
- **$contract_address** | **string**| The address of the Multi Token smart contract |
- **$token_id** | **string**| The ID of the Multi Token |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\MultiTokenGetBalance200Response**](../Model/MultiTokenGetBalance200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetBalanceBatch()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(
     ?string $chain, 
     ?string $contract_address, 
     ?string $token_id, 
@@ -534,6 +568,22 @@ api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(
     ?string $x_testnet_type
 ): string[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$contract_address** | **string**| The address of the Multi Token smart contract |
+ **$token_id** | **string**| Comma-separated IDs of the Multi Tokens to get the amounts for |
+ **$address** | **string**| Comma-separated blockchain addresses to get the token balance for |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+**string[]**
+
+### Description
 
 Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
@@ -583,31 +633,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| The address of the Multi Token smart contract |
- **$token_id** | **string**| Comma-separated IDs of the Multi Tokens to get the amounts for |
- **$address** | **string**| Comma-separated blockchain addresses to get the token balance for |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-**string[]**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetContractAddress()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(
     ?string $chain, 
     ?string $hash, 
     ?string $x_testnet_type
 ): \Tatum\Model\MultiTokenGetContractAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$hash** | **string**| Transaction hash |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\MultiTokenGetContractAddress200Response**](../Model/MultiTokenGetContractAddress200Response.md)
+
+### Description
 
 Get the address of a Multi Token smart contract by its transaction hash
 
@@ -651,30 +703,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$hash** | **string**| Transaction hash |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\MultiTokenGetContractAddress200Response**](../Model/MultiTokenGetContractAddress200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetMetadata()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->multiTokenGetMetadata(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetMetadata(
     ?string $chain, 
     ?string $token, 
     ?string $contract_address, 
     ?string $x_testnet_type
 ): \Tatum\Model\MultiTokenGetMetadata200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$token** | **string**| Token ID |
+ **$contract_address** | **string**| Multi Token contract address |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\MultiTokenGetMetadata200Response**](../Model/MultiTokenGetMetadata200Response.md)
+
+### Description
 
 Get Multi Token metadata
 
@@ -721,30 +778,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$token** | **string**| Token ID |
- **$contract_address** | **string**| Multi Token contract address |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\MultiTokenGetMetadata200Response**](../Model/MultiTokenGetMetadata200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetTransaction()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->multiTokenGetTransaction(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransaction(
     ?string $chain, 
     ?string $hash, 
     ?string $x_testnet_type
 ): \Tatum\Model\MultiTokenGetTransaction200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$hash** | **string**| Transaction hash |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\MultiTokenGetTransaction200Response**](../Model/MultiTokenGetTransaction200Response.md)
+
+### Description
 
 Get a Multi Token transaction by its hash
 
@@ -788,24 +848,14 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$hash** | **string**| Transaction hash |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\MultiTokenGetTransaction200Response**](../Model/MultiTokenGetTransaction200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetTransactionByAddress()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(
     ?string $chain, 
     ?string $address, 
     ?string $token_address, 
@@ -815,6 +865,24 @@ api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(
     ?float $to
 ): \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to work with |
+ **$address** | **string**| Account address you want to get balance of |
+ **$token_address** | **string**| Address of the token smart contract |
+ **$page_size** | **float**| Max number of items per page is 50. |
+ **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$from** | **float**| Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**| Transactions up to this block will be included. | [optional]
+
+### Return type
+
+[**\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]**](../Model/MultiTokenGetTransactionByAddress200ResponseInner.md)
+
+### Description
 
 Get Multi Token transactions on a blockchain address
 
@@ -870,32 +938,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$address** | **string**| Account address you want to get balance of |
- **$token_address** | **string**| Address of the token smart contract |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
-
-### Return type
-
-[**\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]**](../Model/MultiTokenGetTransactionByAddress200ResponseInner.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferMultiToken()`
 
+### Type signature
+
 ```php
-api()->multiTokensERC1155OrCompatible()->transferMultiToken(
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiToken(
     ?\Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request, 
     ?string $x_testnet_type
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_request** | [**\Tatum\Model\TransferMultiTokenRequest**](../Model/TransferMultiTokenRequest.md)|  |
+ **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Transfer a Multi Token
 
@@ -935,27 +1002,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferMultiTokenBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(
+    ?\Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request, 
+    ?string $x_testnet_type
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_request** | [**\Tatum\Model\TransferMultiTokenRequest**](../Model/TransferMultiTokenRequest.md)|  |
+ **$transfer_multi_token_batch_request** | [**\Tatum\Model\TransferMultiTokenBatchRequest**](../Model/TransferMultiTokenBatchRequest.md)|  |
  **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `transferMultiTokenBatch()`
-
-```php
-api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(
-    ?\Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request, 
-    ?string $x_testnet_type
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Transfer multiple Multi Tokens
 
@@ -995,15 +1066,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_batch_request** | [**\Tatum\Model\TransferMultiTokenBatchRequest**](../Model/TransferMultiTokenBatchRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

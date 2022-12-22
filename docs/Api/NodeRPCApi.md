@@ -11,8 +11,10 @@ Method | HTTP request | Description
 
 ## `nodeJsonPostRpcDriver()`
 
+### Type signature
+
 ```php
-api()->nodeRPC()->nodeJsonPostRpcDriver(
+$sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonPostRpcDriver(
     ?string $chain, 
     ?object $body, 
     ?string $x_api_key, 
@@ -22,6 +24,24 @@ api()->nodeRPC()->nodeJsonPostRpcDriver(
     ?string $rpc_path
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to communicate with. |
+ **$body** | **object**|  |
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
+ **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
+ **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain_type** | **string**| Type of Avalanche network. Defaults to Avalanche C-Chain. | [optional] [default to &#39;avax-c&#39;]
+ **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
+
+### Return type
+
+**object**
+
+### Description
 
 Connect to the blockchain node through an RPC driver
 
@@ -76,34 +96,35 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to communicate with. |
- **$body** | **object**|  |
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
- **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
- **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
- **$chain_type** | **string**| Type of Avalanche network. Defaults to Avalanche C-Chain. | [optional] [default to &#39;avax-c&#39;]
- **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `nodeJsonRpcGetDriver()`
 
+### Type signature
+
 ```php
-api()->nodeRPC()->nodeJsonRpcGetDriver(
+$sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcGetDriver(
     ?string $chain, 
     ?string $x_api_key, 
     ?string $node_type, 
     ?string $rpc_path
 ): object
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to communicate with. |
+ **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
+ **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
+ **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
+
+### Return type
+
+**object**
+
+### Description
 
 Connect to the blockchain node through an RPC driver
 
@@ -150,11 +171,28 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nodeJsonRpcPutDriver()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcPutDriver(
+    ?string $chain, 
+    ?object $body, 
+    ?string $x_api_key, 
+    ?string $node_type, 
+    ?string $rpc_path
+): object
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| Blockchain to communicate with. |
+ **$body** | **object**|  |
  **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
  **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
  **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
@@ -163,19 +201,7 @@ Name | Type | Description  | Notes
 
 **object**
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `nodeJsonRpcPutDriver()`
-
-```php
-api()->nodeRPC()->nodeJsonRpcPutDriver(
-    ?string $chain, 
-    ?object $body, 
-    ?string $x_api_key, 
-    ?string $node_type, 
-    ?string $rpc_path
-): object
-```
+### Description
 
 Connect to the blockchain node through an RPC driver
 
@@ -224,18 +250,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to communicate with. |
- **$body** | **object**|  |
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
- **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
- **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
-
-### Return type
-
-**object**
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -20,11 +20,25 @@ Method | HTTP request | Description
 
 ## `xrpAccountSettings()`
 
+### Type signature
+
 ```php
-api()->xRP()->xrpAccountSettings(
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettings(
     ?\Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$xrp_account_settings_request** | [**\Tatum\Model\XrpAccountSettingsRequest**](../Model/XrpAccountSettingsRequest.md)|  |
+
+### Return type
+
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+
+### Description
 
 Modify XRP account
 
@@ -61,25 +75,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpBroadcast()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpBroadcast(
+    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+): \Tatum\Model\TransactionHash
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_account_settings_request** | [**\Tatum\Model\XrpAccountSettingsRequest**](../Model/XrpAccountSettingsRequest.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpBroadcast()`
-
-```php
-api()->xRP()->xrpBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
-): \Tatum\Model\TransactionHash
-```
+### Description
 
 Broadcast signed XRP transaction
 
@@ -116,25 +134,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpGetAccountBalance()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountBalance(
+    ?string $account
+): \Tatum\Model\XrpAccountBalance
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$account** | **string**| Account address you want to get balance of |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\XrpAccountBalance**](../Model/XrpAccountBalance.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpGetAccountBalance()`
-
-```php
-api()->xRP()->xrpGetAccountBalance(
-    ?string $account
-): \Tatum\Model\XrpAccountBalance
-```
+### Description
 
 Get Account Balance
 
@@ -172,6 +194,18 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpGetAccountInfo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountInfo(
+    ?string $account
+): \Tatum\Model\XrpAccount
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -180,17 +214,9 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XrpAccountBalance**](../Model/XrpAccountBalance.md)
+[**\Tatum\Model\XrpAccount**](../Model/XrpAccount.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpGetAccountInfo()`
-
-```php
-api()->xRP()->xrpGetAccountInfo(
-    ?string $account
-): \Tatum\Model\XrpAccount
-```
+### Description
 
 Get Account info
 
@@ -228,27 +254,33 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$account** | **string**| Account address you want to get balance of |
-
-### Return type
-
-[**\Tatum\Model\XrpAccount**](../Model/XrpAccount.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xrpGetAccountTx()`
 
+### Type signature
+
 ```php
-api()->xRP()->xrpGetAccountTx(
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountTx(
     ?string $account, 
     ?float $min, 
     ?string $marker
 ): \Tatum\Model\XrpAccountTx
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$account** | **string**| Address of XRP account. |
+ **$min** | **float**| Ledger version to start scanning for transactions from. | [optional]
+ **$marker** | **string**| Marker from the last paginated request. It is stringified JSON from previous response. | [optional]
+
+### Return type
+
+[**\Tatum\Model\XrpAccountTx**](../Model/XrpAccountTx.md)
+
+### Description
 
 Get Account transactions
 
@@ -292,26 +324,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$account** | **string**| Address of XRP account. |
- **$min** | **float**| Ledger version to start scanning for transactions from. | [optional]
- **$marker** | **string**| Marker from the last paginated request. It is stringified JSON from previous response. | [optional]
-
-### Return type
-
-[**\Tatum\Model\XrpAccountTx**](../Model/XrpAccountTx.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xrpGetFee()`
 
+### Type signature
+
 ```php
-api()->xRP()->xrpGetFee(
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetFee(
 ): \Tatum\Model\XrpFee
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\XrpFee**](../Model/XrpFee.md)
+
+### Description
 
 Get actual Blockchain fee
 
@@ -346,22 +378,26 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpGetLastClosedLedger()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetLastClosedLedger(
+): \Tatum\Model\XrpInfo
+```
+
 ### Parameters
 
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\XrpFee**](../Model/XrpFee.md)
+[**\Tatum\Model\XrpInfo**](../Model/XrpInfo.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpGetLastClosedLedger()`
-
-```php
-api()->xRP()->xrpGetLastClosedLedger(
-): \Tatum\Model\XrpInfo
-```
+### Description
 
 Get XRP Blockchain Information
 
@@ -396,23 +432,29 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\XrpInfo**](../Model/XrpInfo.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xrpGetLedger()`
 
+### Type signature
+
 ```php
-api()->xRP()->xrpGetLedger(
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetLedger(
     ?float $i
 ): \Tatum\Model\XrpLedger
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$i** | **float**| Sequence of XRP ledger. |
+
+### Return type
+
+[**\Tatum\Model\XrpLedger**](../Model/XrpLedger.md)
+
+### Description
 
 Get Ledger
 
@@ -450,25 +492,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpGetTransaction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetTransaction(
+    ?string $hash
+): \Tatum\Model\XrpTx
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$i** | **float**| Sequence of XRP ledger. |
+ **$hash** | **string**| Transaction hash |
 
 ### Return type
 
-[**\Tatum\Model\XrpLedger**](../Model/XrpLedger.md)
+[**\Tatum\Model\XrpTx**](../Model/XrpTx.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpGetTransaction()`
-
-```php
-api()->xRP()->xrpGetTransaction(
-    ?string $hash
-): \Tatum\Model\XrpTx
-```
+### Description
 
 Get XRP Transaction by hash
 
@@ -506,25 +552,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpTransferBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransferBlockchain(
+    ?\Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$xrp_transfer_blockchain_request** | [**\Tatum\Model\XrpTransferBlockchainRequest**](../Model/XrpTransferBlockchainRequest.md)|  |
 
 ### Return type
 
-[**\Tatum\Model\XrpTx**](../Model/XrpTx.md)
+[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpTransferBlockchain()`
-
-```php
-api()->xRP()->xrpTransferBlockchain(
-    ?\Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Send XRP from address to address
 
@@ -561,25 +611,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpTrustLineBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineBlockchain(
+    ?\Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request
+): \Tatum\Model\BtcTransferBlockchain200Response
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_transfer_blockchain_request** | [**\Tatum\Model\XrpTransferBlockchainRequest**](../Model/XrpTransferBlockchainRequest.md)|  |
+ **$xrp_trust_line_blockchain_request** | [**\Tatum\Model\XrpTrustLineBlockchainRequest**](../Model/XrpTrustLineBlockchainRequest.md)|  |
 
 ### Return type
 
 [**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `xrpTrustLineBlockchain()`
-
-```php
-api()->xRP()->xrpTrustLineBlockchain(
-    ?\Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
+### Description
 
 Create / Update / Delete XRP trust line
 
@@ -616,24 +670,26 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$xrp_trust_line_blockchain_request** | [**\Tatum\Model\XrpTrustLineBlockchainRequest**](../Model/XrpTrustLineBlockchainRequest.md)|  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xrpWallet()`
 
+### Type signature
+
 ```php
-api()->xRP()->xrpWallet(
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpWallet(
 ): \Tatum\Model\XrpWallet
 ```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Tatum\Model\XrpWallet**](../Model/XrpWallet.md)
+
+### Description
 
 Generate XRP account
 
@@ -668,12 +724,4 @@ try {
 }
 ```
 
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Tatum\Model\XrpWallet**](../Model/XrpWallet.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

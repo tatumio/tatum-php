@@ -13,12 +13,27 @@ Method | HTTP request | Description
 
 ## `completePendingSignature()`
 
+### Type signature
+
 ```php
-api()->keyManagementSystem()->completePendingSignature(
+$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->completePendingSignature(
     ?string $id, 
     ?string $tx_id
 )
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$id** | **string**| ID of pending transaction |
+ **$tx_id** | **string**| transaction ID of blockchain transaction |
+
+### Return type
+
+void (empty response body)
+
+### Description
 
 Complete pending transaction to sign
 
@@ -56,27 +71,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deletePendingTransactionToSign()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->deletePendingTransactionToSign(
+    ?string $id, 
+    ?bool $revert
+)
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of pending transaction |
- **$tx_id** | **string**| transaction ID of blockchain transaction |
+ **$id** | **string**| ID of transaction |
+ **$revert** | **bool**| Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum ERC20 based currencies. | [optional] [default to true]
 
 ### Return type
 
 void (empty response body)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `deletePendingTransactionToSign()`
-
-```php
-api()->keyManagementSystem()->deletePendingTransactionToSign(
-    ?string $id, 
-    ?bool $revert
-)
-```
+### Description
 
 Delete transaction
 
@@ -114,26 +133,29 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `getPendingTransactionToSign()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionToSign(
+    ?string $id
+): \Tatum\Model\PendingTransaction
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**| ID of transaction |
- **$revert** | **bool**| Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum ERC20 based currencies. | [optional] [default to true]
 
 ### Return type
 
-void (empty response body)
+[**\Tatum\Model\PendingTransaction**](../Model/PendingTransaction.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `getPendingTransactionToSign()`
-
-```php
-api()->keyManagementSystem()->getPendingTransactionToSign(
-    ?string $id
-): \Tatum\Model\PendingTransaction
-```
+### Description
 
 Get transaction details
 
@@ -171,26 +193,31 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of transaction |
-
-### Return type
-
-[**\Tatum\Model\PendingTransaction**](../Model/PendingTransaction.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getPendingTransactionsToSign()`
 
+### Type signature
+
 ```php
-api()->keyManagementSystem()->getPendingTransactionsToSign(
+$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionsToSign(
     ?string $chain, 
     ?string $signatures
 ): \Tatum\Model\PendingTransaction[]
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**| Blockchain to get pending transactions for. |
+ **$signatures** | **string**| Signature IDs of the KMS which invokes this endpoint. If multiple, they should be separated by comma. | [optional]
+
+### Return type
+
+[**\Tatum\Model\PendingTransaction[]**](../Model/PendingTransaction.md)
+
+### Description
 
 Get pending transactions to sign
 
@@ -231,27 +258,31 @@ try {
 }
 ```
 
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `receivePendingTransactionsToSign()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->receivePendingTransactionsToSign(
+    ?string $chain, 
+    ?\Tatum\Model\KmsSignatureIds $kms_signature_ids
+): \Tatum\Model\PendingTransaction[]
+```
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**| Blockchain to get pending transactions for. |
- **$signatures** | **string**| Signature IDs of the KMS which invokes this endpoint. If multiple, they should be separated by comma. | [optional]
+ **$kms_signature_ids** | [**\Tatum\Model\KmsSignatureIds**](../Model/KmsSignatureIds.md)| Signature IDs of the KMS which invokes this endpoint. | [optional]
 
 ### Return type
 
 [**\Tatum\Model\PendingTransaction[]**](../Model/PendingTransaction.md)
 
-[[Back to top]](#) | [[Back to Index]](../index.md)
-
-## `receivePendingTransactionsToSign()`
-
-```php
-api()->keyManagementSystem()->receivePendingTransactionsToSign(
-    ?string $chain, 
-    ?\Tatum\Model\KmsSignatureIds $kms_signature_ids
-): \Tatum\Model\PendingTransaction[]
-```
+### Description
 
 Get pending transactions to sign
 
@@ -292,15 +323,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to get pending transactions for. |
- **$kms_signature_ids** | [**\Tatum\Model\KmsSignatureIds**](../Model/KmsSignatureIds.md)| Signature IDs of the KMS which invokes this endpoint. | [optional]
-
-### Return type
-
-[**\Tatum\Model\PendingTransaction[]**](../Model/PendingTransaction.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -9,11 +9,25 @@ Method | HTTP request | Description
 
 ## `checkMalicousAddress()`
 
+### Type signature
+
 ```php
-api()->maliciousAddress()->checkMalicousAddress(
+$sdk->{mainnet/testnet}()->api()->maliciousAddress()->checkMalicousAddress(
     ?string $address
 ): \Tatum\Model\CheckMalicousAddress200Response
 ```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** | **string**| Blockchain Address to check |
+
+### Return type
+
+[**\Tatum\Model\CheckMalicousAddress200Response**](../Model/CheckMalicousAddress200Response.md)
+
+### Description
 
 Check malicous address
 
@@ -51,14 +65,4 @@ try {
 }
 ```
 
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$address** | **string**| Blockchain Address to check |
-
-### Return type
-
-[**\Tatum\Model\CheckMalicousAddress200Response**](../Model/CheckMalicousAddress200Response.md)
-
-[[Back to top]](#) | [[Back to Index]](../index.md)
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
