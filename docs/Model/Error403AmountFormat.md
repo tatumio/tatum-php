@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | amount.format |
 **getMessage()** | **string** | Amount has incorrect format. |

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHash()** | **string** | Transaction hash. | [optional]
 **getWitnessHash()** | **string** | Witness hash in case of a SegWit transaction. | [optional]

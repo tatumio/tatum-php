@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAmount()** | **string** | Amount to be blocked on account. |
 **getType()** | **string** | Type of blockage. |

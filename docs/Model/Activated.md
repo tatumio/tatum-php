@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getActivated()** | **bool** | If set to "true", the gas pump address has been activated | [optional]
 

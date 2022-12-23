@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSenderAccountId()** | **string** | The ID of the virtual account to send the ERC-20-equivalent Algorand tokens from |
 **getAddress()** | **string** | The blockchain address to send the ERC-20-equivalent Algorand tokens to |

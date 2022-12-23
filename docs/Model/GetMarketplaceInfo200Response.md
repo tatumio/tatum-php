@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFeeAccount()** | **string** | Fee Account Address |
 **getTreasuryAccount()** | **string** | Treasury Account Address |

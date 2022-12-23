@@ -198,7 +198,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\KcsGenerateAddress200Response
 ```
@@ -668,7 +668,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsWeb3Driver(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

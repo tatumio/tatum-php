@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | customer.inactive |
 **getMessage()** | **string** | Unable to perform operation on inactive customer. |

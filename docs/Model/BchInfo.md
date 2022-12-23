@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Chain of the blockchain, main or test. | [optional]
 **getBlocks()** | **float** | Last block. | [optional]

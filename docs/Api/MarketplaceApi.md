@@ -200,7 +200,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFee(
-    string $chain, 
+    string $chain,
     string $contract_address
 ): float
 ```
@@ -264,7 +264,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFeeRecipient(
-    string $chain, 
+    string $chain,
     string $contract_address
 ): \Tatum\Model\GetMarketplaceFeeRecipient200Response
 ```
@@ -328,7 +328,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceInfo(
-    string $chain, 
+    string $chain,
     string $contract_address
 ): \Tatum\Model\GetMarketplaceInfo200Response
 ```
@@ -392,8 +392,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListing(
-    string $chain, 
-    string $contract_address, 
+    string $chain,
+    string $contract_address,
     string $id
 ): \Tatum\Model\GetMarketplaceListing200Response
 ```
@@ -461,8 +461,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListings(
-    string $chain, 
-    string $contract_address, 
+    string $chain,
+    string $contract_address,
     string $type
 ): string[]
 ```

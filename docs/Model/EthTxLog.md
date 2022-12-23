@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** | From which this event originated from. | [optional]
 **getTopics()** | **string[]** | An array with max 4 32 Byte topics, topic 1-3 contains indexed parameters of the log. | [optional]

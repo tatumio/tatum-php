@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAmount()** | **string** | Amount of NFTs to sold in this listing. |
 **getBuyer()** | **string** | Address of the buyer, if exists. | [optional]

@@ -18,9 +18,9 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->getTransactions(
-    \Tatum\Model\TransactionFilterLedger $transaction_filter_ledger, 
-    [ float $page_size,  ]
-    [ float $offset,  ]
+    \Tatum\Model\TransactionFilterLedger $transaction_filter_ledger,
+    [ float $page_size, ]
+    [ float $offset, ]
     [ bool $count ]
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```
@@ -91,9 +91,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByAccountId(
-    \Tatum\Model\TransactionFilter $transaction_filter, 
-    [ float $page_size,  ]
-    [ float $offset,  ]
+    \Tatum\Model\TransactionFilter $transaction_filter,
+    [ float $page_size, ]
+    [ float $offset, ]
     [ bool $count ]
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```
@@ -164,9 +164,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByCustomerId(
-    \Tatum\Model\TransactionFilterCustomer $transaction_filter_customer, 
-    [ float $page_size,  ]
-    [ float $offset,  ]
+    \Tatum\Model\TransactionFilterCustomer $transaction_filter_customer,
+    [ float $page_size, ]
+    [ float $offset, ]
     [ bool $count ]
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```

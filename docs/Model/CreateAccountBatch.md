@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccounts()** | [**\Tatum\Model\CreateAccount[]**](CreateAccount.md) |  |
 

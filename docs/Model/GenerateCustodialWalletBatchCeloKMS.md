@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Blockchain to work with. |
 **getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |

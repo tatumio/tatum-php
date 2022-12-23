@@ -256,7 +256,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGas(
-    \Tatum\Model\EthEstimateGas $eth_estimate_gas, 
+    \Tatum\Model\EthEstimateGas $eth_estimate_gas,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthGasEstimation
 ```
@@ -319,7 +319,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGasBatch(
-    \Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array, 
+    \Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthGasEstimationBatch
 ```

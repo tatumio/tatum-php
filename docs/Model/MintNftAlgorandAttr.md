@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAssetUnit()** | **string** | The unit name of the NFT | [optional]
 **getClawback()** | **string** | The address of the clawback account that can claw back holdings of the NFT | [optional]

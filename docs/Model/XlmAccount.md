@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | A unique identifier for this account. | [optional]
 **getAccountId()** | **string** | This account’s public key encoded in a base32 string representation. | [optional]

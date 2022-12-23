@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | Account ID. If present, list matched FUTURE_BUY/FUTURE_SELL orders trades for that account. | [optional]
 **getCustomerId()** | **string** | Customer ID. If present, list matched FUTURE_BUY/FUTURE_SELL orders trades for that customer. | [optional]

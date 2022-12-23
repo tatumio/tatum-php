@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getReferenceBlockId()** | **string** | Id of the block | [optional]
 **getScript()** | **string** | Script to execute in the transaction | [optional]

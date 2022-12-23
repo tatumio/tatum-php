@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | customer.not.exists |
 **getMessage()** | **string** | No customer with given external ID ${externalId} exists. |

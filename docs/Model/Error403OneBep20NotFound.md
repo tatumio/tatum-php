@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | erc20.token.notFound |
 **getMessage()** | **string** | No such HRM20 currency ${name}. |

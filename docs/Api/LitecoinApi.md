@@ -84,7 +84,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\LtcGenerateAddress200Response
 ```
@@ -607,8 +607,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetTxByAddress(
-    string $address, 
-    float $page_size, 
+    string $address,
+    float $page_size,
     [ float $offset ]
 ): \Tatum\Model\LtcTx[]
 ```
@@ -676,7 +676,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetUTXO(
-    string $hash, 
+    string $hash,
     float $index
 ): \Tatum\Model\LtcUTXO
 ```

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | The blockchain to work with |
 **getCustodialAddress()** | **string** | The gas pump address that holds the asset |

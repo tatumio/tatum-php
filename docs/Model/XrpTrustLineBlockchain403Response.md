@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | xrp.broadcast.failed |
 **getMessage()** | **string** | Xrp submit tx failed. ${error} |

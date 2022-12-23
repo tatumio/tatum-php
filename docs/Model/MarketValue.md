@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAmount()** | **string** | Value of transaction in given base pair. |
 **getCurrency()** | **string** | Base pair. |

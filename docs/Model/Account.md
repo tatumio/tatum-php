@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | The ID of the virtual account |
 **getBalance()** | [**\Tatum\Model\AccountBalance**](AccountBalance.md) |  |

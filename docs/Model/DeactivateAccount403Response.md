@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | account.trade.non.zero |
 **getMessage()** | **string** | Unable to deactivate account with non-zero exchange trades. |

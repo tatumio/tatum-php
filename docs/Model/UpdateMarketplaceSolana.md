@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Blockchain to work with. |
 **getContractAddress()** | **string** | Blockchain address of the smart contract |

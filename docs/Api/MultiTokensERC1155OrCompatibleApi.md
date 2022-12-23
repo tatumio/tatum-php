@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiTokenMinter(
-    \Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request, 
+    \Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -90,7 +90,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiToken(
-    \Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request, 
+    \Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -153,7 +153,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatch(
-    \Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request, 
+    \Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -216,7 +216,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiToken(
-    \Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request, 
+    \Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -279,7 +279,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiToken(
-    \Tatum\Model\MintMultiTokenRequest $mint_multi_token_request, 
+    \Tatum\Model\MintMultiTokenRequest $mint_multi_token_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -342,7 +342,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatch(
-    \Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request, 
+    \Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -405,8 +405,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(
-    string $chain, 
-    string $address, 
+    string $chain,
+    string $address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]
 ```
@@ -474,10 +474,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalance(
-    string $chain, 
-    string $address, 
-    string $contract_address, 
-    string $token_id, 
+    string $chain,
+    string $address,
+    string $contract_address,
+    string $token_id,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MultiTokenGetBalance200Response
 ```
@@ -553,10 +553,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(
-    string $chain, 
-    string $contract_address, 
-    string $token_id, 
-    string $address, 
+    string $chain,
+    string $contract_address,
+    string $token_id,
+    string $address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): string[]
 ```
@@ -632,8 +632,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(
-    string $chain, 
-    string $hash, 
+    string $chain,
+    string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MultiTokenGetContractAddress200Response
 ```
@@ -701,9 +701,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetMetadata(
-    string $chain, 
-    string $token, 
-    string $contract_address, 
+    string $chain,
+    string $token,
+    string $contract_address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MultiTokenGetMetadata200Response
 ```
@@ -775,8 +775,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransaction(
-    string $chain, 
-    string $hash, 
+    string $chain,
+    string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MultiTokenGetTransaction200Response
 ```
@@ -844,12 +844,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(
-    string $chain, 
-    string $address, 
-    string $token_address, 
-    float $page_size, 
-    [ float $offset,  ]
-    [ float $from,  ]
+    string $chain,
+    string $address,
+    string $token_address,
+    float $page_size,
+    [ float $offset, ]
+    [ float $from, ]
     [ float $to ]
 ): \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]
 ```
@@ -933,7 +933,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiToken(
-    \Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request, 
+    \Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -996,7 +996,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(
-    \Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request, 
+    \Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```

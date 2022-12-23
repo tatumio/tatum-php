@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getIndex()** | **float** | Index of the public key. | [optional]
 **getPublicKey()** | **string** |  | [optional]

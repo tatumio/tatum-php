@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTimestamp()** | **float** |  | [optional]
 **getBlockHeight()** | **float** |  | [optional]

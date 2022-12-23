@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAmount()** | **string** | Raw amount of tokens as a string, ignoring decimals. | [optional]
 **getDecimals()** | **float** | Number of decimals configured for token's mint. | [optional]

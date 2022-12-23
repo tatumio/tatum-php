@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getMeta()** | [**\Tatum\Model\SolanaTxMeta**](SolanaTxMeta.md) |  | [optional]
 **getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](SolanaTxTransaction.md) |  | [optional]

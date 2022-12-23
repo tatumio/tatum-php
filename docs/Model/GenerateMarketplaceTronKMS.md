@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Blockchain to work with. | [optional]
 **getFeeRecipient()** | **string** | Address of the recipient of the fee for the trade. |

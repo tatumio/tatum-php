@@ -243,7 +243,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->findAllCustomers(
-    float $page_size, 
+    float $page_size,
     [ float $offset ]
 ): \Tatum\Model\Customer[]
 ```
@@ -366,7 +366,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->updateCustomer(
-    string $id, 
+    string $id,
     \Tatum\Model\CustomerUpdate $customer_update
 ): \Tatum\Model\Customer
 ```

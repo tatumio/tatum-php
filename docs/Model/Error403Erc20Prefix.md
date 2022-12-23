@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | erc20.symbol.prefix |
 **getMessage()** | **string** | ERC20 token cannot start with VC_. |

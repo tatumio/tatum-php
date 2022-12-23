@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxId()** | **string** | Transaction ID. |
 **getTokenInfo()** | [**\Tatum\Model\TronTx20TokenInfo**](TronTx20TokenInfo.md) |  |

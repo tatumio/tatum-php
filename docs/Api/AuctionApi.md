@@ -313,8 +313,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->getAuction(
-    string $chain, 
-    string $contract_address, 
+    string $chain,
+    string $contract_address,
     string $id
 ): \Tatum\Model\GetAuction200Response
 ```
@@ -382,7 +382,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->getAuctionFee(
-    string $chain, 
+    string $chain,
     string $contract_address
 ): float
 ```
@@ -446,7 +446,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->getAuctionFeeRecipient(
-    string $chain, 
+    string $chain,
     string $contract_address
 ): \Tatum\Model\GetAuctionFeeRecipient200Response
 ```

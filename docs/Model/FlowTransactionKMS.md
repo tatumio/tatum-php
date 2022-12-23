@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccount()** | **string** | Blockchain account to send from |
 **getCurrency()** | **string** | Type of asset to send |

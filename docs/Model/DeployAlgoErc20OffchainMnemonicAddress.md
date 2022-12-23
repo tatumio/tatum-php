@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSymbol()** | **string** | Name of the ERC20 token - stored as a symbol on Blockchain |
 **getSupply()** | **string** | max supply of ERC20 token. |

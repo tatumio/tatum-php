@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | compliance.country.btc.not.supported |
 **getMessage()** | **string** | Customer country not supported for BTC. |

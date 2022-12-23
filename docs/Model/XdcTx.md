@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHash()** | **string** | Hash of the transaction. | [optional]
 **getNonce()** | **float** | The number of transactions made by the sender prior to this one. | [optional]

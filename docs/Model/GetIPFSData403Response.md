@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getMessage()** | **string** | Forbidden |
 **getStatusCode()** | **float** | 403 |

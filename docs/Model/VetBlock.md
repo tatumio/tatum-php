@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getNumber()** | **int** | block number (height) | [optional]
 **getId()** | **string** | block identifier | [optional]

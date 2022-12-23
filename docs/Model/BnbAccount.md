@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccountNumber()** | **float** |  | [optional]
 **getAddress()** | **string** |  | [optional]

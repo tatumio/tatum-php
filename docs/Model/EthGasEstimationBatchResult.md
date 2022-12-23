@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getError()** | **bool** | If estimation succeeded. |
 **getContractAddress()** | **string** | Contract address of ERC20 token, if transaction is ERC20 token | [optional]

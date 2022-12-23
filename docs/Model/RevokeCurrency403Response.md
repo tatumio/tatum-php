@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | virtual.account.balance |
 **getMessage()** | **string** | Insufficient balance to revoke virtual currency on account. |

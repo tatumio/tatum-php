@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getExternalId()** | **string** | Customer external ID. |
 **getId()** | **string** | Customer internal ID within Tatum. |

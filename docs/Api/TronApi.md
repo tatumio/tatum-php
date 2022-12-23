@@ -88,7 +88,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx(
-    string $address, 
+    string $address,
     [ string $next ]
 ): \Tatum\Model\TronAccountTx200Response
 ```
@@ -152,7 +152,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx20(
-    string $address, 
+    string $address,
     [ string $next ]
 ): \Tatum\Model\TronAccountTx20200Response
 ```
@@ -448,7 +448,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\TronGenerateAddress200Response
 ```

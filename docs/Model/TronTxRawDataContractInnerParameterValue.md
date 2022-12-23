@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAmount()** | **float** | The amount transferred within the transaction. | [optional]
 **getOwnerAddress()** | **string** | Address of the sender. | [optional]

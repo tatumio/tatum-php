@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | bsc.broadcast.failed |
 **getMessage()** | **string** | Unable to broadcast transaction due to ${error}. |

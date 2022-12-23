@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | senderAccount.frozen |
 **getMessage()** | **string** | Sender account ${transaction.senderAccountId} is frozen, unable to perform payment. |

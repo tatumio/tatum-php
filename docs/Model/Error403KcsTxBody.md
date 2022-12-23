@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | kcs.transaction.body |
 **getMessage()** | **string** | Either currency, or tokenAddress must be defined. |

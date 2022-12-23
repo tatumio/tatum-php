@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getNonce()** | **float** | The block height. | [optional]
 **getRound()** | **float** | The round number. | [optional]

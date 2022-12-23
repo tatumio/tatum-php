@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFrom()** | **string** | Sender address. |
 **getTo()** | **string** | Blockchain address to send assets |

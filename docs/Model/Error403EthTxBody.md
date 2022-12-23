@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | ethereum.transaction.body |
 **getMessage()** | **string** | Either currency, or tokenAddress must be defined. |

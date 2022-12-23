@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** | Blockchain address |
 **getWalletId()** | **string** | Unique identifier of the managed address |

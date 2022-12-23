@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | withdrawal.pending |
 **getMessage()** | **string** | Unable to prepare withdrawal, last withdrawal with id ${id} is not yet processed by blockchain. |

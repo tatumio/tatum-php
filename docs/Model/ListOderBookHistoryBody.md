@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | Account ID. If present, only closed trades for given account will be present. | [optional]
 **getCustomerId()** | **string** | Customer ID. If present, only closed trades for given customer will be present. | [optional]

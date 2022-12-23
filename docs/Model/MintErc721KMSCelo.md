@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTokenId()** | **string** | ID of token to be created. |
 **getTo()** | **string** | Blockchain address to send ERC721 token to |

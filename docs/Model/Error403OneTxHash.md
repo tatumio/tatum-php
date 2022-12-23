@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | bsc.transaction.hash |
 **getMessage()** | **string** | Unable to calculate transaction hash. ${error} |

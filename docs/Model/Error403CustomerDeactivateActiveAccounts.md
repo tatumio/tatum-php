@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | customer.deactivate.account.active |
 **getMessage()** | **string** | Unable to deactivate customer, accounts not deactivated. |

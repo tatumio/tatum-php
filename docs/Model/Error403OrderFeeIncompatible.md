@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | trade.currency.fee |
 **getMessage()** | **string** | Incompatible currencies for currency1 and fee account. |

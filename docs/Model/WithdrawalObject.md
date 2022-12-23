@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | ID of the withdrawal |
 **getTxId()** | **string** | Transaction ID of broadcast transaction | [optional]

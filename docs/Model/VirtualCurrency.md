@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getName()** | **string** | Virtual currency name. Must be prefixed with 'VC_'. |
 **getSupply()** | **string** | Supply of virtual currency. |

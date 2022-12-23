@@ -141,7 +141,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\FlowGenerateAddress200Response
 ```
@@ -205,7 +205,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKey(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\FlowGeneratePubKey200Response
 ```
@@ -557,8 +557,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGetBlockEvents(
-    string $type, 
-    float $from, 
+    string $type,
+    float $from,
     float $to
 ): \Tatum\Model\FlowEvent[]
 ```

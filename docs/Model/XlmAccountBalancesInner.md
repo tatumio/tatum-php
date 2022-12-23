@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getBalance()** | **string** | The number of units of an asset held by this account. | [optional]
 **getLimit()** | **string** | The maximum amount of this asset that this account is willing to accept. Specified when opening a trustline. | [optional]

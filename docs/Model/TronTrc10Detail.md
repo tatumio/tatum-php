@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getOwnerAddress()** | **string** | The address of the TRC-10 token's owner in the hexadecimal format | [optional]
 **getName()** | **string** | The name of the TRC-10 token | [optional]

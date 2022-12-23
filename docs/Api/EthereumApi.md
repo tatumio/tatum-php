@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainSmartContractInvocation(
-    \Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request, 
+    \Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
@@ -89,7 +89,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainTransfer(
-    \Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request, 
+    \Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -152,7 +152,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethBroadcast(
-    \Tatum\Model\BroadcastKMS $broadcast_kms, 
+    \Tatum\Model\BroadcastKMS $broadcast_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionHash
 ```
@@ -215,8 +215,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddress(
-    string $xpub, 
-    float $index, 
+    string $xpub,
+    float $index,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\GeneratedAddressEth
 ```
@@ -284,7 +284,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddressPrivateKey(
-    \Tatum\Model\PrivKeyRequest $priv_key_request, 
+    \Tatum\Model\PrivKeyRequest $priv_key_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\PrivKey
 ```
@@ -347,7 +347,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateWallet(
-    [ string $mnemonic,  ]
+    [ string $mnemonic, ]
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Wallet
 ```
@@ -411,7 +411,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBalance(
-    string $address, 
+    string $address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBalance
 ```
@@ -475,7 +475,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBlock(
-    string $hash, 
+    string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBlock
 ```
@@ -598,9 +598,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetInternalTransactionByAddress(
-    string $address, 
-    float $page_size, 
-    [ float $offset,  ]
+    string $address,
+    float $page_size,
+    [ float $offset, ]
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthTxInternal[]
 ```
@@ -672,7 +672,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransaction(
-    string $hash, 
+    string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthTx
 ```
@@ -736,12 +736,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionByAddress(
-    string $address, 
-    float $page_size, 
-    [ float $offset,  ]
-    [ float $from,  ]
-    [ float $to,  ]
-    [ string $sort = 'DESC',  ]
+    string $address,
+    float $page_size,
+    [ float $offset, ]
+    [ float $from, ]
+    [ float $to, ]
+    [ string $sort = 'DESC', ]
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthTx[]
 ```
@@ -825,7 +825,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionCount(
-    string $address, 
+    string $address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): float
 ```
@@ -889,8 +889,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethWeb3Driver(
-    string $x_api_key, 
-    object $body, 
+    string $x_api_key,
+    object $body,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): object
 ```

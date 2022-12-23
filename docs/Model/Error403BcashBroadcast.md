@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | bch.broadcast.failed |
 **getMessage()** | **string** | Unable to broadcast transaction. Error from blockchain: ${error} |

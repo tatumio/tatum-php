@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getName()** | **string** | The name of the NFT |
 **getSymbol()** | **string** | The symbol or abbreviated name of the NFT |

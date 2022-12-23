@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | subscription.attr.balance.invalid |
 **getMessage()** | **string** | Invalid subscription attribute 'limit' or 'typeOfBalance'. |

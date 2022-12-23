@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | xdc.transaction.sign |
 **getMessage()** | **string** | Unable to sign transaction. ${error} |

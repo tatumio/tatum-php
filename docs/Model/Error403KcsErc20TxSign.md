@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | kcs.bep20.sign |
 **getMessage()** | **string** | Unable to sign transaction for contract creation. ${error} |

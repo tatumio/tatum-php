@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | Hash of the block. | [optional]
 **getParentId()** | **string** | Hash of the parent block. | [optional]

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getReference()** | **string** | Transaction reference of the transaction connected to this withdrawal. | [optional]
 **getData()** | [**\Tatum\Model\ResponseData[]**](ResponseData.md) |  | [optional]

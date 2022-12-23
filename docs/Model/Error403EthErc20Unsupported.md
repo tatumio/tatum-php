@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | eth.erc20.unsupported |
 **getMessage()** | **string** | Unsupported ETH ERC20 blockchain. |

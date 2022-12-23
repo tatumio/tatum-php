@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSender()** | **string** | Account address of the sender |
 **getReceiver()** | **string** | Account address of the receiver or smart contract |

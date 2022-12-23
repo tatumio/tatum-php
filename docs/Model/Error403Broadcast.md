@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | blockchain.broadcast.error |
 **getMessage()** | **string** | Unable to broadcast transaction, wrong input data. |

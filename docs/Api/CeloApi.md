@@ -199,7 +199,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\CeloGenerateAddress200Response
 ```
@@ -610,11 +610,11 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionByAddress(
-    string $address, 
-    float $page_size, 
-    [ float $offset,  ]
-    [ float $from,  ]
-    [ float $to,  ]
+    string $address,
+    float $page_size,
+    [ float $offset, ]
+    [ float $from, ]
+    [ float $to, ]
     [ string $sort = 'DESC' ]
 ): \Tatum\Model\CeloTx[]
 ```
@@ -753,7 +753,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoWeb3Driver(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

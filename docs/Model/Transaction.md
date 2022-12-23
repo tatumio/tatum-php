@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccountId()** | **string** | Source account - source of transaction(s) |
 **getCounterAccountId()** | **string** | Counter account - transaction(s) destination account. In case of blockchain recipient, this is addess of blockchain account. | [optional]

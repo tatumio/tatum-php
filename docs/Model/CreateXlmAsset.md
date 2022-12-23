@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getIssuerAccount()** | **string** | Blockchain address of the issuer of the assets. |
 **getToken()** | **string** | Asset name. |

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | bnb.transfer.failed |
 **getMessage()** | **string** | Unable to transfer funds. ${error} |

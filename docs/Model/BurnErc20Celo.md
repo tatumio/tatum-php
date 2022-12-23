@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAmount()** | **string** | Amount of tokens to be destroyed. |
 **getContractAddress()** | **string** | Address of ERC721 token |

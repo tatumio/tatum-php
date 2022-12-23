@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getEvent()** | **string** | Hexadecimal data representing the event emitted from the smart contract; represents "topic[0,1,2,...]" from the event log. |
 **getChain()** | **string** | The blockchain on which events should be monitored. |

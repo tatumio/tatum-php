@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAffectedNodes()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInner[]**](XrpTxMetaAffectedNodesInner.md) |  | [optional]
 **getTransactionIndex()** | **float** |  | [optional]

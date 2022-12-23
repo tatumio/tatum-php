@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getLedger()** | **float** |  | [optional]
 **getSeq()** | **float** |  | [optional]

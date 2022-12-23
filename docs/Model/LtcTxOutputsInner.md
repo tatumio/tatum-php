@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getValue()** | **string** | Sent amount in LTC. | [optional]
 **getScript()** | **string** | Transaction script. | [optional]

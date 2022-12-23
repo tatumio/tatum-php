@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Chain to work with. |
 **getTokenId()** | **string[][]** | The IDs of the Multi Tokens to be created. |

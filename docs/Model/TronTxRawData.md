@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getContract()** | [**\Tatum\Model\TronTxRawDataContractInner[]**](TronTxRawDataContractInner.md) | Smart contract invocations details. |
 **getRefBlockBytes()** | **float** | The height of the transaction reference block. | [optional]

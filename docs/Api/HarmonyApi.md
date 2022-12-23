@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneBlockchainSmartContractInvocation(
-    \Tatum\Model\OneBlockchainSmartContractInvocationRequest $one_blockchain_smart_contract_invocation_request, 
+    \Tatum\Model\OneBlockchainSmartContractInvocationRequest $one_blockchain_smart_contract_invocation_request,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
@@ -88,7 +88,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneBlockchainTransfer(
-    \Tatum\Model\OneBlockchainTransferRequest $one_blockchain_transfer_request, 
+    \Tatum\Model\OneBlockchainTransferRequest $one_blockchain_transfer_request,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -151,7 +151,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneBroadcast(
-    \Tatum\Model\BroadcastKMS $broadcast_kms, 
+    \Tatum\Model\BroadcastKMS $broadcast_kms,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\TransactionHash
 ```
@@ -273,7 +273,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressOne
 ```
@@ -454,7 +454,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneGetBalance(
-    string $address, 
+    string $address,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\OneBalance
 ```
@@ -518,7 +518,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneGetBlock(
-    string $hash, 
+    string $hash,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\EthBlock
 ```
@@ -635,7 +635,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransaction(
-    string $hash, 
+    string $hash,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\OneTx
 ```
@@ -699,7 +699,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransactionCount(
-    string $address, 
+    string $address,
     [ float $shard_id = 0 ]
 ): float
 ```
@@ -763,8 +763,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->harmony()->oneWeb3Driver(
-    string $x_api_key, 
-    object $body, 
+    string $x_api_key,
+    object $body,
     [ float $shard_id = 0 ]
 ): object
 ```

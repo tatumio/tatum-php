@@ -360,7 +360,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaGetTransaction(
-    string $hash, 
+    string $hash,
     [ string $commitment ]
 ): \Tatum\Model\SolanaTx
 ```
@@ -424,7 +424,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaWeb3Driver(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

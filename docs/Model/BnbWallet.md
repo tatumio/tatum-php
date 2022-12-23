@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** | Generated account address. | [optional]
 **getPrivateKey()** | **string** | Generated private key for account. | [optional]

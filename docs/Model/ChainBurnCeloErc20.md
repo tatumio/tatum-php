@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | The blockchain to work with |
 **getAmount()** | **string** | Amount of tokens to be destroyed. |

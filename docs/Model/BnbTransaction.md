@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxHash()** | **string** |  | [optional]
 **getBlockHeight()** | **float** |  | [optional]

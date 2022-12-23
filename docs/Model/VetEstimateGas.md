@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFrom()** | **string** | Sender account address. |
 **getTo()** | **string** | Recipient account address. |

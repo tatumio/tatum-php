@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | recipientAccount.not.exists |
 **getMessage()** | **string** | Unable to find recipient account ${transaction.recipientAccountId}. |

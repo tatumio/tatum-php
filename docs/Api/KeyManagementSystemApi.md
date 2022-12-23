@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->completePendingSignature(
-    string $id, 
+    string $id,
     string $tx_id
 )
 ```
@@ -78,7 +78,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->deletePendingTransactionToSign(
-    string $id, 
+    string $id,
     [ bool $revert = true ]
 )
 ```
@@ -198,7 +198,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionsToSign(
-    string $chain, 
+    string $chain,
     [ string $signatures ]
 ): \Tatum\Model\PendingTransaction[]
 ```
@@ -262,7 +262,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->receivePendingTransactionsToSign(
-    string $chain, 
+    string $chain,
     [ \Tatum\Model\KmsSignatureIds $kms_signature_ids ]
 ): \Tatum\Model\PendingTransaction[]
 ```

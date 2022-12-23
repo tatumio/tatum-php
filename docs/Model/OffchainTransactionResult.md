@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | ID of withdrawal. If transaction is not valid in blockchain, use this id to cancel withdrawal. |
 **getTxId()** | **string** | TX hash of successful transaction. |

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | xrp.settings.multiple |
 **getMessage()** | **string** | It is possible to set 1 parameter at a time. |

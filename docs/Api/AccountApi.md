@@ -86,7 +86,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->blockAmount(
-    string $id, 
+    string $id,
     \Tatum\Model\BlockAmount $block_amount
 ): \Tatum\Model\Id
 ```
@@ -607,14 +607,14 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccounts(
-    [ float $page_size,  ]
-    [ float $page,  ]
-    [ string $sort,  ]
-    [ string $sort_by,  ]
-    [ bool $active,  ]
-    [ bool $only_non_zero_balance,  ]
-    [ bool $frozen,  ]
-    [ string $currency,  ]
+    [ float $page_size, ]
+    [ float $page, ]
+    [ string $sort, ]
+    [ string $sort_by, ]
+    [ bool $active, ]
+    [ bool $only_non_zero_balance, ]
+    [ bool $frozen, ]
+    [ string $currency, ]
     [ string $account_number ]
 ): \Tatum\Model\Account[]
 ```
@@ -706,9 +706,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccountsByCustomerId(
-    float $page_size, 
-    string $id, 
-    [ float $offset,  ]
+    float $page_size,
+    string $id,
+    [ float $offset, ]
     [ string $account_code ]
 ): \Tatum\Model\Account[]
 ```
@@ -780,14 +780,14 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccountsCount(
-    [ float $page_size,  ]
-    [ float $page,  ]
-    [ string $sort,  ]
-    [ string $sort_by,  ]
-    [ bool $active,  ]
-    [ bool $only_non_zero_balance,  ]
-    [ bool $frozen,  ]
-    [ string $currency,  ]
+    [ float $page_size, ]
+    [ float $page, ]
+    [ string $sort, ]
+    [ string $sort_by, ]
+    [ bool $active, ]
+    [ bool $only_non_zero_balance, ]
+    [ bool $frozen, ]
+    [ string $currency, ]
     [ string $account_number ]
 ): \Tatum\Model\EntitiesCount
 ```
@@ -879,8 +879,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getBlockAmount(
-    string $id, 
-    float $page_size, 
+    string $id,
+    float $page_size,
     [ float $offset ]
 ): \Tatum\Model\Blockage[]
 ```
@@ -1007,7 +1007,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->unblockAmountWithTransaction(
-    string $id, 
+    string $id,
     \Tatum\Model\UnblockAmount $unblock_amount
 ): \Tatum\Model\TransactionResult
 ```
@@ -1126,7 +1126,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->updateAccountByAccountId(
-    string $id, 
+    string $id,
     \Tatum\Model\UpdateAccount $update_account
 )
 ```

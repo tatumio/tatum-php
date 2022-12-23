@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxid()** | **string** | Transaction hash of the input. | [optional]
 **getVout()** | **float** | Transaction index of the input. | [optional]

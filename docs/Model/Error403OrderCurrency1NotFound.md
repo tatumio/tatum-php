@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | trade.currency1AccountId.not.exists |
 **getMessage()** | **string** | Unable to find currency1 account ${trade.currency1AccountId}. |

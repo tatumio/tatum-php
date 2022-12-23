@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | ID of the blockage. | [optional]
 **getAccountId()** | **string** | ID of the account this blockage is for. | [optional]

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | transaction.preparation.failed |
 **getMessage()** | **string** | Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present. |

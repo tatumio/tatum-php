@@ -199,7 +199,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressMatic
 ```
@@ -610,11 +610,11 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->polygon()->polygonGetTransactionByAddress(
-    string $address, 
-    float $page_size, 
-    [ float $offset,  ]
-    [ float $from,  ]
-    [ float $to,  ]
+    string $address,
+    float $page_size,
+    [ float $offset, ]
+    [ float $from, ]
+    [ float $to, ]
     [ string $sort = 'DESC' ]
 ): \Tatum\Model\PolygonTx[]
 ```
@@ -753,7 +753,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->polygon()->polygonWeb3Driver(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

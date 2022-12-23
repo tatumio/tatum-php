@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | ID of the trade | [optional]
 **getType()** | **string** | Type of the trade, BUY or SELL | [optional]

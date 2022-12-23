@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFinalFields()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields**](XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields.md) |  | [optional]
 **getLedgerEntryType()** | **string** |  | [optional]

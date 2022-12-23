@@ -198,7 +198,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\XdcGenerateAddress200Response
 ```
@@ -668,7 +668,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xinFin()->xdcWeb3Driver(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

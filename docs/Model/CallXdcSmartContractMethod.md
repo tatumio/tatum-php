@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getContractAddress()** | **string** | The address of the smart contract |
 **getAmount()** | **string** | Amount of the assets to be sent. | [optional]

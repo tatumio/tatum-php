@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getNumber()** | **float** | The block number. 'null' when its pending block. | [optional]
 **getHash()** | **string** | Hash of the block. 'null' when its pending block. | [optional]

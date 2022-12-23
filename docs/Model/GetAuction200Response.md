@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAmount()** | **string** | Amount of NFTs to sold in this auction. Valid only for ERC1155 listings. | [optional]
 **getBidder()** | **string** | Address of the highest buyer, if exists. | [optional]

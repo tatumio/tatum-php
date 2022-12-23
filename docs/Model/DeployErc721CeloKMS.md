@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getName()** | **string** | Name of the ERC721 token |
 **getSymbol()** | **string** | Symbol of the ERC721 token |

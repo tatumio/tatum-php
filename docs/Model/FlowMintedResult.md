@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxId()** | **string** | Transaction ID | [optional]
 **getTokenId()** | **string** | ID of the token. | [optional]

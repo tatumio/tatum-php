@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFromAccount()** | **string** | XRP account address. Must be the one used for generating deposit tags. |
 **getSignatureId()** | **string** | Identifier of the private key associated in signing application. Secret or signature Id must be present. |

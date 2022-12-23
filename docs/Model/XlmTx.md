@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | A unique identifier for this transaction. | [optional]
 **getPagingToken()** | **string** | A cursor value for use in pagination. | [optional]

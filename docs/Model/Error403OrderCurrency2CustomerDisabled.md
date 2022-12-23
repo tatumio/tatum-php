@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | trade.currency2AccountId.customer.disabled |
 **getMessage()** | **string** | Currency2 account's customer ${currency2Account.customerId} is disabled, unable to perform exchange trade. |

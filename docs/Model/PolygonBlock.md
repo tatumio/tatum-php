@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getDifficulty()** | **string** | Difficulty for this block. | [optional]
 **getExtraData()** | **string** | The 'extra data' field of this block. | [optional]

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getData()** | **string** | The data to be stored on the blockchain |
 **getChain()** | **string** | The blockchain to store the data on |

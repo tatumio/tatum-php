@@ -80,7 +80,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->activatedNotActivatedGasPumpAddresses(
-    string $chain, 
+    string $chain,
     string $tx_id
 ): \Tatum\Model\GasPumpTrxOut
 ```
@@ -202,8 +202,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpAddressesActivatedOrNot(
-    string $chain, 
-    string $owner, 
+    string $chain,
+    string $owner,
     float $index
 ): \Tatum\Model\Activated
 ```
@@ -329,7 +329,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
-    \Tatum\Model\GenerateCustodialWalletBatchRequest $generate_custodial_wallet_batch_request, 
+    \Tatum\Model\GenerateCustodialWalletBatchRequest $generate_custodial_wallet_batch_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -450,7 +450,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->sCGetCustodialAddresses(
-    string $chain, 
+    string $chain,
     string $hash
 ): string[]
 ```

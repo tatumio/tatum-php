@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSender()** | **string** |  | [optional]
 **getRecipient()** | **string** |  | [optional]

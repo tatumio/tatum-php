@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSymbol()** | **string** | Symbol of the ERC20 token |
 **getName()** | **string** | Name of the ERC20 token |

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainStorage()->getLog(
-    string $chain, 
+    string $chain,
     string $id
 ): \Tatum\Model\GetLog200Response
 ```

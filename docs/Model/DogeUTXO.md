@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getScriptPubKey()** | [**\Tatum\Model\DogeTxVoutInnerScriptPubKey**](DogeTxVoutInnerScriptPubKey.md) |  | [optional]
 **getVersion()** | **float** | The version of the transaction | [optional]

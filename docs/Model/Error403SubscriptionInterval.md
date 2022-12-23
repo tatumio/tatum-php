@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | subscription.attr.interval.invalid |
 **getMessage()** | **string** | Invalid subscription attribute 'interval'. |

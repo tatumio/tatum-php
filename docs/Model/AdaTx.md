@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHash()** | **string** | Transaction hash. | [optional]
 **getFee()** | **string** | Fee paid for this transaction, in ADA. | [optional]

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFromAccount()** | **string** | XRP account address. Must be the one used for generating deposit tags. |
 **getIssuerAccount()** | **string** | Blockchain address of the issuer of the assets to create trust line for. |

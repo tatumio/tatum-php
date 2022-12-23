@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | account.blockchain.testnet |
 **getMessage()** | **string** | Unable to create account, unsupported testnet blockchain. |

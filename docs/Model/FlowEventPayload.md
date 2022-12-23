@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of payload. | [optional]
 **getValue()** | [**\Tatum\Model\FlowEventPayloadValue**](FlowEventPayloadValue.md) |  | [optional]

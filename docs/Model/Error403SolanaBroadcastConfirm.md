@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | solana.broadcast.confirm.failed |
 **getMessage()** | **string** | Unexpected error occurred. Reason: ${error}. |

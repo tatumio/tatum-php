@@ -12,7 +12,7 @@ Method | Description
 
 ```php
 $sdk->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
-    ?\Tatum\Model\EthBlockchainTransferRequest $transfer
+    \Tatum\Model\EthBlockchainTransferRequest $transfer
 ): string
 ```
 

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHex()** | **string** |  | [optional]
 **getAsm()** | **string** |  | [optional]

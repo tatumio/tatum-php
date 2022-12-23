@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | bnb.broadcast.failed.tx.state |
 **getMessage()** | **string** | Unable to broadcast BNB transaction, tx ${hash} state not OK. |

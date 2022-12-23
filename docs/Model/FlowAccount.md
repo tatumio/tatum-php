@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** | Account address. | [optional]
 **getBalance()** | **float** | Balance of the account in smallest FLOW unit = 1 FLOW = 1e8 unit | [optional]

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getContractAddress()** | **string** | Contract address of the Multi Token | [optional]
 **getBalances()** | [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]**](MultiTokenGetAddressBalance200ResponseInnerBalancesInner.md) |  | [optional]

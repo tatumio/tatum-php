@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getValue()** | [**\Tatum\Model\FlowCustomTransactionPKArgsInnerValue**](FlowCustomTransactionPKArgsInnerValue.md) |  |
 **getType()** | **string** | Type of the argument |

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Blockchain to work on |
 **getTxData()** | **string** | Hex serialized data representing transaction, which should be signed using one of the managed wallets. |

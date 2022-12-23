@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFromPrivateKey()** | **string** | Private key of the address, from which the TRX will be sent. |
 **getReceiver()** | **string** | Recipient address of frozen BANDWIDTH or ENERGY. |

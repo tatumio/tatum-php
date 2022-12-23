@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | virtual.name.prefix |
 **getMessage()** | **string** | Virtual currency has wrong name, must start with VC_. |

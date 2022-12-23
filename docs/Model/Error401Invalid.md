@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | subscription.invalid |
 **getMessage()** | **string** | Unable to find valid subscription for '${apiKey}' |

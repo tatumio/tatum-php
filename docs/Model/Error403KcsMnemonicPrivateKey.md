@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | private.mnemonic.missing |
 **getMessage()** | **string** | Either mnemonic and index or private key must be present. |

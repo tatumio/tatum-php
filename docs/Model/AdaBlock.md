@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHash()** | **string** | Hash of block. | [optional]
 **getNumber()** | **float** | The number of blocks preceding a particular block on a block chain. | [optional]

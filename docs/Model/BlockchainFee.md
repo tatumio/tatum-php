@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFast()** | **float** | Fast transaction acceptance time into block. For btc-based chains - fee per byte. For evm-based chains - gas price in wei |
 **getMedium()** | **float** | Medium transaction acceptance time into block. For btc-based chains - fee per byte. For evm-based chains - gas price in wei |

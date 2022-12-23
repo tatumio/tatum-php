@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxId()** | **string** | The hash (ID) of the transaction |
 **getContractAddress()** | **string** | The address of deployed marketplace contract |

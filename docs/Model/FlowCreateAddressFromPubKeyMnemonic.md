@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccount()** | **string** | Blockchain account to send from |
 **getPublicKey()** | **string** | Public key to be used; will be assigned to a newly created address and will have a weight of 1000 |

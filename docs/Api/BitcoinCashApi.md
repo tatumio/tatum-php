@@ -81,7 +81,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\BchGenerateAddress200Response
 ```
@@ -492,7 +492,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetTxByAddress(
-    string $address, 
+    string $address,
     [ int $skip ]
 ): \Tatum\Model\BchTx[]
 ```

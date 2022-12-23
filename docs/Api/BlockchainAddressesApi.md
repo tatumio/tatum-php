@@ -18,8 +18,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->addressExists(
-    string $currency, 
-    string $address, 
+    string $currency,
+    string $address,
     [ float $index ]
 ): \Tatum\Model\Account
 ```
@@ -87,8 +87,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->assignAddress(
-    string $id, 
-    string $address, 
+    string $id,
+    string $address,
     [ float $index ]
 ): \Tatum\Model\Address
 ```
@@ -156,7 +156,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddress(
-    string $id, 
+    string $id,
     [ float $index ]
 ): \Tatum\Model\Address
 ```
@@ -337,8 +337,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->removeAddress(
-    string $id, 
-    string $address, 
+    string $id,
+    string $address,
     [ float $index ]
 )
 ```

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHash()** | **string** | The block hash. | [optional]
 **getNonce()** | **float** | The block height. | [optional]

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getMnemonic()** | **string** | Generated mnemonic for wallet. | [optional]
 **getAddress()** | **string** | Generated account address. | [optional]

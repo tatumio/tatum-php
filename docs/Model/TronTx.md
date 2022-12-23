@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getRet()** | [**\Tatum\Model\TronTxRetInner[]**](TronTxRetInner.md) | Result of the smart contract invocation. |
 **getSignature()** | **string[]** | List of signatures of the transaction. |

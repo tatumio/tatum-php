@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getGenesisHash()** | **string** | hash to which this block belongs | [optional]
 **getGenesisId()** | **string** | ID to which this block belongs | [optional]

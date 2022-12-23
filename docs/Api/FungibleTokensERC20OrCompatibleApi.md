@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Approve(
-    \Tatum\Model\Erc20ApproveRequest $erc20_approve_request, 
+    \Tatum\Model\Erc20ApproveRequest $erc20_approve_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -83,7 +83,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Burn(
-    \Tatum\Model\Erc20BurnRequest $erc20_burn_request, 
+    \Tatum\Model\Erc20BurnRequest $erc20_burn_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -146,7 +146,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Deploy(
-    \Tatum\Model\Erc20DeployRequest $erc20_deploy_request, 
+    \Tatum\Model\Erc20DeployRequest $erc20_deploy_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -209,9 +209,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalance(
-    string $chain, 
-    string $address, 
-    string $contract_address, 
+    string $chain,
+    string $address,
+    string $contract_address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Erc20Balance
 ```
@@ -283,7 +283,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(
-    string $chain, 
+    string $chain,
     string $address
 ): \Tatum\Model\Erc20BalanceForAddress[]
 ```
@@ -347,13 +347,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(
-    string $chain, 
-    string $address, 
-    string $token_address, 
-    float $page_size, 
-    [ float $offset,  ]
-    [ float $from,  ]
-    [ float $to,  ]
+    string $chain,
+    string $address,
+    string $token_address,
+    float $page_size,
+    [ float $offset, ]
+    [ float $from, ]
+    [ float $to, ]
     [ string $sort = 'DESC' ]
 ): \Tatum\Model\FungibleTx[]
 ```
@@ -441,7 +441,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Mint(
-    \Tatum\Model\Erc20MintRequest $erc20_mint_request, 
+    \Tatum\Model\Erc20MintRequest $erc20_mint_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -504,7 +504,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Transfer(
-    \Tatum\Model\Erc20TransferRequest $erc20_transfer_request, 
+    \Tatum\Model\Erc20TransferRequest $erc20_transfer_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```

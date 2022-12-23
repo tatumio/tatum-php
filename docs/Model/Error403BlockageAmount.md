@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | blockage.amount.exceeded |
 **getMessage()** | **string** | Amount to transfer is greater then amount of the blockage. |

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHash()** | **string** | The SHA-512 hash of the transaction | [optional]
 **getLedgerIndex()** | **float** | The ledger index of the ledger that includes this transaction. | [optional]

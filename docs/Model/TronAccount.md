@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** | Account address |
 **getBalance()** | **float** | Balance of the TRX, in SUN. SUN is 1/1000000 TRX. |

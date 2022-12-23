@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccepted()** | **bool** |  | [optional]
 **getAccountHash()** | **string** | Hash of all account state information in this ledger, as hex. | [optional]

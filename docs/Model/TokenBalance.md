@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccountIndex()** | **float** | Index of the account in which the token balance is provided for. | [optional]
 **getMint()** | **string** | Pubkey of the token's mint. | [optional]

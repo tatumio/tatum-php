@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSignatureIds()** | **string[]** | List of the signature Ids to be used to sign transactions. | [optional]
 

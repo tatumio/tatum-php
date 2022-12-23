@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftAddMinter(
-    \Tatum\Model\NftAddMinterRequest $nft_add_minter_request, 
+    \Tatum\Model\NftAddMinterRequest $nft_add_minter_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -93,7 +93,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnErc721(
-    \Tatum\Model\NftBurnErc721Request $nft_burn_erc721_request, 
+    \Tatum\Model\NftBurnErc721Request $nft_burn_erc721_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -156,7 +156,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployErc721(
-    \Tatum\Model\NftDeployErc721Request $nft_deploy_erc721_request, 
+    \Tatum\Model\NftDeployErc721Request $nft_deploy_erc721_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -219,9 +219,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetBalanceErc721(
-    string $chain, 
-    string $address, 
-    string $contract_address, 
+    string $chain,
+    string $address,
+    string $contract_address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftGetBalanceErc721200Response
 ```
@@ -293,8 +293,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetContractAddress(
-    string $chain, 
-    string $hash, 
+    string $chain,
+    string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftGetContractAddress200Response
 ```
@@ -362,10 +362,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetMetadataErc721(
-    string $chain, 
-    string $contract_address, 
-    string $token_id, 
-    [ string $account,  ]
+    string $chain,
+    string $contract_address,
+    string $token_id,
+    [ string $account, ]
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftMetadataErc721
 ```
@@ -441,9 +441,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetProvenanceDataErc721(
-    string $chain, 
-    string $contract_address, 
-    string $token_id, 
+    string $chain,
+    string $contract_address,
+    string $token_id,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftProvenanceDataErc721[]
 ```
@@ -515,9 +515,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetRoyaltyErc721(
-    string $chain, 
-    string $contract_address, 
-    string $token_id, 
+    string $chain,
+    string $contract_address,
+    string $token_id,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftRoyaltyErc721
 ```
@@ -589,7 +589,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(
-    string $chain, 
+    string $chain,
     string $address
 ): \Tatum\Model\NftTokenByAddressErc721[]
 ```
@@ -653,9 +653,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(
-    string $chain, 
-    float $page_size, 
-    string $address, 
+    string $chain,
+    float $page_size,
+    string $address,
     [ float $offset ]
 ): \Tatum\Model\NftTokenByCollectionErc721[]
 ```
@@ -727,8 +727,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactErc721(
-    string $chain, 
-    string $hash, 
+    string $chain,
+    string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftGetTransactErc721200Response
 ```
@@ -796,12 +796,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByAddress(
-    string $chain, 
-    string $address, 
-    string $token_address, 
-    float $page_size, 
-    [ float $offset,  ]
-    [ float $from,  ]
+    string $chain,
+    string $address,
+    string $token_address,
+    float $page_size,
+    [ float $offset, ]
+    [ float $from, ]
     [ float $to ]
 ): \Tatum\Model\NftTx[]
 ```
@@ -885,12 +885,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByToken(
-    string $chain, 
-    string $token_id, 
-    string $token_address, 
-    float $page_size, 
-    [ float $offset,  ]
-    [ float $from,  ]
+    string $chain,
+    string $token_id,
+    string $token_address,
+    float $page_size,
+    [ float $offset, ]
+    [ float $from, ]
     [ float $to ]
 ): \Tatum\Model\NftTx[]
 ```
@@ -974,7 +974,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintErc721(
-    \Tatum\Model\NftMintErc721Request $nft_mint_erc721_request, 
+    \Tatum\Model\NftMintErc721Request $nft_mint_erc721_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftMintErc721200Response
 ```
@@ -1037,7 +1037,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintMultipleErc721(
-    \Tatum\Model\NftMintMultipleErc721Request $nft_mint_multiple_erc721_request, 
+    \Tatum\Model\NftMintMultipleErc721Request $nft_mint_multiple_erc721_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftMintMultipleErc721200Response
 ```
@@ -1100,7 +1100,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransferErc721(
-    \Tatum\Model\NftTransferErc721Request $nft_transfer_erc721_request, 
+    \Tatum\Model\NftTransferErc721Request $nft_transfer_erc721_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
@@ -1163,7 +1163,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftUpdateCashbackErc721(
-    \Tatum\Model\NftUpdateCashbackErc721Request $nft_update_cashback_erc721_request, 
+    \Tatum\Model\NftUpdateCashbackErc721Request $nft_update_cashback_erc721_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```

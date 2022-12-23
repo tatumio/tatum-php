@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccountData()** | [**\Tatum\Model\XrpAccountAccountData**](XrpAccountAccountData.md) |  | [optional]
 **getLedgerCurrentIndex()** | **float** | The Ledger Index of the current open ledger these stats describe. | [optional]

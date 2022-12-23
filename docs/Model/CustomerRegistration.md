@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccountingCurrency()** | **string** | The ISO 4217 code of the currency in which all transactions for all virtual accounts of the customer will be billed; to overwrite the currency for this specific virtual account, set the <code>accountingCurrency</code> parameter at the account level. | [optional] [default to 'EUR']
 **getCustomerCountry()** | **string** | The ISO 3166-1 code of the country that the customer has to be compliant with | [optional]

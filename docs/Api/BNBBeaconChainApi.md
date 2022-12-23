@@ -419,12 +419,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTxByAccount(
-    string $address, 
-    float $start_time, 
-    float $end_time, 
-    [ float $limit,  ]
-    [ float $offset,  ]
-    [ string $asset,  ]
+    string $address,
+    float $start_time,
+    float $end_time,
+    [ float $limit, ]
+    [ float $offset, ]
+    [ string $asset, ]
     [ string $address_type ]
 ): \Tatum\Model\BnbTxInAccount
 ```

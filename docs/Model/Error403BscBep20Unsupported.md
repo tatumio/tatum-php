@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | bsc.bep20.unsupported |
 **getMessage()** | **string** | Unsupported ETH BEP20 blockchain. |

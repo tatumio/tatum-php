@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | trade.currency2AccountId.frozen |
 **getMessage()** | **string** | Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade. |

@@ -198,7 +198,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressBsc
 ```
@@ -668,7 +668,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscWeb3Driver(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

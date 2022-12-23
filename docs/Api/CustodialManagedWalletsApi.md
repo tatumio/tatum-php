@@ -131,7 +131,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallet(
-    string $id, 
+    string $id,
     [ bool $export = false ]
 ): \Tatum\Model\CustodialManagedAddress[]
 ```

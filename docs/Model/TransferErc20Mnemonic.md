@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSenderAccountId()** | **string** | Sender account ID |
 **getAddress()** | **string** | Blockchain address to send ERC20 token to |

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFrom()** | **string** | Address of the sender. | [optional]
 **getTo()** | **string** | Address of the receiver. 'null' when its a contract creation transaction. | [optional]

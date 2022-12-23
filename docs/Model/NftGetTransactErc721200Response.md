@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getBlockHash()** | **string** | Hash of the block where this transaction was in. | [optional]
 **getStatus()** | **float** | Status of the transaction | [optional]

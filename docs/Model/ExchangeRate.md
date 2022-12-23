@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | FIAT or crypto asset. |
 **getValue()** | **string** | FIAT value of the asset in given base pair. |

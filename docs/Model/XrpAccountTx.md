@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccount()** | **string** | Unique Address identifying the related account. | [optional]
 **getLedgerIndexMax()** | **float** | The ledger index of the earliest ledger actually searched for transactions. | [optional]

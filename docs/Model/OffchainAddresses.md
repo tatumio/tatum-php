@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](OffchainAddressesAddressesInner.md) |  |
 

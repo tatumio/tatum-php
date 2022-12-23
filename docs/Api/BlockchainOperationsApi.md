@@ -1677,7 +1677,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneDeployHrm20(
-    \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request, 
+    \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\EthDeployErc20200Response
 ```
@@ -1740,7 +1740,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneTransfer(
-    \Tatum\Model\EthTransferRequest $eth_transfer_request, 
+    \Tatum\Model\EthTransferRequest $eth_transfer_request,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\BtcTransfer200Response
 ```
@@ -1861,7 +1861,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->registerErc20Token(
-    string $chain, 
+    string $chain,
     \Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
@@ -1982,7 +1982,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeCeloErc20Address(
-    string $address, 
+    string $address,
     string $name
 )
 ```
@@ -2043,7 +2043,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
-    string $address, 
+    string $address,
     string $name
 )
 ```
@@ -2104,7 +2104,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTrcAddress(
-    string $address, 
+    string $address,
     string $name
 )
 ```

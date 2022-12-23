@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSymbol()** | **string** | Name of the TRC token - stored as a symbol on Blockchain |
 **getSupply()** | **string** | max supply of TRC token. |

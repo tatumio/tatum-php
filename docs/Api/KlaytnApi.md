@@ -198,7 +198,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\KlaytnGenerateAddress200Response
 ```
@@ -668,7 +668,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->klaytn()->klaytnWeb3Driver(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxId()** | **string** | The ID of the transaction | [optional]
 **getNftAddress()** | **string** | The blockchain address of the minted NFT | [optional]

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getPair()** | **string** | Trading pair |
 **getFrom()** | **float** | Start interval in UTC millis. |

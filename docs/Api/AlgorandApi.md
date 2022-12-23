@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algoNodeGetDriver(
-    string $x_api_key, 
+    string $x_api_key,
     string $algod_path
 ): \Tatum\Model\AlgoBlock
 ```
@@ -89,7 +89,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algoNodeIndexerGetDriver(
-    string $x_api_key, 
+    string $x_api_key,
     string $indexer_path
 ): \Tatum\Model\AlgoTx
 ```
@@ -153,8 +153,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algoNodePostDriver(
-    string $x_api_key, 
-    string $algod_path, 
+    string $x_api_key,
+    string $algod_path,
     \Tatum\Model\AlgoNodePostDriverRequest $algo_node_post_driver_request
 ): \Tatum\Model\AlgoNodePostDriver200Response
 ```
@@ -684,9 +684,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetPayTransactionsByFromTo(
-    string $from, 
-    string $to, 
-    [ string $limit,  ]
+    string $from,
+    string $to,
+    [ string $limit, ]
     [ string $next ]
 ): \Tatum\Model\AlgoTxsWithPagination
 ```

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** | Address to send assets from. |
 **getPrivateKey()** | **string** | Private key of the address to send assets from. Private key, or signature Id must be present. | [optional]

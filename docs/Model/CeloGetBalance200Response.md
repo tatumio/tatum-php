@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getCelo()** | **string** | Balance of Celo | [optional]
 **getCUsd()** | **string** | Balance of cUSD | [optional]

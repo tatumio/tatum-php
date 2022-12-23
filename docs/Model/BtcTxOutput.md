@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getValue()** | **float** | Sent amount in satoshis. | [optional]
 **getScript()** | **string** | Transaction script. | [optional]

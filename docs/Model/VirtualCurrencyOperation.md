@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccountId()** | **string** | Ledger account with currency of the virtual currency, on which the operation will be performed. |
 **getAmount()** | **string** | Amount of virtual currency to operate within this operation. |

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccounts()** | **float[]** |  | [optional]
 **getData()** | **string** |  | [optional]

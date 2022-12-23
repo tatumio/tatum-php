@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getCurrentLedgerSize()** | **string** | Number of transactions provisionally included in the in-progress ledger. | [optional]
 **getCurrentQueueSize()** | **string** | Number of transactions currently queued for the next ledger. | [optional]

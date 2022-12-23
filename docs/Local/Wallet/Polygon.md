@@ -15,7 +15,7 @@ Method | Description
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->polygon()->generateWallet(
-    ?string $mnemonic
+    [ string $mnemonic = null ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -69,8 +69,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->polygon()->generateAddressFromXpub(
-    ?string $xpub, 
-    ?int $index
+    string $xpub,
+    int $index
 ): \Tatum\Model\GeneratedAddressBtc
 ```
 
@@ -128,7 +128,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->polygon()->generateAddressFromPrivateKey(
-    ?\Tatum\Model\PrivKey $privateKey
+    \Tatum\Model\PrivKey $privateKey
 ): \Tatum\Model\GeneratedAddressBtc
 ```
 
@@ -182,8 +182,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->polygon()->generatePrivateKey(
-    ?string $mnemonic, 
-    ?int $index
+    string $mnemonic,
+    int $index
 ): \Tatum\Model\PrivKey
 ```
 

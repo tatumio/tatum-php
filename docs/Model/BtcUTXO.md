@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getVersion()** | **float** | The version of the transaction | [optional]
 **getHeight()** | **float** | The height (number) of the block where the transaction is included in | [optional]

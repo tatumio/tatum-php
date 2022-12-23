@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | Event type | [optional]
 **getFields()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInner[]**](FlowEventPayloadValueFieldsInner.md) |  | [optional]

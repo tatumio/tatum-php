@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | broadcast.failed.withdrawalId |
 **getMessage()** | **string** | WithdrawalId must be present. |

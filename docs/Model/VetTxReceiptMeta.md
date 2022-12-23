@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getBlockId()** | **string** |  | [optional]
 **getBlockNumber()** | **float** |  | [optional]

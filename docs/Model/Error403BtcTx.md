@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | transaction.invalid.body |
 **getMessage()** | **string** | Either UTXO, or addresses must be present. |

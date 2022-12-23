@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getBlockNumber()** | **float** | Block number |
 **getTxId()** | **string** | Transaction ID |

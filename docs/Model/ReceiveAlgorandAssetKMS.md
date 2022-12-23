@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFrom()** | **string** | Blockchain sender address. |
 **getAssetId()** | **float** | AssetID of the asset you wanna enable for the sender. |

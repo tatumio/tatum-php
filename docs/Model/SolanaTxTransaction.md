@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getMessage()** | [**\Tatum\Model\SolanaTxMessage**](SolanaTxMessage.md) |  | [optional]
 **getSignatures()** | **string[]** |  | [optional]

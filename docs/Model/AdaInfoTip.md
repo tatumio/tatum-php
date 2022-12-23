@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getNumber()** | **float** | Last block. | [optional]
 **getSlotNo()** | **float** | Last slot number. | [optional]

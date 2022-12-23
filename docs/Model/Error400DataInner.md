@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTarget()** | **array<string,mixed>** | Request object present in the body of the HTTP request |
 **getValue()** | **float** | Value of the target object which validation is wrong. Can be of any data type, example here is using type number. | [optional]

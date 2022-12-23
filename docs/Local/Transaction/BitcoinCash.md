@@ -12,7 +12,7 @@ Method | Description
 
 ```php
 $sdk->{mainnet/testnet}()->local()->transaction()->bitcoinCash()->sign(
-    ?\Tatum\Local\Transaction\Bitcoin\Transfer $transfer
+    \Tatum\Local\Transaction\Bitcoin\Transfer $transfer
 ): string
 ```
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainUtils()->getAuctionEstimatedTime(
-    string $chain, 
+    string $chain,
     string $date
 ): float
 ```
@@ -78,7 +78,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainUtils()->sCGetContractAddress(
-    string $chain, 
+    string $chain,
     string $hash
 ): \Tatum\Model\SCGetContractAddress200Response
 ```

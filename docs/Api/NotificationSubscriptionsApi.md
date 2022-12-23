@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscription(
-    \Tatum\Model\CreateSubscriptionRequest $create_subscription_request, 
+    \Tatum\Model\CreateSubscriptionRequest $create_subscription_request,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
 ```
@@ -245,9 +245,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooks(
-    float $page_size, 
-    [ float $offset,  ]
-    [ string $direction,  ]
+    float $page_size,
+    [ float $offset, ]
+    [ string $direction, ]
     [ bool $failed ]
 ): \Tatum\Model\WebHook[]
 ```
@@ -319,9 +319,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooksCount(
-    float $page_size, 
-    [ float $offset,  ]
-    [ string $direction,  ]
+    float $page_size,
+    [ float $offset, ]
+    [ string $direction, ]
     [ bool $failed ]
 ): \Tatum\Model\EntitiesCount
 ```
@@ -452,8 +452,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptions(
-    float $page_size, 
-    [ float $offset,  ]
+    float $page_size,
+    [ float $offset, ]
     [ string $address ]
 ): \Tatum\Model\Subscription[]
 ```
@@ -521,8 +521,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionsCount(
-    float $page_size, 
-    [ float $offset,  ]
+    float $page_size,
+    [ float $offset, ]
     [ string $address ]
 ): \Tatum\Model\EntitiesCount
 ```

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | withdrawal.prepare.failed |
 **getMessage()** | **string** | Unable to prepare transaction, withdrawal cancelled. |

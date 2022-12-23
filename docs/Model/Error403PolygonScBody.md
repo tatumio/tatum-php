@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | polygon.sc.invalid |
 **getMessage()** | **string** | Invalid parameters for smart contract invocation. |

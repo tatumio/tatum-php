@@ -82,7 +82,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\DogeGenerateAddress200Response
 ```
@@ -546,7 +546,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetUTXO(
-    string $hash, 
+    string $hash,
     float $index
 ): \Tatum\Model\DogeUTXO
 ```

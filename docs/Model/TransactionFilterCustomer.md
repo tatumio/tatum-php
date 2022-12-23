@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | Customer internal ID to search for. |
 **getAccount()** | **string** | Source account - source of transaction(s). | [optional]

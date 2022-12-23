@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | account.xpub.missing |
 **getMessage()** | **string** | No xpub assigned to account, it is not possible to generate address. Use assignAddress method instead. |

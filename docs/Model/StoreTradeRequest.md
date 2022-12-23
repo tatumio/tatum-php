@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of future the trade, FUTURE_BUY, FUTURE_SELL |
 **getPrice()** | **string** | Price to buy / sell |

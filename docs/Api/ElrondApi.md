@@ -194,7 +194,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddress(
-    string $mnemonic, 
+    string $mnemonic,
     float $index
 ): \Tatum\Model\EgldGenerateAddress200Response
 ```
@@ -729,7 +729,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldNodePost(
-    string $x_api_key, 
+    string $x_api_key,
     object $body
 ): object
 ```

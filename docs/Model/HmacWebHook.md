@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getHmacSecret()** | **string** | Your HMAC secret password, which is used for signing the webhook payload. |
 

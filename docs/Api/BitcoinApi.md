@@ -84,7 +84,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressBtc
 ```
@@ -607,8 +607,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetTxByAddress(
-    string $address, 
-    float $page_size, 
+    string $address,
+    float $page_size,
     [ float $offset ]
 ): \Tatum\Model\BtcTx[]
 ```
@@ -676,7 +676,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetUTXO(
-    string $hash, 
+    string $hash,
     float $index
 ): \Tatum\Model\BtcUTXO
 ```

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | withdrawal.failed.transaction.failed |
 **getMessage()** | **string** | Unable to store withdrawal, it is impossible to create transaction. |

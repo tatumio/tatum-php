@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSafe()** | **string** | Safe gas price in wei. |
 **getStandard()** | **string** | Standard gas price in wei. |

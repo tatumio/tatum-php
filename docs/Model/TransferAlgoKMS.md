@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSenderAccountId()** | **string** | The ID of the virtual account to send Algos from |
 **getAddress()** | **string** | The blockchain address to send Algos to |

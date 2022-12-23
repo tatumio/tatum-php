@@ -81,7 +81,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\AdaGenerateAddress200Response
 ```
@@ -492,8 +492,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGetTxByAddress(
-    string $address, 
-    float $page_size, 
+    string $address,
+    float $page_size,
     [ float $offset ]
 ): \Tatum\Model\AdaTx[]
 ```

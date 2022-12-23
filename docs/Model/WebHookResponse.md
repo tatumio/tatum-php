@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getCode()** | **float** | HTTP Status | [optional]
 **getData()** | **string** | Response from the server | [optional]

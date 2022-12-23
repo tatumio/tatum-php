@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSenderAccountId()** | **string** | Sender account ID |
 **getAccount()** | **string** | XRP account address. Must be the one used for generating deposit tags. |

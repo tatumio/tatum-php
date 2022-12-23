@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | trade.feeAccount |
 **getMessage()** | **string** | Unable to find fee account ${trade.feeAccountId}. |

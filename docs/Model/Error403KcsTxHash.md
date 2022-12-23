@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | kcs.transaction.hash |
 **getMessage()** | **string** | Unable to calculate transaction hash. ${error} |

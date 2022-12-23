@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTimestamp()** | **float** | Milliseconds in UTC of the time interval. |
 **getHigh()** | **string** | Highest trade value in the current interval. |

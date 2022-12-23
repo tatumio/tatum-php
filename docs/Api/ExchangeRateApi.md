@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->exchangeRate()->getExchangeRate(
-    string $currency, 
+    string $currency,
     [ string $base_pair = 'EUR' ]
 ): \Tatum\Model\ExchangeRate
 ```

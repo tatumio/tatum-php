@@ -258,8 +258,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountTx(
-    string $account, 
-    [ float $min,  ]
+    string $account,
+    [ float $min, ]
     [ string $marker ]
 ): \Tatum\Model\XrpAccountTx
 ```

@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getMeta()** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMeta**](XrpAccountTxTransactionsInnerMeta.md) |  | [optional]
 **getTx()** | [**\Tatum\Model\XrpTx**](XrpTx.md) |  | [optional]

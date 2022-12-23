@@ -14,13 +14,13 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->deposit()->getDeposits(
-    [ float $page_size,  ]
-    [ float $page,  ]
-    [ string $sort,  ]
-    [ string $status,  ]
-    [ string $currency,  ]
-    [ string $tx_id,  ]
-    [ string $to,  ]
+    [ float $page_size, ]
+    [ float $page, ]
+    [ string $sort, ]
+    [ string $status, ]
+    [ string $currency, ]
+    [ string $tx_id, ]
+    [ string $to, ]
     [ string $account_id ]
 ): \Tatum\Model\Deposit[]
 ```
@@ -108,13 +108,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->deposit()->getDepositsCount(
-    [ float $page_size,  ]
-    [ float $page,  ]
-    [ string $sort,  ]
-    [ string $status,  ]
-    [ string $currency,  ]
-    [ string $tx_id,  ]
-    [ string $to,  ]
+    [ float $page_size, ]
+    [ float $page, ]
+    [ string $sort, ]
+    [ string $status, ]
+    [ string $currency, ]
+    [ string $tx_id, ]
+    [ string $to, ]
     [ string $account_id ]
 ): \Tatum\Model\EntitiesCount
 ```

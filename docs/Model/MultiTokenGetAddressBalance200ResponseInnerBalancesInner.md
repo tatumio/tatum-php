@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTokenId()** | **string** | Token ID. | [optional]
 **getAmount()** | **string** | Number of tokens held by the address. | [optional]

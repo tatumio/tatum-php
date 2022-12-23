@@ -194,12 +194,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTrades(
-    float $page_size, 
-    [ string $id,  ]
-    [ string $customer_id,  ]
-    [ float $offset,  ]
-    [ string $pair,  ]
-    [ bool $count,  ]
+    float $page_size,
+    [ string $id, ]
+    [ string $customer_id, ]
+    [ float $offset, ]
+    [ string $pair, ]
+    [ bool $count, ]
     [ string $trade_type ]
 ): \Tatum\Model\Trade[]
 ```
@@ -341,11 +341,11 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTrades(
-    float $page_size, 
-    [ string $id,  ]
-    [ string $pair,  ]
-    [ float $offset,  ]
-    [ bool $count,  ]
+    float $page_size,
+    [ string $id, ]
+    [ string $pair, ]
+    [ float $offset, ]
+    [ bool $count, ]
     [ string[] $types ]
 ): \Tatum\Model\Trade[]
 ```
@@ -541,12 +541,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getSellTrades(
-    float $page_size, 
-    [ string $id,  ]
-    [ string $customer_id,  ]
-    [ float $offset,  ]
-    [ string $pair,  ]
-    [ bool $count,  ]
+    float $page_size,
+    [ string $id, ]
+    [ string $customer_id, ]
+    [ float $offset, ]
+    [ string $pair, ]
+    [ bool $count, ]
     [ string $trade_type ]
 ): \Tatum\Model\Trade[]
 ```

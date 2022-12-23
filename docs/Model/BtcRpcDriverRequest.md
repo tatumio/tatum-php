@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getJsonrpc()** | **string** | Version of the JSON RPC. | [optional]
 **getId()** | **string** | ID of the request, could be any arbitrary identifier. | [optional]

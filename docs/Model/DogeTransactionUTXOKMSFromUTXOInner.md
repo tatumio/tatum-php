@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxHash()** | **string** | The transaction hash of the UTXO to be spent |
 **getValue()** | **string** | The amount to send (in DOGE) |

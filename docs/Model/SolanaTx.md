@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getBlockTime()** | **float** |  | [optional]
 **getMeta()** | [**\Tatum\Model\SolanaTxMeta**](SolanaTxMeta.md) |  | [optional]

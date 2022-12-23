@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getLedger()** | [**\Tatum\Model\XrpLedgerLedger**](XrpLedgerLedger.md) |  | [optional]
 **getLedgerHash()** | **string** | Unique identifying hash of the entire ledger. | [optional]

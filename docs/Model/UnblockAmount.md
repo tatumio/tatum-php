@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getRecipientAccountId()** | **string** | Internal recipient account ID within Tatum platform |
 **getAmount()** | **string** | Amount to be sent. Amount can be smaller then the blocked amount. |

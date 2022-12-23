@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccount()** | **string** | Blockchain account to send from |
 **getTransaction()** | **string** | Transaction string to send to the chain. |

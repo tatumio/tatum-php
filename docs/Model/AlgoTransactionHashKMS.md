@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTxId()** | **string** | TX hash of transaction. |
 **getAssetIndex()** | **float** | If transaction created new ASA asset, this value is the index of the asset on the network. | [optional]

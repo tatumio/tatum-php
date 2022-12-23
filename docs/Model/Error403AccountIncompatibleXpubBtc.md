@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | Address.generation.failed.wrong.xpub |
 **getMessage()** | **string** | Unable to generate address, wrong xpub and account type. |

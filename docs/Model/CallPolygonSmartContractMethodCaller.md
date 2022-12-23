@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getCaller()** | **string** | The address of the account, which will be sender and fee payer of this transaction |
 **getContractAddress()** | **string** | The address of the smart contract |

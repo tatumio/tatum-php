@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getWeight()** | **float** | The numerical weight of a signer. Used to determine if a transaction meets the threshold requirements. | [optional]
 **getKey()** | **string** | A hash of characters dependent on the signer type. | [optional]

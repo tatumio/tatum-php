@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSenderAccountId()** | **string** | Internal sender account ID within Tatum platform |
 **getRecipientAccountId()** | **string** | Internal recipient account ID within Tatum platform |

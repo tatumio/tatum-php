@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | Account ID. If present, list current active sell trades for that account. | [optional]
 **getCustomerId()** | **string** | Customer ID. If present, list current active buy trades for that customer. | [optional]

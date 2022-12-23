@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTo()** | **string** | Blockchain address to send assets. |
 **getCurrency()** | **string** | Currency to transfer from Binance Blockchain Account. |

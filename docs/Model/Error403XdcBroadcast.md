@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | xdc.broadcast.failed |
 **getMessage()** | **string** | Unable to broadcast transaction due to ${error}. |

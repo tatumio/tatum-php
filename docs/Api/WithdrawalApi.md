@@ -75,7 +75,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->cancelInProgressWithdrawal(
-    string $id, 
+    string $id,
     [ bool $revert = true ]
 )
 ```
@@ -136,7 +136,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->completeWithdrawal(
-    string $id, 
+    string $id,
     string $tx_id
 )
 ```
@@ -197,9 +197,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->getWithdrawals(
-    float $page_size, 
-    [ string $currency,  ]
-    [ string $status,  ]
+    float $page_size,
+    [ string $currency, ]
+    [ string $status, ]
     [ float $offset ]
 ): \Tatum\Model\WithdrawalObject[]
 ```

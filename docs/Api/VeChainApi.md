@@ -139,7 +139,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddress(
-    string $xpub, 
+    string $xpub,
     float $index
 ): \Tatum\Model\VetGenerateAddress200Response
 ```

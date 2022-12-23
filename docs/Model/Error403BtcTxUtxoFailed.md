@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | transaction.preparation.failed.utxo |
 **getMessage()** | **string** | Impossible to find last UTXO. |

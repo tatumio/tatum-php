@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAccount()** | **string** | Source account - source of transaction(s). | [optional]
 **getCounterAccount()** | **string** | Counter account - transaction(s) destination account. | [optional]

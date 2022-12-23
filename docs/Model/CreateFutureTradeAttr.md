@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getSealDate()** | **float** | Time in UTC when the future will be filled. |
 **getPercentBlock()** | **mixed** | Percentage of the future amount which selling or buying account must have available on future creation. This amount will be blocked till future is filled or expires. | [optional]

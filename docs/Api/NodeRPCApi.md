@@ -15,12 +15,12 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonPostRpcDriver(
-    string $chain, 
-    object $body, 
-    [ string $x_api_key,  ]
-    [ string $node_type,  ]
-    [ string $testnet_type = 'ethereum-sepolia',  ]
-    [ string $chain_type = 'avax-c',  ]
+    string $chain,
+    object $body,
+    [ string $x_api_key, ]
+    [ string $node_type, ]
+    [ string $testnet_type = 'ethereum-sepolia', ]
+    [ string $chain_type = 'avax-c', ]
     [ string $rpc_path ]
 ): object
 ```
@@ -103,9 +103,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcGetDriver(
-    string $chain, 
-    [ string $x_api_key,  ]
-    [ string $node_type,  ]
+    string $chain,
+    [ string $x_api_key, ]
+    [ string $node_type, ]
     [ string $rpc_path ]
 ): object
 ```
@@ -177,10 +177,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcPutDriver(
-    string $chain, 
-    object $body, 
-    [ string $x_api_key,  ]
-    [ string $node_type,  ]
+    string $chain,
+    object $body,
+    [ string $x_api_key, ]
+    [ string $node_type, ]
     [ string $rpc_path ]
 ): object
 ```

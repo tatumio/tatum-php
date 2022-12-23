@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTo()** | **string** | Blockchain address to send ERC20 token to |
 **getAmount()** | **string** | Amount to be sent. |

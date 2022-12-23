@@ -140,7 +140,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountTx(
-    string $account, 
+    string $account,
     [ string $pagination ]
 ): \Tatum\Model\XlmTx[]
 ```

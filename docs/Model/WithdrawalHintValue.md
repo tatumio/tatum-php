@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | [**\Tatum\Model\Address**](Address.md) |  | [optional]
 **getAmount()** | **string** | Balance for address. | [optional]

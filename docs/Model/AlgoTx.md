@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getCloseRewards()** | **float** | rewards applied to close-remainder-to account. | [optional]
 **getClosingAmount()** | **float** | closing amount for transaction. | [optional]

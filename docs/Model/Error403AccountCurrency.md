@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | ledger.currency.invalid |
 **getMessage()** | **string** | Unable to create an account, unsupported currency. |

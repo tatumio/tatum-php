@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | virtual.tx.failed |
 **getMessage()** | **string** | Unable to perform operation on virtual currency, impossible to store transaction. |

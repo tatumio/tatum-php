@@ -2,7 +2,7 @@
 
 ## Getters
 
-Method | Return type | Description | Notes
+Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getFromPrivateKey()** | **string** | Private key of the address, from which the TRX will be sent. |
 **getRecipient()** | **string** | Recipient address of created TRC20 tokens. |
