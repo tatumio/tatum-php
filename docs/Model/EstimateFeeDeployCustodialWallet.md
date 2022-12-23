@@ -1,11 +1,11 @@
 # EstimateFeeDeployCustodialWallet
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | Blockchain to estimate fee for. |
-**type** | **string** | Type of transaction |
-**batch_count** | **float** | Number of addresses to create |
+**getChain()** | **string** | Blockchain to estimate fee for. |
+**getType()** | **string** | Type of transaction |
+**getBatchCount()** | **float** | Number of addresses to create |
 
 [[Back to Index]](../index.md)

@@ -1,13 +1,13 @@
 # Blockage
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | ID of the blockage. | [optional]
-**account_id** | **string** | ID of the account this blockage is for. | [optional]
-**amount** | **string** | Amount blocked on account. | [optional]
-**type** | **string** | Type of blockage. | [optional]
-**description** | **string** | Description of blockage. | [optional]
+**getId()** | **string** | ID of the blockage. | [optional]
+**getAccountId()** | **string** | ID of the account this blockage is for. | [optional]
+**getAmount()** | **string** | Amount blocked on account. | [optional]
+**getType()** | **string** | Type of blockage. | [optional]
+**getDescription()** | **string** | Description of blockage. | [optional]
 
 [[Back to Index]](../index.md)

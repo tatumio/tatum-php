@@ -1,10 +1,10 @@
 # VetTxReceiptOutputsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**events** | **object[]** |  | [optional]
-**transfers** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](VetTxReceiptOutputsInnerTransfersInner.md) |  | [optional]
+**getEvents()** | **object[]** |  | [optional]
+**getTransfers()** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](VetTxReceiptOutputsInnerTransfersInner.md) |  | [optional]
 
 [[Back to Index]](../index.md)

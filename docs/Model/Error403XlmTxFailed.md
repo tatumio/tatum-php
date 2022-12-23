@@ -1,11 +1,11 @@
 # Error403XlmTxFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xlm.tx.failed |
-**message** | **string** | Unable to construct transaction. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xlm.tx.failed |
+**getMessage()** | **string** | Unable to construct transaction. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

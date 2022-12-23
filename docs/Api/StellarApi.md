@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -50,9 +50,8 @@ Broadcast signed XLM transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -82,7 +81,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountInfo(
-    ?string $account
+    string $account
 ): \Tatum\Model\XlmAccount
 ```
 
@@ -109,9 +108,8 @@ Get XLM Account info
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $account = 'GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H';
@@ -142,8 +140,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountTx(
-    ?string $account, 
-    ?string $pagination
+    string $account, 
+    [ string $pagination ]
 ): \Tatum\Model\XlmTx[]
 ```
 
@@ -171,9 +169,8 @@ Get XLM Account transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address of XLM account.
 $account = 'GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H';
@@ -231,9 +228,8 @@ Get actual XLM fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -285,9 +281,8 @@ Get XLM Blockchain Information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\XlmLedger $response */
@@ -315,7 +310,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedger(
-    ?string $sequence
+    string $sequence
 ): \Tatum\Model\XlmLedger
 ```
 
@@ -342,9 +337,8 @@ Get XLM Blockchain Ledger by sequence
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Sequence of the ledger.
 $sequence = 1;
@@ -375,7 +369,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedgerTx(
-    ?string $sequence
+    string $sequence
 ): \Tatum\Model\XlmTx[]
 ```
 
@@ -402,9 +396,8 @@ Get XLM Blockchain Transactions in Ledger
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Sequence of the ledger.
 $sequence = 1;
@@ -435,7 +428,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\XlmTx
 ```
 
@@ -462,9 +455,8 @@ Get XLM Transaction by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '749e4f8933221b9942ef38a02856803f379789ec8d971f1f60535db70135673e';
@@ -495,7 +487,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmTransferBlockchain(
-    ?\Tatum\Model\XlmTransferBlockchainRequest $xlm_transfer_blockchain_request
+    \Tatum\Model\XlmTransferBlockchainRequest $xlm_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -522,9 +514,8 @@ Send XLM from address to address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xlm_transfer_blockchain_request = new \Tatum\Model\XlmTransferBlockchainRequest();
 
@@ -554,7 +545,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineBlockchain(
-    ?\Tatum\Model\XlmTrustLineBlockchainRequest $xlm_trust_line_blockchain_request
+    \Tatum\Model\XlmTrustLineBlockchainRequest $xlm_trust_line_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -581,9 +572,8 @@ Create / Update / Delete XLM trust line
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xlm_trust_line_blockchain_request = new \Tatum\Model\XlmTrustLineBlockchainRequest();
 
@@ -637,9 +627,8 @@ Generate XLM account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\XlmWallet $response */

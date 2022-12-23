@@ -1,10 +1,10 @@
 # TronTxRawDataContractInnerParameter
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**\Tatum\Model\TronTxRawDataContractInnerParameterValue**](TronTxRawDataContractInnerParameterValue.md) |  | [optional]
-**type_url** | **string** | Type of the smart contract event. | [optional]
+**getValue()** | [**\Tatum\Model\TronTxRawDataContractInnerParameterValue**](TronTxRawDataContractInnerParameterValue.md) |  | [optional]
+**getTypeUrl()** | **string** | Type of the smart contract event. | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # CreateSubscriptionBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**attr** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](CreateSubscriptionBalanceAttr.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](CreateSubscriptionBalanceAttr.md) |  |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403CustomerInactive
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | customer.inactive |
-**message** | **string** | Unable to perform operation on inactive customer. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | customer.inactive |
+**getMessage()** | **string** | Unable to perform operation on inactive customer. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

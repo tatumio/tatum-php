@@ -1,11 +1,11 @@
 # Error403FeeFormat
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | fee.format |
-**message** | **string** | Fee has incorrect format. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | fee.format |
+**getMessage()** | **string** | Fee has incorrect format. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

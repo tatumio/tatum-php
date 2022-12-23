@@ -1,9 +1,9 @@
 # CeloGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Celo address | [optional]
+**getAddress()** | **string** | Celo address | [optional]
 
 [[Back to Index]](../index.md)

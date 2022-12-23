@@ -1,11 +1,11 @@
 # Error403OffchainBroadcastState
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | withdrawal.unexpected.state |
-**message** | **string** | Unable to complete withdrawal, which is not in InProgress state. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.unexpected.state |
+**getMessage()** | **string** | Unable to complete withdrawal, which is not in InProgress state. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

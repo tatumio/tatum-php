@@ -1,11 +1,11 @@
 # Error403OffchainCheck
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | withdrawal.check.currency |
-**message** | **string** | Withdrawal check available only for ETH based currencies. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.check.currency |
+**getMessage()** | **string** | Withdrawal check available only for ETH based currencies. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

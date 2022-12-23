@@ -13,8 +13,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->exchangeRate()->getExchangeRate(
-    ?string $currency, 
-    ?string $base_pair
+    string $currency, 
+    [ string $base_pair = 'EUR' ]
 ): \Tatum\Model\ExchangeRate
 ```
 
@@ -42,9 +42,8 @@ Get the current exchange rate for exchanging fiat/crypto assets
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The fiat or crypto asset to exchange
 $currency = 'BTC';

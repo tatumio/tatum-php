@@ -1,10 +1,10 @@
 # CreateSubscriptionKMSSuccess
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**attr** | [**\Tatum\Model\CreateSubscriptionKMSSuccessAttr**](CreateSubscriptionKMSSuccessAttr.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSSuccessAttr**](CreateSubscriptionKMSSuccessAttr.md) |  |
 
 [[Back to Index]](../index.md)

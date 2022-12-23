@@ -1,13 +1,13 @@
 # BchTxVinInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**txid** | **string** |  | [optional]
-**vout** | **float** |  | [optional]
-**script_sig** | [**\Tatum\Model\BchTxVinInnerScriptSig**](BchTxVinInnerScriptSig.md) |  | [optional]
-**coinbase** | **string** |  | [optional]
-**sequence** | **float** |  | [optional]
+**getTxid()** | **string** |  | [optional]
+**getVout()** | **float** |  | [optional]
+**getScriptSig()** | [**\Tatum\Model\BchTxVinInnerScriptSig**](BchTxVinInnerScriptSig.md) |  | [optional]
+**getCoinbase()** | **string** |  | [optional]
+**getSequence()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

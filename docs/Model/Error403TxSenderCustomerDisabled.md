@@ -1,11 +1,11 @@
 # Error403TxSenderCustomerDisabled
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | senderAccount.customer.disabled |
-**message** | **string** | Sender accounts customer ${senderAccount.customerId} is disabled, unable to perform payment. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | senderAccount.customer.disabled |
+**getMessage()** | **string** | Sender accounts customer ${senderAccount.customerId} is disabled, unable to perform payment. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

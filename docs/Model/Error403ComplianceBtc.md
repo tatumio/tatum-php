@@ -1,11 +1,11 @@
 # Error403ComplianceBtc
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | compliance.country.btc.not.supported |
-**message** | **string** | Customer country not supported for BTC. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | compliance.country.btc.not.supported |
+**getMessage()** | **string** | Customer country not supported for BTC. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

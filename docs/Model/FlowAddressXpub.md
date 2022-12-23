@@ -1,10 +1,10 @@
 # FlowAddressXpub
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | The ID of the transaction |
-**address** | **string** | The generated blockchain address |
+**getTxId()** | **string** | The ID of the transaction |
+**getAddress()** | **string** | The generated blockchain address |
 
 [[Back to Index]](../index.md)

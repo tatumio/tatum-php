@@ -1,11 +1,11 @@
 # CreateCurrency403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | virtual.creation.error |
-**message** | **string** | It is not possible to create virtual currency. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | virtual.creation.error |
+**getMessage()** | **string** | It is not possible to create virtual currency. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

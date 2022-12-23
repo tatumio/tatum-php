@@ -1,10 +1,10 @@
 # XrpInfo
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ledger_hash** | **string** | Current ledger hash. | [optional]
-**ledger_index** | **float** | Current ledger index. | [optional]
+**getLedgerHash()** | **string** | Current ledger hash. | [optional]
+**getLedgerIndex()** | **float** | Current ledger index. | [optional]
 
 [[Back to Index]](../index.md)

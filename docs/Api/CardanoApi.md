@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -50,9 +50,8 @@ Broadcast signed Ada transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -82,8 +81,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\AdaGenerateAddress200Response
 ```
 
@@ -111,9 +110,8 @@ Generate Ada deposit address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of a wallet.
 $xpub = '30e96a57be6235c686da968c1860f69d1871a692b29626b7ebb923aff8c6731cb9fef3a26b7eba8a07653483d06427d0c07966c5f81c69a7925d714530bedb1ef9e9103547b54ad0954b3569785ca70e1fd08313f92a3a9d31efa216b2b9adac4678455e66c97b53cd589f9da70a14265cf15cd4c1e0ce914407008f4a65f316';
@@ -147,7 +145,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -174,9 +172,8 @@ Generate Ada private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -206,7 +203,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -233,9 +230,8 @@ Generate Ada wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -266,7 +262,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGetAccount(
-    ?string $address
+    string $address
 ): array[]
 ```
 
@@ -293,9 +289,8 @@ Gets a Ada account by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address
 $address = 'Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz';
@@ -326,7 +321,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\AdaBlock
 ```
 
@@ -353,9 +348,8 @@ Get Block by hash or height
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $hash = '00000000ca231a439a5c0a86a5a5dd6dc1918a8e897b96522fa9499288e70183';
@@ -410,9 +404,8 @@ Get Blockchain information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\AdaInfo $response */
@@ -440,7 +433,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGetRawTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\AdaTx
 ```
 
@@ -467,9 +460,8 @@ Get transaction by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '1451692ebbfbea1a2d2ec6fe6782596b6aa2e46c0589d04c406f491b5b46bc6a';
@@ -500,9 +492,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGetTxByAddress(
-    ?string $address, 
-    ?float $page_size, 
-    ?float $offset
+    string $address, 
+    float $page_size, 
+    [ float $offset ]
 ): \Tatum\Model\AdaTx[]
 ```
 
@@ -531,9 +523,8 @@ Get transactions by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address
 $address = 'Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz';
@@ -570,7 +561,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaGetUTXOByAddress(
-    ?string $address
+    string $address
 ): \Tatum\Model\AdaUTXO[]
 ```
 
@@ -597,9 +588,8 @@ Get UTXOs by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address
 $address = 'Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz';
@@ -630,7 +620,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->cardano()->adaTransferBlockchain(
-    ?\Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request
+    \Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -657,9 +647,8 @@ Send ADA to Cardano addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $ada_transfer_blockchain_request = new \Tatum\Model\AdaTransferBlockchainRequest();
 

@@ -1,14 +1,14 @@
 # TronTx20
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | Transaction ID. |
-**token_info** | [**\Tatum\Model\TronTx20TokenInfo**](TronTx20TokenInfo.md) |  |
-**from** | **string** |  |
-**to** | **string** |  |
-**type** | **string** |  |
-**value** | **string** |  |
+**getTxId()** | **string** | Transaction ID. |
+**getTokenInfo()** | [**\Tatum\Model\TronTx20TokenInfo**](TronTx20TokenInfo.md) |  |
+**getFrom()** | **string** |  |
+**getTo()** | **string** |  |
+**getType()** | **string** |  |
+**getValue()** | **string** |  |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # SolanaMarketplaceSellTransactionHash
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | The hash (ID) of the transaction |
-**listing_id** | **string** | The ID of the listing |
+**getTxId()** | **string** | The hash (ID) of the transaction |
+**getListingId()** | **string** | The ID of the listing |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Subscription
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**id** | **string** | ID of the subscription |
-**attr** | **object** | Additional attributes based on the subscription type. | [optional]
+**getType()** | **string** | Type of the subscription. |
+**getId()** | **string** | ID of the subscription |
+**getAttr()** | **object** | Additional attributes based on the subscription type. | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # GetSubscriptionReport403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | report.invalid |
-**message** | **string** | Unsupported report type. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | report.invalid |
+**getMessage()** | **string** | Unsupported report type. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

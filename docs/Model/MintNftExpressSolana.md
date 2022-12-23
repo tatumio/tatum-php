@@ -1,11 +1,11 @@
 # MintNftExpressSolana
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**to** | **string** | The blockchain address to send the NFT to |
-**metadata** | [**\Tatum\Model\SolanaNftExpressMetadata**](SolanaNftExpressMetadata.md) |  |
+**getChain()** | **string** | The blockchain to work with |
+**getTo()** | **string** | The blockchain address to send the NFT to |
+**getMetadata()** | [**\Tatum\Model\SolanaNftExpressMetadata**](SolanaNftExpressMetadata.md) |  |
 
 [[Back to Index]](../index.md)

@@ -1,9 +1,9 @@
 # XrpTxMetaAffectedNodesInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modified_node** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](XrpTxMetaAffectedNodesInnerModifiedNode.md) |  | [optional]
+**getModifiedNode()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](XrpTxMetaAffectedNodesInnerModifiedNode.md) |  | [optional]
 
 [[Back to Index]](../index.md)

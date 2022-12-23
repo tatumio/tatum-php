@@ -1,11 +1,11 @@
 # Error403OffchainCancelled
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | withdrawal.prepare.failed |
-**message** | **string** | Unable to prepare transaction, withdrawal cancelled. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.prepare.failed |
+**getMessage()** | **string** | Unable to prepare transaction, withdrawal cancelled. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

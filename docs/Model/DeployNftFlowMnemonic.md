@@ -1,12 +1,12 @@
 # DeployNftFlowMnemonic
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**account** | **string** | Blockchain address of the sender account. |
-**mnemonic** | **string** | Mnemonic to generate private key of sender address. |
-**index** | **int** | Derivation index of sender address. |
+**getChain()** | **string** | The blockchain to work with |
+**getAccount()** | **string** | Blockchain address of the sender account. |
+**getMnemonic()** | **string** | Mnemonic to generate private key of sender address. |
+**getIndex()** | **int** | Derivation index of sender address. |
 
 [[Back to Index]](../index.md)

@@ -26,8 +26,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainSmartContractInvocation(
-    ?\Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
 
@@ -55,9 +55,8 @@ Invoke a method in a smart contract on Ethereum
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_blockchain_smart_contract_invocation_request = new \Tatum\Model\EthBlockchainSmartContractInvocationRequest();
 
@@ -90,8 +89,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainTransfer(
-    ?\Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -119,9 +118,8 @@ Send Ethereum / ERC20 from account to account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_blockchain_transfer_request = new \Tatum\Model\EthBlockchainTransferRequest();
 
@@ -154,8 +152,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms, 
-    ?string $x_testnet_type
+    \Tatum\Model\BroadcastKMS $broadcast_kms, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -183,9 +181,8 @@ Broadcast signed Ethereum transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -218,9 +215,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddress(
-    ?string $xpub, 
-    ?float $index, 
-    ?string $x_testnet_type
+    string $xpub, 
+    float $index, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\GeneratedAddressEth
 ```
 
@@ -249,9 +246,8 @@ Generate Ethereum account address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -288,8 +284,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\PrivKeyRequest $priv_key_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\PrivKey
 ```
 
@@ -317,9 +313,8 @@ Generate Ethereum private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -352,8 +347,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateWallet(
-    ?string $mnemonic, 
-    ?string $x_testnet_type
+    [ string $mnemonic,  ]
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -381,9 +376,8 @@ Generate Ethereum wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generating extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -417,8 +411,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBalance(
-    ?string $address, 
-    ?string $x_testnet_type
+    string $address, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBalance
 ```
 
@@ -446,9 +440,8 @@ Get the ETH balance of an Ethereum account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
@@ -482,8 +475,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBlock(
-    ?string $hash, 
-    ?string $x_testnet_type
+    string $hash, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBlock
 ```
 
@@ -511,9 +504,8 @@ Get Ethereum block by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $hash = 6470657;
@@ -547,7 +539,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetCurrentBlock(
-    ?string $x_testnet_type
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): float
 ```
 
@@ -574,9 +566,8 @@ Get current block number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
 $x_testnet_type = 'ethereum-sepolia';
@@ -607,10 +598,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetInternalTransactionByAddress(
-    ?string $address, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?string $x_testnet_type
+    string $address, 
+    float $page_size, 
+    [ float $offset,  ]
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthTxInternal[]
 ```
 
@@ -640,9 +631,8 @@ Get Ethereum internal transactions by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
@@ -682,8 +672,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransaction(
-    ?string $hash, 
-    ?string $x_testnet_type
+    string $hash, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthTx
 ```
 
@@ -711,9 +701,8 @@ Get Ethereum Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
@@ -747,13 +736,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionByAddress(
-    ?string $address, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?float $from, 
-    ?float $to, 
-    ?string $sort, 
-    ?string $x_testnet_type
+    string $address, 
+    float $page_size, 
+    [ float $offset,  ]
+    [ float $from,  ]
+    [ float $to,  ]
+    [ string $sort = 'DESC',  ]
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthTx[]
 ```
 
@@ -786,9 +775,8 @@ Get Ethereum transactions by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
@@ -837,8 +825,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionCount(
-    ?string $address, 
-    ?string $x_testnet_type
+    string $address, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): float
 ```
 
@@ -866,9 +854,8 @@ Get count of outgoing Ethereum transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // address
 $address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
@@ -902,9 +889,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->ethereum()->ethWeb3Driver(
-    ?string $x_api_key, 
-    ?object $body, 
-    ?string $testnet_type
+    string $x_api_key, 
+    object $body, 
+    [ string $testnet_type = 'ethereum-sepolia' ]
 ): object
 ```
 
@@ -933,9 +920,8 @@ Web3 HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';

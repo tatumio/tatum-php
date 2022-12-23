@@ -1,10 +1,10 @@
 # CreateSubscriptionPartialTradeMatch
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**attr** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatchAttr**](CreateSubscriptionPartialTradeMatchAttr.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatchAttr**](CreateSubscriptionPartialTradeMatchAttr.md) |  |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error401NotActive
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.not.active |
-**message** | **string** | Subscription not active anymore. |
-**status_code** | **float** | 401 |
+**getErrorCode()** | **string** | subscription.not.active |
+**getMessage()** | **string** | Subscription not active anymore. |
+**getStatusCode()** | **float** | 401 |
 
 [[Back to Index]](../index.md)

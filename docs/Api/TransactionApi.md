@@ -18,10 +18,10 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->getTransactions(
-    ?\Tatum\Model\TransactionFilterLedger $transaction_filter_ledger, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?bool $count
+    \Tatum\Model\TransactionFilterLedger $transaction_filter_ledger, 
+    [ float $page_size,  ]
+    [ float $offset,  ]
+    [ bool $count ]
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```
 
@@ -51,9 +51,8 @@ Find transactions within the ledger.
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $transaction_filter_ledger = new \Tatum\Model\TransactionFilterLedger();
 
@@ -92,10 +91,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByAccountId(
-    ?\Tatum\Model\TransactionFilter $transaction_filter, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?bool $count
+    \Tatum\Model\TransactionFilter $transaction_filter, 
+    [ float $page_size,  ]
+    [ float $offset,  ]
+    [ bool $count ]
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```
 
@@ -125,9 +124,8 @@ Find transactions for account.
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $transaction_filter = new \Tatum\Model\TransactionFilter();
 
@@ -166,10 +164,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByCustomerId(
-    ?\Tatum\Model\TransactionFilterCustomer $transaction_filter_customer, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?bool $count
+    \Tatum\Model\TransactionFilterCustomer $transaction_filter_customer, 
+    [ float $page_size,  ]
+    [ float $offset,  ]
+    [ bool $count ]
 ): \Tatum\Model\GetTransactionsByAccountId200Response
 ```
 
@@ -199,9 +197,8 @@ Find transactions for a customer across all of the customer's accounts.
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $transaction_filter_customer = new \Tatum\Model\TransactionFilterCustomer();
 
@@ -240,7 +237,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByReference(
-    ?string $reference
+    string $reference
 ): \Tatum\Model\Transaction[]
 ```
 
@@ -267,9 +264,8 @@ Find transactions with a given reference across all accounts.
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $reference = 'reference_example';
 
@@ -299,7 +295,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->sendTransaction(
-    ?\Tatum\Model\CreateTransaction $create_transaction
+    \Tatum\Model\CreateTransaction $create_transaction
 ): \Tatum\Model\TransactionResult
 ```
 
@@ -326,9 +322,8 @@ Send payment
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_transaction = new \Tatum\Model\CreateTransaction();
 
@@ -358,7 +353,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->transaction()->sendTransactionBatch(
-    ?\Tatum\Model\BatchCreateTransaction $batch_create_transaction
+    \Tatum\Model\BatchCreateTransaction $batch_create_transaction
 ): string[]
 ```
 
@@ -385,9 +380,8 @@ Send payment in batch
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $batch_create_transaction = new \Tatum\Model\BatchCreateTransaction();
 

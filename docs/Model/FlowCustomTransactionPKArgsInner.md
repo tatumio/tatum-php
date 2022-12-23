@@ -1,11 +1,11 @@
 # FlowCustomTransactionPKArgsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**\Tatum\Model\FlowCustomTransactionPKArgsInnerValue**](FlowCustomTransactionPKArgsInnerValue.md) |  |
-**type** | **string** | Type of the argument |
-**sub_type** | **string** | Type of the argument | [optional]
+**getValue()** | [**\Tatum\Model\FlowCustomTransactionPKArgsInnerValue**](FlowCustomTransactionPKArgsInnerValue.md) |  |
+**getType()** | **string** | Type of the argument |
+**getSubType()** | **string** | Type of the argument | [optional]
 
 [[Back to Index]](../index.md)

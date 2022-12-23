@@ -1,13 +1,13 @@
 # TronTxRawData
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contract** | [**\Tatum\Model\TronTxRawDataContractInner[]**](TronTxRawDataContractInner.md) | Smart contract invocations details. |
-**ref_block_bytes** | **float** | The height of the transaction reference block. | [optional]
-**ref_block_hash** | **float** | The hash of the transaction reference block. | [optional]
-**expiration** | **float** | Expiration of the transaction. |
-**timestamp** | **float** | Time of the transaction. |
+**getContract()** | [**\Tatum\Model\TronTxRawDataContractInner[]**](TronTxRawDataContractInner.md) | Smart contract invocations details. |
+**getRefBlockBytes()** | **float** | The height of the transaction reference block. | [optional]
+**getRefBlockHash()** | **float** | The hash of the transaction reference block. | [optional]
+**getExpiration()** | **float** | Expiration of the transaction. |
+**getTimestamp()** | **float** | Time of the transaction. |
 
 [[Back to Index]](../index.md)

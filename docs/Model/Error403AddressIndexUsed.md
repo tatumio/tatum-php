@@ -1,11 +1,11 @@
 # Error403AddressIndexUsed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | Address.index.used |
-**message** | **string** | Unable to create address, derivation index is already used. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | Address.index.used |
+**getMessage()** | **string** | Unable to create address, derivation index is already used. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

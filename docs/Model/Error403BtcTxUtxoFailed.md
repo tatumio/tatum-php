@@ -1,11 +1,11 @@
 # Error403BtcTxUtxoFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | transaction.preparation.failed.utxo |
-**message** | **string** | Impossible to find last UTXO. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | transaction.preparation.failed.utxo |
+**getMessage()** | **string** | Impossible to find last UTXO. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,9 +1,9 @@
 # VetGetEnergy200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**energy** | **string** | Balance in VTHO | [optional]
+**getEnergy()** | **string** | Balance in VTHO | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # UnblockAmountWithTransaction403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | transaction.not.compliant |
-**message** | **string** | Transaction not compliant, recipient account customer country is not defined. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | transaction.not.compliant |
+**getMessage()** | **string** | Transaction not compliant, recipient account customer country is not defined. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,9 +1,9 @@
 # Data
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Tatum\Model\DataData**](DataData.md) |  |
+**getData()** | [**\Tatum\Model\DataData**](DataData.md) |  |
 
 [[Back to Index]](../index.md)

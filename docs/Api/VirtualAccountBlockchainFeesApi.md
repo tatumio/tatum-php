@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()->offchainEstimateFee(
-    ?\Tatum\Model\OffchainEstimateFee $offchain_estimate_fee
+    \Tatum\Model\OffchainEstimateFee $offchain_estimate_fee
 ): \Tatum\Model\FeeBtc
 ```
 
@@ -40,9 +40,8 @@ Estimate ledger to blockchain transaction fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $offchain_estimate_fee = new \Tatum\Model\OffchainEstimateFee();
 

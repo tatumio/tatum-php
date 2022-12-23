@@ -1,9 +1,9 @@
 # CheckMalicousAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **string** | Whether address is malicous or not | [optional]
+**getStatus()** | **string** | Whether address is malicous or not | [optional]
 
 [[Back to Index]](../index.md)

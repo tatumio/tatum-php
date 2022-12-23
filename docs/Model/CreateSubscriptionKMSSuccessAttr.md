@@ -1,9 +1,9 @@
 # CreateSubscriptionKMSSuccessAttr
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **string** | URL of the endpoint, where HTTP POST request will be sent, when tx is sucessfully broadcasted using Tatum KMS. |
+**getUrl()** | **string** | URL of the endpoint, where HTTP POST request will be sent, when tx is sucessfully broadcasted using Tatum KMS. |
 
 [[Back to Index]](../index.md)

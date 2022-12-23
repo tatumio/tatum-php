@@ -1,11 +1,11 @@
 # Error403TxAmountAdaOffchain
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | amount.ada |
-**message** | **string** | ADA payment amount must be at least 0.000000000001, not ${transaction.amount}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | amount.ada |
+**getMessage()** | **string** | ADA payment amount must be at least 0.000000000001, not ${transaction.amount}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,14 +1,14 @@
 # MintNftAlgorandKMS
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**url** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
-**name** | **string** | The name of the NFT |
-**from** | **string** | The address of the minting account |
-**signature_id** | **string** | The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account |
-**attr** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](MintNftExpressAlgorandAttr.md) |  | [optional]
+**getChain()** | **string** | The blockchain to work with |
+**getUrl()** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
+**getName()** | **string** | The name of the NFT |
+**getFrom()** | **string** | The address of the minting account |
+**getSignatureId()** | **string** | The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account |
+**getAttr()** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](MintNftExpressAlgorandAttr.md) |  | [optional]
 
 [[Back to Index]](../index.md)

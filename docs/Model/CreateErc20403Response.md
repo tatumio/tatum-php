@@ -1,11 +1,11 @@
 # CreateErc20403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | eth.erc20.unsupported |
-**message** | **string** | Unsupported ETH ERC20 blockchain. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | eth.erc20.unsupported |
+**getMessage()** | **string** | Unsupported ETH ERC20 blockchain. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

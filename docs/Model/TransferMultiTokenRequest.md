@@ -1,20 +1,20 @@
 # TransferMultiTokenRequest
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | Chain to work with. |
-**to** | **string** | Blockchain address to send Multi Token token to |
-**token_id** | **string** | ID of token. |
-**amount** | **string** | amount of token. |
-**data** | **string** | Data in bytes | [optional]
-**contract_address** | **string** | Address of Multi Token token |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**nonce** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
-**fee** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
-**fee_currency** | **string** | Currency to pay for transaction gas |
-**index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
-**signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
+**getChain()** | **string** | Chain to work with. |
+**getTo()** | **string** | Blockchain address to send Multi Token token to |
+**getTokenId()** | **string** | ID of token. |
+**getAmount()** | **string** | amount of token. |
+**getData()** | **string** | Data in bytes | [optional]
+**getContractAddress()** | **string** | Address of Multi Token token |
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
+**getFee()** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
+**getFeeCurrency()** | **string** | Currency to pay for transaction gas |
+**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
+**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 
 [[Back to Index]](../index.md)

@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettings(
-    ?\Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request
+    \Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -51,9 +51,8 @@ Modify XRP account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xrp_account_settings_request = new \Tatum\Model\XrpAccountSettingsRequest();
 
@@ -83,7 +82,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -110,9 +109,8 @@ Broadcast signed XRP transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -142,7 +140,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountBalance(
-    ?string $account
+    string $account
 ): \Tatum\Model\XrpAccountBalance
 ```
 
@@ -169,9 +167,8 @@ Get Account Balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $account = 'rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF';
@@ -202,7 +199,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountInfo(
-    ?string $account
+    string $account
 ): \Tatum\Model\XrpAccount
 ```
 
@@ -229,9 +226,8 @@ Get Account info
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $account = 'rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF';
@@ -262,9 +258,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountTx(
-    ?string $account, 
-    ?float $min, 
-    ?string $marker
+    string $account, 
+    [ float $min,  ]
+    [ string $marker ]
 ): \Tatum\Model\XrpAccountTx
 ```
 
@@ -293,9 +289,8 @@ Get Account transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address of XRP account.
 $account = 'account_example';
@@ -356,9 +351,8 @@ Get actual Blockchain fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\XrpFee $response */
@@ -410,9 +404,8 @@ Get XRP Blockchain Information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\XrpInfo $response */
@@ -440,7 +433,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetLedger(
-    ?float $i
+    float $i
 ): \Tatum\Model\XrpLedger
 ```
 
@@ -467,9 +460,8 @@ Get Ledger
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Sequence of XRP ledger.
 $i = 3.4;
@@ -500,7 +492,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\XrpTx
 ```
 
@@ -527,9 +519,8 @@ Get XRP Transaction by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '1A32A054B04AC9D6814710DDCA416E72C4CD2D78D6C3DFC06CC9369CC4F6B250';
@@ -560,7 +551,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpTransferBlockchain(
-    ?\Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request
+    \Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -587,9 +578,8 @@ Send XRP from address to address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xrp_transfer_blockchain_request = new \Tatum\Model\XrpTransferBlockchainRequest();
 
@@ -619,7 +609,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineBlockchain(
-    ?\Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request
+    \Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -646,9 +636,8 @@ Create / Update / Delete XRP trust line
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xrp_trust_line_blockchain_request = new \Tatum\Model\XrpTrustLineBlockchainRequest();
 
@@ -702,9 +691,8 @@ Generate XRP account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\XrpWallet $response */

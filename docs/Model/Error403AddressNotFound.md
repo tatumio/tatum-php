@@ -1,11 +1,11 @@
 # Error403AddressNotFound
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | Address.not.found |
-**message** | **string** | No such address exists. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | Address.not.found |
+**getMessage()** | **string** | No such address exists. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,12 +1,12 @@
 # KcsEstimateGas
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from** | **string** | Sender address. |
-**to** | **string** | Blockchain address to send assets |
-**amount** | **string** | Amount to be sent in KCS. |
-**data** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
+**getFrom()** | **string** | Sender address. |
+**getTo()** | **string** | Blockchain address to send assets |
+**getAmount()** | **string** | Amount to be sent in KCS. |
+**getData()** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
 
 [[Back to Index]](../index.md)

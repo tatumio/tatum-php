@@ -1,9 +1,9 @@
 # StoreIPFS200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ipfs_hash** | **string** | IPFS CID identifier of the stored file. | [optional]
+**getIpfsHash()** | **string** | IPFS CID identifier of the stored file. | [optional]
 
 [[Back to Index]](../index.md)

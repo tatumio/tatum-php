@@ -1,10 +1,10 @@
 # LtcTxInputsInnerPrevout
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hash** | **string** | Transaction hash of the input. | [optional]
-**index** | **float** | Transaction index of the input. | [optional]
+**getHash()** | **string** | Transaction hash of the input. | [optional]
+**getIndex()** | **float** | Transaction index of the input. | [optional]
 
 [[Back to Index]](../index.md)

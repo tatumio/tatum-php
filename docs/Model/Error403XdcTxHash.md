@@ -1,11 +1,11 @@
 # Error403XdcTxHash
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xdc.transaction.hash |
-**message** | **string** | Unable to calculate transaction hash. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xdc.transaction.hash |
+**getMessage()** | **string** | Unable to calculate transaction hash. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,12 +1,12 @@
 # CallOneReadSmartContractMethod
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contract_address** | **string** | The address of the smart contract |
-**method_name** | **string** | Name of the method to invoke on smart contract. |
-**method_abi** | **object** | ABI of the method to invoke. |
-**params** | **string[]** |  |
+**getContractAddress()** | **string** | The address of the smart contract |
+**getMethodName()** | **string** | Name of the method to invoke on smart contract. |
+**getMethodAbi()** | **object** | ABI of the method to invoke. |
+**getParams()** | **string[]** |  |
 
 [[Back to Index]](../index.md)

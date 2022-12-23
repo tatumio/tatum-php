@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->maliciousAddress()->checkMalicousAddress(
-    ?string $address
+    string $address
 ): \Tatum\Model\CheckMalicousAddress200Response
 ```
 
@@ -40,9 +40,8 @@ Check malicous address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain Address to check
 $address = '0x002Bf459dC58584D58886169EA0E80f3Ca95FFAF';

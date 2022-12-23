@@ -1,11 +1,11 @@
 # GetAccounts401Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.invalid |
-**message** | **string** | Unable to find valid subscription for '${apiKey}' |
-**status_code** | **float** | 401 |
+**getErrorCode()** | **string** | subscription.invalid |
+**getMessage()** | **string** | Unable to find valid subscription for '${apiKey}' |
+**getStatusCode()** | **float** | 401 |
 
 [[Back to Index]](../index.md)

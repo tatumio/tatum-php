@@ -1,11 +1,11 @@
 # MintNftExpress
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**to** | **string** | The blockchain address to send the NFT to |
-**url** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
+**getChain()** | **string** | The blockchain to work with |
+**getTo()** | **string** | The blockchain address to send the NFT to |
+**getUrl()** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
 
 [[Back to Index]](../index.md)

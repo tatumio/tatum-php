@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -50,9 +50,8 @@ Broadcast signed Bitcoin Cash transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -82,8 +81,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\BchGenerateAddress200Response
 ```
 
@@ -111,9 +110,8 @@ Generate Bitcoin Cash deposit address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -147,7 +145,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -174,9 +172,8 @@ Generate Bitcoin Cash private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -206,7 +203,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -233,9 +230,8 @@ Generate Bitcoin Cash wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -266,7 +262,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\BchBlock
 ```
 
@@ -293,9 +289,8 @@ Get Bitcoin Cash Block by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height
 $hash = '00000000000000cfb22714715f09b3721f89819a325f7f4d39b2c22a061d1be8';
@@ -350,9 +345,8 @@ Get Bitcoin Cash Blockchain Information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\BchInfo $response */
@@ -380,7 +374,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockHash(
-    ?float $i
+    float $i
 ): \Tatum\Model\BchGetBlockHash200Response
 ```
 
@@ -407,9 +401,8 @@ Get Bitcoin Cash Block hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The number of blocks preceding a particular block on a block chain.
 $i = 1580117;
@@ -440,7 +433,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetRawTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\BchTx
 ```
 
@@ -467,9 +460,8 @@ Get Bitcoin Cash Transaction by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '1451692ebbfbea1a2d2ec6fe6782596b6aa2e46c0589d04c406f491b5b46bc6a';
@@ -500,8 +492,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetTxByAddress(
-    ?string $address, 
-    ?int $skip
+    string $address, 
+    [ int $skip ]
 ): \Tatum\Model\BchTx[]
 ```
 
@@ -529,9 +521,8 @@ Get Bitcoin Cash Transactions by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address
 $address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
@@ -565,7 +556,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchRpcDriver(
-    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
+    \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
 ): object
 ```
 
@@ -592,9 +583,8 @@ JSON RPC HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bch_rpc_driver_request = new \Tatum\Model\BchRpcDriverRequest();
 
@@ -624,7 +614,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchTransferBlockchain(
-    ?\Tatum\Model\BchTransferBlockchainRequest $bch_transfer_blockchain_request
+    \Tatum\Model\BchTransferBlockchainRequest $bch_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -651,9 +641,8 @@ Send BCH to Bitcoin Cash addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bch_transfer_blockchain_request = new \Tatum\Model\BchTransferBlockchainRequest();
 

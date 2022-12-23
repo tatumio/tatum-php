@@ -1,10 +1,10 @@
 # AlgoWallet
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | address of Algorand account. | [optional]
-**secret** | **string** | secretKey can generate Mnemonic, similar to private Key. | [optional]
+**getAddress()** | **string** | address of Algorand account. | [optional]
+**getSecret()** | **string** | secretKey can generate Mnemonic, similar to private Key. | [optional]
 
 [[Back to Index]](../index.md)

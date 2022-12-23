@@ -1,9 +1,9 @@
 # BchGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Bitcoin Cash address | [optional]
+**getAddress()** | **string** | Bitcoin Cash address | [optional]
 
 [[Back to Index]](../index.md)

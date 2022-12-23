@@ -1,10 +1,10 @@
 # Error401
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **string** | Unauthorized |
-**status_code** | **float** | 401 |
+**getMessage()** | **string** | Unauthorized |
+**getStatusCode()** | **float** | 401 |
 
 [[Back to Index]](../index.md)

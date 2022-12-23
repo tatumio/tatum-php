@@ -1,11 +1,11 @@
 # Error403WithdrawalVC
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | withdrawal.account.virtual |
-**message** | **string** | Sender account cannot be virtual. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.account.virtual |
+**getMessage()** | **string** | Sender account cannot be virtual. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -14,8 +14,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainStorage()->getLog(
-    ?string $chain, 
-    ?string $id
+    string $chain, 
+    string $id
 ): \Tatum\Model\GetLog200Response
 ```
 
@@ -43,9 +43,8 @@ Get a log record
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to get the log record from
 $chain = 'ETH';
@@ -79,7 +78,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainStorage()->storeLog(
-    ?\Tatum\Model\StoreLogRequest $store_log_request
+    \Tatum\Model\StoreLogRequest $store_log_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -106,9 +105,8 @@ Store a log record
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $store_log_request = new \Tatum\Model\StoreLogRequest();
 

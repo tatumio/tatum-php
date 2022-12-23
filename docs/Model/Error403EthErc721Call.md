@@ -1,11 +1,11 @@
 # Error403EthErc721Call
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | eth.erc721.failed |
-**message** | **string** | Unable to obtain information for token. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | eth.erc721.failed |
+**getMessage()** | **string** | Unable to obtain information for token. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # BchTxVinInnerScriptSig
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hex** | **string** |  | [optional]
-**asm** | **string** |  | [optional]
+**getHex()** | **string** |  | [optional]
+**getAsm()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

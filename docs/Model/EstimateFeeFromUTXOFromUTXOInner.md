@@ -1,10 +1,10 @@
 # EstimateFeeFromUTXOFromUTXOInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_hash** | **string** | Transaction hash of the UTXO to be spent. |
-**index** | **float** | Index of the UTXO to be spent. |
+**getTxHash()** | **string** | Transaction hash of the UTXO to be spent. |
+**getIndex()** | **float** | Index of the UTXO to be spent. |
 
 [[Back to Index]](../index.md)

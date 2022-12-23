@@ -1,16 +1,16 @@
 # CreateTronTrc10Blockchain
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from_private_key** | **string** | Private key of the address, from which the TRX will be sent. |
-**recipient** | **string** | Recipient address of created TRC 10 tokens. |
-**name** | **string** | Name of the token. |
-**abbreviation** | **string** | Abbreviation of the token. |
-**description** | **string** | Description of the token. |
-**url** | **string** | URL of the token. |
-**total_supply** | **float** | Total supply of the tokens. |
-**decimals** | **float** | Number of decimal places of the token. |
+**getFromPrivateKey()** | **string** | Private key of the address, from which the TRX will be sent. |
+**getRecipient()** | **string** | Recipient address of created TRC 10 tokens. |
+**getName()** | **string** | Name of the token. |
+**getAbbreviation()** | **string** | Abbreviation of the token. |
+**getDescription()** | **string** | Description of the token. |
+**getUrl()** | **string** | URL of the token. |
+**getTotalSupply()** | **float** | Total supply of the tokens. |
+**getDecimals()** | **float** | Number of decimal places of the token. |
 
 [[Back to Index]](../index.md)

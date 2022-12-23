@@ -1,10 +1,10 @@
 # NftProvenanceDataErc721
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**provenance_data** | **string** |  | [optional]
-**token_price** | **string** |  | [optional]
+**getProvenanceData()** | **string** |  | [optional]
+**getTokenPrice()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

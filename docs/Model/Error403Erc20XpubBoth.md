@@ -1,11 +1,11 @@
 # Error403Erc20XpubBoth
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | erc20.address.xpub.both |
-**message** | **string** | Either xpub or address must be present, not both. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | erc20.address.xpub.both |
+**getMessage()** | **string** | Either xpub or address must be present, not both. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

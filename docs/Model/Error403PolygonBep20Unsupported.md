@@ -1,11 +1,11 @@
 # Error403PolygonBep20Unsupported
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | polygon.bep20.unsupported |
-**message** | **string** | Unsupported ETH ERC20 blockchain. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | polygon.bep20.unsupported |
+**getMessage()** | **string** | Unsupported ETH ERC20 blockchain. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->activateAccount(
-    ?string $id
+    string $id
 )
 ```
 
@@ -57,9 +57,8 @@ Activate account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -87,8 +86,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->blockAmount(
-    ?string $id, 
-    ?\Tatum\Model\BlockAmount $block_amount
+    string $id, 
+    \Tatum\Model\BlockAmount $block_amount
 ): \Tatum\Model\Id
 ```
 
@@ -116,9 +115,8 @@ Block an amount in an account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e6be89ee6aa436299950c3f';
@@ -151,7 +149,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->createAccount(
-    ?\Tatum\Model\CreateAccountRequest $create_account_request
+    \Tatum\Model\CreateAccountRequest $create_account_request
 ): \Tatum\Model\Account
 ```
 
@@ -178,9 +176,8 @@ Create a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_account_request = new \Tatum\Model\CreateAccountRequest();
 
@@ -210,7 +207,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->createAccountBatch(
-    ?\Tatum\Model\CreateAccountBatch $create_account_batch
+    \Tatum\Model\CreateAccountBatch $create_account_batch
 ): \Tatum\Model\Account[]
 ```
 
@@ -237,9 +234,8 @@ Create multiple accounts in a batch call
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_account_batch = new \Tatum\Model\CreateAccountBatch();
 
@@ -269,7 +265,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->deactivateAccount(
-    ?string $id
+    string $id
 )
 ```
 
@@ -296,9 +292,8 @@ Deactivate account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -326,7 +321,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->deleteAllBlockAmount(
-    ?string $id
+    string $id
 )
 ```
 
@@ -353,9 +348,8 @@ Unblock all blocked amounts in an account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e6be89ee6aa436299950c3f';
@@ -383,7 +377,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->deleteBlockAmount(
-    ?string $id
+    string $id
 )
 ```
 
@@ -410,9 +404,8 @@ Unblock a blocked amount in an account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockage ID
 $id = '5e6be89ee6aa436299950c3f';
@@ -440,7 +433,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->freezeAccount(
-    ?string $id
+    string $id
 )
 ```
 
@@ -467,9 +460,8 @@ Freeze account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -497,7 +489,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccountBalance(
-    ?string $id
+    string $id
 ): \Tatum\Model\AccountBalance
 ```
 
@@ -524,9 +516,8 @@ Get account balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -557,7 +548,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccountByAccountId(
-    ?string $id
+    string $id
 ): \Tatum\Model\Account
 ```
 
@@ -584,9 +575,8 @@ Get account by ID
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -617,15 +607,15 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccounts(
-    ?float $page_size, 
-    ?float $page, 
-    ?string $sort, 
-    ?string $sort_by, 
-    ?bool $active, 
-    ?bool $only_non_zero_balance, 
-    ?bool $frozen, 
-    ?string $currency, 
-    ?string $account_number
+    [ float $page_size,  ]
+    [ float $page,  ]
+    [ string $sort,  ]
+    [ string $sort_by,  ]
+    [ bool $active,  ]
+    [ bool $only_non_zero_balance,  ]
+    [ bool $frozen,  ]
+    [ string $currency,  ]
+    [ string $account_number ]
 ): \Tatum\Model\Account[]
 ```
 
@@ -660,9 +650,8 @@ List all accounts
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 20;
@@ -717,10 +706,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccountsByCustomerId(
-    ?float $page_size, 
-    ?string $id, 
-    ?float $offset, 
-    ?string $account_code
+    float $page_size, 
+    string $id, 
+    [ float $offset,  ]
+    [ string $account_code ]
 ): \Tatum\Model\Account[]
 ```
 
@@ -750,9 +739,8 @@ List all customer accounts
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -792,15 +780,15 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getAccountsCount(
-    ?float $page_size, 
-    ?float $page, 
-    ?string $sort, 
-    ?string $sort_by, 
-    ?bool $active, 
-    ?bool $only_non_zero_balance, 
-    ?bool $frozen, 
-    ?string $currency, 
-    ?string $account_number
+    [ float $page_size,  ]
+    [ float $page,  ]
+    [ string $sort,  ]
+    [ string $sort_by,  ]
+    [ bool $active,  ]
+    [ bool $only_non_zero_balance,  ]
+    [ bool $frozen,  ]
+    [ string $currency,  ]
+    [ string $account_number ]
 ): \Tatum\Model\EntitiesCount
 ```
 
@@ -835,9 +823,8 @@ Count of found entities for get accounts request
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 20;
@@ -892,9 +879,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getBlockAmount(
-    ?string $id, 
-    ?float $page_size, 
-    ?float $offset
+    string $id, 
+    float $page_size, 
+    [ float $offset ]
 ): \Tatum\Model\Blockage[]
 ```
 
@@ -923,9 +910,8 @@ Get blocked amounts in an account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e6be89ee6aa436299950c3f';
@@ -962,7 +948,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->getBlockAmountById(
-    ?string $id
+    string $id
 ): \Tatum\Model\Blockage
 ```
 
@@ -989,9 +975,8 @@ Get blocked amount by ID
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blocked amount ID
 $id = '5e6be89ee6aa436299950c3f';
@@ -1022,8 +1007,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->unblockAmountWithTransaction(
-    ?string $id, 
-    ?\Tatum\Model\UnblockAmount $unblock_amount
+    string $id, 
+    \Tatum\Model\UnblockAmount $unblock_amount
 ): \Tatum\Model\TransactionResult
 ```
 
@@ -1051,9 +1036,8 @@ Unblock an amount in an account and perform a transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockage ID
 $id = '5e6be89ee6aa436299950c3f';
@@ -1086,7 +1070,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->unfreezeAccount(
-    ?string $id
+    string $id
 )
 ```
 
@@ -1113,9 +1097,8 @@ Unfreeze account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -1143,8 +1126,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->account()->updateAccountByAccountId(
-    ?string $id, 
-    ?\Tatum\Model\UpdateAccount $update_account
+    string $id, 
+    \Tatum\Model\UpdateAccount $update_account
 )
 ```
 
@@ -1172,9 +1155,8 @@ Update account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';

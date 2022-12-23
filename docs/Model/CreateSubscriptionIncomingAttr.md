@@ -1,10 +1,10 @@
 # CreateSubscriptionIncomingAttr
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | ID of the account, on which the webhook will be applied, when new incoming blockchain transaction will be credited. |
-**url** | **string** | URL of the endpoint, where HTTP POST request will be sent, when new incoming blockchain transaction will be credited. |
+**getId()** | **string** | ID of the account, on which the webhook will be applied, when new incoming blockchain transaction will be credited. |
+**getUrl()** | **string** | URL of the endpoint, where HTTP POST request will be sent, when new incoming blockchain transaction will be credited. |
 
 [[Back to Index]](../index.md)

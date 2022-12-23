@@ -1,18 +1,18 @@
 # BtcBlock
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hash** | **string** | Hash of block. | [optional]
-**height** | **float** | The number of blocks preceding a particular block on a block chain. | [optional]
-**depth** | **float** | The number of blocks following a particular block on a block chain, including current one. | [optional]
-**version** | **float** | Block version. | [optional]
-**prev_block** | **string** | Hash of the previous block. | [optional]
-**merkle_root** | **string** | The root node of a merkle tree, a descendant of all the hashed pairs in the tree. | [optional]
-**time** | **float** | Time of the block. | [optional]
-**bits** | **float** |  | [optional]
-**nonce** | **float** | Arbitrary number that is used in Bitcoin's proof of work consensus algorithm. | [optional]
-**txs** | [**\Tatum\Model\BtcTx[]**](BtcTx.md) |  | [optional]
+**getHash()** | **string** | Hash of block. | [optional]
+**getHeight()** | **float** | The number of blocks preceding a particular block on a block chain. | [optional]
+**getDepth()** | **float** | The number of blocks following a particular block on a block chain, including current one. | [optional]
+**getVersion()** | **float** | Block version. | [optional]
+**getPrevBlock()** | **string** | Hash of the previous block. | [optional]
+**getMerkleRoot()** | **string** | The root node of a merkle tree, a descendant of all the hashed pairs in the tree. | [optional]
+**getTime()** | **float** | Time of the block. | [optional]
+**getBits()** | **float** |  | [optional]
+**getNonce()** | **float** | Arbitrary number that is used in Bitcoin's proof of work consensus algorithm. | [optional]
+**getTxs()** | [**\Tatum\Model\BtcTx[]**](BtcTx.md) |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403BlockDelete
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | customer.blockage.inactive |
-**message** | **string** | Unable to delete blockages on account for inactive customer. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | customer.blockage.inactive |
+**getMessage()** | **string** | Unable to delete blockages on account for inactive customer. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

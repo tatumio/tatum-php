@@ -1,9 +1,9 @@
 # SolanaTxMetaStatus
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ok** | **string** |  | [optional]
+**getOk()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403TxSenderNotFound
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | senderAccount.not.exists |
-**message** | **string** | Unable to find sender account ${transaction.senderAccountId}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | senderAccount.not.exists |
+**getMessage()** | **string** | Unable to find sender account ${transaction.senderAccountId}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

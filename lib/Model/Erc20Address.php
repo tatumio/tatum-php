@@ -1008,7 +1008,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set address
      * 
-     * @param string $address The blockchain address to be assigned to the virtual account as a deposit address; the supply of the token will be stored on this address
+     * @param string $address The blockchain address to be assigned to the virtual account as a deposit address.
      * @return $this
      */
     public function setAddress(string $address) {

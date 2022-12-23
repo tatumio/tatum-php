@@ -1,13 +1,13 @@
 # VetTxReceiptMeta
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_id** | **string** |  | [optional]
-**block_number** | **float** |  | [optional]
-**block_timestamp** | **float** |  | [optional]
-**tx_id** | **string** |  | [optional]
-**tx_origin** | **string** |  | [optional]
+**getBlockId()** | **string** |  | [optional]
+**getBlockNumber()** | **float** |  | [optional]
+**getBlockTimestamp()** | **float** |  | [optional]
+**getTxId()** | **string** |  | [optional]
+**getTxOrigin()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

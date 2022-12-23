@@ -25,8 +25,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algoNodeGetDriver(
-    ?string $x_api_key, 
-    ?string $algod_path
+    string $x_api_key, 
+    string $algod_path
 ): \Tatum\Model\AlgoBlock
 ```
 
@@ -54,9 +54,8 @@ Access Algorand Algod GET node endpoints
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
@@ -90,8 +89,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algoNodeIndexerGetDriver(
-    ?string $x_api_key, 
-    ?string $indexer_path
+    string $x_api_key, 
+    string $indexer_path
 ): \Tatum\Model\AlgoTx
 ```
 
@@ -119,9 +118,8 @@ Access Algorand Indexer GET node endpoints
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
@@ -155,9 +153,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algoNodePostDriver(
-    ?string $x_api_key, 
-    ?string $algod_path, 
-    ?\Tatum\Model\AlgoNodePostDriverRequest $algo_node_post_driver_request
+    string $x_api_key, 
+    string $algod_path, 
+    \Tatum\Model\AlgoNodePostDriverRequest $algo_node_post_driver_request
 ): \Tatum\Model\AlgoNodePostDriver200Response
 ```
 
@@ -186,9 +184,8 @@ Access Algorand Algod POST node endpoints
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
@@ -224,7 +221,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algoandBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\AlgoTransactionHashKMS
 ```
 
@@ -251,9 +248,8 @@ Broadcast signed Algorand transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -283,7 +279,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainReceiveAsset(
-    ?\Tatum\Model\AlgorandBlockchainReceiveAssetRequest $algorand_blockchain_receive_asset_request
+    \Tatum\Model\AlgorandBlockchainReceiveAssetRequest $algorand_blockchain_receive_asset_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -310,9 +306,8 @@ Enable receiving asset on account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $algorand_blockchain_receive_asset_request = new \Tatum\Model\AlgorandBlockchainReceiveAssetRequest();
 
@@ -342,7 +337,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainTransfer(
-    ?\Tatum\Model\AlgorandBlockchainTransferRequest $algorand_blockchain_transfer_request
+    \Tatum\Model\AlgorandBlockchainTransferRequest $algorand_blockchain_transfer_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -369,9 +364,8 @@ Send Algos to an Algorand account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $algorand_blockchain_transfer_request = new \Tatum\Model\AlgorandBlockchainTransferRequest();
 
@@ -401,7 +395,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateAddress(
-    ?string $priv
+    string $priv
 ): \Tatum\Model\AlgorandGenerateAddress200Response
 ```
 
@@ -428,9 +422,8 @@ Generate Algorand account address from private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // private key of wallet.
 $priv = 'NBYMCVEEDFYV3TPWVRE6APE7PKHUJD4XAKXCKNCLKGUXOC3LFNJGZQCJCRA53HB7ZAHF6NFJH2QIVQ5USQNWG35QCJLD4KZ5IWMB24Q';
@@ -461,7 +454,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\AlgoWallet
 ```
 
@@ -488,9 +481,8 @@ Generate Algorand wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -521,7 +513,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBalance(
-    ?string $address
+    string $address
 ): \Tatum\Model\AlgorandGetBalance200Response
 ```
 
@@ -548,9 +540,8 @@ Get Algorand Account balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = 'TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4';
@@ -581,7 +572,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBlock(
-    ?float $round_number
+    float $round_number
 ): \Tatum\Model\AlgoBlock
 ```
 
@@ -608,9 +599,8 @@ Get Algorand block by block round number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block round number
 $round_number = 16775567;
@@ -665,9 +655,8 @@ Get current block number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -695,10 +684,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetPayTransactionsByFromTo(
-    ?string $from, 
-    ?string $to, 
-    ?string $limit, 
-    ?string $next
+    string $from, 
+    string $to, 
+    [ string $limit,  ]
+    [ string $next ]
 ): \Tatum\Model\AlgoTxsWithPagination
 ```
 
@@ -728,9 +717,8 @@ Get Algorand Transactions between from and to
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Start timestamp in specified period of time
 $from = 2021-05-01T20:44:39Z;
@@ -770,7 +758,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetTransaction(
-    ?string $txid
+    string $txid
 ): \Tatum\Model\AlgoTx
 ```
 
@@ -797,9 +785,8 @@ Get Algorand Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction id
 $txid = 'LXEBXIBDAIF72NRI76SU252QSOGFCKEHTG7AI4P6W25V35PETU3Q';

@@ -1,11 +1,11 @@
 # Error403EthScBody
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | ethereum.sc.invalid |
-**message** | **string** | Invalid parameters for smart contract invocation. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | ethereum.sc.invalid |
+**getMessage()** | **string** | Invalid parameters for smart contract invocation. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

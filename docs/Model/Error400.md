@@ -1,12 +1,12 @@
 # Error400
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | validation.failed |
-**message** | **string** | Request validation failed. Please see data for additional information. |
-**status_code** | **float** | 400 |
-**data** | [**\Tatum\Model\Error400DataInner[]**](Error400DataInner.md) |  |
+**getErrorCode()** | **string** | validation.failed |
+**getMessage()** | **string** | Request validation failed. Please see data for additional information. |
+**getStatusCode()** | **float** | 400 |
+**getData()** | [**\Tatum\Model\Error400DataInner[]**](Error400DataInner.md) |  |
 
 [[Back to Index]](../index.md)

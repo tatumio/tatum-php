@@ -14,8 +14,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainUtils()->getAuctionEstimatedTime(
-    ?string $chain, 
-    ?string $date
+    string $chain, 
+    string $date
 ): float
 ```
 
@@ -43,9 +43,8 @@ Estimate the block height for a future point in time
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';
@@ -79,8 +78,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainUtils()->sCGetContractAddress(
-    ?string $chain, 
-    ?string $hash
+    string $chain, 
+    string $hash
 ): \Tatum\Model\SCGetContractAddress200Response
 ```
 
@@ -108,9 +107,8 @@ Get the blockchain address of a smart contract by the deployment transaction ID
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';

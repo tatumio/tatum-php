@@ -1,12 +1,12 @@
 # DogeTxVoutInnerScriptPubKey
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asm** | **string** |  | [optional]
-**hex** | **string** |  | [optional]
-**type** | **string** |  | [optional]
-**addresses** | **string[]** |  | [optional]
+**getAsm()** | **string** |  | [optional]
+**getHex()** | **string** |  | [optional]
+**getType()** | **string** |  | [optional]
+**getAddresses()** | **string[]** |  | [optional]
 
 [[Back to Index]](../index.md)

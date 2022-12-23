@@ -1,11 +1,11 @@
 # BlockAmount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **string** | Amount to be blocked on account. |
-**type** | **string** | Type of blockage. |
-**description** | **string** | Description of blockage. | [optional]
+**getAmount()** | **string** | Amount to be blocked on account. |
+**getType()** | **string** | Type of blockage. |
+**getDescription()** | **string** | Description of blockage. | [optional]
 
 [[Back to Index]](../index.md)

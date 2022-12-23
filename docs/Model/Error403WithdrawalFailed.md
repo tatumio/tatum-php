@@ -1,11 +1,11 @@
 # Error403WithdrawalFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | withdrawal.failed.transaction.failed |
-**message** | **string** | Unable to store withdrawal, it is impossible to create transaction. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.failed.transaction.failed |
+**getMessage()** | **string** | Unable to store withdrawal, it is impossible to create transaction. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

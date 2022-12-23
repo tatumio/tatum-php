@@ -1,16 +1,16 @@
 # ApproveCeloErc20KMS
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**contract_address** | **string** | The address of the smart contract |
-**spender** | **string** | The blockchain address to be allowed to transfer or burn the fungible tokens |
-**amount** | **string** | The amount of the tokens allowed to be transferred or burnt |
-**signature_id** | **string** | The KMS identifier of the private key of the smart contract's owner; the fee will be deducted from the owner's address |
-**fee_currency** | **string** | The currency in which the transaction fee will be paid |
-**fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
-**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**getChain()** | **string** | The blockchain to work with |
+**getContractAddress()** | **string** | The address of the smart contract |
+**getSpender()** | **string** | The blockchain address to be allowed to transfer or burn the fungible tokens |
+**getAmount()** | **string** | The amount of the tokens allowed to be transferred or burnt |
+**getSignatureId()** | **string** | The KMS identifier of the private key of the smart contract's owner; the fee will be deducted from the owner's address |
+**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
+**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
 [[Back to Index]](../index.md)

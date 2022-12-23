@@ -1,11 +1,11 @@
 # Error403OrderCurrency1Balance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | trade.currency1.balance |
-**message** | **string** | Insufficient balance on currency1 account ${trade.currency1AccountId}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | trade.currency1.balance |
+**getMessage()** | **string** | Insufficient balance on currency1 account ${trade.currency1AccountId}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

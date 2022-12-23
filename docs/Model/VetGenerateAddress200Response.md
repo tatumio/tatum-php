@@ -1,9 +1,9 @@
 # VetGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | VeChain addres | [optional]
+**getAddress()** | **string** | VeChain addres | [optional]
 
 [[Back to Index]](../index.md)

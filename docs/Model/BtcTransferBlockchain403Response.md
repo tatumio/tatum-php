@@ -1,11 +1,11 @@
 # BtcTransferBlockchain403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | transaction.failed |
-**message** | **string** | No spendable inputs. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | transaction.failed |
+**getMessage()** | **string** | No spendable inputs. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

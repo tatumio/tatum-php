@@ -1,12 +1,12 @@
 # DogeTxVinInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**txid** | **string** | Transaction hash of the input. | [optional]
-**vout** | **float** | Transaction index of the input. | [optional]
-**script_sig** | [**\Tatum\Model\DogeTxVinInnerScriptSig**](DogeTxVinInnerScriptSig.md) |  | [optional]
-**sequence** | **float** |  | [optional]
+**getTxid()** | **string** | Transaction hash of the input. | [optional]
+**getVout()** | **float** | Transaction index of the input. | [optional]
+**getScriptSig()** | [**\Tatum\Model\DogeTxVinInnerScriptSig**](DogeTxVinInnerScriptSig.md) |  | [optional]
+**getSequence()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

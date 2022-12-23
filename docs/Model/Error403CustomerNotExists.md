@@ -1,11 +1,11 @@
 # Error403CustomerNotExists
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | customer.not.exists |
-**message** | **string** | No customer with given external ID ${externalId} exists. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | customer.not.exists |
+**getMessage()** | **string** | No customer with given external ID ${externalId} exists. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,12 +1,12 @@
 # TronInternalTx
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | Transaction ID. |
-**internal_tx_id** | **string** | Internal TX ID. |
-**to_address** | **string** | Recipient address. |
-**from_address** | **string** | Sender address. |
+**getTxId()** | **string** | Transaction ID. |
+**getInternalTxId()** | **string** | Internal TX ID. |
+**getToAddress()** | **string** | Recipient address. |
+**getFromAddress()** | **string** | Sender address. |
 
 [[Back to Index]](../index.md)

@@ -1,14 +1,14 @@
 # BurnNft
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**token_id** | **string** | The ID of the NFT to burn |
-**contract_address** | **string** | The blockchain address of the NFT to burn |
-**from_private_key** | **string** | The private key of the blockchain address from which the fee will be deducted |
-**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getChain()** | **string** | The blockchain to work with |
+**getTokenId()** | **string** | The ID of the NFT to burn |
+**getContractAddress()** | **string** | The blockchain address of the NFT to burn |
+**getFromPrivateKey()** | **string** | The private key of the blockchain address from which the fee will be deducted |
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 
 [[Back to Index]](../index.md)

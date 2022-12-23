@@ -1,11 +1,11 @@
 # Error403BscBep20Set
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | erc20.address.set |
-**message** | **string** | BEP20 address was already set. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | erc20.address.set |
+**getMessage()** | **string** | BEP20 address was already set. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

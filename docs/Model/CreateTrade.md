@@ -1,16 +1,16 @@
 # CreateTrade
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the regular trade, BUY, SELL |
-**price** | **string** | Price to buy / sell |
-**amount** | **string** | Amount of the trade to be bought / sold |
-**pair** | **string** | Trading pair |
-**currency1_account_id** | **string** | ID of the account of the currency 1 trade currency |
-**currency2_account_id** | **string** | ID of the account of the currency 2 trade currency |
-**fee_account_id** | **string** | ID of the account where fee will be paid, if any. If trade is a BUY or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId, and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have same currency as a currency of currency1AccountId. | [optional]
-**fee** | **float** | Percentage of the trade amount to be paid as a fee. | [optional]
+**getType()** | **string** | Type of the regular trade, BUY, SELL |
+**getPrice()** | **string** | Price to buy / sell |
+**getAmount()** | **string** | Amount of the trade to be bought / sold |
+**getPair()** | **string** | Trading pair |
+**getCurrency1AccountId()** | **string** | ID of the account of the currency 1 trade currency |
+**getCurrency2AccountId()** | **string** | ID of the account of the currency 2 trade currency |
+**getFeeAccountId()** | **string** | ID of the account where fee will be paid, if any. If trade is a BUY or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId, and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have same currency as a currency of currency1AccountId. | [optional]
+**getFee()** | **float** | Percentage of the trade amount to be paid as a fee. | [optional]
 
 [[Back to Index]](../index.md)

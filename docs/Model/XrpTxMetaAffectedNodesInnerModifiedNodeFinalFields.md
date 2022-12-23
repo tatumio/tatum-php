@@ -1,13 +1,13 @@
 # XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | **string** |  | [optional]
-**balance** | **string** |  | [optional]
-**flags** | **float** |  | [optional]
-**owner_count** | **float** |  | [optional]
-**sequence** | **float** |  | [optional]
+**getAccount()** | **string** |  | [optional]
+**getBalance()** | **string** |  | [optional]
+**getFlags()** | **float** |  | [optional]
+**getOwnerCount()** | **float** |  | [optional]
+**getSequence()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

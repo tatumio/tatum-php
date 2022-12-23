@@ -1,11 +1,11 @@
 # PolygonEstimateGas403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | polygon.transaction.gas |
-**message** | **string** | Unable to calculate gas limit for transaction. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | polygon.transaction.gas |
+**getMessage()** | **string** | Unable to calculate gas limit for transaction. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

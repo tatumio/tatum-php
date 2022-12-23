@@ -1,11 +1,11 @@
 # FlowTxProposalKey
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** |  | [optional]
-**key_id** | **float** |  | [optional]
-**sequence_number** | **float** |  | [optional]
+**getAddress()** | **string** |  | [optional]
+**getKeyId()** | **float** |  | [optional]
+**getSequenceNumber()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

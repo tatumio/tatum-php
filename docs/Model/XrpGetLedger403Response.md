@@ -1,11 +1,11 @@
 # XrpGetLedger403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xrp.ledger.failed |
-**message** | **string** | ${error} Code: ${code} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xrp.ledger.failed |
+**getMessage()** | **string** | ${error} Code: ${code} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

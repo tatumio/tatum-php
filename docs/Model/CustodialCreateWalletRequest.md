@@ -1,9 +1,9 @@
 # CustodialCreateWalletRequest
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** |  |
+**getChain()** | **string** |  |
 
 [[Back to Index]](../index.md)

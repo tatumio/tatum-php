@@ -1,11 +1,11 @@
 # XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | **string** |  | [optional]
-**balance** | **string** |  | [optional]
-**sequence** | **float** |  | [optional]
+**getAccount()** | **string** |  | [optional]
+**getBalance()** | **string** |  | [optional]
+**getSequence()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

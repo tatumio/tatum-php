@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->chartRequest(
-    ?\Tatum\Model\ChartRequest $chart_request
+    \Tatum\Model\ChartRequest $chart_request
 ): \Tatum\Model\Chart[]
 ```
 
@@ -51,9 +51,8 @@ Obtain chart data from historical closed trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $chart_request = new \Tatum\Model\ChartRequest();
 
@@ -83,7 +82,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->deleteAccountTrades(
-    ?string $id
+    string $id
 )
 ```
 
@@ -110,9 +109,8 @@ Cancel all existing trades for account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -140,7 +138,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->deleteTrade(
-    ?string $id
+    string $id
 )
 ```
 
@@ -167,9 +165,8 @@ Cancel existing trade
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Trade ID
 $id = '5e68c66581f2ee32bc354087';
@@ -197,13 +194,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTrades(
-    ?float $page_size, 
-    ?string $id, 
-    ?string $customer_id, 
-    ?float $offset, 
-    ?string $pair, 
-    ?bool $count, 
-    ?string $trade_type
+    float $page_size, 
+    [ string $id,  ]
+    [ string $customer_id,  ]
+    [ float $offset,  ]
+    [ string $pair,  ]
+    [ bool $count,  ]
+    [ string $trade_type ]
 ): \Tatum\Model\Trade[]
 ```
 
@@ -236,9 +233,8 @@ List all active buy trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -287,7 +283,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTradesBody(
-    ?\Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body
+    \Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body
 ): \Tatum\Model\Trade[]
 ```
 
@@ -314,9 +310,8 @@ List all active buy trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $list_oder_book_active_buy_body = new \Tatum\Model\ListOderBookActiveBuyBody();
 
@@ -346,12 +341,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTrades(
-    ?float $page_size, 
-    ?string $id, 
-    ?string $pair, 
-    ?float $offset, 
-    ?bool $count, 
-    ?string[] $types
+    float $page_size, 
+    [ string $id,  ]
+    [ string $pair,  ]
+    [ float $offset,  ]
+    [ bool $count,  ]
+    [ string[] $types ]
 ): \Tatum\Model\Trade[]
 ```
 
@@ -383,9 +378,8 @@ List all historical trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -431,7 +425,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTradesBody(
-    ?\Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body
+    [ \Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body ]
 ): \Tatum\Model\Trade[]
 ```
 
@@ -458,9 +452,8 @@ List all historical trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $list_oder_book_history_body = new \Tatum\Model\ListOderBookHistoryBody();
 
@@ -490,7 +483,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getMatchedTrades(
-    ?\Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body
+    \Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body
 ): \Tatum\Model\Trade[]
 ```
 
@@ -517,9 +510,8 @@ List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $list_oder_book_matched_body = new \Tatum\Model\ListOderBookMatchedBody();
 
@@ -549,13 +541,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getSellTrades(
-    ?float $page_size, 
-    ?string $id, 
-    ?string $customer_id, 
-    ?float $offset, 
-    ?string $pair, 
-    ?bool $count, 
-    ?string $trade_type
+    float $page_size, 
+    [ string $id,  ]
+    [ string $customer_id,  ]
+    [ float $offset,  ]
+    [ string $pair,  ]
+    [ bool $count,  ]
+    [ string $trade_type ]
 ): \Tatum\Model\Trade[]
 ```
 
@@ -588,9 +580,8 @@ List all active sell trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -639,7 +630,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getSellTradesBody(
-    ?\Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body
+    \Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body
 ): \Tatum\Model\Trade[]
 ```
 
@@ -666,9 +657,8 @@ List all active sell trades
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $list_oder_book_active_sell_body = new \Tatum\Model\ListOderBookActiveSellBody();
 
@@ -698,7 +688,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->getTradeById(
-    ?string $id
+    string $id
 ): \Tatum\Model\Trade
 ```
 
@@ -725,9 +715,8 @@ Get existing trade
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Trade ID
 $id = '5e68c66581f2ee32bc354087';
@@ -758,7 +747,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->orderBook()->storeTrade(
-    ?\Tatum\Model\StoreTradeRequest $store_trade_request
+    \Tatum\Model\StoreTradeRequest $store_trade_request
 ): \Tatum\Model\Id
 ```
 
@@ -785,9 +774,8 @@ Store buy / sell trade
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $store_trade_request = new \Tatum\Model\StoreTradeRequest();
 

@@ -1,11 +1,11 @@
 # Error403OrderFeeNotFound
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | trade.feeAccount |
-**message** | **string** | Unable to find fee account ${trade.feeAccountId}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | trade.feeAccount |
+**getMessage()** | **string** | Unable to find fee account ${trade.feeAccountId}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # PrivKeyRequest
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**index** | **int** | Derivation index of private key to generate. |
-**mnemonic** | **string** | Mnemonic to generate private key from. |
+**getIndex()** | **int** | Derivation index of private key to generate. |
+**getMnemonic()** | **string** | Mnemonic to generate private key from. |
 
 [[Back to Index]](../index.md)

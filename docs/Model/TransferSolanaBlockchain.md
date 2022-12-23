@@ -1,14 +1,14 @@
 # TransferSolanaBlockchain
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from** | **string** | Blockchain address to send assets from |
-**to** | **string** | Blockchain address to send assets to |
-**amount** | **string** | Amount to be sent in SOL. |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**fee_payer** | **string** | Address on the Solana blockchain, from which the fee will be paid for transaction. Defaults to from. | [optional]
-**fee_payer_private_key** | **string** | Private key of the fee payer address. | [optional]
+**getFrom()** | **string** | Blockchain address to send assets from |
+**getTo()** | **string** | Blockchain address to send assets to |
+**getAmount()** | **string** | Amount to be sent in SOL. |
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getFeePayer()** | **string** | Address on the Solana blockchain, from which the fee will be paid for transaction. Defaults to from. | [optional]
+**getFeePayerPrivateKey()** | **string** | Private key of the fee payer address. | [optional]
 
 [[Back to Index]](../index.md)

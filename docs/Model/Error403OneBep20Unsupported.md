@@ -1,11 +1,11 @@
 # Error403OneBep20Unsupported
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | bsc.bep20.unsupported |
-**message** | **string** | Unsupported ETH HRM20 blockchain. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | bsc.bep20.unsupported |
+**getMessage()** | **string** | Unsupported ETH HRM20 blockchain. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

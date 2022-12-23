@@ -1,9 +1,9 @@
 # GeneratedAddressOne
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | ONE address | [optional]
+**getAddress()** | **string** | ONE address | [optional]
 
 [[Back to Index]](../index.md)

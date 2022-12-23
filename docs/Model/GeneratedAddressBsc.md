@@ -1,9 +1,9 @@
 # GeneratedAddressBsc
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | BSC address | [optional]
+**getAddress()** | **string** | BSC address | [optional]
 
 [[Back to Index]](../index.md)

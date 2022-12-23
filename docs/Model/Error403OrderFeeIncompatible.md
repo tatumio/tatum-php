@@ -1,11 +1,11 @@
 # Error403OrderFeeIncompatible
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | trade.currency.fee |
-**message** | **string** | Incompatible currencies for currency1 and fee account. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | trade.currency.fee |
+**getMessage()** | **string** | Incompatible currencies for currency1 and fee account. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

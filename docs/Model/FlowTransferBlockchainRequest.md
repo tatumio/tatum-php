@@ -1,16 +1,16 @@
 # FlowTransferBlockchainRequest
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | **string** | Blockchain account to send from |
-**currency** | **string** | Type of asset to send |
-**to** | **string** | Blockchain address to send assets |
-**amount** | **string** | Amount to be sent, in Flow. |
-**mnemonic** | **string** | Mnemonic to generate private key. |
-**index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. |
-**private_key** | **string** | Secret for account. Secret, or signature Id must be present. |
-**signature_id** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
+**getAccount()** | **string** | Blockchain account to send from |
+**getCurrency()** | **string** | Type of asset to send |
+**getTo()** | **string** | Blockchain address to send assets |
+**getAmount()** | **string** | Amount to be sent, in Flow. |
+**getMnemonic()** | **string** | Mnemonic to generate private key. |
+**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. |
+**getPrivateKey()** | **string** | Secret for account. Secret, or signature Id must be present. |
+**getSignatureId()** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 
 [[Back to Index]](../index.md)

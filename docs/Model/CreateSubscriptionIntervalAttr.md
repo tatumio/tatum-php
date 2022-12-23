@@ -1,9 +1,9 @@
 # CreateSubscriptionIntervalAttr
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**interval** | **float** | Number of hours to obtain transactions for. |
+**getInterval()** | **float** | Number of hours to obtain transactions for. |
 
 [[Back to Index]](../index.md)

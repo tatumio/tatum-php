@@ -1,11 +1,11 @@
 # DogeTxVoutInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **float** | Amount of UTXO in 1/1000000 DOGE. | [optional]
-**n** | **float** | Transaction index of the output. | [optional]
-**script_pub_key** | [**\Tatum\Model\DogeTxVoutInnerScriptPubKey**](DogeTxVoutInnerScriptPubKey.md) |  | [optional]
+**getValue()** | **float** | Amount of UTXO in 1/1000000 DOGE. | [optional]
+**getN()** | **float** | Transaction index of the output. | [optional]
+**getScriptPubKey()** | [**\Tatum\Model\DogeTxVoutInnerScriptPubKey**](DogeTxVoutInnerScriptPubKey.md) |  | [optional]
 
 [[Back to Index]](../index.md)

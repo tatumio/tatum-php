@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplace(
-    ?\Tatum\Model\BuyAssetOnMarketplaceRequest $buy_asset_on_marketplace_request
+    \Tatum\Model\BuyAssetOnMarketplaceRequest $buy_asset_on_marketplace_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -53,9 +53,8 @@ Buy an asset on the NFT marketplace
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $buy_asset_on_marketplace_request = new \Tatum\Model\BuyAssetOnMarketplaceRequest();
 
@@ -85,7 +84,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellMarketplaceListing(
-    ?\Tatum\Model\CancelSellMarketplaceListingRequest $cancel_sell_marketplace_listing_request
+    \Tatum\Model\CancelSellMarketplaceListingRequest $cancel_sell_marketplace_listing_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -112,9 +111,8 @@ Cancel the selling of an asset on the NFT marketplace
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $cancel_sell_marketplace_listing_request = new \Tatum\Model\CancelSellMarketplaceListingRequest();
 
@@ -144,7 +142,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplace(
-    ?\Tatum\Model\GenerateMarketplaceRequest $generate_marketplace_request
+    \Tatum\Model\GenerateMarketplaceRequest $generate_marketplace_request
 ): \Tatum\Model\GenerateMarketplace200Response
 ```
 
@@ -171,9 +169,8 @@ Create an NFT marketplace
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $generate_marketplace_request = new \Tatum\Model\GenerateMarketplaceRequest();
 
@@ -203,8 +200,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFee(
-    ?string $chain, 
-    ?string $contract_address
+    string $chain, 
+    string $contract_address
 ): float
 ```
 
@@ -232,9 +229,8 @@ Get the NFT marketplace fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'chain_example';
@@ -268,8 +264,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFeeRecipient(
-    ?string $chain, 
-    ?string $contract_address
+    string $chain, 
+    string $contract_address
 ): \Tatum\Model\GetMarketplaceFeeRecipient200Response
 ```
 
@@ -297,9 +293,8 @@ Get the recipient of the NFT marketplace fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'chain_example';
@@ -333,8 +328,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceInfo(
-    ?string $chain, 
-    ?string $contract_address
+    string $chain, 
+    string $contract_address
 ): \Tatum\Model\GetMarketplaceInfo200Response
 ```
 
@@ -362,9 +357,8 @@ Get information about an NFT marketplace on Solana
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'SOL';
@@ -398,9 +392,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListing(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $id
+    string $chain, 
+    string $contract_address, 
+    string $id
 ): \Tatum\Model\GetMarketplaceListing200Response
 ```
 
@@ -429,9 +423,8 @@ Get information about a listing on the NFT marketplace
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'chain_example';
@@ -468,9 +461,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListings(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $type
+    string $chain, 
+    string $contract_address, 
+    string $type
 ): string[]
 ```
 
@@ -499,9 +492,8 @@ Get the listings of a certain type from the NFT marketplace
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'CELO';
@@ -538,7 +530,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplace(
-    ?\Tatum\Model\SellAssetOnMarketplaceRequest $sell_asset_on_marketplace_request
+    \Tatum\Model\SellAssetOnMarketplaceRequest $sell_asset_on_marketplace_request
 ): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
 
@@ -565,9 +557,8 @@ Sell an asset on the NFT marketplace
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $sell_asset_on_marketplace_request = new \Tatum\Model\SellAssetOnMarketplaceRequest();
 
@@ -597,7 +588,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->updateFee(
-    ?\Tatum\Model\UpdateFeeRequest $update_fee_request
+    \Tatum\Model\UpdateFeeRequest $update_fee_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -624,9 +615,8 @@ Update the NFT marketplace fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $update_fee_request = new \Tatum\Model\UpdateFeeRequest();
 
@@ -656,7 +646,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipient(
-    ?\Tatum\Model\UpdateFeeRecipientRequest $update_fee_recipient_request
+    \Tatum\Model\UpdateFeeRecipientRequest $update_fee_recipient_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -683,9 +673,8 @@ Update the recipient of the NFT marketplace fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $update_fee_recipient_request = new \Tatum\Model\UpdateFeeRecipientRequest();
 
@@ -715,7 +704,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplace(
-    ?\Tatum\Model\UpdateMarketplaceRequest $update_marketplace_request
+    \Tatum\Model\UpdateMarketplaceRequest $update_marketplace_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -742,9 +731,8 @@ Update an NFT marketplace on Solana
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $update_marketplace_request = new \Tatum\Model\UpdateMarketplaceRequest();
 
@@ -774,7 +762,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFeeFromMarketplace(
-    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
+    \Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -801,9 +789,8 @@ Withdraw funds from the marketplace fee account on Solana
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $withdraw_fee_from_marketplace_request = new \Tatum\Model\WithdrawFeeFromMarketplaceRequest();
 
@@ -833,7 +820,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->marketplace()->withdrawTreasuryFromMarketplace(
-    ?\Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
+    \Tatum\Model\WithdrawFeeFromMarketplaceRequest $withdraw_fee_from_marketplace_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -860,9 +847,8 @@ Withdraw funds from the marketplace treasury account on Solana
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $withdraw_fee_from_marketplace_request = new \Tatum\Model\WithdrawFeeFromMarketplaceRequest();
 

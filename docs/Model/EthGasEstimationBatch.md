@@ -1,10 +1,10 @@
 # EthGasEstimationBatch
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | **bool** | If all estimations succeeded. |
-**result** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](EthGasEstimationBatchResult.md) |  |
+**getError()** | **bool** | If all estimations succeeded. |
+**getResult()** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](EthGasEstimationBatchResult.md) |  |
 
 [[Back to Index]](../index.md)

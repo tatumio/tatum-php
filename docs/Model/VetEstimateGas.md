@@ -1,13 +1,13 @@
 # VetEstimateGas
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from** | **string** | Sender account address. |
-**to** | **string** | Recipient account address. |
-**value** | **string** | Amount to send. |
-**data** | **string** | Data to send to Smart Contract | [optional]
-**nonce** | **float** | Nonce | [optional]
+**getFrom()** | **string** | Sender account address. |
+**getTo()** | **string** | Recipient account address. |
+**getValue()** | **string** | Amount to send. |
+**getData()** | **string** | Data to send to Smart Contract | [optional]
+**getNonce()** | **float** | Nonce | [optional]
 
 [[Back to Index]](../index.md)

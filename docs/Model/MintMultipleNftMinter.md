@@ -1,15 +1,15 @@
 # MintMultipleNftMinter
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**to** | **string[]** | Blockchain address to send NFT token to. |
-**token_id** | **string[]** | ID of token to be created. |
-**minter** | **string** | Address of NFT minter, which will be used to mint the tokens. From this address, transaction fees will be deducted. |
-**url** | **string[]** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
-**contract_address** | **string** | Address of NFT token |
-**fee_currency** | **string** | (Celo only) The currency in which the transaction fee will be paid | [optional]
+**getChain()** | **string** | The blockchain to work with |
+**getTo()** | **string[]** | Blockchain address to send NFT token to. |
+**getTokenId()** | **string[]** | ID of token to be created. |
+**getMinter()** | **string** | Address of NFT minter, which will be used to mint the tokens. From this address, transaction fees will be deducted. |
+**getUrl()** | **string[]** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
+**getContractAddress()** | **string** | Address of NFT token |
+**getFeeCurrency()** | **string** | (Celo only) The currency in which the transaction fee will be paid | [optional]
 
 [[Back to Index]](../index.md)

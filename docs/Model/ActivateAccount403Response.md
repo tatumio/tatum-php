@@ -1,11 +1,11 @@
 # ActivateAccount403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.customer.inactive |
-**message** | **string** | Unable to activate account, customer inactive. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.customer.inactive |
+**getMessage()** | **string** | Unable to activate account, customer inactive. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

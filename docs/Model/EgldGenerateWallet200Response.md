@@ -1,9 +1,9 @@
 # EgldGenerateWallet200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mnemonic** | **string** | Mnemonic to use for generation of private key | [optional]
+**getMnemonic()** | **string** | Mnemonic to use for generation of private key | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,15 +1,15 @@
 # XlmAccountBalancesInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | The number of units of an asset held by this account. | [optional]
-**limit** | **string** | The maximum amount of this asset that this account is willing to accept. Specified when opening a trustline. | [optional]
-**buying_liabilities** | **string** | The sum of all buy offers owned by this account for this asset. | [optional]
-**selling_liabilities** | **string** | The sum of all sell offers owned by this account for this asset. | [optional]
-**asset_type** | **string** | Either native, credit_alphanum4, or credit_alphanum12. | [optional]
-**asset_code** | **string** | The code for this asset. | [optional]
-**asset_issuer** | **string** | The Stellar address of this asset’s issuer. | [optional]
+**getBalance()** | **string** | The number of units of an asset held by this account. | [optional]
+**getLimit()** | **string** | The maximum amount of this asset that this account is willing to accept. Specified when opening a trustline. | [optional]
+**getBuyingLiabilities()** | **string** | The sum of all buy offers owned by this account for this asset. | [optional]
+**getSellingLiabilities()** | **string** | The sum of all sell offers owned by this account for this asset. | [optional]
+**getAssetType()** | **string** | Either native, credit_alphanum4, or credit_alphanum12. | [optional]
+**getAssetCode()** | **string** | The code for this asset. | [optional]
+**getAssetIssuer()** | **string** | The Stellar address of this asset’s issuer. | [optional]
 
 [[Back to Index]](../index.md)

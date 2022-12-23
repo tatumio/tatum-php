@@ -1,11 +1,11 @@
 # SolanaTxMessageHeader
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**num_readonly_signed_accounts** | **float** |  | [optional]
-**num_readonly_unsigned_accounts** | **float** |  | [optional]
-**num_required_signatures** | **float** |  | [optional]
+**getNumReadonlySignedAccounts()** | **float** |  | [optional]
+**getNumReadonlyUnsignedAccounts()** | **float** |  | [optional]
+**getNumRequiredSignatures()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

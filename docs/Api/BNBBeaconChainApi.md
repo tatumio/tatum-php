@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBlockchainTransfer(
-    ?\Tatum\Model\BnbBlockchainTransferRequest $bnb_blockchain_transfer_request
+    \Tatum\Model\BnbBlockchainTransferRequest $bnb_blockchain_transfer_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -47,9 +47,8 @@ Send Binance / Binance Token from account to account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bnb_blockchain_transfer_request = new \Tatum\Model\BnbBlockchainTransferRequest();
 
@@ -79,7 +78,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBroadcast(
-    ?\Tatum\Model\Broadcast $broadcast
+    \Tatum\Model\Broadcast $broadcast
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -106,9 +105,8 @@ Broadcast signed BNB transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast = new \Tatum\Model\Broadcast();
 
@@ -162,9 +160,8 @@ Generate Binance wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\BnbWallet $response */
@@ -192,7 +189,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetAccount(
-    ?string $address
+    string $address
 ): \Tatum\Model\BnbAccount
 ```
 
@@ -219,9 +216,8 @@ Get Binance Account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = 'tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn';
@@ -252,7 +248,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetBlock(
-    ?float $height
+    float $height
 ): \Tatum\Model\BnbBlock
 ```
 
@@ -279,9 +275,8 @@ Get Binance Transactions in Block
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block height
 $height = 6470657;
@@ -336,9 +331,8 @@ Get Binance current block
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -366,7 +360,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\BnbTx
 ```
 
@@ -393,9 +387,8 @@ Get Binance Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '4B944BBF78F3ADE3A377551B5EA7AD0FEDBDA13165D932F94B106EF7A8E16C1A';
@@ -426,13 +419,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTxByAccount(
-    ?string $address, 
-    ?float $start_time, 
-    ?float $end_time, 
-    ?float $limit, 
-    ?float $offset, 
-    ?string $asset, 
-    ?string $address_type
+    string $address, 
+    float $start_time, 
+    float $end_time, 
+    [ float $limit,  ]
+    [ float $offset,  ]
+    [ string $asset,  ]
+    [ string $address_type ]
 ): \Tatum\Model\BnbTxInAccount
 ```
 
@@ -465,9 +458,8 @@ Get Binance Transactions By Address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address
 $address = 'tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn';

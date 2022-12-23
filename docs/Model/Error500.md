@@ -1,10 +1,10 @@
 # Error500
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **string** | Internal server error |
-**status_code** | **float** | 500 |
+**getMessage()** | **string** | Internal server error |
+**getStatusCode()** | **float** | 500 |
 
 [[Back to Index]](../index.md)

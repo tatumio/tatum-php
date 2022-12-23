@@ -1,12 +1,12 @@
 # BchInfo
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | Chain of the blockchain, main or test. | [optional]
-**blocks** | **float** | Last block. | [optional]
-**bestblockhash** | **string** | Hash of the last block. | [optional]
-**difficulty** | **float** | Difficulty of the PoW algorithm. | [optional]
+**getChain()** | **string** | Chain of the blockchain, main or test. | [optional]
+**getBlocks()** | **float** | Last block. | [optional]
+**getBestblockhash()** | **string** | Hash of the last block. | [optional]
+**getDifficulty()** | **float** | Difficulty of the PoW algorithm. | [optional]
 
 [[Back to Index]](../index.md)

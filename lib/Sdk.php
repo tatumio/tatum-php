@@ -45,8 +45,9 @@ class Sdk {
     /**
      * Tatum SDK
      *
-     * @var string $apiKeyMainnet MainNet Tatum API Key
-     * @var string $apiKeyTestnet TestNet Tatum API Key
+     * @see https://apidoc.tatum.io/#section/Authentication
+     * @var string $apiKeyMainnet (optional) MainNet Tatum API Key; default <b>empty string</b>
+     * @var string $apiKeyTestnet (optional) TestNet Tatum API Key; default <b>empty string</b>
      */
     public function __construct(string $apiKeyMainnet = "", string $apiKeyTestnet = "") {
         $this->_apiKeyMainnet = $apiKeyMainnet;

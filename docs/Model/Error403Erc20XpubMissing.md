@@ -1,11 +1,11 @@
 # Error403Erc20XpubMissing
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | erc20.address.xpub.missing |
-**message** | **string** | Either xpub or address must be present. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | erc20.address.xpub.missing |
+**getMessage()** | **string** | Either xpub or address must be present. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

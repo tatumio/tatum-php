@@ -1,10 +1,10 @@
 # TransactionFilterAmountInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | **string** | Filtering operation. |
-**value** | **string** | Value of the operation. |
+**getOp()** | **string** | Filtering operation. |
+**getValue()** | **string** | Value of the operation. |
 
 [[Back to Index]](../index.md)

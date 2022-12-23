@@ -1,11 +1,11 @@
 # SolanaTxMessageInstruction
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | **float[]** |  | [optional]
-**data** | **string** |  | [optional]
-**program_id_index** | **float** |  | [optional]
+**getAccounts()** | **float[]** |  | [optional]
+**getData()** | **string** |  | [optional]
+**getProgramIdIndex()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

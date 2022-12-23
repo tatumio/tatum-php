@@ -1,11 +1,11 @@
 # MultiTokenGetAddressBalance200ResponseInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contract_address** | **string** | Contract address of the Multi Token | [optional]
-**balances** | [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]**](MultiTokenGetAddressBalance200ResponseInnerBalancesInner.md) |  | [optional]
-**metadata** | [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]**](MultiTokenGetAddressBalance200ResponseInnerMetadataInner.md) |  | [optional]
+**getContractAddress()** | **string** | Contract address of the Multi Token | [optional]
+**getBalances()** | [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]**](MultiTokenGetAddressBalance200ResponseInnerBalancesInner.md) |  | [optional]
+**getMetadata()** | [**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]**](MultiTokenGetAddressBalance200ResponseInnerMetadataInner.md) |  | [optional]
 
 [[Back to Index]](../index.md)

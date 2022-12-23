@@ -1,15 +1,15 @@
 # FlowAddPubKeyToAddressRequest
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | **string** | Blockchain account to send from |
-**public_key** | **string** | Public key to be used |
-**mnemonic** | **string** | Mnemonic to generate private key. |
-**index** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. |
-**weight** | **float** | Weight of the key. If not set, default 1000 will be used. | [optional]
-**private_key** | **string** | Secret for account. Secret, or signature Id must be present. |
-**signature_id** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
+**getAccount()** | **string** | Blockchain account to send from |
+**getPublicKey()** | **string** | Public key to be used |
+**getMnemonic()** | **string** | Mnemonic to generate private key. |
+**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. |
+**getWeight()** | **float** | Weight of the key. If not set, default 1000 will be used. | [optional]
+**getPrivateKey()** | **string** | Secret for account. Secret, or signature Id must be present. |
+**getSignatureId()** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403AccountBalanceNonZero
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.balance.non.zero |
-**message** | **string** | Unable to deactivate account with non-zero balance. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.balance.non.zero |
+**getMessage()** | **string** | Unable to deactivate account with non-zero balance. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

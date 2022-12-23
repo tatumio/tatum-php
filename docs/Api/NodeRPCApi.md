@@ -15,13 +15,13 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonPostRpcDriver(
-    ?string $chain, 
-    ?object $body, 
-    ?string $x_api_key, 
-    ?string $node_type, 
-    ?string $testnet_type, 
-    ?string $chain_type, 
-    ?string $rpc_path
+    string $chain, 
+    object $body, 
+    [ string $x_api_key,  ]
+    [ string $node_type,  ]
+    [ string $testnet_type = 'ethereum-sepolia',  ]
+    [ string $chain_type = 'avax-c',  ]
+    [ string $rpc_path ]
 ): object
 ```
 
@@ -54,9 +54,8 @@ Connect to the blockchain node through an RPC driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to communicate with.
 $chain = 'ALGO';
@@ -104,10 +103,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcGetDriver(
-    ?string $chain, 
-    ?string $x_api_key, 
-    ?string $node_type, 
-    ?string $rpc_path
+    string $chain, 
+    [ string $x_api_key,  ]
+    [ string $node_type,  ]
+    [ string $rpc_path ]
 ): object
 ```
 
@@ -137,9 +136,8 @@ Connect to the blockchain node through an RPC driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to communicate with.
 $chain = 'ALGO';
@@ -179,11 +177,11 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcPutDriver(
-    ?string $chain, 
-    ?object $body, 
-    ?string $x_api_key, 
-    ?string $node_type, 
-    ?string $rpc_path
+    string $chain, 
+    object $body, 
+    [ string $x_api_key,  ]
+    [ string $node_type,  ]
+    [ string $rpc_path ]
 ): object
 ```
 
@@ -214,9 +212,8 @@ Connect to the blockchain node through an RPC driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to communicate with.
 $chain = 'ALGO';

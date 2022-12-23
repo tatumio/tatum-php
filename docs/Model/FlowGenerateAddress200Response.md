@@ -1,9 +1,9 @@
 # FlowGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Flow address | [optional]
+**getAddress()** | **string** | Flow address | [optional]
 
 [[Back to Index]](../index.md)

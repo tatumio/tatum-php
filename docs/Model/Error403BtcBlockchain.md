@@ -1,11 +1,11 @@
 # Error403BtcBlockchain
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | blockchain.error.code |
-**message** | **string** | ${error.message} Code: ${error.code} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | blockchain.error.code |
+**getMessage()** | **string** | ${error.message} Code: ${error.code} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

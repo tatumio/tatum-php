@@ -1,11 +1,11 @@
 # CeloGetBalance200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**celo** | **string** | Balance of Celo | [optional]
-**c_usd** | **string** | Balance of cUSD | [optional]
-**c_eur** | **string** | Balance of cEUR | [optional]
+**getCelo()** | **string** | Balance of Celo | [optional]
+**getCUsd()** | **string** | Balance of cUSD | [optional]
+**getCEur()** | **string** | Balance of cEUR | [optional]
 
 [[Back to Index]](../index.md)

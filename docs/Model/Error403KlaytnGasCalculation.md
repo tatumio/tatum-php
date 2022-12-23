@@ -1,11 +1,11 @@
 # Error403KlaytnGasCalculation
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | klaytn.transaction.gas |
-**message** | **string** | Unable to calculate gas limit for transaction. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | klaytn.transaction.gas |
+**getMessage()** | **string** | Unable to calculate gas limit for transaction. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

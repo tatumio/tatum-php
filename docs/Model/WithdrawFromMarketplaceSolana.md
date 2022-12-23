@@ -1,13 +1,13 @@
 # WithdrawFromMarketplaceSolana
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | Blockchain to work with. |
-**contract_address** | **string** | Blockchain address of the smart contract |
-**from** | **mixed** | Blockchain address of the marketplace fee recipient |
-**amount** | **string** | Amount of funds to withdraw. |
-**from_private_key** | **string** | The private key of the marketplace fee recipient |
+**getChain()** | **string** | Blockchain to work with. |
+**getContractAddress()** | **string** | Blockchain address of the smart contract |
+**getFrom()** | **mixed** | Blockchain address of the marketplace fee recipient |
+**getAmount()** | **string** | Amount of funds to withdraw. |
+**getFromPrivateKey()** | **string** | The private key of the marketplace fee recipient |
 
 [[Back to Index]](../index.md)

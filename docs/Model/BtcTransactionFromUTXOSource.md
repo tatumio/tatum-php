@@ -1,11 +1,11 @@
 # BtcTransactionFromUTXOSource
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_hash** | **string** | The transaction hash of the UTXO to be spent |
-**index** | **float** | The index of the UTXO to be spent |
-**private_key** | **string** | The private key of the blockchain address that holds the UTXO to be spent |
+**getTxHash()** | **string** | The transaction hash of the UTXO to be spent |
+**getIndex()** | **float** | The index of the UTXO to be spent |
+**getPrivateKey()** | **string** | The private key of the blockchain address that holds the UTXO to be spent |
 
 [[Back to Index]](../index.md)

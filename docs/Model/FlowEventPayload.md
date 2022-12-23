@@ -1,10 +1,10 @@
 # FlowEventPayload
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of payload. | [optional]
-**value** | [**\Tatum\Model\FlowEventPayloadValue**](FlowEventPayloadValue.md) |  | [optional]
+**getType()** | **string** | Type of payload. | [optional]
+**getValue()** | [**\Tatum\Model\FlowEventPayloadValue**](FlowEventPayloadValue.md) |  | [optional]
 
 [[Back to Index]](../index.md)

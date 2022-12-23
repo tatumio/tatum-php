@@ -1,10 +1,10 @@
 # TronAccountTrc10Inner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **string** | Name of the TRC10 asset. |
-**value** | **float** | Balance of the TRC10 asset. |
+**getKey()** | **string** | Name of the TRC10 asset. |
+**getValue()** | **float** | Balance of the TRC10 asset. |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403AmountFormat
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | amount.format |
-**message** | **string** | Amount has incorrect format. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | amount.format |
+**getMessage()** | **string** | Amount has incorrect format. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

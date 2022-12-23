@@ -1,10 +1,10 @@
 # FlowEventPayloadValue
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | Event type | [optional]
-**fields** | [**\Tatum\Model\FlowEventPayloadValueFieldsInner[]**](FlowEventPayloadValueFieldsInner.md) |  | [optional]
+**getId()** | **string** | Event type | [optional]
+**getFields()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInner[]**](FlowEventPayloadValueFieldsInner.md) |  | [optional]
 
 [[Back to Index]](../index.md)

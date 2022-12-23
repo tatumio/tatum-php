@@ -1,11 +1,11 @@
 # Error403AddressAccountXpubUsed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xpub.used |
-**message** | **string** | XPub already used registered within Tatum |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xpub.used |
+**getMessage()** | **string** | XPub already used registered within Tatum |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

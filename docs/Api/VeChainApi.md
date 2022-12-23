@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetBlockchainTransfer(
-    ?\Tatum\Model\VetBlockchainTransferRequest $vet_blockchain_transfer_request
+    \Tatum\Model\VetBlockchainTransferRequest $vet_blockchain_transfer_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -50,9 +50,8 @@ Send VeChain from account to account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $vet_blockchain_transfer_request = new \Tatum\Model\VetBlockchainTransferRequest();
 
@@ -82,7 +81,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -109,9 +108,8 @@ Broadcast signed VeChain transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -141,8 +139,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\VetGenerateAddress200Response
 ```
 
@@ -170,9 +168,8 @@ Generate VeChain account address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -206,7 +203,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -233,9 +230,8 @@ Generate VeChain private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -265,7 +261,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -292,9 +288,8 @@ Generate VeChain wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -325,7 +320,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGetBalance(
-    ?string $address
+    string $address
 ): \Tatum\Model\VetGetBalance200Response
 ```
 
@@ -352,9 +347,8 @@ Get VeChain Account balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x5034aa590125b64023a0262112b98d72e3c8e40e';
@@ -385,7 +379,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\VetBlock
 ```
 
@@ -412,9 +406,8 @@ Get VeChain Block by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $hash = 325324;
@@ -469,9 +462,8 @@ Get VeChain current block
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -499,7 +491,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGetEnergy(
-    ?string $address
+    string $address
 ): \Tatum\Model\VetGetEnergy200Response
 ```
 
@@ -526,9 +518,8 @@ Get VeChain Account energy (VTHO)
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x5034aa590125b64023a0262112b98d72e3c8e40e';
@@ -559,7 +550,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\VetTx
 ```
 
@@ -586,9 +577,8 @@ Get VeChain Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7';
@@ -619,7 +609,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransactionReceipt(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\VetTxReceipt
 ```
 
@@ -646,9 +636,8 @@ Get VeChain Transaction Receipt
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7';

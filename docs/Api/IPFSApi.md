@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->iPFS()->getIPFSData(
-    ?string $id
+    string $id
 ): \SplFileObject
 ```
 
@@ -41,9 +41,8 @@ Get file from IPFS
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // IPFS CID of the file
 $id = 'QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj';
@@ -74,7 +73,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->iPFS()->storeIPFS(
-    ?\SplFileObject $file
+    [ \SplFileObject $file ]
 ): \Tatum\Model\StoreIPFS200Response
 ```
 
@@ -101,9 +100,8 @@ Store data to IPFS
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Your file to store
 $file = "/path/to/file.txt";

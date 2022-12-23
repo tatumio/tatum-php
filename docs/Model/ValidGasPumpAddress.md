@@ -1,10 +1,10 @@
 # ValidGasPumpAddress
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**index** | **float** | The index of the activated gas pump address | [optional]
-**address** | **string** | The activated gas pump address | [optional]
+**getIndex()** | **float** | The index of the activated gas pump address | [optional]
+**getAddress()** | **string** | The activated gas pump address | [optional]
 
 [[Back to Index]](../index.md)

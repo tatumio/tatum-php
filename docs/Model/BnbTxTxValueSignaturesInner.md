@@ -1,12 +1,12 @@
 # BnbTxTxValueSignaturesInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_number** | **string** |  | [optional]
-**pub_key** | [**\Tatum\Model\BnbTxTxValueSignaturesInnerPubKey**](BnbTxTxValueSignaturesInnerPubKey.md) |  | [optional]
-**sequence** | **string** |  | [optional]
-**signature** | **string** |  | [optional]
+**getAccountNumber()** | **string** |  | [optional]
+**getPubKey()** | [**\Tatum\Model\BnbTxTxValueSignaturesInnerPubKey**](BnbTxTxValueSignaturesInnerPubKey.md) |  | [optional]
+**getSequence()** | **string** |  | [optional]
+**getSignature()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

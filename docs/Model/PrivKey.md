@@ -1,9 +1,9 @@
 # PrivKey
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **string** | Generated private key. | [optional]
+**getKey()** | **string** | Generated private key. | [optional]
 
 [[Back to Index]](../index.md)

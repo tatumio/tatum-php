@@ -1,11 +1,11 @@
 # Error403CustomerDisabled
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | customer.disabled |
-**message** | **string** | Unable to disable disabled customer. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | customer.disabled |
+**getMessage()** | **string** | Unable to disable disabled customer. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

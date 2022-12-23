@@ -1,8 +1,8 @@
 # GetTransactionsByAccountId200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 
 [[Back to Index]](../index.md)

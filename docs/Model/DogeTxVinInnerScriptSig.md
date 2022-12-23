@@ -1,10 +1,10 @@
 # DogeTxVinInnerScriptSig
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asm** | **string** |  | [optional]
-**hex** | **string** |  | [optional]
+**getAsm()** | **string** |  | [optional]
+**getHex()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

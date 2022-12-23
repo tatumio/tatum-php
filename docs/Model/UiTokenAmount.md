@@ -1,12 +1,12 @@
 # UiTokenAmount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **string** | Raw amount of tokens as a string, ignoring decimals. | [optional]
-**decimals** | **float** | Number of decimals configured for token's mint. | [optional]
-**ui_amount** | **mixed** | Token amount as a float, accounting for decimals. | [optional]
-**ui_amount_string** | **string** | Token amount as a string, accounting for decimals. | [optional]
+**getAmount()** | **string** | Raw amount of tokens as a string, ignoring decimals. | [optional]
+**getDecimals()** | **float** | Number of decimals configured for token's mint. | [optional]
+**getUiAmount()** | **mixed** | Token amount as a float, accounting for decimals. | [optional]
+**getUiAmountString()** | **string** | Token amount as a string, accounting for decimals. | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403RateNotFound
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | rate.not.found |
-**message** | **string** | No such currency rate. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | rate.not.found |
+**getMessage()** | **string** | No such currency rate. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

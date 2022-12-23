@@ -1,9 +1,9 @@
 # OneBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in ONE | [optional]
+**getBalance()** | **string** | Balance in ONE | [optional]
 
 [[Back to Index]](../index.md)

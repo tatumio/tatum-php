@@ -1,11 +1,11 @@
 # Error404TxNotFound
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | tx.not.found |
-**message** | **string** | Transaction not found. Possible not exists or is still pending. |
-**status_code** | **float** | 404 |
+**getErrorCode()** | **string** | tx.not.found |
+**getMessage()** | **string** | Transaction not found. Possible not exists or is still pending. |
+**getStatusCode()** | **float** | 404 |
 
 [[Back to Index]](../index.md)

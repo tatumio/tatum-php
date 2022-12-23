@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainSmartContractInvocation(
-    ?\Tatum\Model\BscBlockchainSmartContractInvocationRequest $bsc_blockchain_smart_contract_invocation_request
+    \Tatum\Model\BscBlockchainSmartContractInvocationRequest $bsc_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
 
@@ -51,9 +51,8 @@ Invoke a method in a smart contract on BNB Smart Chain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bsc_blockchain_smart_contract_invocation_request = new \Tatum\Model\BscBlockchainSmartContractInvocationRequest();
 
@@ -83,7 +82,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainTransfer(
-    ?\Tatum\Model\BscBlockchainTransferRequest $bsc_blockchain_transfer_request
+    \Tatum\Model\BscBlockchainTransferRequest $bsc_blockchain_transfer_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -110,9 +109,8 @@ Send BSC / BEP20 from account to account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bsc_blockchain_transfer_request = new \Tatum\Model\BscBlockchainTransferRequest();
 
@@ -142,7 +140,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -169,9 +167,8 @@ Broadcast signed BSC transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -201,8 +198,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\GeneratedAddressBsc
 ```
 
@@ -230,9 +227,8 @@ Generate BSC account address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -266,7 +262,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -293,9 +289,8 @@ Generate BSC private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -325,7 +320,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -352,9 +347,8 @@ Generate BSC wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -385,7 +379,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBalance(
-    ?string $address
+    string $address
 ): \Tatum\Model\BscBalance
 ```
 
@@ -412,9 +406,8 @@ Get BSC Account balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
@@ -445,7 +438,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\EthBlock
 ```
 
@@ -472,9 +465,8 @@ Get BSC block by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $hash = 6470657;
@@ -529,9 +521,8 @@ Get current block number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -559,7 +550,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\BscTx
 ```
 
@@ -586,9 +577,8 @@ Get BSC Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
@@ -619,7 +609,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransactionCount(
-    ?string $address
+    string $address
 ): float
 ```
 
@@ -646,9 +636,8 @@ Get count of outgoing BSC transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // address
 $address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
@@ -679,8 +668,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscWeb3Driver(
-    ?string $x_api_key, 
-    ?object $body
+    string $x_api_key, 
+    object $body
 ): object
 ```
 
@@ -708,9 +697,8 @@ Web3 HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';

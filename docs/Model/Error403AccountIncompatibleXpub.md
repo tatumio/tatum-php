@@ -1,11 +1,11 @@
 # Error403AccountIncompatibleXpub
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.xpub.incompatible |
-**message** | **string** | Xpub not compatible with account currency. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.xpub.incompatible |
+**getMessage()** | **string** | Xpub not compatible with account currency. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

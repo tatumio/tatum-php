@@ -1,10 +1,10 @@
 # BnbWallet
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Generated account address. | [optional]
-**private_key** | **string** | Generated private key for account. | [optional]
+**getAddress()** | **string** | Generated account address. | [optional]
+**getPrivateKey()** | **string** | Generated private key for account. | [optional]
 
 [[Back to Index]](../index.md)

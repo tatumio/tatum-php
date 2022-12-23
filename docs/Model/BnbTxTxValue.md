@@ -1,12 +1,12 @@
 # BnbTxTxValue
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**memo** | **string** |  | [optional]
-**msg** | [**\Tatum\Model\BnbTxTxValueMsgInner[]**](BnbTxTxValueMsgInner.md) |  | [optional]
-**signatures** | [**\Tatum\Model\BnbTxTxValueSignaturesInner[]**](BnbTxTxValueSignaturesInner.md) |  | [optional]
-**source** | **string** |  | [optional]
+**getMemo()** | **string** |  | [optional]
+**getMsg()** | [**\Tatum\Model\BnbTxTxValueMsgInner[]**](BnbTxTxValueMsgInner.md) |  | [optional]
+**getSignatures()** | [**\Tatum\Model\BnbTxTxValueSignaturesInner[]**](BnbTxTxValueSignaturesInner.md) |  | [optional]
+**getSource()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

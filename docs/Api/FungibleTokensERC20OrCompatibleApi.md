@@ -20,8 +20,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Approve(
-    ?\Tatum\Model\Erc20ApproveRequest $erc20_approve_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\Erc20ApproveRequest $erc20_approve_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -49,9 +49,8 @@ Allow a blockchain address to transfer and burn fungible tokens
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $erc20_approve_request = new \Tatum\Model\Erc20ApproveRequest();
 
@@ -84,8 +83,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Burn(
-    ?\Tatum\Model\Erc20BurnRequest $erc20_burn_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\Erc20BurnRequest $erc20_burn_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -113,9 +112,8 @@ Burn fungible tokens
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $erc20_burn_request = new \Tatum\Model\Erc20BurnRequest();
 
@@ -148,8 +146,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Deploy(
-    ?\Tatum\Model\Erc20DeployRequest $erc20_deploy_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\Erc20DeployRequest $erc20_deploy_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -177,9 +175,8 @@ Deploy a fungible token smart contract
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $erc20_deploy_request = new \Tatum\Model\Erc20DeployRequest();
 
@@ -212,10 +209,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalance(
-    ?string $chain, 
-    ?string $address, 
-    ?string $contract_address, 
-    ?string $x_testnet_type
+    string $chain, 
+    string $address, 
+    string $contract_address, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Erc20Balance
 ```
 
@@ -245,9 +242,8 @@ Get the number of fungible tokens that a blockchain address holds in a smart con
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Network name
 $chain = 'CELO';
@@ -287,8 +283,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(
-    ?string $chain, 
-    ?string $address
+    string $chain, 
+    string $address
 ): \Tatum\Model\Erc20BalanceForAddress[]
 ```
 
@@ -316,9 +312,8 @@ Get the total number of fungible tokens that a blockchain address holds
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Network name
 $chain = 'CELO';
@@ -352,14 +347,14 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(
-    ?string $chain, 
-    ?string $address, 
-    ?string $token_address, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?float $from, 
-    ?float $to, 
-    ?string $sort
+    string $chain, 
+    string $address, 
+    string $token_address, 
+    float $page_size, 
+    [ float $offset,  ]
+    [ float $from,  ]
+    [ float $to,  ]
+    [ string $sort = 'DESC' ]
 ): \Tatum\Model\FungibleTx[]
 ```
 
@@ -393,9 +388,8 @@ Get fungible token transactions on a blockchain address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'CELO';
@@ -447,8 +441,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Mint(
-    ?\Tatum\Model\Erc20MintRequest $erc20_mint_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\Erc20MintRequest $erc20_mint_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -476,9 +470,8 @@ Mint fungible tokens
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $erc20_mint_request = new \Tatum\Model\Erc20MintRequest();
 
@@ -511,8 +504,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20Transfer(
-    ?\Tatum\Model\Erc20TransferRequest $erc20_transfer_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\Erc20TransferRequest $erc20_transfer_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -540,9 +533,8 @@ Transfer fungible tokens
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $erc20_transfer_request = new \Tatum\Model\Erc20TransferRequest();
 

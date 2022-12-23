@@ -1,16 +1,16 @@
 # FlowEvent
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_id** | **string** |  | [optional]
-**block_height** | **float** |  | [optional]
-**block_timestamp** | **string** |  | [optional]
-**type** | **string** |  | [optional]
-**transaction_id** | **string** |  | [optional]
-**transaction_index** | **float** |  | [optional]
-**event_index** | **float** |  | [optional]
-**payload** | [**\Tatum\Model\FlowEventPayload**](FlowEventPayload.md) |  | [optional]
+**getBlockId()** | **string** |  | [optional]
+**getBlockHeight()** | **float** |  | [optional]
+**getBlockTimestamp()** | **string** |  | [optional]
+**getType()** | **string** |  | [optional]
+**getTransactionId()** | **string** |  | [optional]
+**getTransactionIndex()** | **float** |  | [optional]
+**getEventIndex()** | **float** |  | [optional]
+**getPayload()** | [**\Tatum\Model\FlowEventPayload**](FlowEventPayload.md) |  | [optional]
 
 [[Back to Index]](../index.md)

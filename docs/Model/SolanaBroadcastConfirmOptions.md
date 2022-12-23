@@ -1,10 +1,10 @@
 # SolanaBroadcastConfirmOptions
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**commitment** | **string** | Commitment to waiting for transaction confirmation | [optional]
-**preflight_commitment** | **string** | Preflight Commitment. | [optional]
+**getCommitment()** | **string** | Commitment to waiting for transaction confirmation | [optional]
+**getPreflightCommitment()** | **string** | Preflight Commitment. | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,15 +1,15 @@
 # TransferEthBlockchain
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
-**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**to** | **string** | Blockchain address to send assets |
-**currency** | **string** | Currency to transfer from Ethereum Blockchain Account. |
-**fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
-**amount** | **string** | Amount to be sent in Ether. |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getData()** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**getTo()** | **string** | Blockchain address to send assets |
+**getCurrency()** | **string** | Currency to transfer from Ethereum Blockchain Account. |
+**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getAmount()** | **string** | Amount to be sent in Ether. |
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 
 [[Back to Index]](../index.md)

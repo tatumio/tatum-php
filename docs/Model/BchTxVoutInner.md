@@ -1,11 +1,11 @@
 # BchTxVoutInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **float** |  | [optional]
-**n** | **float** |  | [optional]
-**script_pub_key** | [**\Tatum\Model\BchTxVoutInnerScriptPubKey**](BchTxVoutInnerScriptPubKey.md) |  | [optional]
+**getValue()** | **float** |  | [optional]
+**getN()** | **float** |  | [optional]
+**getScriptPubKey()** | [**\Tatum\Model\BchTxVoutInnerScriptPubKey**](BchTxVoutInnerScriptPubKey.md) |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # TronWallet
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mnemonic** | **string** | Generated mnemonic for wallet. |
-**xpub** | **string** | Generated Extended public key for wallet with derivation path according to BIP44. This key can be used to generate addresses. |
+**getMnemonic()** | **string** | Generated mnemonic for wallet. |
+**getXpub()** | **string** | Generated Extended public key for wallet with derivation path according to BIP44. This key can be used to generate addresses. |
 
 [[Back to Index]](../index.md)

@@ -1,13 +1,13 @@
 # SolanaBlockReward
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**commission** | **string** |  | [optional]
-**lamports** | **float** |  | [optional]
-**post_balance** | **float** |  | [optional]
-**pubkey** | **string** |  | [optional]
-**reward_type** | **string** |  | [optional]
+**getCommission()** | **string** |  | [optional]
+**getLamports()** | **float** |  | [optional]
+**getPostBalance()** | **float** |  | [optional]
+**getPubkey()** | **string** |  | [optional]
+**getRewardType()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

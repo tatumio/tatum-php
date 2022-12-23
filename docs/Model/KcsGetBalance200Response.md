@@ -1,9 +1,9 @@
 # KcsGetBalance200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in KCS | [optional]
+**getBalance()** | **string** | Balance in KCS | [optional]
 
 [[Back to Index]](../index.md)

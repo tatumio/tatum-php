@@ -1,11 +1,11 @@
 # EthGasEstimation
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gas_limit** | **string** | Gas limit for transaction in gas price. |
-**gas_price** | **string** | Gas price in wei. |
-**estimations** | [**\Tatum\Model\EthGasEstimationDetails**](EthGasEstimationDetails.md) |  |
+**getGasLimit()** | **string** | Gas limit for transaction in gas price. |
+**getGasPrice()** | **string** | Gas price in wei. |
+**getEstimations()** | [**\Tatum\Model\EthGasEstimationDetails**](EthGasEstimationDetails.md) |  |
 
 [[Back to Index]](../index.md)

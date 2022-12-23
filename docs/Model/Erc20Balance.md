@@ -1,9 +1,9 @@
 # Erc20Balance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | The number of fungible tokens in the smallest token unit (for example, if the token has 10 decimal places, the number is returned as 9*10^10) | [optional]
+**getBalance()** | **string** | The number of fungible tokens in the smallest token unit (for example, if the token has 10 decimal places, the number is returned as 9*10^10) | [optional]
 
 [[Back to Index]](../index.md)

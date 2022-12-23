@@ -1,18 +1,18 @@
 # StoreLogRequest
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **string** | The data to be stored on the blockchain |
-**chain** | **string** | The blockchain to store the data on |
-**from_private_key** | **string** | The private key of the blockchain address from which the transaction will be made and the transaction fee will be deducted |
-**from** | **string** | (Elrond only; required) The blockchain address from which the transaction will be made<br/>This is a mandatory parameter for Elrond. Do not use it with any other blockchain. | [optional]
-**to** | **string** | The blockchain address to store the data on<br/>If not provided, the data will be stored on the address from which the transaction is made. | [optional]
-**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**from_shard_id** | **float** | (Harmony only) The ID of the shard from which the data should be read | [optional]
-**to_shard_id** | **float** | (Harmony only) The ID of the shard to which the data should be recorded | [optional]
-**eth_fee** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
-**fee_currency** | **string** | The currency in which the transaction fee will be paid |
+**getData()** | **string** | The data to be stored on the blockchain |
+**getChain()** | **string** | The blockchain to store the data on |
+**getFromPrivateKey()** | **string** | The private key of the blockchain address from which the transaction will be made and the transaction fee will be deducted |
+**getFrom()** | **string** | (Elrond only; required) The blockchain address from which the transaction will be made<br/>This is a mandatory parameter for Elrond. Do not use it with any other blockchain. | [optional]
+**getTo()** | **string** | The blockchain address to store the data on<br/>If not provided, the data will be stored on the address from which the transaction is made. | [optional]
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**getFromShardId()** | **float** | (Harmony only) The ID of the shard from which the data should be read | [optional]
+**getToShardId()** | **float** | (Harmony only) The ID of the shard to which the data should be recorded | [optional]
+**getEthFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
 
 [[Back to Index]](../index.md)

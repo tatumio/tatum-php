@@ -1,9 +1,9 @@
 # DeployCeloErc20OffchainMnemXpubAllOf
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fee_currency** | **string** | The currency in which the transaction fee will be paid |
+**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
 
 [[Back to Index]](../index.md)

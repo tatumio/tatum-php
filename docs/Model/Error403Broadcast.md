@@ -1,11 +1,11 @@
 # Error403Broadcast
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | blockchain.broadcast.error |
-**message** | **string** | Unable to broadcast transaction, wrong input data. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | blockchain.broadcast.error |
+**getMessage()** | **string** | Unable to broadcast transaction, wrong input data. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

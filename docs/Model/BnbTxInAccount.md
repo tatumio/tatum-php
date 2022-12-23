@@ -1,10 +1,10 @@
 # BnbTxInAccount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **float** |  | [optional]
-**tx** | [**\Tatum\Model\BnbTransaction[]**](BnbTransaction.md) |  | [optional]
+**getTotal()** | **float** |  | [optional]
+**getTx()** | [**\Tatum\Model\BnbTransaction[]**](BnbTransaction.md) |  | [optional]
 
 [[Back to Index]](../index.md)

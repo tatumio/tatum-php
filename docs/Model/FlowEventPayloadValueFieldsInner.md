@@ -1,10 +1,10 @@
 # FlowEventPayloadValueFieldsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Name of the property | [optional]
-**value** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](FlowEventPayloadValueFieldsInnerValue.md) |  | [optional]
+**getName()** | **string** | Name of the property | [optional]
+**getValue()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](FlowEventPayloadValueFieldsInnerValue.md) |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403XdcMnemonicPrivateKey
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | private.mnemonic.missing |
-**message** | **string** | Either mnemonic and index or private key must be present. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | private.mnemonic.missing |
+**getMessage()** | **string** | Either mnemonic and index or private key must be present. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

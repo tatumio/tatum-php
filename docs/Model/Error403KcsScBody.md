@@ -1,11 +1,11 @@
 # Error403KcsScBody
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | kcs.sc.invalid |
-**message** | **string** | Invalid parameters for smart contract invocation. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | kcs.sc.invalid |
+**getMessage()** | **string** | Invalid parameters for smart contract invocation. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

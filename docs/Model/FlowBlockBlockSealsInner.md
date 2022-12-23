@@ -1,12 +1,12 @@
 # FlowBlockBlockSealsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_id** | **string** |  | [optional]
-**execution_receipt_signatures** | **string[]** |  | [optional]
-**execution_receipt_id** | **string** |  | [optional]
-**result_approval_signatures** | **string[]** |  | [optional]
+**getBlockId()** | **string** |  | [optional]
+**getExecutionReceiptSignatures()** | **string[]** |  | [optional]
+**getExecutionReceiptId()** | **string** |  | [optional]
+**getResultApprovalSignatures()** | **string[]** |  | [optional]
 
 [[Back to Index]](../index.md)

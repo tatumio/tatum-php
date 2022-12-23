@@ -1,10 +1,10 @@
 # CreateSubscriptionPending
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**attr** | [**\Tatum\Model\CreateSubscriptionPendingAttr**](CreateSubscriptionPendingAttr.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionPendingAttr**](CreateSubscriptionPendingAttr.md) |  |
 
 [[Back to Index]](../index.md)

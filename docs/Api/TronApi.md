@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->generateTronwallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\TronWallet
 ```
 
@@ -56,9 +56,8 @@ Generate a TRON wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -89,8 +88,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx(
-    ?string $address, 
-    ?string $next
+    string $address, 
+    [ string $next ]
 ): \Tatum\Model\TronAccountTx200Response
 ```
 
@@ -118,9 +117,8 @@ Get all transactions for a TRON account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The address of the TRON account to get all transactions for
 $address = 'TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8';
@@ -154,8 +152,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx20(
-    ?string $address, 
-    ?string $next
+    string $address, 
+    [ string $next ]
 ): \Tatum\Model\TronAccountTx20200Response
 ```
 
@@ -183,9 +181,8 @@ Get TRC-20 transactions for a TRON account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The address of the TRON account to get TRC-20 transactions for
 $address = 'TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8';
@@ -219,7 +216,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronBroadcast(
-    ?\Tatum\Model\TronBroadcast $tron_broadcast
+    \Tatum\Model\TronBroadcast $tron_broadcast
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -246,9 +243,8 @@ Broadcast a TRON transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_broadcast = new \Tatum\Model\TronBroadcast();
 
@@ -278,7 +274,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronCreateTrc10(
-    ?\Tatum\Model\TronCreateTrc10Request $tron_create_trc10_request
+    \Tatum\Model\TronCreateTrc10Request $tron_create_trc10_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -305,9 +301,8 @@ Create a TRC-10 token
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_create_trc10_request = new \Tatum\Model\TronCreateTrc10Request();
 
@@ -337,7 +332,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronCreateTrc20(
-    ?\Tatum\Model\TronCreateTrc20Request $tron_create_trc20_request
+    \Tatum\Model\TronCreateTrc20Request $tron_create_trc20_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -364,9 +359,8 @@ Create a TRC-20 token
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_create_trc20_request = new \Tatum\Model\TronCreateTrc20Request();
 
@@ -396,7 +390,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronFreeze(
-    ?\Tatum\Model\TronFreezeRequest $tron_freeze_request
+    \Tatum\Model\TronFreezeRequest $tron_freeze_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -423,9 +417,8 @@ Freeze the balance of a TRON account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_freeze_request = new \Tatum\Model\TronFreezeRequest();
 
@@ -455,8 +448,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\TronGenerateAddress200Response
 ```
 
@@ -484,9 +477,8 @@ Generate a TRON address from the wallet's extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters)
 $xpub = '0244b3f40c6e570ae0032f6d7be87737a6c4e5314a4a1a82e22d0460a0d0cd794936c61f0c80dc74ace4cd04690d4eeb1aa6555883be006e1748306faa7ed3a26a';
@@ -520,7 +512,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -547,9 +539,8 @@ Generate the private key for a TRON address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -579,7 +570,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronGetAccount(
-    ?string $address
+    string $address
 ): \Tatum\Model\TronAccount
 ```
 
@@ -606,9 +597,8 @@ Get the TRON account by its address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address.
 $address = 'TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8';
@@ -639,7 +629,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\TronBlock
 ```
 
@@ -666,9 +656,8 @@ Get a TRON block by its hash or height
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $hash = '000000000195a8cfe2ea4ca60ce921b30e95980a96c6bb1da4a35aa03da9c5a8';
@@ -723,9 +712,8 @@ Get the current TRON block
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\TronGetCurrentBlock200Response $response */
@@ -753,7 +741,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\TronTx
 ```
 
@@ -780,9 +768,8 @@ Get a TRON transaction by its hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash.
 $hash = '81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991';
@@ -813,7 +800,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronTransfer(
-    ?\Tatum\Model\TronTransferRequest $tron_transfer_request
+    \Tatum\Model\TronTransferRequest $tron_transfer_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -840,9 +827,8 @@ Send TRX to a TRON account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_transfer_request = new \Tatum\Model\TronTransferRequest();
 
@@ -872,7 +858,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronTransferTrc10(
-    ?\Tatum\Model\TronTransferTrc10Request $tron_transfer_trc10_request
+    \Tatum\Model\TronTransferTrc10Request $tron_transfer_trc10_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -899,9 +885,8 @@ Send TRC-10 tokens to a TRON account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_transfer_trc10_request = new \Tatum\Model\TronTransferTrc10Request();
 
@@ -931,7 +916,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronTransferTrc20(
-    ?\Tatum\Model\TronTransferTrc20Request $tron_transfer_trc20_request
+    \Tatum\Model\TronTransferTrc20Request $tron_transfer_trc20_request
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -958,9 +943,8 @@ Send TRC-20 tokens to a TRON account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_transfer_trc20_request = new \Tatum\Model\TronTransferTrc20Request();
 
@@ -990,7 +974,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->tron()->tronTrc10Detail(
-    ?string $id_or_owner_address
+    string $id_or_owner_address
 ): \Tatum\Model\TronTrc10Detail
 ```
 
@@ -1017,9 +1001,8 @@ Get information about a TRC-10 token
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The ID of the TRC-10 token or the address of the token's owner
 $id_or_owner_address = 1000540;

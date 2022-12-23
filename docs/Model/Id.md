@@ -1,9 +1,9 @@
 # Id
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | ID of the entity. | [optional]
+**getId()** | **string** | ID of the entity. | [optional]
 
 [[Back to Index]](../index.md)

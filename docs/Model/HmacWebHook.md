@@ -1,9 +1,9 @@
 # HmacWebHook
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hmac_secret** | **string** | Your HMAC secret password, which is used for signing the webhook payload. |
+**getHmacSecret()** | **string** | Your HMAC secret password, which is used for signing the webhook payload. |
 
 [[Back to Index]](../index.md)

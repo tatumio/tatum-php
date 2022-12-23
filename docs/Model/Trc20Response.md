@@ -1,10 +1,10 @@
 # Trc20Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **string** | The ID of the created virtual account with the currency set to the token name (the <code>symbol</code> parameter of the request body) | [optional]
-**address** | **string** | The deposit address of the virtual account | [optional]
+**getAccountId()** | **string** | The ID of the created virtual account with the currency set to the token name (the <code>symbol</code> parameter of the request body) | [optional]
+**getAddress()** | **string** | The deposit address of the virtual account | [optional]
 
 [[Back to Index]](../index.md)

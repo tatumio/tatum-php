@@ -1,11 +1,11 @@
 # Error403TxRecipientNotFound
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | recipientAccount.not.exists |
-**message** | **string** | Unable to find recipient account ${transaction.recipientAccountId}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | recipientAccount.not.exists |
+**getMessage()** | **string** | Unable to find recipient account ${transaction.recipientAccountId}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,9 +1,9 @@
 # XrpAccountTxTransactionsInnerMetaAffectedNodesInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_node** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode**](XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode.md) |  | [optional]
+**getCreatedNode()** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode**](XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode.md) |  | [optional]
 
 [[Back to Index]](../index.md)

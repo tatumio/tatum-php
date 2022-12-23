@@ -1,14 +1,14 @@
 # LtcTxInputsInnerCoin
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**version** | **float** |  | [optional]
-**height** | **float** |  | [optional]
-**value** | **string** | Value of the transaction, in LTC. | [optional]
-**script** | **string** |  | [optional]
-**address** | **string** | Sender address. | [optional]
-**coinbase** | **bool** | Coinbase transaction - miner fee. | [optional]
+**getVersion()** | **float** |  | [optional]
+**getHeight()** | **float** |  | [optional]
+**getValue()** | **string** | Value of the transaction, in LTC. | [optional]
+**getScript()** | **string** |  | [optional]
+**getAddress()** | **string** | Sender address. | [optional]
+**getCoinbase()** | **bool** | Coinbase transaction - miner fee. | [optional]
 
 [[Back to Index]](../index.md)

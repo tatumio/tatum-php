@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->approveNftAuctionSpending(
-    ?\Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request
+    \Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -50,9 +50,8 @@ Allow the NFT auction or marketplace to transfer an asset
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $approve_nft_auction_spending_request = new \Tatum\Model\ApproveNftAuctionSpendingRequest();
 
@@ -82,7 +81,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->bidOnAuction(
-    ?\Tatum\Model\BidOnAuctionRequest $bid_on_auction_request
+    \Tatum\Model\BidOnAuctionRequest $bid_on_auction_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -109,9 +108,8 @@ Bid for an asset at the NFT auction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bid_on_auction_request = new \Tatum\Model\BidOnAuctionRequest();
 
@@ -141,7 +139,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->cancelAuction(
-    ?\Tatum\Model\CancelAuctionRequest $cancel_auction_request
+    \Tatum\Model\CancelAuctionRequest $cancel_auction_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -168,9 +166,8 @@ Cancel the selling of an asset at the NFT auction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $cancel_auction_request = new \Tatum\Model\CancelAuctionRequest();
 
@@ -200,7 +197,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->createAuction(
-    ?\Tatum\Model\CreateAuctionRequest $create_auction_request
+    \Tatum\Model\CreateAuctionRequest $create_auction_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -227,9 +224,8 @@ Sell an asset at the NFT auction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_auction_request = new \Tatum\Model\CreateAuctionRequest();
 
@@ -259,7 +255,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->generateAuction(
-    ?\Tatum\Model\GenerateAuctionRequest $generate_auction_request
+    \Tatum\Model\GenerateAuctionRequest $generate_auction_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -286,9 +282,8 @@ Create an NFT auction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $generate_auction_request = new \Tatum\Model\GenerateAuctionRequest();
 
@@ -318,9 +313,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->getAuction(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $id
+    string $chain, 
+    string $contract_address, 
+    string $id
 ): \Tatum\Model\GetAuction200Response
 ```
 
@@ -349,9 +344,8 @@ Get information about an auctioned asset at the NFT auction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'chain_example';
@@ -388,8 +382,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->getAuctionFee(
-    ?string $chain, 
-    ?string $contract_address
+    string $chain, 
+    string $contract_address
 ): float
 ```
 
@@ -417,9 +411,8 @@ Get the NFT auction fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'chain_example';
@@ -453,8 +446,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->getAuctionFeeRecipient(
-    ?string $chain, 
-    ?string $contract_address
+    string $chain, 
+    string $contract_address
 ): \Tatum\Model\GetAuctionFeeRecipient200Response
 ```
 
@@ -482,9 +475,8 @@ Get the recipient of the NFT auction fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'chain_example';
@@ -518,7 +510,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->settleAuction(
-    ?\Tatum\Model\SettleAuctionRequest $settle_auction_request
+    \Tatum\Model\SettleAuctionRequest $settle_auction_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -545,9 +537,8 @@ Settle an NFT auction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $settle_auction_request = new \Tatum\Model\SettleAuctionRequest();
 
@@ -577,7 +568,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFee(
-    ?\Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request
+    \Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -604,9 +595,8 @@ Update the NFT auction fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $update_auction_fee_request = new \Tatum\Model\UpdateAuctionFeeRequest();
 
@@ -636,7 +626,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFeeRecipient(
-    ?\Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request
+    \Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -663,9 +653,8 @@ Update the recipient of the NFT auction fee
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $update_auction_fee_recipient_request = new \Tatum\Model\UpdateAuctionFeeRecipientRequest();
 

@@ -1,14 +1,14 @@
 # BurnNftFlowMnemonic
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**token_id** | **string** | ID of token to be destroyed. |
-**contract_address** | **string** | Address of NFT token |
-**account** | **string** | Blockchain address of the sender account. |
-**mnemonic** | **string** | Mnemonic to generate private key of sender address. |
-**index** | **int** | Derivation index of sender address. |
+**getChain()** | **string** | The blockchain to work with |
+**getTokenId()** | **string** | ID of token to be destroyed. |
+**getContractAddress()** | **string** | Address of NFT token |
+**getAccount()** | **string** | Blockchain address of the sender account. |
+**getMnemonic()** | **string** | Mnemonic to generate private key of sender address. |
+**getIndex()** | **int** | Derivation index of sender address. |
 
 [[Back to Index]](../index.md)

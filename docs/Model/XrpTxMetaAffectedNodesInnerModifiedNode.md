@@ -1,14 +1,14 @@
 # XrpTxMetaAffectedNodesInnerModifiedNode
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**final_fields** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields**](XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields.md) |  | [optional]
-**ledger_entry_type** | **string** |  | [optional]
-**ledger_index** | **string** |  | [optional]
-**previous_fields** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields**](XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields.md) |  | [optional]
-**previous_txn_id** | **string** |  | [optional]
-**previous_txn_lgr_seq** | **float** |  | [optional]
+**getFinalFields()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields**](XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields.md) |  | [optional]
+**getLedgerEntryType()** | **string** |  | [optional]
+**getLedgerIndex()** | **string** |  | [optional]
+**getPreviousFields()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields**](XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields.md) |  | [optional]
+**getPreviousTxnId()** | **string** |  | [optional]
+**getPreviousTxnLgrSeq()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -18,9 +18,9 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->addressExists(
-    ?string $currency, 
-    ?string $address, 
-    ?float $index
+    string $currency, 
+    string $address, 
+    [ float $index ]
 ): \Tatum\Model\Account
 ```
 
@@ -49,9 +49,8 @@ Check whether a blockchain address is assigned to a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The cryptocurrency of the blockchain address to check
 $currency = 'BNB';
@@ -88,9 +87,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->assignAddress(
-    ?string $id, 
-    ?string $address, 
-    ?float $index
+    string $id, 
+    string $address, 
+    [ float $index ]
 ): \Tatum\Model\Address
 ```
 
@@ -119,9 +118,8 @@ Assign a blockchain address to a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The ID of the virtual account to assign a blockchain address to
 $id = '5e68c66581f2ee32bc354087';
@@ -158,8 +156,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddress(
-    ?string $id, 
-    ?float $index
+    string $id, 
+    [ float $index ]
 ): \Tatum\Model\Address
 ```
 
@@ -187,9 +185,8 @@ Create a deposit address for a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';
@@ -223,7 +220,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddressesBatch(
-    ?\Tatum\Model\OffchainAddresses $offchain_addresses
+    \Tatum\Model\OffchainAddresses $offchain_addresses
 ): \Tatum\Model\Address[]
 ```
 
@@ -250,9 +247,8 @@ Create multiple deposit addresses for a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $offchain_addresses = new \Tatum\Model\OffchainAddresses();
 
@@ -282,7 +278,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->getAllDepositAddresses(
-    ?string $id
+    string $id
 ): \Tatum\Model\Address[]
 ```
 
@@ -309,9 +305,8 @@ Get all deposit addresses for a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The ID of the virtual account to get deposit addresses for
 $id = '5e68c66581f2ee32bc354087';
@@ -342,9 +337,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->removeAddress(
-    ?string $id, 
-    ?string $address, 
-    ?float $index
+    string $id, 
+    string $address, 
+    [ float $index ]
 )
 ```
 
@@ -373,9 +368,8 @@ Remove a deposit address from a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $id = '5e68c66581f2ee32bc354087';

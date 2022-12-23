@@ -1,12 +1,12 @@
 # TronTx20TokenInfo
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol** | **string** |  |
-**address** | **string** |  |
-**decimals** | **float** |  |
-**name** | **string** |  |
+**getSymbol()** | **string** |  |
+**getAddress()** | **string** |  |
+**getDecimals()** | **float** |  |
+**getName()** | **string** |  |
 
 [[Back to Index]](../index.md)

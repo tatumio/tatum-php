@@ -30,8 +30,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftAddMinter(
-    ?\Tatum\Model\NftAddMinterRequest $nft_add_minter_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\NftAddMinterRequest $nft_add_minter_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -59,9 +59,8 @@ Add an NFT minter to an NFT smart contract
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_add_minter_request = new \Tatum\Model\NftAddMinterRequest();
 
@@ -94,8 +93,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnErc721(
-    ?\Tatum\Model\NftBurnErc721Request $nft_burn_erc721_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\NftBurnErc721Request $nft_burn_erc721_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -123,9 +122,8 @@ Burn an NFT
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_burn_erc721_request = new \Tatum\Model\NftBurnErc721Request();
 
@@ -158,8 +156,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployErc721(
-    ?\Tatum\Model\NftDeployErc721Request $nft_deploy_erc721_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\NftDeployErc721Request $nft_deploy_erc721_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -187,9 +185,8 @@ Deploy an NFT smart contract
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_deploy_erc721_request = new \Tatum\Model\NftDeployErc721Request();
 
@@ -222,10 +219,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetBalanceErc721(
-    ?string $chain, 
-    ?string $address, 
-    ?string $contract_address, 
-    ?string $x_testnet_type
+    string $chain, 
+    string $address, 
+    string $contract_address, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftGetBalanceErc721200Response
 ```
 
@@ -255,9 +252,8 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';
@@ -297,9 +293,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetContractAddress(
-    ?string $chain, 
-    ?string $hash, 
-    ?string $x_testnet_type
+    string $chain, 
+    string $hash, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftGetContractAddress200Response
 ```
 
@@ -328,9 +324,8 @@ Get the address of an NFT smart contract by its transaction hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';
@@ -367,11 +362,11 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetMetadataErc721(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $token_id, 
-    ?string $account, 
-    ?string $x_testnet_type
+    string $chain, 
+    string $contract_address, 
+    string $token_id, 
+    [ string $account,  ]
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftMetadataErc721
 ```
 
@@ -402,9 +397,8 @@ Get NFT metadata
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';
@@ -447,10 +441,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetProvenanceDataErc721(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $token_id, 
-    ?string $x_testnet_type
+    string $chain, 
+    string $contract_address, 
+    string $token_id, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftProvenanceDataErc721[]
 ```
 
@@ -480,9 +474,8 @@ Get NFT provenance information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';
@@ -522,10 +515,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetRoyaltyErc721(
-    ?string $chain, 
-    ?string $contract_address, 
-    ?string $token_id, 
-    ?string $x_testnet_type
+    string $chain, 
+    string $contract_address, 
+    string $token_id, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftRoyaltyErc721
 ```
 
@@ -555,9 +548,8 @@ Get NFT royalty information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';
@@ -597,8 +589,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(
-    ?string $chain, 
-    ?string $address
+    string $chain, 
+    string $address
 ): \Tatum\Model\NftTokenByAddressErc721[]
 ```
 
@@ -626,9 +618,8 @@ Get all NFTs that a blockchain address holds
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'SOL';
@@ -662,10 +653,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(
-    ?string $chain, 
-    ?float $page_size, 
-    ?string $address, 
-    ?float $offset
+    string $chain, 
+    float $page_size, 
+    string $address, 
+    [ float $offset ]
 ): \Tatum\Model\NftTokenByCollectionErc721[]
 ```
 
@@ -695,9 +686,8 @@ Get all NFTs from a collection
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'ETH';
@@ -737,9 +727,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactErc721(
-    ?string $chain, 
-    ?string $hash, 
-    ?string $x_testnet_type
+    string $chain, 
+    string $hash, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftGetTransactErc721200Response
 ```
 
@@ -768,9 +758,8 @@ Get an NFT transaction by its hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'chain_example';
@@ -807,13 +796,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByAddress(
-    ?string $chain, 
-    ?string $address, 
-    ?string $token_address, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?float $from, 
-    ?float $to
+    string $chain, 
+    string $address, 
+    string $token_address, 
+    float $page_size, 
+    [ float $offset,  ]
+    [ float $from,  ]
+    [ float $to ]
 ): \Tatum\Model\NftTx[]
 ```
 
@@ -846,9 +835,8 @@ Get NFT transactions on a blockchain address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'CELO';
@@ -897,13 +885,13 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByToken(
-    ?string $chain, 
-    ?string $token_id, 
-    ?string $token_address, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?float $from, 
-    ?float $to
+    string $chain, 
+    string $token_id, 
+    string $token_address, 
+    float $page_size, 
+    [ float $offset,  ]
+    [ float $from,  ]
+    [ float $to ]
 ): \Tatum\Model\NftTx[]
 ```
 
@@ -936,9 +924,8 @@ Get NFT transactions for an NFT
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'CELO';
@@ -987,8 +974,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintErc721(
-    ?\Tatum\Model\NftMintErc721Request $nft_mint_erc721_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\NftMintErc721Request $nft_mint_erc721_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftMintErc721200Response
 ```
 
@@ -1016,9 +1003,8 @@ Mint an NFT
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_mint_erc721_request = new \Tatum\Model\NftMintErc721Request();
 
@@ -1051,8 +1037,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintMultipleErc721(
-    ?\Tatum\Model\NftMintMultipleErc721Request $nft_mint_multiple_erc721_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\NftMintMultipleErc721Request $nft_mint_multiple_erc721_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\NftMintMultipleErc721200Response
 ```
 
@@ -1080,9 +1066,8 @@ Mint multiple NFTs
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_mint_multiple_erc721_request = new \Tatum\Model\NftMintMultipleErc721Request();
 
@@ -1115,8 +1100,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransferErc721(
-    ?\Tatum\Model\NftTransferErc721Request $nft_transfer_erc721_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\NftTransferErc721Request $nft_transfer_erc721_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -1144,9 +1129,8 @@ Transfer an NFT
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_transfer_erc721_request = new \Tatum\Model\NftTransferErc721Request();
 
@@ -1179,8 +1163,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftUpdateCashbackErc721(
-    ?\Tatum\Model\NftUpdateCashbackErc721Request $nft_update_cashback_erc721_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\NftUpdateCashbackErc721Request $nft_update_cashback_erc721_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -1208,9 +1192,8 @@ Update NFT royalty information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_update_cashback_erc721_request = new \Tatum\Model\NftUpdateCashbackErc721Request();
 
@@ -1243,7 +1226,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftVerifyInCollection(
-    ?\Tatum\Model\NftVerifyInCollectionRequest $nft_verify_in_collection_request
+    \Tatum\Model\NftVerifyInCollectionRequest $nft_verify_in_collection_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -1270,9 +1253,8 @@ Verify an NFT in an NFT collection on Solana
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $nft_verify_in_collection_request = new \Tatum\Model\NftVerifyInCollectionRequest();
 

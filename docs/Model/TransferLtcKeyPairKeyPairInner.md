@@ -1,10 +1,10 @@
 # TransferLtcKeyPairKeyPairInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Blockchain address assigned to account withdrawal is made from. | [optional]
-**private_key** | **string** | Private key of blockchain address. | [optional]
+**getAddress()** | **string** | Blockchain address assigned to account withdrawal is made from. | [optional]
+**getPrivateKey()** | **string** | Private key of blockchain address. | [optional]
 
 [[Back to Index]](../index.md)

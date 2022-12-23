@@ -1,11 +1,11 @@
 # XdcEstimateGas
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from** | **string** | Sender address. |
-**to** | **string** | Blockchain address to send assets |
-**amount** | **string** | Amount to be sent in XDC. |
+**getFrom()** | **string** | Sender address. |
+**getTo()** | **string** | Blockchain address to send assets |
+**getAmount()** | **string** | Amount to be sent in XDC. |
 
 [[Back to Index]](../index.md)

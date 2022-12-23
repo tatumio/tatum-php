@@ -1,10 +1,10 @@
 # NftTokenByCollectionErc721
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token_id** | **string** | ID of the token. |
-**metadata** | [**\Tatum\Model\NftTokenByCollectionErc721TokenMetadata**](NftTokenByCollectionErc721TokenMetadata.md) |  | [optional]
+**getTokenId()** | **string** | ID of the token. |
+**getMetadata()** | [**\Tatum\Model\NftTokenByCollectionErc721TokenMetadata**](NftTokenByCollectionErc721TokenMetadata.md) |  | [optional]
 
 [[Back to Index]](../index.md)

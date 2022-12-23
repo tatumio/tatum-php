@@ -1,10 +1,10 @@
 # UpdateAccount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_code** | **string** | For bookkeeping to distinct account purpose. | [optional]
-**account_number** | **string** | Account number from external system. | [optional]
+**getAccountCode()** | **string** | For bookkeeping to distinct account purpose. | [optional]
+**getAccountNumber()** | **string** | Account number from external system. | [optional]
 
 [[Back to Index]](../index.md)

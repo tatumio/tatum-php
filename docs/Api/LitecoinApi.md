@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -53,9 +53,8 @@ Broadcast signed Litecoin transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -85,8 +84,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\LtcGenerateAddress200Response
 ```
 
@@ -114,9 +113,8 @@ Generate Litecoin deposit address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -150,7 +148,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -177,9 +175,8 @@ Generate Litecoin private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -209,7 +206,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -236,9 +233,8 @@ Generate Litecoin wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -269,7 +265,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBalanceOfAddress(
-    ?string $address
+    string $address
 ): \Tatum\Model\BtcBasedBalance
 ```
 
@@ -296,9 +292,8 @@ Get the balance of a Litecoin address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address
 $address = 'n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or';
@@ -329,7 +324,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\LtcBlock
 ```
 
@@ -356,9 +351,8 @@ Get Litecoin Block by hash or height
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $hash = 1234314;
@@ -413,9 +407,8 @@ Get Litecoin Blockchain Information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\LtcInfo $response */
@@ -443,7 +436,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockHash(
-    ?float $i
+    float $i
 ): \Tatum\Model\LtcGetBlockHash200Response
 ```
 
@@ -470,9 +463,8 @@ Get Litecoin Block hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The number of blocks preceding a particular block on a block chain.
 $i = 1234314;
@@ -527,9 +519,8 @@ Get Mempool Transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var string[] $response */
@@ -557,7 +548,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetRawTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\LtcTx
 ```
 
@@ -584,9 +575,8 @@ Get Litecoin Transaction by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = 'd60631d8e5c8b6eb0557b5181cf28564d771c628a08abc414e87ad7c05ff2fc2';
@@ -617,9 +607,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetTxByAddress(
-    ?string $address, 
-    ?float $page_size, 
-    ?float $offset
+    string $address, 
+    float $page_size, 
+    [ float $offset ]
 ): \Tatum\Model\LtcTx[]
 ```
 
@@ -648,9 +638,8 @@ Get Litecoin Transactions by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address
 $address = 'n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or';
@@ -687,8 +676,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetUTXO(
-    ?string $hash, 
-    ?float $index
+    string $hash, 
+    float $index
 ): \Tatum\Model\LtcUTXO
 ```
 
@@ -716,9 +705,8 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The transaction hash
 $hash = '5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a';
@@ -752,7 +740,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcRpcDriver(
-    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
+    \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
 ): object
 ```
 
@@ -779,9 +767,8 @@ JSON RPC HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bch_rpc_driver_request = new \Tatum\Model\BchRpcDriverRequest();
 
@@ -811,7 +798,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransferBlockchain(
-    ?\Tatum\Model\LtcTransferBlockchainRequest $ltc_transfer_blockchain_request
+    \Tatum\Model\LtcTransferBlockchainRequest $ltc_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -838,9 +825,8 @@ Send LTC to Litecoin addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $ltc_transfer_blockchain_request = new \Tatum\Model\LtcTransferBlockchainRequest();
 

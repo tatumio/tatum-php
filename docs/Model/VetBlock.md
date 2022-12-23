@@ -1,23 +1,23 @@
 # VetBlock
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**number** | **int** | block number (height) | [optional]
-**id** | **string** | block identifier | [optional]
-**size** | **int** | RLP encoded block size in bytes | [optional]
-**parent_id** | **string** | parent block ID | [optional]
-**timestamp** | **int** | block unix timestamp | [optional]
-**gas_limit** | **int** | block gas limit (max allowed accumulative gas usage of transactions) | [optional]
-**beneficiary** | **string** | Address of account to receive block reward | [optional]
-**gas_used** | **int** | accumulative gas usage of transactions | [optional]
-**total_score** | **int** | sum of all ancestral blocks' score | [optional]
-**txs_root** | **string** | root hash of transactions in the block | [optional]
-**txs_features** | **int** | supported txs features bitset | [optional]
-**state_root** | **string** | root hash of accounts state | [optional]
-**receipts_root** | **string** | root hash of transaction receipts | [optional]
-**signer** | **string** | the one who signed this block | [optional]
-**transactions** | **string[]** | transactions IDs | [optional]
+**getNumber()** | **int** | block number (height) | [optional]
+**getId()** | **string** | block identifier | [optional]
+**getSize()** | **int** | RLP encoded block size in bytes | [optional]
+**getParentId()** | **string** | parent block ID | [optional]
+**getTimestamp()** | **int** | block unix timestamp | [optional]
+**getGasLimit()** | **int** | block gas limit (max allowed accumulative gas usage of transactions) | [optional]
+**getBeneficiary()** | **string** | Address of account to receive block reward | [optional]
+**getGasUsed()** | **int** | accumulative gas usage of transactions | [optional]
+**getTotalScore()** | **int** | sum of all ancestral blocks' score | [optional]
+**getTxsRoot()** | **string** | root hash of transactions in the block | [optional]
+**getTxsFeatures()** | **int** | supported txs features bitset | [optional]
+**getStateRoot()** | **string** | root hash of accounts state | [optional]
+**getReceiptsRoot()** | **string** | root hash of transaction receipts | [optional]
+**getSigner()** | **string** | the one who signed this block | [optional]
+**getTransactions()** | **string[]** | transactions IDs | [optional]
 
 [[Back to Index]](../index.md)

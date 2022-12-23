@@ -1,9 +1,9 @@
 # Url
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **string** | QR Code as data URL | [optional]
+**getUrl()** | **string** | QR Code as data URL | [optional]
 
 [[Back to Index]](../index.md)

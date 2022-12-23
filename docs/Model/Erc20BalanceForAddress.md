@@ -1,10 +1,10 @@
 # Erc20BalanceForAddress
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contract_address** | **string** | The address of the smart contract that the fungible tokens were minted on | [optional]
-**amount** | **string** | The number of the fungible tokens | [optional]
+**getContractAddress()** | **string** | The address of the smart contract that the fungible tokens were minted on | [optional]
+**getAmount()** | **string** | The number of the fungible tokens | [optional]
 
 [[Back to Index]](../index.md)

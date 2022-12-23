@@ -1,9 +1,9 @@
 # KlaytnGetBalance200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in KLAY | [optional]
+**getBalance()** | **string** | Balance in KLAY | [optional]
 
 [[Back to Index]](../index.md)

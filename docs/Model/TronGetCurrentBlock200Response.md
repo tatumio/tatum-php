@@ -1,11 +1,11 @@
 # TronGetCurrentBlock200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_number** | **float** | Block height. | [optional]
-**hash** | **string** | Block hash. | [optional]
-**testnet** | **bool** | Wether the block is from mainnet of Shasta testnet | [optional]
+**getBlockNumber()** | **float** | Block height. | [optional]
+**getHash()** | **string** | Block hash. | [optional]
+**getTestnet()** | **bool** | Wether the block is from mainnet of Shasta testnet | [optional]
 
 [[Back to Index]](../index.md)

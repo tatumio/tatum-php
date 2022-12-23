@@ -1,10 +1,10 @@
 # OneBlockCurrent
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shard_id** | **float** | Shard ID | [optional]
-**block_number** | **float** | Current block number in this shard | [optional]
+**getShardId()** | **float** | Shard ID | [optional]
+**getBlockNumber()** | **float** | Current block number in this shard | [optional]
 
 [[Back to Index]](../index.md)

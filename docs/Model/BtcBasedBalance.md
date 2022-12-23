@@ -1,10 +1,10 @@
 # BtcBasedBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**incoming** | **string** | Total sum of the assets that arrives to the address. | [optional]
-**outgoing** | **string** | Total sum of the assets that leaves from the address. | [optional]
+**getIncoming()** | **string** | Total sum of the assets that arrives to the address. | [optional]
+**getOutgoing()** | **string** | Total sum of the assets that leaves from the address. | [optional]
 
 [[Back to Index]](../index.md)

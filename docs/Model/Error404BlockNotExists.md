@@ -1,11 +1,11 @@
 # Error404BlockNotExists
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | block.hash.not.exists |
-**message** | **string** | No such block. |
-**status_code** | **float** | 404 |
+**getErrorCode()** | **string** | block.hash.not.exists |
+**getMessage()** | **string** | No such block. |
+**getStatusCode()** | **float** | 404 |
 
 [[Back to Index]](../index.md)

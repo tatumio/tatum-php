@@ -1,14 +1,14 @@
 # MintNftMinter
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**contract_address** | **string** | The blockchain address of the smart contract to build the NFT on |
-**minter** | **string** | The blockchain address of the Tatum NFT minter; this is the address that you added as an NFT minter to your NFT smart contract |
-**to** | **string** | The blockchain address to send the NFT to |
-**token_id** | **string** | The ID of the NFT |
-**url** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
+**getChain()** | **string** | The blockchain to work with |
+**getContractAddress()** | **string** | The blockchain address of the smart contract to build the NFT on |
+**getMinter()** | **string** | The blockchain address of the Tatum NFT minter; this is the address that you added as an NFT minter to your NFT smart contract |
+**getTo()** | **string** | The blockchain address to send the NFT to |
+**getTokenId()** | **string** | The ID of the NFT |
+**getUrl()** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
 
 [[Back to Index]](../index.md)

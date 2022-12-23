@@ -1,11 +1,11 @@
 # Error403ComplianceEth
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | compliance.country.eth.not.supported |
-**message** | **string** | Customer country not supported for ETH. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | compliance.country.eth.not.supported |
+**getMessage()** | **string** | Customer country not supported for ETH. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

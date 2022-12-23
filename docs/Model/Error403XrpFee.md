@@ -1,11 +1,11 @@
 # Error403XrpFee
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xrp.fee |
-**message** | **string** | Unable to calculate fee. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xrp.fee |
+**getMessage()** | **string** | Unable to calculate fee. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

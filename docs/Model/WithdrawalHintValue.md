@@ -1,10 +1,10 @@
 # WithdrawalHintValue
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**\Tatum\Model\Address**](Address.md) |  | [optional]
-**amount** | **string** | Balance for address. | [optional]
+**getAddress()** | [**\Tatum\Model\Address**](Address.md) |  | [optional]
+**getAmount()** | **string** | Balance for address. | [optional]
 
 [[Back to Index]](../index.md)

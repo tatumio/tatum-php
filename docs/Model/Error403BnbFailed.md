@@ -1,11 +1,11 @@
 # Error403BnbFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | bnb.failed |
-**message** | **string** | Unable to communicate with blockchain. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | bnb.failed |
+**getMessage()** | **string** | Unable to communicate with blockchain. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

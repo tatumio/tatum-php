@@ -1,17 +1,17 @@
 # TransferXrpBlockchainAssetKMS
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from_account** | **string** | XRP account address. Must be the one used for generating deposit tags. |
-**to** | **string** | Blockchain address to send assets |
-**amount** | **string** | Amount to be sent, in XRP. |
-**signature_id** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
-**fee** | **string** | Fee to be paid, in XRP. If omitted, current fee will be calculated. | [optional]
-**source_tag** | **int** | Source tag of sender account, if any. | [optional]
-**destination_tag** | **int** | Destination tag of recipient account, if any. | [optional]
-**issuer_account** | **string** | Blockchain address of the issuer of the assets to create trust line for. |
-**token** | **string** | Asset name. Must be 160bit HEX string, e.g. SHA1. |
+**getFromAccount()** | **string** | XRP account address. Must be the one used for generating deposit tags. |
+**getTo()** | **string** | Blockchain address to send assets |
+**getAmount()** | **string** | Amount to be sent, in XRP. |
+**getSignatureId()** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
+**getFee()** | **string** | Fee to be paid, in XRP. If omitted, current fee will be calculated. | [optional]
+**getSourceTag()** | **int** | Source tag of sender account, if any. | [optional]
+**getDestinationTag()** | **int** | Destination tag of recipient account, if any. | [optional]
+**getIssuerAccount()** | **string** | Blockchain address of the issuer of the assets to create trust line for. |
+**getToken()** | **string** | Asset name. Must be 160bit HEX string, e.g. SHA1. |
 
 [[Back to Index]](../index.md)

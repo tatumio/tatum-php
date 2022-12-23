@@ -1,15 +1,15 @@
 # FlowBlock
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | Hash of the block. | [optional]
-**parent_id** | **string** | Hash of the parent block. | [optional]
-**height** | **float** | The block number. | [optional]
-**timestamp** | **string** | Timestamp of the block. | [optional]
-**transactions** | **string[]** | Array of transaction IDs. | [optional]
-**signatures** | **string[]** | Array of signatures. | [optional]
-**block_seals** | [**\Tatum\Model\FlowBlockBlockSealsInner[]**](FlowBlockBlockSealsInner.md) | Array of block seals. | [optional]
+**getId()** | **string** | Hash of the block. | [optional]
+**getParentId()** | **string** | Hash of the parent block. | [optional]
+**getHeight()** | **float** | The block number. | [optional]
+**getTimestamp()** | **string** | Timestamp of the block. | [optional]
+**getTransactions()** | **string[]** | Array of transaction IDs. | [optional]
+**getSignatures()** | **string[]** | Array of signatures. | [optional]
+**getBlockSeals()** | [**\Tatum\Model\FlowBlockBlockSealsInner[]**](FlowBlockBlockSealsInner.md) | Array of block seals. | [optional]
 
 [[Back to Index]](../index.md)

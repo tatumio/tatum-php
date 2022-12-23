@@ -1,11 +1,11 @@
 # LtcTxOutputsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **string** | Sent amount in LTC. | [optional]
-**script** | **string** | Transaction script. | [optional]
-**address** | **string** | Recipient address. | [optional]
+**getValue()** | **string** | Sent amount in LTC. | [optional]
+**getScript()** | **string** | Transaction script. | [optional]
+**getAddress()** | **string** | Recipient address. | [optional]
 
 [[Back to Index]](../index.md)

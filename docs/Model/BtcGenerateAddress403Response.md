@@ -1,11 +1,11 @@
 # BtcGenerateAddress403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | Address.generation.failed |
-**message** | **string** | Unable to generate address. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | Address.generation.failed |
+**getMessage()** | **string** | Unable to generate address. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

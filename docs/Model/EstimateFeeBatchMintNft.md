@@ -1,15 +1,15 @@
 # EstimateFeeBatchMintNft
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | Blockchain to estimate fee for. |
-**type** | **string** | Type of transaction |
-**sender** | **string** | Address of the minter |
-**recipients** | **string[]** | Blockchain addresses to mint tokens to |
-**contract_address** | **string** | Contract address of NFT token |
-**token_ids** | **string[]** | Token IDs |
-**urls** | **string[]** | Metadata URLs |
+**getChain()** | **string** | Blockchain to estimate fee for. |
+**getType()** | **string** | Type of transaction |
+**getSender()** | **string** | Address of the minter |
+**getRecipients()** | **string[]** | Blockchain addresses to mint tokens to |
+**getContractAddress()** | **string** | Contract address of NFT token |
+**getTokenIds()** | **string[]** | Token IDs |
+**getUrls()** | **string[]** | Metadata URLs |
 
 [[Back to Index]](../index.md)

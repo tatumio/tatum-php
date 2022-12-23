@@ -1,10 +1,10 @@
 # FeeAndChange
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**change_address** | **string** | Address, where unspent funds will be transferred. |
-**fee** | **string** | Fee to be paid. | [optional]
+**getChangeAddress()** | **string** | Address, where unspent funds will be transferred. |
+**getFee()** | **string** | Fee to be paid. | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,9 +1,9 @@
 # EntitiesCount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **float** | Total entities | [optional]
+**getTotal()** | **float** | Total entities | [optional]
 
 [[Back to Index]](../index.md)

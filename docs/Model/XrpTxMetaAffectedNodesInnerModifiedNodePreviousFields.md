@@ -1,10 +1,10 @@
 # XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** |  |
-**sequence** | **float** |  |
+**getBalance()** | **string** |  |
+**getSequence()** | **float** |  |
 
 [[Back to Index]](../index.md)

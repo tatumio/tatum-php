@@ -1,11 +1,11 @@
 # EgldGetTransaction403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | egld.transaction.sign |
-**message** | **string** | Unable to sign transaction. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | egld.transaction.sign |
+**getMessage()** | **string** | Unable to sign transaction. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

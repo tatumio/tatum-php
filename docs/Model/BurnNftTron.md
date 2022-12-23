@@ -1,13 +1,13 @@
 # BurnNftTron
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**token_id** | **string** | ID of token to be destroyed. |
-**contract_address** | **string** | Address of NFT token |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**fee_limit** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
+**getChain()** | **string** | The blockchain to work with |
+**getTokenId()** | **string** | ID of token to be destroyed. |
+**getContractAddress()** | **string** | Address of NFT token |
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getFeeLimit()** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
 
 [[Back to Index]](../index.md)

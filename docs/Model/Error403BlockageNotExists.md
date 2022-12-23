@@ -1,11 +1,11 @@
 # Error403BlockageNotExists
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | blockage.not.exists |
-**message** | **string** | No such blockage. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | blockage.not.exists |
+**getMessage()** | **string** | No such blockage. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

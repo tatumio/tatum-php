@@ -1,11 +1,11 @@
 # BtcTxOutput
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **float** | Sent amount in satoshis. | [optional]
-**script** | **string** | Transaction script. | [optional]
-**address** | **string** | Recipient address. | [optional]
+**getValue()** | **float** | Sent amount in satoshis. | [optional]
+**getScript()** | **string** | Transaction script. | [optional]
+**getAddress()** | **string** | Recipient address. | [optional]
 
 [[Back to Index]](../index.md)

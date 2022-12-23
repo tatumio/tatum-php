@@ -1,18 +1,18 @@
 # SolanaTxMeta
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**err** | **object** |  | [optional]
-**fee** | **float** |  | [optional]
-**inner_instructions** | **object[]** |  | [optional]
-**log_messages** | **string[]** |  | [optional]
-**post_balances** | **float[]** |  | [optional]
-**post_token_balances** | [**\Tatum\Model\TokenBalance[]**](TokenBalance.md) |  | [optional]
-**pre_balances** | **float[]** |  | [optional]
-**pre_token_balances** | [**\Tatum\Model\TokenBalance[]**](TokenBalance.md) |  | [optional]
-**rewards** | **object[]** |  | [optional]
-**status** | [**\Tatum\Model\SolanaTxMetaStatus**](SolanaTxMetaStatus.md) |  | [optional]
+**getErr()** | **object** |  | [optional]
+**getFee()** | **float** |  | [optional]
+**getInnerInstructions()** | **object[]** |  | [optional]
+**getLogMessages()** | **string[]** |  | [optional]
+**getPostBalances()** | **float[]** |  | [optional]
+**getPostTokenBalances()** | [**\Tatum\Model\TokenBalance[]**](TokenBalance.md) |  | [optional]
+**getPreBalances()** | **float[]** |  | [optional]
+**getPreTokenBalances()** | [**\Tatum\Model\TokenBalance[]**](TokenBalance.md) |  | [optional]
+**getRewards()** | **object[]** |  | [optional]
+**getStatus()** | [**\Tatum\Model\SolanaTxMetaStatus**](SolanaTxMetaStatus.md) |  | [optional]
 
 [[Back to Index]](../index.md)

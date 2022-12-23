@@ -1,11 +1,11 @@
 # VetTxClausesInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**to** | **string** |  | [optional]
-**value** | **string** |  | [optional]
-**data** | **string** |  | [optional]
+**getTo()** | **string** |  | [optional]
+**getValue()** | **string** |  | [optional]
+**getData()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

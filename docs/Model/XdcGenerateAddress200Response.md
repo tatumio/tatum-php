@@ -1,9 +1,9 @@
 # XdcGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | XDC address | [optional]
+**getAddress()** | **string** | XDC address | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # SolanaTxTransaction
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | [**\Tatum\Model\SolanaTxMessage**](SolanaTxMessage.md) |  | [optional]
-**signatures** | **string[]** |  | [optional]
+**getMessage()** | [**\Tatum\Model\SolanaTxMessage**](SolanaTxMessage.md) |  | [optional]
+**getSignatures()** | **string[]** |  | [optional]
 
 [[Back to Index]](../index.md)

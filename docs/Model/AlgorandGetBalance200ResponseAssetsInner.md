@@ -1,10 +1,10 @@
 # AlgorandGetBalance200ResponseAssetsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float** | Balance in asset unit | [optional]
-**asset_index** | **float** | Asset Index of ASA | [optional]
+**getAmount()** | **float** | Balance in asset unit | [optional]
+**getAssetIndex()** | **float** | Asset Index of ASA | [optional]
 
 [[Back to Index]](../index.md)

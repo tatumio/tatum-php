@@ -1,11 +1,11 @@
 # UnfreezeAccount403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.not.frozen |
-**message** | **string** | Unable to unfreeze unfrozen account. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.not.frozen |
+**getMessage()** | **string** | Unable to unfreeze unfrozen account. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

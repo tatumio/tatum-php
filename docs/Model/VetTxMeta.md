@@ -1,11 +1,11 @@
 # VetTxMeta
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_id** | **string** |  | [optional]
-**block_number** | **float** |  | [optional]
-**block_timestamp** | **float** |  | [optional]
+**getBlockId()** | **string** |  | [optional]
+**getBlockNumber()** | **float** |  | [optional]
+**getBlockTimestamp()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

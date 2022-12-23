@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoBlockchainSmartContractInvocation(
-    ?\Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request
+    \Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request
 ): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
 ```
 
@@ -52,9 +52,8 @@ Invoke a method in a smart contract on Celo
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $celo_blockchain_smart_contract_invocation_request = new \Tatum\Model\CeloBlockchainSmartContractInvocationRequest();
 
@@ -84,7 +83,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoBlockchainTransfer(
-    ?\Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request
+    \Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -111,9 +110,8 @@ Send Celo / ERC20 from account to account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $celo_blockchain_transfer_request = new \Tatum\Model\CeloBlockchainTransferRequest();
 
@@ -143,7 +141,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -170,9 +168,8 @@ Broadcast signed Celo transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -202,8 +199,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\CeloGenerateAddress200Response
 ```
 
@@ -231,9 +228,8 @@ Generate Celo account address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -267,7 +263,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -294,9 +290,8 @@ Generate Celo private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -326,7 +321,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -353,9 +348,8 @@ Generate Celo wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -386,7 +380,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGetBalance(
-    ?string $address
+    string $address
 ): \Tatum\Model\CeloGetBalance200Response
 ```
 
@@ -413,9 +407,8 @@ Get Celo Account balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
@@ -446,7 +439,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\CeloBlock
 ```
 
@@ -473,9 +466,8 @@ Get Celo block by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $hash = 6470657;
@@ -530,9 +522,8 @@ Get current block number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -560,7 +551,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\CeloTx
 ```
 
@@ -587,9 +578,8 @@ Get Celo Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
@@ -620,12 +610,12 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionByAddress(
-    ?string $address, 
-    ?float $page_size, 
-    ?float $offset, 
-    ?float $from, 
-    ?float $to, 
-    ?string $sort
+    string $address, 
+    float $page_size, 
+    [ float $offset,  ]
+    [ float $from,  ]
+    [ float $to,  ]
+    [ string $sort = 'DESC' ]
 ): \Tatum\Model\CeloTx[]
 ```
 
@@ -657,9 +647,8 @@ Get Celo transactions by address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
@@ -705,7 +694,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionCount(
-    ?string $address
+    string $address
 ): float
 ```
 
@@ -732,9 +721,8 @@ Get count of outgoing Celo transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // address
 $address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
@@ -765,8 +753,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->celo()->celoWeb3Driver(
-    ?string $x_api_key, 
-    ?object $body
+    string $x_api_key, 
+    object $body
 ): object
 ```
 
@@ -794,9 +782,8 @@ Web3 HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->virtualCurrency()->createCurrency(
-    ?\Tatum\Model\VirtualCurrency $virtual_currency
+    \Tatum\Model\VirtualCurrency $virtual_currency
 ): \Tatum\Model\Account
 ```
 
@@ -44,9 +44,8 @@ Create new virtual currency
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $virtual_currency = new \Tatum\Model\VirtualCurrency();
 
@@ -76,7 +75,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->virtualCurrency()->getCurrency(
-    ?string $name
+    string $name
 ): \Tatum\Model\VC
 ```
 
@@ -103,9 +102,8 @@ Get virtual currency
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $name = 'name_example';
 
@@ -135,7 +133,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->virtualCurrency()->mintCurrency(
-    ?\Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
+    \Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
 ): \Tatum\Model\TransactionResult
 ```
 
@@ -162,9 +160,8 @@ Create new supply of virtual currency
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $virtual_currency_operation = new \Tatum\Model\VirtualCurrencyOperation();
 
@@ -194,7 +191,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->virtualCurrency()->revokeCurrency(
-    ?\Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
+    \Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
 ): \Tatum\Model\TransactionResult
 ```
 
@@ -221,9 +218,8 @@ Destroy supply of virtual currency
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $virtual_currency_operation = new \Tatum\Model\VirtualCurrencyOperation();
 
@@ -253,7 +249,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->virtualCurrency()->updateCurrency(
-    ?\Tatum\Model\VirtualCurrencyUpdate $virtual_currency_update
+    \Tatum\Model\VirtualCurrencyUpdate $virtual_currency_update
 )
 ```
 
@@ -280,9 +276,8 @@ Update virtual currency
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $virtual_currency_update = new \Tatum\Model\VirtualCurrencyUpdate();
 

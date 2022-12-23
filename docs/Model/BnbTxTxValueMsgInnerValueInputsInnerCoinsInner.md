@@ -1,10 +1,10 @@
 # BnbTxTxValueMsgInnerValueInputsInnerCoinsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **string** |  | [optional]
-**denom** | **string** |  | [optional]
+**getAmount()** | **string** |  | [optional]
+**getDenom()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

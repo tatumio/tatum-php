@@ -1,11 +1,11 @@
 # Error403BtcMnemonicTxFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | transaction.preparation.failed |
-**message** | **string** | Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | transaction.preparation.failed |
+**getMessage()** | **string** | Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,12 +1,12 @@
 # SolanaTx
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_time** | **float** |  | [optional]
-**meta** | [**\Tatum\Model\SolanaTxMeta**](SolanaTxMeta.md) |  | [optional]
-**transaction** | [**\Tatum\Model\SolanaTxTransaction**](SolanaTxTransaction.md) |  | [optional]
-**slot** | **float** |  | [optional]
+**getBlockTime()** | **float** |  | [optional]
+**getMeta()** | [**\Tatum\Model\SolanaTxMeta**](SolanaTxMeta.md) |  | [optional]
+**getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](SolanaTxTransaction.md) |  | [optional]
+**getSlot()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

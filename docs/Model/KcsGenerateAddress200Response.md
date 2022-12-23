@@ -1,9 +1,9 @@
 # KcsGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Kcs address | [optional]
+**getAddress()** | **string** | Kcs address | [optional]
 
 [[Back to Index]](../index.md)

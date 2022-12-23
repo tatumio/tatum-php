@@ -1,11 +1,11 @@
 # Error403BlockageAmount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | blockage.amount.exceeded |
-**message** | **string** | Amount to transfer is greater then amount of the blockage. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | blockage.amount.exceeded |
+**getMessage()** | **string** | Amount to transfer is greater then amount of the blockage. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

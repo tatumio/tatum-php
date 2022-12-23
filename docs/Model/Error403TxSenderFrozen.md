@@ -1,11 +1,11 @@
 # Error403TxSenderFrozen
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | senderAccount.frozen |
-**message** | **string** | Sender account ${transaction.senderAccountId} is frozen, unable to perform payment. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | senderAccount.frozen |
+**getMessage()** | **string** | Sender account ${transaction.senderAccountId} is frozen, unable to perform payment. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # CreateSubscriptionKMSError
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**attr** | [**\Tatum\Model\CreateSubscriptionKMSErrorAttr**](CreateSubscriptionKMSErrorAttr.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSErrorAttr**](CreateSubscriptionKMSErrorAttr.md) |  |
 
 [[Back to Index]](../index.md)

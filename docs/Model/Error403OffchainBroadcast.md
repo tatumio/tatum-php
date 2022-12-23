@@ -1,11 +1,11 @@
 # Error403OffchainBroadcast
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | broadcast.failed.withdrawalId |
-**message** | **string** | WithdrawalId must be present. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | broadcast.failed.withdrawalId |
+**getMessage()** | **string** | WithdrawalId must be present. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

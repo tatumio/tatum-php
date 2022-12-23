@@ -1,11 +1,11 @@
 # Error403KMSNotExists
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | kms.missing |
-**message** | **string** | No such KMS signature with id '{id}'. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | kms.missing |
+**getMessage()** | **string** | No such KMS signature with id '{id}'. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

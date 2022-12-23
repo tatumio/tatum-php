@@ -1,11 +1,11 @@
 # StoreTrade403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | trade.currency2.balance |
-**message** | **string** | Insufficient balance on currency2 account ${trade.currency2AccountId}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | trade.currency2.balance |
+**getMessage()** | **string** | Insufficient balance on currency2 account ${trade.currency2AccountId}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403BnbBroadcatSigFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | bnb.broadcast.bad.signature |
-**message** | **string** | Unable to broadcast BNB transaction, bad signature. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | bnb.broadcast.bad.signature |
+**getMessage()** | **string** | Unable to broadcast BNB transaction, bad signature. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

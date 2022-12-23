@@ -1,9 +1,9 @@
 # EthEstimateGasArray
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**estimations** | [**\Tatum\Model\EthEstimateGas[]**](EthEstimateGas.md) |  |
+**getEstimations()** | [**\Tatum\Model\EthEstimateGas[]**](EthEstimateGas.md) |  |
 
 [[Back to Index]](../index.md)

@@ -1,9 +1,9 @@
 # FlowGeneratePubKey200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pub_key** | **string** | Flow public key | [optional]
+**getPubKey()** | **string** | Flow public key | [optional]
 
 [[Back to Index]](../index.md)

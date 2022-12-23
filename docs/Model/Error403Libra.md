@@ -1,11 +1,11 @@
 # Error403Libra
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | libra.request.failed |
-**message** | **string** | ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | libra.request.failed |
+**getMessage()** | **string** | ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

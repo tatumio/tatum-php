@@ -1,9 +1,9 @@
 # CreateAccountBatch
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | [**\Tatum\Model\CreateAccount[]**](CreateAccount.md) |  |
+**getAccounts()** | [**\Tatum\Model\CreateAccount[]**](CreateAccount.md) |  |
 
 [[Back to Index]](../index.md)

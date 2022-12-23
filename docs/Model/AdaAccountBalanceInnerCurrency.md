@@ -1,10 +1,10 @@
 # AdaAccountBalanceInnerCurrency
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol** | **string** | Name of the asset. | [optional]
-**decimals** | **float** | Number of decimal places. | [optional]
+**getSymbol()** | **string** | Name of the asset. | [optional]
+**getDecimals()** | **float** | Number of decimal places. | [optional]
 
 [[Back to Index]](../index.md)

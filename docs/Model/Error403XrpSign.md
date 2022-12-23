@@ -1,11 +1,11 @@
 # Error403XrpSign
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xrp.sign.failed |
-**message** | **string** | Unable to sign tx. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xrp.sign.failed |
+**getMessage()** | **string** | Unable to sign tx. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

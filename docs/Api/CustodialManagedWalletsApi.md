@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialCreateWallet(
-    ?\Tatum\Model\CustodialCreateWalletRequest $custodial_create_wallet_request
+    [ \Tatum\Model\CustodialCreateWalletRequest $custodial_create_wallet_request ]
 ): \Tatum\Model\CustodialManagedAddress
 ```
 
@@ -44,9 +44,8 @@ Create managed address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $custodial_create_wallet_request = new \Tatum\Model\CustodialCreateWalletRequest();
 
@@ -76,7 +75,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialDeleteWallet(
-    ?string $id
+    string $id
 )
 ```
 
@@ -103,9 +102,8 @@ Delete managed address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // WalletID of the managed address
 $id = '3ad54647-4166-4d34-9186-fd46caaba945';
@@ -133,8 +131,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallet(
-    ?string $id, 
-    ?bool $export
+    string $id, 
+    [ bool $export = false ]
 ): \Tatum\Model\CustodialManagedAddress[]
 ```
 
@@ -162,9 +160,8 @@ Get managed address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // WalletID of the managed address
 $id = '3ad54647-4166-4d34-9186-fd46caaba945';
@@ -222,9 +219,8 @@ Get managed addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\CustodialManagedAddress[] $response */
@@ -252,7 +248,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialTransferManagedAddress(
-    ?\Tatum\Model\TransferManagedAddress $transfer_managed_address
+    [ \Tatum\Model\TransferManagedAddress $transfer_managed_address ]
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -279,9 +275,8 @@ Sign and transfer using managed address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $transfer_managed_address = new \Tatum\Model\TransferManagedAddress();
 

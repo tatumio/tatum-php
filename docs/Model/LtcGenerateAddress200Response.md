@@ -1,9 +1,9 @@
 # LtcGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Litecoin address | [optional]
+**getAddress()** | **string** | Litecoin address | [optional]
 
 [[Back to Index]](../index.md)

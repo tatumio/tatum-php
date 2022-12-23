@@ -49,9 +49,8 @@ Get current block number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -79,7 +78,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldBlockchainTransfer(
-    ?\Tatum\Model\EgldBlockchainTransferRequest $egld_blockchain_transfer_request
+    \Tatum\Model\EgldBlockchainTransferRequest $egld_blockchain_transfer_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -106,9 +105,8 @@ Send EGLD from account to account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $egld_blockchain_transfer_request = new \Tatum\Model\EgldBlockchainTransferRequest();
 
@@ -138,7 +136,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -165,9 +163,8 @@ Broadcast signed EGLD transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -197,8 +194,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddress(
-    ?string $mnemonic, 
-    ?float $index
+    string $mnemonic, 
+    float $index
 ): \Tatum\Model\EgldGenerateAddress200Response
 ```
 
@@ -226,9 +223,8 @@ Generate EGLD account address from mnemonic
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of address.
 $mnemonic = quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten;
@@ -262,7 +258,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -289,9 +285,8 @@ Generate EGLD private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -321,7 +316,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\EgldGenerateWallet200Response
 ```
 
@@ -348,9 +343,8 @@ Generate EGLD wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of private key.
 $mnemonic = 'mnemonic_example';
@@ -381,7 +375,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGetBalance(
-    ?string $address
+    string $address
 ): \Tatum\Model\EgldGetBalance200Response
 ```
 
@@ -408,9 +402,8 @@ Get EGLD Account balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = 'erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7';
@@ -441,7 +434,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\EgldBlock
 ```
 
@@ -468,9 +461,8 @@ Get EGLD block by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or nonce
 $hash = 'a6f2ac15a6b1bafdde9afff2297cef49c4c523c516f8ee12fed54be070e9512b';
@@ -501,7 +493,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\EgldTx
 ```
 
@@ -528,9 +520,8 @@ Get EGLD Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '99996224823736c1e9b8484ed74c1573049478f871d6f94b86811fb1c7b2addd';
@@ -561,7 +552,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionAddress(
-    ?string $address
+    string $address
 ): object[]
 ```
 
@@ -588,9 +579,8 @@ Get count of outgoing EGLD transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // address
 $address = 'erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7';
@@ -621,7 +611,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionCount(
-    ?string $address
+    string $address
 ): float
 ```
 
@@ -648,9 +638,8 @@ Get count of outgoing EGLD transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // address
 $address = 'erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7';
@@ -681,7 +670,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldNodeGet(
-    ?string $x_api_key
+    string $x_api_key
 ): object
 ```
 
@@ -708,9 +697,8 @@ Node HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = /v3/egld/node/asdlkfjnqunalkwjf12341kljl/network/config;
@@ -741,8 +729,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->elrond()->egldNodePost(
-    ?string $x_api_key, 
-    ?object $body
+    string $x_api_key, 
+    object $body
 ): object
 ```
 
@@ -770,9 +758,8 @@ Node HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = /v3/egld/node/asdlkfjnqunalkwjf124387ad/transaction/cost;

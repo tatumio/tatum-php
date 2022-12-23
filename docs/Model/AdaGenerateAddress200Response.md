@@ -1,9 +1,9 @@
 # AdaGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Ada address | [optional]
+**getAddress()** | **string** | Ada address | [optional]
 
 [[Back to Index]](../index.md)

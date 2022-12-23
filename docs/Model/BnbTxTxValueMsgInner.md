@@ -1,10 +1,10 @@
 # BnbTxTxValueMsgInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional]
-**value** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](BnbTxTxValueMsgInnerValue.md) |  | [optional]
+**getType()** | **string** |  | [optional]
+**getValue()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](BnbTxTxValueMsgInnerValue.md) |  | [optional]
 
 [[Back to Index]](../index.md)

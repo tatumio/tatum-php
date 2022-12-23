@@ -21,8 +21,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscription(
-    ?\Tatum\Model\CreateSubscriptionRequest $create_subscription_request, 
-    ?string $testnet_type
+    \Tatum\Model\CreateSubscriptionRequest $create_subscription_request, 
+    [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
 ```
 
@@ -50,9 +50,8 @@ Create a subscription
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_subscription_request = new \Tatum\Model\CreateSubscriptionRequest();
 
@@ -85,7 +84,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->deleteSubscription(
-    ?string $id
+    string $id
 )
 ```
 
@@ -112,9 +111,8 @@ Cancel existing subscription
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Subscription ID
 $id = '5e68c66581f2ee32bc354087';
@@ -166,9 +164,8 @@ Disable HMAC webhook digest
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
         $sdk
@@ -193,7 +190,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->enableWebHookHmac(
-    ?\Tatum\Model\HmacWebHook $hmac_web_hook
+    \Tatum\Model\HmacWebHook $hmac_web_hook
 )
 ```
 
@@ -220,9 +217,8 @@ Enable HMAC webhook digest
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $hmac_web_hook = new \Tatum\Model\HmacWebHook();
 
@@ -249,10 +245,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooks(
-    ?float $page_size, 
-    ?float $offset, 
-    ?string $direction, 
-    ?bool $failed
+    float $page_size, 
+    [ float $offset,  ]
+    [ string $direction,  ]
+    [ bool $failed ]
 ): \Tatum\Model\WebHook[]
 ```
 
@@ -282,9 +278,8 @@ List all executed webhooks
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -324,10 +319,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooksCount(
-    ?float $page_size, 
-    ?float $offset, 
-    ?string $direction, 
-    ?bool $failed
+    float $page_size, 
+    [ float $offset,  ]
+    [ string $direction,  ]
+    [ bool $failed ]
 ): \Tatum\Model\EntitiesCount
 ```
 
@@ -357,9 +352,8 @@ Count of found entities for get webhook request
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -399,7 +393,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionReport(
-    ?string $id
+    string $id
 ): \Tatum\Model\GetSubscriptionReport200Response
 ```
 
@@ -426,9 +420,8 @@ Obtain report for subscription
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Subscription ID
 $id = '5e68c66581f2ee32bc354087';
@@ -459,9 +452,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptions(
-    ?float $page_size, 
-    ?float $offset, 
-    ?string $address
+    float $page_size, 
+    [ float $offset,  ]
+    [ string $address ]
 ): \Tatum\Model\Subscription[]
 ```
 
@@ -490,9 +483,8 @@ List all active subscriptions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -529,9 +521,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionsCount(
-    ?float $page_size, 
-    ?float $offset, 
-    ?string $address
+    float $page_size, 
+    [ float $offset,  ]
+    [ string $address ]
 ): \Tatum\Model\EntitiesCount
 ```
 
@@ -560,9 +552,8 @@ Count of found entities for get webhook request
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;

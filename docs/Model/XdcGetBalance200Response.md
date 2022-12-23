@@ -1,9 +1,9 @@
 # XdcGetBalance200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in XDC | [optional]
+**getBalance()** | **string** | Balance in XDC | [optional]
 
 [[Back to Index]](../index.md)

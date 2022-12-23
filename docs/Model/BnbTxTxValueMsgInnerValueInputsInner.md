@@ -1,10 +1,10 @@
 # BnbTxTxValueMsgInnerValueInputsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** |  | [optional]
-**coins** | [**\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInnerCoinsInner[]**](BnbTxTxValueMsgInnerValueInputsInnerCoinsInner.md) |  | [optional]
+**getAddress()** | **string** |  | [optional]
+**getCoins()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInnerCoinsInner[]**](BnbTxTxValueMsgInnerValueInputsInnerCoinsInner.md) |  | [optional]
 
 [[Back to Index]](../index.md)

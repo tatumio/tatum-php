@@ -1,11 +1,11 @@
 # Error403SubscriptionBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.attr.balance.invalid |
-**message** | **string** | Invalid subscription attribute 'limit' or 'typeOfBalance'. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | subscription.attr.balance.invalid |
+**getMessage()** | **string** | Invalid subscription attribute 'limit' or 'typeOfBalance'. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

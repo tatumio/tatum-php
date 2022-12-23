@@ -1,9 +1,9 @@
 # VetGetBalance200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in VET | [optional]
+**getBalance()** | **string** | Balance in VET | [optional]
 
 [[Back to Index]](../index.md)

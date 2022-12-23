@@ -1,10 +1,10 @@
 # CreateSubscriptionMultiTokenTransferEvent
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**attr** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr**](CreateSubscriptionMultiTokenTransferEventAttr.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr**](CreateSubscriptionMultiTokenTransferEventAttr.md) |  |
 
 [[Back to Index]](../index.md)

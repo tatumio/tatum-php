@@ -1,9 +1,9 @@
 # SolBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in SOL | [optional]
+**getBalance()** | **string** | Balance in SOL | [optional]
 
 [[Back to Index]](../index.md)

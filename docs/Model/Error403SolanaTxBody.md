@@ -1,11 +1,11 @@
 # Error403SolanaTxBody
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | solana.transaction.body |
-**message** | **string** | Either currency, or tokenAddress must be defined. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | solana.transaction.body |
+**getMessage()** | **string** | Either currency, or tokenAddress must be defined. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

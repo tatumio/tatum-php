@@ -1,9 +1,9 @@
 # TransactionHash
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | The hash (ID) of the transaction |
+**getTxId()** | **string** | The hash (ID) of the transaction |
 
 [[Back to Index]](../index.md)

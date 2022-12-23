@@ -1,10 +1,10 @@
 # AdaTxBlock
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**number** | **float** | Index of the block this transaction belongs to. | [optional]
-**hash** | **string** | Block hash. | [optional]
+**getNumber()** | **float** | Index of the block this transaction belongs to. | [optional]
+**getHash()** | **string** | Block hash. | [optional]
 
 [[Back to Index]](../index.md)

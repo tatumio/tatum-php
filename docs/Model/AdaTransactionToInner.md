@@ -1,10 +1,10 @@
 # AdaTransactionToInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Destination address. |
-**value** | **float** | Amount to be sent, in ADA. |
+**getAddress()** | **string** | Destination address. |
+**getValue()** | **float** | Amount to be sent, in ADA. |
 
 [[Back to Index]](../index.md)

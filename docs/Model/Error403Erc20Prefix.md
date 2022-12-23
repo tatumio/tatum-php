@@ -1,11 +1,11 @@
 # Error403Erc20Prefix
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | erc20.symbol.prefix |
-**message** | **string** | ERC20 token cannot start with VC_. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | erc20.symbol.prefix |
+**getMessage()** | **string** | ERC20 token cannot start with VC_. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

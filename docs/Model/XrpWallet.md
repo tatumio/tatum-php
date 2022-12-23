@@ -1,10 +1,10 @@
 # XrpWallet
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Generated account address. |
-**secret** | **string** | Generated secret for account. |
+**getAddress()** | **string** | Generated account address. |
+**getSecret()** | **string** | Generated secret for account. |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # SolanaBroadcastConfirm
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_data** | **string** | Raw signed transaction to be published to network. |
-**options** | [**\Tatum\Model\SolanaBroadcastConfirmOptions**](SolanaBroadcastConfirmOptions.md) |  | [optional]
+**getTxData()** | **string** | Raw signed transaction to be published to network. |
+**getOptions()** | [**\Tatum\Model\SolanaBroadcastConfirmOptions**](SolanaBroadcastConfirmOptions.md) |  | [optional]
 
 [[Back to Index]](../index.md)

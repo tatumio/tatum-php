@@ -1,11 +1,11 @@
 # Error403XrpFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xrp.failed |
-**message** | **string** | Unable to communicate with blockchain. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xrp.failed |
+**getMessage()** | **string** | Unable to communicate with blockchain. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

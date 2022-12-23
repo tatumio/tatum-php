@@ -1,11 +1,11 @@
 # Error403VetFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | vet.failed |
-**message** | **string** | Unable to communicate with blockchain. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | vet.failed |
+**getMessage()** | **string** | Unable to communicate with blockchain. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -14,14 +14,14 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->deposit()->getDeposits(
-    ?float $page_size, 
-    ?float $page, 
-    ?string $sort, 
-    ?string $status, 
-    ?string $currency, 
-    ?string $tx_id, 
-    ?string $to, 
-    ?string $account_id
+    [ float $page_size,  ]
+    [ float $page,  ]
+    [ string $sort,  ]
+    [ string $status,  ]
+    [ string $currency,  ]
+    [ string $tx_id,  ]
+    [ string $to,  ]
+    [ string $account_id ]
 ): \Tatum\Model\Deposit[]
 ```
 
@@ -55,9 +55,8 @@ List all deposits for product
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 20;
@@ -109,14 +108,14 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->deposit()->getDepositsCount(
-    ?float $page_size, 
-    ?float $page, 
-    ?string $sort, 
-    ?string $status, 
-    ?string $currency, 
-    ?string $tx_id, 
-    ?string $to, 
-    ?string $account_id
+    [ float $page_size,  ]
+    [ float $page,  ]
+    [ string $sort,  ]
+    [ string $status,  ]
+    [ string $currency,  ]
+    [ string $tx_id,  ]
+    [ string $to,  ]
+    [ string $account_id ]
 ): \Tatum\Model\EntitiesCount
 ```
 
@@ -150,9 +149,8 @@ Count of found entities for get deposits request
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 20;

@@ -1,16 +1,16 @@
 # BurnMultiTokenCelo
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | Chain to work with. |
-**account** | **string** | Address of holder |
-**token_id** | **string** | ID of token to be destroyed. |
-**amount** | **string** | amount of token to be destroyed. |
-**contract_address** | **string** | Address of Multi Token token |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**nonce** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
-**fee_currency** | **string** | Currency to pay for transaction gas |
+**getChain()** | **string** | Chain to work with. |
+**getAccount()** | **string** | Address of holder |
+**getTokenId()** | **string** | ID of token to be destroyed. |
+**getAmount()** | **string** | amount of token to be destroyed. |
+**getContractAddress()** | **string** | Address of Multi Token token |
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
+**getFeeCurrency()** | **string** | Currency to pay for transaction gas |
 
 [[Back to Index]](../index.md)

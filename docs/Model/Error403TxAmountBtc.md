@@ -1,11 +1,11 @@
 # Error403TxAmountBtc
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | amount.btc |
-**message** | **string** | BTC/LTC/BCH payment amount must be at least 0.00000000000001, not ${transaction.amount}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | amount.btc |
+**getMessage()** | **string** | BTC/LTC/BCH payment amount must be at least 0.00000000000001, not ${transaction.amount}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

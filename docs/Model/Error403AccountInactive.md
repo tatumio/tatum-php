@@ -1,11 +1,11 @@
 # Error403AccountInactive
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.inactive |
-**message** | **string** | Unable to deactivate inactive account. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.inactive |
+**getMessage()** | **string** | Unable to deactivate inactive account. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

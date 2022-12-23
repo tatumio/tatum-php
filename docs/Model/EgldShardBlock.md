@@ -1,11 +1,11 @@
 # EgldShardBlock
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hash** | **string** | The block hash. | [optional]
-**nonce** | **float** | The block height. | [optional]
-**shard** | **float** | The shard number. | [optional]
+**getHash()** | **string** | The block hash. | [optional]
+**getNonce()** | **float** | The block height. | [optional]
+**getShard()** | **float** | The shard number. | [optional]
 
 [[Back to Index]](../index.md)

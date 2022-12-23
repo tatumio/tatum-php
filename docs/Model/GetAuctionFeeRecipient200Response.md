@@ -1,9 +1,9 @@
 # GetAuctionFeeRecipient200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Address of the auction fee recipient. | [optional]
+**getAddress()** | **string** | Address of the auction fee recipient. | [optional]
 
 [[Back to Index]](../index.md)

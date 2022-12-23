@@ -133,7 +133,7 @@ class ObjectSerializer {
     /**
      * URL-encode query parameter
      *
-     * @param \scalar[]|\scalar|string|\DateTime $value Value to serialize to string and url-encode
+     * @param \scalar[]|\scalar|string[]|string|\DateTime $value Value to serialize to string and url-encode
      * 
      * @return string Serialized and url-encoded parameter
      */
@@ -144,7 +144,7 @@ class ObjectSerializer {
     /**
      * Convert value to string or comma-separated list of strings
      *
-     * @param \scalar[]|\scalar|string|\DateTime $value Object to serialize to string
+     * @param \scalar[]|\scalar|string[]|string|\DateTime $value Object to serialize to string
      * 
      * @return string|null Serialized parameter
      */
@@ -163,7 +163,7 @@ class ObjectSerializer {
      * Convert value to a header string
      * If it's a datetime object, format it in ISO8601
      *
-     * @param \Tatum\Model\ModelInterface|\scalar $value a string which will be part of the header.
+     * @param \Tatum\Model\ModelInterface|\scalar|string $value a string which will be part of the header.
      * @return string Header string
      */
     public static function toHeaderValue($value): string {
@@ -266,9 +266,9 @@ class ObjectSerializer {
     /**
      * Serialize an array to a string
      *
-     * @param \scalar[] $collection Collection to serialize to a string
-     * @param string $style The format use for serialization (csv, ssv, tsv, pipes, multi)
-     * @param bool $allowCollectionFormatMulti Allow collection format to be a multidimensional array
+     * @param \scalar[]|string[] $collection                 Collection to serialize to a string
+     * @param string             $style                      The format use for serialization (csv, ssv, tsv, pipes, multi)
+     * @param bool               $allowCollectionFormatMulti (optional); Allow collection format to be a multidimensional array; default <b>false</b>
      * 
      * @return string
      * @throws \Tatum\Sdk\ApiException
@@ -310,10 +310,11 @@ class ObjectSerializer {
     /**
      * Deserialize a JSON string into an object
      *
-     * @param mixed $data object or primitive to be deserialized
-     * @param string $type Some php type that be returned.
-     * @param string $tempPath Temporary path
-     * @param array<array-key, string[]> $httpHeaders A list of headers from the response.
+     * @param mixed                      $data        Object or primitive to be deserialized
+     * @param string                     $type        Some php type that be returned
+     * @param string                     $tempPath    Temporary path
+     * @param array<array-key, string[]> $httpHeaders (optional); A list of headers from the response; default <b>[]</b>
+     * 
      * @return mixed a single or an array of $type instances
      * @throws \Tatum\Sdk\ApiException
      */
@@ -358,8 +359,8 @@ class ObjectSerializer {
     /**
      * Deserialize a JSON string into an object
      *
-     * @param mixed  $data object or primitive to be deserialized
-     * @param string $type class name is passed as a string
+     * @param mixed  $data Object or primitive to be deserialized
+     * @param string $type Class name is passed as a string
      *
      * @return mixed a single or an array of $type instances
      */
@@ -475,14 +476,14 @@ class ObjectSerializer {
     }
 
     /**
-     * Create a request from relevant values.
+     * Create a request from relevant values
      *
-     * @param string $method Request method type.
-     * @param string $uri Request uri.
-     * @param array<array-key, mixed> $query Query parameters.
-     * @param array<string, string|null> $headers Headers.
-     * @param array<string|resource[]> $form Form parameters.
-     * @param mixed $body Body object.
+     * @param string                     $method  Request method type
+     * @param string                     $uri     Request uri
+     * @param array<array-key, mixed>    $query   Query parameters
+     * @param array<string, string|null> $headers Headers
+     * @param array<string|resource[]>   $form    Form parameters
+     * @param mixed                      $body    Body object
      */
     public static function createRequest(
         string $method,
@@ -501,6 +502,7 @@ class ObjectSerializer {
             return $v !== null;
         });
         assert(empty($form) || empty($body), 'Form parameters will override body.');
+        
         // This is a bit hacky but sometimes APIs aren't great about reporting
         // they need to post multipart data. This detects any file parameters
         // and forces a multipart submission.

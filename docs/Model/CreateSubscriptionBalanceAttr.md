@@ -1,10 +1,10 @@
 # CreateSubscriptionBalanceAttr
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**limit** | **string** | Limit to filter accounts with balance above it. |
-**type_of_balance** | **string** | Type of balance to filter. |
+**getLimit()** | **string** | Limit to filter accounts with balance above it. |
+**getTypeOfBalance()** | **string** | Type of balance to filter. |
 
 [[Back to Index]](../index.md)

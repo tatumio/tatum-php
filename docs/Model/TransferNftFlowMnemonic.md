@@ -1,15 +1,15 @@
 # TransferNftFlowMnemonic
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**to** | **string** | Blockchain address to send NFT token to. |
-**token_id** | **string** | ID of token to be sent. |
-**contract_address** | **string** | Address of NFT token |
-**account** | **string** | Blockchain address of the sender account. |
-**mnemonic** | **string** | Mnemonic to generate private key of sender address. |
-**index** | **int** | Derivation index of sender address. |
+**getChain()** | **string** | The blockchain to work with |
+**getTo()** | **string** | Blockchain address to send NFT token to. |
+**getTokenId()** | **string** | ID of token to be sent. |
+**getContractAddress()** | **string** | Address of NFT token |
+**getAccount()** | **string** | Blockchain address of the sender account. |
+**getMnemonic()** | **string** | Mnemonic to generate private key of sender address. |
+**getIndex()** | **int** | Derivation index of sender address. |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # AlgorandGetBalance200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assets** | [**\Tatum\Model\AlgorandGetBalance200ResponseAssetsInner[]**](AlgorandGetBalance200ResponseAssetsInner.md) |  | [optional]
-**balance** | **float** | Balance in ALGO | [optional]
+**getAssets()** | [**\Tatum\Model\AlgorandGetBalance200ResponseAssetsInner[]**](AlgorandGetBalance200ResponseAssetsInner.md) |  | [optional]
+**getBalance()** | **float** | Balance in ALGO | [optional]
 
 [[Back to Index]](../index.md)

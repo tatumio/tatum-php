@@ -1,11 +1,11 @@
 # VetTxReceiptOutputsInnerTransfersInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sender** | **string** |  | [optional]
-**recipient** | **string** |  | [optional]
-**amount** | **string** |  | [optional]
+**getSender()** | **string** |  | [optional]
+**getRecipient()** | **string** |  | [optional]
+**getAmount()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

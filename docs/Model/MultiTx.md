@@ -1,16 +1,16 @@
 # MultiTx
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_number** | **float** | Block number |
-**tx_id** | **string** | Transaction ID |
-**contract_address** | **string** | Contract address |
-**token_id** | **string** | ID of the token |
-**amount** | **string** | Amount of tokens transferred. |
-**from** | **string** | Sender |
-**operator** | **string** | Operator |
-**to** | **string** | recipient |
+**getBlockNumber()** | **float** | Block number |
+**getTxId()** | **string** | Transaction ID |
+**getContractAddress()** | **string** | Contract address |
+**getTokenId()** | **string** | ID of the token |
+**getAmount()** | **string** | Amount of tokens transferred. |
+**getFrom()** | **string** | Sender |
+**getOperator()** | **string** | Operator |
+**getTo()** | **string** | recipient |
 
 [[Back to Index]](../index.md)

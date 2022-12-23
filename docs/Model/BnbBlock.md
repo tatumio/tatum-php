@@ -1,11 +1,11 @@
 # BnbBlock
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**timestamp** | **float** |  | [optional]
-**block_height** | **float** |  | [optional]
-**tx** | [**\Tatum\Model\BnbTransaction[]**](BnbTransaction.md) |  | [optional]
+**getTimestamp()** | **float** |  | [optional]
+**getBlockHeight()** | **float** |  | [optional]
+**getTx()** | [**\Tatum\Model\BnbTransaction[]**](BnbTransaction.md) |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -51,9 +51,8 @@ Broadcast signed Dogecoin transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -83,8 +82,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\DogeGenerateAddress200Response
 ```
 
@@ -112,9 +111,8 @@ Generate Dogecoin deposit address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -148,7 +146,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -175,9 +173,8 @@ Generate Dogecoin private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -207,7 +204,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -234,9 +231,8 @@ Generate Dogecoin wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -267,7 +263,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\DogeBlock
 ```
 
@@ -294,9 +290,8 @@ Get Dogecoin Block by hash or height
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $hash = 1234314;
@@ -351,9 +346,8 @@ Get Dogecoin Blockchain Information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\DogeInfo $response */
@@ -381,7 +375,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockHash(
-    ?float $i
+    float $i
 ): \Tatum\Model\LtcGetBlockHash200Response
 ```
 
@@ -408,9 +402,8 @@ Get Dogecoin Block hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The number of blocks preceding a particular block on a block chain.
 $i = 1234314;
@@ -465,9 +458,8 @@ Get Mempool Transactions
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var string[] $response */
@@ -495,7 +487,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetRawTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\DogeTx
 ```
 
@@ -522,9 +514,8 @@ Get Dogecoin Transaction by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = 'd60631d8e5c8b6eb0557b5181cf28564d771c628a08abc414e87ad7c05ff2fc2';
@@ -555,8 +546,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetUTXO(
-    ?string $hash, 
-    ?float $index
+    string $hash, 
+    float $index
 ): \Tatum\Model\DogeUTXO
 ```
 
@@ -584,9 +575,8 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The transaction hash
 $hash = '5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a';
@@ -620,7 +610,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeRpcDriver(
-    ?\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
+    \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
 ): object
 ```
 
@@ -647,9 +637,8 @@ JSON RPC HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bch_rpc_driver_request = new \Tatum\Model\BchRpcDriverRequest();
 
@@ -679,7 +668,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransferBlockchain(
-    ?\Tatum\Model\DogeTransferBlockchainRequest $doge_transfer_blockchain_request
+    \Tatum\Model\DogeTransferBlockchainRequest $doge_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -706,9 +695,8 @@ Send DOGE to Dogecoin addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $doge_transfer_blockchain_request = new \Tatum\Model\DogeTransferBlockchainRequest();
 

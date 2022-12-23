@@ -1,18 +1,18 @@
 # GetVersion200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**version** | **string** |  | [optional]
-**status** | **string** |  | [optional]
-**testnet** | **bool** |  | [optional]
-**plan_name** | **string** |  | [optional]
-**plan_code** | **string** |  | [optional]
-**price** | **float** |  | [optional]
-**expiration** | **float** |  | [optional]
-**credit_limit** | **float** |  | [optional]
-**usage** | **float** |  | [optional]
-**rollover_day** | **float** |  | [optional]
+**getVersion()** | **string** |  | [optional]
+**getStatus()** | **string** |  | [optional]
+**getTestnet()** | **bool** |  | [optional]
+**getPlanName()** | **string** |  | [optional]
+**getPlanCode()** | **string** |  | [optional]
+**getPrice()** | **float** |  | [optional]
+**getExpiration()** | **float** |  | [optional]
+**getCreditLimit()** | **float** |  | [optional]
+**getUsage()** | **float** |  | [optional]
+**getRolloverDay()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

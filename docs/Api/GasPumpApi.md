@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpAddresses(
-    ?\Tatum\Model\ActivateGasPumpAddressesRequest $activate_gas_pump_addresses_request
+    \Tatum\Model\ActivateGasPumpAddressesRequest $activate_gas_pump_addresses_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -49,9 +49,8 @@ Activate gas pump addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $activate_gas_pump_addresses_request = new \Tatum\Model\ActivateGasPumpAddressesRequest();
 
@@ -81,8 +80,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->activatedNotActivatedGasPumpAddresses(
-    ?string $chain, 
-    ?string $tx_id
+    string $chain, 
+    string $tx_id
 ): \Tatum\Model\GasPumpTrxOut
 ```
 
@@ -110,9 +109,8 @@ Get the results of the address activation transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'ETH';
@@ -146,7 +144,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWallet(
-    ?\Tatum\Model\ApproveTransferCustodialWalletRequest $approve_transfer_custodial_wallet_request
+    \Tatum\Model\ApproveTransferCustodialWalletRequest $approve_transfer_custodial_wallet_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -173,9 +171,8 @@ Approve the transfer of an asset from a gas pump address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $approve_transfer_custodial_wallet_request = new \Tatum\Model\ApproveTransferCustodialWalletRequest();
 
@@ -205,9 +202,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpAddressesActivatedOrNot(
-    ?string $chain, 
-    ?string $owner, 
-    ?float $index
+    string $chain, 
+    string $owner, 
+    float $index
 ): \Tatum\Model\Activated
 ```
 
@@ -236,9 +233,8 @@ Check whether the gas pump address with a specified index is activated
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $chain = 'ETH';
@@ -275,7 +271,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWallet(
-    ?\Tatum\Model\GenerateCustodialWalletRequest $generate_custodial_wallet_request
+    \Tatum\Model\GenerateCustodialWalletRequest $generate_custodial_wallet_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -302,9 +298,8 @@ Generate a custodial wallet address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $generate_custodial_wallet_request = new \Tatum\Model\GenerateCustodialWalletRequest();
 
@@ -334,8 +329,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
-    ?\Tatum\Model\GenerateCustodialWalletBatchRequest $generate_custodial_wallet_batch_request, 
-    ?string $x_testnet_type
+    \Tatum\Model\GenerateCustodialWalletBatchRequest $generate_custodial_wallet_batch_request, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -363,9 +358,8 @@ Generate a gas pump wallet address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $generate_custodial_wallet_batch_request = new \Tatum\Model\GenerateCustodialWalletBatchRequest();
 
@@ -398,7 +392,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->precalculateGasPumpAddresses(
-    ?\Tatum\Model\CreateGasPump $create_gas_pump
+    [ \Tatum\Model\CreateGasPump $create_gas_pump ]
 ): string[]
 ```
 
@@ -425,9 +419,8 @@ Precalculate gas pump addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_gas_pump = new \Tatum\Model\CreateGasPump();
 
@@ -457,8 +450,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->sCGetCustodialAddresses(
-    ?string $chain, 
-    ?string $hash
+    string $chain, 
+    string $hash
 ): string[]
 ```
 
@@ -486,9 +479,8 @@ Get the custodial wallet address from the transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'chain_example';
@@ -522,7 +514,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWallet(
-    ?\Tatum\Model\TransferCustodialWalletRequest $transfer_custodial_wallet_request
+    \Tatum\Model\TransferCustodialWalletRequest $transfer_custodial_wallet_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -549,9 +541,8 @@ Transfer an asset from a gas pump address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $transfer_custodial_wallet_request = new \Tatum\Model\TransferCustodialWalletRequest();
 
@@ -581,7 +572,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatch(
-    ?\Tatum\Model\TransferCustodialWalletBatchRequest $transfer_custodial_wallet_batch_request
+    \Tatum\Model\TransferCustodialWalletBatchRequest $transfer_custodial_wallet_batch_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -608,9 +599,8 @@ Transfer multiple assets from a gas pump address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $transfer_custodial_wallet_batch_request = new \Tatum\Model\TransferCustodialWalletBatchRequest();
 

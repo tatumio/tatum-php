@@ -1,14 +1,14 @@
 # FlowTransactionMnemonic
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | **string** | Blockchain account to send from |
-**currency** | **string** | Type of asset to send |
-**to** | **string** | Blockchain address to send assets |
-**amount** | **string** | Amount to be sent, in Flow. |
-**mnemonic** | **string** | Mnemonic to generate private key. |
-**index** | **float** | Index to the specific address from mnemonic. |
+**getAccount()** | **string** | Blockchain account to send from |
+**getCurrency()** | **string** | Type of asset to send |
+**getTo()** | **string** | Blockchain address to send assets |
+**getAmount()** | **string** | Amount to be sent, in Flow. |
+**getMnemonic()** | **string** | Mnemonic to generate private key. |
+**getIndex()** | **float** | Index to the specific address from mnemonic. |
 
 [[Back to Index]](../index.md)

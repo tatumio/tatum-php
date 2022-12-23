@@ -1,10 +1,10 @@
 # AdaAccountBalanceInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency** | [**\Tatum\Model\AdaAccountBalanceInnerCurrency**](AdaAccountBalanceInnerCurrency.md) |  | [optional]
-**value** | **string** | Quantity of the asset. | [optional]
+**getCurrency()** | [**\Tatum\Model\AdaAccountBalanceInnerCurrency**](AdaAccountBalanceInnerCurrency.md) |  | [optional]
+**getValue()** | **string** | Quantity of the asset. | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # GasPumpTrxOut
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**valid** | [**\Tatum\Model\ValidGasPumpAddress[]**](ValidGasPumpAddress.md) | Activated gas pump addresses | [optional]
-**invalid** | [**\Tatum\Model\InvalidGasPumpAddress[]**](InvalidGasPumpAddress.md) | Not activated gas pump addresses | [optional]
+**getValid()** | [**\Tatum\Model\ValidGasPumpAddress[]**](ValidGasPumpAddress.md) | Activated gas pump addresses | [optional]
+**getInvalid()** | [**\Tatum\Model\InvalidGasPumpAddress[]**](InvalidGasPumpAddress.md) | Not activated gas pump addresses | [optional]
 
 [[Back to Index]](../index.md)

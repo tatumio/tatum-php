@@ -1,9 +1,9 @@
 # OffchainAddresses
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**addresses** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](OffchainAddressesAddressesInner.md) |  |
+**getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](OffchainAddressesAddressesInner.md) |  |
 
 [[Back to Index]](../index.md)

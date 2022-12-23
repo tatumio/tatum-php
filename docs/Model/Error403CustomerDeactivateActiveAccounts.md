@@ -1,11 +1,11 @@
 # Error403CustomerDeactivateActiveAccounts
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | customer.deactivate.account.active |
-**message** | **string** | Unable to deactivate customer, accounts not deactivated. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | customer.deactivate.account.active |
+**getMessage()** | **string** | Unable to deactivate customer, accounts not deactivated. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

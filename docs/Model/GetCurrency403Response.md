@@ -1,11 +1,11 @@
 # GetCurrency403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | vc.not.found |
-**message** | **string** | No such virtual currency. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | vc.not.found |
+**getMessage()** | **string** | No such virtual currency. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

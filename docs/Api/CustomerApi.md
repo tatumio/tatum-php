@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->activateCustomer(
-    ?string $id
+    string $id
 )
 ```
 
@@ -46,9 +46,8 @@ Activate customer
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Customer internal ID
 $id = 'id_example';
@@ -76,7 +75,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->deactivateCustomer(
-    ?string $id
+    string $id
 )
 ```
 
@@ -103,9 +102,8 @@ Deactivate customer
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Customer internal ID
 $id = 'id_example';
@@ -133,7 +131,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->disableCustomer(
-    ?string $id
+    string $id
 )
 ```
 
@@ -160,9 +158,8 @@ Disable customer
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Customer internal ID
 $id = 'id_example';
@@ -190,7 +187,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->enableCustomer(
-    ?string $id
+    string $id
 )
 ```
 
@@ -217,9 +214,8 @@ Enable customer
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Customer internal ID
 $id = 'id_example';
@@ -247,8 +243,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->findAllCustomers(
-    ?float $page_size, 
-    ?float $offset
+    float $page_size, 
+    [ float $offset ]
 ): \Tatum\Model\Customer[]
 ```
 
@@ -276,9 +272,8 @@ List all customers
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -312,7 +307,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->getCustomerByExternalOrInternalId(
-    ?string $id
+    string $id
 ): \Tatum\Model\Customer
 ```
 
@@ -339,9 +334,8 @@ Get customer details
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Customer external or internal ID
 $id = 'id_example';
@@ -372,8 +366,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->customer()->updateCustomer(
-    ?string $id, 
-    ?\Tatum\Model\CustomerUpdate $customer_update
+    string $id, 
+    \Tatum\Model\CustomerUpdate $customer_update
 ): \Tatum\Model\Customer
 ```
 
@@ -401,9 +395,8 @@ Update customer
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Customer internal ID
 $id = 'id_example';

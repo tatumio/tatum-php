@@ -1,12 +1,12 @@
 # BchTxVoutInnerScriptPubKey
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hex** | **string** |  | [optional]
-**asm** | **string** |  | [optional]
-**addresses** | **string[]** |  | [optional]
-**type** | **string** |  | [optional]
+**getHex()** | **string** |  | [optional]
+**getAsm()** | **string** |  | [optional]
+**getAddresses()** | **string[]** |  | [optional]
+**getType()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

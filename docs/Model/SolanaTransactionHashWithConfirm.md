@@ -1,10 +1,10 @@
 # SolanaTransactionHashWithConfirm
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | TX hash of successful transaction. |
-**confirmed** | **bool** | Indicates whether or not the transferred commitment has been fulfilled |
+**getTxId()** | **string** | TX hash of successful transaction. |
+**getConfirmed()** | **bool** | Indicates whether or not the transferred commitment has been fulfilled |
 
 [[Back to Index]](../index.md)

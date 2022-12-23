@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeyToAddress(
-    ?\Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request
+    \Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -52,9 +52,8 @@ Add public key to Flow address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $flow_add_pub_key_to_address_request = new \Tatum\Model\FlowAddPubKeyToAddressRequest();
 
@@ -84,7 +83,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKey(
-    ?\Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request
+    \Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request
 ): \Tatum\Model\FlowCreateAddressFromPubKey200Response
 ```
 
@@ -111,9 +110,8 @@ Create Flow address from public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $flow_create_address_from_pub_key_request = new \Tatum\Model\FlowCreateAddressFromPubKeyRequest();
 
@@ -143,8 +141,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\FlowGenerateAddress200Response
 ```
 
@@ -172,9 +170,8 @@ Generate Flow address from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -208,8 +205,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKey(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\FlowGeneratePubKey200Response
 ```
 
@@ -237,9 +234,8 @@ Generate Flow public key from Extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -273,7 +269,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKeyPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -300,9 +296,8 @@ Generate Flow private key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -332,7 +327,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -359,9 +354,8 @@ Generate Flow wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -392,7 +386,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGetAccount(
-    ?string $address
+    string $address
 ): \Tatum\Model\FlowAccount
 ```
 
@@ -419,9 +413,8 @@ Get the balance of a Flow account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = '0x955cd3f17b2fd8ad';
@@ -452,7 +445,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\FlowBlock
 ```
 
@@ -479,9 +472,8 @@ Get Flow Block by hash or height
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $hash = 1234314;
@@ -536,9 +528,8 @@ Get Flow current block number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -566,9 +557,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGetBlockEvents(
-    ?string $type, 
-    ?float $from, 
-    ?float $to
+    string $type, 
+    float $from, 
+    float $to
 ): \Tatum\Model\FlowEvent[]
 ```
 
@@ -597,9 +588,8 @@ Get Flow events from blocks
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Event type to search for
 $type = A.7e60df042a9c0868.FlowToken.TokensWithdrawn;
@@ -636,7 +626,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowGetRawTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\FlowTx
 ```
 
@@ -663,9 +653,8 @@ Get Flow Transaction by hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = 'd60631d8e5c8b6eb0557b5181cf28564d771c628a08abc414e87ad7c05ff2fc2';
@@ -696,7 +685,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowTransferBlockchain(
-    ?\Tatum\Model\FlowTransferBlockchainRequest $flow_transfer_blockchain_request
+    \Tatum\Model\FlowTransferBlockchainRequest $flow_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -723,9 +712,8 @@ Send Flow to blockchain addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $flow_transfer_blockchain_request = new \Tatum\Model\FlowTransferBlockchainRequest();
 
@@ -755,7 +743,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->flow()->flowTransferCustomBlockchain(
-    ?\Tatum\Model\FlowTransferCustomBlockchainRequest $flow_transfer_custom_blockchain_request
+    \Tatum\Model\FlowTransferCustomBlockchainRequest $flow_transfer_custom_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -782,9 +770,8 @@ Send arbitrary transaction to blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $flow_transfer_custom_blockchain_request = new \Tatum\Model\FlowTransferCustomBlockchainRequest();
 

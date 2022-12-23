@@ -1,11 +1,11 @@
 # Error403SubscriptionType
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.type.invalid |
-**message** | **string** | Invalid subscription type. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | subscription.type.invalid |
+**getMessage()** | **string** | Invalid subscription type. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403VCTxFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | virtual.tx.failed |
-**message** | **string** | Unable to perform operation on virtual currency, impossible to store transaction. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | virtual.tx.failed |
+**getMessage()** | **string** | Unable to perform operation on virtual currency, impossible to store transaction. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

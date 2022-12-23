@@ -1,11 +1,11 @@
 # Error403TxAmountEth
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | amount.eth |
-**message** | **string** | ETH payment amount must be at least 0.000000000001, not ${transaction.amount}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | amount.eth |
+**getMessage()** | **string** | ETH payment amount must be at least 0.000000000001, not ${transaction.amount}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

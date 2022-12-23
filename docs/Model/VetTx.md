@@ -1,20 +1,20 @@
 # VetTx
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**chain_tag** | **string** |  | [optional]
-**block_ref** | **string** |  | [optional]
-**expiration** | **float** |  | [optional]
-**clauses** | [**\Tatum\Model\VetTxClausesInner[]**](VetTxClausesInner.md) |  | [optional]
-**gas_price_coef** | **float** |  | [optional]
-**gas** | **float** |  | [optional]
-**origin** | **string** |  | [optional]
-**nonce** | **string** |  | [optional]
-**size** | **float** |  | [optional]
-**meta** | [**\Tatum\Model\VetTxMeta**](VetTxMeta.md) |  | [optional]
-**block_number** | **float** |  | [optional]
+**getId()** | **string** |  | [optional]
+**getChainTag()** | **string** |  | [optional]
+**getBlockRef()** | **string** |  | [optional]
+**getExpiration()** | **float** |  | [optional]
+**getClauses()** | [**\Tatum\Model\VetTxClausesInner[]**](VetTxClausesInner.md) |  | [optional]
+**getGasPriceCoef()** | **float** |  | [optional]
+**getGas()** | **float** |  | [optional]
+**getOrigin()** | **string** |  | [optional]
+**getNonce()** | **string** |  | [optional]
+**getSize()** | **float** |  | [optional]
+**getMeta()** | [**\Tatum\Model\VetTxMeta**](VetTxMeta.md) |  | [optional]
+**getBlockNumber()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

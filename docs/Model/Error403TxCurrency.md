@@ -1,11 +1,11 @@
 # Error403TxCurrency
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | transaction.currency.incompatible |
-**message** | **string** | Incompatible currencies for sender account ${transaction.senderAccountId} and recipient account ${transaction.recipientAccountId}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | transaction.currency.incompatible |
+**getMessage()** | **string** | Incompatible currencies for sender account ${transaction.senderAccountId} and recipient account ${transaction.recipientAccountId}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,12 +1,12 @@
 # XrpTxMeta
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**affected_nodes** | [**\Tatum\Model\XrpTxMetaAffectedNodesInner[]**](XrpTxMetaAffectedNodesInner.md) |  | [optional]
-**transaction_index** | **float** |  | [optional]
-**transaction_result** | **string** |  | [optional]
-**delivered_amount** | **string** |  | [optional]
+**getAffectedNodes()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInner[]**](XrpTxMetaAffectedNodesInner.md) |  | [optional]
+**getTransactionIndex()** | **float** |  | [optional]
+**getTransactionResult()** | **string** |  | [optional]
+**getDeliveredAmount()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

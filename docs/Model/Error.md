@@ -1,11 +1,11 @@
 # Error
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | payment.amount.notNull |
-**message** | **string** | Payment amount must be greater than 0. |
-**status_code** | **float** | 403 | [optional]
+**getErrorCode()** | **string** | payment.amount.notNull |
+**getMessage()** | **string** | Payment amount must be greater than 0. |
+**getStatusCode()** | **float** | 403 | [optional]
 
 [[Back to Index]](../index.md)

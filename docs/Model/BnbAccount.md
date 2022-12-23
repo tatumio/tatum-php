@@ -1,13 +1,13 @@
 # BnbAccount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_number** | **float** |  | [optional]
-**address** | **string** |  | [optional]
-**balances** | [**\Tatum\Model\BnbAccountBalancesInner[]**](BnbAccountBalancesInner.md) |  | [optional]
-**flags** | **float** |  | [optional]
-**sequence** | **float** |  | [optional]
+**getAccountNumber()** | **float** |  | [optional]
+**getAddress()** | **string** |  | [optional]
+**getBalances()** | [**\Tatum\Model\BnbAccountBalancesInner[]**](BnbAccountBalancesInner.md) |  | [optional]
+**getFlags()** | **float** |  | [optional]
+**getSequence()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

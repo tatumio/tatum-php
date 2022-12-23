@@ -1,11 +1,11 @@
 # FlowTxPayloadSignaturesInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** |  | [optional]
-**key_id** | **float** |  | [optional]
-**signature** | **string** |  | [optional]
+**getAddress()** | **string** |  | [optional]
+**getKeyId()** | **float** |  | [optional]
+**getSignature()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403CustomerEnabled
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | customer.enabled |
-**message** | **string** | Unable to enable enabled customer. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | customer.enabled |
+**getMessage()** | **string** | Unable to enable enabled customer. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

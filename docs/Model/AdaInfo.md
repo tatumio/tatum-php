@@ -1,10 +1,10 @@
 # AdaInfo
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**testnet** | **string** | Chain of the blockchain, main or test. | [optional]
-**tip** | [**\Tatum\Model\AdaInfoTip**](AdaInfoTip.md) |  | [optional]
+**getTestnet()** | **string** | Chain of the blockchain, main or test. | [optional]
+**getTip()** | [**\Tatum\Model\AdaInfoTip**](AdaInfoTip.md) |  | [optional]
 
 [[Back to Index]](../index.md)

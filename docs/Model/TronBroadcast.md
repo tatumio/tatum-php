@@ -1,9 +1,9 @@
 # TronBroadcast
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_data** | **string** | Raw signed transaction to be published to network. |
+**getTxData()** | **string** | Raw signed transaction to be published to network. |
 
 [[Back to Index]](../index.md)

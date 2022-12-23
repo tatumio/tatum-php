@@ -1,9 +1,9 @@
 # MaticBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in MATIC | [optional]
+**getBalance()** | **string** | Balance in MATIC | [optional]
 
 [[Back to Index]](../index.md)

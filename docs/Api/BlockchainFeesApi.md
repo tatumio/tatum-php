@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->bscEstimateGas(
-    ?\Tatum\Model\BscEstimateGas $bsc_estimate_gas
+    \Tatum\Model\BscEstimateGas $bsc_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```
 
@@ -51,9 +51,8 @@ Estimate BNB Smart Chain transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bsc_estimate_gas = new \Tatum\Model\BscEstimateGas();
 
@@ -83,7 +82,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->celoEstimateGas(
-    ?\Tatum\Model\CeloEstimateGas $celo_estimate_gas
+    \Tatum\Model\CeloEstimateGas $celo_estimate_gas
 ): \Tatum\Model\CeloEstimateGas200Response
 ```
 
@@ -110,9 +109,8 @@ Estimate Celo Chain transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $celo_estimate_gas = new \Tatum\Model\CeloEstimateGas();
 
@@ -142,7 +140,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->egldEstimateGas(
-    ?\Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain
+    \Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain
 ): \Tatum\Model\EgldEstimateGas200Response
 ```
 
@@ -169,9 +167,8 @@ Estimate EGLD transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $transaction_fee_egld_blockchain = new \Tatum\Model\TransactionFeeEgldBlockchain();
 
@@ -201,7 +198,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBlockchain(
-    ?\Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request
+    \Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request
 ): \Tatum\Model\EstimateFeeBlockchain200Response
 ```
 
@@ -228,9 +225,8 @@ Estimate the fee for a transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $estimate_fee_blockchain_request = new \Tatum\Model\EstimateFeeBlockchainRequest();
 
@@ -260,8 +256,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGas(
-    ?\Tatum\Model\EthEstimateGas $eth_estimate_gas, 
-    ?string $x_testnet_type
+    \Tatum\Model\EthEstimateGas $eth_estimate_gas, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthGasEstimation
 ```
 
@@ -289,9 +285,8 @@ Estimate Ethereum transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_estimate_gas = new \Tatum\Model\EthEstimateGas();
 
@@ -324,8 +319,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGasBatch(
-    ?\Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array, 
-    ?string $x_testnet_type
+    \Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array, 
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthGasEstimationBatch
 ```
 
@@ -353,9 +348,8 @@ Estimate multiple Ethereum transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_estimate_gas_array = new \Tatum\Model\EthEstimateGasArray();
 
@@ -388,7 +382,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->getBlockchainFee(
-    ?string $chain
+    string $chain
 ): \Tatum\Model\BlockchainFee
 ```
 
@@ -415,9 +409,8 @@ Get recommended blockchain fee / gas price
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Chain
 $chain = 'BTC';
@@ -448,7 +441,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->kcsEstimateGas(
-    ?\Tatum\Model\KcsEstimateGas $kcs_estimate_gas
+    \Tatum\Model\KcsEstimateGas $kcs_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```
 
@@ -475,9 +468,8 @@ Estimate KuCoin Community Chain transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $kcs_estimate_gas = new \Tatum\Model\KcsEstimateGas();
 
@@ -507,7 +499,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->klaytnEstimateGas(
-    ?\Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas
+    \Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas
 ): \Tatum\Model\KlaytnEstimateGas200Response
 ```
 
@@ -534,9 +526,8 @@ Estimate Klaytn transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $klaytn_estimate_gas = new \Tatum\Model\KlaytnEstimateGas();
 
@@ -566,7 +557,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->polygonEstimateGas(
-    ?\Tatum\Model\PolygonEstimateGas $polygon_estimate_gas
+    \Tatum\Model\PolygonEstimateGas $polygon_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```
 
@@ -593,9 +584,8 @@ Estimate Polygon transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $polygon_estimate_gas = new \Tatum\Model\PolygonEstimateGas();
 
@@ -625,7 +615,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->vetEstimateGas(
-    ?\Tatum\Model\VetEstimateGas $vet_estimate_gas
+    \Tatum\Model\VetEstimateGas $vet_estimate_gas
 ): float
 ```
 
@@ -652,9 +642,8 @@ Estimate VeChain Gas for transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $vet_estimate_gas = new \Tatum\Model\VetEstimateGas();
 
@@ -684,7 +673,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainFees()->xdcEstimateGas(
-    ?\Tatum\Model\XdcEstimateGas $xdc_estimate_gas
+    \Tatum\Model\XdcEstimateGas $xdc_estimate_gas
 ): \Tatum\Model\XdcEstimateGas200Response
 ```
 
@@ -711,9 +700,8 @@ Estimate XinFin transaction fees
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xdc_estimate_gas = new \Tatum\Model\XdcEstimateGas();
 

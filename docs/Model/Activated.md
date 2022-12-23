@@ -1,9 +1,9 @@
 # Activated
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activated** | **bool** | If set to "true", the gas pump address has been activated | [optional]
+**getActivated()** | **bool** | If set to "true", the gas pump address has been activated | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # CreateSubscriptionNotificationAttr
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Blockchain address to watch. |
-**chain** | **string** | Blockchain of the address. |
-**url** | **string** | URL of the endpoint, where HTTP POST request will be sent, when transaction is detected on the address. |
+**getAddress()** | **string** | Blockchain address to watch. |
+**getChain()** | **string** | Blockchain of the address. |
+**getUrl()** | **string** | URL of the endpoint, where HTTP POST request will be sent, when transaction is detected on the address. |
 
 [[Back to Index]](../index.md)

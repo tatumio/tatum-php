@@ -1,10 +1,10 @@
 # SolanaListingDataNft
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | NFT Address |
-**data** | [**\Tatum\Model\SolanaNftMetadata**](SolanaNftMetadata.md) |  |
+**getAddress()** | **string** | NFT Address |
+**getData()** | [**\Tatum\Model\SolanaNftMetadata**](SolanaNftMetadata.md) |  |
 
 [[Back to Index]](../index.md)

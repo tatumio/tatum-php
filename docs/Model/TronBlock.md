@@ -1,15 +1,15 @@
 # TronBlock
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hash** | **string** | Block hash | [optional]
-**block_number** | **float** | Block number. | [optional]
-**timestamp** | **float** | Time of the block in UTC millis. | [optional]
-**parent_hash** | **string** | Hash of the parent block. | [optional]
-**witness_address** | **string** | Witness address. | [optional]
-**witness_signature** | **string** | Witness signature. | [optional]
-**transactions** | [**\Tatum\Model\TronTx[]**](TronTx.md) | Transactions that occurs in this block. | [optional]
+**getHash()** | **string** | Block hash | [optional]
+**getBlockNumber()** | **float** | Block number. | [optional]
+**getTimestamp()** | **float** | Time of the block in UTC millis. | [optional]
+**getParentHash()** | **string** | Hash of the parent block. | [optional]
+**getWitnessAddress()** | **string** | Witness address. | [optional]
+**getWitnessSignature()** | **string** | Witness signature. | [optional]
+**getTransactions()** | [**\Tatum\Model\TronTx[]**](TronTx.md) | Transactions that occurs in this block. | [optional]
 
 [[Back to Index]](../index.md)

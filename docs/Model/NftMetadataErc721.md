@@ -1,9 +1,9 @@
 # NftMetadataErc721
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **string** | Metadata associated with token. | [optional]
+**getData()** | **string** | Metadata associated with token. | [optional]
 
 [[Back to Index]](../index.md)

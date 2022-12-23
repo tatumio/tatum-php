@@ -1,9 +1,9 @@
 # DogeGenerateAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Dogecoin address | [optional]
+**getAddress()** | **string** | Dogecoin address | [optional]
 
 [[Back to Index]](../index.md)

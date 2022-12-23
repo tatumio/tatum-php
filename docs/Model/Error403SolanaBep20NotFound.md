@@ -1,11 +1,11 @@
 # Error403SolanaBep20NotFound
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | erc20.token.notFound |
-**message** | **string** | No such ERC20 currency ${name}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | erc20.token.notFound |
+**getMessage()** | **string** | No such ERC20 currency ${name}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

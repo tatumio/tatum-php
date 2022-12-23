@@ -1,11 +1,11 @@
 # Error403OrderCurrency1CustomerDisabled
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | trade.currency1AccountId.customer.disabled |
-**message** | **string** | Currency1 account's customer ${currency1Account.customerId} is disabled, unable to perform exchange trade. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | trade.currency1AccountId.customer.disabled |
+**getMessage()** | **string** | Currency1 account's customer ${currency1Account.customerId} is disabled, unable to perform exchange trade. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

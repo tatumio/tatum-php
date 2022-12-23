@@ -1,11 +1,11 @@
 # Error403AddressAccountXpubMissing
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.xpub.missing |
-**message** | **string** | No xpub assigned to account, it is not possible to generate address. Use assignAddress method instead. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.xpub.missing |
+**getMessage()** | **string** | No xpub assigned to account, it is not possible to generate address. Use assignAddress method instead. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

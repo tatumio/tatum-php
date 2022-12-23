@@ -1,12 +1,12 @@
 # BnbAccountBalancesInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**free** | **string** |  | [optional]
-**frozen** | **string** |  | [optional]
-**locked** | **string** |  | [optional]
-**symbol** | **string** |  | [optional]
+**getFree()** | **string** |  | [optional]
+**getFrozen()** | **string** |  | [optional]
+**getLocked()** | **string** |  | [optional]
+**getSymbol()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

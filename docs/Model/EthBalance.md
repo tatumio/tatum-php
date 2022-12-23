@@ -1,9 +1,9 @@
 # EthBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in ETH | [optional]
+**getBalance()** | **string** | Balance in ETH | [optional]
 
 [[Back to Index]](../index.md)

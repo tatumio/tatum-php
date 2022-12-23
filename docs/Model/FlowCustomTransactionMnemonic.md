@@ -1,13 +1,13 @@
 # FlowCustomTransactionMnemonic
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | **string** | Blockchain account to send from |
-**transaction** | **string** | Transaction string to send to the chain. |
-**args** | [**\Tatum\Model\FlowCustomTransactionPKArgsInner[]**](FlowCustomTransactionPKArgsInner.md) |  |
-**mnemonic** | **string** | Mnemonic to generate private key. |
-**index** | **float** | Index to the specific address from mnemonic. |
+**getAccount()** | **string** | Blockchain account to send from |
+**getTransaction()** | **string** | Transaction string to send to the chain. |
+**getArgs()** | [**\Tatum\Model\FlowCustomTransactionPKArgsInner[]**](FlowCustomTransactionPKArgsInner.md) |  |
+**getMnemonic()** | **string** | Mnemonic to generate private key. |
+**getIndex()** | **float** | Index to the specific address from mnemonic. |
 
 [[Back to Index]](../index.md)

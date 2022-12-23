@@ -1,11 +1,11 @@
 # Error403OrderCurrency2Pair
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | trade.currency2.pair |
-**message** | **string** | Incompatible currencies for currency2 account ${trade.currency2AccountId} and trading pair. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | trade.currency2.pair |
+**getMessage()** | **string** | Incompatible currencies for currency2 account ${trade.currency2AccountId} and trading pair. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

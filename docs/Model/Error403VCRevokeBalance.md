@@ -1,11 +1,11 @@
 # Error403VCRevokeBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | virtual.account.balance |
-**message** | **string** | Insufficient balance to revoke virtual currency on account. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | virtual.account.balance |
+**getMessage()** | **string** | Insufficient balance to revoke virtual currency on account. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

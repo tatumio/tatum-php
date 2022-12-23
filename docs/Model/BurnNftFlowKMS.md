@@ -1,14 +1,14 @@
 # BurnNftFlowKMS
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**token_id** | **string** | ID of token to be destroyed. |
-**contract_address** | **string** | Address of NFT token |
-**account** | **string** | Blockchain address of the sender account. |
-**signature_id** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
-**index** | **int** | Derivation index of sender address. | [optional]
+**getChain()** | **string** | The blockchain to work with |
+**getTokenId()** | **string** | ID of token to be destroyed. |
+**getContractAddress()** | **string** | Address of NFT token |
+**getAccount()** | **string** | Blockchain address of the sender account. |
+**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
+**getIndex()** | **int** | Derivation index of sender address. | [optional]
 
 [[Back to Index]](../index.md)

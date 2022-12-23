@@ -1,13 +1,13 @@
 # TransferBnbBlockchain
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**to** | **string** | Blockchain address to send assets. |
-**currency** | **string** | Currency to transfer from Binance Blockchain Account. |
-**amount** | **string** | Amount to be sent in BNB. |
-**from_private_key** | **string** | Private key of sender address. |
-**message** | **string** | Message to recipient. | [optional]
+**getTo()** | **string** | Blockchain address to send assets. |
+**getCurrency()** | **string** | Currency to transfer from Binance Blockchain Account. |
+**getAmount()** | **string** | Amount to be sent in BNB. |
+**getFromPrivateKey()** | **string** | Private key of sender address. |
+**getMessage()** | **string** | Message to recipient. | [optional]
 
 [[Back to Index]](../index.md)

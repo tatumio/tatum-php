@@ -1,11 +1,11 @@
 # DeactivateAccount403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.trade.non.zero |
-**message** | **string** | Unable to deactivate account with non-zero exchange trades. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.trade.non.zero |
+**getMessage()** | **string** | Unable to deactivate account with non-zero exchange trades. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

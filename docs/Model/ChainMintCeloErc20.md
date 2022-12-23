@@ -1,15 +1,15 @@
 # ChainMintCeloErc20
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chain** | **string** | The blockchain to work with |
-**amount** | **string** | Amount to be minted and transferred to the recipient. |
-**to** | **string** | Blockchain address to send ERC-20 tokens to. |
-**contract_address** | **string** | Address of ERC-20 token |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**fee_currency** | **string** | The currency in which the transaction fee will be paid |
+**getChain()** | **string** | The blockchain to work with |
+**getAmount()** | **string** | Amount to be minted and transferred to the recipient. |
+**getTo()** | **string** | Blockchain address to send ERC-20 tokens to. |
+**getContractAddress()** | **string** | Address of ERC-20 token |
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
 
 [[Back to Index]](../index.md)

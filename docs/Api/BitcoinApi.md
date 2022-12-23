@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcBroadcast(
-    ?\Tatum\Model\BroadcastKMS $broadcast_kms
+    \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -53,9 +53,8 @@ Broadcast a signed Bitcoin transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
@@ -85,8 +84,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddress(
-    ?string $xpub, 
-    ?float $index
+    string $xpub, 
+    float $index
 ): \Tatum\Model\GeneratedAddressBtc
 ```
 
@@ -114,9 +113,8 @@ Generate a Bitcoin address from the wallet's extended public key
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of a wallet.
 $xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
@@ -150,7 +148,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddressPrivateKey(
-    ?\Tatum\Model\PrivKeyRequest $priv_key_request
+    \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
 
@@ -177,9 +175,8 @@ Generate the private key for a Bitcoin address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
@@ -209,7 +206,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateWallet(
-    ?string $mnemonic
+    [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
 
@@ -236,9 +233,8 @@ Generate a Bitcoin wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $mnemonic = 'mnemonic_example';
@@ -269,7 +265,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBalanceOfAddress(
-    ?string $address
+    string $address
 ): \Tatum\Model\BtcBasedBalance
 ```
 
@@ -296,9 +292,8 @@ Get the balance of a Bitcoin address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The blockchain address to get the balance for
 $address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
@@ -329,7 +324,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlock(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\BtcBlock
 ```
 
@@ -356,9 +351,8 @@ Get a Bitcoin block by its hash or height
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $hash = '00000000ca231a439a5c0a86a5a5dd6dc1918a8e897b96522fa9499288e70183';
@@ -413,9 +407,8 @@ Get Bitcoin blockchain information
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\BtcInfo $response */
@@ -443,7 +436,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockHash(
-    ?float $i
+    float $i
 ): \Tatum\Model\BtcBlockHash
 ```
 
@@ -470,9 +463,8 @@ Get the hash of a Bitcoin block
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The number of blocks preceding a particular block on a blockchain.
 $i = 1580117;
@@ -527,9 +519,8 @@ Get transactions from the Bitcoin mempool
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var string[] $response */
@@ -557,7 +548,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetRawTransaction(
-    ?string $hash
+    string $hash
 ): \Tatum\Model\BtcTx
 ```
 
@@ -584,9 +575,8 @@ Get a Bitcoin transaction by its hash
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '1451692ebbfbea1a2d2ec6fe6782596b6aa2e46c0589d04c406f491b5b46bc6a';
@@ -617,9 +607,9 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetTxByAddress(
-    ?string $address, 
-    ?float $page_size, 
-    ?float $offset
+    string $address, 
+    float $page_size, 
+    [ float $offset ]
 ): \Tatum\Model\BtcTx[]
 ```
 
@@ -648,9 +638,8 @@ Get all transactions for a Bitcoin address
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Address
 $address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
@@ -687,8 +676,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetUTXO(
-    ?string $hash, 
-    ?float $index
+    string $hash, 
+    float $index
 ): \Tatum\Model\BtcUTXO
 ```
 
@@ -716,9 +705,8 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // The transaction hash
 $hash = '53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc';
@@ -752,7 +740,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcRpcDriver(
-    ?\Tatum\Model\BtcRpcDriverRequest $btc_rpc_driver_request
+    \Tatum\Model\BtcRpcDriverRequest $btc_rpc_driver_request
 ): object
 ```
 
@@ -779,9 +767,8 @@ Connect to a Bitcoin node through an RPC driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $btc_rpc_driver_request = new \Tatum\Model\BtcRpcDriverRequest();
 
@@ -811,7 +798,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransferBlockchain(
-    ?\Tatum\Model\BtcTransferBlockchainRequest $btc_transfer_blockchain_request
+    \Tatum\Model\BtcTransferBlockchainRequest $btc_transfer_blockchain_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -838,9 +825,8 @@ Send BTC to Bitcoin addresses
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $btc_transfer_blockchain_request = new \Tatum\Model\BtcTransferBlockchainRequest();
 

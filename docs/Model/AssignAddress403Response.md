@@ -1,11 +1,11 @@
 # AssignAddress403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | offchain.not.supported |
-**message** | **string** | Offchain not supported for account with ${account.currency} currency. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | offchain.not.supported |
+**getMessage()** | **string** | Offchain not supported for account with ${account.currency} currency. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

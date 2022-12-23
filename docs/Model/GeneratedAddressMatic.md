@@ -1,9 +1,9 @@
 # GeneratedAddressMatic
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Polygon address | [optional]
+**getAddress()** | **string** | Polygon address | [optional]
 
 [[Back to Index]](../index.md)

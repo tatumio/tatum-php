@@ -1,11 +1,11 @@
 # Error403KlaytnTxBody
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | klaytn.transaction.body |
-**message** | **string** | Either currency, or tokenAddress must be defined. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | klaytn.transaction.body |
+**getMessage()** | **string** | Either currency, or tokenAddress must be defined. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

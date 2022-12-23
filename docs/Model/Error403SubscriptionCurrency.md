@@ -1,11 +1,11 @@
 # Error403SubscriptionCurrency
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.attr.currency.invalid |
-**message** | **string** | Invalid subscription attribute 'currency'. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | subscription.attr.currency.invalid |
+**getMessage()** | **string** | Invalid subscription attribute 'currency'. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403VCDuplicate
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | virtual.duplicate |
-**message** | **string** | Virtual currency with given name already exists. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | virtual.duplicate |
+**getMessage()** | **string** | Virtual currency with given name already exists. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

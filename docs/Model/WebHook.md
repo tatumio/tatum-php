@@ -1,18 +1,18 @@
 # WebHook
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**id** | **string** | ID of the WebHook |
-**subscription_id** | **string** | ID of the subscription |
-**url** | **string** | ID of the subscription |
-**data** | **object** | Data of webhook |
-**next_time** | **float** | Next webhook execution try time | [optional]
-**timestamp** | **float** | Webhook execution time | [optional]
-**retry_count** | **float** | Number | [optional]
-**failed** | **bool** | Flag indicating whether this webhook was successful or not |
-**response** | [**\Tatum\Model\WebHookResponse**](WebHookResponse.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getId()** | **string** | ID of the WebHook |
+**getSubscriptionId()** | **string** | ID of the subscription |
+**getUrl()** | **string** | ID of the subscription |
+**getData()** | **object** | Data of webhook |
+**getNextTime()** | **float** | Next webhook execution try time | [optional]
+**getTimestamp()** | **float** | Webhook execution time | [optional]
+**getRetryCount()** | **float** | Number | [optional]
+**getFailed()** | **bool** | Flag indicating whether this webhook was successful or not |
+**getResponse()** | [**\Tatum\Model\WebHookResponse**](WebHookResponse.md) |  |
 
 [[Back to Index]](../index.md)

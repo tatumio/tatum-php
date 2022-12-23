@@ -1,9 +1,9 @@
 # BchGetBlockHash200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hash** | **string** | Block hash | [optional]
+**getHash()** | **string** | Block hash | [optional]
 
 [[Back to Index]](../index.md)

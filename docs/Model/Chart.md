@@ -1,14 +1,14 @@
 # Chart
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**timestamp** | **float** | Milliseconds in UTC of the time interval. |
-**high** | **string** | Highest trade value in the current interval. |
-**low** | **string** | Lowest trade value in the current interval. |
-**open** | **string** | Open trade value in the current interval. |
-**close** | **string** | Close trade value in the current interval. |
-**volume** | **string** | Total volume of assets traded in the current interval. Volume is in currency1 asset. |
+**getTimestamp()** | **float** | Milliseconds in UTC of the time interval. |
+**getHigh()** | **string** | Highest trade value in the current interval. |
+**getLow()** | **string** | Lowest trade value in the current interval. |
+**getOpen()** | **string** | Open trade value in the current interval. |
+**getClose()** | **string** | Close trade value in the current interval. |
+**getVolume()** | **string** | Total volume of assets traded in the current interval. Volume is in currency1 asset. |
 
 [[Back to Index]](../index.md)

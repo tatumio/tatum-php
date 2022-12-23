@@ -17,8 +17,8 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->completePendingSignature(
-    ?string $id, 
-    ?string $tx_id
+    string $id, 
+    string $tx_id
 )
 ```
 
@@ -46,9 +46,8 @@ Complete pending transaction to sign
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // ID of pending transaction
 $id = 'f91827364f91827364ajdur7';
@@ -79,8 +78,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->deletePendingTransactionToSign(
-    ?string $id, 
-    ?bool $revert
+    string $id, 
+    [ bool $revert = true ]
 )
 ```
 
@@ -108,9 +107,8 @@ Delete transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // ID of transaction
 $id = 'id_example';
@@ -141,7 +139,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionToSign(
-    ?string $id
+    string $id
 ): \Tatum\Model\PendingTransaction
 ```
 
@@ -168,9 +166,8 @@ Get transaction details
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // ID of transaction
 $id = 'id_example';
@@ -201,8 +198,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionsToSign(
-    ?string $chain, 
-    ?string $signatures
+    string $chain, 
+    [ string $signatures ]
 ): \Tatum\Model\PendingTransaction[]
 ```
 
@@ -230,9 +227,8 @@ Get pending transactions to sign
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to get pending transactions for.
 $chain = 'chain_example';
@@ -266,8 +262,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->receivePendingTransactionsToSign(
-    ?string $chain, 
-    ?\Tatum\Model\KmsSignatureIds $kms_signature_ids
+    string $chain, 
+    [ \Tatum\Model\KmsSignatureIds $kms_signature_ids ]
 ): \Tatum\Model\PendingTransaction[]
 ```
 
@@ -295,9 +291,8 @@ Get pending transactions to sign
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to get pending transactions for.
 $chain = 'chain_example';

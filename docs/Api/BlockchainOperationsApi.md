@@ -56,7 +56,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->adaTransferOffchain(
-    ?\Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request
+    \Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -83,9 +83,8 @@ Send ADA from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $ada_transfer_offchain_request = new \Tatum\Model\AdaTransferOffchainRequest();
 
@@ -115,7 +114,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->algoDeployErc20Ledger(
-    ?\Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request
+    \Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request
 ): \Tatum\Model\AlgoDeployErc20Ledger200Response
 ```
 
@@ -142,9 +141,8 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $algo_deploy_erc20_ledger_request = new \Tatum\Model\AlgoDeployErc20LedgerRequest();
 
@@ -174,7 +172,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->algoTransfer(
-    ?\Tatum\Model\AlgoTransferRequest $algo_transfer_request
+    \Tatum\Model\AlgoTransferRequest $algo_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -201,9 +199,8 @@ Send ALGO from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $algo_transfer_request = new \Tatum\Model\AlgoTransferRequest();
 
@@ -233,7 +230,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bchTransfer(
-    ?\Tatum\Model\BchTransferRequest $bch_transfer_request
+    \Tatum\Model\BchTransferRequest $bch_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -260,9 +257,8 @@ Send BCH from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bch_transfer_request = new \Tatum\Model\BchTransferRequest();
 
@@ -292,7 +288,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbAssetOffchain(
-    ?\Tatum\Model\CreateBnbAsset $create_bnb_asset
+    \Tatum\Model\CreateBnbAsset $create_bnb_asset
 )
 ```
 
@@ -319,9 +315,8 @@ Create a BNB-based asset
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_bnb_asset = new \Tatum\Model\CreateBnbAsset();
 
@@ -348,7 +343,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbTransfer(
-    ?\Tatum\Model\BnbTransferRequest $bnb_transfer_request
+    \Tatum\Model\BnbTransferRequest $bnb_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -375,9 +370,8 @@ Send BNB from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bnb_transfer_request = new \Tatum\Model\BnbTransferRequest();
 
@@ -407,7 +401,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bscDeployBep20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+    \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -434,9 +428,8 @@ Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual a
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
 
@@ -466,7 +459,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bscOrBepTransfer(
-    ?\Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request
+    \Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -493,9 +486,8 @@ Send BSC from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $bsc_or_bep_transfer_request = new \Tatum\Model\BscOrBepTransferRequest();
 
@@ -525,7 +517,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->btcTransfer(
-    ?\Tatum\Model\BtcTransferRequest $btc_transfer_request
+    \Tatum\Model\BtcTransferRequest $btc_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -552,9 +544,8 @@ Send BTC from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $btc_transfer_request = new \Tatum\Model\BtcTransferRequest();
 
@@ -584,7 +575,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->celoDeployErc20Ledger(
-    ?\Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request
+    \Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -611,9 +602,8 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $celo_deploy_erc20_ledger_request = new \Tatum\Model\CeloDeployErc20LedgerRequest();
 
@@ -643,7 +633,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->celoOrErc20Transfer(
-    ?\Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request
+    \Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -670,9 +660,8 @@ Send CELO from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $celo_or_erc20_transfer_request = new \Tatum\Model\CeloOrErc20TransferRequest();
 
@@ -702,7 +691,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createBep20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+    \Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
 
@@ -729,9 +718,8 @@ Register a new BNB Smart Chain BEP-20 token in the virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_erc20_request = new \Tatum\Model\CreateErc20Request();
 
@@ -761,7 +749,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createCeloErc20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+    \Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
 
@@ -788,9 +776,8 @@ Register a new Celo ERC-20-equivalent token in the virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_erc20_request = new \Tatum\Model\CreateErc20Request();
 
@@ -820,7 +807,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createErc20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+    \Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
 
@@ -847,9 +834,8 @@ Register a new Ethereum ERC-20 token in the virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_erc20_request = new \Tatum\Model\CreateErc20Request();
 
@@ -879,7 +865,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createHrm20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+    \Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
 
@@ -906,9 +892,8 @@ Register a new Harmony HRM-20 token in the virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_erc20_request = new \Tatum\Model\CreateErc20Request();
 
@@ -938,7 +923,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createTrc(
-    ?\Tatum\Model\CreateTrcRequest $create_trc_request
+    \Tatum\Model\CreateTrcRequest $create_trc_request
 ): \Tatum\Model\Trc20Response
 ```
 
@@ -956,7 +941,7 @@ Name | Type | Description  | Notes
 
 Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
-<h4>10 credits per API call.</h4><br/> <p>First step to create new TRC 10/20 token with given supply on the Tron blockchain with support of Tatum's private ledger.<br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of TRC 10/20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with TRC 10/20 token name as account's currency.<br/> Newly created account is frozen until the specific TRC 10/20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create TRC 10/20 smart contract with Tatum private ledger support: <ol> <li>Create TRC 10/20 token (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy TRC 10</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">TRC 20 smart contract</a> - create new TRC 10/20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store TRC 10/20 smart contract address</a> - link newly created TRC 10/20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for TRC 10/20 Tatum accounts</li> </ol> There is a helper method <a href="#operation/TronDeployTrc">Deploy TRC 10/20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub. </p>
+<h4>10 credits per API call.</h4><br/> <p>First step to create new TRC 10/20 token with given supply on the Tron blockchain with support of Tatum's private ledger.<br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of TRC 10/20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with TRC 10/20 token name as account's currency.<br/> Newly created account is frozen until the specific TRC 10/20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create TRC 10/20 smart contract with Tatum private ledger support: <ol> <li>Create TRC 10/20 token (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy TRC 10</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">TRC 20 smart contract</a> - create new TRC 10/20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store TRC 10/20 smart contract address</a> - link newly created TRC 10/20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for TRC 10/20 Tatum accounts</li> </ol> Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex. There is a helper method <a href="#operation/TronDeployTrc">Deploy TRC 10/20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> </p>
 
 ### Example
 
@@ -965,9 +950,8 @@ Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_trc_request = new \Tatum\Model\CreateTrcRequest();
 
@@ -997,7 +981,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createXdc20(
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+    \Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
 
@@ -1024,9 +1008,8 @@ Register a new XinFin ERC-20-equivalent token in the virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_erc20_request = new \Tatum\Model\CreateErc20Request();
 
@@ -1056,7 +1039,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->dogeTransfer(
-    ?\Tatum\Model\DogeTransferRequest $doge_transfer_request
+    \Tatum\Model\DogeTransferRequest $doge_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1083,9 +1066,8 @@ Send DOGE from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $doge_transfer_request = new \Tatum\Model\DogeTransferRequest();
 
@@ -1115,7 +1097,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->egldTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+    \Tatum\Model\EthTransferRequest $eth_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1142,9 +1124,8 @@ Send EGLD from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_transfer_request = new \Tatum\Model\EthTransferRequest();
 
@@ -1174,7 +1155,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethDeployErc20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+    \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -1201,9 +1182,8 @@ Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
 
@@ -1233,7 +1213,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+    \Tatum\Model\EthTransferRequest $eth_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1260,9 +1240,8 @@ Send ETH from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_transfer_request = new \Tatum\Model\EthTransferRequest();
 
@@ -1292,7 +1271,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethTransferErc20(
-    ?\Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request
+    \Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1319,9 +1298,8 @@ Send Ethereum ERC-20 tokens from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_transfer_erc20_request = new \Tatum\Model\EthTransferErc20Request();
 
@@ -1351,7 +1329,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->flowTransfer(
-    ?\Tatum\Model\FlowTransferRequest $flow_transfer_request
+    \Tatum\Model\FlowTransferRequest $flow_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1378,9 +1356,8 @@ Send FLOW from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $flow_transfer_request = new \Tatum\Model\FlowTransferRequest();
 
@@ -1410,7 +1387,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->kcsDeployErc20Ledger(
-    ?\Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request
+    \Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -1437,9 +1414,8 @@ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the bl
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $kcs_deploy_erc20_ledger_request = new \Tatum\Model\KcsDeployErc20LedgerRequest();
 
@@ -1469,7 +1445,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->kcsTransfer(
-    ?\Tatum\Model\KcsTransferRequest $kcs_transfer_request
+    \Tatum\Model\KcsTransferRequest $kcs_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1496,9 +1472,8 @@ Send KCS from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $kcs_transfer_request = new \Tatum\Model\KcsTransferRequest();
 
@@ -1528,7 +1503,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->klayDeployErc20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+    \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -1555,9 +1530,8 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
 
@@ -1587,7 +1561,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->klayTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+    \Tatum\Model\EthTransferRequest $eth_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1614,9 +1588,8 @@ Send KLAY from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_transfer_request = new \Tatum\Model\EthTransferRequest();
 
@@ -1646,7 +1619,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ltcTransfer(
-    ?\Tatum\Model\LtcTransferRequest $ltc_transfer_request
+    \Tatum\Model\LtcTransferRequest $ltc_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1673,9 +1646,8 @@ Send LTC from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $ltc_transfer_request = new \Tatum\Model\LtcTransferRequest();
 
@@ -1705,8 +1677,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneDeployHrm20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request, 
-    ?float $shard_id
+    \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request, 
+    [ float $shard_id = 0 ]
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -1734,9 +1706,8 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
 
@@ -1769,8 +1740,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request, 
-    ?float $shard_id
+    \Tatum\Model\EthTransferRequest $eth_transfer_request, 
+    [ float $shard_id = 0 ]
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1798,9 +1769,8 @@ Send ONE from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_transfer_request = new \Tatum\Model\EthTransferRequest();
 
@@ -1833,7 +1803,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->polygonTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+    \Tatum\Model\EthTransferRequest $eth_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1860,9 +1830,8 @@ Send MATIC from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_transfer_request = new \Tatum\Model\EthTransferRequest();
 
@@ -1892,8 +1861,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->registerErc20Token(
-    ?string $chain, 
-    ?\Tatum\Model\CreateErc20Request $create_erc20_request
+    string $chain, 
+    \Tatum\Model\CreateErc20Request $create_erc20_request
 ): \Tatum\Model\Erc20Response
 ```
 
@@ -1912,7 +1881,7 @@ Name | Type | Description  | Notes
 
 Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
-<h4>2 credits per API call.</h4><br/> <p>This is the first step to create a new ERC-20 or ERC-20 equivalent token with some supply in a virtual account.<br/> <br/> <br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with token name as account's currency.<br/> Newly created account is frozen until the specific smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create smart contract with Tatum private ledger support: <ol> <li>Register token</a> (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy smart contract</a> - create new smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store smart contract address</a> - link newly created smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for Tatum accounts</li> </ol> Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub. </p>
+<h4>2 credits per API call.</h4><br/> <p>This is the first step to create a new ERC-20 or ERC-20 equivalent token with some supply in a virtual account.<br/> <br/> <br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with token name as account's currency.<br/> Newly created account is frozen until the specific smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create smart contract with Tatum private ledger support: <ol> <li>Register token</a> (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy smart contract</a> - create new smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store smart contract address</a> - link newly created smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for Tatum accounts</li> </ol> Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex. </p>
 
 ### Example
 
@@ -1921,9 +1890,8 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $chain = 'ETH';
@@ -1956,7 +1924,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->solTransfer(
-    ?\Tatum\Model\SolTransferRequest $sol_transfer_request
+    \Tatum\Model\SolTransferRequest $sol_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -1983,9 +1951,8 @@ Send SOL from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $sol_transfer_request = new \Tatum\Model\SolTransferRequest();
 
@@ -2015,8 +1982,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeCeloErc20Address(
-    ?string $address, 
-    ?string $name
+    string $address, 
+    string $name
 )
 ```
 
@@ -2044,9 +2011,8 @@ Set the contract address of a Celo ERC-20-equivalent token
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // ERC-20 contract address
 $address = '0x687422eEA2cB73B5d3e242bA5456b782919AFc85';
@@ -2077,8 +2043,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
-    ?string $address, 
-    ?string $name
+    string $address, 
+    string $name
 )
 ```
 
@@ -2106,9 +2072,8 @@ Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Contract address or token ID
 $address = '0x687422eEA2cB73B5d3e242bA5456b782919AFc85';
@@ -2139,8 +2104,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTrcAddress(
-    ?string $address, 
-    ?string $name
+    string $address, 
+    string $name
 )
 ```
 
@@ -2168,9 +2133,8 @@ Set the contract address of a TRC-10 or TRC-20 token
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // TRC-10 Token ID or TRC-20 contract address
 $address = 'TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW';
@@ -2201,7 +2165,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->tronDeployTrc(
-    ?\Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request
+    \Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -2228,9 +2192,8 @@ Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual ac
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_deploy_trc_request = new \Tatum\Model\TronDeployTrcRequest();
 
@@ -2260,7 +2223,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->tronTransferOffchain(
-    ?\Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request
+    \Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -2287,9 +2250,8 @@ Send TRON from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $tron_transfer_offchain_request = new \Tatum\Model\TronTransferOffchainRequest();
 
@@ -2319,7 +2281,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xdcDeployErc20(
-    ?\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
+    \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request
 ): \Tatum\Model\EthDeployErc20200Response
 ```
 
@@ -2346,9 +2308,8 @@ Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
 
@@ -2378,7 +2339,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xdcTransfer(
-    ?\Tatum\Model\EthTransferRequest $eth_transfer_request
+    \Tatum\Model\EthTransferRequest $eth_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -2405,9 +2366,8 @@ Send XDC from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $eth_transfer_request = new \Tatum\Model\EthTransferRequest();
 
@@ -2437,7 +2397,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmAssetOffchain(
-    ?\Tatum\Model\CreateXlmAsset $create_xlm_asset
+    \Tatum\Model\CreateXlmAsset $create_xlm_asset
 )
 ```
 
@@ -2464,9 +2424,8 @@ Create an XLM-based asset
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_xlm_asset = new \Tatum\Model\CreateXlmAsset();
 
@@ -2493,7 +2452,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmTransfer(
-    ?\Tatum\Model\XlmTransferRequest $xlm_transfer_request
+    \Tatum\Model\XlmTransferRequest $xlm_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -2520,9 +2479,8 @@ Send XLM from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xlm_transfer_request = new \Tatum\Model\XlmTransferRequest();
 
@@ -2552,7 +2510,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpAssetOffchain(
-    ?\Tatum\Model\CreateXrpAsset $create_xrp_asset
+    \Tatum\Model\CreateXrpAsset $create_xrp_asset
 )
 ```
 
@@ -2579,9 +2537,8 @@ Create XRP based Asset
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $create_xrp_asset = new \Tatum\Model\CreateXrpAsset();
 
@@ -2608,7 +2565,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpTransfer(
-    ?\Tatum\Model\XrpTransferRequest $xrp_transfer_request
+    \Tatum\Model\XrpTransferRequest $xrp_transfer_request
 ): \Tatum\Model\BtcTransfer200Response
 ```
 
@@ -2635,9 +2592,8 @@ Send XRP from a virtual account to the blockchain
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $xrp_transfer_request = new \Tatum\Model\XrpTransferRequest();
 

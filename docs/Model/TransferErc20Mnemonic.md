@@ -1,20 +1,20 @@
 # TransferErc20Mnemonic
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sender_account_id** | **string** | Sender account ID |
-**address** | **string** | Blockchain address to send ERC20 token to |
-**amount** | **string** | Amount to be sent. |
-**compliant** | **bool** | Compliance check, if withdrawal is not compliant, it will not be processed. | [optional]
-**currency** | **string** | ERC20 symbol. Required only for calls. | [optional]
-**gas_limit** | **string** | Gas limit for transaction in gas price. If not set, automatic calculation will be used. | [optional]
-**gas_price** | **string** | Gas price in Gwei. If not set, automatic calculation will be used. | [optional]
-**mnemonic** | **string** | Mnemonic to generate private key for sender address. Either mnemonic and index, or privateKey must be present - depends on the type of account and xpub. |
-**index** | **int** | Derivation index of sender address. |
-**nonce** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**payment_id** | **string** | Identifier of the payment, shown for created Transaction within Tatum sender account. | [optional]
-**sender_note** | **string** | Note visible to owner of withdrawing account | [optional]
+**getSenderAccountId()** | **string** | Sender account ID |
+**getAddress()** | **string** | Blockchain address to send ERC20 token to |
+**getAmount()** | **string** | Amount to be sent. |
+**getCompliant()** | **bool** | Compliance check, if withdrawal is not compliant, it will not be processed. | [optional]
+**getCurrency()** | **string** | ERC20 symbol. Required only for calls. | [optional]
+**getGasLimit()** | **string** | Gas limit for transaction in gas price. If not set, automatic calculation will be used. | [optional]
+**getGasPrice()** | **string** | Gas price in Gwei. If not set, automatic calculation will be used. | [optional]
+**getMnemonic()** | **string** | Mnemonic to generate private key for sender address. Either mnemonic and index, or privateKey must be present - depends on the type of account and xpub. |
+**getIndex()** | **int** | Derivation index of sender address. |
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**getPaymentId()** | **string** | Identifier of the payment, shown for created Transaction within Tatum sender account. | [optional]
+**getSenderNote()** | **string** | Note visible to owner of withdrawing account | [optional]
 
 [[Back to Index]](../index.md)

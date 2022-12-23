@@ -1,11 +1,11 @@
 # Error403VCNoAccount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | virtual.account.notValid |
-**message** | **string** | Unable to perform operation on virtual currency, account does not exists. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | virtual.account.notValid |
+**getMessage()** | **string** | Unable to perform operation on virtual currency, account does not exists. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

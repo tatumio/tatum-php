@@ -1,10 +1,10 @@
 # FlowMintedMultipleResult
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | Transaction ID | [optional]
-**token_id** | **string[]** |  | [optional]
+**getTxId()** | **string** | Transaction ID | [optional]
+**getTokenId()** | **string[]** |  | [optional]
 
 [[Back to Index]](../index.md)

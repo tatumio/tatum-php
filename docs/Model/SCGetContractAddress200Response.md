@@ -1,9 +1,9 @@
 # SCGetContractAddress200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contract_address** | **string** | The blockchain address of the smart contract | [optional]
+**getContractAddress()** | **string** | The blockchain address of the smart contract | [optional]
 
 [[Back to Index]](../index.md)

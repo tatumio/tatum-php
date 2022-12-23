@@ -1,11 +1,11 @@
 # Error403OneBroadcast
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | bsc.broadcast.failed |
-**message** | **string** | Unable to broadcast transaction due to ${error}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | bsc.broadcast.failed |
+**getMessage()** | **string** | Unable to broadcast transaction due to ${error}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

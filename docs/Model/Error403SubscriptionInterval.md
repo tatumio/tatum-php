@@ -1,11 +1,11 @@
 # Error403SubscriptionInterval
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.attr.interval.invalid |
-**message** | **string** | Invalid subscription attribute 'interval'. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | subscription.attr.interval.invalid |
+**getMessage()** | **string** | Invalid subscription attribute 'interval'. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # XrpAccountBalanceAssetsInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance of the asset. | [optional]
-**currency** | **string** | Asset identifier. | [optional]
+**getBalance()** | **string** | Balance of the asset. | [optional]
+**getCurrency()** | **string** | Asset identifier. | [optional]
 
 [[Back to Index]](../index.md)

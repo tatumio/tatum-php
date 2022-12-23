@@ -1,12 +1,12 @@
 # CustodialManagedAddress
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Blockchain address |
-**wallet_id** | **string** | Unique identifier of the managed address |
-**chain** | **string** | Blockchain of the address |
-**private_key** | **string** | Private key of the address. Not present by default. | [optional]
+**getAddress()** | **string** | Blockchain address |
+**getWalletId()** | **string** | Unique identifier of the managed address |
+**getChain()** | **string** | Blockchain of the address |
+**getPrivateKey()** | **string** | Private key of the address. Not present by default. | [optional]
 
 [[Back to Index]](../index.md)

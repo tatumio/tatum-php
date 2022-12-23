@@ -1,15 +1,15 @@
 # MintErc721Celo
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token_id** | **string** | ID of token to be created. |
-**to** | **string** | Blockchain address to send ERC721 token to |
-**contract_address** | **string** | Address of ERC721 token |
-**url** | **string** | Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details. |
-**from_private_key** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**nonce** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
-**fee_currency** | **string** | Currency to pay for transaction gas |
+**getTokenId()** | **string** | ID of token to be created. |
+**getTo()** | **string** | Blockchain address to send ERC721 token to |
+**getContractAddress()** | **string** | Address of ERC721 token |
+**getUrl()** | **string** | Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details. |
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
+**getFeeCurrency()** | **string** | Currency to pay for transaction gas |
 
 [[Back to Index]](../index.md)

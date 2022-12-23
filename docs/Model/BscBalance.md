@@ -1,9 +1,9 @@
 # BscBalance
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **string** | Balance in BNB | [optional]
+**getBalance()** | **string** | Balance in BNB | [optional]
 
 [[Back to Index]](../index.md)

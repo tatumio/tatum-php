@@ -1,12 +1,12 @@
 # TransferTronTrc10Blockchain
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from_private_key** | **string** | Private key of the address, from which the TRX will be sent. |
-**to** | **string** | Recipient address of TRON account in Base58 format. |
-**token_id** | **string** | ID of the token to transfer. |
-**amount** | **string** | Amount to be sent in TRX. |
+**getFromPrivateKey()** | **string** | Private key of the address, from which the TRX will be sent. |
+**getTo()** | **string** | Recipient address of TRON account in Base58 format. |
+**getTokenId()** | **string** | ID of the token to transfer. |
+**getAmount()** | **string** | Amount to be sent in TRX. |
 
 [[Back to Index]](../index.md)

@@ -1,11 +1,11 @@
 # Error403AccountFrozen
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.frozen |
-**message** | **string** | Unable to freeze frozen account. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.frozen |
+**getMessage()** | **string** | Unable to freeze frozen account. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

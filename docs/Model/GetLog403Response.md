@@ -1,11 +1,11 @@
 # GetLog403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | tx.missing |
-**message** | **string** | No such tx. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | tx.missing |
+**getMessage()** | **string** | No such tx. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

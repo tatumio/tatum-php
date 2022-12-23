@@ -1,13 +1,13 @@
 # SolanaTxMessage
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**header** | [**\Tatum\Model\SolanaTxMessageHeader**](SolanaTxMessageHeader.md) |  | [optional]
-**account_keys** | **string[]** |  | [optional]
-**recent_blockhash** | **string** |  | [optional]
-**instructions** | [**\Tatum\Model\SolanaTxMessageInstruction[]**](SolanaTxMessageInstruction.md) |  | [optional]
-**index_to_program_ids** | **object** |  | [optional]
+**getHeader()** | [**\Tatum\Model\SolanaTxMessageHeader**](SolanaTxMessageHeader.md) |  | [optional]
+**getAccountKeys()** | **string[]** |  | [optional]
+**getRecentBlockhash()** | **string** |  | [optional]
+**getInstructions()** | [**\Tatum\Model\SolanaTxMessageInstruction[]**](SolanaTxMessageInstruction.md) |  | [optional]
+**getIndexToProgramIds()** | **object** |  | [optional]
 
 [[Back to Index]](../index.md)

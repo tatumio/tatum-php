@@ -1,11 +1,11 @@
 # EthBlockchainSmartContractInvocation200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tx_id** | **string** | The hash (ID) of the transaction |
-**signature_id** | **string** | The internal Tatum ID of the prepared transaction for Key Management Sysytem (KMS) to sign<br/>This is different from the <code>signatureId</code> parameter that you provided in the request body. The <code>signatureId</code> parameter in the request body specifies the signature ID associated with the private key in KMS. |
-**data** | [**\Tatum\Model\DataData**](DataData.md) |  |
+**getTxId()** | **string** | The hash (ID) of the transaction |
+**getSignatureId()** | **string** | The internal Tatum ID of the prepared transaction for Key Management Sysytem (KMS) to sign<br/>This is different from the <code>signatureId</code> parameter that you provided in the request body. The <code>signatureId</code> parameter in the request body specifies the signature ID associated with the private key in KMS. |
+**getData()** | [**\Tatum\Model\DataData**](DataData.md) |  |
 
 [[Back to Index]](../index.md)

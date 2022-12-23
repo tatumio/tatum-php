@@ -1,10 +1,10 @@
 # EstimateFeeFromAddressToInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Destination address. |
-**value** | **float** | Amount to be sent, in BTC. |
+**getAddress()** | **string** | Destination address. |
+**getValue()** | **float** | Amount to be sent, in BTC. |
 
 [[Back to Index]](../index.md)

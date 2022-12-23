@@ -1,10 +1,10 @@
 # FeeETH
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gas_limit** | **float** | Gas limit for transaction in gas price. |
-**gas_price** | **float** | Gas price in Gwei. |
+**getGasLimit()** | **float** | Gas limit for transaction in gas price. |
+**getGasPrice()** | **float** | Gas price in Gwei. |
 
 [[Back to Index]](../index.md)

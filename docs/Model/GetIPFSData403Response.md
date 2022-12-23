@@ -1,10 +1,10 @@
 # GetIPFSData403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **string** | Forbidden |
-**status_code** | **float** | 403 |
+**getMessage()** | **string** | Forbidden |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

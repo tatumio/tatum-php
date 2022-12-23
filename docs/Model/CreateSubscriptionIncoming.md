@@ -1,10 +1,10 @@
 # CreateSubscriptionIncoming
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the subscription. |
-**attr** | [**\Tatum\Model\CreateSubscriptionIncomingAttr**](CreateSubscriptionIncomingAttr.md) |  |
+**getType()** | **string** | Type of the subscription. |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionIncomingAttr**](CreateSubscriptionIncomingAttr.md) |  |
 
 [[Back to Index]](../index.md)

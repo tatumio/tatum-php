@@ -1,9 +1,9 @@
 # GetLog200Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **string** | The data stored in the requested record |
+**getData()** | **string** | The data stored in the requested record |
 
 [[Back to Index]](../index.md)

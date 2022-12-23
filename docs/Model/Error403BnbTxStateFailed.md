@@ -1,11 +1,11 @@
 # Error403BnbTxStateFailed
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | bnb.broadcast.failed.tx.state |
-**message** | **string** | Unable to broadcast BNB transaction, tx ${hash} state not OK. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | bnb.broadcast.failed.tx.state |
+**getMessage()** | **string** | Unable to broadcast BNB transaction, tx ${hash} state not OK. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

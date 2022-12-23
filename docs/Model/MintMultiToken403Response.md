@@ -1,11 +1,11 @@
 # MintMultiToken403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | celo.error |
-**message** | **string** | Unexpected error occurred. Reason: ${reason} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | celo.error |
+**getMessage()** | **string** | Unexpected error occurred. Reason: ${reason} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

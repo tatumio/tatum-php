@@ -1,11 +1,11 @@
 # XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ledger_entry_type** | **string** |  | [optional]
-**ledger_index** | **string** |  | [optional]
-**new_fields** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields**](XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields.md) |  | [optional]
+**getLedgerEntryType()** | **string** |  | [optional]
+**getLedgerIndex()** | **string** |  | [optional]
+**getNewFields()** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields**](XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields.md) |  | [optional]
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # BnbTxTxValueSignaturesInnerPubKey
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional]
-**value** | **string** |  | [optional]
+**getType()** | **string** |  | [optional]
+**getValue()** | **string** |  | [optional]
 
 [[Back to Index]](../index.md)

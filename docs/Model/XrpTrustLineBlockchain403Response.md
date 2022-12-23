@@ -1,11 +1,11 @@
 # XrpTrustLineBlockchain403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | xrp.broadcast.failed |
-**message** | **string** | Xrp submit tx failed. ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | xrp.broadcast.failed |
+**getMessage()** | **string** | Xrp submit tx failed. ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

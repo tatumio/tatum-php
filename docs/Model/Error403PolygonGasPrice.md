@@ -1,11 +1,11 @@
 # Error403PolygonGasPrice
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | gas.price.failed |
-**message** | **string** | Unable to obtain current GAS price. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | gas.price.failed |
+**getMessage()** | **string** | Unable to obtain current GAS price. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

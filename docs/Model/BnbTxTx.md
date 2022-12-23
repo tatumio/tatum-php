@@ -1,10 +1,10 @@
 # BnbTxTx
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional]
-**value** | [**\Tatum\Model\BnbTxTxValue**](BnbTxTxValue.md) |  | [optional]
+**getType()** | **string** |  | [optional]
+**getValue()** | [**\Tatum\Model\BnbTxTxValue**](BnbTxTxValue.md) |  | [optional]
 
 [[Back to Index]](../index.md)

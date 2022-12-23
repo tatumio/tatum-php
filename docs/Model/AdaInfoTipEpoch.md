@@ -1,9 +1,9 @@
 # AdaInfoTipEpoch
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**number** | **float** | Last epoch number. | [optional]
+**getNumber()** | **float** | Last epoch number. | [optional]
 
 [[Back to Index]](../index.md)

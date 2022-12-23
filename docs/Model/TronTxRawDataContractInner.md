@@ -1,10 +1,10 @@
 # TronTxRawDataContractInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**parameter** | [**\Tatum\Model\TronTxRawDataContractInnerParameter**](TronTxRawDataContractInnerParameter.md) |  | [optional]
-**type** | **string** | Type of the Smart contract. | [optional]
+**getParameter()** | [**\Tatum\Model\TronTxRawDataContractInnerParameter**](TronTxRawDataContractInnerParameter.md) |  | [optional]
+**getType()** | **string** | Type of the Smart contract. | [optional]
 
 [[Back to Index]](../index.md)

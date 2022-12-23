@@ -1,11 +1,11 @@
 # MintCurrency403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | account.not.exists |
-**message** | **string** | No such account. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | account.not.exists |
+**getMessage()** | **string** | No such account. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,9 +1,9 @@
 # TransferVetBlockchainFee
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gas_limit** | **string** | Gas limit for transaction. |
+**getGasLimit()** | **string** | Gas limit for transaction. |
 
 [[Back to Index]](../index.md)

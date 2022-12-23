@@ -1,14 +1,14 @@
 # FungibleTx
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**block_number** | **float** | Block number |
-**tx_id** | **string** | Transaction ID |
-**contract_address** | **string** | Contract address |
-**amount** | **string** | Amount of tokens transferred, in smallest decimals |
-**from** | **string** | Sender |
-**to** | **string** | recipient |
+**getBlockNumber()** | **float** | Block number |
+**getTxId()** | **string** | Transaction ID |
+**getContractAddress()** | **string** | Contract address |
+**getAmount()** | **string** | Amount of tokens transferred, in smallest decimals |
+**getFrom()** | **string** | Sender |
+**getTo()** | **string** | recipient |
 
 [[Back to Index]](../index.md)

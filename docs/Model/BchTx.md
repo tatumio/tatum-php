@@ -1,13 +1,13 @@
 # BchTx
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**txid** | **string** |  | [optional]
-**version** | **float** |  | [optional]
-**locktime** | **float** |  | [optional]
-**vin** | [**\Tatum\Model\BchTxVinInner[]**](BchTxVinInner.md) |  | [optional]
-**vout** | [**\Tatum\Model\BchTxVoutInner[]**](BchTxVoutInner.md) |  | [optional]
+**getTxid()** | **string** |  | [optional]
+**getVersion()** | **float** |  | [optional]
+**getLocktime()** | **float** |  | [optional]
+**getVin()** | [**\Tatum\Model\BchTxVinInner[]**](BchTxVinInner.md) |  | [optional]
+**getVout()** | [**\Tatum\Model\BchTxVoutInner[]**](BchTxVoutInner.md) |  | [optional]
 
 [[Back to Index]](../index.md)

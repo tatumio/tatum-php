@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaBlockchainTransfer(
-    ?\Tatum\Model\SolanaBlockchainTransferRequest $solana_blockchain_transfer_request
+    \Tatum\Model\SolanaBlockchainTransferRequest $solana_blockchain_transfer_request
 ): \Tatum\Model\BtcTransferBlockchain200Response
 ```
 
@@ -47,9 +47,8 @@ Send SOL from account to account
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $solana_blockchain_transfer_request = new \Tatum\Model\SolanaBlockchainTransferRequest();
 
@@ -79,7 +78,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaBroadcastConfirm(
-    ?\Tatum\Model\SolanaBroadcastConfirm $solana_broadcast_confirm
+    \Tatum\Model\SolanaBroadcastConfirm $solana_broadcast_confirm
 ): \Tatum\Model\SolanaTransactionHashWithConfirm
 ```
 
@@ -106,9 +105,8 @@ Broadcast and confirm signed Solana transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $solana_broadcast_confirm = new \Tatum\Model\SolanaBroadcastConfirm();
 
@@ -162,9 +160,8 @@ Generate Solana wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var \Tatum\Model\SolanaWallet $response */
@@ -192,7 +189,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaGetBalance(
-    ?string $address
+    string $address
 ): \Tatum\Model\SolBalance
 ```
 
@@ -219,9 +216,8 @@ Get Solana Account balance
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $address = 'FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ';
@@ -252,7 +248,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaGetBlock(
-    ?float $height
+    float $height
 ): \Tatum\Model\SolanaBlock
 ```
 
@@ -279,9 +275,8 @@ Get Solana block by number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Block number
 $height = 6470657;
@@ -336,9 +331,8 @@ Get current block number
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var float $response */
@@ -366,8 +360,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaGetTransaction(
-    ?string $hash, 
-    ?string $commitment
+    string $hash, 
+    [ string $commitment ]
 ): \Tatum\Model\SolanaTx
 ```
 
@@ -395,9 +389,8 @@ Get Solana Transaction
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $hash = '5oSXZkPregqGhHrTcbWhgHQJETvBHtBYssuuCMJ3qroAgHsHndsr8fyY8kY76AgwmMaZBZW8ThHAXwjDaUSweApS';
@@ -431,8 +424,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->solana()->solanaWeb3Driver(
-    ?string $x_api_key, 
-    ?object $body
+    string $x_api_key, 
+    object $body
 ): object
 ```
 
@@ -460,9 +453,8 @@ JSON RPC HTTP driver
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
 $x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';

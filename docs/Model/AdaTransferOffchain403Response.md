@@ -1,11 +1,11 @@
 # AdaTransferOffchain403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | withdrawal.pending |
-**message** | **string** | Unable to prepare withdrawal, last withdrawal with id ${id} is not yet processed by blockchain. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.pending |
+**getMessage()** | **string** | Unable to prepare withdrawal, last withdrawal with id ${id} is not yet processed by blockchain. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

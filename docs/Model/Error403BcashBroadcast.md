@@ -1,11 +1,11 @@
 # Error403BcashBroadcast
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | bch.broadcast.failed |
-**message** | **string** | Unable to broadcast transaction. Error from blockchain: ${error} |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | bch.broadcast.failed |
+**getMessage()** | **string** | Unable to broadcast transaction. Error from blockchain: ${error} |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

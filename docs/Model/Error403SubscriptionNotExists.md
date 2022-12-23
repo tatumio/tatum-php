@@ -1,11 +1,11 @@
 # Error403SubscriptionNotExists
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.not.exists |
-**message** | **string** | No such subscription. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | subscription.not.exists |
+**getMessage()** | **string** | No such subscription. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

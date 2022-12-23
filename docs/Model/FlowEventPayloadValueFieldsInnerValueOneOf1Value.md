@@ -1,10 +1,10 @@
 # FlowEventPayloadValueFieldsInnerValueOneOf1Value
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of the value | [optional]
-**value** | **string** | Value | [optional]
+**getType()** | **string** | Type of the value | [optional]
+**getValue()** | **string** | Value | [optional]
 
 [[Back to Index]](../index.md)

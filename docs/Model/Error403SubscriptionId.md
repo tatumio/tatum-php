@@ -1,11 +1,11 @@
 # Error403SubscriptionId
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | subscription.attr.incoming.invalid |
-**message** | **string** | Invalid subscription attribute 'id' or 'url'. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | subscription.attr.incoming.invalid |
+**getMessage()** | **string** | Invalid subscription attribute 'id' or 'url'. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

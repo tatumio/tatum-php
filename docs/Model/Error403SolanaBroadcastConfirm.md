@@ -1,11 +1,11 @@
 # Error403SolanaBroadcastConfirm
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | solana.broadcast.confirm.failed |
-**message** | **string** | Unexpected error occurred. Reason: ${error}. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | solana.broadcast.confirm.failed |
+**getMessage()** | **string** | Unexpected error occurred. Reason: ${error}. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

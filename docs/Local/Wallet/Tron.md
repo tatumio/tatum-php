@@ -40,9 +40,8 @@ Generate wallet
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // 24-word mnemonic
 $mnemonic = "police hat quantum advance enroll glove thank build warfare inject invite obscure enable inflict seek web cable answer chest suspect comfort tent source seven";
@@ -97,9 +96,8 @@ Generate address from xPub and index
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Extended public key
 $xpub = "xpub6EXfKKFNJZmi6Vk7JPkB8R2vosJiDuMxVS9wRKj9SNv76aJ3AN3wp9niq5cLyFnrcSJGiwCst1jyTmJ1FcJM7xbEK9ov9hSeewcvMRFHiQq";
@@ -155,9 +153,8 @@ Generate address from xPub and index
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Private Key
 $privateKey = (new \Tatum\Model\PrivKey())->setKey("51062cefc351f36b7dbf479d0f86bcb4a5aef3381d866ea76c31ac7241d01f1b");
@@ -212,9 +209,8 @@ Generate private key from mnemonic and index
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // 24-word mnemonic
 $mnemonic = "police hat quantum advance enroll glove thank build warfare inject invite obscure enable inflict seek web cable answer chest suspect comfort tent source seven";

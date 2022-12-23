@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->broadcastBlockchainTransaction(
-    ?\Tatum\Model\BroadcastWithdrawal $broadcast_withdrawal
+    \Tatum\Model\BroadcastWithdrawal $broadcast_withdrawal
 ): \Tatum\Model\BroadcastResponse
 ```
 
@@ -44,9 +44,8 @@ Broadcast signed transaction and complete withdrawal
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $broadcast_withdrawal = new \Tatum\Model\BroadcastWithdrawal();
 
@@ -76,8 +75,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->cancelInProgressWithdrawal(
-    ?string $id, 
-    ?bool $revert
+    string $id, 
+    [ bool $revert = true ]
 )
 ```
 
@@ -105,9 +104,8 @@ Cancel withdrawal
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // ID of created withdrawal
 $id = 'id_example';
@@ -138,8 +136,8 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->completeWithdrawal(
-    ?string $id, 
-    ?string $tx_id
+    string $id, 
+    string $tx_id
 )
 ```
 
@@ -167,9 +165,8 @@ Complete withdrawal
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // ID of created withdrawal
 $id = 'id_example';
@@ -200,10 +197,10 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->getWithdrawals(
-    ?float $page_size, 
-    ?string $currency, 
-    ?string $status, 
-    ?float $offset
+    float $page_size, 
+    [ string $currency,  ]
+    [ string $status,  ]
+    [ float $offset ]
 ): \Tatum\Model\WithdrawalObject[]
 ```
 
@@ -233,9 +230,8 @@ Get withdrawals
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $page_size = 10;
@@ -275,7 +271,7 @@ try {
 
 ```php
 $sdk->{mainnet/testnet}()->api()->withdrawal()->storeWithdrawal(
-    ?\Tatum\Model\Withdrawal $withdrawal
+    \Tatum\Model\Withdrawal $withdrawal
 ): \Tatum\Model\WithdrawalResponse
 ```
 
@@ -302,9 +298,8 @@ Store withdrawal
 
 require_once(__DIR__ . '/autoload.php');
 
-// Set your optional Tatum API keys
-// @see https://apidoc.tatum.io/#section/Authentication
-$sdk = new \Tatum\Sdk(/*'TATUM_API_MAINNET', 'TATUM_API_TESTNET'*/);
+// Tatum SDK
+$sdk = new \Tatum\Sdk();
 
 $withdrawal = new \Tatum\Model\Withdrawal();
 

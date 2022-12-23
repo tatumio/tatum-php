@@ -1,11 +1,11 @@
 # DeletePendingTransactionToSign403Response
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | withdrawal.missing |
-**message** | **string** | No such withdrawal. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.missing |
+**getMessage()** | **string** | No such withdrawal. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

@@ -1,10 +1,10 @@
 # InvalidGasPumpAddress
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | The not activated gas pump address | [optional]
-**reason** | **string** | The reason why the gas pump address did not get activated | [optional]
+**getAddress()** | **string** | The not activated gas pump address | [optional]
+**getReason()** | **string** | The reason why the gas pump address did not get activated | [optional]
 
 [[Back to Index]](../index.md)

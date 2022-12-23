@@ -1,17 +1,17 @@
 # UnblockAmount
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recipient_account_id** | **string** | Internal recipient account ID within Tatum platform |
-**amount** | **string** | Amount to be sent. Amount can be smaller then the blocked amount. |
-**anonymous** | **bool** | Anonymous transaction does not show sender account to recipient, default is false | [optional] [default to false]
-**compliant** | **bool** | Enable compliant checks. Transaction will not be processed, if compliant check fails. | [optional]
-**transaction_code** | **string** | For bookkeeping to distinct transaction purpose. | [optional]
-**payment_id** | **string** | Payment ID, External identifier of the payment, which can be used to pair transactions within Tatum accounts. | [optional]
-**recipient_note** | **string** | Note visible to both, sender and recipient | [optional]
-**base_rate** | **float** | Exchange rate of the base pair. Only applicable for Tatum's Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency. | [optional] [default to 1]
-**sender_note** | **string** | Note visible to sender | [optional]
+**getRecipientAccountId()** | **string** | Internal recipient account ID within Tatum platform |
+**getAmount()** | **string** | Amount to be sent. Amount can be smaller then the blocked amount. |
+**getAnonymous()** | **bool** | Anonymous transaction does not show sender account to recipient, default is false | [optional] [default to false]
+**getCompliant()** | **bool** | Enable compliant checks. Transaction will not be processed, if compliant check fails. | [optional]
+**getTransactionCode()** | **string** | For bookkeeping to distinct transaction purpose. | [optional]
+**getPaymentId()** | **string** | Payment ID, External identifier of the payment, which can be used to pair transactions within Tatum accounts. | [optional]
+**getRecipientNote()** | **string** | Note visible to both, sender and recipient | [optional]
+**getBaseRate()** | **float** | Exchange rate of the base pair. Only applicable for Tatum's Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency. | [optional] [default to 1]
+**getSenderNote()** | **string** | Note visible to sender | [optional]
 
 [[Back to Index]](../index.md)

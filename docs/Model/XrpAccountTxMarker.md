@@ -1,10 +1,10 @@
 # XrpAccountTxMarker
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ledger** | **float** |  | [optional]
-**seq** | **float** |  | [optional]
+**getLedger()** | **float** |  | [optional]
+**getSeq()** | **float** |  | [optional]
 
 [[Back to Index]](../index.md)

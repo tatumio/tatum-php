@@ -1,11 +1,11 @@
 # Error403BtcUTXO
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error_code** | **string** | tx.hash.index.spent |
-**message** | **string** | No such UTXO for transaction and index. |
-**status_code** | **float** | 403 |
+**getErrorCode()** | **string** | tx.hash.index.spent |
+**getMessage()** | **string** | No such UTXO for transaction and index. |
+**getStatusCode()** | **float** | 403 |
 
 [[Back to Index]](../index.md)

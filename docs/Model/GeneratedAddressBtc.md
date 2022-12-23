@@ -1,9 +1,9 @@
 # GeneratedAddressBtc
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | Bitcoin address | [optional]
+**getAddress()** | **string** | Bitcoin address | [optional]
 
 [[Back to Index]](../index.md)

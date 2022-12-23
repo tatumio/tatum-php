@@ -1,10 +1,10 @@
 # AdaTransactionFromAddressFromAddressInner
 
-## Properties
+## Getters
 
-Name | Type | Description | Notes
+Method | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **string** | The blockchain address to send the assets from |
-**private_key** | **string** | The private key of the address to send the assets from |
+**getAddress()** | **string** | The blockchain address to send the assets from |
+**getPrivateKey()** | **string** | The private key of the address to send the assets from |
 
 [[Back to Index]](../index.md)
