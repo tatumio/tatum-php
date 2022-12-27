@@ -20,7 +20,7 @@ use Tatum\Sdk\HeaderSelector;
 use Tatum\Sdk\Psr7\Exception\RequestException;
 use Tatum\Sdk\Psr7\Request;
 use Tatum\Sdk\Psr7\Http\Client;
-use Tatum\Sdk\ObjectSerializer;
+use Tatum\Sdk\Serializer;
 use Tatum\Sdk\ApiException;
 
 abstract class AbstractApi {
@@ -49,43 +49,64 @@ abstract class AbstractApi {
     }
 
     /**
-     * Make a request
+     * Execute a request
      *
      * @param \Tatum\Sdk\Psr7\Request $request    An initialized request object.
-     * @param string|null              $returnType Return type
+     * @param string|null             $returnType (optional) Return type
      * @throws \{{invokerPackage}}\Sdk\ApiException on non-2xx response
      * @return \Tatum\Model\ModelInterface|\Tatum\Sdk\Psr7\Http\ResponseInterface
      */
-    protected function _makeRequest(Request $request, ?string $returnType) {
+    protected function exec(Request $request, ?string $returnType = null) {
+        // Set the user agent and API key
+        $request->setHeader("User-Agent", $this->_caller->config()->getUserAgent());
+        $request->setHeader("x-api-key", $this->_caller->config()->getApiKey());
+
         try {
             $response = Client::send($request);
         } catch (RequestException $e) {
             $response = $e->getResponse();
-            throw new ApiException(
-                "[{$e->getCode()}] {$e->getMessage()}",
+
+            throw (new ApiException(
+                sprintf("[%d] Request error (%s)", (int) $e->getCode(), $e->getMessage()),
                 (int) $e->getCode(),
                 $response ? $response->getHeaders() : [],
-                $response ? (string) $response->getBody() : null
+                $response ? $response->getBody() : null
+            ))->setResponseObject(
+                Serializer::deserialize(
+                    $this->_caller->config(),
+                    $response ? $response->getBody() : null,
+                    $returnType,
+                    $response ? $response->getHeaders() : []
+                )
             );
         }
 
         // Prepare the status code
         $statusCode = $response->getStatusCode();
         if ($statusCode < 200 || $statusCode > 299) {
-            throw new ApiException(
+            throw (new ApiException(
                 sprintf("[%d] Error connecting to the API (%s)", $statusCode, (string) $request->getUri()),
                 $statusCode,
                 $response->getHeaders(),
-                (string) $response->getBody()
+                $response->getBody()
+            ))->setResponseObject(
+                is_string($returnType) && strlen($returnType)
+                    ? Serializer::deserialize(
+                        $this->_caller->config(),
+                        $response->getBody(),
+                        $returnType,
+                        $response->getHeaders()
+                    )
+                    : null
             );
         }
 
         // Convert to a model
-        return isset($returnType)
-            ? ObjectSerializer::deserialize(
+        return is_string($returnType) && strlen($returnType)
+            ? Serializer::deserialize(
+                $this->_caller->config(),
                 $response->getBody(),
                 $returnType,
-                $this->_caller->config()->getTempFolderPath(),
                 $response->getHeaders()
             )
             : $response;

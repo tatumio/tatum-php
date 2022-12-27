@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Cardano API
@@ -28,62 +28,20 @@ class CardanoApi extends AbstractApi {
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function adaBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) { 
-        // Resource path
-        $resourcePath = "/v3/ada/broadcast";
+    public function adaBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+        $rPath = "/v3/ada/broadcast";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $broadcast_kms
+            ), 
+            "\Tatum\Model\TransactionHash"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\TransactionHash $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $broadcast_kms
-                ),
-                "\Tatum\Model\TransactionHash"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\TransactionHash",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -92,68 +50,26 @@ class CardanoApi extends AbstractApi {
      * @param string $xpub Extended public key of a wallet.
      * @param float $index Derivation index of the desired address to be generated.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AdaGenerateAddress200Response
      */
-    public function adaGenerateAddress(string $xpub, float $index) { 
+    public function adaGenerateAddress(string $xpub, float $index) {
         if ($index < 0) {
-            throw new InvalidArgumentException('Invalid value for "$index" when calling CardanoApi.adaGenerateAddress, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$index" when calling CardanoApi.adaGenerateAddress, must be bigger than or equal to 0.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ada/address/{xpub}/{index}";
-        $resourcePath = str_replace("{" . "xpub" . "}", ObjectSerializer::toPathValue($xpub), $resourcePath);
-        $resourcePath = str_replace("{" . "index" . "}", ObjectSerializer::toPathValue($index), $resourcePath);
+        $rPath = "/v3/ada/address/{xpub}/{index}";
+        $rPath = str_replace("{"."xpub"."}", S::toPathValue($xpub), $rPath);
+        $rPath = str_replace("{"."index"."}", S::toPathValue($index), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\AdaGenerateAddress200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AdaGenerateAddress200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\AdaGenerateAddress200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AdaGenerateAddress200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -161,62 +77,20 @@ class CardanoApi extends AbstractApi {
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function adaGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) { 
-        // Resource path
-        $resourcePath = "/v3/ada/wallet/priv";
+    public function adaGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+        $rPath = "/v3/ada/wallet/priv";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $priv_key_request
+            ), 
+            "\Tatum\Model\PrivKey"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PrivKey $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $priv_key_request
-                ),
-                "\Tatum\Model\PrivKey"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PrivKey",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -224,68 +98,26 @@ class CardanoApi extends AbstractApi {
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function adaGenerateWallet(string $mnemonic = null) { 
+    public function adaGenerateWallet(string $mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
-            throw new InvalidArgumentException('Invalid length for "$mnemonic" when calling CardanoApi.adaGenerateWallet, must be smaller than or equal to 500');
+            throw new IAE('Invalid length for "$mnemonic" when calling CardanoApi.adaGenerateWallet, must be smaller than or equal to 500');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ada/wallet";
+        $rPath = "/v3/ada/wallet";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Wallet"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "mnemonic" => isset($mnemonic) ? ObjectSerializer::toQueryValue($mnemonic) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Wallet $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Wallet"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Wallet",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -293,63 +125,21 @@ class CardanoApi extends AbstractApi {
      *
      * @param string $address Address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return array[]
      */
-    public function adaGetAccount(string $address) { 
-        // Resource path
-        $resourcePath = "/v3/ada/account/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
+    public function adaGetAccount(string $address) {
+        $rPath = "/v3/ada/account/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "array[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var array[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "array[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "array[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -357,124 +147,40 @@ class CardanoApi extends AbstractApi {
      *
      * @param string $hash Block hash or height.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AdaBlock
      */
-    public function adaGetBlock(string $hash) { 
-        // Resource path
-        $resourcePath = "/v3/ada/block/{hash}";
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
+    public function adaGetBlock(string $hash) {
+        $rPath = "/v3/ada/block/{hash}";
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\AdaBlock"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AdaBlock $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\AdaBlock"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AdaBlock",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
      * Get Blockchain information
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AdaInfo
      */
-    public function adaGetBlockChainInfo() { 
-        // Resource path
-        $resourcePath = "/v3/ada/info";
+    public function adaGetBlockChainInfo() {
+        $rPath = "/v3/ada/info";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\AdaInfo"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AdaInfo $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\AdaInfo"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AdaInfo",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -482,63 +188,21 @@ class CardanoApi extends AbstractApi {
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AdaTx
      */
-    public function adaGetRawTransaction(string $hash) { 
-        // Resource path
-        $resourcePath = "/v3/ada/transaction/{hash}";
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
+    public function adaGetRawTransaction(string $hash) {
+        $rPath = "/v3/ada/transaction/{hash}";
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\AdaTx"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AdaTx $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\AdaTx"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AdaTx",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -548,74 +212,33 @@ class CardanoApi extends AbstractApi {
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain the next page of data.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AdaTx[]
      */
-    public function adaGetTxByAddress(string $address, float $page_size, float $offset = null) { 
+    public function adaGetTxByAddress(string $address, float $page_size, float $offset = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling CardanoApi.adaGetTxByAddress, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling CardanoApi.adaGetTxByAddress, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling CardanoApi.adaGetTxByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling CardanoApi.adaGetTxByAddress, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ada/transaction/address/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
+        $rPath = "/v3/ada/transaction/address/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\AdaTx[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AdaTx[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\AdaTx[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AdaTx[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -623,63 +246,21 @@ class CardanoApi extends AbstractApi {
      *
      * @param string $address Address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AdaUTXO[]
      */
-    public function adaGetUTXOByAddress(string $address) { 
-        // Resource path
-        $resourcePath = "/v3/ada/{address}/utxos";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
+    public function adaGetUTXOByAddress(string $address) {
+        $rPath = "/v3/ada/{address}/utxos";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\AdaUTXO[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AdaUTXO[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\AdaUTXO[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AdaUTXO[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -687,62 +268,20 @@ class CardanoApi extends AbstractApi {
      *
      * @param \Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function adaTransferBlockchain(\Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request) { 
-        // Resource path
-        $resourcePath = "/v3/ada/transaction";
+    public function adaTransferBlockchain(\Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request) {
+        $rPath = "/v3/ada/transaction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $ada_transfer_blockchain_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $ada_transfer_blockchain_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

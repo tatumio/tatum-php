@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * XRP API
@@ -28,62 +28,20 @@ class XRPApi extends AbstractApi {
      *
      * @param \Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function xrpAccountSettings(\Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request) { 
-        // Resource path
-        $resourcePath = "/v3/xrp/account/settings";
+    public function xrpAccountSettings(\Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request) {
+        $rPath = "/v3/xrp/account/settings";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $xrp_account_settings_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $xrp_account_settings_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -91,62 +49,20 @@ class XRPApi extends AbstractApi {
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function xrpBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) { 
-        // Resource path
-        $resourcePath = "/v3/xrp/broadcast";
+    public function xrpBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+        $rPath = "/v3/xrp/broadcast";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $broadcast_kms
+            ), 
+            "\Tatum\Model\TransactionHash"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\TransactionHash $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $broadcast_kms
-                ),
-                "\Tatum\Model\TransactionHash"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\TransactionHash",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -154,63 +70,21 @@ class XRPApi extends AbstractApi {
      *
      * @param string $account Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpAccountBalance
      */
-    public function xrpGetAccountBalance(string $account) { 
-        // Resource path
-        $resourcePath = "/v3/xrp/account/{account}/balance";
-        $resourcePath = str_replace("{" . "account" . "}", ObjectSerializer::toPathValue($account), $resourcePath);
+    public function xrpGetAccountBalance(string $account) {
+        $rPath = "/v3/xrp/account/{account}/balance";
+        $rPath = str_replace("{"."account"."}", S::toPathValue($account), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpAccountBalance"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpAccountBalance $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpAccountBalance"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpAccountBalance",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -218,63 +92,21 @@ class XRPApi extends AbstractApi {
      *
      * @param string $account Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpAccount
      */
-    public function xrpGetAccountInfo(string $account) { 
-        // Resource path
-        $resourcePath = "/v3/xrp/account/{account}";
-        $resourcePath = str_replace("{" . "account" . "}", ObjectSerializer::toPathValue($account), $resourcePath);
+    public function xrpGetAccountInfo(string $account) {
+        $rPath = "/v3/xrp/account/{account}";
+        $rPath = str_replace("{"."account"."}", S::toPathValue($account), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpAccount"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpAccount $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpAccount"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpAccount",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -284,189 +116,63 @@ class XRPApi extends AbstractApi {
      * @param float|null $min Ledger version to start scanning for transactions from.
      * @param string|null $marker Marker from the last paginated request. It is stringified JSON from previous response.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpAccountTx
      */
-    public function xrpGetAccountTx(string $account, float $min = null, string $marker = null) { 
-        // Resource path
-        $resourcePath = "/v3/xrp/account/tx/{account}";
-        $resourcePath = str_replace("{" . "account" . "}", ObjectSerializer::toPathValue($account), $resourcePath);
+    public function xrpGetAccountTx(string $account, float $min = null, string $marker = null) {
+        $rPath = "/v3/xrp/account/tx/{account}";
+        $rPath = str_replace("{"."account"."}", S::toPathValue($account), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "min" => isset($min) ? S::toQueryValue($min) : null,
+                
+                    "marker" => isset($marker) ? S::toQueryValue($marker) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpAccountTx"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "min" => isset($min) ? ObjectSerializer::toQueryValue($min) : null,
-            
-                "marker" => isset($marker) ? ObjectSerializer::toQueryValue($marker) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpAccountTx $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpAccountTx"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpAccountTx",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
      * Get actual Blockchain fee
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpFee
      */
-    public function xrpGetFee() { 
-        // Resource path
-        $resourcePath = "/v3/xrp/fee";
+    public function xrpGetFee() {
+        $rPath = "/v3/xrp/fee";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpFee"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpFee $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpFee"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpFee",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
      * Get XRP Blockchain Information
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpInfo
      */
-    public function xrpGetLastClosedLedger() { 
-        // Resource path
-        $resourcePath = "/v3/xrp/info";
+    public function xrpGetLastClosedLedger() {
+        $rPath = "/v3/xrp/info";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpInfo"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpInfo $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpInfo"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpInfo",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -474,67 +180,25 @@ class XRPApi extends AbstractApi {
      *
      * @param float $i Sequence of XRP ledger.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpLedger
      */
-    public function xrpGetLedger(float $i) { 
+    public function xrpGetLedger(float $i) {
         if ($i < 0) {
-            throw new InvalidArgumentException('Invalid value for "$i" when calling XRPApi.xrpGetLedger, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$i" when calling XRPApi.xrpGetLedger, must be bigger than or equal to 0.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/xrp/ledger/{i}";
-        $resourcePath = str_replace("{" . "i" . "}", ObjectSerializer::toPathValue($i), $resourcePath);
+        $rPath = "/v3/xrp/ledger/{i}";
+        $rPath = str_replace("{"."i"."}", S::toPathValue($i), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpLedger"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpLedger $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpLedger"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpLedger",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -542,70 +206,29 @@ class XRPApi extends AbstractApi {
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpTx
      */
-    public function xrpGetTransaction(string $hash) { 
+    public function xrpGetTransaction(string $hash) {
         if (strlen($hash) > 64) {
-            throw new InvalidArgumentException('Invalid length for "$hash" when calling XRPApi.xrpGetTransaction, must be smaller than or equal to 64');
+            throw new IAE('Invalid length for "$hash" when calling XRPApi.xrpGetTransaction, must be smaller than or equal to 64');
         }
+
         if (strlen($hash) < 64) {
-            throw new InvalidArgumentException('Invalid length for "$hash" when calling XRPApi.xrpGetTransaction, must be bigger than or equal to 64');
+            throw new IAE('Invalid length for "$hash" when calling XRPApi.xrpGetTransaction, must be bigger than or equal to 64');
         }
 
-        // Resource path
-        $resourcePath = "/v3/xrp/transaction/{hash}";
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
+        $rPath = "/v3/xrp/transaction/{hash}";
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpTx"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpTx $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpTx"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpTx",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -613,62 +236,20 @@ class XRPApi extends AbstractApi {
      *
      * @param \Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function xrpTransferBlockchain(\Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request) { 
-        // Resource path
-        $resourcePath = "/v3/xrp/transaction";
+    public function xrpTransferBlockchain(\Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request) {
+        $rPath = "/v3/xrp/transaction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $xrp_transfer_blockchain_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $xrp_transfer_blockchain_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -676,123 +257,39 @@ class XRPApi extends AbstractApi {
      *
      * @param \Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function xrpTrustLineBlockchain(\Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request) { 
-        // Resource path
-        $resourcePath = "/v3/xrp/trust";
+    public function xrpTrustLineBlockchain(\Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request) {
+        $rPath = "/v3/xrp/trust";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $xrp_trust_line_blockchain_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $xrp_trust_line_blockchain_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
      * Generate XRP account
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XrpWallet
      */
-    public function xrpWallet() { 
-        // Resource path
-        $resourcePath = "/v3/xrp/account";
+    public function xrpWallet() {
+        $rPath = "/v3/xrp/account";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\XrpWallet"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XrpWallet $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\XrpWallet"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XrpWallet",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

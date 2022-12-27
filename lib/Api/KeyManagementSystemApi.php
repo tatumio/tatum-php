@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * KeyManagementSystem API
@@ -29,70 +29,37 @@ class KeyManagementSystemApi extends AbstractApi {
      * @param string $id ID of pending transaction
      * @param string $tx_id transaction ID of blockchain transaction
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function completePendingSignature(string $id, string $tx_id) { 
+    public function completePendingSignature(string $id, string $tx_id) {
         if (strlen($id) > 24) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling KeyManagementSystemApi.completePendingSignature, must be smaller than or equal to 24');
+            throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.completePendingSignature, must be smaller than or equal to 24');
         }
+
         if (strlen($id) < 24) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling KeyManagementSystemApi.completePendingSignature, must be bigger than or equal to 24');
+            throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.completePendingSignature, must be bigger than or equal to 24');
         }
 
         if (strlen($tx_id) > 80) {
-            throw new InvalidArgumentException('Invalid length for "$tx_id" when calling KeyManagementSystemApi.completePendingSignature, must be smaller than or equal to 80');
+            throw new IAE('Invalid length for "$tx_id" when calling KeyManagementSystemApi.completePendingSignature, must be smaller than or equal to 80');
         }
+
         if (strlen($tx_id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$tx_id" when calling KeyManagementSystemApi.completePendingSignature, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$tx_id" when calling KeyManagementSystemApi.completePendingSignature, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/kms/{id}/{txId}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
-        $resourcePath = str_replace("{" . "txId" . "}", ObjectSerializer::toPathValue($tx_id), $resourcePath);
+        $rPath = "/v3/kms/{id}/{txId}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rPath = str_replace("{"."txId"."}", S::toPathValue($tx_id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -101,64 +68,30 @@ class KeyManagementSystemApi extends AbstractApi {
      * @param string $id ID of transaction
      * @param bool|true $revert Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum ERC20 based currencies.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function deletePendingTransactionToSign(string $id, bool $revert = true) { 
+    public function deletePendingTransactionToSign(string $id, bool $revert = true) {
         if (strlen($id) > 24) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling KeyManagementSystemApi.deletePendingTransactionToSign, must be smaller than or equal to 24');
+            throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.deletePendingTransactionToSign, must be smaller than or equal to 24');
         }
+
         if (strlen($id) < 24) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling KeyManagementSystemApi.deletePendingTransactionToSign, must be bigger than or equal to 24');
+            throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.deletePendingTransactionToSign, must be bigger than or equal to 24');
         }
 
-        // Resource path
-        $resourcePath = "/v3/kms/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/kms/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "DELETE", $rPath, [
+                    "revert" => S::toQueryValue($revert),
+                ], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "revert" => ObjectSerializer::toQueryValue($revert),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "DELETE",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -166,70 +99,29 @@ class KeyManagementSystemApi extends AbstractApi {
      *
      * @param string $id ID of transaction
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PendingTransaction
      */
-    public function getPendingTransactionToSign(string $id) { 
+    public function getPendingTransactionToSign(string $id) {
         if (strlen($id) > 24) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling KeyManagementSystemApi.getPendingTransactionToSign, must be smaller than or equal to 24');
+            throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.getPendingTransactionToSign, must be smaller than or equal to 24');
         }
+
         if (strlen($id) < 24) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling KeyManagementSystemApi.getPendingTransactionToSign, must be bigger than or equal to 24');
+            throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.getPendingTransactionToSign, must be bigger than or equal to 24');
         }
 
-        // Resource path
-        $resourcePath = "/v3/kms/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/kms/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\PendingTransaction"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PendingTransaction $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\PendingTransaction"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PendingTransaction",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -238,72 +130,31 @@ class KeyManagementSystemApi extends AbstractApi {
      * @param string $chain Blockchain to get pending transactions for.
      * @param string|null $signatures Signature IDs of the KMS which invokes this endpoint. If multiple, they should be separated by comma.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PendingTransaction[]
      */
-    public function getPendingTransactionsToSign(string $chain, string $signatures = null) { 
+    public function getPendingTransactionsToSign(string $chain, string $signatures = null) {
         if (strlen($chain) > 24) {
-            throw new InvalidArgumentException('Invalid length for "$chain" when calling KeyManagementSystemApi.getPendingTransactionsToSign, must be smaller than or equal to 24');
+            throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.getPendingTransactionsToSign, must be smaller than or equal to 24');
         }
+
         if (strlen($chain) < 24) {
-            throw new InvalidArgumentException('Invalid length for "$chain" when calling KeyManagementSystemApi.getPendingTransactionsToSign, must be bigger than or equal to 24');
+            throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.getPendingTransactionsToSign, must be bigger than or equal to 24');
         }
 
-        // Resource path
-        $resourcePath = "/v3/kms/pending/{chain}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
+        $rPath = "/v3/kms/pending/{chain}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "signatures" => isset($signatures) ? S::toQueryValue($signatures) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\PendingTransaction[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "signatures" => isset($signatures) ? ObjectSerializer::toQueryValue($signatures) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PendingTransaction[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\PendingTransaction[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PendingTransaction[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -312,70 +163,29 @@ class KeyManagementSystemApi extends AbstractApi {
      * @param string $chain Blockchain to get pending transactions for.
      * @param \Tatum\Model\KmsSignatureIds|null $kms_signature_ids Signature IDs of the KMS which invokes this endpoint.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PendingTransaction[]
      */
-    public function receivePendingTransactionsToSign(string $chain, \Tatum\Model\KmsSignatureIds $kms_signature_ids = null) { 
+    public function receivePendingTransactionsToSign(string $chain, \Tatum\Model\KmsSignatureIds $kms_signature_ids = null) {
         if (strlen($chain) > 24) {
-            throw new InvalidArgumentException('Invalid length for "$chain" when calling KeyManagementSystemApi.receivePendingTransactionsToSign, must be smaller than or equal to 24');
+            throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.receivePendingTransactionsToSign, must be smaller than or equal to 24');
         }
+
         if (strlen($chain) < 24) {
-            throw new InvalidArgumentException('Invalid length for "$chain" when calling KeyManagementSystemApi.receivePendingTransactionsToSign, must be bigger than or equal to 24');
+            throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.receivePendingTransactionsToSign, must be bigger than or equal to 24');
         }
 
-        // Resource path
-        $resourcePath = "/v3/kms/pending/{chain}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
+        $rPath = "/v3/kms/pending/{chain}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $kms_signature_ids
+            ), 
+            "\Tatum\Model\PendingTransaction[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PendingTransaction[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $kms_signature_ids
-                ),
-                "\Tatum\Model\PendingTransaction[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PendingTransaction[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

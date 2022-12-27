@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Deposit API
@@ -35,92 +35,52 @@ class DepositApi extends AbstractApi {
      * @param string|null $to Filter by to address
      * @param string|null $account_id Filter by account id
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Deposit[]
      */
-    public function getDeposits(float $page_size = null, float $page = null, string $sort = null, string $status = null, string $currency = null, string $tx_id = null, string $to = null, string $account_id = null) { 
+    public function getDeposits(float $page_size = null, float $page = null, string $sort = null, string $status = null, string $currency = null, string $tx_id = null, string $to = null, string $account_id = null) {
         if (isset($page_size) && $page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling DepositApi.getDeposits, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDeposits, must be smaller than or equal to 50');
         }
+
         if (isset($page_size) && $page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling DepositApi.getDeposits, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDeposits, must be bigger than or equal to 1.');
         }
 
         if (isset($tx_id) && strlen($tx_id) > 80) {
-            throw new InvalidArgumentException('Invalid length for "$tx_id" when calling DepositApi.getDeposits, must be smaller than or equal to 80');
+            throw new IAE('Invalid length for "$tx_id" when calling DepositApi.getDeposits, must be smaller than or equal to 80');
         }
+
         if (isset($tx_id) && strlen($tx_id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$tx_id" when calling DepositApi.getDeposits, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$tx_id" when calling DepositApi.getDeposits, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/deposits";
+        $rPath = "/v3/ledger/deposits";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
+                
+                    "page" => isset($page) ? S::toQueryValue($page) : null,
+                
+                    "sort" => isset($sort) ? S::toQueryValue($sort) : null,
+                
+                    "status" => isset($status) ? S::toQueryValue($status) : null,
+                
+                    "currency" => isset($currency) ? S::toQueryValue($currency) : null,
+                
+                    "txId" => isset($tx_id) ? S::toQueryValue($tx_id) : null,
+                
+                    "to" => isset($to) ? S::toQueryValue($to) : null,
+                
+                    "accountId" => isset($account_id) ? S::toQueryValue($account_id) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Deposit[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => isset($page_size) ? ObjectSerializer::toQueryValue($page_size) : null,
-            
-                "page" => isset($page) ? ObjectSerializer::toQueryValue($page) : null,
-            
-                "sort" => isset($sort) ? ObjectSerializer::toQueryValue($sort) : null,
-            
-                "status" => isset($status) ? ObjectSerializer::toQueryValue($status) : null,
-            
-                "currency" => isset($currency) ? ObjectSerializer::toQueryValue($currency) : null,
-            
-                "txId" => isset($tx_id) ? ObjectSerializer::toQueryValue($tx_id) : null,
-            
-                "to" => isset($to) ? ObjectSerializer::toQueryValue($to) : null,
-            
-                "accountId" => isset($account_id) ? ObjectSerializer::toQueryValue($account_id) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Deposit[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Deposit[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Deposit[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -135,92 +95,52 @@ class DepositApi extends AbstractApi {
      * @param string|null $to Filter by to address
      * @param string|null $account_id Filter by account id
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EntitiesCount
      */
-    public function getDepositsCount(float $page_size = null, float $page = null, string $sort = null, string $status = null, string $currency = null, string $tx_id = null, string $to = null, string $account_id = null) { 
+    public function getDepositsCount(float $page_size = null, float $page = null, string $sort = null, string $status = null, string $currency = null, string $tx_id = null, string $to = null, string $account_id = null) {
         if (isset($page_size) && $page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling DepositApi.getDepositsCount, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDepositsCount, must be smaller than or equal to 50');
         }
+
         if (isset($page_size) && $page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling DepositApi.getDepositsCount, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDepositsCount, must be bigger than or equal to 1.');
         }
 
         if (isset($tx_id) && strlen($tx_id) > 80) {
-            throw new InvalidArgumentException('Invalid length for "$tx_id" when calling DepositApi.getDepositsCount, must be smaller than or equal to 80');
+            throw new IAE('Invalid length for "$tx_id" when calling DepositApi.getDepositsCount, must be smaller than or equal to 80');
         }
+
         if (isset($tx_id) && strlen($tx_id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$tx_id" when calling DepositApi.getDepositsCount, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$tx_id" when calling DepositApi.getDepositsCount, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/deposits/count";
+        $rPath = "/v3/ledger/deposits/count";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
+                
+                    "page" => isset($page) ? S::toQueryValue($page) : null,
+                
+                    "sort" => isset($sort) ? S::toQueryValue($sort) : null,
+                
+                    "status" => isset($status) ? S::toQueryValue($status) : null,
+                
+                    "currency" => isset($currency) ? S::toQueryValue($currency) : null,
+                
+                    "txId" => isset($tx_id) ? S::toQueryValue($tx_id) : null,
+                
+                    "to" => isset($to) ? S::toQueryValue($to) : null,
+                
+                    "accountId" => isset($account_id) ? S::toQueryValue($account_id) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\EntitiesCount"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => isset($page_size) ? ObjectSerializer::toQueryValue($page_size) : null,
-            
-                "page" => isset($page) ? ObjectSerializer::toQueryValue($page) : null,
-            
-                "sort" => isset($sort) ? ObjectSerializer::toQueryValue($sort) : null,
-            
-                "status" => isset($status) ? ObjectSerializer::toQueryValue($status) : null,
-            
-                "currency" => isset($currency) ? ObjectSerializer::toQueryValue($currency) : null,
-            
-                "txId" => isset($tx_id) ? ObjectSerializer::toQueryValue($tx_id) : null,
-            
-                "to" => isset($to) ? ObjectSerializer::toQueryValue($to) : null,
-            
-                "accountId" => isset($account_id) ? ObjectSerializer::toQueryValue($account_id) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EntitiesCount $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\EntitiesCount"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EntitiesCount",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

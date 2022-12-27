@@ -24,8 +24,10 @@ class Request implements RequestInterface {
     /** @var UriInterface */
     private $uri;
 
-    /** @var StreamInterface */
-    private $stream;
+    /** @var StreamInterface|null */
+    private $stream = null;
+
+    private $files = [];
 
     /**
      * @param string                               $method  HTTP method
@@ -36,23 +38,63 @@ class Request implements RequestInterface {
      */
     public function __construct(string $method, $uri, array $headers = [], $body = null, string $version = "1.1") {
         $this->assertMethod($method);
-        if (!($uri instanceof UriInterface)) {
-            $uri = new Uri($uri);
-        }
 
         $this->method = strtoupper($method);
-        $this->uri = $uri;
+        $this->uri = $uri instanceof UriInterface ? $uri : new Uri($uri);
         $this->setHeaders($headers);
-        $this->protocol = $version;
 
         if (!isset($this->headerNames["host"])) {
             $this->updateHostFromUri();
         }
 
-        $this->stream = Utils::streamFor($body);
+        do {
+            // File upload
+            if (is_array($body) && current($body) instanceof \CURLFile) {
+                $this->files = $body;
+                break;
+            }
+
+            // Regular stream
+            $this->stream = Utils::streamFor($body);
+        } while (false);
+
+        $this->protocol = $version;
     }
 
-    public function getStream(): StreamInterface {
+    /**
+     * Set a header
+     *
+     * @param string $headerName  Header name
+     * @param string $headerValue Header value
+     */
+    public function setHeader($headerName, $headerValue = null) {
+        $headers = $this->getHeaders();
+
+        // Remove the header
+        if (null === $headerValue) {
+            unset($headers[$headerName]);
+        } else {
+            $headers[$headerName] = $headerValue;
+        }
+
+        $this->setHeaders($headers);
+    }
+
+    /**
+     * Associative array of ["file name" => {CURLFile object}]
+     *
+     * @return \CURLFile[]
+     */
+    public function getFiles() {
+        return $this->files;
+    }
+
+    /**
+     * Get the stream
+     *
+     * @return StreamInterface|null
+     */
+    public function getStream() {
         return $this->stream;
     }
 
@@ -129,6 +171,7 @@ class Request implements RequestInterface {
             $header = "Host";
             $this->headerNames["host"] = "Host";
         }
+
         // Ensure Host is the first header.
         // See: http://tools.ietf.org/html/rfc7230#section-5.4
         $this->headers = [$header => [$host]] + $this->headers;

@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Transaction API
@@ -31,75 +31,34 @@ class TransactionApi extends AbstractApi {
      * @param float|null $offset Offset to obtain the next page of data.
      * @param bool|null $count Get the total transaction count based on the filter. Either count or pageSize is accepted.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactions(\Tatum\Model\TransactionFilterLedger $transaction_filter_ledger, float $page_size = null, float $offset = null, bool $count = null) { 
+    public function getTransactions(\Tatum\Model\TransactionFilterLedger $transaction_filter_ledger, float $page_size = null, float $offset = null, bool $count = null) {
         if (isset($page_size) && $page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling TransactionApi.getTransactions, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactions, must be smaller than or equal to 50');
         }
+
         if (isset($page_size) && $page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling TransactionApi.getTransactions, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactions, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/transaction/ledger";
+        $rPath = "/v3/ledger/transaction/ledger";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [
+                    "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "count" => isset($count) ? S::toQueryValue($count) : null,
+                ], $rHeaders, [], $transaction_filter_ledger
+            ), 
+            "\Tatum\Model\GetTransactionsByAccountId200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => isset($page_size) ? ObjectSerializer::toQueryValue($page_size) : null,
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "count" => isset($count) ? ObjectSerializer::toQueryValue($count) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\GetTransactionsByAccountId200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $transaction_filter_ledger
-                ),
-                "\Tatum\Model\GetTransactionsByAccountId200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\GetTransactionsByAccountId200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -110,75 +69,34 @@ class TransactionApi extends AbstractApi {
      * @param float|null $offset Offset to obtain the next page of data.
      * @param bool|null $count Get the total transaction count based on the filter. Either count or pageSize is accepted.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactionsByAccountId(\Tatum\Model\TransactionFilter $transaction_filter, float $page_size = null, float $offset = null, bool $count = null) { 
+    public function getTransactionsByAccountId(\Tatum\Model\TransactionFilter $transaction_filter, float $page_size = null, float $offset = null, bool $count = null) {
         if (isset($page_size) && $page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByAccountId, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByAccountId, must be smaller than or equal to 50');
         }
+
         if (isset($page_size) && $page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByAccountId, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByAccountId, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/transaction/account";
+        $rPath = "/v3/ledger/transaction/account";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [
+                    "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "count" => isset($count) ? S::toQueryValue($count) : null,
+                ], $rHeaders, [], $transaction_filter
+            ), 
+            "\Tatum\Model\GetTransactionsByAccountId200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => isset($page_size) ? ObjectSerializer::toQueryValue($page_size) : null,
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "count" => isset($count) ? ObjectSerializer::toQueryValue($count) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\GetTransactionsByAccountId200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $transaction_filter
-                ),
-                "\Tatum\Model\GetTransactionsByAccountId200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\GetTransactionsByAccountId200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -189,75 +107,34 @@ class TransactionApi extends AbstractApi {
      * @param float|null $offset Offset to obtain the next page of data.
      * @param bool|null $count Get total transaction count based on the filter. Either count or pageSize is accepted.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactionsByCustomerId(\Tatum\Model\TransactionFilterCustomer $transaction_filter_customer, float $page_size = null, float $offset = null, bool $count = null) { 
+    public function getTransactionsByCustomerId(\Tatum\Model\TransactionFilterCustomer $transaction_filter_customer, float $page_size = null, float $offset = null, bool $count = null) {
         if (isset($page_size) && $page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByCustomerId, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByCustomerId, must be smaller than or equal to 50');
         }
+
         if (isset($page_size) && $page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByCustomerId, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByCustomerId, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/transaction/customer";
+        $rPath = "/v3/ledger/transaction/customer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [
+                    "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "count" => isset($count) ? S::toQueryValue($count) : null,
+                ], $rHeaders, [], $transaction_filter_customer
+            ), 
+            "\Tatum\Model\GetTransactionsByAccountId200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => isset($page_size) ? ObjectSerializer::toQueryValue($page_size) : null,
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "count" => isset($count) ? ObjectSerializer::toQueryValue($count) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\GetTransactionsByAccountId200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $transaction_filter_customer
-                ),
-                "\Tatum\Model\GetTransactionsByAccountId200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\GetTransactionsByAccountId200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -265,70 +142,29 @@ class TransactionApi extends AbstractApi {
      *
      * @param string $reference 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Transaction[]
      */
-    public function getTransactionsByReference(string $reference) { 
+    public function getTransactionsByReference(string $reference) {
         if (strlen($reference) > 100) {
-            throw new InvalidArgumentException('Invalid length for "$reference" when calling TransactionApi.getTransactionsByReference, must be smaller than or equal to 100');
+            throw new IAE('Invalid length for "$reference" when calling TransactionApi.getTransactionsByReference, must be smaller than or equal to 100');
         }
+
         if (strlen($reference) < 20) {
-            throw new InvalidArgumentException('Invalid length for "$reference" when calling TransactionApi.getTransactionsByReference, must be bigger than or equal to 20');
+            throw new IAE('Invalid length for "$reference" when calling TransactionApi.getTransactionsByReference, must be bigger than or equal to 20');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/transaction/reference/{reference}";
-        $resourcePath = str_replace("{" . "reference" . "}", ObjectSerializer::toPathValue($reference), $resourcePath);
+        $rPath = "/v3/ledger/transaction/reference/{reference}";
+        $rPath = str_replace("{"."reference"."}", S::toPathValue($reference), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\Transaction[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Transaction[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Transaction[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Transaction[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -336,62 +172,20 @@ class TransactionApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateTransaction $create_transaction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\TransactionResult
      */
-    public function sendTransaction(\Tatum\Model\CreateTransaction $create_transaction) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/transaction";
+    public function sendTransaction(\Tatum\Model\CreateTransaction $create_transaction) {
+        $rPath = "/v3/ledger/transaction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_transaction
+            ), 
+            "\Tatum\Model\TransactionResult"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\TransactionResult $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_transaction
-                ),
-                "\Tatum\Model\TransactionResult"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\TransactionResult",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -399,62 +193,20 @@ class TransactionApi extends AbstractApi {
      *
      * @param \Tatum\Model\BatchCreateTransaction $batch_create_transaction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return string[]
      */
-    public function sendTransactionBatch(\Tatum\Model\BatchCreateTransaction $batch_create_transaction) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/transaction/batch";
+    public function sendTransactionBatch(\Tatum\Model\BatchCreateTransaction $batch_create_transaction) {
+        $rPath = "/v3/ledger/transaction/batch";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $batch_create_transaction
+            ), 
+            "string[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var string[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $batch_create_transaction
-                ),
-                "string[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "string[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

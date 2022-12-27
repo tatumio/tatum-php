@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * BlockchainFees API
@@ -28,62 +28,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\BscEstimateGas $bsc_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PolygonEstimateGas200Response
      */
-    public function bscEstimateGas(\Tatum\Model\BscEstimateGas $bsc_estimate_gas) { 
-        // Resource path
-        $resourcePath = "/v3/bsc/gas";
+    public function bscEstimateGas(\Tatum\Model\BscEstimateGas $bsc_estimate_gas) {
+        $rPath = "/v3/bsc/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $bsc_estimate_gas
+            ), 
+            "\Tatum\Model\PolygonEstimateGas200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PolygonEstimateGas200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $bsc_estimate_gas
-                ),
-                "\Tatum\Model\PolygonEstimateGas200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PolygonEstimateGas200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -91,62 +49,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\CeloEstimateGas $celo_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\CeloEstimateGas200Response
      */
-    public function celoEstimateGas(\Tatum\Model\CeloEstimateGas $celo_estimate_gas) { 
-        // Resource path
-        $resourcePath = "/v3/celo/gas";
+    public function celoEstimateGas(\Tatum\Model\CeloEstimateGas $celo_estimate_gas) {
+        $rPath = "/v3/celo/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $celo_estimate_gas
+            ), 
+            "\Tatum\Model\CeloEstimateGas200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\CeloEstimateGas200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $celo_estimate_gas
-                ),
-                "\Tatum\Model\CeloEstimateGas200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\CeloEstimateGas200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -154,62 +70,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EgldEstimateGas200Response
      */
-    public function egldEstimateGas(\Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain) { 
-        // Resource path
-        $resourcePath = "/v3/egld/gas";
+    public function egldEstimateGas(\Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain) {
+        $rPath = "/v3/egld/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $transaction_fee_egld_blockchain
+            ), 
+            "\Tatum\Model\EgldEstimateGas200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EgldEstimateGas200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $transaction_fee_egld_blockchain
-                ),
-                "\Tatum\Model\EgldEstimateGas200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EgldEstimateGas200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -217,62 +91,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EstimateFeeBlockchain200Response
      */
-    public function estimateFeeBlockchain(\Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/estimate";
+    public function estimateFeeBlockchain(\Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request) {
+        $rPath = "/v3/blockchain/estimate";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $estimate_fee_blockchain_request
+            ), 
+            "\Tatum\Model\EstimateFeeBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EstimateFeeBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $estimate_fee_blockchain_request
-                ),
-                "\Tatum\Model\EstimateFeeBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EstimateFeeBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -281,64 +113,26 @@ class BlockchainFeesApi extends AbstractApi {
      * @param \Tatum\Model\EthEstimateGas $eth_estimate_gas 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthGasEstimation
      */
-    public function ethEstimateGas(\Tatum\Model\EthEstimateGas $eth_estimate_gas, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/gas";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function ethEstimateGas(\Tatum\Model\EthEstimateGas $eth_estimate_gas, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthGasEstimation $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $eth_estimate_gas
-                ),
-                "\Tatum\Model\EthGasEstimation"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthGasEstimation",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_estimate_gas
+            ), 
+            "\Tatum\Model\EthGasEstimation"
+        );
     }
     
     /**
@@ -347,64 +141,26 @@ class BlockchainFeesApi extends AbstractApi {
      * @param \Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthGasEstimationBatch
      */
-    public function ethEstimateGasBatch(\Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/gas/batch";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function ethEstimateGasBatch(\Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/gas/batch";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthGasEstimationBatch $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $eth_estimate_gas_array
-                ),
-                "\Tatum\Model\EthGasEstimationBatch"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthGasEstimationBatch",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_estimate_gas_array
+            ), 
+            "\Tatum\Model\EthGasEstimationBatch"
+        );
     }
     
     /**
@@ -412,63 +168,21 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param string $chain Chain
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BlockchainFee
      */
-    public function getBlockchainFee(string $chain) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/fee/{chain}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
+    public function getBlockchainFee(string $chain) {
+        $rPath = "/v3/blockchain/fee/{chain}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\BlockchainFee"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BlockchainFee $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\BlockchainFee"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BlockchainFee",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -476,62 +190,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\KcsEstimateGas $kcs_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PolygonEstimateGas200Response
      */
-    public function kcsEstimateGas(\Tatum\Model\KcsEstimateGas $kcs_estimate_gas) { 
-        // Resource path
-        $resourcePath = "/v3/kcs/gas";
+    public function kcsEstimateGas(\Tatum\Model\KcsEstimateGas $kcs_estimate_gas) {
+        $rPath = "/v3/kcs/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $kcs_estimate_gas
+            ), 
+            "\Tatum\Model\PolygonEstimateGas200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PolygonEstimateGas200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $kcs_estimate_gas
-                ),
-                "\Tatum\Model\PolygonEstimateGas200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PolygonEstimateGas200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -539,62 +211,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\KlaytnEstimateGas200Response
      */
-    public function klaytnEstimateGas(\Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas) { 
-        // Resource path
-        $resourcePath = "/v3/klaytn/gas";
+    public function klaytnEstimateGas(\Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas) {
+        $rPath = "/v3/klaytn/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $klaytn_estimate_gas
+            ), 
+            "\Tatum\Model\KlaytnEstimateGas200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\KlaytnEstimateGas200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $klaytn_estimate_gas
-                ),
-                "\Tatum\Model\KlaytnEstimateGas200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\KlaytnEstimateGas200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -602,62 +232,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\PolygonEstimateGas $polygon_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PolygonEstimateGas200Response
      */
-    public function polygonEstimateGas(\Tatum\Model\PolygonEstimateGas $polygon_estimate_gas) { 
-        // Resource path
-        $resourcePath = "/v3/polygon/gas";
+    public function polygonEstimateGas(\Tatum\Model\PolygonEstimateGas $polygon_estimate_gas) {
+        $rPath = "/v3/polygon/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $polygon_estimate_gas
+            ), 
+            "\Tatum\Model\PolygonEstimateGas200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PolygonEstimateGas200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $polygon_estimate_gas
-                ),
-                "\Tatum\Model\PolygonEstimateGas200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PolygonEstimateGas200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -665,62 +253,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\VetEstimateGas $vet_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return float
      */
-    public function vetEstimateGas(\Tatum\Model\VetEstimateGas $vet_estimate_gas) { 
-        // Resource path
-        $resourcePath = "/v3/vet/transaction/gas";
+    public function vetEstimateGas(\Tatum\Model\VetEstimateGas $vet_estimate_gas) {
+        $rPath = "/v3/vet/transaction/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $vet_estimate_gas
+            ), 
+            "float"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var float $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $vet_estimate_gas
-                ),
-                "float"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "float",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -728,62 +274,20 @@ class BlockchainFeesApi extends AbstractApi {
      *
      * @param \Tatum\Model\XdcEstimateGas $xdc_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\XdcEstimateGas200Response
      */
-    public function xdcEstimateGas(\Tatum\Model\XdcEstimateGas $xdc_estimate_gas) { 
-        // Resource path
-        $resourcePath = "/v3/xdc/gas";
+    public function xdcEstimateGas(\Tatum\Model\XdcEstimateGas $xdc_estimate_gas) {
+        $rPath = "/v3/xdc/gas";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $xdc_estimate_gas
+            ), 
+            "\Tatum\Model\XdcEstimateGas200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\XdcEstimateGas200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $xdc_estimate_gas
-                ),
-                "\Tatum\Model\XdcEstimateGas200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\XdcEstimateGas200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

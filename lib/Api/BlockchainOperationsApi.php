@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * BlockchainOperations API
@@ -28,62 +28,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function adaTransferOffchain(\Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/ada/transfer";
+    public function adaTransferOffchain(\Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request) {
+        $rPath = "/v3/offchain/ada/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $ada_transfer_offchain_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $ada_transfer_offchain_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -91,62 +49,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AlgoDeployErc20Ledger200Response
      */
-    public function algoDeployErc20Ledger(\Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/algo/erc20/deploy";
+    public function algoDeployErc20Ledger(\Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request) {
+        $rPath = "/v3/offchain/algo/erc20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $algo_deploy_erc20_ledger_request
+            ), 
+            "\Tatum\Model\AlgoDeployErc20Ledger200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AlgoDeployErc20Ledger200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $algo_deploy_erc20_ledger_request
-                ),
-                "\Tatum\Model\AlgoDeployErc20Ledger200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AlgoDeployErc20Ledger200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -154,62 +70,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\AlgoTransferRequest $algo_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function algoTransfer(\Tatum\Model\AlgoTransferRequest $algo_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/algorand/transfer";
+    public function algoTransfer(\Tatum\Model\AlgoTransferRequest $algo_transfer_request) {
+        $rPath = "/v3/offchain/algorand/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $algo_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $algo_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -217,62 +91,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\BchTransferRequest $bch_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function bchTransfer(\Tatum\Model\BchTransferRequest $bch_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/bcash/transfer";
+    public function bchTransfer(\Tatum\Model\BchTransferRequest $bch_transfer_request) {
+        $rPath = "/v3/offchain/bcash/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $bch_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $bch_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -280,54 +112,19 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateBnbAsset $create_bnb_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function bnbAssetOffchain(\Tatum\Model\CreateBnbAsset $create_bnb_asset) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/bnb/asset";
+    public function bnbAssetOffchain(\Tatum\Model\CreateBnbAsset $create_bnb_asset) {
+        $rPath = "/v3/offchain/bnb/asset";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_bnb_asset
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_bnb_asset
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -335,62 +132,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\BnbTransferRequest $bnb_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function bnbTransfer(\Tatum\Model\BnbTransferRequest $bnb_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/bnb/transfer";
+    public function bnbTransfer(\Tatum\Model\BnbTransferRequest $bnb_transfer_request) {
+        $rPath = "/v3/offchain/bnb/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $bnb_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $bnb_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -398,62 +153,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function bscDeployBep20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/bsc/bep20/deploy";
+    public function bscDeployBep20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
+        $rPath = "/v3/offchain/bsc/bep20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_deploy_erc20_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_deploy_erc20_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -461,62 +174,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function bscOrBepTransfer(\Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/bsc/transfer";
+    public function bscOrBepTransfer(\Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request) {
+        $rPath = "/v3/offchain/bsc/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $bsc_or_bep_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $bsc_or_bep_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -524,62 +195,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\BtcTransferRequest $btc_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function btcTransfer(\Tatum\Model\BtcTransferRequest $btc_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/bitcoin/transfer";
+    public function btcTransfer(\Tatum\Model\BtcTransferRequest $btc_transfer_request) {
+        $rPath = "/v3/offchain/bitcoin/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $btc_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $btc_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -587,62 +216,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function celoDeployErc20Ledger(\Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/celo/erc20/deploy";
+    public function celoDeployErc20Ledger(\Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request) {
+        $rPath = "/v3/offchain/celo/erc20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $celo_deploy_erc20_ledger_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $celo_deploy_erc20_ledger_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -650,62 +237,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function celoOrErc20Transfer(\Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/celo/transfer";
+    public function celoOrErc20Transfer(\Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request) {
+        $rPath = "/v3/offchain/celo/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $celo_or_erc20_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $celo_or_erc20_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -713,62 +258,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createBep20(\Tatum\Model\CreateErc20Request $create_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/bsc/bep20";
+    public function createBep20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+        $rPath = "/v3/offchain/bsc/bep20";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_erc20_request
+            ), 
+            "\Tatum\Model\Erc20Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_erc20_request
-                ),
-                "\Tatum\Model\Erc20Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -776,62 +279,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createCeloErc20(\Tatum\Model\CreateErc20Request $create_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/celo/erc20";
+    public function createCeloErc20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+        $rPath = "/v3/offchain/celo/erc20";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_erc20_request
+            ), 
+            "\Tatum\Model\Erc20Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_erc20_request
-                ),
-                "\Tatum\Model\Erc20Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -839,62 +300,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createErc20(\Tatum\Model\CreateErc20Request $create_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/ethereum/erc20";
+    public function createErc20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+        $rPath = "/v3/offchain/ethereum/erc20";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_erc20_request
+            ), 
+            "\Tatum\Model\Erc20Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_erc20_request
-                ),
-                "\Tatum\Model\Erc20Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -902,62 +321,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createHrm20(\Tatum\Model\CreateErc20Request $create_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/one/hrm20";
+    public function createHrm20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+        $rPath = "/v3/offchain/one/hrm20";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_erc20_request
+            ), 
+            "\Tatum\Model\Erc20Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_erc20_request
-                ),
-                "\Tatum\Model\Erc20Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -965,62 +342,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateTrcRequest $create_trc_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trc20Response
      */
-    public function createTrc(\Tatum\Model\CreateTrcRequest $create_trc_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/tron/trc";
+    public function createTrc(\Tatum\Model\CreateTrcRequest $create_trc_request) {
+        $rPath = "/v3/offchain/tron/trc";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_trc_request
+            ), 
+            "\Tatum\Model\Trc20Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trc20Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_trc_request
-                ),
-                "\Tatum\Model\Trc20Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trc20Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1028,62 +363,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createXdc20(\Tatum\Model\CreateErc20Request $create_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/xdc/erc20";
+    public function createXdc20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+        $rPath = "/v3/offchain/xdc/erc20";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_erc20_request
+            ), 
+            "\Tatum\Model\Erc20Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_erc20_request
-                ),
-                "\Tatum\Model\Erc20Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1091,62 +384,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\DogeTransferRequest $doge_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function dogeTransfer(\Tatum\Model\DogeTransferRequest $doge_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/dogecoin/transfer";
+    public function dogeTransfer(\Tatum\Model\DogeTransferRequest $doge_transfer_request) {
+        $rPath = "/v3/offchain/dogecoin/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $doge_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $doge_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1154,62 +405,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function egldTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/egld/transfer";
+    public function egldTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
+        $rPath = "/v3/offchain/egld/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1217,62 +426,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function ethDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/ethereum/erc20/deploy";
+    public function ethDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
+        $rPath = "/v3/offchain/ethereum/erc20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_deploy_erc20_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_deploy_erc20_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1280,62 +447,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function ethTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/ethereum/transfer";
+    public function ethTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
+        $rPath = "/v3/offchain/ethereum/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1343,62 +468,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function ethTransferErc20(\Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/ethereum/erc20/transfer";
+    public function ethTransferErc20(\Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request) {
+        $rPath = "/v3/offchain/ethereum/erc20/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_transfer_erc20_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_transfer_erc20_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1406,62 +489,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\FlowTransferRequest $flow_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function flowTransfer(\Tatum\Model\FlowTransferRequest $flow_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/flow/transfer";
+    public function flowTransfer(\Tatum\Model\FlowTransferRequest $flow_transfer_request) {
+        $rPath = "/v3/offchain/flow/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $flow_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $flow_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1469,62 +510,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function kcsDeployErc20Ledger(\Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/kcs/erc20/deploy";
+    public function kcsDeployErc20Ledger(\Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request) {
+        $rPath = "/v3/offchain/kcs/erc20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $kcs_deploy_erc20_ledger_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $kcs_deploy_erc20_ledger_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1532,62 +531,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\KcsTransferRequest $kcs_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function kcsTransfer(\Tatum\Model\KcsTransferRequest $kcs_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/kcs/transfer";
+    public function kcsTransfer(\Tatum\Model\KcsTransferRequest $kcs_transfer_request) {
+        $rPath = "/v3/offchain/kcs/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $kcs_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $kcs_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1595,62 +552,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function klayDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/klaytn/erc20/deploy";
+    public function klayDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
+        $rPath = "/v3/offchain/klaytn/erc20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_deploy_erc20_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_deploy_erc20_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1658,62 +573,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function klayTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/klaytn/transfer";
+    public function klayTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
+        $rPath = "/v3/offchain/klaytn/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1721,62 +594,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\LtcTransferRequest $ltc_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function ltcTransfer(\Tatum\Model\LtcTransferRequest $ltc_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/litecoin/transfer";
+    public function ltcTransfer(\Tatum\Model\LtcTransferRequest $ltc_transfer_request) {
+        $rPath = "/v3/offchain/litecoin/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $ltc_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $ltc_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1785,64 +616,22 @@ class BlockchainOperationsApi extends AbstractApi {
      * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
      * @param float|0 $shard_id Shard to operate on
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function oneDeployHrm20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request, float $shard_id = 0) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/one/hrm20/deploy";
+    public function oneDeployHrm20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request, float $shard_id = 0) {
+        $rPath = "/v3/offchain/one/hrm20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $eth_deploy_erc20_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "shardID" => ObjectSerializer::toQueryValue($shard_id),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_deploy_erc20_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1851,64 +640,22 @@ class BlockchainOperationsApi extends AbstractApi {
      * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
      * @param float|0 $shard_id Shard to operate on
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function oneTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request, float $shard_id = 0) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/one/transfer";
+    public function oneTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request, float $shard_id = 0) {
+        $rPath = "/v3/offchain/one/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $eth_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "shardID" => ObjectSerializer::toQueryValue($shard_id),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1916,62 +663,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function polygonTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/polygon/transfer";
+    public function polygonTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
+        $rPath = "/v3/offchain/polygon/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1980,63 +685,21 @@ class BlockchainOperationsApi extends AbstractApi {
      * @param string $chain Blockchain to work with
      * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function registerErc20Token(string $chain, \Tatum\Model\CreateErc20Request $create_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/token/{chain}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
+    public function registerErc20Token(string $chain, \Tatum\Model\CreateErc20Request $create_erc20_request) {
+        $rPath = "/v3/offchain/token/{chain}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_erc20_request
+            ), 
+            "\Tatum\Model\Erc20Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_erc20_request
-                ),
-                "\Tatum\Model\Erc20Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -2044,62 +707,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\SolTransferRequest $sol_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function solTransfer(\Tatum\Model\SolTransferRequest $sol_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/solana/transfer";
+    public function solTransfer(\Tatum\Model\SolTransferRequest $sol_transfer_request) {
+        $rPath = "/v3/offchain/solana/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $sol_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $sol_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -2108,73 +729,41 @@ class BlockchainOperationsApi extends AbstractApi {
      * @param string $address ERC-20 contract address
      * @param string $name ERC-20 symbol name.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function storeCeloErc20Address(string $address, string $name) { 
+    public function storeCeloErc20Address(string $address, string $name) {
         if (strlen($address) > 100) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling BlockchainOperationsApi.storeCeloErc20Address, must be smaller than or equal to 100');
+            throw new IAE('Invalid length for "$address" when calling BlockchainOperationsApi.storeCeloErc20Address, must be smaller than or equal to 100');
         }
+
         if (strlen($address) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling BlockchainOperationsApi.storeCeloErc20Address, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$address" when calling BlockchainOperationsApi.storeCeloErc20Address, must be bigger than or equal to 1');
         }
 
         if (strlen($name) > 30) {
-            throw new InvalidArgumentException('Invalid length for "$name" when calling BlockchainOperationsApi.storeCeloErc20Address, must be smaller than or equal to 30');
+            throw new IAE('Invalid length for "$name" when calling BlockchainOperationsApi.storeCeloErc20Address, must be smaller than or equal to 30');
         }
+
         if (strlen($name) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$name" when calling BlockchainOperationsApi.storeCeloErc20Address, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$name" when calling BlockchainOperationsApi.storeCeloErc20Address, must be bigger than or equal to 1');
         }
+
         if (!preg_match("/^[a-zA-Z0-9_]+$/", $name)) {
-            throw new InvalidArgumentException('Invalid value for "$name" when calling BlockchainOperationsApi.storeCeloErc20Address, must conform to the pattern /^[a-zA-Z0-9_]+$/');
+            throw new IAE('Invalid value for "$name" when calling BlockchainOperationsApi.storeCeloErc20Address, must conform to the pattern /^[a-zA-Z0-9_]+$/');
         }
 
-        // Resource path
-        $resourcePath = "/v3/offchain/celo/erc20/{name}/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-        $resourcePath = str_replace("{" . "name" . "}", ObjectSerializer::toPathValue($name), $resourcePath);
+        $rPath = "/v3/offchain/celo/erc20/{name}/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rPath = str_replace("{"."name"."}", S::toPathValue($name), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -2183,73 +772,41 @@ class BlockchainOperationsApi extends AbstractApi {
      * @param string $address Contract address or token ID
      * @param string $name Symbol name.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function storeTokenAddress(string $address, string $name) { 
+    public function storeTokenAddress(string $address, string $name) {
         if (strlen($address) > 100) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling BlockchainOperationsApi.storeTokenAddress, must be smaller than or equal to 100');
+            throw new IAE('Invalid length for "$address" when calling BlockchainOperationsApi.storeTokenAddress, must be smaller than or equal to 100');
         }
+
         if (strlen($address) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling BlockchainOperationsApi.storeTokenAddress, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$address" when calling BlockchainOperationsApi.storeTokenAddress, must be bigger than or equal to 1');
         }
 
         if (strlen($name) > 30) {
-            throw new InvalidArgumentException('Invalid length for "$name" when calling BlockchainOperationsApi.storeTokenAddress, must be smaller than or equal to 30');
+            throw new IAE('Invalid length for "$name" when calling BlockchainOperationsApi.storeTokenAddress, must be smaller than or equal to 30');
         }
+
         if (strlen($name) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$name" when calling BlockchainOperationsApi.storeTokenAddress, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$name" when calling BlockchainOperationsApi.storeTokenAddress, must be bigger than or equal to 1');
         }
+
         if (!preg_match("/^[a-zA-Z0-9_]+$/", $name)) {
-            throw new InvalidArgumentException('Invalid value for "$name" when calling BlockchainOperationsApi.storeTokenAddress, must conform to the pattern /^[a-zA-Z0-9_]+$/');
+            throw new IAE('Invalid value for "$name" when calling BlockchainOperationsApi.storeTokenAddress, must conform to the pattern /^[a-zA-Z0-9_]+$/');
         }
 
-        // Resource path
-        $resourcePath = "/v3/offchain/token/{name}/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-        $resourcePath = str_replace("{" . "name" . "}", ObjectSerializer::toPathValue($name), $resourcePath);
+        $rPath = "/v3/offchain/token/{name}/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rPath = str_replace("{"."name"."}", S::toPathValue($name), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -2258,73 +815,41 @@ class BlockchainOperationsApi extends AbstractApi {
      * @param string $address TRC-10 Token ID or TRC-20 contract address
      * @param string $name TRC 10/20 symbol name.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function storeTrcAddress(string $address, string $name) { 
+    public function storeTrcAddress(string $address, string $name) {
         if (strlen($address) > 34) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling BlockchainOperationsApi.storeTrcAddress, must be smaller than or equal to 34');
+            throw new IAE('Invalid length for "$address" when calling BlockchainOperationsApi.storeTrcAddress, must be smaller than or equal to 34');
         }
+
         if (strlen($address) < 7) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling BlockchainOperationsApi.storeTrcAddress, must be bigger than or equal to 7');
+            throw new IAE('Invalid length for "$address" when calling BlockchainOperationsApi.storeTrcAddress, must be bigger than or equal to 7');
         }
 
         if (strlen($name) > 30) {
-            throw new InvalidArgumentException('Invalid length for "$name" when calling BlockchainOperationsApi.storeTrcAddress, must be smaller than or equal to 30');
+            throw new IAE('Invalid length for "$name" when calling BlockchainOperationsApi.storeTrcAddress, must be smaller than or equal to 30');
         }
+
         if (strlen($name) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$name" when calling BlockchainOperationsApi.storeTrcAddress, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$name" when calling BlockchainOperationsApi.storeTrcAddress, must be bigger than or equal to 1');
         }
+
         if (!preg_match("/^[a-zA-Z0-9_]+$/", $name)) {
-            throw new InvalidArgumentException('Invalid value for "$name" when calling BlockchainOperationsApi.storeTrcAddress, must conform to the pattern /^[a-zA-Z0-9_]+$/');
+            throw new IAE('Invalid value for "$name" when calling BlockchainOperationsApi.storeTrcAddress, must conform to the pattern /^[a-zA-Z0-9_]+$/');
         }
 
-        // Resource path
-        $resourcePath = "/v3/offchain/tron/trc/{name}/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-        $resourcePath = str_replace("{" . "name" . "}", ObjectSerializer::toPathValue($name), $resourcePath);
+        $rPath = "/v3/offchain/tron/trc/{name}/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rPath = str_replace("{"."name"."}", S::toPathValue($name), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -2332,62 +857,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function tronDeployTrc(\Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/tron/trc/deploy";
+    public function tronDeployTrc(\Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request) {
+        $rPath = "/v3/offchain/tron/trc/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $tron_deploy_trc_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $tron_deploy_trc_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -2395,62 +878,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function tronTransferOffchain(\Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/tron/transfer";
+    public function tronTransferOffchain(\Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request) {
+        $rPath = "/v3/offchain/tron/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $tron_transfer_offchain_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $tron_transfer_offchain_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -2458,62 +899,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthDeployErc20200Response
      */
-    public function xdcDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/xdc/erc20/deploy";
+    public function xdcDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
+        $rPath = "/v3/offchain/xdc/erc20/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_deploy_erc20_request
+            ), 
+            "\Tatum\Model\EthDeployErc20200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthDeployErc20200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_deploy_erc20_request
-                ),
-                "\Tatum\Model\EthDeployErc20200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthDeployErc20200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -2521,62 +920,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function xdcTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/xdc/transfer";
+    public function xdcTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
+        $rPath = "/v3/offchain/xdc/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $eth_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -2584,54 +941,19 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateXlmAsset $create_xlm_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function xlmAssetOffchain(\Tatum\Model\CreateXlmAsset $create_xlm_asset) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/xlm/asset";
+    public function xlmAssetOffchain(\Tatum\Model\CreateXlmAsset $create_xlm_asset) {
+        $rPath = "/v3/offchain/xlm/asset";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_xlm_asset
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_xlm_asset
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -2639,62 +961,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\XlmTransferRequest $xlm_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function xlmTransfer(\Tatum\Model\XlmTransferRequest $xlm_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/xlm/transfer";
+    public function xlmTransfer(\Tatum\Model\XlmTransferRequest $xlm_transfer_request) {
+        $rPath = "/v3/offchain/xlm/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $xlm_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $xlm_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -2702,54 +982,19 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateXrpAsset $create_xrp_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function xrpAssetOffchain(\Tatum\Model\CreateXrpAsset $create_xrp_asset) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/xrp/asset";
+    public function xrpAssetOffchain(\Tatum\Model\CreateXrpAsset $create_xrp_asset) {
+        $rPath = "/v3/offchain/xrp/asset";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_xrp_asset
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_xrp_asset
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -2757,62 +1002,20 @@ class BlockchainOperationsApi extends AbstractApi {
      *
      * @param \Tatum\Model\XrpTransferRequest $xrp_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransfer200Response
      */
-    public function xrpTransfer(\Tatum\Model\XrpTransferRequest $xrp_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/offchain/xrp/transfer";
+    public function xrpTransfer(\Tatum\Model\XrpTransferRequest $xrp_transfer_request) {
+        $rPath = "/v3/offchain/xrp/transfer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $xrp_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransfer200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransfer200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $xrp_transfer_request
-                ),
-                "\Tatum\Model\BtcTransfer200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransfer200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

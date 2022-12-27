@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Auction API
@@ -28,62 +28,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function approveNftAuctionSpending(\Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/approve";
+    public function approveNftAuctionSpending(\Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request) {
+        $rPath = "/v3/blockchain/auction/approve";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $approve_nft_auction_spending_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $approve_nft_auction_spending_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -91,62 +49,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\BidOnAuctionRequest $bid_on_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function bidOnAuction(\Tatum\Model\BidOnAuctionRequest $bid_on_auction_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/bid";
+    public function bidOnAuction(\Tatum\Model\BidOnAuctionRequest $bid_on_auction_request) {
+        $rPath = "/v3/blockchain/auction/bid";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $bid_on_auction_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $bid_on_auction_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -154,62 +70,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\CancelAuctionRequest $cancel_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function cancelAuction(\Tatum\Model\CancelAuctionRequest $cancel_auction_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/cancel";
+    public function cancelAuction(\Tatum\Model\CancelAuctionRequest $cancel_auction_request) {
+        $rPath = "/v3/blockchain/auction/cancel";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $cancel_auction_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $cancel_auction_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -217,62 +91,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateAuctionRequest $create_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function createAuction(\Tatum\Model\CreateAuctionRequest $create_auction_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/sell";
+    public function createAuction(\Tatum\Model\CreateAuctionRequest $create_auction_request) {
+        $rPath = "/v3/blockchain/auction/sell";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_auction_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_auction_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -280,62 +112,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\GenerateAuctionRequest $generate_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function generateAuction(\Tatum\Model\GenerateAuctionRequest $generate_auction_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction";
+    public function generateAuction(\Tatum\Model\GenerateAuctionRequest $generate_auction_request) {
+        $rPath = "/v3/blockchain/auction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $generate_auction_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $generate_auction_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -345,65 +135,23 @@ class AuctionApi extends AbstractApi {
      * @param string $contract_address Contract address
      * @param string $id Auction ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\GetAuction200Response
      */
-    public function getAuction(string $chain, string $contract_address, string $id) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/{chain}/{contractAddress}/{id}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function getAuction(string $chain, string $contract_address, string $id) {
+        $rPath = "/v3/blockchain/auction/{chain}/{contractAddress}/{id}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."contractAddress"."}", S::toPathValue($contract_address), $rPath);
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\GetAuction200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\GetAuction200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\GetAuction200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\GetAuction200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -412,64 +160,22 @@ class AuctionApi extends AbstractApi {
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return float
      */
-    public function getAuctionFee(string $chain, string $contract_address) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/{chain}/{contractAddress}/fee";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
+    public function getAuctionFee(string $chain, string $contract_address) {
+        $rPath = "/v3/blockchain/auction/{chain}/{contractAddress}/fee";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."contractAddress"."}", S::toPathValue($contract_address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "float"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var float $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "float"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "float",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -478,64 +184,22 @@ class AuctionApi extends AbstractApi {
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\GetAuctionFeeRecipient200Response
      */
-    public function getAuctionFeeRecipient(string $chain, string $contract_address) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/{chain}/{contractAddress}/recipient";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
+    public function getAuctionFeeRecipient(string $chain, string $contract_address) {
+        $rPath = "/v3/blockchain/auction/{chain}/{contractAddress}/recipient";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."contractAddress"."}", S::toPathValue($contract_address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\GetAuctionFeeRecipient200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\GetAuctionFeeRecipient200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\GetAuctionFeeRecipient200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\GetAuctionFeeRecipient200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -543,62 +207,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\SettleAuctionRequest $settle_auction_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function settleAuction(\Tatum\Model\SettleAuctionRequest $settle_auction_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/settle";
+    public function settleAuction(\Tatum\Model\SettleAuctionRequest $settle_auction_request) {
+        $rPath = "/v3/blockchain/auction/settle";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $settle_auction_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $settle_auction_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -606,62 +228,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function updateAuctionFee(\Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/fee";
+    public function updateAuctionFee(\Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request) {
+        $rPath = "/v3/blockchain/auction/fee";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, [], $update_auction_fee_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $update_auction_fee_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -669,62 +249,20 @@ class AuctionApi extends AbstractApi {
      *
      * @param \Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function updateAuctionFeeRecipient(\Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/auction/recipient";
+    public function updateAuctionFeeRecipient(\Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request) {
+        $rPath = "/v3/blockchain/auction/recipient";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, [], $update_auction_fee_recipient_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $update_auction_fee_recipient_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

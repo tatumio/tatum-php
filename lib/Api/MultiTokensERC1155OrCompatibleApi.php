@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * MultiTokensERC1155OrCompatible API
@@ -29,64 +29,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function addMultiTokenMinter(\Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/mint/add";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function addMultiTokenMinter(\Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/mint/add";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $add_multi_token_minter_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $add_multi_token_minter_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -95,64 +57,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function burnMultiToken(\Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/burn";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function burnMultiToken(\Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/burn";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $burn_multi_token_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $burn_multi_token_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -161,64 +85,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function burnMultiTokenBatch(\Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/burn/batch";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function burnMultiTokenBatch(\Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/burn/batch";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $burn_multi_token_batch_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $burn_multi_token_batch_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -227,64 +113,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function deployMultiToken(\Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/deploy";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function deployMultiToken(\Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $deploy_multi_token_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $deploy_multi_token_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -293,64 +141,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\MintMultiTokenRequest $mint_multi_token_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function mintMultiToken(\Tatum\Model\MintMultiTokenRequest $mint_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/mint";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function mintMultiToken(\Tatum\Model\MintMultiTokenRequest $mint_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/mint";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $mint_multi_token_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $mint_multi_token_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -359,64 +169,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function mintMultiTokenBatch(\Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/mint/batch";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function mintMultiTokenBatch(\Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/mint/batch";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $mint_multi_token_batch_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $mint_multi_token_batch_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -426,66 +198,28 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param string $address Blockchain address
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]
      */
-    public function multiTokenGetAddressBalance(string $chain, string $address, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/address/balance/{chain}/{address}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function multiTokenGetAddressBalance(string $chain, string $address, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/address/balance/{chain}/{address}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]"
+        );
     }
     
     /**
@@ -497,68 +231,30 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param string $token_id The ID of the Multi Token
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\MultiTokenGetBalance200Response
      */
-    public function multiTokenGetBalance(string $chain, string $address, string $contract_address, string $token_id, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
-        $resourcePath = str_replace("{" . "tokenId" . "}", ObjectSerializer::toPathValue($token_id), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function multiTokenGetBalance(string $chain, string $address, string $contract_address, string $token_id, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rPath = str_replace("{"."contractAddress"."}", S::toPathValue($contract_address), $rPath);
+        $rPath = str_replace("{"."tokenId"."}", S::toPathValue($token_id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\MultiTokenGetBalance200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\MultiTokenGetBalance200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\MultiTokenGetBalance200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\MultiTokenGetBalance200Response"
+        );
     }
     
     /**
@@ -570,70 +266,32 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param string $address Comma-separated blockchain addresses to get the token balance for
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return string[]
      */
-    public function multiTokenGetBalanceBatch(string $chain, string $contract_address, string $token_id, string $address, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/balance/batch/{chain}/{contractAddress}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function multiTokenGetBalanceBatch(string $chain, string $contract_address, string $token_id, string $address, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/balance/batch/{chain}/{contractAddress}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."contractAddress"."}", S::toPathValue($contract_address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [
-                "tokenId" => ObjectSerializer::toQueryValue($token_id),
-            
-                "address" => ObjectSerializer::toQueryValue($address),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var string[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "string[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "string[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "tokenId" => S::toQueryValue($token_id),
+                
+                    "address" => S::toQueryValue($address),
+                ], $rHeaders, []
+            ), 
+            "string[]"
+        );
     }
     
     /**
@@ -643,66 +301,28 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param string $hash Transaction hash
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\MultiTokenGetContractAddress200Response
      */
-    public function multiTokenGetContractAddress(string $chain, string $hash, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/address/{chain}/{hash}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function multiTokenGetContractAddress(string $chain, string $hash, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/address/{chain}/{hash}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\MultiTokenGetContractAddress200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\MultiTokenGetContractAddress200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\MultiTokenGetContractAddress200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\MultiTokenGetContractAddress200Response"
+        );
     }
     
     /**
@@ -713,71 +333,33 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param string $contract_address Multi Token contract address
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\MultiTokenGetMetadata200Response
      */
-    public function multiTokenGetMetadata(string $chain, string $token, string $contract_address, string $x_testnet_type = 'ethereum-sepolia') { 
+    public function multiTokenGetMetadata(string $chain, string $token, string $contract_address, string $x_testnet_type = 'ethereum-sepolia') {
         if (strlen($token) > 32) {
-            throw new InvalidArgumentException('Invalid length for "$token" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetMetadata, must be smaller than or equal to 32');
+            throw new IAE('Invalid length for "$token" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetMetadata, must be smaller than or equal to 32');
         }
 
-        // Resource path
-        $resourcePath = "/v3/multitoken/metadata/{chain}/{contractAddress}/{token}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "token" . "}", ObjectSerializer::toPathValue($token), $resourcePath);
-        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $rPath = "/v3/multitoken/metadata/{chain}/{contractAddress}/{token}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."token"."}", S::toPathValue($token), $rPath);
+        $rPath = str_replace("{"."contractAddress"."}", S::toPathValue($contract_address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\MultiTokenGetMetadata200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\MultiTokenGetMetadata200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\MultiTokenGetMetadata200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\MultiTokenGetMetadata200Response"
+        );
     }
     
     /**
@@ -787,66 +369,28 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param string $hash Transaction hash
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\MultiTokenGetTransaction200Response
      */
-    public function multiTokenGetTransaction(string $chain, string $hash, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/transaction/{chain}/{hash}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function multiTokenGetTransaction(string $chain, string $hash, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/transaction/{chain}/{hash}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\MultiTokenGetTransaction200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\MultiTokenGetTransaction200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\MultiTokenGetTransaction200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\MultiTokenGetTransaction200Response"
+        );
     }
     
     /**
@@ -860,88 +404,47 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param float|null $from Transactions from this block onwards will be included.
      * @param float|null $to Transactions up to this block will be included.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]
      */
-    public function multiTokenGetTransactionByAddress(string $chain, string $address, string $token_address, float $page_size, float $offset = null, float $from = null, float $to = null) { 
+    public function multiTokenGetTransactionByAddress(string $chain, string $address, string $token_address, float $page_size, float $offset = null, float $from = null, float $to = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be bigger than or equal to 1.');
         }
 
         if (isset($from) && $from < 0) {
-            throw new InvalidArgumentException('Invalid value for "$from" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$from" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be bigger than or equal to 0.');
         }
 
         if (isset($to) && $to < 0) {
-            throw new InvalidArgumentException('Invalid value for "$to" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$to" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be bigger than or equal to 0.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-        $resourcePath = str_replace("{" . "tokenAddress" . "}", ObjectSerializer::toPathValue($token_address), $resourcePath);
+        $rPath = "/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rPath = str_replace("{"."tokenAddress"."}", S::toPathValue($token_address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "from" => isset($from) ? S::toQueryValue($from) : null,
+                
+                    "to" => isset($to) ? S::toQueryValue($to) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "from" => isset($from) ? ObjectSerializer::toQueryValue($from) : null,
-            
-                "to" => isset($to) ? ObjectSerializer::toQueryValue($to) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -950,64 +453,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function transferMultiToken(\Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/transaction";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function transferMultiToken(\Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/transaction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $transfer_multi_token_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $transfer_multi_token_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -1016,64 +481,26 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function transferMultiTokenBatch(\Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/multitoken/transaction/batch";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function transferMultiTokenBatch(\Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/multitoken/transaction/batch";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $transfer_multi_token_batch_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $transfer_multi_token_batch_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
 }

@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Celo API
@@ -28,62 +28,20 @@ class CeloApi extends AbstractApi {
      *
      * @param \Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthBlockchainSmartContractInvocation200Response
      */
-    public function celoBlockchainSmartContractInvocation(\Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request) { 
-        // Resource path
-        $resourcePath = "/v3/celo/smartcontract";
+    public function celoBlockchainSmartContractInvocation(\Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request) {
+        $rPath = "/v3/celo/smartcontract";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $celo_blockchain_smart_contract_invocation_request
+            ), 
+            "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $celo_blockchain_smart_contract_invocation_request
-                ),
-                "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthBlockchainSmartContractInvocation200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -91,62 +49,20 @@ class CeloApi extends AbstractApi {
      *
      * @param \Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function celoBlockchainTransfer(\Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request) { 
-        // Resource path
-        $resourcePath = "/v3/celo/transaction";
+    public function celoBlockchainTransfer(\Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request) {
+        $rPath = "/v3/celo/transaction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $celo_blockchain_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $celo_blockchain_transfer_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -154,62 +70,20 @@ class CeloApi extends AbstractApi {
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function celoBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) { 
-        // Resource path
-        $resourcePath = "/v3/celo/broadcast";
+    public function celoBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+        $rPath = "/v3/celo/broadcast";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $broadcast_kms
+            ), 
+            "\Tatum\Model\TransactionHash"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\TransactionHash $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $broadcast_kms
-                ),
-                "\Tatum\Model\TransactionHash"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\TransactionHash",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -218,64 +92,22 @@ class CeloApi extends AbstractApi {
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\CeloGenerateAddress200Response
      */
-    public function celoGenerateAddress(string $xpub, float $index) { 
-        // Resource path
-        $resourcePath = "/v3/celo/address/{xpub}/{index}";
-        $resourcePath = str_replace("{" . "xpub" . "}", ObjectSerializer::toPathValue($xpub), $resourcePath);
-        $resourcePath = str_replace("{" . "index" . "}", ObjectSerializer::toPathValue($index), $resourcePath);
+    public function celoGenerateAddress(string $xpub, float $index) {
+        $rPath = "/v3/celo/address/{xpub}/{index}";
+        $rPath = str_replace("{"."xpub"."}", S::toPathValue($xpub), $rPath);
+        $rPath = str_replace("{"."index"."}", S::toPathValue($index), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\CeloGenerateAddress200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\CeloGenerateAddress200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\CeloGenerateAddress200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\CeloGenerateAddress200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -283,62 +115,20 @@ class CeloApi extends AbstractApi {
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function celoGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) { 
-        // Resource path
-        $resourcePath = "/v3/celo/wallet/priv";
+    public function celoGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+        $rPath = "/v3/celo/wallet/priv";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $priv_key_request
+            ), 
+            "\Tatum\Model\PrivKey"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PrivKey $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $priv_key_request
-                ),
-                "\Tatum\Model\PrivKey"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PrivKey",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -346,68 +136,26 @@ class CeloApi extends AbstractApi {
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function celoGenerateWallet(string $mnemonic = null) { 
+    public function celoGenerateWallet(string $mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
-            throw new InvalidArgumentException('Invalid length for "$mnemonic" when calling CeloApi.celoGenerateWallet, must be smaller than or equal to 500');
+            throw new IAE('Invalid length for "$mnemonic" when calling CeloApi.celoGenerateWallet, must be smaller than or equal to 500');
         }
 
-        // Resource path
-        $resourcePath = "/v3/celo/wallet";
+        $rPath = "/v3/celo/wallet";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Wallet"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "mnemonic" => isset($mnemonic) ? ObjectSerializer::toQueryValue($mnemonic) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Wallet $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Wallet"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Wallet",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -415,63 +163,21 @@ class CeloApi extends AbstractApi {
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\CeloGetBalance200Response
      */
-    public function celoGetBalance(string $address) { 
-        // Resource path
-        $resourcePath = "/v3/celo/account/balance/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
+    public function celoGetBalance(string $address) {
+        $rPath = "/v3/celo/account/balance/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\CeloGetBalance200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\CeloGetBalance200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\CeloGetBalance200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\CeloGetBalance200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -479,124 +185,40 @@ class CeloApi extends AbstractApi {
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\CeloBlock
      */
-    public function celoGetBlock(string $hash) { 
-        // Resource path
-        $resourcePath = "/v3/celo/block/{hash}";
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
+    public function celoGetBlock(string $hash) {
+        $rPath = "/v3/celo/block/{hash}";
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\CeloBlock"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\CeloBlock $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\CeloBlock"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\CeloBlock",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return float
      */
-    public function celoGetCurrentBlock() { 
-        // Resource path
-        $resourcePath = "/v3/celo/block/current";
+    public function celoGetCurrentBlock() {
+        $rPath = "/v3/celo/block/current";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "float"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var float $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "float"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "float",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -604,63 +226,21 @@ class CeloApi extends AbstractApi {
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\CeloTx
      */
-    public function celoGetTransaction(string $hash) { 
-        // Resource path
-        $resourcePath = "/v3/celo/transaction/{hash}";
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
+    public function celoGetTransaction(string $hash) {
+        $rPath = "/v3/celo/transaction/{hash}";
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\CeloTx"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\CeloTx $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\CeloTx"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\CeloTx",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -673,88 +253,47 @@ class CeloApi extends AbstractApi {
      * @param float|null $to Transactions up to this block will be included.
      * @param string|'DESC' $sort Sorting of the data. ASC - oldest first, DESC - newest first.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\CeloTx[]
      */
-    public function celoGetTransactionByAddress(string $address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC') { 
+    public function celoGetTransactionByAddress(string $address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC') {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling CeloApi.celoGetTransactionByAddress, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling CeloApi.celoGetTransactionByAddress, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling CeloApi.celoGetTransactionByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling CeloApi.celoGetTransactionByAddress, must be bigger than or equal to 1.');
         }
 
         if (isset($from) && $from < 0) {
-            throw new InvalidArgumentException('Invalid value for "$from" when calling CeloApi.celoGetTransactionByAddress, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$from" when calling CeloApi.celoGetTransactionByAddress, must be bigger than or equal to 0.');
         }
 
         if (isset($to) && $to < 0) {
-            throw new InvalidArgumentException('Invalid value for "$to" when calling CeloApi.celoGetTransactionByAddress, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$to" when calling CeloApi.celoGetTransactionByAddress, must be bigger than or equal to 0.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/celo/account/transaction/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
+        $rPath = "/v3/celo/account/transaction/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "from" => isset($from) ? S::toQueryValue($from) : null,
+                
+                    "to" => isset($to) ? S::toQueryValue($to) : null,
+                
+                    "sort" => S::toQueryValue($sort),
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\CeloTx[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "from" => isset($from) ? ObjectSerializer::toQueryValue($from) : null,
-            
-                "to" => isset($to) ? ObjectSerializer::toQueryValue($to) : null,
-            
-                "sort" => ObjectSerializer::toQueryValue($sort),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\CeloTx[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\CeloTx[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\CeloTx[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -762,70 +301,29 @@ class CeloApi extends AbstractApi {
      *
      * @param string $address address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return float
      */
-    public function celoGetTransactionCount(string $address) { 
+    public function celoGetTransactionCount(string $address) {
         if (strlen($address) > 42) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling CeloApi.celoGetTransactionCount, must be smaller than or equal to 42');
+            throw new IAE('Invalid length for "$address" when calling CeloApi.celoGetTransactionCount, must be smaller than or equal to 42');
         }
+
         if (strlen($address) < 42) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling CeloApi.celoGetTransactionCount, must be bigger than or equal to 42');
+            throw new IAE('Invalid length for "$address" when calling CeloApi.celoGetTransactionCount, must be bigger than or equal to 42');
         }
 
-        // Resource path
-        $resourcePath = "/v3/celo/transaction/count/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
+        $rPath = "/v3/celo/transaction/count/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "float"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var float $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "float"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "float",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -834,63 +332,21 @@ class CeloApi extends AbstractApi {
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return object
      */
-    public function celoWeb3Driver(string $x_api_key, object $body) { 
-        // Resource path
-        $resourcePath = "/v3/celo/web3/{xApiKey}";
-        $resourcePath = str_replace("{" . "xApiKey" . "}", ObjectSerializer::toPathValue($x_api_key), $resourcePath);
+    public function celoWeb3Driver(string $x_api_key, object $body) {
+        $rPath = "/v3/celo/web3/{xApiKey}";
+        $rPath = str_replace("{"."xApiKey"."}", S::toPathValue($x_api_key), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $body
+            ), 
+            "object"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var object $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $body
-                ),
-                "object"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "object",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * OrderBook API
@@ -28,62 +28,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param \Tatum\Model\ChartRequest $chart_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Chart[]
      */
-    public function chartRequest(\Tatum\Model\ChartRequest $chart_request) { 
-        // Resource path
-        $resourcePath = "/v3/trade/chart";
+    public function chartRequest(\Tatum\Model\ChartRequest $chart_request) {
+        $rPath = "/v3/trade/chart";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $chart_request
+            ), 
+            "\Tatum\Model\Chart[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Chart[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $chart_request
-                ),
-                "\Tatum\Model\Chart[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Chart[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -91,55 +49,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function deleteAccountTrades(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/trade/account/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function deleteAccountTrades(string $id) {
+        $rPath = "/v3/trade/account/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "DELETE", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "DELETE",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -147,55 +70,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param string $id Trade ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function deleteTrade(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/trade/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function deleteTrade(string $id) {
+        $rPath = "/v3/trade/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "DELETE", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "DELETE",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -209,93 +97,54 @@ class OrderBookApi extends AbstractApi {
      * @param bool|null $count Get the total trade pair count based on the filter. Either count or pageSize is accepted.
      * @param string|null $trade_type Trade type.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getBuyTrades(float $page_size, string $id = null, string $customer_id = null, float $offset = null, string $pair = null, bool $count = null, string $trade_type = null) { 
+    public function getBuyTrades(float $page_size, string $id = null, string $customer_id = null, float $offset = null, string $pair = null, bool $count = null, string $trade_type = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling OrderBookApi.getBuyTrades, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getBuyTrades, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling OrderBookApi.getBuyTrades, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getBuyTrades, must be bigger than or equal to 1.');
         }
 
         if (isset($pair) && strlen($pair) > 30) {
-            throw new InvalidArgumentException('Invalid length for "$pair" when calling OrderBookApi.getBuyTrades, must be smaller than or equal to 30');
+            throw new IAE('Invalid length for "$pair" when calling OrderBookApi.getBuyTrades, must be smaller than or equal to 30');
         }
+
         if (isset($pair) && strlen($pair) < 3) {
-            throw new InvalidArgumentException('Invalid length for "$pair" when calling OrderBookApi.getBuyTrades, must be bigger than or equal to 3');
+            throw new IAE('Invalid length for "$pair" when calling OrderBookApi.getBuyTrades, must be bigger than or equal to 3');
         }
+
         if (isset($pair) && !preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $pair)) {
-            throw new InvalidArgumentException('Invalid value for "$pair" when calling OrderBookApi.getBuyTrades, must conform to the pattern /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/');
+            throw new IAE('Invalid value for "$pair" when calling OrderBookApi.getBuyTrades, must conform to the pattern /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/');
         }
 
-        // Resource path
-        $resourcePath = "/v3/trade/buy";
+        $rPath = "/v3/trade/buy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "id" => isset($id) ? S::toQueryValue($id) : null,
+                
+                    "customerId" => isset($customer_id) ? S::toQueryValue($customer_id) : null,
+                
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "pair" => isset($pair) ? S::toQueryValue($pair) : null,
+                
+                    "count" => isset($count) ? S::toQueryValue($count) : null,
+                
+                    "tradeType" => isset($trade_type) ? S::toQueryValue($trade_type) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Trade[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "id" => isset($id) ? ObjectSerializer::toQueryValue($id) : null,
-            
-                "customerId" => isset($customer_id) ? ObjectSerializer::toQueryValue($customer_id) : null,
-            
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "pair" => isset($pair) ? ObjectSerializer::toQueryValue($pair) : null,
-            
-                "count" => isset($count) ? ObjectSerializer::toQueryValue($count) : null,
-            
-                "tradeType" => isset($trade_type) ? ObjectSerializer::toQueryValue($trade_type) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Trade[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -303,62 +152,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param \Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getBuyTradesBody(\Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body) { 
-        // Resource path
-        $resourcePath = "/v3/trade/buy";
+    public function getBuyTradesBody(\Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body) {
+        $rPath = "/v3/trade/buy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $list_oder_book_active_buy_body
+            ), 
+            "\Tatum\Model\Trade[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $list_oder_book_active_buy_body
-                ),
-                "\Tatum\Model\Trade[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -371,91 +178,52 @@ class OrderBookApi extends AbstractApi {
      * @param bool|null $count Get the total trade pair count based on the filter. Either count or pageSize is accepted.
      * @param string[]|null $types Trade types.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getHistoricalTrades(float $page_size, string $id = null, string $pair = null, float $offset = null, bool $count = null, array $types = null) { 
+    public function getHistoricalTrades(float $page_size, string $id = null, string $pair = null, float $offset = null, bool $count = null, array $types = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling OrderBookApi.getHistoricalTrades, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getHistoricalTrades, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling OrderBookApi.getHistoricalTrades, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getHistoricalTrades, must be bigger than or equal to 1.');
         }
 
         if (isset($pair) && strlen($pair) > 30) {
-            throw new InvalidArgumentException('Invalid length for "$pair" when calling OrderBookApi.getHistoricalTrades, must be smaller than or equal to 30');
+            throw new IAE('Invalid length for "$pair" when calling OrderBookApi.getHistoricalTrades, must be smaller than or equal to 30');
         }
+
         if (isset($pair) && strlen($pair) < 3) {
-            throw new InvalidArgumentException('Invalid length for "$pair" when calling OrderBookApi.getHistoricalTrades, must be bigger than or equal to 3');
+            throw new IAE('Invalid length for "$pair" when calling OrderBookApi.getHistoricalTrades, must be bigger than or equal to 3');
         }
+
         if (isset($pair) && !preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $pair)) {
-            throw new InvalidArgumentException('Invalid value for "$pair" when calling OrderBookApi.getHistoricalTrades, must conform to the pattern /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/');
+            throw new IAE('Invalid value for "$pair" when calling OrderBookApi.getHistoricalTrades, must conform to the pattern /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/');
         }
 
-        // Resource path
-        $resourcePath = "/v3/trade/history";
+        $rPath = "/v3/trade/history";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "id" => isset($id) ? S::toQueryValue($id) : null,
+                
+                    "pair" => isset($pair) ? S::toQueryValue($pair) : null,
+                
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "count" => isset($count) ? S::toQueryValue($count) : null,
+                
+                    "types" => isset($types) ? S::serializeCollection($types, "multi") : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Trade[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "id" => isset($id) ? ObjectSerializer::toQueryValue($id) : null,
-            
-                "pair" => isset($pair) ? ObjectSerializer::toQueryValue($pair) : null,
-            
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "count" => isset($count) ? ObjectSerializer::toQueryValue($count) : null,
-            
-                "types" => isset($types) ? ObjectSerializer::serializeCollection($types, "multi") : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Trade[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -463,62 +231,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param \Tatum\Model\ListOderBookHistoryBody|null $list_oder_book_history_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getHistoricalTradesBody(\Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body = null) { 
-        // Resource path
-        $resourcePath = "/v3/trade/history";
+    public function getHistoricalTradesBody(\Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body = null) {
+        $rPath = "/v3/trade/history";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $list_oder_book_history_body
+            ), 
+            "\Tatum\Model\Trade[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $list_oder_book_history_body
-                ),
-                "\Tatum\Model\Trade[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -526,62 +252,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param \Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getMatchedTrades(\Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body) { 
-        // Resource path
-        $resourcePath = "/v3/trade/matched";
+    public function getMatchedTrades(\Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body) {
+        $rPath = "/v3/trade/matched";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $list_oder_book_matched_body
+            ), 
+            "\Tatum\Model\Trade[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $list_oder_book_matched_body
-                ),
-                "\Tatum\Model\Trade[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -595,93 +279,54 @@ class OrderBookApi extends AbstractApi {
      * @param bool|null $count Get the total trade pair count based on the filter. Either count or pageSize is accepted.
      * @param string|null $trade_type Trade type.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getSellTrades(float $page_size, string $id = null, string $customer_id = null, float $offset = null, string $pair = null, bool $count = null, string $trade_type = null) { 
+    public function getSellTrades(float $page_size, string $id = null, string $customer_id = null, float $offset = null, string $pair = null, bool $count = null, string $trade_type = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling OrderBookApi.getSellTrades, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getSellTrades, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling OrderBookApi.getSellTrades, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getSellTrades, must be bigger than or equal to 1.');
         }
 
         if (isset($pair) && strlen($pair) > 30) {
-            throw new InvalidArgumentException('Invalid length for "$pair" when calling OrderBookApi.getSellTrades, must be smaller than or equal to 30');
+            throw new IAE('Invalid length for "$pair" when calling OrderBookApi.getSellTrades, must be smaller than or equal to 30');
         }
+
         if (isset($pair) && strlen($pair) < 3) {
-            throw new InvalidArgumentException('Invalid length for "$pair" when calling OrderBookApi.getSellTrades, must be bigger than or equal to 3');
+            throw new IAE('Invalid length for "$pair" when calling OrderBookApi.getSellTrades, must be bigger than or equal to 3');
         }
+
         if (isset($pair) && !preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $pair)) {
-            throw new InvalidArgumentException('Invalid value for "$pair" when calling OrderBookApi.getSellTrades, must conform to the pattern /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/');
+            throw new IAE('Invalid value for "$pair" when calling OrderBookApi.getSellTrades, must conform to the pattern /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/');
         }
 
-        // Resource path
-        $resourcePath = "/v3/trade/sell";
+        $rPath = "/v3/trade/sell";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "id" => isset($id) ? S::toQueryValue($id) : null,
+                
+                    "customerId" => isset($customer_id) ? S::toQueryValue($customer_id) : null,
+                
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "pair" => isset($pair) ? S::toQueryValue($pair) : null,
+                
+                    "count" => isset($count) ? S::toQueryValue($count) : null,
+                
+                    "tradeType" => isset($trade_type) ? S::toQueryValue($trade_type) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Trade[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "id" => isset($id) ? ObjectSerializer::toQueryValue($id) : null,
-            
-                "customerId" => isset($customer_id) ? ObjectSerializer::toQueryValue($customer_id) : null,
-            
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "pair" => isset($pair) ? ObjectSerializer::toQueryValue($pair) : null,
-            
-                "count" => isset($count) ? ObjectSerializer::toQueryValue($count) : null,
-            
-                "tradeType" => isset($trade_type) ? ObjectSerializer::toQueryValue($trade_type) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Trade[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -689,62 +334,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param \Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getSellTradesBody(\Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body) { 
-        // Resource path
-        $resourcePath = "/v3/trade/sell";
+    public function getSellTradesBody(\Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body) {
+        $rPath = "/v3/trade/sell";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $list_oder_book_active_sell_body
+            ), 
+            "\Tatum\Model\Trade[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $list_oder_book_active_sell_body
-                ),
-                "\Tatum\Model\Trade[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -752,63 +355,21 @@ class OrderBookApi extends AbstractApi {
      *
      * @param string $id Trade ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trade
      */
-    public function getTradeById(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/trade/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function getTradeById(string $id) {
+        $rPath = "/v3/trade/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\Trade"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Trade $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Trade"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Trade",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -816,62 +377,20 @@ class OrderBookApi extends AbstractApi {
      *
      * @param \Tatum\Model\StoreTradeRequest $store_trade_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Id
      */
-    public function storeTrade(\Tatum\Model\StoreTradeRequest $store_trade_request) { 
-        // Resource path
-        $resourcePath = "/v3/trade";
+    public function storeTrade(\Tatum\Model\StoreTradeRequest $store_trade_request) {
+        $rPath = "/v3/trade";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $store_trade_request
+            ), 
+            "\Tatum\Model\Id"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Id $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $store_trade_request
-                ),
-                "\Tatum\Model\Id"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Id",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

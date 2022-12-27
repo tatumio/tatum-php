@@ -33,7 +33,7 @@ class ApiException extends \Exception {
      *
      * @var string[][]
      */
-    protected $responseHeaders;
+    protected $responseHeaders = [];
 
     /**
      * The deserialized response object
@@ -78,10 +78,12 @@ class ApiException extends \Exception {
      * Sets the deserialized response object (during deserialization)
      *
      * @param \Tatum\Model\ModelInterface|string $obj Deserialized response object
-     * @return void
+     * @return $this
      */
     public function setResponseObject($obj) {
         $this->responseObject = $obj;
+
+        return $this;
     }
 
     /**

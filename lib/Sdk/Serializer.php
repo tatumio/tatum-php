@@ -25,12 +25,11 @@ use Tatum\Sdk\Psr7\Http\StreamInterface;
 /**
  * Object Serializer
  */
-class ObjectSerializer {
-
+class Serializer {
     /**
      * Date-time format
-     * 
-     * @var string 
+     *
+     * @var string
      */
     protected static $_dateTimeFormat = \DateTimeInterface::ATOM;
 
@@ -45,7 +44,7 @@ class ObjectSerializer {
 
     /**
      * Get the date-time format
-     * 
+     *
      * @return string
      */
     public static function getDateTimeFormat(): string {
@@ -57,7 +56,7 @@ class ObjectSerializer {
      *
      * @param mixed  $data   Data to serialize
      * @param string $format (optional) Format of the OpenAPITools type of the data; default <b>null</b>
-     * 
+     *
      * @return \scalar|string|\object|\mixed[]|null serialized form of $data
      */
     public static function sanitizeForSerialization($data, string $format = null) {
@@ -121,12 +120,12 @@ class ObjectSerializer {
                         $values[$property] = self::sanitizeForSerialization($value);
                     }
                 }
-                
-                $result = (object)$values;
+
+                $result = (object) $values;
                 break;
             }
-        } while(false);
-        
+        } while (false);
+
         return $result;
     }
 
@@ -134,7 +133,7 @@ class ObjectSerializer {
      * URL-encode query parameter
      *
      * @param \scalar[]|\scalar|string[]|string|\DateTime $value Value to serialize to string and url-encode
-     * 
+     *
      * @return string Serialized and url-encoded parameter
      */
     public static function toPathValue($value): string {
@@ -145,13 +144,13 @@ class ObjectSerializer {
      * Convert value to string or comma-separated list of strings
      *
      * @param \scalar[]|\scalar|string[]|string|\DateTime $value Object to serialize to string
-     * 
+     *
      * @return string|null Serialized parameter
      */
     public static function toQueryValue($value): string {
         return is_array($value)
             ? implode(
-                ',',
+                ",",
                 array_map(function ($item) {
                     return self::toString($item);
                 }, $value)
@@ -179,11 +178,10 @@ class ObjectSerializer {
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
-    public static function fileToFormValue($files, $maxFileSize = 52428800): array {
-        $result = [];
+    public static function fileToFormValue($files, $maxFileSize = 52428800) {
         clearstatcache();
 
-        foreach ((array) $files as $file) {
+        $convert = function ($file) use ($maxFileSize) {
             $filePath = $file instanceof \SplFileObject ? $file->getRealPath() : "$file";
 
             if (!is_string($filePath) || !is_file($filePath)) {
@@ -194,10 +192,10 @@ class ObjectSerializer {
                 throw new RuntimeException("File is larger than {$maxFileSize} bytes");
             }
 
-            $result[] = new \CURLFile($filePath, mime_content_type($filePath) ?: null, basename($filePath));
-        }
+            return new \CURLFile($filePath, mime_content_type($filePath) ?: null, basename($filePath));
+        };
 
-        return $result;
+        return is_array($files) ? array_map($convert, $files) : $convert($files);
     }
 
     /**
@@ -207,12 +205,12 @@ class ObjectSerializer {
      * If it's a boolean, convert it to "true" or "false"
      *
      * @param \scalar|string|\DateTime|\SplFileObject $value Parameter value
-     * 
+     *
      * @return string Stringified value
      * @throws RuntimeException
      */
     public static function toString($value): string {
-        $result = '';
+        $result = "";
 
         do {
             if ($value instanceof \SplFileObject) {
@@ -229,12 +227,12 @@ class ObjectSerializer {
             }
 
             if (is_bool($value)) {
-                $result = $value ? 'true' : 'false';
+                $result = $value ? "true" : "false";
             }
 
             $result = "$value";
-        } while(false);
-        
+        } while (false);
+
         return $result;
     }
 
@@ -246,20 +244,19 @@ class ObjectSerializer {
      * @return string Encoded body value
      */
     public static function toBodyValue($object, string $contentType): string {
-        $result = '';
+        $result = "";
 
         do {
-            if ('application/json' === $contentType) {
+            if ("application/json" === $contentType) {
                 $result = json_encode(static::sanitizeForSerialization($object));
                 break;
-            } 
-            
+            }
+
             if (!is_array($object)) {
                 $result = self::toString($object);
                 break;
             }
-        } while(false);
-
+        } while (false);
         return $result;
     }
 
@@ -269,40 +266,44 @@ class ObjectSerializer {
      * @param \scalar[]|string[] $collection                 Collection to serialize to a string
      * @param string             $style                      The format use for serialization (csv, ssv, tsv, pipes, multi)
      * @param bool               $allowCollectionFormatMulti (optional); Allow collection format to be a multidimensional array; default <b>false</b>
-     * 
+     *
      * @return string
      * @throws \Tatum\Sdk\ApiException
      */
-    public static function serializeCollection(array $collection, string $style, bool $allowCollectionFormatMulti = false): string {
-        $result = '';
+    public static function serializeCollection(
+        array $collection,
+        string $style,
+        bool $allowCollectionFormatMulti = false
+    ): string {
+        $result = "";
 
         do {
-            if ($allowCollectionFormatMulti && 'multi' === $style) {
-                if (null === $queryString = http_build_query($collection, '', '&')) {
-                    throw new ApiException('Unable to serialize collection');
+            if ($allowCollectionFormatMulti && "multi" === $style) {
+                if (null === ($queryString = http_build_query($collection, "", "&"))) {
+                    throw new ApiException("Unable to serialize collection");
                 }
 
-                $result = preg_replace('/%5B[0-9]+%5D=/', '=', $queryString);
+                $result = preg_replace("/%5B[0-9]+%5D=/", "=", $queryString);
                 break;
             }
 
-            if (in_array($style, ['pipeDelimited', 'pipes'])) {
-                $result = implode('|', $collection);
+            if (in_array($style, ["pipeDelimited", "pipes"])) {
+                $result = implode("|", $collection);
                 break;
             }
 
-            if ('tsv' === $style) {
+            if ("tsv" === $style) {
                 $result = implode("\t", $collection);
                 break;
             }
 
-            if (in_array($style, ['spaceDelimited', 'ssv'])) {
-                $result = implode(' ', $collection);
+            if (in_array($style, ["spaceDelimited", "ssv"])) {
+                $result = implode(" ", $collection);
                 break;
             }
 
-            $result = implode(',', $collection);
-        } while(false);
+            $result = implode(",", $collection);
+        } while (false);
 
         return $result;
     }
@@ -310,43 +311,53 @@ class ObjectSerializer {
     /**
      * Deserialize a JSON string into an object
      *
+     * @param \Tatum\Sdk\Config          $config      Configuration object
      * @param mixed                      $data        Object or primitive to be deserialized
-     * @param string                     $type        Some php type that be returned
-     * @param string                     $tempPath    Temporary path
+     * @param string                     $type        Some type that be returned
      * @param array<array-key, string[]> $httpHeaders (optional); A list of headers from the response; default <b>[]</b>
-     * 
+     *
      * @return mixed a single or an array of $type instances
      * @throws \Tatum\Sdk\ApiException
      */
-    public static function deserialize($data, string $type, string $tempPath, array $httpHeaders = []) {
+    public static function deserialize($config, $data, string $type, array $httpHeaders = []) {
         if (null === $data) {
             return null;
         }
 
-        if (\SplFileObject::class === $type) {
+        // Prepare the temporary path
+        $tempPath = $config->getTempFolderPath();
+
+        if ("\SplFileObject" === $type) {
             // Determine file name
             if (
-                isset($httpHeaders['Content-Disposition'][0]) &&
-                preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'][0], $match)
+                isset($httpHeaders["Content-Disposition"]) &&
+                isset($httpHeaders["Content-Disposition"][0]) &&
+                preg_match(
+                    '/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i',
+                    $httpHeaders["Content-Disposition"][0],
+                    $match
+                )
             ) {
                 $filename = $tempPath . DIRECTORY_SEPARATOR . basename($match[1]);
             } else {
-                $filename = tempnam($tempPath, '');
+                $filename = tempnam($tempPath, "");
                 if ($filename === false) {
-                    throw new ApiException('Unable to create temporary directory');
+                    throw new ApiException("Unable to create temporary directory");
                 }
             }
 
-            $file = fopen($filename, 'w');
+            $file = fopen($filename, "w");
             if ($file === false) {
-                throw new ApiException('Unable to write temporary file');
+                throw new ApiException("Unable to write temporary file");
             }
-            while ($chunk = $data->read(200)) {
-                fwrite($file, $chunk);
+            if (method_exists($data, "read")) {
+                while ($chunk = $data->read(200)) {
+                    fwrite($file, $chunk);
+                }
             }
             fclose($file);
 
-            return new \SplFileObject($filename, 'r');
+            return new \SplFileObject($filename, "r");
         }
 
         // Prepare the data
@@ -370,7 +381,7 @@ class ObjectSerializer {
             return null;
         }
 
-        if (strcasecmp(substr($type, -2), '[]') === 0) {
+        if (strcasecmp(substr($type, -2), "[]") === 0) {
             if (!is_array($data)) {
                 throw new InvalidArgumentException("Invalid array '$type'");
             }
@@ -385,12 +396,12 @@ class ObjectSerializer {
         }
 
         // for associative array e.g. array<string,int>
-        if (preg_match('/^(array<|map\[)/', $type)) {
-            settype($data, 'array');
+        if (preg_match("/^(array<|map\[)/", $type)) {
+            settype($data, "array");
             $inner = substr($type, 4, -1);
             $deserialized = [];
             if (strrpos($inner, ",") !== false) {
-                $subType_array = explode(',', $inner, 2);
+                $subType_array = explode(",", $inner, 2);
                 /** @var string $subType */
                 $subType = $subType_array[1];
                 foreach ($data as $key => $value) {
@@ -400,7 +411,7 @@ class ObjectSerializer {
             return $deserialized;
         }
 
-        if ($type === '\DateTime') {
+        if ($type === "\DateTime") {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return
             // the current time for empty input which is probably not
@@ -460,12 +471,9 @@ class ObjectSerializer {
                 }
 
                 $propertyValue = $data->{$instance::attributeMap()[$property]};
-                $instance->$propertySetter(self::doDeserialize(
-                    $propertyValue,
-                    $model_types
-                ));
+                $instance->$propertySetter(self::doDeserialize($propertyValue, $model_types));
             }
-            
+
             // Add any additional properties directly
             foreach ($additional_properties as $property => $value) {
                 $instance->setAdditionalProperty($property, $value);
@@ -478,67 +486,66 @@ class ObjectSerializer {
     /**
      * Create a request from relevant values
      *
+     * @param \Tatum\Sdk\Config          $config  Configuration object
      * @param string                     $method  Request method type
      * @param string                     $uri     Request uri
      * @param array<array-key, mixed>    $query   Query parameters
      * @param array<string, string|null> $headers Headers
      * @param array<string|resource[]>   $form    Form parameters
-     * @param mixed                      $body    Body object
+     * @param mixed                      $body    (optional) Body object; default <b>empty string</b>
      */
     public static function createRequest(
+        $config,
         string $method,
         string $uri,
         array $query,
         array $headers,
         array $form,
-        $body
-    ) {
-
+        $body = ""
+    ) { 
+        // Clean-up query
         $query = array_filter($query, function ($v) {
             return $v !== null;
         });
-        $query = http_build_query($query);
+
+        // Free Testnet call
+        if (!$config->getApiKey() && !$config->isMainNet()) {
+            $query["type"] = "testnet";
+        }
+
+        $queryString = http_build_query($query);
+
         $headers = array_filter($headers, function ($v) {
             return $v !== null;
         });
-        assert(empty($form) || empty($body), 'Form parameters will override body.');
-        
-        // This is a bit hacky but sometimes APIs aren't great about reporting
-        // they need to post multipart data. This detects any file parameters
-        // and forces a multipart submission.
-        $multipart = array_reduce($form, function (bool $carry, mixed $items): bool {
-            if (is_array($items)) {
-                foreach ($items as $item) {
-                    if (is_resource($item)) {
-                        return true;
+        assert(empty($form) || empty($body), "Form parameters will override body.");
+
+        // Multipart data
+        $multipart = array_reduce(
+            $form,
+            function (bool $carry, $items): bool {
+                $result = $carry;
+
+                if (is_array($items)) {
+                    foreach ($items as $item) {
+                        if ($item instanceof \CURLFile) {
+                            $result = true;
+                            break;
+                        }
                     }
+                } elseif ($items instanceof \CURLFile) {
+                    $result = true;
                 }
-            }
-            return $carry;
-        }, false);
-        
-        // @todo probably need to fix the content type if we detected the need to submit a multipart form.
+
+                return $result;
+            },
+            false
+        );
+
         if (!empty($form)) {
             if ($multipart) {
-                $multipartContents = [];
-                foreach ($form as $paramName => $paramValue) {
-                    if (is_array($paramValue)) {
-                        foreach ($paramValue as $paramValueItem) {
-                            $multipartContents[] = [
-                                'name' => $paramName,
-                                'contents' => $paramValueItem
-                            ];
-                        }
-                    } else {
-                        $multipartContents[] = [
-                            'name' => $paramName,
-                            'contents' => $paramValue
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $body = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
+                $headers["Content-Type"] = "multipart/form-data";
+            } elseif ("application/json" === ($headers["Content-Type"] ?? "")) {
                 $body = json_encode($form);
             } else {
                 // for HTTP post (form)
@@ -549,9 +556,9 @@ class ObjectSerializer {
         // Preapre request
         return new Request(
             $method,
-            $uri . ($query ? "?{$query}" : ''),
+            $config->getHost() . $uri . ($queryString ? "?{$queryString}" : ""),
             $headers,
-            !empty($body) ? self::toBodyValue($body, $headers['Content-Type']) : ''
+            $multipart ? $form : (!empty($body) ? self::toBodyValue($body, $headers["Content-Type"] ?? "") : "")
         );
     }
 }

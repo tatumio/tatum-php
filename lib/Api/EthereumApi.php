@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Ethereum API
@@ -29,64 +29,26 @@ class EthereumApi extends AbstractApi {
      * @param \Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthBlockchainSmartContractInvocation200Response
      */
-    public function ethBlockchainSmartContractInvocation(\Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/smartcontract";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function ethBlockchainSmartContractInvocation(\Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/smartcontract";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $eth_blockchain_smart_contract_invocation_request
-                ),
-                "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthBlockchainSmartContractInvocation200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_blockchain_smart_contract_invocation_request
+            ), 
+            "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
+        );
     }
     
     /**
@@ -95,64 +57,26 @@ class EthereumApi extends AbstractApi {
      * @param \Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function ethBlockchainTransfer(\Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/transaction";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function ethBlockchainTransfer(\Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/transaction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $eth_blockchain_transfer_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $eth_blockchain_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -161,64 +85,26 @@ class EthereumApi extends AbstractApi {
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function ethBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/broadcast";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function ethBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/broadcast";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\TransactionHash $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $broadcast_kms
-                ),
-                "\Tatum\Model\TransactionHash"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\TransactionHash",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $broadcast_kms
+            ), 
+            "\Tatum\Model\TransactionHash"
+        );
     }
     
     /**
@@ -228,66 +114,28 @@ class EthereumApi extends AbstractApi {
      * @param float $index Derivation index of the address to be generated.
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\GeneratedAddressEth
      */
-    public function ethGenerateAddress(string $xpub, float $index, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/address/{xpub}/{index}";
-        $resourcePath = str_replace("{" . "xpub" . "}", ObjectSerializer::toPathValue($xpub), $resourcePath);
-        $resourcePath = str_replace("{" . "index" . "}", ObjectSerializer::toPathValue($index), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function ethGenerateAddress(string $xpub, float $index, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/address/{xpub}/{index}";
+        $rPath = str_replace("{"."xpub"."}", S::toPathValue($xpub), $rPath);
+        $rPath = str_replace("{"."index"."}", S::toPathValue($index), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\GeneratedAddressEth $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\GeneratedAddressEth"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\GeneratedAddressEth",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\GeneratedAddressEth"
+        );
     }
     
     /**
@@ -296,64 +144,26 @@ class EthereumApi extends AbstractApi {
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function ethGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/wallet/priv";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function ethGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/wallet/priv";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\PrivKey $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $priv_key_request
-                ),
-                "\Tatum\Model\PrivKey"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\PrivKey",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $priv_key_request
+            ), 
+            "\Tatum\Model\PrivKey"
+        );
     }
     
     /**
@@ -362,70 +172,32 @@ class EthereumApi extends AbstractApi {
      * @param string|null $mnemonic Mnemonic to use for generating extended public and private keys.
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function ethGenerateWallet(string $mnemonic = null, string $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGenerateWallet(string $mnemonic = null, string $x_testnet_type = 'ethereum-sepolia') {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
-            throw new InvalidArgumentException('Invalid length for "$mnemonic" when calling EthereumApi.ethGenerateWallet, must be smaller than or equal to 500');
+            throw new IAE('Invalid length for "$mnemonic" when calling EthereumApi.ethGenerateWallet, must be smaller than or equal to 500');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ethereum/wallet";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $rPath = "/v3/ethereum/wallet";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [
-                "mnemonic" => isset($mnemonic) ? ObjectSerializer::toQueryValue($mnemonic) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Wallet $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Wallet"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Wallet",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Wallet"
+        );
     }
     
     /**
@@ -434,65 +206,27 @@ class EthereumApi extends AbstractApi {
      * @param string $address Account address you want to get balance of
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthBalance
      */
-    public function ethGetBalance(string $address, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/account/balance/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function ethGetBalance(string $address, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/account/balance/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthBalance $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\EthBalance"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthBalance",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\EthBalance"
+        );
     }
     
     /**
@@ -501,65 +235,27 @@ class EthereumApi extends AbstractApi {
      * @param string $hash Block hash or block number
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthBlock
      */
-    public function ethGetBlock(string $hash, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/block/{hash}";
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function ethGetBlock(string $hash, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/block/{hash}";
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthBlock $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\EthBlock"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthBlock",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\EthBlock"
+        );
     }
     
     /**
@@ -567,64 +263,26 @@ class EthereumApi extends AbstractApi {
      *
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return float
      */
-    public function ethGetCurrentBlock(string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/block/current";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function ethGetCurrentBlock(string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/block/current";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var float $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "float"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "float",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "float"
+        );
     }
     
     /**
@@ -635,76 +293,39 @@ class EthereumApi extends AbstractApi {
      * @param float|null $offset Offset to obtain next page of the data.
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthTxInternal[]
      */
-    public function ethGetInternalTransactionByAddress(string $address, float $page_size, float $offset = null, string $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetInternalTransactionByAddress(string $address, float $page_size, float $offset = null, string $x_testnet_type = 'ethereum-sepolia') {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling EthereumApi.ethGetInternalTransactionByAddress, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetInternalTransactionByAddress, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling EthereumApi.ethGetInternalTransactionByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetInternalTransactionByAddress, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ethereum/account/transaction/erc20/internal/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $rPath = "/v3/ethereum/account/transaction/erc20/internal/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthTxInternal[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\EthTxInternal[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthTxInternal[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\EthTxInternal[]"
+        );
     }
     
     /**
@@ -713,65 +334,27 @@ class EthereumApi extends AbstractApi {
      * @param string $hash Transaction hash
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthTx
      */
-    public function ethGetTransaction(string $hash, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/transaction/{hash}";
-        $resourcePath = str_replace("{" . "hash" . "}", ObjectSerializer::toPathValue($hash), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function ethGetTransaction(string $hash, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/transaction/{hash}";
+        $rPath = str_replace("{"."hash"."}", S::toPathValue($hash), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthTx $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\EthTx"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthTx",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\EthTx"
+        );
     }
     
     /**
@@ -785,90 +368,53 @@ class EthereumApi extends AbstractApi {
      * @param string|'DESC' $sort Sorting of the data. ASC - oldest first, DESC - newest first.
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EthTx[]
      */
-    public function ethGetTransactionByAddress(string $address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC', string $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetTransactionByAddress(string $address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC', string $x_testnet_type = 'ethereum-sepolia') {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling EthereumApi.ethGetTransactionByAddress, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetTransactionByAddress, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling EthereumApi.ethGetTransactionByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetTransactionByAddress, must be bigger than or equal to 1.');
         }
 
         if (isset($from) && $from < 1) {
-            throw new InvalidArgumentException('Invalid value for "$from" when calling EthereumApi.ethGetTransactionByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$from" when calling EthereumApi.ethGetTransactionByAddress, must be bigger than or equal to 1.');
         }
 
         if (isset($to) && $to < 1) {
-            throw new InvalidArgumentException('Invalid value for "$to" when calling EthereumApi.ethGetTransactionByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$to" when calling EthereumApi.ethGetTransactionByAddress, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ethereum/account/transaction/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $rPath = "/v3/ethereum/account/transaction/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "from" => isset($from) ? ObjectSerializer::toQueryValue($from) : null,
-            
-                "to" => isset($to) ? ObjectSerializer::toQueryValue($to) : null,
-            
-                "sort" => ObjectSerializer::toQueryValue($sort),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EthTx[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\EthTx[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EthTx[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "from" => isset($from) ? S::toQueryValue($from) : null,
+                
+                    "to" => isset($to) ? S::toQueryValue($to) : null,
+                
+                    "sort" => S::toQueryValue($sort),
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\EthTx[]"
+        );
     }
     
     /**
@@ -877,72 +423,35 @@ class EthereumApi extends AbstractApi {
      * @param string $address address
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return float
      */
-    public function ethGetTransactionCount(string $address, string $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetTransactionCount(string $address, string $x_testnet_type = 'ethereum-sepolia') {
         if (strlen($address) > 42) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling EthereumApi.ethGetTransactionCount, must be smaller than or equal to 42');
+            throw new IAE('Invalid length for "$address" when calling EthereumApi.ethGetTransactionCount, must be smaller than or equal to 42');
         }
+
         if (strlen($address) < 42) {
-            throw new InvalidArgumentException('Invalid length for "$address" when calling EthereumApi.ethGetTransactionCount, must be bigger than or equal to 42');
+            throw new IAE('Invalid length for "$address" when calling EthereumApi.ethGetTransactionCount, must be bigger than or equal to 42');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ethereum/transaction/count/{address}";
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $rPath = "/v3/ethereum/transaction/count/{address}";
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var float $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "float"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "float",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "float"
+        );
     }
     
     /**
@@ -952,65 +461,23 @@ class EthereumApi extends AbstractApi {
      * @param object $body 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return object
      */
-    public function ethWeb3Driver(string $x_api_key, object $body, string $testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/ethereum/web3/{xApiKey}";
-        $resourcePath = str_replace("{" . "xApiKey" . "}", ObjectSerializer::toPathValue($x_api_key), $resourcePath);
+    public function ethWeb3Driver(string $x_api_key, object $body, string $testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/ethereum/web3/{xApiKey}";
+        $rPath = str_replace("{"."xApiKey"."}", S::toPathValue($x_api_key), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $body
+            ), 
+            "object"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "testnetType" => ObjectSerializer::toQueryValue($testnet_type),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var object $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $body
-                ),
-                "object"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "object",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

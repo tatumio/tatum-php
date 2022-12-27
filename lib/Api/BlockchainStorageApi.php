@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * BlockchainStorage API
@@ -29,73 +29,32 @@ class BlockchainStorageApi extends AbstractApi {
      * @param string $chain The blockchain to get the log record from
      * @param string $id The ID of the log record or transaction to get from the blockchain
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\GetLog200Response
      */
-    public function getLog(string $chain, string $id) { 
+    public function getLog(string $chain, string $id) {
         if (strlen($id) > 100) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling BlockchainStorageApi.getLog, must be smaller than or equal to 100');
+            throw new IAE('Invalid length for "$id" when calling BlockchainStorageApi.getLog, must be smaller than or equal to 100');
         }
+
         if (strlen($id) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling BlockchainStorageApi.getLog, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$id" when calling BlockchainStorageApi.getLog, must be bigger than or equal to 1');
         }
 
-        // Resource path
-        $resourcePath = "/v3/record";
+        $rPath = "/v3/record";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "chain" => S::toQueryValue($chain),
+                
+                    "id" => S::toQueryValue($id),
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\GetLog200Response"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "chain" => ObjectSerializer::toQueryValue($chain),
-            
-                "id" => ObjectSerializer::toQueryValue($id),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\GetLog200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\GetLog200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\GetLog200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -103,62 +62,20 @@ class BlockchainStorageApi extends AbstractApi {
      *
      * @param \Tatum\Model\StoreLogRequest $store_log_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function storeLog(\Tatum\Model\StoreLogRequest $store_log_request) { 
-        // Resource path
-        $resourcePath = "/v3/record";
+    public function storeLog(\Tatum\Model\StoreLogRequest $store_log_request) {
+        $rPath = "/v3/record";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $store_log_request
+            ), 
+            "\Tatum\Model\TransactionHash"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\TransactionHash $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $store_log_request
-                ),
-                "\Tatum\Model\TransactionHash"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\TransactionHash",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

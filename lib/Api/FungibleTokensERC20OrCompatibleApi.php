@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * FungibleTokensERC20OrCompatible API
@@ -29,64 +29,26 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\Erc20ApproveRequest $erc20_approve_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function erc20Approve(\Tatum\Model\Erc20ApproveRequest $erc20_approve_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/approve";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function erc20Approve(\Tatum\Model\Erc20ApproveRequest $erc20_approve_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/blockchain/token/approve";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $erc20_approve_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $erc20_approve_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -95,64 +57,26 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\Erc20BurnRequest $erc20_burn_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function erc20Burn(\Tatum\Model\Erc20BurnRequest $erc20_burn_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/burn";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function erc20Burn(\Tatum\Model\Erc20BurnRequest $erc20_burn_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/blockchain/token/burn";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $erc20_burn_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $erc20_burn_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -161,64 +85,26 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\Erc20DeployRequest $erc20_deploy_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function erc20Deploy(\Tatum\Model\Erc20DeployRequest $erc20_deploy_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/deploy";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function erc20Deploy(\Tatum\Model\Erc20DeployRequest $erc20_deploy_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/blockchain/token/deploy";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $erc20_deploy_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $erc20_deploy_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -229,67 +115,29 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param string $contract_address The address of the fungible token smart contract
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Balance
      */
-    public function erc20GetBalance(string $chain, string $address, string $contract_address, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-        $resourcePath = str_replace("{" . "contractAddress" . "}", ObjectSerializer::toPathValue($contract_address), $resourcePath);
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+    public function erc20GetBalance(string $chain, string $address, string $contract_address, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rPath = str_replace("{"."contractAddress"."}", S::toPathValue($contract_address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20Balance $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Erc20Balance"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20Balance",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\Erc20Balance"
+        );
     }
     
     /**
@@ -298,64 +146,22 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param string $chain Network name
      * @param string $address The blockchain address that you want to get the token balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20BalanceForAddress[]
      */
-    public function erc20GetBalanceAddress(string $chain, string $address) { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/address/{chain}/{address}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
+    public function erc20GetBalanceAddress(string $chain, string $address) {
+        $rPath = "/v3/blockchain/token/address/{chain}/{address}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\Erc20BalanceForAddress[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Erc20BalanceForAddress[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Erc20BalanceForAddress[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Erc20BalanceForAddress[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -370,90 +176,49 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param float|null $to Transactions up to this block will be included.
      * @param string|'DESC' $sort Sorting of the data. ASC - oldest first, DESC - newest first.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\FungibleTx[]
      */
-    public function erc20GetTransactionByAddress(string $chain, string $address, string $token_address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC') { 
+    public function erc20GetTransactionByAddress(string $chain, string $address, string $token_address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC') {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be bigger than or equal to 1.');
         }
 
         if (isset($from) && $from < 0) {
-            throw new InvalidArgumentException('Invalid value for "$from" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$from" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be bigger than or equal to 0.');
         }
 
         if (isset($to) && $to < 0) {
-            throw new InvalidArgumentException('Invalid value for "$to" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be bigger than or equal to 0.');
+            throw new IAE('Invalid value for "$to" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be bigger than or equal to 0.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}";
-        $resourcePath = str_replace("{" . "chain" . "}", ObjectSerializer::toPathValue($chain), $resourcePath);
-        $resourcePath = str_replace("{" . "address" . "}", ObjectSerializer::toPathValue($address), $resourcePath);
-        $resourcePath = str_replace("{" . "tokenAddress" . "}", ObjectSerializer::toPathValue($token_address), $resourcePath);
+        $rPath = "/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}";
+        $rPath = str_replace("{"."chain"."}", S::toPathValue($chain), $rPath);
+        $rPath = str_replace("{"."address"."}", S::toPathValue($address), $rPath);
+        $rPath = str_replace("{"."tokenAddress"."}", S::toPathValue($token_address), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "from" => isset($from) ? S::toQueryValue($from) : null,
+                
+                    "to" => isset($to) ? S::toQueryValue($to) : null,
+                
+                    "sort" => S::toQueryValue($sort),
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\FungibleTx[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "from" => isset($from) ? ObjectSerializer::toQueryValue($from) : null,
-            
-                "to" => isset($to) ? ObjectSerializer::toQueryValue($to) : null,
-            
-                "sort" => ObjectSerializer::toQueryValue($sort),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\FungibleTx[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\FungibleTx[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\FungibleTx[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -462,64 +227,26 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\Erc20MintRequest $erc20_mint_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function erc20Mint(\Tatum\Model\Erc20MintRequest $erc20_mint_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/mint";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function erc20Mint(\Tatum\Model\Erc20MintRequest $erc20_mint_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/blockchain/token/mint";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $erc20_mint_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $erc20_mint_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
     /**
@@ -528,64 +255,26 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @param \Tatum\Model\Erc20TransferRequest $erc20_transfer_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BtcTransferBlockchain200Response
      */
-    public function erc20Transfer(\Tatum\Model\Erc20TransferRequest $erc20_transfer_request, string $x_testnet_type = 'ethereum-sepolia') { 
-        // Resource path
-        $resourcePath = "/v3/blockchain/token/transaction";
-
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+    public function erc20Transfer(\Tatum\Model\Erc20TransferRequest $erc20_transfer_request, string $x_testnet_type = 'ethereum-sepolia') {
+        $rPath = "/v3/blockchain/token/transaction";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
         );
 
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\BtcTransferBlockchain200Response $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([
-                            "x-testnet-type" => isset($x_testnet_type) ? ObjectSerializer::toHeaderValue($x_testnet_type) : null,
-                        ], $headers),
-                    [],
-                    $erc20_transfer_request
-                ),
-                "\Tatum\Model\BtcTransferBlockchain200Response"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\BtcTransferBlockchain200Response",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $erc20_transfer_request
+            ), 
+            "\Tatum\Model\BtcTransferBlockchain200Response"
+        );
     }
     
 }

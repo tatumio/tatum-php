@@ -62,7 +62,9 @@ class Client {
 
         // POST payload
         if ("POST" === $request->getMethod()) {
-            $options[CURLOPT_POSTFIELDS] = "{$request->getStream()}";
+            $options[CURLOPT_POSTFIELDS] = count($request->getFiles())
+                ? $request->getFiles()
+                : strval($request->getStream());
         }
 
         // Prepare request
@@ -79,7 +81,7 @@ class Client {
         $response = new Response((int) $info["http_code"], $responseHeaders, "$stream", strval($info["http_version"]));
 
         // Invalid result
-        if (200 !== $response->getStatusCode() || strlen($error)) {
+        if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299 || strlen($error)) {
             throw new RequestException($response, $error);
         }
 

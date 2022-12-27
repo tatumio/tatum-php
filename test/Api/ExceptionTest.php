@@ -11,7 +11,6 @@
 namespace Tatum\Test\Local\Api;
 
 use Tatum\Sdk;
-use Tatum\Model;
 use PHPUnit\Framework\TestCase;
 use Tatum\Sdk\ApiException;
 

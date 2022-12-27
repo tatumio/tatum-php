@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Customer API
@@ -28,62 +28,28 @@ class CustomerApi extends AbstractApi {
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function activateCustomer(string $id) { 
+    public function activateCustomer(string $id) {
         if (strlen($id) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.activateCustomer, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.activateCustomer, must be smaller than or equal to 50');
         }
+
         if (strlen($id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.activateCustomer, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.activateCustomer, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/customer/{id}/activate";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/customer/{id}/activate";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -91,62 +57,28 @@ class CustomerApi extends AbstractApi {
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function deactivateCustomer(string $id) { 
+    public function deactivateCustomer(string $id) {
         if (strlen($id) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.deactivateCustomer, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.deactivateCustomer, must be smaller than or equal to 50');
         }
+
         if (strlen($id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.deactivateCustomer, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.deactivateCustomer, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/customer/{id}/deactivate";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/customer/{id}/deactivate";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -154,62 +86,28 @@ class CustomerApi extends AbstractApi {
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function disableCustomer(string $id) { 
+    public function disableCustomer(string $id) {
         if (strlen($id) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.disableCustomer, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.disableCustomer, must be smaller than or equal to 50');
         }
+
         if (strlen($id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.disableCustomer, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.disableCustomer, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/customer/{id}/disable";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/customer/{id}/disable";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -217,62 +115,28 @@ class CustomerApi extends AbstractApi {
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function enableCustomer(string $id) { 
+    public function enableCustomer(string $id) {
         if (strlen($id) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.enableCustomer, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.enableCustomer, must be smaller than or equal to 50');
         }
+
         if (strlen($id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.enableCustomer, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.enableCustomer, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/customer/{id}/enable";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/customer/{id}/enable";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -281,73 +145,32 @@ class CustomerApi extends AbstractApi {
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain next page of the data.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Customer[]
      */
-    public function findAllCustomers(float $page_size, float $offset = null) { 
+    public function findAllCustomers(float $page_size, float $offset = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling CustomerApi.findAllCustomers, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling CustomerApi.findAllCustomers, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling CustomerApi.findAllCustomers, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling CustomerApi.findAllCustomers, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/customer";
+        $rPath = "/v3/ledger/customer";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Customer[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Customer[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Customer[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Customer[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -355,70 +178,29 @@ class CustomerApi extends AbstractApi {
      *
      * @param string $id Customer external or internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Customer
      */
-    public function getCustomerByExternalOrInternalId(string $id) { 
+    public function getCustomerByExternalOrInternalId(string $id) {
         if (strlen($id) > 100) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.getCustomerByExternalOrInternalId, must be smaller than or equal to 100');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.getCustomerByExternalOrInternalId, must be smaller than or equal to 100');
         }
+
         if (strlen($id) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.getCustomerByExternalOrInternalId, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.getCustomerByExternalOrInternalId, must be bigger than or equal to 1');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/customer/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/customer/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\Customer"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Customer $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Customer"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Customer",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -427,70 +209,29 @@ class CustomerApi extends AbstractApi {
      * @param string $id Customer internal ID
      * @param \Tatum\Model\CustomerUpdate $customer_update 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Customer
      */
-    public function updateCustomer(string $id, \Tatum\Model\CustomerUpdate $customer_update) { 
+    public function updateCustomer(string $id, \Tatum\Model\CustomerUpdate $customer_update) {
         if (strlen($id) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.updateCustomer, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.updateCustomer, must be smaller than or equal to 50');
         }
+
         if (strlen($id) < 10) {
-            throw new InvalidArgumentException('Invalid length for "$id" when calling CustomerApi.updateCustomer, must be bigger than or equal to 10');
+            throw new IAE('Invalid length for "$id" when calling CustomerApi.updateCustomer, must be bigger than or equal to 10');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/customer/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/customer/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, [], $customer_update
+            ), 
+            "\Tatum\Model\Customer"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Customer $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $customer_update
-                ),
-                "\Tatum\Model\Customer"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Customer",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

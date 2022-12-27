@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * Account API
@@ -28,55 +28,20 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function activateAccount(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/{id}/activate";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function activateAccount(string $id) {
+        $rPath = "/v3/ledger/account/{id}/activate";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -85,63 +50,21 @@ class AccountApi extends AbstractApi {
      * @param string $id Account ID
      * @param \Tatum\Model\BlockAmount $block_amount 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Id
      */
-    public function blockAmount(string $id, \Tatum\Model\BlockAmount $block_amount) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/block/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function blockAmount(string $id, \Tatum\Model\BlockAmount $block_amount) {
+        $rPath = "/v3/ledger/account/block/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $block_amount
+            ), 
+            "\Tatum\Model\Id"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Id $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $block_amount
-                ),
-                "\Tatum\Model\Id"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Id",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -149,62 +72,20 @@ class AccountApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateAccountRequest $create_account_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Account
      */
-    public function createAccount(\Tatum\Model\CreateAccountRequest $create_account_request) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account";
+    public function createAccount(\Tatum\Model\CreateAccountRequest $create_account_request) {
+        $rPath = "/v3/ledger/account";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_account_request
+            ), 
+            "\Tatum\Model\Account"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Account $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_account_request
-                ),
-                "\Tatum\Model\Account"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Account",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -212,62 +93,20 @@ class AccountApi extends AbstractApi {
      *
      * @param \Tatum\Model\CreateAccountBatch $create_account_batch 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Account[]
      */
-    public function createAccountBatch(\Tatum\Model\CreateAccountBatch $create_account_batch) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/batch";
+    public function createAccountBatch(\Tatum\Model\CreateAccountBatch $create_account_batch) {
+        $rPath = "/v3/ledger/account/batch";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", $rPath, [], $rHeaders, [], $create_account_batch
+            ), 
+            "\Tatum\Model\Account[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Account[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "POST",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $create_account_batch
-                ),
-                "\Tatum\Model\Account[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Account[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -275,55 +114,20 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function deactivateAccount(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/{id}/deactivate";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function deactivateAccount(string $id) {
+        $rPath = "/v3/ledger/account/{id}/deactivate";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -331,55 +135,20 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function deleteAllBlockAmount(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/block/account/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function deleteAllBlockAmount(string $id) {
+        $rPath = "/v3/ledger/account/block/account/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "DELETE", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "DELETE",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -387,55 +156,20 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Blockage ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function deleteBlockAmount(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/block/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function deleteBlockAmount(string $id) {
+        $rPath = "/v3/ledger/account/block/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "DELETE", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "DELETE",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -443,55 +177,20 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function freezeAccount(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/{id}/freeze";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function freezeAccount(string $id) {
+        $rPath = "/v3/ledger/account/{id}/freeze";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -499,63 +198,21 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\AccountBalance
      */
-    public function getAccountBalance(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/{id}/balance";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function getAccountBalance(string $id) {
+        $rPath = "/v3/ledger/account/{id}/balance";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\AccountBalance"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\AccountBalance $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\AccountBalance"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\AccountBalance",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -563,63 +220,21 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Account
      */
-    public function getAccountByAccountId(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function getAccountByAccountId(string $id) {
+        $rPath = "/v3/ledger/account/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\Account"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Account $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Account"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Account",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -635,94 +250,54 @@ class AccountApi extends AbstractApi {
      * @param string|null $currency Filter by currency
      * @param string|null $account_number Filter by account number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Account[]
      */
-    public function getAccounts(float $page_size = null, float $page = null, string $sort = null, string $sort_by = null, bool $active = null, bool $only_non_zero_balance = null, bool $frozen = null, string $currency = null, string $account_number = null) { 
+    public function getAccounts(float $page_size = null, float $page = null, string $sort = null, string $sort_by = null, bool $active = null, bool $only_non_zero_balance = null, bool $frozen = null, string $currency = null, string $account_number = null) {
         if (isset($page_size) && $page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getAccounts, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccounts, must be smaller than or equal to 50');
         }
+
         if (isset($page_size) && $page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getAccounts, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccounts, must be bigger than or equal to 1.');
         }
 
         if (isset($account_number) && strlen($account_number) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$account_number" when calling AccountApi.getAccounts, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$account_number" when calling AccountApi.getAccounts, must be smaller than or equal to 50');
         }
+
         if (isset($account_number) && strlen($account_number) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$account_number" when calling AccountApi.getAccounts, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$account_number" when calling AccountApi.getAccounts, must be bigger than or equal to 1');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/account";
+        $rPath = "/v3/ledger/account";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
+                
+                    "page" => isset($page) ? S::toQueryValue($page) : null,
+                
+                    "sort" => isset($sort) ? S::toQueryValue($sort) : null,
+                
+                    "sortBy" => isset($sort_by) ? S::toQueryValue($sort_by) : null,
+                
+                    "active" => isset($active) ? S::toQueryValue($active) : null,
+                
+                    "onlyNonZeroBalance" => isset($only_non_zero_balance) ? S::toQueryValue($only_non_zero_balance) : null,
+                
+                    "frozen" => isset($frozen) ? S::toQueryValue($frozen) : null,
+                
+                    "currency" => isset($currency) ? S::toQueryValue($currency) : null,
+                
+                    "accountNumber" => isset($account_number) ? S::toQueryValue($account_number) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Account[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => isset($page_size) ? ObjectSerializer::toQueryValue($page_size) : null,
-            
-                "page" => isset($page) ? ObjectSerializer::toQueryValue($page) : null,
-            
-                "sort" => isset($sort) ? ObjectSerializer::toQueryValue($sort) : null,
-            
-                "sortBy" => isset($sort_by) ? ObjectSerializer::toQueryValue($sort_by) : null,
-            
-                "active" => isset($active) ? ObjectSerializer::toQueryValue($active) : null,
-            
-                "onlyNonZeroBalance" => isset($only_non_zero_balance) ? ObjectSerializer::toQueryValue($only_non_zero_balance) : null,
-            
-                "frozen" => isset($frozen) ? ObjectSerializer::toQueryValue($frozen) : null,
-            
-                "currency" => isset($currency) ? ObjectSerializer::toQueryValue($currency) : null,
-            
-                "accountNumber" => isset($account_number) ? ObjectSerializer::toQueryValue($account_number) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Account[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Account[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Account[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -733,83 +308,43 @@ class AccountApi extends AbstractApi {
      * @param float|null $offset Offset to obtain the next page of data.
      * @param string|null $account_code For bookkeeping to distinct account purpose.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Account[]
      */
-    public function getAccountsByCustomerId(float $page_size, string $id, float $offset = null, string $account_code = null) { 
+    public function getAccountsByCustomerId(float $page_size, string $id, float $offset = null, string $account_code = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getAccountsByCustomerId, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccountsByCustomerId, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getAccountsByCustomerId, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccountsByCustomerId, must be bigger than or equal to 1.');
         }
 
         if (isset($account_code) && strlen($account_code) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$account_code" when calling AccountApi.getAccountsByCustomerId, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$account_code" when calling AccountApi.getAccountsByCustomerId, must be smaller than or equal to 50');
         }
+
         if (isset($account_code) && strlen($account_code) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$account_code" when calling AccountApi.getAccountsByCustomerId, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$account_code" when calling AccountApi.getAccountsByCustomerId, must be bigger than or equal to 1');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/customer/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/account/customer/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                
+                    "accountCode" => isset($account_code) ? S::toQueryValue($account_code) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Account[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            
-                "accountCode" => isset($account_code) ? ObjectSerializer::toQueryValue($account_code) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Account[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Account[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Account[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -825,94 +360,54 @@ class AccountApi extends AbstractApi {
      * @param string|null $currency Filter by currency
      * @param string|null $account_number Filter by account number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\EntitiesCount
      */
-    public function getAccountsCount(float $page_size = null, float $page = null, string $sort = null, string $sort_by = null, bool $active = null, bool $only_non_zero_balance = null, bool $frozen = null, string $currency = null, string $account_number = null) { 
+    public function getAccountsCount(float $page_size = null, float $page = null, string $sort = null, string $sort_by = null, bool $active = null, bool $only_non_zero_balance = null, bool $frozen = null, string $currency = null, string $account_number = null) {
         if (isset($page_size) && $page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getAccountsCount, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccountsCount, must be smaller than or equal to 50');
         }
+
         if (isset($page_size) && $page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getAccountsCount, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccountsCount, must be bigger than or equal to 1.');
         }
 
         if (isset($account_number) && strlen($account_number) > 50) {
-            throw new InvalidArgumentException('Invalid length for "$account_number" when calling AccountApi.getAccountsCount, must be smaller than or equal to 50');
+            throw new IAE('Invalid length for "$account_number" when calling AccountApi.getAccountsCount, must be smaller than or equal to 50');
         }
+
         if (isset($account_number) && strlen($account_number) < 1) {
-            throw new InvalidArgumentException('Invalid length for "$account_number" when calling AccountApi.getAccountsCount, must be bigger than or equal to 1');
+            throw new IAE('Invalid length for "$account_number" when calling AccountApi.getAccountsCount, must be bigger than or equal to 1');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/count";
+        $rPath = "/v3/ledger/account/count";
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
+                
+                    "page" => isset($page) ? S::toQueryValue($page) : null,
+                
+                    "sort" => isset($sort) ? S::toQueryValue($sort) : null,
+                
+                    "sortBy" => isset($sort_by) ? S::toQueryValue($sort_by) : null,
+                
+                    "active" => isset($active) ? S::toQueryValue($active) : null,
+                
+                    "onlyNonZeroBalance" => isset($only_non_zero_balance) ? S::toQueryValue($only_non_zero_balance) : null,
+                
+                    "frozen" => isset($frozen) ? S::toQueryValue($frozen) : null,
+                
+                    "currency" => isset($currency) ? S::toQueryValue($currency) : null,
+                
+                    "accountNumber" => isset($account_number) ? S::toQueryValue($account_number) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\EntitiesCount"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => isset($page_size) ? ObjectSerializer::toQueryValue($page_size) : null,
-            
-                "page" => isset($page) ? ObjectSerializer::toQueryValue($page) : null,
-            
-                "sort" => isset($sort) ? ObjectSerializer::toQueryValue($sort) : null,
-            
-                "sortBy" => isset($sort_by) ? ObjectSerializer::toQueryValue($sort_by) : null,
-            
-                "active" => isset($active) ? ObjectSerializer::toQueryValue($active) : null,
-            
-                "onlyNonZeroBalance" => isset($only_non_zero_balance) ? ObjectSerializer::toQueryValue($only_non_zero_balance) : null,
-            
-                "frozen" => isset($frozen) ? ObjectSerializer::toQueryValue($frozen) : null,
-            
-                "currency" => isset($currency) ? ObjectSerializer::toQueryValue($currency) : null,
-            
-                "accountNumber" => isset($account_number) ? ObjectSerializer::toQueryValue($account_number) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\EntitiesCount $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\EntitiesCount"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\EntitiesCount",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -922,74 +417,33 @@ class AccountApi extends AbstractApi {
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain the next page of data.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Blockage[]
      */
-    public function getBlockAmount(string $id, float $page_size, float $offset = null) { 
+    public function getBlockAmount(string $id, float $page_size, float $offset = null) {
         if ($page_size > 50) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getBlockAmount, must be smaller than or equal to 50');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getBlockAmount, must be smaller than or equal to 50');
         }
+
         if ($page_size < 1) {
-            throw new InvalidArgumentException('Invalid value for "$page_size" when calling AccountApi.getBlockAmount, must be bigger than or equal to 1.');
+            throw new IAE('Invalid value for "$page_size" when calling AccountApi.getBlockAmount, must be bigger than or equal to 1.');
         }
 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/block/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+        $rPath = "/v3/ledger/account/block/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "pageSize" => S::toQueryValue($page_size),
+                
+                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\Blockage[]"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "pageSize" => ObjectSerializer::toQueryValue($page_size),
-            
-                "offset" => isset($offset) ? ObjectSerializer::toQueryValue($offset) : null,
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Blockage[] $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Blockage[]"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Blockage[]",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -997,63 +451,21 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Blocked amount ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Blockage
      */
-    public function getBlockAmountById(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/block/{id}/detail";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function getBlockAmountById(string $id) {
+        $rPath = "/v3/ledger/account/block/{id}/detail";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [], $rHeaders, []
+            ), 
+            "\Tatum\Model\Blockage"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\Blockage $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\Blockage"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\Blockage",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1062,63 +474,21 @@ class AccountApi extends AbstractApi {
      * @param string $id Blockage ID
      * @param \Tatum\Model\UnblockAmount $unblock_amount 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\TransactionResult
      */
-    public function unblockAmountWithTransaction(string $id, \Tatum\Model\UnblockAmount $unblock_amount) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/block/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function unblockAmountWithTransaction(string $id, \Tatum\Model\UnblockAmount $unblock_amount) {
+        $rPath = "/v3/ledger/account/block/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, [], $unblock_amount
+            ), 
+            "\Tatum\Model\TransactionResult"
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\TransactionResult $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $unblock_amount
-                ),
-                "\Tatum\Model\TransactionResult"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\TransactionResult",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
     /**
@@ -1126,55 +496,20 @@ class AccountApi extends AbstractApi {
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function unfreezeAccount(string $id) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/{id}/unfreeze";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function unfreezeAccount(string $id) {
+        $rPath = "/v3/ledger/account/{id}/unfreeze";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, []
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
     /**
@@ -1183,55 +518,20 @@ class AccountApi extends AbstractApi {
      * @param string $id Account ID
      * @param \Tatum\Model\UpdateAccount $update_account 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return void
      */
-    public function updateAccountByAccountId(string $id, \Tatum\Model\UpdateAccount $update_account) { 
-        // Resource path
-        $resourcePath = "/v3/ledger/account/{id}";
-        $resourcePath = str_replace("{" . "id" . "}", ObjectSerializer::toPathValue($id), $resourcePath);
+    public function updateAccountByAccountId(string $id, \Tatum\Model\UpdateAccount $update_account) {
+        $rPath = "/v3/ledger/account/{id}";
+        $rPath = str_replace("{"."id"."}", S::toPathValue($id), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], ["application/json"])
+        $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", $rPath, [], $rHeaders, [], $update_account
+            )
         );
-
-        // Prepare the query parameters
-        $queryParams = [];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "PUT",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    $update_account
-                ),
-                ""
-            );
-        } catch (ApiException $e) {
-            throw $e;
-        }
-        
     }
     
 }

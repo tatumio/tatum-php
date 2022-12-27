@@ -15,9 +15,9 @@
 
 namespace Tatum\Api;
 
-use InvalidArgumentException;
-use Tatum\Sdk\ApiException;
-use Tatum\Sdk\ObjectSerializer;
+use InvalidArgumentException as IAE;
+use Tatum\Sdk\ApiException as APIE;
+use Tatum\Sdk\Serializer as S;
 
 /**
  * ExchangeRate API
@@ -29,65 +29,23 @@ class ExchangeRateApi extends AbstractApi {
      * @param string $currency The fiat or crypto asset to exchange
      * @param string|'EUR' $base_pair The target fiat asset to get the exchange rate for
      * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\ExchangeRate
      */
-    public function getExchangeRate(string $currency, string $base_pair = 'EUR') { 
-        // Resource path
-        $resourcePath = "/v3/tatum/rate/{currency}";
-        $resourcePath = str_replace("{" . "currency" . "}", ObjectSerializer::toPathValue($currency), $resourcePath);
+    public function getExchangeRate(string $currency, string $base_pair = 'EUR') {
+        $rPath = "/v3/tatum/rate/{currency}";
+        $rPath = str_replace("{"."currency"."}", S::toPathValue($currency), $rPath);
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
-        // Prepare request headers
-        $headers = [
-            "User-Agent" => $this->_caller->config()->getUserAgent()
-        ];
-
-        // Set the API key
-        if ($this->_caller->config()->getApiKey()) {
-            $headers["x-api-key"] = $this->_caller->config()->getApiKey();
-        }
-
-        // Accept and content-type
-        $headers = array_merge(
-            $headers, 
-            $this->_headerSelector->selectHeaders(["application/json"], [])
+        return $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "GET", $rPath, [
+                    "basePair" => S::toQueryValue($base_pair),
+                ], $rHeaders, []
+            ), 
+            "\Tatum\Model\ExchangeRate"
         );
-
-        // Prepare the query parameters
-        $queryParams = [
-                "basePair" => ObjectSerializer::toQueryValue($base_pair),
-            ];
-
-        // Free Testnet call
-        if (!isset($headers["x-api-key"]) && !$this->_caller->config()->isMainNet()) {
-            $queryParams["type"] = "testnet";
-        }
-
-        try {
-            /** @var \Tatum\Model\ExchangeRate $model */ $model = $this->_makeRequest(
-                ObjectSerializer::createRequest(
-                    "GET",
-                    $this->_caller->config()->getHost() . $resourcePath,
-                    $queryParams,
-                    array_merge([], $headers),
-                    [],
-                    ""
-                ),
-                "\Tatum\Model\ExchangeRate"
-            );
-        } catch (ApiException $e) {
-            $e->setResponseObject(
-                ObjectSerializer::deserialize(
-                    $e->getResponseBody() ?? "",
-                    "\Tatum\Model\ExchangeRate",
-                    $this->_caller->config()->getTempFolderPath(),
-                    $e->getResponseHeaders()
-                )
-            );
-            throw $e;
-        }
-        return $model;
     }
     
 }

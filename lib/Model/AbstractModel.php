@@ -17,7 +17,7 @@ namespace Tatum\Model;
 
 use ArrayAccess;
 use InvalidArgumentException;
-use Tatum\Sdk\ObjectSerializer;
+use Tatum\Sdk\Serializer;
 
 abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerializable {
     /**
@@ -210,7 +210,7 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize() {
-        return ObjectSerializer::sanitizeForSerialization($this);
+        return Serializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -220,6 +220,6 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
      * @throws \JsonException
      */
     public function __toString() {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
+        return json_encode(Serializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
     }
 }
