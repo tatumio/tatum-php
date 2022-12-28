@@ -25,20 +25,20 @@ class EthTxInternal extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthTxInternal";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "input" => ["input", "string", null, "getInput", "setInput"], 
-        "trace_id" => ["traceId", "string", null, "getTraceId", "setTraceId"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "err_code" => ["errCode", "string", null, "getErrCode", "setErrCode"], 
-        "gas" => ["gas", "float", null, "getGas", "setGas"], 
-        "is_error" => ["isError", "string", null, "getIsError", "setIsError"], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "input" => ["input", "string", null, "getInput", "setInput", null], 
+        "trace_id" => ["traceId", "string", null, "getTraceId", "setTraceId", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "err_code" => ["errCode", "string", null, "getErrCode", "setErrCode", null], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
+        "is_error" => ["isError", "string", null, "getIsError", "setIsError", null], 
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null]
     ];
 
     /**
@@ -47,20 +47,19 @@ class EthTxInternal extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "to"=>null, "value"=>null, "block_number"=>null, "time_stamp"=>null, "hash"=>null, "input"=>null, "trace_id"=>null, "type"=>null, "err_code"=>null, "gas"=>null, "is_error"=>null, "gas_used"=>null, "contract_address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get from

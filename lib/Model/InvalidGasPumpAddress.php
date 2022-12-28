@@ -25,8 +25,8 @@ class InvalidGasPumpAddress extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "InvalidGasPumpAddress";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "reason" => ["reason", "string", null, "getReason", "setReason"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "reason" => ["reason", "string", null, "getReason", "setReason", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class InvalidGasPumpAddress extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "reason"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get address

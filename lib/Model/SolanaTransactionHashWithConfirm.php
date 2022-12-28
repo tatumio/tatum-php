@@ -25,8 +25,8 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTransactionHashWithConfirm";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "confirmed"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
         if (is_null($this->_data['confirmed'])) {
             $ip[] = "'confirmed' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

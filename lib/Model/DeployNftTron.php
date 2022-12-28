@@ -26,11 +26,11 @@ class DeployNftTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "DeployNftTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class DeployNftTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "name"=>null, "symbol"=>null, "from_private_key"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -88,9 +87,9 @@ class DeployNftTron extends AbstractModel {
         if (is_null($this->_data['fee_limit'])) {
             $ip[] = "'fee_limit' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,11 +25,11 @@ class SolanaBlockReward extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaBlockReward";
     protected static $_definition = [
-        "commission" => ["commission", "string", 'nullable', "getCommission", "setCommission"], 
-        "lamports" => ["lamports", "float", null, "getLamports", "setLamports"], 
-        "post_balance" => ["postBalance", "float", null, "getPostBalance", "setPostBalance"], 
-        "pubkey" => ["pubkey", "string", null, "getPubkey", "setPubkey"], 
-        "reward_type" => ["rewardType", "string", null, "getRewardType", "setRewardType"]
+        "commission" => ["commission", "string", 'nullable', "getCommission", "setCommission", null], 
+        "lamports" => ["lamports", "float", null, "getLamports", "setLamports", null], 
+        "post_balance" => ["postBalance", "float", null, "getPostBalance", "setPostBalance", null], 
+        "pubkey" => ["pubkey", "string", null, "getPubkey", "setPubkey", null], 
+        "reward_type" => ["rewardType", "string", null, "getRewardType", "setRewardType", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class SolanaBlockReward extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["commission"=>null, "lamports"=>null, "post_balance"=>null, "pubkey"=>null, "reward_type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get commission

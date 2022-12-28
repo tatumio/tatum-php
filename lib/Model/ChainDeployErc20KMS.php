@@ -31,16 +31,16 @@ class ChainDeployErc20KMS extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     protected static $_name = "ChainDeployErc20KMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -49,17 +49,16 @@ class ChainDeployErc20KMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "symbol"=>null, "name"=>null, "total_cap"=>null, "supply"=>null, "digits"=>null, "address"=>null, "signature_id"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -128,9 +127,9 @@ class ChainDeployErc20KMS extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

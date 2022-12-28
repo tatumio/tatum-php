@@ -25,16 +25,16 @@ class CreateTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateTransaction";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "recipient_account_id" => ["recipientAccountId", "string", null, "getRecipientAccountId", "setRecipientAccountId"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "recipient_account_id" => ["recipientAccountId", "string", null, "getRecipientAccountId", "setRecipientAccountId", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous", false], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class CreateTransaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "recipient_account_id"=>null, "amount"=>null, "anonymous"=>false, "compliant"=>null, "transaction_code"=>null, "payment_id"=>null, "recipient_note"=>null, "base_rate"=>1, "sender_note"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -108,9 +107,9 @@ class CreateTransaction extends AbstractModel {
         if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
             $ip[] = "'sender_note' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

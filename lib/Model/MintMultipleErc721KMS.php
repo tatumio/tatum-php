@@ -25,14 +25,14 @@ class MintMultipleErc721KMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "MintMultipleErc721KMS";
     protected static $_definition = [
-        "to" => ["to", "string[]", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId"], 
-        "url" => ["url", "string[]", null, "getUrl", "setUrl"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"]
+        "to" => ["to", "string[]", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId", null], 
+        "url" => ["url", "string[]", null, "getUrl", "setUrl", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class MintMultipleErc721KMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["to"=>null, "token_id"=>null, "url"=>null, "contract_address"=>null, "signature_id"=>null, "index"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
@@ -79,9 +78,9 @@ class MintMultipleErc721KMS extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get to

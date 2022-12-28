@@ -29,26 +29,26 @@ class NftTransferErc721Request extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "NftTransferErc721_request";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance"], 
-        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData"], 
-        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "amount" => ["amount", "float", null, "getAmount", "setAmount"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
+        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null], 
+        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", 1], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -57,17 +57,16 @@ class NftTransferErc721Request extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["value"=>null, "chain"=>null, "to"=>null, "token_id"=>null, "contract_address"=>null, "provenance"=>null, "provenance_data"=>null, "token_price"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "fee_currency"=>null, "fee_limit"=>null, "from"=>null, "amount"=>1, "account"=>null, "private_key"=>null, "mnemonic"=>null, "index"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -171,9 +170,9 @@ class NftTransferErc721Request extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

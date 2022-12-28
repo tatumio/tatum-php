@@ -25,10 +25,10 @@ class FlowCustomTransactionPK extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowCustomTransactionPK";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction"], 
-        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null], 
+        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class FlowCustomTransactionPK extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "transaction"=>null, "args"=>null, "private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account'])) {
             $ip[] = "'account' can't be null";
         }
@@ -78,9 +77,9 @@ class FlowCustomTransactionPK extends AbstractModel {
         if ((mb_strlen($this->_data['private_key']) < 64)) {
             $ip[] = "'private_key' length must be >= 64";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account

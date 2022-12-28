@@ -29,14 +29,14 @@ class ApproveCeloErc20 extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "ApproveCeloErc20";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "spender" => ["spender", "string", null, "getSpender", "setSpender"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "spender" => ["spender", "string", null, "getSpender", "setSpender", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
     ];
 
     /**
@@ -45,17 +45,16 @@ class ApproveCeloErc20 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "spender"=>null, "amount"=>null, "from_private_key"=>null, "fee_currency"=>null, "fee"=>null, "nonce"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -108,9 +107,9 @@ class ApproveCeloErc20 extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

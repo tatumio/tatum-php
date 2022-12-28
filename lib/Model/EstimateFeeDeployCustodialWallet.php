@@ -33,9 +33,9 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
     public const TYPE_DEPLOY_CUSTODIAL_WALLET_BATCH = 'DEPLOY_CUSTODIAL_WALLET_BATCH';
     protected static $_name = "EstimateFeeDeployCustodialWallet";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "type"=>null, "batch_count"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -80,9 +79,9 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
         if (($this->_data['batch_count'] < 1)) {
             $ip[] = "'batch_count' must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

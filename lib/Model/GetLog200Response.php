@@ -25,7 +25,7 @@ class GetLog200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GetLog_200_response";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData"]
+        "data" => ["data", "string", null, "getData", "setData", null]
     ];
 
     /**
@@ -34,23 +34,22 @@ class GetLog200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['data'])) {
             $ip[] = "'data' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get data

@@ -25,13 +25,13 @@ class MintNftAlgorandAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "MintNftAlgorand_attr";
     protected static $_definition = [
-        "asset_unit" => ["assetUnit", "string", null, "getAssetUnit", "setAssetUnit"], 
-        "clawback" => ["clawback", "string", null, "getClawback", "setClawback"], 
-        "manager" => ["manager", "string", null, "getManager", "setManager"], 
-        "reserve" => ["reserve", "string", null, "getReserve", "setReserve"], 
-        "freeze" => ["freeze", "string", null, "getFreeze", "setFreeze"], 
-        "total" => ["total", "float", null, "getTotal", "setTotal"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"]
+        "asset_unit" => ["assetUnit", "string", null, "getAssetUnit", "setAssetUnit", null], 
+        "clawback" => ["clawback", "string", null, "getClawback", "setClawback", null], 
+        "manager" => ["manager", "string", null, "getManager", "setManager", null], 
+        "reserve" => ["reserve", "string", null, "getReserve", "setReserve", null], 
+        "freeze" => ["freeze", "string", null, "getFreeze", "setFreeze", null], 
+        "total" => ["total", "float", null, "getTotal", "setTotal", 1], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", 0]
     ];
 
     /**
@@ -40,17 +40,16 @@ class MintNftAlgorandAttr extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["asset_unit"=>null, "clawback"=>null, "manager"=>null, "reserve"=>null, "freeze"=>null, "total"=>1, "decimals"=>0] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['asset_unit']) && (mb_strlen($this->_data['asset_unit']) > 8)) {
             $ip[] = "'asset_unit' length must be <= 8";
         }
@@ -90,9 +89,9 @@ class MintNftAlgorandAttr extends AbstractModel {
         if (!is_null($this->_data['decimals']) && ($this->_data['decimals'] < 1)) {
             $ip[] = "'decimals' must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get asset_unit

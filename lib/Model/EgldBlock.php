@@ -25,14 +25,14 @@ class EgldBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EgldBlock";
     protected static $_definition = [
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "round" => ["round", "float", null, "getRound", "setRound"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "prev_block_hash" => ["prevBlockHash", "string", null, "getPrevBlockHash", "setPrevBlockHash"], 
-        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch"], 
-        "num_txs" => ["numTxs", "float", null, "getNumTxs", "setNumTxs"], 
-        "shard_blocks" => ["shardBlocks", "\Tatum\Model\EgldShardBlock[]", null, "getShardBlocks", "setShardBlocks"], 
-        "transactions" => ["transactions", "\Tatum\Model\EgldTx[]", null, "getTransactions", "setTransactions"]
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "round" => ["round", "float", null, "getRound", "setRound", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "prev_block_hash" => ["prevBlockHash", "string", null, "getPrevBlockHash", "setPrevBlockHash", null], 
+        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch", null], 
+        "num_txs" => ["numTxs", "float", null, "getNumTxs", "setNumTxs", null], 
+        "shard_blocks" => ["shardBlocks", "\Tatum\Model\EgldShardBlock[]", null, "getShardBlocks", "setShardBlocks", null], 
+        "transactions" => ["transactions", "\Tatum\Model\EgldTx[]", null, "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -41,20 +41,19 @@ class EgldBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["nonce"=>null, "round"=>null, "hash"=>null, "prev_block_hash"=>null, "epoch"=>null, "num_txs"=>null, "shard_blocks"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get nonce

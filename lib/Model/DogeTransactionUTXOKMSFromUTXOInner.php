@@ -25,11 +25,11 @@ class DogeTransactionUTXOKMSFromUTXOInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTransactionUTXOKMS_fromUTXO_inner";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class DogeTransactionUTXOKMSFromUTXOInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_hash"=>null, "value"=>null, "address"=>null, "index"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_hash'])) {
             $ip[] = "'tx_hash' can't be null";
         }
@@ -76,9 +75,9 @@ class DogeTransactionUTXOKMSFromUTXOInner extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_hash

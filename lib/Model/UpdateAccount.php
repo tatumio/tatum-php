@@ -25,8 +25,8 @@ class UpdateAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "UpdateAccount";
     protected static $_definition = [
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode"], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber"]
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null]
     ];
 
     /**
@@ -35,17 +35,16 @@ class UpdateAccount extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_code"=>null, "account_number"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['account_code']) && (mb_strlen($this->_data['account_code']) > 50)) {
             $ip[] = "'account_code' length must be <= 50";
         }
@@ -58,9 +57,9 @@ class UpdateAccount extends AbstractModel {
         if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) < 1)) {
             $ip[] = "'account_number' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account_code

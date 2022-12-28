@@ -25,11 +25,11 @@ class TransferTronTrc20Blockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferTronTrc20Blockchain";
     protected static $_definition = [
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class TransferTronTrc20Blockchain extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_private_key"=>null, "to"=>null, "token_address"=>null, "fee_limit"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
         }
@@ -88,9 +87,9 @@ class TransferTronTrc20Blockchain extends AbstractModel {
         if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
             $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_private_key

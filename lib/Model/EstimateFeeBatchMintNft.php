@@ -33,13 +33,13 @@ class EstimateFeeBatchMintNft extends AbstractModel {
     public const TYPE_MINT_NFT_BATCH = 'MINT_NFT_BATCH';
     protected static $_name = "EstimateFeeBatchMintNft";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds"], 
-        "urls" => ["urls", "string[]", null, "getUrls", "setUrls"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds", null], 
+        "urls" => ["urls", "string[]", null, "getUrls", "setUrls", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "type"=>null, "sender"=>null, "recipients"=>null, "contract_address"=>null, "token_ids"=>null, "urls"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -102,9 +101,9 @@ class EstimateFeeBatchMintNft extends AbstractModel {
         if (is_null($this->_data['urls'])) {
             $ip[] = "'urls' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,16 +25,16 @@ class BscBlockchainSmartContractInvocationRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BscBlockchainSmartContractInvocation_request";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName"], 
-        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi"], 
-        "params" => ["params", "string[]", null, "getParams", "setParams"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null], 
+        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null], 
+        "params" => ["params", "string[]", null, "getParams", "setParams", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class BscBlockchainSmartContractInvocationRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["contract_address"=>null, "method_name"=>null, "method_abi"=>null, "params"=>null, "amount"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "index"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['contract_address'])) {
             $ip[] = "'contract_address' can't be null";
         }
@@ -99,9 +98,9 @@ class BscBlockchainSmartContractInvocationRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get contract_address

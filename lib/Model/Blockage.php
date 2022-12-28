@@ -25,11 +25,11 @@ class Blockage extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Blockage";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class Blockage extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "account_id"=>null, "amount"=>null, "type"=>null, "description"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get id

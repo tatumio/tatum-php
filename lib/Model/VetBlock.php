@@ -25,21 +25,21 @@ class VetBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetBlock";
     protected static $_definition = [
-        "number" => ["number", "int", 'uint32', "getNumber", "setNumber"], 
-        "id" => ["id", "string", 'bytes32', "getId", "setId"], 
-        "size" => ["size", "int", 'uint32', "getSize", "setSize"], 
-        "parent_id" => ["parentID", "string", 'bytes32', "getParentId", "setParentId"], 
-        "timestamp" => ["timestamp", "int", 'uint64', "getTimestamp", "setTimestamp"], 
-        "gas_limit" => ["gasLimit", "int", 'uint64', "getGasLimit", "setGasLimit"], 
-        "beneficiary" => ["beneficiary", "string", 'bytes32', "getBeneficiary", "setBeneficiary"], 
-        "gas_used" => ["gasUsed", "int", 'uint64', "getGasUsed", "setGasUsed"], 
-        "total_score" => ["totalScore", "int", 'uint64', "getTotalScore", "setTotalScore"], 
-        "txs_root" => ["txsRoot", "string", 'bytes32', "getTxsRoot", "setTxsRoot"], 
-        "txs_features" => ["txsFeatures", "int", 'uint32', "getTxsFeatures", "setTxsFeatures"], 
-        "state_root" => ["stateRoot", "string", 'bytes32', "getStateRoot", "setStateRoot"], 
-        "receipts_root" => ["receiptsRoot", "string", 'bytes32', "getReceiptsRoot", "setReceiptsRoot"], 
-        "signer" => ["signer", "string", 'bytes20', "getSigner", "setSigner"], 
-        "transactions" => ["transactions", "string[]", 'bytes32', "getTransactions", "setTransactions"]
+        "number" => ["number", "int", 'uint32', "getNumber", "setNumber", null], 
+        "id" => ["id", "string", 'bytes32', "getId", "setId", null], 
+        "size" => ["size", "int", 'uint32', "getSize", "setSize", null], 
+        "parent_id" => ["parentID", "string", 'bytes32', "getParentId", "setParentId", null], 
+        "timestamp" => ["timestamp", "int", 'uint64', "getTimestamp", "setTimestamp", null], 
+        "gas_limit" => ["gasLimit", "int", 'uint64', "getGasLimit", "setGasLimit", null], 
+        "beneficiary" => ["beneficiary", "string", 'bytes32', "getBeneficiary", "setBeneficiary", null], 
+        "gas_used" => ["gasUsed", "int", 'uint64', "getGasUsed", "setGasUsed", null], 
+        "total_score" => ["totalScore", "int", 'uint64', "getTotalScore", "setTotalScore", null], 
+        "txs_root" => ["txsRoot", "string", 'bytes32', "getTxsRoot", "setTxsRoot", null], 
+        "txs_features" => ["txsFeatures", "int", 'uint32', "getTxsFeatures", "setTxsFeatures", null], 
+        "state_root" => ["stateRoot", "string", 'bytes32', "getStateRoot", "setStateRoot", null], 
+        "receipts_root" => ["receiptsRoot", "string", 'bytes32', "getReceiptsRoot", "setReceiptsRoot", null], 
+        "signer" => ["signer", "string", 'bytes20', "getSigner", "setSigner", null], 
+        "transactions" => ["transactions", "string[]", 'bytes32', "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -48,20 +48,19 @@ class VetBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["number"=>null, "id"=>null, "size"=>null, "parent_id"=>null, "timestamp"=>null, "gas_limit"=>null, "beneficiary"=>null, "gas_used"=>null, "total_score"=>null, "txs_root"=>null, "txs_features"=>null, "state_root"=>null, "receipts_root"=>null, "signer"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get number

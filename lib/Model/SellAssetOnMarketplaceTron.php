@@ -26,18 +26,18 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "SellAssetOnMarketplaceTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress"], 
-        "seller" => ["seller", "string", null, "getSeller", "setSeller"], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address"], 
-        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
-        "price" => ["price", "string", null, "getPrice", "setPrice"], 
-        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
+        "seller" => ["seller", "string", null, "getSeller", "setSeller", null], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
+        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
+        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -46,17 +46,16 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "nft_address"=>null, "seller"=>null, "erc20_address"=>null, "listing_id"=>null, "amount"=>null, "token_id"=>null, "price"=>null, "is_erc721"=>null, "from_private_key"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -140,9 +139,9 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
         if (($this->_data['fee_limit'] < 0)) {
             $ip[] = "'fee_limit' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

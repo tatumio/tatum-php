@@ -25,8 +25,8 @@ class PrivKeyRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "PrivKeyRequest";
     protected static $_definition = [
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"]
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null]
     ];
 
     /**
@@ -35,17 +35,16 @@ class PrivKeyRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["index"=>null, "mnemonic"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['index'])) {
             $ip[] = "'index' can't be null";
         }
@@ -61,9 +60,9 @@ class PrivKeyRequest extends AbstractModel {
         if ((mb_strlen($this->_data['mnemonic']) < 1)) {
             $ip[] = "'mnemonic' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get index

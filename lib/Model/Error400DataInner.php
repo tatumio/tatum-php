@@ -25,10 +25,10 @@ class Error400DataInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Error400_data_inner";
     protected static $_definition = [
-        "target" => ["target", "array<string,mixed>", null, "getTarget", "setTarget"], 
-        "value" => ["value", "float", null, "getValue", "setValue"], 
-        "property" => ["property", "string", null, "getProperty", "setProperty"], 
-        "constraints" => ["constraints", "array<string,mixed>", null, "getConstraints", "setConstraints"]
+        "target" => ["target", "array<string,mixed>", null, "getTarget", "setTarget", null], 
+        "value" => ["value", "float", null, "getValue", "setValue", null], 
+        "property" => ["property", "string", null, "getProperty", "setProperty", null], 
+        "constraints" => ["constraints", "array<string,mixed>", null, "getConstraints", "setConstraints", null]
     ];
 
     /**
@@ -37,23 +37,22 @@ class Error400DataInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["target"=>null, "value"=>null, "property"=>null, "constraints"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['target'])) {
             $ip[] = "'target' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get target

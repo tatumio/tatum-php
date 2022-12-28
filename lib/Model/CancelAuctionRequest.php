@@ -29,16 +29,16 @@ class CancelAuctionRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "CancelAuction_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -47,17 +47,16 @@ class CancelAuctionRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "id"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "erc20_address"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -113,9 +112,9 @@ class CancelAuctionRequest extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

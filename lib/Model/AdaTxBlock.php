@@ -25,8 +25,8 @@ class AdaTxBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTx_block";
     protected static $_definition = [
-        "number" => ["number", "float", null, "getNumber", "setNumber"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"]
+        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class AdaTxBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["number"=>null, "hash"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get number

@@ -227,19 +227,19 @@ class VC extends AbstractModel {
     public const CHAIN_XLM = 'XLM';
     protected static $_name = "VC";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "precision" => ["precision", "float", null, "getPrecision", "setPrecision"], 
-        "trc_type" => ["trcType", "string", null, "getTrcType", "setTrcType"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
-        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address"], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "initial_address" => ["initialAddress", "string", null, "getInitialAddress", "setInitialAddress"]
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "precision" => ["precision", "float", null, "getPrecision", "setPrecision", null], 
+        "trc_type" => ["trcType", "string", null, "getTrcType", "setTrcType", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
+        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "initial_address" => ["initialAddress", "string", null, "getInitialAddress", "setInitialAddress", null]
     ];
 
     /**
@@ -248,17 +248,16 @@ class VC extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["name"=>null, "supply"=>null, "account_id"=>null, "base_rate"=>1, "precision"=>null, "trc_type"=>null, "base_pair"=>null, "customer_id"=>null, "description"=>null, "erc20_address"=>null, "issuer_account"=>null, "chain"=>null, "initial_address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['name'])) {
             $ip[] = "'name' can't be null";
         }
@@ -289,9 +288,9 @@ class VC extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

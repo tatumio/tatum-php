@@ -29,19 +29,19 @@ class Erc20DeployRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "Erc20Deploy_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -50,17 +50,16 @@ class Erc20DeployRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "symbol"=>null, "name"=>null, "total_cap"=>null, "supply"=>null, "digits"=>null, "address"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "from"=>null, "fee_currency"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -158,9 +157,9 @@ class Erc20DeployRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

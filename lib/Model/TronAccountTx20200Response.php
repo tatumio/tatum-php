@@ -25,8 +25,8 @@ class TronAccountTx20200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronAccountTx20_200_response";
     protected static $_definition = [
-        "next" => ["next", "string", null, "getNext", "setNext"], 
-        "transactions" => ["transactions", "\Tatum\Model\TronTx20[]", null, "getTransactions", "setTransactions"]
+        "next" => ["next", "string", null, "getNext", "setNext", null], 
+        "transactions" => ["transactions", "\Tatum\Model\TronTx20[]", null, "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -35,23 +35,22 @@ class TronAccountTx20200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["next"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['transactions'])) {
             $ip[] = "'transactions' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get next

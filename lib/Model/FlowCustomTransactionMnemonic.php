@@ -25,11 +25,11 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowCustomTransactionMnemonic";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction"], 
-        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null], 
+        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "transaction"=>null, "args"=>null, "mnemonic"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account'])) {
             $ip[] = "'account' can't be null";
         }
@@ -85,9 +84,9 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
         if (($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account

@@ -27,7 +27,7 @@ class CheckMalicousAddress200Response extends AbstractModel {
     public const STATUS_INVALID = 'invalid';
     protected static $_name = "CheckMalicousAddress_200_response";
     protected static $_definition = [
-        "status" => ["status", "string", null, "getStatus", "setStatus"]
+        "status" => ["status", "string", null, "getStatus", "setStatus", null]
     ];
 
     /**
@@ -36,25 +36,24 @@ class CheckMalicousAddress200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["status"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getStatusAllowableValues();
         $value = $this->_data['status'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'status' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

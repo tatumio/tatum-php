@@ -33,13 +33,13 @@ class MintMultipleNftMinter extends AbstractModel {
     public const FEE_CURRENCY_CELO = 'CELO';
     protected static $_name = "MintMultipleNftMinter";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string[]", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId"], 
-        "minter" => ["minter", "string", null, "getMinter", "setMinter"], 
-        "url" => ["url", "string[]", null, "getUrl", "setUrl"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string[]", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId", null], 
+        "minter" => ["minter", "string", null, "getMinter", "setMinter", null], 
+        "url" => ["url", "string[]", null, "getUrl", "setUrl", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class MintMultipleNftMinter extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "token_id"=>null, "minter"=>null, "url"=>null, "contract_address"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -99,9 +98,9 @@ class MintMultipleNftMinter extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

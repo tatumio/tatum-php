@@ -26,15 +26,15 @@ class TransferNftKMSTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "TransferNftKMSTron";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class TransferNftKMSTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["value"=>null, "chain"=>null, "account"=>null, "to"=>null, "token_id"=>null, "contract_address"=>null, "index"=>null, "signature_id"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -104,9 +103,9 @@ class TransferNftKMSTron extends AbstractModel {
         if (is_null($this->_data['fee_limit'])) {
             $ip[] = "'fee_limit' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

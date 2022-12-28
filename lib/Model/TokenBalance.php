@@ -25,11 +25,11 @@ class TokenBalance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TokenBalance";
     protected static $_definition = [
-        "account_index" => ["accountIndex", "float", null, "getAccountIndex", "setAccountIndex"], 
-        "mint" => ["mint", "string", null, "getMint", "setMint"], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner"], 
-        "program_id" => ["programId", "string", null, "getProgramId", "setProgramId"], 
-        "ui_token_amount" => ["uiTokenAmount", "\Tatum\Model\UiTokenAmount", null, "getUiTokenAmount", "setUiTokenAmount"]
+        "account_index" => ["accountIndex", "float", null, "getAccountIndex", "setAccountIndex", null], 
+        "mint" => ["mint", "string", null, "getMint", "setMint", null], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
+        "program_id" => ["programId", "string", null, "getProgramId", "setProgramId", null], 
+        "ui_token_amount" => ["uiTokenAmount", "\Tatum\Model\UiTokenAmount", null, "getUiTokenAmount", "setUiTokenAmount", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class TokenBalance extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_index"=>null, "mint"=>null, "owner"=>null, "program_id"=>null, "ui_token_amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get account_index

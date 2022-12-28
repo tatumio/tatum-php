@@ -31,15 +31,15 @@ class BurnMultiTokenBatch extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "BurnMultiTokenBatch";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId"], 
-        "amounts" => ["amounts", "string[]", null, "getAmounts", "setAmounts"], 
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId", null], 
+        "amounts" => ["amounts", "string[]", null, "getAmounts", "setAmounts", null], 
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class BurnMultiTokenBatch extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "account"=>null, "token_id"=>null, "amounts"=>null, "data"=>null, "contract_address"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -103,9 +102,9 @@ class BurnMultiTokenBatch extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

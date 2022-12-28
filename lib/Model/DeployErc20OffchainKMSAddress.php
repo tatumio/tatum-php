@@ -222,15 +222,15 @@ class DeployErc20OffchainKMSAddress extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "DeployErc20OffchainKMSAddress";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
     ];
 
     /**
@@ -239,17 +239,16 @@ class DeployErc20OffchainKMSAddress extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "supply"=>null, "description"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "address"=>null, "signature_id"=>null, "nonce"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['symbol'])) {
             $ip[] = "'symbol' can't be null";
         }
@@ -312,9 +311,9 @@ class DeployErc20OffchainKMSAddress extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

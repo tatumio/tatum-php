@@ -28,11 +28,11 @@ class DeployErc721Celo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "DeployErc721Celo";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class DeployErc721Celo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["name"=>null, "symbol"=>null, "from_private_key"=>null, "nonce"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['name'])) {
             $ip[] = "'name' can't be null";
         }
@@ -90,9 +89,9 @@ class DeployErc721Celo extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

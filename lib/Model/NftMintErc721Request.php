@@ -29,32 +29,32 @@ class NftMintErc721Request extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "NftMintErc721_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr"], 
-        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadataKMS", null, "getMetadata", "setMetadata"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "minter" => ["minter", "string", null, "getMinter", "setMinter"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "erc20" => ["erc20", "string", null, "getErc20", "setErc20"], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance"], 
-        "author_addresses" => ["authorAddresses", "string[]", null, "getAuthorAddresses", "setAuthorAddresses"], 
-        "cashback_values" => ["cashbackValues", "string[]", null, "getCashbackValues", "setCashbackValues"], 
-        "fixed_values" => ["fixedValues", "string[]", null, "getFixedValues", "setFixedValues"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr", null], 
+        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadataKMS", null, "getMetadata", "setMetadata", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "minter" => ["minter", "string", null, "getMinter", "setMinter", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "erc20" => ["erc20", "string", null, "getErc20", "setErc20", null], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
+        "author_addresses" => ["authorAddresses", "string[]", null, "getAuthorAddresses", "setAuthorAddresses", null], 
+        "cashback_values" => ["cashbackValues", "string[]", null, "getCashbackValues", "setCashbackValues", null], 
+        "fixed_values" => ["fixedValues", "string[]", null, "getFixedValues", "setFixedValues", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -63,17 +63,16 @@ class NftMintErc721Request extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "url"=>null, "name"=>null, "attr"=>null, "metadata"=>null, "contract_address"=>null, "minter"=>null, "token_id"=>null, "from_private_key"=>null, "erc20"=>null, "provenance"=>null, "author_addresses"=>null, "cashback_values"=>null, "fixed_values"=>null, "nonce"=>null, "fee"=>null, "signature_id"=>null, "index"=>null, "from"=>null, "fee_currency"=>null, "account"=>null, "private_key"=>null, "mnemonic"=>null, "collection_verifier_private_key"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -213,9 +212,9 @@ class NftMintErc721Request extends AbstractModel {
         if (is_null($this->_data['fee_limit'])) {
             $ip[] = "'fee_limit' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

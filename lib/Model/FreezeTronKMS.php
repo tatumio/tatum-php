@@ -27,13 +27,13 @@ class FreezeTronKMS extends AbstractModel {
     public const RESOURCE_ENERGY = 'ENERGY';
     protected static $_name = "FreezeTronKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver"], 
-        "duration" => ["duration", "float", null, "getDuration", "setDuration"], 
-        "resource" => ["resource", "string", null, "getResource", "setResource"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
+        "duration" => ["duration", "float", null, "getDuration", "setDuration", null], 
+        "resource" => ["resource", "string", null, "getResource", "setResource", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -42,17 +42,16 @@ class FreezeTronKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "signature_id"=>null, "index"=>null, "receiver"=>null, "duration"=>null, "resource"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -97,9 +96,9 @@ class FreezeTronKMS extends AbstractModel {
         if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
             $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

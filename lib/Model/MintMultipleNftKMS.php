@@ -31,17 +31,17 @@ class MintMultipleNftKMS extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "MintMultipleNftKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string[]", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId"], 
-        "url" => ["url", "string[]", null, "getUrl", "setUrl"], 
-        "author_addresses" => ["authorAddresses", "string[][]", null, "getAuthorAddresses", "setAuthorAddresses"], 
-        "cashback_values" => ["cashbackValues", "string[][]", null, "getCashbackValues", "setCashbackValues"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string[]", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId", null], 
+        "url" => ["url", "string[]", null, "getUrl", "setUrl", null], 
+        "author_addresses" => ["authorAddresses", "string[][]", null, "getAuthorAddresses", "setAuthorAddresses", null], 
+        "cashback_values" => ["cashbackValues", "string[][]", null, "getCashbackValues", "setCashbackValues", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -50,17 +50,16 @@ class MintMultipleNftKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "token_id"=>null, "url"=>null, "author_addresses"=>null, "cashback_values"=>null, "contract_address"=>null, "index"=>null, "signature_id"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -96,9 +95,9 @@ class MintMultipleNftKMS extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,22 +25,22 @@ class CeloTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CeloTx";
     protected static $_definition = [
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
-        "status" => ["status", "bool", null, "getStatus", "setStatus"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "gas" => ["gas", "float", null, "getGas", "setGas"], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash"], 
-        "input" => ["input", "string", null, "getInput", "setInput"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
-        "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "logs" => ["logs", "\Tatum\Model\CeloTxLogsInner[]", null, "getLogs", "setLogs"]
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
+        "status" => ["status", "bool", null, "getStatus", "setStatus", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null], 
+        "input" => ["input", "string", null, "getInput", "setInput", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
+        "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "logs" => ["logs", "\Tatum\Model\CeloTxLogsInner[]", null, "getLogs", "setLogs", null]
     ];
 
     /**
@@ -49,20 +49,19 @@ class CeloTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_hash"=>null, "status"=>null, "block_number"=>null, "from"=>null, "gas"=>null, "gas_price"=>null, "transaction_hash"=>null, "input"=>null, "nonce"=>null, "to"=>null, "transaction_index"=>null, "value"=>null, "gas_used"=>null, "cumulative_gas_used"=>null, "contract_address"=>null, "logs"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_hash

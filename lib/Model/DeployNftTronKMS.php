@@ -26,13 +26,13 @@ class DeployNftTronKMS extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "DeployNftTronKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class DeployNftTronKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "account"=>null, "name"=>null, "symbol"=>null, "index"=>null, "signature_id"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -96,9 +95,9 @@ class DeployNftTronKMS extends AbstractModel {
         if (is_null($this->_data['fee_limit'])) {
             $ip[] = "'fee_limit' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

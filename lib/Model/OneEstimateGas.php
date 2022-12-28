@@ -25,10 +25,10 @@ class OneEstimateGas extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OneEstimateGas";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "data" => ["data", "string", null, "getData", "setData"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "data" => ["data", "string", null, "getData", "setData", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class OneEstimateGas extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "to"=>null, "amount"=>null, "data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -75,9 +74,9 @@ class OneEstimateGas extends AbstractModel {
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 50000)) {
             $ip[] = "'data' length must be <= 50000";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

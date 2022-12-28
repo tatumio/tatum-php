@@ -25,18 +25,18 @@ class TransferAdaKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferAdaKMS";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
     ];
 
     /**
@@ -45,17 +45,16 @@ class TransferAdaKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "amount"=>null, "compliant"=>null, "fee"=>null, "from"=>null, "signature_id"=>null, "xpub"=>null, "attr"=>null, "index"=>null, "payment_id"=>null, "sender_account_id"=>null, "sender_note"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
@@ -125,9 +124,9 @@ class TransferAdaKMS extends AbstractModel {
         if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
             $ip[] = "'sender_note' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get address

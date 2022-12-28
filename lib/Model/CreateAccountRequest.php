@@ -195,13 +195,13 @@ class CreateAccountRequest extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "createAccount_request";
     protected static $_definition = [
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber"]
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null]
     ];
 
     /**
@@ -210,17 +210,16 @@ class CreateAccountRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["currency"=>null, "xpub"=>null, "customer"=>null, "compliant"=>null, "account_code"=>null, "accounting_currency"=>null, "account_number"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['currency'])) {
             $ip[] = "'currency' can't be null";
         }
@@ -262,9 +261,9 @@ class CreateAccountRequest extends AbstractModel {
         if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) < 1)) {
             $ip[] = "'account_number' length must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

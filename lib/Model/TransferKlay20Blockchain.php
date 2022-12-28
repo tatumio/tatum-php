@@ -25,13 +25,13 @@ class TransferKlay20Blockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferKlay20Blockchain";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\TransferKlay20BlockchainFee", null, "getFee", "setFee"]
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\TransferKlay20BlockchainFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class TransferKlay20Blockchain extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["to"=>null, "amount"=>null, "contract_address"=>null, "digits"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
@@ -96,9 +95,9 @@ class TransferKlay20Blockchain extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get to

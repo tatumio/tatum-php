@@ -25,14 +25,14 @@ class BtcUTXO extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcUTXO";
     protected static $_definition = [
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "height" => ["height", "float", null, "getHeight", "setHeight"], 
-        "value" => ["value", "float", null, "getValue", "setValue"], 
-        "script" => ["script", "string", null, "getScript", "setScript"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
+        "value" => ["value", "float", null, "getValue", "setValue", null], 
+        "script" => ["script", "string", null, "getScript", "setScript", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -41,20 +41,19 @@ class BtcUTXO extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["version"=>null, "height"=>null, "value"=>null, "script"=>null, "address"=>null, "coinbase"=>null, "hash"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get version

@@ -27,8 +27,8 @@ class TransferKlay20BlockchainFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferKlay20Blockchain_fee";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit"], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"]
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class TransferKlay20BlockchainFee extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["gas_limit"=>null, "gas_price"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['gas_limit'])) {
             $ip[] = "'gas_limit' can't be null";
         }
@@ -60,9 +59,9 @@ class TransferKlay20BlockchainFee extends AbstractModel {
         if (!preg_match("/^[+]?\\d+$/", $this->_data['gas_price'])) {
             $ip[] = "'gas_price' must match /^[+]?\\d+$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get gas_limit

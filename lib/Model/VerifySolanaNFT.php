@@ -26,11 +26,11 @@ class VerifySolanaNFT extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "VerifySolanaNFT";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress"], 
-        "collection_address" => ["collectionAddress", "string", null, "getCollectionAddress", "setCollectionAddress"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
+        "collection_address" => ["collectionAddress", "string", null, "getCollectionAddress", "setCollectionAddress", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class VerifySolanaNFT extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "nft_address"=>null, "collection_address"=>null, "from"=>null, "from_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -94,9 +93,9 @@ class VerifySolanaNFT extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 64)) {
             $ip[] = "'from_private_key' length must be >= 64";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

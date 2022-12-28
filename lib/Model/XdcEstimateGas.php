@@ -25,9 +25,9 @@ class XdcEstimateGas extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XdcEstimateGas";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class XdcEstimateGas extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "to"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -71,9 +70,9 @@ class XdcEstimateGas extends AbstractModel {
         if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
             $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

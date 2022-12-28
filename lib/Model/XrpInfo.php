@@ -25,8 +25,8 @@ class XrpInfo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpInfo";
     protected static $_definition = [
-        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash"], 
-        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex"]
+        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null], 
+        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class XrpInfo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["ledger_hash"=>null, "ledger_index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get ledger_hash

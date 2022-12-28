@@ -25,11 +25,11 @@ class BchTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx";
     protected static $_definition = [
-        "txid" => ["txid", "string", null, "getTxid", "setTxid"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime"], 
-        "vin" => ["vin", "\Tatum\Model\BchTxVinInner[]", null, "getVin", "setVin"], 
-        "vout" => ["vout", "\Tatum\Model\BchTxVoutInner[]", null, "getVout", "setVout"]
+        "txid" => ["txid", "string", null, "getTxid", "setTxid", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null], 
+        "vin" => ["vin", "\Tatum\Model\BchTxVinInner[]", null, "getVin", "setVin", null], 
+        "vout" => ["vout", "\Tatum\Model\BchTxVoutInner[]", null, "getVout", "setVout", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class BchTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["txid"=>null, "version"=>null, "locktime"=>null, "vin"=>null, "vout"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get txid

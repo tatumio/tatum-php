@@ -25,9 +25,9 @@ class AdaTxInputsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTx_inputs_inner";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class AdaTxInputsInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_hash"=>null, "value"=>null, "address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get tx_hash

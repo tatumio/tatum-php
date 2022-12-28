@@ -25,17 +25,17 @@ class VetTxReceipt extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTxReceipt";
     protected static $_definition = [
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
-        "gas_payer" => ["gasPayer", "string", null, "getGasPayer", "setGasPayer"], 
-        "paid" => ["paid", "string", null, "getPaid", "setPaid"], 
-        "reward" => ["reward", "string", null, "getReward", "setReward"], 
-        "reverted" => ["reverted", "bool", null, "getReverted", "setReverted"], 
-        "meta" => ["meta", "\Tatum\Model\VetTxReceiptMeta", null, "getMeta", "setMeta"], 
-        "outputs" => ["outputs", "\Tatum\Model\VetTxReceiptOutputsInner[]", null, "getOutputs", "setOutputs"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash"], 
-        "status" => ["status", "string", null, "getStatus", "setStatus"]
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
+        "gas_payer" => ["gasPayer", "string", null, "getGasPayer", "setGasPayer", null], 
+        "paid" => ["paid", "string", null, "getPaid", "setPaid", null], 
+        "reward" => ["reward", "string", null, "getReward", "setReward", null], 
+        "reverted" => ["reverted", "bool", null, "getReverted", "setReverted", null], 
+        "meta" => ["meta", "\Tatum\Model\VetTxReceiptMeta", null, "getMeta", "setMeta", null], 
+        "outputs" => ["outputs", "\Tatum\Model\VetTxReceiptOutputsInner[]", null, "getOutputs", "setOutputs", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null]
     ];
 
     /**
@@ -44,20 +44,19 @@ class VetTxReceipt extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["gas_used"=>null, "gas_payer"=>null, "paid"=>null, "reward"=>null, "reverted"=>null, "meta"=>null, "outputs"=>null, "block_number"=>null, "block_hash"=>null, "transaction_hash"=>null, "status"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get gas_used

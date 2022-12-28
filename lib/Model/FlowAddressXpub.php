@@ -25,8 +25,8 @@ class FlowAddressXpub extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAddressXpub";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class FlowAddressXpub extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

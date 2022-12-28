@@ -44,14 +44,14 @@ class TransferEthBlockchainKMS extends AbstractModel {
     public const CURRENCY_ETH = 'ETH';
     protected static $_name = "TransferEthBlockchainKMS";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -60,17 +60,16 @@ class TransferEthBlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null, "nonce"=>null, "to"=>null, "currency"=>null, "fee"=>null, "amount"=>null, "signature_id"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 50000)) {
             $ip[] = "'data' length must be <= 50000";
         }
@@ -106,9 +105,9 @@ class TransferEthBlockchainKMS extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

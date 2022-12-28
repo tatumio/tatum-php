@@ -25,9 +25,9 @@ class AdaInfoTip extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaInfo_tip";
     protected static $_definition = [
-        "number" => ["number", "float", null, "getNumber", "setNumber"], 
-        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo"], 
-        "epoch" => ["epoch", "\Tatum\Model\AdaInfoTipEpoch", null, "getEpoch", "setEpoch"]
+        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
+        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo", null], 
+        "epoch" => ["epoch", "\Tatum\Model\AdaInfoTipEpoch", null, "getEpoch", "setEpoch", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class AdaInfoTip extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["number"=>null, "slot_no"=>null, "epoch"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get number

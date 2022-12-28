@@ -25,7 +25,7 @@ class Erc20Balance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Erc20Balance";
     protected static $_definition = [
-        "balance" => ["balance", "string", null, "getBalance", "setBalance"]
+        "balance" => ["balance", "string", null, "getBalance", "setBalance", null]
     ];
 
     /**
@@ -34,20 +34,19 @@ class Erc20Balance extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["balance"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get balance

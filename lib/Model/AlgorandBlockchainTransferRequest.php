@@ -25,14 +25,14 @@ class AlgorandBlockchainTransferRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgorandBlockchainTransfer_request";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "note" => ["note", "string", null, "getNote", "setNote"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "note" => ["note", "string", null, "getNote", "setNote", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class AlgorandBlockchainTransferRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "to"=>null, "fee"=>null, "amount"=>null, "note"=>null, "from_private_key"=>null, "index"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -73,9 +72,9 @@ class AlgorandBlockchainTransferRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

@@ -25,20 +25,20 @@ class LtcTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "LtcTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "witness_hash" => ["witnessHash", "string", null, "getWitnessHash", "setWitnessHash"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "rate" => ["rate", "string", null, "getRate", "setRate"], 
-        "ps" => ["ps", "float", null, "getPs", "setPs"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "block" => ["block", "string", null, "getBlock", "setBlock"], 
-        "ts" => ["ts", "float", null, "getTs", "setTs"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "flag" => ["flag", "float", null, "getFlag", "setFlag"], 
-        "inputs" => ["inputs", "\Tatum\Model\LtcTxInputsInner[]", null, "getInputs", "setInputs"], 
-        "outputs" => ["outputs", "\Tatum\Model\LtcTxOutputsInner[]", null, "getOutputs", "setOutputs"], 
-        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "witness_hash" => ["witnessHash", "string", null, "getWitnessHash", "setWitnessHash", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "rate" => ["rate", "string", null, "getRate", "setRate", null], 
+        "ps" => ["ps", "float", null, "getPs", "setPs", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "block" => ["block", "string", null, "getBlock", "setBlock", null], 
+        "ts" => ["ts", "float", null, "getTs", "setTs", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "flag" => ["flag", "float", null, "getFlag", "setFlag", null], 
+        "inputs" => ["inputs", "\Tatum\Model\LtcTxInputsInner[]", null, "getInputs", "setInputs", null], 
+        "outputs" => ["outputs", "\Tatum\Model\LtcTxOutputsInner[]", null, "getOutputs", "setOutputs", null], 
+        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null]
     ];
 
     /**
@@ -47,20 +47,19 @@ class LtcTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "witness_hash"=>null, "fee"=>null, "rate"=>null, "ps"=>null, "block_number"=>null, "block"=>null, "ts"=>null, "index"=>null, "version"=>null, "flag"=>null, "inputs"=>null, "outputs"=>null, "locktime"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

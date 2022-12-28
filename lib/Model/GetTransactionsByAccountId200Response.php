@@ -29,17 +29,39 @@ class GetTransactionsByAccountId200Response extends AbstractModel {
 
     /**
      * GetTransactionsByAccountId200Response
+     *
+     * @param mixed $data Model data
      */
-    public function __construct() {
+    public function __construct($data = null) {
+        $this->_data = $data;
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
-        $ip = [];
-
-        
-        return $ip;
+        return [];
     }
+
+    /**
+     * Get data
+     * 
+     * @return mixed OneOfArrayNumber
+     */
+    public function getData() {
+        return $this->_data;
+    }
+
+    /**
+     * Set data
+     * 
+     * @param mixed $data OneOfArrayNumber
+     * @return $this
+     */
+    public function setData($data) {
+        $this->_data = $data;
+
+        return $this;
+    }
+    
 }

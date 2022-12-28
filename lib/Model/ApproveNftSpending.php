@@ -30,14 +30,14 @@ class ApproveNftSpending extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     protected static $_name = "ApproveNftSpending";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "spender" => ["spender", "string", null, "getSpender", "setSpender"], 
-        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721"], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "spender" => ["spender", "string", null, "getSpender", "setSpender", null], 
+        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -46,17 +46,16 @@ class ApproveNftSpending extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "spender"=>null, "is_erc721"=>null, "token_id"=>null, "contract_address"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -101,9 +100,9 @@ class ApproveNftSpending extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 66)) {
             $ip[] = "'from_private_key' length must be >= 66";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

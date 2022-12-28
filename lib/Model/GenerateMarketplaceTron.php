@@ -26,11 +26,11 @@ class GenerateMarketplaceTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "GenerateMarketplaceTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient"], 
-        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null], 
+        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class GenerateMarketplaceTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "fee_recipient"=>null, "marketplace_fee"=>null, "from_private_key"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getChainAllowableValues();
         $value = $this->_data['chain'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
@@ -88,9 +87,9 @@ class GenerateMarketplaceTron extends AbstractModel {
         if (($this->_data['fee_limit'] < 0)) {
             $ip[] = "'fee_limit' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

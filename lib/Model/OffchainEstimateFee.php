@@ -25,12 +25,12 @@ class OffchainEstimateFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OffchainEstimateFee";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class OffchainEstimateFee extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "address"=>null, "amount"=>null, "multiple_amounts"=>null, "attr"=>null, "xpub"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -89,9 +88,9 @@ class OffchainEstimateFee extends AbstractModel {
         if (!is_null($this->_data['xpub']) && (mb_strlen($this->_data['xpub']) < 1)) {
             $ip[] = "'xpub' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

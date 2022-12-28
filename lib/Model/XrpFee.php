@@ -25,13 +25,13 @@ class XrpFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpFee";
     protected static $_definition = [
-        "current_ledger_size" => ["current_ledger_size", "string", null, "getCurrentLedgerSize", "setCurrentLedgerSize"], 
-        "current_queue_size" => ["current_queue_size", "string", null, "getCurrentQueueSize", "setCurrentQueueSize"], 
-        "drops" => ["drops", "\Tatum\Model\XrpFeeDrops", null, "getDrops", "setDrops"], 
-        "expected_ledger_size" => ["expected_ledger_size", "string", null, "getExpectedLedgerSize", "setExpectedLedgerSize"], 
-        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex"], 
-        "levels" => ["levels", "\Tatum\Model\XrpFeeLevels", null, "getLevels", "setLevels"], 
-        "max_queue_size" => ["max_queue_size", "string", null, "getMaxQueueSize", "setMaxQueueSize"]
+        "current_ledger_size" => ["current_ledger_size", "string", null, "getCurrentLedgerSize", "setCurrentLedgerSize", null], 
+        "current_queue_size" => ["current_queue_size", "string", null, "getCurrentQueueSize", "setCurrentQueueSize", null], 
+        "drops" => ["drops", "\Tatum\Model\XrpFeeDrops", null, "getDrops", "setDrops", null], 
+        "expected_ledger_size" => ["expected_ledger_size", "string", null, "getExpectedLedgerSize", "setExpectedLedgerSize", null], 
+        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex", null], 
+        "levels" => ["levels", "\Tatum\Model\XrpFeeLevels", null, "getLevels", "setLevels", null], 
+        "max_queue_size" => ["max_queue_size", "string", null, "getMaxQueueSize", "setMaxQueueSize", null]
     ];
 
     /**
@@ -40,20 +40,19 @@ class XrpFee extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["current_ledger_size"=>null, "current_queue_size"=>null, "drops"=>null, "expected_ledger_size"=>null, "ledger_current_index"=>null, "levels"=>null, "max_queue_size"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get current_ledger_size

@@ -25,16 +25,16 @@ class AlgoTransferRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoTransfer_request";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class AlgoTransferRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "address"=>null, "amount"=>null, "fee"=>null, "private_key"=>null, "compliant"=>null, "payment_id"=>null, "sender_note"=>null, "signature_id"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -111,9 +110,9 @@ class AlgoTransferRequest extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

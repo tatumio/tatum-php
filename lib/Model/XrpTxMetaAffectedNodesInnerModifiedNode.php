@@ -25,12 +25,12 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode";
     protected static $_definition = [
-        "final_fields" => ["FinalFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields", null, "getFinalFields", "setFinalFields"], 
-        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType"], 
-        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex"], 
-        "previous_fields" => ["PreviousFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields", null, "getPreviousFields", "setPreviousFields"], 
-        "previous_txn_id" => ["PreviousTxnID", "string", null, "getPreviousTxnId", "setPreviousTxnId"], 
-        "previous_txn_lgr_seq" => ["PreviousTxnLgrSeq", "float", null, "getPreviousTxnLgrSeq", "setPreviousTxnLgrSeq"]
+        "final_fields" => ["FinalFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields", null, "getFinalFields", "setFinalFields", null], 
+        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null], 
+        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex", null], 
+        "previous_fields" => ["PreviousFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields", null, "getPreviousFields", "setPreviousFields", null], 
+        "previous_txn_id" => ["PreviousTxnID", "string", null, "getPreviousTxnId", "setPreviousTxnId", null], 
+        "previous_txn_lgr_seq" => ["PreviousTxnLgrSeq", "float", null, "getPreviousTxnLgrSeq", "setPreviousTxnLgrSeq", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["final_fields"=>null, "ledger_entry_type"=>null, "ledger_index"=>null, "previous_fields"=>null, "previous_txn_id"=>null, "previous_txn_lgr_seq"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get final_fields

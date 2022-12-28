@@ -25,8 +25,8 @@ class Broadcast extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Broadcast";
     protected static $_definition = [
-        "tx_data" => ["txData", "string", null, "getTxData", "setTxData"], 
-        "signature_id" => ["signatureId", "string", null, "getSignatureId", "setSignatureId"]
+        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null], 
+        "signature_id" => ["signatureId", "string", null, "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -35,17 +35,16 @@ class Broadcast extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_data"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_data'])) {
             $ip[] = "'tx_data' can't be null";
         }
@@ -61,9 +60,9 @@ class Broadcast extends AbstractModel {
         if (!is_null($this->_data['signature_id']) && (mb_strlen($this->_data['signature_id']) < 24)) {
             $ip[] = "'signature_id' length must be >= 24";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_data

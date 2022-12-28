@@ -26,9 +26,9 @@ class TransferManagedAddress extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "TransferManagedAddress";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "tx_data" => ["txData", "string", null, "getTxData", "setTxData"], 
-        "wallet_ids" => ["walletIds", "\Tatum\Model\TransferManagedAddressWalletIdsInner[]", null, "getWalletIds", "setWalletIds"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null], 
+        "wallet_ids" => ["walletIds", "\Tatum\Model\TransferManagedAddressWalletIdsInner[]", null, "getWalletIds", "setWalletIds", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class TransferManagedAddress extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "tx_data"=>null, "wallet_ids"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -68,9 +67,9 @@ class TransferManagedAddress extends AbstractModel {
         if (is_null($this->_data['wallet_ids'])) {
             $ip[] = "'wallet_ids' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

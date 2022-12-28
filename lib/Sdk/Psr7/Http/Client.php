@@ -53,7 +53,7 @@ class Client {
             CURLOPT_FAILONERROR => false,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_MAXREDIRS => 5,
-            CURLOPT_TIMEOUT => 5,
+            CURLOPT_TIMEOUT => 30,
             CURLOPT_CONNECTTIMEOUT => 5,
             CURLOPT_HTTP_VERSION => isset(self::HTTP_VERSIONS[$request->getProtocolVersion()])
                 ? self::HTTP_VERSIONS[$request->getProtocolVersion()]

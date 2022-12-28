@@ -28,9 +28,9 @@ class XlmAccountSignersInner extends AbstractModel {
     public const TYPE_PREAUTH_TX = 'preauth_tx';
     protected static $_name = "XlmAccount_signers_inner";
     protected static $_definition = [
-        "weight" => ["weight", "float", null, "getWeight", "setWeight"], 
-        "key" => ["key", "string", null, "getKey", "setKey"], 
-        "type" => ["type", "string", null, "getType", "setType"]
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null], 
+        "key" => ["key", "string", null, "getKey", "setKey", null], 
+        "type" => ["type", "string", null, "getType", "setType", null]
     ];
 
     /**
@@ -39,25 +39,24 @@ class XlmAccountSignersInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["weight"=>null, "key"=>null, "type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getTypeAllowableValues();
         $value = $this->_data['type'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

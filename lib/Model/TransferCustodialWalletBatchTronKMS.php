@@ -29,17 +29,17 @@ class TransferCustodialWalletBatchTronKMS extends AbstractModel {
     public const CONTRACT_TYPE_3 = 3;
     protected static $_name = "TransferCustodialWalletBatchTronKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "recipient" => ["recipient", "string[]", null, "getRecipient", "setRecipient"], 
-        "contract_type" => ["contractType", "float[]", null, "getContractType", "setContractType"], 
-        "token_address" => ["tokenAddress", "string[]", null, "getTokenAddress", "setTokenAddress"], 
-        "amount" => ["amount", "string[]", null, "getAmount", "setAmount"], 
-        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "recipient" => ["recipient", "string[]", null, "getRecipient", "setRecipient", null], 
+        "contract_type" => ["contractType", "float[]", null, "getContractType", "setContractType", null], 
+        "token_address" => ["tokenAddress", "string[]", null, "getTokenAddress", "setTokenAddress", null], 
+        "amount" => ["amount", "string[]", null, "getAmount", "setAmount", null], 
+        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class TransferCustodialWalletBatchTronKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "custodial_address"=>null, "from"=>null, "recipient"=>null, "contract_type"=>null, "token_address"=>null, "amount"=>null, "token_id"=>null, "signature_id"=>null, "index"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -112,9 +111,9 @@ class TransferCustodialWalletBatchTronKMS extends AbstractModel {
         if (($this->_data['fee_limit'] < 0)) {
             $ip[] = "'fee_limit' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

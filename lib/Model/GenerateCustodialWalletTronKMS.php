@@ -26,15 +26,15 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "GenerateCustodialWalletTronKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "enable_fungible_tokens" => ["enableFungibleTokens", "bool", null, "getEnableFungibleTokens", "setEnableFungibleTokens"], 
-        "enable_non_fungible_tokens" => ["enableNonFungibleTokens", "bool", null, "getEnableNonFungibleTokens", "setEnableNonFungibleTokens"], 
-        "enable_semi_fungible_tokens" => ["enableSemiFungibleTokens", "bool", null, "getEnableSemiFungibleTokens", "setEnableSemiFungibleTokens"], 
-        "enable_batch_transactions" => ["enableBatchTransactions", "bool", null, "getEnableBatchTransactions", "setEnableBatchTransactions"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "enable_fungible_tokens" => ["enableFungibleTokens", "bool", null, "getEnableFungibleTokens", "setEnableFungibleTokens", null], 
+        "enable_non_fungible_tokens" => ["enableNonFungibleTokens", "bool", null, "getEnableNonFungibleTokens", "setEnableNonFungibleTokens", null], 
+        "enable_semi_fungible_tokens" => ["enableSemiFungibleTokens", "bool", null, "getEnableSemiFungibleTokens", "setEnableSemiFungibleTokens", null], 
+        "enable_batch_transactions" => ["enableBatchTransactions", "bool", null, "getEnableBatchTransactions", "setEnableBatchTransactions", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "fee_limit"=>null, "from"=>null, "signature_id"=>null, "index"=>null, "enable_fungible_tokens"=>null, "enable_non_fungible_tokens"=>null, "enable_semi_fungible_tokens"=>null, "enable_batch_transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -95,9 +94,9 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
         if (is_null($this->_data['enable_batch_transactions'])) {
             $ip[] = "'enable_batch_transactions' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

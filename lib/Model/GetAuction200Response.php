@@ -25,16 +25,16 @@ class GetAuction200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GetAuction_200_response";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "bidder" => ["bidder", "string", null, "getBidder", "setBidder"], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address"], 
-        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721"], 
-        "started_at" => ["startedAt", "string", null, "getStartedAt", "setStartedAt"], 
-        "ended_at" => ["endedAt", "string", null, "getEndedAt", "setEndedAt"], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress"], 
-        "ending_price" => ["endingPrice", "string", null, "getEndingPrice", "setEndingPrice"], 
-        "seller" => ["seller", "string", null, "getSeller", "setSeller"], 
-        "highest_bid" => ["highestBid", "string", null, "getHighestBid", "setHighestBid"]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "bidder" => ["bidder", "string", null, "getBidder", "setBidder", null], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
+        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null], 
+        "started_at" => ["startedAt", "string", null, "getStartedAt", "setStartedAt", null], 
+        "ended_at" => ["endedAt", "string", null, "getEndedAt", "setEndedAt", null], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
+        "ending_price" => ["endingPrice", "string", null, "getEndingPrice", "setEndingPrice", null], 
+        "seller" => ["seller", "string", null, "getSeller", "setSeller", null], 
+        "highest_bid" => ["highestBid", "string", null, "getHighestBid", "setHighestBid", null]
     ];
 
     /**
@@ -43,20 +43,19 @@ class GetAuction200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["amount"=>null, "bidder"=>null, "erc20_address"=>null, "is_erc721"=>null, "started_at"=>null, "ended_at"=>null, "nft_address"=>null, "ending_price"=>null, "seller"=>null, "highest_bid"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get amount

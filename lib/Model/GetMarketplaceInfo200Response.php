@@ -25,16 +25,16 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GetMarketplaceInfo_200_response";
     protected static $_definition = [
-        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount"], 
-        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount"], 
-        "authority" => ["authority", "string", null, "getAuthority", "setAuthority"], 
-        "creator" => ["creator", "string", null, "getCreator", "setCreator"], 
-        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee"], 
-        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint"], 
-        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination"], 
-        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination"], 
-        "requires_sign_off" => ["requiresSignOff", "bool", null, "getRequiresSignOff", "setRequiresSignOff"], 
-        "can_change_sale_price" => ["canChangeSalePrice", "bool", null, "getCanChangeSalePrice", "setCanChangeSalePrice"]
+        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null], 
+        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null], 
+        "authority" => ["authority", "string", null, "getAuthority", "setAuthority", null], 
+        "creator" => ["creator", "string", null, "getCreator", "setCreator", null], 
+        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null], 
+        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint", null], 
+        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination", null], 
+        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination", null], 
+        "requires_sign_off" => ["requiresSignOff", "bool", null, "getRequiresSignOff", "setRequiresSignOff", null], 
+        "can_change_sale_price" => ["canChangeSalePrice", "bool", null, "getCanChangeSalePrice", "setCanChangeSalePrice", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["fee_account"=>null, "treasury_account"=>null, "authority"=>null, "creator"=>null, "marketplace_fee"=>null, "treasury_mint"=>null, "treasury_withdrawal_destination"=>null, "fee_withdrawal_destination"=>null, "requires_sign_off"=>null, "can_change_sale_price"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['fee_account'])) {
             $ip[] = "'fee_account' can't be null";
         }
@@ -132,9 +131,9 @@ class GetMarketplaceInfo200Response extends AbstractModel {
         if (is_null($this->_data['can_change_sale_price'])) {
             $ip[] = "'can_change_sale_price' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get fee_account

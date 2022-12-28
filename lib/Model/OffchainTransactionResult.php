@@ -25,9 +25,9 @@ class OffchainTransactionResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OffchainTransactionResult";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class OffchainTransactionResult extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "tx_id"=>null, "completed"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -56,9 +55,9 @@ class OffchainTransactionResult extends AbstractModel {
         if (is_null($this->_data['completed'])) {
             $ip[] = "'completed' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get id

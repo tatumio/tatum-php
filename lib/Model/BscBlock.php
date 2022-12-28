@@ -25,25 +25,25 @@ class BscBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BscBlock";
     protected static $_definition = [
-        "difficulty" => ["difficulty", "string", null, "getDifficulty", "setDifficulty"], 
-        "extra_data" => ["extraData", "string", null, "getExtraData", "setExtraData"], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit"], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "logs_bloom" => ["logsBloom", "string", null, "getLogsBloom", "setLogsBloom"], 
-        "miner" => ["miner", "string", null, "getMiner", "setMiner"], 
-        "mix_hash" => ["mixHash", "string", null, "getMixHash", "setMixHash"], 
-        "nonce" => ["nonce", "string", null, "getNonce", "setNonce"], 
-        "number" => ["number", "float", null, "getNumber", "setNumber"], 
-        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash"], 
-        "receipts_root" => ["receiptsRoot", "string", null, "getReceiptsRoot", "setReceiptsRoot"], 
-        "sha3_uncles" => ["sha3Uncles", "string", null, "getSha3Uncles", "setSha3Uncles"], 
-        "size" => ["size", "float", null, "getSize", "setSize"], 
-        "state_root" => ["stateRoot", "string", null, "getStateRoot", "setStateRoot"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "total_difficulty" => ["totalDifficulty", "string", null, "getTotalDifficulty", "setTotalDifficulty"], 
-        "transactions" => ["transactions", "\Tatum\Model\BscTx[]", null, "getTransactions", "setTransactions"], 
-        "transactions_root" => ["transactionsRoot", "string", null, "getTransactionsRoot", "setTransactionsRoot"]
+        "difficulty" => ["difficulty", "string", null, "getDifficulty", "setDifficulty", null], 
+        "extra_data" => ["extraData", "string", null, "getExtraData", "setExtraData", null], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "logs_bloom" => ["logsBloom", "string", null, "getLogsBloom", "setLogsBloom", null], 
+        "miner" => ["miner", "string", null, "getMiner", "setMiner", null], 
+        "mix_hash" => ["mixHash", "string", null, "getMixHash", "setMixHash", null], 
+        "nonce" => ["nonce", "string", null, "getNonce", "setNonce", null], 
+        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
+        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash", null], 
+        "receipts_root" => ["receiptsRoot", "string", null, "getReceiptsRoot", "setReceiptsRoot", null], 
+        "sha3_uncles" => ["sha3Uncles", "string", null, "getSha3Uncles", "setSha3Uncles", null], 
+        "size" => ["size", "float", null, "getSize", "setSize", null], 
+        "state_root" => ["stateRoot", "string", null, "getStateRoot", "setStateRoot", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "total_difficulty" => ["totalDifficulty", "string", null, "getTotalDifficulty", "setTotalDifficulty", null], 
+        "transactions" => ["transactions", "\Tatum\Model\BscTx[]", null, "getTransactions", "setTransactions", null], 
+        "transactions_root" => ["transactionsRoot", "string", null, "getTransactionsRoot", "setTransactionsRoot", null]
     ];
 
     /**
@@ -52,20 +52,19 @@ class BscBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["difficulty"=>null, "extra_data"=>null, "gas_limit"=>null, "gas_used"=>null, "hash"=>null, "logs_bloom"=>null, "miner"=>null, "mix_hash"=>null, "nonce"=>null, "number"=>null, "parent_hash"=>null, "receipts_root"=>null, "sha3_uncles"=>null, "size"=>null, "state_root"=>null, "timestamp"=>null, "total_difficulty"=>null, "transactions"=>null, "transactions_root"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get difficulty

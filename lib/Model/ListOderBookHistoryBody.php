@@ -39,18 +39,18 @@ class ListOderBookHistoryBody extends AbstractModel {
     public const SORT_FEE_DESC = 'FEE_DESC';
     protected static $_name = "ListOderBookHistoryBody";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId"], 
-        "page_size" => ["pageSize", "float", null, "getPageSize", "setPageSize"], 
-        "offset" => ["offset", "float", null, "getOffset", "setOffset"], 
-        "pair" => ["pair", "string", null, "getPair", "setPair"], 
-        "count" => ["count", "bool", null, "getCount", "setCount"], 
-        "types" => ["types", "string[]", null, "getTypes", "setTypes"], 
-        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount"], 
-        "fill" => ["fill", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getFill", "setFill"], 
-        "price" => ["price", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getPrice", "setPrice"], 
-        "created" => ["created", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getCreated", "setCreated"], 
-        "sort" => ["sort", "string[]", null, "getSort", "setSort"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null], 
+        "page_size" => ["pageSize", "float", null, "getPageSize", "setPageSize", null], 
+        "offset" => ["offset", "float", null, "getOffset", "setOffset", null], 
+        "pair" => ["pair", "string", null, "getPair", "setPair", null], 
+        "count" => ["count", "bool", null, "getCount", "setCount", null], 
+        "types" => ["types", "string[]", null, "getTypes", "setTypes", null], 
+        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount", null], 
+        "fill" => ["fill", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getFill", "setFill", null], 
+        "price" => ["price", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getPrice", "setPrice", null], 
+        "created" => ["created", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getCreated", "setCreated", null], 
+        "sort" => ["sort", "string[]", null, "getSort", "setSort", null]
     ];
 
     /**
@@ -59,17 +59,16 @@ class ListOderBookHistoryBody extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "customer_id"=>null, "page_size"=>null, "offset"=>null, "pair"=>null, "count"=>null, "types"=>null, "amount"=>null, "fill"=>null, "price"=>null, "created"=>null, "sort"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['page_size'])) {
             $ip[] = "'page_size' can't be null";
         }
@@ -88,9 +87,9 @@ class ListOderBookHistoryBody extends AbstractModel {
         if (!is_null($this->_data['pair']) && !preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $this->_data['pair'])) {
             $ip[] = "'pair' must match /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

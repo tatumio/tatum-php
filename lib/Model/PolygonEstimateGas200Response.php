@@ -25,8 +25,8 @@ class PolygonEstimateGas200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "PolygonEstimateGas_200_response";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit"], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"]
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class PolygonEstimateGas200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["gas_limit"=>null, "gas_price"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['gas_limit'])) {
             $ip[] = "'gas_limit' can't be null";
         }
         if (is_null($this->_data['gas_price'])) {
             $ip[] = "'gas_price' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get gas_limit

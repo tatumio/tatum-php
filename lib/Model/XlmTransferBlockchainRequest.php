@@ -25,15 +25,15 @@ class XlmTransferBlockchainRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmTransferBlockchain_request";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret"], 
-        "initialize" => ["initialize", "bool", null, "getInitialize", "setInitialize"], 
-        "message" => ["message", "string", null, "getMessage", "setMessage"], 
-        "token" => ["token", "string", null, "getToken", "setToken"], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null], 
+        "initialize" => ["initialize", "bool", null, "getInitialize", "setInitialize", false], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null], 
+        "token" => ["token", "string", null, "getToken", "setToken", null], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -42,17 +42,16 @@ class XlmTransferBlockchainRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_account"=>null, "to"=>null, "amount"=>null, "from_secret"=>null, "initialize"=>false, "message"=>null, "token"=>null, "issuer_account"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_account'])) {
             $ip[] = "'from_account' can't be null";
         }
@@ -116,9 +115,9 @@ class XlmTransferBlockchainRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_account

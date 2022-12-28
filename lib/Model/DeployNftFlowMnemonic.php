@@ -26,10 +26,10 @@ class DeployNftFlowMnemonic extends AbstractModel {
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "DeployNftFlowMnemonic";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class DeployNftFlowMnemonic extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "account"=>null, "mnemonic"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -81,9 +80,9 @@ class DeployNftFlowMnemonic extends AbstractModel {
         if (($this->_data['index'] > 2147483647)) {
             $ip[] = "'index' must be <= 2147483647";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

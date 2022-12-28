@@ -25,8 +25,8 @@ class Wallet extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Wallet";
     protected static $_definition = [
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"]
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class Wallet extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["mnemonic"=>null, "xpub"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get mnemonic

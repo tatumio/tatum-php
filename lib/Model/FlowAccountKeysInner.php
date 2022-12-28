@@ -25,13 +25,13 @@ class FlowAccountKeysInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAccount_keys_inner";
     protected static $_definition = [
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey"], 
-        "sign_algo" => ["signAlgo", "float", null, "getSignAlgo", "setSignAlgo"], 
-        "hash_algo" => ["hashAlgo", "float", null, "getHashAlgo", "setHashAlgo"], 
-        "sequence_number" => ["sequenceNumber", "float", null, "getSequenceNumber", "setSequenceNumber"], 
-        "revoked" => ["revoked", "bool", null, "getRevoked", "setRevoked"], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight"]
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
+        "sign_algo" => ["signAlgo", "float", null, "getSignAlgo", "setSignAlgo", null], 
+        "hash_algo" => ["hashAlgo", "float", null, "getHashAlgo", "setHashAlgo", null], 
+        "sequence_number" => ["sequenceNumber", "float", null, "getSequenceNumber", "setSequenceNumber", null], 
+        "revoked" => ["revoked", "bool", null, "getRevoked", "setRevoked", null], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null]
     ];
 
     /**
@@ -40,20 +40,19 @@ class FlowAccountKeysInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["index"=>null, "public_key"=>null, "sign_algo"=>null, "hash_algo"=>null, "sequence_number"=>null, "revoked"=>null, "weight"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get index

@@ -26,12 +26,12 @@ class ChainDeploySolanaSpl extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "ChainDeploySolanaSpl";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class ChainDeploySolanaSpl extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "supply"=>null, "digits"=>null, "address"=>null, "from"=>null, "from_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -104,9 +103,9 @@ class ChainDeploySolanaSpl extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 128)) {
             $ip[] = "'from_private_key' length must be >= 128";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

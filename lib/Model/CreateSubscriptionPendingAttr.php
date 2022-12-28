@@ -27,8 +27,8 @@ class CreateSubscriptionPendingAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateSubscriptionPending_attr";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class CreateSubscriptionPendingAttr extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "url"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -63,9 +62,9 @@ class CreateSubscriptionPendingAttr extends AbstractModel {
         if ((mb_strlen($this->_data['url']) > 500)) {
             $ip[] = "'url' length must be <= 500";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get id

@@ -31,8 +31,8 @@ class TransactionFilterAmountInner extends AbstractModel {
     public const OP_NEQ = 'neq';
     protected static $_name = "TransactionFilter_amount_inner";
     protected static $_definition = [
-        "op" => ["op", "string", null, "getOp", "setOp"], 
-        "value" => ["value", "string", null, "getValue", "setValue"]
+        "op" => ["op", "string", null, "getOp", "setOp", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class TransactionFilterAmountInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["op"=>null, "value"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['op'])) {
             $ip[] = "'op' can't be null";
         }
@@ -63,9 +62,9 @@ class TransactionFilterAmountInner extends AbstractModel {
         if (is_null($this->_data['value'])) {
             $ip[] = "'value' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

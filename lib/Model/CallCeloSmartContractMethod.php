@@ -28,15 +28,15 @@ class CallCeloSmartContractMethod extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "CallCeloSmartContractMethod";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName"], 
-        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi"], 
-        "params" => ["params", "string[]", null, "getParams", "setParams"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null], 
+        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null], 
+        "params" => ["params", "string[]", null, "getParams", "setParams", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -45,17 +45,16 @@ class CallCeloSmartContractMethod extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["contract_address"=>null, "method_name"=>null, "method_abi"=>null, "params"=>null, "amount"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['contract_address'])) {
             $ip[] = "'contract_address' can't be null";
         }
@@ -103,9 +102,9 @@ class CallCeloSmartContractMethod extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

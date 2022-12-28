@@ -27,8 +27,8 @@ class TronAccountTrc10Inner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronAccount_trc10_inner";
     protected static $_definition = [
-        "key" => ["key", "string", null, "getKey", "setKey"], 
-        "value" => ["value", "float", null, "getValue", "setValue"]
+        "key" => ["key", "string", null, "getKey", "setKey", null], 
+        "value" => ["value", "float", null, "getValue", "setValue", null]
     ];
 
     /**
@@ -37,26 +37,25 @@ class TronAccountTrc10Inner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["key"=>null, "value"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['key'])) {
             $ip[] = "'key' can't be null";
         }
         if (is_null($this->_data['value'])) {
             $ip[] = "'value' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get key

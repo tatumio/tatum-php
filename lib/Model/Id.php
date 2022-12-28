@@ -25,7 +25,7 @@ class Id extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Id";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"]
+        "id" => ["id", "string", null, "getId", "setId", null]
     ];
 
     /**
@@ -34,20 +34,19 @@ class Id extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get id

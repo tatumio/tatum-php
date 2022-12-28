@@ -25,16 +25,16 @@ class GetVersion200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "getVersion_200_response";
     protected static $_definition = [
-        "version" => ["version", "string", null, "getVersion", "setVersion"], 
-        "status" => ["status", "string", null, "getStatus", "setStatus"], 
-        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet"], 
-        "plan_name" => ["planName", "string", null, "getPlanName", "setPlanName"], 
-        "plan_code" => ["planCode", "string", null, "getPlanCode", "setPlanCode"], 
-        "price" => ["price", "float", null, "getPrice", "setPrice"], 
-        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration"], 
-        "credit_limit" => ["creditLimit", "float", null, "getCreditLimit", "setCreditLimit"], 
-        "usage" => ["usage", "float", null, "getUsage", "setUsage"], 
-        "rollover_day" => ["rolloverDay", "float", null, "getRolloverDay", "setRolloverDay"]
+        "version" => ["version", "string", null, "getVersion", "setVersion", null], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
+        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet", null], 
+        "plan_name" => ["planName", "string", null, "getPlanName", "setPlanName", null], 
+        "plan_code" => ["planCode", "string", null, "getPlanCode", "setPlanCode", null], 
+        "price" => ["price", "float", null, "getPrice", "setPrice", null], 
+        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null], 
+        "credit_limit" => ["creditLimit", "float", null, "getCreditLimit", "setCreditLimit", null], 
+        "usage" => ["usage", "float", null, "getUsage", "setUsage", null], 
+        "rollover_day" => ["rolloverDay", "float", null, "getRolloverDay", "setRolloverDay", null]
     ];
 
     /**
@@ -43,20 +43,19 @@ class GetVersion200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["version"=>null, "status"=>null, "testnet"=>null, "plan_name"=>null, "plan_code"=>null, "price"=>null, "expiration"=>null, "credit_limit"=>null, "usage"=>null, "rollover_day"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get version

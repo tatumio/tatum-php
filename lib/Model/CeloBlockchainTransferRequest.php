@@ -31,15 +31,15 @@ class CeloBlockchainTransferRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "CeloBlockchainTransfer_request";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class CeloBlockchainTransferRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null, "nonce"=>null, "to"=>null, "currency"=>null, "fee_currency"=>null, "amount"=>null, "from_private_key"=>null, "index"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 50000)) {
             $ip[] = "'data' length must be <= 50000";
         }
@@ -111,9 +110,9 @@ class CeloBlockchainTransferRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

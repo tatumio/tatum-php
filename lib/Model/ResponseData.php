@@ -25,11 +25,11 @@ class ResponseData extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "ResponseData";
     protected static $_definition = [
-        "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "float", null, "getAmount", "setAmount"], 
-        "v_in" => ["vIn", "string", null, "getVIn", "setVIn"], 
-        "v_in_index" => ["vInIndex", "int", null, "getVInIndex", "setVInIndex"], 
-        "script_pub_key" => ["scriptPubKey", "string", null, "getScriptPubKey", "setScriptPubKey"]
+        "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", null], 
+        "v_in" => ["vIn", "string", null, "getVIn", "setVIn", null], 
+        "v_in_index" => ["vInIndex", "int", null, "getVInIndex", "setVInIndex", null], 
+        "script_pub_key" => ["scriptPubKey", "string", null, "getScriptPubKey", "setScriptPubKey", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class ResponseData extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "amount"=>null, "v_in"=>null, "v_in_index"=>null, "script_pub_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get address

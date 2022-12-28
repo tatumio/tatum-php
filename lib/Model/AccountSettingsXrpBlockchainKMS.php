@@ -25,11 +25,11 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AccountSettingsXrpBlockchainKMS";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "rippling" => ["rippling", "bool", null, "getRippling", "setRippling"], 
-        "require_destination_tag" => ["requireDestinationTag", "bool", null, "getRequireDestinationTag", "setRequireDestinationTag"]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "rippling" => ["rippling", "bool", null, "getRippling", "setRippling", null], 
+        "require_destination_tag" => ["requireDestinationTag", "bool", null, "getRequireDestinationTag", "setRequireDestinationTag", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_account"=>null, "signature_id"=>null, "fee"=>null, "rippling"=>null, "require_destination_tag"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_account'])) {
             $ip[] = "'from_account' can't be null";
         }
@@ -64,9 +63,9 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
         if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
             $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_account

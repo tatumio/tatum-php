@@ -29,20 +29,20 @@ class Erc20TransferRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "Erc20Transfer_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer"], 
-        "fee_payer_private_key" => ["feePayerPrivateKey", "string", null, "getFeePayerPrivateKey", "setFeePayerPrivateKey"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee_payer_signature_id" => ["feePayerSignatureId", "string", 'uuid', "getFeePayerSignatureId", "setFeePayerSignatureId"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer", null], 
+        "fee_payer_private_key" => ["feePayerPrivateKey", "string", null, "getFeePayerPrivateKey", "setFeePayerPrivateKey", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "fee_payer_signature_id" => ["feePayerSignatureId", "string", 'uuid', "getFeePayerSignatureId", "setFeePayerSignatureId", null]
     ];
 
     /**
@@ -51,17 +51,16 @@ class Erc20TransferRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "contract_address"=>null, "amount"=>null, "digits"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "from"=>null, "fee_payer"=>null, "fee_payer_private_key"=>null, "fee_currency"=>null, "signature_id"=>null, "fee_payer_signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -147,9 +146,9 @@ class Erc20TransferRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

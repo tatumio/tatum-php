@@ -25,16 +25,16 @@ class Account extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Account";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "balance" => ["balance", "\Tatum\Model\AccountBalance", null, "getBalance", "setBalance"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "frozen" => ["frozen", "bool", null, "getFrozen", "setFrozen"], 
-        "active" => ["active", "bool", null, "getActive", "setActive"], 
-        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId"], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber"], 
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "balance" => ["balance", "\Tatum\Model\AccountBalance", null, "getBalance", "setBalance", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "frozen" => ["frozen", "bool", null, "getFrozen", "setFrozen", null], 
+        "active" => ["active", "bool", null, "getActive", "setActive", null], 
+        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null], 
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class Account extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "balance"=>null, "currency"=>null, "frozen"=>null, "active"=>null, "customer_id"=>null, "account_number"=>null, "account_code"=>null, "accounting_currency"=>null, "xpub"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -75,9 +74,9 @@ class Account extends AbstractModel {
         if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) < 1)) {
             $ip[] = "'account_number' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get id

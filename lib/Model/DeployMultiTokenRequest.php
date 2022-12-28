@@ -29,15 +29,15 @@ class DeployMultiTokenRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "DeployMultiToken_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "uri" => ["uri", "string", null, "getUri", "setUri"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "uri" => ["uri", "string", null, "getUri", "setUri", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -46,17 +46,16 @@ class DeployMultiTokenRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "uri"=>null, "from_private_key"=>null, "public_mint"=>null, "nonce"=>null, "fee"=>null, "signature_id"=>null, "fee_currency"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -100,9 +99,9 @@ class DeployMultiTokenRequest extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

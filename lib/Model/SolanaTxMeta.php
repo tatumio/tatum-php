@@ -25,16 +25,16 @@ class SolanaTxMeta extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxMeta";
     protected static $_definition = [
-        "err" => ["err", "object", null, "getErr", "setErr"], 
-        "fee" => ["fee", "float", null, "getFee", "setFee"], 
-        "inner_instructions" => ["innerInstructions", "object[]", null, "getInnerInstructions", "setInnerInstructions"], 
-        "log_messages" => ["logMessages", "string[]", null, "getLogMessages", "setLogMessages"], 
-        "post_balances" => ["postBalances", "float[]", null, "getPostBalances", "setPostBalances"], 
-        "post_token_balances" => ["postTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPostTokenBalances", "setPostTokenBalances"], 
-        "pre_balances" => ["preBalances", "float[]", null, "getPreBalances", "setPreBalances"], 
-        "pre_token_balances" => ["preTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPreTokenBalances", "setPreTokenBalances"], 
-        "rewards" => ["rewards", "object[]", null, "getRewards", "setRewards"], 
-        "status" => ["status", "\Tatum\Model\SolanaTxMetaStatus", null, "getStatus", "setStatus"]
+        "err" => ["err", "object", null, "getErr", "setErr", null], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
+        "inner_instructions" => ["innerInstructions", "object[]", null, "getInnerInstructions", "setInnerInstructions", null], 
+        "log_messages" => ["logMessages", "string[]", null, "getLogMessages", "setLogMessages", null], 
+        "post_balances" => ["postBalances", "float[]", null, "getPostBalances", "setPostBalances", null], 
+        "post_token_balances" => ["postTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPostTokenBalances", "setPostTokenBalances", null], 
+        "pre_balances" => ["preBalances", "float[]", null, "getPreBalances", "setPreBalances", null], 
+        "pre_token_balances" => ["preTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPreTokenBalances", "setPreTokenBalances", null], 
+        "rewards" => ["rewards", "object[]", null, "getRewards", "setRewards", null], 
+        "status" => ["status", "\Tatum\Model\SolanaTxMetaStatus", null, "getStatus", "setStatus", null]
     ];
 
     /**
@@ -43,20 +43,19 @@ class SolanaTxMeta extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["err"=>null, "fee"=>null, "inner_instructions"=>null, "log_messages"=>null, "post_balances"=>null, "post_token_balances"=>null, "pre_balances"=>null, "pre_token_balances"=>null, "rewards"=>null, "status"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get err

@@ -25,18 +25,18 @@ class VetTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTx";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "chain_tag" => ["chainTag", "string", null, "getChainTag", "setChainTag"], 
-        "block_ref" => ["blockRef", "string", null, "getBlockRef", "setBlockRef"], 
-        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration"], 
-        "clauses" => ["clauses", "\Tatum\Model\VetTxClausesInner[]", null, "getClauses", "setClauses"], 
-        "gas_price_coef" => ["gasPriceCoef", "float", null, "getGasPriceCoef", "setGasPriceCoef"], 
-        "gas" => ["gas", "float", null, "getGas", "setGas"], 
-        "origin" => ["origin", "string", null, "getOrigin", "setOrigin"], 
-        "nonce" => ["nonce", "string", null, "getNonce", "setNonce"], 
-        "size" => ["size", "float", null, "getSize", "setSize"], 
-        "meta" => ["meta", "\Tatum\Model\VetTxMeta", null, "getMeta", "setMeta"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "chain_tag" => ["chainTag", "string", null, "getChainTag", "setChainTag", null], 
+        "block_ref" => ["blockRef", "string", null, "getBlockRef", "setBlockRef", null], 
+        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null], 
+        "clauses" => ["clauses", "\Tatum\Model\VetTxClausesInner[]", null, "getClauses", "setClauses", null], 
+        "gas_price_coef" => ["gasPriceCoef", "float", null, "getGasPriceCoef", "setGasPriceCoef", null], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
+        "origin" => ["origin", "string", null, "getOrigin", "setOrigin", null], 
+        "nonce" => ["nonce", "string", null, "getNonce", "setNonce", null], 
+        "size" => ["size", "float", null, "getSize", "setSize", null], 
+        "meta" => ["meta", "\Tatum\Model\VetTxMeta", null, "getMeta", "setMeta", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null]
     ];
 
     /**
@@ -45,20 +45,19 @@ class VetTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "chain_tag"=>null, "block_ref"=>null, "expiration"=>null, "clauses"=>null, "gas_price_coef"=>null, "gas"=>null, "origin"=>null, "nonce"=>null, "size"=>null, "meta"=>null, "block_number"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get id

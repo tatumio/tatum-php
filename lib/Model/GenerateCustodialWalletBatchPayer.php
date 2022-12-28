@@ -30,10 +30,10 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
     public const CHAIN_CELO = 'CELO';
     protected static $_name = "GenerateCustodialWalletBatchPayer";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered"], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount"], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered", null], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null]
     ];
 
     /**
@@ -42,17 +42,16 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "fees_covered"=>null, "batch_count"=>null, "owner"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -82,9 +81,9 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
         if ((mb_strlen($this->_data['owner']) < 42)) {
             $ip[] = "'owner' length must be >= 42";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

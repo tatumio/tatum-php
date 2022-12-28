@@ -26,16 +26,16 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
     public const CHAIN_CELO = 'CELO';
     protected static $_name = "ApproveNftSpendingCeloKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "spender" => ["spender", "string", null, "getSpender", "setSpender"], 
-        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721"], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "spender" => ["spender", "string", null, "getSpender", "setSpender", null], 
+        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "spender"=>null, "is_erc721"=>null, "token_id"=>null, "contract_address"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -99,9 +98,9 @@ class ApproveNftSpendingCeloKMS extends AbstractModel {
         if (is_null($this->_data['fee_currency'])) {
             $ip[] = "'fee_currency' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

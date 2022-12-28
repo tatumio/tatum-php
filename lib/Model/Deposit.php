@@ -28,21 +28,21 @@ class Deposit extends AbstractModel {
     public const STATUS_FAILED = 'Failed';
     protected static $_name = "Deposit";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "status" => ["status", "string", null, "getStatus", "setStatus"], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "reference" => ["reference", "string", null, "getReference", "setReference"], 
-        "vout" => ["vout", "float", null, "getVout", "setVout"], 
-        "spent" => ["spent", "bool", null, "getSpent", "setSpent"], 
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight"], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
+        "vout" => ["vout", "float", null, "getVout", "setVout", null], 
+        "spent" => ["spent", "bool", null, "getSpent", "setSpent", null], 
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null]
     ];
 
     /**
@@ -51,17 +51,16 @@ class Deposit extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "address"=>null, "timestamp"=>null, "xpub"=>null, "derivation_key"=>null, "amount"=>null, "status"=>null, "account_id"=>null, "currency"=>null, "reference"=>null, "vout"=>null, "spent"=>null, "block_height"=>null, "block_hash"=>null, "from"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
@@ -115,9 +114,9 @@ class Deposit extends AbstractModel {
         if (($this->_data['block_height'] < 0)) {
             $ip[] = "'block_height' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

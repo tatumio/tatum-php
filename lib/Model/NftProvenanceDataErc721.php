@@ -25,8 +25,8 @@ class NftProvenanceDataErc721 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftProvenanceDataErc721";
     protected static $_definition = [
-        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData"], 
-        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice"]
+        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null], 
+        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class NftProvenanceDataErc721 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["provenance_data"=>null, "token_price"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get provenance_data

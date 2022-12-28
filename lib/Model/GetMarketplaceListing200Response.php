@@ -28,19 +28,19 @@ class GetMarketplaceListing200Response extends AbstractModel {
     public const STATE__2 = '2';
     protected static $_name = "GetMarketplaceListing_200_response";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer"], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address"], 
-        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721"], 
-        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId"], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress"], 
-        "price" => ["price", "string", null, "getPrice", "setPrice"], 
-        "seller" => ["seller", "string", null, "getSeller", "setSeller"], 
-        "state" => ["state", "string", null, "getState", "setState"], 
-        "nft" => ["nft", "\Tatum\Model\SolanaListingDataNft", null, "getNft", "setNft"], 
-        "created_at" => ["createdAt", "float", null, "getCreatedAt", "setCreatedAt"], 
-        "purchased_at" => ["purchasedAt", "float", null, "getPurchasedAt", "setPurchasedAt"], 
-        "cancelled_at" => ["cancelledAt", "float", null, "getCancelledAt", "setCancelledAt"]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer", null], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
+        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null], 
+        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
+        "seller" => ["seller", "string", null, "getSeller", "setSeller", null], 
+        "state" => ["state", "string", null, "getState", "setState", null], 
+        "nft" => ["nft", "\Tatum\Model\SolanaListingDataNft", null, "getNft", "setNft", null], 
+        "created_at" => ["createdAt", "float", null, "getCreatedAt", "setCreatedAt", null], 
+        "purchased_at" => ["purchasedAt", "float", null, "getPurchasedAt", "setPurchasedAt", null], 
+        "cancelled_at" => ["cancelledAt", "float", null, "getCancelledAt", "setCancelledAt", null]
     ];
 
     /**
@@ -49,17 +49,16 @@ class GetMarketplaceListing200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["amount"=>null, "buyer"=>null, "erc20_address"=>null, "is_erc721"=>null, "listing_id"=>null, "nft_address"=>null, "price"=>null, "seller"=>null, "state"=>null, "nft"=>null, "created_at"=>null, "purchased_at"=>null, "cancelled_at"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['amount'])) {
             $ip[] = "'amount' can't be null";
         }
@@ -86,9 +85,9 @@ class GetMarketplaceListing200Response extends AbstractModel {
         if (is_null($this->_data['created_at'])) {
             $ip[] = "'created_at' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,11 +25,11 @@ class TransferVetBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferVetBlockchain";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "fee" => ["fee", "\Tatum\Model\TransferVetBlockchainFee", null, "getFee", "setFee"]
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "fee" => ["fee", "\Tatum\Model\TransferVetBlockchainFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class TransferVetBlockchain extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["to"=>null, "amount"=>null, "from_private_key"=>null, "data"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
@@ -76,9 +75,9 @@ class TransferVetBlockchain extends AbstractModel {
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 10000)) {
             $ip[] = "'data' length must be <= 10000";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get to

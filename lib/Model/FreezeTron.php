@@ -27,11 +27,11 @@ class FreezeTron extends AbstractModel {
     public const RESOURCE_ENERGY = 'ENERGY';
     protected static $_name = "FreezeTron";
     protected static $_definition = [
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver"], 
-        "duration" => ["duration", "float", null, "getDuration", "setDuration"], 
-        "resource" => ["resource", "string", null, "getResource", "setResource"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
+        "duration" => ["duration", "float", null, "getDuration", "setDuration", null], 
+        "resource" => ["resource", "string", null, "getResource", "setResource", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class FreezeTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_private_key"=>null, "receiver"=>null, "duration"=>null, "resource"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
         }
@@ -89,9 +88,9 @@ class FreezeTron extends AbstractModel {
         if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
             $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

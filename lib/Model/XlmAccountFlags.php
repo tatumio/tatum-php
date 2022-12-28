@@ -27,9 +27,9 @@ class XlmAccountFlags extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmAccount_flags";
     protected static $_definition = [
-        "auth_required" => ["auth_required", "bool", null, "getAuthRequired", "setAuthRequired"], 
-        "auth_revocable" => ["auth_revocable", "bool", null, "getAuthRevocable", "setAuthRevocable"], 
-        "auth_immutable" => ["auth_immutable", "bool", null, "getAuthImmutable", "setAuthImmutable"]
+        "auth_required" => ["auth_required", "bool", null, "getAuthRequired", "setAuthRequired", null], 
+        "auth_revocable" => ["auth_revocable", "bool", null, "getAuthRevocable", "setAuthRevocable", null], 
+        "auth_immutable" => ["auth_immutable", "bool", null, "getAuthImmutable", "setAuthImmutable", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class XlmAccountFlags extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["auth_required"=>null, "auth_revocable"=>null, "auth_immutable"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get auth_required

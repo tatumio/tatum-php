@@ -25,24 +25,24 @@ class AlgoTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoTx";
     protected static $_definition = [
-        "close_rewards" => ["closeRewards", "float", null, "getCloseRewards", "setCloseRewards"], 
-        "closing_amount" => ["closingAmount", "float", null, "getClosingAmount", "setClosingAmount"], 
-        "confirmed_round" => ["confirmedRound", "float", null, "getConfirmedRound", "setConfirmedRound"], 
-        "fee" => ["fee", "float", null, "getFee", "setFee"], 
-        "first_valid" => ["firstValid", "float", null, "getFirstValid", "setFirstValid"], 
-        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash"], 
-        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId"], 
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "intra_round_offset" => ["intraRoundOffset", "float", null, "getIntraRoundOffset", "setIntraRoundOffset"], 
-        "last_valid" => ["lastValid", "float", null, "getLastValid", "setLastValid"], 
-        "note" => ["note", "string", null, "getNote", "setNote"], 
-        "payment_transaction" => ["paymentTransaction", "object", null, "getPaymentTransaction", "setPaymentTransaction"], 
-        "receiver_rewards" => ["receiverRewards", "float", null, "getReceiverRewards", "setReceiverRewards"], 
-        "round_time" => ["roundTime", "float", null, "getRoundTime", "setRoundTime"], 
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "sender_rewards" => ["senderRewards", "float", null, "getSenderRewards", "setSenderRewards"], 
-        "signature" => ["signature", "object", null, "getSignature", "setSignature"], 
-        "tx_type" => ["txType", "string", null, "getTxType", "setTxType"]
+        "close_rewards" => ["closeRewards", "float", null, "getCloseRewards", "setCloseRewards", null], 
+        "closing_amount" => ["closingAmount", "float", null, "getClosingAmount", "setClosingAmount", null], 
+        "confirmed_round" => ["confirmedRound", "float", null, "getConfirmedRound", "setConfirmedRound", null], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
+        "first_valid" => ["firstValid", "float", null, "getFirstValid", "setFirstValid", null], 
+        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash", null], 
+        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId", null], 
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "intra_round_offset" => ["intraRoundOffset", "float", null, "getIntraRoundOffset", "setIntraRoundOffset", null], 
+        "last_valid" => ["lastValid", "float", null, "getLastValid", "setLastValid", null], 
+        "note" => ["note", "string", null, "getNote", "setNote", null], 
+        "payment_transaction" => ["paymentTransaction", "object", null, "getPaymentTransaction", "setPaymentTransaction", null], 
+        "receiver_rewards" => ["receiverRewards", "float", null, "getReceiverRewards", "setReceiverRewards", null], 
+        "round_time" => ["roundTime", "float", null, "getRoundTime", "setRoundTime", null], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "sender_rewards" => ["senderRewards", "float", null, "getSenderRewards", "setSenderRewards", null], 
+        "signature" => ["signature", "object", null, "getSignature", "setSignature", null], 
+        "tx_type" => ["txType", "string", null, "getTxType", "setTxType", null]
     ];
 
     /**
@@ -51,20 +51,19 @@ class AlgoTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["close_rewards"=>null, "closing_amount"=>null, "confirmed_round"=>null, "fee"=>null, "first_valid"=>null, "genesis_hash"=>null, "genesis_id"=>null, "id"=>null, "intra_round_offset"=>null, "last_valid"=>null, "note"=>null, "payment_transaction"=>null, "receiver_rewards"=>null, "round_time"=>null, "sender"=>null, "sender_rewards"=>null, "signature"=>null, "tx_type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get close_rewards

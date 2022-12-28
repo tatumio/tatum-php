@@ -25,11 +25,11 @@ class TransferVetBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferVetBlockchainKMS";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "fee" => ["fee", "\Tatum\Model\TransferVetBlockchainFee", null, "getFee", "setFee"]
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "fee" => ["fee", "\Tatum\Model\TransferVetBlockchainFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class TransferVetBlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["to"=>null, "amount"=>null, "signature_id"=>null, "data"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
@@ -70,9 +69,9 @@ class TransferVetBlockchainKMS extends AbstractModel {
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 10000)) {
             $ip[] = "'data' length must be <= 10000";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get to

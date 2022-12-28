@@ -25,11 +25,11 @@ class SolanaTxMessage extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxMessage";
     protected static $_definition = [
-        "header" => ["header", "\Tatum\Model\SolanaTxMessageHeader", null, "getHeader", "setHeader"], 
-        "account_keys" => ["accountKeys", "string[]", null, "getAccountKeys", "setAccountKeys"], 
-        "recent_blockhash" => ["recentBlockhash", "string", null, "getRecentBlockhash", "setRecentBlockhash"], 
-        "instructions" => ["instructions", "\Tatum\Model\SolanaTxMessageInstruction[]", null, "getInstructions", "setInstructions"], 
-        "index_to_program_ids" => ["indexToProgramIds", "object", null, "getIndexToProgramIds", "setIndexToProgramIds"]
+        "header" => ["header", "\Tatum\Model\SolanaTxMessageHeader", null, "getHeader", "setHeader", null], 
+        "account_keys" => ["accountKeys", "string[]", null, "getAccountKeys", "setAccountKeys", null], 
+        "recent_blockhash" => ["recentBlockhash", "string", null, "getRecentBlockhash", "setRecentBlockhash", null], 
+        "instructions" => ["instructions", "\Tatum\Model\SolanaTxMessageInstruction[]", null, "getInstructions", "setInstructions", null], 
+        "index_to_program_ids" => ["indexToProgramIds", "object", null, "getIndexToProgramIds", "setIndexToProgramIds", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class SolanaTxMessage extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["header"=>null, "account_keys"=>null, "recent_blockhash"=>null, "instructions"=>null, "index_to_program_ids"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get header

@@ -25,10 +25,10 @@ class UiTokenAmount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "UiTokenAmount";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
-        "ui_amount" => ["uiAmount", "mixed", null, "getUiAmount", "setUiAmount"], 
-        "ui_amount_string" => ["uiAmountString", "string", null, "getUiAmountString", "setUiAmountString"]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
+        "ui_amount" => ["uiAmount", "mixed", null, "getUiAmount", "setUiAmount", null], 
+        "ui_amount_string" => ["uiAmountString", "string", null, "getUiAmountString", "setUiAmountString", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class UiTokenAmount extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["amount"=>null, "decimals"=>null, "ui_amount"=>null, "ui_amount_string"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get amount

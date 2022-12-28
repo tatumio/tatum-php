@@ -25,8 +25,8 @@ class GasPumpTrxOut extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GasPumpTrxOut";
     protected static $_definition = [
-        "valid" => ["valid", "\Tatum\Model\ValidGasPumpAddress[]", null, "getValid", "setValid"], 
-        "invalid" => ["invalid", "\Tatum\Model\InvalidGasPumpAddress[]", null, "getInvalid", "setInvalid"]
+        "valid" => ["valid", "\Tatum\Model\ValidGasPumpAddress[]", null, "getValid", "setValid", null], 
+        "invalid" => ["invalid", "\Tatum\Model\InvalidGasPumpAddress[]", null, "getInvalid", "setInvalid", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class GasPumpTrxOut extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["valid"=>null, "invalid"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get valid

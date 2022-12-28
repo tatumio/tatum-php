@@ -25,10 +25,10 @@ class FlowBlockBlockSealsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowBlock_blockSeals_inner";
     protected static $_definition = [
-        "block_id" => ["blockId", "string", null, "getBlockId", "setBlockId"], 
-        "execution_receipt_signatures" => ["executionReceiptSignatures", "string[]", null, "getExecutionReceiptSignatures", "setExecutionReceiptSignatures"], 
-        "execution_receipt_id" => ["executionReceiptId", "string", null, "getExecutionReceiptId", "setExecutionReceiptId"], 
-        "result_approval_signatures" => ["resultApprovalSignatures", "string[]", null, "getResultApprovalSignatures", "setResultApprovalSignatures"]
+        "block_id" => ["blockId", "string", null, "getBlockId", "setBlockId", null], 
+        "execution_receipt_signatures" => ["executionReceiptSignatures", "string[]", null, "getExecutionReceiptSignatures", "setExecutionReceiptSignatures", null], 
+        "execution_receipt_id" => ["executionReceiptId", "string", null, "getExecutionReceiptId", "setExecutionReceiptId", null], 
+        "result_approval_signatures" => ["resultApprovalSignatures", "string[]", null, "getResultApprovalSignatures", "setResultApprovalSignatures", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class FlowBlockBlockSealsInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_id"=>null, "execution_receipt_signatures"=>null, "execution_receipt_id"=>null, "result_approval_signatures"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_id

@@ -25,17 +25,17 @@ class TransferBtcKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferBtcKMS";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class TransferBtcKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "address"=>null, "amount"=>null, "compliant"=>null, "fee"=>null, "multiple_amounts"=>null, "attr"=>null, "signature_id"=>null, "xpub"=>null, "payment_id"=>null, "sender_note"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -115,9 +114,9 @@ class TransferBtcKMS extends AbstractModel {
         if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
             $ip[] = "'sender_note' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

@@ -691,10 +691,10 @@ class CustomerUpdate extends AbstractModel {
     public const PROVIDER_COUNTRY_ZW = 'ZW';
     protected static $_name = "CustomerUpdate";
     protected static $_definition = [
-        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry"], 
-        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry"]
+        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
+        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null], 
+        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null]
     ];
 
     /**
@@ -703,17 +703,16 @@ class CustomerUpdate extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["external_id"=>null, "accounting_currency"=>null, "customer_country"=>null, "provider_country"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['external_id'])) {
             $ip[] = "'external_id' can't be null";
         }
@@ -756,9 +755,9 @@ class CustomerUpdate extends AbstractModel {
         if (!is_null($this->_data['provider_country']) && (mb_strlen($this->_data['provider_country']) < 2)) {
             $ip[] = "'provider_country' length must be >= 2";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

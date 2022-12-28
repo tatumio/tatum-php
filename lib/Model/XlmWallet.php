@@ -25,8 +25,8 @@ class XlmWallet extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmWallet";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "secret" => ["secret", "string", null, "getSecret", "setSecret"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "secret" => ["secret", "string", null, "getSecret", "setSecret", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class XlmWallet extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "secret"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
         if (is_null($this->_data['secret'])) {
             $ip[] = "'secret' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get address

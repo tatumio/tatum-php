@@ -25,12 +25,12 @@ class TrustLineXrpBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TrustLineXrpBlockchainKMS";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount"], 
-        "limit" => ["limit", "string", null, "getLimit", "setLimit"], 
-        "token" => ["token", "string", null, "getToken", "setToken"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null], 
+        "token" => ["token", "string", null, "getToken", "setToken", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class TrustLineXrpBlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_account"=>null, "issuer_account"=>null, "limit"=>null, "token"=>null, "signature_id"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_account'])) {
             $ip[] = "'from_account' can't be null";
         }
@@ -92,9 +91,9 @@ class TrustLineXrpBlockchainKMS extends AbstractModel {
         if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
             $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_account

@@ -25,19 +25,19 @@ class BnbTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTransaction";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash"], 
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight"], 
-        "tx_type" => ["txType", "string", null, "getTxType", "setTxType"], 
-        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp"], 
-        "from_addr" => ["fromAddr", "string", null, "getFromAddr", "setFromAddr"], 
-        "to_addr" => ["toAddr", "string", null, "getToAddr", "setToAddr"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "tx_asset" => ["txAsset", "string", null, "getTxAsset", "setTxAsset"], 
-        "tx_fee" => ["txFee", "string", null, "getTxFee", "setTxFee"], 
-        "code" => ["code", "float", null, "getCode", "setCode"], 
-        "memo" => ["memo", "string", null, "getMemo", "setMemo"], 
-        "source" => ["source", "float", null, "getSource", "setSource"], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence"]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
+        "tx_type" => ["txType", "string", null, "getTxType", "setTxType", null], 
+        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp", null], 
+        "from_addr" => ["fromAddr", "string", null, "getFromAddr", "setFromAddr", null], 
+        "to_addr" => ["toAddr", "string", null, "getToAddr", "setToAddr", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "tx_asset" => ["txAsset", "string", null, "getTxAsset", "setTxAsset", null], 
+        "tx_fee" => ["txFee", "string", null, "getTxFee", "setTxFee", null], 
+        "code" => ["code", "float", null, "getCode", "setCode", null], 
+        "memo" => ["memo", "string", null, "getMemo", "setMemo", null], 
+        "source" => ["source", "float", null, "getSource", "setSource", null], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null]
     ];
 
     /**
@@ -46,20 +46,19 @@ class BnbTransaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_hash"=>null, "block_height"=>null, "tx_type"=>null, "time_stamp"=>null, "from_addr"=>null, "to_addr"=>null, "value"=>null, "tx_asset"=>null, "tx_fee"=>null, "code"=>null, "memo"=>null, "source"=>null, "sequence"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get tx_hash

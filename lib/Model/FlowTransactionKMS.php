@@ -27,12 +27,12 @@ class FlowTransactionKMS extends AbstractModel {
     public const CURRENCY_FUSD = 'FUSD';
     protected static $_name = "FlowTransactionKMS";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class FlowTransactionKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "currency"=>null, "to"=>null, "amount"=>null, "signature_id"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account'])) {
             $ip[] = "'account' can't be null";
         }
@@ -93,9 +92,9 @@ class FlowTransactionKMS extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

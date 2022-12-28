@@ -25,9 +25,9 @@ class SolanaNftMetadataCreator extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaNftMetadataCreator";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "verified" => ["verified", "bool", null, "getVerified", "setVerified"], 
-        "share" => ["share", "float", null, "getShare", "setShare"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "verified" => ["verified", "bool", null, "getVerified", "setVerified", null], 
+        "share" => ["share", "float", null, "getShare", "setShare", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class SolanaNftMetadataCreator extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "verified"=>null, "share"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
@@ -62,9 +61,9 @@ class SolanaNftMetadataCreator extends AbstractModel {
         if (is_null($this->_data['share'])) {
             $ip[] = "'share' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get address

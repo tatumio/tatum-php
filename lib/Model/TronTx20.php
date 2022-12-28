@@ -25,12 +25,12 @@ class TronTx20 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx20";
     protected static $_definition = [
-        "tx_id" => ["txID", "string", null, "getTxId", "setTxId"], 
-        "token_info" => ["tokenInfo", "\Tatum\Model\TronTx20TokenInfo", null, "getTokenInfo", "setTokenInfo"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "value" => ["value", "string", null, "getValue", "setValue"]
+        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null], 
+        "token_info" => ["tokenInfo", "\Tatum\Model\TronTx20TokenInfo", null, "getTokenInfo", "setTokenInfo", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class TronTx20 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "token_info"=>null, "from"=>null, "to"=>null, "type"=>null, "value"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
@@ -68,9 +67,9 @@ class TronTx20 extends AbstractModel {
         if (is_null($this->_data['value'])) {
             $ip[] = "'value' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

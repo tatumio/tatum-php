@@ -25,11 +25,11 @@ class VetEstimateGas extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetEstimateGas";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class VetEstimateGas extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "to"=>null, "value"=>null, "data"=>null, "nonce"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -70,9 +69,9 @@ class VetEstimateGas extends AbstractModel {
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 10000)) {
             $ip[] = "'data' length must be <= 10000";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

@@ -25,17 +25,17 @@ class TransferBscKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferBscKMS";
     protected static $_definition = [
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"], 
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit"], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"]
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class TransferBscKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["nonce"=>null, "address"=>null, "amount"=>null, "compliant"=>null, "signature_id"=>null, "index"=>null, "payment_id"=>null, "sender_account_id"=>null, "sender_note"=>null, "gas_limit"=>null, "gas_price"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
@@ -109,9 +108,9 @@ class TransferBscKMS extends AbstractModel {
         if (!is_null($this->_data['gas_price']) && !preg_match("/^[+]?\\d+$/", $this->_data['gas_price'])) {
             $ip[] = "'gas_price' must match /^[+]?\\d+$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get nonce

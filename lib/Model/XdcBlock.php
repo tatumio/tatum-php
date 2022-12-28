@@ -25,25 +25,25 @@ class XdcBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XdcBlock";
     protected static $_definition = [
-        "number" => ["number", "float", null, "getNumber", "setNumber"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash"], 
-        "nonce" => ["nonce", "string", null, "getNonce", "setNonce"], 
-        "sha3_uncles" => ["sha3Uncles", "string", null, "getSha3Uncles", "setSha3Uncles"], 
-        "logs_bloom" => ["logsBloom", "string", null, "getLogsBloom", "setLogsBloom"], 
-        "transactions_root" => ["transactionsRoot", "string", null, "getTransactionsRoot", "setTransactionsRoot"], 
-        "state_root" => ["stateRoot", "string", null, "getStateRoot", "setStateRoot"], 
-        "receipts_root" => ["receiptsRoot", "string", null, "getReceiptsRoot", "setReceiptsRoot"], 
-        "miner" => ["miner", "string", null, "getMiner", "setMiner"], 
-        "difficulty" => ["difficulty", "string", null, "getDifficulty", "setDifficulty"], 
-        "total_difficulty" => ["totalDifficulty", "string", null, "getTotalDifficulty", "setTotalDifficulty"], 
-        "extra_data" => ["extraData", "string", null, "getExtraData", "setExtraData"], 
-        "size" => ["size", "float", null, "getSize", "setSize"], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit"], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "transactions" => ["transactions", "\Tatum\Model\XdcTx[]", null, "getTransactions", "setTransactions"], 
-        "uncles" => ["uncles", "string[]", null, "getUncles", "setUncles"]
+        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash", null], 
+        "nonce" => ["nonce", "string", null, "getNonce", "setNonce", null], 
+        "sha3_uncles" => ["sha3Uncles", "string", null, "getSha3Uncles", "setSha3Uncles", null], 
+        "logs_bloom" => ["logsBloom", "string", null, "getLogsBloom", "setLogsBloom", null], 
+        "transactions_root" => ["transactionsRoot", "string", null, "getTransactionsRoot", "setTransactionsRoot", null], 
+        "state_root" => ["stateRoot", "string", null, "getStateRoot", "setStateRoot", null], 
+        "receipts_root" => ["receiptsRoot", "string", null, "getReceiptsRoot", "setReceiptsRoot", null], 
+        "miner" => ["miner", "string", null, "getMiner", "setMiner", null], 
+        "difficulty" => ["difficulty", "string", null, "getDifficulty", "setDifficulty", null], 
+        "total_difficulty" => ["totalDifficulty", "string", null, "getTotalDifficulty", "setTotalDifficulty", null], 
+        "extra_data" => ["extraData", "string", null, "getExtraData", "setExtraData", null], 
+        "size" => ["size", "float", null, "getSize", "setSize", null], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "transactions" => ["transactions", "\Tatum\Model\XdcTx[]", null, "getTransactions", "setTransactions", null], 
+        "uncles" => ["uncles", "string[]", null, "getUncles", "setUncles", null]
     ];
 
     /**
@@ -52,20 +52,19 @@ class XdcBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["number"=>null, "hash"=>null, "parent_hash"=>null, "nonce"=>null, "sha3_uncles"=>null, "logs_bloom"=>null, "transactions_root"=>null, "state_root"=>null, "receipts_root"=>null, "miner"=>null, "difficulty"=>null, "total_difficulty"=>null, "extra_data"=>null, "size"=>null, "gas_limit"=>null, "gas_used"=>null, "timestamp"=>null, "transactions"=>null, "uncles"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get number

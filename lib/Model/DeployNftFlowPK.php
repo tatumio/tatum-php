@@ -26,9 +26,9 @@ class DeployNftFlowPK extends AbstractModel {
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "DeployNftFlowPK";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class DeployNftFlowPK extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "account"=>null, "private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -74,9 +73,9 @@ class DeployNftFlowPK extends AbstractModel {
         if ((mb_strlen($this->_data['private_key']) < 64)) {
             $ip[] = "'private_key' length must be >= 64";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

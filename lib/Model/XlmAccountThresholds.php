@@ -27,9 +27,9 @@ class XlmAccountThresholds extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmAccount_thresholds";
     protected static $_definition = [
-        "low_threshold" => ["low_threshold", "float", null, "getLowThreshold", "setLowThreshold"], 
-        "med_threshold" => ["med_threshold", "float", null, "getMedThreshold", "setMedThreshold"], 
-        "high_threshold" => ["high_threshold", "float", null, "getHighThreshold", "setHighThreshold"]
+        "low_threshold" => ["low_threshold", "float", null, "getLowThreshold", "setLowThreshold", null], 
+        "med_threshold" => ["med_threshold", "float", null, "getMedThreshold", "setMedThreshold", null], 
+        "high_threshold" => ["high_threshold", "float", null, "getHighThreshold", "setHighThreshold", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class XlmAccountThresholds extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["low_threshold"=>null, "med_threshold"=>null, "high_threshold"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get low_threshold

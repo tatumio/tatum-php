@@ -27,10 +27,10 @@ class XrpFeeLevels extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpFee_levels";
     protected static $_definition = [
-        "median_level" => ["median_level", "string", null, "getMedianLevel", "setMedianLevel"], 
-        "minimum_level" => ["minimum_level", "string", null, "getMinimumLevel", "setMinimumLevel"], 
-        "open_ledger_level" => ["open_ledger_level", "string", null, "getOpenLedgerLevel", "setOpenLedgerLevel"], 
-        "reference_level" => ["reference_level", "string", null, "getReferenceLevel", "setReferenceLevel"]
+        "median_level" => ["median_level", "string", null, "getMedianLevel", "setMedianLevel", null], 
+        "minimum_level" => ["minimum_level", "string", null, "getMinimumLevel", "setMinimumLevel", null], 
+        "open_ledger_level" => ["open_ledger_level", "string", null, "getOpenLedgerLevel", "setOpenLedgerLevel", null], 
+        "reference_level" => ["reference_level", "string", null, "getReferenceLevel", "setReferenceLevel", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class XrpFeeLevels extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["median_level"=>null, "minimum_level"=>null, "open_ledger_level"=>null, "reference_level"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get median_level

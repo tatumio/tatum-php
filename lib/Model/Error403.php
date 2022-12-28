@@ -25,8 +25,8 @@ class Error403 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Error403";
     protected static $_definition = [
-        "message" => ["message", "string", null, "getMessage", "setMessage"], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode"]
+        "message" => ["message", "string", null, "getMessage", "setMessage", null], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class Error403 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["message"=>null, "status_code"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['message'])) {
             $ip[] = "'message' can't be null";
         }
         if (is_null($this->_data['status_code'])) {
             $ip[] = "'status_code' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get message

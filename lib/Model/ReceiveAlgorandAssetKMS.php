@@ -25,9 +25,9 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "ReceiveAlgorandAssetKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "asset_id"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -62,9 +61,9 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

@@ -25,13 +25,13 @@ class TransferXrpBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXrpBlockchainKMS";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag"], 
-        "destination_tag" => ["destinationTag", "int", null, "getDestinationTag", "setDestinationTag"]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag", null], 
+        "destination_tag" => ["destinationTag", "int", null, "getDestinationTag", "setDestinationTag", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class TransferXrpBlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_account"=>null, "to"=>null, "amount"=>null, "signature_id"=>null, "fee"=>null, "source_tag"=>null, "destination_tag"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_account'])) {
             $ip[] = "'from_account' can't be null";
         }
@@ -81,9 +80,9 @@ class TransferXrpBlockchainKMS extends AbstractModel {
         if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
             $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_account

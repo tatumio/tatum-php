@@ -31,11 +31,11 @@ class ActivateGasPumpTatum extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     protected static $_name = "ActivateGasPumpTatum";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner"], 
-        "from" => ["from", "int", null, "getFrom", "setFrom"], 
-        "to" => ["to", "int", null, "getTo", "setTo"], 
-        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
+        "from" => ["from", "int", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "int", null, "getTo", "setTo", null], 
+        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class ActivateGasPumpTatum extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "owner"=>null, "from"=>null, "to"=>null, "fees_covered"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -81,9 +80,9 @@ class ActivateGasPumpTatum extends AbstractModel {
         if (is_null($this->_data['fees_covered'])) {
             $ip[] = "'fees_covered' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -55,20 +55,20 @@ class TransactionFilterLedger extends AbstractModel {
     public const OP_TYPE_REVOKE = 'REVOKE';
     protected static $_name = "TransactionFilterLedger";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "from" => ["from", "int", 'int64', "getFrom", "setFrom"], 
-        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount"], 
-        "currencies" => ["currencies", "string[]", null, "getCurrencies", "setCurrencies"], 
-        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType"], 
-        "transaction_types" => ["transactionTypes", "string[]", null, "getTransactionTypes", "setTransactionTypes"], 
-        "op_type" => ["opType", "string", null, "getOpType", "setOpType"], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"], 
-        "to" => ["to", "int", 'int64', "getTo", "setTo"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "from" => ["from", "int", 'int64', "getFrom", "setFrom", null], 
+        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount", null], 
+        "currencies" => ["currencies", "string[]", null, "getCurrencies", "setCurrencies", null], 
+        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType", null], 
+        "transaction_types" => ["transactionTypes", "string[]", null, "getTransactionTypes", "setTransactionTypes", null], 
+        "op_type" => ["opType", "string", null, "getOpType", "setOpType", null], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
+        "to" => ["to", "int", 'int64', "getTo", "setTo", null]
     ];
 
     /**
@@ -77,17 +77,16 @@ class TransactionFilterLedger extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "counter_account"=>null, "currency"=>null, "from"=>null, "amount"=>null, "currencies"=>null, "transaction_type"=>null, "transaction_types"=>null, "op_type"=>null, "transaction_code"=>null, "payment_id"=>null, "recipient_note"=>null, "sender_note"=>null, "to"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['account']) && (mb_strlen($this->_data['account']) > 24)) {
             $ip[] = "'account' length must be <= 24";
         }
@@ -146,9 +145,9 @@ class TransactionFilterLedger extends AbstractModel {
         if (!is_null($this->_data['to']) && ($this->_data['to'] < 0)) {
             $ip[] = "'to' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

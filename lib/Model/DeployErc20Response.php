@@ -25,8 +25,8 @@ class DeployErc20Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DeployErc20Response";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class DeployErc20Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_id"=>null, "tx_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account_id'])) {
             $ip[] = "'account_id' can't be null";
         }
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account_id

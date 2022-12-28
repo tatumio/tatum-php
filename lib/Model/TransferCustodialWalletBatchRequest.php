@@ -32,21 +32,21 @@ class TransferCustodialWalletBatchRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "TransferCustodialWalletBatch_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress"], 
-        "recipient" => ["recipient", "string[]", null, "getRecipient", "setRecipient"], 
-        "contract_type" => ["contractType", "float[]", null, "getContractType", "setContractType"], 
-        "token_address" => ["tokenAddress", "string[]", null, "getTokenAddress", "setTokenAddress"], 
-        "amount" => ["amount", "string[]", null, "getAmount", "setAmount"], 
-        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
+        "recipient" => ["recipient", "string[]", null, "getRecipient", "setRecipient", null], 
+        "contract_type" => ["contractType", "float[]", null, "getContractType", "setContractType", null], 
+        "token_address" => ["tokenAddress", "string[]", null, "getTokenAddress", "setTokenAddress", null], 
+        "amount" => ["amount", "string[]", null, "getAmount", "setAmount", null], 
+        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null]
     ];
 
     /**
@@ -55,17 +55,16 @@ class TransferCustodialWalletBatchRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "custodial_address"=>null, "recipient"=>null, "contract_type"=>null, "token_address"=>null, "amount"=>null, "token_id"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null, "fee_limit"=>null, "from"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -136,9 +135,9 @@ class TransferCustodialWalletBatchRequest extends AbstractModel {
         if ((mb_strlen($this->_data['from']) < 34)) {
             $ip[] = "'from' length must be >= 34";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

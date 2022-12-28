@@ -25,8 +25,8 @@ class BnbTxTxValueMsgInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx_tx_value_msg_inner";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "value" => ["value", "\Tatum\Model\BnbTxTxValueMsgInnerValue", null, "getValue", "setValue"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "value" => ["value", "\Tatum\Model\BnbTxTxValueMsgInnerValue", null, "getValue", "setValue", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class BnbTxTxValueMsgInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "value"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get type

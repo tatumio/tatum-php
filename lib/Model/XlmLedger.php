@@ -25,21 +25,21 @@ class XlmLedger extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmLedger";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "paging_token" => ["paging_token", "string", null, "getPagingToken", "setPagingToken"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence"], 
-        "successful_transaction_count" => ["successful_transaction_count", "float", null, "getSuccessfulTransactionCount", "setSuccessfulTransactionCount"], 
-        "failed_transaction_count" => ["failed_transaction_count", "float", null, "getFailedTransactionCount", "setFailedTransactionCount"], 
-        "operation_count" => ["operation_count", "float", null, "getOperationCount", "setOperationCount"], 
-        "closed_at" => ["closed_at", "string", null, "getClosedAt", "setClosedAt"], 
-        "total_coins" => ["total_coins", "string", null, "getTotalCoins", "setTotalCoins"], 
-        "fee_pool" => ["fee_pool", "string", null, "getFeePool", "setFeePool"], 
-        "base_fee_in_stroops" => ["base_fee_in_stroops", "float", null, "getBaseFeeInStroops", "setBaseFeeInStroops"], 
-        "base_reserve_in_stroops" => ["base_reserve_in_stroops", "float", null, "getBaseReserveInStroops", "setBaseReserveInStroops"], 
-        "max_tx_set_size" => ["max_tx_set_size", "float", null, "getMaxTxSetSize", "setMaxTxSetSize"], 
-        "protocol_version" => ["protocol_version", "float", null, "getProtocolVersion", "setProtocolVersion"], 
-        "header_xdr" => ["header_xdr", "string", null, "getHeaderXdr", "setHeaderXdr"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "paging_token" => ["paging_token", "string", null, "getPagingToken", "setPagingToken", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null], 
+        "successful_transaction_count" => ["successful_transaction_count", "float", null, "getSuccessfulTransactionCount", "setSuccessfulTransactionCount", null], 
+        "failed_transaction_count" => ["failed_transaction_count", "float", null, "getFailedTransactionCount", "setFailedTransactionCount", null], 
+        "operation_count" => ["operation_count", "float", null, "getOperationCount", "setOperationCount", null], 
+        "closed_at" => ["closed_at", "string", null, "getClosedAt", "setClosedAt", null], 
+        "total_coins" => ["total_coins", "string", null, "getTotalCoins", "setTotalCoins", null], 
+        "fee_pool" => ["fee_pool", "string", null, "getFeePool", "setFeePool", null], 
+        "base_fee_in_stroops" => ["base_fee_in_stroops", "float", null, "getBaseFeeInStroops", "setBaseFeeInStroops", null], 
+        "base_reserve_in_stroops" => ["base_reserve_in_stroops", "float", null, "getBaseReserveInStroops", "setBaseReserveInStroops", null], 
+        "max_tx_set_size" => ["max_tx_set_size", "float", null, "getMaxTxSetSize", "setMaxTxSetSize", null], 
+        "protocol_version" => ["protocol_version", "float", null, "getProtocolVersion", "setProtocolVersion", null], 
+        "header_xdr" => ["header_xdr", "string", null, "getHeaderXdr", "setHeaderXdr", null]
     ];
 
     /**
@@ -48,20 +48,19 @@ class XlmLedger extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "paging_token"=>null, "hash"=>null, "sequence"=>null, "successful_transaction_count"=>null, "failed_transaction_count"=>null, "operation_count"=>null, "closed_at"=>null, "total_coins"=>null, "fee_pool"=>null, "base_fee_in_stroops"=>null, "base_reserve_in_stroops"=>null, "max_tx_set_size"=>null, "protocol_version"=>null, "header_xdr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get id

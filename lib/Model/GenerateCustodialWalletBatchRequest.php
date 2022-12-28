@@ -29,18 +29,18 @@ class GenerateCustodialWalletBatchRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "GenerateCustodialWalletBatch_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered"], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount"], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered", null], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null]
     ];
 
     /**
@@ -49,17 +49,16 @@ class GenerateCustodialWalletBatchRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "fees_covered"=>null, "batch_count"=>null, "owner"=>null, "from_private_key"=>null, "fee"=>null, "nonce"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null, "fee_limit"=>null, "from"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -118,9 +117,9 @@ class GenerateCustodialWalletBatchRequest extends AbstractModel {
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,11 +25,11 @@ class GenerateMarketplace200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GenerateMarketplace_200_response";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount"], 
-        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null], 
+        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class GenerateMarketplace200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "contract_address"=>null, "fee_account"=>null, "treasury_account"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
@@ -64,9 +63,9 @@ class GenerateMarketplace200Response extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

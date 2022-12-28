@@ -25,11 +25,11 @@ class BchTxVinInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx_vin_inner";
     protected static $_definition = [
-        "txid" => ["txid", "string", null, "getTxid", "setTxid"], 
-        "vout" => ["vout", "float", null, "getVout", "setVout"], 
-        "script_sig" => ["scriptSig", "\Tatum\Model\BchTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig"], 
-        "coinbase" => ["coinbase", "string", null, "getCoinbase", "setCoinbase"], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence"]
+        "txid" => ["txid", "string", null, "getTxid", "setTxid", null], 
+        "vout" => ["vout", "float", null, "getVout", "setVout", null], 
+        "script_sig" => ["scriptSig", "\Tatum\Model\BchTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig", null], 
+        "coinbase" => ["coinbase", "string", null, "getCoinbase", "setCoinbase", null], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class BchTxVinInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["txid"=>null, "vout"=>null, "script_sig"=>null, "coinbase"=>null, "sequence"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get txid

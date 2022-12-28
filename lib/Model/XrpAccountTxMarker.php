@@ -27,8 +27,8 @@ class XrpAccountTxMarker extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_marker";
     protected static $_definition = [
-        "ledger" => ["ledger", "float", null, "getLedger", "setLedger"], 
-        "seq" => ["seq", "float", null, "getSeq", "setSeq"]
+        "ledger" => ["ledger", "float", null, "getLedger", "setLedger", null], 
+        "seq" => ["seq", "float", null, "getSeq", "setSeq", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class XrpAccountTxMarker extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["ledger"=>null, "seq"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get ledger

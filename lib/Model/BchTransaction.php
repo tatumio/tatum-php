@@ -25,10 +25,10 @@ class BchTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTransaction";
     protected static $_definition = [
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo"], 
-        "to" => ["to", "\Tatum\Model\BchTransactionToInner[]", null, "getTo", "setTo"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress"]
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null], 
+        "to" => ["to", "\Tatum\Model\BchTransactionToInner[]", null, "getTo", "setTo", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null]
     ];
 
     /**
@@ -37,26 +37,25 @@ class BchTransaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_utxo"=>null, "to"=>null, "fee"=>null, "change_address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_utxo'])) {
             $ip[] = "'from_utxo' can't be null";
         }
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_utxo

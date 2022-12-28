@@ -25,8 +25,8 @@ class FeeAndChange extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FeeAndChange";
     protected static $_definition = [
-        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"]
+        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -35,23 +35,22 @@ class FeeAndChange extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["change_address"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['change_address'])) {
             $ip[] = "'change_address' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get change_address

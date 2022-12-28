@@ -25,8 +25,8 @@ class BatchCreateTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BatchCreateTransaction";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "transaction" => ["transaction", "\Tatum\Model\BatchCreateTransactionTransactionInner[]", null, "getTransaction", "setTransaction"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "transaction" => ["transaction", "\Tatum\Model\BatchCreateTransactionTransactionInner[]", null, "getTransaction", "setTransaction", null]
     ];
 
     /**
@@ -35,17 +35,16 @@ class BatchCreateTransaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "transaction"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -55,9 +54,9 @@ class BatchCreateTransaction extends AbstractModel {
         if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
             $ip[] = "'sender_account_id' length must be >= 24";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

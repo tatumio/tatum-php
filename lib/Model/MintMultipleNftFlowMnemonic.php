@@ -26,13 +26,13 @@ class MintMultipleNftFlowMnemonic extends AbstractModel {
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "MintMultipleNftFlowMnemonic";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string[]", null, "getTo", "setTo"], 
-        "url" => ["url", "string[]", null, "getUrl", "setUrl"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string[]", null, "getTo", "setTo", null], 
+        "url" => ["url", "string[]", null, "getUrl", "setUrl", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class MintMultipleNftFlowMnemonic extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "url"=>null, "contract_address"=>null, "account"=>null, "mnemonic"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -99,9 +98,9 @@ class MintMultipleNftFlowMnemonic extends AbstractModel {
         if (($this->_data['index'] > 2147483647)) {
             $ip[] = "'index' must be <= 2147483647";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

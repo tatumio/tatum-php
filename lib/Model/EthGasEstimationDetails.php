@@ -27,10 +27,10 @@ class EthGasEstimationDetails extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthGasEstimationDetails";
     protected static $_definition = [
-        "safe" => ["safe", "string", null, "getSafe", "setSafe"], 
-        "standard" => ["standard", "string", null, "getStandard", "setStandard"], 
-        "fast" => ["fast", "string", null, "getFast", "setFast"], 
-        "base_fee" => ["baseFee", "string", null, "getBaseFee", "setBaseFee"]
+        "safe" => ["safe", "string", null, "getSafe", "setSafe", null], 
+        "standard" => ["standard", "string", null, "getStandard", "setStandard", null], 
+        "fast" => ["fast", "string", null, "getFast", "setFast", null], 
+        "base_fee" => ["baseFee", "string", null, "getBaseFee", "setBaseFee", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class EthGasEstimationDetails extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["safe"=>null, "standard"=>null, "fast"=>null, "base_fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['safe'])) {
             $ip[] = "'safe' can't be null";
         }
@@ -62,9 +61,9 @@ class EthGasEstimationDetails extends AbstractModel {
         if (is_null($this->_data['base_fee'])) {
             $ip[] = "'base_fee' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get safe

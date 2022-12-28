@@ -25,20 +25,20 @@ class AdaTransferOffchainRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTransferOffchain_request";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "key_pair" => ["keyPair", "\Tatum\Model\TransferAdaKeyPairKeyPairInner[]", null, "getKeyPair", "setKeyPair"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "key_pair" => ["keyPair", "\Tatum\Model\TransferAdaKeyPairKeyPairInner[]", null, "getKeyPair", "setKeyPair", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -47,17 +47,16 @@ class AdaTransferOffchainRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "address"=>null, "amount"=>null, "compliant"=>null, "fee"=>null, "key_pair"=>null, "attr"=>null, "payment_id"=>null, "sender_note"=>null, "index"=>null, "mnemonic"=>null, "xpub"=>null, "from"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -148,9 +147,9 @@ class AdaTransferOffchainRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

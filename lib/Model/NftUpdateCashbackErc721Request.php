@@ -29,18 +29,18 @@ class NftUpdateCashbackErc721Request extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "NftUpdateCashbackErc721_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "cashback_value" => ["cashbackValue", "string", null, "getCashbackValue", "setCashbackValue"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "cashback_value" => ["cashbackValue", "string", null, "getCashbackValue", "setCashbackValue", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null]
     ];
 
     /**
@@ -49,17 +49,16 @@ class NftUpdateCashbackErc721Request extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "token_id"=>null, "contract_address"=>null, "cashback_value"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "fee_currency"=>null, "fee_limit"=>null, "signature_id"=>null, "index"=>null, "account"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -124,9 +123,9 @@ class NftUpdateCashbackErc721Request extends AbstractModel {
         if ((mb_strlen($this->_data['account']) < 34)) {
             $ip[] = "'account' length must be >= 34";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

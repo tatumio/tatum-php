@@ -36,9 +36,9 @@ class Subscription extends AbstractModel {
     public const TYPE_TRANSACTION_HISTORY_REPORT = 'TRANSACTION_HISTORY_REPORT';
     protected static $_name = "Subscription";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "attr" => ["attr", "object", null, "getAttr", "setAttr"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "attr" => ["attr", "object", null, "getAttr", "setAttr", null]
     ];
 
     /**
@@ -47,17 +47,16 @@ class Subscription extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "id"=>null, "attr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['type'])) {
             $ip[] = "'type' can't be null";
         }
@@ -69,9 +68,9 @@ class Subscription extends AbstractModel {
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

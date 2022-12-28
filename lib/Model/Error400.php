@@ -25,10 +25,10 @@ class Error400 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Error400";
     protected static $_definition = [
-        "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode"], 
-        "message" => ["message", "string", null, "getMessage", "setMessage"], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode"], 
-        "data" => ["data", "\Tatum\Model\Error400DataInner[]", null, "getData", "setData"]
+        "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode", null], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null], 
+        "data" => ["data", "\Tatum\Model\Error400DataInner[]", null, "getData", "setData", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class Error400 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["error_code"=>null, "message"=>null, "status_code"=>null, "data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['error_code'])) {
             $ip[] = "'error_code' can't be null";
         }
@@ -60,9 +59,9 @@ class Error400 extends AbstractModel {
         if (is_null($this->_data['data'])) {
             $ip[] = "'data' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get error_code

@@ -49,7 +49,13 @@ This SDK has no external dependencies in production. This means you can use this
 
 ### Requirements
 
-Please use `PHP 7.3` or later and the PHP extensions mentioned in the [`composer.json`](/composer.json) file.
+This SDK requires `64-bit` `PHP 7.3` or later with the following extensions:
+
+ * `ext-curl`
+ * `ext-json`
+ * `ext-gmp`
+ * `ext-bcmath`
+ * `ext-mbstring`
 
 ## Getting Started
 

@@ -25,9 +25,9 @@ class CeloGetBalance200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CeloGetBalance_200_response";
     protected static $_definition = [
-        "celo" => ["celo", "string", null, "getCelo", "setCelo"], 
-        "c_usd" => ["cUsd", "string", null, "getCUsd", "setCUsd"], 
-        "c_eur" => ["cEur", "string", null, "getCEur", "setCEur"]
+        "celo" => ["celo", "string", null, "getCelo", "setCelo", null], 
+        "c_usd" => ["cUsd", "string", null, "getCUsd", "setCUsd", null], 
+        "c_eur" => ["cEur", "string", null, "getCEur", "setCEur", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class CeloGetBalance200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["celo"=>null, "c_usd"=>null, "c_eur"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get celo

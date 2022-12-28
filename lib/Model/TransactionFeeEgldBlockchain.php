@@ -25,10 +25,10 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransactionFeeEgldBlockchain";
     protected static $_definition = [
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "data" => ["data", "string", null, "getData", "setData"]
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "data" => ["data", "string", null, "getData", "setData", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender"=>null, "receiver"=>null, "value"=>null, "data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender'])) {
             $ip[] = "'sender' can't be null";
         }
@@ -69,9 +68,9 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
         if (is_null($this->_data['value'])) {
             $ip[] = "'value' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender

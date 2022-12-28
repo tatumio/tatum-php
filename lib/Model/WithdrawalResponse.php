@@ -25,9 +25,9 @@ class WithdrawalResponse extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "WithdrawalResponse";
     protected static $_definition = [
-        "reference" => ["reference", "string", null, "getReference", "setReference"], 
-        "data" => ["data", "\Tatum\Model\ResponseData[]", null, "getData", "setData"], 
-        "id" => ["id", "string", null, "getId", "setId"]
+        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
+        "data" => ["data", "\Tatum\Model\ResponseData[]", null, "getData", "setData", null], 
+        "id" => ["id", "string", null, "getId", "setId", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class WithdrawalResponse extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["reference"=>null, "data"=>null, "id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get reference

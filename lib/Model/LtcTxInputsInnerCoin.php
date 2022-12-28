@@ -25,12 +25,12 @@ class LtcTxInputsInnerCoin extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "LtcTx_inputs_inner_coin";
     protected static $_definition = [
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "height" => ["height", "float", null, "getHeight", "setHeight"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "script" => ["script", "string", null, "getScript", "setScript"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase"]
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "script" => ["script", "string", null, "getScript", "setScript", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class LtcTxInputsInnerCoin extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["version"=>null, "height"=>null, "value"=>null, "script"=>null, "address"=>null, "coinbase"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get version

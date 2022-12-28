@@ -26,8 +26,8 @@ class CreateSubscriptionKMSError extends AbstractModel {
     public const TYPE_KMS_FAILED_TX = 'KMS_FAILED_TX';
     protected static $_name = "CreateSubscriptionKMSError";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "attr" => ["attr", "\Tatum\Model\CreateSubscriptionKMSErrorAttr", null, "getAttr", "setAttr"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "attr" => ["attr", "\Tatum\Model\CreateSubscriptionKMSErrorAttr", null, "getAttr", "setAttr", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class CreateSubscriptionKMSError extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "attr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['type'])) {
             $ip[] = "'type' can't be null";
         }
@@ -58,9 +57,9 @@ class CreateSubscriptionKMSError extends AbstractModel {
         if (is_null($this->_data['attr'])) {
             $ip[] = "'attr' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

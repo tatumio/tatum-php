@@ -33,14 +33,14 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     public const TYPE_TRANSFER_CUSTODIAL = 'TRANSFER_CUSTODIAL';
     protected static $_name = "EstimateFeeTransferFromCustodial";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null]
     ];
 
     /**
@@ -49,17 +49,16 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "type"=>null, "sender"=>null, "recipient"=>null, "contract_address"=>null, "custodial_address"=>null, "amount"=>null, "token_type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -127,9 +126,9 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
         if (($this->_data['token_type'] < 0)) {
             $ip[] = "'token_type' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,14 +25,14 @@ class OneTxLog extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OneTxLog";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "topics" => ["topics", "string[]", null, "getTopics", "setTopics"], 
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "log_index" => ["logIndex", "float", null, "getLogIndex", "setLogIndex"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex"], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "topics" => ["topics", "string[]", null, "getTopics", "setTopics", null], 
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "log_index" => ["logIndex", "float", null, "getLogIndex", "setLogIndex", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null]
     ];
 
     /**
@@ -41,20 +41,19 @@ class OneTxLog extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "topics"=>null, "data"=>null, "log_index"=>null, "block_number"=>null, "block_hash"=>null, "transaction_index"=>null, "transaction_hash"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get address

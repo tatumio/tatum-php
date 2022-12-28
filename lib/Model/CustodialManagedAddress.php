@@ -34,10 +34,10 @@ class CustodialManagedAddress extends AbstractModel {
     public const CHAIN_BTC = 'BTC';
     protected static $_name = "CustodialManagedAddress";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "wallet_id" => ["walletId", "string", 'uuid', "getWalletId", "setWalletId"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "wallet_id" => ["walletId", "string", 'uuid', "getWalletId", "setWalletId", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
     ];
 
     /**
@@ -46,17 +46,16 @@ class CustodialManagedAddress extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "wallet_id"=>null, "chain"=>null, "private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
@@ -71,9 +70,9 @@ class CustodialManagedAddress extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

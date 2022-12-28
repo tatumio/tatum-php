@@ -26,13 +26,13 @@ class MintMultipleNftTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "MintMultipleNftTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string[]", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId"], 
-        "url" => ["url", "string[]", null, "getUrl", "setUrl"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string[]", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId", null], 
+        "url" => ["url", "string[]", null, "getUrl", "setUrl", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class MintMultipleNftTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "token_id"=>null, "url"=>null, "contract_address"=>null, "from_private_key"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -90,9 +89,9 @@ class MintMultipleNftTron extends AbstractModel {
         if (is_null($this->_data['fee_limit'])) {
             $ip[] = "'fee_limit' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

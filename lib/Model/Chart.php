@@ -27,12 +27,12 @@ class Chart extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Chart";
     protected static $_definition = [
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "high" => ["high", "string", null, "getHigh", "setHigh"], 
-        "low" => ["low", "string", null, "getLow", "setLow"], 
-        "open" => ["open", "string", null, "getOpen", "setOpen"], 
-        "close" => ["close", "string", null, "getClose", "setClose"], 
-        "volume" => ["volume", "string", null, "getVolume", "setVolume"]
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "high" => ["high", "string", null, "getHigh", "setHigh", null], 
+        "low" => ["low", "string", null, "getLow", "setLow", null], 
+        "open" => ["open", "string", null, "getOpen", "setOpen", null], 
+        "close" => ["close", "string", null, "getClose", "setClose", null], 
+        "volume" => ["volume", "string", null, "getVolume", "setVolume", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class Chart extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["timestamp"=>null, "high"=>null, "low"=>null, "open"=>null, "close"=>null, "volume"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['timestamp'])) {
             $ip[] = "'timestamp' can't be null";
         }
@@ -70,9 +69,9 @@ class Chart extends AbstractModel {
         if (is_null($this->_data['volume'])) {
             $ip[] = "'volume' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get timestamp

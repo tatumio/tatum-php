@@ -55,20 +55,20 @@ class TransactionFilter extends AbstractModel {
     public const OP_TYPE_REVOKE = 'REVOKE';
     protected static $_name = "TransactionFilter";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount"], 
-        "from" => ["from", "int", 'int64', "getFrom", "setFrom"], 
-        "to" => ["to", "int", 'int64', "getTo", "setTo"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount"], 
-        "currencies" => ["currencies", "string[]", null, "getCurrencies", "setCurrencies"], 
-        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType"], 
-        "transaction_types" => ["transactionTypes", "string[]", null, "getTransactionTypes", "setTransactionTypes"], 
-        "op_type" => ["opType", "string", null, "getOpType", "setOpType"], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount", null], 
+        "from" => ["from", "int", 'int64', "getFrom", "setFrom", null], 
+        "to" => ["to", "int", 'int64', "getTo", "setTo", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount", null], 
+        "currencies" => ["currencies", "string[]", null, "getCurrencies", "setCurrencies", null], 
+        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType", null], 
+        "transaction_types" => ["transactionTypes", "string[]", null, "getTransactionTypes", "setTransactionTypes", null], 
+        "op_type" => ["opType", "string", null, "getOpType", "setOpType", null], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
     ];
 
     /**
@@ -77,17 +77,16 @@ class TransactionFilter extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "counter_account"=>null, "from"=>null, "to"=>null, "currency"=>null, "amount"=>null, "currencies"=>null, "transaction_type"=>null, "transaction_types"=>null, "op_type"=>null, "transaction_code"=>null, "payment_id"=>null, "recipient_note"=>null, "sender_note"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -149,9 +148,9 @@ class TransactionFilter extends AbstractModel {
         if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
             $ip[] = "'sender_note' length must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,14 +25,14 @@ class TronTrc10Detail extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTrc10Detail";
     protected static $_definition = [
-        "owner_address" => ["ownerAddress", "string", null, "getOwnerAddress", "setOwnerAddress"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "abbr" => ["abbr", "string", null, "getAbbr", "setAbbr"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply"], 
-        "precision" => ["precision", "float", null, "getPrecision", "setPrecision"], 
-        "id" => ["id", "float", null, "getId", "setId"]
+        "owner_address" => ["ownerAddress", "string", null, "getOwnerAddress", "setOwnerAddress", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "abbr" => ["abbr", "string", null, "getAbbr", "setAbbr", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply", null], 
+        "precision" => ["precision", "float", null, "getPrecision", "setPrecision", null], 
+        "id" => ["id", "float", null, "getId", "setId", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class TronTrc10Detail extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["owner_address"=>null, "name"=>null, "abbr"=>null, "description"=>null, "url"=>null, "total_supply"=>null, "precision"=>null, "id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['owner_address']) && (mb_strlen($this->_data['owner_address']) > 34)) {
             $ip[] = "'owner_address' length must be <= 34";
         }
@@ -91,9 +90,9 @@ class TronTrc10Detail extends AbstractModel {
         if (!is_null($this->_data['precision']) && ($this->_data['precision'] < 0)) {
             $ip[] = "'precision' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get owner_address

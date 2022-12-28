@@ -28,12 +28,12 @@ class MintNftSolana extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "MintNftSolana";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey"], 
-        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadata", null, "getMetadata", "setMetadata"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey", null], 
+        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadata", null, "getMetadata", "setMetadata", null]
     ];
 
     /**
@@ -42,17 +42,16 @@ class MintNftSolana extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "from"=>null, "from_private_key"=>null, "collection_verifier_private_key"=>null, "metadata"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -97,9 +96,9 @@ class MintNftSolana extends AbstractModel {
         if (is_null($this->_data['metadata'])) {
             $ip[] = "'metadata' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

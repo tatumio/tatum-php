@@ -25,12 +25,12 @@ class NftTokenByAddressErc721 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftTokenByAddressErc721";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "balances" => ["balances", "string[]", 'uint256', "getBalances", "setBalances"], 
-        "block_number" => ["blockNumber", "float[]", null, "getBlockNumber", "setBlockNumber"], 
-        "metadata" => ["metadata", "\Tatum\Model\NftTokenByAddressErc721TokenMetadata[]", null, "getMetadata", "setMetadata"], 
-        "supply" => ["supply", "float", null, "getSupply", "setSupply"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "balances" => ["balances", "string[]", 'uint256', "getBalances", "setBalances", null], 
+        "block_number" => ["blockNumber", "float[]", null, "getBlockNumber", "setBlockNumber", null], 
+        "metadata" => ["metadata", "\Tatum\Model\NftTokenByAddressErc721TokenMetadata[]", null, "getMetadata", "setMetadata", null], 
+        "supply" => ["supply", "float", null, "getSupply", "setSupply", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class NftTokenByAddressErc721 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["contract_address"=>null, "balances"=>null, "block_number"=>null, "metadata"=>null, "supply"=>null, "decimals"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['contract_address'])) {
             $ip[] = "'contract_address' can't be null";
         }
@@ -59,9 +58,9 @@ class NftTokenByAddressErc721 extends AbstractModel {
         if (is_null($this->_data['metadata'])) {
             $ip[] = "'metadata' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get contract_address

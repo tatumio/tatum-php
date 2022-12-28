@@ -25,15 +25,15 @@ class CallSmartContractMethodKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CallSmartContractMethodKMS";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName"], 
-        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi"], 
-        "params" => ["params", "object[]", null, "getParams", "setParams"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null], 
+        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null], 
+        "params" => ["params", "object[]", null, "getParams", "setParams", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -42,17 +42,16 @@ class CallSmartContractMethodKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["contract_address"=>null, "amount"=>null, "method_name"=>null, "method_abi"=>null, "params"=>null, "signature_id"=>null, "index"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['contract_address'])) {
             $ip[] = "'contract_address' can't be null";
         }
@@ -89,9 +88,9 @@ class CallSmartContractMethodKMS extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get contract_address

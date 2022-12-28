@@ -25,14 +25,14 @@ class MultiTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTx";
     protected static $_definition = [
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "operator" => ["operator", "string", null, "getOperator", "setOperator"], 
-        "to" => ["to", "string", null, "getTo", "setTo"]
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "operator" => ["operator", "string", null, "getOperator", "setOperator", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class MultiTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_number"=>null, "tx_id"=>null, "contract_address"=>null, "token_id"=>null, "amount"=>null, "from"=>null, "operator"=>null, "to"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['block_number'])) {
             $ip[] = "'block_number' can't be null";
         }
@@ -76,9 +75,9 @@ class MultiTx extends AbstractModel {
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get block_number

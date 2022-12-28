@@ -25,11 +25,11 @@ class XrpAccountTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "ledger_index_max" => ["ledger_index_max", "float", null, "getLedgerIndexMax", "setLedgerIndexMax"], 
-        "ledger_index_min" => ["ledger_index_min", "float", null, "getLedgerIndexMin", "setLedgerIndexMin"], 
-        "marker" => ["marker", "\Tatum\Model\XrpAccountTxMarker", null, "getMarker", "setMarker"], 
-        "transactions" => ["transactions", "\Tatum\Model\XrpAccountTxTransactionsInner[]", null, "getTransactions", "setTransactions"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "ledger_index_max" => ["ledger_index_max", "float", null, "getLedgerIndexMax", "setLedgerIndexMax", null], 
+        "ledger_index_min" => ["ledger_index_min", "float", null, "getLedgerIndexMin", "setLedgerIndexMin", null], 
+        "marker" => ["marker", "\Tatum\Model\XrpAccountTxMarker", null, "getMarker", "setMarker", null], 
+        "transactions" => ["transactions", "\Tatum\Model\XrpAccountTxTransactionsInner[]", null, "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class XrpAccountTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "ledger_index_max"=>null, "ledger_index_min"=>null, "marker"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get account

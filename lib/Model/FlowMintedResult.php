@@ -25,8 +25,8 @@ class FlowMintedResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowMintedResult";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null]
     ];
 
     /**
@@ -35,23 +35,22 @@ class FlowMintedResult extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "token_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['token_id']) && (mb_strlen($this->_data['token_id']) > 78)) {
             $ip[] = "'token_id' length must be <= 78";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

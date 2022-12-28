@@ -25,9 +25,9 @@ class XrpAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccount";
     protected static $_definition = [
-        "account_data" => ["account_data", "\Tatum\Model\XrpAccountAccountData", null, "getAccountData", "setAccountData"], 
-        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex"], 
-        "validated" => ["validated", "bool", null, "getValidated", "setValidated"]
+        "account_data" => ["account_data", "\Tatum\Model\XrpAccountAccountData", null, "getAccountData", "setAccountData", null], 
+        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex", null], 
+        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class XrpAccount extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_data"=>null, "ledger_current_index"=>null, "validated"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get account_data

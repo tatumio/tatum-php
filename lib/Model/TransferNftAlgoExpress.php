@@ -26,10 +26,10 @@ class TransferNftAlgoExpress extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "TransferNftAlgoExpress";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "amount" => ["amount", "float", null, "getAmount", "setAmount"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", 1]
     ];
 
     /**
@@ -38,17 +38,16 @@ class TransferNftAlgoExpress extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "contract_address"=>null, "amount"=>1] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -75,9 +74,9 @@ class TransferNftAlgoExpress extends AbstractModel {
         if (!is_null($this->_data['amount']) && ($this->_data['amount'] < 0)) {
             $ip[] = "'amount' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -28,12 +28,12 @@ class MintNftAlgorandKMS extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "MintNftAlgorandKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr", null]
     ];
 
     /**
@@ -42,17 +42,16 @@ class MintNftAlgorandKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "url"=>null, "name"=>null, "from"=>null, "signature_id"=>null, "attr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -88,9 +87,9 @@ class MintNftAlgorandKMS extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

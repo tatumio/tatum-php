@@ -28,11 +28,11 @@ class MintNftAlgorand extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "MintNftAlgorand";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "attr" => ["attr", "\Tatum\Model\MintNftAlgorandAttr", null, "getAttr", "setAttr"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "attr" => ["attr", "\Tatum\Model\MintNftAlgorandAttr", null, "getAttr", "setAttr", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class MintNftAlgorand extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "url"=>null, "name"=>null, "from_private_key"=>null, "attr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -84,9 +83,9 @@ class MintNftAlgorand extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 103)) {
             $ip[] = "'from_private_key' length must be >= 103";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

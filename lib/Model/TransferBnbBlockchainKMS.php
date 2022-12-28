@@ -26,12 +26,12 @@ class TransferBnbBlockchainKMS extends AbstractModel {
     public const CURRENCY_BNB = 'BNB';
     protected static $_name = "TransferBnbBlockchainKMS";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "from_address" => ["fromAddress", "string", null, "getFromAddress", "setFromAddress"], 
-        "message" => ["message", "string", null, "getMessage", "setMessage"]
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "from_address" => ["fromAddress", "string", null, "getFromAddress", "setFromAddress", null], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class TransferBnbBlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["to"=>null, "currency"=>null, "amount"=>null, "signature_id"=>null, "from_address"=>null, "message"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
@@ -92,9 +91,9 @@ class TransferBnbBlockchainKMS extends AbstractModel {
         if (!is_null($this->_data['message']) && (mb_strlen($this->_data['message']) < 1)) {
             $ip[] = "'message' length must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,13 +25,13 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferTronTrc20BlockchainKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "signature_id"=>null, "index"=>null, "to"=>null, "token_address"=>null, "fee_limit"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -96,9 +95,9 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
         if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
             $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

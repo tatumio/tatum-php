@@ -26,10 +26,10 @@ class DeployNftFlowKMS extends AbstractModel {
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "DeployNftFlowKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class DeployNftFlowKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "account"=>null, "signature_id"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -72,9 +71,9 @@ class DeployNftFlowKMS extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] > 2147483647)) {
             $ip[] = "'index' must be <= 2147483647";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

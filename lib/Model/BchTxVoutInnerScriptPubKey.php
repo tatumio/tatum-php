@@ -25,10 +25,10 @@ class BchTxVoutInnerScriptPubKey extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx_vout_inner_scriptPubKey";
     protected static $_definition = [
-        "hex" => ["hex", "string", null, "getHex", "setHex"], 
-        "asm" => ["asm", "string", null, "getAsm", "setAsm"], 
-        "addresses" => ["addresses", "string[]", null, "getAddresses", "setAddresses"], 
-        "type" => ["type", "string", null, "getType", "setType"]
+        "hex" => ["hex", "string", null, "getHex", "setHex", null], 
+        "asm" => ["asm", "string", null, "getAsm", "setAsm", null], 
+        "addresses" => ["addresses", "string[]", null, "getAddresses", "setAddresses", null], 
+        "type" => ["type", "string", null, "getType", "setType", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class BchTxVoutInnerScriptPubKey extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hex"=>null, "asm"=>null, "addresses"=>null, "type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hex

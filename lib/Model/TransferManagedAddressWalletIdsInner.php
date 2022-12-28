@@ -27,8 +27,8 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
     public const TYPE_RAW = 'RAW';
     protected static $_name = "TransferManagedAddress_walletIds_inner";
     protected static $_definition = [
-        "key" => ["key", "string", null, "getKey", "setKey"], 
-        "type" => ["type", "string", null, "getType", "setType"]
+        "key" => ["key", "string", null, "getKey", "setKey", null], 
+        "type" => ["type", "string", null, "getType", "setType", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["key"=>null, "type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['key'])) {
             $ip[] = "'key' can't be null";
         }
@@ -59,9 +58,9 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

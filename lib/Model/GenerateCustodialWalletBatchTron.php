@@ -26,11 +26,11 @@ class GenerateCustodialWalletBatchTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "GenerateCustodialWalletBatchTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount"], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class GenerateCustodialWalletBatchTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "from_private_key"=>null, "batch_count"=>null, "owner"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -85,9 +84,9 @@ class GenerateCustodialWalletBatchTron extends AbstractModel {
         if (($this->_data['fee_limit'] < 5)) {
             $ip[] = "'fee_limit' must be >= 5";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

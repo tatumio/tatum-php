@@ -25,12 +25,12 @@ class AdaBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "number" => ["number", "float", null, "getNumber", "setNumber"], 
-        "epoch_no" => ["epochNo", "float", null, "getEpochNo", "setEpochNo"], 
-        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo"], 
-        "forged_at" => ["forgedAt", "string", null, "getForgedAt", "setForgedAt"], 
-        "transactions" => ["transactions", "\Tatum\Model\AdaTx[]", null, "getTransactions", "setTransactions"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
+        "epoch_no" => ["epochNo", "float", null, "getEpochNo", "setEpochNo", null], 
+        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo", null], 
+        "forged_at" => ["forgedAt", "string", null, "getForgedAt", "setForgedAt", null], 
+        "transactions" => ["transactions", "\Tatum\Model\AdaTx[]", null, "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class AdaBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "number"=>null, "epoch_no"=>null, "slot_no"=>null, "forged_at"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

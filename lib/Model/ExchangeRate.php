@@ -421,11 +421,11 @@ class ExchangeRate extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "ExchangeRate";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "source" => ["source", "string", null, "getSource", "setSource"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", 'EUR'], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "source" => ["source", "string", null, "getSource", "setSource", null]
     ];
 
     /**
@@ -434,17 +434,16 @@ class ExchangeRate extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "value"=>null, "base_pair"=>'EUR', "timestamp"=>null, "source"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -470,9 +469,9 @@ class ExchangeRate extends AbstractModel {
         if (is_null($this->_data['source'])) {
             $ip[] = "'source' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

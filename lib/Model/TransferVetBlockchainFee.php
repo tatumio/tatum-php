@@ -27,7 +27,7 @@ class TransferVetBlockchainFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferVetBlockchain_fee";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit"]
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null]
     ];
 
     /**
@@ -36,26 +36,25 @@ class TransferVetBlockchainFee extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["gas_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['gas_limit'])) {
             $ip[] = "'gas_limit' can't be null";
         }
         if (!preg_match("/^[+]?\\d+$/", $this->_data['gas_limit'])) {
             $ip[] = "'gas_limit' must match /^[+]?\\d+$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get gas_limit

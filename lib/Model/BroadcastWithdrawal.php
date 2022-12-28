@@ -25,10 +25,10 @@ class BroadcastWithdrawal extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BroadcastWithdrawal";
     protected static $_definition = [
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "tx_data" => ["txData", "string", null, "getTxData", "setTxData"], 
-        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null], 
+        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class BroadcastWithdrawal extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["currency"=>null, "tx_data"=>null, "withdrawal_id"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['currency'])) {
             $ip[] = "'currency' can't be null";
         }
@@ -72,9 +71,9 @@ class BroadcastWithdrawal extends AbstractModel {
         if (!is_null($this->_data['withdrawal_id']) && (mb_strlen($this->_data['withdrawal_id']) < 24)) {
             $ip[] = "'withdrawal_id' length must be >= 24";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get currency

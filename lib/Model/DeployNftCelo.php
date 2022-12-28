@@ -29,15 +29,15 @@ class DeployNftCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "DeployNftCelo";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance"], 
-        "cashback" => ["cashback", "bool", null, "getCashback", "setCashback"], 
-        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
+        "cashback" => ["cashback", "bool", null, "getCashback", "setCashback", null], 
+        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -46,17 +46,16 @@ class DeployNftCelo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "name"=>null, "provenance"=>null, "cashback"=>null, "public_mint"=>null, "symbol"=>null, "from_private_key"=>null, "nonce"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -103,9 +102,9 @@ class DeployNftCelo extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

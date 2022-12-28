@@ -26,12 +26,12 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "BuyAssetOnMarketplaceSolana";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId"], 
-        "from" => ["from", "mixed", null, "getFrom", "setFrom"], 
-        "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null], 
+        "from" => ["from", "mixed", null, "getFrom", "setFrom", null], 
+        "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "listing_id"=>null, "from"=>null, "authority_private_key"=>null, "from_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -101,9 +100,9 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 87)) {
             $ip[] = "'from_private_key' length must be >= 87";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

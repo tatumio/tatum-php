@@ -25,9 +25,9 @@ class BtcTransactionFromUTXOSource extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTransactionFromUTXOSource";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class BtcTransactionFromUTXOSource extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_hash"=>null, "index"=>null, "private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_hash'])) {
             $ip[] = "'tx_hash' can't be null";
         }
@@ -74,9 +73,9 @@ class BtcTransactionFromUTXOSource extends AbstractModel {
         if ((mb_strlen($this->_data['private_key']) < 52)) {
             $ip[] = "'private_key' length must be >= 52";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_hash

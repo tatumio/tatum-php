@@ -223,10 +223,10 @@ class MarketValue extends AbstractModel {
     public const CURRENCY_ZWL = 'ZWL';
     protected static $_name = "MarketValue";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "source_date" => ["sourceDate", "float", null, "getSourceDate", "setSourceDate"], 
-        "source" => ["source", "string", null, "getSource", "setSource"]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "source_date" => ["sourceDate", "float", null, "getSourceDate", "setSourceDate", null], 
+        "source" => ["source", "string", null, "getSource", "setSource", null]
     ];
 
     /**
@@ -235,17 +235,16 @@ class MarketValue extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["amount"=>null, "currency"=>null, "source_date"=>null, "source"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['amount'])) {
             $ip[] = "'amount' can't be null";
         }
@@ -263,9 +262,9 @@ class MarketValue extends AbstractModel {
         if (is_null($this->_data['source'])) {
             $ip[] = "'source' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,10 +25,10 @@ class XrpLedger extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpLedger";
     protected static $_definition = [
-        "ledger" => ["ledger", "\Tatum\Model\XrpLedgerLedger", null, "getLedger", "setLedger"], 
-        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash"], 
-        "ledger_index" => ["ledger_index", "int", null, "getLedgerIndex", "setLedgerIndex"], 
-        "validated" => ["validated", "bool", null, "getValidated", "setValidated"]
+        "ledger" => ["ledger", "\Tatum\Model\XrpLedgerLedger", null, "getLedger", "setLedger", null], 
+        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null], 
+        "ledger_index" => ["ledger_index", "int", null, "getLedgerIndex", "setLedgerIndex", null], 
+        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class XrpLedger extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["ledger"=>null, "ledger_hash"=>null, "ledger_index"=>null, "validated"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get ledger

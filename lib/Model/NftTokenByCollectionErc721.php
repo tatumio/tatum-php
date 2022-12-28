@@ -25,8 +25,8 @@ class NftTokenByCollectionErc721 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftTokenByCollectionErc721";
     protected static $_definition = [
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "metadata" => ["metadata", "\Tatum\Model\NftTokenByCollectionErc721TokenMetadata", null, "getMetadata", "setMetadata"]
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "metadata" => ["metadata", "\Tatum\Model\NftTokenByCollectionErc721TokenMetadata", null, "getMetadata", "setMetadata", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class NftTokenByCollectionErc721 extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["token_id"=>null, "metadata"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['token_id'])) {
             $ip[] = "'token_id' can't be null";
         }
         if ((mb_strlen($this->_data['token_id']) > 78)) {
             $ip[] = "'token_id' length must be <= 78";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get token_id

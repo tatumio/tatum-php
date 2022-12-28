@@ -25,9 +25,9 @@ class BlockAmount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BlockAmount";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class BlockAmount extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["amount"=>null, "type"=>null, "description"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['amount'])) {
             $ip[] = "'amount' can't be null";
         }
@@ -71,9 +70,9 @@ class BlockAmount extends AbstractModel {
         if (!is_null($this->_data['description']) && (mb_strlen($this->_data['description']) < 1)) {
             $ip[] = "'description' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get amount

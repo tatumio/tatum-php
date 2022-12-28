@@ -25,8 +25,8 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode_PreviousFields";
     protected static $_definition = [
-        "balance" => ["Balance", "string", null, "getBalance", "setBalance"], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence"]
+        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["balance"=>null, "sequence"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['balance'])) {
             $ip[] = "'balance' can't be null";
         }
         if (is_null($this->_data['sequence'])) {
             $ip[] = "'sequence' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get balance

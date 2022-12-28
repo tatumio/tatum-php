@@ -28,10 +28,10 @@ class MintNftExpressAlgorand extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "MintNftExpressAlgorand";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class MintNftExpressAlgorand extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "url"=>null, "name"=>null, "attr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -74,9 +73,9 @@ class MintNftExpressAlgorand extends AbstractModel {
         if ((mb_strlen($this->_data['name']) < 1)) {
             $ip[] = "'name' length must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,8 +25,8 @@ class EthGasEstimationBatch extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthGasEstimationBatch";
     protected static $_definition = [
-        "error" => ["error", "bool", null, "getError", "setError"], 
-        "result" => ["result", "\Tatum\Model\EthGasEstimationBatchResult[]", null, "getResult", "setResult"]
+        "error" => ["error", "bool", null, "getError", "setError", null], 
+        "result" => ["result", "\Tatum\Model\EthGasEstimationBatchResult[]", null, "getResult", "setResult", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class EthGasEstimationBatch extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["error"=>null, "result"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['error'])) {
             $ip[] = "'error' can't be null";
         }
         if (is_null($this->_data['result'])) {
             $ip[] = "'result' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get error

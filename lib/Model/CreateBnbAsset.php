@@ -222,8 +222,8 @@ class CreateBnbAsset extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "CreateBnbAsset";
     protected static $_definition = [
-        "token" => ["token", "string", null, "getToken", "setToken"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"]
+        "token" => ["token", "string", null, "getToken", "setToken", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null]
     ];
 
     /**
@@ -232,17 +232,16 @@ class CreateBnbAsset extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["token"=>null, "base_pair"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['token'])) {
             $ip[] = "'token' can't be null";
         }
@@ -269,9 +268,9 @@ class CreateBnbAsset extends AbstractModel {
         if ((mb_strlen($this->_data['base_pair']) < 3)) {
             $ip[] = "'base_pair' length must be >= 3";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

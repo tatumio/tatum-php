@@ -25,18 +25,18 @@ class FlowTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowTx";
     protected static $_definition = [
-        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId"], 
-        "script" => ["script", "string", null, "getScript", "setScript"], 
-        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs"], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit"], 
-        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey"], 
-        "payer" => ["payer", "string", null, "getPayer", "setPayer"], 
-        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures"], 
-        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures"], 
-        "status" => ["status", "float", null, "getStatus", "setStatus"], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode"], 
-        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage"], 
-        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents"]
+        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId", null], 
+        "script" => ["script", "string", null, "getScript", "setScript", null], 
+        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs", null], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
+        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey", null], 
+        "payer" => ["payer", "string", null, "getPayer", "setPayer", null], 
+        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures", null], 
+        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures", null], 
+        "status" => ["status", "float", null, "getStatus", "setStatus", null], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null], 
+        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage", null], 
+        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents", null]
     ];
 
     /**
@@ -45,20 +45,19 @@ class FlowTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["reference_block_id"=>null, "script"=>null, "args"=>null, "gas_limit"=>null, "proposal_key"=>null, "payer"=>null, "payload_signatures"=>null, "envelope_signatures"=>null, "status"=>null, "status_code"=>null, "error_message"=>null, "events"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get reference_block_id

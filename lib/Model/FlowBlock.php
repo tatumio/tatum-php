@@ -25,13 +25,13 @@ class FlowBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowBlock";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "parent_id" => ["parentId", "string", null, "getParentId", "setParentId"], 
-        "height" => ["height", "float", null, "getHeight", "setHeight"], 
-        "timestamp" => ["timestamp", "string", null, "getTimestamp", "setTimestamp"], 
-        "transactions" => ["transactions", "string[]", null, "getTransactions", "setTransactions"], 
-        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures"], 
-        "block_seals" => ["blockSeals", "\Tatum\Model\FlowBlockBlockSealsInner[]", null, "getBlockSeals", "setBlockSeals"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "parent_id" => ["parentId", "string", null, "getParentId", "setParentId", null], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
+        "timestamp" => ["timestamp", "string", null, "getTimestamp", "setTimestamp", null], 
+        "transactions" => ["transactions", "string[]", null, "getTransactions", "setTransactions", null], 
+        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null], 
+        "block_seals" => ["blockSeals", "\Tatum\Model\FlowBlockBlockSealsInner[]", null, "getBlockSeals", "setBlockSeals", null]
     ];
 
     /**
@@ -40,20 +40,19 @@ class FlowBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "parent_id"=>null, "height"=>null, "timestamp"=>null, "transactions"=>null, "signatures"=>null, "block_seals"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get id

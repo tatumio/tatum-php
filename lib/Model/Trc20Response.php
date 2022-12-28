@@ -25,8 +25,8 @@ class Trc20Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Trc20Response";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class Trc20Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_id"=>null, "address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get account_id

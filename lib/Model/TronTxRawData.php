@@ -27,11 +27,11 @@ class TronTxRawData extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_rawData";
     protected static $_definition = [
-        "contract" => ["contract", "\Tatum\Model\TronTxRawDataContractInner[]", null, "getContract", "setContract"], 
-        "ref_block_bytes" => ["ref_block_bytes", "float", null, "getRefBlockBytes", "setRefBlockBytes"], 
-        "ref_block_hash" => ["ref_block_hash", "float", null, "getRefBlockHash", "setRefBlockHash"], 
-        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"]
+        "contract" => ["contract", "\Tatum\Model\TronTxRawDataContractInner[]", null, "getContract", "setContract", null], 
+        "ref_block_bytes" => ["ref_block_bytes", "float", null, "getRefBlockBytes", "setRefBlockBytes", null], 
+        "ref_block_hash" => ["ref_block_hash", "float", null, "getRefBlockHash", "setRefBlockHash", null], 
+        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class TronTxRawData extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["contract"=>null, "ref_block_bytes"=>null, "ref_block_hash"=>null, "expiration"=>null, "timestamp"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['contract'])) {
             $ip[] = "'contract' can't be null";
         }
@@ -60,9 +59,9 @@ class TronTxRawData extends AbstractModel {
         if (is_null($this->_data['timestamp'])) {
             $ip[] = "'timestamp' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get contract

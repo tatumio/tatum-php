@@ -25,13 +25,13 @@ class XlmAccountBalancesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmAccount_balances_inner";
     protected static $_definition = [
-        "balance" => ["balance", "string", null, "getBalance", "setBalance"], 
-        "limit" => ["limit", "string", null, "getLimit", "setLimit"], 
-        "buying_liabilities" => ["buying_liabilities", "string", null, "getBuyingLiabilities", "setBuyingLiabilities"], 
-        "selling_liabilities" => ["selling_liabilities", "string", null, "getSellingLiabilities", "setSellingLiabilities"], 
-        "asset_type" => ["asset_type", "string", null, "getAssetType", "setAssetType"], 
-        "asset_code" => ["asset_code", "string", null, "getAssetCode", "setAssetCode"], 
-        "asset_issuer" => ["asset_issuer", "string", null, "getAssetIssuer", "setAssetIssuer"]
+        "balance" => ["balance", "string", null, "getBalance", "setBalance", null], 
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null], 
+        "buying_liabilities" => ["buying_liabilities", "string", null, "getBuyingLiabilities", "setBuyingLiabilities", null], 
+        "selling_liabilities" => ["selling_liabilities", "string", null, "getSellingLiabilities", "setSellingLiabilities", null], 
+        "asset_type" => ["asset_type", "string", null, "getAssetType", "setAssetType", null], 
+        "asset_code" => ["asset_code", "string", null, "getAssetCode", "setAssetCode", null], 
+        "asset_issuer" => ["asset_issuer", "string", null, "getAssetIssuer", "setAssetIssuer", null]
     ];
 
     /**
@@ -40,20 +40,19 @@ class XlmAccountBalancesInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["balance"=>null, "limit"=>null, "buying_liabilities"=>null, "selling_liabilities"=>null, "asset_type"=>null, "asset_code"=>null, "asset_issuer"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get balance

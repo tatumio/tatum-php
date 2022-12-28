@@ -27,15 +27,15 @@ class CreateFutureTrade extends AbstractModel {
     public const TYPE_SELL = 'FUTURE_SELL';
     protected static $_name = "CreateFutureTrade";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "price" => ["price", "string", null, "getPrice", "setPrice"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "pair" => ["pair", "string", null, "getPair", "setPair"], 
-        "currency1_account_id" => ["currency1AccountId", "string", null, "getCurrency1AccountId", "setCurrency1AccountId"], 
-        "currency2_account_id" => ["currency2AccountId", "string", null, "getCurrency2AccountId", "setCurrency2AccountId"], 
-        "fee_account_id" => ["feeAccountId", "string", null, "getFeeAccountId", "setFeeAccountId"], 
-        "fee" => ["fee", "float", null, "getFee", "setFee"], 
-        "attr" => ["attr", "\Tatum\Model\CreateFutureTradeAttr", null, "getAttr", "setAttr"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "pair" => ["pair", "string", null, "getPair", "setPair", null], 
+        "currency1_account_id" => ["currency1AccountId", "string", null, "getCurrency1AccountId", "setCurrency1AccountId", null], 
+        "currency2_account_id" => ["currency2AccountId", "string", null, "getCurrency2AccountId", "setCurrency2AccountId", null], 
+        "fee_account_id" => ["feeAccountId", "string", null, "getFeeAccountId", "setFeeAccountId", null], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
+        "attr" => ["attr", "\Tatum\Model\CreateFutureTradeAttr", null, "getAttr", "setAttr", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class CreateFutureTrade extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "price"=>null, "amount"=>null, "pair"=>null, "currency1_account_id"=>null, "currency2_account_id"=>null, "fee_account_id"=>null, "fee"=>null, "attr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['type'])) {
             $ip[] = "'type' can't be null";
         }
@@ -126,9 +125,9 @@ class CreateFutureTrade extends AbstractModel {
         if (is_null($this->_data['attr'])) {
             $ip[] = "'attr' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

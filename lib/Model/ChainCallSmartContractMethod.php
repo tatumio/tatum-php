@@ -28,14 +28,14 @@ class ChainCallSmartContractMethod extends AbstractModel {
     public const CHAIN_XDC = 'XDC';
     protected static $_name = "ChainCallSmartContractMethod";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName"], 
-        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi"], 
-        "params" => ["params", "string[]", null, "getParams", "setParams"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null], 
+        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null], 
+        "params" => ["params", "string[]", null, "getParams", "setParams", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class ChainCallSmartContractMethod extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "method_name"=>null, "method_abi"=>null, "params"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -99,9 +98,9 @@ class ChainCallSmartContractMethod extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

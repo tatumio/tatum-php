@@ -28,10 +28,10 @@ class EstimateFeeFromUTXO extends AbstractModel {
     public const TYPE_TRANSFER = 'TRANSFER';
     protected static $_name = "EstimateFeeFromUTXO";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo"], 
-        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null], 
+        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class EstimateFeeFromUTXO extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "type"=>null, "from_utxo"=>null, "to"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -73,9 +72,9 @@ class EstimateFeeFromUTXO extends AbstractModel {
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

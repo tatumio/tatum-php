@@ -28,20 +28,20 @@ class CeloOrErc20TransferRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "CeloOrErc20Transfer_request";
     protected static $_definition = [
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"], 
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit"], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -50,17 +50,16 @@ class CeloOrErc20TransferRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["nonce"=>null, "address"=>null, "amount"=>null, "compliant"=>null, "from_private_key"=>null, "payment_id"=>null, "sender_account_id"=>null, "fee_currency"=>null, "sender_note"=>null, "gas_limit"=>null, "gas_price"=>null, "index"=>null, "mnemonic"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
@@ -144,9 +143,9 @@ class CeloOrErc20TransferRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,12 +25,12 @@ class DogeUTXO extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeUTXO";
     protected static $_definition = [
-        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\DogeTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "height" => ["height", "float", null, "getHeight", "setHeight"], 
-        "value" => ["value", "float", null, "getValue", "setValue"], 
-        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase"], 
-        "bestblock" => ["bestblock", "string", null, "getBestblock", "setBestblock"]
+        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\DogeTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
+        "value" => ["value", "float", null, "getValue", "setValue", null], 
+        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase", null], 
+        "bestblock" => ["bestblock", "string", null, "getBestblock", "setBestblock", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class DogeUTXO extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["script_pub_key"=>null, "version"=>null, "height"=>null, "value"=>null, "coinbase"=>null, "bestblock"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get script_pub_key

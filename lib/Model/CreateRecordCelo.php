@@ -29,12 +29,12 @@ class CreateRecordCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "CreateRecordCelo";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"]
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class CreateRecordCelo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null, "chain"=>null, "from_private_key"=>null, "fee_currency"=>null, "to"=>null, "nonce"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['data'])) {
             $ip[] = "'data' can't be null";
         }
@@ -97,9 +96,9 @@ class CreateRecordCelo extends AbstractModel {
         if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
             $ip[] = "'nonce' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

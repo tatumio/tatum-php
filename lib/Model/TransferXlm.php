@@ -25,15 +25,15 @@ class TransferXlm extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXlm";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "secret" => ["secret", "string", null, "getSecret", "setSecret"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "secret" => ["secret", "string", null, "getSecret", "setSecret", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
     ];
 
     /**
@@ -42,17 +42,16 @@ class TransferXlm extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "from_account"=>null, "address"=>null, "amount"=>null, "secret"=>null, "compliant"=>null, "attr"=>null, "payment_id"=>null, "sender_note"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -116,9 +115,9 @@ class TransferXlm extends AbstractModel {
         if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
             $ip[] = "'sender_note' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

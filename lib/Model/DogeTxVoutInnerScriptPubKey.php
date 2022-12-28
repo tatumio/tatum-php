@@ -25,10 +25,10 @@ class DogeTxVoutInnerScriptPubKey extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTx_vout_inner_scriptPubKey";
     protected static $_definition = [
-        "asm" => ["asm", "string", null, "getAsm", "setAsm"], 
-        "hex" => ["hex", "string", null, "getHex", "setHex"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "addresses" => ["addresses", "string[]", null, "getAddresses", "setAddresses"]
+        "asm" => ["asm", "string", null, "getAsm", "setAsm", null], 
+        "hex" => ["hex", "string", null, "getHex", "setHex", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "addresses" => ["addresses", "string[]", null, "getAddresses", "setAddresses", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class DogeTxVoutInnerScriptPubKey extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["asm"=>null, "hex"=>null, "type"=>null, "addresses"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get asm

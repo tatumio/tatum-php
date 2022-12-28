@@ -25,13 +25,13 @@ class SolanaBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaBlock";
     protected static $_definition = [
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight"], 
-        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime"], 
-        "blockhash" => ["blockhash", "string", null, "getBlockhash", "setBlockhash"], 
-        "parent_slot" => ["parentSlot", "float", null, "getParentSlot", "setParentSlot"], 
-        "previous_blockhash" => ["previousBlockhash", "string", null, "getPreviousBlockhash", "setPreviousBlockhash"], 
-        "rewards" => ["rewards", "\Tatum\Model\SolanaBlockReward[]", null, "getRewards", "setRewards"], 
-        "transactions" => ["transactions", "\Tatum\Model\SolanaBlockTx[]", null, "getTransactions", "setTransactions"]
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
+        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime", null], 
+        "blockhash" => ["blockhash", "string", null, "getBlockhash", "setBlockhash", null], 
+        "parent_slot" => ["parentSlot", "float", null, "getParentSlot", "setParentSlot", null], 
+        "previous_blockhash" => ["previousBlockhash", "string", null, "getPreviousBlockhash", "setPreviousBlockhash", null], 
+        "rewards" => ["rewards", "\Tatum\Model\SolanaBlockReward[]", null, "getRewards", "setRewards", null], 
+        "transactions" => ["transactions", "\Tatum\Model\SolanaBlockTx[]", null, "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -40,20 +40,19 @@ class SolanaBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_height"=>null, "block_time"=>null, "blockhash"=>null, "parent_slot"=>null, "previous_blockhash"=>null, "rewards"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_height

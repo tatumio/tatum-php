@@ -25,14 +25,14 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateTronTrc20BlockchainKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "signature_id"=>null, "index"=>null, "recipient"=>null, "name"=>null, "symbol"=>null, "total_supply"=>null, "decimals"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -109,9 +108,9 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
         if (($this->_data['decimals'] < 0)) {
             $ip[] = "'decimals' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

@@ -25,8 +25,8 @@ class BchTxVinInnerScriptSig extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx_vin_inner_scriptSig";
     protected static $_definition = [
-        "hex" => ["hex", "string", null, "getHex", "setHex"], 
-        "asm" => ["asm", "string", null, "getAsm", "setAsm"]
+        "hex" => ["hex", "string", null, "getHex", "setHex", null], 
+        "asm" => ["asm", "string", null, "getAsm", "setAsm", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class BchTxVinInnerScriptSig extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hex"=>null, "asm"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hex

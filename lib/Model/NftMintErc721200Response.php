@@ -25,13 +25,13 @@ class NftMintErc721200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftMintErc721_200_response";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress"], 
-        "nft_account_address" => ["nftAccountAddress", "string", null, "getNftAccountAddress", "setNftAccountAddress"], 
-        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex"], 
-        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
+        "nft_account_address" => ["nftAccountAddress", "string", null, "getNftAccountAddress", "setNftAccountAddress", null], 
+        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null], 
+        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class NftMintErc721200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "token_id"=>null, "nft_address"=>null, "nft_account_address"=>null, "asset_index"=>null, "confirmed"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
@@ -60,9 +59,9 @@ class NftMintErc721200Response extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

@@ -25,8 +25,8 @@ class BchTransactionToInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTransaction_to_inner";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "value" => ["value", "float", null, "getValue", "setValue"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "value" => ["value", "float", null, "getValue", "setValue", null]
     ];
 
     /**
@@ -35,17 +35,16 @@ class BchTransactionToInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "value"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
@@ -55,9 +54,9 @@ class BchTransactionToInner extends AbstractModel {
         if (($this->_data['value'] < 0)) {
             $ip[] = "'value' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get address

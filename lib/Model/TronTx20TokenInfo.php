@@ -25,10 +25,10 @@ class TronTx20TokenInfo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx20_tokenInfo";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
-        "name" => ["name", "string", null, "getName", "setName"]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
+        "name" => ["name", "string", null, "getName", "setName", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class TronTx20TokenInfo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "address"=>null, "decimals"=>null, "name"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['symbol'])) {
             $ip[] = "'symbol' can't be null";
         }
@@ -60,9 +59,9 @@ class TronTx20TokenInfo extends AbstractModel {
         if (is_null($this->_data['name'])) {
             $ip[] = "'name' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get symbol

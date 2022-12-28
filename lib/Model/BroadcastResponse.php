@@ -25,8 +25,8 @@ class BroadcastResponse extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BroadcastResponse";
     protected static $_definition = [
-        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"]
+        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class BroadcastResponse extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["completed"=>null, "tx_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get completed

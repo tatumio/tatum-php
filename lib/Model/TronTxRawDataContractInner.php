@@ -25,8 +25,8 @@ class TronTxRawDataContractInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_rawData_contract_inner";
     protected static $_definition = [
-        "parameter" => ["parameter", "\Tatum\Model\TronTxRawDataContractInnerParameter", null, "getParameter", "setParameter"], 
-        "type" => ["type", "string", null, "getType", "setType"]
+        "parameter" => ["parameter", "\Tatum\Model\TronTxRawDataContractInnerParameter", null, "getParameter", "setParameter", null], 
+        "type" => ["type", "string", null, "getType", "setType", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class TronTxRawDataContractInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["parameter"=>null, "type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get parameter

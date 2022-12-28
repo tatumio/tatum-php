@@ -25,11 +25,11 @@ class FlowTxEventsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowTx_events_inner";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "transaction_id" => ["transactionId", "string", null, "getTransactionId", "setTransactionId"], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex"], 
-        "event_index" => ["eventIndex", "float", null, "getEventIndex", "setEventIndex"], 
-        "data" => ["data", "object", null, "getData", "setData"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "transaction_id" => ["transactionId", "string", null, "getTransactionId", "setTransactionId", null], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
+        "event_index" => ["eventIndex", "float", null, "getEventIndex", "setEventIndex", null], 
+        "data" => ["data", "object", null, "getData", "setData", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class FlowTxEventsInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "transaction_id"=>null, "transaction_index"=>null, "event_index"=>null, "data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get type

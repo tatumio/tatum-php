@@ -395,15 +395,15 @@ class Erc20Address extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "Erc20Address";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR']
     ];
 
     /**
@@ -412,17 +412,16 @@ class Erc20Address extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "supply"=>null, "decimals"=>null, "description"=>null, "address"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "accounting_currency"=>'EUR'] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['symbol'])) {
             $ip[] = "'symbol' can't be null";
         }
@@ -496,9 +495,9 @@ class Erc20Address extends AbstractModel {
         if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
             $ip[] = "'accounting_currency' length must be >= 3";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

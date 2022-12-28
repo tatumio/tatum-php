@@ -25,8 +25,8 @@ class AccountBalance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AccountBalance";
     protected static $_definition = [
-        "account_balance" => ["accountBalance", "string", null, "getAccountBalance", "setAccountBalance"], 
-        "available_balance" => ["availableBalance", "string", null, "getAvailableBalance", "setAvailableBalance"]
+        "account_balance" => ["accountBalance", "string", null, "getAccountBalance", "setAccountBalance", null], 
+        "available_balance" => ["availableBalance", "string", null, "getAvailableBalance", "setAvailableBalance", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class AccountBalance extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_balance"=>null, "available_balance"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account_balance'])) {
             $ip[] = "'account_balance' can't be null";
         }
         if (is_null($this->_data['available_balance'])) {
             $ip[] = "'available_balance' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account_balance

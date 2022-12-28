@@ -25,10 +25,10 @@ class EthGasEstimationBatchResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthGasEstimationBatchResult";
     protected static $_definition = [
-        "error" => ["error", "bool", null, "getError", "setError"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "data" => ["data", "\Tatum\Model\EthGasEstimationBatchResultData", null, "getData", "setData"], 
-        "msg" => ["msg", "string", null, "getMsg", "setMsg"]
+        "error" => ["error", "bool", null, "getError", "setError", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "data" => ["data", "\Tatum\Model\EthGasEstimationBatchResultData", null, "getData", "setData", null], 
+        "msg" => ["msg", "string", null, "getMsg", "setMsg", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class EthGasEstimationBatchResult extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["error"=>null, "contract_address"=>null, "data"=>null, "msg"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['error'])) {
             $ip[] = "'error' can't be null";
         }
@@ -57,9 +56,9 @@ class EthGasEstimationBatchResult extends AbstractModel {
         if (!is_null($this->_data['contract_address']) && (mb_strlen($this->_data['contract_address']) < 42)) {
             $ip[] = "'contract_address' length must be >= 42";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get error

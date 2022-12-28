@@ -25,7 +25,7 @@ class TronTxRetInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_ret_inner";
     protected static $_definition = [
-        "contract_ret" => ["contractRet", "string", null, "getContractRet", "setContractRet"]
+        "contract_ret" => ["contractRet", "string", null, "getContractRet", "setContractRet", null]
     ];
 
     /**
@@ -34,20 +34,19 @@ class TronTxRetInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["contract_ret"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get contract_ret

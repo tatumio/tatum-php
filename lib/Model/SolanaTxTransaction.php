@@ -25,8 +25,8 @@ class SolanaTxTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxTransaction";
     protected static $_definition = [
-        "message" => ["message", "\Tatum\Model\SolanaTxMessage", null, "getMessage", "setMessage"], 
-        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures"]
+        "message" => ["message", "\Tatum\Model\SolanaTxMessage", null, "getMessage", "setMessage", null], 
+        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class SolanaTxTransaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["message"=>null, "signatures"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get message

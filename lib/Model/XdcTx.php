@@ -25,24 +25,24 @@ class XdcTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XdcTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "gas" => ["gas", "float", null, "getGas", "setGas"], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"], 
-        "input" => ["input", "string", null, "getInput", "setInput"], 
-        "status" => ["status", "bool", null, "getStatus", "setStatus"], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed"], 
-        "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "logs" => ["logs", "\Tatum\Model\KlaytnTxLogsInner[]", null, "getLogs", "setLogs"], 
-        "logs_bloom" => ["logsBloom", "string", 'DATA, 256 Bytes', "getLogsBloom", "setLogsBloom"], 
-        "root" => ["root", "string", null, "getRoot", "setRoot"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
+        "input" => ["input", "string", null, "getInput", "setInput", null], 
+        "status" => ["status", "bool", null, "getStatus", "setStatus", null], 
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
+        "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "logs" => ["logs", "\Tatum\Model\KlaytnTxLogsInner[]", null, "getLogs", "setLogs", null], 
+        "logs_bloom" => ["logsBloom", "string", 'DATA, 256 Bytes', "getLogsBloom", "setLogsBloom", null], 
+        "root" => ["root", "string", null, "getRoot", "setRoot", null]
     ];
 
     /**
@@ -51,20 +51,19 @@ class XdcTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "nonce"=>null, "block_hash"=>null, "block_number"=>null, "transaction_index"=>null, "from"=>null, "to"=>null, "value"=>null, "gas"=>null, "gas_price"=>null, "input"=>null, "status"=>null, "gas_used"=>null, "cumulative_gas_used"=>null, "contract_address"=>null, "logs"=>null, "logs_bloom"=>null, "root"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

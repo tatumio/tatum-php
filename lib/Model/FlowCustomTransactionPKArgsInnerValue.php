@@ -31,17 +31,39 @@ class FlowCustomTransactionPKArgsInnerValue extends AbstractModel {
 
     /**
      * FlowCustomTransactionPKArgsInnerValue
+     *
+     * @param mixed $data Model data
      */
-    public function __construct() {
+    public function __construct($data = null) {
+        $this->_data = $data;
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
-        $ip = [];
-
-        
-        return $ip;
+        return [];
     }
+
+    /**
+     * Get data
+     * 
+     * @return mixed OneOfStringArray
+     */
+    public function getData() {
+        return $this->_data;
+    }
+
+    /**
+     * Set data
+     * 
+     * @param mixed $data OneOfStringArray
+     * @return $this
+     */
+    public function setData($data) {
+        $this->_data = $data;
+
+        return $this;
+    }
+    
 }

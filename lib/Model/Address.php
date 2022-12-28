@@ -25,13 +25,13 @@ class Address extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Address";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "destination_tag" => ["destinationTag", "float", null, "getDestinationTag", "setDestinationTag"], 
-        "memo" => ["memo", "string", null, "getMemo", "setMemo"], 
-        "message" => ["message", "string", null, "getMessage", "setMessage"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "destination_tag" => ["destinationTag", "float", null, "getDestinationTag", "setDestinationTag", null], 
+        "memo" => ["memo", "string", null, "getMemo", "setMemo", null], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class Address extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "currency"=>null, "derivation_key"=>null, "xpub"=>null, "destination_tag"=>null, "memo"=>null, "message"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
@@ -60,9 +59,9 @@ class Address extends AbstractModel {
         if (!is_null($this->_data['derivation_key']) && ($this->_data['derivation_key'] > 2147483647)) {
             $ip[] = "'derivation_key' must be <= 2147483647";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get address

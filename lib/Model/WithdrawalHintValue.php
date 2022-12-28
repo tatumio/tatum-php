@@ -25,8 +25,8 @@ class WithdrawalHintValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "WithdrawalHint_value";
     protected static $_definition = [
-        "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class WithdrawalHintValue extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get address

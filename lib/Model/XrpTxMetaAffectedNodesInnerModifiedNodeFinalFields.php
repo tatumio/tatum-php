@@ -25,11 +25,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode_FinalFields";
     protected static $_definition = [
-        "account" => ["Account", "string", null, "getAccount", "setAccount"], 
-        "balance" => ["Balance", "string", null, "getBalance", "setBalance"], 
-        "flags" => ["Flags", "float", null, "getFlags", "setFlags"], 
-        "owner_count" => ["OwnerCount", "float", null, "getOwnerCount", "setOwnerCount"], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence"]
+        "account" => ["Account", "string", null, "getAccount", "setAccount", null], 
+        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null], 
+        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null], 
+        "owner_count" => ["OwnerCount", "float", null, "getOwnerCount", "setOwnerCount", null], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "balance"=>null, "flags"=>null, "owner_count"=>null, "sequence"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get account

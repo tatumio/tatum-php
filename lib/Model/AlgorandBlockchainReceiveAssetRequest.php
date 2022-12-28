@@ -25,10 +25,10 @@ class AlgorandBlockchainReceiveAssetRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgorandBlockchainReceiveAsset_request";
     protected static $_definition = [
-        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class AlgorandBlockchainReceiveAssetRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["asset_id"=>null, "from_private_key"=>null, "from"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['asset_id'])) {
             $ip[] = "'asset_id' can't be null";
         }
@@ -66,9 +65,9 @@ class AlgorandBlockchainReceiveAssetRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get asset_id

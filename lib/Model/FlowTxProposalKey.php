@@ -25,9 +25,9 @@ class FlowTxProposalKey extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowTx_proposalKey";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "key_id" => ["keyId", "float", null, "getKeyId", "setKeyId"], 
-        "sequence_number" => ["sequenceNumber", "float", null, "getSequenceNumber", "setSequenceNumber"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "key_id" => ["keyId", "float", null, "getKeyId", "setKeyId", null], 
+        "sequence_number" => ["sequenceNumber", "float", null, "getSequenceNumber", "setSequenceNumber", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class FlowTxProposalKey extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "key_id"=>null, "sequence_number"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get address

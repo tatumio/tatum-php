@@ -25,17 +25,17 @@ class TronCreateTrc10Request extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronCreateTrc10_request";
     protected static $_definition = [
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "abbreviation" => ["abbreviation", "string", null, "getAbbreviation", "setAbbreviation"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "abbreviation" => ["abbreviation", "string", null, "getAbbreviation", "setAbbreviation", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class TronCreateTrc10Request extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_private_key"=>null, "recipient"=>null, "name"=>null, "abbreviation"=>null, "description"=>null, "url"=>null, "total_supply"=>null, "decimals"=>null, "from"=>null, "signature_id"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
         }
@@ -139,9 +138,9 @@ class TronCreateTrc10Request extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_private_key

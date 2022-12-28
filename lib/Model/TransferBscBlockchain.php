@@ -41,13 +41,13 @@ class TransferBscBlockchain extends AbstractModel {
     public const CURRENCY_BUSD_BSC = 'BUSD_BSC';
     protected static $_name = "TransferBscBlockchain";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"]
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
     ];
 
     /**
@@ -56,17 +56,16 @@ class TransferBscBlockchain extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null, "nonce"=>null, "to"=>null, "currency"=>null, "fee"=>null, "amount"=>null, "from_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 50000)) {
             $ip[] = "'data' length must be <= 50000";
         }
@@ -105,9 +104,9 @@ class TransferBscBlockchain extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 66)) {
             $ip[] = "'from_private_key' length must be >= 66";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

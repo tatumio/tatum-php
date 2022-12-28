@@ -25,10 +25,10 @@ class BnbAccountBalancesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbAccount_balances_inner";
     protected static $_definition = [
-        "free" => ["free", "string", null, "getFree", "setFree"], 
-        "frozen" => ["frozen", "string", null, "getFrozen", "setFrozen"], 
-        "locked" => ["locked", "string", null, "getLocked", "setLocked"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"]
+        "free" => ["free", "string", null, "getFree", "setFree", null], 
+        "frozen" => ["frozen", "string", null, "getFrozen", "setFrozen", null], 
+        "locked" => ["locked", "string", null, "getLocked", "setLocked", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class BnbAccountBalancesInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["free"=>null, "frozen"=>null, "locked"=>null, "symbol"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get free

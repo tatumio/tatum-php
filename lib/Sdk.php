@@ -12,6 +12,7 @@
 namespace Tatum;
 
 use Tatum\Sdk\Caller;
+use RuntimeException;
 
 class Sdk {
     /**
@@ -48,10 +49,35 @@ class Sdk {
      * @see https://apidoc.tatum.io/#section/Authentication
      * @var string $apiKeyMainnet (optional) MainNet Tatum API Key; default <b>empty string</b>
      * @var string $apiKeyTestnet (optional) TestNet Tatum API Key; default <b>empty string</b>
+     * @throws \RuntimeException
      */
     public function __construct(string $apiKeyMainnet = "", string $apiKeyTestnet = "") {
         $this->_apiKeyMainnet = $apiKeyMainnet;
         $this->_apiKeyTestnet = $apiKeyTestnet;
+
+        // System check
+        if (PHP_INT_SIZE < 8) {
+            throw new RuntimeException("Tatum SDK: 64-bit PHP is required");
+        }
+
+        // PHP check
+        if (version_compare(PHP_VERSION, "7.3.0") <= 0) {
+            throw new RuntimeException("Tatum SDK: PHP v7.3+ is required");
+        }
+
+        // Extensions check
+        $extensions = [
+            "curl" => "curl_init",
+            "json" => "json_encode",
+            "gmp" => "gmp_init",
+            "bcmath" => "bcadd",
+            "mbstring" => "mb_strlen"
+        ];
+        foreach ($extensions as $extName => $extFunction) {
+            if (!function_exists($extFunction)) {
+                throw new RuntimeException("Tatum SDK: PHP extension '$extName' is required");
+            }
+        }
     }
 
     /**

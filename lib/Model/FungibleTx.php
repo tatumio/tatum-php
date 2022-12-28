@@ -25,12 +25,12 @@ class FungibleTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FungibleTx";
     protected static $_definition = [
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"]
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class FungibleTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_number"=>null, "tx_id"=>null, "contract_address"=>null, "amount"=>null, "from"=>null, "to"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['block_number'])) {
             $ip[] = "'block_number' can't be null";
         }
@@ -68,9 +67,9 @@ class FungibleTx extends AbstractModel {
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get block_number

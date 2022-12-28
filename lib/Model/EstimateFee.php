@@ -40,12 +40,12 @@ class EstimateFee extends AbstractModel {
     public const TYPE_DEPLOY_MARKETPLACE = 'DEPLOY_MARKETPLACE';
     protected static $_name = "EstimateFee";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -54,17 +54,16 @@ class EstimateFee extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "type"=>null, "sender"=>null, "recipient"=>null, "contract_address"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -102,9 +101,9 @@ class EstimateFee extends AbstractModel {
         if (!is_null($this->_data['amount']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
             $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,13 +25,13 @@ class TronTransferTrc10Request extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTransferTrc10_request";
     protected static $_definition = [
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class TronTransferTrc10Request extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_private_key"=>null, "to"=>null, "token_id"=>null, "amount"=>null, "from"=>null, "signature_id"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
         }
@@ -99,9 +98,9 @@ class TronTransferTrc10Request extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_private_key

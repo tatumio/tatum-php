@@ -25,18 +25,18 @@ class AlgoBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoBlock";
     protected static $_definition = [
-        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash"], 
-        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId"], 
-        "previous_block_hash" => ["previousBlockHash", "string", null, "getPreviousBlockHash", "setPreviousBlockHash"], 
-        "rewards" => ["rewards", "object", null, "getRewards", "setRewards"], 
-        "round" => ["round", "float", null, "getRound", "setRound"], 
-        "seed" => ["seed", "string", null, "getSeed", "setSeed"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "txns" => ["txns", "\Tatum\Model\AlgoTx[]", null, "getTxns", "setTxns"], 
-        "txn" => ["txn", "string", null, "getTxn", "setTxn"], 
-        "txnc" => ["txnc", "float", null, "getTxnc", "setTxnc"], 
-        "upgrade_state" => ["upgradeState", "object", null, "getUpgradeState", "setUpgradeState"], 
-        "upgrade_vote" => ["upgradeVote", "object", null, "getUpgradeVote", "setUpgradeVote"]
+        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash", null], 
+        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId", null], 
+        "previous_block_hash" => ["previousBlockHash", "string", null, "getPreviousBlockHash", "setPreviousBlockHash", null], 
+        "rewards" => ["rewards", "object", null, "getRewards", "setRewards", null], 
+        "round" => ["round", "float", null, "getRound", "setRound", null], 
+        "seed" => ["seed", "string", null, "getSeed", "setSeed", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "txns" => ["txns", "\Tatum\Model\AlgoTx[]", null, "getTxns", "setTxns", null], 
+        "txn" => ["txn", "string", null, "getTxn", "setTxn", null], 
+        "txnc" => ["txnc", "float", null, "getTxnc", "setTxnc", null], 
+        "upgrade_state" => ["upgradeState", "object", null, "getUpgradeState", "setUpgradeState", null], 
+        "upgrade_vote" => ["upgradeVote", "object", null, "getUpgradeVote", "setUpgradeVote", null]
     ];
 
     /**
@@ -45,20 +45,19 @@ class AlgoBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["genesis_hash"=>null, "genesis_id"=>null, "previous_block_hash"=>null, "rewards"=>null, "round"=>null, "seed"=>null, "timestamp"=>null, "txns"=>null, "txn"=>null, "txnc"=>null, "upgrade_state"=>null, "upgrade_vote"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get genesis_hash

@@ -25,9 +25,9 @@ class BnbBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbBlock";
     protected static $_definition = [
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight"], 
-        "tx" => ["tx", "\Tatum\Model\BnbTransaction[]", null, "getTx", "setTx"]
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
+        "tx" => ["tx", "\Tatum\Model\BnbTransaction[]", null, "getTx", "setTx", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class BnbBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["timestamp"=>null, "block_height"=>null, "tx"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get timestamp

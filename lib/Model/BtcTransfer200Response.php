@@ -25,10 +25,10 @@ class BtcTransfer200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTransfer_200_response";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class BtcTransfer200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "tx_id"=>null, "completed"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -60,9 +59,9 @@ class BtcTransfer200Response extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get id

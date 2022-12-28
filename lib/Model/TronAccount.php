@@ -25,18 +25,18 @@ class TronAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronAccount";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "balance" => ["balance", "float", null, "getBalance", "setBalance"], 
-        "trc10" => ["trc10", "\Tatum\Model\TronAccountTrc10Inner[]", null, "getTrc10", "setTrc10"], 
-        "trc20" => ["trc20", "object[]", null, "getTrc20", "setTrc20"], 
-        "create_time" => ["createTime", "float", null, "getCreateTime", "setCreateTime"], 
-        "asset_issued_id" => ["assetIssuedId", "string", null, "getAssetIssuedId", "setAssetIssuedId"], 
-        "asset_issued_name" => ["assetIssuedName", "float", null, "getAssetIssuedName", "setAssetIssuedName"], 
-        "free_net_usage" => ["freeNetUsage", "float", null, "getFreeNetUsage", "setFreeNetUsage"], 
-        "free_net_limit" => ["freeNetLimit", "float", null, "getFreeNetLimit", "setFreeNetLimit"], 
-        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage"], 
-        "net_limit" => ["netLimit", "float", null, "getNetLimit", "setNetLimit"], 
-        "bandwidth" => ["bandwidth", "float", null, "getBandwidth", "setBandwidth"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "balance" => ["balance", "float", null, "getBalance", "setBalance", null], 
+        "trc10" => ["trc10", "\Tatum\Model\TronAccountTrc10Inner[]", null, "getTrc10", "setTrc10", null], 
+        "trc20" => ["trc20", "object[]", null, "getTrc20", "setTrc20", null], 
+        "create_time" => ["createTime", "float", null, "getCreateTime", "setCreateTime", null], 
+        "asset_issued_id" => ["assetIssuedId", "string", null, "getAssetIssuedId", "setAssetIssuedId", null], 
+        "asset_issued_name" => ["assetIssuedName", "float", null, "getAssetIssuedName", "setAssetIssuedName", null], 
+        "free_net_usage" => ["freeNetUsage", "float", null, "getFreeNetUsage", "setFreeNetUsage", null], 
+        "free_net_limit" => ["freeNetLimit", "float", null, "getFreeNetLimit", "setFreeNetLimit", null], 
+        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage", null], 
+        "net_limit" => ["netLimit", "float", null, "getNetLimit", "setNetLimit", null], 
+        "bandwidth" => ["bandwidth", "float", null, "getBandwidth", "setBandwidth", null]
     ];
 
     /**
@@ -45,17 +45,16 @@ class TronAccount extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "balance"=>null, "trc10"=>null, "trc20"=>null, "create_time"=>null, "asset_issued_id"=>null, "asset_issued_name"=>null, "free_net_usage"=>null, "free_net_limit"=>null, "net_usage"=>null, "net_limit"=>null, "bandwidth"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
@@ -77,9 +76,9 @@ class TronAccount extends AbstractModel {
         if (is_null($this->_data['bandwidth'])) {
             $ip[] = "'bandwidth' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get address

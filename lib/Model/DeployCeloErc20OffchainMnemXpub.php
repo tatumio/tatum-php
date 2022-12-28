@@ -225,18 +225,18 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "DeployCeloErc20OffchainMnemXpub";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -245,17 +245,16 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "supply"=>null, "description"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "xpub"=>null, "derivation_index"=>null, "mnemonic"=>null, "index"=>null, "nonce"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['symbol'])) {
             $ip[] = "'symbol' can't be null";
         }
@@ -344,9 +343,9 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

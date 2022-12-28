@@ -25,11 +25,11 @@ class VetTxReceiptMeta extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTxReceipt_meta";
     protected static $_definition = [
-        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "block_timestamp" => ["blockTimestamp", "float", null, "getBlockTimestamp", "setBlockTimestamp"], 
-        "tx_id" => ["txID", "string", null, "getTxId", "setTxId"], 
-        "tx_origin" => ["txOrigin", "string", null, "getTxOrigin", "setTxOrigin"]
+        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "block_timestamp" => ["blockTimestamp", "float", null, "getBlockTimestamp", "setBlockTimestamp", null], 
+        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null], 
+        "tx_origin" => ["txOrigin", "string", null, "getTxOrigin", "setTxOrigin", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class VetTxReceiptMeta extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_id"=>null, "block_number"=>null, "block_timestamp"=>null, "tx_id"=>null, "tx_origin"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_id

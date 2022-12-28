@@ -26,12 +26,12 @@ class ActivateGasPumpTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "ActivateGasPumpTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner"], 
-        "from" => ["from", "int", null, "getFrom", "setFrom"], 
-        "to" => ["to", "int", null, "getTo", "setTo"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
+        "from" => ["from", "int", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "int", null, "getTo", "setTo", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class ActivateGasPumpTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "owner"=>null, "from"=>null, "to"=>null, "fee_limit"=>null, "from_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -86,9 +85,9 @@ class ActivateGasPumpTron extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 64)) {
             $ip[] = "'from_private_key' length must be >= 64";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

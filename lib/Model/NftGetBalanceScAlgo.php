@@ -25,7 +25,7 @@ class NftGetBalanceScAlgo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftGetBalanceScAlgo";
     protected static $_definition = [
-        "data" => ["data", "\Tatum\Model\NftGetBalanceScAlgoDataInner[]", null, "getData", "setData"]
+        "data" => ["data", "\Tatum\Model\NftGetBalanceScAlgoDataInner[]", null, "getData", "setData", null]
     ];
 
     /**
@@ -34,20 +34,19 @@ class NftGetBalanceScAlgo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get data

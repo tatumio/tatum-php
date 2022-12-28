@@ -36,8 +36,8 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
     public const PREFLIGHT_COMMITMENT_MAX = 'max';
     protected static $_name = "SolanaBroadcastConfirmOptions";
     protected static $_definition = [
-        "commitment" => ["commitment", "string", null, "getCommitment", "setCommitment"], 
-        "preflight_commitment" => ["preflightCommitment", "string", null, "getPreflightCommitment", "setPreflightCommitment"]
+        "commitment" => ["commitment", "string", null, "getCommitment", "setCommitment", null], 
+        "preflight_commitment" => ["preflightCommitment", "string", null, "getPreflightCommitment", "setPreflightCommitment", null]
     ];
 
     /**
@@ -46,17 +46,16 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["commitment"=>null, "preflight_commitment"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getCommitmentAllowableValues();
         $value = $this->_data['commitment'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
@@ -67,9 +66,9 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'preflight_commitment' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

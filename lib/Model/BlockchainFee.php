@@ -27,12 +27,12 @@ class BlockchainFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BlockchainFee";
     protected static $_definition = [
-        "fast" => ["fast", "float", null, "getFast", "setFast"], 
-        "medium" => ["medium", "float", null, "getMedium", "setMedium"], 
-        "slow" => ["slow", "float", null, "getSlow", "setSlow"], 
-        "base_fee" => ["baseFee", "float", null, "getBaseFee", "setBaseFee"], 
-        "time" => ["time", "string", null, "getTime", "setTime"], 
-        "block" => ["block", "float", null, "getBlock", "setBlock"]
+        "fast" => ["fast", "float", null, "getFast", "setFast", null], 
+        "medium" => ["medium", "float", null, "getMedium", "setMedium", null], 
+        "slow" => ["slow", "float", null, "getSlow", "setSlow", null], 
+        "base_fee" => ["baseFee", "float", null, "getBaseFee", "setBaseFee", null], 
+        "time" => ["time", "string", null, "getTime", "setTime", null], 
+        "block" => ["block", "float", null, "getBlock", "setBlock", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class BlockchainFee extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["fast"=>null, "medium"=>null, "slow"=>null, "base_fee"=>null, "time"=>null, "block"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['fast'])) {
             $ip[] = "'fast' can't be null";
         }
@@ -67,9 +66,9 @@ class BlockchainFee extends AbstractModel {
         if (is_null($this->_data['block'])) {
             $ip[] = "'block' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get fast

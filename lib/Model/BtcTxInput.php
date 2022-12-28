@@ -25,11 +25,11 @@ class BtcTxInput extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTxInput";
     protected static $_definition = [
-        "prevout" => ["prevout", "\Tatum\Model\BtcTxInputPrevOut", null, "getPrevout", "setPrevout"], 
-        "script" => ["script", "string", null, "getScript", "setScript"], 
-        "witness" => ["witness", "string", null, "getWitness", "setWitness"], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence"], 
-        "coin" => ["coin", "\Tatum\Model\BtcTxInputCoin", null, "getCoin", "setCoin"]
+        "prevout" => ["prevout", "\Tatum\Model\BtcTxInputPrevOut", null, "getPrevout", "setPrevout", null], 
+        "script" => ["script", "string", null, "getScript", "setScript", null], 
+        "witness" => ["witness", "string", null, "getWitness", "setWitness", null], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null], 
+        "coin" => ["coin", "\Tatum\Model\BtcTxInputCoin", null, "getCoin", "setCoin", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class BtcTxInput extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["prevout"=>null, "script"=>null, "witness"=>null, "sequence"=>null, "coin"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get prevout

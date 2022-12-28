@@ -25,9 +25,9 @@ class AdaTransactionFromAddressInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTransaction_fromAddress_inner";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -36,23 +36,22 @@ class AdaTransactionFromAddressInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "private_key"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['address'])) {
             $ip[] = "'address' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get address

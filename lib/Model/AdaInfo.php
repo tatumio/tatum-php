@@ -25,8 +25,8 @@ class AdaInfo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaInfo";
     protected static $_definition = [
-        "testnet" => ["testnet", "string", null, "getTestnet", "setTestnet"], 
-        "tip" => ["tip", "\Tatum\Model\AdaInfoTip", null, "getTip", "setTip"]
+        "testnet" => ["testnet", "string", null, "getTestnet", "setTestnet", null], 
+        "tip" => ["tip", "\Tatum\Model\AdaInfoTip", null, "getTip", "setTip", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class AdaInfo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["testnet"=>null, "tip"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get testnet

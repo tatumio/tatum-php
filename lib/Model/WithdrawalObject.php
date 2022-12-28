@@ -28,18 +28,18 @@ class WithdrawalObject extends AbstractModel {
     public const STATUS_CANCELLED = 'Cancelled';
     protected static $_name = "WithdrawalObject";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "status" => ["status", "string", null, "getStatus", "setStatus"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "reference" => ["reference", "string", null, "getReference", "setReference"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class WithdrawalObject extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "tx_id"=>null, "account_id"=>null, "status"=>null, "address"=>null, "reference"=>null, "amount"=>null, "attr"=>null, "fee"=>null, "multiple_amounts"=>null, "payment_id"=>null, "sender_note"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -115,9 +114,9 @@ class WithdrawalObject extends AbstractModel {
         if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
             $ip[] = "'sender_note' length must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

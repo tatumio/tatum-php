@@ -44,14 +44,14 @@ class PendingTransaction extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "PendingTransaction";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "hashes" => ["hashes", "string[]", null, "getHashes", "setHashes"], 
-        "serialized_transaction" => ["serializedTransaction", "string", null, "getSerializedTransaction", "setSerializedTransaction"], 
-        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "withdrawal_responses" => ["withdrawalResponses", "\Tatum\Model\ResponseData[]", null, "getWithdrawalResponses", "setWithdrawalResponses"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "hashes" => ["hashes", "string[]", null, "getHashes", "setHashes", null], 
+        "serialized_transaction" => ["serializedTransaction", "string", null, "getSerializedTransaction", "setSerializedTransaction", null], 
+        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "withdrawal_responses" => ["withdrawalResponses", "\Tatum\Model\ResponseData[]", null, "getWithdrawalResponses", "setWithdrawalResponses", null]
     ];
 
     /**
@@ -60,17 +60,16 @@ class PendingTransaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "chain"=>null, "hashes"=>null, "serialized_transaction"=>null, "withdrawal_id"=>null, "index"=>null, "tx_id"=>null, "withdrawal_responses"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['id'])) {
             $ip[] = "'id' can't be null";
         }
@@ -91,9 +90,9 @@ class PendingTransaction extends AbstractModel {
         if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -28,15 +28,15 @@ class MintNftTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "MintNftTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "author_addresses" => ["authorAddresses", "string[]", null, "getAuthorAddresses", "setAuthorAddresses"], 
-        "cashback_values" => ["cashbackValues", "string[]", null, "getCashbackValues", "setCashbackValues"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "author_addresses" => ["authorAddresses", "string[]", null, "getAuthorAddresses", "setAuthorAddresses", null], 
+        "cashback_values" => ["cashbackValues", "string[]", null, "getCashbackValues", "setCashbackValues", null]
     ];
 
     /**
@@ -45,17 +45,16 @@ class MintNftTron extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "contract_address"=>null, "token_id"=>null, "url"=>null, "fee_limit"=>null, "from_private_key"=>null, "author_addresses"=>null, "cashback_values"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -106,9 +105,9 @@ class MintNftTron extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 64)) {
             $ip[] = "'from_private_key' length must be >= 64";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

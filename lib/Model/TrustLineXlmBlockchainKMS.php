@@ -25,11 +25,11 @@ class TrustLineXlmBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TrustLineXlmBlockchainKMS";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount"], 
-        "token" => ["token", "string", null, "getToken", "setToken"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "limit" => ["limit", "string", null, "getLimit", "setLimit"]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
+        "token" => ["token", "string", null, "getToken", "setToken", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class TrustLineXlmBlockchainKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_account"=>null, "issuer_account"=>null, "token"=>null, "signature_id"=>null, "limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_account'])) {
             $ip[] = "'from_account' can't be null";
         }
@@ -85,9 +84,9 @@ class TrustLineXlmBlockchainKMS extends AbstractModel {
         if (!is_null($this->_data['limit']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['limit'])) {
             $ip[] = "'limit' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_account

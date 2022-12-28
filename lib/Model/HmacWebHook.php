@@ -25,7 +25,7 @@ class HmacWebHook extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "HmacWebHook";
     protected static $_definition = [
-        "hmac_secret" => ["hmacSecret", "string", null, "getHmacSecret", "setHmacSecret"]
+        "hmac_secret" => ["hmacSecret", "string", null, "getHmacSecret", "setHmacSecret", null]
     ];
 
     /**
@@ -34,26 +34,25 @@ class HmacWebHook extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hmac_secret"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['hmac_secret'])) {
             $ip[] = "'hmac_secret' can't be null";
         }
         if ((mb_strlen($this->_data['hmac_secret']) > 100)) {
             $ip[] = "'hmac_secret' length must be <= 100";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get hmac_secret

@@ -195,13 +195,13 @@ class Customer extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "Customer";
     protected static $_definition = [
-        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId"], 
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "enabled" => ["enabled", "bool", null, "getEnabled", "setEnabled"], 
-        "active" => ["active", "bool", null, "getActive", "setActive"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry"], 
-        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry"]
+        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null], 
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "enabled" => ["enabled", "bool", null, "getEnabled", "setEnabled", null], 
+        "active" => ["active", "bool", null, "getActive", "setActive", null], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
+        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null], 
+        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null]
     ];
 
     /**
@@ -210,17 +210,16 @@ class Customer extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["external_id"=>null, "id"=>null, "enabled"=>null, "active"=>null, "accounting_currency"=>null, "customer_country"=>null, "provider_country"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['external_id'])) {
             $ip[] = "'external_id' can't be null";
         }
@@ -238,9 +237,9 @@ class Customer extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'accounting_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

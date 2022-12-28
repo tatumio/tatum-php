@@ -26,13 +26,13 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "GenerateCustodialWalletBatchTronKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount"], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "from"=>null, "signature_id"=>null, "index"=>null, "batch_count"=>null, "owner"=>null, "fee_limit"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -87,9 +86,9 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
         if (($this->_data['fee_limit'] < 5)) {
             $ip[] = "'fee_limit' must be >= 5";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

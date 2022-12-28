@@ -25,9 +25,9 @@ class MultiTokenGetAddressBalance200ResponseInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTokenGetAddressBalance_200_response_inner";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "balances" => ["balances", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]", null, "getBalances", "setBalances"], 
-        "metadata" => ["metadata", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]", null, "getMetadata", "setMetadata"]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "balances" => ["balances", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]", null, "getBalances", "setBalances", null], 
+        "metadata" => ["metadata", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]", null, "getMetadata", "setMetadata", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class MultiTokenGetAddressBalance200ResponseInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["contract_address"=>null, "balances"=>null, "metadata"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get contract_address

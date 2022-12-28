@@ -26,11 +26,11 @@ class TransferNftAlgo extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "TransferNftAlgo";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "amount" => ["amount", "float", null, "getAmount", "setAmount"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", 1]
     ];
 
     /**
@@ -39,17 +39,16 @@ class TransferNftAlgo extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "contract_address"=>null, "from_private_key"=>null, "amount"=>1] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -85,9 +84,9 @@ class TransferNftAlgo extends AbstractModel {
         if (!is_null($this->_data['amount']) && ($this->_data['amount'] < 1)) {
             $ip[] = "'amount' must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

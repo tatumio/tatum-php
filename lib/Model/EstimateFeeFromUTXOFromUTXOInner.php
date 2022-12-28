@@ -25,8 +25,8 @@ class EstimateFeeFromUTXOFromUTXOInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EstimateFeeFromUTXO_fromUTXO_inner";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -35,17 +35,16 @@ class EstimateFeeFromUTXOFromUTXOInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_hash"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_hash'])) {
             $ip[] = "'tx_hash' can't be null";
         }
@@ -64,9 +63,9 @@ class EstimateFeeFromUTXOFromUTXOInner extends AbstractModel {
         if (($this->_data['index'] < 0)) {
             $ip[] = "'index' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_hash

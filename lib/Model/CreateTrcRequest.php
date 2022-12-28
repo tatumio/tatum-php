@@ -394,19 +394,19 @@ class CreateTrcRequest extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "createTrc_request";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub"], 
-        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex"]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR'], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
+        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null]
     ];
 
     /**
@@ -415,17 +415,16 @@ class CreateTrcRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "supply"=>null, "decimals"=>null, "type"=>null, "description"=>null, "address"=>null, "url"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "accounting_currency"=>'EUR', "xpub"=>null, "derivation_index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['symbol'])) {
             $ip[] = "'symbol' can't be null";
         }
@@ -531,9 +530,9 @@ class CreateTrcRequest extends AbstractModel {
         if (($this->_data['derivation_index'] > 2147483647)) {
             $ip[] = "'derivation_index' must be <= 2147483647";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

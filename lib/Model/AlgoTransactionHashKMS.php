@@ -25,10 +25,10 @@ class AlgoTransactionHashKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoTransactionHashKMS";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex"], 
-        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed"], 
-        "failed" => ["failed", "bool", null, "getFailed", "setFailed"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null], 
+        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", false], 
+        "failed" => ["failed", "bool", null, "getFailed", "setFailed", null]
     ];
 
     /**
@@ -37,23 +37,22 @@ class AlgoTransactionHashKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "asset_index"=>null, "confirmed"=>false, "failed"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

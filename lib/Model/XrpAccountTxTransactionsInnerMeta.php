@@ -27,10 +27,10 @@ class XrpAccountTxTransactionsInnerMeta extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta";
     protected static $_definition = [
-        "affected_nodes" => ["AffectedNodes", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInner[]", null, "getAffectedNodes", "setAffectedNodes"], 
-        "transaction_index" => ["TransactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex"], 
-        "transaction_result" => ["TransactionResult", "string", null, "getTransactionResult", "setTransactionResult"], 
-        "delivered_amount" => ["delivered_amount", "string", null, "getDeliveredAmount", "setDeliveredAmount"]
+        "affected_nodes" => ["AffectedNodes", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInner[]", null, "getAffectedNodes", "setAffectedNodes", null], 
+        "transaction_index" => ["TransactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
+        "transaction_result" => ["TransactionResult", "string", null, "getTransactionResult", "setTransactionResult", null], 
+        "delivered_amount" => ["delivered_amount", "string", null, "getDeliveredAmount", "setDeliveredAmount", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class XrpAccountTxTransactionsInnerMeta extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["affected_nodes"=>null, "transaction_index"=>null, "transaction_result"=>null, "delivered_amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get affected_nodes

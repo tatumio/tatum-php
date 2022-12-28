@@ -25,9 +25,9 @@ class DogeTxVoutInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTx_vout_inner";
     protected static $_definition = [
-        "value" => ["value", "float", null, "getValue", "setValue"], 
-        "n" => ["n", "float", null, "getN", "setN"], 
-        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\DogeTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey"]
+        "value" => ["value", "float", null, "getValue", "setValue", null], 
+        "n" => ["n", "float", null, "getN", "setN", null], 
+        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\DogeTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class DogeTxVoutInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["value"=>null, "n"=>null, "script_pub_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get value

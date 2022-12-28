@@ -25,9 +25,9 @@ class TronGetCurrentBlock200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronGetCurrentBlock_200_response";
     protected static $_definition = [
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet"]
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class TronGetCurrentBlock200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_number"=>null, "hash"=>null, "testnet"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_number

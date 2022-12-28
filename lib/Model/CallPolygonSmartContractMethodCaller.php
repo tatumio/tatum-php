@@ -25,13 +25,13 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CallPolygonSmartContractMethodCaller";
     protected static $_definition = [
-        "caller" => ["caller", "string", null, "getCaller", "setCaller"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName"], 
-        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi"], 
-        "params" => ["params", "string[]", null, "getParams", "setParams"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "caller" => ["caller", "string", null, "getCaller", "setCaller", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null], 
+        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null], 
+        "params" => ["params", "string[]", null, "getParams", "setParams", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["caller"=>null, "contract_address"=>null, "amount"=>null, "method_name"=>null, "method_abi"=>null, "params"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['caller'])) {
             $ip[] = "'caller' can't be null";
         }
@@ -87,9 +86,9 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
         if (is_null($this->_data['params'])) {
             $ip[] = "'params' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get caller

@@ -29,16 +29,16 @@ class StoreLogRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "StoreLog_request";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "from_shard_id" => ["fromShardID", "float", null, "getFromShardId", "setFromShardId"], 
-        "to_shard_id" => ["toShardID", "float", null, "getToShardId", "setToShardId"], 
-        "eth_fee" => ["ethFee", "\Tatum\Model\CustomFee", null, "getEthFee", "setEthFee"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "from_shard_id" => ["fromShardID", "float", null, "getFromShardId", "setFromShardId", null], 
+        "to_shard_id" => ["toShardID", "float", null, "getToShardId", "setToShardId", null], 
+        "eth_fee" => ["ethFee", "\Tatum\Model\CustomFee", null, "getEthFee", "setEthFee", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -47,17 +47,16 @@ class StoreLogRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null, "chain"=>null, "from_private_key"=>null, "from"=>null, "to"=>null, "nonce"=>null, "from_shard_id"=>null, "to_shard_id"=>null, "eth_fee"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['data'])) {
             $ip[] = "'data' can't be null";
         }
@@ -119,9 +118,9 @@ class StoreLogRequest extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

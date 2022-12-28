@@ -28,21 +28,21 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
     public const TYPE_TRANSFER = 'TRANSFER';
     protected static $_name = "EstimateFeeBlockchain_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients"], 
-        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds"], 
-        "urls" => ["urls", "string[]", null, "getUrls", "setUrls"], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount"], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress"], 
-        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType"], 
-        "from_address" => ["fromAddress", "string[]", null, "getFromAddress", "setFromAddress"], 
-        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo"], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients", null], 
+        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds", null], 
+        "urls" => ["urls", "string[]", null, "getUrls", "setUrls", null], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
+        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null], 
+        "from_address" => ["fromAddress", "string[]", null, "getFromAddress", "setFromAddress", null], 
+        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null]
     ];
 
     /**
@@ -51,17 +51,16 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "type"=>null, "sender"=>null, "recipient"=>null, "contract_address"=>null, "amount"=>null, "recipients"=>null, "token_ids"=>null, "urls"=>null, "batch_count"=>null, "custodial_address"=>null, "token_type"=>null, "from_address"=>null, "to"=>null, "from_utxo"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -156,9 +155,9 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
         if (is_null($this->_data['from_utxo'])) {
             $ip[] = "'from_utxo' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,11 +25,11 @@ class LtcTransferBlockchainRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "LtcTransferBlockchain_request";
     protected static $_definition = [
-        "from_address" => ["fromAddress", "\Tatum\Model\LtcTransactionAddressKMSFromAddressInner[]", null, "getFromAddress", "setFromAddress"], 
-        "to" => ["to", "\Tatum\Model\LtcTransactionAddressToInner[]", null, "getTo", "setTo"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress"], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOKMSFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo"]
+        "from_address" => ["fromAddress", "\Tatum\Model\LtcTransactionAddressKMSFromAddressInner[]", null, "getFromAddress", "setFromAddress", null], 
+        "to" => ["to", "\Tatum\Model\LtcTransactionAddressToInner[]", null, "getTo", "setTo", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOKMSFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class LtcTransferBlockchainRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_address"=>null, "to"=>null, "fee"=>null, "change_address"=>null, "from_utxo"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_address'])) {
             $ip[] = "'from_address' can't be null";
         }
@@ -58,9 +57,9 @@ class LtcTransferBlockchainRequest extends AbstractModel {
         if (is_null($this->_data['from_utxo'])) {
             $ip[] = "'from_utxo' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_address

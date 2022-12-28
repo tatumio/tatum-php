@@ -25,9 +25,9 @@ class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTxReceipt_outputs_inner_transfers_inner";
     protected static $_definition = [
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"]
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender"=>null, "recipient"=>null, "amount"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get sender

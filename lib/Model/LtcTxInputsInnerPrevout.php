@@ -25,8 +25,8 @@ class LtcTxInputsInnerPrevout extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "LtcTx_inputs_inner_prevout";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class LtcTxInputsInnerPrevout extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "index"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

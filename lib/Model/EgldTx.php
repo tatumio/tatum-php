@@ -25,26 +25,26 @@ class EgldTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EgldTx";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "round" => ["round", "float", null, "getRound", "setRound"], 
-        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver"], 
-        "sender" => ["sender", "string", null, "getSender", "setSender"], 
-        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice"], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit"], 
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "signature" => ["signature", "string", null, "getSignature", "setSignature"], 
-        "source_shard" => ["sourceShard", "float", null, "getSourceShard", "setSourceShard"], 
-        "destination_shard" => ["destinationShard", "float", null, "getDestinationShard", "setDestinationShard"], 
-        "block_nonce" => ["blockNonce", "float", null, "getBlockNonce", "setBlockNonce"], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
-        "miniblock_hash" => ["miniblockHash", "string", null, "getMiniblockHash", "setMiniblockHash"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "status" => ["status", "string", null, "getStatus", "setStatus"], 
-        "hyperblock_nonce" => ["hyperblockNonce", "float", null, "getHyperblockNonce", "setHyperblockNonce"], 
-        "hyperblock_hash" => ["hyperblockHash", "string", null, "getHyperblockHash", "setHyperblockHash"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "round" => ["round", "float", null, "getRound", "setRound", null], 
+        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
+        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice", null], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "signature" => ["signature", "string", null, "getSignature", "setSignature", null], 
+        "source_shard" => ["sourceShard", "float", null, "getSourceShard", "setSourceShard", null], 
+        "destination_shard" => ["destinationShard", "float", null, "getDestinationShard", "setDestinationShard", null], 
+        "block_nonce" => ["blockNonce", "float", null, "getBlockNonce", "setBlockNonce", null], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
+        "miniblock_hash" => ["miniblockHash", "string", null, "getMiniblockHash", "setMiniblockHash", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
+        "hyperblock_nonce" => ["hyperblockNonce", "float", null, "getHyperblockNonce", "setHyperblockNonce", null], 
+        "hyperblock_hash" => ["hyperblockHash", "string", null, "getHyperblockHash", "setHyperblockHash", null]
     ];
 
     /**
@@ -53,20 +53,19 @@ class EgldTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "nonce"=>null, "round"=>null, "epoch"=>null, "value"=>null, "receiver"=>null, "sender"=>null, "gas_price"=>null, "gas_limit"=>null, "data"=>null, "signature"=>null, "source_shard"=>null, "destination_shard"=>null, "block_nonce"=>null, "block_hash"=>null, "miniblock_hash"=>null, "timestamp"=>null, "status"=>null, "hyperblock_nonce"=>null, "hyperblock_hash"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get type

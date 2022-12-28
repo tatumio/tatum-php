@@ -29,16 +29,16 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "ChainDeployCeloErc20KMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
     ];
 
     /**
@@ -47,17 +47,16 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "symbol"=>null, "name"=>null, "total_cap"=>null, "supply"=>null, "digits"=>null, "address"=>null, "signature_id"=>null, "nonce"=>null, "fee_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -134,9 +133,9 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

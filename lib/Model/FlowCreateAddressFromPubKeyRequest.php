@@ -25,12 +25,12 @@ class FlowCreateAddressFromPubKeyRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowCreateAddressFromPubKey_request";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class FlowCreateAddressFromPubKeyRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "public_key"=>null, "mnemonic"=>null, "index"=>null, "private_key"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account'])) {
             $ip[] = "'account' can't be null";
         }
@@ -95,9 +94,9 @@ class FlowCreateAddressFromPubKeyRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account

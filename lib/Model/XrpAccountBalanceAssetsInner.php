@@ -25,8 +25,8 @@ class XrpAccountBalanceAssetsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountBalance_assets_inner";
     protected static $_definition = [
-        "balance" => ["balance", "string", null, "getBalance", "setBalance"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"]
+        "balance" => ["balance", "string", null, "getBalance", "setBalance", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class XrpAccountBalanceAssetsInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["balance"=>null, "currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get balance

@@ -27,7 +27,7 @@ class CreateSubscriptionIntervalAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateSubscriptionInterval_attr";
     protected static $_definition = [
-        "interval" => ["interval", "float", null, "getInterval", "setInterval"]
+        "interval" => ["interval", "float", null, "getInterval", "setInterval", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class CreateSubscriptionIntervalAttr extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["interval"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['interval'])) {
             $ip[] = "'interval' can't be null";
         }
@@ -56,9 +55,9 @@ class CreateSubscriptionIntervalAttr extends AbstractModel {
         if (($this->_data['interval'] < 1)) {
             $ip[] = "'interval' must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get interval

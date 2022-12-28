@@ -25,8 +25,8 @@ class FlowEventPayloadValueFieldsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowEvent_payload_value_fields_inner";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "value" => ["value", "\Tatum\Model\FlowEventPayloadValueFieldsInnerValue", null, "getValue", "setValue"]
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "value" => ["value", "\Tatum\Model\FlowEventPayloadValueFieldsInnerValue", null, "getValue", "setValue", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class FlowEventPayloadValueFieldsInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["name"=>null, "value"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get name

@@ -29,22 +29,22 @@ class NftDeployErc721Request extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "NftDeployErc721_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance"], 
-        "cashback" => ["cashback", "bool", null, "getCashback", "setCashback"], 
-        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
+        "cashback" => ["cashback", "bool", null, "getCashback", "setCashback", null], 
+        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null]
     ];
 
     /**
@@ -53,17 +53,16 @@ class NftDeployErc721Request extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "name"=>null, "symbol"=>null, "from_private_key"=>null, "provenance"=>null, "cashback"=>null, "public_mint"=>null, "nonce"=>null, "fee"=>null, "fee_currency"=>null, "fee_limit"=>null, "index"=>null, "signature_id"=>null, "account"=>null, "private_key"=>null, "mnemonic"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -149,9 +148,9 @@ class NftDeployErc721Request extends AbstractModel {
         if ((mb_strlen($this->_data['mnemonic']) < 1)) {
             $ip[] = "'mnemonic' length must be >= 1";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

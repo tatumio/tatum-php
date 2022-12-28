@@ -25,12 +25,12 @@ class TransferAlgorandBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferAlgorandBlockchain";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "fee" => ["fee", "string", null, "getFee", "setFee"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "note" => ["note", "string", null, "getNote", "setNote"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "note" => ["note", "string", null, "getNote", "setNote", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class TransferAlgorandBlockchain extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "to"=>null, "fee"=>null, "amount"=>null, "note"=>null, "from_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -65,9 +64,9 @@ class TransferAlgorandBlockchain extends AbstractModel {
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

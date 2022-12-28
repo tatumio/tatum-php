@@ -222,9 +222,9 @@ class VirtualCurrencyUpdate extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "VirtualCurrencyUpdate";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"]
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null]
     ];
 
     /**
@@ -233,17 +233,16 @@ class VirtualCurrencyUpdate extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["name"=>null, "base_rate"=>1, "base_pair"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['name'])) {
             $ip[] = "'name' can't be null";
         }
@@ -270,9 +269,9 @@ class VirtualCurrencyUpdate extends AbstractModel {
         if (!is_null($this->_data['base_pair']) && (mb_strlen($this->_data['base_pair']) < 3)) {
             $ip[] = "'base_pair' length must be >= 3";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

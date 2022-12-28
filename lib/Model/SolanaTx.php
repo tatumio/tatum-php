@@ -25,10 +25,10 @@ class SolanaTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTx";
     protected static $_definition = [
-        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime"], 
-        "meta" => ["meta", "\Tatum\Model\SolanaTxMeta", null, "getMeta", "setMeta"], 
-        "transaction" => ["transaction", "\Tatum\Model\SolanaTxTransaction", null, "getTransaction", "setTransaction"], 
-        "slot" => ["slot", "float", null, "getSlot", "setSlot"]
+        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime", null], 
+        "meta" => ["meta", "\Tatum\Model\SolanaTxMeta", null, "getMeta", "setMeta", null], 
+        "transaction" => ["transaction", "\Tatum\Model\SolanaTxTransaction", null, "getTransaction", "setTransaction", null], 
+        "slot" => ["slot", "float", null, "getSlot", "setSlot", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class SolanaTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_time"=>null, "meta"=>null, "transaction"=>null, "slot"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_time

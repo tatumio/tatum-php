@@ -25,8 +25,8 @@ class AdaAccountBalanceInnerCurrency extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaAccountBalance_inner_currency";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals"]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class AdaAccountBalanceInnerCurrency extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["symbol"=>null, "decimals"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get symbol

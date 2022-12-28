@@ -25,9 +25,9 @@ class SolanaTxMessageHeader extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxMessageHeader";
     protected static $_definition = [
-        "num_readonly_signed_accounts" => ["numReadonlySignedAccounts", "float", null, "getNumReadonlySignedAccounts", "setNumReadonlySignedAccounts"], 
-        "num_readonly_unsigned_accounts" => ["numReadonlyUnsignedAccounts", "float", null, "getNumReadonlyUnsignedAccounts", "setNumReadonlyUnsignedAccounts"], 
-        "num_required_signatures" => ["numRequiredSignatures", "float", null, "getNumRequiredSignatures", "setNumRequiredSignatures"]
+        "num_readonly_signed_accounts" => ["numReadonlySignedAccounts", "float", null, "getNumReadonlySignedAccounts", "setNumReadonlySignedAccounts", null], 
+        "num_readonly_unsigned_accounts" => ["numReadonlyUnsignedAccounts", "float", null, "getNumReadonlyUnsignedAccounts", "setNumReadonlyUnsignedAccounts", null], 
+        "num_required_signatures" => ["numRequiredSignatures", "float", null, "getNumRequiredSignatures", "setNumRequiredSignatures", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class SolanaTxMessageHeader extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["num_readonly_signed_accounts"=>null, "num_readonly_unsigned_accounts"=>null, "num_required_signatures"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get num_readonly_signed_accounts

@@ -361,10 +361,10 @@ class Serializer {
         }
 
         // Prepare the data
-        $result = $data instanceof StreamInterface ? $data->getContents() : $data;
+        $result = $data instanceof StreamInterface ? "$data" : $data;
         $result = is_string($result) ? json_decode($result) : $result;
 
-        return $result ? static::doDeserialize($result, $type) : null;
+        return null !== $result ? static::doDeserialize($result, $type) : null;
     }
 
     /**
@@ -461,22 +461,28 @@ class Serializer {
         /** @psalm-suppress MixedMethodCall */
         $instance = new $type();
         if ($instance instanceof ModelInterface) {
-            $additional_properties = get_object_vars($data);
-            foreach ($instance::openAPITypes() as $property => $model_types) {
-                $propertySetter = $instance::setters()[$property];
-                unset($additional_properties[$property]);
+            if (count($instance::getters())) {
+                if (is_object($data)) {
+                    $additional_properties = get_object_vars($data);
+                    foreach ($instance::openAPITypes() as $property => $model_types) {
+                        $propertySetter = $instance::setters()[$property];
+                        unset($additional_properties[$property]);
 
-                if (!isset($data->{$instance::attributeMap()[$property]})) {
-                    continue;
+                        if (!isset($data->{$instance::attributeMap()[$property]})) {
+                            continue;
+                        }
+
+                        $propertyValue = $data->{$instance::attributeMap()[$property]};
+                        $instance->$propertySetter(self::doDeserialize($propertyValue, $model_types));
+                    }
+
+                    // Add any additional properties directly
+                    foreach ($additional_properties as $property => $value) {
+                        $instance->setAdditionalProperty($property, $value);
+                    }
                 }
-
-                $propertyValue = $data->{$instance::attributeMap()[$property]};
-                $instance->$propertySetter(self::doDeserialize($propertyValue, $model_types));
-            }
-
-            // Add any additional properties directly
-            foreach ($additional_properties as $property => $value) {
-                $instance->setAdditionalProperty($property, $value);
+            } else {
+                $instance->setData($data);
             }
         }
 

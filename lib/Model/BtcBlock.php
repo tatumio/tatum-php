@@ -25,16 +25,16 @@ class BtcBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "height" => ["height", "float", null, "getHeight", "setHeight"], 
-        "depth" => ["depth", "float", null, "getDepth", "setDepth"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "prev_block" => ["prevBlock", "string", null, "getPrevBlock", "setPrevBlock"], 
-        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot"], 
-        "time" => ["time", "float", null, "getTime", "setTime"], 
-        "bits" => ["bits", "float", null, "getBits", "setBits"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "txs" => ["txs", "\Tatum\Model\BtcTx[]", null, "getTxs", "setTxs"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
+        "depth" => ["depth", "float", null, "getDepth", "setDepth", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "prev_block" => ["prevBlock", "string", null, "getPrevBlock", "setPrevBlock", null], 
+        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot", null], 
+        "time" => ["time", "float", null, "getTime", "setTime", null], 
+        "bits" => ["bits", "float", null, "getBits", "setBits", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "txs" => ["txs", "\Tatum\Model\BtcTx[]", null, "getTxs", "setTxs", null]
     ];
 
     /**
@@ -43,20 +43,19 @@ class BtcBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "height"=>null, "depth"=>null, "version"=>null, "prev_block"=>null, "merkle_root"=>null, "time"=>null, "bits"=>null, "nonce"=>null, "txs"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

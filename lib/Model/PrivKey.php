@@ -25,7 +25,7 @@ class PrivKey extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "PrivKey";
     protected static $_definition = [
-        "key" => ["key", "string", null, "getKey", "setKey"]
+        "key" => ["key", "string", null, "getKey", "setKey", null]
     ];
 
     /**
@@ -34,20 +34,19 @@ class PrivKey extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get key

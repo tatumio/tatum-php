@@ -25,8 +25,8 @@ class SolanaBroadcastConfirm extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaBroadcastConfirm";
     protected static $_definition = [
-        "tx_data" => ["txData", "string", null, "getTxData", "setTxData"], 
-        "options" => ["options", "\Tatum\Model\SolanaBroadcastConfirmOptions", null, "getOptions", "setOptions"]
+        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null], 
+        "options" => ["options", "\Tatum\Model\SolanaBroadcastConfirmOptions", null, "getOptions", "setOptions", null]
     ];
 
     /**
@@ -35,17 +35,16 @@ class SolanaBroadcastConfirm extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_data"=>null, "options"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_data'])) {
             $ip[] = "'tx_data' can't be null";
         }
@@ -55,9 +54,9 @@ class SolanaBroadcastConfirm extends AbstractModel {
         if ((mb_strlen($this->_data['tx_data']) < 1)) {
             $ip[] = "'tx_data' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_data

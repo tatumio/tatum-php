@@ -25,10 +25,10 @@ class DogeTxVinInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTx_vin_inner";
     protected static $_definition = [
-        "txid" => ["txid", "string", null, "getTxid", "setTxid"], 
-        "vout" => ["vout", "float", null, "getVout", "setVout"], 
-        "script_sig" => ["scriptSig", "\Tatum\Model\DogeTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig"], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence"]
+        "txid" => ["txid", "string", null, "getTxid", "setTxid", null], 
+        "vout" => ["vout", "float", null, "getVout", "setVout", null], 
+        "script_sig" => ["scriptSig", "\Tatum\Model\DogeTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig", null], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class DogeTxVinInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["txid"=>null, "vout"=>null, "script_sig"=>null, "sequence"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get txid

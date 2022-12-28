@@ -37,10 +37,10 @@ class ChartRequest extends AbstractModel {
     public const TIME_FRAME_YEAR = 'YEAR';
     protected static $_name = "ChartRequest";
     protected static $_definition = [
-        "pair" => ["pair", "string", null, "getPair", "setPair"], 
-        "from" => ["from", "float", null, "getFrom", "setFrom"], 
-        "to" => ["to", "float", null, "getTo", "setTo"], 
-        "time_frame" => ["timeFrame", "string", null, "getTimeFrame", "setTimeFrame"]
+        "pair" => ["pair", "string", null, "getPair", "setPair", null], 
+        "from" => ["from", "float", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "float", null, "getTo", "setTo", null], 
+        "time_frame" => ["timeFrame", "string", null, "getTimeFrame", "setTimeFrame", null]
     ];
 
     /**
@@ -49,17 +49,16 @@ class ChartRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["pair"=>null, "from"=>null, "to"=>null, "time_frame"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['pair'])) {
             $ip[] = "'pair' can't be null";
         }
@@ -92,9 +91,9 @@ class ChartRequest extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'time_frame' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

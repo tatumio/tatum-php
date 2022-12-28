@@ -25,22 +25,22 @@ class XrpTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex"], 
-        "account" => ["Account", "string", null, "getAccount", "setAccount"], 
-        "amount" => ["Amount", "string", null, "getAmount", "setAmount"], 
-        "destination" => ["Destination", "string", null, "getDestination", "setDestination"], 
-        "fee" => ["Fee", "string", null, "getFee", "setFee"], 
-        "transaction_type" => ["TransactionType", "string", null, "getTransactionType", "setTransactionType"], 
-        "flags" => ["Flags", "float", null, "getFlags", "setFlags"], 
-        "last_ledger_sequence" => ["LastLedgerSequence", "float", null, "getLastLedgerSequence", "setLastLedgerSequence"], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence"], 
-        "date" => ["date", "float", null, "getDate", "setDate"], 
-        "in_ledger" => ["inLedger", "float", null, "getInLedger", "setInLedger"], 
-        "signing_pub_key" => ["SigningPubKey", "string", null, "getSigningPubKey", "setSigningPubKey"], 
-        "txn_signature" => ["TxnSignature", "string", null, "getTxnSignature", "setTxnSignature"], 
-        "meta" => ["meta", "\Tatum\Model\XrpTxMeta", null, "getMeta", "setMeta"], 
-        "validated" => ["validated", "bool", null, "getValidated", "setValidated"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex", null], 
+        "account" => ["Account", "string", null, "getAccount", "setAccount", null], 
+        "amount" => ["Amount", "string", null, "getAmount", "setAmount", null], 
+        "destination" => ["Destination", "string", null, "getDestination", "setDestination", null], 
+        "fee" => ["Fee", "string", null, "getFee", "setFee", null], 
+        "transaction_type" => ["TransactionType", "string", null, "getTransactionType", "setTransactionType", null], 
+        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null], 
+        "last_ledger_sequence" => ["LastLedgerSequence", "float", null, "getLastLedgerSequence", "setLastLedgerSequence", null], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null], 
+        "date" => ["date", "float", null, "getDate", "setDate", null], 
+        "in_ledger" => ["inLedger", "float", null, "getInLedger", "setInLedger", null], 
+        "signing_pub_key" => ["SigningPubKey", "string", null, "getSigningPubKey", "setSigningPubKey", null], 
+        "txn_signature" => ["TxnSignature", "string", null, "getTxnSignature", "setTxnSignature", null], 
+        "meta" => ["meta", "\Tatum\Model\XrpTxMeta", null, "getMeta", "setMeta", null], 
+        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null]
     ];
 
     /**
@@ -49,20 +49,19 @@ class XrpTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "ledger_index"=>null, "account"=>null, "amount"=>null, "destination"=>null, "fee"=>null, "transaction_type"=>null, "flags"=>null, "last_ledger_sequence"=>null, "sequence"=>null, "date"=>null, "in_ledger"=>null, "signing_pub_key"=>null, "txn_signature"=>null, "meta"=>null, "validated"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

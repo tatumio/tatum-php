@@ -67,16 +67,16 @@ abstract class AbstractApi {
             $response = $e->getResponse();
 
             throw (new ApiException(
-                sprintf("[%d] Request error (%s)", (int) $e->getCode(), $e->getMessage()),
+                sprintf("[%d] Request error (%s): %s", (int) $e->getCode(), $e->getMessage(), $response->getBody()),
                 (int) $e->getCode(),
-                $response ? $response->getHeaders() : [],
-                $response ? $response->getBody() : null
+                $response->getHeaders(),
+                $response->getBody()
             ))->setResponseObject(
                 Serializer::deserialize(
                     $this->_caller->config(),
-                    $response ? $response->getBody() : null,
-                    $returnType,
-                    $response ? $response->getHeaders() : []
+                    $response->getBody(),
+                    "array",
+                    $response->getHeaders()
                 )
             );
         }
@@ -90,14 +90,12 @@ abstract class AbstractApi {
                 $response->getHeaders(),
                 $response->getBody()
             ))->setResponseObject(
-                is_string($returnType) && strlen($returnType)
-                    ? Serializer::deserialize(
-                        $this->_caller->config(),
-                        $response->getBody(),
-                        $returnType,
-                        $response->getHeaders()
-                    )
-                    : null
+                Serializer::deserialize(
+                    $this->_caller->config(),
+                    $response->getBody(),
+                    "array",
+                    $response->getHeaders()
+                )
             );
         }
 

@@ -25,33 +25,33 @@ class NftGetTransactErc721200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftGetTransactErc721_200_response";
     protected static $_definition = [
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash"], 
-        "status" => ["status", "float", null, "getStatus", "setStatus"], 
-        "block_number" => ["blockNumber", "mixed", null, "getBlockNumber", "setBlockNumber"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "gas" => ["gas", "float", null, "getGas", "setGas"], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice"], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash"], 
-        "input" => ["input", "string", null, "getInput", "setInput"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "transaction_index" => ["transactionIndex", "mixed", null, "getTransactionIndex", "setTransactionIndex"], 
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "gas_used" => ["gasUsed", "mixed", null, "getGasUsed", "setGasUsed"], 
-        "cumulative_gas_used" => ["cumulativeGasUsed", "mixed", null, "getCumulativeGasUsed", "setCumulativeGasUsed"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "logs" => ["logs", "\Tatum\Model\EthTxLog[]", null, "getLogs", "setLogs"], 
-        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId"], 
-        "script" => ["script", "string", null, "getScript", "setScript"], 
-        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs"], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit"], 
-        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey"], 
-        "payer" => ["payer", "string", null, "getPayer", "setPayer"], 
-        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures"], 
-        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures"], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode"], 
-        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage"], 
-        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents"]
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
+        "status" => ["status", "float", null, "getStatus", "setStatus", null], 
+        "block_number" => ["blockNumber", "mixed", null, "getBlockNumber", "setBlockNumber", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null], 
+        "input" => ["input", "string", null, "getInput", "setInput", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "transaction_index" => ["transactionIndex", "mixed", null, "getTransactionIndex", "setTransactionIndex", null], 
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "gas_used" => ["gasUsed", "mixed", null, "getGasUsed", "setGasUsed", null], 
+        "cumulative_gas_used" => ["cumulativeGasUsed", "mixed", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "logs" => ["logs", "\Tatum\Model\EthTxLog[]", null, "getLogs", "setLogs", null], 
+        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId", null], 
+        "script" => ["script", "string", null, "getScript", "setScript", null], 
+        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs", null], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
+        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey", null], 
+        "payer" => ["payer", "string", null, "getPayer", "setPayer", null], 
+        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures", null], 
+        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures", null], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null], 
+        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage", null], 
+        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents", null]
     ];
 
     /**
@@ -60,20 +60,19 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_hash"=>null, "status"=>null, "block_number"=>null, "from"=>null, "gas"=>null, "gas_price"=>null, "transaction_hash"=>null, "input"=>null, "nonce"=>null, "to"=>null, "transaction_index"=>null, "value"=>null, "gas_used"=>null, "cumulative_gas_used"=>null, "contract_address"=>null, "logs"=>null, "reference_block_id"=>null, "script"=>null, "args"=>null, "gas_limit"=>null, "proposal_key"=>null, "payer"=>null, "payload_signatures"=>null, "envelope_signatures"=>null, "status_code"=>null, "error_message"=>null, "events"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_hash

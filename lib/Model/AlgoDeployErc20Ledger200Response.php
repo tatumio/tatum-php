@@ -25,9 +25,9 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoDeployErc20Ledger_200_response";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -36,17 +36,16 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_id"=>null, "tx_id"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account_id'])) {
             $ip[] = "'account_id' can't be null";
         }
@@ -56,9 +55,9 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account_id

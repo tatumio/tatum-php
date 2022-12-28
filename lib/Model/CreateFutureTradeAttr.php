@@ -27,9 +27,9 @@ class CreateFutureTradeAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateFutureTrade_attr";
     protected static $_definition = [
-        "seal_date" => ["sealDate", "float", null, "getSealDate", "setSealDate"], 
-        "percent_block" => ["percentBlock", "mixed", null, "getPercentBlock", "setPercentBlock"], 
-        "percent_penalty" => ["percentPenalty", "mixed", null, "getPercentPenalty", "setPercentPenalty"]
+        "seal_date" => ["sealDate", "float", null, "getSealDate", "setSealDate", null], 
+        "percent_block" => ["percentBlock", "mixed", null, "getPercentBlock", "setPercentBlock", null], 
+        "percent_penalty" => ["percentPenalty", "mixed", null, "getPercentPenalty", "setPercentPenalty", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class CreateFutureTradeAttr extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["seal_date"=>null, "percent_block"=>null, "percent_penalty"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['seal_date'])) {
             $ip[] = "'seal_date' can't be null";
         }
@@ -67,9 +66,9 @@ class CreateFutureTradeAttr extends AbstractModel {
         if (!is_null($this->_data['percent_penalty']) && ($this->_data['percent_penalty'] < 0)) {
             $ip[] = "'percent_penalty' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get seal_date

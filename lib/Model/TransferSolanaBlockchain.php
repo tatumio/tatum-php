@@ -25,12 +25,12 @@ class TransferSolanaBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferSolanaBlockchain";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer"], 
-        "fee_payer_private_key" => ["feePayerPrivateKey", "string", null, "getFeePayerPrivateKey", "setFeePayerPrivateKey"]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer", null], 
+        "fee_payer_private_key" => ["feePayerPrivateKey", "string", null, "getFeePayerPrivateKey", "setFeePayerPrivateKey", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class TransferSolanaBlockchain extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from"=>null, "to"=>null, "amount"=>null, "from_private_key"=>null, "fee_payer"=>null, "fee_payer_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from'])) {
             $ip[] = "'from' can't be null";
         }
@@ -95,9 +94,9 @@ class TransferSolanaBlockchain extends AbstractModel {
         if (!is_null($this->_data['fee_payer_private_key']) && (mb_strlen($this->_data['fee_payer_private_key']) < 128)) {
             $ip[] = "'fee_payer_private_key' length must be >= 128";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from

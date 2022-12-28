@@ -25,10 +25,10 @@ class AdaUTXO extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaUTXO";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"]
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class AdaUTXO extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["value"=>null, "index"=>null, "tx_hash"=>null, "address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get value

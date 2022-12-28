@@ -27,9 +27,9 @@ class WebHookResponse extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "WebHook_response";
     protected static $_definition = [
-        "code" => ["code", "float", null, "getCode", "setCode"], 
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "network_error" => ["networkError", "bool", null, "getNetworkError", "setNetworkError"]
+        "code" => ["code", "float", null, "getCode", "setCode", null], 
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "network_error" => ["networkError", "bool", null, "getNetworkError", "setNetworkError", null]
     ];
 
     /**
@@ -38,23 +38,22 @@ class WebHookResponse extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["code"=>null, "data"=>null, "network_error"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['network_error'])) {
             $ip[] = "'network_error' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get code

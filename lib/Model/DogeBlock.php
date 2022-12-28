@@ -25,18 +25,18 @@ class DogeBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "height" => ["height", "float", null, "getHeight", "setHeight"], 
-        "size" => ["size", "float", null, "getSize", "setSize"], 
-        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations"], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash"], 
-        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot"], 
-        "time" => ["time", "float", null, "getTime", "setTime"], 
-        "bits" => ["bits", "float", null, "getBits", "setBits"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "txs" => ["txs", "\Tatum\Model\DogeTx[]", null, "getTxs", "setTxs"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
+        "size" => ["size", "float", null, "getSize", "setSize", null], 
+        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations", null], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash", null], 
+        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot", null], 
+        "time" => ["time", "float", null, "getTime", "setTime", null], 
+        "bits" => ["bits", "float", null, "getBits", "setBits", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "txs" => ["txs", "\Tatum\Model\DogeTx[]", null, "getTxs", "setTxs", null]
     ];
 
     /**
@@ -45,20 +45,19 @@ class DogeBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "height"=>null, "size"=>null, "confirmations"=>null, "weight"=>null, "version"=>null, "previousblockhash"=>null, "merkle_root"=>null, "time"=>null, "bits"=>null, "nonce"=>null, "txs"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

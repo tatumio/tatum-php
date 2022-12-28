@@ -25,20 +25,20 @@ class BtcTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "hex" => ["hex", "string", null, "getHex", "setHex"], 
-        "witness_hash" => ["witnessHash", "string", null, "getWitnessHash", "setWitnessHash"], 
-        "fee" => ["fee", "float", null, "getFee", "setFee"], 
-        "rate" => ["rate", "float", null, "getRate", "setRate"], 
-        "mtime" => ["mtime", "float", null, "getMtime", "setMtime"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "block" => ["block", "string", null, "getBlock", "setBlock"], 
-        "time" => ["time", "float", null, "getTime", "setTime"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "inputs" => ["inputs", "\Tatum\Model\BtcTxInput[]", null, "getInputs", "setInputs"], 
-        "outputs" => ["outputs", "\Tatum\Model\BtcTxOutput[]", null, "getOutputs", "setOutputs"], 
-        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "hex" => ["hex", "string", null, "getHex", "setHex", null], 
+        "witness_hash" => ["witnessHash", "string", null, "getWitnessHash", "setWitnessHash", null], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
+        "rate" => ["rate", "float", null, "getRate", "setRate", null], 
+        "mtime" => ["mtime", "float", null, "getMtime", "setMtime", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "block" => ["block", "string", null, "getBlock", "setBlock", null], 
+        "time" => ["time", "float", null, "getTime", "setTime", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "inputs" => ["inputs", "\Tatum\Model\BtcTxInput[]", null, "getInputs", "setInputs", null], 
+        "outputs" => ["outputs", "\Tatum\Model\BtcTxOutput[]", null, "getOutputs", "setOutputs", null], 
+        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null]
     ];
 
     /**
@@ -47,20 +47,19 @@ class BtcTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "hex"=>null, "witness_hash"=>null, "fee"=>null, "rate"=>null, "mtime"=>null, "block_number"=>null, "block"=>null, "time"=>null, "index"=>null, "version"=>null, "inputs"=>null, "outputs"=>null, "locktime"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

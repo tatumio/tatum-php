@@ -25,16 +25,16 @@ class XlmAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmAccount";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "account_id" => ["account_id", "string", null, "getAccountId", "setAccountId"], 
-        "sequence" => ["sequence", "string", null, "getSequence", "setSequence"], 
-        "subentry_count" => ["subentry_count", "float", null, "getSubentryCount", "setSubentryCount"], 
-        "last_modified_ledger" => ["last_modified_ledger", "float", null, "getLastModifiedLedger", "setLastModifiedLedger"], 
-        "thresholds" => ["thresholds", "\Tatum\Model\XlmAccountThresholds", null, "getThresholds", "setThresholds"], 
-        "flags" => ["flags", "\Tatum\Model\XlmAccountFlags", null, "getFlags", "setFlags"], 
-        "balances" => ["balances", "\Tatum\Model\XlmAccountBalancesInner[]", null, "getBalances", "setBalances"], 
-        "signers" => ["signers", "\Tatum\Model\XlmAccountSignersInner[]", null, "getSigners", "setSigners"], 
-        "data" => ["data", "object", null, "getData", "setData"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "account_id" => ["account_id", "string", null, "getAccountId", "setAccountId", null], 
+        "sequence" => ["sequence", "string", null, "getSequence", "setSequence", null], 
+        "subentry_count" => ["subentry_count", "float", null, "getSubentryCount", "setSubentryCount", null], 
+        "last_modified_ledger" => ["last_modified_ledger", "float", null, "getLastModifiedLedger", "setLastModifiedLedger", null], 
+        "thresholds" => ["thresholds", "\Tatum\Model\XlmAccountThresholds", null, "getThresholds", "setThresholds", null], 
+        "flags" => ["flags", "\Tatum\Model\XlmAccountFlags", null, "getFlags", "setFlags", null], 
+        "balances" => ["balances", "\Tatum\Model\XlmAccountBalancesInner[]", null, "getBalances", "setBalances", null], 
+        "signers" => ["signers", "\Tatum\Model\XlmAccountSignersInner[]", null, "getSigners", "setSigners", null], 
+        "data" => ["data", "object", null, "getData", "setData", null]
     ];
 
     /**
@@ -43,20 +43,19 @@ class XlmAccount extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "account_id"=>null, "sequence"=>null, "subentry_count"=>null, "last_modified_ledger"=>null, "thresholds"=>null, "flags"=>null, "balances"=>null, "signers"=>null, "data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get id

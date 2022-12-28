@@ -29,8 +29,8 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
     public const TYPE_OF_BALANCE_AVAILABLE = 'available';
     protected static $_name = "CreateSubscriptionBalance_attr";
     protected static $_definition = [
-        "limit" => ["limit", "string", null, "getLimit", "setLimit"], 
-        "type_of_balance" => ["typeOfBalance", "string", null, "getTypeOfBalance", "setTypeOfBalance"]
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null], 
+        "type_of_balance" => ["typeOfBalance", "string", null, "getTypeOfBalance", "setTypeOfBalance", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["limit"=>null, "type_of_balance"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['limit'])) {
             $ip[] = "'limit' can't be null";
         }
@@ -67,9 +66,9 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'type_of_balance' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

@@ -25,12 +25,12 @@ class XlmTrustLineBlockchainRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmTrustLineBlockchain_request";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount"], 
-        "token" => ["token", "string", null, "getToken", "setToken"], 
-        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret"], 
-        "limit" => ["limit", "string", null, "getLimit", "setLimit"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
+        "token" => ["token", "string", null, "getToken", "setToken", null], 
+        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null], 
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class XlmTrustLineBlockchainRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_account"=>null, "issuer_account"=>null, "token"=>null, "from_secret"=>null, "limit"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_account'])) {
             $ip[] = "'from_account' can't be null";
         }
@@ -95,9 +94,9 @@ class XlmTrustLineBlockchainRequest extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_account

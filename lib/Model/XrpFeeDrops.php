@@ -27,10 +27,10 @@ class XrpFeeDrops extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpFee_drops";
     protected static $_definition = [
-        "base_fee" => ["base_fee", "string", null, "getBaseFee", "setBaseFee"], 
-        "median_fee" => ["median_fee", "string", null, "getMedianFee", "setMedianFee"], 
-        "minimum_fee" => ["minimum_fee", "string", null, "getMinimumFee", "setMinimumFee"], 
-        "open_ledger_fee" => ["open_ledger_fee", "string", null, "getOpenLedgerFee", "setOpenLedgerFee"]
+        "base_fee" => ["base_fee", "string", null, "getBaseFee", "setBaseFee", null], 
+        "median_fee" => ["median_fee", "string", null, "getMedianFee", "setMedianFee", null], 
+        "minimum_fee" => ["minimum_fee", "string", null, "getMinimumFee", "setMinimumFee", null], 
+        "open_ledger_fee" => ["open_ledger_fee", "string", null, "getOpenLedgerFee", "setOpenLedgerFee", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class XrpFeeDrops extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["base_fee"=>null, "median_fee"=>null, "minimum_fee"=>null, "open_ledger_fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get base_fee

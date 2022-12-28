@@ -25,12 +25,12 @@ class TronTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx";
     protected static $_definition = [
-        "ret" => ["ret", "\Tatum\Model\TronTxRetInner[]", null, "getRet", "setRet"], 
-        "signature" => ["signature", "string[]", null, "getSignature", "setSignature"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "tx_id" => ["txID", "string", null, "getTxId", "setTxId"], 
-        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage"], 
-        "raw_data" => ["rawData", "\Tatum\Model\TronTxRawData", null, "getRawData", "setRawData"]
+        "ret" => ["ret", "\Tatum\Model\TronTxRetInner[]", null, "getRet", "setRet", null], 
+        "signature" => ["signature", "string[]", null, "getSignature", "setSignature", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null], 
+        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage", null], 
+        "raw_data" => ["rawData", "\Tatum\Model\TronTxRawData", null, "getRawData", "setRawData", null]
     ];
 
     /**
@@ -39,17 +39,16 @@ class TronTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["ret"=>null, "signature"=>null, "block_number"=>null, "tx_id"=>null, "net_usage"=>null, "raw_data"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['ret'])) {
             $ip[] = "'ret' can't be null";
         }
@@ -65,9 +64,9 @@ class TronTx extends AbstractModel {
         if (is_null($this->_data['raw_data'])) {
             $ip[] = "'raw_data' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get ret

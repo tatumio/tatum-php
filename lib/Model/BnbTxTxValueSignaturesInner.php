@@ -25,10 +25,10 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx_tx_value_signatures_inner";
     protected static $_definition = [
-        "account_number" => ["account_number", "string", null, "getAccountNumber", "setAccountNumber"], 
-        "pub_key" => ["pub_key", "\Tatum\Model\BnbTxTxValueSignaturesInnerPubKey", null, "getPubKey", "setPubKey"], 
-        "sequence" => ["sequence", "string", null, "getSequence", "setSequence"], 
-        "signature" => ["signature", "string", null, "getSignature", "setSignature"]
+        "account_number" => ["account_number", "string", null, "getAccountNumber", "setAccountNumber", null], 
+        "pub_key" => ["pub_key", "\Tatum\Model\BnbTxTxValueSignaturesInnerPubKey", null, "getPubKey", "setPubKey", null], 
+        "sequence" => ["sequence", "string", null, "getSequence", "setSequence", null], 
+        "signature" => ["signature", "string", null, "getSignature", "setSignature", null]
     ];
 
     /**
@@ -37,20 +37,19 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_number"=>null, "pub_key"=>null, "sequence"=>null, "signature"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get account_number

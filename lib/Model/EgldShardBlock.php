@@ -25,9 +25,9 @@ class EgldShardBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EgldShardBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "shard" => ["shard", "float", null, "getShard", "setShard"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "shard" => ["shard", "float", null, "getShard", "setShard", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class EgldShardBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "nonce"=>null, "shard"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

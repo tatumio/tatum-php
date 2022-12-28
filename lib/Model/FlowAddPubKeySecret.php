@@ -25,10 +25,10 @@ class FlowAddPubKeySecret extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAddPubKeySecret";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class FlowAddPubKeySecret extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "public_key"=>null, "private_key"=>null, "weight"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account'])) {
             $ip[] = "'account' can't be null";
         }
@@ -81,9 +80,9 @@ class FlowAddPubKeySecret extends AbstractModel {
         if (!is_null($this->_data['weight']) && ($this->_data['weight'] < 0)) {
             $ip[] = "'weight' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account

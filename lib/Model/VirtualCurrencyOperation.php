@@ -25,14 +25,14 @@ class VirtualCurrencyOperation extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VirtualCurrencyOperation";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "reference" => ["reference", "string", null, "getReference", "setReference"], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode"], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote"], 
-        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
+        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class VirtualCurrencyOperation extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_id"=>null, "amount"=>null, "payment_id"=>null, "reference"=>null, "transaction_code"=>null, "recipient_note"=>null, "counter_account"=>null, "sender_note"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account_id'])) {
             $ip[] = "'account_id' can't be null";
         }
@@ -106,9 +105,9 @@ class VirtualCurrencyOperation extends AbstractModel {
         if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
             $ip[] = "'sender_note' length must be >= 1";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account_id

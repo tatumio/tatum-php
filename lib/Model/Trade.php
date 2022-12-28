@@ -27,19 +27,19 @@ class Trade extends AbstractModel {
     public const TYPE_SELL = 'SELL';
     protected static $_name = "Trade";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "price" => ["price", "string", null, "getPrice", "setPrice"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "pair" => ["pair", "string", null, "getPair", "setPair"], 
-        "is_maker" => ["isMaker", "bool", null, "getIsMaker", "setIsMaker"], 
-        "fill" => ["fill", "string", null, "getFill", "setFill"], 
-        "fee_account_id" => ["feeAccountId", "string", null, "getFeeAccountId", "setFeeAccountId"], 
-        "fee" => ["fee", "float", null, "getFee", "setFee"], 
-        "currency1_account_id" => ["currency1AccountId", "string", null, "getCurrency1AccountId", "setCurrency1AccountId"], 
-        "currency2_account_id" => ["currency2AccountId", "string", null, "getCurrency2AccountId", "setCurrency2AccountId"], 
-        "created" => ["created", "float", null, "getCreated", "setCreated"], 
-        "attr" => ["attr", "\Tatum\Model\TradeAttr", null, "getAttr", "setAttr"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "pair" => ["pair", "string", null, "getPair", "setPair", null], 
+        "is_maker" => ["isMaker", "bool", null, "getIsMaker", "setIsMaker", null], 
+        "fill" => ["fill", "string", null, "getFill", "setFill", null], 
+        "fee_account_id" => ["feeAccountId", "string", null, "getFeeAccountId", "setFeeAccountId", null], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
+        "currency1_account_id" => ["currency1AccountId", "string", null, "getCurrency1AccountId", "setCurrency1AccountId", null], 
+        "currency2_account_id" => ["currency2AccountId", "string", null, "getCurrency2AccountId", "setCurrency2AccountId", null], 
+        "created" => ["created", "float", null, "getCreated", "setCreated", null], 
+        "attr" => ["attr", "\Tatum\Model\TradeAttr", null, "getAttr", "setAttr", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class Trade extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "type"=>null, "price"=>null, "amount"=>null, "pair"=>null, "is_maker"=>null, "fill"=>null, "fee_account_id"=>null, "fee"=>null, "currency1_account_id"=>null, "currency2_account_id"=>null, "created"=>null, "attr"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getTypeAllowableValues();
         $value = $this->_data['type'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
@@ -76,9 +75,9 @@ class Trade extends AbstractModel {
         if (!is_null($this->_data['fee']) && ($this->_data['fee'] < 0)) {
             $ip[] = "'fee' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

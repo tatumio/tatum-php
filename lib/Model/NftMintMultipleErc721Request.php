@@ -29,24 +29,24 @@ class NftMintMultipleErc721Request extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "NftMintMultipleErc721_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string[]", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId"], 
-        "minter" => ["minter", "string", null, "getMinter", "setMinter"], 
-        "url" => ["url", "string[]", null, "getUrl", "setUrl"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "author_addresses" => ["authorAddresses", "string[][]", null, "getAuthorAddresses", "setAuthorAddresses"], 
-        "cashback_values" => ["cashbackValues", "string[][]", null, "getCashbackValues", "setCashbackValues"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit"], 
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey"], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic"], 
-        "index" => ["index", "int", null, "getIndex", "setIndex"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string[]", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId", null], 
+        "minter" => ["minter", "string", null, "getMinter", "setMinter", null], 
+        "url" => ["url", "string[]", null, "getUrl", "setUrl", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "author_addresses" => ["authorAddresses", "string[][]", null, "getAuthorAddresses", "setAuthorAddresses", null], 
+        "cashback_values" => ["cashbackValues", "string[][]", null, "getCashbackValues", "setCashbackValues", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
     ];
 
     /**
@@ -55,17 +55,16 @@ class NftMintMultipleErc721Request extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "token_id"=>null, "minter"=>null, "url"=>null, "contract_address"=>null, "fee_currency"=>null, "author_addresses"=>null, "cashback_values"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null, "fee_limit"=>null, "account"=>null, "private_key"=>null, "mnemonic"=>null, "index"=>null, "signature_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -160,9 +159,9 @@ class NftMintMultipleErc721Request extends AbstractModel {
         if (is_null($this->_data['signature_id'])) {
             $ip[] = "'signature_id' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

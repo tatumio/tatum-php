@@ -31,17 +31,17 @@ class TransferNft extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "TransferNft";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance"], 
-        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData"], 
-        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee"]
+        "value" => ["value", "string", null, "getValue", "setValue", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
+        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null], 
+        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -50,17 +50,16 @@ class TransferNft extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["value"=>null, "chain"=>null, "to"=>null, "token_id"=>null, "contract_address"=>null, "provenance"=>null, "provenance_data"=>null, "token_price"=>null, "from_private_key"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -105,9 +104,9 @@ class TransferNft extends AbstractModel {
         if ((mb_strlen($this->_data['from_private_key']) < 66)) {
             $ip[] = "'from_private_key' length must be >= 66";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

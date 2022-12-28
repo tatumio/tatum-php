@@ -25,10 +25,10 @@ class TronInternalTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronInternalTx";
     protected static $_definition = [
-        "tx_id" => ["tx_id", "string", null, "getTxId", "setTxId"], 
-        "internal_tx_id" => ["internal_tx_id", "string", null, "getInternalTxId", "setInternalTxId"], 
-        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress"], 
-        "from_address" => ["from_address", "string", null, "getFromAddress", "setFromAddress"]
+        "tx_id" => ["tx_id", "string", null, "getTxId", "setTxId", null], 
+        "internal_tx_id" => ["internal_tx_id", "string", null, "getInternalTxId", "setInternalTxId", null], 
+        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress", null], 
+        "from_address" => ["from_address", "string", null, "getFromAddress", "setFromAddress", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class TronInternalTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "internal_tx_id"=>null, "to_address"=>null, "from_address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
@@ -60,9 +59,9 @@ class TronInternalTx extends AbstractModel {
         if (is_null($this->_data['from_address'])) {
             $ip[] = "'from_address' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

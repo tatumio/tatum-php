@@ -27,10 +27,10 @@ class BtcRpcDriverRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcRpcDriver_request";
     protected static $_definition = [
-        "jsonrpc" => ["jsonrpc", "string", null, "getJsonrpc", "setJsonrpc"], 
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "method" => ["method", "string", null, "getMethod", "setMethod"], 
-        "params" => ["params", "object[]", null, "getParams", "setParams"]
+        "jsonrpc" => ["jsonrpc", "string", null, "getJsonrpc", "setJsonrpc", null], 
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "method" => ["method", "string", null, "getMethod", "setMethod", null], 
+        "params" => ["params", "object[]", null, "getParams", "setParams", null]
     ];
 
     /**
@@ -39,20 +39,19 @@ class BtcRpcDriverRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["jsonrpc"=>null, "id"=>null, "method"=>null, "params"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get jsonrpc

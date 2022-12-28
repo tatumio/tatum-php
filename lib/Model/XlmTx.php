@@ -29,25 +29,25 @@ class XlmTx extends AbstractModel {
     public const MEMO_TYPE__RETURN = 'MEMO_RETURN';
     protected static $_name = "XlmTx";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "paging_token" => ["paging_token", "string", null, "getPagingToken", "setPagingToken"], 
-        "successful" => ["successful", "bool", null, "getSuccessful", "setSuccessful"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "ledger" => ["ledger", "float", null, "getLedger", "setLedger"], 
-        "created_at" => ["created_at", "string", null, "getCreatedAt", "setCreatedAt"], 
-        "source_account" => ["source_account", "string", null, "getSourceAccount", "setSourceAccount"], 
-        "source_account_sequence" => ["source_account_sequence", "string", null, "getSourceAccountSequence", "setSourceAccountSequence"], 
-        "fee_paid" => ["fee_paid", "float", null, "getFeePaid", "setFeePaid"], 
-        "fee_charged" => ["fee_charged", "float", null, "getFeeCharged", "setFeeCharged"], 
-        "max_fee" => ["max_fee", "float", null, "getMaxFee", "setMaxFee"], 
-        "operation_count" => ["operation_count", "float", null, "getOperationCount", "setOperationCount"], 
-        "envelope_xdr" => ["envelope_xdr", "string", null, "getEnvelopeXdr", "setEnvelopeXdr"], 
-        "result_xdr" => ["result_xdr", "string", null, "getResultXdr", "setResultXdr"], 
-        "result_meta_xdr" => ["result_meta_xdr", "string", null, "getResultMetaXdr", "setResultMetaXdr"], 
-        "fee_meta_xdr" => ["fee_meta_xdr", "string", null, "getFeeMetaXdr", "setFeeMetaXdr"], 
-        "memo" => ["memo", "string", null, "getMemo", "setMemo"], 
-        "memo_type" => ["memo_type", "string", null, "getMemoType", "setMemoType"], 
-        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "paging_token" => ["paging_token", "string", null, "getPagingToken", "setPagingToken", null], 
+        "successful" => ["successful", "bool", null, "getSuccessful", "setSuccessful", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "ledger" => ["ledger", "float", null, "getLedger", "setLedger", null], 
+        "created_at" => ["created_at", "string", null, "getCreatedAt", "setCreatedAt", null], 
+        "source_account" => ["source_account", "string", null, "getSourceAccount", "setSourceAccount", null], 
+        "source_account_sequence" => ["source_account_sequence", "string", null, "getSourceAccountSequence", "setSourceAccountSequence", null], 
+        "fee_paid" => ["fee_paid", "float", null, "getFeePaid", "setFeePaid", null], 
+        "fee_charged" => ["fee_charged", "float", null, "getFeeCharged", "setFeeCharged", null], 
+        "max_fee" => ["max_fee", "float", null, "getMaxFee", "setMaxFee", null], 
+        "operation_count" => ["operation_count", "float", null, "getOperationCount", "setOperationCount", null], 
+        "envelope_xdr" => ["envelope_xdr", "string", null, "getEnvelopeXdr", "setEnvelopeXdr", null], 
+        "result_xdr" => ["result_xdr", "string", null, "getResultXdr", "setResultXdr", null], 
+        "result_meta_xdr" => ["result_meta_xdr", "string", null, "getResultMetaXdr", "setResultMetaXdr", null], 
+        "fee_meta_xdr" => ["fee_meta_xdr", "string", null, "getFeeMetaXdr", "setFeeMetaXdr", null], 
+        "memo" => ["memo", "string", null, "getMemo", "setMemo", null], 
+        "memo_type" => ["memo_type", "string", null, "getMemoType", "setMemoType", null], 
+        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null]
     ];
 
     /**
@@ -56,25 +56,24 @@ class XlmTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "paging_token"=>null, "successful"=>null, "hash"=>null, "ledger"=>null, "created_at"=>null, "source_account"=>null, "source_account_sequence"=>null, "fee_paid"=>null, "fee_charged"=>null, "max_fee"=>null, "operation_count"=>null, "envelope_xdr"=>null, "result_xdr"=>null, "result_meta_xdr"=>null, "fee_meta_xdr"=>null, "memo"=>null, "memo_type"=>null, "signatures"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getMemoTypeAllowableValues();
         $value = $this->_data['memo_type'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'memo_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

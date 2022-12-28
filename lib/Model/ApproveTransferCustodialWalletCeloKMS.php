@@ -32,18 +32,18 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "ApproveTransferCustodialWalletCeloKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress"], 
-        "spender" => ["spender", "string", null, "getSpender", "setSpender"], 
-        "contract_type" => ["contractType", "float", null, "getContractType", "setContractType"], 
-        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
+        "spender" => ["spender", "string", null, "getSpender", "setSpender", null], 
+        "contract_type" => ["contractType", "float", null, "getContractType", "setContractType", null], 
+        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null]
     ];
 
     /**
@@ -52,17 +52,16 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "custodial_address"=>null, "spender"=>null, "contract_type"=>null, "token_address"=>null, "amount"=>null, "token_id"=>null, "signature_id"=>null, "index"=>null, "fee_currency"=>null, "nonce"=>null, "fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -126,9 +125,9 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

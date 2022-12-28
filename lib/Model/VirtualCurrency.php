@@ -392,15 +392,15 @@ class VirtualCurrency extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "VirtualCurrency";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply"], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair"], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate"], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer"], 
-        "description" => ["description", "string", null, "getDescription", "setDescription"], 
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode"], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber"], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"]
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null]
     ];
 
     /**
@@ -409,17 +409,16 @@ class VirtualCurrency extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["name"=>null, "supply"=>null, "base_pair"=>null, "base_rate"=>1, "customer"=>null, "description"=>null, "account_code"=>null, "account_number"=>null, "accounting_currency"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['name'])) {
             $ip[] = "'name' can't be null";
         }
@@ -490,9 +489,9 @@ class VirtualCurrency extends AbstractModel {
         if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
             $ip[] = "'accounting_currency' length must be >= 3";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

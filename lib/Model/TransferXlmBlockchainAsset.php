@@ -25,14 +25,14 @@ class TransferXlmBlockchainAsset extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXlmBlockchainAsset";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret"], 
-        "initialize" => ["initialize", "bool", null, "getInitialize", "setInitialize"], 
-        "token" => ["token", "string", null, "getToken", "setToken"], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount"], 
-        "message" => ["message", "string", null, "getMessage", "setMessage"]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null], 
+        "initialize" => ["initialize", "bool", null, "getInitialize", "setInitialize", false], 
+        "token" => ["token", "string", null, "getToken", "setToken", null], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null]
     ];
 
     /**
@@ -41,17 +41,16 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_account"=>null, "to"=>null, "amount"=>null, "from_secret"=>null, "initialize"=>false, "token"=>null, "issuer_account"=>null, "message"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['from_account'])) {
             $ip[] = "'from_account' can't be null";
         }
@@ -112,9 +111,9 @@ class TransferXlmBlockchainAsset extends AbstractModel {
         if (!is_null($this->_data['message']) && !preg_match("/^[ -~]{0,64}$/", $this->_data['message'])) {
             $ip[] = "'message' must match /^[ -~]{0,64}$/";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_account

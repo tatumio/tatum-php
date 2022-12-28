@@ -25,9 +25,9 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields ex
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode_NewFields";
     protected static $_definition = [
-        "account" => ["Account", "string", null, "getAccount", "setAccount"], 
-        "balance" => ["Balance", "string", null, "getBalance", "setBalance"], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence"]
+        "account" => ["Account", "string", null, "getAccount", "setAccount", null], 
+        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields ex
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "balance"=>null, "sequence"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get account

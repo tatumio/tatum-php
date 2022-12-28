@@ -25,8 +25,8 @@ class FlowEventPayloadValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowEvent_payload_value";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "fields" => ["fields", "\Tatum\Model\FlowEventPayloadValueFieldsInner[]", null, "getFields", "setFields"]
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "fields" => ["fields", "\Tatum\Model\FlowEventPayloadValueFieldsInner[]", null, "getFields", "setFields", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class FlowEventPayloadValue extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["id"=>null, "fields"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get id

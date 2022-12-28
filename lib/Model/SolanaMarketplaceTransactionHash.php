@@ -25,10 +25,10 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaMarketplaceTransactionHash";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount"], 
-        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount"]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null], 
+        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null]
     ];
 
     /**
@@ -37,17 +37,16 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["tx_id"=>null, "contract_address"=>null, "fee_account"=>null, "treasury_account"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['tx_id'])) {
             $ip[] = "'tx_id' can't be null";
         }
@@ -60,9 +59,9 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
         if (is_null($this->_data['treasury_account'])) {
             $ip[] = "'treasury_account' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get tx_id

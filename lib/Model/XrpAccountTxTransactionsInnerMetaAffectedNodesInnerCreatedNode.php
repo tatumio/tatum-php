@@ -25,9 +25,9 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends Abs
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode";
     protected static $_definition = [
-        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType"], 
-        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex"], 
-        "new_fields" => ["NewFields", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields", null, "getNewFields", "setNewFields"]
+        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null], 
+        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex", null], 
+        "new_fields" => ["NewFields", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields", null, "getNewFields", "setNewFields", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends Abs
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["ledger_entry_type"=>null, "ledger_index"=>null, "new_fields"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get ledger_entry_type

@@ -43,23 +43,23 @@ class Transaction extends AbstractModel {
     public const TRANSACTION_TYPE_EXCHANGE_SELL = 'EXCHANGE_SELL';
     protected static $_name = "Transaction";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId"], 
-        "counter_account_id" => ["counterAccountId", "string", null, "getCounterAccountId", "setCounterAccountId"], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous"], 
-        "created" => ["created", "float", null, "getCreated", "setCreated"], 
-        "market_value" => ["marketValue", "\Tatum\Model\MarketValue", null, "getMarketValue", "setMarketValue"], 
-        "operation_type" => ["operationType", "string", null, "getOperationType", "setOperationType"], 
-        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType"], 
-        "reference" => ["reference", "string", null, "getReference", "setReference"], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId"]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
+        "counter_account_id" => ["counterAccountId", "string", null, "getCounterAccountId", "setCounterAccountId", null], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous", null], 
+        "created" => ["created", "float", null, "getCreated", "setCreated", null], 
+        "market_value" => ["marketValue", "\Tatum\Model\MarketValue", null, "getMarketValue", "setMarketValue", null], 
+        "operation_type" => ["operationType", "string", null, "getOperationType", "setOperationType", null], 
+        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType", null], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
     ];
 
     /**
@@ -68,17 +68,16 @@ class Transaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account_id"=>null, "counter_account_id"=>null, "currency"=>null, "amount"=>null, "anonymous"=>null, "created"=>null, "market_value"=>null, "operation_type"=>null, "transaction_type"=>null, "reference"=>null, "transaction_code"=>null, "sender_note"=>null, "recipient_note"=>null, "payment_id"=>null, "attr"=>null, "address"=>null, "tx_id"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account_id'])) {
             $ip[] = "'account_id' can't be null";
         }
@@ -116,9 +115,9 @@ class Transaction extends AbstractModel {
         if (is_null($this->_data['reference'])) {
             $ip[] = "'reference' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

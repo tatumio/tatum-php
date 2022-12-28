@@ -25,18 +25,18 @@ class BchBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "size" => ["size", "float", null, "getSize", "setSize"], 
-        "height" => ["height", "float", null, "getHeight", "setHeight"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "merkleroot" => ["merkleroot", "string", null, "getMerkleroot", "setMerkleroot"], 
-        "tx" => ["tx", "\Tatum\Model\BchTx[]", null, "getTx", "setTx"], 
-        "time" => ["time", "float", null, "getTime", "setTime"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "difficulty" => ["difficulty", "float", null, "getDifficulty", "setDifficulty"], 
-        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations"], 
-        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash"], 
-        "nextblockhash" => ["nextblockhash", "string", null, "getNextblockhash", "setNextblockhash"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "size" => ["size", "float", null, "getSize", "setSize", null], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "merkleroot" => ["merkleroot", "string", null, "getMerkleroot", "setMerkleroot", null], 
+        "tx" => ["tx", "\Tatum\Model\BchTx[]", null, "getTx", "setTx", null], 
+        "time" => ["time", "float", null, "getTime", "setTime", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "difficulty" => ["difficulty", "float", null, "getDifficulty", "setDifficulty", null], 
+        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations", null], 
+        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash", null], 
+        "nextblockhash" => ["nextblockhash", "string", null, "getNextblockhash", "setNextblockhash", null]
     ];
 
     /**
@@ -45,20 +45,19 @@ class BchBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "size"=>null, "height"=>null, "version"=>null, "merkleroot"=>null, "tx"=>null, "time"=>null, "nonce"=>null, "difficulty"=>null, "confirmations"=>null, "previousblockhash"=>null, "nextblockhash"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

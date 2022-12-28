@@ -33,12 +33,12 @@ class MintNftMinter extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     protected static $_name = "MintNftMinter";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress"], 
-        "minter" => ["minter", "string", null, "getMinter", "setMinter"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
+        "minter" => ["minter", "string", null, "getMinter", "setMinter", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null]
     ];
 
     /**
@@ -47,17 +47,16 @@ class MintNftMinter extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "contract_address"=>null, "minter"=>null, "to"=>null, "token_id"=>null, "url"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -105,9 +104,9 @@ class MintNftMinter extends AbstractModel {
         if ((mb_strlen($this->_data['url']) > 256)) {
             $ip[] = "'url' length must be <= 256";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

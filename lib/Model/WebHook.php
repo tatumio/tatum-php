@@ -34,16 +34,16 @@ class WebHook extends AbstractModel {
     public const TYPE_KMS_COMPLETED_TX = 'KMS_COMPLETED_TX';
     protected static $_name = "WebHook";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "id" => ["id", "string", null, "getId", "setId"], 
-        "subscription_id" => ["subscriptionId", "string", null, "getSubscriptionId", "setSubscriptionId"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"], 
-        "data" => ["data", "object", null, "getData", "setData"], 
-        "next_time" => ["nextTime", "float", null, "getNextTime", "setNextTime"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "retry_count" => ["retryCount", "float", null, "getRetryCount", "setRetryCount"], 
-        "failed" => ["failed", "bool", null, "getFailed", "setFailed"], 
-        "response" => ["response", "\Tatum\Model\WebHookResponse", null, "getResponse", "setResponse"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "id" => ["id", "string", null, "getId", "setId", null], 
+        "subscription_id" => ["subscriptionId", "string", null, "getSubscriptionId", "setSubscriptionId", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
+        "data" => ["data", "object", null, "getData", "setData", null], 
+        "next_time" => ["nextTime", "float", null, "getNextTime", "setNextTime", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "retry_count" => ["retryCount", "float", null, "getRetryCount", "setRetryCount", null], 
+        "failed" => ["failed", "bool", null, "getFailed", "setFailed", null], 
+        "response" => ["response", "\Tatum\Model\WebHookResponse", null, "getResponse", "setResponse", null]
     ];
 
     /**
@@ -52,17 +52,16 @@ class WebHook extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "id"=>null, "subscription_id"=>null, "url"=>null, "data"=>null, "next_time"=>null, "timestamp"=>null, "retry_count"=>null, "failed"=>null, "response"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['type'])) {
             $ip[] = "'type' can't be null";
         }
@@ -89,9 +88,9 @@ class WebHook extends AbstractModel {
         if (is_null($this->_data['response'])) {
             $ip[] = "'response' can't be null";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

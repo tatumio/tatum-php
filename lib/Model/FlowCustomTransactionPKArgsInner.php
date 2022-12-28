@@ -91,9 +91,9 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
     public const SUB_TYPE_STRUCT = 'Struct';
     protected static $_name = "FlowCustomTransactionPK_args_inner";
     protected static $_definition = [
-        "value" => ["value", "\Tatum\Model\FlowCustomTransactionPKArgsInnerValue", null, "getValue", "setValue"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "sub_type" => ["subType", "string", null, "getSubType", "setSubType"]
+        "value" => ["value", "\Tatum\Model\FlowCustomTransactionPKArgsInnerValue", null, "getValue", "setValue", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "sub_type" => ["subType", "string", null, "getSubType", "setSubType", null]
     ];
 
     /**
@@ -102,17 +102,16 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["value"=>null, "type"=>null, "sub_type"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['value'])) {
             $ip[] = "'value' can't be null";
         }
@@ -135,9 +134,9 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
         if (!is_null($this->_data['sub_type']) && (mb_strlen($this->_data['sub_type']) > 38)) {
             $ip[] = "'sub_type' length must be <= 38";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

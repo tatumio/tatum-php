@@ -33,9 +33,9 @@ class MintNftExpress extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     protected static $_name = "MintNftExpress";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "url" => ["url", "string", null, "getUrl", "setUrl"]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null]
     ];
 
     /**
@@ -44,17 +44,16 @@ class MintNftExpress extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["chain"=>null, "to"=>null, "url"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['chain'])) {
             $ip[] = "'chain' can't be null";
         }
@@ -78,9 +77,9 @@ class MintNftExpress extends AbstractModel {
         if ((mb_strlen($this->_data['url']) > 256)) {
             $ip[] = "'url' length must be <= 256";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

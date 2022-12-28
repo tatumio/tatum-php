@@ -31,15 +31,15 @@ class CreateRecord extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     protected static $_name = "CreateRecord";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData"], 
-        "chain" => ["chain", "string", null, "getChain", "setChain"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "from" => ["from", "string", null, "getFrom", "setFrom"], 
-        "to" => ["to", "string", null, "getTo", "setTo"], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce"], 
-        "from_shard_id" => ["fromShardID", "float", null, "getFromShardId", "setFromShardId"], 
-        "to_shard_id" => ["toShardID", "float", null, "getToShardId", "setToShardId"], 
-        "eth_fee" => ["ethFee", "\Tatum\Model\CustomFee", null, "getEthFee", "setEthFee"]
+        "data" => ["data", "string", null, "getData", "setData", null], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
+        "to" => ["to", "string", null, "getTo", "setTo", null], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
+        "from_shard_id" => ["fromShardID", "float", null, "getFromShardId", "setFromShardId", null], 
+        "to_shard_id" => ["toShardID", "float", null, "getToShardId", "setToShardId", null], 
+        "eth_fee" => ["ethFee", "\Tatum\Model\CustomFee", null, "getEthFee", "setEthFee", null]
     ];
 
     /**
@@ -48,17 +48,16 @@ class CreateRecord extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["data"=>null, "chain"=>null, "from_private_key"=>null, "from"=>null, "to"=>null, "nonce"=>null, "from_shard_id"=>null, "to_shard_id"=>null, "eth_fee"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['data'])) {
             $ip[] = "'data' can't be null";
         }
@@ -112,9 +111,9 @@ class CreateRecord extends AbstractModel {
         if (!is_null($this->_data['to_shard_id']) && ($this->_data['to_shard_id'] < 0)) {
             $ip[] = "'to_shard_id' must be >= 0";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

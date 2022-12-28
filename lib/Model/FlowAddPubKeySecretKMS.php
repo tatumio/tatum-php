@@ -25,11 +25,11 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAddPubKeySecretKMS";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount"], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "index" => ["index", "float", null, "getIndex", "setIndex"], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight"]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null]
     ];
 
     /**
@@ -38,17 +38,16 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["account"=>null, "public_key"=>null, "signature_id"=>null, "index"=>null, "weight"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['account'])) {
             $ip[] = "'account' can't be null";
         }
@@ -79,9 +78,9 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
         if (!is_null($this->_data['weight']) && ($this->_data['weight'] < 0)) {
             $ip[] = "'weight' must be >= 0";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get account

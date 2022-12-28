@@ -25,9 +25,9 @@ class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractM
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTokenGetAddressBalance_200_response_inner_balances_inner";
     protected static $_definition = [
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"]
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null]
     ];
 
     /**
@@ -36,20 +36,19 @@ class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractM
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["token_id"=>null, "amount"=>null, "block_number"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get token_id

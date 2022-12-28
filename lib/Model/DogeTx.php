@@ -25,13 +25,13 @@ class DogeTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "size" => ["size", "float", null, "getSize", "setSize"], 
-        "vsize" => ["vsize", "float", null, "getVsize", "setVsize"], 
-        "version" => ["version", "float", null, "getVersion", "setVersion"], 
-        "vin" => ["vin", "\Tatum\Model\DogeTxVinInner[]", null, "getVin", "setVin"], 
-        "vout" => ["vout", "\Tatum\Model\DogeTxVoutInner[]", null, "getVout", "setVout"], 
-        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "size" => ["size", "float", null, "getSize", "setSize", null], 
+        "vsize" => ["vsize", "float", null, "getVsize", "setVsize", null], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
+        "vin" => ["vin", "\Tatum\Model\DogeTxVinInner[]", null, "getVin", "setVin", null], 
+        "vout" => ["vout", "\Tatum\Model\DogeTxVoutInner[]", null, "getVout", "setVout", null], 
+        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null]
     ];
 
     /**
@@ -40,20 +40,19 @@ class DogeTx extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "size"=>null, "vsize"=>null, "version"=>null, "vin"=>null, "vout"=>null, "locktime"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash

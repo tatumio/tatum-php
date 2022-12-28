@@ -25,11 +25,11 @@ class FlowAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAccount";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "balance" => ["balance", "float", null, "getBalance", "setBalance"], 
-        "code" => ["code", "string", null, "getCode", "setCode"], 
-        "contracts" => ["contracts", "object", null, "getContracts", "setContracts"], 
-        "keys" => ["keys", "\Tatum\Model\FlowAccountKeysInner[]", null, "getKeys", "setKeys"]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "balance" => ["balance", "float", null, "getBalance", "setBalance", null], 
+        "code" => ["code", "string", null, "getCode", "setCode", null], 
+        "contracts" => ["contracts", "object", null, "getContracts", "setContracts", null], 
+        "keys" => ["keys", "\Tatum\Model\FlowAccountKeysInner[]", null, "getKeys", "setKeys", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class FlowAccount extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["address"=>null, "balance"=>null, "code"=>null, "contracts"=>null, "keys"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get address

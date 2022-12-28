@@ -27,23 +27,23 @@ class XrpLedgerLedger extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpLedger_ledger";
     protected static $_definition = [
-        "accepted" => ["accepted", "bool", null, "getAccepted", "setAccepted"], 
-        "account_hash" => ["account_hash", "string", null, "getAccountHash", "setAccountHash"], 
-        "close_flags" => ["close_flags", "int", null, "getCloseFlags", "setCloseFlags"], 
-        "close_time" => ["close_time", "int", null, "getCloseTime", "setCloseTime"], 
-        "close_time_human" => ["close_time_human", "string", null, "getCloseTimeHuman", "setCloseTimeHuman"], 
-        "close_time_resolution" => ["close_time_resolution", "int", null, "getCloseTimeResolution", "setCloseTimeResolution"], 
-        "closed" => ["closed", "bool", null, "getClosed", "setClosed"], 
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash"], 
-        "ledger_index" => ["ledger_index", "string", null, "getLedgerIndex", "setLedgerIndex"], 
-        "parent_close_time" => ["parent_close_time", "int", null, "getParentCloseTime", "setParentCloseTime"], 
-        "parent_hash" => ["parent_hash", "string", null, "getParentHash", "setParentHash"], 
-        "seq_num" => ["seqNum", "string", null, "getSeqNum", "setSeqNum"], 
-        "total_coins" => ["totalCoins", "string", null, "getTotalCoins", "setTotalCoins"], 
-        "total_coins" => ["total_coins", "string", null, "getTotalCoins", "setTotalCoins"], 
-        "transaction_hash" => ["transaction_hash", "string", null, "getTransactionHash", "setTransactionHash"], 
-        "transactions" => ["transactions", "\Tatum\Model\XrpTx[]", null, "getTransactions", "setTransactions"]
+        "accepted" => ["accepted", "bool", null, "getAccepted", "setAccepted", null], 
+        "account_hash" => ["account_hash", "string", null, "getAccountHash", "setAccountHash", null], 
+        "close_flags" => ["close_flags", "int", null, "getCloseFlags", "setCloseFlags", null], 
+        "close_time" => ["close_time", "int", null, "getCloseTime", "setCloseTime", null], 
+        "close_time_human" => ["close_time_human", "string", null, "getCloseTimeHuman", "setCloseTimeHuman", null], 
+        "close_time_resolution" => ["close_time_resolution", "int", null, "getCloseTimeResolution", "setCloseTimeResolution", null], 
+        "closed" => ["closed", "bool", null, "getClosed", "setClosed", null], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null], 
+        "ledger_index" => ["ledger_index", "string", null, "getLedgerIndex", "setLedgerIndex", null], 
+        "parent_close_time" => ["parent_close_time", "int", null, "getParentCloseTime", "setParentCloseTime", null], 
+        "parent_hash" => ["parent_hash", "string", null, "getParentHash", "setParentHash", null], 
+        "seq_num" => ["seqNum", "string", null, "getSeqNum", "setSeqNum", null], 
+        "total_coins" => ["totalCoins", "string", null, "getTotalCoins", "setTotalCoins", null], 
+        "total_coins" => ["total_coins", "string", null, "getTotalCoins", "setTotalCoins", null], 
+        "transaction_hash" => ["transaction_hash", "string", null, "getTransactionHash", "setTransactionHash", null], 
+        "transactions" => ["transactions", "\Tatum\Model\XrpTx[]", null, "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -52,20 +52,19 @@ class XrpLedgerLedger extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["accepted"=>null, "account_hash"=>null, "close_flags"=>null, "close_time"=>null, "close_time_human"=>null, "close_time_resolution"=>null, "closed"=>null, "hash"=>null, "ledger_hash"=>null, "ledger_index"=>null, "parent_close_time"=>null, "parent_hash"=>null, "seq_num"=>null, "total_coins"=>null, "total_coins"=>null, "transaction_hash"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get accepted

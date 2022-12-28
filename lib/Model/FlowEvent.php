@@ -25,14 +25,14 @@ class FlowEvent extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowEvent";
     protected static $_definition = [
-        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId"], 
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight"], 
-        "block_timestamp" => ["blockTimestamp", "string", null, "getBlockTimestamp", "setBlockTimestamp"], 
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "transaction_id" => ["transactionId", "string", null, "getTransactionId", "setTransactionId"], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex"], 
-        "event_index" => ["eventIndex", "float", null, "getEventIndex", "setEventIndex"], 
-        "payload" => ["payload", "\Tatum\Model\FlowEventPayload", null, "getPayload", "setPayload"]
+        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId", null], 
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
+        "block_timestamp" => ["blockTimestamp", "string", null, "getBlockTimestamp", "setBlockTimestamp", null], 
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "transaction_id" => ["transactionId", "string", null, "getTransactionId", "setTransactionId", null], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
+        "event_index" => ["eventIndex", "float", null, "getEventIndex", "setEventIndex", null], 
+        "payload" => ["payload", "\Tatum\Model\FlowEventPayload", null, "getPayload", "setPayload", null]
     ];
 
     /**
@@ -41,20 +41,19 @@ class FlowEvent extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["block_id"=>null, "block_height"=>null, "block_timestamp"=>null, "type"=>null, "transaction_id"=>null, "transaction_index"=>null, "event_index"=>null, "payload"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get block_id

@@ -25,11 +25,11 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_rawData_contract_inner_parameter_value";
     protected static $_definition = [
-        "amount" => ["amount", "float", null, "getAmount", "setAmount"], 
-        "owner_address" => ["owner_address", "string", null, "getOwnerAddress", "setOwnerAddress"], 
-        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress"], 
-        "owner_address_base58" => ["ownerAddressBase58", "string", null, "getOwnerAddressBase58", "setOwnerAddressBase58"], 
-        "to_address_base58" => ["toAddressBase58", "string", null, "getToAddressBase58", "setToAddressBase58"]
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", null], 
+        "owner_address" => ["owner_address", "string", null, "getOwnerAddress", "setOwnerAddress", null], 
+        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress", null], 
+        "owner_address_base58" => ["ownerAddressBase58", "string", null, "getOwnerAddressBase58", "setOwnerAddressBase58", null], 
+        "to_address_base58" => ["toAddressBase58", "string", null, "getToAddressBase58", "setToAddressBase58", null]
     ];
 
     /**
@@ -38,20 +38,19 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["amount"=>null, "owner_address"=>null, "to_address"=>null, "owner_address_base58"=>null, "to_address_base58"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get amount

@@ -25,16 +25,16 @@ class BnbTransferRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTransfer_request";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId"], 
-        "address" => ["address", "string", null, "getAddress", "setAddress"], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount"], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant"], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr"], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote"], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId"], 
-        "from_address" => ["fromAddress", "string", null, "getFromAddress", "setFromAddress"]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
+        "from_address" => ["fromAddress", "string", null, "getFromAddress", "setFromAddress", null]
     ];
 
     /**
@@ -43,17 +43,16 @@ class BnbTransferRequest extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["sender_account_id"=>null, "address"=>null, "amount"=>null, "compliant"=>null, "attr"=>null, "payment_id"=>null, "from_private_key"=>null, "sender_note"=>null, "signature_id"=>null, "from_address"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['sender_account_id'])) {
             $ip[] = "'sender_account_id' can't be null";
         }
@@ -114,9 +113,9 @@ class BnbTransferRequest extends AbstractModel {
         if ((mb_strlen($this->_data['from_address']) < 42)) {
             $ip[] = "'from_address' length must be >= 42";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get sender_account_id

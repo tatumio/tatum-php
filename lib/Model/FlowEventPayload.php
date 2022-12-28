@@ -26,8 +26,8 @@ class FlowEventPayload extends AbstractModel {
     public const TYPE_EVENT = 'Event';
     protected static $_name = "FlowEvent_payload";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType"], 
-        "value" => ["value", "\Tatum\Model\FlowEventPayloadValue", null, "getValue", "setValue"]
+        "type" => ["type", "string", null, "getType", "setType", null], 
+        "value" => ["value", "\Tatum\Model\FlowEventPayloadValue", null, "getValue", "setValue", null]
     ];
 
     /**
@@ -36,25 +36,24 @@ class FlowEventPayload extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["type"=>null, "value"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getTypeAllowableValues();
         $value = $this->_data['type'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
             $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

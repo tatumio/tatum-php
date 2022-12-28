@@ -197,10 +197,10 @@ class CustomerRegistration extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "CustomerRegistration";
     protected static $_definition = [
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency"], 
-        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry"], 
-        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId"], 
-        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry"]
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR'], 
+        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null], 
+        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null], 
+        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null]
     ];
 
     /**
@@ -209,17 +209,16 @@ class CustomerRegistration extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["accounting_currency"=>'EUR', "customer_country"=>null, "external_id"=>null, "provider_country"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         $allowed = $this->getAccountingCurrencyAllowableValues();
         $value = $this->_data['accounting_currency'];
         if (!is_null($value) && !in_array($value, $allowed, true)) {
@@ -252,9 +251,9 @@ class CustomerRegistration extends AbstractModel {
         if (!is_null($this->_data['provider_country']) && (mb_strlen($this->_data['provider_country']) < 2)) {
             $ip[] = "'provider_country' length must be >= 2";
         }
-        
         return $ip;
     }
+
     /**
      * Get allowable values
      *

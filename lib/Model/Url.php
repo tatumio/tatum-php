@@ -25,7 +25,7 @@ class Url extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Url";
     protected static $_definition = [
-        "url" => ["url", "string", null, "getUrl", "setUrl"]
+        "url" => ["url", "string", null, "getUrl", "setUrl", null]
     ];
 
     /**
@@ -34,20 +34,19 @@ class Url extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["url"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get url

@@ -25,9 +25,9 @@ class AdaTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTransaction";
     protected static $_definition = [
-        "from_address" => ["fromAddress", "\Tatum\Model\AdaTransactionFromAddressInner[]", null, "getFromAddress", "setFromAddress"], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo"], 
-        "to" => ["to", "\Tatum\Model\AdaTransactionToInner[]", null, "getTo", "setTo"]
+        "from_address" => ["fromAddress", "\Tatum\Model\AdaTransactionFromAddressInner[]", null, "getFromAddress", "setFromAddress", null], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null], 
+        "to" => ["to", "\Tatum\Model\AdaTransactionToInner[]", null, "getTo", "setTo", null]
     ];
 
     /**
@@ -36,23 +36,22 @@ class AdaTransaction extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["from_address"=>null, "from_utxo"=>null, "to"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['to'])) {
             $ip[] = "'to' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get from_address

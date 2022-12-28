@@ -25,8 +25,8 @@ class ReceiveAlgorandAsset extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "ReceiveAlgorandAsset";
     protected static $_definition = [
-        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId"], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey"]
+        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
     ];
 
     /**
@@ -35,26 +35,25 @@ class ReceiveAlgorandAsset extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["asset_id"=>null, "from_private_key"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['asset_id'])) {
             $ip[] = "'asset_id' can't be null";
         }
         if (is_null($this->_data['from_private_key'])) {
             $ip[] = "'from_private_key' can't be null";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get asset_id

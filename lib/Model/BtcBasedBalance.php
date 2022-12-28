@@ -25,8 +25,8 @@ class BtcBasedBalance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcBasedBalance";
     protected static $_definition = [
-        "incoming" => ["incoming", "string", null, "getIncoming", "setIncoming"], 
-        "outgoing" => ["outgoing", "string", null, "getOutgoing", "setOutgoing"]
+        "incoming" => ["incoming", "string", null, "getIncoming", "setIncoming", null], 
+        "outgoing" => ["outgoing", "string", null, "getOutgoing", "setOutgoing", null]
     ];
 
     /**
@@ -35,20 +35,19 @@ class BtcBasedBalance extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["incoming"=>null, "outgoing"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get incoming

@@ -25,13 +25,13 @@ class SolanaNftExpressMetadata extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaNftExpressMetadata";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName"], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol"], 
-        "seller_fee_basis_points" => ["sellerFeeBasisPoints", "float", null, "getSellerFeeBasisPoints", "setSellerFeeBasisPoints"], 
-        "uri" => ["uri", "string", null, "getUri", "setUri"], 
-        "collection" => ["collection", "string", null, "getCollection", "setCollection"], 
-        "mutable" => ["mutable", "bool", null, "getMutable", "setMutable"], 
-        "creators" => ["creators", "\Tatum\Model\SolanaNftMetadataCreator[]", null, "getCreators", "setCreators"]
+        "name" => ["name", "string", null, "getName", "setName", null], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
+        "seller_fee_basis_points" => ["sellerFeeBasisPoints", "float", null, "getSellerFeeBasisPoints", "setSellerFeeBasisPoints", null], 
+        "uri" => ["uri", "string", null, "getUri", "setUri", null], 
+        "collection" => ["collection", "string", null, "getCollection", "setCollection", null], 
+        "mutable" => ["mutable", "bool", null, "getMutable", "setMutable", true], 
+        "creators" => ["creators", "\Tatum\Model\SolanaNftMetadataCreator[]", null, "getCreators", "setCreators", null]
     ];
 
     /**
@@ -40,17 +40,16 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["name"=>null, "symbol"=>null, "seller_fee_basis_points"=>null, "uri"=>null, "collection"=>null, "mutable"=>true, "creators"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
         if (is_null($this->_data['name'])) {
             $ip[] = "'name' can't be null";
         }
@@ -78,9 +77,9 @@ class SolanaNftExpressMetadata extends AbstractModel {
         if (!is_null($this->_data['collection']) && (mb_strlen($this->_data['collection']) < 43)) {
             $ip[] = "'collection' length must be >= 43";
         }
-        
         return $ip;
     }
+
 
     /**
      * Get name

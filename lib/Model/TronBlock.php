@@ -25,13 +25,13 @@ class TronBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash"], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber"], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp"], 
-        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash"], 
-        "witness_address" => ["witnessAddress", "string", null, "getWitnessAddress", "setWitnessAddress"], 
-        "witness_signature" => ["witnessSignature", "string", null, "getWitnessSignature", "setWitnessSignature"], 
-        "transactions" => ["transactions", "\Tatum\Model\TronTx[]", null, "getTransactions", "setTransactions"]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
+        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash", null], 
+        "witness_address" => ["witnessAddress", "string", null, "getWitnessAddress", "setWitnessAddress", null], 
+        "witness_signature" => ["witnessSignature", "string", null, "getWitnessSignature", "setWitnessSignature", null], 
+        "transactions" => ["transactions", "\Tatum\Model\TronTx[]", null, "getTransactions", "setTransactions", null]
     ];
 
     /**
@@ -40,20 +40,19 @@ class TronBlock extends AbstractModel {
      * @param mixed[] $data Model data
      */
     public function __construct(array $data = []) {
-        foreach(["hash"=>null, "block_number"=>null, "timestamp"=>null, "parent_hash"=>null, "witness_address"=>null, "witness_signature"=>null, "transactions"=>null] as $k => $v) {
-            $this->_data[$k] = $data[$k] ?? $v;
+        foreach(static::$_definition as $k => $v) {
+            $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function listInvalidProperties(): array {
         $ip = [];
-
-        
         return $ip;
     }
+
 
     /**
      * Get hash
