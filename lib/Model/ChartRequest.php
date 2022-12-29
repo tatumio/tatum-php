@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ChartRequest Model
  */
@@ -37,10 +35,10 @@ class ChartRequest extends AbstractModel {
     public const TIME_FRAME_YEAR = 'YEAR';
     protected static $_name = "ChartRequest";
     protected static $_definition = [
-        "pair" => ["pair", "string", null, "getPair", "setPair", null], 
-        "from" => ["from", "float", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "float", null, "getTo", "setTo", null], 
-        "time_frame" => ["timeFrame", "string", null, "getTimeFrame", "setTimeFrame", null]
+        "pair" => ["pair", "string", null, "getPair", "setPair", null, ["r" => 1, "p" => "/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", "nl" => 3, "xl" => 30]], 
+        "from" => ["from", "float", null, "getFrom", "setFrom", null, ["r" => 1, "n" => [0]]], 
+        "to" => ["to", "float", null, "getTo", "setTo", null, ["r" => 1, "n" => [0]]], 
+        "time_frame" => ["timeFrame", "string", null, "getTimeFrame", "setTimeFrame", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -52,46 +50,6 @@ class ChartRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['pair'])) {
-            $ip[] = "'pair' can't be null";
-        }
-        if ((mb_strlen($this->_data['pair']) > 30)) {
-            $ip[] = "'pair' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['pair']) < 3)) {
-            $ip[] = "'pair' length must be >= 3";
-        }
-        if (!preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $this->_data['pair'])) {
-            $ip[] = "'pair' must match /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if (($this->_data['from'] < 0)) {
-            $ip[] = "'from' must be >= 0";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (($this->_data['to'] < 0)) {
-            $ip[] = "'to' must be >= 0";
-        }
-        if (is_null($this->_data['time_frame'])) {
-            $ip[] = "'time_frame' can't be null";
-        }
-        $allowed = $this->getTimeFrameAllowableValues();
-        $value = $this->_data['time_frame'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'time_frame' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -129,21 +87,11 @@ class ChartRequest extends AbstractModel {
      * Set pair
      * 
      * @param string $pair Trading pair
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPair(string $pair) {
-        if ((mb_strlen($pair) > 30)) {
-            throw new IAE('ChartRequest.setPair: $pair length must be <= 30');
-        }
-        if ((mb_strlen($pair) < 3)) {
-            throw new IAE('ChartRequest.setPair: $pair length must be >= 3');
-        }
-        if ((!preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $pair))) {
-            throw new IAE('ChartRequest.setPair: $pair must match /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/, ' . var_export($pair, true) . ' given');
-        }
-        $this->_data['pair'] = $pair;
-
-        return $this;
+        return $this->_set("pair", $pair);
     }
 
     /**
@@ -159,15 +107,11 @@ class ChartRequest extends AbstractModel {
      * Set from
      * 
      * @param float $from Start interval in UTC millis.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(float $from) {
-        if (($from < 0)) {
-            throw new IAE('ChartRequest.setFrom: $from must be >=0');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -183,15 +127,11 @@ class ChartRequest extends AbstractModel {
      * Set to
      * 
      * @param float $to End interval in UTC millis.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(float $to) {
-        if (($to < 0)) {
-            throw new IAE('ChartRequest.setTo: $to must be >=0');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -207,15 +147,10 @@ class ChartRequest extends AbstractModel {
      * Set time_frame
      * 
      * @param string $time_frame Time frame of the chart.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimeFrame(string $time_frame) {
-        $allowed = $this->getTimeFrameAllowableValues();
-        if (!in_array($time_frame, $allowed, true)) {
-            throw new IAE(sprintf("ChartRequest.setTimeFrame: time_frame invalid value '%s', must be one of '%s'", $time_frame, implode("', '", $allowed)));
-        }
-        $this->_data['time_frame'] = $time_frame;
-
-        return $this;
+        return $this->_set("time_frame", $time_frame);
     }
 }

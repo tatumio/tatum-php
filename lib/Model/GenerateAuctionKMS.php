@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateAuctionKMS Model
  */
@@ -30,13 +28,13 @@ class GenerateAuctionKMS extends AbstractModel {
     public const CHAIN_MATIC = 'MATIC';
     protected static $_name = "GenerateAuctionKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null], 
-        "auction_fee" => ["auctionFee", "float", null, "getAuctionFee", "setAuctionFee", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "auction_fee" => ["auctionFee", "float", null, "getAuctionFee", "setAuctionFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -48,46 +46,6 @@ class GenerateAuctionKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_recipient'])) {
-            $ip[] = "'fee_recipient' can't be null";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) > 42)) {
-            $ip[] = "'fee_recipient' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) < 42)) {
-            $ip[] = "'fee_recipient' length must be >= 42";
-        }
-        if (is_null($this->_data['auction_fee'])) {
-            $ip[] = "'auction_fee' can't be null";
-        }
-        if (($this->_data['auction_fee'] > 10000)) {
-            $ip[] = "'auction_fee' must be <= 10000";
-        }
-        if (($this->_data['auction_fee'] < 0)) {
-            $ip[] = "'auction_fee' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -118,16 +76,11 @@ class GenerateAuctionKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateAuctionKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -143,18 +96,11 @@ class GenerateAuctionKMS extends AbstractModel {
      * Set fee_recipient
      * 
      * @param string $fee_recipient Address of the recipient of the fee for the trade.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeRecipient(string $fee_recipient) {
-        if ((mb_strlen($fee_recipient) > 42)) {
-            throw new IAE('GenerateAuctionKMS.setFeeRecipient: $fee_recipient length must be <= 42');
-        }
-        if ((mb_strlen($fee_recipient) < 42)) {
-            throw new IAE('GenerateAuctionKMS.setFeeRecipient: $fee_recipient length must be >= 42');
-        }
-        $this->_data['fee_recipient'] = $fee_recipient;
-
-        return $this;
+        return $this->_set("fee_recipient", $fee_recipient);
     }
 
     /**
@@ -170,18 +116,11 @@ class GenerateAuctionKMS extends AbstractModel {
      * Set auction_fee
      * 
      * @param float $auction_fee Percentage of the selling amount of the NFT asset. 100 - 1%
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuctionFee(float $auction_fee) {
-        if (($auction_fee > 10000)) {
-            throw new IAE('GenerateAuctionKMS.setAuctionFee: $auction_fee must be <=10000');
-        }
-        if (($auction_fee < 0)) {
-            throw new IAE('GenerateAuctionKMS.setAuctionFee: $auction_fee must be >=0');
-        }
-        $this->_data['auction_fee'] = $auction_fee;
-
-        return $this;
+        return $this->_set("auction_fee", $auction_fee);
     }
 
     /**
@@ -197,12 +136,11 @@ class GenerateAuctionKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -218,15 +156,11 @@ class GenerateAuctionKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('GenerateAuctionKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -242,12 +176,11 @@ class GenerateAuctionKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -263,11 +196,10 @@ class GenerateAuctionKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

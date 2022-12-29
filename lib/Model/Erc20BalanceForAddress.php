@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Erc20BalanceForAddress Model
  */
@@ -25,8 +23,8 @@ class Erc20BalanceForAddress extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Erc20BalanceForAddress";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class Erc20BalanceForAddress extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class Erc20BalanceForAddress extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address The address of the smart contract that the fungible tokens were minted on
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -83,11 +72,10 @@ class Erc20BalanceForAddress extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount The number of the fungible tokens
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

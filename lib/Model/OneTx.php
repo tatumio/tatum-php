@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * OneTx Model
  */
@@ -25,22 +23,22 @@ class OneTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OneTx";
     protected static $_definition = [
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
-        "status" => ["status", "bool", null, "getStatus", "setStatus", null], 
-        "block_number" => ["blockNumber", "mixed", null, "getBlockNumber", "setBlockNumber", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null], 
-        "input" => ["input", "string", null, "getInput", "setInput", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "transaction_index" => ["transactionIndex", "mixed", null, "getTransactionIndex", "setTransactionIndex", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "gas_used" => ["gasUsed", "mixed", null, "getGasUsed", "setGasUsed", null], 
-        "cumulative_gas_used" => ["cumulativeGasUsed", "mixed", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "logs" => ["logs", "\Tatum\Model\OneTxLog[]", null, "getLogs", "setLogs", null]
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 
+        "status" => ["status", "bool", null, "getStatus", "setStatus", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "mixed", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 0]], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null, ["r" => 0]], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 0]], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null, ["r" => 0]], 
+        "input" => ["input", "string", null, "getInput", "setInput", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0]], 
+        "transaction_index" => ["transactionIndex", "mixed", null, "getTransactionIndex", "setTransactionIndex", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "gas_used" => ["gasUsed", "mixed", null, "getGasUsed", "setGasUsed", null, ["r" => 0]], 
+        "cumulative_gas_used" => ["cumulativeGasUsed", "mixed", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null, ["r" => 0]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]], 
+        "logs" => ["logs", "\Tatum\Model\OneTxLog[]", null, "getLogs", "setLogs", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -52,14 +50,6 @@ class OneTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -76,12 +66,11 @@ class OneTx extends AbstractModel {
      * Set block_hash
      * 
      * @param string|null $block_hash Hash of the block where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHash(?string $block_hash) {
-        $this->_data['block_hash'] = $block_hash;
-
-        return $this;
+        return $this->_set("block_hash", $block_hash);
     }
 
     /**
@@ -97,12 +86,11 @@ class OneTx extends AbstractModel {
      * Set status
      * 
      * @param bool|null $status TRUE if the transaction was successful, FALSE, if the EVM reverted the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?bool $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -118,12 +106,11 @@ class OneTx extends AbstractModel {
      * Set block_number
      * 
      * @param mixed|null $block_number The number of the block that the transaction is included in; if not returned, the transaction has not been included in a block yet.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?mixed $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -139,12 +126,11 @@ class OneTx extends AbstractModel {
      * Set from
      * 
      * @param string|null $from Address of the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(?string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -160,12 +146,11 @@ class OneTx extends AbstractModel {
      * Set gas
      * 
      * @param float|null $gas Gas provided by the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGas(?float $gas) {
-        $this->_data['gas'] = $gas;
-
-        return $this;
+        return $this->_set("gas", $gas);
     }
 
     /**
@@ -181,12 +166,11 @@ class OneTx extends AbstractModel {
      * Set gas_price
      * 
      * @param string|null $gas_price Gas price provided by the sender in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(?string $gas_price) {
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 
     /**
@@ -202,12 +186,11 @@ class OneTx extends AbstractModel {
      * Set transaction_hash
      * 
      * @param string|null $transaction_hash Hash of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionHash(?string $transaction_hash) {
-        $this->_data['transaction_hash'] = $transaction_hash;
-
-        return $this;
+        return $this->_set("transaction_hash", $transaction_hash);
     }
 
     /**
@@ -223,12 +206,11 @@ class OneTx extends AbstractModel {
      * Set input
      * 
      * @param string|null $input The data sent along with the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInput(?string $input) {
-        $this->_data['input'] = $input;
-
-        return $this;
+        return $this->_set("input", $input);
     }
 
     /**
@@ -244,12 +226,11 @@ class OneTx extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The number of transactions made by the sender prior to this one.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -265,12 +246,11 @@ class OneTx extends AbstractModel {
      * Set to
      * 
      * @param string|null $to Address of the receiver. 'null' when its a contract creation transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(?string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -286,12 +266,11 @@ class OneTx extends AbstractModel {
      * Set transaction_index
      * 
      * @param mixed|null $transaction_index The integer of the transactions index position in the block; if not returned, the transaction has not been included in a block yet.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionIndex(?mixed $transaction_index) {
-        $this->_data['transaction_index'] = $transaction_index;
-
-        return $this;
+        return $this->_set("transaction_index", $transaction_index);
     }
 
     /**
@@ -307,12 +286,11 @@ class OneTx extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Value transferred in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -328,12 +306,11 @@ class OneTx extends AbstractModel {
      * Set gas_used
      * 
      * @param mixed|null $gas_used The amount of gas used by this specific transaction alone; if not returned, the transaction has not been included in a block yet.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasUsed(?mixed $gas_used) {
-        $this->_data['gas_used'] = $gas_used;
-
-        return $this;
+        return $this->_set("gas_used", $gas_used);
     }
 
     /**
@@ -349,12 +326,11 @@ class OneTx extends AbstractModel {
      * Set cumulative_gas_used
      * 
      * @param mixed|null $cumulative_gas_used The total amount of gas used when this transaction was executed in the block; if not returned, the transaction has not been included in a block yet.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCumulativeGasUsed(?mixed $cumulative_gas_used) {
-        $this->_data['cumulative_gas_used'] = $cumulative_gas_used;
-
-        return $this;
+        return $this->_set("cumulative_gas_used", $cumulative_gas_used);
     }
 
     /**
@@ -370,12 +346,11 @@ class OneTx extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address The contract address created, if the transaction was a contract creation, otherwise null.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -391,11 +366,10 @@ class OneTx extends AbstractModel {
      * Set logs
      * 
      * @param \Tatum\Model\OneTxLog[]|null $logs Log events, that happened in this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLogs(?array $logs) {
-        $this->_data['logs'] = $logs;
-
-        return $this;
+        return $this->_set("logs", $logs);
     }
 }

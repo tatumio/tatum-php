@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateTronTrc10Blockchain Model
  */
@@ -25,14 +23,14 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateTronTrc10Blockchain";
     protected static $_definition = [
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "abbreviation" => ["abbreviation", "string", null, "getAbbreviation", "setAbbreviation", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply", null], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null]
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "abbreviation" => ["abbreviation", "string", null, "getAbbreviation", "setAbbreviation", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply", null, ["r" => 1, "n" => [0]]], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 1, "n" => [0], "x" => [5]]]
     ];
 
     /**
@@ -44,83 +42,6 @@ class CreateTronTrc10Blockchain extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['recipient'])) {
-            $ip[] = "'recipient' can't be null";
-        }
-        if ((mb_strlen($this->_data['recipient']) > 34)) {
-            $ip[] = "'recipient' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['recipient']) < 34)) {
-            $ip[] = "'recipient' length must be >= 34";
-        }
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 100)) {
-            $ip[] = "'name' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (is_null($this->_data['abbreviation'])) {
-            $ip[] = "'abbreviation' can't be null";
-        }
-        if ((mb_strlen($this->_data['abbreviation']) > 100)) {
-            $ip[] = "'abbreviation' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['abbreviation']) < 1)) {
-            $ip[] = "'abbreviation' length must be >= 1";
-        }
-        if (is_null($this->_data['description'])) {
-            $ip[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->_data['description']) > 100)) {
-            $ip[] = "'description' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['description']) < 1)) {
-            $ip[] = "'description' length must be >= 1";
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 100)) {
-            $ip[] = "'url' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['url']) < 1)) {
-            $ip[] = "'url' length must be >= 1";
-        }
-        if (is_null($this->_data['total_supply'])) {
-            $ip[] = "'total_supply' can't be null";
-        }
-        if (($this->_data['total_supply'] < 0)) {
-            $ip[] = "'total_supply' must be >= 0";
-        }
-        if (is_null($this->_data['decimals'])) {
-            $ip[] = "'decimals' can't be null";
-        }
-        if (($this->_data['decimals'] > 5)) {
-            $ip[] = "'decimals' must be <= 5";
-        }
-        if (($this->_data['decimals'] < 0)) {
-            $ip[] = "'decimals' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -137,18 +58,11 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of the address, from which the TRX will be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('CreateTronTrc10Blockchain.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('CreateTronTrc10Blockchain.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -164,18 +78,11 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set recipient
      * 
      * @param string $recipient Recipient address of created TRC 10 tokens.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipient(string $recipient) {
-        if ((mb_strlen($recipient) > 34)) {
-            throw new IAE('CreateTronTrc10Blockchain.setRecipient: $recipient length must be <= 34');
-        }
-        if ((mb_strlen($recipient) < 34)) {
-            throw new IAE('CreateTronTrc10Blockchain.setRecipient: $recipient length must be >= 34');
-        }
-        $this->_data['recipient'] = $recipient;
-
-        return $this;
+        return $this->_set("recipient", $recipient);
     }
 
     /**
@@ -191,18 +98,11 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set name
      * 
      * @param string $name Name of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 100)) {
-            throw new IAE('CreateTronTrc10Blockchain.setName: $name length must be <= 100');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('CreateTronTrc10Blockchain.setName: $name length must be >= 1');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -218,18 +118,11 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set abbreviation
      * 
      * @param string $abbreviation Abbreviation of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAbbreviation(string $abbreviation) {
-        if ((mb_strlen($abbreviation) > 100)) {
-            throw new IAE('CreateTronTrc10Blockchain.setAbbreviation: $abbreviation length must be <= 100');
-        }
-        if ((mb_strlen($abbreviation) < 1)) {
-            throw new IAE('CreateTronTrc10Blockchain.setAbbreviation: $abbreviation length must be >= 1');
-        }
-        $this->_data['abbreviation'] = $abbreviation;
-
-        return $this;
+        return $this->_set("abbreviation", $abbreviation);
     }
 
     /**
@@ -245,18 +138,11 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set description
      * 
      * @param string $description Description of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(string $description) {
-        if ((mb_strlen($description) > 100)) {
-            throw new IAE('CreateTronTrc10Blockchain.setDescription: $description length must be <= 100');
-        }
-        if ((mb_strlen($description) < 1)) {
-            throw new IAE('CreateTronTrc10Blockchain.setDescription: $description length must be >= 1');
-        }
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 
     /**
@@ -272,18 +158,11 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set url
      * 
      * @param string $url URL of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 100)) {
-            throw new IAE('CreateTronTrc10Blockchain.setUrl: $url length must be <= 100');
-        }
-        if ((mb_strlen($url) < 1)) {
-            throw new IAE('CreateTronTrc10Blockchain.setUrl: $url length must be >= 1');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -299,15 +178,11 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set total_supply
      * 
      * @param float $total_supply Total supply of the tokens.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotalSupply(float $total_supply) {
-        if (($total_supply < 0)) {
-            throw new IAE('CreateTronTrc10Blockchain.setTotalSupply: $total_supply must be >=0');
-        }
-        $this->_data['total_supply'] = $total_supply;
-
-        return $this;
+        return $this->_set("total_supply", $total_supply);
     }
 
     /**
@@ -323,17 +198,10 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      * Set decimals
      * 
      * @param float $decimals Number of decimal places of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDecimals(float $decimals) {
-        if (($decimals > 5)) {
-            throw new IAE('CreateTronTrc10Blockchain.setDecimals: $decimals must be <=5');
-        }
-        if (($decimals < 0)) {
-            throw new IAE('CreateTronTrc10Blockchain.setDecimals: $decimals must be >=0');
-        }
-        $this->_data['decimals'] = $decimals;
-
-        return $this;
+        return $this->_set("decimals", $decimals);
     }
 }

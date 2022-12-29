@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ChainBurnErc20 Model
  */
@@ -32,12 +30,12 @@ class ChainBurnErc20 extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "ChainBurnErc20";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 43]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -49,49 +47,6 @@ class ChainBurnErc20 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 43)) {
-            $ip[] = "'contract_address' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -124,16 +79,11 @@ class ChainBurnErc20 extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("ChainBurnErc20.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -149,15 +99,11 @@ class ChainBurnErc20 extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount of tokens to be destroyed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('ChainBurnErc20.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -173,18 +119,11 @@ class ChainBurnErc20 extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of ERC20 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 43)) {
-            throw new IAE('ChainBurnErc20.setContractAddress: $contract_address length must be <= 43');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('ChainBurnErc20.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -200,18 +139,11 @@ class ChainBurnErc20 extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('ChainBurnErc20.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('ChainBurnErc20.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -227,12 +159,11 @@ class ChainBurnErc20 extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\CustomFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -248,14 +179,10 @@ class ChainBurnErc20 extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('ChainBurnErc20.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 }

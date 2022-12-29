@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoTxsWithPagination Model
  */
@@ -25,8 +23,8 @@ class AlgoTxsWithPagination extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoTxsWithPagination";
     protected static $_definition = [
-        "next_token" => ["nextToken", "string", null, "getNextToken", "setNextToken", null], 
-        "transactions" => ["transactions", "\Tatum\Model\AlgoTx[]", null, "getTransactions", "setTransactions", null]
+        "next_token" => ["nextToken", "string", null, "getNextToken", "setNextToken", null, ["r" => 0]], 
+        "transactions" => ["transactions", "\Tatum\Model\AlgoTx[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class AlgoTxsWithPagination extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class AlgoTxsWithPagination extends AbstractModel {
      * Set next_token
      * 
      * @param string|null $next_token Used for pagination, when making another request provide this token with the next parameter.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNextToken(?string $next_token) {
-        $this->_data['next_token'] = $next_token;
-
-        return $this;
+        return $this->_set("next_token", $next_token);
     }
 
     /**
@@ -83,11 +72,10 @@ class AlgoTxsWithPagination extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\AlgoTx[]|null $transactions Array of transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

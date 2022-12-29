@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcBasedBalance Model
  */
@@ -25,8 +23,8 @@ class BtcBasedBalance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcBasedBalance";
     protected static $_definition = [
-        "incoming" => ["incoming", "string", null, "getIncoming", "setIncoming", null], 
-        "outgoing" => ["outgoing", "string", null, "getOutgoing", "setOutgoing", null]
+        "incoming" => ["incoming", "string", null, "getIncoming", "setIncoming", null, ["r" => 0]], 
+        "outgoing" => ["outgoing", "string", null, "getOutgoing", "setOutgoing", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BtcBasedBalance extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BtcBasedBalance extends AbstractModel {
      * Set incoming
      * 
      * @param string|null $incoming Total sum of the assets that arrives to the address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIncoming(?string $incoming) {
-        $this->_data['incoming'] = $incoming;
-
-        return $this;
+        return $this->_set("incoming", $incoming);
     }
 
     /**
@@ -83,11 +72,10 @@ class BtcBasedBalance extends AbstractModel {
      * Set outgoing
      * 
      * @param string|null $outgoing Total sum of the assets that leaves from the address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOutgoing(?string $outgoing) {
-        $this->_data['outgoing'] = $outgoing;
-
-        return $this;
+        return $this->_set("outgoing", $outgoing);
     }
 }

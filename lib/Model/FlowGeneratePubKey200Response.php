@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowGeneratePubKey_200_response Model
  */
@@ -25,7 +23,7 @@ class FlowGeneratePubKey200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowGeneratePubKey_200_response";
     protected static $_definition = [
-        "pub_key" => ["pubKey", "string", null, "getPubKey", "setPubKey", null]
+        "pub_key" => ["pubKey", "string", null, "getPubKey", "setPubKey", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class FlowGeneratePubKey200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class FlowGeneratePubKey200Response extends AbstractModel {
      * Set pub_key
      * 
      * @param string|null $pub_key Flow public key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPubKey(?string $pub_key) {
-        $this->_data['pub_key'] = $pub_key;
-
-        return $this;
+        return $this->_set("pub_key", $pub_key);
     }
 }

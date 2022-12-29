@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowCustomTransactionPK_args_inner Model
  */
@@ -91,9 +89,9 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
     public const SUB_TYPE_STRUCT = 'Struct';
     protected static $_name = "FlowCustomTransactionPK_args_inner";
     protected static $_definition = [
-        "value" => ["value", "\Tatum\Model\FlowCustomTransactionPKArgsInnerValue", null, "getValue", "setValue", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "sub_type" => ["subType", "string", null, "getSubType", "setSubType", null]
+        "value" => ["value", "\Tatum\Model\FlowCustomTransactionPKArgsInnerValue", null, "getValue", "setValue", null, ["r" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1, "xl" => 38]], 
+        "sub_type" => ["subType", "string", null, "getSubType", "setSubType", null, ["r" => 0, "e" => 1, "xl" => 38]]
     ];
 
     /**
@@ -105,36 +103,6 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['type']) > 38)) {
-            $ip[] = "'type' length must be <= 38";
-        }
-        $allowed = $this->getSubTypeAllowableValues();
-        $value = $this->_data['sub_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'sub_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['sub_type']) && (mb_strlen($this->_data['sub_type']) > 38)) {
-            $ip[] = "'sub_type' length must be <= 38";
-        }
-        return $ip;
     }
 
     /**
@@ -235,12 +203,11 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
      * Set value
      * 
      * @param \Tatum\Model\FlowCustomTransactionPKArgsInnerValue $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(\Tatum\Model\FlowCustomTransactionPKArgsInnerValue $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -256,19 +223,11 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of the argument
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("FlowCustomTransactionPKArgsInner.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($type) > 38)) {
-            throw new IAE('FlowCustomTransactionPKArgsInner.setType: $type length must be <= 38');
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -284,18 +243,10 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
      * Set sub_type
      * 
      * @param string|null $sub_type Type of the argument
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSubType(?string $sub_type) {
-        $allowed = $this->getSubTypeAllowableValues();
-        if (!is_null($sub_type) && !in_array($sub_type, $allowed, true)) {
-            throw new IAE(sprintf("FlowCustomTransactionPKArgsInner.setSubType: sub_type invalid value '%s', must be one of '%s'", $sub_type, implode("', '", $allowed)));
-        }
-        if (!is_null($sub_type) && (mb_strlen($sub_type) > 38)) {
-            throw new IAE('FlowCustomTransactionPKArgsInner.setSubType: $sub_type length must be <= 38');
-        }
-        $this->_data['sub_type'] = $sub_type;
-
-        return $this;
+        return $this->_set("sub_type", $sub_type);
     }
 }

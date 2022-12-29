@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionTradeMatch_attr Model
  * 
@@ -27,8 +25,8 @@ class CreateSubscriptionTradeMatchAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateSubscriptionTradeMatch_attr";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 500]]
     ];
 
     /**
@@ -40,29 +38,6 @@ class CreateSubscriptionTradeMatchAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if ((mb_strlen($this->_data['id']) > 24)) {
-            $ip[] = "'id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['id']) < 24)) {
-            $ip[] = "'id' length must be >= 24";
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 500)) {
-            $ip[] = "'url' length must be <= 500";
-        }
-        return $ip;
     }
 
 
@@ -79,18 +54,11 @@ class CreateSubscriptionTradeMatchAttr extends AbstractModel {
      * Set id
      * 
      * @param string $id ID of the customer, on which the webhook will be applied, when on any of his accounts trade will be matched and closed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        if ((mb_strlen($id) > 24)) {
-            throw new IAE('CreateSubscriptionTradeMatchAttr.setId: $id length must be <= 24');
-        }
-        if ((mb_strlen($id) < 24)) {
-            throw new IAE('CreateSubscriptionTradeMatchAttr.setId: $id length must be >= 24');
-        }
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -106,14 +74,10 @@ class CreateSubscriptionTradeMatchAttr extends AbstractModel {
      * Set url
      * 
      * @param string $url URL of the endpoint, where HTTP POST request will be sent, when on any of his accounts trade will be matched and closed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 500)) {
-            throw new IAE('CreateSubscriptionTradeMatchAttr.setUrl: $url length must be <= 500');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 }

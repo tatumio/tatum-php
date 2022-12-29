@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BroadcastWithdrawal Model
  */
@@ -25,10 +23,10 @@ class BroadcastWithdrawal extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BroadcastWithdrawal";
     protected static $_definition = [
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null], 
-        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "nl" => 2, "xl" => 40]], 
+        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null, ["r" => 1, "nl" => 1, "xl" => 500000]], 
+        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId", null, ["r" => 0, "nl" => 24, "xl" => 24]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 0]]
     ];
 
     /**
@@ -40,38 +38,6 @@ class BroadcastWithdrawal extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        if ((mb_strlen($this->_data['currency']) > 40)) {
-            $ip[] = "'currency' length must be <= 40";
-        }
-        if ((mb_strlen($this->_data['currency']) < 2)) {
-            $ip[] = "'currency' length must be >= 2";
-        }
-        if (is_null($this->_data['tx_data'])) {
-            $ip[] = "'tx_data' can't be null";
-        }
-        if ((mb_strlen($this->_data['tx_data']) > 500000)) {
-            $ip[] = "'tx_data' length must be <= 500000";
-        }
-        if ((mb_strlen($this->_data['tx_data']) < 1)) {
-            $ip[] = "'tx_data' length must be >= 1";
-        }
-        if (!is_null($this->_data['withdrawal_id']) && (mb_strlen($this->_data['withdrawal_id']) > 24)) {
-            $ip[] = "'withdrawal_id' length must be <= 24";
-        }
-        if (!is_null($this->_data['withdrawal_id']) && (mb_strlen($this->_data['withdrawal_id']) < 24)) {
-            $ip[] = "'withdrawal_id' length must be >= 24";
-        }
-        return $ip;
     }
 
 
@@ -88,18 +54,11 @@ class BroadcastWithdrawal extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Currency of signed transaction to be broadcast, BTC, LTC, DOGE, BNB, XLM, TRX, BCH, ETH, XRP, ERC20, TRC20
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        if ((mb_strlen($currency) > 40)) {
-            throw new IAE('BroadcastWithdrawal.setCurrency: $currency length must be <= 40');
-        }
-        if ((mb_strlen($currency) < 2)) {
-            throw new IAE('BroadcastWithdrawal.setCurrency: $currency length must be >= 2');
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -115,18 +74,11 @@ class BroadcastWithdrawal extends AbstractModel {
      * Set tx_data
      * 
      * @param string $tx_data Raw signed transaction to be published to network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxData(string $tx_data) {
-        if ((mb_strlen($tx_data) > 500000)) {
-            throw new IAE('BroadcastWithdrawal.setTxData: $tx_data length must be <= 500000');
-        }
-        if ((mb_strlen($tx_data) < 1)) {
-            throw new IAE('BroadcastWithdrawal.setTxData: $tx_data length must be >= 1');
-        }
-        $this->_data['tx_data'] = $tx_data;
-
-        return $this;
+        return $this->_set("tx_data", $tx_data);
     }
 
     /**
@@ -142,18 +94,11 @@ class BroadcastWithdrawal extends AbstractModel {
      * Set withdrawal_id
      * 
      * @param string|null $withdrawal_id Withdrawal ID to be completed by transaction broadcast
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWithdrawalId(?string $withdrawal_id) {
-        if (!is_null($withdrawal_id) && (mb_strlen($withdrawal_id) > 24)) {
-            throw new IAE('BroadcastWithdrawal.setWithdrawalId: $withdrawal_id length must be <= 24');
-        }
-        if (!is_null($withdrawal_id) && (mb_strlen($withdrawal_id) < 24)) {
-            throw new IAE('BroadcastWithdrawal.setWithdrawalId: $withdrawal_id length must be >= 24');
-        }
-        $this->_data['withdrawal_id'] = $withdrawal_id;
-
-        return $this;
+        return $this->_set("withdrawal_id", $withdrawal_id);
     }
 
     /**
@@ -169,11 +114,10 @@ class BroadcastWithdrawal extends AbstractModel {
      * Set signature_id
      * 
      * @param string|null $signature_id ID of prepared payment template to sign. This is should be stored on a client side to retrieve ID of the blockchain transaction, when signing application signs the transaction and broadcasts it to the blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(?string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

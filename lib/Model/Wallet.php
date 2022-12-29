@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Wallet Model
  */
@@ -25,8 +23,8 @@ class Wallet extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Wallet";
     protected static $_definition = [
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null]
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 0]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class Wallet extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class Wallet extends AbstractModel {
      * Set mnemonic
      * 
      * @param string|null $mnemonic Generated mnemonic for wallet.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(?string $mnemonic) {
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -83,11 +72,10 @@ class Wallet extends AbstractModel {
      * Set xpub
      * 
      * @param string|null $xpub Generated Extended public key for wallet with derivation path according to BIP44. This key can be used to generate addresses.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(?string $xpub) {
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 }

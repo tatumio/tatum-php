@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * OffchainTransactionSignatureResult Model
  */
@@ -25,7 +23,7 @@ class OffchainTransactionSignatureResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OffchainTransactionSignatureResult";
     protected static $_definition = [
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class OffchainTransactionSignatureResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class OffchainTransactionSignatureResult extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id ID of prepared payment template to sign. This is should be stored on a client side to retrieve ID of the blockchain transaction, when signing application signs the transaction and broadcasts it to the blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowTx_events_inner Model
  */
@@ -25,11 +23,11 @@ class FlowTxEventsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowTx_events_inner";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "transaction_id" => ["transactionId", "string", null, "getTransactionId", "setTransactionId", null], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
-        "event_index" => ["eventIndex", "float", null, "getEventIndex", "setEventIndex", null], 
-        "data" => ["data", "object", null, "getData", "setData", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 
+        "transaction_id" => ["transactionId", "string", null, "getTransactionId", "setTransactionId", null, ["r" => 0]], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null, ["r" => 0]], 
+        "event_index" => ["eventIndex", "float", null, "getEventIndex", "setEventIndex", null, ["r" => 0]], 
+        "data" => ["data", "object", null, "getData", "setData", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class FlowTxEventsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class FlowTxEventsInner extends AbstractModel {
      * Set type
      * 
      * @param string|null $type type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -86,12 +75,11 @@ class FlowTxEventsInner extends AbstractModel {
      * Set transaction_id
      * 
      * @param string|null $transaction_id transaction_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionId(?string $transaction_id) {
-        $this->_data['transaction_id'] = $transaction_id;
-
-        return $this;
+        return $this->_set("transaction_id", $transaction_id);
     }
 
     /**
@@ -107,12 +95,11 @@ class FlowTxEventsInner extends AbstractModel {
      * Set transaction_index
      * 
      * @param float|null $transaction_index transaction_index
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionIndex(?float $transaction_index) {
-        $this->_data['transaction_index'] = $transaction_index;
-
-        return $this;
+        return $this->_set("transaction_index", $transaction_index);
     }
 
     /**
@@ -128,12 +115,11 @@ class FlowTxEventsInner extends AbstractModel {
      * Set event_index
      * 
      * @param float|null $event_index event_index
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEventIndex(?float $event_index) {
-        $this->_data['event_index'] = $event_index;
-
-        return $this;
+        return $this->_set("event_index", $event_index);
     }
 
     /**
@@ -149,11 +135,10 @@ class FlowTxEventsInner extends AbstractModel {
      * Set data
      * 
      * @param object|null $data Event specific data. May vary.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?object $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

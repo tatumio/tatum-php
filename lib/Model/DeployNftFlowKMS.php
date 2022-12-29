@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DeployNftFlowKMS Model
  */
@@ -26,10 +24,10 @@ class DeployNftFlowKMS extends AbstractModel {
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "DeployNftFlowKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "int", null, "getIndex", "setIndex", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null, ["r" => 0, "x" => [2147483647]]]
     ];
 
     /**
@@ -41,37 +39,6 @@ class DeployNftFlowKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] > 2147483647)) {
-            $ip[] = "'index' must be <= 2147483647";
-        }
-        return $ip;
     }
 
     /**
@@ -98,16 +65,11 @@ class DeployNftFlowKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("DeployNftFlowKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -123,18 +85,11 @@ class DeployNftFlowKMS extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain address of the sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('DeployNftFlowKMS.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('DeployNftFlowKMS.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -150,12 +105,11 @@ class DeployNftFlowKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -171,14 +125,10 @@ class DeployNftFlowKMS extends AbstractModel {
      * Set index
      * 
      * @param int|null $index Derivation index of sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?int $index) {
-        if (!is_null($index) && ($index > 2147483647)) {
-            throw new IAE('DeployNftFlowKMS.setIndex: $index must be <=2147483647');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 }

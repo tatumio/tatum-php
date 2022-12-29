@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CustomerRegistration Model
  * 
@@ -197,10 +195,10 @@ class CustomerRegistration extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "CustomerRegistration";
     protected static $_definition = [
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR'], 
-        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null], 
-        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null], 
-        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null]
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR', ["r" => 0, "e" => 1, "nl" => 3, "xl" => 3]], 
+        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null, ["r" => 0, "nl" => 2, "xl" => 2]], 
+        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null, ["r" => 0, "nl" => 2, "xl" => 2]]
     ];
 
     /**
@@ -212,46 +210,6 @@ class CustomerRegistration extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        $value = $this->_data['accounting_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'accounting_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) > 3)) {
-            $ip[] = "'accounting_currency' length must be <= 3";
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
-            $ip[] = "'accounting_currency' length must be >= 3";
-        }
-        if (!is_null($this->_data['customer_country']) && (mb_strlen($this->_data['customer_country']) > 2)) {
-            $ip[] = "'customer_country' length must be <= 2";
-        }
-        if (!is_null($this->_data['customer_country']) && (mb_strlen($this->_data['customer_country']) < 2)) {
-            $ip[] = "'customer_country' length must be >= 2";
-        }
-        if (is_null($this->_data['external_id'])) {
-            $ip[] = "'external_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['external_id']) > 100)) {
-            $ip[] = "'external_id' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['external_id']) < 1)) {
-            $ip[] = "'external_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['provider_country']) && (mb_strlen($this->_data['provider_country']) > 2)) {
-            $ip[] = "'provider_country' length must be <= 2";
-        }
-        if (!is_null($this->_data['provider_country']) && (mb_strlen($this->_data['provider_country']) < 2)) {
-            $ip[] = "'provider_country' length must be >= 2";
-        }
-        return $ip;
     }
 
     /**
@@ -447,22 +405,11 @@ class CustomerRegistration extends AbstractModel {
      * Set accounting_currency
      * 
      * @param string|null $accounting_currency The ISO 4217 code of the currency in which all transactions for all virtual accounts of the customer will be billed; to overwrite the currency for this specific virtual account, set the <code>accountingCurrency</code> parameter at the account level.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        if (!is_null($accounting_currency) && !in_array($accounting_currency, $allowed, true)) {
-            throw new IAE(sprintf("CustomerRegistration.setAccountingCurrency: accounting_currency invalid value '%s', must be one of '%s'", $accounting_currency, implode("', '", $allowed)));
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) > 3)) {
-            throw new IAE('CustomerRegistration.setAccountingCurrency: $accounting_currency length must be <= 3');
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) < 3)) {
-            throw new IAE('CustomerRegistration.setAccountingCurrency: $accounting_currency length must be >= 3');
-        }
-        $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
+        return $this->_set("accounting_currency", $accounting_currency);
     }
 
     /**
@@ -478,18 +425,11 @@ class CustomerRegistration extends AbstractModel {
      * Set customer_country
      * 
      * @param string|null $customer_country The ISO 3166-1 code of the country that the customer has to be compliant with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomerCountry(?string $customer_country) {
-        if (!is_null($customer_country) && (mb_strlen($customer_country) > 2)) {
-            throw new IAE('CustomerRegistration.setCustomerCountry: $customer_country length must be <= 2');
-        }
-        if (!is_null($customer_country) && (mb_strlen($customer_country) < 2)) {
-            throw new IAE('CustomerRegistration.setCustomerCountry: $customer_country length must be >= 2');
-        }
-        $this->_data['customer_country'] = $customer_country;
-
-        return $this;
+        return $this->_set("customer_country", $customer_country);
     }
 
     /**
@@ -505,18 +445,11 @@ class CustomerRegistration extends AbstractModel {
      * Set external_id
      * 
      * @param string $external_id The external ID of the customer; use only anonymized identification that you have in your system<br/>If a customer with the specified external ID does not exist, a new customer is created. If a customer with the specified external ID exists, it is updated with the provided information.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExternalId(string $external_id) {
-        if ((mb_strlen($external_id) > 100)) {
-            throw new IAE('CustomerRegistration.setExternalId: $external_id length must be <= 100');
-        }
-        if ((mb_strlen($external_id) < 1)) {
-            throw new IAE('CustomerRegistration.setExternalId: $external_id length must be >= 1');
-        }
-        $this->_data['external_id'] = $external_id;
-
-        return $this;
+        return $this->_set("external_id", $external_id);
     }
 
     /**
@@ -532,17 +465,10 @@ class CustomerRegistration extends AbstractModel {
      * Set provider_country
      * 
      * @param string|null $provider_country The ISO 3166-1 code of the country that the service provider has to be compliant with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProviderCountry(?string $provider_country) {
-        if (!is_null($provider_country) && (mb_strlen($provider_country) > 2)) {
-            throw new IAE('CustomerRegistration.setProviderCountry: $provider_country length must be <= 2');
-        }
-        if (!is_null($provider_country) && (mb_strlen($provider_country) < 2)) {
-            throw new IAE('CustomerRegistration.setProviderCountry: $provider_country length must be >= 2');
-        }
-        $this->_data['provider_country'] = $provider_country;
-
-        return $this;
+        return $this->_set("provider_country", $provider_country);
     }
 }

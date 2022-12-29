@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccountTx_transactions_inner_meta_AffectedNodes_inner Model
  */
@@ -25,7 +23,7 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInner extends AbstractModel 
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta_AffectedNodes_inner";
     protected static $_definition = [
-        "created_node" => ["CreatedNode", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode", null, "getCreatedNode", "setCreatedNode", null]
+        "created_node" => ["CreatedNode", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode", null, "getCreatedNode", "setCreatedNode", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInner extends AbstractModel 
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInner extends AbstractModel 
      * Set created_node
      * 
      * @param \Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode|null $created_node created_node
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreatedNode(?\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode $created_node) {
-        $this->_data['created_node'] = $created_node;
-
-        return $this;
+        return $this->_set("created_node", $created_node);
     }
 }

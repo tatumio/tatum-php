@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GetLog_200_response Model
  */
@@ -25,7 +23,7 @@ class GetLog200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GetLog_200_response";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData", null]
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class GetLog200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['data'])) {
-            $ip[] = "'data' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class GetLog200Response extends AbstractModel {
      * Set data
      * 
      * @param string $data The data stored in the requested record
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

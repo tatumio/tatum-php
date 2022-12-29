@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * UpdateFeeRecipient Model
  */
@@ -30,12 +28,12 @@ class UpdateFeeRecipient extends AbstractModel {
     public const CHAIN_MATIC = 'MATIC';
     protected static $_name = "UpdateFeeRecipient";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -47,49 +45,6 @@ class UpdateFeeRecipient extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['fee_recipient'])) {
-            $ip[] = "'fee_recipient' can't be null";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) > 42)) {
-            $ip[] = "'fee_recipient' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) < 42)) {
-            $ip[] = "'fee_recipient' length must be >= 42";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        return $ip;
     }
 
     /**
@@ -120,16 +75,11 @@ class UpdateFeeRecipient extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("UpdateFeeRecipient.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -145,18 +95,11 @@ class UpdateFeeRecipient extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of the marketplace smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('UpdateFeeRecipient.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('UpdateFeeRecipient.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -172,18 +115,11 @@ class UpdateFeeRecipient extends AbstractModel {
      * Set fee_recipient
      * 
      * @param string $fee_recipient Recipient address of the marketplace fee.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeRecipient(string $fee_recipient) {
-        if ((mb_strlen($fee_recipient) > 42)) {
-            throw new IAE('UpdateFeeRecipient.setFeeRecipient: $fee_recipient length must be <= 42');
-        }
-        if ((mb_strlen($fee_recipient) < 42)) {
-            throw new IAE('UpdateFeeRecipient.setFeeRecipient: $fee_recipient length must be >= 42');
-        }
-        $this->_data['fee_recipient'] = $fee_recipient;
-
-        return $this;
+        return $this->_set("fee_recipient", $fee_recipient);
     }
 
     /**
@@ -199,18 +135,11 @@ class UpdateFeeRecipient extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('UpdateFeeRecipient.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('UpdateFeeRecipient.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -226,12 +155,11 @@ class UpdateFeeRecipient extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -247,11 +175,10 @@ class UpdateFeeRecipient extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

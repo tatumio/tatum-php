@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EntitiesCount Model
  */
@@ -25,7 +23,7 @@ class EntitiesCount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EntitiesCount";
     protected static $_definition = [
-        "total" => ["total", "float", null, "getTotal", "setTotal", null]
+        "total" => ["total", "float", null, "getTotal", "setTotal", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class EntitiesCount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class EntitiesCount extends AbstractModel {
      * Set total
      * 
      * @param float|null $total Total entities
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotal(?float $total) {
-        $this->_data['total'] = $total;
-
-        return $this;
+        return $this->_set("total", $total);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionMultiTokenTransferEvent Model
  */
@@ -26,8 +24,8 @@ class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
     public const TYPE_CONTRACT_MULTITOKEN_TXS_PER_BLOCK = 'CONTRACT_MULTITOKEN_TXS_PER_BLOCK';
     protected static $_name = "CreateSubscriptionMultiTokenTransferEvent";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "attr" => ["attr", "\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr", null, "getAttr", "setAttr", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "attr" => ["attr", "\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr", null, "getAttr", "setAttr", null, ["r" => 1]]
     ];
 
     /**
@@ -39,25 +37,6 @@ class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['attr'])) {
-            $ip[] = "'attr' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -84,16 +63,11 @@ class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of the subscription.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("CreateSubscriptionMultiTokenTransferEvent.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -109,11 +83,10 @@ class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
      * Set attr
      * 
      * @param \Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr $attr attr
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 }

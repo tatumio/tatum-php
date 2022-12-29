@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DogeTx Model
  */
@@ -25,13 +23,13 @@ class DogeTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "size" => ["size", "float", null, "getSize", "setSize", null], 
-        "vsize" => ["vsize", "float", null, "getVsize", "setVsize", null], 
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "vin" => ["vin", "\Tatum\Model\DogeTxVinInner[]", null, "getVin", "setVin", null], 
-        "vout" => ["vout", "\Tatum\Model\DogeTxVoutInner[]", null, "getVout", "setVout", null], 
-        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "size" => ["size", "float", null, "getSize", "setSize", null, ["r" => 0]], 
+        "vsize" => ["vsize", "float", null, "getVsize", "setVsize", null, ["r" => 0]], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "vin" => ["vin", "\Tatum\Model\DogeTxVinInner[]", null, "getVin", "setVin", null, ["r" => 0, "c" => 1]], 
+        "vout" => ["vout", "\Tatum\Model\DogeTxVoutInner[]", null, "getVout", "setVout", null, ["r" => 0, "c" => 1]], 
+        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null, ["r" => 0]]
     ];
 
     /**
@@ -43,14 +41,6 @@ class DogeTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -67,12 +57,11 @@ class DogeTx extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Transaction hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -88,12 +77,11 @@ class DogeTx extends AbstractModel {
      * Set size
      * 
      * @param float|null $size Size of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSize(?float $size) {
-        $this->_data['size'] = $size;
-
-        return $this;
+        return $this->_set("size", $size);
     }
 
     /**
@@ -109,12 +97,11 @@ class DogeTx extends AbstractModel {
      * Set vsize
      * 
      * @param float|null $vsize vsize
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVsize(?float $vsize) {
-        $this->_data['vsize'] = $vsize;
-
-        return $this;
+        return $this->_set("vsize", $vsize);
     }
 
     /**
@@ -130,12 +117,11 @@ class DogeTx extends AbstractModel {
      * Set version
      * 
      * @param float|null $version Index of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -151,12 +137,11 @@ class DogeTx extends AbstractModel {
      * Set vin
      * 
      * @param \Tatum\Model\DogeTxVinInner[]|null $vin List of transactions, from which assets are being sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVin(?array $vin) {
-        $this->_data['vin'] = $vin;
-
-        return $this;
+        return $this->_set("vin", $vin);
     }
 
     /**
@@ -172,12 +157,11 @@ class DogeTx extends AbstractModel {
      * Set vout
      * 
      * @param \Tatum\Model\DogeTxVoutInner[]|null $vout List of recipient addresses and amounts to send to each of them.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVout(?array $vout) {
-        $this->_data['vout'] = $vout;
-
-        return $this;
+        return $this->_set("vout", $vout);
     }
 
     /**
@@ -193,11 +177,10 @@ class DogeTx extends AbstractModel {
      * Set locktime
      * 
      * @param float|null $locktime locktime
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLocktime(?float $locktime) {
-        $this->_data['locktime'] = $locktime;
-
-        return $this;
+        return $this->_set("locktime", $locktime);
     }
 }

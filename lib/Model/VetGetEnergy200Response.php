@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetGetEnergy_200_response Model
  */
@@ -25,7 +23,7 @@ class VetGetEnergy200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetGetEnergy_200_response";
     protected static $_definition = [
-        "energy" => ["energy", "string", null, "getEnergy", "setEnergy", null]
+        "energy" => ["energy", "string", null, "getEnergy", "setEnergy", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class VetGetEnergy200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class VetGetEnergy200Response extends AbstractModel {
      * Set energy
      * 
      * @param string|null $energy Balance in VTHO
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnergy(?string $energy) {
-        $this->_data['energy'] = $energy;
-
-        return $this;
+        return $this->_set("energy", $energy);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CustodialCreateWallet_request Model
  */
@@ -34,7 +32,7 @@ class CustodialCreateWalletRequest extends AbstractModel {
     public const CHAIN_BTC = 'BTC';
     protected static $_name = "CustodialCreateWallet_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -46,22 +44,6 @@ class CustodialCreateWalletRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -96,15 +78,10 @@ class CustodialCreateWalletRequest extends AbstractModel {
      * Set chain
      * 
      * @param string $chain chain
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CustodialCreateWalletRequest.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 }

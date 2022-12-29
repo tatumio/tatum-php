@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DeployNftCeloKMS Model
  */
@@ -29,16 +27,16 @@ class DeployNftCeloKMS extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "DeployNftCeloKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
-        "cashback" => ["cashback", "bool", null, "getCashback", "setCashback", null], 
-        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "nl" => 1, "xl" => 30]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null, ["r" => 0]], 
+        "cashback" => ["cashback", "bool", null, "getCashback", "setCashback", null, ["r" => 0]], 
+        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint", null, ["r" => 0]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -50,57 +48,6 @@ class DeployNftCeloKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 100)) {
-            $ip[] = "'name' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (is_null($this->_data['symbol'])) {
-            $ip[] = "'symbol' can't be null";
-        }
-        if ((mb_strlen($this->_data['symbol']) > 30)) {
-            $ip[] = "'symbol' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['symbol']) < 1)) {
-            $ip[] = "'symbol' length must be >= 1";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -139,16 +86,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("DeployNftCeloKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -164,18 +106,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set name
      * 
      * @param string $name Name of the NFT token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 100)) {
-            throw new IAE('DeployNftCeloKMS.setName: $name length must be <= 100');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('DeployNftCeloKMS.setName: $name length must be >= 1');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -191,18 +126,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set symbol
      * 
      * @param string $symbol Symbol of the NFT token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(string $symbol) {
-        if ((mb_strlen($symbol) > 30)) {
-            throw new IAE('DeployNftCeloKMS.setSymbol: $symbol length must be <= 30');
-        }
-        if ((mb_strlen($symbol) < 1)) {
-            throw new IAE('DeployNftCeloKMS.setSymbol: $symbol length must be >= 1');
-        }
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -218,15 +146,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('DeployNftCeloKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -242,12 +166,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -263,15 +186,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('DeployNftCeloKMS.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -287,12 +206,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set provenance
      * 
      * @param bool|null $provenance True if the contract is provenance percentage royalty type. False by default. <a href=\"https://github.com/tatumio/smart-contracts\" target=\"_blank\">Details and sources available here.</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProvenance(?bool $provenance) {
-        $this->_data['provenance'] = $provenance;
-
-        return $this;
+        return $this->_set("provenance", $provenance);
     }
 
     /**
@@ -308,12 +226,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set cashback
      * 
      * @param bool|null $cashback True if the contract is fixed price royalty type. False by default. <a href=\"https://github.com/tatumio/smart-contracts\" target=\"_blank\">Details and sources available here.</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCashback(?bool $cashback) {
-        $this->_data['cashback'] = $cashback;
-
-        return $this;
+        return $this->_set("cashback", $cashback);
     }
 
     /**
@@ -329,12 +246,11 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set public_mint
      * 
      * @param bool|null $public_mint True if the contract is publicMint type. False by default.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPublicMint(?bool $public_mint) {
-        $this->_data['public_mint'] = $public_mint;
-
-        return $this;
+        return $this->_set("public_mint", $public_mint);
     }
 
     /**
@@ -350,15 +266,10 @@ class DeployNftCeloKMS extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("DeployNftCeloKMS.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 }

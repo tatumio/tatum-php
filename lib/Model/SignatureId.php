@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SignatureId Model
  */
@@ -25,7 +23,7 @@ class SignatureId extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SignatureId";
     protected static $_definition = [
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class SignatureId extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class SignatureId extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The internal Tatum ID of the prepared transaction for Key Management Sysytem (KMS) to sign<br/>This is different from the <code>signatureId</code> parameter that you provided in the request body. The <code>signatureId</code> parameter in the request body specifies the signature ID associated with the private key in KMS.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

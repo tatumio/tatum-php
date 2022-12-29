@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaNftExpressMetadata Model
  */
@@ -25,13 +23,13 @@ class SolanaNftExpressMetadata extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaNftExpressMetadata";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "seller_fee_basis_points" => ["sellerFeeBasisPoints", "float", null, "getSellerFeeBasisPoints", "setSellerFeeBasisPoints", null], 
-        "uri" => ["uri", "string", null, "getUri", "setUri", null], 
-        "collection" => ["collection", "string", null, "getCollection", "setCollection", null], 
-        "mutable" => ["mutable", "bool", null, "getMutable", "setMutable", true], 
-        "creators" => ["creators", "\Tatum\Model\SolanaNftMetadataCreator[]", null, "getCreators", "setCreators", null]
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "xl" => 255]], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "xl" => 255]], 
+        "seller_fee_basis_points" => ["sellerFeeBasisPoints", "float", null, "getSellerFeeBasisPoints", "setSellerFeeBasisPoints", null, ["r" => 1]], 
+        "uri" => ["uri", "string", null, "getUri", "setUri", null, ["r" => 1, "xl" => 500]], 
+        "collection" => ["collection", "string", null, "getCollection", "setCollection", null, ["r" => 0, "nl" => 43, "xl" => 44]], 
+        "mutable" => ["mutable", "bool", null, "getMutable", "setMutable", true, ["r" => 0]], 
+        "creators" => ["creators", "\Tatum\Model\SolanaNftMetadataCreator[]", null, "getCreators", "setCreators", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -43,41 +41,6 @@ class SolanaNftExpressMetadata extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 255)) {
-            $ip[] = "'name' length must be <= 255";
-        }
-        if (is_null($this->_data['symbol'])) {
-            $ip[] = "'symbol' can't be null";
-        }
-        if ((mb_strlen($this->_data['symbol']) > 255)) {
-            $ip[] = "'symbol' length must be <= 255";
-        }
-        if (is_null($this->_data['seller_fee_basis_points'])) {
-            $ip[] = "'seller_fee_basis_points' can't be null";
-        }
-        if (is_null($this->_data['uri'])) {
-            $ip[] = "'uri' can't be null";
-        }
-        if ((mb_strlen($this->_data['uri']) > 500)) {
-            $ip[] = "'uri' length must be <= 500";
-        }
-        if (!is_null($this->_data['collection']) && (mb_strlen($this->_data['collection']) > 44)) {
-            $ip[] = "'collection' length must be <= 44";
-        }
-        if (!is_null($this->_data['collection']) && (mb_strlen($this->_data['collection']) < 43)) {
-            $ip[] = "'collection' length must be >= 43";
-        }
-        return $ip;
     }
 
 
@@ -94,15 +57,11 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * Set name
      * 
      * @param string $name The name of the NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 255)) {
-            throw new IAE('SolanaNftExpressMetadata.setName: $name length must be <= 255');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -118,15 +77,11 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * Set symbol
      * 
      * @param string $symbol The symbol or abbreviated name of the NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(string $symbol) {
-        if ((mb_strlen($symbol) > 255)) {
-            throw new IAE('SolanaNftExpressMetadata.setSymbol: $symbol length must be <= 255');
-        }
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -142,12 +97,11 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * Set seller_fee_basis_points
      * 
      * @param float $seller_fee_basis_points The royalty that will be paid to the authors of the minted NFT every time the NFT is transferred<br/>The royalty is calculated as a percentage of the NFT price. To set the royalty to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.<br/>To specify the NFT authors and their shares in the royalty, set the <code>creators</code> parameter.<br/>To disable the royalty for the NFT completely, set <code>sellerFeeBasisPoints</code> to <code>0</code> and do not set <code>creators</code>.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSellerFeeBasisPoints(float $seller_fee_basis_points) {
-        $this->_data['seller_fee_basis_points'] = $seller_fee_basis_points;
-
-        return $this;
+        return $this->_set("seller_fee_basis_points", $seller_fee_basis_points);
     }
 
     /**
@@ -163,15 +117,11 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * Set uri
      * 
      * @param string $uri The URL pointing to the NFT metadata; for more information, see <a href=\"https://eips.ethereum.org/EIPS/eip-721#specification\" target=\"_blank\">EIP-721</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUri(string $uri) {
-        if ((mb_strlen($uri) > 500)) {
-            throw new IAE('SolanaNftExpressMetadata.setUri: $uri length must be <= 500');
-        }
-        $this->_data['uri'] = $uri;
-
-        return $this;
+        return $this->_set("uri", $uri);
     }
 
     /**
@@ -187,18 +137,11 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * Set collection
      * 
      * @param string|null $collection The blockchain address of the NFT collection where the NFT will be minted in. By default, the NFT is minted as not verified (is not considered a part of the collection). To verify the NFT in the collection, use the <a href=\"https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)#operation/NftVerifyInCollection\" target=\"_blank\">NFT verification API</a>. To know more about Solana collections and verification, refer to the <a href=\"https://docs.metaplex.com/programs/token-metadata/certified-collections\" target=\"_blank\">Solana user documentation</a>.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCollection(?string $collection) {
-        if (!is_null($collection) && (mb_strlen($collection) > 44)) {
-            throw new IAE('SolanaNftExpressMetadata.setCollection: $collection length must be <= 44');
-        }
-        if (!is_null($collection) && (mb_strlen($collection) < 43)) {
-            throw new IAE('SolanaNftExpressMetadata.setCollection: $collection length must be >= 43');
-        }
-        $this->_data['collection'] = $collection;
-
-        return $this;
+        return $this->_set("collection", $collection);
     }
 
     /**
@@ -214,12 +157,11 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * Set mutable
      * 
      * @param bool|null $mutable Specifies whether the NFT metadata is mutable (\"true\") or immutable (\"false\"); if not set, defaults to \"true\"
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMutable(?bool $mutable) {
-        $this->_data['mutable'] = $mutable;
-
-        return $this;
+        return $this->_set("mutable", $mutable);
     }
 
     /**
@@ -235,11 +177,10 @@ class SolanaNftExpressMetadata extends AbstractModel {
      * Set creators
      * 
      * @param \Tatum\Model\SolanaNftMetadataCreator[]|null $creators The blockchain addresses where the royalties will be sent every time the minted NFT is transferred
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreators(?array $creators) {
-        $this->_data['creators'] = $creators;
-
-        return $this;
+        return $this->_set("creators", $creators);
     }
 }

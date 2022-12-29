@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Error400 Model
  */
@@ -25,10 +23,10 @@ class Error400 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Error400";
     protected static $_definition = [
-        "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode", null], 
-        "message" => ["message", "string", null, "getMessage", "setMessage", null], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null], 
-        "data" => ["data", "\Tatum\Model\Error400DataInner[]", null, "getData", "setData", null]
+        "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode", null, ["r" => 1]], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 1]], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null, ["r" => 1]], 
+        "data" => ["data", "\Tatum\Model\Error400DataInner[]", null, "getData", "setData", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -40,26 +38,6 @@ class Error400 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['error_code'])) {
-            $ip[] = "'error_code' can't be null";
-        }
-        if (is_null($this->_data['message'])) {
-            $ip[] = "'message' can't be null";
-        }
-        if (is_null($this->_data['status_code'])) {
-            $ip[] = "'status_code' can't be null";
-        }
-        if (is_null($this->_data['data'])) {
-            $ip[] = "'data' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -76,12 +54,11 @@ class Error400 extends AbstractModel {
      * Set error_code
      * 
      * @param string $error_code validation.failed
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErrorCode(string $error_code) {
-        $this->_data['error_code'] = $error_code;
-
-        return $this;
+        return $this->_set("error_code", $error_code);
     }
 
     /**
@@ -97,12 +74,11 @@ class Error400 extends AbstractModel {
      * Set message
      * 
      * @param string $message Request validation failed. Please see data for additional information.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(string $message) {
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 
     /**
@@ -118,12 +94,11 @@ class Error400 extends AbstractModel {
      * Set status_code
      * 
      * @param float $status_code 400
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatusCode(float $status_code) {
-        $this->_data['status_code'] = $status_code;
-
-        return $this;
+        return $this->_set("status_code", $status_code);
     }
 
     /**
@@ -139,11 +114,10 @@ class Error400 extends AbstractModel {
      * Set data
      * 
      * @param \Tatum\Model\Error400DataInner[] $data data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(array $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferXlm Model
  */
@@ -25,15 +23,15 @@ class TransferXlm extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXlm";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "secret" => ["secret", "string", null, "getSecret", "setSecret", null], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "secret" => ["secret", "string", null, "getSecret", "setSecret", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null, ["r" => 0, "p" => "/^[ -~]{0,64}$/", "xl" => 64]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -45,77 +43,6 @@ class TransferXlm extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['sender_account_id'])) {
-            $ip[] = "'sender_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) > 24)) {
-            $ip[] = "'sender_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
-            $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['from_account'])) {
-            $ip[] = "'from_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_account']) > 56)) {
-            $ip[] = "'from_account' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['from_account']) < 56)) {
-            $ip[] = "'from_account' length must be >= 56";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 56)) {
-            $ip[] = "'address' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['address']) < 56)) {
-            $ip[] = "'address' length must be >= 56";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['secret'])) {
-            $ip[] = "'secret' can't be null";
-        }
-        if ((mb_strlen($this->_data['secret']) > 56)) {
-            $ip[] = "'secret' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['secret']) < 56)) {
-            $ip[] = "'secret' length must be >= 56";
-        }
-        if (!is_null($this->_data['attr']) && (mb_strlen($this->_data['attr']) > 64)) {
-            $ip[] = "'attr' length must be <= 64";
-        }
-        if (!is_null($this->_data['attr']) && !preg_match("/^[ -~]{0,64}$/", $this->_data['attr'])) {
-            $ip[] = "'attr' must match /^[ -~]{0,64}$/";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -132,18 +59,11 @@ class TransferXlm extends AbstractModel {
      * Set sender_account_id
      * 
      * @param string $sender_account_id Sender account ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderAccountId(string $sender_account_id) {
-        if ((mb_strlen($sender_account_id) > 24)) {
-            throw new IAE('TransferXlm.setSenderAccountId: $sender_account_id length must be <= 24');
-        }
-        if ((mb_strlen($sender_account_id) < 24)) {
-            throw new IAE('TransferXlm.setSenderAccountId: $sender_account_id length must be >= 24');
-        }
-        $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
+        return $this->_set("sender_account_id", $sender_account_id);
     }
 
     /**
@@ -159,18 +79,11 @@ class TransferXlm extends AbstractModel {
      * Set from_account
      * 
      * @param string $from_account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAccount(string $from_account) {
-        if ((mb_strlen($from_account) > 56)) {
-            throw new IAE('TransferXlm.setFromAccount: $from_account length must be <= 56');
-        }
-        if ((mb_strlen($from_account) < 56)) {
-            throw new IAE('TransferXlm.setFromAccount: $from_account length must be >= 56');
-        }
-        $this->_data['from_account'] = $from_account;
-
-        return $this;
+        return $this->_set("from_account", $from_account);
     }
 
     /**
@@ -186,18 +99,11 @@ class TransferXlm extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 56)) {
-            throw new IAE('TransferXlm.setAddress: $address length must be <= 56');
-        }
-        if ((mb_strlen($address) < 56)) {
-            throw new IAE('TransferXlm.setAddress: $address length must be >= 56');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -213,18 +119,11 @@ class TransferXlm extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent, in XLM or XLM-based Asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('TransferXlm.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferXlm.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -240,18 +139,11 @@ class TransferXlm extends AbstractModel {
      * Set secret
      * 
      * @param string $secret Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSecret(string $secret) {
-        if ((mb_strlen($secret) > 56)) {
-            throw new IAE('TransferXlm.setSecret: $secret length must be <= 56');
-        }
-        if ((mb_strlen($secret) < 56)) {
-            throw new IAE('TransferXlm.setSecret: $secret length must be >= 56');
-        }
-        $this->_data['secret'] = $secret;
-
-        return $this;
+        return $this->_set("secret", $secret);
     }
 
     /**
@@ -267,12 +159,11 @@ class TransferXlm extends AbstractModel {
      * Set compliant
      * 
      * @param bool|null $compliant Compliance check, if withdrawal is not compliant, it will not be processed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompliant(?bool $compliant) {
-        $this->_data['compliant'] = $compliant;
-
-        return $this;
+        return $this->_set("compliant", $compliant);
     }
 
     /**
@@ -288,18 +179,11 @@ class TransferXlm extends AbstractModel {
      * Set attr
      * 
      * @param string|null $attr Short message to recipient. Usually used as an account discriminator. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number. When using as an account disciminator in Tatum Offchain ledger, can be in format of destination_acc/source_acc.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?string $attr) {
-        if (!is_null($attr) && (mb_strlen($attr) > 64)) {
-            throw new IAE('TransferXlm.setAttr: $attr length must be <= 64');
-        }
-        if (!is_null($attr) && (!preg_match("/^[ -~]{0,64}$/", $attr))) {
-            throw new IAE('TransferXlm.setAttr: $attr must match /^[ -~]{0,64}$/, ' . var_export($attr, true) . ' given');
-        }
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 
     /**
@@ -315,18 +199,11 @@ class TransferXlm extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Identifier of the payment, shown for created Transaction within Tatum sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('TransferXlm.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('TransferXlm.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -342,17 +219,10 @@ class TransferXlm extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to owner of withdrawing account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('TransferXlm.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('TransferXlm.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

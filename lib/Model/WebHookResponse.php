@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * WebHook_response Model
  * 
@@ -27,9 +25,9 @@ class WebHookResponse extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "WebHook_response";
     protected static $_definition = [
-        "code" => ["code", "float", null, "getCode", "setCode", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "network_error" => ["networkError", "bool", null, "getNetworkError", "setNetworkError", null]
+        "code" => ["code", "float", null, "getCode", "setCode", null, ["r" => 0]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]], 
+        "network_error" => ["networkError", "bool", null, "getNetworkError", "setNetworkError", null, ["r" => 1]]
     ];
 
     /**
@@ -41,17 +39,6 @@ class WebHookResponse extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['network_error'])) {
-            $ip[] = "'network_error' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +55,11 @@ class WebHookResponse extends AbstractModel {
      * Set code
      * 
      * @param float|null $code HTTP Status
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCode(?float $code) {
-        $this->_data['code'] = $code;
-
-        return $this;
+        return $this->_set("code", $code);
     }
 
     /**
@@ -89,12 +75,11 @@ class WebHookResponse extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Response from the server
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -110,11 +95,10 @@ class WebHookResponse extends AbstractModel {
      * Set network_error
      * 
      * @param bool $network_error Flag indicating whether an error has been caused by the network
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNetworkError(bool $network_error) {
-        $this->_data['network_error'] = $network_error;
-
-        return $this;
+        return $this->_set("network_error", $network_error);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferNftCelo Model
  */
@@ -29,17 +27,17 @@ class TransferNftCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "TransferNftCelo";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
-        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null], 
-        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null, ["r" => 0]], 
+        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null, ["r" => 0]], 
+        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null, ["r" => 0, "xl" => 256]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -51,66 +49,6 @@ class TransferNftCelo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 42)) {
-            $ip[] = "'to' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['to']) < 42)) {
-            $ip[] = "'to' length must be >= 42";
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        if (!is_null($this->_data['token_price']) && (mb_strlen($this->_data['token_price']) > 256)) {
-            $ip[] = "'token_price' length must be <= 256";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -149,12 +87,11 @@ class TransferNftCelo extends AbstractModel {
      * Set value
      * 
      * @param string|null $value If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -170,16 +107,11 @@ class TransferNftCelo extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("TransferNftCelo.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -195,18 +127,11 @@ class TransferNftCelo extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send NFT token to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 42)) {
-            throw new IAE('TransferNftCelo.setTo: $to length must be <= 42');
-        }
-        if ((mb_strlen($to) < 42)) {
-            throw new IAE('TransferNftCelo.setTo: $to length must be >= 42');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -222,15 +147,11 @@ class TransferNftCelo extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id ID of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 78)) {
-            throw new IAE('TransferNftCelo.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -246,12 +167,11 @@ class TransferNftCelo extends AbstractModel {
      * Set provenance
      * 
      * @param bool|null $provenance True if the contract is provenance type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProvenance(?bool $provenance) {
-        $this->_data['provenance'] = $provenance;
-
-        return $this;
+        return $this->_set("provenance", $provenance);
     }
 
     /**
@@ -267,12 +187,11 @@ class TransferNftCelo extends AbstractModel {
      * Set provenance_data
      * 
      * @param string|null $provenance_data data you want to store with transaction, optional and valid only if provenance contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProvenanceData(?string $provenance_data) {
-        $this->_data['provenance_data'] = $provenance_data;
-
-        return $this;
+        return $this->_set("provenance_data", $provenance_data);
     }
 
     /**
@@ -288,15 +207,11 @@ class TransferNftCelo extends AbstractModel {
      * Set token_price
      * 
      * @param string|null $token_price current price of the token, valid only for provenance
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenPrice(?string $token_price) {
-        if (!is_null($token_price) && (mb_strlen($token_price) > 256)) {
-            throw new IAE('TransferNftCelo.setTokenPrice: $token_price length must be <= 256');
-        }
-        $this->_data['token_price'] = $token_price;
-
-        return $this;
+        return $this->_set("token_price", $token_price);
     }
 
     /**
@@ -312,18 +227,11 @@ class TransferNftCelo extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of NFT token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('TransferNftCelo.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('TransferNftCelo.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -339,18 +247,11 @@ class TransferNftCelo extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('TransferNftCelo.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('TransferNftCelo.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -366,12 +267,11 @@ class TransferNftCelo extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -387,15 +287,10 @@ class TransferNftCelo extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("TransferNftCelo.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 }

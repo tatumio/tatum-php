@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MintMultiTokenBatchKMSCelo Model
  */
@@ -29,16 +27,16 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "MintMultiTokenBatchKMSCelo";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string[]", null, "getTo", "setTo", null], 
-        "token_id" => ["tokenId", "string[][]", null, "getTokenId", "setTokenId", null], 
-        "amounts" => ["amounts", "string[][]", null, "getAmounts", "setAmounts", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string[]", null, "getTo", "setTo", null, ["r" => 1, "c" => 1]], 
+        "token_id" => ["tokenId", "string[][]", null, "getTokenId", "setTokenId", null, ["r" => 1, "c" => 1]], 
+        "amounts" => ["amounts", "string[][]", null, "getAmounts", "setAmounts", null, ["r" => 1, "c" => 1]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -50,57 +48,6 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if (is_null($this->_data['amounts'])) {
-            $ip[] = "'amounts' can't be null";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -139,16 +86,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Chain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("MintMultiTokenBatchKMSCelo.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -164,12 +106,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set to
      * 
      * @param string[] $to The blockchain address to send the Multi Tokens to.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(array $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -185,12 +126,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set token_id
      * 
      * @param string[][] $token_id The IDs of the Multi Tokens to be created.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(array $token_id) {
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -206,12 +146,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set amounts
      * 
      * @param string[][] $amounts The amounts of the Multi Tokens to be created.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmounts(array $amounts) {
-        $this->_data['amounts'] = $amounts;
-
-        return $this;
+        return $this->_set("amounts", $amounts);
     }
 
     /**
@@ -227,12 +166,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Data in bytes
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -248,18 +186,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The address of the Multi Token smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('MintMultiTokenBatchKMSCelo.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('MintMultiTokenBatchKMSCelo.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -275,15 +206,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('MintMultiTokenBatchKMSCelo.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -299,12 +226,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -320,15 +246,11 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Nonce to be set to Celo transaction. If not present, last known nonce will be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('MintMultiTokenBatchKMSCelo.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -344,15 +266,10 @@ class MintMultiTokenBatchKMSCelo extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency Currency to pay for transaction gas
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("MintMultiTokenBatchKMSCelo.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 }

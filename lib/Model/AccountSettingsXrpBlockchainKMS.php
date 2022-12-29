@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AccountSettingsXrpBlockchainKMS Model
  */
@@ -25,11 +23,11 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AccountSettingsXrpBlockchainKMS";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "rippling" => ["rippling", "bool", null, "getRippling", "setRippling", null], 
-        "require_destination_tag" => ["requireDestinationTag", "bool", null, "getRequireDestinationTag", "setRequireDestinationTag", null]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "rippling" => ["rippling", "bool", null, "getRippling", "setRippling", null, ["r" => 0]], 
+        "require_destination_tag" => ["requireDestinationTag", "bool", null, "getRequireDestinationTag", "setRequireDestinationTag", null, ["r" => 0]]
     ];
 
     /**
@@ -41,29 +39,6 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_account'])) {
-            $ip[] = "'from_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_account']) > 34)) {
-            $ip[] = "'from_account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['from_account']) < 33)) {
-            $ip[] = "'from_account' length must be >= 33";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
 
@@ -80,18 +55,11 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      * Set from_account
      * 
      * @param string $from_account XRP account address. Must be the one used for generating deposit tags.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAccount(string $from_account) {
-        if ((mb_strlen($from_account) > 34)) {
-            throw new IAE('AccountSettingsXrpBlockchainKMS.setFromAccount: $from_account length must be <= 34');
-        }
-        if ((mb_strlen($from_account) < 33)) {
-            throw new IAE('AccountSettingsXrpBlockchainKMS.setFromAccount: $from_account length must be >= 33');
-        }
-        $this->_data['from_account'] = $from_account;
-
-        return $this;
+        return $this->_set("from_account", $from_account);
     }
 
     /**
@@ -107,12 +75,11 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Secret or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -128,15 +95,11 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be paid, in XRP. If omitted, current fee will be calculated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        if (!is_null($fee) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('AccountSettingsXrpBlockchainKMS.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -152,12 +115,11 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      * Set rippling
      * 
      * @param bool|null $rippling Should be true, if an account is the issuer of assets.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRippling(?bool $rippling) {
-        $this->_data['rippling'] = $rippling;
-
-        return $this;
+        return $this->_set("rippling", $rippling);
     }
 
     /**
@@ -173,11 +135,10 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      * Set require_destination_tag
      * 
      * @param bool|null $require_destination_tag Should be true, if an account should support off-chain processing.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRequireDestinationTag(?bool $require_destination_tag) {
-        $this->_data['require_destination_tag'] = $require_destination_tag;
-
-        return $this;
+        return $this->_set("require_destination_tag", $require_destination_tag);
     }
 }

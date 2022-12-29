@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * UpdateFeeSolanaKMS Model
  */
@@ -26,11 +24,11 @@ class UpdateFeeSolanaKMS extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "UpdateFeeSolanaKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -42,52 +40,6 @@ class UpdateFeeSolanaKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 44)) {
-            $ip[] = "'contract_address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 44)) {
-            $ip[] = "'contract_address' length must be >= 44";
-        }
-        if (is_null($this->_data['marketplace_fee'])) {
-            $ip[] = "'marketplace_fee' can't be null";
-        }
-        if (($this->_data['marketplace_fee'] > 10000)) {
-            $ip[] = "'marketplace_fee' must be <= 10000";
-        }
-        if (($this->_data['marketplace_fee'] < 0)) {
-            $ip[] = "'marketplace_fee' must be >= 0";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 44)) {
-            $ip[] = "'from' length must be >= 44";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -114,16 +66,11 @@ class UpdateFeeSolanaKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("UpdateFeeSolanaKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -139,18 +86,11 @@ class UpdateFeeSolanaKMS extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Blockchain address of the smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 44)) {
-            throw new IAE('UpdateFeeSolanaKMS.setContractAddress: $contract_address length must be <= 44');
-        }
-        if ((mb_strlen($contract_address) < 44)) {
-            throw new IAE('UpdateFeeSolanaKMS.setContractAddress: $contract_address length must be >= 44');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -166,18 +106,11 @@ class UpdateFeeSolanaKMS extends AbstractModel {
      * Set marketplace_fee
      * 
      * @param float $marketplace_fee The new percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMarketplaceFee(float $marketplace_fee) {
-        if (($marketplace_fee > 10000)) {
-            throw new IAE('UpdateFeeSolanaKMS.setMarketplaceFee: $marketplace_fee must be <=10000');
-        }
-        if (($marketplace_fee < 0)) {
-            throw new IAE('UpdateFeeSolanaKMS.setMarketplaceFee: $marketplace_fee must be >=0');
-        }
-        $this->_data['marketplace_fee'] = $marketplace_fee;
-
-        return $this;
+        return $this->_set("marketplace_fee", $marketplace_fee);
     }
 
     /**
@@ -193,18 +126,11 @@ class UpdateFeeSolanaKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address of the marketplace authority
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('UpdateFeeSolanaKMS.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 44)) {
-            throw new IAE('UpdateFeeSolanaKMS.setFrom: $from length must be >= 44');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -220,11 +146,10 @@ class UpdateFeeSolanaKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the marketspace authority
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

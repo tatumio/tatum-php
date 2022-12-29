@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * WithdrawalObject Model
  */
@@ -28,18 +26,18 @@ class WithdrawalObject extends AbstractModel {
     public const STATUS_CANCELLED = 'Cancelled';
     protected static $_name = "WithdrawalObject";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1]], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null, ["r" => 0, "e" => 1]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 1, "xl" => 10000]], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null, ["r" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null, ["r" => 0, "nl" => 1, "xl" => 64]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null, ["r" => 0, "c" => 1]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -51,70 +49,6 @@ class WithdrawalObject extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        $allowed = $this->getStatusAllowableValues();
-        $value = $this->_data['status'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'status' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 10000)) {
-            $ip[] = "'address' length must be <= 10000";
-        }
-        if ((mb_strlen($this->_data['address']) < 1)) {
-            $ip[] = "'address' length must be >= 1";
-        }
-        if (is_null($this->_data['reference'])) {
-            $ip[] = "'reference' can't be null";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['attr']) && (mb_strlen($this->_data['attr']) > 64)) {
-            $ip[] = "'attr' length must be <= 64";
-        }
-        if (!is_null($this->_data['attr']) && (mb_strlen($this->_data['attr']) < 1)) {
-            $ip[] = "'attr' length must be >= 1";
-        }
-        if (is_null($this->_data['fee'])) {
-            $ip[] = "'fee' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
     /**
@@ -143,12 +77,11 @@ class WithdrawalObject extends AbstractModel {
      * Set id
      * 
      * @param string $id ID of the withdrawal
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -164,12 +97,11 @@ class WithdrawalObject extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id Transaction ID of broadcast transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -185,12 +117,11 @@ class WithdrawalObject extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id Sender account ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -206,16 +137,11 @@ class WithdrawalObject extends AbstractModel {
      * Set status
      * 
      * @param string|null $status Status of the withdrawal
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?string $status) {
-        $allowed = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed, true)) {
-            throw new IAE(sprintf("WithdrawalObject.setStatus: status invalid value '%s', must be one of '%s'", $status, implode("', '", $allowed)));
-        }
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -231,18 +157,11 @@ class WithdrawalObject extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 10000)) {
-            throw new IAE('WithdrawalObject.setAddress: $address length must be <= 10000');
-        }
-        if ((mb_strlen($address) < 1)) {
-            throw new IAE('WithdrawalObject.setAddress: $address length must be >= 1');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -258,12 +177,11 @@ class WithdrawalObject extends AbstractModel {
      * Set reference
      * 
      * @param string $reference Transaction internal reference - unique identifier within Tatum ledger. In order of failure, use this value to search for problems.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReference(string $reference) {
-        $this->_data['reference'] = $reference;
-
-        return $this;
+        return $this->_set("reference", $reference);
     }
 
     /**
@@ -279,18 +197,11 @@ class WithdrawalObject extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be withdrawn to blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('WithdrawalObject.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('WithdrawalObject.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -306,18 +217,11 @@ class WithdrawalObject extends AbstractModel {
      * Set attr
      * 
      * @param string|null $attr <p>Used to parametrize withdrawal. Used for XRP withdrawal to define destination tag of recipient, or XLM memo of the recipient, if needed.<br/> For Bitcoin, Litecoin, Bitcoin Cash, used as a change address for left coins from transaction.</p>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?string $attr) {
-        if (!is_null($attr) && (mb_strlen($attr) > 64)) {
-            throw new IAE('WithdrawalObject.setAttr: $attr length must be <= 64');
-        }
-        if (!is_null($attr) && (mb_strlen($attr) < 1)) {
-            throw new IAE('WithdrawalObject.setAttr: $attr length must be >= 1');
-        }
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 
     /**
@@ -333,15 +237,11 @@ class WithdrawalObject extends AbstractModel {
      * Set fee
      * 
      * @param string $fee Fee to be submitted as a transaction fee to blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(string $fee) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('WithdrawalObject.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -357,12 +257,11 @@ class WithdrawalObject extends AbstractModel {
      * Set multiple_amounts
      * 
      * @param string[]|null $multiple_amounts For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMultipleAmounts(?array $multiple_amounts) {
-        $this->_data['multiple_amounts'] = $multiple_amounts;
-
-        return $this;
+        return $this->_set("multiple_amounts", $multiple_amounts);
     }
 
     /**
@@ -378,18 +277,11 @@ class WithdrawalObject extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Identifier of the payment, shown for created Transaction within Tatum sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('WithdrawalObject.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('WithdrawalObject.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -405,17 +297,10 @@ class WithdrawalObject extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to owner of withdrawing account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('WithdrawalObject.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('WithdrawalObject.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

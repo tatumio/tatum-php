@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftTokenByCollectionErc721TokenMetadata Model
  */
@@ -25,9 +23,9 @@ class NftTokenByCollectionErc721TokenMetadata extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftTokenByCollectionErc721TokenMetadata";
     protected static $_definition = [
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "metadata" => ["metadata", "object", null, "getMetadata", "setMetadata", null]
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 0, "xl" => 78]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0]], 
+        "metadata" => ["metadata", "object", null, "getMetadata", "setMetadata", null, ["r" => 0]]
     ];
 
     /**
@@ -39,17 +37,6 @@ class NftTokenByCollectionErc721TokenMetadata extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (!is_null($this->_data['token_id']) && (mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        return $ip;
     }
 
 
@@ -66,15 +53,11 @@ class NftTokenByCollectionErc721TokenMetadata extends AbstractModel {
      * Set token_id
      * 
      * @param string|null $token_id TokenID of the NFT token owned by this address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(?string $token_id) {
-        if (!is_null($token_id) && (mb_strlen($token_id) > 78)) {
-            throw new IAE('NftTokenByCollectionErc721TokenMetadata.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -90,12 +73,11 @@ class NftTokenByCollectionErc721TokenMetadata extends AbstractModel {
      * Set url
      * 
      * @param string|null $url Metadata URL of the TokenID. This data don't have to be present, safest way (if not present) is to obtain them from the NFT Contract.tokenURI() method call.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(?string $url) {
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -111,11 +93,10 @@ class NftTokenByCollectionErc721TokenMetadata extends AbstractModel {
      * Set metadata
      * 
      * @param object|null $metadata Metadata scheme obtained from the url. This data don't have to be present, safest way (if not present) is to obtain them from the NFT Contract.tokenURI() method call.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(?object $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 }

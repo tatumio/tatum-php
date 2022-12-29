@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Id Model
  */
@@ -25,7 +23,7 @@ class Id extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Id";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class Id extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class Id extends AbstractModel {
      * Set id
      * 
      * @param string|null $id ID of the entity.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 }

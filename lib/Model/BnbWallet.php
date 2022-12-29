@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbWallet Model
  */
@@ -25,8 +23,8 @@ class BnbWallet extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbWallet";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BnbWallet extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BnbWallet extends AbstractModel {
      * Set address
      * 
      * @param string|null $address Generated account address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -83,11 +72,10 @@ class BnbWallet extends AbstractModel {
      * Set private_key
      * 
      * @param string|null $private_key Generated private key for account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(?string $private_key) {
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

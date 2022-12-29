@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferXrpBlockchainAssetKMS Model
  */
@@ -25,15 +23,15 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXrpBlockchainAssetKMS";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag", null], 
-        "destination_tag" => ["destinationTag", "int", null, "getDestinationTag", "setDestinationTag", null], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
-        "token" => ["token", "string", null, "getToken", "setToken", null]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag", null, ["r" => 0]], 
+        "destination_tag" => ["destinationTag", "int", null, "getDestinationTag", "setDestinationTag", null, ["r" => 0]], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "token" => ["token", "string", null, "getToken", "setToken", null, ["r" => 1, "p" => "/^[A-F0-9]{40}$/", "nl" => 40, "xl" => 40]]
     ];
 
     /**
@@ -45,65 +43,6 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_account'])) {
-            $ip[] = "'from_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_account']) > 34)) {
-            $ip[] = "'from_account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['from_account']) < 33)) {
-            $ip[] = "'from_account' length must be >= 33";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 34)) {
-            $ip[] = "'to' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['to']) < 33)) {
-            $ip[] = "'to' length must be >= 33";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['issuer_account'])) {
-            $ip[] = "'issuer_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) > 34)) {
-            $ip[] = "'issuer_account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) < 33)) {
-            $ip[] = "'issuer_account' length must be >= 33";
-        }
-        if (is_null($this->_data['token'])) {
-            $ip[] = "'token' can't be null";
-        }
-        if ((mb_strlen($this->_data['token']) > 40)) {
-            $ip[] = "'token' length must be <= 40";
-        }
-        if ((mb_strlen($this->_data['token']) < 40)) {
-            $ip[] = "'token' length must be >= 40";
-        }
-        if (!preg_match("/^[A-F0-9]{40}$/", $this->_data['token'])) {
-            $ip[] = "'token' must match /^[A-F0-9]{40}$/";
-        }
-        return $ip;
     }
 
 
@@ -120,18 +59,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set from_account
      * 
      * @param string $from_account XRP account address. Must be the one used for generating deposit tags.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAccount(string $from_account) {
-        if ((mb_strlen($from_account) > 34)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setFromAccount: $from_account length must be <= 34');
-        }
-        if ((mb_strlen($from_account) < 33)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setFromAccount: $from_account length must be >= 33');
-        }
-        $this->_data['from_account'] = $from_account;
-
-        return $this;
+        return $this->_set("from_account", $from_account);
     }
 
     /**
@@ -147,18 +79,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 34)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setTo: $to length must be <= 34');
-        }
-        if ((mb_strlen($to) < 33)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setTo: $to length must be >= 33');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -174,15 +99,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent, in XRP.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -198,12 +119,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -219,15 +139,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be paid, in XRP. If omitted, current fee will be calculated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        if (!is_null($fee) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -243,12 +159,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set source_tag
      * 
      * @param int|null $source_tag Source tag of sender account, if any.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSourceTag(?int $source_tag) {
-        $this->_data['source_tag'] = $source_tag;
-
-        return $this;
+        return $this->_set("source_tag", $source_tag);
     }
 
     /**
@@ -264,12 +179,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set destination_tag
      * 
      * @param int|null $destination_tag Destination tag of recipient account, if any.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDestinationTag(?int $destination_tag) {
-        $this->_data['destination_tag'] = $destination_tag;
-
-        return $this;
+        return $this->_set("destination_tag", $destination_tag);
     }
 
     /**
@@ -285,18 +199,11 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set issuer_account
      * 
      * @param string $issuer_account Blockchain address of the issuer of the assets to create trust line for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIssuerAccount(string $issuer_account) {
-        if ((mb_strlen($issuer_account) > 34)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setIssuerAccount: $issuer_account length must be <= 34');
-        }
-        if ((mb_strlen($issuer_account) < 33)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setIssuerAccount: $issuer_account length must be >= 33');
-        }
-        $this->_data['issuer_account'] = $issuer_account;
-
-        return $this;
+        return $this->_set("issuer_account", $issuer_account);
     }
 
     /**
@@ -312,20 +219,10 @@ class TransferXrpBlockchainAssetKMS extends AbstractModel {
      * Set token
      * 
      * @param string $token Asset name. Must be 160bit HEX string, e.g. SHA1.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToken(string $token) {
-        if ((mb_strlen($token) > 40)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setToken: $token length must be <= 40');
-        }
-        if ((mb_strlen($token) < 40)) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setToken: $token length must be >= 40');
-        }
-        if ((!preg_match("/^[A-F0-9]{40}$/", $token))) {
-            throw new IAE('TransferXrpBlockchainAssetKMS.setToken: $token must match /^[A-F0-9]{40}$/, ' . var_export($token, true) . ' given');
-        }
-        $this->_data['token'] = $token;
-
-        return $this;
+        return $this->_set("token", $token);
     }
 }

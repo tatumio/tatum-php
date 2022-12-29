@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EgldTx Model
  */
@@ -25,26 +23,26 @@ class EgldTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EgldTx";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "round" => ["round", "float", null, "getRound", "setRound", null], 
-        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice", null], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "signature" => ["signature", "string", null, "getSignature", "setSignature", null], 
-        "source_shard" => ["sourceShard", "float", null, "getSourceShard", "setSourceShard", null], 
-        "destination_shard" => ["destinationShard", "float", null, "getDestinationShard", "setDestinationShard", null], 
-        "block_nonce" => ["blockNonce", "float", null, "getBlockNonce", "setBlockNonce", null], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
-        "miniblock_hash" => ["miniblockHash", "string", null, "getMiniblockHash", "setMiniblockHash", null], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
-        "hyperblock_nonce" => ["hyperblockNonce", "float", null, "getHyperblockNonce", "setHyperblockNonce", null], 
-        "hyperblock_hash" => ["hyperblockHash", "string", null, "getHyperblockHash", "setHyperblockHash", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "round" => ["round", "float", null, "getRound", "setRound", null, ["r" => 0]], 
+        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null, ["r" => 0]], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 0]], 
+        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice", null, ["r" => 0]], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 0]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]], 
+        "signature" => ["signature", "string", null, "getSignature", "setSignature", null, ["r" => 0]], 
+        "source_shard" => ["sourceShard", "float", null, "getSourceShard", "setSourceShard", null, ["r" => 0]], 
+        "destination_shard" => ["destinationShard", "float", null, "getDestinationShard", "setDestinationShard", null, ["r" => 0]], 
+        "block_nonce" => ["blockNonce", "float", null, "getBlockNonce", "setBlockNonce", null, ["r" => 0]], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 
+        "miniblock_hash" => ["miniblockHash", "string", null, "getMiniblockHash", "setMiniblockHash", null, ["r" => 0]], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null, ["r" => 0]], 
+        "hyperblock_nonce" => ["hyperblockNonce", "float", null, "getHyperblockNonce", "setHyperblockNonce", null, ["r" => 0]], 
+        "hyperblock_hash" => ["hyperblockHash", "string", null, "getHyperblockHash", "setHyperblockHash", null, ["r" => 0]]
     ];
 
     /**
@@ -56,14 +54,6 @@ class EgldTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -80,12 +70,11 @@ class EgldTx extends AbstractModel {
      * Set type
      * 
      * @param string|null $type Type of transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -101,12 +90,11 @@ class EgldTx extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Nonce of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -122,12 +110,11 @@ class EgldTx extends AbstractModel {
      * Set round
      * 
      * @param float|null $round The round number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRound(?float $round) {
-        $this->_data['round'] = $round;
-
-        return $this;
+        return $this->_set("round", $round);
     }
 
     /**
@@ -143,12 +130,11 @@ class EgldTx extends AbstractModel {
      * Set epoch
      * 
      * @param float|null $epoch An epoch is a sequence of consecutive rounds during which the configuration of the network does not change (currently aprox. 24 hrs in length).
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEpoch(?float $epoch) {
-        $this->_data['epoch'] = $epoch;
-
-        return $this;
+        return $this->_set("epoch", $epoch);
     }
 
     /**
@@ -164,12 +150,11 @@ class EgldTx extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Transferred value.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -185,12 +170,11 @@ class EgldTx extends AbstractModel {
      * Set receiver
      * 
      * @param string|null $receiver Address of the receiver.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReceiver(?string $receiver) {
-        $this->_data['receiver'] = $receiver;
-
-        return $this;
+        return $this->_set("receiver", $receiver);
     }
 
     /**
@@ -206,12 +190,11 @@ class EgldTx extends AbstractModel {
      * Set sender
      * 
      * @param string|null $sender Address of the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(?string $sender) {
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -227,12 +210,11 @@ class EgldTx extends AbstractModel {
      * Set gas_price
      * 
      * @param float|null $gas_price Gas price provided by the sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(?float $gas_price) {
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 
     /**
@@ -248,12 +230,11 @@ class EgldTx extends AbstractModel {
      * Set gas_limit
      * 
      * @param float|null $gas_limit Gas provided by the sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(?float $gas_limit) {
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -269,12 +250,11 @@ class EgldTx extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Data field in transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -290,12 +270,11 @@ class EgldTx extends AbstractModel {
      * Set signature
      * 
      * @param string|null $signature Signature of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignature(?string $signature) {
-        $this->_data['signature'] = $signature;
-
-        return $this;
+        return $this->_set("signature", $signature);
     }
 
     /**
@@ -311,12 +290,11 @@ class EgldTx extends AbstractModel {
      * Set source_shard
      * 
      * @param float|null $source_shard Source shard.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSourceShard(?float $source_shard) {
-        $this->_data['source_shard'] = $source_shard;
-
-        return $this;
+        return $this->_set("source_shard", $source_shard);
     }
 
     /**
@@ -332,12 +310,11 @@ class EgldTx extends AbstractModel {
      * Set destination_shard
      * 
      * @param float|null $destination_shard Destination shard.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDestinationShard(?float $destination_shard) {
-        $this->_data['destination_shard'] = $destination_shard;
-
-        return $this;
+        return $this->_set("destination_shard", $destination_shard);
     }
 
     /**
@@ -353,12 +330,11 @@ class EgldTx extends AbstractModel {
      * Set block_nonce
      * 
      * @param float|null $block_nonce Nonce of block which contains current transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNonce(?float $block_nonce) {
-        $this->_data['block_nonce'] = $block_nonce;
-
-        return $this;
+        return $this->_set("block_nonce", $block_nonce);
     }
 
     /**
@@ -374,12 +350,11 @@ class EgldTx extends AbstractModel {
      * Set block_hash
      * 
      * @param string|null $block_hash Hash of block which contains current transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHash(?string $block_hash) {
-        $this->_data['block_hash'] = $block_hash;
-
-        return $this;
+        return $this->_set("block_hash", $block_hash);
     }
 
     /**
@@ -395,12 +370,11 @@ class EgldTx extends AbstractModel {
      * Set miniblock_hash
      * 
      * @param string|null $miniblock_hash Miniblock hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMiniblockHash(?string $miniblock_hash) {
-        $this->_data['miniblock_hash'] = $miniblock_hash;
-
-        return $this;
+        return $this->_set("miniblock_hash", $miniblock_hash);
     }
 
     /**
@@ -416,12 +390,11 @@ class EgldTx extends AbstractModel {
      * Set timestamp
      * 
      * @param float|null $timestamp The unix timestamp for when the block was collated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(?float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -437,12 +410,11 @@ class EgldTx extends AbstractModel {
      * Set status
      * 
      * @param string|null $status Status of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?string $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -458,12 +430,11 @@ class EgldTx extends AbstractModel {
      * Set hyperblock_nonce
      * 
      * @param float|null $hyperblock_nonce Nonce of the hyperblockwhere this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHyperblockNonce(?float $hyperblock_nonce) {
-        $this->_data['hyperblock_nonce'] = $hyperblock_nonce;
-
-        return $this;
+        return $this->_set("hyperblock_nonce", $hyperblock_nonce);
     }
 
     /**
@@ -479,11 +450,10 @@ class EgldTx extends AbstractModel {
      * Set hyperblock_hash
      * 
      * @param string|null $hyperblock_hash Hash of the hyperblock where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHyperblockHash(?string $hyperblock_hash) {
-        $this->_data['hyperblock_hash'] = $hyperblock_hash;
-
-        return $this;
+        return $this->_set("hyperblock_hash", $hyperblock_hash);
     }
 }

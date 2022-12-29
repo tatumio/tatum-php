@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateXlmAsset Model
  */
@@ -222,9 +220,9 @@ class CreateXlmAsset extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "CreateXlmAsset";
     protected static $_definition = [
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
-        "token" => ["token", "string", null, "getToken", "setToken", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null]
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "token" => ["token", "string", null, "getToken", "setToken", null, ["r" => 1, "p" => "/^[a-zA-Z0-9]{1,12}$/", "nl" => 1, "xl" => 12]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 3, "xl" => 50]]
     ];
 
     /**
@@ -236,49 +234,6 @@ class CreateXlmAsset extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['issuer_account'])) {
-            $ip[] = "'issuer_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) > 56)) {
-            $ip[] = "'issuer_account' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) < 56)) {
-            $ip[] = "'issuer_account' length must be >= 56";
-        }
-        if (is_null($this->_data['token'])) {
-            $ip[] = "'token' can't be null";
-        }
-        if ((mb_strlen($this->_data['token']) > 12)) {
-            $ip[] = "'token' length must be <= 12";
-        }
-        if ((mb_strlen($this->_data['token']) < 1)) {
-            $ip[] = "'token' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9]{1,12}$/", $this->_data['token'])) {
-            $ip[] = "'token' must match /^[a-zA-Z0-9]{1,12}$/";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['base_pair']) > 50)) {
-            $ip[] = "'base_pair' length must be <= 50";
-        }
-        if ((mb_strlen($this->_data['base_pair']) < 3)) {
-            $ip[] = "'base_pair' length must be >= 3";
-        }
-        return $ip;
     }
 
     /**
@@ -501,18 +456,11 @@ class CreateXlmAsset extends AbstractModel {
      * Set issuer_account
      * 
      * @param string $issuer_account Blockchain address of the issuer of the assets.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIssuerAccount(string $issuer_account) {
-        if ((mb_strlen($issuer_account) > 56)) {
-            throw new IAE('CreateXlmAsset.setIssuerAccount: $issuer_account length must be <= 56');
-        }
-        if ((mb_strlen($issuer_account) < 56)) {
-            throw new IAE('CreateXlmAsset.setIssuerAccount: $issuer_account length must be >= 56');
-        }
-        $this->_data['issuer_account'] = $issuer_account;
-
-        return $this;
+        return $this->_set("issuer_account", $issuer_account);
     }
 
     /**
@@ -528,21 +476,11 @@ class CreateXlmAsset extends AbstractModel {
      * Set token
      * 
      * @param string $token Asset name.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToken(string $token) {
-        if ((mb_strlen($token) > 12)) {
-            throw new IAE('CreateXlmAsset.setToken: $token length must be <= 12');
-        }
-        if ((mb_strlen($token) < 1)) {
-            throw new IAE('CreateXlmAsset.setToken: $token length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9]{1,12}$/", $token))) {
-            throw new IAE('CreateXlmAsset.setToken: $token must match /^[a-zA-Z0-9]{1,12}$/, ' . var_export($token, true) . ' given');
-        }
-        $this->_data['token'] = $token;
-
-        return $this;
+        return $this->_set("token", $token);
     }
 
     /**
@@ -558,21 +496,10 @@ class CreateXlmAsset extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("CreateXlmAsset.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($base_pair) > 50)) {
-            throw new IAE('CreateXlmAsset.setBasePair: $base_pair length must be <= 50');
-        }
-        if ((mb_strlen($base_pair) < 3)) {
-            throw new IAE('CreateXlmAsset.setBasePair: $base_pair length must be >= 3');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 }

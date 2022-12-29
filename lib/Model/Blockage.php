@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Blockage Model
  */
@@ -25,11 +23,11 @@ class Blockage extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Blockage";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 0]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class Blockage extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class Blockage extends AbstractModel {
      * Set id
      * 
      * @param string|null $id ID of the blockage.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -86,12 +75,11 @@ class Blockage extends AbstractModel {
      * Set account_id
      * 
      * @param string|null $account_id ID of the account this blockage is for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(?string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -107,12 +95,11 @@ class Blockage extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Amount blocked on account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -128,12 +115,11 @@ class Blockage extends AbstractModel {
      * Set type
      * 
      * @param string|null $type Type of blockage.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -149,11 +135,10 @@ class Blockage extends AbstractModel {
      * Set description
      * 
      * @param string|null $description Description of blockage.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(?string $description) {
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 }

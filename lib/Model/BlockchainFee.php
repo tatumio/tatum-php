@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BlockchainFee Model
  * 
@@ -27,12 +25,12 @@ class BlockchainFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BlockchainFee";
     protected static $_definition = [
-        "fast" => ["fast", "float", null, "getFast", "setFast", null], 
-        "medium" => ["medium", "float", null, "getMedium", "setMedium", null], 
-        "slow" => ["slow", "float", null, "getSlow", "setSlow", null], 
-        "base_fee" => ["baseFee", "float", null, "getBaseFee", "setBaseFee", null], 
-        "time" => ["time", "string", null, "getTime", "setTime", null], 
-        "block" => ["block", "float", null, "getBlock", "setBlock", null]
+        "fast" => ["fast", "float", null, "getFast", "setFast", null, ["r" => 1]], 
+        "medium" => ["medium", "float", null, "getMedium", "setMedium", null, ["r" => 1]], 
+        "slow" => ["slow", "float", null, "getSlow", "setSlow", null, ["r" => 1]], 
+        "base_fee" => ["baseFee", "float", null, "getBaseFee", "setBaseFee", null, ["r" => 0]], 
+        "time" => ["time", "string", null, "getTime", "setTime", null, ["r" => 1]], 
+        "block" => ["block", "float", null, "getBlock", "setBlock", null, ["r" => 1]]
     ];
 
     /**
@@ -44,29 +42,6 @@ class BlockchainFee extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['fast'])) {
-            $ip[] = "'fast' can't be null";
-        }
-        if (is_null($this->_data['medium'])) {
-            $ip[] = "'medium' can't be null";
-        }
-        if (is_null($this->_data['slow'])) {
-            $ip[] = "'slow' can't be null";
-        }
-        if (is_null($this->_data['time'])) {
-            $ip[] = "'time' can't be null";
-        }
-        if (is_null($this->_data['block'])) {
-            $ip[] = "'block' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -83,12 +58,11 @@ class BlockchainFee extends AbstractModel {
      * Set fast
      * 
      * @param float $fast Fast transaction acceptance time into block. For btc-based chains - fee per byte. For evm-based chains - gas price in wei
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFast(float $fast) {
-        $this->_data['fast'] = $fast;
-
-        return $this;
+        return $this->_set("fast", $fast);
     }
 
     /**
@@ -104,12 +78,11 @@ class BlockchainFee extends AbstractModel {
      * Set medium
      * 
      * @param float $medium Medium transaction acceptance time into block. For btc-based chains - fee per byte. For evm-based chains - gas price in wei
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMedium(float $medium) {
-        $this->_data['medium'] = $medium;
-
-        return $this;
+        return $this->_set("medium", $medium);
     }
 
     /**
@@ -125,12 +98,11 @@ class BlockchainFee extends AbstractModel {
      * Set slow
      * 
      * @param float $slow Slow transaction acceptance time into block. For btc-based chains - fee per byte. For evm-based chains - gas price in wei
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSlow(float $slow) {
-        $this->_data['slow'] = $slow;
-
-        return $this;
+        return $this->_set("slow", $slow);
     }
 
     /**
@@ -146,12 +118,11 @@ class BlockchainFee extends AbstractModel {
      * Set base_fee
      * 
      * @param float|null $base_fee (evm-based only) This is the minimum fee needs to paid in order for the tx to be accepted into block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseFee(?float $base_fee) {
-        $this->_data['base_fee'] = $base_fee;
-
-        return $this;
+        return $this->_set("base_fee", $base_fee);
     }
 
     /**
@@ -167,12 +138,11 @@ class BlockchainFee extends AbstractModel {
      * Set time
      * 
      * @param string $time Last time fees were recalculated
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTime(string $time) {
-        $this->_data['time'] = $time;
-
-        return $this;
+        return $this->_set("time", $time);
     }
 
     /**
@@ -188,11 +158,10 @@ class BlockchainFee extends AbstractModel {
      * Set block
      * 
      * @param float $block Last used to calculate fee from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlock(float $block) {
-        $this->_data['block'] = $block;
-
-        return $this;
+        return $this->_set("block", $block);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgorandGetBalance_200_response Model
  */
@@ -25,8 +23,8 @@ class AlgorandGetBalance200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgorandGetBalance_200_response";
     protected static $_definition = [
-        "assets" => ["assets", "\Tatum\Model\AlgorandGetBalance200ResponseAssetsInner[]", null, "getAssets", "setAssets", null], 
-        "balance" => ["balance", "float", null, "getBalance", "setBalance", null]
+        "assets" => ["assets", "\Tatum\Model\AlgorandGetBalance200ResponseAssetsInner[]", null, "getAssets", "setAssets", null, ["r" => 0, "c" => 1]], 
+        "balance" => ["balance", "float", null, "getBalance", "setBalance", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class AlgorandGetBalance200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class AlgorandGetBalance200Response extends AbstractModel {
      * Set assets
      * 
      * @param \Tatum\Model\AlgorandGetBalance200ResponseAssetsInner[]|null $assets assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssets(?array $assets) {
-        $this->_data['assets'] = $assets;
-
-        return $this;
+        return $this->_set("assets", $assets);
     }
 
     /**
@@ -83,11 +72,10 @@ class AlgorandGetBalance200Response extends AbstractModel {
      * Set balance
      * 
      * @param float|null $balance Balance in ALGO
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?float $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 }

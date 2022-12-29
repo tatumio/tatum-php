@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowCustomTransactionPK Model
  */
@@ -25,10 +23,10 @@ class FlowCustomTransactionPK extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowCustomTransactionPK";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null], 
-        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null, ["r" => 1, "nl" => 1, "xl" => 500000]], 
+        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null, ["r" => 1, "c" => 1]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]]
     ];
 
     /**
@@ -40,44 +38,6 @@ class FlowCustomTransactionPK extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['transaction'])) {
-            $ip[] = "'transaction' can't be null";
-        }
-        if ((mb_strlen($this->_data['transaction']) > 500000)) {
-            $ip[] = "'transaction' length must be <= 500000";
-        }
-        if ((mb_strlen($this->_data['transaction']) < 1)) {
-            $ip[] = "'transaction' length must be >= 1";
-        }
-        if (is_null($this->_data['args'])) {
-            $ip[] = "'args' can't be null";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        return $ip;
     }
 
 
@@ -94,18 +54,11 @@ class FlowCustomTransactionPK extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowCustomTransactionPK.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowCustomTransactionPK.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -121,18 +74,11 @@ class FlowCustomTransactionPK extends AbstractModel {
      * Set transaction
      * 
      * @param string $transaction Transaction string to send to the chain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransaction(string $transaction) {
-        if ((mb_strlen($transaction) > 500000)) {
-            throw new IAE('FlowCustomTransactionPK.setTransaction: $transaction length must be <= 500000');
-        }
-        if ((mb_strlen($transaction) < 1)) {
-            throw new IAE('FlowCustomTransactionPK.setTransaction: $transaction length must be >= 1');
-        }
-        $this->_data['transaction'] = $transaction;
-
-        return $this;
+        return $this->_set("transaction", $transaction);
     }
 
     /**
@@ -148,12 +94,11 @@ class FlowCustomTransactionPK extends AbstractModel {
      * Set args
      * 
      * @param \Tatum\Model\FlowCustomTransactionPKArgsInner[] $args args
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setArgs(array $args) {
-        $this->_data['args'] = $args;
-
-        return $this;
+        return $this->_set("args", $args);
     }
 
     /**
@@ -169,17 +114,10 @@ class FlowCustomTransactionPK extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('FlowCustomTransactionPK.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('FlowCustomTransactionPK.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

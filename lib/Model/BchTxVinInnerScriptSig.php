@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BchTx_vin_inner_scriptSig Model
  */
@@ -25,8 +23,8 @@ class BchTxVinInnerScriptSig extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx_vin_inner_scriptSig";
     protected static $_definition = [
-        "hex" => ["hex", "string", null, "getHex", "setHex", null], 
-        "asm" => ["asm", "string", null, "getAsm", "setAsm", null]
+        "hex" => ["hex", "string", null, "getHex", "setHex", null, ["r" => 0]], 
+        "asm" => ["asm", "string", null, "getAsm", "setAsm", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BchTxVinInnerScriptSig extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BchTxVinInnerScriptSig extends AbstractModel {
      * Set hex
      * 
      * @param string|null $hex hex
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHex(?string $hex) {
-        $this->_data['hex'] = $hex;
-
-        return $this;
+        return $this->_set("hex", $hex);
     }
 
     /**
@@ -83,11 +72,10 @@ class BchTxVinInnerScriptSig extends AbstractModel {
      * Set asm
      * 
      * @param string|null $asm asm
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAsm(?string $asm) {
-        $this->_data['asm'] = $asm;
-
-        return $this;
+        return $this->_set("asm", $asm);
     }
 }

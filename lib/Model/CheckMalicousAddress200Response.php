@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CheckMalicousAddress_200_response Model
  */
@@ -27,7 +25,7 @@ class CheckMalicousAddress200Response extends AbstractModel {
     public const STATUS_INVALID = 'invalid';
     protected static $_name = "CheckMalicousAddress_200_response";
     protected static $_definition = [
-        "status" => ["status", "string", null, "getStatus", "setStatus", null]
+        "status" => ["status", "string", null, "getStatus", "setStatus", null, ["r" => 0, "e" => 1]]
     ];
 
     /**
@@ -39,19 +37,6 @@ class CheckMalicousAddress200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getStatusAllowableValues();
-        $value = $this->_data['status'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'status' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -79,15 +64,10 @@ class CheckMalicousAddress200Response extends AbstractModel {
      * Set status
      * 
      * @param string|null $status Whether address is malicous or not
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?string $status) {
-        $allowed = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed, true)) {
-            throw new IAE(sprintf("CheckMalicousAddress200Response.setStatus: status invalid value '%s', must be one of '%s'", $status, implode("', '", $allowed)));
-        }
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 }

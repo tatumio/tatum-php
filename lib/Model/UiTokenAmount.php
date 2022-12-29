@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * UiTokenAmount Model
  */
@@ -25,10 +23,10 @@ class UiTokenAmount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "UiTokenAmount";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
-        "ui_amount" => ["uiAmount", "mixed", null, "getUiAmount", "setUiAmount", null], 
-        "ui_amount_string" => ["uiAmountString", "string", null, "getUiAmountString", "setUiAmountString", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 0]], 
+        "ui_amount" => ["uiAmount", "mixed", null, "getUiAmount", "setUiAmount", null, ["r" => 0]], 
+        "ui_amount_string" => ["uiAmountString", "string", null, "getUiAmountString", "setUiAmountString", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class UiTokenAmount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class UiTokenAmount extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Raw amount of tokens as a string, ignoring decimals.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -85,12 +74,11 @@ class UiTokenAmount extends AbstractModel {
      * Set decimals
      * 
      * @param float|null $decimals Number of decimals configured for token's mint.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDecimals(?float $decimals) {
-        $this->_data['decimals'] = $decimals;
-
-        return $this;
+        return $this->_set("decimals", $decimals);
     }
 
     /**
@@ -106,12 +94,11 @@ class UiTokenAmount extends AbstractModel {
      * Set ui_amount
      * 
      * @param mixed|null $ui_amount Token amount as a float, accounting for decimals.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUiAmount(?mixed $ui_amount) {
-        $this->_data['ui_amount'] = $ui_amount;
-
-        return $this;
+        return $this->_set("ui_amount", $ui_amount);
     }
 
     /**
@@ -127,11 +114,10 @@ class UiTokenAmount extends AbstractModel {
      * Set ui_amount_string
      * 
      * @param string|null $ui_amount_string Token amount as a string, accounting for decimals.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUiAmountString(?string $ui_amount_string) {
-        $this->_data['ui_amount_string'] = $ui_amount_string;
-
-        return $this;
+        return $this->_set("ui_amount_string", $ui_amount_string);
     }
 }

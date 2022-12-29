@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftGetTransactErc721_200_response Model
  */
@@ -25,33 +23,33 @@ class NftGetTransactErc721200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftGetTransactErc721_200_response";
     protected static $_definition = [
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
-        "status" => ["status", "float", null, "getStatus", "setStatus", null], 
-        "block_number" => ["blockNumber", "mixed", null, "getBlockNumber", "setBlockNumber", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null], 
-        "input" => ["input", "string", null, "getInput", "setInput", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "transaction_index" => ["transactionIndex", "mixed", null, "getTransactionIndex", "setTransactionIndex", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "gas_used" => ["gasUsed", "mixed", null, "getGasUsed", "setGasUsed", null], 
-        "cumulative_gas_used" => ["cumulativeGasUsed", "mixed", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "logs" => ["logs", "\Tatum\Model\EthTxLog[]", null, "getLogs", "setLogs", null], 
-        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId", null], 
-        "script" => ["script", "string", null, "getScript", "setScript", null], 
-        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs", null], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
-        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey", null], 
-        "payer" => ["payer", "string", null, "getPayer", "setPayer", null], 
-        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures", null], 
-        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures", null], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null], 
-        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage", null], 
-        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents", null]
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 
+        "status" => ["status", "float", null, "getStatus", "setStatus", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "mixed", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 0]], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null, ["r" => 0]], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 0]], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null, ["r" => 0]], 
+        "input" => ["input", "string", null, "getInput", "setInput", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0]], 
+        "transaction_index" => ["transactionIndex", "mixed", null, "getTransactionIndex", "setTransactionIndex", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "gas_used" => ["gasUsed", "mixed", null, "getGasUsed", "setGasUsed", null, ["r" => 0]], 
+        "cumulative_gas_used" => ["cumulativeGasUsed", "mixed", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null, ["r" => 0]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]], 
+        "logs" => ["logs", "\Tatum\Model\EthTxLog[]", null, "getLogs", "setLogs", null, ["r" => 0, "c" => 1]], 
+        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId", null, ["r" => 0]], 
+        "script" => ["script", "string", null, "getScript", "setScript", null, ["r" => 0]], 
+        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs", null, ["r" => 0, "c" => 1]], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 0]], 
+        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey", null, ["r" => 0]], 
+        "payer" => ["payer", "string", null, "getPayer", "setPayer", null, ["r" => 0]], 
+        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures", null, ["r" => 0, "c" => 1]], 
+        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures", null, ["r" => 0, "c" => 1]], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null, ["r" => 0]], 
+        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage", null, ["r" => 0]], 
+        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -63,14 +61,6 @@ class NftGetTransactErc721200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -87,12 +77,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set block_hash
      * 
      * @param string|null $block_hash Hash of the block where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHash(?string $block_hash) {
-        $this->_data['block_hash'] = $block_hash;
-
-        return $this;
+        return $this->_set("block_hash", $block_hash);
     }
 
     /**
@@ -108,12 +97,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set status
      * 
      * @param float|null $status Status of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?float $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -129,12 +117,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set block_number
      * 
      * @param mixed|null $block_number Block number where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?mixed $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -150,12 +137,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set from
      * 
      * @param string|null $from Address of the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(?string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -171,12 +157,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set gas
      * 
      * @param float|null $gas Gas provided by the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGas(?float $gas) {
-        $this->_data['gas'] = $gas;
-
-        return $this;
+        return $this->_set("gas", $gas);
     }
 
     /**
@@ -192,12 +177,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set gas_price
      * 
      * @param string|null $gas_price Gas price provided by the sender in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(?string $gas_price) {
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 
     /**
@@ -213,12 +197,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set transaction_hash
      * 
      * @param string|null $transaction_hash Hash of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionHash(?string $transaction_hash) {
-        $this->_data['transaction_hash'] = $transaction_hash;
-
-        return $this;
+        return $this->_set("transaction_hash", $transaction_hash);
     }
 
     /**
@@ -234,12 +217,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set input
      * 
      * @param string|null $input The data sent along with the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInput(?string $input) {
-        $this->_data['input'] = $input;
-
-        return $this;
+        return $this->_set("input", $input);
     }
 
     /**
@@ -255,12 +237,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The number of transactions made by the sender prior to this one.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -276,12 +257,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set to
      * 
      * @param string|null $to Address of the receiver. 'null' when its a contract creation transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(?string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -297,12 +277,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set transaction_index
      * 
      * @param mixed|null $transaction_index Integer of the transactions index position in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionIndex(?mixed $transaction_index) {
-        $this->_data['transaction_index'] = $transaction_index;
-
-        return $this;
+        return $this->_set("transaction_index", $transaction_index);
     }
 
     /**
@@ -318,12 +297,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Value transferred in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -339,12 +317,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set gas_used
      * 
      * @param mixed|null $gas_used The amount of gas used by this specific transaction alone.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasUsed(?mixed $gas_used) {
-        $this->_data['gas_used'] = $gas_used;
-
-        return $this;
+        return $this->_set("gas_used", $gas_used);
     }
 
     /**
@@ -360,12 +337,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set cumulative_gas_used
      * 
      * @param mixed|null $cumulative_gas_used The total amount of gas used when this transaction was executed in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCumulativeGasUsed(?mixed $cumulative_gas_used) {
-        $this->_data['cumulative_gas_used'] = $cumulative_gas_used;
-
-        return $this;
+        return $this->_set("cumulative_gas_used", $cumulative_gas_used);
     }
 
     /**
@@ -381,12 +357,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address The contract address created, if the transaction was a contract creation, otherwise null.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -402,12 +377,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set logs
      * 
      * @param \Tatum\Model\EthTxLog[]|null $logs Log events, that happened in this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLogs(?array $logs) {
-        $this->_data['logs'] = $logs;
-
-        return $this;
+        return $this->_set("logs", $logs);
     }
 
     /**
@@ -423,12 +397,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set reference_block_id
      * 
      * @param string|null $reference_block_id Id of the block
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReferenceBlockId(?string $reference_block_id) {
-        $this->_data['reference_block_id'] = $reference_block_id;
-
-        return $this;
+        return $this->_set("reference_block_id", $reference_block_id);
     }
 
     /**
@@ -444,12 +417,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set script
      * 
      * @param string|null $script Script to execute in the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScript(?string $script) {
-        $this->_data['script'] = $script;
-
-        return $this;
+        return $this->_set("script", $script);
     }
 
     /**
@@ -465,12 +437,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set args
      * 
      * @param \Tatum\Model\FlowTxArgsInner[]|null $args Args to the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setArgs(?array $args) {
-        $this->_data['args'] = $args;
-
-        return $this;
+        return $this->_set("args", $args);
     }
 
     /**
@@ -486,12 +457,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set gas_limit
      * 
      * @param float|null $gas_limit Gas limit for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(?float $gas_limit) {
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -507,12 +477,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set proposal_key
      * 
      * @param \Tatum\Model\FlowTxProposalKey|null $proposal_key proposal_key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProposalKey(?\Tatum\Model\FlowTxProposalKey $proposal_key) {
-        $this->_data['proposal_key'] = $proposal_key;
-
-        return $this;
+        return $this->_set("proposal_key", $proposal_key);
     }
 
     /**
@@ -528,12 +497,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set payer
      * 
      * @param string|null $payer Address from which the assets and fees were debited
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPayer(?string $payer) {
-        $this->_data['payer'] = $payer;
-
-        return $this;
+        return $this->_set("payer", $payer);
     }
 
     /**
@@ -549,12 +517,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set payload_signatures
      * 
      * @param \Tatum\Model\FlowTxPayloadSignaturesInner[]|null $payload_signatures Array of payload signatures.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPayloadSignatures(?array $payload_signatures) {
-        $this->_data['payload_signatures'] = $payload_signatures;
-
-        return $this;
+        return $this->_set("payload_signatures", $payload_signatures);
     }
 
     /**
@@ -570,12 +537,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set envelope_signatures
      * 
      * @param \Tatum\Model\FlowTxPayloadSignaturesInner[]|null $envelope_signatures Array of envelope signatures.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnvelopeSignatures(?array $envelope_signatures) {
-        $this->_data['envelope_signatures'] = $envelope_signatures;
-
-        return $this;
+        return $this->_set("envelope_signatures", $envelope_signatures);
     }
 
     /**
@@ -591,12 +557,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set status_code
      * 
      * @param float|null $status_code Status cofe of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatusCode(?float $status_code) {
-        $this->_data['status_code'] = $status_code;
-
-        return $this;
+        return $this->_set("status_code", $status_code);
     }
 
     /**
@@ -612,12 +577,11 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set error_message
      * 
      * @param string|null $error_message error_message
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErrorMessage(?string $error_message) {
-        $this->_data['error_message'] = $error_message;
-
-        return $this;
+        return $this->_set("error_message", $error_message);
     }
 
     /**
@@ -633,11 +597,10 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * Set events
      * 
      * @param \Tatum\Model\FlowTxEventsInner[]|null $events events
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEvents(?array $events) {
-        $this->_data['events'] = $events;
-
-        return $this;
+        return $this->_set("events", $events);
     }
 }

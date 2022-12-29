@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgorandMintedResult Model
  */
@@ -25,9 +23,9 @@ class AlgorandMintedResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgorandMintedResult";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null], 
-        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 
+        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null, ["r" => 0]], 
+        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class AlgorandMintedResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class AlgorandMintedResult extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id The ID of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -84,12 +73,11 @@ class AlgorandMintedResult extends AbstractModel {
      * Set asset_index
      * 
      * @param float|null $asset_index The ID of the minted NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssetIndex(?float $asset_index) {
-        $this->_data['asset_index'] = $asset_index;
-
-        return $this;
+        return $this->_set("asset_index", $asset_index);
     }
 
     /**
@@ -105,11 +93,10 @@ class AlgorandMintedResult extends AbstractModel {
      * Set confirmed
      * 
      * @param bool|null $confirmed If set to \"true\", the transaction was included in the block within five rounds; otherwise, returned set to \"false\". \"false\" does not mean that the transaction was not included in the block; the Tatum API just does not wait for that much time to return the response.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setConfirmed(?bool $confirmed) {
-        $this->_data['confirmed'] = $confirmed;
-
-        return $this;
+        return $this->_set("confirmed", $confirmed);
     }
 }

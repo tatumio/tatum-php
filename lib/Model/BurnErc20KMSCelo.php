@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BurnErc20KMSCelo Model
  */
@@ -28,12 +26,12 @@ class BurnErc20KMSCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "BurnErc20KMSCelo";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -45,43 +43,6 @@ class BurnErc20KMSCelo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -110,15 +71,11 @@ class BurnErc20KMSCelo extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount of tokens to be destroyed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('BurnErc20KMSCelo.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -134,18 +91,11 @@ class BurnErc20KMSCelo extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of ERC721 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('BurnErc20KMSCelo.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('BurnErc20KMSCelo.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -161,15 +111,11 @@ class BurnErc20KMSCelo extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('BurnErc20KMSCelo.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -185,12 +131,11 @@ class BurnErc20KMSCelo extends AbstractModel {
      * Set signature_id
      * 
      * @param string|null $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(?string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -206,15 +151,11 @@ class BurnErc20KMSCelo extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Nonce to be set to Celo transaction. If not present, last known nonce will be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('BurnErc20KMSCelo.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -230,15 +171,10 @@ class BurnErc20KMSCelo extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency Currency to pay for transaction gas
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("BurnErc20KMSCelo.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 }

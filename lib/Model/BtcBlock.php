@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcBlock Model
  */
@@ -25,16 +23,16 @@ class BtcBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
-        "depth" => ["depth", "float", null, "getDepth", "setDepth", null], 
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "prev_block" => ["prevBlock", "string", null, "getPrevBlock", "setPrevBlock", null], 
-        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot", null], 
-        "time" => ["time", "float", null, "getTime", "setTime", null], 
-        "bits" => ["bits", "float", null, "getBits", "setBits", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "txs" => ["txs", "\Tatum\Model\BtcTx[]", null, "getTxs", "setTxs", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null, ["r" => 0]], 
+        "depth" => ["depth", "float", null, "getDepth", "setDepth", null, ["r" => 0]], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "prev_block" => ["prevBlock", "string", null, "getPrevBlock", "setPrevBlock", null, ["r" => 0]], 
+        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot", null, ["r" => 0]], 
+        "time" => ["time", "float", null, "getTime", "setTime", null, ["r" => 0]], 
+        "bits" => ["bits", "float", null, "getBits", "setBits", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "txs" => ["txs", "\Tatum\Model\BtcTx[]", null, "getTxs", "setTxs", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -46,14 +44,6 @@ class BtcBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -70,12 +60,11 @@ class BtcBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Hash of block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -91,12 +80,11 @@ class BtcBlock extends AbstractModel {
      * Set height
      * 
      * @param float|null $height The number of blocks preceding a particular block on a block chain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHeight(?float $height) {
-        $this->_data['height'] = $height;
-
-        return $this;
+        return $this->_set("height", $height);
     }
 
     /**
@@ -112,12 +100,11 @@ class BtcBlock extends AbstractModel {
      * Set depth
      * 
      * @param float|null $depth The number of blocks following a particular block on a block chain, including current one.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDepth(?float $depth) {
-        $this->_data['depth'] = $depth;
-
-        return $this;
+        return $this->_set("depth", $depth);
     }
 
     /**
@@ -133,12 +120,11 @@ class BtcBlock extends AbstractModel {
      * Set version
      * 
      * @param float|null $version Block version.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -154,12 +140,11 @@ class BtcBlock extends AbstractModel {
      * Set prev_block
      * 
      * @param string|null $prev_block Hash of the previous block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrevBlock(?string $prev_block) {
-        $this->_data['prev_block'] = $prev_block;
-
-        return $this;
+        return $this->_set("prev_block", $prev_block);
     }
 
     /**
@@ -175,12 +160,11 @@ class BtcBlock extends AbstractModel {
      * Set merkle_root
      * 
      * @param string|null $merkle_root The root node of a merkle tree, a descendant of all the hashed pairs in the tree.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMerkleRoot(?string $merkle_root) {
-        $this->_data['merkle_root'] = $merkle_root;
-
-        return $this;
+        return $this->_set("merkle_root", $merkle_root);
     }
 
     /**
@@ -196,12 +180,11 @@ class BtcBlock extends AbstractModel {
      * Set time
      * 
      * @param float|null $time Time of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTime(?float $time) {
-        $this->_data['time'] = $time;
-
-        return $this;
+        return $this->_set("time", $time);
     }
 
     /**
@@ -217,12 +200,11 @@ class BtcBlock extends AbstractModel {
      * Set bits
      * 
      * @param float|null $bits bits
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBits(?float $bits) {
-        $this->_data['bits'] = $bits;
-
-        return $this;
+        return $this->_set("bits", $bits);
     }
 
     /**
@@ -238,12 +220,11 @@ class BtcBlock extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Arbitrary number that is used in Bitcoin's proof of work consensus algorithm.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -259,11 +240,10 @@ class BtcBlock extends AbstractModel {
      * Set txs
      * 
      * @param \Tatum\Model\BtcTx[]|null $txs txs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxs(?array $txs) {
-        $this->_data['txs'] = $txs;
-
-        return $this;
+        return $this->_set("txs", $txs);
     }
 }

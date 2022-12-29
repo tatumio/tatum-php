@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ActivateGasPumpAddresses_request Model
  */
@@ -29,16 +27,16 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "ActivateGasPumpAddresses_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
-        "from" => ["from", "int", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "int", null, "getTo", "setTo", null], 
-        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null, ["r" => 1]], 
+        "from" => ["from", "int", null, "getFrom", "setFrom", null, ["r" => 1, "n" => [0]]], 
+        "to" => ["to", "int", null, "getTo", "setTo", null, ["r" => 1, "n" => [0]]], 
+        "fees_covered" => ["feesCovered", "bool", null, "getFeesCovered", "setFeesCovered", null, ["r" => 1]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 0, "e" => 1]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1]]
     ];
 
     /**
@@ -50,63 +48,6 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['owner'])) {
-            $ip[] = "'owner' can't be null";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if (($this->_data['from'] < 0)) {
-            $ip[] = "'from' must be >= 0";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (($this->_data['to'] < 0)) {
-            $ip[] = "'to' must be >= 0";
-        }
-        if (is_null($this->_data['fees_covered'])) {
-            $ip[] = "'fees_covered' can't be null";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -145,16 +86,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("ActivateGasPumpAddressesRequest.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -170,12 +106,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set owner
      * 
      * @param string $owner The blockchain address that owns the precalculated gas pump addresses and is used to pay gas fees for operations made on the gas pump addresses; can be referred to as \"master address\"
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwner(string $owner) {
-        $this->_data['owner'] = $owner;
-
-        return $this;
+        return $this->_set("owner", $owner);
     }
 
     /**
@@ -191,15 +126,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set from
      * 
      * @param int $from The start index of the range of gas pump addresses to activate
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(int $from) {
-        if (($from < 0)) {
-            throw new IAE('ActivateGasPumpAddressesRequest.setFrom: $from must be >=0');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -215,15 +146,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set to
      * 
      * @param int $to The end index of the range of gas pump addresses to activate; must be greater than or equal to the value in the <code>from</code> parameter
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(int $to) {
-        if (($to < 0)) {
-            throw new IAE('ActivateGasPumpAddressesRequest.setTo: $to must be >=0');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -239,12 +166,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set fees_covered
      * 
      * @param bool $fees_covered Set to \"true\" to cover the gas fee by credits from your monthly credit allowance.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeesCovered(bool $fees_covered) {
-        $this->_data['fees_covered'] = $fees_covered;
-
-        return $this;
+        return $this->_set("fees_covered", $fees_covered);
     }
 
     /**
@@ -260,18 +186,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the blockchain address that will pay the gas fee for the activation transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('ActivateGasPumpAddressesRequest.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('ActivateGasPumpAddressesRequest.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -287,12 +206,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the blockchain address that will pay the gas fee for the activation transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -308,15 +226,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set index
      * 
      * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('ActivateGasPumpAddressesRequest.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -332,16 +246,11 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set fee_currency
      * 
      * @param string|null $fee_currency The currency to pay for the gas fee; if not set, defaults to CELO
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(?string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!is_null($fee_currency) && !in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("ActivateGasPumpAddressesRequest.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -357,11 +266,10 @@ class ActivateGasPumpAddressesRequest extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit The maximum amount to be paid as the gas fee (in TRX)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 }

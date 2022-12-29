@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ChainDeployCeloErc20KMS Model
  */
@@ -29,16 +27,16 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "ChainDeployCeloErc20KMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap", null], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "nl" => 1, "xl" => 30]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 100]], 
+        "total_cap" => ["totalCap", "string", null, "getTotalCap", "setTotalCap", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null, ["r" => 1, "n" => [1], "x" => [30]]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -50,90 +48,6 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['symbol'])) {
-            $ip[] = "'symbol' can't be null";
-        }
-        if ((mb_strlen($this->_data['symbol']) > 30)) {
-            $ip[] = "'symbol' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['symbol']) < 1)) {
-            $ip[] = "'symbol' length must be >= 1";
-        }
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 100)) {
-            $ip[] = "'name' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9_]+$/", $this->_data['name'])) {
-            $ip[] = "'name' must match /^[a-zA-Z0-9_]+$/";
-        }
-        if (!is_null($this->_data['total_cap']) && (mb_strlen($this->_data['total_cap']) > 38)) {
-            $ip[] = "'total_cap' length must be <= 38";
-        }
-        if (!is_null($this->_data['total_cap']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['total_cap'])) {
-            $ip[] = "'total_cap' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['supply'])) {
-            $ip[] = "'supply' can't be null";
-        }
-        if ((mb_strlen($this->_data['supply']) > 38)) {
-            $ip[] = "'supply' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['supply'])) {
-            $ip[] = "'supply' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['digits'])) {
-            $ip[] = "'digits' can't be null";
-        }
-        if (($this->_data['digits'] > 30)) {
-            $ip[] = "'digits' must be <= 30";
-        }
-        if (($this->_data['digits'] < 1)) {
-            $ip[] = "'digits' must be >= 1";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 42)) {
-            $ip[] = "'address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['address']) < 42)) {
-            $ip[] = "'address' length must be >= 42";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -172,16 +86,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("ChainDeployCeloErc20KMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -197,18 +106,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set symbol
      * 
      * @param string $symbol Symbol of the ERC20 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(string $symbol) {
-        if ((mb_strlen($symbol) > 30)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setSymbol: $symbol length must be <= 30');
-        }
-        if ((mb_strlen($symbol) < 1)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setSymbol: $symbol length must be >= 1');
-        }
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -224,21 +126,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set name
      * 
      * @param string $name Name of the ERC20 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 100)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setName: $name length must be <= 100');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setName: $name length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9_]+$/", $name))) {
-            throw new IAE('ChainDeployCeloErc20KMS.setName: $name must match /^[a-zA-Z0-9_]+$/, ' . var_export($name, true) . ' given');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -254,18 +146,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set total_cap
      * 
      * @param string|null $total_cap Max supply of ERC20 token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotalCap(?string $total_cap) {
-        if (!is_null($total_cap) && (mb_strlen($total_cap) > 38)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setTotalCap: $total_cap length must be <= 38');
-        }
-        if (!is_null($total_cap) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $total_cap))) {
-            throw new IAE('ChainDeployCeloErc20KMS.setTotalCap: $total_cap must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($total_cap, true) . ' given');
-        }
-        $this->_data['total_cap'] = $total_cap;
-
-        return $this;
+        return $this->_set("total_cap", $total_cap);
     }
 
     /**
@@ -281,18 +166,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set supply
      * 
      * @param string $supply Max supply of ERC20 token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(string $supply) {
-        if ((mb_strlen($supply) > 38)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setSupply: $supply length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $supply))) {
-            throw new IAE('ChainDeployCeloErc20KMS.setSupply: $supply must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($supply, true) . ' given');
-        }
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -308,18 +186,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set digits
      * 
      * @param float $digits Number of decimal points
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDigits(float $digits) {
-        if (($digits > 30)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setDigits: $digits must be <=30');
-        }
-        if (($digits < 1)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setDigits: $digits must be >=1');
-        }
-        $this->_data['digits'] = $digits;
-
-        return $this;
+        return $this->_set("digits", $digits);
     }
 
     /**
@@ -335,18 +206,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set address
      * 
      * @param string $address Address on Ethereum blockchain, where all created ERC20 tokens will be transferred.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 42)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setAddress: $address length must be <= 42');
-        }
-        if ((mb_strlen($address) < 42)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setAddress: $address length must be >= 42');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -362,12 +226,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -383,15 +246,11 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('ChainDeployCeloErc20KMS.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -407,15 +266,10 @@ class ChainDeployCeloErc20KMS extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("ChainDeployCeloErc20KMS.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 }

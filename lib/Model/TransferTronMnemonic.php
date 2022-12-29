@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferTronMnemonic Model
  */
@@ -25,15 +23,15 @@ class TransferTronMnemonic extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferTronMnemonic";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null, ["r" => 1, "x" => [2147483647]]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -45,71 +43,6 @@ class TransferTronMnemonic extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 34)) {
-            $ip[] = "'address' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['address']) < 34)) {
-            $ip[] = "'address' length must be >= 34";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] > 2147483647)) {
-            $ip[] = "'index' must be <= 2147483647";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (is_null($this->_data['sender_account_id'])) {
-            $ip[] = "'sender_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) > 24)) {
-            $ip[] = "'sender_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
-            $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -126,18 +59,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 34)) {
-            throw new IAE('TransferTronMnemonic.setAddress: $address length must be <= 34');
-        }
-        if ((mb_strlen($address) < 34)) {
-            throw new IAE('TransferTronMnemonic.setAddress: $address length must be >= 34');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -153,18 +79,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in Tron.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('TransferTronMnemonic.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferTronMnemonic.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -180,12 +99,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set compliant
      * 
      * @param bool|null $compliant Compliance check, if withdrawal is not compliant, it will not be processed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompliant(?bool $compliant) {
-        $this->_data['compliant'] = $compliant;
-
-        return $this;
+        return $this->_set("compliant", $compliant);
     }
 
     /**
@@ -201,15 +119,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 2.5 TRX is used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        if (!is_null($fee) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('TransferTronMnemonic.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -225,15 +139,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set index
      * 
      * @param int $index Derivation index of sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(int $index) {
-        if (($index > 2147483647)) {
-            throw new IAE('TransferTronMnemonic.setIndex: $index must be <=2147483647');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -249,18 +159,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key for sender address. Either mnemonic and index, privateKey or signature Id must be present - depends on the type of account and xpub.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('TransferTronMnemonic.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('TransferTronMnemonic.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -276,18 +179,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Identifier of the payment, shown for created Transaction within Tatum sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('TransferTronMnemonic.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('TransferTronMnemonic.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -303,18 +199,11 @@ class TransferTronMnemonic extends AbstractModel {
      * Set sender_account_id
      * 
      * @param string $sender_account_id Sender account ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderAccountId(string $sender_account_id) {
-        if ((mb_strlen($sender_account_id) > 24)) {
-            throw new IAE('TransferTronMnemonic.setSenderAccountId: $sender_account_id length must be <= 24');
-        }
-        if ((mb_strlen($sender_account_id) < 24)) {
-            throw new IAE('TransferTronMnemonic.setSenderAccountId: $sender_account_id length must be >= 24');
-        }
-        $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
+        return $this->_set("sender_account_id", $sender_account_id);
     }
 
     /**
@@ -330,17 +219,10 @@ class TransferTronMnemonic extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to owner of withdrawing account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('TransferTronMnemonic.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('TransferTronMnemonic.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

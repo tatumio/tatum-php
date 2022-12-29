@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowTransferBlockchain_request Model
  */
@@ -27,14 +25,14 @@ class FlowTransferBlockchainRequest extends AbstractModel {
     public const CURRENCY_FUSD = 'FUSD';
     protected static $_name = "FlowTransferBlockchain_request";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0]]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -46,76 +44,6 @@ class FlowTransferBlockchainRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        $allowed = $this->getCurrencyAllowableValues();
-        $value = $this->_data['currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 18)) {
-            $ip[] = "'to' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['to']) < 18)) {
-            $ip[] = "'to' length must be >= 18";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -143,18 +71,11 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowTransferBlockchainRequest.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowTransferBlockchainRequest.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -170,16 +91,11 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Type of asset to send
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $allowed = $this->getCurrencyAllowableValues();
-        if (!in_array($currency, $allowed, true)) {
-            throw new IAE(sprintf("FlowTransferBlockchainRequest.setCurrency: currency invalid value '%s', must be one of '%s'", $currency, implode("', '", $allowed)));
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -195,18 +111,11 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 18)) {
-            throw new IAE('FlowTransferBlockchainRequest.setTo: $to length must be <= 18');
-        }
-        if ((mb_strlen($to) < 18)) {
-            throw new IAE('FlowTransferBlockchainRequest.setTo: $to length must be >= 18');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -222,18 +131,11 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent, in Flow.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('FlowTransferBlockchainRequest.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('FlowTransferBlockchainRequest.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -249,18 +151,11 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('FlowTransferBlockchainRequest.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('FlowTransferBlockchainRequest.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -276,15 +171,11 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set index
      * 
      * @param float $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index < 0)) {
-            throw new IAE('FlowTransferBlockchainRequest.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -300,18 +191,11 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('FlowTransferBlockchainRequest.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('FlowTransferBlockchainRequest.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -327,11 +211,10 @@ class FlowTransferBlockchainRequest extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

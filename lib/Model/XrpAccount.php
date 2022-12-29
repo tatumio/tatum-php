@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccount Model
  */
@@ -25,9 +23,9 @@ class XrpAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccount";
     protected static $_definition = [
-        "account_data" => ["account_data", "\Tatum\Model\XrpAccountAccountData", null, "getAccountData", "setAccountData", null], 
-        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex", null], 
-        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null]
+        "account_data" => ["account_data", "\Tatum\Model\XrpAccountAccountData", null, "getAccountData", "setAccountData", null, ["r" => 0]], 
+        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex", null, ["r" => 0]], 
+        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class XrpAccount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class XrpAccount extends AbstractModel {
      * Set account_data
      * 
      * @param \Tatum\Model\XrpAccountAccountData|null $account_data account_data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountData(?\Tatum\Model\XrpAccountAccountData $account_data) {
-        $this->_data['account_data'] = $account_data;
-
-        return $this;
+        return $this->_set("account_data", $account_data);
     }
 
     /**
@@ -84,12 +73,11 @@ class XrpAccount extends AbstractModel {
      * Set ledger_current_index
      * 
      * @param float|null $ledger_current_index The Ledger Index of the current open ledger these stats describe.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerCurrentIndex(?float $ledger_current_index) {
-        $this->_data['ledger_current_index'] = $ledger_current_index;
-
-        return $this;
+        return $this->_set("ledger_current_index", $ledger_current_index);
     }
 
     /**
@@ -105,11 +93,10 @@ class XrpAccount extends AbstractModel {
      * Set validated
      * 
      * @param bool|null $validated True if this data is from a validated ledger version; if omitted or set to false, this data is not final.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValidated(?bool $validated) {
-        $this->_data['validated'] = $validated;
-
-        return $this;
+        return $this->_set("validated", $validated);
     }
 }

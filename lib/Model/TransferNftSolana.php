@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferNftSolana Model
  */
@@ -26,11 +24,11 @@ class TransferNftSolana extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "TransferNftSolana";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 128, "xl" => 128]]
     ];
 
     /**
@@ -42,58 +40,6 @@ class TransferNftSolana extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 44)) {
-            $ip[] = "'from' length must be >= 44";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 44)) {
-            $ip[] = "'to' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['to']) < 44)) {
-            $ip[] = "'to' length must be >= 44";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 44)) {
-            $ip[] = "'contract_address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 44)) {
-            $ip[] = "'contract_address' length must be >= 44";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 128)) {
-            $ip[] = "'from_private_key' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 128)) {
-            $ip[] = "'from_private_key' length must be >= 128";
-        }
-        return $ip;
     }
 
     /**
@@ -120,16 +66,11 @@ class TransferNftSolana extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("TransferNftSolana.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -145,18 +86,11 @@ class TransferNftSolana extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address to send the NFT from; this is the address that you used in the <code>to</code> parameter in the request body of the <a href=\"#operation/NftMintErc721\">minting call</a>; from this address, the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('TransferNftSolana.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 44)) {
-            throw new IAE('TransferNftSolana.setFrom: $from length must be >= 44');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -172,18 +106,11 @@ class TransferNftSolana extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address to send the NFT to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 44)) {
-            throw new IAE('TransferNftSolana.setTo: $to length must be <= 44');
-        }
-        if ((mb_strlen($to) < 44)) {
-            throw new IAE('TransferNftSolana.setTo: $to length must be >= 44');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -199,18 +126,11 @@ class TransferNftSolana extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The blockchain address of the NFT; this is the address from the <code>nftAddress</code> parameter returned in the response body of the <a href=\"#operation/NftMintErc721\">minting call</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 44)) {
-            throw new IAE('TransferNftSolana.setContractAddress: $contract_address length must be <= 44');
-        }
-        if ((mb_strlen($contract_address) < 44)) {
-            throw new IAE('TransferNftSolana.setContractAddress: $contract_address length must be >= 44');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -226,17 +146,10 @@ class TransferNftSolana extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the blockchain address that you are sending the NFT from (the address that you specified in the <code>from</code> parameter)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 128)) {
-            throw new IAE('TransferNftSolana.setFromPrivateKey: $from_private_key length must be <= 128');
-        }
-        if ((mb_strlen($from_private_key) < 128)) {
-            throw new IAE('TransferNftSolana.setFromPrivateKey: $from_private_key length must be >= 128');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 }

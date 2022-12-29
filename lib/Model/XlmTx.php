@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XlmTx Model
  */
@@ -29,25 +27,25 @@ class XlmTx extends AbstractModel {
     public const MEMO_TYPE__RETURN = 'MEMO_RETURN';
     protected static $_name = "XlmTx";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "paging_token" => ["paging_token", "string", null, "getPagingToken", "setPagingToken", null], 
-        "successful" => ["successful", "bool", null, "getSuccessful", "setSuccessful", null], 
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "ledger" => ["ledger", "float", null, "getLedger", "setLedger", null], 
-        "created_at" => ["created_at", "string", null, "getCreatedAt", "setCreatedAt", null], 
-        "source_account" => ["source_account", "string", null, "getSourceAccount", "setSourceAccount", null], 
-        "source_account_sequence" => ["source_account_sequence", "string", null, "getSourceAccountSequence", "setSourceAccountSequence", null], 
-        "fee_paid" => ["fee_paid", "float", null, "getFeePaid", "setFeePaid", null], 
-        "fee_charged" => ["fee_charged", "float", null, "getFeeCharged", "setFeeCharged", null], 
-        "max_fee" => ["max_fee", "float", null, "getMaxFee", "setMaxFee", null], 
-        "operation_count" => ["operation_count", "float", null, "getOperationCount", "setOperationCount", null], 
-        "envelope_xdr" => ["envelope_xdr", "string", null, "getEnvelopeXdr", "setEnvelopeXdr", null], 
-        "result_xdr" => ["result_xdr", "string", null, "getResultXdr", "setResultXdr", null], 
-        "result_meta_xdr" => ["result_meta_xdr", "string", null, "getResultMetaXdr", "setResultMetaXdr", null], 
-        "fee_meta_xdr" => ["fee_meta_xdr", "string", null, "getFeeMetaXdr", "setFeeMetaXdr", null], 
-        "memo" => ["memo", "string", null, "getMemo", "setMemo", null], 
-        "memo_type" => ["memo_type", "string", null, "getMemoType", "setMemoType", null], 
-        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "paging_token" => ["paging_token", "string", null, "getPagingToken", "setPagingToken", null, ["r" => 0]], 
+        "successful" => ["successful", "bool", null, "getSuccessful", "setSuccessful", null, ["r" => 0]], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "ledger" => ["ledger", "float", null, "getLedger", "setLedger", null, ["r" => 0]], 
+        "created_at" => ["created_at", "string", null, "getCreatedAt", "setCreatedAt", null, ["r" => 0]], 
+        "source_account" => ["source_account", "string", null, "getSourceAccount", "setSourceAccount", null, ["r" => 0]], 
+        "source_account_sequence" => ["source_account_sequence", "string", null, "getSourceAccountSequence", "setSourceAccountSequence", null, ["r" => 0]], 
+        "fee_paid" => ["fee_paid", "float", null, "getFeePaid", "setFeePaid", null, ["r" => 0]], 
+        "fee_charged" => ["fee_charged", "float", null, "getFeeCharged", "setFeeCharged", null, ["r" => 0]], 
+        "max_fee" => ["max_fee", "float", null, "getMaxFee", "setMaxFee", null, ["r" => 0]], 
+        "operation_count" => ["operation_count", "float", null, "getOperationCount", "setOperationCount", null, ["r" => 0]], 
+        "envelope_xdr" => ["envelope_xdr", "string", null, "getEnvelopeXdr", "setEnvelopeXdr", null, ["r" => 0]], 
+        "result_xdr" => ["result_xdr", "string", null, "getResultXdr", "setResultXdr", null, ["r" => 0]], 
+        "result_meta_xdr" => ["result_meta_xdr", "string", null, "getResultMetaXdr", "setResultMetaXdr", null, ["r" => 0]], 
+        "fee_meta_xdr" => ["fee_meta_xdr", "string", null, "getFeeMetaXdr", "setFeeMetaXdr", null, ["r" => 0]], 
+        "memo" => ["memo", "string", null, "getMemo", "setMemo", null, ["r" => 0]], 
+        "memo_type" => ["memo_type", "string", null, "getMemoType", "setMemoType", null, ["r" => 0, "e" => 1]], 
+        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -59,19 +57,6 @@ class XlmTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getMemoTypeAllowableValues();
-        $value = $this->_data['memo_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'memo_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -101,12 +86,11 @@ class XlmTx extends AbstractModel {
      * Set id
      * 
      * @param string|null $id A unique identifier for this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -122,12 +106,11 @@ class XlmTx extends AbstractModel {
      * Set paging_token
      * 
      * @param string|null $paging_token A cursor value for use in pagination.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPagingToken(?string $paging_token) {
-        $this->_data['paging_token'] = $paging_token;
-
-        return $this;
+        return $this->_set("paging_token", $paging_token);
     }
 
     /**
@@ -143,12 +126,11 @@ class XlmTx extends AbstractModel {
      * Set successful
      * 
      * @param bool|null $successful Indicates if this transaction was successful or not.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSuccessful(?bool $successful) {
-        $this->_data['successful'] = $successful;
-
-        return $this;
+        return $this->_set("successful", $successful);
     }
 
     /**
@@ -164,12 +146,11 @@ class XlmTx extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash A hex-encoded SHA-256 hash of this transaction’s XDR-encoded form.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -185,12 +166,11 @@ class XlmTx extends AbstractModel {
      * Set ledger
      * 
      * @param float|null $ledger The sequence number of the ledger that this transaction was included in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedger(?float $ledger) {
-        $this->_data['ledger'] = $ledger;
-
-        return $this;
+        return $this->_set("ledger", $ledger);
     }
 
     /**
@@ -206,12 +186,11 @@ class XlmTx extends AbstractModel {
      * Set created_at
      * 
      * @param string|null $created_at The date this transaction was created.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreatedAt(?string $created_at) {
-        $this->_data['created_at'] = $created_at;
-
-        return $this;
+        return $this->_set("created_at", $created_at);
     }
 
     /**
@@ -227,12 +206,11 @@ class XlmTx extends AbstractModel {
      * Set source_account
      * 
      * @param string|null $source_account The account that originates the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSourceAccount(?string $source_account) {
-        $this->_data['source_account'] = $source_account;
-
-        return $this;
+        return $this->_set("source_account", $source_account);
     }
 
     /**
@@ -248,12 +226,11 @@ class XlmTx extends AbstractModel {
      * Set source_account_sequence
      * 
      * @param string|null $source_account_sequence The source account’s sequence number that this transaction consumed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSourceAccountSequence(?string $source_account_sequence) {
-        $this->_data['source_account_sequence'] = $source_account_sequence;
-
-        return $this;
+        return $this->_set("source_account_sequence", $source_account_sequence);
     }
 
     /**
@@ -269,12 +246,11 @@ class XlmTx extends AbstractModel {
      * Set fee_paid
      * 
      * @param float|null $fee_paid The fee (in stroops) paid by the source account to apply this transaction to the ledger.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeePaid(?float $fee_paid) {
-        $this->_data['fee_paid'] = $fee_paid;
-
-        return $this;
+        return $this->_set("fee_paid", $fee_paid);
     }
 
     /**
@@ -290,12 +266,11 @@ class XlmTx extends AbstractModel {
      * Set fee_charged
      * 
      * @param float|null $fee_charged fee_charged
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCharged(?float $fee_charged) {
-        $this->_data['fee_charged'] = $fee_charged;
-
-        return $this;
+        return $this->_set("fee_charged", $fee_charged);
     }
 
     /**
@@ -311,12 +286,11 @@ class XlmTx extends AbstractModel {
      * Set max_fee
      * 
      * @param float|null $max_fee The maximum fee (in stroops) that the source account was willing to pay.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMaxFee(?float $max_fee) {
-        $this->_data['max_fee'] = $max_fee;
-
-        return $this;
+        return $this->_set("max_fee", $max_fee);
     }
 
     /**
@@ -332,12 +306,11 @@ class XlmTx extends AbstractModel {
      * Set operation_count
      * 
      * @param float|null $operation_count The number of operations contained within this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOperationCount(?float $operation_count) {
-        $this->_data['operation_count'] = $operation_count;
-
-        return $this;
+        return $this->_set("operation_count", $operation_count);
     }
 
     /**
@@ -353,12 +326,11 @@ class XlmTx extends AbstractModel {
      * Set envelope_xdr
      * 
      * @param string|null $envelope_xdr A base64 encoded string of the raw TransactionEnvelope XDR struct for this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnvelopeXdr(?string $envelope_xdr) {
-        $this->_data['envelope_xdr'] = $envelope_xdr;
-
-        return $this;
+        return $this->_set("envelope_xdr", $envelope_xdr);
     }
 
     /**
@@ -374,12 +346,11 @@ class XlmTx extends AbstractModel {
      * Set result_xdr
      * 
      * @param string|null $result_xdr A base64 encoded string of the raw TransactionResult XDR struct for this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setResultXdr(?string $result_xdr) {
-        $this->_data['result_xdr'] = $result_xdr;
-
-        return $this;
+        return $this->_set("result_xdr", $result_xdr);
     }
 
     /**
@@ -395,12 +366,11 @@ class XlmTx extends AbstractModel {
      * Set result_meta_xdr
      * 
      * @param string|null $result_meta_xdr A base64 encoded string of the raw TransactionMeta XDR struct for this transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setResultMetaXdr(?string $result_meta_xdr) {
-        $this->_data['result_meta_xdr'] = $result_meta_xdr;
-
-        return $this;
+        return $this->_set("result_meta_xdr", $result_meta_xdr);
     }
 
     /**
@@ -416,12 +386,11 @@ class XlmTx extends AbstractModel {
      * Set fee_meta_xdr
      * 
      * @param string|null $fee_meta_xdr A base64 encoded string of the raw LedgerEntryChanges XDR struct produced by taking fees for this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeMetaXdr(?string $fee_meta_xdr) {
-        $this->_data['fee_meta_xdr'] = $fee_meta_xdr;
-
-        return $this;
+        return $this->_set("fee_meta_xdr", $fee_meta_xdr);
     }
 
     /**
@@ -437,12 +406,11 @@ class XlmTx extends AbstractModel {
      * Set memo
      * 
      * @param string|null $memo The optional memo attached to a transaction. Usually used as an account distiguisher.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMemo(?string $memo) {
-        $this->_data['memo'] = $memo;
-
-        return $this;
+        return $this->_set("memo", $memo);
     }
 
     /**
@@ -458,16 +426,11 @@ class XlmTx extends AbstractModel {
      * Set memo_type
      * 
      * @param string|null $memo_type The type of memo.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMemoType(?string $memo_type) {
-        $allowed = $this->getMemoTypeAllowableValues();
-        if (!is_null($memo_type) && !in_array($memo_type, $allowed, true)) {
-            throw new IAE(sprintf("XlmTx.setMemoType: memo_type invalid value '%s', must be one of '%s'", $memo_type, implode("', '", $allowed)));
-        }
-        $this->_data['memo_type'] = $memo_type;
-
-        return $this;
+        return $this->_set("memo_type", $memo_type);
     }
 
     /**
@@ -483,11 +446,10 @@ class XlmTx extends AbstractModel {
      * Set signatures
      * 
      * @param string[]|null $signatures An array of signatures used to sign this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatures(?array $signatures) {
-        $this->_data['signatures'] = $signatures;
-
-        return $this;
+        return $this->_set("signatures", $signatures);
     }
 }

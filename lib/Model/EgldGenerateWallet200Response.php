@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EgldGenerateWallet_200_response Model
  */
@@ -25,7 +23,7 @@ class EgldGenerateWallet200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EgldGenerateWallet_200_response";
     protected static $_definition = [
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null]
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class EgldGenerateWallet200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class EgldGenerateWallet200Response extends AbstractModel {
      * Set mnemonic
      * 
      * @param string|null $mnemonic Mnemonic to use for generation of private key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(?string $mnemonic) {
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 }

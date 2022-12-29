@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferEgldBlockchain Model
  */
@@ -25,12 +23,12 @@ class TransferEgldBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferEgldBlockchain";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "fee" => ["fee", "\Tatum\Model\TransferEgldBlockchainFee", null, "getFee", "setFee", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 62, "xl" => 62]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 62, "xl" => 62]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1]], 
+        "fee" => ["fee", "\Tatum\Model\TransferEgldBlockchainFee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]]
     ];
 
     /**
@@ -42,44 +40,6 @@ class TransferEgldBlockchain extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 62)) {
-            $ip[] = "'from' length must be <= 62";
-        }
-        if ((mb_strlen($this->_data['from']) < 62)) {
-            $ip[] = "'from' length must be >= 62";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 62)) {
-            $ip[] = "'to' length must be <= 62";
-        }
-        if ((mb_strlen($this->_data['to']) < 62)) {
-            $ip[] = "'to' length must be >= 62";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        return $ip;
     }
 
 
@@ -96,18 +56,11 @@ class TransferEgldBlockchain extends AbstractModel {
      * Set from
      * 
      * @param string $from Account address of the sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 62)) {
-            throw new IAE('TransferEgldBlockchain.setFrom: $from length must be <= 62');
-        }
-        if ((mb_strlen($from) < 62)) {
-            throw new IAE('TransferEgldBlockchain.setFrom: $from length must be >= 62');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -123,18 +76,11 @@ class TransferEgldBlockchain extends AbstractModel {
      * Set to
      * 
      * @param string $to Account address of the receiver or smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 62)) {
-            throw new IAE('TransferEgldBlockchain.setTo: $to length must be <= 62');
-        }
-        if ((mb_strlen($to) < 62)) {
-            throw new IAE('TransferEgldBlockchain.setTo: $to length must be >= 62');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -150,12 +96,11 @@ class TransferEgldBlockchain extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Value to be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -171,12 +116,11 @@ class TransferEgldBlockchain extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\TransferEgldBlockchainFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\TransferEgldBlockchainFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -192,12 +136,11 @@ class TransferEgldBlockchain extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -213,17 +156,10 @@ class TransferEgldBlockchain extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('TransferEgldBlockchain.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('TransferEgldBlockchain.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 }

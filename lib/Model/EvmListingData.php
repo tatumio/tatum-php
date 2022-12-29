@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EvmListingData Model
  */
@@ -28,15 +26,15 @@ class EvmListingData extends AbstractModel {
     public const STATE__2 = '2';
     protected static $_name = "EvmListingData";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer", null], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
-        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null], 
-        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
-        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
-        "seller" => ["seller", "string", null, "getSeller", "setSeller", null], 
-        "state" => ["state", "string", null, "getState", "setState", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer", null, ["r" => 0]], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null, ["r" => 0]], 
+        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null, ["r" => 0]], 
+        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null, ["r" => 0]], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null, ["r" => 0]], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null, ["r" => 0]], 
+        "seller" => ["seller", "string", null, "getSeller", "setSeller", null, ["r" => 0]], 
+        "state" => ["state", "string", null, "getState", "setState", null, ["r" => 0, "e" => 1]]
     ];
 
     /**
@@ -48,19 +46,6 @@ class EvmListingData extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getStateAllowableValues();
-        $value = $this->_data['state'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'state' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -89,12 +74,11 @@ class EvmListingData extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Amount of NFTs to sold in this listing. Valid only for ERC1155 listings.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -110,12 +94,11 @@ class EvmListingData extends AbstractModel {
      * Set buyer
      * 
      * @param string|null $buyer Address of the buyer, if exists.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBuyer(?string $buyer) {
-        $this->_data['buyer'] = $buyer;
-
-        return $this;
+        return $this->_set("buyer", $buyer);
     }
 
     /**
@@ -131,12 +114,11 @@ class EvmListingData extends AbstractModel {
      * Set erc20_address
      * 
      * @param string|null $erc20_address Address of the ERC20 token smart contract, which should be used for paying for the asset
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErc20Address(?string $erc20_address) {
-        $this->_data['erc20_address'] = $erc20_address;
-
-        return $this;
+        return $this->_set("erc20_address", $erc20_address);
     }
 
     /**
@@ -152,12 +134,11 @@ class EvmListingData extends AbstractModel {
      * Set is_erc721
      * 
      * @param bool|null $is_erc721 True if asset is NFT of type ERC721, false if ERC1155
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIsErc721(?bool $is_erc721) {
-        $this->_data['is_erc721'] = $is_erc721;
-
-        return $this;
+        return $this->_set("is_erc721", $is_erc721);
     }
 
     /**
@@ -173,12 +154,11 @@ class EvmListingData extends AbstractModel {
      * Set listing_id
      * 
      * @param string|null $listing_id ID of the listing.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setListingId(?string $listing_id) {
-        $this->_data['listing_id'] = $listing_id;
-
-        return $this;
+        return $this->_set("listing_id", $listing_id);
     }
 
     /**
@@ -194,12 +174,11 @@ class EvmListingData extends AbstractModel {
      * Set nft_address
      * 
      * @param string|null $nft_address Address of the NFT smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNftAddress(?string $nft_address) {
-        $this->_data['nft_address'] = $nft_address;
-
-        return $this;
+        return $this->_set("nft_address", $nft_address);
     }
 
     /**
@@ -215,12 +194,11 @@ class EvmListingData extends AbstractModel {
      * Set price
      * 
      * @param string|null $price Price of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrice(?string $price) {
-        $this->_data['price'] = $price;
-
-        return $this;
+        return $this->_set("price", $price);
     }
 
     /**
@@ -236,12 +214,11 @@ class EvmListingData extends AbstractModel {
      * Set seller
      * 
      * @param string|null $seller Address of the seller.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSeller(?string $seller) {
-        $this->_data['seller'] = $seller;
-
-        return $this;
+        return $this->_set("seller", $seller);
     }
 
     /**
@@ -257,15 +234,10 @@ class EvmListingData extends AbstractModel {
      * Set state
      * 
      * @param string|null $state State of the listing. 0 - available, 1 - sold, 2 - cancelled
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setState(?string $state) {
-        $allowed = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowed, true)) {
-            throw new IAE(sprintf("EvmListingData.setState: state invalid value '%s', must be one of '%s'", $state, implode("', '", $allowed)));
-        }
-        $this->_data['state'] = $state;
-
-        return $this;
+        return $this->_set("state", $state);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTx20 Model
  */
@@ -25,12 +23,12 @@ class TronTx20 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx20";
     protected static $_definition = [
-        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null], 
-        "token_info" => ["tokenInfo", "\Tatum\Model\TronTx20TokenInfo", null, "getTokenInfo", "setTokenInfo", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null]
+        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "token_info" => ["tokenInfo", "\Tatum\Model\TronTx20TokenInfo", null, "getTokenInfo", "setTokenInfo", null, ["r" => 1]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 1]]
     ];
 
     /**
@@ -42,32 +40,6 @@ class TronTx20 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['token_info'])) {
-            $ip[] = "'token_info' can't be null";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -84,12 +56,11 @@ class TronTx20 extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id Transaction ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -105,12 +76,11 @@ class TronTx20 extends AbstractModel {
      * Set token_info
      * 
      * @param \Tatum\Model\TronTx20TokenInfo $token_info token_info
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenInfo(\Tatum\Model\TronTx20TokenInfo $token_info) {
-        $this->_data['token_info'] = $token_info;
-
-        return $this;
+        return $this->_set("token_info", $token_info);
     }
 
     /**
@@ -126,12 +96,11 @@ class TronTx20 extends AbstractModel {
      * Set from
      * 
      * @param string $from from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -147,12 +116,11 @@ class TronTx20 extends AbstractModel {
      * Set to
      * 
      * @param string $to to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -168,12 +136,11 @@ class TronTx20 extends AbstractModel {
      * Set type
      * 
      * @param string $type type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -189,11 +156,10 @@ class TronTx20 extends AbstractModel {
      * Set value
      * 
      * @param string $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

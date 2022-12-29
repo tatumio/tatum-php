@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateTransaction Model
  */
@@ -25,16 +23,16 @@ class CreateTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateTransaction";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
-        "recipient_account_id" => ["recipientAccountId", "string", null, "getRecipientAccountId", "setRecipientAccountId", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous", false], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "recipient_account_id" => ["recipientAccountId", "string", null, "getRecipientAccountId", "setRecipientAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous", false, ["r" => 0]], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null, ["r" => 0, "nl" => 1, "xl" => 500]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -46,68 +44,6 @@ class CreateTransaction extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['sender_account_id'])) {
-            $ip[] = "'sender_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) > 24)) {
-            $ip[] = "'sender_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
-            $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['recipient_account_id'])) {
-            $ip[] = "'recipient_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['recipient_account_id']) > 24)) {
-            $ip[] = "'recipient_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['recipient_account_id']) < 24)) {
-            $ip[] = "'recipient_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['transaction_code']) && (mb_strlen($this->_data['transaction_code']) > 100)) {
-            $ip[] = "'transaction_code' length must be <= 100";
-        }
-        if (!is_null($this->_data['transaction_code']) && (mb_strlen($this->_data['transaction_code']) < 1)) {
-            $ip[] = "'transaction_code' length must be >= 1";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['recipient_note']) && (mb_strlen($this->_data['recipient_note']) > 500)) {
-            $ip[] = "'recipient_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['recipient_note']) && (mb_strlen($this->_data['recipient_note']) < 1)) {
-            $ip[] = "'recipient_note' length must be >= 1";
-        }
-        if (!is_null($this->_data['base_rate']) && ($this->_data['base_rate'] < 0)) {
-            $ip[] = "'base_rate' must be >= 0";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -124,18 +60,11 @@ class CreateTransaction extends AbstractModel {
      * Set sender_account_id
      * 
      * @param string $sender_account_id Internal sender account ID within Tatum platform
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderAccountId(string $sender_account_id) {
-        if ((mb_strlen($sender_account_id) > 24)) {
-            throw new IAE('CreateTransaction.setSenderAccountId: $sender_account_id length must be <= 24');
-        }
-        if ((mb_strlen($sender_account_id) < 24)) {
-            throw new IAE('CreateTransaction.setSenderAccountId: $sender_account_id length must be >= 24');
-        }
-        $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
+        return $this->_set("sender_account_id", $sender_account_id);
     }
 
     /**
@@ -151,18 +80,11 @@ class CreateTransaction extends AbstractModel {
      * Set recipient_account_id
      * 
      * @param string $recipient_account_id Internal recipient account ID within Tatum platform
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipientAccountId(string $recipient_account_id) {
-        if ((mb_strlen($recipient_account_id) > 24)) {
-            throw new IAE('CreateTransaction.setRecipientAccountId: $recipient_account_id length must be <= 24');
-        }
-        if ((mb_strlen($recipient_account_id) < 24)) {
-            throw new IAE('CreateTransaction.setRecipientAccountId: $recipient_account_id length must be >= 24');
-        }
-        $this->_data['recipient_account_id'] = $recipient_account_id;
-
-        return $this;
+        return $this->_set("recipient_account_id", $recipient_account_id);
     }
 
     /**
@@ -178,18 +100,11 @@ class CreateTransaction extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('CreateTransaction.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('CreateTransaction.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -205,12 +120,11 @@ class CreateTransaction extends AbstractModel {
      * Set anonymous
      * 
      * @param bool|null $anonymous Anonymous transaction does not show sender account to recipient, default is false
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAnonymous(?bool $anonymous) {
-        $this->_data['anonymous'] = $anonymous;
-
-        return $this;
+        return $this->_set("anonymous", $anonymous);
     }
 
     /**
@@ -226,12 +140,11 @@ class CreateTransaction extends AbstractModel {
      * Set compliant
      * 
      * @param bool|null $compliant Enable compliant checks. Transaction will not be processed, if compliant check fails.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompliant(?bool $compliant) {
-        $this->_data['compliant'] = $compliant;
-
-        return $this;
+        return $this->_set("compliant", $compliant);
     }
 
     /**
@@ -247,18 +160,11 @@ class CreateTransaction extends AbstractModel {
      * Set transaction_code
      * 
      * @param string|null $transaction_code For bookkeeping to distinct transaction purpose.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionCode(?string $transaction_code) {
-        if (!is_null($transaction_code) && (mb_strlen($transaction_code) > 100)) {
-            throw new IAE('CreateTransaction.setTransactionCode: $transaction_code length must be <= 100');
-        }
-        if (!is_null($transaction_code) && (mb_strlen($transaction_code) < 1)) {
-            throw new IAE('CreateTransaction.setTransactionCode: $transaction_code length must be >= 1');
-        }
-        $this->_data['transaction_code'] = $transaction_code;
-
-        return $this;
+        return $this->_set("transaction_code", $transaction_code);
     }
 
     /**
@@ -274,18 +180,11 @@ class CreateTransaction extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Payment ID, External identifier of the payment, which can be used to pair transactions within Tatum accounts.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('CreateTransaction.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('CreateTransaction.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -301,18 +200,11 @@ class CreateTransaction extends AbstractModel {
      * Set recipient_note
      * 
      * @param string|null $recipient_note Note visible to both, sender and recipient
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipientNote(?string $recipient_note) {
-        if (!is_null($recipient_note) && (mb_strlen($recipient_note) > 500)) {
-            throw new IAE('CreateTransaction.setRecipientNote: $recipient_note length must be <= 500');
-        }
-        if (!is_null($recipient_note) && (mb_strlen($recipient_note) < 1)) {
-            throw new IAE('CreateTransaction.setRecipientNote: $recipient_note length must be >= 1');
-        }
-        $this->_data['recipient_note'] = $recipient_note;
-
-        return $this;
+        return $this->_set("recipient_note", $recipient_note);
     }
 
     /**
@@ -328,15 +220,11 @@ class CreateTransaction extends AbstractModel {
      * Set base_rate
      * 
      * @param float|null $base_rate Exchange rate of the base pair. Only applicable for Tatum's Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
-        if (!is_null($base_rate) && ($base_rate < 0)) {
-            throw new IAE('CreateTransaction.setBaseRate: $base_rate must be >=0');
-        }
-        $this->_data['base_rate'] = $base_rate;
-
-        return $this;
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -352,17 +240,10 @@ class CreateTransaction extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('CreateTransaction.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('CreateTransaction.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

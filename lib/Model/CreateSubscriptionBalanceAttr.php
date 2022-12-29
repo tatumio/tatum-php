@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionBalance_attr Model
  * 
@@ -29,8 +27,8 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
     public const TYPE_OF_BALANCE_AVAILABLE = 'available';
     protected static $_name = "CreateSubscriptionBalance_attr";
     protected static $_definition = [
-        "limit" => ["limit", "string", null, "getLimit", "setLimit", null], 
-        "type_of_balance" => ["typeOfBalance", "string", null, "getTypeOfBalance", "setTypeOfBalance", null]
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "type_of_balance" => ["typeOfBalance", "string", null, "getTypeOfBalance", "setTypeOfBalance", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -42,31 +40,6 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['limit'])) {
-            $ip[] = "'limit' can't be null";
-        }
-        if ((mb_strlen($this->_data['limit']) > 38)) {
-            $ip[] = "'limit' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['limit'])) {
-            $ip[] = "'limit' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['type_of_balance'])) {
-            $ip[] = "'type_of_balance' can't be null";
-        }
-        $allowed = $this->getTypeOfBalanceAllowableValues();
-        $value = $this->_data['type_of_balance'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type_of_balance' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -94,18 +67,11 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
      * Set limit
      * 
      * @param string $limit Limit to filter accounts with balance above it.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLimit(string $limit) {
-        if ((mb_strlen($limit) > 38)) {
-            throw new IAE('CreateSubscriptionBalanceAttr.setLimit: $limit length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $limit))) {
-            throw new IAE('CreateSubscriptionBalanceAttr.setLimit: $limit must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($limit, true) . ' given');
-        }
-        $this->_data['limit'] = $limit;
-
-        return $this;
+        return $this->_set("limit", $limit);
     }
 
     /**
@@ -121,15 +87,10 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
      * Set type_of_balance
      * 
      * @param string $type_of_balance Type of balance to filter.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTypeOfBalance(string $type_of_balance) {
-        $allowed = $this->getTypeOfBalanceAllowableValues();
-        if (!in_array($type_of_balance, $allowed, true)) {
-            throw new IAE(sprintf("CreateSubscriptionBalanceAttr.setTypeOfBalance: type_of_balance invalid value '%s', must be one of '%s'", $type_of_balance, implode("', '", $allowed)));
-        }
-        $this->_data['type_of_balance'] = $type_of_balance;
-
-        return $this;
+        return $this->_set("type_of_balance", $type_of_balance);
     }
 }

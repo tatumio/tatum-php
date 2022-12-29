@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ChainTransferSolanaSpl Model
  */
@@ -26,15 +24,15 @@ class ChainTransferSolanaSpl extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "ChainTransferSolanaSpl";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer", null], 
-        "fee_payer_private_key" => ["feePayerPrivateKey", "string", null, "getFeePayerPrivateKey", "setFeePayerPrivateKey", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 44, "xl" => 43]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 43]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null, ["r" => 1, "n" => [0], "x" => [30]]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 128, "xl" => 87]], 
+        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer", null, ["r" => 0, "nl" => 43, "xl" => 44]], 
+        "fee_payer_private_key" => ["feePayerPrivateKey", "string", null, "getFeePayerPrivateKey", "setFeePayerPrivateKey", null, ["r" => 0, "nl" => 128, "xl" => 87]]
     ];
 
     /**
@@ -46,85 +44,6 @@ class ChainTransferSolanaSpl extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 43)) {
-            $ip[] = "'from' length must be >= 43";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 43)) {
-            $ip[] = "'to' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['to']) < 44)) {
-            $ip[] = "'to' length must be >= 44";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 43)) {
-            $ip[] = "'contract_address' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 44)) {
-            $ip[] = "'contract_address' length must be >= 44";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['digits'])) {
-            $ip[] = "'digits' can't be null";
-        }
-        if (($this->_data['digits'] > 30)) {
-            $ip[] = "'digits' must be <= 30";
-        }
-        if (($this->_data['digits'] < 0)) {
-            $ip[] = "'digits' must be >= 0";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 87)) {
-            $ip[] = "'from_private_key' length must be <= 87";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 128)) {
-            $ip[] = "'from_private_key' length must be >= 128";
-        }
-        if (!is_null($this->_data['fee_payer']) && (mb_strlen($this->_data['fee_payer']) > 44)) {
-            $ip[] = "'fee_payer' length must be <= 44";
-        }
-        if (!is_null($this->_data['fee_payer']) && (mb_strlen($this->_data['fee_payer']) < 43)) {
-            $ip[] = "'fee_payer' length must be >= 43";
-        }
-        if (!is_null($this->_data['fee_payer_private_key']) && (mb_strlen($this->_data['fee_payer_private_key']) > 87)) {
-            $ip[] = "'fee_payer_private_key' length must be <= 87";
-        }
-        if (!is_null($this->_data['fee_payer_private_key']) && (mb_strlen($this->_data['fee_payer_private_key']) < 128)) {
-            $ip[] = "'fee_payer_private_key' length must be >= 128";
-        }
-        return $ip;
     }
 
     /**
@@ -151,16 +70,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("ChainTransferSolanaSpl.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -176,18 +90,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address to send the fungible tokens from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('ChainTransferSolanaSpl.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 43)) {
-            throw new IAE('ChainTransferSolanaSpl.setFrom: $from length must be >= 43');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -203,18 +110,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address to send the fungible tokens to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 43)) {
-            throw new IAE('ChainTransferSolanaSpl.setTo: $to length must be <= 43');
-        }
-        if ((mb_strlen($to) < 44)) {
-            throw new IAE('ChainTransferSolanaSpl.setTo: $to length must be >= 44');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -230,18 +130,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The blockchain address of the fungible tokens
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 43)) {
-            throw new IAE('ChainTransferSolanaSpl.setContractAddress: $contract_address length must be <= 43');
-        }
-        if ((mb_strlen($contract_address) < 44)) {
-            throw new IAE('ChainTransferSolanaSpl.setContractAddress: $contract_address length must be >= 44');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -257,15 +150,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set amount
      * 
      * @param string $amount The amount of the fungible tokens to be sent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('ChainTransferSolanaSpl.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -281,18 +170,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set digits
      * 
      * @param float $digits The number of decimal places that the fungible tokens have
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDigits(float $digits) {
-        if (($digits > 30)) {
-            throw new IAE('ChainTransferSolanaSpl.setDigits: $digits must be <=30');
-        }
-        if (($digits < 0)) {
-            throw new IAE('ChainTransferSolanaSpl.setDigits: $digits must be >=0');
-        }
-        $this->_data['digits'] = $digits;
-
-        return $this;
+        return $this->_set("digits", $digits);
     }
 
     /**
@@ -308,18 +190,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the <code>from</code> parameter); the transaction fee will be deducted from this address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 87)) {
-            throw new IAE('ChainTransferSolanaSpl.setFromPrivateKey: $from_private_key length must be <= 87');
-        }
-        if ((mb_strlen($from_private_key) < 128)) {
-            throw new IAE('ChainTransferSolanaSpl.setFromPrivateKey: $from_private_key length must be >= 128');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -335,18 +210,11 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set fee_payer
      * 
      * @param string|null $fee_payer The blockchain address from which the fee will be deducted; if not set, defaults to the address that you specified in the <code>from</code> parameter
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeePayer(?string $fee_payer) {
-        if (!is_null($fee_payer) && (mb_strlen($fee_payer) > 44)) {
-            throw new IAE('ChainTransferSolanaSpl.setFeePayer: $fee_payer length must be <= 44');
-        }
-        if (!is_null($fee_payer) && (mb_strlen($fee_payer) < 43)) {
-            throw new IAE('ChainTransferSolanaSpl.setFeePayer: $fee_payer length must be >= 43');
-        }
-        $this->_data['fee_payer'] = $fee_payer;
-
-        return $this;
+        return $this->_set("fee_payer", $fee_payer);
     }
 
     /**
@@ -362,17 +230,10 @@ class ChainTransferSolanaSpl extends AbstractModel {
      * Set fee_payer_private_key
      * 
      * @param string|null $fee_payer_private_key The private key of the blockchain address that you specified in the <code>feePayer</code> parameter; if not set, defaults to the private key that you specified in the <code>fromPrivateKey</code> parameter
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeePayerPrivateKey(?string $fee_payer_private_key) {
-        if (!is_null($fee_payer_private_key) && (mb_strlen($fee_payer_private_key) > 87)) {
-            throw new IAE('ChainTransferSolanaSpl.setFeePayerPrivateKey: $fee_payer_private_key length must be <= 87');
-        }
-        if (!is_null($fee_payer_private_key) && (mb_strlen($fee_payer_private_key) < 128)) {
-            throw new IAE('ChainTransferSolanaSpl.setFeePayerPrivateKey: $fee_payer_private_key length must be >= 128');
-        }
-        $this->_data['fee_payer_private_key'] = $fee_payer_private_key;
-
-        return $this;
+        return $this->_set("fee_payer_private_key", $fee_payer_private_key);
     }
 }

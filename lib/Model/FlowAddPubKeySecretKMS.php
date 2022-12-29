@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowAddPubKeySecretKMS Model
  */
@@ -25,11 +23,11 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAddPubKeySecretKMS";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null, ["r" => 1, "nl" => 128, "xl" => 128]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null, ["r" => 0, "n" => [0], "x" => [1000]]]
     ];
 
     /**
@@ -41,44 +39,6 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['public_key'])) {
-            $ip[] = "'public_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['public_key']) > 128)) {
-            $ip[] = "'public_key' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['public_key']) < 128)) {
-            $ip[] = "'public_key' length must be >= 128";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] > 1000)) {
-            $ip[] = "'weight' must be <= 1000";
-        }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] < 0)) {
-            $ip[] = "'weight' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -95,18 +55,11 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowAddPubKeySecretKMS.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowAddPubKeySecretKMS.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -122,18 +75,11 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
      * Set public_key
      * 
      * @param string $public_key Public key to be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPublicKey(string $public_key) {
-        if ((mb_strlen($public_key) > 128)) {
-            throw new IAE('FlowAddPubKeySecretKMS.setPublicKey: $public_key length must be <= 128');
-        }
-        if ((mb_strlen($public_key) < 128)) {
-            throw new IAE('FlowAddPubKeySecretKMS.setPublicKey: $public_key length must be >= 128');
-        }
-        $this->_data['public_key'] = $public_key;
-
-        return $this;
+        return $this->_set("public_key", $public_key);
     }
 
     /**
@@ -149,12 +95,11 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -170,15 +115,11 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('FlowAddPubKeySecretKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -194,17 +135,10 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
      * Set weight
      * 
      * @param float|null $weight Weight of the key. If not set, default 1000 will be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWeight(?float $weight) {
-        if (!is_null($weight) && ($weight > 1000)) {
-            throw new IAE('FlowAddPubKeySecretKMS.setWeight: $weight must be <=1000');
-        }
-        if (!is_null($weight) && ($weight < 0)) {
-            throw new IAE('FlowAddPubKeySecretKMS.setWeight: $weight must be >=0');
-        }
-        $this->_data['weight'] = $weight;
-
-        return $this;
+        return $this->_set("weight", $weight);
     }
 }

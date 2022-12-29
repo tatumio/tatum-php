@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTx Model
  */
@@ -25,12 +23,12 @@ class TronTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx";
     protected static $_definition = [
-        "ret" => ["ret", "\Tatum\Model\TronTxRetInner[]", null, "getRet", "setRet", null], 
-        "signature" => ["signature", "string[]", null, "getSignature", "setSignature", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null], 
-        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage", null], 
-        "raw_data" => ["rawData", "\Tatum\Model\TronTxRawData", null, "getRawData", "setRawData", null]
+        "ret" => ["ret", "\Tatum\Model\TronTxRetInner[]", null, "getRet", "setRet", null, ["r" => 1, "c" => 1]], 
+        "signature" => ["signature", "string[]", null, "getSignature", "setSignature", null, ["r" => 1, "c" => 1]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 1]], 
+        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage", null, ["r" => 0]], 
+        "raw_data" => ["rawData", "\Tatum\Model\TronTxRawData", null, "getRawData", "setRawData", null, ["r" => 1]]
     ];
 
     /**
@@ -42,29 +40,6 @@ class TronTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['ret'])) {
-            $ip[] = "'ret' can't be null";
-        }
-        if (is_null($this->_data['signature'])) {
-            $ip[] = "'signature' can't be null";
-        }
-        if (is_null($this->_data['block_number'])) {
-            $ip[] = "'block_number' can't be null";
-        }
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['raw_data'])) {
-            $ip[] = "'raw_data' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -81,12 +56,11 @@ class TronTx extends AbstractModel {
      * Set ret
      * 
      * @param \Tatum\Model\TronTxRetInner[] $ret Result of the smart contract invocation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRet(array $ret) {
-        $this->_data['ret'] = $ret;
-
-        return $this;
+        return $this->_set("ret", $ret);
     }
 
     /**
@@ -102,12 +76,11 @@ class TronTx extends AbstractModel {
      * Set signature
      * 
      * @param string[] $signature List of signatures of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignature(array $signature) {
-        $this->_data['signature'] = $signature;
-
-        return $this;
+        return $this->_set("signature", $signature);
     }
 
     /**
@@ -123,12 +96,11 @@ class TronTx extends AbstractModel {
      * Set block_number
      * 
      * @param float $block_number The block in which the transaction was included.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -144,12 +116,11 @@ class TronTx extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id Transaction ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -165,12 +136,11 @@ class TronTx extends AbstractModel {
      * Set net_usage
      * 
      * @param float|null $net_usage Usage of the network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNetUsage(?float $net_usage) {
-        $this->_data['net_usage'] = $net_usage;
-
-        return $this;
+        return $this->_set("net_usage", $net_usage);
     }
 
     /**
@@ -186,11 +156,10 @@ class TronTx extends AbstractModel {
      * Set raw_data
      * 
      * @param \Tatum\Model\TronTxRawData $raw_data raw_data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRawData(\Tatum\Model\TronTxRawData $raw_data) {
-        $this->_data['raw_data'] = $raw_data;
-
-        return $this;
+        return $this->_set("raw_data", $raw_data);
     }
 }

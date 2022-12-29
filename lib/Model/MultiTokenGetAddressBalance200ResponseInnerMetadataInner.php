@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MultiTokenGetAddressBalance_200_response_inner_metadata_inner Model
  */
@@ -25,9 +23,9 @@ class MultiTokenGetAddressBalance200ResponseInnerMetadataInner extends AbstractM
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTokenGetAddressBalance_200_response_inner_metadata_inner";
     protected static $_definition = [
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "metadata" => ["metadata", "object", null, "getMetadata", "setMetadata", null]
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 0]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0]], 
+        "metadata" => ["metadata", "object", null, "getMetadata", "setMetadata", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class MultiTokenGetAddressBalance200ResponseInnerMetadataInner extends AbstractM
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class MultiTokenGetAddressBalance200ResponseInnerMetadataInner extends AbstractM
      * Set token_id
      * 
      * @param string|null $token_id The ID of the Multi Token owned by this address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(?string $token_id) {
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -84,12 +73,11 @@ class MultiTokenGetAddressBalance200ResponseInnerMetadataInner extends AbstractM
      * Set url
      * 
      * @param string|null $url The URL pointing to the Multi Token metadata; the URL may not be present, and if it is not returned, you can get it by calling the Multi Token Contract.uri() method
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(?string $url) {
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -105,11 +93,10 @@ class MultiTokenGetAddressBalance200ResponseInnerMetadataInner extends AbstractM
      * Set metadata
      * 
      * @param object|null $metadata The metadata scheme obtained from the metadata URL; the scheme may not be present, and if it is not returned, you can get it using the <a href=\"#operation/MultiTokenGetMetadata\">Multi Token metadata API</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(?object $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 }

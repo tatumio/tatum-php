@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaAccountBalance_inner Model
  */
@@ -25,8 +23,8 @@ class AdaAccountBalanceInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaAccountBalance_inner";
     protected static $_definition = [
-        "currency" => ["currency", "\Tatum\Model\AdaAccountBalanceInnerCurrency", null, "getCurrency", "setCurrency", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null]
+        "currency" => ["currency", "\Tatum\Model\AdaAccountBalanceInnerCurrency", null, "getCurrency", "setCurrency", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class AdaAccountBalanceInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class AdaAccountBalanceInner extends AbstractModel {
      * Set currency
      * 
      * @param \Tatum\Model\AdaAccountBalanceInnerCurrency|null $currency currency
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(?\Tatum\Model\AdaAccountBalanceInnerCurrency $currency) {
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -83,11 +72,10 @@ class AdaAccountBalanceInner extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Quantity of the asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

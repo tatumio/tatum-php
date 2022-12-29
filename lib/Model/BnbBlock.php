@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbBlock Model
  */
@@ -25,9 +23,9 @@ class BnbBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbBlock";
     protected static $_definition = [
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
-        "tx" => ["tx", "\Tatum\Model\BnbTransaction[]", null, "getTx", "setTx", null]
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null, ["r" => 0]], 
+        "tx" => ["tx", "\Tatum\Model\BnbTransaction[]", null, "getTx", "setTx", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class BnbBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class BnbBlock extends AbstractModel {
      * Set timestamp
      * 
      * @param float|null $timestamp timestamp
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(?float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -84,12 +73,11 @@ class BnbBlock extends AbstractModel {
      * Set block_height
      * 
      * @param float|null $block_height block_height
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHeight(?float $block_height) {
-        $this->_data['block_height'] = $block_height;
-
-        return $this;
+        return $this->_set("block_height", $block_height);
     }
 
     /**
@@ -105,11 +93,10 @@ class BnbBlock extends AbstractModel {
      * Set tx
      * 
      * @param \Tatum\Model\BnbTransaction[]|null $tx tx
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTx(?array $tx) {
-        $this->_data['tx'] = $tx;
-
-        return $this;
+        return $this->_set("tx", $tx);
     }
 }

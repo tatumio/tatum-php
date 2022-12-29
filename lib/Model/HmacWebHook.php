@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * HmacWebHook Model
  */
@@ -25,7 +23,7 @@ class HmacWebHook extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "HmacWebHook";
     protected static $_definition = [
-        "hmac_secret" => ["hmacSecret", "string", null, "getHmacSecret", "setHmacSecret", null]
+        "hmac_secret" => ["hmacSecret", "string", null, "getHmacSecret", "setHmacSecret", null, ["r" => 1, "xl" => 100]]
     ];
 
     /**
@@ -37,20 +35,6 @@ class HmacWebHook extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['hmac_secret'])) {
-            $ip[] = "'hmac_secret' can't be null";
-        }
-        if ((mb_strlen($this->_data['hmac_secret']) > 100)) {
-            $ip[] = "'hmac_secret' length must be <= 100";
-        }
-        return $ip;
     }
 
 
@@ -67,14 +51,10 @@ class HmacWebHook extends AbstractModel {
      * Set hmac_secret
      * 
      * @param string $hmac_secret Your HMAC secret password, which is used for signing the webhook payload.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHmacSecret(string $hmac_secret) {
-        if ((mb_strlen($hmac_secret) > 100)) {
-            throw new IAE('HmacWebHook.setHmacSecret: $hmac_secret length must be <= 100');
-        }
-        $this->_data['hmac_secret'] = $hmac_secret;
-
-        return $this;
+        return $this->_set("hmac_secret", $hmac_secret);
     }
 }

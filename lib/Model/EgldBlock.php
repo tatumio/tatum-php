@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EgldBlock Model
  */
@@ -25,14 +23,14 @@ class EgldBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EgldBlock";
     protected static $_definition = [
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "round" => ["round", "float", null, "getRound", "setRound", null], 
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "prev_block_hash" => ["prevBlockHash", "string", null, "getPrevBlockHash", "setPrevBlockHash", null], 
-        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch", null], 
-        "num_txs" => ["numTxs", "float", null, "getNumTxs", "setNumTxs", null], 
-        "shard_blocks" => ["shardBlocks", "\Tatum\Model\EgldShardBlock[]", null, "getShardBlocks", "setShardBlocks", null], 
-        "transactions" => ["transactions", "\Tatum\Model\EgldTx[]", null, "getTransactions", "setTransactions", null]
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "round" => ["round", "float", null, "getRound", "setRound", null, ["r" => 0]], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "prev_block_hash" => ["prevBlockHash", "string", null, "getPrevBlockHash", "setPrevBlockHash", null, ["r" => 0]], 
+        "epoch" => ["epoch", "float", null, "getEpoch", "setEpoch", null, ["r" => 0]], 
+        "num_txs" => ["numTxs", "float", null, "getNumTxs", "setNumTxs", null, ["r" => 0]], 
+        "shard_blocks" => ["shardBlocks", "\Tatum\Model\EgldShardBlock[]", null, "getShardBlocks", "setShardBlocks", null, ["r" => 0, "c" => 1]], 
+        "transactions" => ["transactions", "\Tatum\Model\EgldTx[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -44,14 +42,6 @@ class EgldBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -68,12 +58,11 @@ class EgldBlock extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The block height.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -89,12 +78,11 @@ class EgldBlock extends AbstractModel {
      * Set round
      * 
      * @param float|null $round The round number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRound(?float $round) {
-        $this->_data['round'] = $round;
-
-        return $this;
+        return $this->_set("round", $round);
     }
 
     /**
@@ -110,12 +98,11 @@ class EgldBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Hash of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -131,12 +118,11 @@ class EgldBlock extends AbstractModel {
      * Set prev_block_hash
      * 
      * @param string|null $prev_block_hash Hash of the previous block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrevBlockHash(?string $prev_block_hash) {
-        $this->_data['prev_block_hash'] = $prev_block_hash;
-
-        return $this;
+        return $this->_set("prev_block_hash", $prev_block_hash);
     }
 
     /**
@@ -152,12 +138,11 @@ class EgldBlock extends AbstractModel {
      * Set epoch
      * 
      * @param float|null $epoch An epoch is a sequence of consecutive rounds during which the configuration of the network does not change (currently aprox. 24 hrs in length).
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEpoch(?float $epoch) {
-        $this->_data['epoch'] = $epoch;
-
-        return $this;
+        return $this->_set("epoch", $epoch);
     }
 
     /**
@@ -173,12 +158,11 @@ class EgldBlock extends AbstractModel {
      * Set num_txs
      * 
      * @param float|null $num_txs Number of transactions in current block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumTxs(?float $num_txs) {
-        $this->_data['num_txs'] = $num_txs;
-
-        return $this;
+        return $this->_set("num_txs", $num_txs);
     }
 
     /**
@@ -194,12 +178,11 @@ class EgldBlock extends AbstractModel {
      * Set shard_blocks
      * 
      * @param \Tatum\Model\EgldShardBlock[]|null $shard_blocks Array of shard blocks
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setShardBlocks(?array $shard_blocks) {
-        $this->_data['shard_blocks'] = $shard_blocks;
-
-        return $this;
+        return $this->_set("shard_blocks", $shard_blocks);
     }
 
     /**
@@ -215,11 +198,10 @@ class EgldBlock extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\EgldTx[]|null $transactions Array of transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

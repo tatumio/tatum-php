@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateGasPump Model
  */
@@ -32,10 +30,10 @@ class CreateGasPump extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "CreateGasPump";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
-        "from" => ["from", "int", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "int", null, "getTo", "setTo", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null, ["r" => 1]], 
+        "from" => ["from", "int", null, "getFrom", "setFrom", null, ["r" => 1, "n" => [0]]], 
+        "to" => ["to", "int", null, "getTo", "setTo", null, ["r" => 1, "n" => [0]]]
     ];
 
     /**
@@ -47,37 +45,6 @@ class CreateGasPump extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['owner'])) {
-            $ip[] = "'owner' can't be null";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if (($this->_data['from'] < 0)) {
-            $ip[] = "'from' must be >= 0";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (($this->_data['to'] < 0)) {
-            $ip[] = "'to' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -110,16 +77,11 @@ class CreateGasPump extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CreateGasPump.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -135,12 +97,11 @@ class CreateGasPump extends AbstractModel {
      * Set owner
      * 
      * @param string $owner The blockchain address that will own the precalculated gas pump addresses and will be used to pay gas fees for operations made on the gas pump addresses; can be referred to as \"master address\"
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwner(string $owner) {
-        $this->_data['owner'] = $owner;
-
-        return $this;
+        return $this->_set("owner", $owner);
     }
 
     /**
@@ -156,15 +117,11 @@ class CreateGasPump extends AbstractModel {
      * Set from
      * 
      * @param int $from The start index of the range of gas pump addresses to precalculate
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(int $from) {
-        if (($from < 0)) {
-            throw new IAE('CreateGasPump.setFrom: $from must be >=0');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -180,14 +137,10 @@ class CreateGasPump extends AbstractModel {
      * Set to
      * 
      * @param int $to The end index of the range of gas pump addresses to precalculate; must be greater than or equal to the value in the <code>from</code> parameter
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(int $to) {
-        if (($to < 0)) {
-            throw new IAE('CreateGasPump.setTo: $to must be >=0');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MintMultiToken Model
  */
@@ -31,15 +29,15 @@ class MintMultiToken extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "MintMultiToken";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 32]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "xl" => 32]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -51,64 +49,6 @@ class MintMultiToken extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 32)) {
-            $ip[] = "'token_id' length must be <= 32";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 42)) {
-            $ip[] = "'to' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['to']) < 42)) {
-            $ip[] = "'to' length must be >= 42";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 32)) {
-            $ip[] = "'amount' length must be <= 32";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -140,16 +80,11 @@ class MintMultiToken extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Chain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("MintMultiToken.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -165,15 +100,11 @@ class MintMultiToken extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id ID of token to be created.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 32)) {
-            throw new IAE('MintMultiToken.setTokenId: $token_id length must be <= 32');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -189,18 +120,11 @@ class MintMultiToken extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send Multi Token token to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 42)) {
-            throw new IAE('MintMultiToken.setTo: $to length must be <= 42');
-        }
-        if ((mb_strlen($to) < 42)) {
-            throw new IAE('MintMultiToken.setTo: $to length must be >= 42');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -216,18 +140,11 @@ class MintMultiToken extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of Multi Token token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('MintMultiToken.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('MintMultiToken.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -243,15 +160,11 @@ class MintMultiToken extends AbstractModel {
      * Set amount
      * 
      * @param string $amount amount of token to be created.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 32)) {
-            throw new IAE('MintMultiToken.setAmount: $amount length must be <= 32');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -267,12 +180,11 @@ class MintMultiToken extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Data in bytes
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -288,18 +200,11 @@ class MintMultiToken extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('MintMultiToken.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('MintMultiToken.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -315,15 +220,11 @@ class MintMultiToken extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Nonce to be set to transaction. If not present, last known nonce will be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('MintMultiToken.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -339,11 +240,10 @@ class MintMultiToken extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

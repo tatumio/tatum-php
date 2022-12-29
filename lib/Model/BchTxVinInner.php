@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BchTx_vin_inner Model
  */
@@ -25,11 +23,11 @@ class BchTxVinInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx_vin_inner";
     protected static $_definition = [
-        "txid" => ["txid", "string", null, "getTxid", "setTxid", null], 
-        "vout" => ["vout", "float", null, "getVout", "setVout", null], 
-        "script_sig" => ["scriptSig", "\Tatum\Model\BchTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig", null], 
-        "coinbase" => ["coinbase", "string", null, "getCoinbase", "setCoinbase", null], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null]
+        "txid" => ["txid", "string", null, "getTxid", "setTxid", null, ["r" => 0]], 
+        "vout" => ["vout", "float", null, "getVout", "setVout", null, ["r" => 0]], 
+        "script_sig" => ["scriptSig", "\Tatum\Model\BchTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig", null, ["r" => 0]], 
+        "coinbase" => ["coinbase", "string", null, "getCoinbase", "setCoinbase", null, ["r" => 0]], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class BchTxVinInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class BchTxVinInner extends AbstractModel {
      * Set txid
      * 
      * @param string|null $txid txid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxid(?string $txid) {
-        $this->_data['txid'] = $txid;
-
-        return $this;
+        return $this->_set("txid", $txid);
     }
 
     /**
@@ -86,12 +75,11 @@ class BchTxVinInner extends AbstractModel {
      * Set vout
      * 
      * @param float|null $vout vout
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVout(?float $vout) {
-        $this->_data['vout'] = $vout;
-
-        return $this;
+        return $this->_set("vout", $vout);
     }
 
     /**
@@ -107,12 +95,11 @@ class BchTxVinInner extends AbstractModel {
      * Set script_sig
      * 
      * @param \Tatum\Model\BchTxVinInnerScriptSig|null $script_sig script_sig
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScriptSig(?\Tatum\Model\BchTxVinInnerScriptSig $script_sig) {
-        $this->_data['script_sig'] = $script_sig;
-
-        return $this;
+        return $this->_set("script_sig", $script_sig);
     }
 
     /**
@@ -128,12 +115,11 @@ class BchTxVinInner extends AbstractModel {
      * Set coinbase
      * 
      * @param string|null $coinbase coinbase
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCoinbase(?string $coinbase) {
-        $this->_data['coinbase'] = $coinbase;
-
-        return $this;
+        return $this->_set("coinbase", $coinbase);
     }
 
     /**
@@ -149,11 +135,10 @@ class BchTxVinInner extends AbstractModel {
      * Set sequence
      * 
      * @param float|null $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 }

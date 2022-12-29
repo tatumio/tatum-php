@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaNftMetadataCreator Model
  */
@@ -25,9 +23,9 @@ class SolanaNftMetadataCreator extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaNftMetadataCreator";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "verified" => ["verified", "bool", null, "getVerified", "setVerified", null], 
-        "share" => ["share", "float", null, "getShare", "setShare", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "verified" => ["verified", "bool", null, "getVerified", "setVerified", null, ["r" => 1]], 
+        "share" => ["share", "float", null, "getShare", "setShare", null, ["r" => 1]]
     ];
 
     /**
@@ -39,29 +37,6 @@ class SolanaNftMetadataCreator extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 44)) {
-            $ip[] = "'address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['address']) < 43)) {
-            $ip[] = "'address' length must be >= 43";
-        }
-        if (is_null($this->_data['verified'])) {
-            $ip[] = "'verified' can't be null";
-        }
-        if (is_null($this->_data['share'])) {
-            $ip[] = "'share' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -78,18 +53,11 @@ class SolanaNftMetadataCreator extends AbstractModel {
      * Set address
      * 
      * @param string $address The blockchain address of the NFT creator
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 44)) {
-            throw new IAE('SolanaNftMetadataCreator.setAddress: $address length must be <= 44');
-        }
-        if ((mb_strlen($address) < 43)) {
-            throw new IAE('SolanaNftMetadataCreator.setAddress: $address length must be >= 43');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -105,12 +73,11 @@ class SolanaNftMetadataCreator extends AbstractModel {
      * Set verified
      * 
      * @param bool $verified If set to \"true\", the NFT creator was verified. Only the address whose private key was used during the minting of the NFT can be a verified creator. If you are minting the NFT using NFT Express, set this parameter to \"false\".
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVerified(bool $verified) {
-        $this->_data['verified'] = $verified;
-
-        return $this;
+        return $this->_set("verified", $verified);
     }
 
     /**
@@ -126,11 +93,10 @@ class SolanaNftMetadataCreator extends AbstractModel {
      * Set share
      * 
      * @param float $share The share to be sent to the NFT creator (in %)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setShare(float $share) {
-        $this->_data['share'] = $share;
-
-        return $this;
+        return $this->_set("share", $share);
     }
 }

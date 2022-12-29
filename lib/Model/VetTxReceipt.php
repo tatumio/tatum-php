@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetTxReceipt Model
  */
@@ -25,17 +23,17 @@ class VetTxReceipt extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTxReceipt";
     protected static $_definition = [
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
-        "gas_payer" => ["gasPayer", "string", null, "getGasPayer", "setGasPayer", null], 
-        "paid" => ["paid", "string", null, "getPaid", "setPaid", null], 
-        "reward" => ["reward", "string", null, "getReward", "setReward", null], 
-        "reverted" => ["reverted", "bool", null, "getReverted", "setReverted", null], 
-        "meta" => ["meta", "\Tatum\Model\VetTxReceiptMeta", null, "getMeta", "setMeta", null], 
-        "outputs" => ["outputs", "\Tatum\Model\VetTxReceiptOutputsInner[]", null, "getOutputs", "setOutputs", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null], 
-        "status" => ["status", "string", null, "getStatus", "setStatus", null]
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null, ["r" => 0]], 
+        "gas_payer" => ["gasPayer", "string", null, "getGasPayer", "setGasPayer", null, ["r" => 0]], 
+        "paid" => ["paid", "string", null, "getPaid", "setPaid", null, ["r" => 0]], 
+        "reward" => ["reward", "string", null, "getReward", "setReward", null, ["r" => 0]], 
+        "reverted" => ["reverted", "bool", null, "getReverted", "setReverted", null, ["r" => 0]], 
+        "meta" => ["meta", "\Tatum\Model\VetTxReceiptMeta", null, "getMeta", "setMeta", null, ["r" => 0]], 
+        "outputs" => ["outputs", "\Tatum\Model\VetTxReceiptOutputsInner[]", null, "getOutputs", "setOutputs", null, ["r" => 0, "c" => 1]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null, ["r" => 0]], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null, ["r" => 0]]
     ];
 
     /**
@@ -47,14 +45,6 @@ class VetTxReceipt extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -71,12 +61,11 @@ class VetTxReceipt extends AbstractModel {
      * Set gas_used
      * 
      * @param float|null $gas_used gas_used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasUsed(?float $gas_used) {
-        $this->_data['gas_used'] = $gas_used;
-
-        return $this;
+        return $this->_set("gas_used", $gas_used);
     }
 
     /**
@@ -92,12 +81,11 @@ class VetTxReceipt extends AbstractModel {
      * Set gas_payer
      * 
      * @param string|null $gas_payer gas_payer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPayer(?string $gas_payer) {
-        $this->_data['gas_payer'] = $gas_payer;
-
-        return $this;
+        return $this->_set("gas_payer", $gas_payer);
     }
 
     /**
@@ -113,12 +101,11 @@ class VetTxReceipt extends AbstractModel {
      * Set paid
      * 
      * @param string|null $paid paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaid(?string $paid) {
-        $this->_data['paid'] = $paid;
-
-        return $this;
+        return $this->_set("paid", $paid);
     }
 
     /**
@@ -134,12 +121,11 @@ class VetTxReceipt extends AbstractModel {
      * Set reward
      * 
      * @param string|null $reward reward
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReward(?string $reward) {
-        $this->_data['reward'] = $reward;
-
-        return $this;
+        return $this->_set("reward", $reward);
     }
 
     /**
@@ -155,12 +141,11 @@ class VetTxReceipt extends AbstractModel {
      * Set reverted
      * 
      * @param bool|null $reverted reverted
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReverted(?bool $reverted) {
-        $this->_data['reverted'] = $reverted;
-
-        return $this;
+        return $this->_set("reverted", $reverted);
     }
 
     /**
@@ -176,12 +161,11 @@ class VetTxReceipt extends AbstractModel {
      * Set meta
      * 
      * @param \Tatum\Model\VetTxReceiptMeta|null $meta meta
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMeta(?\Tatum\Model\VetTxReceiptMeta $meta) {
-        $this->_data['meta'] = $meta;
-
-        return $this;
+        return $this->_set("meta", $meta);
     }
 
     /**
@@ -197,12 +181,11 @@ class VetTxReceipt extends AbstractModel {
      * Set outputs
      * 
      * @param \Tatum\Model\VetTxReceiptOutputsInner[]|null $outputs List of recipient addresses and amounts to send to each of them.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOutputs(?array $outputs) {
-        $this->_data['outputs'] = $outputs;
-
-        return $this;
+        return $this->_set("outputs", $outputs);
     }
 
     /**
@@ -218,12 +201,11 @@ class VetTxReceipt extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number block_number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -239,12 +221,11 @@ class VetTxReceipt extends AbstractModel {
      * Set block_hash
      * 
      * @param string|null $block_hash block_hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHash(?string $block_hash) {
-        $this->_data['block_hash'] = $block_hash;
-
-        return $this;
+        return $this->_set("block_hash", $block_hash);
     }
 
     /**
@@ -260,12 +241,11 @@ class VetTxReceipt extends AbstractModel {
      * Set transaction_hash
      * 
      * @param string|null $transaction_hash transaction_hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionHash(?string $transaction_hash) {
-        $this->_data['transaction_hash'] = $transaction_hash;
-
-        return $this;
+        return $this->_set("transaction_hash", $transaction_hash);
     }
 
     /**
@@ -281,11 +261,10 @@ class VetTxReceipt extends AbstractModel {
      * Set status
      * 
      * @param string|null $status status
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?string $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 }

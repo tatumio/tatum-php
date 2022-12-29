@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GasPumpTrxOut Model
  */
@@ -25,8 +23,8 @@ class GasPumpTrxOut extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GasPumpTrxOut";
     protected static $_definition = [
-        "valid" => ["valid", "\Tatum\Model\ValidGasPumpAddress[]", null, "getValid", "setValid", null], 
-        "invalid" => ["invalid", "\Tatum\Model\InvalidGasPumpAddress[]", null, "getInvalid", "setInvalid", null]
+        "valid" => ["valid", "\Tatum\Model\ValidGasPumpAddress[]", null, "getValid", "setValid", null, ["r" => 0, "c" => 1]], 
+        "invalid" => ["invalid", "\Tatum\Model\InvalidGasPumpAddress[]", null, "getInvalid", "setInvalid", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class GasPumpTrxOut extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class GasPumpTrxOut extends AbstractModel {
      * Set valid
      * 
      * @param \Tatum\Model\ValidGasPumpAddress[]|null $valid Activated gas pump addresses
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValid(?array $valid) {
-        $this->_data['valid'] = $valid;
-
-        return $this;
+        return $this->_set("valid", $valid);
     }
 
     /**
@@ -83,11 +72,10 @@ class GasPumpTrxOut extends AbstractModel {
      * Set invalid
      * 
      * @param \Tatum\Model\InvalidGasPumpAddress[]|null $invalid Not activated gas pump addresses
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInvalid(?array $invalid) {
-        $this->_data['invalid'] = $invalid;
-
-        return $this;
+        return $this->_set("invalid", $invalid);
     }
 }

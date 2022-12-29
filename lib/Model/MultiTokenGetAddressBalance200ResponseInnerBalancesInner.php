@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MultiTokenGetAddressBalance_200_response_inner_balances_inner Model
  */
@@ -25,9 +23,9 @@ class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractM
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTokenGetAddressBalance_200_response_inner_balances_inner";
     protected static $_definition = [
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null]
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 0]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractM
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractM
      * Set token_id
      * 
      * @param string|null $token_id Token ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(?string $token_id) {
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -84,12 +73,11 @@ class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractM
      * Set amount
      * 
      * @param string|null $amount Number of tokens held by the address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -105,11 +93,10 @@ class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractM
      * Set block_number
      * 
      * @param float|null $block_number Block number when the token was received by the address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 }

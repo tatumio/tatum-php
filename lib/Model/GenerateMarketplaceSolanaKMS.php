@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateMarketplaceSolanaKMS Model
  */
@@ -26,15 +24,15 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "GenerateMarketplaceSolanaKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint", null], 
-        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination", null], 
-        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination", null], 
-        "requires_sign_off" => ["requiresSignOff", "bool", null, "getRequiresSignOff", "setRequiresSignOff", null], 
-        "can_change_sale_price" => ["canChangeSalePrice", "bool", null, "getCanChangeSalePrice", "setCanChangeSalePrice", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint", null, ["r" => 0, "nl" => 43, "xl" => 44]], 
+        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination", null, ["r" => 0, "nl" => 43, "xl" => 44]], 
+        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination", null, ["r" => 0, "nl" => 43, "xl" => 44]], 
+        "requires_sign_off" => ["requiresSignOff", "bool", null, "getRequiresSignOff", "setRequiresSignOff", null, ["r" => 0]], 
+        "can_change_sale_price" => ["canChangeSalePrice", "bool", null, "getCanChangeSalePrice", "setCanChangeSalePrice", null, ["r" => 0]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -46,61 +44,6 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['marketplace_fee'])) {
-            $ip[] = "'marketplace_fee' can't be null";
-        }
-        if (($this->_data['marketplace_fee'] > 10000)) {
-            $ip[] = "'marketplace_fee' must be <= 10000";
-        }
-        if (($this->_data['marketplace_fee'] < 0)) {
-            $ip[] = "'marketplace_fee' must be >= 0";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 43)) {
-            $ip[] = "'from' length must be >= 43";
-        }
-        if (!is_null($this->_data['treasury_mint']) && (mb_strlen($this->_data['treasury_mint']) > 44)) {
-            $ip[] = "'treasury_mint' length must be <= 44";
-        }
-        if (!is_null($this->_data['treasury_mint']) && (mb_strlen($this->_data['treasury_mint']) < 43)) {
-            $ip[] = "'treasury_mint' length must be >= 43";
-        }
-        if (!is_null($this->_data['treasury_withdrawal_destination']) && (mb_strlen($this->_data['treasury_withdrawal_destination']) > 44)) {
-            $ip[] = "'treasury_withdrawal_destination' length must be <= 44";
-        }
-        if (!is_null($this->_data['treasury_withdrawal_destination']) && (mb_strlen($this->_data['treasury_withdrawal_destination']) < 43)) {
-            $ip[] = "'treasury_withdrawal_destination' length must be >= 43";
-        }
-        if (!is_null($this->_data['fee_withdrawal_destination']) && (mb_strlen($this->_data['fee_withdrawal_destination']) > 44)) {
-            $ip[] = "'fee_withdrawal_destination' length must be <= 44";
-        }
-        if (!is_null($this->_data['fee_withdrawal_destination']) && (mb_strlen($this->_data['fee_withdrawal_destination']) < 43)) {
-            $ip[] = "'fee_withdrawal_destination' length must be >= 43";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -127,16 +70,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateMarketplaceSolanaKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -152,18 +90,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set marketplace_fee
      * 
      * @param float $marketplace_fee The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMarketplaceFee(float $marketplace_fee) {
-        if (($marketplace_fee > 10000)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setMarketplaceFee: $marketplace_fee must be <=10000');
-        }
-        if (($marketplace_fee < 0)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setMarketplaceFee: $marketplace_fee must be >=0');
-        }
-        $this->_data['marketplace_fee'] = $marketplace_fee;
-
-        return $this;
+        return $this->_set("marketplace_fee", $marketplace_fee);
     }
 
     /**
@@ -179,18 +110,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from The address that will be the owner of the marketplace
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 43)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setFrom: $from length must be >= 43');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -206,18 +130,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set treasury_mint
      * 
      * @param string|null $treasury_mint Address of a SPL token contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTreasuryMint(?string $treasury_mint) {
-        if (!is_null($treasury_mint) && (mb_strlen($treasury_mint) > 44)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setTreasuryMint: $treasury_mint length must be <= 44');
-        }
-        if (!is_null($treasury_mint) && (mb_strlen($treasury_mint) < 43)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setTreasuryMint: $treasury_mint length must be >= 43');
-        }
-        $this->_data['treasury_mint'] = $treasury_mint;
-
-        return $this;
+        return $this->_set("treasury_mint", $treasury_mint);
     }
 
     /**
@@ -233,18 +150,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set treasury_withdrawal_destination
      * 
      * @param string|null $treasury_withdrawal_destination The address that will be able to withdraw funds from the marketplace treasury account to own address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTreasuryWithdrawalDestination(?string $treasury_withdrawal_destination) {
-        if (!is_null($treasury_withdrawal_destination) && (mb_strlen($treasury_withdrawal_destination) > 44)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setTreasuryWithdrawalDestination: $treasury_withdrawal_destination length must be <= 44');
-        }
-        if (!is_null($treasury_withdrawal_destination) && (mb_strlen($treasury_withdrawal_destination) < 43)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setTreasuryWithdrawalDestination: $treasury_withdrawal_destination length must be >= 43');
-        }
-        $this->_data['treasury_withdrawal_destination'] = $treasury_withdrawal_destination;
-
-        return $this;
+        return $this->_set("treasury_withdrawal_destination", $treasury_withdrawal_destination);
     }
 
     /**
@@ -260,18 +170,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set fee_withdrawal_destination
      * 
      * @param string|null $fee_withdrawal_destination The address that will be able to withdraw funds from the marketplace fee account to own address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeWithdrawalDestination(?string $fee_withdrawal_destination) {
-        if (!is_null($fee_withdrawal_destination) && (mb_strlen($fee_withdrawal_destination) > 44)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setFeeWithdrawalDestination: $fee_withdrawal_destination length must be <= 44');
-        }
-        if (!is_null($fee_withdrawal_destination) && (mb_strlen($fee_withdrawal_destination) < 43)) {
-            throw new IAE('GenerateMarketplaceSolanaKMS.setFeeWithdrawalDestination: $fee_withdrawal_destination length must be >= 43');
-        }
-        $this->_data['fee_withdrawal_destination'] = $fee_withdrawal_destination;
-
-        return $this;
+        return $this->_set("fee_withdrawal_destination", $fee_withdrawal_destination);
     }
 
     /**
@@ -287,12 +190,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set requires_sign_off
      * 
      * @param bool|null $requires_sign_off Set to \"false\" if you do not want the marketplace to sign all operations related to the listings and sales; if not set, defaults to \"true\" (the marketplace must sign all the operations)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRequiresSignOff(?bool $requires_sign_off) {
-        $this->_data['requires_sign_off'] = $requires_sign_off;
-
-        return $this;
+        return $this->_set("requires_sign_off", $requires_sign_off);
     }
 
     /**
@@ -308,12 +210,11 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set can_change_sale_price
      * 
      * @param bool|null $can_change_sale_price Set to \"true\" to allow the marketplace to change the sale price that the seller intentionally set to 0; if not set, defaults to \"false\" (the marketplace cannot change the sale price)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCanChangeSalePrice(?bool $can_change_sale_price) {
-        $this->_data['can_change_sale_price'] = $can_change_sale_price;
-
-        return $this;
+        return $this->_set("can_change_sale_price", $can_change_sale_price);
     }
 
     /**
@@ -329,11 +230,10 @@ class GenerateMarketplaceSolanaKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the blockchain address from which the fee will be deducted
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

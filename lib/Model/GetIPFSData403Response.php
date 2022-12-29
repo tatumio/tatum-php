@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GetIPFSData_403_response Model
  */
@@ -25,8 +23,8 @@ class GetIPFSData403Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GetIPFSData_403_response";
     protected static $_definition = [
-        "message" => ["message", "string", null, "getMessage", "setMessage", null], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null]
+        "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 1]], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class GetIPFSData403Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['message'])) {
-            $ip[] = "'message' can't be null";
-        }
-        if (is_null($this->_data['status_code'])) {
-            $ip[] = "'status_code' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class GetIPFSData403Response extends AbstractModel {
      * Set message
      * 
      * @param string $message Forbidden
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(string $message) {
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 
     /**
@@ -89,11 +72,10 @@ class GetIPFSData403Response extends AbstractModel {
      * Set status_code
      * 
      * @param float $status_code 403
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatusCode(float $status_code) {
-        $this->_data['status_code'] = $status_code;
-
-        return $this;
+        return $this->_set("status_code", $status_code);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpTx_meta_AffectedNodes_inner_ModifiedNode Model
  */
@@ -25,12 +23,12 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode";
     protected static $_definition = [
-        "final_fields" => ["FinalFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields", null, "getFinalFields", "setFinalFields", null], 
-        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null], 
-        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex", null], 
-        "previous_fields" => ["PreviousFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields", null, "getPreviousFields", "setPreviousFields", null], 
-        "previous_txn_id" => ["PreviousTxnID", "string", null, "getPreviousTxnId", "setPreviousTxnId", null], 
-        "previous_txn_lgr_seq" => ["PreviousTxnLgrSeq", "float", null, "getPreviousTxnLgrSeq", "setPreviousTxnLgrSeq", null]
+        "final_fields" => ["FinalFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields", null, "getFinalFields", "setFinalFields", null, ["r" => 0]], 
+        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null, ["r" => 0]], 
+        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex", null, ["r" => 0]], 
+        "previous_fields" => ["PreviousFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields", null, "getPreviousFields", "setPreviousFields", null, ["r" => 0]], 
+        "previous_txn_id" => ["PreviousTxnID", "string", null, "getPreviousTxnId", "setPreviousTxnId", null, ["r" => 0]], 
+        "previous_txn_lgr_seq" => ["PreviousTxnLgrSeq", "float", null, "getPreviousTxnLgrSeq", "setPreviousTxnLgrSeq", null, ["r" => 0]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
      * Set final_fields
      * 
      * @param \Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields|null $final_fields final_fields
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFinalFields(?\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields $final_fields) {
-        $this->_data['final_fields'] = $final_fields;
-
-        return $this;
+        return $this->_set("final_fields", $final_fields);
     }
 
     /**
@@ -87,12 +76,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
      * Set ledger_entry_type
      * 
      * @param string|null $ledger_entry_type ledger_entry_type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerEntryType(?string $ledger_entry_type) {
-        $this->_data['ledger_entry_type'] = $ledger_entry_type;
-
-        return $this;
+        return $this->_set("ledger_entry_type", $ledger_entry_type);
     }
 
     /**
@@ -108,12 +96,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
      * Set ledger_index
      * 
      * @param string|null $ledger_index ledger_index
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerIndex(?string $ledger_index) {
-        $this->_data['ledger_index'] = $ledger_index;
-
-        return $this;
+        return $this->_set("ledger_index", $ledger_index);
     }
 
     /**
@@ -129,12 +116,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
      * Set previous_fields
      * 
      * @param \Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields|null $previous_fields previous_fields
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousFields(?\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields $previous_fields) {
-        $this->_data['previous_fields'] = $previous_fields;
-
-        return $this;
+        return $this->_set("previous_fields", $previous_fields);
     }
 
     /**
@@ -150,12 +136,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
      * Set previous_txn_id
      * 
      * @param string|null $previous_txn_id previous_txn_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousTxnId(?string $previous_txn_id) {
-        $this->_data['previous_txn_id'] = $previous_txn_id;
-
-        return $this;
+        return $this->_set("previous_txn_id", $previous_txn_id);
     }
 
     /**
@@ -171,11 +156,10 @@ class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
      * Set previous_txn_lgr_seq
      * 
      * @param float|null $previous_txn_lgr_seq previous_txn_lgr_seq
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousTxnLgrSeq(?float $previous_txn_lgr_seq) {
-        $this->_data['previous_txn_lgr_seq'] = $previous_txn_lgr_seq;
-
-        return $this;
+        return $this->_set("previous_txn_lgr_seq", $previous_txn_lgr_seq);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ReceiveAlgorandAssetKMS Model
  */
@@ -25,9 +23,9 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "ReceiveAlgorandAssetKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 58, "xl" => 58]], 
+        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null, ["r" => 1]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -39,29 +37,6 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 58)) {
-            $ip[] = "'from' length must be <= 58";
-        }
-        if ((mb_strlen($this->_data['from']) < 58)) {
-            $ip[] = "'from' length must be >= 58";
-        }
-        if (is_null($this->_data['asset_id'])) {
-            $ip[] = "'asset_id' can't be null";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -78,18 +53,11 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from Blockchain sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 58)) {
-            throw new IAE('ReceiveAlgorandAssetKMS.setFrom: $from length must be <= 58');
-        }
-        if ((mb_strlen($from) < 58)) {
-            throw new IAE('ReceiveAlgorandAssetKMS.setFrom: $from length must be >= 58');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -105,12 +73,11 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
      * Set asset_id
      * 
      * @param float $asset_id AssetID of the asset you wanna enable for the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssetId(float $asset_id) {
-        $this->_data['asset_id'] = $asset_id;
-
-        return $this;
+        return $this->_set("asset_id", $asset_id);
     }
 
     /**
@@ -126,11 +93,10 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

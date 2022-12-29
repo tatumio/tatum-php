@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferAlgorandBlockchainKMS Model
  */
@@ -25,13 +23,13 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferAlgorandBlockchainKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "note" => ["note", "string", null, "getNote", "setNote", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1]], 
+        "note" => ["note", "string", null, "getNote", "setNote", null, ["r" => 0]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -43,32 +41,6 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (is_null($this->_data['fee'])) {
-            $ip[] = "'fee' can't be null";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -85,12 +57,11 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address of the sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -106,12 +77,11 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address of the recipient
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -127,12 +97,11 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      * Set fee
      * 
      * @param string $fee The transaction fee in Algos
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(string $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -148,12 +117,11 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount The amount to send in Algos
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -169,12 +137,11 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      * Set note
      * 
      * @param string|null $note The note for the recipient; must not contain spaces
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNote(?string $note) {
-        $this->_data['note'] = $note;
-
-        return $this;
+        return $this->_set("note", $note);
     }
 
     /**
@@ -190,15 +157,11 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('TransferAlgorandBlockchainKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -214,11 +177,10 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

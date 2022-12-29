@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferXrpKMS Model
  */
@@ -25,16 +23,16 @@ class TransferXrpKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXrpKMS";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
-        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null, ["r" => 0]], 
+        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag", null, ["r" => 0]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -46,65 +44,6 @@ class TransferXrpKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['sender_account_id'])) {
-            $ip[] = "'sender_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) > 24)) {
-            $ip[] = "'sender_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
-            $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 100)) {
-            $ip[] = "'account' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['account']) < 1)) {
-            $ip[] = "'account' length must be >= 1";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 100)) {
-            $ip[] = "'address' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['address']) < 1)) {
-            $ip[] = "'address' length must be >= 1";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -121,18 +60,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set sender_account_id
      * 
      * @param string $sender_account_id Sender account ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderAccountId(string $sender_account_id) {
-        if ((mb_strlen($sender_account_id) > 24)) {
-            throw new IAE('TransferXrpKMS.setSenderAccountId: $sender_account_id length must be <= 24');
-        }
-        if ((mb_strlen($sender_account_id) < 24)) {
-            throw new IAE('TransferXrpKMS.setSenderAccountId: $sender_account_id length must be >= 24');
-        }
-        $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
+        return $this->_set("sender_account_id", $sender_account_id);
     }
 
     /**
@@ -148,18 +80,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set account
      * 
      * @param string $account XRP account address. Must be the one used for generating deposit tags.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 100)) {
-            throw new IAE('TransferXrpKMS.setAccount: $account length must be <= 100');
-        }
-        if ((mb_strlen($account) < 1)) {
-            throw new IAE('TransferXrpKMS.setAccount: $account length must be >= 1');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -175,18 +100,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 100)) {
-            throw new IAE('TransferXrpKMS.setAddress: $address length must be <= 100');
-        }
-        if ((mb_strlen($address) < 1)) {
-            throw new IAE('TransferXrpKMS.setAddress: $address length must be >= 1');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -202,18 +120,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent, in XRP.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('TransferXrpKMS.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferXrpKMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -229,12 +140,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set compliant
      * 
      * @param bool|null $compliant Compliance check, if withdrawal is not compliant, it will not be processed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompliant(?bool $compliant) {
-        $this->_data['compliant'] = $compliant;
-
-        return $this;
+        return $this->_set("compliant", $compliant);
     }
 
     /**
@@ -250,12 +160,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set attr
      * 
      * @param string|null $attr Destination tag of the recipient account, if any. Must be stringified uint32.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?string $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 
     /**
@@ -271,12 +180,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set source_tag
      * 
      * @param int|null $source_tag Source tag of sender account, if any.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSourceTag(?int $source_tag) {
-        $this->_data['source_tag'] = $source_tag;
-
-        return $this;
+        return $this->_set("source_tag", $source_tag);
     }
 
     /**
@@ -292,18 +200,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Identifier of the payment, shown for created Transaction within Tatum sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('TransferXrpKMS.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('TransferXrpKMS.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -319,12 +220,11 @@ class TransferXrpKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -340,17 +240,10 @@ class TransferXrpKMS extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to owner of withdrawing account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('TransferXrpKMS.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('TransferXrpKMS.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

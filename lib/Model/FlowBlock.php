@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowBlock Model
  */
@@ -25,13 +23,13 @@ class FlowBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowBlock";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "parent_id" => ["parentId", "string", null, "getParentId", "setParentId", null], 
-        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
-        "timestamp" => ["timestamp", "string", null, "getTimestamp", "setTimestamp", null], 
-        "transactions" => ["transactions", "string[]", null, "getTransactions", "setTransactions", null], 
-        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null], 
-        "block_seals" => ["blockSeals", "\Tatum\Model\FlowBlockBlockSealsInner[]", null, "getBlockSeals", "setBlockSeals", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "parent_id" => ["parentId", "string", null, "getParentId", "setParentId", null, ["r" => 0]], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null, ["r" => 0]], 
+        "timestamp" => ["timestamp", "string", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 
+        "transactions" => ["transactions", "string[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]], 
+        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null, ["r" => 0, "c" => 1]], 
+        "block_seals" => ["blockSeals", "\Tatum\Model\FlowBlockBlockSealsInner[]", null, "getBlockSeals", "setBlockSeals", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -43,14 +41,6 @@ class FlowBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -67,12 +57,11 @@ class FlowBlock extends AbstractModel {
      * Set id
      * 
      * @param string|null $id Hash of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -88,12 +77,11 @@ class FlowBlock extends AbstractModel {
      * Set parent_id
      * 
      * @param string|null $parent_id Hash of the parent block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParentId(?string $parent_id) {
-        $this->_data['parent_id'] = $parent_id;
-
-        return $this;
+        return $this->_set("parent_id", $parent_id);
     }
 
     /**
@@ -109,12 +97,11 @@ class FlowBlock extends AbstractModel {
      * Set height
      * 
      * @param float|null $height The block number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHeight(?float $height) {
-        $this->_data['height'] = $height;
-
-        return $this;
+        return $this->_set("height", $height);
     }
 
     /**
@@ -130,12 +117,11 @@ class FlowBlock extends AbstractModel {
      * Set timestamp
      * 
      * @param string|null $timestamp Timestamp of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(?string $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -151,12 +137,11 @@ class FlowBlock extends AbstractModel {
      * Set transactions
      * 
      * @param string[]|null $transactions Array of transaction IDs.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 
     /**
@@ -172,12 +157,11 @@ class FlowBlock extends AbstractModel {
      * Set signatures
      * 
      * @param string[]|null $signatures Array of signatures.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatures(?array $signatures) {
-        $this->_data['signatures'] = $signatures;
-
-        return $this;
+        return $this->_set("signatures", $signatures);
     }
 
     /**
@@ -193,11 +177,10 @@ class FlowBlock extends AbstractModel {
      * Set block_seals
      * 
      * @param \Tatum\Model\FlowBlockBlockSealsInner[]|null $block_seals Array of block seals.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockSeals(?array $block_seals) {
-        $this->_data['block_seals'] = $block_seals;
-
-        return $this;
+        return $this->_set("block_seals", $block_seals);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CallReadSmartContractMethod Model
  */
@@ -25,10 +23,10 @@ class CallReadSmartContractMethod extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CallReadSmartContractMethod";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null], 
-        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null], 
-        "params" => ["params", "object[]", null, "getParams", "setParams", null]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null, ["r" => 1]], 
+        "params" => ["params", "object[]", null, "getParams", "setParams", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -40,38 +38,6 @@ class CallReadSmartContractMethod extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['method_name'])) {
-            $ip[] = "'method_name' can't be null";
-        }
-        if ((mb_strlen($this->_data['method_name']) > 500)) {
-            $ip[] = "'method_name' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['method_name']) < 1)) {
-            $ip[] = "'method_name' length must be >= 1";
-        }
-        if (is_null($this->_data['method_abi'])) {
-            $ip[] = "'method_abi' can't be null";
-        }
-        if (is_null($this->_data['params'])) {
-            $ip[] = "'params' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -88,18 +54,11 @@ class CallReadSmartContractMethod extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The address of the smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('CallReadSmartContractMethod.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('CallReadSmartContractMethod.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -115,18 +74,11 @@ class CallReadSmartContractMethod extends AbstractModel {
      * Set method_name
      * 
      * @param string $method_name Name of the method to invoke on smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMethodName(string $method_name) {
-        if ((mb_strlen($method_name) > 500)) {
-            throw new IAE('CallReadSmartContractMethod.setMethodName: $method_name length must be <= 500');
-        }
-        if ((mb_strlen($method_name) < 1)) {
-            throw new IAE('CallReadSmartContractMethod.setMethodName: $method_name length must be >= 1');
-        }
-        $this->_data['method_name'] = $method_name;
-
-        return $this;
+        return $this->_set("method_name", $method_name);
     }
 
     /**
@@ -142,12 +94,11 @@ class CallReadSmartContractMethod extends AbstractModel {
      * Set method_abi
      * 
      * @param object $method_abi ABI of the method to invoke.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMethodAbi(object $method_abi) {
-        $this->_data['method_abi'] = $method_abi;
-
-        return $this;
+        return $this->_set("method_abi", $method_abi);
     }
 
     /**
@@ -163,11 +114,10 @@ class CallReadSmartContractMethod extends AbstractModel {
      * Set params
      * 
      * @param object[] $params Parameters of the method to be invoked.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParams(array $params) {
-        $this->_data['params'] = $params;
-
-        return $this;
+        return $this->_set("params", $params);
     }
 }

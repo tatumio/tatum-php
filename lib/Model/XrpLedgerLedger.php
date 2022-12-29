@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpLedger_ledger Model
  * 
@@ -27,23 +25,23 @@ class XrpLedgerLedger extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpLedger_ledger";
     protected static $_definition = [
-        "accepted" => ["accepted", "bool", null, "getAccepted", "setAccepted", null], 
-        "account_hash" => ["account_hash", "string", null, "getAccountHash", "setAccountHash", null], 
-        "close_flags" => ["close_flags", "int", null, "getCloseFlags", "setCloseFlags", null], 
-        "close_time" => ["close_time", "int", null, "getCloseTime", "setCloseTime", null], 
-        "close_time_human" => ["close_time_human", "string", null, "getCloseTimeHuman", "setCloseTimeHuman", null], 
-        "close_time_resolution" => ["close_time_resolution", "int", null, "getCloseTimeResolution", "setCloseTimeResolution", null], 
-        "closed" => ["closed", "bool", null, "getClosed", "setClosed", null], 
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null], 
-        "ledger_index" => ["ledger_index", "string", null, "getLedgerIndex", "setLedgerIndex", null], 
-        "parent_close_time" => ["parent_close_time", "int", null, "getParentCloseTime", "setParentCloseTime", null], 
-        "parent_hash" => ["parent_hash", "string", null, "getParentHash", "setParentHash", null], 
-        "seq_num" => ["seqNum", "string", null, "getSeqNum", "setSeqNum", null], 
-        "total_coins" => ["totalCoins", "string", null, "getTotalCoins", "setTotalCoins", null], 
-        "total_coins" => ["total_coins", "string", null, "getTotalCoins", "setTotalCoins", null], 
-        "transaction_hash" => ["transaction_hash", "string", null, "getTransactionHash", "setTransactionHash", null], 
-        "transactions" => ["transactions", "\Tatum\Model\XrpTx[]", null, "getTransactions", "setTransactions", null]
+        "accepted" => ["accepted", "bool", null, "getAccepted", "setAccepted", null, ["r" => 0]], 
+        "account_hash" => ["account_hash", "string", null, "getAccountHash", "setAccountHash", null, ["r" => 0]], 
+        "close_flags" => ["close_flags", "int", null, "getCloseFlags", "setCloseFlags", null, ["r" => 0]], 
+        "close_time" => ["close_time", "int", null, "getCloseTime", "setCloseTime", null, ["r" => 0]], 
+        "close_time_human" => ["close_time_human", "string", null, "getCloseTimeHuman", "setCloseTimeHuman", null, ["r" => 0]], 
+        "close_time_resolution" => ["close_time_resolution", "int", null, "getCloseTimeResolution", "setCloseTimeResolution", null, ["r" => 0]], 
+        "closed" => ["closed", "bool", null, "getClosed", "setClosed", null, ["r" => 0]], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null, ["r" => 0]], 
+        "ledger_index" => ["ledger_index", "string", null, "getLedgerIndex", "setLedgerIndex", null, ["r" => 0]], 
+        "parent_close_time" => ["parent_close_time", "int", null, "getParentCloseTime", "setParentCloseTime", null, ["r" => 0]], 
+        "parent_hash" => ["parent_hash", "string", null, "getParentHash", "setParentHash", null, ["r" => 0]], 
+        "seq_num" => ["seqNum", "string", null, "getSeqNum", "setSeqNum", null, ["r" => 0]], 
+        "total_coins" => ["totalCoins", "string", null, "getTotalCoins", "setTotalCoins", null, ["r" => 0]], 
+        "total_coins" => ["total_coins", "string", null, "getTotalCoins", "setTotalCoins", null, ["r" => 0]], 
+        "transaction_hash" => ["transaction_hash", "string", null, "getTransactionHash", "setTransactionHash", null, ["r" => 0]], 
+        "transactions" => ["transactions", "\Tatum\Model\XrpTx[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -55,14 +53,6 @@ class XrpLedgerLedger extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -79,12 +69,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set accepted
      * 
      * @param bool|null $accepted accepted
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccepted(?bool $accepted) {
-        $this->_data['accepted'] = $accepted;
-
-        return $this;
+        return $this->_set("accepted", $accepted);
     }
 
     /**
@@ -100,12 +89,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set account_hash
      * 
      * @param string|null $account_hash Hash of all account state information in this ledger, as hex.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountHash(?string $account_hash) {
-        $this->_data['account_hash'] = $account_hash;
-
-        return $this;
+        return $this->_set("account_hash", $account_hash);
     }
 
     /**
@@ -121,12 +109,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set close_flags
      * 
      * @param int|null $close_flags A bit-map of flags relating to the closing of this ledger. Currently, the ledger has only one flag defined for close_flags: sLCF_NoConsensusTime (value 1). If this flag is enabled, it means that validators were in conflict regarding the correct close time for the ledger, but build otherwise the same ledger, so they declared consensus while \"agreeing to disagree\" on the close time. In this case, the consensus ledger contains a close_time that is 1 second after that of the previous ledger. (In this case, there is no official close time, but the actual real-world close time is probably 3-6 seconds later than the specified close_time.)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCloseFlags(?int $close_flags) {
-        $this->_data['close_flags'] = $close_flags;
-
-        return $this;
+        return $this->_set("close_flags", $close_flags);
     }
 
     /**
@@ -142,12 +129,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set close_time
      * 
      * @param int|null $close_time The time this ledger was closed, in seconds since the Ripple Epoch
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCloseTime(?int $close_time) {
-        $this->_data['close_time'] = $close_time;
-
-        return $this;
+        return $this->_set("close_time", $close_time);
     }
 
     /**
@@ -163,12 +149,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set close_time_human
      * 
      * @param string|null $close_time_human The time this ledger was closed, in human-readable format. Always uses the UTC time zone.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCloseTimeHuman(?string $close_time_human) {
-        $this->_data['close_time_human'] = $close_time_human;
-
-        return $this;
+        return $this->_set("close_time_human", $close_time_human);
     }
 
     /**
@@ -184,12 +169,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set close_time_resolution
      * 
      * @param int|null $close_time_resolution Ledger close times are rounded to within this many seconds.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCloseTimeResolution(?int $close_time_resolution) {
-        $this->_data['close_time_resolution'] = $close_time_resolution;
-
-        return $this;
+        return $this->_set("close_time_resolution", $close_time_resolution);
     }
 
     /**
@@ -205,12 +189,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set closed
      * 
      * @param bool|null $closed Whether or not this ledger has been closed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setClosed(?bool $closed) {
-        $this->_data['closed'] = $closed;
-
-        return $this;
+        return $this->_set("closed", $closed);
     }
 
     /**
@@ -226,12 +209,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -247,12 +229,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set ledger_hash
      * 
      * @param string|null $ledger_hash Unique identifying hash of the entire ledger.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerHash(?string $ledger_hash) {
-        $this->_data['ledger_hash'] = $ledger_hash;
-
-        return $this;
+        return $this->_set("ledger_hash", $ledger_hash);
     }
 
     /**
@@ -268,12 +249,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set ledger_index
      * 
      * @param string|null $ledger_index The Ledger Index of this ledger, as a quoted integer.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerIndex(?string $ledger_index) {
-        $this->_data['ledger_index'] = $ledger_index;
-
-        return $this;
+        return $this->_set("ledger_index", $ledger_index);
     }
 
     /**
@@ -289,12 +269,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set parent_close_time
      * 
      * @param int|null $parent_close_time The time at which the previous ledger was closed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParentCloseTime(?int $parent_close_time) {
-        $this->_data['parent_close_time'] = $parent_close_time;
-
-        return $this;
+        return $this->_set("parent_close_time", $parent_close_time);
     }
 
     /**
@@ -310,12 +289,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set parent_hash
      * 
      * @param string|null $parent_hash Unique identifying hash of the ledger that came immediately before this one.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParentHash(?string $parent_hash) {
-        $this->_data['parent_hash'] = $parent_hash;
-
-        return $this;
+        return $this->_set("parent_hash", $parent_hash);
     }
 
     /**
@@ -331,12 +309,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set seq_num
      * 
      * @param string|null $seq_num seq_num
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSeqNum(?string $seq_num) {
-        $this->_data['seq_num'] = $seq_num;
-
-        return $this;
+        return $this->_set("seq_num", $seq_num);
     }
 
     /**
@@ -352,12 +329,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set total_coins
      * 
      * @param string|null $total_coins total_coins
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotalCoins(?string $total_coins) {
-        $this->_data['total_coins'] = $total_coins;
-
-        return $this;
+        return $this->_set("total_coins", $total_coins);
     }
 
     /**
@@ -373,12 +349,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set total_coins
      * 
      * @param string|null $total_coins Total number of XRP drops in the network, as a quoted integer. (This decreases as transaction costs destroy XRP.)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotalCoins(?string $total_coins) {
-        $this->_data['total_coins'] = $total_coins;
-
-        return $this;
+        return $this->_set("total_coins", $total_coins);
     }
 
     /**
@@ -394,12 +369,11 @@ class XrpLedgerLedger extends AbstractModel {
      * Set transaction_hash
      * 
      * @param string|null $transaction_hash Hash of the transaction information included in this ledger, as hex.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionHash(?string $transaction_hash) {
-        $this->_data['transaction_hash'] = $transaction_hash;
-
-        return $this;
+        return $this->_set("transaction_hash", $transaction_hash);
     }
 
     /**
@@ -415,11 +389,10 @@ class XrpLedgerLedger extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\XrpTx[]|null $transactions transactions
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

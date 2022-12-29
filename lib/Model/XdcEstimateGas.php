@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XdcEstimateGas Model
  */
@@ -25,9 +23,9 @@ class XdcEstimateGas extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XdcEstimateGas";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 42, "xl" => 43]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 42, "xl" => 43]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]]
     ];
 
     /**
@@ -39,38 +37,6 @@ class XdcEstimateGas extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 43)) {
-            $ip[] = "'from' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['from']) < 42)) {
-            $ip[] = "'from' length must be >= 42";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 43)) {
-            $ip[] = "'to' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['to']) < 42)) {
-            $ip[] = "'to' length must be >= 42";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
 
@@ -87,18 +53,11 @@ class XdcEstimateGas extends AbstractModel {
      * Set from
      * 
      * @param string $from Sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 43)) {
-            throw new IAE('XdcEstimateGas.setFrom: $from length must be <= 43');
-        }
-        if ((mb_strlen($from) < 42)) {
-            throw new IAE('XdcEstimateGas.setFrom: $from length must be >= 42');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -114,18 +73,11 @@ class XdcEstimateGas extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 43)) {
-            throw new IAE('XdcEstimateGas.setTo: $to length must be <= 43');
-        }
-        if ((mb_strlen($to) < 42)) {
-            throw new IAE('XdcEstimateGas.setTo: $to length must be >= 42');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -141,14 +93,10 @@ class XdcEstimateGas extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in XDC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('XdcEstimateGas.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DeployTrcOffchainKMSAddress Model
  */
@@ -224,18 +222,18 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "DeployTrcOffchainKMSAddress";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 30]], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 1, "n" => [0]]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -247,102 +245,6 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['symbol'])) {
-            $ip[] = "'symbol' can't be null";
-        }
-        if ((mb_strlen($this->_data['symbol']) > 30)) {
-            $ip[] = "'symbol' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['symbol']) < 1)) {
-            $ip[] = "'symbol' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9_]+$/", $this->_data['symbol'])) {
-            $ip[] = "'symbol' must match /^[a-zA-Z0-9_]+$/";
-        }
-        if (is_null($this->_data['supply'])) {
-            $ip[] = "'supply' can't be null";
-        }
-        if ((mb_strlen($this->_data['supply']) > 38)) {
-            $ip[] = "'supply' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['supply'])) {
-            $ip[] = "'supply' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['decimals'])) {
-            $ip[] = "'decimals' can't be null";
-        }
-        if (($this->_data['decimals'] < 0)) {
-            $ip[] = "'decimals' must be >= 0";
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['description'])) {
-            $ip[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->_data['description']) > 100)) {
-            $ip[] = "'description' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['description']) < 1)) {
-            $ip[] = "'description' length must be >= 1";
-        }
-        if (!is_null($this->_data['url']) && (mb_strlen($this->_data['url']) > 100)) {
-            $ip[] = "'url' length must be <= 100";
-        }
-        if (!is_null($this->_data['url']) && (mb_strlen($this->_data['url']) < 1)) {
-            $ip[] = "'url' length must be >= 1";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['base_pair']) > 30)) {
-            $ip[] = "'base_pair' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['base_pair']) < 2)) {
-            $ip[] = "'base_pair' length must be >= 2";
-        }
-        if (!is_null($this->_data['base_rate']) && ($this->_data['base_rate'] < 0)) {
-            $ip[] = "'base_rate' must be >= 0";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 42)) {
-            $ip[] = "'address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['address']) < 42)) {
-            $ip[] = "'address' length must be >= 42";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 34)) {
-            $ip[] = "'from' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['from']) < 34)) {
-            $ip[] = "'from' length must be >= 34";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -576,21 +478,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set symbol
      * 
      * @param string $symbol Name of the TRC token - stored as a symbol on Blockchain
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(string $symbol) {
-        if ((mb_strlen($symbol) > 30)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setSymbol: $symbol length must be <= 30');
-        }
-        if ((mb_strlen($symbol) < 1)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setSymbol: $symbol length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9_]+$/", $symbol))) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setSymbol: $symbol must match /^[a-zA-Z0-9_]+$/, ' . var_export($symbol, true) . ' given');
-        }
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -606,18 +498,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set supply
      * 
      * @param string $supply max supply of TRC token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(string $supply) {
-        if ((mb_strlen($supply) > 38)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setSupply: $supply length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $supply))) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setSupply: $supply must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($supply, true) . ' given');
-        }
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -633,15 +518,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set decimals
      * 
      * @param float $decimals Number of decimal points of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDecimals(float $decimals) {
-        if (($decimals < 0)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setDecimals: $decimals must be >=0');
-        }
-        $this->_data['decimals'] = $decimals;
-
-        return $this;
+        return $this->_set("decimals", $decimals);
     }
 
     /**
@@ -657,16 +538,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of TRC token to create.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("DeployTrcOffchainKMSAddress.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -682,18 +558,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set description
      * 
      * @param string $description Description of the TRC token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(string $description) {
-        if ((mb_strlen($description) > 100)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setDescription: $description length must be <= 100');
-        }
-        if ((mb_strlen($description) < 1)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setDescription: $description length must be >= 1');
-        }
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 
     /**
@@ -709,18 +578,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set url
      * 
      * @param string|null $url URL of the project. Applicable for TRC-10 only.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(?string $url) {
-        if (!is_null($url) && (mb_strlen($url) > 100)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setUrl: $url length must be <= 100');
-        }
-        if (!is_null($url) && (mb_strlen($url) < 1)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setUrl: $url length must be >= 1');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -736,22 +598,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("DeployTrcOffchainKMSAddress.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($base_pair) > 30)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setBasePair: $base_pair length must be <= 30');
-        }
-        if ((mb_strlen($base_pair) < 2)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setBasePair: $base_pair length must be >= 2');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 
     /**
@@ -767,15 +618,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set base_rate
      * 
      * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
-        if (!is_null($base_rate) && ($base_rate < 0)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setBaseRate: $base_rate must be >=0');
-        }
-        $this->_data['base_rate'] = $base_rate;
-
-        return $this;
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -791,12 +638,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set customer
      * 
      * @param \Tatum\Model\CustomerRegistration|null $customer customer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
-        $this->_data['customer'] = $customer;
-
-        return $this;
+        return $this->_set("customer", $customer);
     }
 
     /**
@@ -812,18 +658,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set address
      * 
      * @param string $address Address on Tron blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 42)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setAddress: $address length must be <= 42');
-        }
-        if ((mb_strlen($address) < 42)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setAddress: $address length must be >= 42');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -839,18 +678,11 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set from
      * 
      * @param string $from Blockchain address to perform operation from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 34)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setFrom: $from length must be <= 34');
-        }
-        if ((mb_strlen($from) < 34)) {
-            throw new IAE('DeployTrcOffchainKMSAddress.setFrom: $from length must be >= 34');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -866,11 +698,10 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

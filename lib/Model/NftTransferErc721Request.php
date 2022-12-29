@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftTransferErc721_request Model
  */
@@ -29,26 +27,26 @@ class NftTransferErc721Request extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "NftTransferErc721_request";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
-        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null], 
-        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "amount" => ["amount", "float", null, "getAmount", "setAmount", 1], 
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null, ["r" => 0]], 
+        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null, ["r" => 0]], 
+        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null, ["r" => 0, "xl" => 256]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 106, "xl" => 103]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", 1, ["r" => 0, "n" => [0]]], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -60,117 +58,6 @@ class NftTransferErc721Request extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 34)) {
-            $ip[] = "'to' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['to']) < 34)) {
-            $ip[] = "'to' length must be >= 34";
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 34)) {
-            $ip[] = "'contract_address' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 34)) {
-            $ip[] = "'contract_address' length must be >= 34";
-        }
-        if (!is_null($this->_data['token_price']) && (mb_strlen($this->_data['token_price']) > 256)) {
-            $ip[] = "'token_price' length must be <= 256";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 103)) {
-            $ip[] = "'from_private_key' length must be <= 103";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 106)) {
-            $ip[] = "'from_private_key' length must be >= 106";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 44)) {
-            $ip[] = "'from' length must be >= 44";
-        }
-        if (!is_null($this->_data['amount']) && ($this->_data['amount'] < 0)) {
-            $ip[] = "'amount' must be >= 0";
-        }
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 34)) {
-            $ip[] = "'account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['account']) < 34)) {
-            $ip[] = "'account' length must be >= 34";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -209,12 +96,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set value
      * 
      * @param string|null $value If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -230,16 +116,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("NftTransferErc721Request.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -255,18 +136,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send NFT token to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 34)) {
-            throw new IAE('NftTransferErc721Request.setTo: $to length must be <= 34');
-        }
-        if ((mb_strlen($to) < 34)) {
-            throw new IAE('NftTransferErc721Request.setTo: $to length must be >= 34');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -282,15 +156,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id ID of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 78)) {
-            throw new IAE('NftTransferErc721Request.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -306,18 +176,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of NFT token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 34)) {
-            throw new IAE('NftTransferErc721Request.setContractAddress: $contract_address length must be <= 34');
-        }
-        if ((mb_strlen($contract_address) < 34)) {
-            throw new IAE('NftTransferErc721Request.setContractAddress: $contract_address length must be >= 34');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -333,12 +196,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set provenance
      * 
      * @param bool|null $provenance True if the contract is provenance type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProvenance(?bool $provenance) {
-        $this->_data['provenance'] = $provenance;
-
-        return $this;
+        return $this->_set("provenance", $provenance);
     }
 
     /**
@@ -354,12 +216,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set provenance_data
      * 
      * @param string|null $provenance_data data you want to store with transaction, optional and valid only if provenance contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProvenanceData(?string $provenance_data) {
-        $this->_data['provenance_data'] = $provenance_data;
-
-        return $this;
+        return $this->_set("provenance_data", $provenance_data);
     }
 
     /**
@@ -375,15 +236,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set token_price
      * 
      * @param string|null $token_price current price of the token, valid only for provenance
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenPrice(?string $token_price) {
-        if (!is_null($token_price) && (mb_strlen($token_price) > 256)) {
-            throw new IAE('NftTransferErc721Request.setTokenPrice: $token_price length must be <= 256');
-        }
-        $this->_data['token_price'] = $token_price;
-
-        return $this;
+        return $this->_set("token_price", $token_price);
     }
 
     /**
@@ -399,18 +256,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the sender's blockchain address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 103)) {
-            throw new IAE('NftTransferErc721Request.setFromPrivateKey: $from_private_key length must be <= 103');
-        }
-        if ((mb_strlen($from_private_key) < 106)) {
-            throw new IAE('NftTransferErc721Request.setFromPrivateKey: $from_private_key length must be >= 106');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -426,12 +276,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -447,12 +296,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\CustomFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -468,16 +316,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("NftTransferErc721Request.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -493,12 +336,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit The maximum amount to be paid as the transaction fee (in TRX)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 
     /**
@@ -514,18 +356,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address to send the NFT from; this is the address that you used in the <code>to</code> parameter in the request body of the <a href=\"#operation/NftMintErc721\">minting call</a>; from this address, the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('NftTransferErc721Request.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 44)) {
-            throw new IAE('NftTransferErc721Request.setFrom: $from length must be >= 44');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -541,15 +376,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set amount
      * 
      * @param float|null $amount (For <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional NFTs</a> only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?float $amount) {
-        if (!is_null($amount) && ($amount < 0)) {
-            throw new IAE('NftTransferErc721Request.setAmount: $amount must be >=0');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -565,18 +396,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain address to perform transaction from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 34)) {
-            throw new IAE('NftTransferErc721Request.setAccount: $account length must be <= 34');
-        }
-        if ((mb_strlen($account) < 34)) {
-            throw new IAE('NftTransferErc721Request.setAccount: $account length must be >= 34');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -592,18 +416,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Private key of sender address. Private key, mnemonic and index or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('NftTransferErc721Request.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('NftTransferErc721Request.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -619,18 +436,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key of sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('NftTransferErc721Request.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('NftTransferErc721Request.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -646,15 +456,11 @@ class NftTransferErc721Request extends AbstractModel {
      * Set index
      * 
      * @param float $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index < 0)) {
-            throw new IAE('NftTransferErc721Request.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -670,11 +476,10 @@ class NftTransferErc721Request extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

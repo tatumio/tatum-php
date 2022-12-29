@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaTransaction Model
  */
@@ -25,9 +23,9 @@ class AdaTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTransaction";
     protected static $_definition = [
-        "from_address" => ["fromAddress", "\Tatum\Model\AdaTransactionFromAddressInner[]", null, "getFromAddress", "setFromAddress", null], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null], 
-        "to" => ["to", "\Tatum\Model\AdaTransactionToInner[]", null, "getTo", "setTo", null]
+        "from_address" => ["fromAddress", "\Tatum\Model\AdaTransactionFromAddressInner[]", null, "getFromAddress", "setFromAddress", null, ["r" => 0, "c" => 1]], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 0, "c" => 1]], 
+        "to" => ["to", "\Tatum\Model\AdaTransactionToInner[]", null, "getTo", "setTo", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -39,17 +37,6 @@ class AdaTransaction extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -66,12 +53,11 @@ class AdaTransaction extends AbstractModel {
      * Set from_address
      * 
      * @param \Tatum\Model\AdaTransactionFromAddressInner[]|null $from_address Array of addresses and corresponding private keys. Tatum will automatically scan last unspent transactions for each address and will use all of the unspent values. We advise to use this option if you have 1 address per 1 transaction only.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAddress(?array $from_address) {
-        $this->_data['from_address'] = $from_address;
-
-        return $this;
+        return $this->_set("from_address", $from_address);
     }
 
     /**
@@ -87,12 +73,11 @@ class AdaTransaction extends AbstractModel {
      * Set from_utxo
      * 
      * @param \Tatum\Model\AdaTransactionFromUTXOInner[]|null $from_utxo Array of transaction hashes, index of UTXO in it and corresponding private keys. Use this option if you want to calculate amount to send manually. Either fromUTXO or fromAddress must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromUtxo(?array $from_utxo) {
-        $this->_data['from_utxo'] = $from_utxo;
-
-        return $this;
+        return $this->_set("from_utxo", $from_utxo);
     }
 
     /**
@@ -108,11 +93,10 @@ class AdaTransaction extends AbstractModel {
      * Set to
      * 
      * @param \Tatum\Model\AdaTransactionToInner[] $to Array of addresses and values to send Litecoins to. Values must be set in LTC. Difference between from and to is transaction fee.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(array $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransactionFilter_amount_inner Model
  */
@@ -31,8 +29,8 @@ class TransactionFilterAmountInner extends AbstractModel {
     public const OP_NEQ = 'neq';
     protected static $_name = "TransactionFilter_amount_inner";
     protected static $_definition = [
-        "op" => ["op", "string", null, "getOp", "setOp", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null]
+        "op" => ["op", "string", null, "getOp", "setOp", null, ["r" => 1, "e" => 1]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 1]]
     ];
 
     /**
@@ -44,25 +42,6 @@ class TransactionFilterAmountInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['op'])) {
-            $ip[] = "'op' can't be null";
-        }
-        $allowed = $this->getOpAllowableValues();
-        $value = $this->_data['op'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'op' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -94,16 +73,11 @@ class TransactionFilterAmountInner extends AbstractModel {
      * Set op
      * 
      * @param string $op Filtering operation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOp(string $op) {
-        $allowed = $this->getOpAllowableValues();
-        if (!in_array($op, $allowed, true)) {
-            throw new IAE(sprintf("TransactionFilterAmountInner.setOp: op invalid value '%s', must be one of '%s'", $op, implode("', '", $allowed)));
-        }
-        $this->_data['op'] = $op;
-
-        return $this;
+        return $this->_set("op", $op);
     }
 
     /**
@@ -119,11 +93,10 @@ class TransactionFilterAmountInner extends AbstractModel {
      * Set value
      * 
      * @param string $value Value of the operation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

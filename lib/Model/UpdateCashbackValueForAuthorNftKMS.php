@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * UpdateCashbackValueForAuthorNftKMS Model
  */
@@ -31,14 +29,14 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     protected static $_name = "UpdateCashbackValueForAuthorNftKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "cashback_value" => ["cashbackValue", "string", null, "getCashbackValue", "setCashbackValue", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "cashback_value" => ["cashbackValue", "string", null, "getCashbackValue", "setCashbackValue", null, ["r" => 1]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -50,49 +48,6 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['cashback_value'])) {
-            $ip[] = "'cashback_value' can't be null";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -124,16 +79,11 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("UpdateCashbackValueForAuthorNftKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -149,15 +99,11 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id The ID of the NFT to update royalty information for
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 78)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftKMS.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -173,18 +119,11 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The blockchain address of the NFT to update royalty information for
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftKMS.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftKMS.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -200,12 +139,11 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set cashback_value
      * 
      * @param string $cashback_value The new value of the royalty cashback to be set for the author of the NFT; to disable the royalties for the NFT completely, set this parameter to 0
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCashbackValue(string $cashback_value) {
-        $this->_data['cashback_value'] = $cashback_value;
-
-        return $this;
+        return $this->_set("cashback_value", $cashback_value);
     }
 
     /**
@@ -221,12 +159,11 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the NFT author's address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -242,15 +179,11 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the NFT author's address that was generated from the mnemonic
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -266,15 +199,11 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftKMS.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -290,11 +219,10 @@ class UpdateCashbackValueForAuthorNftKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\CustomFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

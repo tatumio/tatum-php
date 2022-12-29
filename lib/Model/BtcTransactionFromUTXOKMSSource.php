@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcTransactionFromUTXOKMSSource Model
  */
@@ -25,9 +23,9 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTransactionFromUTXOKMSSource";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0], "x" => [2147483647]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -39,35 +37,6 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_hash'])) {
-            $ip[] = "'tx_hash' can't be null";
-        }
-        if ((mb_strlen($this->_data['tx_hash']) > 64)) {
-            $ip[] = "'tx_hash' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['tx_hash']) < 64)) {
-            $ip[] = "'tx_hash' length must be >= 64";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] > 2147483647)) {
-            $ip[] = "'index' must be <= 2147483647";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -84,18 +53,11 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
      * Set tx_hash
      * 
      * @param string $tx_hash The transaction hash of the UTXO to be spent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxHash(string $tx_hash) {
-        if ((mb_strlen($tx_hash) > 64)) {
-            throw new IAE('BtcTransactionFromUTXOKMSSource.setTxHash: $tx_hash length must be <= 64');
-        }
-        if ((mb_strlen($tx_hash) < 64)) {
-            throw new IAE('BtcTransactionFromUTXOKMSSource.setTxHash: $tx_hash length must be >= 64');
-        }
-        $this->_data['tx_hash'] = $tx_hash;
-
-        return $this;
+        return $this->_set("tx_hash", $tx_hash);
     }
 
     /**
@@ -111,18 +73,11 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
      * Set index
      * 
      * @param float $index The index of the UTXO to be spent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index > 2147483647)) {
-            throw new IAE('BtcTransactionFromUTXOKMSSource.setIndex: $index must be <=2147483647');
-        }
-        if (($index < 0)) {
-            throw new IAE('BtcTransactionFromUTXOKMSSource.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -138,11 +93,10 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the blockchain address that holds the UTXO to be spent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

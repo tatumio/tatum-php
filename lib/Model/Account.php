@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Account Model
  */
@@ -25,16 +23,16 @@ class Account extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Account";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "balance" => ["balance", "\Tatum\Model\AccountBalance", null, "getBalance", "setBalance", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "frozen" => ["frozen", "bool", null, "getFrozen", "setFrozen", null], 
-        "active" => ["active", "bool", null, "getActive", "setActive", null], 
-        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null], 
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 
+        "balance" => ["balance", "\Tatum\Model\AccountBalance", null, "getBalance", "setBalance", null, ["r" => 1]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1]], 
+        "frozen" => ["frozen", "bool", null, "getFrozen", "setFrozen", null, ["r" => 1]], 
+        "active" => ["active", "bool", null, "getActive", "setActive", null, ["r" => 1]], 
+        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null, ["r" => 0]], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0, "nl" => 1, "xl" => 50]], 
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null, ["r" => 0]], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null, ["r" => 0]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 0]]
     ];
 
     /**
@@ -46,35 +44,6 @@ class Account extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if (is_null($this->_data['balance'])) {
-            $ip[] = "'balance' can't be null";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        if (is_null($this->_data['frozen'])) {
-            $ip[] = "'frozen' can't be null";
-        }
-        if (is_null($this->_data['active'])) {
-            $ip[] = "'active' can't be null";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) > 50)) {
-            $ip[] = "'account_number' length must be <= 50";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) < 1)) {
-            $ip[] = "'account_number' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -91,12 +60,11 @@ class Account extends AbstractModel {
      * Set id
      * 
      * @param string $id The ID of the virtual account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -112,12 +80,11 @@ class Account extends AbstractModel {
      * Set balance
      * 
      * @param \Tatum\Model\AccountBalance $balance balance
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(\Tatum\Model\AccountBalance $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -133,12 +100,11 @@ class Account extends AbstractModel {
      * Set currency
      * 
      * @param string $currency The currency of the virtual account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -154,12 +120,11 @@ class Account extends AbstractModel {
      * Set frozen
      * 
      * @param bool $frozen If set to \"true\", the virtual account is frozen
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrozen(bool $frozen) {
-        $this->_data['frozen'] = $frozen;
-
-        return $this;
+        return $this->_set("frozen", $frozen);
     }
 
     /**
@@ -175,12 +140,11 @@ class Account extends AbstractModel {
      * Set active
      * 
      * @param bool $active If set to \"true\", the virtual account is active
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setActive(bool $active) {
-        $this->_data['active'] = $active;
-
-        return $this;
+        return $this->_set("active", $active);
     }
 
     /**
@@ -196,12 +160,11 @@ class Account extends AbstractModel {
      * Set customer_id
      * 
      * @param string|null $customer_id The ID of the customer (newly created or existing one) associated with the virtual account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomerId(?string $customer_id) {
-        $this->_data['customer_id'] = $customer_id;
-
-        return $this;
+        return $this->_set("customer_id", $customer_id);
     }
 
     /**
@@ -217,18 +180,11 @@ class Account extends AbstractModel {
      * Set account_number
      * 
      * @param string|null $account_number The number associated with the virtual account in an external system
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountNumber(?string $account_number) {
-        if (!is_null($account_number) && (mb_strlen($account_number) > 50)) {
-            throw new IAE('Account.setAccountNumber: $account_number length must be <= 50');
-        }
-        if (!is_null($account_number) && (mb_strlen($account_number) < 1)) {
-            throw new IAE('Account.setAccountNumber: $account_number length must be >= 1');
-        }
-        $this->_data['account_number'] = $account_number;
-
-        return $this;
+        return $this->_set("account_number", $account_number);
     }
 
     /**
@@ -244,12 +200,11 @@ class Account extends AbstractModel {
      * Set account_code
      * 
      * @param string|null $account_code The code associated with the virtual account in an external system to designate the purpose of the account in bookkeeping
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountCode(?string $account_code) {
-        $this->_data['account_code'] = $account_code;
-
-        return $this;
+        return $this->_set("account_code", $account_code);
     }
 
     /**
@@ -265,12 +220,11 @@ class Account extends AbstractModel {
      * Set accounting_currency
      * 
      * @param string|null $accounting_currency The currency in which all the transactions for all accounts will be accounted
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
-        $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
+        return $this->_set("accounting_currency", $accounting_currency);
     }
 
     /**
@@ -286,11 +240,10 @@ class Account extends AbstractModel {
      * Set xpub
      * 
      * @param string|null $xpub The extended public key of the blockchain wallet associated with the virtual account; used to generate deposit addresses for the virtual account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(?string $xpub) {
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Activated Model
  */
@@ -25,7 +23,7 @@ class Activated extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Activated";
     protected static $_definition = [
-        "activated" => ["activated", "bool", null, "getActivated", "setActivated", null]
+        "activated" => ["activated", "bool", null, "getActivated", "setActivated", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class Activated extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class Activated extends AbstractModel {
      * Set activated
      * 
      * @param bool|null $activated If set to \"true\", the gas pump address has been activated
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setActivated(?bool $activated) {
-        $this->_data['activated'] = $activated;
-
-        return $this;
+        return $this->_set("activated", $activated);
     }
 }

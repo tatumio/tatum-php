@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaAccountBalance_inner_currency Model
  */
@@ -25,8 +23,8 @@ class AdaAccountBalanceInnerCurrency extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaAccountBalance_inner_currency";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 0]], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class AdaAccountBalanceInnerCurrency extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class AdaAccountBalanceInnerCurrency extends AbstractModel {
      * Set symbol
      * 
      * @param string|null $symbol Name of the asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(?string $symbol) {
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -83,11 +72,10 @@ class AdaAccountBalanceInnerCurrency extends AbstractModel {
      * Set decimals
      * 
      * @param float|null $decimals Number of decimal places.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDecimals(?float $decimals) {
-        $this->_data['decimals'] = $decimals;
-
-        return $this;
+        return $this->_set("decimals", $decimals);
     }
 }

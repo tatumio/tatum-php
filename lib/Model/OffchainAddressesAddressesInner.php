@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * OffchainAddresses_addresses_inner Model
  */
@@ -25,8 +23,8 @@ class OffchainAddressesAddressesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OffchainAddresses_addresses_inner";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null, ["r" => 0, "n" => [0], "x" => [2147483647]]]
     ];
 
     /**
@@ -38,29 +36,6 @@ class OffchainAddressesAddressesInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['account_id']) > 24)) {
-            $ip[] = "'account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['account_id']) < 24)) {
-            $ip[] = "'account_id' length must be >= 24";
-        }
-        if (!is_null($this->_data['derivation_key']) && ($this->_data['derivation_key'] > 2147483647)) {
-            $ip[] = "'derivation_key' must be <= 2147483647";
-        }
-        if (!is_null($this->_data['derivation_key']) && ($this->_data['derivation_key'] < 0)) {
-            $ip[] = "'derivation_key' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -77,18 +52,11 @@ class OffchainAddressesAddressesInner extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id ID of the account, for which blockchain address will be created.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        if ((mb_strlen($account_id) > 24)) {
-            throw new IAE('OffchainAddressesAddressesInner.setAccountId: $account_id length must be <= 24');
-        }
-        if ((mb_strlen($account_id) < 24)) {
-            throw new IAE('OffchainAddressesAddressesInner.setAccountId: $account_id length must be >= 24');
-        }
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -104,17 +72,10 @@ class OffchainAddressesAddressesInner extends AbstractModel {
      * Set derivation_key
      * 
      * @param int|null $derivation_key Derivation key index for given address to generate. If not present, first not used address will be created.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDerivationKey(?int $derivation_key) {
-        if (!is_null($derivation_key) && ($derivation_key > 2147483647)) {
-            throw new IAE('OffchainAddressesAddressesInner.setDerivationKey: $derivation_key must be <=2147483647');
-        }
-        if (!is_null($derivation_key) && ($derivation_key < 0)) {
-            throw new IAE('OffchainAddressesAddressesInner.setDerivationKey: $derivation_key must be >=0');
-        }
-        $this->_data['derivation_key'] = $derivation_key;
-
-        return $this;
+        return $this->_set("derivation_key", $derivation_key);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaListingData_nft Model
  */
@@ -25,8 +23,8 @@ class SolanaListingDataNft extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaListingData_nft";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "data" => ["data", "\Tatum\Model\SolanaNftMetadata", null, "getData", "setData", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "data" => ["data", "\Tatum\Model\SolanaNftMetadata", null, "getData", "setData", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class SolanaListingDataNft extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['data'])) {
-            $ip[] = "'data' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class SolanaListingDataNft extends AbstractModel {
      * Set address
      * 
      * @param string $address NFT Address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -89,11 +72,10 @@ class SolanaListingDataNft extends AbstractModel {
      * Set data
      * 
      * @param \Tatum\Model\SolanaNftMetadata $data data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(\Tatum\Model\SolanaNftMetadata $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

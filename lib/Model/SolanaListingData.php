@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaListingData Model
  */
@@ -28,16 +26,16 @@ class SolanaListingData extends AbstractModel {
     public const STATE__2 = '2';
     protected static $_name = "SolanaListingData";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer", null], 
-        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null], 
-        "nft" => ["nft", "\Tatum\Model\SolanaListingDataNft", null, "getNft", "setNft", null], 
-        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
-        "seller" => ["seller", "string", null, "getSeller", "setSeller", null], 
-        "state" => ["state", "string", null, "getState", "setState", null], 
-        "created_at" => ["createdAt", "float", null, "getCreatedAt", "setCreatedAt", null], 
-        "purchased_at" => ["purchasedAt", "float", null, "getPurchasedAt", "setPurchasedAt", null], 
-        "cancelled_at" => ["cancelledAt", "float", null, "getCancelledAt", "setCancelledAt", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1]], 
+        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer", null, ["r" => 0]], 
+        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null, ["r" => 1]], 
+        "nft" => ["nft", "\Tatum\Model\SolanaListingDataNft", null, "getNft", "setNft", null, ["r" => 1]], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null, ["r" => 1]], 
+        "seller" => ["seller", "string", null, "getSeller", "setSeller", null, ["r" => 1]], 
+        "state" => ["state", "string", null, "getState", "setState", null, ["r" => 1, "e" => 1]], 
+        "created_at" => ["createdAt", "float", null, "getCreatedAt", "setCreatedAt", null, ["r" => 1]], 
+        "purchased_at" => ["purchasedAt", "float", null, "getPurchasedAt", "setPurchasedAt", null, ["r" => 0]], 
+        "cancelled_at" => ["cancelledAt", "float", null, "getCancelledAt", "setCancelledAt", null, ["r" => 0]]
     ];
 
     /**
@@ -49,40 +47,6 @@ class SolanaListingData extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (is_null($this->_data['listing_id'])) {
-            $ip[] = "'listing_id' can't be null";
-        }
-        if (is_null($this->_data['nft'])) {
-            $ip[] = "'nft' can't be null";
-        }
-        if (is_null($this->_data['price'])) {
-            $ip[] = "'price' can't be null";
-        }
-        if (is_null($this->_data['seller'])) {
-            $ip[] = "'seller' can't be null";
-        }
-        if (is_null($this->_data['state'])) {
-            $ip[] = "'state' can't be null";
-        }
-        $allowed = $this->getStateAllowableValues();
-        $value = $this->_data['state'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'state' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['created_at'])) {
-            $ip[] = "'created_at' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -111,12 +75,11 @@ class SolanaListingData extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount of NFTs to sold in this listing.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -132,12 +95,11 @@ class SolanaListingData extends AbstractModel {
      * Set buyer
      * 
      * @param string|null $buyer Address of the buyer, if exists.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBuyer(?string $buyer) {
-        $this->_data['buyer'] = $buyer;
-
-        return $this;
+        return $this->_set("buyer", $buyer);
     }
 
     /**
@@ -153,12 +115,11 @@ class SolanaListingData extends AbstractModel {
      * Set listing_id
      * 
      * @param string $listing_id ID of the listing
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setListingId(string $listing_id) {
-        $this->_data['listing_id'] = $listing_id;
-
-        return $this;
+        return $this->_set("listing_id", $listing_id);
     }
 
     /**
@@ -174,12 +135,11 @@ class SolanaListingData extends AbstractModel {
      * Set nft
      * 
      * @param \Tatum\Model\SolanaListingDataNft $nft nft
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNft(\Tatum\Model\SolanaListingDataNft $nft) {
-        $this->_data['nft'] = $nft;
-
-        return $this;
+        return $this->_set("nft", $nft);
     }
 
     /**
@@ -195,12 +155,11 @@ class SolanaListingData extends AbstractModel {
      * Set price
      * 
      * @param string $price Price of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrice(string $price) {
-        $this->_data['price'] = $price;
-
-        return $this;
+        return $this->_set("price", $price);
     }
 
     /**
@@ -216,12 +175,11 @@ class SolanaListingData extends AbstractModel {
      * Set seller
      * 
      * @param string $seller Address of the seller.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSeller(string $seller) {
-        $this->_data['seller'] = $seller;
-
-        return $this;
+        return $this->_set("seller", $seller);
     }
 
     /**
@@ -237,16 +195,11 @@ class SolanaListingData extends AbstractModel {
      * Set state
      * 
      * @param string $state State of the listing. 0 - available, 1 - sold, 2 - cancelled
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setState(string $state) {
-        $allowed = $this->getStateAllowableValues();
-        if (!in_array($state, $allowed, true)) {
-            throw new IAE(sprintf("SolanaListingData.setState: state invalid value '%s', must be one of '%s'", $state, implode("', '", $allowed)));
-        }
-        $this->_data['state'] = $state;
-
-        return $this;
+        return $this->_set("state", $state);
     }
 
     /**
@@ -262,12 +215,11 @@ class SolanaListingData extends AbstractModel {
      * Set created_at
      * 
      * @param float $created_at Timestamp when this listing was created
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreatedAt(float $created_at) {
-        $this->_data['created_at'] = $created_at;
-
-        return $this;
+        return $this->_set("created_at", $created_at);
     }
 
     /**
@@ -283,12 +235,11 @@ class SolanaListingData extends AbstractModel {
      * Set purchased_at
      * 
      * @param float|null $purchased_at Timestamp when this listing was purchased
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPurchasedAt(?float $purchased_at) {
-        $this->_data['purchased_at'] = $purchased_at;
-
-        return $this;
+        return $this->_set("purchased_at", $purchased_at);
     }
 
     /**
@@ -304,11 +255,10 @@ class SolanaListingData extends AbstractModel {
      * Set cancelled_at
      * 
      * @param float|null $cancelled_at Timestamp when this listing was cancelled
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCancelledAt(?float $cancelled_at) {
-        $this->_data['cancelled_at'] = $cancelled_at;
-
-        return $this;
+        return $this->_set("cancelled_at", $cancelled_at);
     }
 }

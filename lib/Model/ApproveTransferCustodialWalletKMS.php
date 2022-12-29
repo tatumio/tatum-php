@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ApproveTransferCustodialWalletKMS Model
  */
@@ -34,17 +32,17 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     public const CONTRACT_TYPE_2 = 2;
     protected static $_name = "ApproveTransferCustodialWalletKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
-        "spender" => ["spender", "string", null, "getSpender", "setSpender", null], 
-        "contract_type" => ["contractType", "float", null, "getContractType", "setContractType", null], 
-        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "spender" => ["spender", "string", null, "getSpender", "setSpender", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "contract_type" => ["contractType", "float", null, "getContractType", "setContractType", null, ["r" => 1, "e" => 1]], 
+        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 0, "xl" => 256]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -56,69 +54,6 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['custodial_address'])) {
-            $ip[] = "'custodial_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) > 42)) {
-            $ip[] = "'custodial_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) < 42)) {
-            $ip[] = "'custodial_address' length must be >= 42";
-        }
-        if (is_null($this->_data['spender'])) {
-            $ip[] = "'spender' can't be null";
-        }
-        if ((mb_strlen($this->_data['spender']) > 42)) {
-            $ip[] = "'spender' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['spender']) < 42)) {
-            $ip[] = "'spender' length must be >= 42";
-        }
-        if (is_null($this->_data['contract_type'])) {
-            $ip[] = "'contract_type' can't be null";
-        }
-        $allowed = $this->getContractTypeAllowableValues();
-        $value = $this->_data['contract_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'contract_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['token_address'])) {
-            $ip[] = "'token_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_address']) > 42)) {
-            $ip[] = "'token_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['token_address']) < 42)) {
-            $ip[] = "'token_address' length must be >= 42";
-        }
-        if (!is_null($this->_data['amount']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['token_id']) && (mb_strlen($this->_data['token_id']) > 256)) {
-            $ip[] = "'token_id' length must be <= 256";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -162,16 +97,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("ApproveTransferCustodialWalletKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -187,18 +117,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set custodial_address
      * 
      * @param string $custodial_address The gas pump address that holds the asset
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustodialAddress(string $custodial_address) {
-        if ((mb_strlen($custodial_address) > 42)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setCustodialAddress: $custodial_address length must be <= 42');
-        }
-        if ((mb_strlen($custodial_address) < 42)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setCustodialAddress: $custodial_address length must be >= 42');
-        }
-        $this->_data['custodial_address'] = $custodial_address;
-
-        return $this;
+        return $this->_set("custodial_address", $custodial_address);
     }
 
     /**
@@ -214,18 +137,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set spender
      * 
      * @param string $spender The blockchain address to allow the transfer of the asset from the gas pump address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSpender(string $spender) {
-        if ((mb_strlen($spender) > 42)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setSpender: $spender length must be <= 42');
-        }
-        if ((mb_strlen($spender) < 42)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setSpender: $spender length must be >= 42');
-        }
-        $this->_data['spender'] = $spender;
-
-        return $this;
+        return $this->_set("spender", $spender);
     }
 
     /**
@@ -241,16 +157,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set contract_type
      * 
      * @param float $contract_type The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent), or <code>2</code> for Multi Tokens (ERC-1155 or equivalent).
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractType(float $contract_type) {
-        $allowed = $this->getContractTypeAllowableValues();
-        if (!in_array($contract_type, $allowed, true)) {
-            throw new IAE(sprintf("ApproveTransferCustodialWalletKMS.setContractType: contract_type invalid value '%s', must be one of '%s'", $contract_type, implode("', '", $allowed)));
-        }
-        $this->_data['contract_type'] = $contract_type;
-
-        return $this;
+        return $this->_set("contract_type", $contract_type);
     }
 
     /**
@@ -266,18 +177,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set token_address
      * 
      * @param string $token_address The address of the asset to transfer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenAddress(string $token_address) {
-        if ((mb_strlen($token_address) > 42)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setTokenAddress: $token_address length must be <= 42');
-        }
-        if ((mb_strlen($token_address) < 42)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setTokenAddress: $token_address length must be >= 42');
-        }
-        $this->_data['token_address'] = $token_address;
-
-        return $this;
+        return $this->_set("token_address", $token_address);
     }
 
     /**
@@ -293,15 +197,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount (Only if the asset is a fungible token or Multi Token) The amount of the asset to transfer. Do not use if the asset is an NFT.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        if (!is_null($amount) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -317,15 +217,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set token_id
      * 
      * @param string|null $token_id (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the asset is a fungible token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(?string $token_id) {
-        if (!is_null($token_id) && (mb_strlen($token_id) > 256)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setTokenId: $token_id length must be <= 256');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -341,12 +237,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the blockchain address that owns the gas pump address key (\"master address\")
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -362,15 +257,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('ApproveTransferCustodialWalletKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -386,12 +277,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transfer transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -407,11 +297,10 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\ApproveTransferCustodialWalletFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\ApproveTransferCustodialWalletFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

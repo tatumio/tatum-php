@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Trade_attr Model
  * 
@@ -27,9 +25,9 @@ class TradeAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Trade_attr";
     protected static $_definition = [
-        "seal_date" => ["sealDate", "float", null, "getSealDate", "setSealDate", null], 
-        "percent_block" => ["percentBlock", "float", null, "getPercentBlock", "setPercentBlock", null], 
-        "percent_penalty" => ["percentPenalty", "float", null, "getPercentPenalty", "setPercentPenalty", null]
+        "seal_date" => ["sealDate", "float", null, "getSealDate", "setSealDate", null, ["r" => 1, "n" => [0]]], 
+        "percent_block" => ["percentBlock", "float", null, "getPercentBlock", "setPercentBlock", null, ["r" => 0, "n" => [0], "x" => [100]]], 
+        "percent_penalty" => ["percentPenalty", "float", null, "getPercentPenalty", "setPercentPenalty", null, ["r" => 0, "n" => [0], "x" => [100]]]
     ];
 
     /**
@@ -41,32 +39,6 @@ class TradeAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['seal_date'])) {
-            $ip[] = "'seal_date' can't be null";
-        }
-        if (($this->_data['seal_date'] < 0)) {
-            $ip[] = "'seal_date' must be >= 0";
-        }
-        if (!is_null($this->_data['percent_block']) && ($this->_data['percent_block'] > 100)) {
-            $ip[] = "'percent_block' must be <= 100";
-        }
-        if (!is_null($this->_data['percent_block']) && ($this->_data['percent_block'] < 0)) {
-            $ip[] = "'percent_block' must be >= 0";
-        }
-        if (!is_null($this->_data['percent_penalty']) && ($this->_data['percent_penalty'] > 100)) {
-            $ip[] = "'percent_penalty' must be <= 100";
-        }
-        if (!is_null($this->_data['percent_penalty']) && ($this->_data['percent_penalty'] < 0)) {
-            $ip[] = "'percent_penalty' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -83,15 +55,11 @@ class TradeAttr extends AbstractModel {
      * Set seal_date
      * 
      * @param float $seal_date Time in UTC when the future will be filled.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSealDate(float $seal_date) {
-        if (($seal_date < 0)) {
-            throw new IAE('TradeAttr.setSealDate: $seal_date must be >=0');
-        }
-        $this->_data['seal_date'] = $seal_date;
-
-        return $this;
+        return $this->_set("seal_date", $seal_date);
     }
 
     /**
@@ -107,18 +75,11 @@ class TradeAttr extends AbstractModel {
      * Set percent_block
      * 
      * @param float|null $percent_block Percentage of the future amount which the selling or buying account must have available for the future’s creation. This amount will be blocked until the future is filled or expires.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPercentBlock(?float $percent_block) {
-        if (!is_null($percent_block) && ($percent_block > 100)) {
-            throw new IAE('TradeAttr.setPercentBlock: $percent_block must be <=100');
-        }
-        if (!is_null($percent_block) && ($percent_block < 0)) {
-            throw new IAE('TradeAttr.setPercentBlock: $percent_block must be >=0');
-        }
-        $this->_data['percent_block'] = $percent_block;
-
-        return $this;
+        return $this->_set("percent_block", $percent_block);
     }
 
     /**
@@ -134,17 +95,10 @@ class TradeAttr extends AbstractModel {
      * Set percent_penalty
      * 
      * @param float|null $percent_penalty If one of the parties doesn’t have the full amount of the future at the time of expiration filled, the party will be penalized.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPercentPenalty(?float $percent_penalty) {
-        if (!is_null($percent_penalty) && ($percent_penalty > 100)) {
-            throw new IAE('TradeAttr.setPercentPenalty: $percent_penalty must be <=100');
-        }
-        if (!is_null($percent_penalty) && ($percent_penalty < 0)) {
-            throw new IAE('TradeAttr.setPercentPenalty: $percent_penalty must be >=0');
-        }
-        $this->_data['percent_penalty'] = $percent_penalty;
-
-        return $this;
+        return $this->_set("percent_penalty", $percent_penalty);
     }
 }

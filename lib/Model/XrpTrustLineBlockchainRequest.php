@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpTrustLineBlockchain_request Model
  */
@@ -25,13 +23,13 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTrustLineBlockchain_request";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
-        "limit" => ["limit", "string", null, "getLimit", "setLimit", null], 
-        "token" => ["token", "string", null, "getToken", "setToken", null], 
-        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "token" => ["token", "string", null, "getToken", "setToken", null, ["r" => 1, "p" => "/^[A-F0-9]{40}$/", "nl" => 40, "xl" => 40]], 
+        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null, ["r" => 1, "nl" => 29, "xl" => 29]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -43,65 +41,6 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_account'])) {
-            $ip[] = "'from_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_account']) > 34)) {
-            $ip[] = "'from_account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['from_account']) < 33)) {
-            $ip[] = "'from_account' length must be >= 33";
-        }
-        if (is_null($this->_data['issuer_account'])) {
-            $ip[] = "'issuer_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) > 34)) {
-            $ip[] = "'issuer_account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) < 33)) {
-            $ip[] = "'issuer_account' length must be >= 33";
-        }
-        if (is_null($this->_data['limit'])) {
-            $ip[] = "'limit' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['limit'])) {
-            $ip[] = "'limit' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['token'])) {
-            $ip[] = "'token' can't be null";
-        }
-        if ((mb_strlen($this->_data['token']) > 40)) {
-            $ip[] = "'token' length must be <= 40";
-        }
-        if ((mb_strlen($this->_data['token']) < 40)) {
-            $ip[] = "'token' length must be >= 40";
-        }
-        if (!preg_match("/^[A-F0-9]{40}$/", $this->_data['token'])) {
-            $ip[] = "'token' must match /^[A-F0-9]{40}$/";
-        }
-        if (is_null($this->_data['from_secret'])) {
-            $ip[] = "'from_secret' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_secret']) > 29)) {
-            $ip[] = "'from_secret' length must be <= 29";
-        }
-        if ((mb_strlen($this->_data['from_secret']) < 29)) {
-            $ip[] = "'from_secret' length must be >= 29";
-        }
-        if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -118,18 +57,11 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
      * Set from_account
      * 
      * @param string $from_account XRP account address. Must be the one used for generating deposit tags.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAccount(string $from_account) {
-        if ((mb_strlen($from_account) > 34)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setFromAccount: $from_account length must be <= 34');
-        }
-        if ((mb_strlen($from_account) < 33)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setFromAccount: $from_account length must be >= 33');
-        }
-        $this->_data['from_account'] = $from_account;
-
-        return $this;
+        return $this->_set("from_account", $from_account);
     }
 
     /**
@@ -145,18 +77,11 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
      * Set issuer_account
      * 
      * @param string $issuer_account Blockchain address of the issuer of the assets to create trust line for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIssuerAccount(string $issuer_account) {
-        if ((mb_strlen($issuer_account) > 34)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setIssuerAccount: $issuer_account length must be <= 34');
-        }
-        if ((mb_strlen($issuer_account) < 33)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setIssuerAccount: $issuer_account length must be >= 33');
-        }
-        $this->_data['issuer_account'] = $issuer_account;
-
-        return $this;
+        return $this->_set("issuer_account", $issuer_account);
     }
 
     /**
@@ -172,15 +97,11 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
      * Set limit
      * 
      * @param string $limit Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLimit(string $limit) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $limit))) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setLimit: $limit must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($limit, true) . ' given');
-        }
-        $this->_data['limit'] = $limit;
-
-        return $this;
+        return $this->_set("limit", $limit);
     }
 
     /**
@@ -196,21 +117,11 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
      * Set token
      * 
      * @param string $token Asset name. Must be 160bit HEX string, e.g. SHA1.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToken(string $token) {
-        if ((mb_strlen($token) > 40)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setToken: $token length must be <= 40');
-        }
-        if ((mb_strlen($token) < 40)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setToken: $token length must be >= 40');
-        }
-        if ((!preg_match("/^[A-F0-9]{40}$/", $token))) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setToken: $token must match /^[A-F0-9]{40}$/, ' . var_export($token, true) . ' given');
-        }
-        $this->_data['token'] = $token;
-
-        return $this;
+        return $this->_set("token", $token);
     }
 
     /**
@@ -226,18 +137,11 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
      * Set from_secret
      * 
      * @param string $from_secret Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromSecret(string $from_secret) {
-        if ((mb_strlen($from_secret) > 29)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setFromSecret: $from_secret length must be <= 29');
-        }
-        if ((mb_strlen($from_secret) < 29)) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setFromSecret: $from_secret length must be >= 29');
-        }
-        $this->_data['from_secret'] = $from_secret;
-
-        return $this;
+        return $this->_set("from_secret", $from_secret);
     }
 
     /**
@@ -253,15 +157,11 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be paid, in XRP. If omitted, current fee will be calculated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        if (!is_null($fee) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('XrpTrustLineBlockchainRequest.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -277,11 +177,10 @@ class XrpTrustLineBlockchainRequest extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

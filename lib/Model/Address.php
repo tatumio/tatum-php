@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Address Model
  */
@@ -25,13 +23,13 @@ class Address extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Address";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
-        "destination_tag" => ["destinationTag", "float", null, "getDestinationTag", "setDestinationTag", null], 
-        "memo" => ["memo", "string", null, "getMemo", "setMemo", null], 
-        "message" => ["message", "string", null, "getMessage", "setMessage", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1]], 
+        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null, ["r" => 0, "x" => [2147483647]]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 0]], 
+        "destination_tag" => ["destinationTag", "float", null, "getDestinationTag", "setDestinationTag", null, ["r" => 0]], 
+        "memo" => ["memo", "string", null, "getMemo", "setMemo", null, ["r" => 0]], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 0]]
     ];
 
     /**
@@ -43,23 +41,6 @@ class Address extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        if (!is_null($this->_data['derivation_key']) && ($this->_data['derivation_key'] > 2147483647)) {
-            $ip[] = "'derivation_key' must be <= 2147483647";
-        }
-        return $ip;
     }
 
 
@@ -76,12 +57,11 @@ class Address extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -97,12 +77,11 @@ class Address extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Currency of generated address. BTC, LTC, DOGE, BCH, ETH, XRP, XLM, BNB, TRX, ERC20, TRC20.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -118,15 +97,11 @@ class Address extends AbstractModel {
      * Set derivation_key
      * 
      * @param int|null $derivation_key Derivation key index for given address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDerivationKey(?int $derivation_key) {
-        if (!is_null($derivation_key) && ($derivation_key > 2147483647)) {
-            throw new IAE('Address.setDerivationKey: $derivation_key must be <=2147483647');
-        }
-        $this->_data['derivation_key'] = $derivation_key;
-
-        return $this;
+        return $this->_set("derivation_key", $derivation_key);
     }
 
     /**
@@ -142,12 +117,11 @@ class Address extends AbstractModel {
      * Set xpub
      * 
      * @param string|null $xpub Extended public key to derive address from. In case of XRP, this is account address, since address is defined as DestinationTag, which is address field. In case of XLM, this is account address, since address is defined as message, which is address field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(?string $xpub) {
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 
     /**
@@ -163,12 +137,11 @@ class Address extends AbstractModel {
      * Set destination_tag
      * 
      * @param float|null $destination_tag In case of XRP, destinationTag is the distinguisher of the account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDestinationTag(?float $destination_tag) {
-        $this->_data['destination_tag'] = $destination_tag;
-
-        return $this;
+        return $this->_set("destination_tag", $destination_tag);
     }
 
     /**
@@ -184,12 +157,11 @@ class Address extends AbstractModel {
      * Set memo
      * 
      * @param string|null $memo In case of BNB, message is the distinguisher of the account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMemo(?string $memo) {
-        $this->_data['memo'] = $memo;
-
-        return $this;
+        return $this->_set("memo", $memo);
     }
 
     /**
@@ -205,11 +177,10 @@ class Address extends AbstractModel {
      * Set message
      * 
      * @param string|null $message In case of XLM, message is the distinguisher of the account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(?string $message) {
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 }

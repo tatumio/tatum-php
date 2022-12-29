@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Deposit Model
  */
@@ -28,21 +26,21 @@ class Deposit extends AbstractModel {
     public const STATUS_FAILED = 'Failed';
     protected static $_name = "Deposit";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
-        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
-        "vout" => ["vout", "float", null, "getVout", "setVout", null], 
-        "spent" => ["spent", "bool", null, "getSpent", "setSpent", null], 
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 1, "n" => [0]]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1]], 
+        "derivation_key" => ["derivationKey", "int", 'int32', "getDerivationKey", "setDerivationKey", null, ["r" => 1, "x" => [2147483647]]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1]], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null, ["r" => 1, "e" => 1]], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1]], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null, ["r" => 1]], 
+        "vout" => ["vout", "float", null, "getVout", "setVout", null, ["r" => 1]], 
+        "spent" => ["spent", "bool", null, "getSpent", "setSpent", null, ["r" => 1]], 
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null, ["r" => 1, "n" => [0]]], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 0]]
     ];
 
     /**
@@ -54,67 +52,6 @@ class Deposit extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['timestamp'])) {
-            $ip[] = "'timestamp' can't be null";
-        }
-        if (($this->_data['timestamp'] < 0)) {
-            $ip[] = "'timestamp' must be >= 0";
-        }
-        if (is_null($this->_data['xpub'])) {
-            $ip[] = "'xpub' can't be null";
-        }
-        if (is_null($this->_data['derivation_key'])) {
-            $ip[] = "'derivation_key' can't be null";
-        }
-        if (($this->_data['derivation_key'] > 2147483647)) {
-            $ip[] = "'derivation_key' must be <= 2147483647";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (is_null($this->_data['status'])) {
-            $ip[] = "'status' can't be null";
-        }
-        $allowed = $this->getStatusAllowableValues();
-        $value = $this->_data['status'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'status' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        if (is_null($this->_data['reference'])) {
-            $ip[] = "'reference' can't be null";
-        }
-        if (is_null($this->_data['vout'])) {
-            $ip[] = "'vout' can't be null";
-        }
-        if (is_null($this->_data['spent'])) {
-            $ip[] = "'spent' can't be null";
-        }
-        if (is_null($this->_data['block_height'])) {
-            $ip[] = "'block_height' can't be null";
-        }
-        if (($this->_data['block_height'] < 0)) {
-            $ip[] = "'block_height' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -143,12 +80,11 @@ class Deposit extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id tx_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -164,12 +100,11 @@ class Deposit extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -185,15 +120,11 @@ class Deposit extends AbstractModel {
      * Set timestamp
      * 
      * @param float $timestamp End interval in UTC millis.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(float $timestamp) {
-        if (($timestamp < 0)) {
-            throw new IAE('Deposit.setTimestamp: $timestamp must be >=0');
-        }
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -209,12 +140,11 @@ class Deposit extends AbstractModel {
      * Set xpub
      * 
      * @param string $xpub Extended public key to derive address from.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(string $xpub) {
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 
     /**
@@ -230,15 +160,11 @@ class Deposit extends AbstractModel {
      * Set derivation_key
      * 
      * @param int $derivation_key Derivation key index for given address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDerivationKey(int $derivation_key) {
-        if (($derivation_key > 2147483647)) {
-            throw new IAE('Deposit.setDerivationKey: $derivation_key must be <=2147483647');
-        }
-        $this->_data['derivation_key'] = $derivation_key;
-
-        return $this;
+        return $this->_set("derivation_key", $derivation_key);
     }
 
     /**
@@ -254,12 +180,11 @@ class Deposit extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount of the trade
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -275,16 +200,11 @@ class Deposit extends AbstractModel {
      * Set status
      * 
      * @param string $status Status of deposit
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(string $status) {
-        $allowed = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowed, true)) {
-            throw new IAE(sprintf("Deposit.setStatus: status invalid value '%s', must be one of '%s'", $status, implode("', '", $allowed)));
-        }
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -300,12 +220,11 @@ class Deposit extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id Account ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -321,12 +240,11 @@ class Deposit extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Currency
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -342,12 +260,11 @@ class Deposit extends AbstractModel {
      * Set reference
      * 
      * @param string $reference reference
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReference(string $reference) {
-        $this->_data['reference'] = $reference;
-
-        return $this;
+        return $this->_set("reference", $reference);
     }
 
     /**
@@ -363,12 +280,11 @@ class Deposit extends AbstractModel {
      * Set vout
      * 
      * @param float $vout vout
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVout(float $vout) {
-        $this->_data['vout'] = $vout;
-
-        return $this;
+        return $this->_set("vout", $vout);
     }
 
     /**
@@ -384,12 +300,11 @@ class Deposit extends AbstractModel {
      * Set spent
      * 
      * @param bool $spent spent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSpent(bool $spent) {
-        $this->_data['spent'] = $spent;
-
-        return $this;
+        return $this->_set("spent", $spent);
     }
 
     /**
@@ -405,15 +320,11 @@ class Deposit extends AbstractModel {
      * Set block_height
      * 
      * @param float $block_height Block of deposit
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHeight(float $block_height) {
-        if (($block_height < 0)) {
-            throw new IAE('Deposit.setBlockHeight: $block_height must be >=0');
-        }
-        $this->_data['block_height'] = $block_height;
-
-        return $this;
+        return $this->_set("block_height", $block_height);
     }
 
     /**
@@ -429,12 +340,11 @@ class Deposit extends AbstractModel {
      * Set block_hash
      * 
      * @param string|null $block_hash Hash of the block where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHash(?string $block_hash) {
-        $this->_data['block_hash'] = $block_hash;
-
-        return $this;
+        return $this->_set("block_hash", $block_hash);
     }
 
     /**
@@ -450,11 +360,10 @@ class Deposit extends AbstractModel {
      * Set from
      * 
      * @param string|null $from Blockchain address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(?string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 }

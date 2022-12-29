@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTx Model
  */
@@ -25,12 +23,12 @@ class BnbTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx";
     protected static $_definition = [
-        "code" => ["code", "float", null, "getCode", "setCode", null], 
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "height" => ["height", "string", null, "getHeight", "setHeight", null], 
-        "log" => ["log", "string", null, "getLog", "setLog", null], 
-        "ok" => ["ok", "bool", null, "getOk", "setOk", null], 
-        "tx" => ["tx", "\Tatum\Model\BnbTxTx", null, "getTx", "setTx", null]
+        "code" => ["code", "float", null, "getCode", "setCode", null, ["r" => 0]], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "height" => ["height", "string", null, "getHeight", "setHeight", null, ["r" => 0]], 
+        "log" => ["log", "string", null, "getLog", "setLog", null, ["r" => 0]], 
+        "ok" => ["ok", "bool", null, "getOk", "setOk", null, ["r" => 0]], 
+        "tx" => ["tx", "\Tatum\Model\BnbTxTx", null, "getTx", "setTx", null, ["r" => 0]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class BnbTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class BnbTx extends AbstractModel {
      * Set code
      * 
      * @param float|null $code code
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCode(?float $code) {
-        $this->_data['code'] = $code;
-
-        return $this;
+        return $this->_set("code", $code);
     }
 
     /**
@@ -87,12 +76,11 @@ class BnbTx extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -108,12 +96,11 @@ class BnbTx extends AbstractModel {
      * Set height
      * 
      * @param string|null $height height
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHeight(?string $height) {
-        $this->_data['height'] = $height;
-
-        return $this;
+        return $this->_set("height", $height);
     }
 
     /**
@@ -129,12 +116,11 @@ class BnbTx extends AbstractModel {
      * Set log
      * 
      * @param string|null $log log
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLog(?string $log) {
-        $this->_data['log'] = $log;
-
-        return $this;
+        return $this->_set("log", $log);
     }
 
     /**
@@ -150,12 +136,11 @@ class BnbTx extends AbstractModel {
      * Set ok
      * 
      * @param bool|null $ok ok
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOk(?bool $ok) {
-        $this->_data['ok'] = $ok;
-
-        return $this;
+        return $this->_set("ok", $ok);
     }
 
     /**
@@ -171,11 +156,10 @@ class BnbTx extends AbstractModel {
      * Set tx
      * 
      * @param \Tatum\Model\BnbTxTx|null $tx tx
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTx(?\Tatum\Model\BnbTxTx $tx) {
-        $this->_data['tx'] = $tx;
-
-        return $this;
+        return $this->_set("tx", $tx);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaMarketplaceTransactionHash Model
  */
@@ -25,10 +23,10 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaMarketplaceTransactionHash";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null], 
-        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1]], 
+        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null, ["r" => 1]], 
+        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null, ["r" => 1]]
     ];
 
     /**
@@ -40,26 +38,6 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if (is_null($this->_data['fee_account'])) {
-            $ip[] = "'fee_account' can't be null";
-        }
-        if (is_null($this->_data['treasury_account'])) {
-            $ip[] = "'treasury_account' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -76,12 +54,11 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id The hash (ID) of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -97,12 +74,11 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The address of deployed marketplace contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -118,12 +94,11 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
      * Set fee_account
      * 
      * @param string $fee_account The blockchain address of the fee account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeAccount(string $fee_account) {
-        $this->_data['fee_account'] = $fee_account;
-
-        return $this;
+        return $this->_set("fee_account", $fee_account);
     }
 
     /**
@@ -139,11 +114,10 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
      * Set treasury_account
      * 
      * @param string $treasury_account The blockchain address of the treasury account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTreasuryAccount(string $treasury_account) {
-        $this->_data['treasury_account'] = $treasury_account;
-
-        return $this;
+        return $this->_set("treasury_account", $treasury_account);
     }
 }

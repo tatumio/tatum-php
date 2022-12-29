@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode Model
  */
@@ -25,9 +23,9 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends Abs
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode";
     protected static $_definition = [
-        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null], 
-        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex", null], 
-        "new_fields" => ["NewFields", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields", null, "getNewFields", "setNewFields", null]
+        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null, ["r" => 0]], 
+        "ledger_index" => ["LedgerIndex", "string", null, "getLedgerIndex", "setLedgerIndex", null, ["r" => 0]], 
+        "new_fields" => ["NewFields", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields", null, "getNewFields", "setNewFields", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends Abs
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends Abs
      * Set ledger_entry_type
      * 
      * @param string|null $ledger_entry_type ledger_entry_type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerEntryType(?string $ledger_entry_type) {
-        $this->_data['ledger_entry_type'] = $ledger_entry_type;
-
-        return $this;
+        return $this->_set("ledger_entry_type", $ledger_entry_type);
     }
 
     /**
@@ -84,12 +73,11 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends Abs
      * Set ledger_index
      * 
      * @param string|null $ledger_index ledger_index
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerIndex(?string $ledger_index) {
-        $this->_data['ledger_index'] = $ledger_index;
-
-        return $this;
+        return $this->_set("ledger_index", $ledger_index);
     }
 
     /**
@@ -105,11 +93,10 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends Abs
      * Set new_fields
      * 
      * @param \Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields|null $new_fields new_fields
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNewFields(?\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields $new_fields) {
-        $this->_data['new_fields'] = $new_fields;
-
-        return $this;
+        return $this->_set("new_fields", $new_fields);
     }
 }

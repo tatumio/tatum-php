@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateCustodialWalletCeloKMS Model
  */
@@ -29,16 +27,16 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "GenerateCustodialWalletCeloKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "enable_fungible_tokens" => ["enableFungibleTokens", "bool", null, "getEnableFungibleTokens", "setEnableFungibleTokens", null], 
-        "enable_non_fungible_tokens" => ["enableNonFungibleTokens", "bool", null, "getEnableNonFungibleTokens", "setEnableNonFungibleTokens", null], 
-        "enable_semi_fungible_tokens" => ["enableSemiFungibleTokens", "bool", null, "getEnableSemiFungibleTokens", "setEnableSemiFungibleTokens", null], 
-        "enable_batch_transactions" => ["enableBatchTransactions", "bool", null, "getEnableBatchTransactions", "setEnableBatchTransactions", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "enable_fungible_tokens" => ["enableFungibleTokens", "bool", null, "getEnableFungibleTokens", "setEnableFungibleTokens", null, ["r" => 1]], 
+        "enable_non_fungible_tokens" => ["enableNonFungibleTokens", "bool", null, "getEnableNonFungibleTokens", "setEnableNonFungibleTokens", null, ["r" => 1]], 
+        "enable_semi_fungible_tokens" => ["enableSemiFungibleTokens", "bool", null, "getEnableSemiFungibleTokens", "setEnableSemiFungibleTokens", null, ["r" => 1]], 
+        "enable_batch_transactions" => ["enableBatchTransactions", "bool", null, "getEnableBatchTransactions", "setEnableBatchTransactions", null, ["r" => 1]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -50,51 +48,6 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['enable_fungible_tokens'])) {
-            $ip[] = "'enable_fungible_tokens' can't be null";
-        }
-        if (is_null($this->_data['enable_non_fungible_tokens'])) {
-            $ip[] = "'enable_non_fungible_tokens' can't be null";
-        }
-        if (is_null($this->_data['enable_semi_fungible_tokens'])) {
-            $ip[] = "'enable_semi_fungible_tokens' can't be null";
-        }
-        if (is_null($this->_data['enable_batch_transactions'])) {
-            $ip[] = "'enable_batch_transactions' can't be null";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -133,16 +86,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateCustodialWalletCeloKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -158,16 +106,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("GenerateCustodialWalletCeloKMS.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -183,12 +126,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -204,15 +146,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('GenerateCustodialWalletCeloKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -228,12 +166,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set enable_fungible_tokens
      * 
      * @param bool $enable_fungible_tokens If address should support ERC20 tokens, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableFungibleTokens(bool $enable_fungible_tokens) {
-        $this->_data['enable_fungible_tokens'] = $enable_fungible_tokens;
-
-        return $this;
+        return $this->_set("enable_fungible_tokens", $enable_fungible_tokens);
     }
 
     /**
@@ -249,12 +186,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set enable_non_fungible_tokens
      * 
      * @param bool $enable_non_fungible_tokens If address should support ERC721 tokens, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableNonFungibleTokens(bool $enable_non_fungible_tokens) {
-        $this->_data['enable_non_fungible_tokens'] = $enable_non_fungible_tokens;
-
-        return $this;
+        return $this->_set("enable_non_fungible_tokens", $enable_non_fungible_tokens);
     }
 
     /**
@@ -270,12 +206,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set enable_semi_fungible_tokens
      * 
      * @param bool $enable_semi_fungible_tokens If address should support ERC1155 tokens, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableSemiFungibleTokens(bool $enable_semi_fungible_tokens) {
-        $this->_data['enable_semi_fungible_tokens'] = $enable_semi_fungible_tokens;
-
-        return $this;
+        return $this->_set("enable_semi_fungible_tokens", $enable_semi_fungible_tokens);
     }
 
     /**
@@ -291,12 +226,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set enable_batch_transactions
      * 
      * @param bool $enable_batch_transactions If address should support batch transfers of the assets, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableBatchTransactions(bool $enable_batch_transactions) {
-        $this->_data['enable_batch_transactions'] = $enable_batch_transactions;
-
-        return $this;
+        return $this->_set("enable_batch_transactions", $enable_batch_transactions);
     }
 
     /**
@@ -312,12 +246,11 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -333,14 +266,10 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('GenerateCustodialWalletCeloKMS.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 }

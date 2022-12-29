@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EgldShardBlock Model
  */
@@ -25,9 +23,9 @@ class EgldShardBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EgldShardBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "shard" => ["shard", "float", null, "getShard", "setShard", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "shard" => ["shard", "float", null, "getShard", "setShard", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class EgldShardBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class EgldShardBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash The block hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -84,12 +73,11 @@ class EgldShardBlock extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The block height.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -105,11 +93,10 @@ class EgldShardBlock extends AbstractModel {
      * Set shard
      * 
      * @param float|null $shard The shard number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setShard(?float $shard) {
-        $this->_data['shard'] = $shard;
-
-        return $this;
+        return $this->_set("shard", $shard);
     }
 }

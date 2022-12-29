@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransactionFeeEgldBlockchain Model
  */
@@ -25,10 +23,10 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransactionFeeEgldBlockchain";
     protected static $_definition = [
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "data" => ["data", "string", null, "getData", "setData", null]
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 1, "nl" => 62, "xl" => 62]], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null, ["r" => 1, "nl" => 62, "xl" => 62]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 1]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]]
     ];
 
     /**
@@ -40,35 +38,6 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['sender'])) {
-            $ip[] = "'sender' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender']) > 62)) {
-            $ip[] = "'sender' length must be <= 62";
-        }
-        if ((mb_strlen($this->_data['sender']) < 62)) {
-            $ip[] = "'sender' length must be >= 62";
-        }
-        if (is_null($this->_data['receiver'])) {
-            $ip[] = "'receiver' can't be null";
-        }
-        if ((mb_strlen($this->_data['receiver']) > 62)) {
-            $ip[] = "'receiver' length must be <= 62";
-        }
-        if ((mb_strlen($this->_data['receiver']) < 62)) {
-            $ip[] = "'receiver' length must be >= 62";
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -85,18 +54,11 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      * Set sender
      * 
      * @param string $sender Account address of the sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(string $sender) {
-        if ((mb_strlen($sender) > 62)) {
-            throw new IAE('TransactionFeeEgldBlockchain.setSender: $sender length must be <= 62');
-        }
-        if ((mb_strlen($sender) < 62)) {
-            throw new IAE('TransactionFeeEgldBlockchain.setSender: $sender length must be >= 62');
-        }
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -112,18 +74,11 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      * Set receiver
      * 
      * @param string $receiver Account address of the receiver or smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReceiver(string $receiver) {
-        if ((mb_strlen($receiver) > 62)) {
-            throw new IAE('TransactionFeeEgldBlockchain.setReceiver: $receiver length must be <= 62');
-        }
-        if ((mb_strlen($receiver) < 62)) {
-            throw new IAE('TransactionFeeEgldBlockchain.setReceiver: $receiver length must be >= 62');
-        }
-        $this->_data['receiver'] = $receiver;
-
-        return $this;
+        return $this->_set("receiver", $receiver);
     }
 
     /**
@@ -139,12 +94,11 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      * Set value
      * 
      * @param string $value Value to be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -160,11 +114,10 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

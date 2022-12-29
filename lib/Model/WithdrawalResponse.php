@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * WithdrawalResponse Model
  */
@@ -25,9 +23,9 @@ class WithdrawalResponse extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "WithdrawalResponse";
     protected static $_definition = [
-        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
-        "data" => ["data", "\Tatum\Model\ResponseData[]", null, "getData", "setData", null], 
-        "id" => ["id", "string", null, "getId", "setId", null]
+        "reference" => ["reference", "string", null, "getReference", "setReference", null, ["r" => 0]], 
+        "data" => ["data", "\Tatum\Model\ResponseData[]", null, "getData", "setData", null, ["r" => 0, "c" => 1]], 
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class WithdrawalResponse extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class WithdrawalResponse extends AbstractModel {
      * Set reference
      * 
      * @param string|null $reference Transaction reference of the transaction connected to this withdrawal.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReference(?string $reference) {
-        $this->_data['reference'] = $reference;
-
-        return $this;
+        return $this->_set("reference", $reference);
     }
 
     /**
@@ -84,12 +73,11 @@ class WithdrawalResponse extends AbstractModel {
      * Set data
      * 
      * @param \Tatum\Model\ResponseData[]|null $data data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?array $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -105,11 +93,10 @@ class WithdrawalResponse extends AbstractModel {
      * Set id
      * 
      * @param string|null $id ID of withdrawal
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 }

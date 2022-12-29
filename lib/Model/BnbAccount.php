@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbAccount Model
  */
@@ -25,11 +23,11 @@ class BnbAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbAccount";
     protected static $_definition = [
-        "account_number" => ["account_number", "float", null, "getAccountNumber", "setAccountNumber", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "balances" => ["balances", "\Tatum\Model\BnbAccountBalancesInner[]", null, "getBalances", "setBalances", null], 
-        "flags" => ["flags", "float", null, "getFlags", "setFlags", null], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null]
+        "account_number" => ["account_number", "float", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "balances" => ["balances", "\Tatum\Model\BnbAccountBalancesInner[]", null, "getBalances", "setBalances", null, ["r" => 0, "c" => 1]], 
+        "flags" => ["flags", "float", null, "getFlags", "setFlags", null, ["r" => 0]], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class BnbAccount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class BnbAccount extends AbstractModel {
      * Set account_number
      * 
      * @param float|null $account_number account_number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountNumber(?float $account_number) {
-        $this->_data['account_number'] = $account_number;
-
-        return $this;
+        return $this->_set("account_number", $account_number);
     }
 
     /**
@@ -86,12 +75,11 @@ class BnbAccount extends AbstractModel {
      * Set address
      * 
      * @param string|null $address address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -107,12 +95,11 @@ class BnbAccount extends AbstractModel {
      * Set balances
      * 
      * @param \Tatum\Model\BnbAccountBalancesInner[]|null $balances balances
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalances(?array $balances) {
-        $this->_data['balances'] = $balances;
-
-        return $this;
+        return $this->_set("balances", $balances);
     }
 
     /**
@@ -128,12 +115,11 @@ class BnbAccount extends AbstractModel {
      * Set flags
      * 
      * @param float|null $flags flags
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFlags(?float $flags) {
-        $this->_data['flags'] = $flags;
-
-        return $this;
+        return $this->_set("flags", $flags);
     }
 
     /**
@@ -149,11 +135,10 @@ class BnbAccount extends AbstractModel {
      * Set sequence
      * 
      * @param float|null $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 }

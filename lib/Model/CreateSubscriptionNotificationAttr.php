@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionNotification_attr Model
  * 
@@ -38,9 +36,9 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "CreateSubscriptionNotification_attr";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 13, "xl" => 128]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 500]]
     ];
 
     /**
@@ -52,37 +50,6 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 128)) {
-            $ip[] = "'address' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['address']) < 13)) {
-            $ip[] = "'address' length must be >= 13";
-        }
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 500)) {
-            $ip[] = "'url' length must be <= 500";
-        }
-        return $ip;
     }
 
     /**
@@ -119,18 +86,11 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address to watch.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 128)) {
-            throw new IAE('CreateSubscriptionNotificationAttr.setAddress: $address length must be <= 128');
-        }
-        if ((mb_strlen($address) < 13)) {
-            throw new IAE('CreateSubscriptionNotificationAttr.setAddress: $address length must be >= 13');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -146,16 +106,11 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain of the address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CreateSubscriptionNotificationAttr.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -171,14 +126,10 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
      * Set url
      * 
      * @param string $url URL of the endpoint, where HTTP POST request will be sent, when transaction is detected on the address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 500)) {
-            throw new IAE('CreateSubscriptionNotificationAttr.setUrl: $url length must be <= 500');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 }

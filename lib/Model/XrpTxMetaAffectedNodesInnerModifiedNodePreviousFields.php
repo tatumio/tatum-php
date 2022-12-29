@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpTx_meta_AffectedNodes_inner_ModifiedNode_PreviousFields Model
  */
@@ -25,8 +23,8 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode_PreviousFields";
     protected static $_definition = [
-        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null]
+        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null, ["r" => 1]], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['balance'])) {
-            $ip[] = "'balance' can't be null";
-        }
-        if (is_null($this->_data['sequence'])) {
-            $ip[] = "'sequence' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
      * Set balance
      * 
      * @param string $balance balance
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(string $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -89,11 +72,10 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
      * Set sequence
      * 
      * @param float $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EthGasEstimationBatch Model
  */
@@ -25,8 +23,8 @@ class EthGasEstimationBatch extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthGasEstimationBatch";
     protected static $_definition = [
-        "error" => ["error", "bool", null, "getError", "setError", null], 
-        "result" => ["result", "\Tatum\Model\EthGasEstimationBatchResult[]", null, "getResult", "setResult", null]
+        "error" => ["error", "bool", null, "getError", "setError", null, ["r" => 1]], 
+        "result" => ["result", "\Tatum\Model\EthGasEstimationBatchResult[]", null, "getResult", "setResult", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class EthGasEstimationBatch extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['error'])) {
-            $ip[] = "'error' can't be null";
-        }
-        if (is_null($this->_data['result'])) {
-            $ip[] = "'result' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class EthGasEstimationBatch extends AbstractModel {
      * Set error
      * 
      * @param bool $error If all estimations succeeded.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setError(bool $error) {
-        $this->_data['error'] = $error;
-
-        return $this;
+        return $this->_set("error", $error);
     }
 
     /**
@@ -89,11 +72,10 @@ class EthGasEstimationBatch extends AbstractModel {
      * Set result
      * 
      * @param \Tatum\Model\EthGasEstimationBatchResult[] $result result
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setResult(array $result) {
-        $this->_data['result'] = $result;
-
-        return $this;
+        return $this->_set("result", $result);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DeployErc20OffchainMnemXpub Model
  */
@@ -222,17 +220,17 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "DeployErc20OffchainMnemXpub";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
-        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "index" => ["index", "int", null, "getIndex", "setIndex", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 30]], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 1, "xl" => 150]], 
+        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null, ["r" => 1, "x" => [2147483647]]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null, ["r" => 1, "x" => [2147483647]]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -244,94 +242,6 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['symbol'])) {
-            $ip[] = "'symbol' can't be null";
-        }
-        if ((mb_strlen($this->_data['symbol']) > 30)) {
-            $ip[] = "'symbol' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['symbol']) < 1)) {
-            $ip[] = "'symbol' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9_]+$/", $this->_data['symbol'])) {
-            $ip[] = "'symbol' must match /^[a-zA-Z0-9_]+$/";
-        }
-        if (is_null($this->_data['supply'])) {
-            $ip[] = "'supply' can't be null";
-        }
-        if ((mb_strlen($this->_data['supply']) > 38)) {
-            $ip[] = "'supply' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['supply'])) {
-            $ip[] = "'supply' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['description'])) {
-            $ip[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->_data['description']) > 100)) {
-            $ip[] = "'description' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['description']) < 1)) {
-            $ip[] = "'description' length must be >= 1";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['base_pair']) > 30)) {
-            $ip[] = "'base_pair' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['base_pair']) < 2)) {
-            $ip[] = "'base_pair' length must be >= 2";
-        }
-        if (!is_null($this->_data['base_rate']) && ($this->_data['base_rate'] < 0)) {
-            $ip[] = "'base_rate' must be >= 0";
-        }
-        if (is_null($this->_data['xpub'])) {
-            $ip[] = "'xpub' can't be null";
-        }
-        if ((mb_strlen($this->_data['xpub']) > 150)) {
-            $ip[] = "'xpub' length must be <= 150";
-        }
-        if ((mb_strlen($this->_data['xpub']) < 1)) {
-            $ip[] = "'xpub' length must be >= 1";
-        }
-        if (is_null($this->_data['derivation_index'])) {
-            $ip[] = "'derivation_index' can't be null";
-        }
-        if (($this->_data['derivation_index'] > 2147483647)) {
-            $ip[] = "'derivation_index' must be <= 2147483647";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] > 2147483647)) {
-            $ip[] = "'index' must be <= 2147483647";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -554,21 +464,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set symbol
      * 
      * @param string $symbol Name of the ERC20 token - stored as a symbol on Blockchain
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(string $symbol) {
-        if ((mb_strlen($symbol) > 30)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setSymbol: $symbol length must be <= 30');
-        }
-        if ((mb_strlen($symbol) < 1)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setSymbol: $symbol length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9_]+$/", $symbol))) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setSymbol: $symbol must match /^[a-zA-Z0-9_]+$/, ' . var_export($symbol, true) . ' given');
-        }
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -584,18 +484,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set supply
      * 
      * @param string $supply max supply of ERC20 token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(string $supply) {
-        if ((mb_strlen($supply) > 38)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setSupply: $supply length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $supply))) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setSupply: $supply must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($supply, true) . ' given');
-        }
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -611,18 +504,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set description
      * 
      * @param string $description Description of the ERC20 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(string $description) {
-        if ((mb_strlen($description) > 100)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setDescription: $description length must be <= 100');
-        }
-        if ((mb_strlen($description) < 1)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setDescription: $description length must be >= 1');
-        }
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 
     /**
@@ -638,22 +524,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("DeployErc20OffchainMnemXpub.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($base_pair) > 30)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setBasePair: $base_pair length must be <= 30');
-        }
-        if ((mb_strlen($base_pair) < 2)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setBasePair: $base_pair length must be >= 2');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 
     /**
@@ -669,15 +544,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set base_rate
      * 
      * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
-        if (!is_null($base_rate) && ($base_rate < 0)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setBaseRate: $base_rate must be >=0');
-        }
-        $this->_data['base_rate'] = $base_rate;
-
-        return $this;
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -693,12 +564,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set customer
      * 
      * @param \Tatum\Model\CustomerRegistration|null $customer customer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
-        $this->_data['customer'] = $customer;
-
-        return $this;
+        return $this->_set("customer", $customer);
     }
 
     /**
@@ -714,18 +584,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set xpub
      * 
      * @param string $xpub Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(string $xpub) {
-        if ((mb_strlen($xpub) > 150)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setXpub: $xpub length must be <= 150');
-        }
-        if ((mb_strlen($xpub) < 1)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setXpub: $xpub length must be >= 1');
-        }
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 
     /**
@@ -741,15 +604,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set derivation_index
      * 
      * @param int $derivation_index Derivation index for xpub to generate specific deposit address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDerivationIndex(int $derivation_index) {
-        if (($derivation_index > 2147483647)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setDerivationIndex: $derivation_index must be <=2147483647');
-        }
-        $this->_data['derivation_index'] = $derivation_index;
-
-        return $this;
+        return $this->_set("derivation_index", $derivation_index);
     }
 
     /**
@@ -765,18 +624,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -792,15 +644,11 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set index
      * 
      * @param int $index derivation index of address to pay for deployment of ERC20
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(int $index) {
-        if (($index > 2147483647)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setIndex: $index must be <=2147483647');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -816,14 +664,10 @@ class DeployErc20OffchainMnemXpub extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('DeployErc20OffchainMnemXpub.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 }

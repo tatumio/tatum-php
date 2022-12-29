@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferVetBlockchain_fee Model
  * 
@@ -27,7 +25,7 @@ class TransferVetBlockchainFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferVetBlockchain_fee";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null]
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]]
     ];
 
     /**
@@ -39,20 +37,6 @@ class TransferVetBlockchainFee extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['gas_limit'])) {
-            $ip[] = "'gas_limit' can't be null";
-        }
-        if (!preg_match("/^[+]?\\d+$/", $this->_data['gas_limit'])) {
-            $ip[] = "'gas_limit' must match /^[+]?\\d+$/";
-        }
-        return $ip;
     }
 
 
@@ -69,14 +53,10 @@ class TransferVetBlockchainFee extends AbstractModel {
      * Set gas_limit
      * 
      * @param string $gas_limit Gas limit for transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(string $gas_limit) {
-        if ((!preg_match("/^[+]?\\d+$/", $gas_limit))) {
-            throw new IAE('TransferVetBlockchainFee.setGasLimit: $gas_limit must match /^[+]?\\d+$/, ' . var_export($gas_limit, true) . ' given');
-        }
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 }

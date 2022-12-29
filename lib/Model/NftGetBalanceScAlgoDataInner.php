@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftGetBalanceScAlgo_data_inner Model
  */
@@ -25,9 +23,9 @@ class NftGetBalanceScAlgoDataInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftGetBalanceScAlgo_data_inner";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "balances" => ["balances", "string[]", null, "getBalances", "setBalances", null], 
-        "metadata" => ["metadata", "\Tatum\Model\NftGetBalanceScAlgoDataInnerMetadataInner[]", null, "getMetadata", "setMetadata", null]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]], 
+        "balances" => ["balances", "string[]", null, "getBalances", "setBalances", null, ["r" => 0, "c" => 1]], 
+        "metadata" => ["metadata", "\Tatum\Model\NftGetBalanceScAlgoDataInnerMetadataInner[]", null, "getMetadata", "setMetadata", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class NftGetBalanceScAlgoDataInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class NftGetBalanceScAlgoDataInner extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address The asset ID (the ID of the NFT)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -84,12 +73,11 @@ class NftGetBalanceScAlgoDataInner extends AbstractModel {
      * Set balances
      * 
      * @param string[]|null $balances The array returning <code>1</code> to indicate that the NFT with the specified ID exists
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalances(?array $balances) {
-        $this->_data['balances'] = $balances;
-
-        return $this;
+        return $this->_set("balances", $balances);
     }
 
     /**
@@ -105,11 +93,10 @@ class NftGetBalanceScAlgoDataInner extends AbstractModel {
      * Set metadata
      * 
      * @param \Tatum\Model\NftGetBalanceScAlgoDataInnerMetadataInner[]|null $metadata metadata
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(?array $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronBroadcast Model
  */
@@ -25,7 +23,7 @@ class TronBroadcast extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronBroadcast";
     protected static $_definition = [
-        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null]
+        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null, ["r" => 1, "nl" => 1, "xl" => 50000]]
     ];
 
     /**
@@ -37,23 +35,6 @@ class TronBroadcast extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_data'])) {
-            $ip[] = "'tx_data' can't be null";
-        }
-        if ((mb_strlen($this->_data['tx_data']) > 50000)) {
-            $ip[] = "'tx_data' length must be <= 50000";
-        }
-        if ((mb_strlen($this->_data['tx_data']) < 1)) {
-            $ip[] = "'tx_data' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -70,17 +51,10 @@ class TronBroadcast extends AbstractModel {
      * Set tx_data
      * 
      * @param string $tx_data Raw signed transaction to be published to network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxData(string $tx_data) {
-        if ((mb_strlen($tx_data) > 50000)) {
-            throw new IAE('TronBroadcast.setTxData: $tx_data length must be <= 50000');
-        }
-        if ((mb_strlen($tx_data) < 1)) {
-            throw new IAE('TronBroadcast.setTxData: $tx_data length must be >= 1');
-        }
-        $this->_data['tx_data'] = $tx_data;
-
-        return $this;
+        return $this->_set("tx_data", $tx_data);
     }
 }

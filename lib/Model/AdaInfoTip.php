@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaInfo_tip Model
  */
@@ -25,9 +23,9 @@ class AdaInfoTip extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaInfo_tip";
     protected static $_definition = [
-        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
-        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo", null], 
-        "epoch" => ["epoch", "\Tatum\Model\AdaInfoTipEpoch", null, "getEpoch", "setEpoch", null]
+        "number" => ["number", "float", null, "getNumber", "setNumber", null, ["r" => 0]], 
+        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo", null, ["r" => 0]], 
+        "epoch" => ["epoch", "\Tatum\Model\AdaInfoTipEpoch", null, "getEpoch", "setEpoch", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class AdaInfoTip extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class AdaInfoTip extends AbstractModel {
      * Set number
      * 
      * @param float|null $number Last block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumber(?float $number) {
-        $this->_data['number'] = $number;
-
-        return $this;
+        return $this->_set("number", $number);
     }
 
     /**
@@ -84,12 +73,11 @@ class AdaInfoTip extends AbstractModel {
      * Set slot_no
      * 
      * @param float|null $slot_no Last slot number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSlotNo(?float $slot_no) {
-        $this->_data['slot_no'] = $slot_no;
-
-        return $this;
+        return $this->_set("slot_no", $slot_no);
     }
 
     /**
@@ -105,11 +93,10 @@ class AdaInfoTip extends AbstractModel {
      * Set epoch
      * 
      * @param \Tatum\Model\AdaInfoTipEpoch|null $epoch epoch
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEpoch(?\Tatum\Model\AdaInfoTipEpoch $epoch) {
-        $this->_data['epoch'] = $epoch;
-
-        return $this;
+        return $this->_set("epoch", $epoch);
     }
 }

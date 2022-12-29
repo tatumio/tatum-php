@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ApproveTransferCustodialWallet_fee Model
  * 
@@ -27,8 +25,8 @@ class ApproveTransferCustodialWalletFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "ApproveTransferCustodialWallet_fee";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null]
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]]
     ];
 
     /**
@@ -40,26 +38,6 @@ class ApproveTransferCustodialWalletFee extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['gas_limit'])) {
-            $ip[] = "'gas_limit' can't be null";
-        }
-        if (!preg_match("/^[+]?\\d+$/", $this->_data['gas_limit'])) {
-            $ip[] = "'gas_limit' must match /^[+]?\\d+$/";
-        }
-        if (is_null($this->_data['gas_price'])) {
-            $ip[] = "'gas_price' can't be null";
-        }
-        if (!preg_match("/^[+]?\\d+$/", $this->_data['gas_price'])) {
-            $ip[] = "'gas_price' must match /^[+]?\\d+$/";
-        }
-        return $ip;
     }
 
 
@@ -76,15 +54,11 @@ class ApproveTransferCustodialWalletFee extends AbstractModel {
      * Set gas_limit
      * 
      * @param string $gas_limit Gas limit for transaction in gas price.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(string $gas_limit) {
-        if ((!preg_match("/^[+]?\\d+$/", $gas_limit))) {
-            throw new IAE('ApproveTransferCustodialWalletFee.setGasLimit: $gas_limit must match /^[+]?\\d+$/, ' . var_export($gas_limit, true) . ' given');
-        }
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -100,14 +74,10 @@ class ApproveTransferCustodialWalletFee extends AbstractModel {
      * Set gas_price
      * 
      * @param string $gas_price Gas price in Gwei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(string $gas_price) {
-        if ((!preg_match("/^[+]?\\d+$/", $gas_price))) {
-            throw new IAE('ApproveTransferCustodialWalletFee.setGasPrice: $gas_price must match /^[+]?\\d+$/, ' . var_export($gas_price, true) . ' given');
-        }
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 }

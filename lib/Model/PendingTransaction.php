@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * PendingTransaction Model
  */
@@ -44,14 +42,14 @@ class PendingTransaction extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "PendingTransaction";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "hashes" => ["hashes", "string[]", null, "getHashes", "setHashes", null], 
-        "serialized_transaction" => ["serializedTransaction", "string", null, "getSerializedTransaction", "setSerializedTransaction", null], 
-        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "withdrawal_responses" => ["withdrawalResponses", "\Tatum\Model\ResponseData[]", null, "getWithdrawalResponses", "setWithdrawalResponses", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "hashes" => ["hashes", "string[]", null, "getHashes", "setHashes", null, ["r" => 1, "c" => 1]], 
+        "serialized_transaction" => ["serializedTransaction", "string", null, "getSerializedTransaction", "setSerializedTransaction", null, ["r" => 1]], 
+        "withdrawal_id" => ["withdrawalId", "string", null, "getWithdrawalId", "setWithdrawalId", null, ["r" => 0]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 
+        "withdrawal_responses" => ["withdrawalResponses", "\Tatum\Model\ResponseData[]", null, "getWithdrawalResponses", "setWithdrawalResponses", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -63,34 +61,6 @@ class PendingTransaction extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['hashes'])) {
-            $ip[] = "'hashes' can't be null";
-        }
-        if (is_null($this->_data['serialized_transaction'])) {
-            $ip[] = "'serialized_transaction' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -135,12 +105,11 @@ class PendingTransaction extends AbstractModel {
      * Set id
      * 
      * @param string $id ID of the pending transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -156,16 +125,11 @@ class PendingTransaction extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("PendingTransaction.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -181,12 +145,11 @@ class PendingTransaction extends AbstractModel {
      * Set hashes
      * 
      * @param string[] $hashes List of the signature Ids to be used to sign transaction. Those hashes should be in order of signing for the BTC, LTC or BCH blockchains.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHashes(array $hashes) {
-        $this->_data['hashes'] = $hashes;
-
-        return $this;
+        return $this->_set("hashes", $hashes);
     }
 
     /**
@@ -202,12 +165,11 @@ class PendingTransaction extends AbstractModel {
      * Set serialized_transaction
      * 
      * @param string $serialized_transaction Serialized data of the transaction to be signed. It can be JSON, HEX or any other representation based on the blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSerializedTransaction(string $serialized_transaction) {
-        $this->_data['serialized_transaction'] = $serialized_transaction;
-
-        return $this;
+        return $this->_set("serialized_transaction", $serialized_transaction);
     }
 
     /**
@@ -223,12 +185,11 @@ class PendingTransaction extends AbstractModel {
      * Set withdrawal_id
      * 
      * @param string|null $withdrawal_id ID of the pending off-chain withdrawal connected to this transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWithdrawalId(?string $withdrawal_id) {
-        $this->_data['withdrawal_id'] = $withdrawal_id;
-
-        return $this;
+        return $this->_set("withdrawal_id", $withdrawal_id);
     }
 
     /**
@@ -244,15 +205,11 @@ class PendingTransaction extends AbstractModel {
      * Set index
      * 
      * @param float|null $index In case of mnemonic type of signature Id, this is the index to the specific account that should be used for signature.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('PendingTransaction.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -268,12 +225,11 @@ class PendingTransaction extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id TX hash of successful transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -289,11 +245,10 @@ class PendingTransaction extends AbstractModel {
      * Set withdrawal_responses
      * 
      * @param \Tatum\Model\ResponseData[]|null $withdrawal_responses Additional information used for BTC, LTC, DOGE and BCH off-chain to blockchain transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWithdrawalResponses(?array $withdrawal_responses) {
-        $this->_data['withdrawal_responses'] = $withdrawal_responses;
-
-        return $this;
+        return $this->_set("withdrawal_responses", $withdrawal_responses);
     }
 }

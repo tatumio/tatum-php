@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VirtualCurrencyUpdate Model
  */
@@ -222,9 +220,9 @@ class VirtualCurrencyUpdate extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "VirtualCurrencyUpdate";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null]
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 30]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 0, "e" => 1, "nl" => 3, "xl" => 50]]
     ];
 
     /**
@@ -236,40 +234,6 @@ class VirtualCurrencyUpdate extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 30)) {
-            $ip[] = "'name' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9_]+$/", $this->_data['name'])) {
-            $ip[] = "'name' must match /^[a-zA-Z0-9_]+$/";
-        }
-        if (!is_null($this->_data['base_rate']) && ($this->_data['base_rate'] < 0)) {
-            $ip[] = "'base_rate' must be >= 0";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['base_pair']) && (mb_strlen($this->_data['base_pair']) > 50)) {
-            $ip[] = "'base_pair' length must be <= 50";
-        }
-        if (!is_null($this->_data['base_pair']) && (mb_strlen($this->_data['base_pair']) < 3)) {
-            $ip[] = "'base_pair' length must be >= 3";
-        }
-        return $ip;
     }
 
     /**
@@ -492,21 +456,11 @@ class VirtualCurrencyUpdate extends AbstractModel {
      * Set name
      * 
      * @param string $name Virtual currency name, which will be updated. It is not possible to update the name of the virtual currency.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 30)) {
-            throw new IAE('VirtualCurrencyUpdate.setName: $name length must be <= 30');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('VirtualCurrencyUpdate.setName: $name length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9_]+$/", $name))) {
-            throw new IAE('VirtualCurrencyUpdate.setName: $name must match /^[a-zA-Z0-9_]+$/, ' . var_export($name, true) . ' given');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -522,15 +476,11 @@ class VirtualCurrencyUpdate extends AbstractModel {
      * Set base_rate
      * 
      * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
-        if (!is_null($base_rate) && ($base_rate < 0)) {
-            throw new IAE('VirtualCurrencyUpdate.setBaseRate: $base_rate must be >=0');
-        }
-        $this->_data['base_rate'] = $base_rate;
-
-        return $this;
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -546,21 +496,10 @@ class VirtualCurrencyUpdate extends AbstractModel {
      * Set base_pair
      * 
      * @param string|null $base_pair Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(?string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!is_null($base_pair) && !in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("VirtualCurrencyUpdate.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if (!is_null($base_pair) && (mb_strlen($base_pair) > 50)) {
-            throw new IAE('VirtualCurrencyUpdate.setBasePair: $base_pair length must be <= 50');
-        }
-        if (!is_null($base_pair) && (mb_strlen($base_pair) < 3)) {
-            throw new IAE('VirtualCurrencyUpdate.setBasePair: $base_pair length must be >= 3');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 }

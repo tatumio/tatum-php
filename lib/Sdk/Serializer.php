@@ -311,23 +311,29 @@ class Serializer {
     /**
      * Deserialize a JSON string into an object
      *
-     * @param \Tatum\Sdk\Config          $config      Configuration object
      * @param mixed                      $data        Object or primitive to be deserialized
      * @param string                     $type        Some type that be returned
-     * @param array<array-key, string[]> $httpHeaders (optional); A list of headers from the response; default <b>[]</b>
+     * @param array<array-key, string[]> $httpHeaders (optional) For $type = \SplFileObject: A list of headers from the response; default <b>[]</b>
+     * @param \Tatum\Sdk\Config          $config      (optional) For $type = \SplFileObject: Configuration object; default <b>null</b>
      *
      * @return mixed a single or an array of $type instances
      * @throws \Tatum\Sdk\ApiException
+     * @throws \RuntimeException
      */
-    public static function deserialize($config, $data, string $type, array $httpHeaders = []) {
+    public static function deserialize($data, string $type, array $httpHeaders = [], $config = null) {
         if (null === $data) {
             return null;
         }
 
-        // Prepare the temporary path
-        $tempPath = $config->getTempFolderPath();
-
+        // File object
         if ("\SplFileObject" === $type) {
+            if (!$config instanceof \Tatum\Sdk\Config) {
+                throw new \RuntimeException("'config' argument missing");
+            }
+
+            // Prepare the temporary path
+            $tempPath = $config->getTempFolderPath();
+
             // Determine file name
             if (
                 isset($httpHeaders["Content-Disposition"]) &&

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcTransactionFromUTXOTarget Model
  */
@@ -25,8 +23,8 @@ class BtcTransactionFromUTXOTarget extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTransactionFromUTXOTarget";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "value" => ["value", "float", null, "getValue", "setValue", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "value" => ["value", "float", null, "getValue", "setValue", null, ["r" => 1, "n" => [0]]]
     ];
 
     /**
@@ -38,23 +36,6 @@ class BtcTransactionFromUTXOTarget extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        if (($this->_data['value'] < 0)) {
-            $ip[] = "'value' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -71,12 +52,11 @@ class BtcTransactionFromUTXOTarget extends AbstractModel {
      * Set address
      * 
      * @param string $address The blockchain address to receive the assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -92,14 +72,10 @@ class BtcTransactionFromUTXOTarget extends AbstractModel {
      * Set value
      * 
      * @param float $value The amount to receive (in BTC)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(float $value) {
-        if (($value < 0)) {
-            throw new IAE('BtcTransactionFromUTXOTarget.setValue: $value must be >=0');
-        }
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

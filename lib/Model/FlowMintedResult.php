@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowMintedResult Model
  */
@@ -25,8 +23,8 @@ class FlowMintedResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowMintedResult";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 0, "xl" => 78]]
     ];
 
     /**
@@ -38,17 +36,6 @@ class FlowMintedResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (!is_null($this->_data['token_id']) && (mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        return $ip;
     }
 
 
@@ -65,12 +52,11 @@ class FlowMintedResult extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id Transaction ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -86,14 +72,10 @@ class FlowMintedResult extends AbstractModel {
      * Set token_id
      * 
      * @param string|null $token_id ID of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(?string $token_id) {
-        if (!is_null($token_id) && (mb_strlen($token_id) > 78)) {
-            throw new IAE('FlowMintedResult.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MintNftFlowPK Model
  * 
@@ -28,12 +26,12 @@ class MintNftFlowPK extends AbstractModel {
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "MintNftFlowPK";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 256]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 36, "xl" => 36]], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]]
     ];
 
     /**
@@ -45,64 +43,6 @@ class MintNftFlowPK extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 18)) {
-            $ip[] = "'to' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['to']) < 18)) {
-            $ip[] = "'to' length must be >= 18";
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 256)) {
-            $ip[] = "'url' length must be <= 256";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 36)) {
-            $ip[] = "'contract_address' length must be <= 36";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 36)) {
-            $ip[] = "'contract_address' length must be >= 36";
-        }
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        return $ip;
     }
 
     /**
@@ -129,16 +69,11 @@ class MintNftFlowPK extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("MintNftFlowPK.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -154,18 +89,11 @@ class MintNftFlowPK extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send NFT token to.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 18)) {
-            throw new IAE('MintNftFlowPK.setTo: $to length must be <= 18');
-        }
-        if ((mb_strlen($to) < 18)) {
-            throw new IAE('MintNftFlowPK.setTo: $to length must be >= 18');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -181,15 +109,11 @@ class MintNftFlowPK extends AbstractModel {
      * Set url
      * 
      * @param string $url The URL pointing to the NFT metadata; for more information, see <a href=\"https://eips.ethereum.org/EIPS/eip-721#specification\" target=\"_blank\">EIP-721</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 256)) {
-            throw new IAE('MintNftFlowPK.setUrl: $url length must be <= 256');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -205,18 +129,11 @@ class MintNftFlowPK extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of NFT token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 36)) {
-            throw new IAE('MintNftFlowPK.setContractAddress: $contract_address length must be <= 36');
-        }
-        if ((mb_strlen($contract_address) < 36)) {
-            throw new IAE('MintNftFlowPK.setContractAddress: $contract_address length must be >= 36');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -232,18 +149,11 @@ class MintNftFlowPK extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain address of the sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('MintNftFlowPK.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('MintNftFlowPK.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -259,17 +169,10 @@ class MintNftFlowPK extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Private key of sender address. Private key, mnemonic and index or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('MintNftFlowPK.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('MintNftFlowPK.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

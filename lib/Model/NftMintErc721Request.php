@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftMintErc721_request Model
  */
@@ -29,32 +27,32 @@ class NftMintErc721Request extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "NftMintErc721_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr", null], 
-        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadataKMS", null, "getMetadata", "setMetadata", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "minter" => ["minter", "string", null, "getMinter", "setMinter", null], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "erc20" => ["erc20", "string", null, "getErc20", "setErc20", null], 
-        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null], 
-        "author_addresses" => ["authorAddresses", "string[]", null, "getAuthorAddresses", "setAuthorAddresses", null], 
-        "cashback_values" => ["cashbackValues", "string[]", null, "getCashbackValues", "setCashbackValues", null], 
-        "fixed_values" => ["fixedValues", "string[]", null, "getFixedValues", "setFixedValues", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 256]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "nl" => 1, "xl" => 32]], 
+        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr", null, ["r" => 0]], 
+        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadataKMS", null, "getMetadata", "setMetadata", null, ["r" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "minter" => ["minter", "string", null, "getMinter", "setMinter", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "erc20" => ["erc20", "string", null, "getErc20", "setErc20", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "provenance" => ["provenance", "bool", null, "getProvenance", "setProvenance", null, ["r" => 0]], 
+        "author_addresses" => ["authorAddresses", "string[]", null, "getAuthorAddresses", "setAuthorAddresses", null, ["r" => 0, "c" => 1]], 
+        "cashback_values" => ["cashbackValues", "string[]", null, "getCashbackValues", "setCashbackValues", null, ["r" => 0, "c" => 1]], 
+        "fixed_values" => ["fixedValues", "string[]", null, "getFixedValues", "setFixedValues", null, ["r" => 0, "c" => 1]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0]]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey", null, ["r" => 0, "nl" => 64, "xl" => 128]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1]]
     ];
 
     /**
@@ -66,153 +64,6 @@ class NftMintErc721Request extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 34)) {
-            $ip[] = "'to' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['to']) < 34)) {
-            $ip[] = "'to' length must be >= 34";
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 256)) {
-            $ip[] = "'url' length must be <= 256";
-        }
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 32)) {
-            $ip[] = "'name' length must be <= 32";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (is_null($this->_data['metadata'])) {
-            $ip[] = "'metadata' can't be null";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 34)) {
-            $ip[] = "'contract_address' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 34)) {
-            $ip[] = "'contract_address' length must be >= 34";
-        }
-        if (is_null($this->_data['minter'])) {
-            $ip[] = "'minter' can't be null";
-        }
-        if ((mb_strlen($this->_data['minter']) > 42)) {
-            $ip[] = "'minter' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['minter']) < 42)) {
-            $ip[] = "'minter' length must be >= 42";
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        if (!is_null($this->_data['erc20']) && (mb_strlen($this->_data['erc20']) > 42)) {
-            $ip[] = "'erc20' length must be <= 42";
-        }
-        if (!is_null($this->_data['erc20']) && (mb_strlen($this->_data['erc20']) < 42)) {
-            $ip[] = "'erc20' length must be >= 42";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 43)) {
-            $ip[] = "'from' length must be >= 43";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 34)) {
-            $ip[] = "'account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['account']) < 34)) {
-            $ip[] = "'account' length must be >= 34";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (!is_null($this->_data['collection_verifier_private_key']) && (mb_strlen($this->_data['collection_verifier_private_key']) > 128)) {
-            $ip[] = "'collection_verifier_private_key' length must be <= 128";
-        }
-        if (!is_null($this->_data['collection_verifier_private_key']) && (mb_strlen($this->_data['collection_verifier_private_key']) < 64)) {
-            $ip[] = "'collection_verifier_private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -251,16 +102,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("NftMintErc721Request.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -276,18 +122,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address to send the NFT to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 34)) {
-            throw new IAE('NftMintErc721Request.setTo: $to length must be <= 34');
-        }
-        if ((mb_strlen($to) < 34)) {
-            throw new IAE('NftMintErc721Request.setTo: $to length must be >= 34');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -303,15 +142,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set url
      * 
      * @param string $url The URL pointing to the NFT metadata; for more information, see <a href=\"https://eips.ethereum.org/EIPS/eip-721#specification\" target=\"_blank\">EIP-721</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 256)) {
-            throw new IAE('NftMintErc721Request.setUrl: $url length must be <= 256');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -327,18 +162,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set name
      * 
      * @param string $name The name of the NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 32)) {
-            throw new IAE('NftMintErc721Request.setName: $name length must be <= 32');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('NftMintErc721Request.setName: $name length must be >= 1');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -354,12 +182,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set attr
      * 
      * @param \Tatum\Model\MintNftExpressAlgorandAttr|null $attr attr
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?\Tatum\Model\MintNftExpressAlgorandAttr $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 
     /**
@@ -375,12 +202,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set metadata
      * 
      * @param \Tatum\Model\SolanaNftMetadataKMS $metadata metadata
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(\Tatum\Model\SolanaNftMetadataKMS $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 
     /**
@@ -396,18 +222,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The blockchain address of the smart contract to build the NFT on
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 34)) {
-            throw new IAE('NftMintErc721Request.setContractAddress: $contract_address length must be <= 34');
-        }
-        if ((mb_strlen($contract_address) < 34)) {
-            throw new IAE('NftMintErc721Request.setContractAddress: $contract_address length must be >= 34');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -423,18 +242,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set minter
      * 
      * @param string $minter The blockchain address of the Tatum NFT minter; this is the address that you added as an NFT minter to your NFT smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMinter(string $minter) {
-        if ((mb_strlen($minter) > 42)) {
-            throw new IAE('NftMintErc721Request.setMinter: $minter length must be <= 42');
-        }
-        if ((mb_strlen($minter) < 42)) {
-            throw new IAE('NftMintErc721Request.setMinter: $minter length must be >= 42');
-        }
-        $this->_data['minter'] = $minter;
-
-        return $this;
+        return $this->_set("minter", $minter);
     }
 
     /**
@@ -450,15 +262,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id The ID of the NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 78)) {
-            throw new IAE('NftMintErc721Request.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -474,18 +282,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the blockchain address that will pay the fee for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('NftMintErc721Request.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('NftMintErc721Request.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -501,18 +302,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set erc20
      * 
      * @param string|null $erc20 The blockchain address of the custom fungible token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErc20(?string $erc20) {
-        if (!is_null($erc20) && (mb_strlen($erc20) > 42)) {
-            throw new IAE('NftMintErc721Request.setErc20: $erc20 length must be <= 42');
-        }
-        if (!is_null($erc20) && (mb_strlen($erc20) < 42)) {
-            throw new IAE('NftMintErc721Request.setErc20: $erc20 length must be >= 42');
-        }
-        $this->_data['erc20'] = $erc20;
-
-        return $this;
+        return $this->_set("erc20", $erc20);
     }
 
     /**
@@ -528,12 +322,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set provenance
      * 
      * @param bool|null $provenance Set to \"true\" if the NFT smart contract is of the <a href=\"#operation/NftDeployErc721\">provenance type</a>; otherwise, set to \"false\".
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProvenance(?bool $provenance) {
-        $this->_data['provenance'] = $provenance;
-
-        return $this;
+        return $this->_set("provenance", $provenance);
     }
 
     /**
@@ -549,12 +342,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set author_addresses
      * 
      * @param string[]|null $author_addresses The blockchain addresses where the royalties will be sent every time the minted NFT is transferred; the royalties are paid in the native blockchain currency, TRX
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthorAddresses(?array $author_addresses) {
-        $this->_data['author_addresses'] = $author_addresses;
-
-        return $this;
+        return $this->_set("author_addresses", $author_addresses);
     }
 
     /**
@@ -570,12 +362,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set cashback_values
      * 
      * @param string[]|null $cashback_values The amounts of the royalties that will be paid to the authors of the minted NFT every time the NFT is transferred; the amount is defined as a fixed amount of the native blockchain currency
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCashbackValues(?array $cashback_values) {
-        $this->_data['cashback_values'] = $cashback_values;
-
-        return $this;
+        return $this->_set("cashback_values", $cashback_values);
     }
 
     /**
@@ -591,12 +382,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set fixed_values
      * 
      * @param string[]|null $fixed_values The fixed amounts of the native blockchain currency to which the cashback royalty amounts will be compared to; if the fixed amount specified in this parameter is greater than the amount of the cashback royalties, this fixed amount will be sent to the NFT authors instead of the cashback royalties
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFixedValues(?array $fixed_values) {
-        $this->_data['fixed_values'] = $fixed_values;
-
-        return $this;
+        return $this->_set("fixed_values", $fixed_values);
     }
 
     /**
@@ -612,15 +402,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('NftMintErc721Request.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -636,12 +422,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\CustomFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -657,12 +442,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the blockchain address that will pay the fee for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -678,15 +462,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set index
      * 
      * @param float $index (Only if the signature ID is mnemonic-based) The index of the address to pay the transaction fee that was generated from the mnemonic
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index < 0)) {
-            throw new IAE('NftMintErc721Request.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -702,18 +482,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address that will pay the fee for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('NftMintErc721Request.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 43)) {
-            throw new IAE('NftMintErc721Request.setFrom: $from length must be >= 43');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -729,16 +502,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("NftMintErc721Request.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -754,18 +522,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set account
      * 
      * @param string $account The blockchain address that will pay the fee for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 34)) {
-            throw new IAE('NftMintErc721Request.setAccount: $account length must be <= 34');
-        }
-        if ((mb_strlen($account) < 34)) {
-            throw new IAE('NftMintErc721Request.setAccount: $account length must be >= 34');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -781,18 +542,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Private key of sender address. Private key, mnemonic and index or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('NftMintErc721Request.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('NftMintErc721Request.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -808,18 +562,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key of sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('NftMintErc721Request.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('NftMintErc721Request.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -835,18 +582,11 @@ class NftMintErc721Request extends AbstractModel {
      * Set collection_verifier_private_key
      * 
      * @param string|null $collection_verifier_private_key The private key of the collection verifier (owner) who will verify the NFT in the NFT collection where the NFT is minted in. The blockchain address of this collection is specified in the <code>collection</code> parameter in the <code>metadata</code> section of the request body. To know more about Solana collections and verification, refer to the <a href=\"https://docs.metaplex.com/programs/token-metadata/certified-collections\" target=\"_blank\">Solana user documentation</a>.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCollectionVerifierPrivateKey(?string $collection_verifier_private_key) {
-        if (!is_null($collection_verifier_private_key) && (mb_strlen($collection_verifier_private_key) > 128)) {
-            throw new IAE('NftMintErc721Request.setCollectionVerifierPrivateKey: $collection_verifier_private_key length must be <= 128');
-        }
-        if (!is_null($collection_verifier_private_key) && (mb_strlen($collection_verifier_private_key) < 64)) {
-            throw new IAE('NftMintErc721Request.setCollectionVerifierPrivateKey: $collection_verifier_private_key length must be >= 64');
-        }
-        $this->_data['collection_verifier_private_key'] = $collection_verifier_private_key;
-
-        return $this;
+        return $this->_set("collection_verifier_private_key", $collection_verifier_private_key);
     }
 
     /**
@@ -862,11 +602,10 @@ class NftMintErc721Request extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit The maximum amount to be paid as the transaction fee (in TRX)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 }

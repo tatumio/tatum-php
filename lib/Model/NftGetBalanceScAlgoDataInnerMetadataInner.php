@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftGetBalanceScAlgo_data_inner_metadata_inner Model
  */
@@ -25,7 +23,7 @@ class NftGetBalanceScAlgoDataInnerMetadataInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftGetBalanceScAlgo_data_inner_metadata_inner";
     protected static $_definition = [
-        "url" => ["url", "string", null, "getUrl", "setUrl", null]
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class NftGetBalanceScAlgoDataInnerMetadataInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class NftGetBalanceScAlgoDataInnerMetadataInner extends AbstractModel {
      * Set url
      * 
      * @param string|null $url The URL pointing to the NFT metadata; may not be present
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(?string $url) {
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTx_tx_value Model
  */
@@ -25,10 +23,10 @@ class BnbTxTxValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx_tx_value";
     protected static $_definition = [
-        "memo" => ["memo", "string", null, "getMemo", "setMemo", null], 
-        "msg" => ["msg", "\Tatum\Model\BnbTxTxValueMsgInner[]", null, "getMsg", "setMsg", null], 
-        "signatures" => ["signatures", "\Tatum\Model\BnbTxTxValueSignaturesInner[]", null, "getSignatures", "setSignatures", null], 
-        "source" => ["source", "string", null, "getSource", "setSource", null]
+        "memo" => ["memo", "string", null, "getMemo", "setMemo", null, ["r" => 0]], 
+        "msg" => ["msg", "\Tatum\Model\BnbTxTxValueMsgInner[]", null, "getMsg", "setMsg", null, ["r" => 0, "c" => 1]], 
+        "signatures" => ["signatures", "\Tatum\Model\BnbTxTxValueSignaturesInner[]", null, "getSignatures", "setSignatures", null, ["r" => 0, "c" => 1]], 
+        "source" => ["source", "string", null, "getSource", "setSource", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class BnbTxTxValue extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class BnbTxTxValue extends AbstractModel {
      * Set memo
      * 
      * @param string|null $memo memo
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMemo(?string $memo) {
-        $this->_data['memo'] = $memo;
-
-        return $this;
+        return $this->_set("memo", $memo);
     }
 
     /**
@@ -85,12 +74,11 @@ class BnbTxTxValue extends AbstractModel {
      * Set msg
      * 
      * @param \Tatum\Model\BnbTxTxValueMsgInner[]|null $msg msg
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMsg(?array $msg) {
-        $this->_data['msg'] = $msg;
-
-        return $this;
+        return $this->_set("msg", $msg);
     }
 
     /**
@@ -106,12 +94,11 @@ class BnbTxTxValue extends AbstractModel {
      * Set signatures
      * 
      * @param \Tatum\Model\BnbTxTxValueSignaturesInner[]|null $signatures signatures
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatures(?array $signatures) {
-        $this->_data['signatures'] = $signatures;
-
-        return $this;
+        return $this->_set("signatures", $signatures);
     }
 
     /**
@@ -127,11 +114,10 @@ class BnbTxTxValue extends AbstractModel {
      * Set source
      * 
      * @param string|null $source source
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSource(?string $source) {
-        $this->_data['source'] = $source;
-
-        return $this;
+        return $this->_set("source", $source);
     }
 }

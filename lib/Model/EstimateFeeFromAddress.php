@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFeeFromAddress Model
  */
@@ -28,10 +26,10 @@ class EstimateFeeFromAddress extends AbstractModel {
     public const TYPE_TRANSFER = 'TRANSFER';
     protected static $_name = "EstimateFeeFromAddress";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "from_address" => ["fromAddress", "string[]", null, "getFromAddress", "setFromAddress", null], 
-        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "from_address" => ["fromAddress", "string[]", null, "getFromAddress", "setFromAddress", null, ["r" => 1, "c" => 1]], 
+        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -43,36 +41,6 @@ class EstimateFeeFromAddress extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from_address'])) {
-            $ip[] = "'from_address' can't be null";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -110,16 +78,11 @@ class EstimateFeeFromAddress extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to estimate fee for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeFromAddress.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -135,16 +98,11 @@ class EstimateFeeFromAddress extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeFromAddress.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -160,12 +118,11 @@ class EstimateFeeFromAddress extends AbstractModel {
      * Set from_address
      * 
      * @param string[] $from_address Array of addresses. Tatum will automatically scan last 100 transactions for each address and will use all of the unspent values. We advise to use this option if you have 1 address per 1 transaction only.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAddress(array $from_address) {
-        $this->_data['from_address'] = $from_address;
-
-        return $this;
+        return $this->_set("from_address", $from_address);
     }
 
     /**
@@ -181,11 +138,10 @@ class EstimateFeeFromAddress extends AbstractModel {
      * Set to
      * 
      * @param \Tatum\Model\EstimateFeeFromAddressToInner[] $to Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(array $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 }

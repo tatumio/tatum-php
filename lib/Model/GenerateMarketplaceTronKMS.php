@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateMarketplaceTronKMS Model
  */
@@ -26,13 +24,13 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "GenerateMarketplaceTronKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null], 
-        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 0, "e" => 1]], 
+        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1, "n" => [0]]]
     ];
 
     /**
@@ -44,58 +42,6 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_recipient'])) {
-            $ip[] = "'fee_recipient' can't be null";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) > 34)) {
-            $ip[] = "'fee_recipient' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) < 34)) {
-            $ip[] = "'fee_recipient' length must be >= 34";
-        }
-        if (is_null($this->_data['marketplace_fee'])) {
-            $ip[] = "'marketplace_fee' can't be null";
-        }
-        if (($this->_data['marketplace_fee'] > 10000)) {
-            $ip[] = "'marketplace_fee' must be <= 10000";
-        }
-        if (($this->_data['marketplace_fee'] < 0)) {
-            $ip[] = "'marketplace_fee' must be >= 0";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 34)) {
-            $ip[] = "'from' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['from']) < 34)) {
-            $ip[] = "'from' length must be >= 34";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        if (($this->_data['fee_limit'] < 0)) {
-            $ip[] = "'fee_limit' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -122,16 +68,11 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      * Set chain
      * 
      * @param string|null $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(?string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!is_null($chain) && !in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateMarketplaceTronKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -147,18 +88,11 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      * Set fee_recipient
      * 
      * @param string $fee_recipient Address of the recipient of the fee for the trade.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeRecipient(string $fee_recipient) {
-        if ((mb_strlen($fee_recipient) > 34)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setFeeRecipient: $fee_recipient length must be <= 34');
-        }
-        if ((mb_strlen($fee_recipient) < 34)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setFeeRecipient: $fee_recipient length must be >= 34');
-        }
-        $this->_data['fee_recipient'] = $fee_recipient;
-
-        return $this;
+        return $this->_set("fee_recipient", $fee_recipient);
     }
 
     /**
@@ -174,18 +108,11 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      * Set marketplace_fee
      * 
      * @param float $marketplace_fee The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMarketplaceFee(float $marketplace_fee) {
-        if (($marketplace_fee > 10000)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setMarketplaceFee: $marketplace_fee must be <=10000');
-        }
-        if (($marketplace_fee < 0)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setMarketplaceFee: $marketplace_fee must be >=0');
-        }
-        $this->_data['marketplace_fee'] = $marketplace_fee;
-
-        return $this;
+        return $this->_set("marketplace_fee", $marketplace_fee);
     }
 
     /**
@@ -201,18 +128,11 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from Address of the recipient of the fee for the trade.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 34)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setFrom: $from length must be <= 34');
-        }
-        if ((mb_strlen($from) < 34)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setFrom: $from length must be >= 34');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -228,12 +148,11 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -249,15 +168,11 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -273,14 +188,10 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit Fee in TRX to be paid.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        if (($fee_limit < 0)) {
-            throw new IAE('GenerateMarketplaceTronKMS.setFeeLimit: $fee_limit must be >=0');
-        }
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 }

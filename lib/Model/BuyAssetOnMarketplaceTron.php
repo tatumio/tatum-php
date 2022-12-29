@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BuyAssetOnMarketplaceTron Model
  */
@@ -26,14 +24,14 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "BuyAssetOnMarketplaceTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
-        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer", null], 
-        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null, ["r" => 0, "nl" => 34, "xl" => 34]], 
+        "buyer" => ["buyer", "string", null, "getBuyer", "setBuyer", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 1, "xl" => 200]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1, "n" => [0]]]
     ];
 
     /**
@@ -45,70 +43,6 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 34)) {
-            $ip[] = "'contract_address' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 34)) {
-            $ip[] = "'contract_address' length must be >= 34";
-        }
-        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) > 34)) {
-            $ip[] = "'erc20_address' length must be <= 34";
-        }
-        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) < 34)) {
-            $ip[] = "'erc20_address' length must be >= 34";
-        }
-        if (!is_null($this->_data['buyer']) && (mb_strlen($this->_data['buyer']) > 42)) {
-            $ip[] = "'buyer' length must be <= 42";
-        }
-        if (!is_null($this->_data['buyer']) && (mb_strlen($this->_data['buyer']) < 42)) {
-            $ip[] = "'buyer' length must be >= 42";
-        }
-        if (is_null($this->_data['listing_id'])) {
-            $ip[] = "'listing_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['listing_id']) > 200)) {
-            $ip[] = "'listing_id' length must be <= 200";
-        }
-        if ((mb_strlen($this->_data['listing_id']) < 1)) {
-            $ip[] = "'listing_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['amount']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        if (($this->_data['fee_limit'] < 0)) {
-            $ip[] = "'fee_limit' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -135,16 +69,11 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("BuyAssetOnMarketplaceTron.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -160,18 +89,11 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of the marketplace smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 34)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setContractAddress: $contract_address length must be <= 34');
-        }
-        if ((mb_strlen($contract_address) < 34)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setContractAddress: $contract_address length must be >= 34');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -187,18 +109,11 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set erc20_address
      * 
      * @param string|null $erc20_address Optional address of the TRC20 token, which will be used as a selling currency of the NFT.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErc20Address(?string $erc20_address) {
-        if (!is_null($erc20_address) && (mb_strlen($erc20_address) > 34)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setErc20Address: $erc20_address length must be <= 34');
-        }
-        if (!is_null($erc20_address) && (mb_strlen($erc20_address) < 34)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setErc20Address: $erc20_address length must be >= 34');
-        }
-        $this->_data['erc20_address'] = $erc20_address;
-
-        return $this;
+        return $this->_set("erc20_address", $erc20_address);
     }
 
     /**
@@ -214,18 +129,11 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set buyer
      * 
      * @param string|null $buyer In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the address of the buyer, which should approve spending of the ERC20 tokens for the Marketplace contract. This could be used for a buying from the custodial wallet address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBuyer(?string $buyer) {
-        if (!is_null($buyer) && (mb_strlen($buyer) > 42)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setBuyer: $buyer length must be <= 42');
-        }
-        if (!is_null($buyer) && (mb_strlen($buyer) < 42)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setBuyer: $buyer length must be >= 42');
-        }
-        $this->_data['buyer'] = $buyer;
-
-        return $this;
+        return $this->_set("buyer", $buyer);
     }
 
     /**
@@ -241,18 +149,11 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set listing_id
      * 
      * @param string $listing_id ID of the listing. It's up to the developer to generate unique ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setListingId(string $listing_id) {
-        if ((mb_strlen($listing_id) > 200)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setListingId: $listing_id length must be <= 200');
-        }
-        if ((mb_strlen($listing_id) < 1)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setListingId: $listing_id length must be >= 1');
-        }
-        $this->_data['listing_id'] = $listing_id;
-
-        return $this;
+        return $this->_set("listing_id", $listing_id);
     }
 
     /**
@@ -268,15 +169,11 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Amount of the assets to be sent. For ERC-721 tokens, enter 1.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        if (!is_null($amount) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -292,18 +189,11 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -319,14 +209,10 @@ class BuyAssetOnMarketplaceTron extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit Fee in TRX to be paid.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        if (($fee_limit < 0)) {
-            throw new IAE('BuyAssetOnMarketplaceTron.setFeeLimit: $fee_limit must be >=0');
-        }
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VirtualCurrencyOperation Model
  */
@@ -25,14 +23,14 @@ class VirtualCurrencyOperation extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VirtualCurrencyOperation";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
-        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null, ["r" => 0, "nl" => 1, "xl" => 500]], 
+        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount", null, ["r" => 0, "nl" => 24, "xl" => 24]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -44,68 +42,6 @@ class VirtualCurrencyOperation extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['account_id']) > 24)) {
-            $ip[] = "'account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['account_id']) < 24)) {
-            $ip[] = "'account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['reference']) && (mb_strlen($this->_data['reference']) > 100)) {
-            $ip[] = "'reference' length must be <= 100";
-        }
-        if (!is_null($this->_data['reference']) && (mb_strlen($this->_data['reference']) < 1)) {
-            $ip[] = "'reference' length must be >= 1";
-        }
-        if (!is_null($this->_data['transaction_code']) && (mb_strlen($this->_data['transaction_code']) > 100)) {
-            $ip[] = "'transaction_code' length must be <= 100";
-        }
-        if (!is_null($this->_data['transaction_code']) && (mb_strlen($this->_data['transaction_code']) < 1)) {
-            $ip[] = "'transaction_code' length must be >= 1";
-        }
-        if (!is_null($this->_data['recipient_note']) && (mb_strlen($this->_data['recipient_note']) > 500)) {
-            $ip[] = "'recipient_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['recipient_note']) && (mb_strlen($this->_data['recipient_note']) < 1)) {
-            $ip[] = "'recipient_note' length must be >= 1";
-        }
-        if (!is_null($this->_data['counter_account']) && (mb_strlen($this->_data['counter_account']) > 24)) {
-            $ip[] = "'counter_account' length must be <= 24";
-        }
-        if (!is_null($this->_data['counter_account']) && (mb_strlen($this->_data['counter_account']) < 24)) {
-            $ip[] = "'counter_account' length must be >= 24";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -122,18 +58,11 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id Ledger account with currency of the virtual currency, on which the operation will be performed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        if ((mb_strlen($account_id) > 24)) {
-            throw new IAE('VirtualCurrencyOperation.setAccountId: $account_id length must be <= 24');
-        }
-        if ((mb_strlen($account_id) < 24)) {
-            throw new IAE('VirtualCurrencyOperation.setAccountId: $account_id length must be >= 24');
-        }
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -149,18 +78,11 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount of virtual currency to operate within this operation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('VirtualCurrencyOperation.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('VirtualCurrencyOperation.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -176,18 +98,11 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Identifier of the payment, shown for created Transaction within Tatum sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('VirtualCurrencyOperation.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('VirtualCurrencyOperation.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -203,18 +118,11 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set reference
      * 
      * @param string|null $reference Reference of the payment.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReference(?string $reference) {
-        if (!is_null($reference) && (mb_strlen($reference) > 100)) {
-            throw new IAE('VirtualCurrencyOperation.setReference: $reference length must be <= 100');
-        }
-        if (!is_null($reference) && (mb_strlen($reference) < 1)) {
-            throw new IAE('VirtualCurrencyOperation.setReference: $reference length must be >= 1');
-        }
-        $this->_data['reference'] = $reference;
-
-        return $this;
+        return $this->_set("reference", $reference);
     }
 
     /**
@@ -230,18 +138,11 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set transaction_code
      * 
      * @param string|null $transaction_code For bookkeeping to distinct transaction purpose.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionCode(?string $transaction_code) {
-        if (!is_null($transaction_code) && (mb_strlen($transaction_code) > 100)) {
-            throw new IAE('VirtualCurrencyOperation.setTransactionCode: $transaction_code length must be <= 100');
-        }
-        if (!is_null($transaction_code) && (mb_strlen($transaction_code) < 1)) {
-            throw new IAE('VirtualCurrencyOperation.setTransactionCode: $transaction_code length must be >= 1');
-        }
-        $this->_data['transaction_code'] = $transaction_code;
-
-        return $this;
+        return $this->_set("transaction_code", $transaction_code);
     }
 
     /**
@@ -257,18 +158,11 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set recipient_note
      * 
      * @param string|null $recipient_note Note visible to both, sender and recipient. Available for both Mint and Revoke operations
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipientNote(?string $recipient_note) {
-        if (!is_null($recipient_note) && (mb_strlen($recipient_note) > 500)) {
-            throw new IAE('VirtualCurrencyOperation.setRecipientNote: $recipient_note length must be <= 500');
-        }
-        if (!is_null($recipient_note) && (mb_strlen($recipient_note) < 1)) {
-            throw new IAE('VirtualCurrencyOperation.setRecipientNote: $recipient_note length must be >= 1');
-        }
-        $this->_data['recipient_note'] = $recipient_note;
-
-        return $this;
+        return $this->_set("recipient_note", $recipient_note);
     }
 
     /**
@@ -284,18 +178,11 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set counter_account
      * 
      * @param string|null $counter_account External account identifier. By default, there is no counterAccount present in the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCounterAccount(?string $counter_account) {
-        if (!is_null($counter_account) && (mb_strlen($counter_account) > 24)) {
-            throw new IAE('VirtualCurrencyOperation.setCounterAccount: $counter_account length must be <= 24');
-        }
-        if (!is_null($counter_account) && (mb_strlen($counter_account) < 24)) {
-            throw new IAE('VirtualCurrencyOperation.setCounterAccount: $counter_account length must be >= 24');
-        }
-        $this->_data['counter_account'] = $counter_account;
-
-        return $this;
+        return $this->_set("counter_account", $counter_account);
     }
 
     /**
@@ -311,17 +198,10 @@ class VirtualCurrencyOperation extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to sender. Available in Revoke operation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('VirtualCurrencyOperation.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('VirtualCurrencyOperation.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

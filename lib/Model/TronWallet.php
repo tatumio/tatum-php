@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronWallet Model
  */
@@ -25,8 +23,8 @@ class TronWallet extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronWallet";
     protected static $_definition = [
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null]
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class TronWallet extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if (is_null($this->_data['xpub'])) {
-            $ip[] = "'xpub' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class TronWallet extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Generated mnemonic for wallet.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -89,11 +72,10 @@ class TronWallet extends AbstractModel {
      * Set xpub
      * 
      * @param string $xpub Generated Extended public key for wallet with derivation path according to BIP44. This key can be used to generate addresses.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(string $xpub) {
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 }

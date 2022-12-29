@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowTransactionMnemonic Model
  */
@@ -27,12 +25,12 @@ class FlowTransactionMnemonic extends AbstractModel {
     public const CURRENCY_FUSD = 'FUSD';
     protected static $_name = "FlowTransactionMnemonic";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0]]]
     ];
 
     /**
@@ -44,64 +42,6 @@ class FlowTransactionMnemonic extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        $allowed = $this->getCurrencyAllowableValues();
-        $value = $this->_data['currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 18)) {
-            $ip[] = "'to' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['to']) < 18)) {
-            $ip[] = "'to' length must be >= 18";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -129,18 +69,11 @@ class FlowTransactionMnemonic extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowTransactionMnemonic.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowTransactionMnemonic.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -156,16 +89,11 @@ class FlowTransactionMnemonic extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Type of asset to send
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $allowed = $this->getCurrencyAllowableValues();
-        if (!in_array($currency, $allowed, true)) {
-            throw new IAE(sprintf("FlowTransactionMnemonic.setCurrency: currency invalid value '%s', must be one of '%s'", $currency, implode("', '", $allowed)));
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -181,18 +109,11 @@ class FlowTransactionMnemonic extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 18)) {
-            throw new IAE('FlowTransactionMnemonic.setTo: $to length must be <= 18');
-        }
-        if ((mb_strlen($to) < 18)) {
-            throw new IAE('FlowTransactionMnemonic.setTo: $to length must be >= 18');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -208,18 +129,11 @@ class FlowTransactionMnemonic extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent, in Flow.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('FlowTransactionMnemonic.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('FlowTransactionMnemonic.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -235,18 +149,11 @@ class FlowTransactionMnemonic extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('FlowTransactionMnemonic.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('FlowTransactionMnemonic.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -262,14 +169,10 @@ class FlowTransactionMnemonic extends AbstractModel {
      * Set index
      * 
      * @param float $index Index to the specific address from mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index < 0)) {
-            throw new IAE('FlowTransactionMnemonic.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EthGasEstimationBatchResult Model
  */
@@ -25,10 +23,10 @@ class EthGasEstimationBatchResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthGasEstimationBatchResult";
     protected static $_definition = [
-        "error" => ["error", "bool", null, "getError", "setError", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "data" => ["data", "\Tatum\Model\EthGasEstimationBatchResultData", null, "getData", "setData", null], 
-        "msg" => ["msg", "string", null, "getMsg", "setMsg", null]
+        "error" => ["error", "bool", null, "getError", "setError", null, ["r" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "data" => ["data", "\Tatum\Model\EthGasEstimationBatchResultData", null, "getData", "setData", null, ["r" => 0]], 
+        "msg" => ["msg", "string", null, "getMsg", "setMsg", null, ["r" => 0]]
     ];
 
     /**
@@ -40,23 +38,6 @@ class EthGasEstimationBatchResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['error'])) {
-            $ip[] = "'error' can't be null";
-        }
-        if (!is_null($this->_data['contract_address']) && (mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if (!is_null($this->_data['contract_address']) && (mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        return $ip;
     }
 
 
@@ -73,12 +54,11 @@ class EthGasEstimationBatchResult extends AbstractModel {
      * Set error
      * 
      * @param bool $error If estimation succeeded.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setError(bool $error) {
-        $this->_data['error'] = $error;
-
-        return $this;
+        return $this->_set("error", $error);
     }
 
     /**
@@ -94,18 +74,11 @@ class EthGasEstimationBatchResult extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address Contract address of ERC20 token, if transaction is ERC20 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        if (!is_null($contract_address) && (mb_strlen($contract_address) > 42)) {
-            throw new IAE('EthGasEstimationBatchResult.setContractAddress: $contract_address length must be <= 42');
-        }
-        if (!is_null($contract_address) && (mb_strlen($contract_address) < 42)) {
-            throw new IAE('EthGasEstimationBatchResult.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -121,12 +94,11 @@ class EthGasEstimationBatchResult extends AbstractModel {
      * Set data
      * 
      * @param \Tatum\Model\EthGasEstimationBatchResultData|null $data data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?\Tatum\Model\EthGasEstimationBatchResultData $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -142,11 +114,10 @@ class EthGasEstimationBatchResult extends AbstractModel {
      * Set msg
      * 
      * @param string|null $msg Error message. Present only if error - true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMsg(?string $msg) {
-        $this->_data['msg'] = $msg;
-
-        return $this;
+        return $this->_set("msg", $msg);
     }
 }

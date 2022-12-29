@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowMintedMultipleResult Model
  */
@@ -25,8 +23,8 @@ class FlowMintedMultipleResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowMintedMultipleResult";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 
+        "token_id" => ["tokenId", "string[]", 'uint256', "getTokenId", "setTokenId", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class FlowMintedMultipleResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class FlowMintedMultipleResult extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id Transaction ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -83,11 +72,10 @@ class FlowMintedMultipleResult extends AbstractModel {
      * Set token_id
      * 
      * @param string[]|null $token_id token_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(?array $token_id) {
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 }

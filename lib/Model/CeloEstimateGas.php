@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CeloEstimateGas Model
  */
@@ -25,10 +23,10 @@ class CeloEstimateGas extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CeloEstimateGas";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "data" => ["data", "string", null, "getData", "setData", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0, "p" => "/^(0x|0h)?[0-9A-F]+$/", "xl" => 50000]]
     ];
 
     /**
@@ -40,44 +38,6 @@ class CeloEstimateGas extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 42)) {
-            $ip[] = "'from' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['from']) < 42)) {
-            $ip[] = "'from' length must be >= 42";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 42)) {
-            $ip[] = "'to' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['to']) < 42)) {
-            $ip[] = "'to' length must be >= 42";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 50000)) {
-            $ip[] = "'data' length must be <= 50000";
-        }
-        if (!is_null($this->_data['data']) && !preg_match("/^(0x|0h)?[0-9A-F]+$/", $this->_data['data'])) {
-            $ip[] = "'data' must match /^(0x|0h)?[0-9A-F]+$/";
-        }
-        return $ip;
     }
 
 
@@ -94,18 +54,11 @@ class CeloEstimateGas extends AbstractModel {
      * Set from
      * 
      * @param string $from Sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 42)) {
-            throw new IAE('CeloEstimateGas.setFrom: $from length must be <= 42');
-        }
-        if ((mb_strlen($from) < 42)) {
-            throw new IAE('CeloEstimateGas.setFrom: $from length must be >= 42');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -121,18 +74,11 @@ class CeloEstimateGas extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 42)) {
-            throw new IAE('CeloEstimateGas.setTo: $to length must be <= 42');
-        }
-        if ((mb_strlen($to) < 42)) {
-            throw new IAE('CeloEstimateGas.setTo: $to length must be >= 42');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -148,15 +94,11 @@ class CeloEstimateGas extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('CeloEstimateGas.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -172,17 +114,10 @@ class CeloEstimateGas extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        if (!is_null($data) && (mb_strlen($data) > 50000)) {
-            throw new IAE('CeloEstimateGas.setData: $data length must be <= 50000');
-        }
-        if (!is_null($data) && (!preg_match("/^(0x|0h)?[0-9A-F]+$/", $data))) {
-            throw new IAE('CeloEstimateGas.setData: $data must match /^(0x|0h)?[0-9A-F]+$/, ' . var_export($data, true) . ' given');
-        }
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcTx Model
  */
@@ -25,20 +23,20 @@ class BtcTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "hex" => ["hex", "string", null, "getHex", "setHex", null], 
-        "witness_hash" => ["witnessHash", "string", null, "getWitnessHash", "setWitnessHash", null], 
-        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
-        "rate" => ["rate", "float", null, "getRate", "setRate", null], 
-        "mtime" => ["mtime", "float", null, "getMtime", "setMtime", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "block" => ["block", "string", null, "getBlock", "setBlock", null], 
-        "time" => ["time", "float", null, "getTime", "setTime", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "inputs" => ["inputs", "\Tatum\Model\BtcTxInput[]", null, "getInputs", "setInputs", null], 
-        "outputs" => ["outputs", "\Tatum\Model\BtcTxOutput[]", null, "getOutputs", "setOutputs", null], 
-        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "hex" => ["hex", "string", null, "getHex", "setHex", null, ["r" => 0]], 
+        "witness_hash" => ["witnessHash", "string", null, "getWitnessHash", "setWitnessHash", null, ["r" => 0]], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null, ["r" => 0]], 
+        "rate" => ["rate", "float", null, "getRate", "setRate", null, ["r" => 0]], 
+        "mtime" => ["mtime", "float", null, "getMtime", "setMtime", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "block" => ["block", "string", null, "getBlock", "setBlock", null, ["r" => 0]], 
+        "time" => ["time", "float", null, "getTime", "setTime", null, ["r" => 0]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0]], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "inputs" => ["inputs", "\Tatum\Model\BtcTxInput[]", null, "getInputs", "setInputs", null, ["r" => 0, "c" => 1]], 
+        "outputs" => ["outputs", "\Tatum\Model\BtcTxOutput[]", null, "getOutputs", "setOutputs", null, ["r" => 0, "c" => 1]], 
+        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null, ["r" => 0]]
     ];
 
     /**
@@ -50,14 +48,6 @@ class BtcTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -74,12 +64,11 @@ class BtcTx extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Transaction hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -95,12 +84,11 @@ class BtcTx extends AbstractModel {
      * Set hex
      * 
      * @param string|null $hex Transaction hex.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHex(?string $hex) {
-        $this->_data['hex'] = $hex;
-
-        return $this;
+        return $this->_set("hex", $hex);
     }
 
     /**
@@ -116,12 +104,11 @@ class BtcTx extends AbstractModel {
      * Set witness_hash
      * 
      * @param string|null $witness_hash Witness hash in case of a SegWit transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWitnessHash(?string $witness_hash) {
-        $this->_data['witness_hash'] = $witness_hash;
-
-        return $this;
+        return $this->_set("witness_hash", $witness_hash);
     }
 
     /**
@@ -137,12 +124,11 @@ class BtcTx extends AbstractModel {
      * Set fee
      * 
      * @param float|null $fee Fee paid for this transaction, in satoshis.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?float $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -158,12 +144,11 @@ class BtcTx extends AbstractModel {
      * Set rate
      * 
      * @param float|null $rate rate
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRate(?float $rate) {
-        $this->_data['rate'] = $rate;
-
-        return $this;
+        return $this->_set("rate", $rate);
     }
 
     /**
@@ -179,12 +164,11 @@ class BtcTx extends AbstractModel {
      * Set mtime
      * 
      * @param float|null $mtime mtime
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMtime(?float $mtime) {
-        $this->_data['mtime'] = $mtime;
-
-        return $this;
+        return $this->_set("mtime", $mtime);
     }
 
     /**
@@ -200,12 +184,11 @@ class BtcTx extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number Height of the block this transaction belongs to.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -221,12 +204,11 @@ class BtcTx extends AbstractModel {
      * Set block
      * 
      * @param string|null $block Hash of the block this transaction belongs to.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlock(?string $block) {
-        $this->_data['block'] = $block;
-
-        return $this;
+        return $this->_set("block", $block);
     }
 
     /**
@@ -242,12 +224,11 @@ class BtcTx extends AbstractModel {
      * Set time
      * 
      * @param float|null $time Time of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTime(?float $time) {
-        $this->_data['time'] = $time;
-
-        return $this;
+        return $this->_set("time", $time);
     }
 
     /**
@@ -263,12 +244,11 @@ class BtcTx extends AbstractModel {
      * Set index
      * 
      * @param float|null $index Index of the transaction in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -284,12 +264,11 @@ class BtcTx extends AbstractModel {
      * Set version
      * 
      * @param float|null $version Index of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -305,12 +284,11 @@ class BtcTx extends AbstractModel {
      * Set inputs
      * 
      * @param \Tatum\Model\BtcTxInput[]|null $inputs List of transactions, from which assets are being sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInputs(?array $inputs) {
-        $this->_data['inputs'] = $inputs;
-
-        return $this;
+        return $this->_set("inputs", $inputs);
     }
 
     /**
@@ -326,12 +304,11 @@ class BtcTx extends AbstractModel {
      * Set outputs
      * 
      * @param \Tatum\Model\BtcTxOutput[]|null $outputs List of recipient addresses and amounts to send to each of them.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOutputs(?array $outputs) {
-        $this->_data['outputs'] = $outputs;
-
-        return $this;
+        return $this->_set("outputs", $outputs);
     }
 
     /**
@@ -347,11 +324,10 @@ class BtcTx extends AbstractModel {
      * Set locktime
      * 
      * @param float|null $locktime Block this transaction was included in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLocktime(?float $locktime) {
-        $this->_data['locktime'] = $locktime;
-
-        return $this;
+        return $this->_set("locktime", $locktime);
     }
 }

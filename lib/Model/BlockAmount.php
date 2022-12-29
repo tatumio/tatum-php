@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BlockAmount Model
  */
@@ -25,9 +23,9 @@ class BlockAmount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BlockAmount";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 0, "nl" => 1, "xl" => 300]]
     ];
 
     /**
@@ -39,38 +37,6 @@ class BlockAmount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        if ((mb_strlen($this->_data['type']) > 100)) {
-            $ip[] = "'type' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['type']) < 1)) {
-            $ip[] = "'type' length must be >= 1";
-        }
-        if (!is_null($this->_data['description']) && (mb_strlen($this->_data['description']) > 300)) {
-            $ip[] = "'description' length must be <= 300";
-        }
-        if (!is_null($this->_data['description']) && (mb_strlen($this->_data['description']) < 1)) {
-            $ip[] = "'description' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -87,18 +53,11 @@ class BlockAmount extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be blocked on account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('BlockAmount.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('BlockAmount.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -114,18 +73,11 @@ class BlockAmount extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of blockage.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        if ((mb_strlen($type) > 100)) {
-            throw new IAE('BlockAmount.setType: $type length must be <= 100');
-        }
-        if ((mb_strlen($type) < 1)) {
-            throw new IAE('BlockAmount.setType: $type length must be >= 1');
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -141,17 +93,10 @@ class BlockAmount extends AbstractModel {
      * Set description
      * 
      * @param string|null $description Description of blockage.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(?string $description) {
-        if (!is_null($description) && (mb_strlen($description) > 300)) {
-            throw new IAE('BlockAmount.setDescription: $description length must be <= 300');
-        }
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new IAE('BlockAmount.setDescription: $description length must be >= 1');
-        }
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 }

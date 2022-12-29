@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ListOderBookHistoryBody Model
  */
@@ -39,18 +37,18 @@ class ListOderBookHistoryBody extends AbstractModel {
     public const SORT_FEE_DESC = 'FEE_DESC';
     protected static $_name = "ListOderBookHistoryBody";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null], 
-        "page_size" => ["pageSize", "float", null, "getPageSize", "setPageSize", null], 
-        "offset" => ["offset", "float", null, "getOffset", "setOffset", null], 
-        "pair" => ["pair", "string", null, "getPair", "setPair", null], 
-        "count" => ["count", "bool", null, "getCount", "setCount", null], 
-        "types" => ["types", "string[]", null, "getTypes", "setTypes", null], 
-        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount", null], 
-        "fill" => ["fill", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getFill", "setFill", null], 
-        "price" => ["price", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getPrice", "setPrice", null], 
-        "created" => ["created", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getCreated", "setCreated", null], 
-        "sort" => ["sort", "string[]", null, "getSort", "setSort", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null, ["r" => 0]], 
+        "page_size" => ["pageSize", "float", null, "getPageSize", "setPageSize", null, ["r" => 1, "n" => [1], "x" => [50]]], 
+        "offset" => ["offset", "float", null, "getOffset", "setOffset", null, ["r" => 0]], 
+        "pair" => ["pair", "string", null, "getPair", "setPair", null, ["r" => 0, "p" => "/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", "nl" => 3, "xl" => 30]], 
+        "count" => ["count", "bool", null, "getCount", "setCount", null, ["r" => 0]], 
+        "types" => ["types", "string[]", null, "getTypes", "setTypes", null, ["r" => 0, "e" => 1, "c" => 1]], 
+        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount", null, ["r" => 0, "c" => 1]], 
+        "fill" => ["fill", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getFill", "setFill", null, ["r" => 0, "c" => 1]], 
+        "price" => ["price", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getPrice", "setPrice", null, ["r" => 0, "c" => 1]], 
+        "created" => ["created", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getCreated", "setCreated", null, ["r" => 0, "c" => 1]], 
+        "sort" => ["sort", "string[]", null, "getSort", "setSort", null, ["r" => 0, "e" => 1, "c" => 1]]
     ];
 
     /**
@@ -62,32 +60,6 @@ class ListOderBookHistoryBody extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['page_size'])) {
-            $ip[] = "'page_size' can't be null";
-        }
-        if (($this->_data['page_size'] > 50)) {
-            $ip[] = "'page_size' must be <= 50";
-        }
-        if (($this->_data['page_size'] < 1)) {
-            $ip[] = "'page_size' must be >= 1";
-        }
-        if (!is_null($this->_data['pair']) && (mb_strlen($this->_data['pair']) > 30)) {
-            $ip[] = "'pair' length must be <= 30";
-        }
-        if (!is_null($this->_data['pair']) && (mb_strlen($this->_data['pair']) < 3)) {
-            $ip[] = "'pair' length must be >= 3";
-        }
-        if (!is_null($this->_data['pair']) && !preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $this->_data['pair'])) {
-            $ip[] = "'pair' must match /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/";
-        }
-        return $ip;
     }
 
     /**
@@ -136,12 +108,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set id
      * 
      * @param string|null $id Account ID. If present, only closed trades for given account will be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -157,12 +128,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set customer_id
      * 
      * @param string|null $customer_id Customer ID. If present, only closed trades for given customer will be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomerId(?string $customer_id) {
-        $this->_data['customer_id'] = $customer_id;
-
-        return $this;
+        return $this->_set("customer_id", $customer_id);
     }
 
     /**
@@ -178,18 +148,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set page_size
      * 
      * @param float $page_size Max number of items per page is 50.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPageSize(float $page_size) {
-        if (($page_size > 50)) {
-            throw new IAE('ListOderBookHistoryBody.setPageSize: $page_size must be <=50');
-        }
-        if (($page_size < 1)) {
-            throw new IAE('ListOderBookHistoryBody.setPageSize: $page_size must be >=1');
-        }
-        $this->_data['page_size'] = $page_size;
-
-        return $this;
+        return $this->_set("page_size", $page_size);
     }
 
     /**
@@ -205,12 +168,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set offset
      * 
      * @param float|null $offset Offset to obtain next page of the data.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOffset(?float $offset) {
-        $this->_data['offset'] = $offset;
-
-        return $this;
+        return $this->_set("offset", $offset);
     }
 
     /**
@@ -226,21 +188,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set pair
      * 
      * @param string|null $pair Trade pair. If present, list historical trades for that pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPair(?string $pair) {
-        if (!is_null($pair) && (mb_strlen($pair) > 30)) {
-            throw new IAE('ListOderBookHistoryBody.setPair: $pair length must be <= 30');
-        }
-        if (!is_null($pair) && (mb_strlen($pair) < 3)) {
-            throw new IAE('ListOderBookHistoryBody.setPair: $pair length must be >= 3');
-        }
-        if (!is_null($pair) && (!preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $pair))) {
-            throw new IAE('ListOderBookHistoryBody.setPair: $pair must match /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/, ' . var_export($pair, true) . ' given');
-        }
-        $this->_data['pair'] = $pair;
-
-        return $this;
+        return $this->_set("pair", $pair);
     }
 
     /**
@@ -256,12 +208,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set count
      * 
      * @param bool|null $count Get the total trade pair count based on the filter. Either count or pageSize is accepted.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCount(?bool $count) {
-        $this->_data['count'] = $count;
-
-        return $this;
+        return $this->_set("count", $count);
     }
 
     /**
@@ -277,16 +228,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set types
      * 
      * @param string[]|null $types Trade types.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTypes(?array $types) {
-        $allowed = $this->getTypesAllowableValues();
-        if (!is_null($types) && array_diff($types, $allowed)) {
-            throw new IAE(sprintf("ListOderBookHistoryBody.setTypes: types must be one of '%s'", implode("', '", $allowed)));
-        }
-        $this->_data['types'] = $types;
-
-        return $this;
+        return $this->_set("types", $types);
     }
 
     /**
@@ -302,12 +248,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set amount
      * 
      * @param \Tatum\Model\TransactionFilterAmountInner[]|null $amount Amount of the trade. AND is used between filter options.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?array $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -323,12 +268,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set fill
      * 
      * @param \Tatum\Model\TransactionFilterAmountInner[]|null $fill Fill of the trade. AND is used between filter options.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFill(?array $fill) {
-        $this->_data['fill'] = $fill;
-
-        return $this;
+        return $this->_set("fill", $fill);
     }
 
     /**
@@ -344,12 +288,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set price
      * 
      * @param \Tatum\Model\TransactionFilterAmountInner[]|null $price Price of the trade. AND is used between filter options.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrice(?array $price) {
-        $this->_data['price'] = $price;
-
-        return $this;
+        return $this->_set("price", $price);
     }
 
     /**
@@ -365,12 +308,11 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set created
      * 
      * @param \Tatum\Model\TransactionFilterAmountInner[]|null $created Created date of the trade. AND is used between filter options.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreated(?array $created) {
-        $this->_data['created'] = $created;
-
-        return $this;
+        return $this->_set("created", $created);
     }
 
     /**
@@ -386,15 +328,10 @@ class ListOderBookHistoryBody extends AbstractModel {
      * Set sort
      * 
      * @param string[]|null $sort Sorts the result by selected property. The priority of the items is determined by order of the sort properties in array.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSort(?array $sort) {
-        $allowed = $this->getSortAllowableValues();
-        if (!is_null($sort) && array_diff($sort, $allowed)) {
-            throw new IAE(sprintf("ListOderBookHistoryBody.setSort: sort must be one of '%s'", implode("', '", $allowed)));
-        }
-        $this->_data['sort'] = $sort;
-
-        return $this;
+        return $this->_set("sort", $sort);
     }
 }

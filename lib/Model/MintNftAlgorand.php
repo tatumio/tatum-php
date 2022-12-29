@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MintNftAlgorand Model
  * 
@@ -28,11 +26,11 @@ class MintNftAlgorand extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "MintNftAlgorand";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "attr" => ["attr", "\Tatum\Model\MintNftAlgorandAttr", null, "getAttr", "setAttr", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 256]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "nl" => 1, "xl" => 32]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 103, "xl" => 103]], 
+        "attr" => ["attr", "\Tatum\Model\MintNftAlgorandAttr", null, "getAttr", "setAttr", null, ["r" => 0]]
     ];
 
     /**
@@ -44,46 +42,6 @@ class MintNftAlgorand extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 256)) {
-            $ip[] = "'url' length must be <= 256";
-        }
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 32)) {
-            $ip[] = "'name' length must be <= 32";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 103)) {
-            $ip[] = "'from_private_key' length must be <= 103";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 103)) {
-            $ip[] = "'from_private_key' length must be >= 103";
-        }
-        return $ip;
     }
 
     /**
@@ -110,16 +68,11 @@ class MintNftAlgorand extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("MintNftAlgorand.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -135,15 +88,11 @@ class MintNftAlgorand extends AbstractModel {
      * Set url
      * 
      * @param string $url The URL pointing to the NFT metadata; for more information, see <a href=\"https://eips.ethereum.org/EIPS/eip-721#specification\" target=\"_blank\">EIP-721</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 256)) {
-            throw new IAE('MintNftAlgorand.setUrl: $url length must be <= 256');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -159,18 +108,11 @@ class MintNftAlgorand extends AbstractModel {
      * Set name
      * 
      * @param string $name The name of the NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 32)) {
-            throw new IAE('MintNftAlgorand.setName: $name length must be <= 32');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('MintNftAlgorand.setName: $name length must be >= 1');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -186,18 +128,11 @@ class MintNftAlgorand extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the minting account; the transaction fee will be paid from this account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 103)) {
-            throw new IAE('MintNftAlgorand.setFromPrivateKey: $from_private_key length must be <= 103');
-        }
-        if ((mb_strlen($from_private_key) < 103)) {
-            throw new IAE('MintNftAlgorand.setFromPrivateKey: $from_private_key length must be >= 103');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -213,11 +148,10 @@ class MintNftAlgorand extends AbstractModel {
      * Set attr
      * 
      * @param \Tatum\Model\MintNftAlgorandAttr|null $attr attr
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?\Tatum\Model\MintNftAlgorandAttr $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 }

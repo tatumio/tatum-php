@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftTx Model
  */
@@ -25,12 +23,12 @@ class NftTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftTx";
     protected static $_definition = [
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null]
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 1]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1]], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1]]
     ];
 
     /**
@@ -42,35 +40,6 @@ class NftTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['block_number'])) {
-            $ip[] = "'block_number' can't be null";
-        }
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -87,12 +56,11 @@ class NftTx extends AbstractModel {
      * Set block_number
      * 
      * @param float $block_number Block number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -108,12 +76,11 @@ class NftTx extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id Transaction ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -129,12 +96,11 @@ class NftTx extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Contract address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -150,15 +116,11 @@ class NftTx extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id ID of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 78)) {
-            throw new IAE('NftTx.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -174,12 +136,11 @@ class NftTx extends AbstractModel {
      * Set from
      * 
      * @param string $from Sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -195,11 +156,10 @@ class NftTx extends AbstractModel {
      * Set to
      * 
      * @param string $to recipient
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 }

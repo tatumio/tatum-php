@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * storeTrade_request Model
  */
@@ -27,15 +25,15 @@ class StoreTradeRequest extends AbstractModel {
     public const TYPE_SELL = 'FUTURE_SELL';
     protected static $_name = "storeTrade_request";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "pair" => ["pair", "string", null, "getPair", "setPair", null], 
-        "currency1_account_id" => ["currency1AccountId", "string", null, "getCurrency1AccountId", "setCurrency1AccountId", null], 
-        "currency2_account_id" => ["currency2AccountId", "string", null, "getCurrency2AccountId", "setCurrency2AccountId", null], 
-        "fee_account_id" => ["feeAccountId", "string", null, "getFeeAccountId", "setFeeAccountId", null], 
-        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
-        "attr" => ["attr", "\Tatum\Model\CreateFutureTradeAttr", null, "getAttr", "setAttr", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "pair" => ["pair", "string", null, "getPair", "setPair", null, ["r" => 1, "p" => "/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", "nl" => 3, "xl" => 30]], 
+        "currency1_account_id" => ["currency1AccountId", "string", null, "getCurrency1AccountId", "setCurrency1AccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "currency2_account_id" => ["currency2AccountId", "string", null, "getCurrency2AccountId", "setCurrency2AccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "fee_account_id" => ["feeAccountId", "string", null, "getFeeAccountId", "setFeeAccountId", null, ["r" => 0, "nl" => 24, "xl" => 24]], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null, ["r" => 0, "n" => [0], "x" => [100]]], 
+        "attr" => ["attr", "\Tatum\Model\CreateFutureTradeAttr", null, "getAttr", "setAttr", null, ["r" => 1]]
     ];
 
     /**
@@ -47,85 +45,6 @@ class StoreTradeRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['price'])) {
-            $ip[] = "'price' can't be null";
-        }
-        if ((mb_strlen($this->_data['price']) > 38)) {
-            $ip[] = "'price' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['price'])) {
-            $ip[] = "'price' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['pair'])) {
-            $ip[] = "'pair' can't be null";
-        }
-        if ((mb_strlen($this->_data['pair']) > 30)) {
-            $ip[] = "'pair' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['pair']) < 3)) {
-            $ip[] = "'pair' length must be >= 3";
-        }
-        if (!preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $this->_data['pair'])) {
-            $ip[] = "'pair' must match /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/";
-        }
-        if (is_null($this->_data['currency1_account_id'])) {
-            $ip[] = "'currency1_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['currency1_account_id']) > 24)) {
-            $ip[] = "'currency1_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['currency1_account_id']) < 24)) {
-            $ip[] = "'currency1_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['currency2_account_id'])) {
-            $ip[] = "'currency2_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['currency2_account_id']) > 24)) {
-            $ip[] = "'currency2_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['currency2_account_id']) < 24)) {
-            $ip[] = "'currency2_account_id' length must be >= 24";
-        }
-        if (!is_null($this->_data['fee_account_id']) && (mb_strlen($this->_data['fee_account_id']) > 24)) {
-            $ip[] = "'fee_account_id' length must be <= 24";
-        }
-        if (!is_null($this->_data['fee_account_id']) && (mb_strlen($this->_data['fee_account_id']) < 24)) {
-            $ip[] = "'fee_account_id' length must be >= 24";
-        }
-        if (!is_null($this->_data['fee']) && ($this->_data['fee'] > 100)) {
-            $ip[] = "'fee' must be <= 100";
-        }
-        if (!is_null($this->_data['fee']) && ($this->_data['fee'] < 0)) {
-            $ip[] = "'fee' must be >= 0";
-        }
-        if (is_null($this->_data['attr'])) {
-            $ip[] = "'attr' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -153,16 +72,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of future the trade, FUTURE_BUY, FUTURE_SELL
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("StoreTradeRequest.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -178,18 +92,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set price
      * 
      * @param string $price Price to buy / sell
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrice(string $price) {
-        if ((mb_strlen($price) > 38)) {
-            throw new IAE('StoreTradeRequest.setPrice: $price length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $price))) {
-            throw new IAE('StoreTradeRequest.setPrice: $price must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($price, true) . ' given');
-        }
-        $this->_data['price'] = $price;
-
-        return $this;
+        return $this->_set("price", $price);
     }
 
     /**
@@ -205,18 +112,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount of the trade to be bought / sold
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('StoreTradeRequest.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('StoreTradeRequest.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -232,21 +132,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set pair
      * 
      * @param string $pair Trading pair
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPair(string $pair) {
-        if ((mb_strlen($pair) > 30)) {
-            throw new IAE('StoreTradeRequest.setPair: $pair length must be <= 30');
-        }
-        if ((mb_strlen($pair) < 3)) {
-            throw new IAE('StoreTradeRequest.setPair: $pair length must be >= 3');
-        }
-        if ((!preg_match("/^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/", $pair))) {
-            throw new IAE('StoreTradeRequest.setPair: $pair must match /^[A-a-zZ0-9_\\-]+\/[A-Za-z0-9_\\-]+$/, ' . var_export($pair, true) . ' given');
-        }
-        $this->_data['pair'] = $pair;
-
-        return $this;
+        return $this->_set("pair", $pair);
     }
 
     /**
@@ -262,18 +152,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set currency1_account_id
      * 
      * @param string $currency1_account_id ID of the account of the currency 1 trade currency
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency1AccountId(string $currency1_account_id) {
-        if ((mb_strlen($currency1_account_id) > 24)) {
-            throw new IAE('StoreTradeRequest.setCurrency1AccountId: $currency1_account_id length must be <= 24');
-        }
-        if ((mb_strlen($currency1_account_id) < 24)) {
-            throw new IAE('StoreTradeRequest.setCurrency1AccountId: $currency1_account_id length must be >= 24');
-        }
-        $this->_data['currency1_account_id'] = $currency1_account_id;
-
-        return $this;
+        return $this->_set("currency1_account_id", $currency1_account_id);
     }
 
     /**
@@ -289,18 +172,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set currency2_account_id
      * 
      * @param string $currency2_account_id ID of the account of the currency 2 trade currency
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency2AccountId(string $currency2_account_id) {
-        if ((mb_strlen($currency2_account_id) > 24)) {
-            throw new IAE('StoreTradeRequest.setCurrency2AccountId: $currency2_account_id length must be <= 24');
-        }
-        if ((mb_strlen($currency2_account_id) < 24)) {
-            throw new IAE('StoreTradeRequest.setCurrency2AccountId: $currency2_account_id length must be >= 24');
-        }
-        $this->_data['currency2_account_id'] = $currency2_account_id;
-
-        return $this;
+        return $this->_set("currency2_account_id", $currency2_account_id);
     }
 
     /**
@@ -316,18 +192,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set fee_account_id
      * 
      * @param string|null $fee_account_id ID of the account where fee will be paid, if any. If trade is a BUY or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId, and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have same currency as a currency of currency1AccountId.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeAccountId(?string $fee_account_id) {
-        if (!is_null($fee_account_id) && (mb_strlen($fee_account_id) > 24)) {
-            throw new IAE('StoreTradeRequest.setFeeAccountId: $fee_account_id length must be <= 24');
-        }
-        if (!is_null($fee_account_id) && (mb_strlen($fee_account_id) < 24)) {
-            throw new IAE('StoreTradeRequest.setFeeAccountId: $fee_account_id length must be >= 24');
-        }
-        $this->_data['fee_account_id'] = $fee_account_id;
-
-        return $this;
+        return $this->_set("fee_account_id", $fee_account_id);
     }
 
     /**
@@ -343,18 +212,11 @@ class StoreTradeRequest extends AbstractModel {
      * Set fee
      * 
      * @param float|null $fee Percentage of the trade amount to be paid as a fee.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?float $fee) {
-        if (!is_null($fee) && ($fee > 100)) {
-            throw new IAE('StoreTradeRequest.setFee: $fee must be <=100');
-        }
-        if (!is_null($fee) && ($fee < 0)) {
-            throw new IAE('StoreTradeRequest.setFee: $fee must be >=0');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -370,11 +232,10 @@ class StoreTradeRequest extends AbstractModel {
      * Set attr
      * 
      * @param \Tatum\Model\CreateFutureTradeAttr $attr attr
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(\Tatum\Model\CreateFutureTradeAttr $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 }

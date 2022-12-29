@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BchTx_vout_inner Model
  */
@@ -25,9 +23,9 @@ class BchTxVoutInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx_vout_inner";
     protected static $_definition = [
-        "value" => ["value", "float", null, "getValue", "setValue", null], 
-        "n" => ["n", "float", null, "getN", "setN", null], 
-        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\BchTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey", null]
+        "value" => ["value", "float", null, "getValue", "setValue", null, ["r" => 0]], 
+        "n" => ["n", "float", null, "getN", "setN", null, ["r" => 0]], 
+        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\BchTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class BchTxVoutInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class BchTxVoutInner extends AbstractModel {
      * Set value
      * 
      * @param float|null $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?float $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -84,12 +73,11 @@ class BchTxVoutInner extends AbstractModel {
      * Set n
      * 
      * @param float|null $n n
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setN(?float $n) {
-        $this->_data['n'] = $n;
-
-        return $this;
+        return $this->_set("n", $n);
     }
 
     /**
@@ -105,11 +93,10 @@ class BchTxVoutInner extends AbstractModel {
      * Set script_pub_key
      * 
      * @param \Tatum\Model\BchTxVoutInnerScriptPubKey|null $script_pub_key script_pub_key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScriptPubKey(?\Tatum\Model\BchTxVoutInnerScriptPubKey $script_pub_key) {
-        $this->_data['script_pub_key'] = $script_pub_key;
-
-        return $this;
+        return $this->_set("script_pub_key", $script_pub_key);
     }
 }

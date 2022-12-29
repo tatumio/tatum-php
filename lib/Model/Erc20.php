@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Erc20 Model
  */
@@ -395,16 +393,16 @@ class Erc20 extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "Erc20";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
-        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR']
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 30]], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 1, "n" => [0]]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 1, "xl" => 150]], 
+        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null, ["r" => 1, "x" => [2147483647]]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 3, "xl" => 50]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR', ["r" => 0, "e" => 1, "nl" => 3, "xl" => 3]]
     ];
 
     /**
@@ -416,93 +414,6 @@ class Erc20 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['symbol'])) {
-            $ip[] = "'symbol' can't be null";
-        }
-        if ((mb_strlen($this->_data['symbol']) > 30)) {
-            $ip[] = "'symbol' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['symbol']) < 1)) {
-            $ip[] = "'symbol' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9_]+$/", $this->_data['symbol'])) {
-            $ip[] = "'symbol' must match /^[a-zA-Z0-9_]+$/";
-        }
-        if (is_null($this->_data['supply'])) {
-            $ip[] = "'supply' can't be null";
-        }
-        if ((mb_strlen($this->_data['supply']) > 38)) {
-            $ip[] = "'supply' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['supply'])) {
-            $ip[] = "'supply' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['decimals'])) {
-            $ip[] = "'decimals' can't be null";
-        }
-        if (($this->_data['decimals'] < 0)) {
-            $ip[] = "'decimals' must be >= 0";
-        }
-        if (is_null($this->_data['description'])) {
-            $ip[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->_data['description']) > 100)) {
-            $ip[] = "'description' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['description']) < 1)) {
-            $ip[] = "'description' length must be >= 1";
-        }
-        if (is_null($this->_data['xpub'])) {
-            $ip[] = "'xpub' can't be null";
-        }
-        if ((mb_strlen($this->_data['xpub']) > 150)) {
-            $ip[] = "'xpub' length must be <= 150";
-        }
-        if ((mb_strlen($this->_data['xpub']) < 1)) {
-            $ip[] = "'xpub' length must be >= 1";
-        }
-        if (is_null($this->_data['derivation_index'])) {
-            $ip[] = "'derivation_index' can't be null";
-        }
-        if (($this->_data['derivation_index'] > 2147483647)) {
-            $ip[] = "'derivation_index' must be <= 2147483647";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['base_pair']) > 50)) {
-            $ip[] = "'base_pair' length must be <= 50";
-        }
-        if ((mb_strlen($this->_data['base_pair']) < 3)) {
-            $ip[] = "'base_pair' length must be >= 3";
-        }
-        if (!is_null($this->_data['base_rate']) && ($this->_data['base_rate'] < 0)) {
-            $ip[] = "'base_rate' must be >= 0";
-        }
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        $value = $this->_data['accounting_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'accounting_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) > 3)) {
-            $ip[] = "'accounting_currency' length must be <= 3";
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
-            $ip[] = "'accounting_currency' length must be >= 3";
-        }
-        return $ip;
     }
 
     /**
@@ -907,21 +818,11 @@ class Erc20 extends AbstractModel {
      * Set symbol
      * 
      * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(string $symbol) {
-        if ((mb_strlen($symbol) > 30)) {
-            throw new IAE('Erc20.setSymbol: $symbol length must be <= 30');
-        }
-        if ((mb_strlen($symbol) < 1)) {
-            throw new IAE('Erc20.setSymbol: $symbol length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9_]+$/", $symbol))) {
-            throw new IAE('Erc20.setSymbol: $symbol must match /^[a-zA-Z0-9_]+$/, ' . var_export($symbol, true) . ' given');
-        }
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -937,18 +838,11 @@ class Erc20 extends AbstractModel {
      * Set supply
      * 
      * @param string $supply The supply of the token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(string $supply) {
-        if ((mb_strlen($supply) > 38)) {
-            throw new IAE('Erc20.setSupply: $supply length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $supply))) {
-            throw new IAE('Erc20.setSupply: $supply must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($supply, true) . ' given');
-        }
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -964,15 +858,11 @@ class Erc20 extends AbstractModel {
      * Set decimals
      * 
      * @param float $decimals The number of decimal places that the token has
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDecimals(float $decimals) {
-        if (($decimals < 0)) {
-            throw new IAE('Erc20.setDecimals: $decimals must be >=0');
-        }
-        $this->_data['decimals'] = $decimals;
-
-        return $this;
+        return $this->_set("decimals", $decimals);
     }
 
     /**
@@ -988,18 +878,11 @@ class Erc20 extends AbstractModel {
      * Set description
      * 
      * @param string $description The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(string $description) {
-        if ((mb_strlen($description) > 100)) {
-            throw new IAE('Erc20.setDescription: $description length must be <= 100');
-        }
-        if ((mb_strlen($description) < 1)) {
-            throw new IAE('Erc20.setDescription: $description length must be >= 1');
-        }
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 
     /**
@@ -1015,18 +898,11 @@ class Erc20 extends AbstractModel {
      * Set xpub
      * 
      * @param string $xpub The extended public key of the wallet from which a deposit address for the virtual account will be generated; the supply of the token will be stored on this address<br/><b>NOTE:</b>On Solana, you only can assign an existing address to the virtual account; use the <code>Erc20Address</code> schema of this API.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(string $xpub) {
-        if ((mb_strlen($xpub) > 150)) {
-            throw new IAE('Erc20.setXpub: $xpub length must be <= 150');
-        }
-        if ((mb_strlen($xpub) < 1)) {
-            throw new IAE('Erc20.setXpub: $xpub length must be >= 1');
-        }
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 
     /**
@@ -1042,15 +918,11 @@ class Erc20 extends AbstractModel {
      * Set derivation_index
      * 
      * @param int $derivation_index The derivation index to use together with the extended public key to generate the deposit address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDerivationIndex(int $derivation_index) {
-        if (($derivation_index > 2147483647)) {
-            throw new IAE('Erc20.setDerivationIndex: $derivation_index must be <=2147483647');
-        }
-        $this->_data['derivation_index'] = $derivation_index;
-
-        return $this;
+        return $this->_set("derivation_index", $derivation_index);
     }
 
     /**
@@ -1066,22 +938,11 @@ class Erc20 extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair The base pair for the virtual currency that represents the token; used to calculate the value of a transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("Erc20.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($base_pair) > 50)) {
-            throw new IAE('Erc20.setBasePair: $base_pair length must be <= 50');
-        }
-        if ((mb_strlen($base_pair) < 3)) {
-            throw new IAE('Erc20.setBasePair: $base_pair length must be >= 3');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 
     /**
@@ -1097,15 +958,11 @@ class Erc20 extends AbstractModel {
      * Set base_rate
      * 
      * @param float|null $base_rate The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
-        if (!is_null($base_rate) && ($base_rate < 0)) {
-            throw new IAE('Erc20.setBaseRate: $base_rate must be >=0');
-        }
-        $this->_data['base_rate'] = $base_rate;
-
-        return $this;
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -1121,12 +978,11 @@ class Erc20 extends AbstractModel {
      * Set customer
      * 
      * @param \Tatum\Model\CustomerRegistration|null $customer customer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
-        $this->_data['customer'] = $customer;
-
-        return $this;
+        return $this->_set("customer", $customer);
     }
 
     /**
@@ -1142,21 +998,10 @@ class Erc20 extends AbstractModel {
      * Set accounting_currency
      * 
      * @param string|null $accounting_currency The ISO 4217 code of the currency in which all transactions for the created virtual account will be billed
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        if (!is_null($accounting_currency) && !in_array($accounting_currency, $allowed, true)) {
-            throw new IAE(sprintf("Erc20.setAccountingCurrency: accounting_currency invalid value '%s', must be one of '%s'", $accounting_currency, implode("', '", $allowed)));
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) > 3)) {
-            throw new IAE('Erc20.setAccountingCurrency: $accounting_currency length must be <= 3');
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) < 3)) {
-            throw new IAE('Erc20.setAccountingCurrency: $accounting_currency length must be >= 3');
-        }
-        $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
+        return $this->_set("accounting_currency", $accounting_currency);
     }
 }

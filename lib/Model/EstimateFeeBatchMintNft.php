@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFeeBatchMintNft Model
  */
@@ -33,13 +31,13 @@ class EstimateFeeBatchMintNft extends AbstractModel {
     public const TYPE_MINT_NFT_BATCH = 'MINT_NFT_BATCH';
     protected static $_name = "EstimateFeeBatchMintNft";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds", null], 
-        "urls" => ["urls", "string[]", null, "getUrls", "setUrls", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 1, "nl" => 43, "xl" => 42]], 
+        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients", null, ["r" => 1, "c" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 43, "xl" => 42]], 
+        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds", null, ["r" => 1, "c" => 1]], 
+        "urls" => ["urls", "string[]", null, "getUrls", "setUrls", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -51,57 +49,6 @@ class EstimateFeeBatchMintNft extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['sender'])) {
-            $ip[] = "'sender' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender']) > 42)) {
-            $ip[] = "'sender' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['sender']) < 43)) {
-            $ip[] = "'sender' length must be >= 43";
-        }
-        if (is_null($this->_data['recipients'])) {
-            $ip[] = "'recipients' can't be null";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 43)) {
-            $ip[] = "'contract_address' length must be >= 43";
-        }
-        if (is_null($this->_data['token_ids'])) {
-            $ip[] = "'token_ids' can't be null";
-        }
-        if (is_null($this->_data['urls'])) {
-            $ip[] = "'urls' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -144,16 +91,11 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to estimate fee for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeBatchMintNft.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -169,16 +111,11 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeBatchMintNft.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -194,18 +131,11 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * Set sender
      * 
      * @param string $sender Address of the minter
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(string $sender) {
-        if ((mb_strlen($sender) > 42)) {
-            throw new IAE('EstimateFeeBatchMintNft.setSender: $sender length must be <= 42');
-        }
-        if ((mb_strlen($sender) < 43)) {
-            throw new IAE('EstimateFeeBatchMintNft.setSender: $sender length must be >= 43');
-        }
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -221,12 +151,11 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * Set recipients
      * 
      * @param string[] $recipients Blockchain addresses to mint tokens to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipients(array $recipients) {
-        $this->_data['recipients'] = $recipients;
-
-        return $this;
+        return $this->_set("recipients", $recipients);
     }
 
     /**
@@ -242,18 +171,11 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Contract address of NFT token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('EstimateFeeBatchMintNft.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 43)) {
-            throw new IAE('EstimateFeeBatchMintNft.setContractAddress: $contract_address length must be >= 43');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -269,12 +191,11 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * Set token_ids
      * 
      * @param string[] $token_ids Token IDs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenIds(array $token_ids) {
-        $this->_data['token_ids'] = $token_ids;
-
-        return $this;
+        return $this->_set("token_ids", $token_ids);
     }
 
     /**
@@ -290,11 +211,10 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      * Set urls
      * 
      * @param string[] $urls Metadata URLs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrls(array $urls) {
-        $this->_data['urls'] = $urls;
-
-        return $this;
+        return $this->_set("urls", $urls);
     }
 }

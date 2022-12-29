@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SellAssetOnMarketplaceSolana Model
  */
@@ -26,13 +24,13 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "SellAssetOnMarketplaceSolana";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
-        "from" => ["from", "mixed", null, "getFrom", "setFrom", null], 
-        "price" => ["price", "string", null, "getPrice", "setPrice", null], 
-        "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "from" => ["from", "mixed", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "price" => ["price", "string", null, "getPrice", "setPrice", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey", null, ["r" => 0, "nl" => 87, "xl" => 128]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 87, "xl" => 128]]
     ];
 
     /**
@@ -44,70 +42,6 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 44)) {
-            $ip[] = "'contract_address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 44)) {
-            $ip[] = "'contract_address' length must be >= 44";
-        }
-        if (is_null($this->_data['nft_address'])) {
-            $ip[] = "'nft_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['nft_address']) > 44)) {
-            $ip[] = "'nft_address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['nft_address']) < 44)) {
-            $ip[] = "'nft_address' length must be >= 44";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 44)) {
-            $ip[] = "'from' length must be >= 44";
-        }
-        if (is_null($this->_data['price'])) {
-            $ip[] = "'price' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['price'])) {
-            $ip[] = "'price' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['authority_private_key']) && (mb_strlen($this->_data['authority_private_key']) > 128)) {
-            $ip[] = "'authority_private_key' length must be <= 128";
-        }
-        if (!is_null($this->_data['authority_private_key']) && (mb_strlen($this->_data['authority_private_key']) < 87)) {
-            $ip[] = "'authority_private_key' length must be >= 87";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 128)) {
-            $ip[] = "'from_private_key' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 87)) {
-            $ip[] = "'from_private_key' length must be >= 87";
-        }
-        return $ip;
     }
 
     /**
@@ -134,16 +68,11 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("SellAssetOnMarketplaceSolana.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -159,18 +88,11 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Blockchain address of the smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 44)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setContractAddress: $contract_address length must be <= 44');
-        }
-        if ((mb_strlen($contract_address) < 44)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setContractAddress: $contract_address length must be >= 44');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -186,18 +108,11 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
      * Set nft_address
      * 
      * @param string $nft_address Blockchain address of the asset to sell
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNftAddress(string $nft_address) {
-        if ((mb_strlen($nft_address) > 44)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setNftAddress: $nft_address length must be <= 44');
-        }
-        if ((mb_strlen($nft_address) < 44)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setNftAddress: $nft_address length must be >= 44');
-        }
-        $this->_data['nft_address'] = $nft_address;
-
-        return $this;
+        return $this->_set("nft_address", $nft_address);
     }
 
     /**
@@ -213,18 +128,11 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
      * Set from
      * 
      * @param mixed $from Blockchain address of the seller
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(mixed $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 44)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setFrom: $from length must be >= 44');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -240,15 +148,11 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
      * Set price
      * 
      * @param string $price Price of the asset to sell. Marketplace fee will be obtained on top of this price.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrice(string $price) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $price))) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setPrice: $price must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($price, true) . ' given');
-        }
-        $this->_data['price'] = $price;
-
-        return $this;
+        return $this->_set("price", $price);
     }
 
     /**
@@ -264,18 +168,11 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
      * Set authority_private_key
      * 
      * @param string|null $authority_private_key The private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to \"true\" for the marketplace
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthorityPrivateKey(?string $authority_private_key) {
-        if (!is_null($authority_private_key) && (mb_strlen($authority_private_key) > 128)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setAuthorityPrivateKey: $authority_private_key length must be <= 128');
-        }
-        if (!is_null($authority_private_key) && (mb_strlen($authority_private_key) < 87)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setAuthorityPrivateKey: $authority_private_key length must be >= 87');
-        }
-        $this->_data['authority_private_key'] = $authority_private_key;
-
-        return $this;
+        return $this->_set("authority_private_key", $authority_private_key);
     }
 
     /**
@@ -291,17 +188,10 @@ class SellAssetOnMarketplaceSolana extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the seller
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 128)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setFromPrivateKey: $from_private_key length must be <= 128');
-        }
-        if ((mb_strlen($from_private_key) < 87)) {
-            throw new IAE('SellAssetOnMarketplaceSolana.setFromPrivateKey: $from_private_key length must be >= 87');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 }

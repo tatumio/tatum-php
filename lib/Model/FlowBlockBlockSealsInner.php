@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowBlock_blockSeals_inner Model
  */
@@ -25,10 +23,10 @@ class FlowBlockBlockSealsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowBlock_blockSeals_inner";
     protected static $_definition = [
-        "block_id" => ["blockId", "string", null, "getBlockId", "setBlockId", null], 
-        "execution_receipt_signatures" => ["executionReceiptSignatures", "string[]", null, "getExecutionReceiptSignatures", "setExecutionReceiptSignatures", null], 
-        "execution_receipt_id" => ["executionReceiptId", "string", null, "getExecutionReceiptId", "setExecutionReceiptId", null], 
-        "result_approval_signatures" => ["resultApprovalSignatures", "string[]", null, "getResultApprovalSignatures", "setResultApprovalSignatures", null]
+        "block_id" => ["blockId", "string", null, "getBlockId", "setBlockId", null, ["r" => 0]], 
+        "execution_receipt_signatures" => ["executionReceiptSignatures", "string[]", null, "getExecutionReceiptSignatures", "setExecutionReceiptSignatures", null, ["r" => 0, "c" => 1]], 
+        "execution_receipt_id" => ["executionReceiptId", "string", null, "getExecutionReceiptId", "setExecutionReceiptId", null, ["r" => 0]], 
+        "result_approval_signatures" => ["resultApprovalSignatures", "string[]", null, "getResultApprovalSignatures", "setResultApprovalSignatures", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class FlowBlockBlockSealsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class FlowBlockBlockSealsInner extends AbstractModel {
      * Set block_id
      * 
      * @param string|null $block_id block_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockId(?string $block_id) {
-        $this->_data['block_id'] = $block_id;
-
-        return $this;
+        return $this->_set("block_id", $block_id);
     }
 
     /**
@@ -85,12 +74,11 @@ class FlowBlockBlockSealsInner extends AbstractModel {
      * Set execution_receipt_signatures
      * 
      * @param string[]|null $execution_receipt_signatures execution_receipt_signatures
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExecutionReceiptSignatures(?array $execution_receipt_signatures) {
-        $this->_data['execution_receipt_signatures'] = $execution_receipt_signatures;
-
-        return $this;
+        return $this->_set("execution_receipt_signatures", $execution_receipt_signatures);
     }
 
     /**
@@ -106,12 +94,11 @@ class FlowBlockBlockSealsInner extends AbstractModel {
      * Set execution_receipt_id
      * 
      * @param string|null $execution_receipt_id execution_receipt_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExecutionReceiptId(?string $execution_receipt_id) {
-        $this->_data['execution_receipt_id'] = $execution_receipt_id;
-
-        return $this;
+        return $this->_set("execution_receipt_id", $execution_receipt_id);
     }
 
     /**
@@ -127,11 +114,10 @@ class FlowBlockBlockSealsInner extends AbstractModel {
      * Set result_approval_signatures
      * 
      * @param string[]|null $result_approval_signatures result_approval_signatures
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setResultApprovalSignatures(?array $result_approval_signatures) {
-        $this->_data['result_approval_signatures'] = $result_approval_signatures;
-
-        return $this;
+        return $this->_set("result_approval_signatures", $result_approval_signatures);
     }
 }

@@ -63,49 +63,34 @@ abstract class AbstractApi {
 
         try {
             $response = Client::send($request);
-        } catch (RequestException $e) {
-            $response = $e->getResponse();
+        } catch (RequestException $exc) {
+            $response = $exc->getResponse();
 
             throw (new ApiException(
-                sprintf("[%d] Request error (%s): %s", (int) $e->getCode(), $e->getMessage(), $response->getBody()),
-                (int) $e->getCode(),
+                sprintf("[%d] Request error (%s): %s", (int) $exc->getCode(), $exc->getMessage(), $response->getBody()),
+                (int) $exc->getCode(),
                 $response->getHeaders(),
                 $response->getBody()
-            ))->setResponseObject(
-                Serializer::deserialize(
-                    $this->_caller->config(),
-                    $response->getBody(),
-                    "array",
-                    $response->getHeaders()
-                )
-            );
+            ))->setResponseObject(Serializer::deserialize($response->getBody(), "array"));
         }
 
-        // Prepare the status code
-        $statusCode = $response->getStatusCode();
-        if ($statusCode < 200 || $statusCode > 299) {
+        // Server error
+        if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299) {
             throw (new ApiException(
-                sprintf("[%d] Error connecting to the API (%s)", $statusCode, (string) $request->getUri()),
-                $statusCode,
+                sprintf("[%d] API error (%s)", $response->getStatusCode(), strval($request->getUri())),
+                $response->getStatusCode(),
                 $response->getHeaders(),
                 $response->getBody()
-            ))->setResponseObject(
-                Serializer::deserialize(
-                    $this->_caller->config(),
-                    $response->getBody(),
-                    "array",
-                    $response->getHeaders()
-                )
-            );
+            ))->setResponseObject(Serializer::deserialize($response->getBody(), "array"));
         }
 
         // Convert to a model
         return is_string($returnType) && strlen($returnType)
             ? Serializer::deserialize(
-                $this->_caller->config(),
                 $response->getBody(),
                 $returnType,
-                $response->getHeaders()
+                $response->getHeaders(),
+                $this->_caller->config()
             )
             : $response;
     }

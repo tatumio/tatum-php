@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CeloGetBalance_200_response Model
  */
@@ -25,9 +23,9 @@ class CeloGetBalance200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CeloGetBalance_200_response";
     protected static $_definition = [
-        "celo" => ["celo", "string", null, "getCelo", "setCelo", null], 
-        "c_usd" => ["cUsd", "string", null, "getCUsd", "setCUsd", null], 
-        "c_eur" => ["cEur", "string", null, "getCEur", "setCEur", null]
+        "celo" => ["celo", "string", null, "getCelo", "setCelo", null, ["r" => 0]], 
+        "c_usd" => ["cUsd", "string", null, "getCUsd", "setCUsd", null, ["r" => 0]], 
+        "c_eur" => ["cEur", "string", null, "getCEur", "setCEur", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class CeloGetBalance200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class CeloGetBalance200Response extends AbstractModel {
      * Set celo
      * 
      * @param string|null $celo Balance of Celo
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCelo(?string $celo) {
-        $this->_data['celo'] = $celo;
-
-        return $this;
+        return $this->_set("celo", $celo);
     }
 
     /**
@@ -84,12 +73,11 @@ class CeloGetBalance200Response extends AbstractModel {
      * Set c_usd
      * 
      * @param string|null $c_usd Balance of cUSD
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCUsd(?string $c_usd) {
-        $this->_data['c_usd'] = $c_usd;
-
-        return $this;
+        return $this->_set("c_usd", $c_usd);
     }
 
     /**
@@ -105,11 +93,10 @@ class CeloGetBalance200Response extends AbstractModel {
      * Set c_eur
      * 
      * @param string|null $c_eur Balance of cEUR
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCEur(?string $c_eur) {
-        $this->_data['c_eur'] = $c_eur;
-
-        return $this;
+        return $this->_set("c_eur", $c_eur);
     }
 }

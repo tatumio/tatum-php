@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MarketValue Model
  * 
@@ -223,10 +221,10 @@ class MarketValue extends AbstractModel {
     public const CURRENCY_ZWL = 'ZWL';
     protected static $_name = "MarketValue";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "source_date" => ["sourceDate", "float", null, "getSourceDate", "setSourceDate", null], 
-        "source" => ["source", "string", null, "getSource", "setSource", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "e" => 1]], 
+        "source_date" => ["sourceDate", "float", null, "getSourceDate", "setSourceDate", null, ["r" => 1]], 
+        "source" => ["source", "string", null, "getSource", "setSource", null, ["r" => 1]]
     ];
 
     /**
@@ -238,31 +236,6 @@ class MarketValue extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        $allowed = $this->getCurrencyAllowableValues();
-        $value = $this->_data['currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['source_date'])) {
-            $ip[] = "'source_date' can't be null";
-        }
-        if (is_null($this->_data['source'])) {
-            $ip[] = "'source' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -484,12 +457,11 @@ class MarketValue extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Value of transaction in given base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -505,16 +477,11 @@ class MarketValue extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $allowed = $this->getCurrencyAllowableValues();
-        if (!in_array($currency, $allowed, true)) {
-            throw new IAE(sprintf("MarketValue.setCurrency: currency invalid value '%s', must be one of '%s'", $currency, implode("', '", $allowed)));
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -530,12 +497,11 @@ class MarketValue extends AbstractModel {
      * Set source_date
      * 
      * @param float $source_date Date of validity of rate in UTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSourceDate(float $source_date) {
-        $this->_data['source_date'] = $source_date;
-
-        return $this;
+        return $this->_set("source_date", $source_date);
     }
 
     /**
@@ -551,11 +517,10 @@ class MarketValue extends AbstractModel {
      * Set source
      * 
      * @param string $source Source of base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSource(string $source) {
-        $this->_data['source'] = $source;
-
-        return $this;
+        return $this->_set("source", $source);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaTransaction_fromAddress_inner Model
  */
@@ -25,9 +23,9 @@ class AdaTransactionFromAddressInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTransaction_fromAddress_inner";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 0]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 0]]
     ];
 
     /**
@@ -39,17 +37,6 @@ class AdaTransactionFromAddressInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -66,12 +53,11 @@ class AdaTransactionFromAddressInner extends AbstractModel {
      * Set address
      * 
      * @param string $address Address to send assets from.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -87,12 +73,11 @@ class AdaTransactionFromAddressInner extends AbstractModel {
      * Set private_key
      * 
      * @param string|null $private_key Private key of the address to send assets from. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(?string $private_key) {
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -108,11 +93,10 @@ class AdaTransactionFromAddressInner extends AbstractModel {
      * Set signature_id
      * 
      * @param string|null $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(?string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

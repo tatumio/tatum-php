@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Erc20Balance Model
  */
@@ -25,7 +23,7 @@ class Erc20Balance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Erc20Balance";
     protected static $_definition = [
-        "balance" => ["balance", "string", null, "getBalance", "setBalance", null]
+        "balance" => ["balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class Erc20Balance extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class Erc20Balance extends AbstractModel {
      * Set balance
      * 
      * @param string|null $balance The number of fungible tokens in the smallest token unit (for example, if the token has 10 decimal places, the number is returned as 9*10^10)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?string $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 }

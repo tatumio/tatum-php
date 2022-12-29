@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpTx_meta_AffectedNodes_inner Model
  */
@@ -25,7 +23,7 @@ class XrpTxMetaAffectedNodesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner";
     protected static $_definition = [
-        "modified_node" => ["ModifiedNode", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode", null, "getModifiedNode", "setModifiedNode", null]
+        "modified_node" => ["ModifiedNode", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode", null, "getModifiedNode", "setModifiedNode", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class XrpTxMetaAffectedNodesInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class XrpTxMetaAffectedNodesInner extends AbstractModel {
      * Set modified_node
      * 
      * @param \Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode|null $modified_node modified_node
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setModifiedNode(?\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode $modified_node) {
-        $this->_data['modified_node'] = $modified_node;
-
-        return $this;
+        return $this->_set("modified_node", $modified_node);
     }
 }

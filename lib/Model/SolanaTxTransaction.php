@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaTxTransaction Model
  */
@@ -25,8 +23,8 @@ class SolanaTxTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxTransaction";
     protected static $_definition = [
-        "message" => ["message", "\Tatum\Model\SolanaTxMessage", null, "getMessage", "setMessage", null], 
-        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null]
+        "message" => ["message", "\Tatum\Model\SolanaTxMessage", null, "getMessage", "setMessage", null, ["r" => 0]], 
+        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class SolanaTxTransaction extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class SolanaTxTransaction extends AbstractModel {
      * Set message
      * 
      * @param \Tatum\Model\SolanaTxMessage|null $message message
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(?\Tatum\Model\SolanaTxMessage $message) {
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 
     /**
@@ -83,11 +72,10 @@ class SolanaTxTransaction extends AbstractModel {
      * Set signatures
      * 
      * @param string[]|null $signatures signatures
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatures(?array $signatures) {
-        $this->_data['signatures'] = $signatures;
-
-        return $this;
+        return $this->_set("signatures", $signatures);
     }
 }

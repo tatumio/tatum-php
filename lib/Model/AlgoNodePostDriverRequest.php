@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoNodePostDriver_request Model
  */
@@ -25,7 +23,7 @@ class AlgoNodePostDriverRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoNodePostDriver_request";
     protected static $_definition = [
-        "rawtxn" => ["rawtxn", "string", null, "getRawtxn", "setRawtxn", null]
+        "rawtxn" => ["rawtxn", "string", null, "getRawtxn", "setRawtxn", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class AlgoNodePostDriverRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class AlgoNodePostDriverRequest extends AbstractModel {
      * Set rawtxn
      * 
      * @param string|null $rawtxn Check here - <a href=\"https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions\" target=\"_blank\">https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRawtxn(?string $rawtxn) {
-        $this->_data['rawtxn'] = $rawtxn;
-
-        return $this;
+        return $this->_set("rawtxn", $rawtxn);
     }
 }

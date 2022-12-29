@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetTxReceipt_outputs_inner Model
  */
@@ -25,8 +23,8 @@ class VetTxReceiptOutputsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTxReceipt_outputs_inner";
     protected static $_definition = [
-        "events" => ["events", "object[]", null, "getEvents", "setEvents", null], 
-        "transfers" => ["transfers", "\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]", null, "getTransfers", "setTransfers", null]
+        "events" => ["events", "object[]", null, "getEvents", "setEvents", null, ["r" => 0, "c" => 1]], 
+        "transfers" => ["transfers", "\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]", null, "getTransfers", "setTransfers", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class VetTxReceiptOutputsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class VetTxReceiptOutputsInner extends AbstractModel {
      * Set events
      * 
      * @param object[]|null $events events
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEvents(?array $events) {
-        $this->_data['events'] = $events;
-
-        return $this;
+        return $this->_set("events", $events);
     }
 
     /**
@@ -83,11 +72,10 @@ class VetTxReceiptOutputsInner extends AbstractModel {
      * Set transfers
      * 
      * @param \Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]|null $transfers transfers
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransfers(?array $transfers) {
-        $this->_data['transfers'] = $transfers;
-
-        return $this;
+        return $this->_set("transfers", $transfers);
     }
 }

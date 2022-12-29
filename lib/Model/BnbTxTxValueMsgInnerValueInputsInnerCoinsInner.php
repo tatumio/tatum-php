@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTx_tx_value_msg_inner_value_inputs_inner_coins_inner Model
  */
@@ -25,8 +23,8 @@ class BnbTxTxValueMsgInnerValueInputsInnerCoinsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx_tx_value_msg_inner_value_inputs_inner_coins_inner";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "denom" => ["denom", "string", null, "getDenom", "setDenom", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "denom" => ["denom", "string", null, "getDenom", "setDenom", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BnbTxTxValueMsgInnerValueInputsInnerCoinsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BnbTxTxValueMsgInnerValueInputsInnerCoinsInner extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount amount
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -83,11 +72,10 @@ class BnbTxTxValueMsgInnerValueInputsInnerCoinsInner extends AbstractModel {
      * Set denom
      * 
      * @param string|null $denom denom
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDenom(?string $denom) {
-        $this->_data['denom'] = $denom;
-
-        return $this;
+        return $this->_set("denom", $denom);
     }
 }

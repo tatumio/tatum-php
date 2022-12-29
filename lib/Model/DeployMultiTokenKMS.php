@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DeployMultiTokenKMS Model
  */
@@ -31,12 +29,12 @@ class DeployMultiTokenKMS extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "DeployMultiTokenKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "uri" => ["uri", "string", null, "getUri", "setUri", null], 
-        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "uri" => ["uri", "string", null, "getUri", "setUri", null, ["r" => 1]], 
+        "public_mint" => ["publicMint", "bool", null, "getPublicMint", "setPublicMint", null, ["r" => 0]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -48,31 +46,6 @@ class DeployMultiTokenKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['uri'])) {
-            $ip[] = "'uri' can't be null";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -104,16 +77,11 @@ class DeployMultiTokenKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Chain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("DeployMultiTokenKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -129,12 +97,11 @@ class DeployMultiTokenKMS extends AbstractModel {
      * Set uri
      * 
      * @param string $uri URI of the Multi Token token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUri(string $uri) {
-        $this->_data['uri'] = $uri;
-
-        return $this;
+        return $this->_set("uri", $uri);
     }
 
     /**
@@ -150,12 +117,11 @@ class DeployMultiTokenKMS extends AbstractModel {
      * Set public_mint
      * 
      * @param bool|null $public_mint True if the contract is publicMint type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPublicMint(?bool $public_mint) {
-        $this->_data['public_mint'] = $public_mint;
-
-        return $this;
+        return $this->_set("public_mint", $public_mint);
     }
 
     /**
@@ -171,12 +137,11 @@ class DeployMultiTokenKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -192,15 +157,11 @@ class DeployMultiTokenKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Nonce to be set to transaction. If not present, last known nonce will be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('DeployMultiTokenKMS.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -216,11 +177,10 @@ class DeployMultiTokenKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

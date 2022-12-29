@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MintNftAlgorandKMS Model
  * 
@@ -28,12 +26,12 @@ class MintNftAlgorandKMS extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "MintNftAlgorandKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 256]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "nl" => 1, "xl" => 32]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 58, "xl" => 58]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "attr" => ["attr", "\Tatum\Model\MintNftExpressAlgorandAttr", null, "getAttr", "setAttr", null, ["r" => 0]]
     ];
 
     /**
@@ -45,49 +43,6 @@ class MintNftAlgorandKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 256)) {
-            $ip[] = "'url' length must be <= 256";
-        }
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 32)) {
-            $ip[] = "'name' length must be <= 32";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 58)) {
-            $ip[] = "'from' length must be <= 58";
-        }
-        if ((mb_strlen($this->_data['from']) < 58)) {
-            $ip[] = "'from' length must be >= 58";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -114,16 +69,11 @@ class MintNftAlgorandKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("MintNftAlgorandKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -139,15 +89,11 @@ class MintNftAlgorandKMS extends AbstractModel {
      * Set url
      * 
      * @param string $url The URL pointing to the NFT metadata; for more information, see <a href=\"https://eips.ethereum.org/EIPS/eip-721#specification\" target=\"_blank\">EIP-721</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 256)) {
-            throw new IAE('MintNftAlgorandKMS.setUrl: $url length must be <= 256');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -163,18 +109,11 @@ class MintNftAlgorandKMS extends AbstractModel {
      * Set name
      * 
      * @param string $name The name of the NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 32)) {
-            throw new IAE('MintNftAlgorandKMS.setName: $name length must be <= 32');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('MintNftAlgorandKMS.setName: $name length must be >= 1');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -190,18 +129,11 @@ class MintNftAlgorandKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from The address of the minting account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 58)) {
-            throw new IAE('MintNftAlgorandKMS.setFrom: $from length must be <= 58');
-        }
-        if ((mb_strlen($from) < 58)) {
-            throw new IAE('MintNftAlgorandKMS.setFrom: $from length must be >= 58');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -217,12 +149,11 @@ class MintNftAlgorandKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -238,11 +169,10 @@ class MintNftAlgorandKMS extends AbstractModel {
      * Set attr
      * 
      * @param \Tatum\Model\MintNftExpressAlgorandAttr|null $attr attr
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?\Tatum\Model\MintNftExpressAlgorandAttr $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 }

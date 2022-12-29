@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MultiTokenGetBalance_200_response Model
  */
@@ -25,7 +23,7 @@ class MultiTokenGetBalance200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTokenGetBalance_200_response";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData", null]
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class MultiTokenGetBalance200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class MultiTokenGetBalance200Response extends AbstractModel {
      * Set data
      * 
      * @param string|null $data The amount of the specified Multi Token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

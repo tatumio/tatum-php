@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowAddressXpub Model
  */
@@ -25,8 +23,8 @@ class FlowAddressXpub extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAddressXpub";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class FlowAddressXpub extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class FlowAddressXpub extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id The ID of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -89,11 +72,10 @@ class FlowAddressXpub extends AbstractModel {
      * Set address
      * 
      * @param string $address The generated blockchain address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 }

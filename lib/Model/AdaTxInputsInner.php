@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaTx_inputs_inner Model
  */
@@ -25,9 +23,9 @@ class AdaTxInputsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTx_inputs_inner";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class AdaTxInputsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class AdaTxInputsInner extends AbstractModel {
      * Set tx_hash
      * 
      * @param string|null $tx_hash Transaction hash of the input.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxHash(?string $tx_hash) {
-        $this->_data['tx_hash'] = $tx_hash;
-
-        return $this;
+        return $this->_set("tx_hash", $tx_hash);
     }
 
     /**
@@ -84,12 +73,11 @@ class AdaTxInputsInner extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Value of the transaction, in Lovelace - 1/1000000 of ADA.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -105,11 +93,10 @@ class AdaTxInputsInner extends AbstractModel {
      * Set address
      * 
      * @param string|null $address Sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 }

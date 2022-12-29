@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetTx Model
  */
@@ -25,18 +23,18 @@ class VetTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTx";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "chain_tag" => ["chainTag", "string", null, "getChainTag", "setChainTag", null], 
-        "block_ref" => ["blockRef", "string", null, "getBlockRef", "setBlockRef", null], 
-        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null], 
-        "clauses" => ["clauses", "\Tatum\Model\VetTxClausesInner[]", null, "getClauses", "setClauses", null], 
-        "gas_price_coef" => ["gasPriceCoef", "float", null, "getGasPriceCoef", "setGasPriceCoef", null], 
-        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
-        "origin" => ["origin", "string", null, "getOrigin", "setOrigin", null], 
-        "nonce" => ["nonce", "string", null, "getNonce", "setNonce", null], 
-        "size" => ["size", "float", null, "getSize", "setSize", null], 
-        "meta" => ["meta", "\Tatum\Model\VetTxMeta", null, "getMeta", "setMeta", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "chain_tag" => ["chainTag", "string", null, "getChainTag", "setChainTag", null, ["r" => 0]], 
+        "block_ref" => ["blockRef", "string", null, "getBlockRef", "setBlockRef", null, ["r" => 0]], 
+        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null, ["r" => 0]], 
+        "clauses" => ["clauses", "\Tatum\Model\VetTxClausesInner[]", null, "getClauses", "setClauses", null, ["r" => 0, "c" => 1]], 
+        "gas_price_coef" => ["gasPriceCoef", "float", null, "getGasPriceCoef", "setGasPriceCoef", null, ["r" => 0]], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null, ["r" => 0]], 
+        "origin" => ["origin", "string", null, "getOrigin", "setOrigin", null, ["r" => 0]], 
+        "nonce" => ["nonce", "string", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "size" => ["size", "float", null, "getSize", "setSize", null, ["r" => 0]], 
+        "meta" => ["meta", "\Tatum\Model\VetTxMeta", null, "getMeta", "setMeta", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]]
     ];
 
     /**
@@ -48,14 +46,6 @@ class VetTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -72,12 +62,11 @@ class VetTx extends AbstractModel {
      * Set id
      * 
      * @param string|null $id id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -93,12 +82,11 @@ class VetTx extends AbstractModel {
      * Set chain_tag
      * 
      * @param string|null $chain_tag chain_tag
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChainTag(?string $chain_tag) {
-        $this->_data['chain_tag'] = $chain_tag;
-
-        return $this;
+        return $this->_set("chain_tag", $chain_tag);
     }
 
     /**
@@ -114,12 +102,11 @@ class VetTx extends AbstractModel {
      * Set block_ref
      * 
      * @param string|null $block_ref block_ref
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockRef(?string $block_ref) {
-        $this->_data['block_ref'] = $block_ref;
-
-        return $this;
+        return $this->_set("block_ref", $block_ref);
     }
 
     /**
@@ -135,12 +122,11 @@ class VetTx extends AbstractModel {
      * Set expiration
      * 
      * @param float|null $expiration expiration
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExpiration(?float $expiration) {
-        $this->_data['expiration'] = $expiration;
-
-        return $this;
+        return $this->_set("expiration", $expiration);
     }
 
     /**
@@ -156,12 +142,11 @@ class VetTx extends AbstractModel {
      * Set clauses
      * 
      * @param \Tatum\Model\VetTxClausesInner[]|null $clauses clauses
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setClauses(?array $clauses) {
-        $this->_data['clauses'] = $clauses;
-
-        return $this;
+        return $this->_set("clauses", $clauses);
     }
 
     /**
@@ -177,12 +162,11 @@ class VetTx extends AbstractModel {
      * Set gas_price_coef
      * 
      * @param float|null $gas_price_coef gas_price_coef
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPriceCoef(?float $gas_price_coef) {
-        $this->_data['gas_price_coef'] = $gas_price_coef;
-
-        return $this;
+        return $this->_set("gas_price_coef", $gas_price_coef);
     }
 
     /**
@@ -198,12 +182,11 @@ class VetTx extends AbstractModel {
      * Set gas
      * 
      * @param float|null $gas gas
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGas(?float $gas) {
-        $this->_data['gas'] = $gas;
-
-        return $this;
+        return $this->_set("gas", $gas);
     }
 
     /**
@@ -219,12 +202,11 @@ class VetTx extends AbstractModel {
      * Set origin
      * 
      * @param string|null $origin origin
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOrigin(?string $origin) {
-        $this->_data['origin'] = $origin;
-
-        return $this;
+        return $this->_set("origin", $origin);
     }
 
     /**
@@ -240,12 +222,11 @@ class VetTx extends AbstractModel {
      * Set nonce
      * 
      * @param string|null $nonce nonce
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?string $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -261,12 +242,11 @@ class VetTx extends AbstractModel {
      * Set size
      * 
      * @param float|null $size size
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSize(?float $size) {
-        $this->_data['size'] = $size;
-
-        return $this;
+        return $this->_set("size", $size);
     }
 
     /**
@@ -282,12 +262,11 @@ class VetTx extends AbstractModel {
      * Set meta
      * 
      * @param \Tatum\Model\VetTxMeta|null $meta meta
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMeta(?\Tatum\Model\VetTxMeta $meta) {
-        $this->_data['meta'] = $meta;
-
-        return $this;
+        return $this->_set("meta", $meta);
     }
 
     /**
@@ -303,11 +282,10 @@ class VetTx extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number block_number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XlmAccount_flags Model
  * 
@@ -27,9 +25,9 @@ class XlmAccountFlags extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmAccount_flags";
     protected static $_definition = [
-        "auth_required" => ["auth_required", "bool", null, "getAuthRequired", "setAuthRequired", null], 
-        "auth_revocable" => ["auth_revocable", "bool", null, "getAuthRevocable", "setAuthRevocable", null], 
-        "auth_immutable" => ["auth_immutable", "bool", null, "getAuthImmutable", "setAuthImmutable", null]
+        "auth_required" => ["auth_required", "bool", null, "getAuthRequired", "setAuthRequired", null, ["r" => 0]], 
+        "auth_revocable" => ["auth_revocable", "bool", null, "getAuthRevocable", "setAuthRevocable", null, ["r" => 0]], 
+        "auth_immutable" => ["auth_immutable", "bool", null, "getAuthImmutable", "setAuthImmutable", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class XlmAccountFlags extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class XlmAccountFlags extends AbstractModel {
      * Set auth_required
      * 
      * @param bool|null $auth_required If set to true, anyone who wants to hold an asset issued by this account must first be approved by this account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthRequired(?bool $auth_required) {
-        $this->_data['auth_required'] = $auth_required;
-
-        return $this;
+        return $this->_set("auth_required", $auth_required);
     }
 
     /**
@@ -86,12 +75,11 @@ class XlmAccountFlags extends AbstractModel {
      * Set auth_revocable
      * 
      * @param bool|null $auth_revocable If set to true, this account can freeze the balance of a holder of an asset issued by this account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthRevocable(?bool $auth_revocable) {
-        $this->_data['auth_revocable'] = $auth_revocable;
-
-        return $this;
+        return $this->_set("auth_revocable", $auth_revocable);
     }
 
     /**
@@ -107,11 +95,10 @@ class XlmAccountFlags extends AbstractModel {
      * Set auth_immutable
      * 
      * @param bool|null $auth_immutable If set to true, none of the following flags can be changed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthImmutable(?bool $auth_immutable) {
-        $this->_data['auth_immutable'] = $auth_immutable;
-
-        return $this;
+        return $this->_set("auth_immutable", $auth_immutable);
     }
 }

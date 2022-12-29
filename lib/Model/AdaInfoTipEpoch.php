@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaInfo_tip_epoch Model
  */
@@ -25,7 +23,7 @@ class AdaInfoTipEpoch extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaInfo_tip_epoch";
     protected static $_definition = [
-        "number" => ["number", "float", null, "getNumber", "setNumber", null]
+        "number" => ["number", "float", null, "getNumber", "setNumber", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class AdaInfoTipEpoch extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class AdaInfoTipEpoch extends AbstractModel {
      * Set number
      * 
      * @param float|null $number Last epoch number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumber(?float $number) {
-        $this->_data['number'] = $number;
-
-        return $this;
+        return $this->_set("number", $number);
     }
 }

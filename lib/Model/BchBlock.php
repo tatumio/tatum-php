@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BchBlock Model
  */
@@ -25,18 +23,18 @@ class BchBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "size" => ["size", "float", null, "getSize", "setSize", null], 
-        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "merkleroot" => ["merkleroot", "string", null, "getMerkleroot", "setMerkleroot", null], 
-        "tx" => ["tx", "\Tatum\Model\BchTx[]", null, "getTx", "setTx", null], 
-        "time" => ["time", "float", null, "getTime", "setTime", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "difficulty" => ["difficulty", "float", null, "getDifficulty", "setDifficulty", null], 
-        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations", null], 
-        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash", null], 
-        "nextblockhash" => ["nextblockhash", "string", null, "getNextblockhash", "setNextblockhash", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "size" => ["size", "float", null, "getSize", "setSize", null, ["r" => 0]], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null, ["r" => 0]], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "merkleroot" => ["merkleroot", "string", null, "getMerkleroot", "setMerkleroot", null, ["r" => 0]], 
+        "tx" => ["tx", "\Tatum\Model\BchTx[]", null, "getTx", "setTx", null, ["r" => 0, "c" => 1]], 
+        "time" => ["time", "float", null, "getTime", "setTime", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "difficulty" => ["difficulty", "float", null, "getDifficulty", "setDifficulty", null, ["r" => 0]], 
+        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations", null, ["r" => 0]], 
+        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash", null, ["r" => 0]], 
+        "nextblockhash" => ["nextblockhash", "string", null, "getNextblockhash", "setNextblockhash", null, ["r" => 0]]
     ];
 
     /**
@@ -48,14 +46,6 @@ class BchBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -72,12 +62,11 @@ class BchBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Hash of block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -93,12 +82,11 @@ class BchBlock extends AbstractModel {
      * Set size
      * 
      * @param float|null $size Block size.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSize(?float $size) {
-        $this->_data['size'] = $size;
-
-        return $this;
+        return $this->_set("size", $size);
     }
 
     /**
@@ -114,12 +102,11 @@ class BchBlock extends AbstractModel {
      * Set height
      * 
      * @param float|null $height The number of blocks preceding a particular block on a block chain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHeight(?float $height) {
-        $this->_data['height'] = $height;
-
-        return $this;
+        return $this->_set("height", $height);
     }
 
     /**
@@ -135,12 +122,11 @@ class BchBlock extends AbstractModel {
      * Set version
      * 
      * @param float|null $version Block version.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -156,12 +142,11 @@ class BchBlock extends AbstractModel {
      * Set merkleroot
      * 
      * @param string|null $merkleroot The root node of a merkle tree, a descendant of all the hashed pairs in the tree.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMerkleroot(?string $merkleroot) {
-        $this->_data['merkleroot'] = $merkleroot;
-
-        return $this;
+        return $this->_set("merkleroot", $merkleroot);
     }
 
     /**
@@ -177,12 +162,11 @@ class BchBlock extends AbstractModel {
      * Set tx
      * 
      * @param \Tatum\Model\BchTx[]|null $tx List of transactions present in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTx(?array $tx) {
-        $this->_data['tx'] = $tx;
-
-        return $this;
+        return $this->_set("tx", $tx);
     }
 
     /**
@@ -198,12 +182,11 @@ class BchBlock extends AbstractModel {
      * Set time
      * 
      * @param float|null $time Time of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTime(?float $time) {
-        $this->_data['time'] = $time;
-
-        return $this;
+        return $this->_set("time", $time);
     }
 
     /**
@@ -219,12 +202,11 @@ class BchBlock extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Arbitrary number that is used in Bitcoin's proof of work consensus algorithm.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -240,12 +222,11 @@ class BchBlock extends AbstractModel {
      * Set difficulty
      * 
      * @param float|null $difficulty difficulty
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDifficulty(?float $difficulty) {
-        $this->_data['difficulty'] = $difficulty;
-
-        return $this;
+        return $this->_set("difficulty", $difficulty);
     }
 
     /**
@@ -261,12 +242,11 @@ class BchBlock extends AbstractModel {
      * Set confirmations
      * 
      * @param float|null $confirmations Number of blocks mined after this block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setConfirmations(?float $confirmations) {
-        $this->_data['confirmations'] = $confirmations;
-
-        return $this;
+        return $this->_set("confirmations", $confirmations);
     }
 
     /**
@@ -282,12 +262,11 @@ class BchBlock extends AbstractModel {
      * Set previousblockhash
      * 
      * @param string|null $previousblockhash Hash of the previous block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousblockhash(?string $previousblockhash) {
-        $this->_data['previousblockhash'] = $previousblockhash;
-
-        return $this;
+        return $this->_set("previousblockhash", $previousblockhash);
     }
 
     /**
@@ -303,11 +282,10 @@ class BchBlock extends AbstractModel {
      * Set nextblockhash
      * 
      * @param string|null $nextblockhash Hash of the next block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNextblockhash(?string $nextblockhash) {
-        $this->_data['nextblockhash'] = $nextblockhash;
-
-        return $this;
+        return $this->_set("nextblockhash", $nextblockhash);
     }
 }

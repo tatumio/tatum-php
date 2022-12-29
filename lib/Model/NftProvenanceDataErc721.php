@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftProvenanceDataErc721 Model
  */
@@ -25,8 +23,8 @@ class NftProvenanceDataErc721 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftProvenanceDataErc721";
     protected static $_definition = [
-        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null], 
-        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null]
+        "provenance_data" => ["provenanceData", "string", null, "getProvenanceData", "setProvenanceData", null, ["r" => 0]], 
+        "token_price" => ["tokenPrice", "string", null, "getTokenPrice", "setTokenPrice", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class NftProvenanceDataErc721 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class NftProvenanceDataErc721 extends AbstractModel {
      * Set provenance_data
      * 
      * @param string|null $provenance_data provenance_data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProvenanceData(?string $provenance_data) {
-        $this->_data['provenance_data'] = $provenance_data;
-
-        return $this;
+        return $this->_set("provenance_data", $provenance_data);
     }
 
     /**
@@ -83,11 +72,10 @@ class NftProvenanceDataErc721 extends AbstractModel {
      * Set token_price
      * 
      * @param string|null $token_price token_price
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenPrice(?string $token_price) {
-        $this->_data['token_price'] = $token_price;
-
-        return $this;
+        return $this->_set("token_price", $token_price);
     }
 }

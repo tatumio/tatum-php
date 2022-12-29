@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * getVersion_200_response Model
  */
@@ -25,16 +23,16 @@ class GetVersion200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "getVersion_200_response";
     protected static $_definition = [
-        "version" => ["version", "string", null, "getVersion", "setVersion", null], 
-        "status" => ["status", "string", null, "getStatus", "setStatus", null], 
-        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet", null], 
-        "plan_name" => ["planName", "string", null, "getPlanName", "setPlanName", null], 
-        "plan_code" => ["planCode", "string", null, "getPlanCode", "setPlanCode", null], 
-        "price" => ["price", "float", null, "getPrice", "setPrice", null], 
-        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null], 
-        "credit_limit" => ["creditLimit", "float", null, "getCreditLimit", "setCreditLimit", null], 
-        "usage" => ["usage", "float", null, "getUsage", "setUsage", null], 
-        "rollover_day" => ["rolloverDay", "float", null, "getRolloverDay", "setRolloverDay", null]
+        "version" => ["version", "string", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "status" => ["status", "string", null, "getStatus", "setStatus", null, ["r" => 0]], 
+        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet", null, ["r" => 0]], 
+        "plan_name" => ["planName", "string", null, "getPlanName", "setPlanName", null, ["r" => 0]], 
+        "plan_code" => ["planCode", "string", null, "getPlanCode", "setPlanCode", null, ["r" => 0]], 
+        "price" => ["price", "float", null, "getPrice", "setPrice", null, ["r" => 0]], 
+        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null, ["r" => 0]], 
+        "credit_limit" => ["creditLimit", "float", null, "getCreditLimit", "setCreditLimit", null, ["r" => 0]], 
+        "usage" => ["usage", "float", null, "getUsage", "setUsage", null, ["r" => 0]], 
+        "rollover_day" => ["rolloverDay", "float", null, "getRolloverDay", "setRolloverDay", null, ["r" => 0]]
     ];
 
     /**
@@ -46,14 +44,6 @@ class GetVersion200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -70,12 +60,11 @@ class GetVersion200Response extends AbstractModel {
      * Set version
      * 
      * @param string|null $version version
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?string $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -91,12 +80,11 @@ class GetVersion200Response extends AbstractModel {
      * Set status
      * 
      * @param string|null $status status
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?string $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -112,12 +100,11 @@ class GetVersion200Response extends AbstractModel {
      * Set testnet
      * 
      * @param bool|null $testnet testnet
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTestnet(?bool $testnet) {
-        $this->_data['testnet'] = $testnet;
-
-        return $this;
+        return $this->_set("testnet", $testnet);
     }
 
     /**
@@ -133,12 +120,11 @@ class GetVersion200Response extends AbstractModel {
      * Set plan_name
      * 
      * @param string|null $plan_name plan_name
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPlanName(?string $plan_name) {
-        $this->_data['plan_name'] = $plan_name;
-
-        return $this;
+        return $this->_set("plan_name", $plan_name);
     }
 
     /**
@@ -154,12 +140,11 @@ class GetVersion200Response extends AbstractModel {
      * Set plan_code
      * 
      * @param string|null $plan_code plan_code
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPlanCode(?string $plan_code) {
-        $this->_data['plan_code'] = $plan_code;
-
-        return $this;
+        return $this->_set("plan_code", $plan_code);
     }
 
     /**
@@ -175,12 +160,11 @@ class GetVersion200Response extends AbstractModel {
      * Set price
      * 
      * @param float|null $price price
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrice(?float $price) {
-        $this->_data['price'] = $price;
-
-        return $this;
+        return $this->_set("price", $price);
     }
 
     /**
@@ -196,12 +180,11 @@ class GetVersion200Response extends AbstractModel {
      * Set expiration
      * 
      * @param float|null $expiration expiration
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExpiration(?float $expiration) {
-        $this->_data['expiration'] = $expiration;
-
-        return $this;
+        return $this->_set("expiration", $expiration);
     }
 
     /**
@@ -217,12 +200,11 @@ class GetVersion200Response extends AbstractModel {
      * Set credit_limit
      * 
      * @param float|null $credit_limit credit_limit
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreditLimit(?float $credit_limit) {
-        $this->_data['credit_limit'] = $credit_limit;
-
-        return $this;
+        return $this->_set("credit_limit", $credit_limit);
     }
 
     /**
@@ -238,12 +220,11 @@ class GetVersion200Response extends AbstractModel {
      * Set usage
      * 
      * @param float|null $usage usage
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUsage(?float $usage) {
-        $this->_data['usage'] = $usage;
-
-        return $this;
+        return $this->_set("usage", $usage);
     }
 
     /**
@@ -259,11 +240,10 @@ class GetVersion200Response extends AbstractModel {
      * Set rollover_day
      * 
      * @param float|null $rollover_day rollover_day
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRolloverDay(?float $rollover_day) {
-        $this->_data['rollover_day'] = $rollover_day;
-
-        return $this;
+        return $this->_set("rollover_day", $rollover_day);
     }
 }

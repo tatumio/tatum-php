@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcTransactionFromAddressSource Model
  */
@@ -25,8 +23,8 @@ class BtcTransactionFromAddressSource extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTransactionFromAddressSource";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class BtcTransactionFromAddressSource extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class BtcTransactionFromAddressSource extends AbstractModel {
      * Set address
      * 
      * @param string $address The blockchain address to send the assets from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -89,11 +72,10 @@ class BtcTransactionFromAddressSource extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key The private key of the address to send the assets from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

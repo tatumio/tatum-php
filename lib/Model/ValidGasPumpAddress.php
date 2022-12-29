@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ValidGasPumpAddress Model
  */
@@ -25,8 +23,8 @@ class ValidGasPumpAddress extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "ValidGasPumpAddress";
     protected static $_definition = [
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null]
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class ValidGasPumpAddress extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class ValidGasPumpAddress extends AbstractModel {
      * Set index
      * 
      * @param float|null $index The index of the activated gas pump address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -83,11 +72,10 @@ class ValidGasPumpAddress extends AbstractModel {
      * Set address
      * 
      * @param string|null $address The activated gas pump address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 }

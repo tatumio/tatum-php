@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcTxInputPrevOut Model
  */
@@ -25,8 +23,8 @@ class BtcTxInputPrevOut extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTxInputPrevOut";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BtcTxInputPrevOut extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BtcTxInputPrevOut extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Transaction hash of the input.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -83,11 +72,10 @@ class BtcTxInputPrevOut extends AbstractModel {
      * Set index
      * 
      * @param float|null $index Transaction index of the input.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 }

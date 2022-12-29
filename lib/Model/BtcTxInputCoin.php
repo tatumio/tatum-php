@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcTxInputCoin Model
  */
@@ -25,12 +23,12 @@ class BtcTxInputCoin extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTxInputCoin";
     protected static $_definition = [
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "value" => ["value", "float", null, "getValue", "setValue", null], 
-        "script" => ["script", "string", null, "getScript", "setScript", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase", null]
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "value" => ["value", "float", null, "getValue", "setValue", null, ["r" => 0]], 
+        "script" => ["script", "string", null, "getScript", "setScript", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase", null, ["r" => 0]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class BtcTxInputCoin extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class BtcTxInputCoin extends AbstractModel {
      * Set version
      * 
      * @param float|null $version version
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -87,12 +76,11 @@ class BtcTxInputCoin extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number block_number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -108,12 +96,11 @@ class BtcTxInputCoin extends AbstractModel {
      * Set value
      * 
      * @param float|null $value Amount of the transaction, in Satoshis (1 BTC = 100 000 000 Satoshis)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?float $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -129,12 +116,11 @@ class BtcTxInputCoin extends AbstractModel {
      * Set script
      * 
      * @param string|null $script script
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScript(?string $script) {
-        $this->_data['script'] = $script;
-
-        return $this;
+        return $this->_set("script", $script);
     }
 
     /**
@@ -150,12 +136,11 @@ class BtcTxInputCoin extends AbstractModel {
      * Set address
      * 
      * @param string|null $address Sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -171,11 +156,10 @@ class BtcTxInputCoin extends AbstractModel {
      * Set coinbase
      * 
      * @param bool|null $coinbase Coinbase transaction - miner fee.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCoinbase(?bool $coinbase) {
-        $this->_data['coinbase'] = $coinbase;
-
-        return $this;
+        return $this->_set("coinbase", $coinbase);
     }
 }

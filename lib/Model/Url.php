@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Url Model
  */
@@ -25,7 +23,7 @@ class Url extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Url";
     protected static $_definition = [
-        "url" => ["url", "string", null, "getUrl", "setUrl", null]
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class Url extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class Url extends AbstractModel {
      * Set url
      * 
      * @param string|null $url QR Code as data URL
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(?string $url) {
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 }

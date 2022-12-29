@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpTx Model
  */
@@ -25,22 +23,22 @@ class XrpTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex", null], 
-        "account" => ["Account", "string", null, "getAccount", "setAccount", null], 
-        "amount" => ["Amount", "string", null, "getAmount", "setAmount", null], 
-        "destination" => ["Destination", "string", null, "getDestination", "setDestination", null], 
-        "fee" => ["Fee", "string", null, "getFee", "setFee", null], 
-        "transaction_type" => ["TransactionType", "string", null, "getTransactionType", "setTransactionType", null], 
-        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null], 
-        "last_ledger_sequence" => ["LastLedgerSequence", "float", null, "getLastLedgerSequence", "setLastLedgerSequence", null], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null], 
-        "date" => ["date", "float", null, "getDate", "setDate", null], 
-        "in_ledger" => ["inLedger", "float", null, "getInLedger", "setInLedger", null], 
-        "signing_pub_key" => ["SigningPubKey", "string", null, "getSigningPubKey", "setSigningPubKey", null], 
-        "txn_signature" => ["TxnSignature", "string", null, "getTxnSignature", "setTxnSignature", null], 
-        "meta" => ["meta", "\Tatum\Model\XrpTxMeta", null, "getMeta", "setMeta", null], 
-        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex", null, ["r" => 0]], 
+        "account" => ["Account", "string", null, "getAccount", "setAccount", null, ["r" => 0]], 
+        "amount" => ["Amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "destination" => ["Destination", "string", null, "getDestination", "setDestination", null, ["r" => 0]], 
+        "fee" => ["Fee", "string", null, "getFee", "setFee", null, ["r" => 0]], 
+        "transaction_type" => ["TransactionType", "string", null, "getTransactionType", "setTransactionType", null, ["r" => 0]], 
+        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null, ["r" => 0]], 
+        "last_ledger_sequence" => ["LastLedgerSequence", "float", null, "getLastLedgerSequence", "setLastLedgerSequence", null, ["r" => 0]], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]], 
+        "date" => ["date", "float", null, "getDate", "setDate", null, ["r" => 0]], 
+        "in_ledger" => ["inLedger", "float", null, "getInLedger", "setInLedger", null, ["r" => 0]], 
+        "signing_pub_key" => ["SigningPubKey", "string", null, "getSigningPubKey", "setSigningPubKey", null, ["r" => 0]], 
+        "txn_signature" => ["TxnSignature", "string", null, "getTxnSignature", "setTxnSignature", null, ["r" => 0]], 
+        "meta" => ["meta", "\Tatum\Model\XrpTxMeta", null, "getMeta", "setMeta", null, ["r" => 0]], 
+        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null, ["r" => 0]]
     ];
 
     /**
@@ -52,14 +50,6 @@ class XrpTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -76,12 +66,11 @@ class XrpTx extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash The SHA-512 hash of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -97,12 +86,11 @@ class XrpTx extends AbstractModel {
      * Set ledger_index
      * 
      * @param float|null $ledger_index The ledger index of the ledger that includes this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerIndex(?float $ledger_index) {
-        $this->_data['ledger_index'] = $ledger_index;
-
-        return $this;
+        return $this->_set("ledger_index", $ledger_index);
     }
 
     /**
@@ -118,12 +106,11 @@ class XrpTx extends AbstractModel {
      * Set account
      * 
      * @param string|null $account The unique address of the account that initiated the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(?string $account) {
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -139,12 +126,11 @@ class XrpTx extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Amount of transaction, in drops. 1 drop = 0.000001 XRP.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -160,12 +146,11 @@ class XrpTx extends AbstractModel {
      * Set destination
      * 
      * @param string|null $destination Recipient account address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDestination(?string $destination) {
-        $this->_data['destination'] = $destination;
-
-        return $this;
+        return $this->_set("destination", $destination);
     }
 
     /**
@@ -181,12 +166,11 @@ class XrpTx extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Integer amount of XRP, in drops, to be destroyed as a cost for distributing this transaction to the network. Some transaction types have different minimum requirements.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -202,12 +186,11 @@ class XrpTx extends AbstractModel {
      * Set transaction_type
      * 
      * @param string|null $transaction_type Type of the transaction. XRp supports more than 18 transaction types. For the payment, Payment type is used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionType(?string $transaction_type) {
-        $this->_data['transaction_type'] = $transaction_type;
-
-        return $this;
+        return $this->_set("transaction_type", $transaction_type);
     }
 
     /**
@@ -223,12 +206,11 @@ class XrpTx extends AbstractModel {
      * Set flags
      * 
      * @param float|null $flags Set of bit-flags for this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFlags(?float $flags) {
-        $this->_data['flags'] = $flags;
-
-        return $this;
+        return $this->_set("flags", $flags);
     }
 
     /**
@@ -244,12 +226,11 @@ class XrpTx extends AbstractModel {
      * Set last_ledger_sequence
      * 
      * @param float|null $last_ledger_sequence Last ledger, in which this transaction could have occured.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLastLedgerSequence(?float $last_ledger_sequence) {
-        $this->_data['last_ledger_sequence'] = $last_ledger_sequence;
-
-        return $this;
+        return $this->_set("last_ledger_sequence", $last_ledger_sequence);
     }
 
     /**
@@ -265,12 +246,11 @@ class XrpTx extends AbstractModel {
      * Set sequence
      * 
      * @param float|null $sequence The sequence number of the account sending the transaction. A transaction is only valid if the Sequence number is exactly 1 greater than the previous transaction from the same account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 
     /**
@@ -286,12 +266,11 @@ class XrpTx extends AbstractModel {
      * Set date
      * 
      * @param float|null $date Timestamp of the transaction, in Ripple epoch (946684800 seconds after Unix Epoch)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDate(?float $date) {
-        $this->_data['date'] = $date;
-
-        return $this;
+        return $this->_set("date", $date);
     }
 
     /**
@@ -307,12 +286,11 @@ class XrpTx extends AbstractModel {
      * Set in_ledger
      * 
      * @param float|null $in_ledger Ledger, in which transaction took place.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInLedger(?float $in_ledger) {
-        $this->_data['in_ledger'] = $in_ledger;
-
-        return $this;
+        return $this->_set("in_ledger", $in_ledger);
     }
 
     /**
@@ -328,12 +306,11 @@ class XrpTx extends AbstractModel {
      * Set signing_pub_key
      * 
      * @param string|null $signing_pub_key signing_pub_key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSigningPubKey(?string $signing_pub_key) {
-        $this->_data['signing_pub_key'] = $signing_pub_key;
-
-        return $this;
+        return $this->_set("signing_pub_key", $signing_pub_key);
     }
 
     /**
@@ -349,12 +326,11 @@ class XrpTx extends AbstractModel {
      * Set txn_signature
      * 
      * @param string|null $txn_signature txn_signature
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxnSignature(?string $txn_signature) {
-        $this->_data['txn_signature'] = $txn_signature;
-
-        return $this;
+        return $this->_set("txn_signature", $txn_signature);
     }
 
     /**
@@ -370,12 +346,11 @@ class XrpTx extends AbstractModel {
      * Set meta
      * 
      * @param \Tatum\Model\XrpTxMeta|null $meta meta
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMeta(?\Tatum\Model\XrpTxMeta $meta) {
-        $this->_data['meta'] = $meta;
-
-        return $this;
+        return $this->_set("meta", $meta);
     }
 
     /**
@@ -391,11 +366,10 @@ class XrpTx extends AbstractModel {
      * Set validated
      * 
      * @param bool|null $validated Whether or not the transaction is included in a validated ledger. Any transaction not yet in a validated ledger is subject to change.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValidated(?bool $validated) {
-        $this->_data['validated'] = $validated;
-
-        return $this;
+        return $this->_set("validated", $validated);
     }
 }

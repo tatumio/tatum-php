@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * StoreIPFS_200_response Model
  */
@@ -25,7 +23,7 @@ class StoreIPFS200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "StoreIPFS_200_response";
     protected static $_definition = [
-        "ipfs_hash" => ["ipfsHash", "string", null, "getIpfsHash", "setIpfsHash", null]
+        "ipfs_hash" => ["ipfsHash", "string", null, "getIpfsHash", "setIpfsHash", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class StoreIPFS200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class StoreIPFS200Response extends AbstractModel {
      * Set ipfs_hash
      * 
      * @param string|null $ipfs_hash IPFS CID identifier of the stored file.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIpfsHash(?string $ipfs_hash) {
-        $this->_data['ipfs_hash'] = $ipfs_hash;
-
-        return $this;
+        return $this->_set("ipfs_hash", $ipfs_hash);
     }
 }

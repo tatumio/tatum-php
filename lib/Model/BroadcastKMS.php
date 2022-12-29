@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BroadcastKMS Model
  */
@@ -25,8 +23,8 @@ class BroadcastKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BroadcastKMS";
     protected static $_definition = [
-        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null, ["r" => 1, "nl" => 1, "xl" => 500000]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 0]]
     ];
 
     /**
@@ -38,23 +36,6 @@ class BroadcastKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_data'])) {
-            $ip[] = "'tx_data' can't be null";
-        }
-        if ((mb_strlen($this->_data['tx_data']) > 500000)) {
-            $ip[] = "'tx_data' length must be <= 500000";
-        }
-        if ((mb_strlen($this->_data['tx_data']) < 1)) {
-            $ip[] = "'tx_data' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -71,18 +52,11 @@ class BroadcastKMS extends AbstractModel {
      * Set tx_data
      * 
      * @param string $tx_data Raw signed transaction to be published to network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxData(string $tx_data) {
-        if ((mb_strlen($tx_data) > 500000)) {
-            throw new IAE('BroadcastKMS.setTxData: $tx_data length must be <= 500000');
-        }
-        if ((mb_strlen($tx_data) < 1)) {
-            throw new IAE('BroadcastKMS.setTxData: $tx_data length must be >= 1');
-        }
-        $this->_data['tx_data'] = $tx_data;
-
-        return $this;
+        return $this->_set("tx_data", $tx_data);
     }
 
     /**
@@ -98,11 +72,10 @@ class BroadcastKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string|null $signature_id ID of prepared payment template to sign. Required only, when broadcasting transaction signed by Tatum KMS.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(?string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

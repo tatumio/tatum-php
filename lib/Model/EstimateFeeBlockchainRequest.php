@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFeeBlockchain_request Model
  */
@@ -28,21 +26,21 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
     public const TYPE_TRANSFER = 'TRANSFER';
     protected static $_name = "EstimateFeeBlockchain_request";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients", null], 
-        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds", null], 
-        "urls" => ["urls", "string[]", null, "getUrls", "setUrls", null], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
-        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null], 
-        "from_address" => ["fromAddress", "string[]", null, "getFromAddress", "setFromAddress", null], 
-        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "recipients" => ["recipients", "string[]", null, "getRecipients", "setRecipients", null, ["r" => 1, "c" => 1]], 
+        "token_ids" => ["tokenIds", "string[]", null, "getTokenIds", "setTokenIds", null, ["r" => 1, "c" => 1]], 
+        "urls" => ["urls", "string[]", null, "getUrls", "setUrls", null, ["r" => 1, "c" => 1]], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null, ["r" => 1, "n" => [1], "x" => [300]]], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null, ["r" => 1, "n" => [0], "x" => [3]]], 
+        "from_address" => ["fromAddress", "string[]", null, "getFromAddress", "setFromAddress", null, ["r" => 1, "c" => 1]], 
+        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null, ["r" => 1, "c" => 1]], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -54,108 +52,6 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['sender'])) {
-            $ip[] = "'sender' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender']) > 42)) {
-            $ip[] = "'sender' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['sender']) < 42)) {
-            $ip[] = "'sender' length must be >= 42";
-        }
-        if (is_null($this->_data['recipient'])) {
-            $ip[] = "'recipient' can't be null";
-        }
-        if ((mb_strlen($this->_data['recipient']) > 42)) {
-            $ip[] = "'recipient' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['recipient']) < 42)) {
-            $ip[] = "'recipient' length must be >= 42";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['recipients'])) {
-            $ip[] = "'recipients' can't be null";
-        }
-        if (is_null($this->_data['token_ids'])) {
-            $ip[] = "'token_ids' can't be null";
-        }
-        if (is_null($this->_data['urls'])) {
-            $ip[] = "'urls' can't be null";
-        }
-        if (is_null($this->_data['batch_count'])) {
-            $ip[] = "'batch_count' can't be null";
-        }
-        if (($this->_data['batch_count'] > 300)) {
-            $ip[] = "'batch_count' must be <= 300";
-        }
-        if (($this->_data['batch_count'] < 1)) {
-            $ip[] = "'batch_count' must be >= 1";
-        }
-        if (is_null($this->_data['custodial_address'])) {
-            $ip[] = "'custodial_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) > 42)) {
-            $ip[] = "'custodial_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) < 42)) {
-            $ip[] = "'custodial_address' length must be >= 42";
-        }
-        if (is_null($this->_data['token_type'])) {
-            $ip[] = "'token_type' can't be null";
-        }
-        if (($this->_data['token_type'] > 3)) {
-            $ip[] = "'token_type' must be <= 3";
-        }
-        if (($this->_data['token_type'] < 0)) {
-            $ip[] = "'token_type' must be >= 0";
-        }
-        if (is_null($this->_data['from_address'])) {
-            $ip[] = "'from_address' can't be null";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (is_null($this->_data['from_utxo'])) {
-            $ip[] = "'from_utxo' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -193,16 +89,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to estimate fee for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeBlockchainRequest.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -218,16 +109,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeBlockchainRequest.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -243,18 +129,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set sender
      * 
      * @param string $sender Sender address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(string $sender) {
-        if ((mb_strlen($sender) > 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setSender: $sender length must be <= 42');
-        }
-        if ((mb_strlen($sender) < 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setSender: $sender length must be >= 42');
-        }
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -270,18 +149,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set recipient
      * 
      * @param string $recipient Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipient(string $recipient) {
-        if ((mb_strlen($recipient) > 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setRecipient: $recipient length must be <= 42');
-        }
-        if ((mb_strlen($recipient) < 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setRecipient: $recipient length must be >= 42');
-        }
-        $this->_data['recipient'] = $recipient;
-
-        return $this;
+        return $this->_set("recipient", $recipient);
     }
 
     /**
@@ -297,18 +169,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Contract address of the token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -324,15 +189,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in native asset, ERC20 or ERC1155
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('EstimateFeeBlockchainRequest.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -348,12 +209,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set recipients
      * 
      * @param string[] $recipients Blockchain addresses to mint tokens to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipients(array $recipients) {
-        $this->_data['recipients'] = $recipients;
-
-        return $this;
+        return $this->_set("recipients", $recipients);
     }
 
     /**
@@ -369,12 +229,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set token_ids
      * 
      * @param string[] $token_ids Token IDs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenIds(array $token_ids) {
-        $this->_data['token_ids'] = $token_ids;
-
-        return $this;
+        return $this->_set("token_ids", $token_ids);
     }
 
     /**
@@ -390,12 +249,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set urls
      * 
      * @param string[] $urls Metadata URLs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrls(array $urls) {
-        $this->_data['urls'] = $urls;
-
-        return $this;
+        return $this->_set("urls", $urls);
     }
 
     /**
@@ -411,18 +269,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set batch_count
      * 
      * @param float $batch_count Number of addresses to create
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBatchCount(float $batch_count) {
-        if (($batch_count > 300)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setBatchCount: $batch_count must be <=300');
-        }
-        if (($batch_count < 1)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setBatchCount: $batch_count must be >=1');
-        }
-        $this->_data['batch_count'] = $batch_count;
-
-        return $this;
+        return $this->_set("batch_count", $batch_count);
     }
 
     /**
@@ -438,18 +289,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set custodial_address
      * 
      * @param string $custodial_address Contract address of custodial wallet contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustodialAddress(string $custodial_address) {
-        if ((mb_strlen($custodial_address) > 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setCustodialAddress: $custodial_address length must be <= 42');
-        }
-        if ((mb_strlen($custodial_address) < 42)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setCustodialAddress: $custodial_address length must be >= 42');
-        }
-        $this->_data['custodial_address'] = $custodial_address;
-
-        return $this;
+        return $this->_set("custodial_address", $custodial_address);
     }
 
     /**
@@ -465,18 +309,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set token_type
      * 
      * @param float $token_type Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenType(float $token_type) {
-        if (($token_type > 3)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setTokenType: $token_type must be <=3');
-        }
-        if (($token_type < 0)) {
-            throw new IAE('EstimateFeeBlockchainRequest.setTokenType: $token_type must be >=0');
-        }
-        $this->_data['token_type'] = $token_type;
-
-        return $this;
+        return $this->_set("token_type", $token_type);
     }
 
     /**
@@ -492,12 +329,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set from_address
      * 
      * @param string[] $from_address Array of addresses. Tatum will automatically scan last 100 transactions for each address and will use all of the unspent values. We advise to use this option if you have 1 address per 1 transaction only.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAddress(array $from_address) {
-        $this->_data['from_address'] = $from_address;
-
-        return $this;
+        return $this->_set("from_address", $from_address);
     }
 
     /**
@@ -513,12 +349,11 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set to
      * 
      * @param \Tatum\Model\EstimateFeeFromAddressToInner[] $to Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(array $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -534,11 +369,10 @@ class EstimateFeeBlockchainRequest extends AbstractModel {
      * Set from_utxo
      * 
      * @param \Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[] $from_utxo Array of transaction hashes, index of UTXO in it and corresponding private keys. Use this option if you want to calculate amount to send manually. Either fromUTXO or fromAddress must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromUtxo(array $from_utxo) {
-        $this->_data['from_utxo'] = $from_utxo;
-
-        return $this;
+        return $this->_set("from_utxo", $from_utxo);
     }
 }

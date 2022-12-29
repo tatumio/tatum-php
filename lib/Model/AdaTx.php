@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaTx Model
  */
@@ -25,11 +23,11 @@ class AdaTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "block" => ["block", "\Tatum\Model\AdaTxBlock", null, "getBlock", "setBlock", null], 
-        "inputs" => ["inputs", "\Tatum\Model\AdaTxInputsInner[]", null, "getInputs", "setInputs", null], 
-        "outputs" => ["outputs", "\Tatum\Model\AdaUTXO[]", null, "getOutputs", "setOutputs", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0]], 
+        "block" => ["block", "\Tatum\Model\AdaTxBlock", null, "getBlock", "setBlock", null, ["r" => 0]], 
+        "inputs" => ["inputs", "\Tatum\Model\AdaTxInputsInner[]", null, "getInputs", "setInputs", null, ["r" => 0, "c" => 1]], 
+        "outputs" => ["outputs", "\Tatum\Model\AdaUTXO[]", null, "getOutputs", "setOutputs", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class AdaTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class AdaTx extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Transaction hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -86,12 +75,11 @@ class AdaTx extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee paid for this transaction, in ADA.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -107,12 +95,11 @@ class AdaTx extends AbstractModel {
      * Set block
      * 
      * @param \Tatum\Model\AdaTxBlock|null $block block
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlock(?\Tatum\Model\AdaTxBlock $block) {
-        $this->_data['block'] = $block;
-
-        return $this;
+        return $this->_set("block", $block);
     }
 
     /**
@@ -128,12 +115,11 @@ class AdaTx extends AbstractModel {
      * Set inputs
      * 
      * @param \Tatum\Model\AdaTxInputsInner[]|null $inputs List of transactions, from which assets are being sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInputs(?array $inputs) {
-        $this->_data['inputs'] = $inputs;
-
-        return $this;
+        return $this->_set("inputs", $inputs);
     }
 
     /**
@@ -149,11 +135,10 @@ class AdaTx extends AbstractModel {
      * Set outputs
      * 
      * @param \Tatum\Model\AdaUTXO[]|null $outputs List of recipient addresses and amounts to send to each of them.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOutputs(?array $outputs) {
-        $this->_data['outputs'] = $outputs;
-
-        return $this;
+        return $this->_set("outputs", $outputs);
     }
 }

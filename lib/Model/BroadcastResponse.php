@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BroadcastResponse Model
  */
@@ -25,8 +23,8 @@ class BroadcastResponse extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BroadcastResponse";
     protected static $_definition = [
-        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
+        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null, ["r" => 0]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BroadcastResponse extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BroadcastResponse extends AbstractModel {
      * Set completed
      * 
      * @param bool|null $completed Flag, if withdrawal is successfully completed within Tatum systems.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompleted(?bool $completed) {
-        $this->_data['completed'] = $completed;
-
-        return $this;
+        return $this->_set("completed", $completed);
     }
 
     /**
@@ -83,11 +72,10 @@ class BroadcastResponse extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id Transaction ID of broadcast transaction and status
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 }

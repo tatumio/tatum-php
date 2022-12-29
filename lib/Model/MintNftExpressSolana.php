@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MintNftExpressSolana Model
  * 
@@ -28,9 +26,9 @@ class MintNftExpressSolana extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "MintNftExpressSolana";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "metadata" => ["metadata", "\Tatum\Model\SolanaNftExpressMetadata", null, "getMetadata", "setMetadata", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "metadata" => ["metadata", "\Tatum\Model\SolanaNftExpressMetadata", null, "getMetadata", "setMetadata", null, ["r" => 1]]
     ];
 
     /**
@@ -42,34 +40,6 @@ class MintNftExpressSolana extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 44)) {
-            $ip[] = "'to' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['to']) < 43)) {
-            $ip[] = "'to' length must be >= 43";
-        }
-        if (is_null($this->_data['metadata'])) {
-            $ip[] = "'metadata' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -96,16 +66,11 @@ class MintNftExpressSolana extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("MintNftExpressSolana.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -121,18 +86,11 @@ class MintNftExpressSolana extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address to send the NFT to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 44)) {
-            throw new IAE('MintNftExpressSolana.setTo: $to length must be <= 44');
-        }
-        if ((mb_strlen($to) < 43)) {
-            throw new IAE('MintNftExpressSolana.setTo: $to length must be >= 43');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -148,11 +106,10 @@ class MintNftExpressSolana extends AbstractModel {
      * Set metadata
      * 
      * @param \Tatum\Model\SolanaNftExpressMetadata $metadata metadata
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(\Tatum\Model\SolanaNftExpressMetadata $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 }

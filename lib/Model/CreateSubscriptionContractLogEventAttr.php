@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionContractLogEvent_attr Model
  * 
@@ -32,9 +30,9 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "CreateSubscriptionContractLogEvent_attr";
     protected static $_definition = [
-        "event" => ["event", "string", null, "getEvent", "setEvent", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null]
+        "event" => ["event", "string", null, "getEvent", "setEvent", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 500]]
     ];
 
     /**
@@ -46,37 +44,6 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['event'])) {
-            $ip[] = "'event' can't be null";
-        }
-        if ((mb_strlen($this->_data['event']) > 66)) {
-            $ip[] = "'event' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['event']) < 66)) {
-            $ip[] = "'event' length must be >= 66";
-        }
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 500)) {
-            $ip[] = "'url' length must be <= 500";
-        }
-        return $ip;
     }
 
     /**
@@ -107,18 +74,11 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
      * Set event
      * 
      * @param string $event Hexadecimal data representing the event emitted from the smart contract; represents \"topic[0,1,2,...]\" from the event log.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEvent(string $event) {
-        if ((mb_strlen($event) > 66)) {
-            throw new IAE('CreateSubscriptionContractLogEventAttr.setEvent: $event length must be <= 66');
-        }
-        if ((mb_strlen($event) < 66)) {
-            throw new IAE('CreateSubscriptionContractLogEventAttr.setEvent: $event length must be >= 66');
-        }
-        $this->_data['event'] = $event;
-
-        return $this;
+        return $this->_set("event", $event);
     }
 
     /**
@@ -134,16 +94,11 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain on which events should be monitored.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CreateSubscriptionContractLogEventAttr.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -159,14 +114,10 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
      * Set url
      * 
      * @param string $url The URL of the endpoint where an HTTP POST request will be sent when the block where the events from the smart contracts are reflected gets completed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 500)) {
-            throw new IAE('CreateSubscriptionContractLogEventAttr.setUrl: $url length must be <= 500');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateBnbAsset Model
  */
@@ -222,8 +220,8 @@ class CreateBnbAsset extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "CreateBnbAsset";
     protected static $_definition = [
-        "token" => ["token", "string", null, "getToken", "setToken", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null]
+        "token" => ["token", "string", null, "getToken", "setToken", null, ["r" => 1, "p" => "/^[a-zA-Z0-9\\-]{1,12}$/", "nl" => 1, "xl" => 12]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 3, "xl" => 50]]
     ];
 
     /**
@@ -235,40 +233,6 @@ class CreateBnbAsset extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['token'])) {
-            $ip[] = "'token' can't be null";
-        }
-        if ((mb_strlen($this->_data['token']) > 12)) {
-            $ip[] = "'token' length must be <= 12";
-        }
-        if ((mb_strlen($this->_data['token']) < 1)) {
-            $ip[] = "'token' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9\\-]{1,12}$/", $this->_data['token'])) {
-            $ip[] = "'token' must match /^[a-zA-Z0-9\\-]{1,12}$/";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['base_pair']) > 50)) {
-            $ip[] = "'base_pair' length must be <= 50";
-        }
-        if ((mb_strlen($this->_data['base_pair']) < 3)) {
-            $ip[] = "'base_pair' length must be >= 3";
-        }
-        return $ip;
     }
 
     /**
@@ -491,21 +455,11 @@ class CreateBnbAsset extends AbstractModel {
      * Set token
      * 
      * @param string $token Asset name.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToken(string $token) {
-        if ((mb_strlen($token) > 12)) {
-            throw new IAE('CreateBnbAsset.setToken: $token length must be <= 12');
-        }
-        if ((mb_strlen($token) < 1)) {
-            throw new IAE('CreateBnbAsset.setToken: $token length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9\\-]{1,12}$/", $token))) {
-            throw new IAE('CreateBnbAsset.setToken: $token must match /^[a-zA-Z0-9\\-]{1,12}$/, ' . var_export($token, true) . ' given');
-        }
-        $this->_data['token'] = $token;
-
-        return $this;
+        return $this->_set("token", $token);
     }
 
     /**
@@ -521,21 +475,10 @@ class CreateBnbAsset extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("CreateBnbAsset.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($base_pair) > 50)) {
-            throw new IAE('CreateBnbAsset.setBasePair: $base_pair length must be <= 50');
-        }
-        if ((mb_strlen($base_pair) < 3)) {
-            throw new IAE('CreateBnbAsset.setBasePair: $base_pair length must be >= 3');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 }

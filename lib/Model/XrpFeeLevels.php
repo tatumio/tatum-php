@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpFee_levels Model
  * 
@@ -27,10 +25,10 @@ class XrpFeeLevels extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpFee_levels";
     protected static $_definition = [
-        "median_level" => ["median_level", "string", null, "getMedianLevel", "setMedianLevel", null], 
-        "minimum_level" => ["minimum_level", "string", null, "getMinimumLevel", "setMinimumLevel", null], 
-        "open_ledger_level" => ["open_ledger_level", "string", null, "getOpenLedgerLevel", "setOpenLedgerLevel", null], 
-        "reference_level" => ["reference_level", "string", null, "getReferenceLevel", "setReferenceLevel", null]
+        "median_level" => ["median_level", "string", null, "getMedianLevel", "setMedianLevel", null, ["r" => 0]], 
+        "minimum_level" => ["minimum_level", "string", null, "getMinimumLevel", "setMinimumLevel", null, ["r" => 0]], 
+        "open_ledger_level" => ["open_ledger_level", "string", null, "getOpenLedgerLevel", "setOpenLedgerLevel", null, ["r" => 0]], 
+        "reference_level" => ["reference_level", "string", null, "getReferenceLevel", "setReferenceLevel", null, ["r" => 0]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class XrpFeeLevels extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class XrpFeeLevels extends AbstractModel {
      * Set median_level
      * 
      * @param string|null $median_level The median transaction cost among transactions in the previous validated ledger, represented in fee levels.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMedianLevel(?string $median_level) {
-        $this->_data['median_level'] = $median_level;
-
-        return $this;
+        return $this->_set("median_level", $median_level);
     }
 
     /**
@@ -87,12 +76,11 @@ class XrpFeeLevels extends AbstractModel {
      * Set minimum_level
      * 
      * @param string|null $minimum_level The minimum transaction cost required to be queued for a future ledger, represented in fee levels.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMinimumLevel(?string $minimum_level) {
-        $this->_data['minimum_level'] = $minimum_level;
-
-        return $this;
+        return $this->_set("minimum_level", $minimum_level);
     }
 
     /**
@@ -108,12 +96,11 @@ class XrpFeeLevels extends AbstractModel {
      * Set open_ledger_level
      * 
      * @param string|null $open_ledger_level The minimum transaction cost required to be included in the current open ledger, represented in fee levels.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOpenLedgerLevel(?string $open_ledger_level) {
-        $this->_data['open_ledger_level'] = $open_ledger_level;
-
-        return $this;
+        return $this->_set("open_ledger_level", $open_ledger_level);
     }
 
     /**
@@ -129,11 +116,10 @@ class XrpFeeLevels extends AbstractModel {
      * Set reference_level
      * 
      * @param string|null $reference_level The equivalent of the minimum transaction cost, represented in fee levels.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReferenceLevel(?string $reference_level) {
-        $this->_data['reference_level'] = $reference_level;
-
-        return $this;
+        return $this->_set("reference_level", $reference_level);
     }
 }

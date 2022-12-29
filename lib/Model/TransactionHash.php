@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransactionHash Model
  */
@@ -25,7 +23,7 @@ class TransactionHash extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransactionHash";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class TransactionHash extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class TransactionHash extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id The hash (ID) of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 }

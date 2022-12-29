@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AccountBalance Model
  */
@@ -25,8 +23,8 @@ class AccountBalance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AccountBalance";
     protected static $_definition = [
-        "account_balance" => ["accountBalance", "string", null, "getAccountBalance", "setAccountBalance", null], 
-        "available_balance" => ["availableBalance", "string", null, "getAvailableBalance", "setAvailableBalance", null]
+        "account_balance" => ["accountBalance", "string", null, "getAccountBalance", "setAccountBalance", null, ["r" => 1]], 
+        "available_balance" => ["availableBalance", "string", null, "getAvailableBalance", "setAvailableBalance", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class AccountBalance extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account_balance'])) {
-            $ip[] = "'account_balance' can't be null";
-        }
-        if (is_null($this->_data['available_balance'])) {
-            $ip[] = "'available_balance' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class AccountBalance extends AbstractModel {
      * Set account_balance
      * 
      * @param string $account_balance All assets on the account, both available and blocked
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountBalance(string $account_balance) {
-        $this->_data['account_balance'] = $account_balance;
-
-        return $this;
+        return $this->_set("account_balance", $account_balance);
     }
 
     /**
@@ -89,11 +72,10 @@ class AccountBalance extends AbstractModel {
      * Set available_balance
      * 
      * @param string $available_balance The account balance minus the blocked assets; use the available balance to determine how much a customer can send or withdraw from their virtual account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAvailableBalance(string $available_balance) {
-        $this->_data['available_balance'] = $available_balance;
-
-        return $this;
+        return $this->_set("available_balance", $available_balance);
     }
 }

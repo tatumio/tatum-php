@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoDeployErc20Ledger_200_response Model
  */
@@ -25,9 +23,9 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoDeployErc20Ledger_200_response";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -39,23 +37,6 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -72,12 +53,11 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id Account ID with the type of currency as created ERC20 token symbol. Account will be unfrozen when ERC20 contract address will be set.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -93,12 +73,11 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id TX hash of successful transaction. From this transaction receipt contract address can be obtained.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -114,11 +93,10 @@ class AlgoDeployErc20Ledger200Response extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id ID of prepared payment template to sign. This is should be stored on a client side to retrieve ID of the blockchain transaction, when signing application signs the transaction and broadcasts it to the blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

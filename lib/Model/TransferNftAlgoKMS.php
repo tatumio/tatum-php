@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferNftAlgoKMS Model
  */
@@ -26,12 +24,12 @@ class TransferNftAlgoKMS extends AbstractModel {
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "TransferNftAlgoKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "amount" => ["amount", "float", null, "getAmount", "setAmount", 1]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 58, "xl" => 58]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 58, "xl" => 58]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "xl" => 256]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", 1, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -43,52 +41,6 @@ class TransferNftAlgoKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 58)) {
-            $ip[] = "'from' length must be <= 58";
-        }
-        if ((mb_strlen($this->_data['from']) < 58)) {
-            $ip[] = "'from' length must be >= 58";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 58)) {
-            $ip[] = "'to' length must be <= 58";
-        }
-        if ((mb_strlen($this->_data['to']) < 58)) {
-            $ip[] = "'to' length must be >= 58";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 256)) {
-            $ip[] = "'contract_address' length must be <= 256";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['amount']) && ($this->_data['amount'] < 0)) {
-            $ip[] = "'amount' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -115,16 +67,11 @@ class TransferNftAlgoKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("TransferNftAlgoKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -140,18 +87,11 @@ class TransferNftAlgoKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address to transfer the NFT from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 58)) {
-            throw new IAE('TransferNftAlgoKMS.setFrom: $from length must be <= 58');
-        }
-        if ((mb_strlen($from) < 58)) {
-            throw new IAE('TransferNftAlgoKMS.setFrom: $from length must be >= 58');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -167,18 +107,11 @@ class TransferNftAlgoKMS extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address to transfer the NFT to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 58)) {
-            throw new IAE('TransferNftAlgoKMS.setTo: $to length must be <= 58');
-        }
-        if ((mb_strlen($to) < 58)) {
-            throw new IAE('TransferNftAlgoKMS.setTo: $to length must be >= 58');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -194,15 +127,11 @@ class TransferNftAlgoKMS extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The asset ID (the ID of the NFT)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 256)) {
-            throw new IAE('TransferNftAlgoKMS.setContractAddress: $contract_address length must be <= 256');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -218,12 +147,11 @@ class TransferNftAlgoKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the sender's blockchain address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -239,14 +167,10 @@ class TransferNftAlgoKMS extends AbstractModel {
      * Set amount
      * 
      * @param float|null $amount (For <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional NFTs</a> only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?float $amount) {
-        if (!is_null($amount) && ($amount < 0)) {
-            throw new IAE('TransferNftAlgoKMS.setAmount: $amount must be >=0');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

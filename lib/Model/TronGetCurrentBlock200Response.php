@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronGetCurrentBlock_200_response Model
  */
@@ -25,9 +23,9 @@ class TronGetCurrentBlock200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronGetCurrentBlock_200_response";
     protected static $_definition = [
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet", null]
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "testnet" => ["testnet", "bool", null, "getTestnet", "setTestnet", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class TronGetCurrentBlock200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class TronGetCurrentBlock200Response extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number Block height.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -84,12 +73,11 @@ class TronGetCurrentBlock200Response extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Block hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -105,11 +93,10 @@ class TronGetCurrentBlock200Response extends AbstractModel {
      * Set testnet
      * 
      * @param bool|null $testnet Wether the block is from mainnet of Shasta testnet
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTestnet(?bool $testnet) {
-        $this->_data['testnet'] = $testnet;
-
-        return $this;
+        return $this->_set("testnet", $testnet);
     }
 }

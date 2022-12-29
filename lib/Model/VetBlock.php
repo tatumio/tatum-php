@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetBlock Model
  */
@@ -25,21 +23,21 @@ class VetBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetBlock";
     protected static $_definition = [
-        "number" => ["number", "int", 'uint32', "getNumber", "setNumber", null], 
-        "id" => ["id", "string", 'bytes32', "getId", "setId", null], 
-        "size" => ["size", "int", 'uint32', "getSize", "setSize", null], 
-        "parent_id" => ["parentID", "string", 'bytes32', "getParentId", "setParentId", null], 
-        "timestamp" => ["timestamp", "int", 'uint64', "getTimestamp", "setTimestamp", null], 
-        "gas_limit" => ["gasLimit", "int", 'uint64', "getGasLimit", "setGasLimit", null], 
-        "beneficiary" => ["beneficiary", "string", 'bytes32', "getBeneficiary", "setBeneficiary", null], 
-        "gas_used" => ["gasUsed", "int", 'uint64', "getGasUsed", "setGasUsed", null], 
-        "total_score" => ["totalScore", "int", 'uint64', "getTotalScore", "setTotalScore", null], 
-        "txs_root" => ["txsRoot", "string", 'bytes32', "getTxsRoot", "setTxsRoot", null], 
-        "txs_features" => ["txsFeatures", "int", 'uint32', "getTxsFeatures", "setTxsFeatures", null], 
-        "state_root" => ["stateRoot", "string", 'bytes32', "getStateRoot", "setStateRoot", null], 
-        "receipts_root" => ["receiptsRoot", "string", 'bytes32', "getReceiptsRoot", "setReceiptsRoot", null], 
-        "signer" => ["signer", "string", 'bytes20', "getSigner", "setSigner", null], 
-        "transactions" => ["transactions", "string[]", 'bytes32', "getTransactions", "setTransactions", null]
+        "number" => ["number", "int", 'uint32', "getNumber", "setNumber", null, ["r" => 0]], 
+        "id" => ["id", "string", 'bytes32', "getId", "setId", null, ["r" => 0]], 
+        "size" => ["size", "int", 'uint32', "getSize", "setSize", null, ["r" => 0]], 
+        "parent_id" => ["parentID", "string", 'bytes32', "getParentId", "setParentId", null, ["r" => 0]], 
+        "timestamp" => ["timestamp", "int", 'uint64', "getTimestamp", "setTimestamp", null, ["r" => 0]], 
+        "gas_limit" => ["gasLimit", "int", 'uint64', "getGasLimit", "setGasLimit", null, ["r" => 0]], 
+        "beneficiary" => ["beneficiary", "string", 'bytes32', "getBeneficiary", "setBeneficiary", null, ["r" => 0]], 
+        "gas_used" => ["gasUsed", "int", 'uint64', "getGasUsed", "setGasUsed", null, ["r" => 0]], 
+        "total_score" => ["totalScore", "int", 'uint64', "getTotalScore", "setTotalScore", null, ["r" => 0]], 
+        "txs_root" => ["txsRoot", "string", 'bytes32', "getTxsRoot", "setTxsRoot", null, ["r" => 0]], 
+        "txs_features" => ["txsFeatures", "int", 'uint32', "getTxsFeatures", "setTxsFeatures", null, ["r" => 0]], 
+        "state_root" => ["stateRoot", "string", 'bytes32', "getStateRoot", "setStateRoot", null, ["r" => 0]], 
+        "receipts_root" => ["receiptsRoot", "string", 'bytes32', "getReceiptsRoot", "setReceiptsRoot", null, ["r" => 0]], 
+        "signer" => ["signer", "string", 'bytes20', "getSigner", "setSigner", null, ["r" => 0]], 
+        "transactions" => ["transactions", "string[]", 'bytes32', "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -51,14 +49,6 @@ class VetBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -75,12 +65,11 @@ class VetBlock extends AbstractModel {
      * Set number
      * 
      * @param int|null $number block number (height)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumber(?int $number) {
-        $this->_data['number'] = $number;
-
-        return $this;
+        return $this->_set("number", $number);
     }
 
     /**
@@ -96,12 +85,11 @@ class VetBlock extends AbstractModel {
      * Set id
      * 
      * @param string|null $id block identifier
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -117,12 +105,11 @@ class VetBlock extends AbstractModel {
      * Set size
      * 
      * @param int|null $size RLP encoded block size in bytes
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSize(?int $size) {
-        $this->_data['size'] = $size;
-
-        return $this;
+        return $this->_set("size", $size);
     }
 
     /**
@@ -138,12 +125,11 @@ class VetBlock extends AbstractModel {
      * Set parent_id
      * 
      * @param string|null $parent_id parent block ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParentId(?string $parent_id) {
-        $this->_data['parent_id'] = $parent_id;
-
-        return $this;
+        return $this->_set("parent_id", $parent_id);
     }
 
     /**
@@ -159,12 +145,11 @@ class VetBlock extends AbstractModel {
      * Set timestamp
      * 
      * @param int|null $timestamp block unix timestamp
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(?int $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -180,12 +165,11 @@ class VetBlock extends AbstractModel {
      * Set gas_limit
      * 
      * @param int|null $gas_limit block gas limit (max allowed accumulative gas usage of transactions)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(?int $gas_limit) {
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -201,12 +185,11 @@ class VetBlock extends AbstractModel {
      * Set beneficiary
      * 
      * @param string|null $beneficiary Address of account to receive block reward
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBeneficiary(?string $beneficiary) {
-        $this->_data['beneficiary'] = $beneficiary;
-
-        return $this;
+        return $this->_set("beneficiary", $beneficiary);
     }
 
     /**
@@ -222,12 +205,11 @@ class VetBlock extends AbstractModel {
      * Set gas_used
      * 
      * @param int|null $gas_used accumulative gas usage of transactions
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasUsed(?int $gas_used) {
-        $this->_data['gas_used'] = $gas_used;
-
-        return $this;
+        return $this->_set("gas_used", $gas_used);
     }
 
     /**
@@ -243,12 +225,11 @@ class VetBlock extends AbstractModel {
      * Set total_score
      * 
      * @param int|null $total_score sum of all ancestral blocks' score
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotalScore(?int $total_score) {
-        $this->_data['total_score'] = $total_score;
-
-        return $this;
+        return $this->_set("total_score", $total_score);
     }
 
     /**
@@ -264,12 +245,11 @@ class VetBlock extends AbstractModel {
      * Set txs_root
      * 
      * @param string|null $txs_root root hash of transactions in the block
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxsRoot(?string $txs_root) {
-        $this->_data['txs_root'] = $txs_root;
-
-        return $this;
+        return $this->_set("txs_root", $txs_root);
     }
 
     /**
@@ -285,12 +265,11 @@ class VetBlock extends AbstractModel {
      * Set txs_features
      * 
      * @param int|null $txs_features supported txs features bitset
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxsFeatures(?int $txs_features) {
-        $this->_data['txs_features'] = $txs_features;
-
-        return $this;
+        return $this->_set("txs_features", $txs_features);
     }
 
     /**
@@ -306,12 +285,11 @@ class VetBlock extends AbstractModel {
      * Set state_root
      * 
      * @param string|null $state_root root hash of accounts state
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStateRoot(?string $state_root) {
-        $this->_data['state_root'] = $state_root;
-
-        return $this;
+        return $this->_set("state_root", $state_root);
     }
 
     /**
@@ -327,12 +305,11 @@ class VetBlock extends AbstractModel {
      * Set receipts_root
      * 
      * @param string|null $receipts_root root hash of transaction receipts
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReceiptsRoot(?string $receipts_root) {
-        $this->_data['receipts_root'] = $receipts_root;
-
-        return $this;
+        return $this->_set("receipts_root", $receipts_root);
     }
 
     /**
@@ -348,12 +325,11 @@ class VetBlock extends AbstractModel {
      * Set signer
      * 
      * @param string|null $signer the one who signed this block
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSigner(?string $signer) {
-        $this->_data['signer'] = $signer;
-
-        return $this;
+        return $this->_set("signer", $signer);
     }
 
     /**
@@ -369,11 +345,10 @@ class VetBlock extends AbstractModel {
      * Set transactions
      * 
      * @param string[]|null $transactions transactions IDs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

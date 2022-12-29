@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftTokenByAddressErc721 Model
  */
@@ -25,12 +23,12 @@ class NftTokenByAddressErc721 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftTokenByAddressErc721";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "balances" => ["balances", "string[]", 'uint256', "getBalances", "setBalances", null], 
-        "block_number" => ["blockNumber", "float[]", null, "getBlockNumber", "setBlockNumber", null], 
-        "metadata" => ["metadata", "\Tatum\Model\NftTokenByAddressErc721TokenMetadata[]", null, "getMetadata", "setMetadata", null], 
-        "supply" => ["supply", "float", null, "getSupply", "setSupply", null], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1]], 
+        "balances" => ["balances", "string[]", 'uint256', "getBalances", "setBalances", null, ["r" => 1, "c" => 1]], 
+        "block_number" => ["blockNumber", "float[]", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0, "c" => 1]], 
+        "metadata" => ["metadata", "\Tatum\Model\NftTokenByAddressErc721TokenMetadata[]", null, "getMetadata", "setMetadata", null, ["r" => 1, "c" => 1]], 
+        "supply" => ["supply", "float", null, "getSupply", "setSupply", null, ["r" => 0]], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 0]]
     ];
 
     /**
@@ -42,23 +40,6 @@ class NftTokenByAddressErc721 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if (is_null($this->_data['balances'])) {
-            $ip[] = "'balances' can't be null";
-        }
-        if (is_null($this->_data['metadata'])) {
-            $ip[] = "'metadata' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -75,12 +56,11 @@ class NftTokenByAddressErc721 extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address On Algorand, this is the asset ID (the ID of the NFT); on the other blockchains, this is the address of the NFT smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -96,12 +76,11 @@ class NftTokenByAddressErc721 extends AbstractModel {
      * Set balances
      * 
      * @param string[] $balances On Algorand, this is either an array of \"1\" to indicate that the NFTs with the specified IDs exist, or an array with the number of NFT fractions if the NFTs are <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional</a>; on the other blockchains, this is an array of the IDs of the NFTs.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalances(array $balances) {
-        $this->_data['balances'] = $balances;
-
-        return $this;
+        return $this->_set("balances", $balances);
     }
 
     /**
@@ -117,12 +96,11 @@ class NftTokenByAddressErc721 extends AbstractModel {
      * Set block_number
      * 
      * @param float[]|null $block_number (EVM-based blockchains only) An array of the numbers of the blocks in which the NFT was received by the address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?array $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -138,12 +116,11 @@ class NftTokenByAddressErc721 extends AbstractModel {
      * Set metadata
      * 
      * @param \Tatum\Model\NftTokenByAddressErc721TokenMetadata[] $metadata metadata
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(array $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 
     /**
@@ -159,12 +136,11 @@ class NftTokenByAddressErc721 extends AbstractModel {
      * Set supply
      * 
      * @param float|null $supply (Algorand only) The number of fractions in the NFT if the NFT is <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(?float $supply) {
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -180,11 +156,10 @@ class NftTokenByAddressErc721 extends AbstractModel {
      * Set decimals
      * 
      * @param float|null $decimals (Algorand only) The number of decimal places in an NFT fraction if the NFT is <a href=\"https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts\" target=\"_blank\">fractional</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDecimals(?float $decimals) {
-        $this->_data['decimals'] = $decimals;
-
-        return $this;
+        return $this->_set("decimals", $decimals);
     }
 }

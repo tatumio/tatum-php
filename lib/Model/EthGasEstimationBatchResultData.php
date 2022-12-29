@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EthGasEstimationBatchResultData Model
  */
@@ -25,9 +23,9 @@ class EthGasEstimationBatchResultData extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthGasEstimationBatchResultData";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
-        "estimations" => ["estimations", "\Tatum\Model\EthGasEstimationDetails", null, "getEstimations", "setEstimations", null]
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 1]], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 1]], 
+        "estimations" => ["estimations", "\Tatum\Model\EthGasEstimationDetails", null, "getEstimations", "setEstimations", null, ["r" => 1]]
     ];
 
     /**
@@ -39,23 +37,6 @@ class EthGasEstimationBatchResultData extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['gas_limit'])) {
-            $ip[] = "'gas_limit' can't be null";
-        }
-        if (is_null($this->_data['gas_price'])) {
-            $ip[] = "'gas_price' can't be null";
-        }
-        if (is_null($this->_data['estimations'])) {
-            $ip[] = "'estimations' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -72,12 +53,11 @@ class EthGasEstimationBatchResultData extends AbstractModel {
      * Set gas_limit
      * 
      * @param string $gas_limit Gas limit for transaction in gas price.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(string $gas_limit) {
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -93,12 +73,11 @@ class EthGasEstimationBatchResultData extends AbstractModel {
      * Set gas_price
      * 
      * @param string $gas_price Gas price in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(string $gas_price) {
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 
     /**
@@ -114,11 +93,10 @@ class EthGasEstimationBatchResultData extends AbstractModel {
      * Set estimations
      * 
      * @param \Tatum\Model\EthGasEstimationDetails $estimations estimations
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEstimations(\Tatum\Model\EthGasEstimationDetails $estimations) {
-        $this->_data['estimations'] = $estimations;
-
-        return $this;
+        return $this->_set("estimations", $estimations);
     }
 }

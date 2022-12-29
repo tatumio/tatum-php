@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MultiTokenGetAddressBalance_200_response_inner Model
  */
@@ -25,9 +23,9 @@ class MultiTokenGetAddressBalance200ResponseInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTokenGetAddressBalance_200_response_inner";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "balances" => ["balances", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]", null, "getBalances", "setBalances", null], 
-        "metadata" => ["metadata", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]", null, "getMetadata", "setMetadata", null]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]], 
+        "balances" => ["balances", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]", null, "getBalances", "setBalances", null, ["r" => 0, "c" => 1]], 
+        "metadata" => ["metadata", "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]", null, "getMetadata", "setMetadata", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class MultiTokenGetAddressBalance200ResponseInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class MultiTokenGetAddressBalance200ResponseInner extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address Contract address of the Multi Token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -84,12 +73,11 @@ class MultiTokenGetAddressBalance200ResponseInner extends AbstractModel {
      * Set balances
      * 
      * @param \Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerBalancesInner[]|null $balances balances
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalances(?array $balances) {
-        $this->_data['balances'] = $balances;
-
-        return $this;
+        return $this->_set("balances", $balances);
     }
 
     /**
@@ -105,11 +93,10 @@ class MultiTokenGetAddressBalance200ResponseInner extends AbstractModel {
      * Set metadata
      * 
      * @param \Tatum\Model\MultiTokenGetAddressBalance200ResponseInnerMetadataInner[]|null $metadata metadata
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(?array $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 }

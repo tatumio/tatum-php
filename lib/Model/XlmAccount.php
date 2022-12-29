@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XlmAccount Model
  */
@@ -25,16 +23,16 @@ class XlmAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmAccount";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "account_id" => ["account_id", "string", null, "getAccountId", "setAccountId", null], 
-        "sequence" => ["sequence", "string", null, "getSequence", "setSequence", null], 
-        "subentry_count" => ["subentry_count", "float", null, "getSubentryCount", "setSubentryCount", null], 
-        "last_modified_ledger" => ["last_modified_ledger", "float", null, "getLastModifiedLedger", "setLastModifiedLedger", null], 
-        "thresholds" => ["thresholds", "\Tatum\Model\XlmAccountThresholds", null, "getThresholds", "setThresholds", null], 
-        "flags" => ["flags", "\Tatum\Model\XlmAccountFlags", null, "getFlags", "setFlags", null], 
-        "balances" => ["balances", "\Tatum\Model\XlmAccountBalancesInner[]", null, "getBalances", "setBalances", null], 
-        "signers" => ["signers", "\Tatum\Model\XlmAccountSignersInner[]", null, "getSigners", "setSigners", null], 
-        "data" => ["data", "object", null, "getData", "setData", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "account_id" => ["account_id", "string", null, "getAccountId", "setAccountId", null, ["r" => 0]], 
+        "sequence" => ["sequence", "string", null, "getSequence", "setSequence", null, ["r" => 0]], 
+        "subentry_count" => ["subentry_count", "float", null, "getSubentryCount", "setSubentryCount", null, ["r" => 0]], 
+        "last_modified_ledger" => ["last_modified_ledger", "float", null, "getLastModifiedLedger", "setLastModifiedLedger", null, ["r" => 0]], 
+        "thresholds" => ["thresholds", "\Tatum\Model\XlmAccountThresholds", null, "getThresholds", "setThresholds", null, ["r" => 0]], 
+        "flags" => ["flags", "\Tatum\Model\XlmAccountFlags", null, "getFlags", "setFlags", null, ["r" => 0]], 
+        "balances" => ["balances", "\Tatum\Model\XlmAccountBalancesInner[]", null, "getBalances", "setBalances", null, ["r" => 0, "c" => 1]], 
+        "signers" => ["signers", "\Tatum\Model\XlmAccountSignersInner[]", null, "getSigners", "setSigners", null, ["r" => 0, "c" => 1]], 
+        "data" => ["data", "object", null, "getData", "setData", null, ["r" => 0]]
     ];
 
     /**
@@ -46,14 +44,6 @@ class XlmAccount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -70,12 +60,11 @@ class XlmAccount extends AbstractModel {
      * Set id
      * 
      * @param string|null $id A unique identifier for this account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -91,12 +80,11 @@ class XlmAccount extends AbstractModel {
      * Set account_id
      * 
      * @param string|null $account_id This account’s public key encoded in a base32 string representation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(?string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -112,12 +100,11 @@ class XlmAccount extends AbstractModel {
      * Set sequence
      * 
      * @param string|null $sequence This account’s current sequence number. For use when submitting this account’s next transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?string $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 
     /**
@@ -133,12 +120,11 @@ class XlmAccount extends AbstractModel {
      * Set subentry_count
      * 
      * @param float|null $subentry_count The number of subentries on this account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSubentryCount(?float $subentry_count) {
-        $this->_data['subentry_count'] = $subentry_count;
-
-        return $this;
+        return $this->_set("subentry_count", $subentry_count);
     }
 
     /**
@@ -154,12 +140,11 @@ class XlmAccount extends AbstractModel {
      * Set last_modified_ledger
      * 
      * @param float|null $last_modified_ledger The ID of the last ledger that included changes to this account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLastModifiedLedger(?float $last_modified_ledger) {
-        $this->_data['last_modified_ledger'] = $last_modified_ledger;
-
-        return $this;
+        return $this->_set("last_modified_ledger", $last_modified_ledger);
     }
 
     /**
@@ -175,12 +160,11 @@ class XlmAccount extends AbstractModel {
      * Set thresholds
      * 
      * @param \Tatum\Model\XlmAccountThresholds|null $thresholds thresholds
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setThresholds(?\Tatum\Model\XlmAccountThresholds $thresholds) {
-        $this->_data['thresholds'] = $thresholds;
-
-        return $this;
+        return $this->_set("thresholds", $thresholds);
     }
 
     /**
@@ -196,12 +180,11 @@ class XlmAccount extends AbstractModel {
      * Set flags
      * 
      * @param \Tatum\Model\XlmAccountFlags|null $flags flags
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFlags(?\Tatum\Model\XlmAccountFlags $flags) {
-        $this->_data['flags'] = $flags;
-
-        return $this;
+        return $this->_set("flags", $flags);
     }
 
     /**
@@ -217,12 +200,11 @@ class XlmAccount extends AbstractModel {
      * Set balances
      * 
      * @param \Tatum\Model\XlmAccountBalancesInner[]|null $balances The assets this account holds.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalances(?array $balances) {
-        $this->_data['balances'] = $balances;
-
-        return $this;
+        return $this->_set("balances", $balances);
     }
 
     /**
@@ -238,12 +220,11 @@ class XlmAccount extends AbstractModel {
      * Set signers
      * 
      * @param \Tatum\Model\XlmAccountSignersInner[]|null $signers The public keys and associated weights that can be used to authorize transactions for this account. Used for multi-sig.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSigners(?array $signers) {
-        $this->_data['signers'] = $signers;
-
-        return $this;
+        return $this->_set("signers", $signers);
     }
 
     /**
@@ -259,11 +240,10 @@ class XlmAccount extends AbstractModel {
      * Set data
      * 
      * @param object|null $data An array of account data fields.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?object $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

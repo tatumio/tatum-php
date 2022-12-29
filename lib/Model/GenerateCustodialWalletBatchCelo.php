@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateCustodialWalletBatchCelo Model
  */
@@ -29,13 +27,13 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "GenerateCustodialWalletBatchCelo";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null, ["r" => 1, "n" => [0], "x" => [270]]], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null, ["r" => 1, "nl" => 42, "xl" => 43]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -47,60 +45,6 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        if (is_null($this->_data['batch_count'])) {
-            $ip[] = "'batch_count' can't be null";
-        }
-        if (($this->_data['batch_count'] > 270)) {
-            $ip[] = "'batch_count' must be <= 270";
-        }
-        if (($this->_data['batch_count'] < 0)) {
-            $ip[] = "'batch_count' must be >= 0";
-        }
-        if (is_null($this->_data['owner'])) {
-            $ip[] = "'owner' can't be null";
-        }
-        if ((mb_strlen($this->_data['owner']) > 43)) {
-            $ip[] = "'owner' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['owner']) < 42)) {
-            $ip[] = "'owner' length must be >= 42";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -139,16 +83,11 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateCustodialWalletBatchCelo.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -164,16 +103,11 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("GenerateCustodialWalletBatchCelo.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -189,18 +123,11 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of account, from which the transaction will be initiated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('GenerateCustodialWalletBatchCelo.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('GenerateCustodialWalletBatchCelo.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -216,18 +143,11 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
      * Set batch_count
      * 
      * @param float $batch_count Number of addresses to generate.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBatchCount(float $batch_count) {
-        if (($batch_count > 270)) {
-            throw new IAE('GenerateCustodialWalletBatchCelo.setBatchCount: $batch_count must be <=270');
-        }
-        if (($batch_count < 0)) {
-            throw new IAE('GenerateCustodialWalletBatchCelo.setBatchCount: $batch_count must be >=0');
-        }
-        $this->_data['batch_count'] = $batch_count;
-
-        return $this;
+        return $this->_set("batch_count", $batch_count);
     }
 
     /**
@@ -243,18 +163,11 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
      * Set owner
      * 
      * @param string $owner Owner of the addresses.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwner(string $owner) {
-        if ((mb_strlen($owner) > 43)) {
-            throw new IAE('GenerateCustodialWalletBatchCelo.setOwner: $owner length must be <= 43');
-        }
-        if ((mb_strlen($owner) < 42)) {
-            throw new IAE('GenerateCustodialWalletBatchCelo.setOwner: $owner length must be >= 42');
-        }
-        $this->_data['owner'] = $owner;
-
-        return $this;
+        return $this->_set("owner", $owner);
     }
 
     /**
@@ -270,12 +183,11 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -291,14 +203,10 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('GenerateCustodialWalletBatchCelo.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 }

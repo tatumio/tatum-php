@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFeeBlockchain_200_response Model
  */
@@ -25,11 +23,11 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EstimateFeeBlockchain_200_response";
     protected static $_definition = [
-        "fast" => ["fast", "string", null, "getFast", "setFast", null], 
-        "medium" => ["medium", "string", null, "getMedium", "setMedium", null], 
-        "slow" => ["slow", "string", null, "getSlow", "setSlow", null], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
-        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice", null]
+        "fast" => ["fast", "string", null, "getFast", "setFast", null, ["r" => 1]], 
+        "medium" => ["medium", "string", null, "getMedium", "setMedium", null, ["r" => 1]], 
+        "slow" => ["slow", "string", null, "getSlow", "setSlow", null, ["r" => 1]], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 1]], 
+        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice", null, ["r" => 1]]
     ];
 
     /**
@@ -41,29 +39,6 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['fast'])) {
-            $ip[] = "'fast' can't be null";
-        }
-        if (is_null($this->_data['medium'])) {
-            $ip[] = "'medium' can't be null";
-        }
-        if (is_null($this->_data['slow'])) {
-            $ip[] = "'slow' can't be null";
-        }
-        if (is_null($this->_data['gas_limit'])) {
-            $ip[] = "'gas_limit' can't be null";
-        }
-        if (is_null($this->_data['gas_price'])) {
-            $ip[] = "'gas_price' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -80,12 +55,11 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
      * Set fast
      * 
      * @param string $fast Transaction fee in BTC/LTC to be paid, if transaction should be included in next 1-2 blocks.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFast(string $fast) {
-        $this->_data['fast'] = $fast;
-
-        return $this;
+        return $this->_set("fast", $fast);
     }
 
     /**
@@ -101,12 +75,11 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
      * Set medium
      * 
      * @param string $medium Transaction fee in BTC/LTC to be paid, if transaction should be included in next 5-6 blocks.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMedium(string $medium) {
-        $this->_data['medium'] = $medium;
-
-        return $this;
+        return $this->_set("medium", $medium);
     }
 
     /**
@@ -122,12 +95,11 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
      * Set slow
      * 
      * @param string $slow Transaction fee in BTC/LTC to be paid, if transaction should be included in next 7+ blocks.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSlow(string $slow) {
-        $this->_data['slow'] = $slow;
-
-        return $this;
+        return $this->_set("slow", $slow);
     }
 
     /**
@@ -143,12 +115,11 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
      * Set gas_limit
      * 
      * @param float $gas_limit Gas limit for transaction in gas price.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(float $gas_limit) {
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -164,11 +135,10 @@ class EstimateFeeBlockchain200Response extends AbstractModel {
      * Set gas_price
      * 
      * @param float $gas_price Gas price in Gwei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(float $gas_price) {
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 }

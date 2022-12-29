@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftGetBalanceScAlgo Model
  */
@@ -25,7 +23,7 @@ class NftGetBalanceScAlgo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftGetBalanceScAlgo";
     protected static $_definition = [
-        "data" => ["data", "\Tatum\Model\NftGetBalanceScAlgoDataInner[]", null, "getData", "setData", null]
+        "data" => ["data", "\Tatum\Model\NftGetBalanceScAlgoDataInner[]", null, "getData", "setData", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class NftGetBalanceScAlgo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class NftGetBalanceScAlgo extends AbstractModel {
      * Set data
      * 
      * @param \Tatum\Model\NftGetBalanceScAlgoDataInner[]|null $data data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?array $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

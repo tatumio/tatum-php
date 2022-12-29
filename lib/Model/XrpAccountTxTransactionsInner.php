@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccountTx_transactions_inner Model
  */
@@ -25,9 +23,9 @@ class XrpAccountTxTransactionsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_transactions_inner";
     protected static $_definition = [
-        "meta" => ["meta", "\Tatum\Model\XrpAccountTxTransactionsInnerMeta", null, "getMeta", "setMeta", null], 
-        "tx" => ["tx", "\Tatum\Model\XrpTx", null, "getTx", "setTx", null], 
-        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null]
+        "meta" => ["meta", "\Tatum\Model\XrpAccountTxTransactionsInnerMeta", null, "getMeta", "setMeta", null, ["r" => 0]], 
+        "tx" => ["tx", "\Tatum\Model\XrpTx", null, "getTx", "setTx", null, ["r" => 0]], 
+        "validated" => ["validated", "bool", null, "getValidated", "setValidated", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class XrpAccountTxTransactionsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class XrpAccountTxTransactionsInner extends AbstractModel {
      * Set meta
      * 
      * @param \Tatum\Model\XrpAccountTxTransactionsInnerMeta|null $meta meta
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMeta(?\Tatum\Model\XrpAccountTxTransactionsInnerMeta $meta) {
-        $this->_data['meta'] = $meta;
-
-        return $this;
+        return $this->_set("meta", $meta);
     }
 
     /**
@@ -84,12 +73,11 @@ class XrpAccountTxTransactionsInner extends AbstractModel {
      * Set tx
      * 
      * @param \Tatum\Model\XrpTx|null $tx tx
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTx(?\Tatum\Model\XrpTx $tx) {
-        $this->_data['tx'] = $tx;
-
-        return $this;
+        return $this->_set("tx", $tx);
     }
 
     /**
@@ -105,11 +93,10 @@ class XrpAccountTxTransactionsInner extends AbstractModel {
      * Set validated
      * 
      * @param bool|null $validated True if this data is from a validated ledger version; if omitted or set to false, this data is not final.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValidated(?bool $validated) {
-        $this->_data['validated'] = $validated;
-
-        return $this;
+        return $this->_set("validated", $validated);
     }
 }

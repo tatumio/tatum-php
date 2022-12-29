@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowCustomTransactionKMS Model
  */
@@ -25,11 +23,11 @@ class FlowCustomTransactionKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowCustomTransactionKMS";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null], 
-        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null, ["r" => 1, "nl" => 1, "xl" => 500000]], 
+        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null, ["r" => 1, "c" => 1]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -41,41 +39,6 @@ class FlowCustomTransactionKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['transaction'])) {
-            $ip[] = "'transaction' can't be null";
-        }
-        if ((mb_strlen($this->_data['transaction']) > 500000)) {
-            $ip[] = "'transaction' length must be <= 500000";
-        }
-        if ((mb_strlen($this->_data['transaction']) < 1)) {
-            $ip[] = "'transaction' length must be >= 1";
-        }
-        if (is_null($this->_data['args'])) {
-            $ip[] = "'args' can't be null";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -92,18 +55,11 @@ class FlowCustomTransactionKMS extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowCustomTransactionKMS.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowCustomTransactionKMS.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -119,18 +75,11 @@ class FlowCustomTransactionKMS extends AbstractModel {
      * Set transaction
      * 
      * @param string $transaction Transaction string to send to the chain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransaction(string $transaction) {
-        if ((mb_strlen($transaction) > 500000)) {
-            throw new IAE('FlowCustomTransactionKMS.setTransaction: $transaction length must be <= 500000');
-        }
-        if ((mb_strlen($transaction) < 1)) {
-            throw new IAE('FlowCustomTransactionKMS.setTransaction: $transaction length must be >= 1');
-        }
-        $this->_data['transaction'] = $transaction;
-
-        return $this;
+        return $this->_set("transaction", $transaction);
     }
 
     /**
@@ -146,12 +95,11 @@ class FlowCustomTransactionKMS extends AbstractModel {
      * Set args
      * 
      * @param \Tatum\Model\FlowCustomTransactionPKArgsInner[] $args args
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setArgs(array $args) {
-        $this->_data['args'] = $args;
-
-        return $this;
+        return $this->_set("args", $args);
     }
 
     /**
@@ -167,12 +115,11 @@ class FlowCustomTransactionKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -188,14 +135,10 @@ class FlowCustomTransactionKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('FlowCustomTransactionKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 }

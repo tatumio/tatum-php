@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * OffchainTransactionResult Model
  */
@@ -25,9 +23,9 @@ class OffchainTransactionResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OffchainTransactionResult";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null, ["r" => 1]]
     ];
 
     /**
@@ -39,23 +37,6 @@ class OffchainTransactionResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['completed'])) {
-            $ip[] = "'completed' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -72,12 +53,11 @@ class OffchainTransactionResult extends AbstractModel {
      * Set id
      * 
      * @param string $id ID of withdrawal. If transaction is not valid in blockchain, use this id to cancel withdrawal.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -93,12 +73,11 @@ class OffchainTransactionResult extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id TX hash of successful transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -114,11 +93,10 @@ class OffchainTransactionResult extends AbstractModel {
      * Set completed
      * 
      * @param bool $completed If set to \"true\", the withdrawal has been completed in the virtual account; if set to \"false\", the withdrawal has not been completed and you have to <a href=\"https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal\" target=\"_blank\">complete it manually</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompleted(bool $completed) {
-        $this->_data['completed'] = $completed;
-
-        return $this;
+        return $this->_set("completed", $completed);
     }
 }

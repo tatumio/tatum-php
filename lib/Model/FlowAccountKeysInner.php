@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowAccount_keys_inner Model
  */
@@ -25,13 +23,13 @@ class FlowAccountKeysInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAccount_keys_inner";
     protected static $_definition = [
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
-        "sign_algo" => ["signAlgo", "float", null, "getSignAlgo", "setSignAlgo", null], 
-        "hash_algo" => ["hashAlgo", "float", null, "getHashAlgo", "setHashAlgo", null], 
-        "sequence_number" => ["sequenceNumber", "float", null, "getSequenceNumber", "setSequenceNumber", null], 
-        "revoked" => ["revoked", "bool", null, "getRevoked", "setRevoked", null], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight", null]
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0]], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null, ["r" => 0]], 
+        "sign_algo" => ["signAlgo", "float", null, "getSignAlgo", "setSignAlgo", null, ["r" => 0]], 
+        "hash_algo" => ["hashAlgo", "float", null, "getHashAlgo", "setHashAlgo", null, ["r" => 0]], 
+        "sequence_number" => ["sequenceNumber", "float", null, "getSequenceNumber", "setSequenceNumber", null, ["r" => 0]], 
+        "revoked" => ["revoked", "bool", null, "getRevoked", "setRevoked", null, ["r" => 0]], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null, ["r" => 0]]
     ];
 
     /**
@@ -43,14 +41,6 @@ class FlowAccountKeysInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -67,12 +57,11 @@ class FlowAccountKeysInner extends AbstractModel {
      * Set index
      * 
      * @param float|null $index Index of the public key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -88,12 +77,11 @@ class FlowAccountKeysInner extends AbstractModel {
      * Set public_key
      * 
      * @param string|null $public_key public_key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPublicKey(?string $public_key) {
-        $this->_data['public_key'] = $public_key;
-
-        return $this;
+        return $this->_set("public_key", $public_key);
     }
 
     /**
@@ -109,12 +97,11 @@ class FlowAccountKeysInner extends AbstractModel {
      * Set sign_algo
      * 
      * @param float|null $sign_algo Type of signature algorithm. 2 - ECDSA_secp256k1
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignAlgo(?float $sign_algo) {
-        $this->_data['sign_algo'] = $sign_algo;
-
-        return $this;
+        return $this->_set("sign_algo", $sign_algo);
     }
 
     /**
@@ -130,12 +117,11 @@ class FlowAccountKeysInner extends AbstractModel {
      * Set hash_algo
      * 
      * @param float|null $hash_algo Type of hash algo. 3 - SHA3_256
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHashAlgo(?float $hash_algo) {
-        $this->_data['hash_algo'] = $hash_algo;
-
-        return $this;
+        return $this->_set("hash_algo", $hash_algo);
     }
 
     /**
@@ -151,12 +137,11 @@ class FlowAccountKeysInner extends AbstractModel {
      * Set sequence_number
      * 
      * @param float|null $sequence_number Number of outgoing transactions for this public key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequenceNumber(?float $sequence_number) {
-        $this->_data['sequence_number'] = $sequence_number;
-
-        return $this;
+        return $this->_set("sequence_number", $sequence_number);
     }
 
     /**
@@ -172,12 +157,11 @@ class FlowAccountKeysInner extends AbstractModel {
      * Set revoked
      * 
      * @param bool|null $revoked revoked
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRevoked(?bool $revoked) {
-        $this->_data['revoked'] = $revoked;
-
-        return $this;
+        return $this->_set("revoked", $revoked);
     }
 
     /**
@@ -193,11 +177,10 @@ class FlowAccountKeysInner extends AbstractModel {
      * Set weight
      * 
      * @param float|null $weight Weight of the key. 1000 means single signature necessary.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWeight(?float $weight) {
-        $this->_data['weight'] = $weight;
-
-        return $this;
+        return $this->_set("weight", $weight);
     }
 }

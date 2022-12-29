@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BuyAssetOnMarketplaceSolanaKMS Model
  */
@@ -26,12 +24,12 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "BuyAssetOnMarketplaceSolanaKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null], 
-        "from" => ["from", "mixed", null, "getFrom", "setFrom", null], 
-        "authority_signature_id" => ["authoritySignatureId", "string", 'uuid', "getAuthoritySignatureId", "setAuthoritySignatureId", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "from" => ["from", "mixed", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "authority_signature_id" => ["authoritySignatureId", "string", 'uuid', "getAuthoritySignatureId", "setAuthoritySignatureId", null, ["r" => 0]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -43,52 +41,6 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 44)) {
-            $ip[] = "'contract_address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 44)) {
-            $ip[] = "'contract_address' length must be >= 44";
-        }
-        if (is_null($this->_data['listing_id'])) {
-            $ip[] = "'listing_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['listing_id']) > 44)) {
-            $ip[] = "'listing_id' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['listing_id']) < 44)) {
-            $ip[] = "'listing_id' length must be >= 44";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 44)) {
-            $ip[] = "'from' length must be >= 44";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -115,16 +67,11 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("BuyAssetOnMarketplaceSolanaKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -140,18 +87,11 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Blockchain address of the smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 44)) {
-            throw new IAE('BuyAssetOnMarketplaceSolanaKMS.setContractAddress: $contract_address length must be <= 44');
-        }
-        if ((mb_strlen($contract_address) < 44)) {
-            throw new IAE('BuyAssetOnMarketplaceSolanaKMS.setContractAddress: $contract_address length must be >= 44');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -167,18 +107,11 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
      * Set listing_id
      * 
      * @param mixed $listing_id Blockchain address of the listing
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setListingId(mixed $listing_id) {
-        if ((mb_strlen($listing_id) > 44)) {
-            throw new IAE('BuyAssetOnMarketplaceSolanaKMS.setListingId: $listing_id length must be <= 44');
-        }
-        if ((mb_strlen($listing_id) < 44)) {
-            throw new IAE('BuyAssetOnMarketplaceSolanaKMS.setListingId: $listing_id length must be >= 44');
-        }
-        $this->_data['listing_id'] = $listing_id;
-
-        return $this;
+        return $this->_set("listing_id", $listing_id);
     }
 
     /**
@@ -194,18 +127,11 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
      * Set from
      * 
      * @param mixed $from Blockchain address of the buyer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(mixed $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('BuyAssetOnMarketplaceSolanaKMS.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 44)) {
-            throw new IAE('BuyAssetOnMarketplaceSolanaKMS.setFrom: $from length must be >= 44');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -221,12 +147,11 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
      * Set authority_signature_id
      * 
      * @param string|null $authority_signature_id The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to \"true\" for the marketplace
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthoritySignatureId(?string $authority_signature_id) {
-        $this->_data['authority_signature_id'] = $authority_signature_id;
-
-        return $this;
+        return $this->_set("authority_signature_id", $authority_signature_id);
     }
 
     /**
@@ -242,11 +167,10 @@ class BuyAssetOnMarketplaceSolanaKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the buyer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

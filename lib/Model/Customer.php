@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Customer Model
  */
@@ -195,13 +193,13 @@ class Customer extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "Customer";
     protected static $_definition = [
-        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null], 
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "enabled" => ["enabled", "bool", null, "getEnabled", "setEnabled", null], 
-        "active" => ["active", "bool", null, "getActive", "setActive", null], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
-        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null], 
-        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null]
+        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null, ["r" => 1]], 
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 
+        "enabled" => ["enabled", "bool", null, "getEnabled", "setEnabled", null, ["r" => 1]], 
+        "active" => ["active", "bool", null, "getActive", "setActive", null, ["r" => 1]], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null, ["r" => 0, "e" => 1]], 
+        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null, ["r" => 0]], 
+        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null, ["r" => 0]]
     ];
 
     /**
@@ -213,31 +211,6 @@ class Customer extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['external_id'])) {
-            $ip[] = "'external_id' can't be null";
-        }
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if (is_null($this->_data['enabled'])) {
-            $ip[] = "'enabled' can't be null";
-        }
-        if (is_null($this->_data['active'])) {
-            $ip[] = "'active' can't be null";
-        }
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        $value = $this->_data['accounting_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'accounting_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -433,12 +406,11 @@ class Customer extends AbstractModel {
      * Set external_id
      * 
      * @param string $external_id Customer external ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExternalId(string $external_id) {
-        $this->_data['external_id'] = $external_id;
-
-        return $this;
+        return $this->_set("external_id", $external_id);
     }
 
     /**
@@ -454,12 +426,11 @@ class Customer extends AbstractModel {
      * Set id
      * 
      * @param string $id Customer internal ID within Tatum.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -475,12 +446,11 @@ class Customer extends AbstractModel {
      * Set enabled
      * 
      * @param bool $enabled Indicates whether customer is enabled or not
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnabled(bool $enabled) {
-        $this->_data['enabled'] = $enabled;
-
-        return $this;
+        return $this->_set("enabled", $enabled);
     }
 
     /**
@@ -496,12 +466,11 @@ class Customer extends AbstractModel {
      * Set active
      * 
      * @param bool $active Indicates whether customer is active or not
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setActive(bool $active) {
-        $this->_data['active'] = $active;
-
-        return $this;
+        return $this->_set("active", $active);
     }
 
     /**
@@ -517,16 +486,11 @@ class Customer extends AbstractModel {
      * Set accounting_currency
      * 
      * @param string|null $accounting_currency All transaction will be accounted in this currency for all accounts of the customer. Currency can be overridden per account level. ISO-4217
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        if (!is_null($accounting_currency) && !in_array($accounting_currency, $allowed, true)) {
-            throw new IAE(sprintf("Customer.setAccountingCurrency: accounting_currency invalid value '%s', must be one of '%s'", $accounting_currency, implode("', '", $allowed)));
-        }
-        $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
+        return $this->_set("accounting_currency", $accounting_currency);
     }
 
     /**
@@ -542,12 +506,11 @@ class Customer extends AbstractModel {
      * Set customer_country
      * 
      * @param string|null $customer_country Country customer has to be compliant with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomerCountry(?string $customer_country) {
-        $this->_data['customer_country'] = $customer_country;
-
-        return $this;
+        return $this->_set("customer_country", $customer_country);
     }
 
     /**
@@ -563,11 +526,10 @@ class Customer extends AbstractModel {
      * Set provider_country
      * 
      * @param string|null $provider_country Country service provider has to be compliant with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProviderCountry(?string $provider_country) {
-        $this->_data['provider_country'] = $provider_country;
-
-        return $this;
+        return $this->_set("provider_country", $provider_country);
     }
 }

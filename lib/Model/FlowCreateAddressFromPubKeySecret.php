@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowCreateAddressFromPubKeySecret Model
  */
@@ -25,9 +23,9 @@ class FlowCreateAddressFromPubKeySecret extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowCreateAddressFromPubKeySecret";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null, ["r" => 1, "nl" => 128, "xl" => 128]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]]
     ];
 
     /**
@@ -39,41 +37,6 @@ class FlowCreateAddressFromPubKeySecret extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['public_key'])) {
-            $ip[] = "'public_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['public_key']) > 128)) {
-            $ip[] = "'public_key' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['public_key']) < 128)) {
-            $ip[] = "'public_key' length must be >= 128";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        return $ip;
     }
 
 
@@ -90,18 +53,11 @@ class FlowCreateAddressFromPubKeySecret extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowCreateAddressFromPubKeySecret.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowCreateAddressFromPubKeySecret.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -117,18 +73,11 @@ class FlowCreateAddressFromPubKeySecret extends AbstractModel {
      * Set public_key
      * 
      * @param string $public_key Public key to be used; will be assigned to a newly created address and will have a weight of 1000
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPublicKey(string $public_key) {
-        if ((mb_strlen($public_key) > 128)) {
-            throw new IAE('FlowCreateAddressFromPubKeySecret.setPublicKey: $public_key length must be <= 128');
-        }
-        if ((mb_strlen($public_key) < 128)) {
-            throw new IAE('FlowCreateAddressFromPubKeySecret.setPublicKey: $public_key length must be >= 128');
-        }
-        $this->_data['public_key'] = $public_key;
-
-        return $this;
+        return $this->_set("public_key", $public_key);
     }
 
     /**
@@ -144,17 +93,10 @@ class FlowCreateAddressFromPubKeySecret extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('FlowCreateAddressFromPubKeySecret.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('FlowCreateAddressFromPubKeySecret.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

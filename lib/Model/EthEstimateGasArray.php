@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EthEstimateGasArray Model
  */
@@ -25,7 +23,7 @@ class EthEstimateGasArray extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthEstimateGasArray";
     protected static $_definition = [
-        "estimations" => ["estimations", "\Tatum\Model\EthEstimateGas[]", null, "getEstimations", "setEstimations", null]
+        "estimations" => ["estimations", "\Tatum\Model\EthEstimateGas[]", null, "getEstimations", "setEstimations", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class EthEstimateGasArray extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['estimations'])) {
-            $ip[] = "'estimations' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class EthEstimateGasArray extends AbstractModel {
      * Set estimations
      * 
      * @param \Tatum\Model\EthEstimateGas[] $estimations estimations
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEstimations(array $estimations) {
-        $this->_data['estimations'] = $estimations;
-
-        return $this;
+        return $this->_set("estimations", $estimations);
     }
 }

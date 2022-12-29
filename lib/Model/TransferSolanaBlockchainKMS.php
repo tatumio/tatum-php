@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferSolanaBlockchainKMS Model
  */
@@ -25,12 +23,12 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferSolanaBlockchainKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer", null], 
-        "fee_payer_signature_id" => ["feePayerSignatureId", "string", 'uuid', "getFeePayerSignatureId", "setFeePayerSignatureId", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "fee_payer" => ["feePayer", "string", null, "getFeePayer", "setFeePayer", null, ["r" => 0, "nl" => 43, "xl" => 44]], 
+        "fee_payer_signature_id" => ["feePayerSignatureId", "string", 'uuid', "getFeePayerSignatureId", "setFeePayerSignatureId", null, ["r" => 0]]
     ];
 
     /**
@@ -42,47 +40,6 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 43)) {
-            $ip[] = "'from' length must be >= 43";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 44)) {
-            $ip[] = "'to' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['to']) < 43)) {
-            $ip[] = "'to' length must be >= 43";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['fee_payer']) && (mb_strlen($this->_data['fee_payer']) > 44)) {
-            $ip[] = "'fee_payer' length must be <= 44";
-        }
-        if (!is_null($this->_data['fee_payer']) && (mb_strlen($this->_data['fee_payer']) < 43)) {
-            $ip[] = "'fee_payer' length must be >= 43";
-        }
-        return $ip;
     }
 
 
@@ -99,18 +56,11 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from Blockchain address to send assets from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('TransferSolanaBlockchainKMS.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 43)) {
-            throw new IAE('TransferSolanaBlockchainKMS.setFrom: $from length must be >= 43');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -126,18 +76,11 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 44)) {
-            throw new IAE('TransferSolanaBlockchainKMS.setTo: $to length must be <= 44');
-        }
-        if ((mb_strlen($to) < 43)) {
-            throw new IAE('TransferSolanaBlockchainKMS.setTo: $to length must be >= 43');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -153,15 +96,11 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in SOL.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferSolanaBlockchainKMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -177,12 +116,11 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -198,18 +136,11 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
      * Set fee_payer
      * 
      * @param string|null $fee_payer Blockchain address to pay the fee for the transaction from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeePayer(?string $fee_payer) {
-        if (!is_null($fee_payer) && (mb_strlen($fee_payer) > 44)) {
-            throw new IAE('TransferSolanaBlockchainKMS.setFeePayer: $fee_payer length must be <= 44');
-        }
-        if (!is_null($fee_payer) && (mb_strlen($fee_payer) < 43)) {
-            throw new IAE('TransferSolanaBlockchainKMS.setFeePayer: $fee_payer length must be >= 43');
-        }
-        $this->_data['fee_payer'] = $fee_payer;
-
-        return $this;
+        return $this->_set("fee_payer", $fee_payer);
     }
 
     /**
@@ -225,11 +156,10 @@ class TransferSolanaBlockchainKMS extends AbstractModel {
      * Set fee_payer_signature_id
      * 
      * @param string|null $fee_payer_signature_id Identifier of the private key used for paying the gas costs in signing application. Defaults to the signatureId.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeePayerSignatureId(?string $fee_payer_signature_id) {
-        $this->_data['fee_payer_signature_id'] = $fee_payer_signature_id;
-
-        return $this;
+        return $this->_set("fee_payer_signature_id", $fee_payer_signature_id);
     }
 }

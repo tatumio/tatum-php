@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateXrpAsset Model
  */
@@ -222,9 +220,9 @@ class CreateXrpAsset extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "CreateXrpAsset";
     protected static $_definition = [
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
-        "token" => ["token", "string", null, "getToken", "setToken", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null]
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "token" => ["token", "string", null, "getToken", "setToken", null, ["r" => 1, "p" => "/^[A-F0-9]{40}$/", "nl" => 40, "xl" => 40]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 3, "xl" => 50]]
     ];
 
     /**
@@ -236,49 +234,6 @@ class CreateXrpAsset extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['issuer_account'])) {
-            $ip[] = "'issuer_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) > 34)) {
-            $ip[] = "'issuer_account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) < 33)) {
-            $ip[] = "'issuer_account' length must be >= 33";
-        }
-        if (is_null($this->_data['token'])) {
-            $ip[] = "'token' can't be null";
-        }
-        if ((mb_strlen($this->_data['token']) > 40)) {
-            $ip[] = "'token' length must be <= 40";
-        }
-        if ((mb_strlen($this->_data['token']) < 40)) {
-            $ip[] = "'token' length must be >= 40";
-        }
-        if (!preg_match("/^[A-F0-9]{40}$/", $this->_data['token'])) {
-            $ip[] = "'token' must match /^[A-F0-9]{40}$/";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['base_pair']) > 50)) {
-            $ip[] = "'base_pair' length must be <= 50";
-        }
-        if ((mb_strlen($this->_data['base_pair']) < 3)) {
-            $ip[] = "'base_pair' length must be >= 3";
-        }
-        return $ip;
     }
 
     /**
@@ -501,18 +456,11 @@ class CreateXrpAsset extends AbstractModel {
      * Set issuer_account
      * 
      * @param string $issuer_account Blockchain address of the issuer of the assets.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIssuerAccount(string $issuer_account) {
-        if ((mb_strlen($issuer_account) > 34)) {
-            throw new IAE('CreateXrpAsset.setIssuerAccount: $issuer_account length must be <= 34');
-        }
-        if ((mb_strlen($issuer_account) < 33)) {
-            throw new IAE('CreateXrpAsset.setIssuerAccount: $issuer_account length must be >= 33');
-        }
-        $this->_data['issuer_account'] = $issuer_account;
-
-        return $this;
+        return $this->_set("issuer_account", $issuer_account);
     }
 
     /**
@@ -528,21 +476,11 @@ class CreateXrpAsset extends AbstractModel {
      * Set token
      * 
      * @param string $token Asset name.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToken(string $token) {
-        if ((mb_strlen($token) > 40)) {
-            throw new IAE('CreateXrpAsset.setToken: $token length must be <= 40');
-        }
-        if ((mb_strlen($token) < 40)) {
-            throw new IAE('CreateXrpAsset.setToken: $token length must be >= 40');
-        }
-        if ((!preg_match("/^[A-F0-9]{40}$/", $token))) {
-            throw new IAE('CreateXrpAsset.setToken: $token must match /^[A-F0-9]{40}$/, ' . var_export($token, true) . ' given');
-        }
-        $this->_data['token'] = $token;
-
-        return $this;
+        return $this->_set("token", $token);
     }
 
     /**
@@ -558,21 +496,10 @@ class CreateXrpAsset extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("CreateXrpAsset.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($base_pair) > 50)) {
-            throw new IAE('CreateXrpAsset.setBasePair: $base_pair length must be <= 50');
-        }
-        if ((mb_strlen($base_pair) < 3)) {
-            throw new IAE('CreateXrpAsset.setBasePair: $base_pair length must be >= 3');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 }

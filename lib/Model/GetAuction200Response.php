@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GetAuction_200_response Model
  */
@@ -25,16 +23,16 @@ class GetAuction200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GetAuction_200_response";
     protected static $_definition = [
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "bidder" => ["bidder", "string", null, "getBidder", "setBidder", null], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
-        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null], 
-        "started_at" => ["startedAt", "string", null, "getStartedAt", "setStartedAt", null], 
-        "ended_at" => ["endedAt", "string", null, "getEndedAt", "setEndedAt", null], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
-        "ending_price" => ["endingPrice", "string", null, "getEndingPrice", "setEndingPrice", null], 
-        "seller" => ["seller", "string", null, "getSeller", "setSeller", null], 
-        "highest_bid" => ["highestBid", "string", null, "getHighestBid", "setHighestBid", null]
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "bidder" => ["bidder", "string", null, "getBidder", "setBidder", null, ["r" => 0]], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null, ["r" => 0]], 
+        "is_erc721" => ["isErc721", "bool", null, "getIsErc721", "setIsErc721", null, ["r" => 0]], 
+        "started_at" => ["startedAt", "string", null, "getStartedAt", "setStartedAt", null, ["r" => 0]], 
+        "ended_at" => ["endedAt", "string", null, "getEndedAt", "setEndedAt", null, ["r" => 0]], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null, ["r" => 0]], 
+        "ending_price" => ["endingPrice", "string", null, "getEndingPrice", "setEndingPrice", null, ["r" => 0]], 
+        "seller" => ["seller", "string", null, "getSeller", "setSeller", null, ["r" => 0]], 
+        "highest_bid" => ["highestBid", "string", null, "getHighestBid", "setHighestBid", null, ["r" => 0]]
     ];
 
     /**
@@ -46,14 +44,6 @@ class GetAuction200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -70,12 +60,11 @@ class GetAuction200Response extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Amount of NFTs to sold in this auction. Valid only for ERC1155 listings.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -91,12 +80,11 @@ class GetAuction200Response extends AbstractModel {
      * Set bidder
      * 
      * @param string|null $bidder Address of the highest buyer, if exists.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBidder(?string $bidder) {
-        $this->_data['bidder'] = $bidder;
-
-        return $this;
+        return $this->_set("bidder", $bidder);
     }
 
     /**
@@ -112,12 +100,11 @@ class GetAuction200Response extends AbstractModel {
      * Set erc20_address
      * 
      * @param string|null $erc20_address Address of the ERC20 token smart contract, which should be used for paying for the asset..
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErc20Address(?string $erc20_address) {
-        $this->_data['erc20_address'] = $erc20_address;
-
-        return $this;
+        return $this->_set("erc20_address", $erc20_address);
     }
 
     /**
@@ -133,12 +120,11 @@ class GetAuction200Response extends AbstractModel {
      * Set is_erc721
      * 
      * @param bool|null $is_erc721 If the listing is for ERC721 or ERC1155 token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIsErc721(?bool $is_erc721) {
-        $this->_data['is_erc721'] = $is_erc721;
-
-        return $this;
+        return $this->_set("is_erc721", $is_erc721);
     }
 
     /**
@@ -154,12 +140,11 @@ class GetAuction200Response extends AbstractModel {
      * Set started_at
      * 
      * @param string|null $started_at Block height this auction started at.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStartedAt(?string $started_at) {
-        $this->_data['started_at'] = $started_at;
-
-        return $this;
+        return $this->_set("started_at", $started_at);
     }
 
     /**
@@ -175,12 +160,11 @@ class GetAuction200Response extends AbstractModel {
      * Set ended_at
      * 
      * @param string|null $ended_at Block height this auction ended at.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEndedAt(?string $ended_at) {
-        $this->_data['ended_at'] = $ended_at;
-
-        return $this;
+        return $this->_set("ended_at", $ended_at);
     }
 
     /**
@@ -196,12 +180,11 @@ class GetAuction200Response extends AbstractModel {
      * Set nft_address
      * 
      * @param string|null $nft_address Address of the NFT smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNftAddress(?string $nft_address) {
-        $this->_data['nft_address'] = $nft_address;
-
-        return $this;
+        return $this->_set("nft_address", $nft_address);
     }
 
     /**
@@ -217,12 +200,11 @@ class GetAuction200Response extends AbstractModel {
      * Set ending_price
      * 
      * @param string|null $ending_price Final auction price of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEndingPrice(?string $ending_price) {
-        $this->_data['ending_price'] = $ending_price;
-
-        return $this;
+        return $this->_set("ending_price", $ending_price);
     }
 
     /**
@@ -238,12 +220,11 @@ class GetAuction200Response extends AbstractModel {
      * Set seller
      * 
      * @param string|null $seller Address of the seller.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSeller(?string $seller) {
-        $this->_data['seller'] = $seller;
-
-        return $this;
+        return $this->_set("seller", $seller);
     }
 
     /**
@@ -259,11 +240,10 @@ class GetAuction200Response extends AbstractModel {
      * Set highest_bid
      * 
      * @param string|null $highest_bid Current highest bid of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHighestBid(?string $highest_bid) {
-        $this->_data['highest_bid'] = $highest_bid;
-
-        return $this;
+        return $this->_set("highest_bid", $highest_bid);
     }
 }

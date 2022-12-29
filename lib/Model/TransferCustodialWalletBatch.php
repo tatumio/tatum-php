@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferCustodialWalletBatch Model
  */
@@ -35,16 +33,16 @@ class TransferCustodialWalletBatch extends AbstractModel {
     public const CONTRACT_TYPE_3 = 3;
     protected static $_name = "TransferCustodialWalletBatch";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
-        "recipient" => ["recipient", "string[]", null, "getRecipient", "setRecipient", null], 
-        "contract_type" => ["contractType", "float[]", null, "getContractType", "setContractType", null], 
-        "token_address" => ["tokenAddress", "string[]", null, "getTokenAddress", "setTokenAddress", null], 
-        "amount" => ["amount", "string[]", null, "getAmount", "setAmount", null], 
-        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "recipient" => ["recipient", "string[]", null, "getRecipient", "setRecipient", null, ["r" => 1, "c" => 1]], 
+        "contract_type" => ["contractType", "float[]", null, "getContractType", "setContractType", null, ["r" => 1, "e" => 1, "c" => 1]], 
+        "token_address" => ["tokenAddress", "string[]", null, "getTokenAddress", "setTokenAddress", null, ["r" => 1, "c" => 1]], 
+        "amount" => ["amount", "string[]", null, "getAmount", "setAmount", null, ["r" => 1, "c" => 1]], 
+        "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId", null, ["r" => 1, "c" => 1]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -56,55 +54,6 @@ class TransferCustodialWalletBatch extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['custodial_address'])) {
-            $ip[] = "'custodial_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) > 42)) {
-            $ip[] = "'custodial_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) < 42)) {
-            $ip[] = "'custodial_address' length must be >= 42";
-        }
-        if (is_null($this->_data['recipient'])) {
-            $ip[] = "'recipient' can't be null";
-        }
-        if (is_null($this->_data['contract_type'])) {
-            $ip[] = "'contract_type' can't be null";
-        }
-        if (is_null($this->_data['token_address'])) {
-            $ip[] = "'token_address' can't be null";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        return $ip;
     }
 
     /**
@@ -149,16 +98,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("TransferCustodialWalletBatch.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -174,18 +118,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set custodial_address
      * 
      * @param string $custodial_address The gas pump address that transfers the assets; this is the address that you <a href=\"#operation/PrecalculateGasPumpAddresses\">precalculated</a> and <a href=\"#operation/ActivateGasPumpAddresses\">activated</a> earlier and that is assigned to a customer in your custodial application; this is not the \"master address\"
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustodialAddress(string $custodial_address) {
-        if ((mb_strlen($custodial_address) > 42)) {
-            throw new IAE('TransferCustodialWalletBatch.setCustodialAddress: $custodial_address length must be <= 42');
-        }
-        if ((mb_strlen($custodial_address) < 42)) {
-            throw new IAE('TransferCustodialWalletBatch.setCustodialAddress: $custodial_address length must be >= 42');
-        }
-        $this->_data['custodial_address'] = $custodial_address;
-
-        return $this;
+        return $this->_set("custodial_address", $custodial_address);
     }
 
     /**
@@ -201,12 +138,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set recipient
      * 
      * @param string[] $recipient The blockchain address that receives the assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipient(array $recipient) {
-        $this->_data['recipient'] = $recipient;
-
-        return $this;
+        return $this->_set("recipient", $recipient);
     }
 
     /**
@@ -222,16 +158,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set contract_type
      * 
      * @param float[] $contract_type The type of the assets to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent), <code>2</code> for Multi Tokens (ERC-1155 or equivalent), or <code>3</code> for native blockchain currencies.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractType(array $contract_type) {
-        $allowed = $this->getContractTypeAllowableValues();
-        if (array_diff($contract_type, $allowed)) {
-            throw new IAE(sprintf("TransferCustodialWalletBatch.setContractType: contract_type must be one of '%s'", implode("', '", $allowed)));
-        }
-        $this->_data['contract_type'] = $contract_type;
-
-        return $this;
+        return $this->_set("contract_type", $contract_type);
     }
 
     /**
@@ -247,12 +178,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set token_address
      * 
      * @param string[] $token_address <ul> <li> If the assets are fungible tokens, NFTs, or Multi Tokens, set this parameter to the array of the addresses of the tokens to transfer:<br/> <code>\"tokenAddress\": [\"0x782919AFc85eEA2cB736874225456bB5d3e242bA\",\"0x74225456bB5d3e242bA782919AFc85eEA2cB7368\",...,\"0x3e242bA78274225456bB52cB7368d919AFc85eEA\"]</code> </li> <li> If the assets are a native blockchain currency, set this parameter to the array of zeros, a zero per currency:<br/> <code>\"tokenAddress\": [\"0\",\"0\",...,\"0\"]</code> </li> </ul>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenAddress(array $token_address) {
-        $this->_data['token_address'] = $token_address;
-
-        return $this;
+        return $this->_set("token_address", $token_address);
     }
 
     /**
@@ -268,12 +198,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set amount
      * 
      * @param string[] $amount <ul> <li> If the assets are fungible tokens, Multi Tokens, or a native blockchain currency, set this parameter to the array of the amounts of the assets to transfer:<br/> <code>\"amount\": [\"100000\",\"15000\",...,\"250000\"]</code> </li> <li> If the assets are NFTs, set this parameter to the array of zeros, a zero per NFT:<br/> <code>\"amount\": [\"0\",\"0\",...,\"0\"]</code> </li> </ul>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(array $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -289,12 +218,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set token_id
      * 
      * @param string[] $token_id <ul> <li> If the assets are Multi Tokens or NFTs, set this parameter to the array of the IDs of the tokens to transfer:<br/> <code>\"tokenId\": [\"12\",\"13\",...,\"24\"]</code>  </li> <li> If the assets are fungible tokens or a native blockchain currency, set this parameter to the array of zeros, a zero per fungible token/currency:<br/> <code>\"tokenId\": [\"0\",\"0\",...,\"0\"]</code> </li> </ul>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(array $token_id) {
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -310,18 +238,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the blockchain address that owns the gas pump address (\"master address\")
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('TransferCustodialWalletBatch.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('TransferCustodialWalletBatch.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -337,12 +258,11 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transfer transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -358,11 +278,10 @@ class TransferCustodialWalletBatch extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\ApproveTransferCustodialWalletFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\ApproveTransferCustodialWalletFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

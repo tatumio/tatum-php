@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpTx_meta_AffectedNodes_inner_ModifiedNode_FinalFields Model
  */
@@ -25,11 +23,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode_FinalFields";
     protected static $_definition = [
-        "account" => ["Account", "string", null, "getAccount", "setAccount", null], 
-        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null], 
-        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null], 
-        "owner_count" => ["OwnerCount", "float", null, "getOwnerCount", "setOwnerCount", null], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null]
+        "account" => ["Account", "string", null, "getAccount", "setAccount", null, ["r" => 0]], 
+        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]], 
+        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null, ["r" => 0]], 
+        "owner_count" => ["OwnerCount", "float", null, "getOwnerCount", "setOwnerCount", null, ["r" => 0]], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
      * Set account
      * 
      * @param string|null $account account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(?string $account) {
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -86,12 +75,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
      * Set balance
      * 
      * @param string|null $balance balance
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?string $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -107,12 +95,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
      * Set flags
      * 
      * @param float|null $flags flags
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFlags(?float $flags) {
-        $this->_data['flags'] = $flags;
-
-        return $this;
+        return $this->_set("flags", $flags);
     }
 
     /**
@@ -128,12 +115,11 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
      * Set owner_count
      * 
      * @param float|null $owner_count owner_count
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwnerCount(?float $owner_count) {
-        $this->_data['owner_count'] = $owner_count;
-
-        return $this;
+        return $this->_set("owner_count", $owner_count);
     }
 
     /**
@@ -149,11 +135,10 @@ class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
      * Set sequence
      * 
      * @param float|null $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 }

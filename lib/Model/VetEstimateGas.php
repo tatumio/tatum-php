@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetEstimateGas Model
  */
@@ -25,11 +23,11 @@ class VetEstimateGas extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetEstimateGas";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "xl" => 50]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "xl" => 50]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 1, "xl" => 50]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0, "xl" => 10000]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]]
     ];
 
     /**
@@ -41,35 +39,6 @@ class VetEstimateGas extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 50)) {
-            $ip[] = "'from' length must be <= 50";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 50)) {
-            $ip[] = "'to' length must be <= 50";
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        if ((mb_strlen($this->_data['value']) > 50)) {
-            $ip[] = "'value' length must be <= 50";
-        }
-        if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 10000)) {
-            $ip[] = "'data' length must be <= 10000";
-        }
-        return $ip;
     }
 
 
@@ -86,15 +55,11 @@ class VetEstimateGas extends AbstractModel {
      * Set from
      * 
      * @param string $from Sender account address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 50)) {
-            throw new IAE('VetEstimateGas.setFrom: $from length must be <= 50');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -110,15 +75,11 @@ class VetEstimateGas extends AbstractModel {
      * Set to
      * 
      * @param string $to Recipient account address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 50)) {
-            throw new IAE('VetEstimateGas.setTo: $to length must be <= 50');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -134,15 +95,11 @@ class VetEstimateGas extends AbstractModel {
      * Set value
      * 
      * @param string $value Amount to send.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(string $value) {
-        if ((mb_strlen($value) > 50)) {
-            throw new IAE('VetEstimateGas.setValue: $value length must be <= 50');
-        }
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -158,15 +115,11 @@ class VetEstimateGas extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Data to send to Smart Contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        if (!is_null($data) && (mb_strlen($data) > 10000)) {
-            throw new IAE('VetEstimateGas.setData: $data length must be <= 10000');
-        }
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -182,11 +135,10 @@ class VetEstimateGas extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Nonce
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 }

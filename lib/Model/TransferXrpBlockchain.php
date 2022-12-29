@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferXrpBlockchain Model
  */
@@ -25,13 +23,13 @@ class TransferXrpBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXrpBlockchain";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag", null], 
-        "destination_tag" => ["destinationTag", "int", null, "getDestinationTag", "setDestinationTag", null]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 33, "xl" => 34]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null, ["r" => 1, "nl" => 29, "xl" => 29]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "source_tag" => ["sourceTag", "int", null, "getSourceTag", "setSourceTag", null, ["r" => 0]], 
+        "destination_tag" => ["destinationTag", "int", null, "getDestinationTag", "setDestinationTag", null, ["r" => 0]]
     ];
 
     /**
@@ -43,50 +41,6 @@ class TransferXrpBlockchain extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_account'])) {
-            $ip[] = "'from_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_account']) > 34)) {
-            $ip[] = "'from_account' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['from_account']) < 33)) {
-            $ip[] = "'from_account' length must be >= 33";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 34)) {
-            $ip[] = "'to' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['to']) < 33)) {
-            $ip[] = "'to' length must be >= 33";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['from_secret'])) {
-            $ip[] = "'from_secret' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_secret']) > 29)) {
-            $ip[] = "'from_secret' length must be <= 29";
-        }
-        if ((mb_strlen($this->_data['from_secret']) < 29)) {
-            $ip[] = "'from_secret' length must be >= 29";
-        }
-        if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
 
@@ -103,18 +57,11 @@ class TransferXrpBlockchain extends AbstractModel {
      * Set from_account
      * 
      * @param string $from_account XRP account address. Must be the one used for generating deposit tags.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAccount(string $from_account) {
-        if ((mb_strlen($from_account) > 34)) {
-            throw new IAE('TransferXrpBlockchain.setFromAccount: $from_account length must be <= 34');
-        }
-        if ((mb_strlen($from_account) < 33)) {
-            throw new IAE('TransferXrpBlockchain.setFromAccount: $from_account length must be >= 33');
-        }
-        $this->_data['from_account'] = $from_account;
-
-        return $this;
+        return $this->_set("from_account", $from_account);
     }
 
     /**
@@ -130,18 +77,11 @@ class TransferXrpBlockchain extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 34)) {
-            throw new IAE('TransferXrpBlockchain.setTo: $to length must be <= 34');
-        }
-        if ((mb_strlen($to) < 33)) {
-            throw new IAE('TransferXrpBlockchain.setTo: $to length must be >= 33');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -157,15 +97,11 @@ class TransferXrpBlockchain extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent, in XRP.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferXrpBlockchain.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -181,18 +117,11 @@ class TransferXrpBlockchain extends AbstractModel {
      * Set from_secret
      * 
      * @param string $from_secret Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromSecret(string $from_secret) {
-        if ((mb_strlen($from_secret) > 29)) {
-            throw new IAE('TransferXrpBlockchain.setFromSecret: $from_secret length must be <= 29');
-        }
-        if ((mb_strlen($from_secret) < 29)) {
-            throw new IAE('TransferXrpBlockchain.setFromSecret: $from_secret length must be >= 29');
-        }
-        $this->_data['from_secret'] = $from_secret;
-
-        return $this;
+        return $this->_set("from_secret", $from_secret);
     }
 
     /**
@@ -208,15 +137,11 @@ class TransferXrpBlockchain extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be paid, in XRP. If omitted, current fee will be calculated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        if (!is_null($fee) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('TransferXrpBlockchain.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -232,12 +157,11 @@ class TransferXrpBlockchain extends AbstractModel {
      * Set source_tag
      * 
      * @param int|null $source_tag Source tag of sender account, if any.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSourceTag(?int $source_tag) {
-        $this->_data['source_tag'] = $source_tag;
-
-        return $this;
+        return $this->_set("source_tag", $source_tag);
     }
 
     /**
@@ -253,11 +177,10 @@ class TransferXrpBlockchain extends AbstractModel {
      * Set destination_tag
      * 
      * @param int|null $destination_tag Destination tag of recipient account, if any.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDestinationTag(?int $destination_tag) {
-        $this->_data['destination_tag'] = $destination_tag;
-
-        return $this;
+        return $this->_set("destination_tag", $destination_tag);
     }
 }

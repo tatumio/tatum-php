@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateRecordCelo Model
  */
@@ -29,12 +27,12 @@ class CreateRecordCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "CreateRecordCelo";
     protected static $_definition = [
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 1, "nl" => 1, "xl" => 130000]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -46,57 +44,6 @@ class CreateRecordCelo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['data'])) {
-            $ip[] = "'data' can't be null";
-        }
-        if ((mb_strlen($this->_data['data']) > 130000)) {
-            $ip[] = "'data' length must be <= 130000";
-        }
-        if ((mb_strlen($this->_data['data']) < 1)) {
-            $ip[] = "'data' length must be >= 1";
-        }
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['to']) && (mb_strlen($this->_data['to']) > 42)) {
-            $ip[] = "'to' length must be <= 42";
-        }
-        if (!is_null($this->_data['to']) && (mb_strlen($this->_data['to']) < 42)) {
-            $ip[] = "'to' length must be >= 42";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -135,18 +82,11 @@ class CreateRecordCelo extends AbstractModel {
      * Set data
      * 
      * @param string $data The data to be stored on the blockchain
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(string $data) {
-        if ((mb_strlen($data) > 130000)) {
-            throw new IAE('CreateRecordCelo.setData: $data length must be <= 130000');
-        }
-        if ((mb_strlen($data) < 1)) {
-            throw new IAE('CreateRecordCelo.setData: $data length must be >= 1');
-        }
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -162,16 +102,11 @@ class CreateRecordCelo extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to store the data on
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CreateRecordCelo.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -187,18 +122,11 @@ class CreateRecordCelo extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the blockchain address from which the transaction will be made and the transaction fee will be deducted
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('CreateRecordCelo.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('CreateRecordCelo.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -214,16 +142,11 @@ class CreateRecordCelo extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("CreateRecordCelo.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -239,18 +162,11 @@ class CreateRecordCelo extends AbstractModel {
      * Set to
      * 
      * @param string|null $to The blockchain address to store the data on<br/>If not provided, the data will be stored on the address from which the transaction is made.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(?string $to) {
-        if (!is_null($to) && (mb_strlen($to) > 42)) {
-            throw new IAE('CreateRecordCelo.setTo: $to length must be <= 42');
-        }
-        if (!is_null($to) && (mb_strlen($to) < 42)) {
-            throw new IAE('CreateRecordCelo.setTo: $to length must be >= 42');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -266,14 +182,10 @@ class CreateRecordCelo extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('CreateRecordCelo.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 }

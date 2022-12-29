@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EthGasEstimationDetails Model
  * 
@@ -27,10 +25,10 @@ class EthGasEstimationDetails extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthGasEstimationDetails";
     protected static $_definition = [
-        "safe" => ["safe", "string", null, "getSafe", "setSafe", null], 
-        "standard" => ["standard", "string", null, "getStandard", "setStandard", null], 
-        "fast" => ["fast", "string", null, "getFast", "setFast", null], 
-        "base_fee" => ["baseFee", "string", null, "getBaseFee", "setBaseFee", null]
+        "safe" => ["safe", "string", null, "getSafe", "setSafe", null, ["r" => 1]], 
+        "standard" => ["standard", "string", null, "getStandard", "setStandard", null, ["r" => 1]], 
+        "fast" => ["fast", "string", null, "getFast", "setFast", null, ["r" => 1]], 
+        "base_fee" => ["baseFee", "string", null, "getBaseFee", "setBaseFee", null, ["r" => 1]]
     ];
 
     /**
@@ -42,26 +40,6 @@ class EthGasEstimationDetails extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['safe'])) {
-            $ip[] = "'safe' can't be null";
-        }
-        if (is_null($this->_data['standard'])) {
-            $ip[] = "'standard' can't be null";
-        }
-        if (is_null($this->_data['fast'])) {
-            $ip[] = "'fast' can't be null";
-        }
-        if (is_null($this->_data['base_fee'])) {
-            $ip[] = "'base_fee' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -78,12 +56,11 @@ class EthGasEstimationDetails extends AbstractModel {
      * Set safe
      * 
      * @param string $safe Safe gas price in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSafe(string $safe) {
-        $this->_data['safe'] = $safe;
-
-        return $this;
+        return $this->_set("safe", $safe);
     }
 
     /**
@@ -99,12 +76,11 @@ class EthGasEstimationDetails extends AbstractModel {
      * Set standard
      * 
      * @param string $standard Standard gas price in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStandard(string $standard) {
-        $this->_data['standard'] = $standard;
-
-        return $this;
+        return $this->_set("standard", $standard);
     }
 
     /**
@@ -120,12 +96,11 @@ class EthGasEstimationDetails extends AbstractModel {
      * Set fast
      * 
      * @param string $fast Fast gas price in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFast(string $fast) {
-        $this->_data['fast'] = $fast;
-
-        return $this;
+        return $this->_set("fast", $fast);
     }
 
     /**
@@ -141,11 +116,10 @@ class EthGasEstimationDetails extends AbstractModel {
      * Set base_fee
      * 
      * @param string $base_fee Base fee for EIP-1559 transactions in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseFee(string $base_fee) {
-        $this->_data['base_fee'] = $base_fee;
-
-        return $this;
+        return $this->_set("base_fee", $base_fee);
     }
 }

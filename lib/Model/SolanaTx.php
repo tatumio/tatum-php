@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaTx Model
  */
@@ -25,10 +23,10 @@ class SolanaTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTx";
     protected static $_definition = [
-        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime", null], 
-        "meta" => ["meta", "\Tatum\Model\SolanaTxMeta", null, "getMeta", "setMeta", null], 
-        "transaction" => ["transaction", "\Tatum\Model\SolanaTxTransaction", null, "getTransaction", "setTransaction", null], 
-        "slot" => ["slot", "float", null, "getSlot", "setSlot", null]
+        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime", null, ["r" => 0]], 
+        "meta" => ["meta", "\Tatum\Model\SolanaTxMeta", null, "getMeta", "setMeta", null, ["r" => 0]], 
+        "transaction" => ["transaction", "\Tatum\Model\SolanaTxTransaction", null, "getTransaction", "setTransaction", null, ["r" => 0]], 
+        "slot" => ["slot", "float", null, "getSlot", "setSlot", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class SolanaTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class SolanaTx extends AbstractModel {
      * Set block_time
      * 
      * @param float|null $block_time block_time
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockTime(?float $block_time) {
-        $this->_data['block_time'] = $block_time;
-
-        return $this;
+        return $this->_set("block_time", $block_time);
     }
 
     /**
@@ -85,12 +74,11 @@ class SolanaTx extends AbstractModel {
      * Set meta
      * 
      * @param \Tatum\Model\SolanaTxMeta|null $meta meta
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMeta(?\Tatum\Model\SolanaTxMeta $meta) {
-        $this->_data['meta'] = $meta;
-
-        return $this;
+        return $this->_set("meta", $meta);
     }
 
     /**
@@ -106,12 +94,11 @@ class SolanaTx extends AbstractModel {
      * Set transaction
      * 
      * @param \Tatum\Model\SolanaTxTransaction|null $transaction transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransaction(?\Tatum\Model\SolanaTxTransaction $transaction) {
-        $this->_data['transaction'] = $transaction;
-
-        return $this;
+        return $this->_set("transaction", $transaction);
     }
 
     /**
@@ -127,11 +114,10 @@ class SolanaTx extends AbstractModel {
      * Set slot
      * 
      * @param float|null $slot slot
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSlot(?float $slot) {
-        $this->_data['slot'] = $slot;
-
-        return $this;
+        return $this->_set("slot", $slot);
     }
 }

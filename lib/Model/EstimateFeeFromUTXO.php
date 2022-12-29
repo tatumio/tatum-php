@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFeeFromUTXO Model
  */
@@ -28,10 +26,10 @@ class EstimateFeeFromUTXO extends AbstractModel {
     public const TYPE_TRANSFER = 'TRANSFER';
     protected static $_name = "EstimateFeeFromUTXO";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null], 
-        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 1, "c" => 1]], 
+        "to" => ["to", "\Tatum\Model\EstimateFeeFromAddressToInner[]", null, "getTo", "setTo", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -43,36 +41,6 @@ class EstimateFeeFromUTXO extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from_utxo'])) {
-            $ip[] = "'from_utxo' can't be null";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -110,16 +78,11 @@ class EstimateFeeFromUTXO extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to estimate fee for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeFromUTXO.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -135,16 +98,11 @@ class EstimateFeeFromUTXO extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeFromUTXO.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -160,12 +118,11 @@ class EstimateFeeFromUTXO extends AbstractModel {
      * Set from_utxo
      * 
      * @param \Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[] $from_utxo Array of transaction hashes, index of UTXO in it and corresponding private keys. Use this option if you want to calculate amount to send manually. Either fromUTXO or fromAddress must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromUtxo(array $from_utxo) {
-        $this->_data['from_utxo'] = $from_utxo;
-
-        return $this;
+        return $this->_set("from_utxo", $from_utxo);
     }
 
     /**
@@ -181,11 +138,10 @@ class EstimateFeeFromUTXO extends AbstractModel {
      * Set to
      * 
      * @param \Tatum\Model\EstimateFeeFromAddressToInner[] $to Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(array $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 }

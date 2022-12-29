@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransactionFilter Model
  */
@@ -55,20 +53,20 @@ class TransactionFilter extends AbstractModel {
     public const OP_TYPE_REVOKE = 'REVOKE';
     protected static $_name = "TransactionFilter";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount", null], 
-        "from" => ["from", "int", 'int64', "getFrom", "setFrom", null], 
-        "to" => ["to", "int", 'int64', "getTo", "setTo", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount", null], 
-        "currencies" => ["currencies", "string[]", null, "getCurrencies", "setCurrencies", null], 
-        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType", null], 
-        "transaction_types" => ["transactionTypes", "string[]", null, "getTransactionTypes", "setTransactionTypes", null], 
-        "op_type" => ["opType", "string", null, "getOpType", "setOpType", null], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "counter_account" => ["counterAccount", "string", null, "getCounterAccount", "setCounterAccount", null, ["r" => 0, "nl" => 24, "xl" => 24]], 
+        "from" => ["from", "int", 'int64', "getFrom", "setFrom", null, ["r" => 0, "n" => [0]]], 
+        "to" => ["to", "int", 'int64', "getTo", "setTo", null, ["r" => 0, "n" => [0]]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 0, "nl" => 1, "xl" => 50]], 
+        "amount" => ["amount", "\Tatum\Model\TransactionFilterAmountInner[]", null, "getAmount", "setAmount", null, ["r" => 0, "c" => 1]], 
+        "currencies" => ["currencies", "string[]", null, "getCurrencies", "setCurrencies", null, ["r" => 0, "c" => 1]], 
+        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType", null, ["r" => 0, "e" => 1]], 
+        "transaction_types" => ["transactionTypes", "string[]", null, "getTransactionTypes", "setTransactionTypes", null, ["r" => 0, "e" => 1, "c" => 1]], 
+        "op_type" => ["opType", "string", null, "getOpType", "setOpType", null, ["r" => 0, "e" => 1]], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null, ["r" => 0, "nl" => 1, "xl" => 500]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -80,75 +78,6 @@ class TransactionFilter extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if ((mb_strlen($this->_data['id']) > 24)) {
-            $ip[] = "'id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['id']) < 24)) {
-            $ip[] = "'id' length must be >= 24";
-        }
-        if (!is_null($this->_data['counter_account']) && (mb_strlen($this->_data['counter_account']) > 24)) {
-            $ip[] = "'counter_account' length must be <= 24";
-        }
-        if (!is_null($this->_data['counter_account']) && (mb_strlen($this->_data['counter_account']) < 24)) {
-            $ip[] = "'counter_account' length must be >= 24";
-        }
-        if (!is_null($this->_data['from']) && ($this->_data['from'] < 0)) {
-            $ip[] = "'from' must be >= 0";
-        }
-        if (!is_null($this->_data['to']) && ($this->_data['to'] < 0)) {
-            $ip[] = "'to' must be >= 0";
-        }
-        if (!is_null($this->_data['currency']) && (mb_strlen($this->_data['currency']) > 50)) {
-            $ip[] = "'currency' length must be <= 50";
-        }
-        if (!is_null($this->_data['currency']) && (mb_strlen($this->_data['currency']) < 1)) {
-            $ip[] = "'currency' length must be >= 1";
-        }
-        $allowed = $this->getTransactionTypeAllowableValues();
-        $value = $this->_data['transaction_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'transaction_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        $allowed = $this->getOpTypeAllowableValues();
-        $value = $this->_data['op_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'op_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['transaction_code']) && (mb_strlen($this->_data['transaction_code']) > 100)) {
-            $ip[] = "'transaction_code' length must be <= 100";
-        }
-        if (!is_null($this->_data['transaction_code']) && (mb_strlen($this->_data['transaction_code']) < 1)) {
-            $ip[] = "'transaction_code' length must be >= 1";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['recipient_note']) && (mb_strlen($this->_data['recipient_note']) > 500)) {
-            $ip[] = "'recipient_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['recipient_note']) && (mb_strlen($this->_data['recipient_note']) < 1)) {
-            $ip[] = "'recipient_note' length must be >= 1";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
     /**
@@ -222,18 +151,11 @@ class TransactionFilter extends AbstractModel {
      * Set id
      * 
      * @param string $id Account ID - source of transaction(s).
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        if ((mb_strlen($id) > 24)) {
-            throw new IAE('TransactionFilter.setId: $id length must be <= 24');
-        }
-        if ((mb_strlen($id) < 24)) {
-            throw new IAE('TransactionFilter.setId: $id length must be >= 24');
-        }
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -249,18 +171,11 @@ class TransactionFilter extends AbstractModel {
      * Set counter_account
      * 
      * @param string|null $counter_account Counter account - transaction(s) destination account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCounterAccount(?string $counter_account) {
-        if (!is_null($counter_account) && (mb_strlen($counter_account) > 24)) {
-            throw new IAE('TransactionFilter.setCounterAccount: $counter_account length must be <= 24');
-        }
-        if (!is_null($counter_account) && (mb_strlen($counter_account) < 24)) {
-            throw new IAE('TransactionFilter.setCounterAccount: $counter_account length must be >= 24');
-        }
-        $this->_data['counter_account'] = $counter_account;
-
-        return $this;
+        return $this->_set("counter_account", $counter_account);
     }
 
     /**
@@ -276,15 +191,11 @@ class TransactionFilter extends AbstractModel {
      * Set from
      * 
      * @param int|null $from Starting date to search for transactions from in UTC millis. If not present, search all history.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(?int $from) {
-        if (!is_null($from) && ($from < 0)) {
-            throw new IAE('TransactionFilter.setFrom: $from must be >=0');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -300,15 +211,11 @@ class TransactionFilter extends AbstractModel {
      * Set to
      * 
      * @param int|null $to Date until to search for transactions in UTC millis. If not present, search up till now.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(?int $to) {
-        if (!is_null($to) && ($to < 0)) {
-            throw new IAE('TransactionFilter.setTo: $to must be >=0');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -324,18 +231,11 @@ class TransactionFilter extends AbstractModel {
      * Set currency
      * 
      * @param string|null $currency Currency of the transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(?string $currency) {
-        if (!is_null($currency) && (mb_strlen($currency) > 50)) {
-            throw new IAE('TransactionFilter.setCurrency: $currency length must be <= 50');
-        }
-        if (!is_null($currency) && (mb_strlen($currency) < 1)) {
-            throw new IAE('TransactionFilter.setCurrency: $currency length must be >= 1');
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -351,12 +251,11 @@ class TransactionFilter extends AbstractModel {
      * Set amount
      * 
      * @param \Tatum\Model\TransactionFilterAmountInner[]|null $amount Amount of the transaction. AND is used between filter options.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?array $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -372,12 +271,11 @@ class TransactionFilter extends AbstractModel {
      * Set currencies
      * 
      * @param string[]|null $currencies List of currencies of the transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrencies(?array $currencies) {
-        $this->_data['currencies'] = $currencies;
-
-        return $this;
+        return $this->_set("currencies", $currencies);
     }
 
     /**
@@ -393,16 +291,11 @@ class TransactionFilter extends AbstractModel {
      * Set transaction_type
      * 
      * @param string|null $transaction_type Type of payment
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionType(?string $transaction_type) {
-        $allowed = $this->getTransactionTypeAllowableValues();
-        if (!is_null($transaction_type) && !in_array($transaction_type, $allowed, true)) {
-            throw new IAE(sprintf("TransactionFilter.setTransactionType: transaction_type invalid value '%s', must be one of '%s'", $transaction_type, implode("', '", $allowed)));
-        }
-        $this->_data['transaction_type'] = $transaction_type;
-
-        return $this;
+        return $this->_set("transaction_type", $transaction_type);
     }
 
     /**
@@ -418,16 +311,11 @@ class TransactionFilter extends AbstractModel {
      * Set transaction_types
      * 
      * @param string[]|null $transaction_types Types of payment
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionTypes(?array $transaction_types) {
-        $allowed = $this->getTransactionTypesAllowableValues();
-        if (!is_null($transaction_types) && array_diff($transaction_types, $allowed)) {
-            throw new IAE(sprintf("TransactionFilter.setTransactionTypes: transaction_types must be one of '%s'", implode("', '", $allowed)));
-        }
-        $this->_data['transaction_types'] = $transaction_types;
-
-        return $this;
+        return $this->_set("transaction_types", $transaction_types);
     }
 
     /**
@@ -443,16 +331,11 @@ class TransactionFilter extends AbstractModel {
      * Set op_type
      * 
      * @param string|null $op_type Type of operation
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOpType(?string $op_type) {
-        $allowed = $this->getOpTypeAllowableValues();
-        if (!is_null($op_type) && !in_array($op_type, $allowed, true)) {
-            throw new IAE(sprintf("TransactionFilter.setOpType: op_type invalid value '%s', must be one of '%s'", $op_type, implode("', '", $allowed)));
-        }
-        $this->_data['op_type'] = $op_type;
-
-        return $this;
+        return $this->_set("op_type", $op_type);
     }
 
     /**
@@ -468,18 +351,11 @@ class TransactionFilter extends AbstractModel {
      * Set transaction_code
      * 
      * @param string|null $transaction_code For bookkeeping to distinct transaction purpose.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionCode(?string $transaction_code) {
-        if (!is_null($transaction_code) && (mb_strlen($transaction_code) > 100)) {
-            throw new IAE('TransactionFilter.setTransactionCode: $transaction_code length must be <= 100');
-        }
-        if (!is_null($transaction_code) && (mb_strlen($transaction_code) < 1)) {
-            throw new IAE('TransactionFilter.setTransactionCode: $transaction_code length must be >= 1');
-        }
-        $this->_data['transaction_code'] = $transaction_code;
-
-        return $this;
+        return $this->_set("transaction_code", $transaction_code);
     }
 
     /**
@@ -495,18 +371,11 @@ class TransactionFilter extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Payment ID defined in payment order by sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('TransactionFilter.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('TransactionFilter.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -522,18 +391,11 @@ class TransactionFilter extends AbstractModel {
      * Set recipient_note
      * 
      * @param string|null $recipient_note Recipient note defined in payment order by sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipientNote(?string $recipient_note) {
-        if (!is_null($recipient_note) && (mb_strlen($recipient_note) > 500)) {
-            throw new IAE('TransactionFilter.setRecipientNote: $recipient_note length must be <= 500');
-        }
-        if (!is_null($recipient_note) && (mb_strlen($recipient_note) < 1)) {
-            throw new IAE('TransactionFilter.setRecipientNote: $recipient_note length must be >= 1');
-        }
-        $this->_data['recipient_note'] = $recipient_note;
-
-        return $this;
+        return $this->_set("recipient_note", $recipient_note);
     }
 
     /**
@@ -549,17 +411,10 @@ class TransactionFilter extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Sender note defined in payment order by sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('TransactionFilter.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('TransactionFilter.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

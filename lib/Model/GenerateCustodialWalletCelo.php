@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateCustodialWalletCelo Model
  */
@@ -29,15 +27,15 @@ class GenerateCustodialWalletCelo extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "GenerateCustodialWalletCelo";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "enable_fungible_tokens" => ["enableFungibleTokens", "bool", null, "getEnableFungibleTokens", "setEnableFungibleTokens", null], 
-        "enable_non_fungible_tokens" => ["enableNonFungibleTokens", "bool", null, "getEnableNonFungibleTokens", "setEnableNonFungibleTokens", null], 
-        "enable_semi_fungible_tokens" => ["enableSemiFungibleTokens", "bool", null, "getEnableSemiFungibleTokens", "setEnableSemiFungibleTokens", null], 
-        "enable_batch_transactions" => ["enableBatchTransactions", "bool", null, "getEnableBatchTransactions", "setEnableBatchTransactions", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "enable_fungible_tokens" => ["enableFungibleTokens", "bool", null, "getEnableFungibleTokens", "setEnableFungibleTokens", null, ["r" => 1]], 
+        "enable_non_fungible_tokens" => ["enableNonFungibleTokens", "bool", null, "getEnableNonFungibleTokens", "setEnableNonFungibleTokens", null, ["r" => 1]], 
+        "enable_semi_fungible_tokens" => ["enableSemiFungibleTokens", "bool", null, "getEnableSemiFungibleTokens", "setEnableSemiFungibleTokens", null, ["r" => 1]], 
+        "enable_batch_transactions" => ["enableBatchTransactions", "bool", null, "getEnableBatchTransactions", "setEnableBatchTransactions", null, ["r" => 1]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]]
     ];
 
     /**
@@ -49,54 +47,6 @@ class GenerateCustodialWalletCelo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        if (is_null($this->_data['enable_fungible_tokens'])) {
-            $ip[] = "'enable_fungible_tokens' can't be null";
-        }
-        if (is_null($this->_data['enable_non_fungible_tokens'])) {
-            $ip[] = "'enable_non_fungible_tokens' can't be null";
-        }
-        if (is_null($this->_data['enable_semi_fungible_tokens'])) {
-            $ip[] = "'enable_semi_fungible_tokens' can't be null";
-        }
-        if (is_null($this->_data['enable_batch_transactions'])) {
-            $ip[] = "'enable_batch_transactions' can't be null";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -135,16 +85,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateCustodialWalletCelo.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -160,16 +105,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("GenerateCustodialWalletCelo.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -185,18 +125,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of account, from which the transaction will be initiated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('GenerateCustodialWalletCelo.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('GenerateCustodialWalletCelo.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -212,12 +145,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set enable_fungible_tokens
      * 
      * @param bool $enable_fungible_tokens If address should support ERC20 tokens, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableFungibleTokens(bool $enable_fungible_tokens) {
-        $this->_data['enable_fungible_tokens'] = $enable_fungible_tokens;
-
-        return $this;
+        return $this->_set("enable_fungible_tokens", $enable_fungible_tokens);
     }
 
     /**
@@ -233,12 +165,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set enable_non_fungible_tokens
      * 
      * @param bool $enable_non_fungible_tokens If address should support ERC721 tokens, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableNonFungibleTokens(bool $enable_non_fungible_tokens) {
-        $this->_data['enable_non_fungible_tokens'] = $enable_non_fungible_tokens;
-
-        return $this;
+        return $this->_set("enable_non_fungible_tokens", $enable_non_fungible_tokens);
     }
 
     /**
@@ -254,12 +185,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set enable_semi_fungible_tokens
      * 
      * @param bool $enable_semi_fungible_tokens If address should support ERC1155 tokens, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableSemiFungibleTokens(bool $enable_semi_fungible_tokens) {
-        $this->_data['enable_semi_fungible_tokens'] = $enable_semi_fungible_tokens;
-
-        return $this;
+        return $this->_set("enable_semi_fungible_tokens", $enable_semi_fungible_tokens);
     }
 
     /**
@@ -275,12 +205,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set enable_batch_transactions
      * 
      * @param bool $enable_batch_transactions If address should support batch transfers of the assets, it should be marked as true.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnableBatchTransactions(bool $enable_batch_transactions) {
-        $this->_data['enable_batch_transactions'] = $enable_batch_transactions;
-
-        return $this;
+        return $this->_set("enable_batch_transactions", $enable_batch_transactions);
     }
 
     /**
@@ -296,12 +225,11 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -317,14 +245,10 @@ class GenerateCustodialWalletCelo extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('GenerateCustodialWalletCelo.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 }

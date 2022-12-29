@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaMintedResult Model
  */
@@ -25,9 +23,9 @@ class SolanaMintedResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaMintedResult";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null], 
-        "nft_account_address" => ["nftAccountAddress", "string", null, "getNftAccountAddress", "setNftAccountAddress", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null, ["r" => 0]], 
+        "nft_account_address" => ["nftAccountAddress", "string", null, "getNftAccountAddress", "setNftAccountAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class SolanaMintedResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class SolanaMintedResult extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id The ID of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -84,12 +73,11 @@ class SolanaMintedResult extends AbstractModel {
      * Set nft_address
      * 
      * @param string|null $nft_address The blockchain address of the minted NFT
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNftAddress(?string $nft_address) {
-        $this->_data['nft_address'] = $nft_address;
-
-        return $this;
+        return $this->_set("nft_address", $nft_address);
     }
 
     /**
@@ -105,11 +93,10 @@ class SolanaMintedResult extends AbstractModel {
      * Set nft_account_address
      * 
      * @param string|null $nft_account_address The blockchain address that received the minted NFT; this address was created under the recipient's account address (the one in the <code>to</code> parameter of the request body), is owned by the recipient's address, and has the same private key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNftAccountAddress(?string $nft_account_address) {
-        $this->_data['nft_account_address'] = $nft_account_address;
-
-        return $this;
+        return $this->_set("nft_account_address", $nft_account_address);
     }
 }

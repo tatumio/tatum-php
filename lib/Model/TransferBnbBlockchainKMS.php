@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferBnbBlockchainKMS Model
  */
@@ -26,12 +24,12 @@ class TransferBnbBlockchainKMS extends AbstractModel {
     public const CURRENCY_BNB = 'BNB';
     protected static $_name = "TransferBnbBlockchainKMS";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "from_address" => ["fromAddress", "string", null, "getFromAddress", "setFromAddress", null], 
-        "message" => ["message", "string", null, "getMessage", "setMessage", null]
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "e" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "from_address" => ["fromAddress", "string", null, "getFromAddress", "setFromAddress", null, ["r" => 1, "nl" => 42, "xl" => 50]], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 0, "nl" => 1, "xl" => 50]]
     ];
 
     /**
@@ -43,55 +41,6 @@ class TransferBnbBlockchainKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 100)) {
-            $ip[] = "'to' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['to']) < 1)) {
-            $ip[] = "'to' length must be >= 1";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        $allowed = $this->getCurrencyAllowableValues();
-        $value = $this->_data['currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (is_null($this->_data['from_address'])) {
-            $ip[] = "'from_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_address']) > 50)) {
-            $ip[] = "'from_address' length must be <= 50";
-        }
-        if ((mb_strlen($this->_data['from_address']) < 42)) {
-            $ip[] = "'from_address' length must be >= 42";
-        }
-        if (!is_null($this->_data['message']) && (mb_strlen($this->_data['message']) > 50)) {
-            $ip[] = "'message' length must be <= 50";
-        }
-        if (!is_null($this->_data['message']) && (mb_strlen($this->_data['message']) < 1)) {
-            $ip[] = "'message' length must be >= 1";
-        }
-        return $ip;
     }
 
     /**
@@ -118,18 +67,11 @@ class TransferBnbBlockchainKMS extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 100)) {
-            throw new IAE('TransferBnbBlockchainKMS.setTo: $to length must be <= 100');
-        }
-        if ((mb_strlen($to) < 1)) {
-            throw new IAE('TransferBnbBlockchainKMS.setTo: $to length must be >= 1');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -145,16 +87,11 @@ class TransferBnbBlockchainKMS extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Currency to transfer from Binance Blockchain Account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $allowed = $this->getCurrencyAllowableValues();
-        if (!in_array($currency, $allowed, true)) {
-            throw new IAE(sprintf("TransferBnbBlockchainKMS.setCurrency: currency invalid value '%s', must be one of '%s'", $currency, implode("', '", $allowed)));
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -170,15 +107,11 @@ class TransferBnbBlockchainKMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in BNB.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferBnbBlockchainKMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -194,12 +127,11 @@ class TransferBnbBlockchainKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Signature hash of the mnemonic, which will be used to sign transactions locally. All signature Ids should be present, which might be used to sign transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -215,18 +147,11 @@ class TransferBnbBlockchainKMS extends AbstractModel {
      * Set from_address
      * 
      * @param string $from_address Blockchain address to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAddress(string $from_address) {
-        if ((mb_strlen($from_address) > 50)) {
-            throw new IAE('TransferBnbBlockchainKMS.setFromAddress: $from_address length must be <= 50');
-        }
-        if ((mb_strlen($from_address) < 42)) {
-            throw new IAE('TransferBnbBlockchainKMS.setFromAddress: $from_address length must be >= 42');
-        }
-        $this->_data['from_address'] = $from_address;
-
-        return $this;
+        return $this->_set("from_address", $from_address);
     }
 
     /**
@@ -242,17 +167,10 @@ class TransferBnbBlockchainKMS extends AbstractModel {
      * Set message
      * 
      * @param string|null $message Message to recipient.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(?string $message) {
-        if (!is_null($message) && (mb_strlen($message) > 50)) {
-            throw new IAE('TransferBnbBlockchainKMS.setMessage: $message length must be <= 50');
-        }
-        if (!is_null($message) && (mb_strlen($message) < 1)) {
-            throw new IAE('TransferBnbBlockchainKMS.setMessage: $message length must be >= 1');
-        }
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 }

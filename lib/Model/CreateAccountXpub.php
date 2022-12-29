@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateAccountXpub Model
  */
@@ -195,13 +193,13 @@ class CreateAccountXpub extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "CreateAccountXpub";
     protected static $_definition = [
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null]
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "nl" => 2, "xl" => 40]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 1, "xl" => 192]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null, ["r" => 0, "nl" => 1, "xl" => 50]], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null, ["r" => 0, "e" => 1, "nl" => 3, "xl" => 3]], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0, "nl" => 1, "xl" => 50]]
     ];
 
     /**
@@ -213,55 +211,6 @@ class CreateAccountXpub extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        if ((mb_strlen($this->_data['currency']) > 40)) {
-            $ip[] = "'currency' length must be <= 40";
-        }
-        if ((mb_strlen($this->_data['currency']) < 2)) {
-            $ip[] = "'currency' length must be >= 2";
-        }
-        if (is_null($this->_data['xpub'])) {
-            $ip[] = "'xpub' can't be null";
-        }
-        if ((mb_strlen($this->_data['xpub']) > 192)) {
-            $ip[] = "'xpub' length must be <= 192";
-        }
-        if ((mb_strlen($this->_data['xpub']) < 1)) {
-            $ip[] = "'xpub' length must be >= 1";
-        }
-        if (!is_null($this->_data['account_code']) && (mb_strlen($this->_data['account_code']) > 50)) {
-            $ip[] = "'account_code' length must be <= 50";
-        }
-        if (!is_null($this->_data['account_code']) && (mb_strlen($this->_data['account_code']) < 1)) {
-            $ip[] = "'account_code' length must be >= 1";
-        }
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        $value = $this->_data['accounting_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'accounting_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) > 3)) {
-            $ip[] = "'accounting_currency' length must be <= 3";
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
-            $ip[] = "'accounting_currency' length must be >= 3";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) > 50)) {
-            $ip[] = "'account_number' length must be <= 50";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) < 1)) {
-            $ip[] = "'account_number' length must be >= 1";
-        }
-        return $ip;
     }
 
     /**
@@ -457,18 +406,11 @@ class CreateAccountXpub extends AbstractModel {
      * Set currency
      * 
      * @param string $currency <p>The currency for the virtual account</p> <ul> <li><b>Native blockchain assets:</b> ALGO, BCH, BNB, BSC, BTC, CELO, DOGE, EGLD, ETH, FLOW, KCS, KLAY, LTC, MATIC, ONE, SOL, TRON, VET, XDC, XLM, XRP</li> <li><b>Digital assets:</b> BADA, BAT, BBCH, BBTC, BDOT, BETH, BLTC, BUSD, BUSD_BSC, BXRP, CAKE, FREE, GMC, LEO, LINK, MKR, MMY, PAX, PAXG, TUSD, UNI, USD_BSC, USDC, USDC_MATIC, USDT, USDT_TRON, WBNB, WBTC, XCON</li> <li><b><a href=\"https://apidoc.tatum.io/tag/Virtual-Currency\" target=\"_blank\">Virtual currency</a></b> registered on the Tatum platform and starting with the \"VC_\" prefix</li> <li><b><a href=\"https://apidoc.tatum.io/tag/Blockchain-operations#operation/BnbAssetOffchain\" target=\"_blank\">BNB assets</a>, <a href=\"https://apidoc.tatum.io/tag/Blockchain-operations#operation/XlmAssetOffchain\" target=\"_blank\">XLM assets</a>, and <a href=\"https://apidoc.tatum.io/tag/Blockchain-operations#operation/XrpAssetOffchain\" target=\"_blank\">XRP assets</a></b> created via the Tatum platform</li> <li><b>Custom fungible tokens</b> (ERC-20 or equivalent, such as BEP-20 or TRC-10/20) registered on the Tatum platform; for more information, see <a href=\"https://docs.tatum.io/guides/ledger-and-off-chain/how-to-connect-custom-erc-20-token-to-the-ledger\" target=\"_blank\">our user documentation</a> <br/>The fungible tokens do not have direct faucets on the testnet. To use them in a testnet environment, you have to register a new fungible token in a virtual account (use <a href=\"https://apidoc.tatum.io/tag/Blockchain-operations/#operation/createTrc\" target=\"_blank\">this API</a> for TRON TRC-10/20 tokens and <a href=\"https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registerErc20Token\" target=\"_blank\">this API</a> for any other tokens) and make sure that your tokens minted on the testnet are <a href=\"https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storeTokenAddress\" target=\"_blank\">linked to the token smart contract</a>.</li> </ul>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        if ((mb_strlen($currency) > 40)) {
-            throw new IAE('CreateAccountXpub.setCurrency: $currency length must be <= 40');
-        }
-        if ((mb_strlen($currency) < 2)) {
-            throw new IAE('CreateAccountXpub.setCurrency: $currency length must be >= 2');
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -484,18 +426,11 @@ class CreateAccountXpub extends AbstractModel {
      * Set xpub
      * 
      * @param string $xpub Extended public key to generate addresses from.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(string $xpub) {
-        if ((mb_strlen($xpub) > 192)) {
-            throw new IAE('CreateAccountXpub.setXpub: $xpub length must be <= 192');
-        }
-        if ((mb_strlen($xpub) < 1)) {
-            throw new IAE('CreateAccountXpub.setXpub: $xpub length must be >= 1');
-        }
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 
     /**
@@ -511,12 +446,11 @@ class CreateAccountXpub extends AbstractModel {
      * Set customer
      * 
      * @param \Tatum\Model\CustomerRegistration|null $customer customer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
-        $this->_data['customer'] = $customer;
-
-        return $this;
+        return $this->_set("customer", $customer);
     }
 
     /**
@@ -532,12 +466,11 @@ class CreateAccountXpub extends AbstractModel {
      * Set compliant
      * 
      * @param bool|null $compliant Enable compliant checks. If this is enabled, it is impossible to create account if compliant check fails.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompliant(?bool $compliant) {
-        $this->_data['compliant'] = $compliant;
-
-        return $this;
+        return $this->_set("compliant", $compliant);
     }
 
     /**
@@ -553,18 +486,11 @@ class CreateAccountXpub extends AbstractModel {
      * Set account_code
      * 
      * @param string|null $account_code For bookkeeping to distinct account purpose.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountCode(?string $account_code) {
-        if (!is_null($account_code) && (mb_strlen($account_code) > 50)) {
-            throw new IAE('CreateAccountXpub.setAccountCode: $account_code length must be <= 50');
-        }
-        if (!is_null($account_code) && (mb_strlen($account_code) < 1)) {
-            throw new IAE('CreateAccountXpub.setAccountCode: $account_code length must be >= 1');
-        }
-        $this->_data['account_code'] = $account_code;
-
-        return $this;
+        return $this->_set("account_code", $account_code);
     }
 
     /**
@@ -580,22 +506,11 @@ class CreateAccountXpub extends AbstractModel {
      * Set accounting_currency
      * 
      * @param string|null $accounting_currency All transaction will be accounted in this currency for all accounts. Currency can be overridden per account level. If not set, customer accountingCurrency is used or EUR by default. ISO-4217
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        if (!is_null($accounting_currency) && !in_array($accounting_currency, $allowed, true)) {
-            throw new IAE(sprintf("CreateAccountXpub.setAccountingCurrency: accounting_currency invalid value '%s', must be one of '%s'", $accounting_currency, implode("', '", $allowed)));
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) > 3)) {
-            throw new IAE('CreateAccountXpub.setAccountingCurrency: $accounting_currency length must be <= 3');
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) < 3)) {
-            throw new IAE('CreateAccountXpub.setAccountingCurrency: $accounting_currency length must be >= 3');
-        }
-        $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
+        return $this->_set("accounting_currency", $accounting_currency);
     }
 
     /**
@@ -611,17 +526,10 @@ class CreateAccountXpub extends AbstractModel {
      * Set account_number
      * 
      * @param string|null $account_number Account number from external system.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountNumber(?string $account_number) {
-        if (!is_null($account_number) && (mb_strlen($account_number) > 50)) {
-            throw new IAE('CreateAccountXpub.setAccountNumber: $account_number length must be <= 50');
-        }
-        if (!is_null($account_number) && (mb_strlen($account_number) < 1)) {
-            throw new IAE('CreateAccountXpub.setAccountNumber: $account_number length must be >= 1');
-        }
-        $this->_data['account_number'] = $account_number;
-
-        return $this;
+        return $this->_set("account_number", $account_number);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CustodialManagedAddress Model
  */
@@ -34,10 +32,10 @@ class CustodialManagedAddress extends AbstractModel {
     public const CHAIN_BTC = 'BTC';
     protected static $_name = "CustodialManagedAddress";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "wallet_id" => ["walletId", "string", 'uuid', "getWalletId", "setWalletId", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "wallet_id" => ["walletId", "string", 'uuid', "getWalletId", "setWalletId", null, ["r" => 1]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 0]]
     ];
 
     /**
@@ -49,28 +47,6 @@ class CustodialManagedAddress extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['wallet_id'])) {
-            $ip[] = "'wallet_id' can't be null";
-        }
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -105,12 +81,11 @@ class CustodialManagedAddress extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -126,12 +101,11 @@ class CustodialManagedAddress extends AbstractModel {
      * Set wallet_id
      * 
      * @param string $wallet_id Unique identifier of the managed address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWalletId(string $wallet_id) {
-        $this->_data['wallet_id'] = $wallet_id;
-
-        return $this;
+        return $this->_set("wallet_id", $wallet_id);
     }
 
     /**
@@ -147,16 +121,11 @@ class CustodialManagedAddress extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain of the address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CustodialManagedAddress.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -172,11 +141,10 @@ class CustodialManagedAddress extends AbstractModel {
      * Set private_key
      * 
      * @param string|null $private_key Private key of the address. Not present by default.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(?string $private_key) {
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

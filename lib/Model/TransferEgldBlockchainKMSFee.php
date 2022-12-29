@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferEgldBlockchainKMS_fee Model
  * 
@@ -27,8 +25,8 @@ class TransferEgldBlockchainKMSFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferEgldBlockchainKMS_fee";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null]
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 0, "p" => "/^[+]?\\d+$/"]], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 0, "p" => "/^[+]?\\d+$/"]]
     ];
 
     /**
@@ -40,20 +38,6 @@ class TransferEgldBlockchainKMSFee extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (!is_null($this->_data['gas_limit']) && !preg_match("/^[+]?\\d+$/", $this->_data['gas_limit'])) {
-            $ip[] = "'gas_limit' must match /^[+]?\\d+$/";
-        }
-        if (!is_null($this->_data['gas_price']) && !preg_match("/^[+]?\\d+$/", $this->_data['gas_price'])) {
-            $ip[] = "'gas_price' must match /^[+]?\\d+$/";
-        }
-        return $ip;
     }
 
 
@@ -70,15 +54,11 @@ class TransferEgldBlockchainKMSFee extends AbstractModel {
      * Set gas_limit
      * 
      * @param string|null $gas_limit Gas limit for transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(?string $gas_limit) {
-        if (!is_null($gas_limit) && (!preg_match("/^[+]?\\d+$/", $gas_limit))) {
-            throw new IAE('TransferEgldBlockchainKMSFee.setGasLimit: $gas_limit must match /^[+]?\\d+$/, ' . var_export($gas_limit, true) . ' given');
-        }
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -94,14 +74,10 @@ class TransferEgldBlockchainKMSFee extends AbstractModel {
      * Set gas_price
      * 
      * @param string|null $gas_price Gas price.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(?string $gas_price) {
-        if (!is_null($gas_price) && (!preg_match("/^[+]?\\d+$/", $gas_price))) {
-            throw new IAE('TransferEgldBlockchainKMSFee.setGasPrice: $gas_price must match /^[+]?\\d+$/, ' . var_export($gas_price, true) . ' given');
-        }
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 }

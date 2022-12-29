@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowAddPubKeyToAddress_request Model
  */
@@ -25,13 +23,13 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAddPubKeyToAddress_request";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "public_key" => ["publicKey", "string", null, "getPublicKey", "setPublicKey", null, ["r" => 1, "nl" => 128, "xl" => 128]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0]]], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null, ["r" => 0, "n" => [0], "x" => [1000]]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -43,65 +41,6 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['public_key'])) {
-            $ip[] = "'public_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['public_key']) > 128)) {
-            $ip[] = "'public_key' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['public_key']) < 128)) {
-            $ip[] = "'public_key' length must be >= 128";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] > 1000)) {
-            $ip[] = "'weight' must be <= 1000";
-        }
-        if (!is_null($this->_data['weight']) && ($this->_data['weight'] < 0)) {
-            $ip[] = "'weight' must be >= 0";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -118,18 +57,11 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -145,18 +77,11 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * Set public_key
      * 
      * @param string $public_key Public key to be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPublicKey(string $public_key) {
-        if ((mb_strlen($public_key) > 128)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setPublicKey: $public_key length must be <= 128');
-        }
-        if ((mb_strlen($public_key) < 128)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setPublicKey: $public_key length must be >= 128');
-        }
-        $this->_data['public_key'] = $public_key;
-
-        return $this;
+        return $this->_set("public_key", $public_key);
     }
 
     /**
@@ -172,18 +97,11 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -199,15 +117,11 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * Set index
      * 
      * @param float $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index < 0)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -223,18 +137,11 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * Set weight
      * 
      * @param float|null $weight Weight of the key. If not set, default 1000 will be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWeight(?float $weight) {
-        if (!is_null($weight) && ($weight > 1000)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setWeight: $weight must be <=1000');
-        }
-        if (!is_null($weight) && ($weight < 0)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setWeight: $weight must be >=0');
-        }
-        $this->_data['weight'] = $weight;
-
-        return $this;
+        return $this->_set("weight", $weight);
     }
 
     /**
@@ -250,18 +157,11 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('FlowAddPubKeyToAddressRequest.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -277,11 +177,10 @@ class FlowAddPubKeyToAddressRequest extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

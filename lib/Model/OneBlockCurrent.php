@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * OneBlockCurrent Model
  */
@@ -25,8 +23,8 @@ class OneBlockCurrent extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OneBlockCurrent";
     protected static $_definition = [
-        "shard_id" => ["shardID", "float", null, "getShardId", "setShardId", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null]
+        "shard_id" => ["shardID", "float", null, "getShardId", "setShardId", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class OneBlockCurrent extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class OneBlockCurrent extends AbstractModel {
      * Set shard_id
      * 
      * @param float|null $shard_id Shard ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setShardId(?float $shard_id) {
-        $this->_data['shard_id'] = $shard_id;
-
-        return $this;
+        return $this->_set("shard_id", $shard_id);
     }
 
     /**
@@ -83,11 +72,10 @@ class OneBlockCurrent extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number Current block number in this shard
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 }

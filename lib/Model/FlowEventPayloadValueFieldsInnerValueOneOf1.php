@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowEvent_payload_value_fields_inner_value_oneOf_1 Model
  */
@@ -25,8 +23,8 @@ class FlowEventPayloadValueFieldsInnerValueOneOf1 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowEvent_payload_value_fields_inner_value_oneOf_1";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "value" => ["value", "\Tatum\Model\FlowEventPayloadValueFieldsInnerValueOneOf1Value", null, "getValue", "setValue", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 
+        "value" => ["value", "\Tatum\Model\FlowEventPayloadValueFieldsInnerValueOneOf1Value", null, "getValue", "setValue", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class FlowEventPayloadValueFieldsInnerValueOneOf1 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class FlowEventPayloadValueFieldsInnerValueOneOf1 extends AbstractModel {
      * Set type
      * 
      * @param string|null $type Type of the value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -83,11 +72,10 @@ class FlowEventPayloadValueFieldsInnerValueOneOf1 extends AbstractModel {
      * Set value
      * 
      * @param \Tatum\Model\FlowEventPayloadValueFieldsInnerValueOneOf1Value|null $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?\Tatum\Model\FlowEventPayloadValueFieldsInnerValueOneOf1Value $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

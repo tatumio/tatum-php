@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftRoyaltyErc721 Model
  */
@@ -25,8 +23,8 @@ class NftRoyaltyErc721 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftRoyaltyErc721";
     protected static $_definition = [
-        "addresses" => ["addresses", "string[]", null, "getAddresses", "setAddresses", null], 
-        "values" => ["values", "string[]", null, "getValues", "setValues", null]
+        "addresses" => ["addresses", "string[]", null, "getAddresses", "setAddresses", null, ["r" => 0, "c" => 1]], 
+        "values" => ["values", "string[]", null, "getValues", "setValues", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class NftRoyaltyErc721 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class NftRoyaltyErc721 extends AbstractModel {
      * Set addresses
      * 
      * @param string[]|null $addresses The blockchain addresses where the royalty cashback will be sent every time the NFT is transferred
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddresses(?array $addresses) {
-        $this->_data['addresses'] = $addresses;
-
-        return $this;
+        return $this->_set("addresses", $addresses);
     }
 
     /**
@@ -83,11 +72,10 @@ class NftRoyaltyErc721 extends AbstractModel {
      * Set values
      * 
      * @param string[]|null $values The amounts of the royalties that will be paid to the authors of the NFT every time the NFT is transferred; the royalties are paid as a percentage of the NFT price (on Solana) or in a native blockchain currency (on the other supported blockchains)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValues(?array $values) {
-        $this->_data['values'] = $values;
-
-        return $this;
+        return $this->_set("values", $values);
     }
 }

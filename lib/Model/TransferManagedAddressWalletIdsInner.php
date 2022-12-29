@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferManagedAddress_walletIds_inner Model
  */
@@ -27,8 +25,8 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
     public const TYPE_RAW = 'RAW';
     protected static $_name = "TransferManagedAddress_walletIds_inner";
     protected static $_definition = [
-        "key" => ["key", "string", null, "getKey", "setKey", null], 
-        "type" => ["type", "string", null, "getType", "setType", null]
+        "key" => ["key", "string", null, "getKey", "setKey", null, ["r" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]]
     ];
 
     /**
@@ -40,25 +38,6 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['key'])) {
-            $ip[] = "'key' can't be null";
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -86,12 +65,11 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
      * Set key
      * 
      * @param string $key Wallet ID of wallet, which should be used for signing. In case of RAW type of the wallet, this represents the private key which will be used for signatures.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setKey(string $key) {
-        $this->_data['key'] = $key;
-
-        return $this;
+        return $this->_set("key", $key);
     }
 
     /**
@@ -107,15 +85,10 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of the wallet to be used - RAW represents native private key, MANAGED represents ID of the managed wallet.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("TransferManagedAddressWalletIdsInner.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 }

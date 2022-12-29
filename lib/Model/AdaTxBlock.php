@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaTx_block Model
  */
@@ -25,8 +23,8 @@ class AdaTxBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTx_block";
     protected static $_definition = [
-        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
-        "hash" => ["hash", "string", null, "getHash", "setHash", null]
+        "number" => ["number", "float", null, "getNumber", "setNumber", null, ["r" => 0]], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class AdaTxBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class AdaTxBlock extends AbstractModel {
      * Set number
      * 
      * @param float|null $number Index of the block this transaction belongs to.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumber(?float $number) {
-        $this->_data['number'] = $number;
-
-        return $this;
+        return $this->_set("number", $number);
     }
 
     /**
@@ -83,11 +72,10 @@ class AdaTxBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Block hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 }

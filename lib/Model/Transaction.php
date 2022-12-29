@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Transaction Model
  */
@@ -43,23 +41,23 @@ class Transaction extends AbstractModel {
     public const TRANSACTION_TYPE_EXCHANGE_SELL = 'EXCHANGE_SELL';
     protected static $_name = "Transaction";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "counter_account_id" => ["counterAccountId", "string", null, "getCounterAccountId", "setCounterAccountId", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous", null], 
-        "created" => ["created", "float", null, "getCreated", "setCreated", null], 
-        "market_value" => ["marketValue", "\Tatum\Model\MarketValue", null, "getMarketValue", "setMarketValue", null], 
-        "operation_type" => ["operationType", "string", null, "getOperationType", "setOperationType", null], 
-        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType", null], 
-        "reference" => ["reference", "string", null, "getReference", "setReference", null], 
-        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null], 
-        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1]], 
+        "counter_account_id" => ["counterAccountId", "string", null, "getCounterAccountId", "setCounterAccountId", null, ["r" => 0]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1]], 
+        "anonymous" => ["anonymous", "bool", null, "getAnonymous", "setAnonymous", null, ["r" => 1]], 
+        "created" => ["created", "float", null, "getCreated", "setCreated", null, ["r" => 1]], 
+        "market_value" => ["marketValue", "\Tatum\Model\MarketValue", null, "getMarketValue", "setMarketValue", null, ["r" => 1]], 
+        "operation_type" => ["operationType", "string", null, "getOperationType", "setOperationType", null, ["r" => 1, "e" => 1]], 
+        "transaction_type" => ["transactionType", "string", null, "getTransactionType", "setTransactionType", null, ["r" => 1, "e" => 1]], 
+        "reference" => ["reference", "string", null, "getReference", "setReference", null, ["r" => 1]], 
+        "transaction_code" => ["transactionCode", "string", null, "getTransactionCode", "setTransactionCode", null, ["r" => 0]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0]], 
+        "recipient_note" => ["recipientNote", "string", null, "getRecipientNote", "setRecipientNote", null, ["r" => 0]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0]], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]]
     ];
 
     /**
@@ -71,51 +69,6 @@ class Transaction extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (is_null($this->_data['anonymous'])) {
-            $ip[] = "'anonymous' can't be null";
-        }
-        if (is_null($this->_data['created'])) {
-            $ip[] = "'created' can't be null";
-        }
-        if (is_null($this->_data['market_value'])) {
-            $ip[] = "'market_value' can't be null";
-        }
-        if (is_null($this->_data['operation_type'])) {
-            $ip[] = "'operation_type' can't be null";
-        }
-        $allowed = $this->getOperationTypeAllowableValues();
-        $value = $this->_data['operation_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'operation_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['transaction_type'])) {
-            $ip[] = "'transaction_type' can't be null";
-        }
-        $allowed = $this->getTransactionTypeAllowableValues();
-        $value = $this->_data['transaction_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'transaction_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['reference'])) {
-            $ip[] = "'reference' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -168,12 +121,11 @@ class Transaction extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id Source account - source of transaction(s)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -189,12 +141,11 @@ class Transaction extends AbstractModel {
      * Set counter_account_id
      * 
      * @param string|null $counter_account_id Counter account - transaction(s) destination account. In case of blockchain recipient, this is addess of blockchain account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCounterAccountId(?string $counter_account_id) {
-        $this->_data['counter_account_id'] = $counter_account_id;
-
-        return $this;
+        return $this->_set("counter_account_id", $counter_account_id);
     }
 
     /**
@@ -210,12 +161,11 @@ class Transaction extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Transaction currency
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -231,12 +181,11 @@ class Transaction extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount in account's currency
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -252,12 +201,11 @@ class Transaction extends AbstractModel {
      * Set anonymous
      * 
      * @param bool $anonymous Whether the transaction is anonymous. If true, counter account owner does not see source account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAnonymous(bool $anonymous) {
-        $this->_data['anonymous'] = $anonymous;
-
-        return $this;
+        return $this->_set("anonymous", $anonymous);
     }
 
     /**
@@ -273,12 +221,11 @@ class Transaction extends AbstractModel {
      * Set created
      * 
      * @param float $created Time in UTC of transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreated(float $created) {
-        $this->_data['created'] = $created;
-
-        return $this;
+        return $this->_set("created", $created);
     }
 
     /**
@@ -294,12 +241,11 @@ class Transaction extends AbstractModel {
      * Set market_value
      * 
      * @param \Tatum\Model\MarketValue $market_value market_value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMarketValue(\Tatum\Model\MarketValue $market_value) {
-        $this->_data['market_value'] = $market_value;
-
-        return $this;
+        return $this->_set("market_value", $market_value);
     }
 
     /**
@@ -315,16 +261,11 @@ class Transaction extends AbstractModel {
      * Set operation_type
      * 
      * @param string $operation_type Type of operation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOperationType(string $operation_type) {
-        $allowed = $this->getOperationTypeAllowableValues();
-        if (!in_array($operation_type, $allowed, true)) {
-            throw new IAE(sprintf("Transaction.setOperationType: operation_type invalid value '%s', must be one of '%s'", $operation_type, implode("', '", $allowed)));
-        }
-        $this->_data['operation_type'] = $operation_type;
-
-        return $this;
+        return $this->_set("operation_type", $operation_type);
     }
 
     /**
@@ -340,16 +281,11 @@ class Transaction extends AbstractModel {
      * Set transaction_type
      * 
      * @param string $transaction_type Type of payment.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionType(string $transaction_type) {
-        $allowed = $this->getTransactionTypeAllowableValues();
-        if (!in_array($transaction_type, $allowed, true)) {
-            throw new IAE(sprintf("Transaction.setTransactionType: transaction_type invalid value '%s', must be one of '%s'", $transaction_type, implode("', '", $allowed)));
-        }
-        $this->_data['transaction_type'] = $transaction_type;
-
-        return $this;
+        return $this->_set("transaction_type", $transaction_type);
     }
 
     /**
@@ -365,12 +301,11 @@ class Transaction extends AbstractModel {
      * Set reference
      * 
      * @param string $reference Transaction internal reference - unique identifier within Tatum ledger. In order of failure, use this value to search for problems.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReference(string $reference) {
-        $this->_data['reference'] = $reference;
-
-        return $this;
+        return $this->_set("reference", $reference);
     }
 
     /**
@@ -386,12 +321,11 @@ class Transaction extends AbstractModel {
      * Set transaction_code
      * 
      * @param string|null $transaction_code For bookkeeping to distinct transaction purpose.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionCode(?string $transaction_code) {
-        $this->_data['transaction_code'] = $transaction_code;
-
-        return $this;
+        return $this->_set("transaction_code", $transaction_code);
     }
 
     /**
@@ -407,12 +341,11 @@ class Transaction extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible for sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 
     /**
@@ -428,12 +361,11 @@ class Transaction extends AbstractModel {
      * Set recipient_note
      * 
      * @param string|null $recipient_note Note visible for both sender and recipient.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipientNote(?string $recipient_note) {
-        $this->_data['recipient_note'] = $recipient_note;
-
-        return $this;
+        return $this->_set("recipient_note", $recipient_note);
     }
 
     /**
@@ -449,12 +381,11 @@ class Transaction extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Payment ID defined in payment order by sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -470,12 +401,11 @@ class Transaction extends AbstractModel {
      * Set attr
      * 
      * @param string|null $attr Present only for operationType WITHDRAWAL and XLM / XRP based accounts it represents message or destinationTag of the recipient, if present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?string $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 
     /**
@@ -491,12 +421,11 @@ class Transaction extends AbstractModel {
      * Set address
      * 
      * @param string|null $address For operationType DEPOSIT it represents address, on which was deposit credited for the account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -512,11 +441,10 @@ class Transaction extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id For operationType DEPOSIT, BLOCKCHAIN_TRANSACTION it represents transaction id, for which deposit occured.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 }

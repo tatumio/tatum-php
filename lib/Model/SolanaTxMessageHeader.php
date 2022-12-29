@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaTxMessageHeader Model
  */
@@ -25,9 +23,9 @@ class SolanaTxMessageHeader extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxMessageHeader";
     protected static $_definition = [
-        "num_readonly_signed_accounts" => ["numReadonlySignedAccounts", "float", null, "getNumReadonlySignedAccounts", "setNumReadonlySignedAccounts", null], 
-        "num_readonly_unsigned_accounts" => ["numReadonlyUnsignedAccounts", "float", null, "getNumReadonlyUnsignedAccounts", "setNumReadonlyUnsignedAccounts", null], 
-        "num_required_signatures" => ["numRequiredSignatures", "float", null, "getNumRequiredSignatures", "setNumRequiredSignatures", null]
+        "num_readonly_signed_accounts" => ["numReadonlySignedAccounts", "float", null, "getNumReadonlySignedAccounts", "setNumReadonlySignedAccounts", null, ["r" => 0]], 
+        "num_readonly_unsigned_accounts" => ["numReadonlyUnsignedAccounts", "float", null, "getNumReadonlyUnsignedAccounts", "setNumReadonlyUnsignedAccounts", null, ["r" => 0]], 
+        "num_required_signatures" => ["numRequiredSignatures", "float", null, "getNumRequiredSignatures", "setNumRequiredSignatures", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class SolanaTxMessageHeader extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class SolanaTxMessageHeader extends AbstractModel {
      * Set num_readonly_signed_accounts
      * 
      * @param float|null $num_readonly_signed_accounts num_readonly_signed_accounts
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumReadonlySignedAccounts(?float $num_readonly_signed_accounts) {
-        $this->_data['num_readonly_signed_accounts'] = $num_readonly_signed_accounts;
-
-        return $this;
+        return $this->_set("num_readonly_signed_accounts", $num_readonly_signed_accounts);
     }
 
     /**
@@ -84,12 +73,11 @@ class SolanaTxMessageHeader extends AbstractModel {
      * Set num_readonly_unsigned_accounts
      * 
      * @param float|null $num_readonly_unsigned_accounts num_readonly_unsigned_accounts
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumReadonlyUnsignedAccounts(?float $num_readonly_unsigned_accounts) {
-        $this->_data['num_readonly_unsigned_accounts'] = $num_readonly_unsigned_accounts;
-
-        return $this;
+        return $this->_set("num_readonly_unsigned_accounts", $num_readonly_unsigned_accounts);
     }
 
     /**
@@ -105,11 +93,10 @@ class SolanaTxMessageHeader extends AbstractModel {
      * Set num_required_signatures
      * 
      * @param float|null $num_required_signatures num_required_signatures
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumRequiredSignatures(?float $num_required_signatures) {
-        $this->_data['num_required_signatures'] = $num_required_signatures;
-
-        return $this;
+        return $this->_set("num_required_signatures", $num_required_signatures);
     }
 }

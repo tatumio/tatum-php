@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * OffchainAddresses Model
  */
@@ -25,7 +23,7 @@ class OffchainAddresses extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OffchainAddresses";
     protected static $_definition = [
-        "addresses" => ["addresses", "\Tatum\Model\OffchainAddressesAddressesInner[]", null, "getAddresses", "setAddresses", null]
+        "addresses" => ["addresses", "\Tatum\Model\OffchainAddressesAddressesInner[]", null, "getAddresses", "setAddresses", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class OffchainAddresses extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['addresses'])) {
-            $ip[] = "'addresses' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class OffchainAddresses extends AbstractModel {
      * Set addresses
      * 
      * @param \Tatum\Model\OffchainAddressesAddressesInner[] $addresses addresses
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddresses(array $addresses) {
-        $this->_data['addresses'] = $addresses;
-
-        return $this;
+        return $this->_set("addresses", $addresses);
     }
 }

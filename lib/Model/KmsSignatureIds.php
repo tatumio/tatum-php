@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * KmsSignatureIds Model
  */
@@ -25,7 +23,7 @@ class KmsSignatureIds extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "KmsSignatureIds";
     protected static $_definition = [
-        "signature_ids" => ["signatureIds", "string[]", 'uuid', "getSignatureIds", "setSignatureIds", null]
+        "signature_ids" => ["signatureIds", "string[]", 'uuid', "getSignatureIds", "setSignatureIds", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class KmsSignatureIds extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class KmsSignatureIds extends AbstractModel {
      * Set signature_ids
      * 
      * @param string[]|null $signature_ids List of the signature Ids to be used to sign transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureIds(?array $signature_ids) {
-        $this->_data['signature_ids'] = $signature_ids;
-
-        return $this;
+        return $this->_set("signature_ids", $signature_ids);
     }
 }

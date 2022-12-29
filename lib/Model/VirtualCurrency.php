@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VirtualCurrency Model
  */
@@ -392,15 +390,15 @@ class VirtualCurrency extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "VirtualCurrency";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null]
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 30]], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "nl" => 1, "xl" => 38]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 3, "xl" => 50]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null, ["r" => 0, "nl" => 1, "xl" => 50]], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0, "nl" => 1, "xl" => 50]], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null, ["r" => 0, "e" => 1, "nl" => 3, "xl" => 3]]
     ];
 
     /**
@@ -412,84 +410,6 @@ class VirtualCurrency extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->_data['name']) > 30)) {
-            $ip[] = "'name' length must be <= 30";
-        }
-        if ((mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9_]+$/", $this->_data['name'])) {
-            $ip[] = "'name' must match /^[a-zA-Z0-9_]+$/";
-        }
-        if (is_null($this->_data['supply'])) {
-            $ip[] = "'supply' can't be null";
-        }
-        if ((mb_strlen($this->_data['supply']) > 38)) {
-            $ip[] = "'supply' length must be <= 38";
-        }
-        if ((mb_strlen($this->_data['supply']) < 1)) {
-            $ip[] = "'supply' length must be >= 1";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['supply'])) {
-            $ip[] = "'supply' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if ((mb_strlen($this->_data['base_pair']) > 50)) {
-            $ip[] = "'base_pair' length must be <= 50";
-        }
-        if ((mb_strlen($this->_data['base_pair']) < 3)) {
-            $ip[] = "'base_pair' length must be >= 3";
-        }
-        if (!is_null($this->_data['base_rate']) && ($this->_data['base_rate'] < 0)) {
-            $ip[] = "'base_rate' must be >= 0";
-        }
-        if (!is_null($this->_data['description']) && (mb_strlen($this->_data['description']) > 100)) {
-            $ip[] = "'description' length must be <= 100";
-        }
-        if (!is_null($this->_data['description']) && (mb_strlen($this->_data['description']) < 1)) {
-            $ip[] = "'description' length must be >= 1";
-        }
-        if (!is_null($this->_data['account_code']) && (mb_strlen($this->_data['account_code']) > 50)) {
-            $ip[] = "'account_code' length must be <= 50";
-        }
-        if (!is_null($this->_data['account_code']) && (mb_strlen($this->_data['account_code']) < 1)) {
-            $ip[] = "'account_code' length must be >= 1";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) > 50)) {
-            $ip[] = "'account_number' length must be <= 50";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) < 1)) {
-            $ip[] = "'account_number' length must be >= 1";
-        }
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        $value = $this->_data['accounting_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'accounting_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) > 3)) {
-            $ip[] = "'accounting_currency' length must be <= 3";
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
-            $ip[] = "'accounting_currency' length must be >= 3";
-        }
-        return $ip;
     }
 
     /**
@@ -891,21 +811,11 @@ class VirtualCurrency extends AbstractModel {
      * Set name
      * 
      * @param string $name Virtual currency name. Must be prefixed with 'VC_'.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        if ((mb_strlen($name) > 30)) {
-            throw new IAE('VirtualCurrency.setName: $name length must be <= 30');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new IAE('VirtualCurrency.setName: $name length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9_]+$/", $name))) {
-            throw new IAE('VirtualCurrency.setName: $name must match /^[a-zA-Z0-9_]+$/, ' . var_export($name, true) . ' given');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -921,21 +831,11 @@ class VirtualCurrency extends AbstractModel {
      * Set supply
      * 
      * @param string $supply Supply of virtual currency.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(string $supply) {
-        if ((mb_strlen($supply) > 38)) {
-            throw new IAE('VirtualCurrency.setSupply: $supply length must be <= 38');
-        }
-        if ((mb_strlen($supply) < 1)) {
-            throw new IAE('VirtualCurrency.setSupply: $supply length must be >= 1');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $supply))) {
-            throw new IAE('VirtualCurrency.setSupply: $supply must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($supply, true) . ' given');
-        }
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -951,22 +851,11 @@ class VirtualCurrency extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("VirtualCurrency.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        if ((mb_strlen($base_pair) > 50)) {
-            throw new IAE('VirtualCurrency.setBasePair: $base_pair length must be <= 50');
-        }
-        if ((mb_strlen($base_pair) < 3)) {
-            throw new IAE('VirtualCurrency.setBasePair: $base_pair length must be >= 3');
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 
     /**
@@ -982,15 +871,11 @@ class VirtualCurrency extends AbstractModel {
      * Set base_rate
      * 
      * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
-        if (!is_null($base_rate) && ($base_rate < 0)) {
-            throw new IAE('VirtualCurrency.setBaseRate: $base_rate must be >=0');
-        }
-        $this->_data['base_rate'] = $base_rate;
-
-        return $this;
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -1006,12 +891,11 @@ class VirtualCurrency extends AbstractModel {
      * Set customer
      * 
      * @param \Tatum\Model\CustomerRegistration|null $customer customer
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
-        $this->_data['customer'] = $customer;
-
-        return $this;
+        return $this->_set("customer", $customer);
     }
 
     /**
@@ -1027,18 +911,11 @@ class VirtualCurrency extends AbstractModel {
      * Set description
      * 
      * @param string|null $description Used as a description within Tatum system.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(?string $description) {
-        if (!is_null($description) && (mb_strlen($description) > 100)) {
-            throw new IAE('VirtualCurrency.setDescription: $description length must be <= 100');
-        }
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new IAE('VirtualCurrency.setDescription: $description length must be >= 1');
-        }
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 
     /**
@@ -1054,18 +931,11 @@ class VirtualCurrency extends AbstractModel {
      * Set account_code
      * 
      * @param string|null $account_code For bookkeeping to distinct account purpose.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountCode(?string $account_code) {
-        if (!is_null($account_code) && (mb_strlen($account_code) > 50)) {
-            throw new IAE('VirtualCurrency.setAccountCode: $account_code length must be <= 50');
-        }
-        if (!is_null($account_code) && (mb_strlen($account_code) < 1)) {
-            throw new IAE('VirtualCurrency.setAccountCode: $account_code length must be >= 1');
-        }
-        $this->_data['account_code'] = $account_code;
-
-        return $this;
+        return $this->_set("account_code", $account_code);
     }
 
     /**
@@ -1081,18 +951,11 @@ class VirtualCurrency extends AbstractModel {
      * Set account_number
      * 
      * @param string|null $account_number Account number from external system.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountNumber(?string $account_number) {
-        if (!is_null($account_number) && (mb_strlen($account_number) > 50)) {
-            throw new IAE('VirtualCurrency.setAccountNumber: $account_number length must be <= 50');
-        }
-        if (!is_null($account_number) && (mb_strlen($account_number) < 1)) {
-            throw new IAE('VirtualCurrency.setAccountNumber: $account_number length must be >= 1');
-        }
-        $this->_data['account_number'] = $account_number;
-
-        return $this;
+        return $this->_set("account_number", $account_number);
     }
 
     /**
@@ -1108,21 +971,10 @@ class VirtualCurrency extends AbstractModel {
      * Set accounting_currency
      * 
      * @param string|null $accounting_currency All transaction will be billed in this currency for created account associated with this currency. If not set, EUR is used. ISO-4217
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        if (!is_null($accounting_currency) && !in_array($accounting_currency, $allowed, true)) {
-            throw new IAE(sprintf("VirtualCurrency.setAccountingCurrency: accounting_currency invalid value '%s', must be one of '%s'", $accounting_currency, implode("', '", $allowed)));
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) > 3)) {
-            throw new IAE('VirtualCurrency.setAccountingCurrency: $accounting_currency length must be <= 3');
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) < 3)) {
-            throw new IAE('VirtualCurrency.setAccountingCurrency: $accounting_currency length must be >= 3');
-        }
-        $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
+        return $this->_set("accounting_currency", $accounting_currency);
     }
 }

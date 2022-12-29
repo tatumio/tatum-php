@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronAccountTx_200_response Model
  */
@@ -25,8 +23,8 @@ class TronAccountTx200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronAccountTx_200_response";
     protected static $_definition = [
-        "next" => ["next", "string", null, "getNext", "setNext", null], 
-        "transactions" => ["transactions", "\Tatum\Model\TronTx[]", null, "getTransactions", "setTransactions", null]
+        "next" => ["next", "string", null, "getNext", "setNext", null, ["r" => 0]], 
+        "transactions" => ["transactions", "\Tatum\Model\TronTx[]", null, "getTransactions", "setTransactions", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -38,17 +36,6 @@ class TronAccountTx200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['transactions'])) {
-            $ip[] = "'transactions' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -65,12 +52,11 @@ class TronAccountTx200Response extends AbstractModel {
      * Set next
      * 
      * @param string|null $next If present, there are more transactions for the TRON account than the 200 transactions returned in the response, and this parameter specifies the ID of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNext(?string $next) {
-        $this->_data['next'] = $next;
-
-        return $this;
+        return $this->_set("next", $next);
     }
 
     /**
@@ -86,11 +72,10 @@ class TronAccountTx200Response extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\TronTx[] $transactions The list of transactions for the specified TRON account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

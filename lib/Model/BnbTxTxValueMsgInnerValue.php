@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTx_tx_value_msg_inner_value Model
  */
@@ -25,8 +23,8 @@ class BnbTxTxValueMsgInnerValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx_tx_value_msg_inner_value";
     protected static $_definition = [
-        "inputs" => ["inputs", "\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInner[]", null, "getInputs", "setInputs", null], 
-        "outputs" => ["outputs", "\Tatum\Model\BnbTxTxValueMsgInnerValueOutputsInner[]", null, "getOutputs", "setOutputs", null]
+        "inputs" => ["inputs", "\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInner[]", null, "getInputs", "setInputs", null, ["r" => 0, "c" => 1]], 
+        "outputs" => ["outputs", "\Tatum\Model\BnbTxTxValueMsgInnerValueOutputsInner[]", null, "getOutputs", "setOutputs", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BnbTxTxValueMsgInnerValue extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BnbTxTxValueMsgInnerValue extends AbstractModel {
      * Set inputs
      * 
      * @param \Tatum\Model\BnbTxTxValueMsgInnerValueInputsInner[]|null $inputs List of transactions, from which assets are being sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInputs(?array $inputs) {
-        $this->_data['inputs'] = $inputs;
-
-        return $this;
+        return $this->_set("inputs", $inputs);
     }
 
     /**
@@ -83,11 +72,10 @@ class BnbTxTxValueMsgInnerValue extends AbstractModel {
      * Set outputs
      * 
      * @param \Tatum\Model\BnbTxTxValueMsgInnerValueOutputsInner[]|null $outputs List of recipient addresses and amounts to send to each of them.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOutputs(?array $outputs) {
-        $this->_data['outputs'] = $outputs;
-
-        return $this;
+        return $this->_set("outputs", $outputs);
     }
 }

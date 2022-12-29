@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferBtcMnemonic Model
  */
@@ -25,17 +23,17 @@ class TransferBtcMnemonic extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferBtcMnemonic";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 1, "xl" => 10000]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null, ["r" => 0, "c" => 1]], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null, ["r" => 0, "nl" => 1, "xl" => 256]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 1, "xl" => 150]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -47,80 +45,6 @@ class TransferBtcMnemonic extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['sender_account_id'])) {
-            $ip[] = "'sender_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) > 24)) {
-            $ip[] = "'sender_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
-            $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 10000)) {
-            $ip[] = "'address' length must be <= 10000";
-        }
-        if ((mb_strlen($this->_data['address']) < 1)) {
-            $ip[] = "'address' length must be >= 1";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['attr']) && (mb_strlen($this->_data['attr']) > 256)) {
-            $ip[] = "'attr' length must be <= 256";
-        }
-        if (!is_null($this->_data['attr']) && (mb_strlen($this->_data['attr']) < 1)) {
-            $ip[] = "'attr' length must be >= 1";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (is_null($this->_data['xpub'])) {
-            $ip[] = "'xpub' can't be null";
-        }
-        if ((mb_strlen($this->_data['xpub']) > 150)) {
-            $ip[] = "'xpub' length must be <= 150";
-        }
-        if ((mb_strlen($this->_data['xpub']) < 1)) {
-            $ip[] = "'xpub' length must be >= 1";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -137,18 +61,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set sender_account_id
      * 
      * @param string $sender_account_id Sender account ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderAccountId(string $sender_account_id) {
-        if ((mb_strlen($sender_account_id) > 24)) {
-            throw new IAE('TransferBtcMnemonic.setSenderAccountId: $sender_account_id length must be <= 24');
-        }
-        if ((mb_strlen($sender_account_id) < 24)) {
-            throw new IAE('TransferBtcMnemonic.setSenderAccountId: $sender_account_id length must be >= 24');
-        }
-        $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
+        return $this->_set("sender_account_id", $sender_account_id);
     }
 
     /**
@@ -164,18 +81,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 10000)) {
-            throw new IAE('TransferBtcMnemonic.setAddress: $address length must be <= 10000');
-        }
-        if ((mb_strlen($address) < 1)) {
-            throw new IAE('TransferBtcMnemonic.setAddress: $address length must be >= 1');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -191,18 +101,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be withdrawn to blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('TransferBtcMnemonic.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferBtcMnemonic.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -218,12 +121,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set compliant
      * 
      * @param bool|null $compliant Compliance check, if withdrawal is not compliant, it will not be processed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompliant(?bool $compliant) {
-        $this->_data['compliant'] = $compliant;
-
-        return $this;
+        return $this->_set("compliant", $compliant);
     }
 
     /**
@@ -239,15 +141,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 0.0005 BTC is used. Minimum fee is 0.00001 BTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        if (!is_null($fee) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('TransferBtcMnemonic.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -263,12 +161,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set multiple_amounts
      * 
      * @param string[]|null $multiple_amounts For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMultipleAmounts(?array $multiple_amounts) {
-        $this->_data['multiple_amounts'] = $multiple_amounts;
-
-        return $this;
+        return $this->_set("multiple_amounts", $multiple_amounts);
     }
 
     /**
@@ -284,18 +181,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set attr
      * 
      * @param string|null $attr Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr must be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?string $attr) {
-        if (!is_null($attr) && (mb_strlen($attr) > 256)) {
-            throw new IAE('TransferBtcMnemonic.setAttr: $attr length must be <= 256');
-        }
-        if (!is_null($attr) && (mb_strlen($attr) < 1)) {
-            throw new IAE('TransferBtcMnemonic.setAttr: $attr length must be >= 1');
-        }
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 
     /**
@@ -311,18 +201,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic seed - usually 12-24 words with access to whole wallet. Either mnemonic, keyPair or signature Id must be present - depends on the type of account and xpub. Tatum KMS does not support keyPair type of off-chain transaction, only mnemonic based.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('TransferBtcMnemonic.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('TransferBtcMnemonic.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -338,18 +221,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set xpub
      * 
      * @param string $xpub Extended public key (xpub) of the wallet associated with the accounts. Should be present, when mnemonic is used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setXpub(string $xpub) {
-        if ((mb_strlen($xpub) > 150)) {
-            throw new IAE('TransferBtcMnemonic.setXpub: $xpub length must be <= 150');
-        }
-        if ((mb_strlen($xpub) < 1)) {
-            throw new IAE('TransferBtcMnemonic.setXpub: $xpub length must be >= 1');
-        }
-        $this->_data['xpub'] = $xpub;
-
-        return $this;
+        return $this->_set("xpub", $xpub);
     }
 
     /**
@@ -365,18 +241,11 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Identifier of the payment, shown for created Transaction within Tatum sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('TransferBtcMnemonic.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('TransferBtcMnemonic.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -392,17 +261,10 @@ class TransferBtcMnemonic extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to owner of withdrawing account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('TransferBtcMnemonic.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('TransferBtcMnemonic.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

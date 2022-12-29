@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoTransactionHashKMS Model
  */
@@ -25,10 +23,10 @@ class AlgoTransactionHashKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoTransactionHashKMS";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null], 
-        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", false], 
-        "failed" => ["failed", "bool", null, "getFailed", "setFailed", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null, ["r" => 0]], 
+        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", false, ["r" => 0]], 
+        "failed" => ["failed", "bool", null, "getFailed", "setFailed", null, ["r" => 0]]
     ];
 
     /**
@@ -40,17 +38,6 @@ class AlgoTransactionHashKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -67,12 +54,11 @@ class AlgoTransactionHashKMS extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id TX hash of transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -88,12 +74,11 @@ class AlgoTransactionHashKMS extends AbstractModel {
      * Set asset_index
      * 
      * @param float|null $asset_index If transaction created new ASA asset, this value is the index of the asset on the network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssetIndex(?float $asset_index) {
-        $this->_data['asset_index'] = $asset_index;
-
-        return $this;
+        return $this->_set("asset_index", $asset_index);
     }
 
     /**
@@ -109,12 +94,11 @@ class AlgoTransactionHashKMS extends AbstractModel {
      * Set confirmed
      * 
      * @param bool|null $confirmed If transaction was not confirmed within 5 rounds, result is false.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setConfirmed(?bool $confirmed) {
-        $this->_data['confirmed'] = $confirmed;
-
-        return $this;
+        return $this->_set("confirmed", $confirmed);
     }
 
     /**
@@ -130,11 +114,10 @@ class AlgoTransactionHashKMS extends AbstractModel {
      * Set failed
      * 
      * @param bool|null $failed In case of the transaction was broadcast to the blockchain, but it was not possible to complete Tatum KMS signature, reponse is marked as failed and must be marked manually.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFailed(?bool $failed) {
-        $this->_data['failed'] = $failed;
-
-        return $this;
+        return $this->_set("failed", $failed);
     }
 }

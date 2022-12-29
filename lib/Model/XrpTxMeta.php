@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpTx_meta Model
  */
@@ -25,10 +23,10 @@ class XrpTxMeta extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpTx_meta";
     protected static $_definition = [
-        "affected_nodes" => ["AffectedNodes", "\Tatum\Model\XrpTxMetaAffectedNodesInner[]", null, "getAffectedNodes", "setAffectedNodes", null], 
-        "transaction_index" => ["TransactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
-        "transaction_result" => ["TransactionResult", "string", null, "getTransactionResult", "setTransactionResult", null], 
-        "delivered_amount" => ["delivered_amount", "string", null, "getDeliveredAmount", "setDeliveredAmount", null]
+        "affected_nodes" => ["AffectedNodes", "\Tatum\Model\XrpTxMetaAffectedNodesInner[]", null, "getAffectedNodes", "setAffectedNodes", null, ["r" => 0, "c" => 1]], 
+        "transaction_index" => ["TransactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null, ["r" => 0]], 
+        "transaction_result" => ["TransactionResult", "string", null, "getTransactionResult", "setTransactionResult", null, ["r" => 0]], 
+        "delivered_amount" => ["delivered_amount", "string", null, "getDeliveredAmount", "setDeliveredAmount", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class XrpTxMeta extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class XrpTxMeta extends AbstractModel {
      * Set affected_nodes
      * 
      * @param \Tatum\Model\XrpTxMetaAffectedNodesInner[]|null $affected_nodes affected_nodes
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAffectedNodes(?array $affected_nodes) {
-        $this->_data['affected_nodes'] = $affected_nodes;
-
-        return $this;
+        return $this->_set("affected_nodes", $affected_nodes);
     }
 
     /**
@@ -85,12 +74,11 @@ class XrpTxMeta extends AbstractModel {
      * Set transaction_index
      * 
      * @param float|null $transaction_index transaction_index
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionIndex(?float $transaction_index) {
-        $this->_data['transaction_index'] = $transaction_index;
-
-        return $this;
+        return $this->_set("transaction_index", $transaction_index);
     }
 
     /**
@@ -106,12 +94,11 @@ class XrpTxMeta extends AbstractModel {
      * Set transaction_result
      * 
      * @param string|null $transaction_result transaction_result
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionResult(?string $transaction_result) {
-        $this->_data['transaction_result'] = $transaction_result;
-
-        return $this;
+        return $this->_set("transaction_result", $transaction_result);
     }
 
     /**
@@ -127,11 +114,10 @@ class XrpTxMeta extends AbstractModel {
      * Set delivered_amount
      * 
      * @param string|null $delivered_amount delivered_amount
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDeliveredAmount(?string $delivered_amount) {
-        $this->_data['delivered_amount'] = $delivered_amount;
-
-        return $this;
+        return $this->_set("delivered_amount", $delivered_amount);
     }
 }

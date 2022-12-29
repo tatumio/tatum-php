@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTx_tx_value_signatures_inner Model
  */
@@ -25,10 +23,10 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx_tx_value_signatures_inner";
     protected static $_definition = [
-        "account_number" => ["account_number", "string", null, "getAccountNumber", "setAccountNumber", null], 
-        "pub_key" => ["pub_key", "\Tatum\Model\BnbTxTxValueSignaturesInnerPubKey", null, "getPubKey", "setPubKey", null], 
-        "sequence" => ["sequence", "string", null, "getSequence", "setSequence", null], 
-        "signature" => ["signature", "string", null, "getSignature", "setSignature", null]
+        "account_number" => ["account_number", "string", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0]], 
+        "pub_key" => ["pub_key", "\Tatum\Model\BnbTxTxValueSignaturesInnerPubKey", null, "getPubKey", "setPubKey", null, ["r" => 0]], 
+        "sequence" => ["sequence", "string", null, "getSequence", "setSequence", null, ["r" => 0]], 
+        "signature" => ["signature", "string", null, "getSignature", "setSignature", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
      * Set account_number
      * 
      * @param string|null $account_number account_number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountNumber(?string $account_number) {
-        $this->_data['account_number'] = $account_number;
-
-        return $this;
+        return $this->_set("account_number", $account_number);
     }
 
     /**
@@ -85,12 +74,11 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
      * Set pub_key
      * 
      * @param \Tatum\Model\BnbTxTxValueSignaturesInnerPubKey|null $pub_key pub_key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPubKey(?\Tatum\Model\BnbTxTxValueSignaturesInnerPubKey $pub_key) {
-        $this->_data['pub_key'] = $pub_key;
-
-        return $this;
+        return $this->_set("pub_key", $pub_key);
     }
 
     /**
@@ -106,12 +94,11 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
      * Set sequence
      * 
      * @param string|null $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?string $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 
     /**
@@ -127,11 +114,10 @@ class BnbTxTxValueSignaturesInner extends AbstractModel {
      * Set signature
      * 
      * @param string|null $signature signature
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignature(?string $signature) {
-        $this->_data['signature'] = $signature;
-
-        return $this;
+        return $this->_set("signature", $signature);
     }
 }

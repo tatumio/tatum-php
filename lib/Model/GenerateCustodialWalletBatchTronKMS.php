@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateCustodialWalletBatchTronKMS Model
  */
@@ -26,13 +24,13 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "GenerateCustodialWalletBatchTronKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null, ["r" => 1]], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1, "n" => [5]]]
     ];
 
     /**
@@ -44,49 +42,6 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['batch_count'])) {
-            $ip[] = "'batch_count' can't be null";
-        }
-        if (is_null($this->_data['owner'])) {
-            $ip[] = "'owner' can't be null";
-        }
-        if ((mb_strlen($this->_data['owner']) > 34)) {
-            $ip[] = "'owner' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['owner']) < 34)) {
-            $ip[] = "'owner' length must be >= 34";
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        if (($this->_data['fee_limit'] < 5)) {
-            $ip[] = "'fee_limit' must be >= 5";
-        }
-        return $ip;
     }
 
     /**
@@ -113,16 +68,11 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateCustodialWalletBatchTronKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -138,12 +88,11 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from Sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -159,12 +108,11 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -180,15 +128,11 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('GenerateCustodialWalletBatchTronKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -204,12 +148,11 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * Set batch_count
      * 
      * @param float $batch_count Number of addresses to generate.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBatchCount(float $batch_count) {
-        $this->_data['batch_count'] = $batch_count;
-
-        return $this;
+        return $this->_set("batch_count", $batch_count);
     }
 
     /**
@@ -225,18 +168,11 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * Set owner
      * 
      * @param string $owner Owner of the addresses.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwner(string $owner) {
-        if ((mb_strlen($owner) > 34)) {
-            throw new IAE('GenerateCustodialWalletBatchTronKMS.setOwner: $owner length must be <= 34');
-        }
-        if ((mb_strlen($owner) < 34)) {
-            throw new IAE('GenerateCustodialWalletBatchTronKMS.setOwner: $owner length must be >= 34');
-        }
-        $this->_data['owner'] = $owner;
-
-        return $this;
+        return $this->_set("owner", $owner);
     }
 
     /**
@@ -252,14 +188,10 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit Fee limit to be set, in TRX
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        if (($fee_limit < 5)) {
-            throw new IAE('GenerateCustodialWalletBatchTronKMS.setFeeLimit: $fee_limit must be >=5');
-        }
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 }

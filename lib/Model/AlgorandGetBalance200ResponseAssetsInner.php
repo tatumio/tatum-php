@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgorandGetBalance_200_response_assets_inner Model
  */
@@ -25,8 +23,8 @@ class AlgorandGetBalance200ResponseAssetsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgorandGetBalance_200_response_assets_inner";
     protected static $_definition = [
-        "amount" => ["amount", "float", null, "getAmount", "setAmount", null], 
-        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null]
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "asset_index" => ["assetIndex", "float", null, "getAssetIndex", "setAssetIndex", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class AlgorandGetBalance200ResponseAssetsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class AlgorandGetBalance200ResponseAssetsInner extends AbstractModel {
      * Set amount
      * 
      * @param float|null $amount Balance in asset unit
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?float $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -83,11 +72,10 @@ class AlgorandGetBalance200ResponseAssetsInner extends AbstractModel {
      * Set asset_index
      * 
      * @param float|null $asset_index Asset Index of ASA
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssetIndex(?float $asset_index) {
-        $this->_data['asset_index'] = $asset_index;
-
-        return $this;
+        return $this->_set("asset_index", $asset_index);
     }
 }

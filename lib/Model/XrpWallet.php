@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpWallet Model
  */
@@ -25,8 +23,8 @@ class XrpWallet extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpWallet";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "secret" => ["secret", "string", null, "getSecret", "setSecret", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "secret" => ["secret", "string", null, "getSecret", "setSecret", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class XrpWallet extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['secret'])) {
-            $ip[] = "'secret' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class XrpWallet extends AbstractModel {
      * Set address
      * 
      * @param string $address Generated account address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -89,11 +72,10 @@ class XrpWallet extends AbstractModel {
      * Set secret
      * 
      * @param string $secret Generated secret for account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSecret(string $secret) {
-        $this->_data['secret'] = $secret;
-
-        return $this;
+        return $this->_set("secret", $secret);
     }
 }

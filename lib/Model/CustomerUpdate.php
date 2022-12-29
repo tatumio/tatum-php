@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CustomerUpdate Model
  */
@@ -691,10 +689,10 @@ class CustomerUpdate extends AbstractModel {
     public const PROVIDER_COUNTRY_ZW = 'ZW';
     protected static $_name = "CustomerUpdate";
     protected static $_definition = [
-        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null], 
-        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null], 
-        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null], 
-        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null]
+        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", null, ["r" => 0, "e" => 1, "nl" => 3, "xl" => 3]], 
+        "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null, ["r" => 0, "e" => 1, "nl" => 2, "xl" => 2]], 
+        "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null, ["r" => 0, "e" => 1, "nl" => 2, "xl" => 2]]
     ];
 
     /**
@@ -706,56 +704,6 @@ class CustomerUpdate extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['external_id'])) {
-            $ip[] = "'external_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['external_id']) > 100)) {
-            $ip[] = "'external_id' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['external_id']) < 1)) {
-            $ip[] = "'external_id' length must be >= 1";
-        }
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        $value = $this->_data['accounting_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'accounting_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) > 3)) {
-            $ip[] = "'accounting_currency' length must be <= 3";
-        }
-        if (!is_null($this->_data['accounting_currency']) && (mb_strlen($this->_data['accounting_currency']) < 3)) {
-            $ip[] = "'accounting_currency' length must be >= 3";
-        }
-        $allowed = $this->getCustomerCountryAllowableValues();
-        $value = $this->_data['customer_country'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'customer_country' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['customer_country']) && (mb_strlen($this->_data['customer_country']) > 2)) {
-            $ip[] = "'customer_country' length must be <= 2";
-        }
-        if (!is_null($this->_data['customer_country']) && (mb_strlen($this->_data['customer_country']) < 2)) {
-            $ip[] = "'customer_country' length must be >= 2";
-        }
-        $allowed = $this->getProviderCountryAllowableValues();
-        $value = $this->_data['provider_country'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'provider_country' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['provider_country']) && (mb_strlen($this->_data['provider_country']) > 2)) {
-            $ip[] = "'provider_country' length must be <= 2";
-        }
-        if (!is_null($this->_data['provider_country']) && (mb_strlen($this->_data['provider_country']) < 2)) {
-            $ip[] = "'provider_country' length must be >= 2";
-        }
-        return $ip;
     }
 
     /**
@@ -1465,18 +1413,11 @@ class CustomerUpdate extends AbstractModel {
      * Set external_id
      * 
      * @param string $external_id External customer ID. If not set, it will not be updated.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExternalId(string $external_id) {
-        if ((mb_strlen($external_id) > 100)) {
-            throw new IAE('CustomerUpdate.setExternalId: $external_id length must be <= 100');
-        }
-        if ((mb_strlen($external_id) < 1)) {
-            throw new IAE('CustomerUpdate.setExternalId: $external_id length must be >= 1');
-        }
-        $this->_data['external_id'] = $external_id;
-
-        return $this;
+        return $this->_set("external_id", $external_id);
     }
 
     /**
@@ -1492,22 +1433,11 @@ class CustomerUpdate extends AbstractModel {
      * Set accounting_currency
      * 
      * @param string|null $accounting_currency All transaction will be accounted in this currency for all accounts. Currency can be overridden per account level. If not set, it will not be updated. ISO-4217
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountingCurrency(?string $accounting_currency) {
-        $allowed = $this->getAccountingCurrencyAllowableValues();
-        if (!is_null($accounting_currency) && !in_array($accounting_currency, $allowed, true)) {
-            throw new IAE(sprintf("CustomerUpdate.setAccountingCurrency: accounting_currency invalid value '%s', must be one of '%s'", $accounting_currency, implode("', '", $allowed)));
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) > 3)) {
-            throw new IAE('CustomerUpdate.setAccountingCurrency: $accounting_currency length must be <= 3');
-        }
-        if (!is_null($accounting_currency) && (mb_strlen($accounting_currency) < 3)) {
-            throw new IAE('CustomerUpdate.setAccountingCurrency: $accounting_currency length must be >= 3');
-        }
-        $this->_data['accounting_currency'] = $accounting_currency;
-
-        return $this;
+        return $this->_set("accounting_currency", $accounting_currency);
     }
 
     /**
@@ -1523,22 +1453,11 @@ class CustomerUpdate extends AbstractModel {
      * Set customer_country
      * 
      * @param string|null $customer_country Country customer has to be compliant with. If not set, it will not be updated. ISO-3166-1.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomerCountry(?string $customer_country) {
-        $allowed = $this->getCustomerCountryAllowableValues();
-        if (!is_null($customer_country) && !in_array($customer_country, $allowed, true)) {
-            throw new IAE(sprintf("CustomerUpdate.setCustomerCountry: customer_country invalid value '%s', must be one of '%s'", $customer_country, implode("', '", $allowed)));
-        }
-        if (!is_null($customer_country) && (mb_strlen($customer_country) > 2)) {
-            throw new IAE('CustomerUpdate.setCustomerCountry: $customer_country length must be <= 2');
-        }
-        if (!is_null($customer_country) && (mb_strlen($customer_country) < 2)) {
-            throw new IAE('CustomerUpdate.setCustomerCountry: $customer_country length must be >= 2');
-        }
-        $this->_data['customer_country'] = $customer_country;
-
-        return $this;
+        return $this->_set("customer_country", $customer_country);
     }
 
     /**
@@ -1554,21 +1473,10 @@ class CustomerUpdate extends AbstractModel {
      * Set provider_country
      * 
      * @param string|null $provider_country Country service provider has to be compliant with. If not set, it will not be updated. ISO-3166-1
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProviderCountry(?string $provider_country) {
-        $allowed = $this->getProviderCountryAllowableValues();
-        if (!is_null($provider_country) && !in_array($provider_country, $allowed, true)) {
-            throw new IAE(sprintf("CustomerUpdate.setProviderCountry: provider_country invalid value '%s', must be one of '%s'", $provider_country, implode("', '", $allowed)));
-        }
-        if (!is_null($provider_country) && (mb_strlen($provider_country) > 2)) {
-            throw new IAE('CustomerUpdate.setProviderCountry: $provider_country length must be <= 2');
-        }
-        if (!is_null($provider_country) && (mb_strlen($provider_country) < 2)) {
-            throw new IAE('CustomerUpdate.setProviderCountry: $provider_country length must be >= 2');
-        }
-        $this->_data['provider_country'] = $provider_country;
-
-        return $this;
+        return $this->_set("provider_country", $provider_country);
     }
 }

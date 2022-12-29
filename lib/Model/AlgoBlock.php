@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoBlock Model
  */
@@ -25,18 +23,18 @@ class AlgoBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoBlock";
     protected static $_definition = [
-        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash", null], 
-        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId", null], 
-        "previous_block_hash" => ["previousBlockHash", "string", null, "getPreviousBlockHash", "setPreviousBlockHash", null], 
-        "rewards" => ["rewards", "object", null, "getRewards", "setRewards", null], 
-        "round" => ["round", "float", null, "getRound", "setRound", null], 
-        "seed" => ["seed", "string", null, "getSeed", "setSeed", null], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "txns" => ["txns", "\Tatum\Model\AlgoTx[]", null, "getTxns", "setTxns", null], 
-        "txn" => ["txn", "string", null, "getTxn", "setTxn", null], 
-        "txnc" => ["txnc", "float", null, "getTxnc", "setTxnc", null], 
-        "upgrade_state" => ["upgradeState", "object", null, "getUpgradeState", "setUpgradeState", null], 
-        "upgrade_vote" => ["upgradeVote", "object", null, "getUpgradeVote", "setUpgradeVote", null]
+        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash", null, ["r" => 0]], 
+        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId", null, ["r" => 0]], 
+        "previous_block_hash" => ["previousBlockHash", "string", null, "getPreviousBlockHash", "setPreviousBlockHash", null, ["r" => 0]], 
+        "rewards" => ["rewards", "object", null, "getRewards", "setRewards", null, ["r" => 0]], 
+        "round" => ["round", "float", null, "getRound", "setRound", null, ["r" => 0]], 
+        "seed" => ["seed", "string", null, "getSeed", "setSeed", null, ["r" => 0]], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 
+        "txns" => ["txns", "\Tatum\Model\AlgoTx[]", null, "getTxns", "setTxns", null, ["r" => 0, "c" => 1]], 
+        "txn" => ["txn", "string", null, "getTxn", "setTxn", null, ["r" => 0]], 
+        "txnc" => ["txnc", "float", null, "getTxnc", "setTxnc", null, ["r" => 0]], 
+        "upgrade_state" => ["upgradeState", "object", null, "getUpgradeState", "setUpgradeState", null, ["r" => 0]], 
+        "upgrade_vote" => ["upgradeVote", "object", null, "getUpgradeVote", "setUpgradeVote", null, ["r" => 0]]
     ];
 
     /**
@@ -48,14 +46,6 @@ class AlgoBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -72,12 +62,11 @@ class AlgoBlock extends AbstractModel {
      * Set genesis_hash
      * 
      * @param string|null $genesis_hash hash to which this block belongs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGenesisHash(?string $genesis_hash) {
-        $this->_data['genesis_hash'] = $genesis_hash;
-
-        return $this;
+        return $this->_set("genesis_hash", $genesis_hash);
     }
 
     /**
@@ -93,12 +82,11 @@ class AlgoBlock extends AbstractModel {
      * Set genesis_id
      * 
      * @param string|null $genesis_id ID to which this block belongs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGenesisId(?string $genesis_id) {
-        $this->_data['genesis_id'] = $genesis_id;
-
-        return $this;
+        return $this->_set("genesis_id", $genesis_id);
     }
 
     /**
@@ -114,12 +102,11 @@ class AlgoBlock extends AbstractModel {
      * Set previous_block_hash
      * 
      * @param string|null $previous_block_hash Previous block hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousBlockHash(?string $previous_block_hash) {
-        $this->_data['previous_block_hash'] = $previous_block_hash;
-
-        return $this;
+        return $this->_set("previous_block_hash", $previous_block_hash);
     }
 
     /**
@@ -135,12 +122,11 @@ class AlgoBlock extends AbstractModel {
      * Set rewards
      * 
      * @param object|null $rewards rewards
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRewards(?object $rewards) {
-        $this->_data['rewards'] = $rewards;
-
-        return $this;
+        return $this->_set("rewards", $rewards);
     }
 
     /**
@@ -156,12 +142,11 @@ class AlgoBlock extends AbstractModel {
      * Set round
      * 
      * @param float|null $round Current round on which this block was appended to the chain
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRound(?float $round) {
-        $this->_data['round'] = $round;
-
-        return $this;
+        return $this->_set("round", $round);
     }
 
     /**
@@ -177,12 +162,11 @@ class AlgoBlock extends AbstractModel {
      * Set seed
      * 
      * @param string|null $seed Sortition seed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSeed(?string $seed) {
-        $this->_data['seed'] = $seed;
-
-        return $this;
+        return $this->_set("seed", $seed);
     }
 
     /**
@@ -198,12 +182,11 @@ class AlgoBlock extends AbstractModel {
      * Set timestamp
      * 
      * @param float|null $timestamp Block creation timestamp in seconds since eposh
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(?float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -219,12 +202,11 @@ class AlgoBlock extends AbstractModel {
      * Set txns
      * 
      * @param \Tatum\Model\AlgoTx[]|null $txns Array of transactions
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxns(?array $txns) {
-        $this->_data['txns'] = $txns;
-
-        return $this;
+        return $this->_set("txns", $txns);
     }
 
     /**
@@ -240,12 +222,11 @@ class AlgoBlock extends AbstractModel {
      * Set txn
      * 
      * @param string|null $txn TransactionsRoot authenticates the set of transactions appearing in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxn(?string $txn) {
-        $this->_data['txn'] = $txn;
-
-        return $this;
+        return $this->_set("txn", $txn);
     }
 
     /**
@@ -261,12 +242,11 @@ class AlgoBlock extends AbstractModel {
      * Set txnc
      * 
      * @param float|null $txnc TxnCounter counts the number of transations committed in the ledger
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxnc(?float $txnc) {
-        $this->_data['txnc'] = $txnc;
-
-        return $this;
+        return $this->_set("txnc", $txnc);
     }
 
     /**
@@ -282,12 +262,11 @@ class AlgoBlock extends AbstractModel {
      * Set upgrade_state
      * 
      * @param object|null $upgrade_state upgrade state
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUpgradeState(?object $upgrade_state) {
-        $this->_data['upgrade_state'] = $upgrade_state;
-
-        return $this;
+        return $this->_set("upgrade_state", $upgrade_state);
     }
 
     /**
@@ -303,11 +282,10 @@ class AlgoBlock extends AbstractModel {
      * Set upgrade_vote
      * 
      * @param object|null $upgrade_vote upgrade vote
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUpgradeVote(?object $upgrade_vote) {
-        $this->_data['upgrade_vote'] = $upgrade_vote;
-
-        return $this;
+        return $this->_set("upgrade_vote", $upgrade_vote);
     }
 }

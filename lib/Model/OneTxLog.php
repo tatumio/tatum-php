@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * OneTxLog Model
  */
@@ -25,14 +23,14 @@ class OneTxLog extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "OneTxLog";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "topics" => ["topics", "string[]", null, "getTopics", "setTopics", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "log_index" => ["logIndex", "float", null, "getLogIndex", "setLogIndex", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
-        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "topics" => ["topics", "string[]", null, "getTopics", "setTopics", null, ["r" => 0, "c" => 1]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]], 
+        "log_index" => ["logIndex", "float", null, "getLogIndex", "setLogIndex", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null, ["r" => 0]], 
+        "transaction_hash" => ["transactionHash", "string", null, "getTransactionHash", "setTransactionHash", null, ["r" => 0]]
     ];
 
     /**
@@ -44,14 +42,6 @@ class OneTxLog extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -68,12 +58,11 @@ class OneTxLog extends AbstractModel {
      * Set address
      * 
      * @param string|null $address From which this event originated from.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -89,12 +78,11 @@ class OneTxLog extends AbstractModel {
      * Set topics
      * 
      * @param string[]|null $topics An array with max 4 32 Byte topics, topic 1-3 contains indexed parameters of the log.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTopics(?array $topics) {
-        $this->_data['topics'] = $topics;
-
-        return $this;
+        return $this->_set("topics", $topics);
     }
 
     /**
@@ -110,12 +98,11 @@ class OneTxLog extends AbstractModel {
      * Set data
      * 
      * @param string|null $data The data containing non-indexed log parameter.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -131,12 +118,11 @@ class OneTxLog extends AbstractModel {
      * Set log_index
      * 
      * @param float|null $log_index Integer of the event index position in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLogIndex(?float $log_index) {
-        $this->_data['log_index'] = $log_index;
-
-        return $this;
+        return $this->_set("log_index", $log_index);
     }
 
     /**
@@ -152,12 +138,11 @@ class OneTxLog extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number Block number where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -173,12 +158,11 @@ class OneTxLog extends AbstractModel {
      * Set block_hash
      * 
      * @param string|null $block_hash Hash of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHash(?string $block_hash) {
-        $this->_data['block_hash'] = $block_hash;
-
-        return $this;
+        return $this->_set("block_hash", $block_hash);
     }
 
     /**
@@ -194,12 +178,11 @@ class OneTxLog extends AbstractModel {
      * Set transaction_index
      * 
      * @param float|null $transaction_index Integer of the transaction’s index position, the event was created in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionIndex(?float $transaction_index) {
-        $this->_data['transaction_index'] = $transaction_index;
-
-        return $this;
+        return $this->_set("transaction_index", $transaction_index);
     }
 
     /**
@@ -215,11 +198,10 @@ class OneTxLog extends AbstractModel {
      * Set transaction_hash
      * 
      * @param string|null $transaction_hash Hash of the transaction this event was created in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionHash(?string $transaction_hash) {
-        $this->_data['transaction_hash'] = $transaction_hash;
-
-        return $this;
+        return $this->_set("transaction_hash", $transaction_hash);
     }
 }

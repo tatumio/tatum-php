@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronBlock Model
  */
@@ -25,13 +23,13 @@ class TronBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash", null], 
-        "witness_address" => ["witnessAddress", "string", null, "getWitnessAddress", "setWitnessAddress", null], 
-        "witness_signature" => ["witnessSignature", "string", null, "getWitnessSignature", "setWitnessSignature", null], 
-        "transactions" => ["transactions", "\Tatum\Model\TronTx[]", null, "getTransactions", "setTransactions", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 
+        "parent_hash" => ["parentHash", "string", null, "getParentHash", "setParentHash", null, ["r" => 0]], 
+        "witness_address" => ["witnessAddress", "string", null, "getWitnessAddress", "setWitnessAddress", null, ["r" => 0]], 
+        "witness_signature" => ["witnessSignature", "string", null, "getWitnessSignature", "setWitnessSignature", null, ["r" => 0]], 
+        "transactions" => ["transactions", "\Tatum\Model\TronTx[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -43,14 +41,6 @@ class TronBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -67,12 +57,11 @@ class TronBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Block hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -88,12 +77,11 @@ class TronBlock extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number Block number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -109,12 +97,11 @@ class TronBlock extends AbstractModel {
      * Set timestamp
      * 
      * @param float|null $timestamp Time of the block in UTC millis.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(?float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -130,12 +117,11 @@ class TronBlock extends AbstractModel {
      * Set parent_hash
      * 
      * @param string|null $parent_hash Hash of the parent block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParentHash(?string $parent_hash) {
-        $this->_data['parent_hash'] = $parent_hash;
-
-        return $this;
+        return $this->_set("parent_hash", $parent_hash);
     }
 
     /**
@@ -151,12 +137,11 @@ class TronBlock extends AbstractModel {
      * Set witness_address
      * 
      * @param string|null $witness_address Witness address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWitnessAddress(?string $witness_address) {
-        $this->_data['witness_address'] = $witness_address;
-
-        return $this;
+        return $this->_set("witness_address", $witness_address);
     }
 
     /**
@@ -172,12 +157,11 @@ class TronBlock extends AbstractModel {
      * Set witness_signature
      * 
      * @param string|null $witness_signature Witness signature.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWitnessSignature(?string $witness_signature) {
-        $this->_data['witness_signature'] = $witness_signature;
-
-        return $this;
+        return $this->_set("witness_signature", $witness_signature);
     }
 
     /**
@@ -193,11 +177,10 @@ class TronBlock extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\TronTx[]|null $transactions Transactions that occurs in this block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

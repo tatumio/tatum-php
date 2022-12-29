@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTx_ret_inner Model
  */
@@ -25,7 +23,7 @@ class TronTxRetInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_ret_inner";
     protected static $_definition = [
-        "contract_ret" => ["contractRet", "string", null, "getContractRet", "setContractRet", null]
+        "contract_ret" => ["contractRet", "string", null, "getContractRet", "setContractRet", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class TronTxRetInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class TronTxRetInner extends AbstractModel {
      * Set contract_ret
      * 
      * @param string|null $contract_ret Returns the value of the smart contract invocation.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractRet(?string $contract_ret) {
-        $this->_data['contract_ret'] = $contract_ret;
-
-        return $this;
+        return $this->_set("contract_ret", $contract_ret);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * UpdateCashbackValueForAuthorNftTron Model
  */
@@ -26,12 +24,12 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "UpdateCashbackValueForAuthorNftTron";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "cashback_value" => ["cashbackValue", "string", null, "getCashbackValue", "setCashbackValue", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "cashback_value" => ["cashbackValue", "string", null, "getCashbackValue", "setCashbackValue", null, ["r" => 1]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]]
     ];
 
     /**
@@ -43,52 +41,6 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 34)) {
-            $ip[] = "'contract_address' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 34)) {
-            $ip[] = "'contract_address' length must be >= 34";
-        }
-        if (is_null($this->_data['cashback_value'])) {
-            $ip[] = "'cashback_value' can't be null";
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        return $ip;
     }
 
     /**
@@ -115,16 +67,11 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("UpdateCashbackValueForAuthorNftTron.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -140,15 +87,11 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id The ID of the NFT to update royalty information for
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 78)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftTron.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -164,18 +107,11 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The blockchain address of the NFT to update royalty information for
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 34)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftTron.setContractAddress: $contract_address length must be <= 34');
-        }
-        if ((mb_strlen($contract_address) < 34)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftTron.setContractAddress: $contract_address length must be >= 34');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -191,12 +127,11 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
      * Set cashback_value
      * 
      * @param string $cashback_value The new value of the royalty cashback to be set for the author of the NFT; to disable the royalties for the NFT completely, set this parameter to 0
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCashbackValue(string $cashback_value) {
-        $this->_data['cashback_value'] = $cashback_value;
-
-        return $this;
+        return $this->_set("cashback_value", $cashback_value);
     }
 
     /**
@@ -212,12 +147,11 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit The maximum amount to be paid as the transaction fee (in TRX)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 
     /**
@@ -233,17 +167,10 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the NFT author's address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftTron.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('UpdateCashbackValueForAuthorNftTron.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 }

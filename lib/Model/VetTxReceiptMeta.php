@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetTxReceipt_meta Model
  */
@@ -25,11 +23,11 @@ class VetTxReceiptMeta extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTxReceipt_meta";
     protected static $_definition = [
-        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "block_timestamp" => ["blockTimestamp", "float", null, "getBlockTimestamp", "setBlockTimestamp", null], 
-        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null], 
-        "tx_origin" => ["txOrigin", "string", null, "getTxOrigin", "setTxOrigin", null]
+        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "block_timestamp" => ["blockTimestamp", "float", null, "getBlockTimestamp", "setBlockTimestamp", null, ["r" => 0]], 
+        "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 
+        "tx_origin" => ["txOrigin", "string", null, "getTxOrigin", "setTxOrigin", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class VetTxReceiptMeta extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class VetTxReceiptMeta extends AbstractModel {
      * Set block_id
      * 
      * @param string|null $block_id block_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockId(?string $block_id) {
-        $this->_data['block_id'] = $block_id;
-
-        return $this;
+        return $this->_set("block_id", $block_id);
     }
 
     /**
@@ -86,12 +75,11 @@ class VetTxReceiptMeta extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number block_number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -107,12 +95,11 @@ class VetTxReceiptMeta extends AbstractModel {
      * Set block_timestamp
      * 
      * @param float|null $block_timestamp block_timestamp
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockTimestamp(?float $block_timestamp) {
-        $this->_data['block_timestamp'] = $block_timestamp;
-
-        return $this;
+        return $this->_set("block_timestamp", $block_timestamp);
     }
 
     /**
@@ -128,12 +115,11 @@ class VetTxReceiptMeta extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id tx_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -149,11 +135,10 @@ class VetTxReceiptMeta extends AbstractModel {
      * Set tx_origin
      * 
      * @param string|null $tx_origin tx_origin
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxOrigin(?string $tx_origin) {
-        $this->_data['tx_origin'] = $tx_origin;
-
-        return $this;
+        return $this->_set("tx_origin", $tx_origin);
     }
 }

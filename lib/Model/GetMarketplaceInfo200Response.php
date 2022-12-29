@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GetMarketplaceInfo_200_response Model
  */
@@ -25,16 +23,16 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GetMarketplaceInfo_200_response";
     protected static $_definition = [
-        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null], 
-        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null], 
-        "authority" => ["authority", "string", null, "getAuthority", "setAuthority", null], 
-        "creator" => ["creator", "string", null, "getCreator", "setCreator", null], 
-        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null], 
-        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint", null], 
-        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination", null], 
-        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination", null], 
-        "requires_sign_off" => ["requiresSignOff", "bool", null, "getRequiresSignOff", "setRequiresSignOff", null], 
-        "can_change_sale_price" => ["canChangeSalePrice", "bool", null, "getCanChangeSalePrice", "setCanChangeSalePrice", null]
+        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "authority" => ["authority", "string", null, "getAuthority", "setAuthority", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "creator" => ["creator", "string", null, "getCreator", "setCreator", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
+        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "requires_sign_off" => ["requiresSignOff", "bool", null, "getRequiresSignOff", "setRequiresSignOff", null, ["r" => 1]], 
+        "can_change_sale_price" => ["canChangeSalePrice", "bool", null, "getCanChangeSalePrice", "setCanChangeSalePrice", null, ["r" => 1]]
     ];
 
     /**
@@ -46,92 +44,6 @@ class GetMarketplaceInfo200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['fee_account'])) {
-            $ip[] = "'fee_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['fee_account']) > 44)) {
-            $ip[] = "'fee_account' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['fee_account']) < 44)) {
-            $ip[] = "'fee_account' length must be >= 44";
-        }
-        if (is_null($this->_data['treasury_account'])) {
-            $ip[] = "'treasury_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['treasury_account']) > 44)) {
-            $ip[] = "'treasury_account' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['treasury_account']) < 44)) {
-            $ip[] = "'treasury_account' length must be >= 44";
-        }
-        if (is_null($this->_data['authority'])) {
-            $ip[] = "'authority' can't be null";
-        }
-        if ((mb_strlen($this->_data['authority']) > 44)) {
-            $ip[] = "'authority' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['authority']) < 44)) {
-            $ip[] = "'authority' length must be >= 44";
-        }
-        if (is_null($this->_data['creator'])) {
-            $ip[] = "'creator' can't be null";
-        }
-        if ((mb_strlen($this->_data['creator']) > 44)) {
-            $ip[] = "'creator' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['creator']) < 44)) {
-            $ip[] = "'creator' length must be >= 44";
-        }
-        if (is_null($this->_data['marketplace_fee'])) {
-            $ip[] = "'marketplace_fee' can't be null";
-        }
-        if (($this->_data['marketplace_fee'] > 10000)) {
-            $ip[] = "'marketplace_fee' must be <= 10000";
-        }
-        if (($this->_data['marketplace_fee'] < 0)) {
-            $ip[] = "'marketplace_fee' must be >= 0";
-        }
-        if (is_null($this->_data['treasury_mint'])) {
-            $ip[] = "'treasury_mint' can't be null";
-        }
-        if ((mb_strlen($this->_data['treasury_mint']) > 44)) {
-            $ip[] = "'treasury_mint' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['treasury_mint']) < 43)) {
-            $ip[] = "'treasury_mint' length must be >= 43";
-        }
-        if (is_null($this->_data['treasury_withdrawal_destination'])) {
-            $ip[] = "'treasury_withdrawal_destination' can't be null";
-        }
-        if ((mb_strlen($this->_data['treasury_withdrawal_destination']) > 44)) {
-            $ip[] = "'treasury_withdrawal_destination' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['treasury_withdrawal_destination']) < 43)) {
-            $ip[] = "'treasury_withdrawal_destination' length must be >= 43";
-        }
-        if (is_null($this->_data['fee_withdrawal_destination'])) {
-            $ip[] = "'fee_withdrawal_destination' can't be null";
-        }
-        if ((mb_strlen($this->_data['fee_withdrawal_destination']) > 44)) {
-            $ip[] = "'fee_withdrawal_destination' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['fee_withdrawal_destination']) < 43)) {
-            $ip[] = "'fee_withdrawal_destination' length must be >= 43";
-        }
-        if (is_null($this->_data['requires_sign_off'])) {
-            $ip[] = "'requires_sign_off' can't be null";
-        }
-        if (is_null($this->_data['can_change_sale_price'])) {
-            $ip[] = "'can_change_sale_price' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -148,18 +60,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set fee_account
      * 
      * @param string $fee_account Fee Account Address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeAccount(string $fee_account) {
-        if ((mb_strlen($fee_account) > 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setFeeAccount: $fee_account length must be <= 44');
-        }
-        if ((mb_strlen($fee_account) < 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setFeeAccount: $fee_account length must be >= 44');
-        }
-        $this->_data['fee_account'] = $fee_account;
-
-        return $this;
+        return $this->_set("fee_account", $fee_account);
     }
 
     /**
@@ -175,18 +80,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set treasury_account
      * 
      * @param string $treasury_account Treasury Account Address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTreasuryAccount(string $treasury_account) {
-        if ((mb_strlen($treasury_account) > 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setTreasuryAccount: $treasury_account length must be <= 44');
-        }
-        if ((mb_strlen($treasury_account) < 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setTreasuryAccount: $treasury_account length must be >= 44');
-        }
-        $this->_data['treasury_account'] = $treasury_account;
-
-        return $this;
+        return $this->_set("treasury_account", $treasury_account);
     }
 
     /**
@@ -202,18 +100,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set authority
      * 
      * @param string $authority Authority Address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthority(string $authority) {
-        if ((mb_strlen($authority) > 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setAuthority: $authority length must be <= 44');
-        }
-        if ((mb_strlen($authority) < 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setAuthority: $authority length must be >= 44');
-        }
-        $this->_data['authority'] = $authority;
-
-        return $this;
+        return $this->_set("authority", $authority);
     }
 
     /**
@@ -229,18 +120,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set creator
      * 
      * @param string $creator Creator Address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreator(string $creator) {
-        if ((mb_strlen($creator) > 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setCreator: $creator length must be <= 44');
-        }
-        if ((mb_strlen($creator) < 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setCreator: $creator length must be >= 44');
-        }
-        $this->_data['creator'] = $creator;
-
-        return $this;
+        return $this->_set("creator", $creator);
     }
 
     /**
@@ -256,18 +140,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set marketplace_fee
      * 
      * @param float $marketplace_fee The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMarketplaceFee(float $marketplace_fee) {
-        if (($marketplace_fee > 10000)) {
-            throw new IAE('GetMarketplaceInfo200Response.setMarketplaceFee: $marketplace_fee must be <=10000');
-        }
-        if (($marketplace_fee < 0)) {
-            throw new IAE('GetMarketplaceInfo200Response.setMarketplaceFee: $marketplace_fee must be >=0');
-        }
-        $this->_data['marketplace_fee'] = $marketplace_fee;
-
-        return $this;
+        return $this->_set("marketplace_fee", $marketplace_fee);
     }
 
     /**
@@ -283,18 +160,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set treasury_mint
      * 
      * @param string $treasury_mint Address of a SPL token contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTreasuryMint(string $treasury_mint) {
-        if ((mb_strlen($treasury_mint) > 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setTreasuryMint: $treasury_mint length must be <= 44');
-        }
-        if ((mb_strlen($treasury_mint) < 43)) {
-            throw new IAE('GetMarketplaceInfo200Response.setTreasuryMint: $treasury_mint length must be >= 43');
-        }
-        $this->_data['treasury_mint'] = $treasury_mint;
-
-        return $this;
+        return $this->_set("treasury_mint", $treasury_mint);
     }
 
     /**
@@ -310,18 +180,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set treasury_withdrawal_destination
      * 
      * @param string $treasury_withdrawal_destination The address that will be able to withdraw funds from the marketplace treasury account to own address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTreasuryWithdrawalDestination(string $treasury_withdrawal_destination) {
-        if ((mb_strlen($treasury_withdrawal_destination) > 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setTreasuryWithdrawalDestination: $treasury_withdrawal_destination length must be <= 44');
-        }
-        if ((mb_strlen($treasury_withdrawal_destination) < 43)) {
-            throw new IAE('GetMarketplaceInfo200Response.setTreasuryWithdrawalDestination: $treasury_withdrawal_destination length must be >= 43');
-        }
-        $this->_data['treasury_withdrawal_destination'] = $treasury_withdrawal_destination;
-
-        return $this;
+        return $this->_set("treasury_withdrawal_destination", $treasury_withdrawal_destination);
     }
 
     /**
@@ -337,18 +200,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set fee_withdrawal_destination
      * 
      * @param string $fee_withdrawal_destination The address that will be able to withdraw funds from the marketplace fee account to own address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeWithdrawalDestination(string $fee_withdrawal_destination) {
-        if ((mb_strlen($fee_withdrawal_destination) > 44)) {
-            throw new IAE('GetMarketplaceInfo200Response.setFeeWithdrawalDestination: $fee_withdrawal_destination length must be <= 44');
-        }
-        if ((mb_strlen($fee_withdrawal_destination) < 43)) {
-            throw new IAE('GetMarketplaceInfo200Response.setFeeWithdrawalDestination: $fee_withdrawal_destination length must be >= 43');
-        }
-        $this->_data['fee_withdrawal_destination'] = $fee_withdrawal_destination;
-
-        return $this;
+        return $this->_set("fee_withdrawal_destination", $fee_withdrawal_destination);
     }
 
     /**
@@ -364,12 +220,11 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set requires_sign_off
      * 
      * @param bool $requires_sign_off If set to \"true\", the marketplace must sign all operations related to the listings and sales.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRequiresSignOff(bool $requires_sign_off) {
-        $this->_data['requires_sign_off'] = $requires_sign_off;
-
-        return $this;
+        return $this->_set("requires_sign_off", $requires_sign_off);
     }
 
     /**
@@ -385,11 +240,10 @@ class GetMarketplaceInfo200Response extends AbstractModel {
      * Set can_change_sale_price
      * 
      * @param bool $can_change_sale_price If set to \"true\", the marketplace can change the sale price that the seller intentionally set to 0.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCanChangeSalePrice(bool $can_change_sale_price) {
-        $this->_data['can_change_sale_price'] = $can_change_sale_price;
-
-        return $this;
+        return $this->_set("can_change_sale_price", $can_change_sale_price);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoNodePostDriver_200_response Model
  */
@@ -25,7 +23,7 @@ class AlgoNodePostDriver200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoNodePostDriver_200_response";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class AlgoNodePostDriver200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class AlgoNodePostDriver200Response extends AbstractModel {
      * Set tx_id
      * 
      * @param string|null $tx_id Check here - <a href=\"https://developer.algorand.org/docs/rest-apis/algod/v2/#rawtransaction-response-200\" target=\"_blank\">https://developer.algorand.org/docs/rest-apis/algod/v2/#rawtransaction-response-200</a>
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(?string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 }

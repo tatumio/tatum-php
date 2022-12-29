@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronAccount Model
  */
@@ -25,18 +23,18 @@ class TronAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronAccount";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "balance" => ["balance", "float", null, "getBalance", "setBalance", null], 
-        "trc10" => ["trc10", "\Tatum\Model\TronAccountTrc10Inner[]", null, "getTrc10", "setTrc10", null], 
-        "trc20" => ["trc20", "object[]", null, "getTrc20", "setTrc20", null], 
-        "create_time" => ["createTime", "float", null, "getCreateTime", "setCreateTime", null], 
-        "asset_issued_id" => ["assetIssuedId", "string", null, "getAssetIssuedId", "setAssetIssuedId", null], 
-        "asset_issued_name" => ["assetIssuedName", "float", null, "getAssetIssuedName", "setAssetIssuedName", null], 
-        "free_net_usage" => ["freeNetUsage", "float", null, "getFreeNetUsage", "setFreeNetUsage", null], 
-        "free_net_limit" => ["freeNetLimit", "float", null, "getFreeNetLimit", "setFreeNetLimit", null], 
-        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage", null], 
-        "net_limit" => ["netLimit", "float", null, "getNetLimit", "setNetLimit", null], 
-        "bandwidth" => ["bandwidth", "float", null, "getBandwidth", "setBandwidth", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "balance" => ["balance", "float", null, "getBalance", "setBalance", null, ["r" => 1]], 
+        "trc10" => ["trc10", "\Tatum\Model\TronAccountTrc10Inner[]", null, "getTrc10", "setTrc10", null, ["r" => 1, "c" => 1]], 
+        "trc20" => ["trc20", "object[]", null, "getTrc20", "setTrc20", null, ["r" => 1, "c" => 1]], 
+        "create_time" => ["createTime", "float", null, "getCreateTime", "setCreateTime", null, ["r" => 1]], 
+        "asset_issued_id" => ["assetIssuedId", "string", null, "getAssetIssuedId", "setAssetIssuedId", null, ["r" => 0]], 
+        "asset_issued_name" => ["assetIssuedName", "float", null, "getAssetIssuedName", "setAssetIssuedName", null, ["r" => 0]], 
+        "free_net_usage" => ["freeNetUsage", "float", null, "getFreeNetUsage", "setFreeNetUsage", null, ["r" => 1]], 
+        "free_net_limit" => ["freeNetLimit", "float", null, "getFreeNetLimit", "setFreeNetLimit", null, ["r" => 0]], 
+        "net_usage" => ["netUsage", "float", null, "getNetUsage", "setNetUsage", null, ["r" => 0]], 
+        "net_limit" => ["netLimit", "float", null, "getNetLimit", "setNetLimit", null, ["r" => 0]], 
+        "bandwidth" => ["bandwidth", "float", null, "getBandwidth", "setBandwidth", null, ["r" => 1]]
     ];
 
     /**
@@ -48,35 +46,6 @@ class TronAccount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['balance'])) {
-            $ip[] = "'balance' can't be null";
-        }
-        if (is_null($this->_data['trc10'])) {
-            $ip[] = "'trc10' can't be null";
-        }
-        if (is_null($this->_data['trc20'])) {
-            $ip[] = "'trc20' can't be null";
-        }
-        if (is_null($this->_data['create_time'])) {
-            $ip[] = "'create_time' can't be null";
-        }
-        if (is_null($this->_data['free_net_usage'])) {
-            $ip[] = "'free_net_usage' can't be null";
-        }
-        if (is_null($this->_data['bandwidth'])) {
-            $ip[] = "'bandwidth' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -93,12 +62,11 @@ class TronAccount extends AbstractModel {
      * Set address
      * 
      * @param string $address Account address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -114,12 +82,11 @@ class TronAccount extends AbstractModel {
      * Set balance
      * 
      * @param float $balance Balance of the TRX, in SUN. SUN is 1/1000000 TRX.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(float $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -135,12 +102,11 @@ class TronAccount extends AbstractModel {
      * Set trc10
      * 
      * @param \Tatum\Model\TronAccountTrc10Inner[] $trc10 trc10
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTrc10(array $trc10) {
-        $this->_data['trc10'] = $trc10;
-
-        return $this;
+        return $this->_set("trc10", $trc10);
     }
 
     /**
@@ -156,12 +122,11 @@ class TronAccount extends AbstractModel {
      * Set trc20
      * 
      * @param object[] $trc20 trc20
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTrc20(array $trc20) {
-        $this->_data['trc20'] = $trc20;
-
-        return $this;
+        return $this->_set("trc20", $trc20);
     }
 
     /**
@@ -177,12 +142,11 @@ class TronAccount extends AbstractModel {
      * Set create_time
      * 
      * @param float $create_time Date of creation of the account in UTC millis.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCreateTime(float $create_time) {
-        $this->_data['create_time'] = $create_time;
-
-        return $this;
+        return $this->_set("create_time", $create_time);
     }
 
     /**
@@ -198,12 +162,11 @@ class TronAccount extends AbstractModel {
      * Set asset_issued_id
      * 
      * @param string|null $asset_issued_id ID of the issued TRC10 token, if any.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssetIssuedId(?string $asset_issued_id) {
-        $this->_data['asset_issued_id'] = $asset_issued_id;
-
-        return $this;
+        return $this->_set("asset_issued_id", $asset_issued_id);
     }
 
     /**
@@ -219,12 +182,11 @@ class TronAccount extends AbstractModel {
      * Set asset_issued_name
      * 
      * @param float|null $asset_issued_name Balance of the issued TRC10 token, if any.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssetIssuedName(?float $asset_issued_name) {
-        $this->_data['asset_issued_name'] = $asset_issued_name;
-
-        return $this;
+        return $this->_set("asset_issued_name", $asset_issued_name);
     }
 
     /**
@@ -240,12 +202,11 @@ class TronAccount extends AbstractModel {
      * Set free_net_usage
      * 
      * @param float $free_net_usage Free usage of the network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFreeNetUsage(float $free_net_usage) {
-        $this->_data['free_net_usage'] = $free_net_usage;
-
-        return $this;
+        return $this->_set("free_net_usage", $free_net_usage);
     }
 
     /**
@@ -261,12 +222,11 @@ class TronAccount extends AbstractModel {
      * Set free_net_limit
      * 
      * @param float|null $free_net_limit Free usage limit of the network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFreeNetLimit(?float $free_net_limit) {
-        $this->_data['free_net_limit'] = $free_net_limit;
-
-        return $this;
+        return $this->_set("free_net_limit", $free_net_limit);
     }
 
     /**
@@ -282,12 +242,11 @@ class TronAccount extends AbstractModel {
      * Set net_usage
      * 
      * @param float|null $net_usage Extra usage of the network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNetUsage(?float $net_usage) {
-        $this->_data['net_usage'] = $net_usage;
-
-        return $this;
+        return $this->_set("net_usage", $net_usage);
     }
 
     /**
@@ -303,12 +262,11 @@ class TronAccount extends AbstractModel {
      * Set net_limit
      * 
      * @param float|null $net_limit Extra usage limit of the network.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNetLimit(?float $net_limit) {
-        $this->_data['net_limit'] = $net_limit;
-
-        return $this;
+        return $this->_set("net_limit", $net_limit);
     }
 
     /**
@@ -324,11 +282,10 @@ class TronAccount extends AbstractModel {
      * Set bandwidth
      * 
      * @param float $bandwidth Remaining usage of the network, equal to freeNetLimit - freeNetUsed + netLimit - netUsed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBandwidth(float $bandwidth) {
-        $this->_data['bandwidth'] = $bandwidth;
-
-        return $this;
+        return $this->_set("bandwidth", $bandwidth);
     }
 }

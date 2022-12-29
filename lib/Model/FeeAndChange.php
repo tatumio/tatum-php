@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FeeAndChange Model
  */
@@ -25,8 +23,8 @@ class FeeAndChange extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FeeAndChange";
     protected static $_definition = [
-        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null]
+        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null, ["r" => 1]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -38,17 +36,6 @@ class FeeAndChange extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['change_address'])) {
-            $ip[] = "'change_address' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -65,12 +52,11 @@ class FeeAndChange extends AbstractModel {
      * Set change_address
      * 
      * @param string $change_address Address, where unspent funds will be transferred.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChangeAddress(string $change_address) {
-        $this->_data['change_address'] = $change_address;
-
-        return $this;
+        return $this->_set("change_address", $change_address);
     }
 
     /**
@@ -86,11 +72,10 @@ class FeeAndChange extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be paid.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

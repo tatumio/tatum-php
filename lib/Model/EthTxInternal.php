@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EthTxInternal Model
  */
@@ -25,20 +23,20 @@ class EthTxInternal extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "EthTxInternal";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp", null], 
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "input" => ["input", "string", null, "getInput", "setInput", null], 
-        "trace_id" => ["traceId", "string", null, "getTraceId", "setTraceId", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "err_code" => ["errCode", "string", null, "getErrCode", "setErrCode", null], 
-        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
-        "is_error" => ["isError", "string", null, "getIsError", "setIsError", null], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 0]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp", null, ["r" => 0]], 
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "input" => ["input", "string", null, "getInput", "setInput", null, ["r" => 0]], 
+        "trace_id" => ["traceId", "string", null, "getTraceId", "setTraceId", null, ["r" => 0]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 
+        "err_code" => ["errCode", "string", null, "getErrCode", "setErrCode", null, ["r" => 0]], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null, ["r" => 0]], 
+        "is_error" => ["isError", "string", null, "getIsError", "setIsError", null, ["r" => 0]], 
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null, ["r" => 0]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -50,14 +48,6 @@ class EthTxInternal extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -74,12 +64,11 @@ class EthTxInternal extends AbstractModel {
      * Set from
      * 
      * @param string|null $from Address of the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(?string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -95,12 +84,11 @@ class EthTxInternal extends AbstractModel {
      * Set to
      * 
      * @param string|null $to Address of the receiver. 'null' when its a contract creation transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(?string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -116,12 +104,11 @@ class EthTxInternal extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Value transferred in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -137,12 +124,11 @@ class EthTxInternal extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number Block number where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -158,12 +144,11 @@ class EthTxInternal extends AbstractModel {
      * Set time_stamp
      * 
      * @param string|null $time_stamp Time of the transaction in seconds.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimeStamp(?string $time_stamp) {
-        $this->_data['time_stamp'] = $time_stamp;
-
-        return $this;
+        return $this->_set("time_stamp", $time_stamp);
     }
 
     /**
@@ -179,12 +164,11 @@ class EthTxInternal extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Hash of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -200,12 +184,11 @@ class EthTxInternal extends AbstractModel {
      * Set input
      * 
      * @param string|null $input The data sent along with the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInput(?string $input) {
-        $this->_data['input'] = $input;
-
-        return $this;
+        return $this->_set("input", $input);
     }
 
     /**
@@ -221,12 +204,11 @@ class EthTxInternal extends AbstractModel {
      * Set trace_id
      * 
      * @param string|null $trace_id Trace ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTraceId(?string $trace_id) {
-        $this->_data['trace_id'] = $trace_id;
-
-        return $this;
+        return $this->_set("trace_id", $trace_id);
     }
 
     /**
@@ -242,12 +224,11 @@ class EthTxInternal extends AbstractModel {
      * Set type
      * 
      * @param string|null $type Type of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -263,12 +244,11 @@ class EthTxInternal extends AbstractModel {
      * Set err_code
      * 
      * @param string|null $err_code Error code.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErrCode(?string $err_code) {
-        $this->_data['err_code'] = $err_code;
-
-        return $this;
+        return $this->_set("err_code", $err_code);
     }
 
     /**
@@ -284,12 +264,11 @@ class EthTxInternal extends AbstractModel {
      * Set gas
      * 
      * @param float|null $gas Gas provided by the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGas(?float $gas) {
-        $this->_data['gas'] = $gas;
-
-        return $this;
+        return $this->_set("gas", $gas);
     }
 
     /**
@@ -305,12 +284,11 @@ class EthTxInternal extends AbstractModel {
      * Set is_error
      * 
      * @param string|null $is_error 1 if the transaction was not successful, 0 otherwise.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIsError(?string $is_error) {
-        $this->_data['is_error'] = $is_error;
-
-        return $this;
+        return $this->_set("is_error", $is_error);
     }
 
     /**
@@ -326,12 +304,11 @@ class EthTxInternal extends AbstractModel {
      * Set gas_used
      * 
      * @param float|null $gas_used The amount of gas used by this specific transaction alone.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasUsed(?float $gas_used) {
-        $this->_data['gas_used'] = $gas_used;
-
-        return $this;
+        return $this->_set("gas_used", $gas_used);
     }
 
     /**
@@ -347,11 +324,10 @@ class EthTxInternal extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address The contract address created, if the transaction was a contract creation, otherwise null.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 }

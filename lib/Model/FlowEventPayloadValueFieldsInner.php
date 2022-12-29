@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowEvent_payload_value_fields_inner Model
  */
@@ -25,8 +23,8 @@ class FlowEventPayloadValueFieldsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowEvent_payload_value_fields_inner";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "value" => ["value", "\Tatum\Model\FlowEventPayloadValueFieldsInnerValue", null, "getValue", "setValue", null]
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 0]], 
+        "value" => ["value", "\Tatum\Model\FlowEventPayloadValueFieldsInnerValue", null, "getValue", "setValue", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class FlowEventPayloadValueFieldsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class FlowEventPayloadValueFieldsInner extends AbstractModel {
      * Set name
      * 
      * @param string|null $name Name of the property
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(?string $name) {
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -83,11 +72,10 @@ class FlowEventPayloadValueFieldsInner extends AbstractModel {
      * Set value
      * 
      * @param \Tatum\Model\FlowEventPayloadValueFieldsInnerValue|null $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?\Tatum\Model\FlowEventPayloadValueFieldsInnerValue $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowCustomTransactionPK_args_inner_value Model
  * 
@@ -36,13 +34,6 @@ class FlowCustomTransactionPKArgsInnerValue extends AbstractModel {
      */
     public function __construct($data = null) {
         $this->_data = $data;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        return [];
     }
 
     /**

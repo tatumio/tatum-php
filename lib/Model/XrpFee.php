@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpFee Model
  */
@@ -25,13 +23,13 @@ class XrpFee extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpFee";
     protected static $_definition = [
-        "current_ledger_size" => ["current_ledger_size", "string", null, "getCurrentLedgerSize", "setCurrentLedgerSize", null], 
-        "current_queue_size" => ["current_queue_size", "string", null, "getCurrentQueueSize", "setCurrentQueueSize", null], 
-        "drops" => ["drops", "\Tatum\Model\XrpFeeDrops", null, "getDrops", "setDrops", null], 
-        "expected_ledger_size" => ["expected_ledger_size", "string", null, "getExpectedLedgerSize", "setExpectedLedgerSize", null], 
-        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex", null], 
-        "levels" => ["levels", "\Tatum\Model\XrpFeeLevels", null, "getLevels", "setLevels", null], 
-        "max_queue_size" => ["max_queue_size", "string", null, "getMaxQueueSize", "setMaxQueueSize", null]
+        "current_ledger_size" => ["current_ledger_size", "string", null, "getCurrentLedgerSize", "setCurrentLedgerSize", null, ["r" => 0]], 
+        "current_queue_size" => ["current_queue_size", "string", null, "getCurrentQueueSize", "setCurrentQueueSize", null, ["r" => 0]], 
+        "drops" => ["drops", "\Tatum\Model\XrpFeeDrops", null, "getDrops", "setDrops", null, ["r" => 0]], 
+        "expected_ledger_size" => ["expected_ledger_size", "string", null, "getExpectedLedgerSize", "setExpectedLedgerSize", null, ["r" => 0]], 
+        "ledger_current_index" => ["ledger_current_index", "float", null, "getLedgerCurrentIndex", "setLedgerCurrentIndex", null, ["r" => 0]], 
+        "levels" => ["levels", "\Tatum\Model\XrpFeeLevels", null, "getLevels", "setLevels", null, ["r" => 0]], 
+        "max_queue_size" => ["max_queue_size", "string", null, "getMaxQueueSize", "setMaxQueueSize", null, ["r" => 0]]
     ];
 
     /**
@@ -43,14 +41,6 @@ class XrpFee extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -67,12 +57,11 @@ class XrpFee extends AbstractModel {
      * Set current_ledger_size
      * 
      * @param string|null $current_ledger_size Number of transactions provisionally included in the in-progress ledger.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrentLedgerSize(?string $current_ledger_size) {
-        $this->_data['current_ledger_size'] = $current_ledger_size;
-
-        return $this;
+        return $this->_set("current_ledger_size", $current_ledger_size);
     }
 
     /**
@@ -88,12 +77,11 @@ class XrpFee extends AbstractModel {
      * Set current_queue_size
      * 
      * @param string|null $current_queue_size Number of transactions currently queued for the next ledger.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrentQueueSize(?string $current_queue_size) {
-        $this->_data['current_queue_size'] = $current_queue_size;
-
-        return $this;
+        return $this->_set("current_queue_size", $current_queue_size);
     }
 
     /**
@@ -109,12 +97,11 @@ class XrpFee extends AbstractModel {
      * Set drops
      * 
      * @param \Tatum\Model\XrpFeeDrops|null $drops drops
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDrops(?\Tatum\Model\XrpFeeDrops $drops) {
-        $this->_data['drops'] = $drops;
-
-        return $this;
+        return $this->_set("drops", $drops);
     }
 
     /**
@@ -130,12 +117,11 @@ class XrpFee extends AbstractModel {
      * Set expected_ledger_size
      * 
      * @param string|null $expected_ledger_size The approximate number of transactions expected to be included in the current ledger. This is based on the number of transactions in the previous ledger.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExpectedLedgerSize(?string $expected_ledger_size) {
-        $this->_data['expected_ledger_size'] = $expected_ledger_size;
-
-        return $this;
+        return $this->_set("expected_ledger_size", $expected_ledger_size);
     }
 
     /**
@@ -151,12 +137,11 @@ class XrpFee extends AbstractModel {
      * Set ledger_current_index
      * 
      * @param float|null $ledger_current_index The Ledger Index of the current open ledger these stats describe.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerCurrentIndex(?float $ledger_current_index) {
-        $this->_data['ledger_current_index'] = $ledger_current_index;
-
-        return $this;
+        return $this->_set("ledger_current_index", $ledger_current_index);
     }
 
     /**
@@ -172,12 +157,11 @@ class XrpFee extends AbstractModel {
      * Set levels
      * 
      * @param \Tatum\Model\XrpFeeLevels|null $levels levels
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLevels(?\Tatum\Model\XrpFeeLevels $levels) {
-        $this->_data['levels'] = $levels;
-
-        return $this;
+        return $this->_set("levels", $levels);
     }
 
     /**
@@ -193,11 +177,10 @@ class XrpFee extends AbstractModel {
      * Set max_queue_size
      * 
      * @param string|null $max_queue_size The maximum number of transactions that the transaction queue can currently hold.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMaxQueueSize(?string $max_queue_size) {
-        $this->_data['max_queue_size'] = $max_queue_size;
-
-        return $this;
+        return $this->_set("max_queue_size", $max_queue_size);
     }
 }

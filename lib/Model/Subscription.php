@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Subscription Model
  */
@@ -36,9 +34,9 @@ class Subscription extends AbstractModel {
     public const TYPE_TRANSACTION_HISTORY_REPORT = 'TRANSACTION_HISTORY_REPORT';
     protected static $_name = "Subscription";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "attr" => ["attr", "object", null, "getAttr", "setAttr", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 
+        "attr" => ["attr", "object", null, "getAttr", "setAttr", null, ["r" => 0]]
     ];
 
     /**
@@ -50,25 +48,6 @@ class Subscription extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -105,16 +84,11 @@ class Subscription extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of the subscription.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("Subscription.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -130,12 +104,11 @@ class Subscription extends AbstractModel {
      * Set id
      * 
      * @param string $id ID of the subscription
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -151,11 +124,10 @@ class Subscription extends AbstractModel {
      * Set attr
      * 
      * @param object|null $attr Additional attributes based on the subscription type.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(?object $attr) {
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 }

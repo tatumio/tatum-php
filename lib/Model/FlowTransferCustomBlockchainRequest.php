@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowTransferCustomBlockchain_request Model
  */
@@ -25,13 +23,13 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowTransferCustomBlockchain_request";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null], 
-        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null], 
-        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 
+        "transaction" => ["transaction", "string", null, "getTransaction", "setTransaction", null, ["r" => 1, "nl" => 1, "xl" => 500000]], 
+        "args" => ["args", "\Tatum\Model\FlowCustomTransactionPKArgsInner[]", null, "getArgs", "setArgs", null, ["r" => 1, "c" => 1]], 
+        "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0]]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -43,62 +41,6 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account'])) {
-            $ip[] = "'account' can't be null";
-        }
-        if ((mb_strlen($this->_data['account']) > 18)) {
-            $ip[] = "'account' length must be <= 18";
-        }
-        if ((mb_strlen($this->_data['account']) < 18)) {
-            $ip[] = "'account' length must be >= 18";
-        }
-        if (is_null($this->_data['transaction'])) {
-            $ip[] = "'transaction' can't be null";
-        }
-        if ((mb_strlen($this->_data['transaction']) > 500000)) {
-            $ip[] = "'transaction' length must be <= 500000";
-        }
-        if ((mb_strlen($this->_data['transaction']) < 1)) {
-            $ip[] = "'transaction' length must be >= 1";
-        }
-        if (is_null($this->_data['args'])) {
-            $ip[] = "'args' can't be null";
-        }
-        if (is_null($this->_data['mnemonic'])) {
-            $ip[] = "'mnemonic' can't be null";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) > 500)) {
-            $ip[] = "'mnemonic' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['mnemonic']) < 1)) {
-            $ip[] = "'mnemonic' length must be >= 1";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 64)) {
-            $ip[] = "'private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 64)) {
-            $ip[] = "'private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -115,18 +57,11 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
      * Set account
      * 
      * @param string $account Blockchain account to send from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(string $account) {
-        if ((mb_strlen($account) > 18)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setAccount: $account length must be <= 18');
-        }
-        if ((mb_strlen($account) < 18)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setAccount: $account length must be >= 18');
-        }
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -142,18 +77,11 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
      * Set transaction
      * 
      * @param string $transaction Transaction string to send to the chain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransaction(string $transaction) {
-        if ((mb_strlen($transaction) > 500000)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setTransaction: $transaction length must be <= 500000');
-        }
-        if ((mb_strlen($transaction) < 1)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setTransaction: $transaction length must be >= 1');
-        }
-        $this->_data['transaction'] = $transaction;
-
-        return $this;
+        return $this->_set("transaction", $transaction);
     }
 
     /**
@@ -169,12 +97,11 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
      * Set args
      * 
      * @param \Tatum\Model\FlowCustomTransactionPKArgsInner[] $args args
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setArgs(array $args) {
-        $this->_data['args'] = $args;
-
-        return $this;
+        return $this->_set("args", $args);
     }
 
     /**
@@ -190,18 +117,11 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
      * Set mnemonic
      * 
      * @param string $mnemonic Mnemonic to generate private key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMnemonic(string $mnemonic) {
-        if ((mb_strlen($mnemonic) > 500)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setMnemonic: $mnemonic length must be <= 500');
-        }
-        if ((mb_strlen($mnemonic) < 1)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setMnemonic: $mnemonic length must be >= 1');
-        }
-        $this->_data['mnemonic'] = $mnemonic;
-
-        return $this;
+        return $this->_set("mnemonic", $mnemonic);
     }
 
     /**
@@ -217,15 +137,11 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
      * Set index
      * 
      * @param float $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index < 0)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -241,18 +157,11 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 64)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setPrivateKey: $private_key length must be <= 64');
-        }
-        if ((mb_strlen($private_key) < 64)) {
-            throw new IAE('FlowTransferCustomBlockchainRequest.setPrivateKey: $private_key length must be >= 64');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -268,11 +177,10 @@ class FlowTransferCustomBlockchainRequest extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the secret associated in signing application. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

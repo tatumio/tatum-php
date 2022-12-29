@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccountTx_marker Model
  * 
@@ -27,8 +25,8 @@ class XrpAccountTxMarker extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_marker";
     protected static $_definition = [
-        "ledger" => ["ledger", "float", null, "getLedger", "setLedger", null], 
-        "seq" => ["seq", "float", null, "getSeq", "setSeq", null]
+        "ledger" => ["ledger", "float", null, "getLedger", "setLedger", null, ["r" => 0]], 
+        "seq" => ["seq", "float", null, "getSeq", "setSeq", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class XrpAccountTxMarker extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class XrpAccountTxMarker extends AbstractModel {
      * Set ledger
      * 
      * @param float|null $ledger ledger
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedger(?float $ledger) {
-        $this->_data['ledger'] = $ledger;
-
-        return $this;
+        return $this->_set("ledger", $ledger);
     }
 
     /**
@@ -85,11 +74,10 @@ class XrpAccountTxMarker extends AbstractModel {
      * Set seq
      * 
      * @param float|null $seq seq
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSeq(?float $seq) {
-        $this->_data['seq'] = $seq;
-
-        return $this;
+        return $this->_set("seq", $seq);
     }
 }

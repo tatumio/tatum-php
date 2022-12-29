@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * WebHook Model
  */
@@ -34,16 +32,16 @@ class WebHook extends AbstractModel {
     public const TYPE_KMS_COMPLETED_TX = 'KMS_COMPLETED_TX';
     protected static $_name = "WebHook";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "subscription_id" => ["subscriptionId", "string", null, "getSubscriptionId", "setSubscriptionId", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "data" => ["data", "object", null, "getData", "setData", null], 
-        "next_time" => ["nextTime", "float", null, "getNextTime", "setNextTime", null], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "retry_count" => ["retryCount", "float", null, "getRetryCount", "setRetryCount", null], 
-        "failed" => ["failed", "bool", null, "getFailed", "setFailed", null], 
-        "response" => ["response", "\Tatum\Model\WebHookResponse", null, "getResponse", "setResponse", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 
+        "subscription_id" => ["subscriptionId", "string", null, "getSubscriptionId", "setSubscriptionId", null, ["r" => 1]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1]], 
+        "data" => ["data", "object", null, "getData", "setData", null, ["r" => 1]], 
+        "next_time" => ["nextTime", "float", null, "getNextTime", "setNextTime", null, ["r" => 0]], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 
+        "retry_count" => ["retryCount", "float", null, "getRetryCount", "setRetryCount", null, ["r" => 0]], 
+        "failed" => ["failed", "bool", null, "getFailed", "setFailed", null, ["r" => 1]], 
+        "response" => ["response", "\Tatum\Model\WebHookResponse", null, "getResponse", "setResponse", null, ["r" => 1]]
     ];
 
     /**
@@ -55,40 +53,6 @@ class WebHook extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        if (is_null($this->_data['subscription_id'])) {
-            $ip[] = "'subscription_id' can't be null";
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if (is_null($this->_data['data'])) {
-            $ip[] = "'data' can't be null";
-        }
-        if (is_null($this->_data['failed'])) {
-            $ip[] = "'failed' can't be null";
-        }
-        if (is_null($this->_data['response'])) {
-            $ip[] = "'response' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -123,16 +87,11 @@ class WebHook extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of the subscription.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("WebHook.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -148,12 +107,11 @@ class WebHook extends AbstractModel {
      * Set id
      * 
      * @param string $id ID of the WebHook
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -169,12 +127,11 @@ class WebHook extends AbstractModel {
      * Set subscription_id
      * 
      * @param string $subscription_id ID of the subscription
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSubscriptionId(string $subscription_id) {
-        $this->_data['subscription_id'] = $subscription_id;
-
-        return $this;
+        return $this->_set("subscription_id", $subscription_id);
     }
 
     /**
@@ -190,12 +147,11 @@ class WebHook extends AbstractModel {
      * Set url
      * 
      * @param string $url ID of the subscription
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -211,12 +167,11 @@ class WebHook extends AbstractModel {
      * Set data
      * 
      * @param object $data Data of webhook
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(object $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -232,12 +187,11 @@ class WebHook extends AbstractModel {
      * Set next_time
      * 
      * @param float|null $next_time Next webhook execution try time
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNextTime(?float $next_time) {
-        $this->_data['next_time'] = $next_time;
-
-        return $this;
+        return $this->_set("next_time", $next_time);
     }
 
     /**
@@ -253,12 +207,11 @@ class WebHook extends AbstractModel {
      * Set timestamp
      * 
      * @param float|null $timestamp Webhook execution time
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(?float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -274,12 +227,11 @@ class WebHook extends AbstractModel {
      * Set retry_count
      * 
      * @param float|null $retry_count Number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRetryCount(?float $retry_count) {
-        $this->_data['retry_count'] = $retry_count;
-
-        return $this;
+        return $this->_set("retry_count", $retry_count);
     }
 
     /**
@@ -295,12 +247,11 @@ class WebHook extends AbstractModel {
      * Set failed
      * 
      * @param bool $failed Flag indicating whether this webhook was successful or not
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFailed(bool $failed) {
-        $this->_data['failed'] = $failed;
-
-        return $this;
+        return $this->_set("failed", $failed);
     }
 
     /**
@@ -316,11 +267,10 @@ class WebHook extends AbstractModel {
      * Set response
      * 
      * @param \Tatum\Model\WebHookResponse $response response
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setResponse(\Tatum\Model\WebHookResponse $response) {
-        $this->_data['response'] = $response;
-
-        return $this;
+        return $this->_set("response", $response);
     }
 }

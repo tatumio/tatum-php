@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronAccount_trc10_inner Model
  * 
@@ -27,8 +25,8 @@ class TronAccountTrc10Inner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronAccount_trc10_inner";
     protected static $_definition = [
-        "key" => ["key", "string", null, "getKey", "setKey", null], 
-        "value" => ["value", "float", null, "getValue", "setValue", null]
+        "key" => ["key", "string", null, "getKey", "setKey", null, ["r" => 1]], 
+        "value" => ["value", "float", null, "getValue", "setValue", null, ["r" => 1]]
     ];
 
     /**
@@ -40,20 +38,6 @@ class TronAccountTrc10Inner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['key'])) {
-            $ip[] = "'key' can't be null";
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -70,12 +54,11 @@ class TronAccountTrc10Inner extends AbstractModel {
      * Set key
      * 
      * @param string $key Name of the TRC10 asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setKey(string $key) {
-        $this->_data['key'] = $key;
-
-        return $this;
+        return $this->_set("key", $key);
     }
 
     /**
@@ -91,11 +74,10 @@ class TronAccountTrc10Inner extends AbstractModel {
      * Set value
      * 
      * @param float $value Balance of the TRC10 asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(float $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

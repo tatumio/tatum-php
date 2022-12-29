@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronInternalTx Model
  */
@@ -25,10 +23,10 @@ class TronInternalTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronInternalTx";
     protected static $_definition = [
-        "tx_id" => ["tx_id", "string", null, "getTxId", "setTxId", null], 
-        "internal_tx_id" => ["internal_tx_id", "string", null, "getInternalTxId", "setInternalTxId", null], 
-        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress", null], 
-        "from_address" => ["from_address", "string", null, "getFromAddress", "setFromAddress", null]
+        "tx_id" => ["tx_id", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "internal_tx_id" => ["internal_tx_id", "string", null, "getInternalTxId", "setInternalTxId", null, ["r" => 1]], 
+        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress", null, ["r" => 1]], 
+        "from_address" => ["from_address", "string", null, "getFromAddress", "setFromAddress", null, ["r" => 1]]
     ];
 
     /**
@@ -40,26 +38,6 @@ class TronInternalTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['internal_tx_id'])) {
-            $ip[] = "'internal_tx_id' can't be null";
-        }
-        if (is_null($this->_data['to_address'])) {
-            $ip[] = "'to_address' can't be null";
-        }
-        if (is_null($this->_data['from_address'])) {
-            $ip[] = "'from_address' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -76,12 +54,11 @@ class TronInternalTx extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id Transaction ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -97,12 +74,11 @@ class TronInternalTx extends AbstractModel {
      * Set internal_tx_id
      * 
      * @param string $internal_tx_id Internal TX ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInternalTxId(string $internal_tx_id) {
-        $this->_data['internal_tx_id'] = $internal_tx_id;
-
-        return $this;
+        return $this->_set("internal_tx_id", $internal_tx_id);
     }
 
     /**
@@ -118,12 +94,11 @@ class TronInternalTx extends AbstractModel {
      * Set to_address
      * 
      * @param string $to_address Recipient address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToAddress(string $to_address) {
-        $this->_data['to_address'] = $to_address;
-
-        return $this;
+        return $this->_set("to_address", $to_address);
     }
 
     /**
@@ -139,11 +114,10 @@ class TronInternalTx extends AbstractModel {
      * Set from_address
      * 
      * @param string $from_address Sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAddress(string $from_address) {
-        $this->_data['from_address'] = $from_address;
-
-        return $this;
+        return $this->_set("from_address", $from_address);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TrustLineXlmBlockchain Model
  */
@@ -25,11 +23,11 @@ class TrustLineXlmBlockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TrustLineXlmBlockchain";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
-        "token" => ["token", "string", null, "getToken", "setToken", null], 
-        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null], 
-        "limit" => ["limit", "string", null, "getLimit", "setLimit", null]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "token" => ["token", "string", null, "getToken", "setToken", null, ["r" => 1, "p" => "/^[a-zA-Z0-9]{1,12}$/", "nl" => 1, "xl" => 12]], 
+        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "limit" => ["limit", "string", null, "getLimit", "setLimit", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]]
     ];
 
     /**
@@ -41,56 +39,6 @@ class TrustLineXlmBlockchain extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_account'])) {
-            $ip[] = "'from_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_account']) > 56)) {
-            $ip[] = "'from_account' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['from_account']) < 56)) {
-            $ip[] = "'from_account' length must be >= 56";
-        }
-        if (is_null($this->_data['issuer_account'])) {
-            $ip[] = "'issuer_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) > 56)) {
-            $ip[] = "'issuer_account' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) < 56)) {
-            $ip[] = "'issuer_account' length must be >= 56";
-        }
-        if (is_null($this->_data['token'])) {
-            $ip[] = "'token' can't be null";
-        }
-        if ((mb_strlen($this->_data['token']) > 12)) {
-            $ip[] = "'token' length must be <= 12";
-        }
-        if ((mb_strlen($this->_data['token']) < 1)) {
-            $ip[] = "'token' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9]{1,12}$/", $this->_data['token'])) {
-            $ip[] = "'token' must match /^[a-zA-Z0-9]{1,12}$/";
-        }
-        if (is_null($this->_data['from_secret'])) {
-            $ip[] = "'from_secret' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_secret']) > 56)) {
-            $ip[] = "'from_secret' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['from_secret']) < 56)) {
-            $ip[] = "'from_secret' length must be >= 56";
-        }
-        if (!is_null($this->_data['limit']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['limit'])) {
-            $ip[] = "'limit' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
 
@@ -107,18 +55,11 @@ class TrustLineXlmBlockchain extends AbstractModel {
      * Set from_account
      * 
      * @param string $from_account XLM account address. Must be the one used for generating deposit tags.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAccount(string $from_account) {
-        if ((mb_strlen($from_account) > 56)) {
-            throw new IAE('TrustLineXlmBlockchain.setFromAccount: $from_account length must be <= 56');
-        }
-        if ((mb_strlen($from_account) < 56)) {
-            throw new IAE('TrustLineXlmBlockchain.setFromAccount: $from_account length must be >= 56');
-        }
-        $this->_data['from_account'] = $from_account;
-
-        return $this;
+        return $this->_set("from_account", $from_account);
     }
 
     /**
@@ -134,18 +75,11 @@ class TrustLineXlmBlockchain extends AbstractModel {
      * Set issuer_account
      * 
      * @param string $issuer_account Blockchain address of the issuer of the assets to create trust line for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIssuerAccount(string $issuer_account) {
-        if ((mb_strlen($issuer_account) > 56)) {
-            throw new IAE('TrustLineXlmBlockchain.setIssuerAccount: $issuer_account length must be <= 56');
-        }
-        if ((mb_strlen($issuer_account) < 56)) {
-            throw new IAE('TrustLineXlmBlockchain.setIssuerAccount: $issuer_account length must be >= 56');
-        }
-        $this->_data['issuer_account'] = $issuer_account;
-
-        return $this;
+        return $this->_set("issuer_account", $issuer_account);
     }
 
     /**
@@ -161,21 +95,11 @@ class TrustLineXlmBlockchain extends AbstractModel {
      * Set token
      * 
      * @param string $token Asset name.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToken(string $token) {
-        if ((mb_strlen($token) > 12)) {
-            throw new IAE('TrustLineXlmBlockchain.setToken: $token length must be <= 12');
-        }
-        if ((mb_strlen($token) < 1)) {
-            throw new IAE('TrustLineXlmBlockchain.setToken: $token length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9]{1,12}$/", $token))) {
-            throw new IAE('TrustLineXlmBlockchain.setToken: $token must match /^[a-zA-Z0-9]{1,12}$/, ' . var_export($token, true) . ' given');
-        }
-        $this->_data['token'] = $token;
-
-        return $this;
+        return $this->_set("token", $token);
     }
 
     /**
@@ -191,18 +115,11 @@ class TrustLineXlmBlockchain extends AbstractModel {
      * Set from_secret
      * 
      * @param string $from_secret Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromSecret(string $from_secret) {
-        if ((mb_strlen($from_secret) > 56)) {
-            throw new IAE('TrustLineXlmBlockchain.setFromSecret: $from_secret length must be <= 56');
-        }
-        if ((mb_strlen($from_secret) < 56)) {
-            throw new IAE('TrustLineXlmBlockchain.setFromSecret: $from_secret length must be >= 56');
-        }
-        $this->_data['from_secret'] = $from_secret;
-
-        return $this;
+        return $this->_set("from_secret", $from_secret);
     }
 
     /**
@@ -218,14 +135,10 @@ class TrustLineXlmBlockchain extends AbstractModel {
      * Set limit
      * 
      * @param string|null $limit Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line. When no limit is specified, maximum amount available is permitted.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLimit(?string $limit) {
-        if (!is_null($limit) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $limit))) {
-            throw new IAE('TrustLineXlmBlockchain.setLimit: $limit must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($limit, true) . ' given');
-        }
-        $this->_data['limit'] = $limit;
-
-        return $this;
+        return $this->_set("limit", $limit);
     }
 }

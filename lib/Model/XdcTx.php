@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XdcTx Model
  */
@@ -25,24 +23,24 @@ class XdcTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XdcTx";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "gas" => ["gas", "float", null, "getGas", "setGas", null], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null], 
-        "input" => ["input", "string", null, "getInput", "setInput", null], 
-        "status" => ["status", "bool", null, "getStatus", "setStatus", null], 
-        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null], 
-        "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "logs" => ["logs", "\Tatum\Model\KlaytnTxLogsInner[]", null, "getLogs", "setLogs", null], 
-        "logs_bloom" => ["logsBloom", "string", 'DATA, 256 Bytes', "getLogsBloom", "setLogsBloom", null], 
-        "root" => ["root", "string", null, "getRoot", "setRoot", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "transaction_index" => ["transactionIndex", "float", null, "getTransactionIndex", "setTransactionIndex", null, ["r" => 0]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 0]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "gas" => ["gas", "float", null, "getGas", "setGas", null, ["r" => 0]], 
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 0]], 
+        "input" => ["input", "string", null, "getInput", "setInput", null, ["r" => 0]], 
+        "status" => ["status", "bool", null, "getStatus", "setStatus", null, ["r" => 0]], 
+        "gas_used" => ["gasUsed", "float", null, "getGasUsed", "setGasUsed", null, ["r" => 0]], 
+        "cumulative_gas_used" => ["cumulativeGasUsed", "float", null, "getCumulativeGasUsed", "setCumulativeGasUsed", null, ["r" => 0]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]], 
+        "logs" => ["logs", "\Tatum\Model\KlaytnTxLogsInner[]", null, "getLogs", "setLogs", null, ["r" => 0, "c" => 1]], 
+        "logs_bloom" => ["logsBloom", "string", 'DATA, 256 Bytes', "getLogsBloom", "setLogsBloom", null, ["r" => 0]], 
+        "root" => ["root", "string", null, "getRoot", "setRoot", null, ["r" => 0]]
     ];
 
     /**
@@ -54,14 +52,6 @@ class XdcTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -78,12 +68,11 @@ class XdcTx extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Hash of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -99,12 +88,11 @@ class XdcTx extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The number of transactions made by the sender prior to this one.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -120,12 +108,11 @@ class XdcTx extends AbstractModel {
      * Set block_hash
      * 
      * @param string|null $block_hash Hash of the block where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHash(?string $block_hash) {
-        $this->_data['block_hash'] = $block_hash;
-
-        return $this;
+        return $this->_set("block_hash", $block_hash);
     }
 
     /**
@@ -141,12 +128,11 @@ class XdcTx extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number Block number where this transaction was in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -162,12 +148,11 @@ class XdcTx extends AbstractModel {
      * Set transaction_index
      * 
      * @param float|null $transaction_index Integer of the transactions index position in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactionIndex(?float $transaction_index) {
-        $this->_data['transaction_index'] = $transaction_index;
-
-        return $this;
+        return $this->_set("transaction_index", $transaction_index);
     }
 
     /**
@@ -183,12 +168,11 @@ class XdcTx extends AbstractModel {
      * Set from
      * 
      * @param string|null $from Address of the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(?string $from) {
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -204,12 +188,11 @@ class XdcTx extends AbstractModel {
      * Set to
      * 
      * @param string|null $to Address of the receiver. 'null' when its a contract creation transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(?string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -225,12 +208,11 @@ class XdcTx extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Value transferred in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -246,12 +228,11 @@ class XdcTx extends AbstractModel {
      * Set gas
      * 
      * @param float|null $gas Gas provided by the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGas(?float $gas) {
-        $this->_data['gas'] = $gas;
-
-        return $this;
+        return $this->_set("gas", $gas);
     }
 
     /**
@@ -267,12 +248,11 @@ class XdcTx extends AbstractModel {
      * Set gas_price
      * 
      * @param string|null $gas_price Gas price provided by the sender in wei.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(?string $gas_price) {
-        $this->_data['gas_price'] = $gas_price;
-
-        return $this;
+        return $this->_set("gas_price", $gas_price);
     }
 
     /**
@@ -288,12 +268,11 @@ class XdcTx extends AbstractModel {
      * Set input
      * 
      * @param string|null $input The data sent along with the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInput(?string $input) {
-        $this->_data['input'] = $input;
-
-        return $this;
+        return $this->_set("input", $input);
     }
 
     /**
@@ -309,12 +288,11 @@ class XdcTx extends AbstractModel {
      * Set status
      * 
      * @param bool|null $status TRUE if the transaction was successful, FALSE, if the EVM reverted the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?bool $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -330,12 +308,11 @@ class XdcTx extends AbstractModel {
      * Set gas_used
      * 
      * @param float|null $gas_used The amount of gas used by this specific transaction alone.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasUsed(?float $gas_used) {
-        $this->_data['gas_used'] = $gas_used;
-
-        return $this;
+        return $this->_set("gas_used", $gas_used);
     }
 
     /**
@@ -351,12 +328,11 @@ class XdcTx extends AbstractModel {
      * Set cumulative_gas_used
      * 
      * @param float|null $cumulative_gas_used The total amount of gas used when this transaction was executed in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCumulativeGasUsed(?float $cumulative_gas_used) {
-        $this->_data['cumulative_gas_used'] = $cumulative_gas_used;
-
-        return $this;
+        return $this->_set("cumulative_gas_used", $cumulative_gas_used);
     }
 
     /**
@@ -372,12 +348,11 @@ class XdcTx extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address The contract address created, if the transaction was a contract creation, otherwise null.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -393,12 +368,11 @@ class XdcTx extends AbstractModel {
      * Set logs
      * 
      * @param \Tatum\Model\KlaytnTxLogsInner[]|null $logs Log events, that happened in this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLogs(?array $logs) {
-        $this->_data['logs'] = $logs;
-
-        return $this;
+        return $this->_set("logs", $logs);
     }
 
     /**
@@ -414,12 +388,11 @@ class XdcTx extends AbstractModel {
      * Set logs_bloom
      * 
      * @param string|null $logs_bloom Bloom filter for light clients to quickly retrieve related logs.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLogsBloom(?string $logs_bloom) {
-        $this->_data['logs_bloom'] = $logs_bloom;
-
-        return $this;
+        return $this->_set("logs_bloom", $logs_bloom);
     }
 
     /**
@@ -435,11 +408,10 @@ class XdcTx extends AbstractModel {
      * Set root
      * 
      * @param string|null $root 32 bytes of post-transaction stateroot (pre Byzantium)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRoot(?string $root) {
-        $this->_data['root'] = $root;
-
-        return $this;
+        return $this->_set("root", $root);
     }
 }

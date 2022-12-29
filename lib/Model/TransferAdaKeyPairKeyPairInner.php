@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferAdaKeyPair_keyPair_inner Model
  */
@@ -25,8 +23,8 @@ class TransferAdaKeyPairKeyPairInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferAdaKeyPair_keyPair_inner";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0, "nl" => 30, "xl" => 150]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 0, "nl" => 192, "xl" => 192]]
     ];
 
     /**
@@ -38,26 +36,6 @@ class TransferAdaKeyPairKeyPairInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (!is_null($this->_data['address']) && (mb_strlen($this->_data['address']) > 150)) {
-            $ip[] = "'address' length must be <= 150";
-        }
-        if (!is_null($this->_data['address']) && (mb_strlen($this->_data['address']) < 30)) {
-            $ip[] = "'address' length must be >= 30";
-        }
-        if (!is_null($this->_data['private_key']) && (mb_strlen($this->_data['private_key']) > 192)) {
-            $ip[] = "'private_key' length must be <= 192";
-        }
-        if (!is_null($this->_data['private_key']) && (mb_strlen($this->_data['private_key']) < 192)) {
-            $ip[] = "'private_key' length must be >= 192";
-        }
-        return $ip;
     }
 
 
@@ -74,18 +52,11 @@ class TransferAdaKeyPairKeyPairInner extends AbstractModel {
      * Set address
      * 
      * @param string|null $address Blockchain address assigned to account withdrawal is made from.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        if (!is_null($address) && (mb_strlen($address) > 150)) {
-            throw new IAE('TransferAdaKeyPairKeyPairInner.setAddress: $address length must be <= 150');
-        }
-        if (!is_null($address) && (mb_strlen($address) < 30)) {
-            throw new IAE('TransferAdaKeyPairKeyPairInner.setAddress: $address length must be >= 30');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -101,17 +72,10 @@ class TransferAdaKeyPairKeyPairInner extends AbstractModel {
      * Set private_key
      * 
      * @param string|null $private_key Private key of blockchain address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(?string $private_key) {
-        if (!is_null($private_key) && (mb_strlen($private_key) > 192)) {
-            throw new IAE('TransferAdaKeyPairKeyPairInner.setPrivateKey: $private_key length must be <= 192');
-        }
-        if (!is_null($private_key) && (mb_strlen($private_key) < 192)) {
-            throw new IAE('TransferAdaKeyPairKeyPairInner.setPrivateKey: $private_key length must be >= 192');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

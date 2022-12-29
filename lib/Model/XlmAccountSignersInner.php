@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XlmAccount_signers_inner Model
  */
@@ -28,9 +26,9 @@ class XlmAccountSignersInner extends AbstractModel {
     public const TYPE_PREAUTH_TX = 'preauth_tx';
     protected static $_name = "XlmAccount_signers_inner";
     protected static $_definition = [
-        "weight" => ["weight", "float", null, "getWeight", "setWeight", null], 
-        "key" => ["key", "string", null, "getKey", "setKey", null], 
-        "type" => ["type", "string", null, "getType", "setType", null]
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null, ["r" => 0]], 
+        "key" => ["key", "string", null, "getKey", "setKey", null, ["r" => 0]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0, "e" => 1]]
     ];
 
     /**
@@ -42,19 +40,6 @@ class XlmAccountSignersInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -83,12 +68,11 @@ class XlmAccountSignersInner extends AbstractModel {
      * Set weight
      * 
      * @param float|null $weight The numerical weight of a signer. Used to determine if a transaction meets the threshold requirements.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWeight(?float $weight) {
-        $this->_data['weight'] = $weight;
-
-        return $this;
+        return $this->_set("weight", $weight);
     }
 
     /**
@@ -104,12 +88,11 @@ class XlmAccountSignersInner extends AbstractModel {
      * Set key
      * 
      * @param string|null $key A hash of characters dependent on the signer type.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setKey(?string $key) {
-        $this->_data['key'] = $key;
-
-        return $this;
+        return $this->_set("key", $key);
     }
 
     /**
@@ -125,15 +108,10 @@ class XlmAccountSignersInner extends AbstractModel {
      * Set type
      * 
      * @param string|null $type The type of hash for this signer.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("XlmAccountSignersInner.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 }

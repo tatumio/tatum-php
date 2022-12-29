@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTx_rawData_contract_inner Model
  */
@@ -25,8 +23,8 @@ class TronTxRawDataContractInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_rawData_contract_inner";
     protected static $_definition = [
-        "parameter" => ["parameter", "\Tatum\Model\TronTxRawDataContractInnerParameter", null, "getParameter", "setParameter", null], 
-        "type" => ["type", "string", null, "getType", "setType", null]
+        "parameter" => ["parameter", "\Tatum\Model\TronTxRawDataContractInnerParameter", null, "getParameter", "setParameter", null, ["r" => 0]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class TronTxRawDataContractInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class TronTxRawDataContractInner extends AbstractModel {
      * Set parameter
      * 
      * @param \Tatum\Model\TronTxRawDataContractInnerParameter|null $parameter parameter
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParameter(?\Tatum\Model\TronTxRawDataContractInnerParameter $parameter) {
-        $this->_data['parameter'] = $parameter;
-
-        return $this;
+        return $this->_set("parameter", $parameter);
     }
 
     /**
@@ -83,11 +72,10 @@ class TronTxRawDataContractInner extends AbstractModel {
      * Set type
      * 
      * @param string|null $type Type of the Smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 }

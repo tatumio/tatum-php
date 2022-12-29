@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GenerateMarketplaceCeloKMS Model
  */
@@ -29,14 +27,14 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
     public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "GenerateMarketplaceCeloKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null], 
-        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "fee_recipient" => ["feeRecipient", "string", null, "getFeeRecipient", "setFeeRecipient", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -48,54 +46,6 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['fee_recipient'])) {
-            $ip[] = "'fee_recipient' can't be null";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) > 42)) {
-            $ip[] = "'fee_recipient' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['fee_recipient']) < 42)) {
-            $ip[] = "'fee_recipient' length must be >= 42";
-        }
-        if (is_null($this->_data['fee_currency'])) {
-            $ip[] = "'fee_currency' can't be null";
-        }
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        $value = $this->_data['fee_currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'fee_currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['marketplace_fee'])) {
-            $ip[] = "'marketplace_fee' can't be null";
-        }
-        if (($this->_data['marketplace_fee'] > 10000)) {
-            $ip[] = "'marketplace_fee' must be <= 10000";
-        }
-        if (($this->_data['marketplace_fee'] < 0)) {
-            $ip[] = "'marketplace_fee' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -134,16 +84,11 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("GenerateMarketplaceCeloKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -159,18 +104,11 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set fee_recipient
      * 
      * @param string $fee_recipient Address of the recipient of the fee for the trade.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeRecipient(string $fee_recipient) {
-        if ((mb_strlen($fee_recipient) > 42)) {
-            throw new IAE('GenerateMarketplaceCeloKMS.setFeeRecipient: $fee_recipient length must be <= 42');
-        }
-        if ((mb_strlen($fee_recipient) < 42)) {
-            throw new IAE('GenerateMarketplaceCeloKMS.setFeeRecipient: $fee_recipient length must be >= 42');
-        }
-        $this->_data['fee_recipient'] = $fee_recipient;
-
-        return $this;
+        return $this->_set("fee_recipient", $fee_recipient);
     }
 
     /**
@@ -186,16 +124,11 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set fee_currency
      * 
      * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeCurrency(string $fee_currency) {
-        $allowed = $this->getFeeCurrencyAllowableValues();
-        if (!in_array($fee_currency, $allowed, true)) {
-            throw new IAE(sprintf("GenerateMarketplaceCeloKMS.setFeeCurrency: fee_currency invalid value '%s', must be one of '%s'", $fee_currency, implode("', '", $allowed)));
-        }
-        $this->_data['fee_currency'] = $fee_currency;
-
-        return $this;
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -211,18 +144,11 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set marketplace_fee
      * 
      * @param float $marketplace_fee The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMarketplaceFee(float $marketplace_fee) {
-        if (($marketplace_fee > 10000)) {
-            throw new IAE('GenerateMarketplaceCeloKMS.setMarketplaceFee: $marketplace_fee must be <=10000');
-        }
-        if (($marketplace_fee < 0)) {
-            throw new IAE('GenerateMarketplaceCeloKMS.setMarketplaceFee: $marketplace_fee must be >=0');
-        }
-        $this->_data['marketplace_fee'] = $marketplace_fee;
-
-        return $this;
+        return $this->_set("marketplace_fee", $marketplace_fee);
     }
 
     /**
@@ -238,12 +164,11 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -259,15 +184,11 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('GenerateMarketplaceCeloKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -283,12 +204,11 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -304,11 +224,10 @@ class GenerateMarketplaceCeloKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

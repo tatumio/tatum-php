@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTx_tx_value_signatures_inner_pub_key Model
  */
@@ -25,8 +23,8 @@ class BnbTxTxValueSignaturesInnerPubKey extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTx_tx_value_signatures_inner_pub_key";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BnbTxTxValueSignaturesInnerPubKey extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BnbTxTxValueSignaturesInnerPubKey extends AbstractModel {
      * Set type
      * 
      * @param string|null $type type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -83,11 +72,10 @@ class BnbTxTxValueSignaturesInnerPubKey extends AbstractModel {
      * Set value
      * 
      * @param string|null $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

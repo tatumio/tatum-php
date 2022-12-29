@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ChainDeploySolanaSplKMS Model
  */
@@ -26,12 +24,12 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "ChainDeploySolanaSplKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null, ["r" => 1, "n" => [0], "x" => [30]]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 44, "xl" => 43]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 43]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -43,61 +41,6 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['supply'])) {
-            $ip[] = "'supply' can't be null";
-        }
-        if ((mb_strlen($this->_data['supply']) > 38)) {
-            $ip[] = "'supply' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['supply'])) {
-            $ip[] = "'supply' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['digits'])) {
-            $ip[] = "'digits' can't be null";
-        }
-        if (($this->_data['digits'] > 30)) {
-            $ip[] = "'digits' must be <= 30";
-        }
-        if (($this->_data['digits'] < 0)) {
-            $ip[] = "'digits' must be >= 0";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 43)) {
-            $ip[] = "'address' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['address']) < 44)) {
-            $ip[] = "'address' length must be >= 44";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 43)) {
-            $ip[] = "'from' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['from']) < 44)) {
-            $ip[] = "'from' length must be >= 44";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -124,16 +67,11 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("ChainDeploySolanaSplKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -149,18 +87,11 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      * Set supply
      * 
      * @param string $supply Initial supply of SPL token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(string $supply) {
-        if ((mb_strlen($supply) > 38)) {
-            throw new IAE('ChainDeploySolanaSplKMS.setSupply: $supply length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $supply))) {
-            throw new IAE('ChainDeploySolanaSplKMS.setSupply: $supply must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($supply, true) . ' given');
-        }
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -176,18 +107,11 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      * Set digits
      * 
      * @param float $digits Number of decimal points
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDigits(float $digits) {
-        if (($digits > 30)) {
-            throw new IAE('ChainDeploySolanaSplKMS.setDigits: $digits must be <=30');
-        }
-        if (($digits < 0)) {
-            throw new IAE('ChainDeploySolanaSplKMS.setDigits: $digits must be >=0');
-        }
-        $this->_data['digits'] = $digits;
-
-        return $this;
+        return $this->_set("digits", $digits);
     }
 
     /**
@@ -203,18 +127,11 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      * Set address
      * 
      * @param string $address Address on Solana blockchain, where all created SPL tokens will be transferred.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 43)) {
-            throw new IAE('ChainDeploySolanaSplKMS.setAddress: $address length must be <= 43');
-        }
-        if ((mb_strlen($address) < 44)) {
-            throw new IAE('ChainDeploySolanaSplKMS.setAddress: $address length must be >= 44');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -230,18 +147,11 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from Address on Solana blockchain, from which the fee for the deployment of SPL will be paid.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 43)) {
-            throw new IAE('ChainDeploySolanaSplKMS.setFrom: $from length must be <= 43');
-        }
-        if ((mb_strlen($from) < 44)) {
-            throw new IAE('ChainDeploySolanaSplKMS.setFrom: $from length must be >= 44');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -257,11 +167,10 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

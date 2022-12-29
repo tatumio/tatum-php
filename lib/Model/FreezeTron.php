@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FreezeTron Model
  */
@@ -27,11 +25,11 @@ class FreezeTron extends AbstractModel {
     public const RESOURCE_ENERGY = 'ENERGY';
     protected static $_name = "FreezeTron";
     protected static $_definition = [
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
-        "duration" => ["duration", "float", null, "getDuration", "setDuration", null], 
-        "resource" => ["resource", "string", null, "getResource", "setResource", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "duration" => ["duration", "float", null, "getDuration", "setDuration", null, ["r" => 1, "n" => [3]]], 
+        "resource" => ["resource", "string", null, "getResource", "setResource", null, ["r" => 1, "e" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]]
     ];
 
     /**
@@ -43,52 +41,6 @@ class FreezeTron extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['receiver'])) {
-            $ip[] = "'receiver' can't be null";
-        }
-        if ((mb_strlen($this->_data['receiver']) > 34)) {
-            $ip[] = "'receiver' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['receiver']) < 34)) {
-            $ip[] = "'receiver' length must be >= 34";
-        }
-        if (is_null($this->_data['duration'])) {
-            $ip[] = "'duration' can't be null";
-        }
-        if (($this->_data['duration'] < 3)) {
-            $ip[] = "'duration' must be >= 3";
-        }
-        if (is_null($this->_data['resource'])) {
-            $ip[] = "'resource' can't be null";
-        }
-        $allowed = $this->getResourceAllowableValues();
-        $value = $this->_data['resource'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'resource' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
     /**
@@ -116,18 +68,11 @@ class FreezeTron extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of the address, from which the TRX will be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('FreezeTron.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('FreezeTron.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -143,18 +88,11 @@ class FreezeTron extends AbstractModel {
      * Set receiver
      * 
      * @param string $receiver Recipient address of frozen BANDWIDTH or ENERGY.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReceiver(string $receiver) {
-        if ((mb_strlen($receiver) > 34)) {
-            throw new IAE('FreezeTron.setReceiver: $receiver length must be <= 34');
-        }
-        if ((mb_strlen($receiver) < 34)) {
-            throw new IAE('FreezeTron.setReceiver: $receiver length must be >= 34');
-        }
-        $this->_data['receiver'] = $receiver;
-
-        return $this;
+        return $this->_set("receiver", $receiver);
     }
 
     /**
@@ -170,15 +108,11 @@ class FreezeTron extends AbstractModel {
      * Set duration
      * 
      * @param float $duration Duration of frozen funds, in days.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDuration(float $duration) {
-        if (($duration < 3)) {
-            throw new IAE('FreezeTron.setDuration: $duration must be >=3');
-        }
-        $this->_data['duration'] = $duration;
-
-        return $this;
+        return $this->_set("duration", $duration);
     }
 
     /**
@@ -194,16 +128,11 @@ class FreezeTron extends AbstractModel {
      * Set resource
      * 
      * @param string $resource Resource to obtain, BANDWIDTH or ENERGY.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setResource(string $resource) {
-        $allowed = $this->getResourceAllowableValues();
-        if (!in_array($resource, $allowed, true)) {
-            throw new IAE(sprintf("FreezeTron.setResource: resource invalid value '%s', must be one of '%s'", $resource, implode("', '", $allowed)));
-        }
-        $this->_data['resource'] = $resource;
-
-        return $this;
+        return $this->_set("resource", $resource);
     }
 
     /**
@@ -219,14 +148,10 @@ class FreezeTron extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be frozen in TRX.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('FreezeTron.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

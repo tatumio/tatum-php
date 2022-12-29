@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Consumption Model
  */
@@ -25,8 +23,8 @@ class Consumption extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Consumption";
     protected static $_definition = [
-        "day" => ["day", "string", null, "getDay", "setDay", null], 
-        "usage" => ["usage", "float", null, "getUsage", "setUsage", null]
+        "day" => ["day", "string", null, "getDay", "setDay", null, ["r" => 0]], 
+        "usage" => ["usage", "float", null, "getUsage", "setUsage", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class Consumption extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class Consumption extends AbstractModel {
      * Set day
      * 
      * @param string|null $day The date in the MM/DD/YYYY format
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDay(?string $day) {
-        $this->_data['day'] = $day;
-
-        return $this;
+        return $this->_set("day", $day);
     }
 
     /**
@@ -83,11 +72,10 @@ class Consumption extends AbstractModel {
      * Set usage
      * 
      * @param float|null $usage The number of credits used on the specified day
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUsage(?float $usage) {
-        $this->_data['usage'] = $usage;
-
-        return $this;
+        return $this->_set("usage", $usage);
     }
 }

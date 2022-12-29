@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * GeneratedAddressBsc Model
  */
@@ -25,7 +23,7 @@ class GeneratedAddressBsc extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "GeneratedAddressBsc";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class GeneratedAddressBsc extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class GeneratedAddressBsc extends AbstractModel {
      * Set address
      * 
      * @param string|null $address BSC address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 }

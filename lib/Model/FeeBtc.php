@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FeeBtc Model
  */
@@ -25,9 +23,9 @@ class FeeBtc extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FeeBtc";
     protected static $_definition = [
-        "fast" => ["fast", "string", null, "getFast", "setFast", null], 
-        "medium" => ["medium", "string", null, "getMedium", "setMedium", null], 
-        "slow" => ["slow", "string", null, "getSlow", "setSlow", null]
+        "fast" => ["fast", "string", null, "getFast", "setFast", null, ["r" => 1]], 
+        "medium" => ["medium", "string", null, "getMedium", "setMedium", null, ["r" => 1]], 
+        "slow" => ["slow", "string", null, "getSlow", "setSlow", null, ["r" => 1]]
     ];
 
     /**
@@ -39,23 +37,6 @@ class FeeBtc extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['fast'])) {
-            $ip[] = "'fast' can't be null";
-        }
-        if (is_null($this->_data['medium'])) {
-            $ip[] = "'medium' can't be null";
-        }
-        if (is_null($this->_data['slow'])) {
-            $ip[] = "'slow' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -72,12 +53,11 @@ class FeeBtc extends AbstractModel {
      * Set fast
      * 
      * @param string $fast Transaction fee in BTC/LTC to be paid, if transaction should be included in next 1-2 blocks.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFast(string $fast) {
-        $this->_data['fast'] = $fast;
-
-        return $this;
+        return $this->_set("fast", $fast);
     }
 
     /**
@@ -93,12 +73,11 @@ class FeeBtc extends AbstractModel {
      * Set medium
      * 
      * @param string $medium Transaction fee in BTC/LTC to be paid, if transaction should be included in next 5-6 blocks.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMedium(string $medium) {
-        $this->_data['medium'] = $medium;
-
-        return $this;
+        return $this->_set("medium", $medium);
     }
 
     /**
@@ -114,11 +93,10 @@ class FeeBtc extends AbstractModel {
      * Set slow
      * 
      * @param string $slow Transaction fee in BTC/LTC to be paid, if transaction should be included in next 7+ blocks.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSlow(string $slow) {
-        $this->_data['slow'] = $slow;
-
-        return $this;
+        return $this->_set("slow", $slow);
     }
 }

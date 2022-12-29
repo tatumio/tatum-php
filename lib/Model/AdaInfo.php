@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaInfo Model
  */
@@ -25,8 +23,8 @@ class AdaInfo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaInfo";
     protected static $_definition = [
-        "testnet" => ["testnet", "string", null, "getTestnet", "setTestnet", null], 
-        "tip" => ["tip", "\Tatum\Model\AdaInfoTip", null, "getTip", "setTip", null]
+        "testnet" => ["testnet", "string", null, "getTestnet", "setTestnet", null, ["r" => 0]], 
+        "tip" => ["tip", "\Tatum\Model\AdaInfoTip", null, "getTip", "setTip", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class AdaInfo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class AdaInfo extends AbstractModel {
      * Set testnet
      * 
      * @param string|null $testnet Chain of the blockchain, main or test.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTestnet(?string $testnet) {
-        $this->_data['testnet'] = $testnet;
-
-        return $this;
+        return $this->_set("testnet", $testnet);
     }
 
     /**
@@ -83,11 +72,10 @@ class AdaInfo extends AbstractModel {
      * Set tip
      * 
      * @param \Tatum\Model\AdaInfoTip|null $tip tip
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTip(?\Tatum\Model\AdaInfoTip $tip) {
-        $this->_data['tip'] = $tip;
-
-        return $this;
+        return $this->_set("tip", $tip);
     }
 }

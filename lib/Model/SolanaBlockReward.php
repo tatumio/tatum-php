@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaBlockReward Model
  */
@@ -25,11 +23,11 @@ class SolanaBlockReward extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaBlockReward";
     protected static $_definition = [
-        "commission" => ["commission", "string", 'nullable', "getCommission", "setCommission", null], 
-        "lamports" => ["lamports", "float", null, "getLamports", "setLamports", null], 
-        "post_balance" => ["postBalance", "float", null, "getPostBalance", "setPostBalance", null], 
-        "pubkey" => ["pubkey", "string", null, "getPubkey", "setPubkey", null], 
-        "reward_type" => ["rewardType", "string", null, "getRewardType", "setRewardType", null]
+        "commission" => ["commission", "string", 'nullable', "getCommission", "setCommission", null, ["r" => 0]], 
+        "lamports" => ["lamports", "float", null, "getLamports", "setLamports", null, ["r" => 0]], 
+        "post_balance" => ["postBalance", "float", null, "getPostBalance", "setPostBalance", null, ["r" => 0]], 
+        "pubkey" => ["pubkey", "string", null, "getPubkey", "setPubkey", null, ["r" => 0]], 
+        "reward_type" => ["rewardType", "string", null, "getRewardType", "setRewardType", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class SolanaBlockReward extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class SolanaBlockReward extends AbstractModel {
      * Set commission
      * 
      * @param string|null $commission commission
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCommission(?string $commission) {
-        $this->_data['commission'] = $commission;
-
-        return $this;
+        return $this->_set("commission", $commission);
     }
 
     /**
@@ -86,12 +75,11 @@ class SolanaBlockReward extends AbstractModel {
      * Set lamports
      * 
      * @param float|null $lamports lamports
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLamports(?float $lamports) {
-        $this->_data['lamports'] = $lamports;
-
-        return $this;
+        return $this->_set("lamports", $lamports);
     }
 
     /**
@@ -107,12 +95,11 @@ class SolanaBlockReward extends AbstractModel {
      * Set post_balance
      * 
      * @param float|null $post_balance post_balance
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPostBalance(?float $post_balance) {
-        $this->_data['post_balance'] = $post_balance;
-
-        return $this;
+        return $this->_set("post_balance", $post_balance);
     }
 
     /**
@@ -128,12 +115,11 @@ class SolanaBlockReward extends AbstractModel {
      * Set pubkey
      * 
      * @param string|null $pubkey pubkey
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPubkey(?string $pubkey) {
-        $this->_data['pubkey'] = $pubkey;
-
-        return $this;
+        return $this->_set("pubkey", $pubkey);
     }
 
     /**
@@ -149,11 +135,10 @@ class SolanaBlockReward extends AbstractModel {
      * Set reward_type
      * 
      * @param string|null $reward_type reward_type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRewardType(?string $reward_type) {
-        $this->_data['reward_type'] = $reward_type;
-
-        return $this;
+        return $this->_set("reward_type", $reward_type);
     }
 }

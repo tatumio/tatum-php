@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowEvent_payload_value Model
  */
@@ -25,8 +23,8 @@ class FlowEventPayloadValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowEvent_payload_value";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "fields" => ["fields", "\Tatum\Model\FlowEventPayloadValueFieldsInner[]", null, "getFields", "setFields", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "fields" => ["fields", "\Tatum\Model\FlowEventPayloadValueFieldsInner[]", null, "getFields", "setFields", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class FlowEventPayloadValue extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class FlowEventPayloadValue extends AbstractModel {
      * Set id
      * 
      * @param string|null $id Event type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -83,11 +72,10 @@ class FlowEventPayloadValue extends AbstractModel {
      * Set fields
      * 
      * @param \Tatum\Model\FlowEventPayloadValueFieldsInner[]|null $fields fields
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFields(?array $fields) {
-        $this->_data['fields'] = $fields;
-
-        return $this;
+        return $this->_set("fields", $fields);
     }
 }

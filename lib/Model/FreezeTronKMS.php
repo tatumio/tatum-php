@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FreezeTronKMS Model
  */
@@ -27,13 +25,13 @@ class FreezeTronKMS extends AbstractModel {
     public const RESOURCE_ENERGY = 'ENERGY';
     protected static $_name = "FreezeTronKMS";
     protected static $_definition = [
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null], 
-        "duration" => ["duration", "float", null, "getDuration", "setDuration", null], 
-        "resource" => ["resource", "string", null, "getResource", "setResource", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "duration" => ["duration", "float", null, "getDuration", "setDuration", null, ["r" => 1, "n" => [3]]], 
+        "resource" => ["resource", "string", null, "getResource", "setResource", null, ["r" => 1, "e" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]]
     ];
 
     /**
@@ -45,58 +43,6 @@ class FreezeTronKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 34)) {
-            $ip[] = "'from' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['from']) < 34)) {
-            $ip[] = "'from' length must be >= 34";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['receiver'])) {
-            $ip[] = "'receiver' can't be null";
-        }
-        if ((mb_strlen($this->_data['receiver']) > 34)) {
-            $ip[] = "'receiver' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['receiver']) < 34)) {
-            $ip[] = "'receiver' length must be >= 34";
-        }
-        if (is_null($this->_data['duration'])) {
-            $ip[] = "'duration' can't be null";
-        }
-        if (($this->_data['duration'] < 3)) {
-            $ip[] = "'duration' must be >= 3";
-        }
-        if (is_null($this->_data['resource'])) {
-            $ip[] = "'resource' can't be null";
-        }
-        $allowed = $this->getResourceAllowableValues();
-        $value = $this->_data['resource'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'resource' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
     /**
@@ -124,18 +70,11 @@ class FreezeTronKMS extends AbstractModel {
      * Set from
      * 
      * @param string $from Sender address of TRON account in Base58 format.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 34)) {
-            throw new IAE('FreezeTronKMS.setFrom: $from length must be <= 34');
-        }
-        if ((mb_strlen($from) < 34)) {
-            throw new IAE('FreezeTronKMS.setFrom: $from length must be >= 34');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -151,12 +90,11 @@ class FreezeTronKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -172,15 +110,11 @@ class FreezeTronKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('FreezeTronKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -196,18 +130,11 @@ class FreezeTronKMS extends AbstractModel {
      * Set receiver
      * 
      * @param string $receiver Recipient address of frozen BANDWIDTH or ENERGY.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReceiver(string $receiver) {
-        if ((mb_strlen($receiver) > 34)) {
-            throw new IAE('FreezeTronKMS.setReceiver: $receiver length must be <= 34');
-        }
-        if ((mb_strlen($receiver) < 34)) {
-            throw new IAE('FreezeTronKMS.setReceiver: $receiver length must be >= 34');
-        }
-        $this->_data['receiver'] = $receiver;
-
-        return $this;
+        return $this->_set("receiver", $receiver);
     }
 
     /**
@@ -223,15 +150,11 @@ class FreezeTronKMS extends AbstractModel {
      * Set duration
      * 
      * @param float $duration Duration of frozen funds, in days.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDuration(float $duration) {
-        if (($duration < 3)) {
-            throw new IAE('FreezeTronKMS.setDuration: $duration must be >=3');
-        }
-        $this->_data['duration'] = $duration;
-
-        return $this;
+        return $this->_set("duration", $duration);
     }
 
     /**
@@ -247,16 +170,11 @@ class FreezeTronKMS extends AbstractModel {
      * Set resource
      * 
      * @param string $resource Resource to obtain, BANDWIDTH or ENERGY.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setResource(string $resource) {
-        $allowed = $this->getResourceAllowableValues();
-        if (!in_array($resource, $allowed, true)) {
-            throw new IAE(sprintf("FreezeTronKMS.setResource: resource invalid value '%s', must be one of '%s'", $resource, implode("', '", $allowed)));
-        }
-        $this->_data['resource'] = $resource;
-
-        return $this;
+        return $this->_set("resource", $resource);
     }
 
     /**
@@ -272,14 +190,10 @@ class FreezeTronKMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be frozen in TRX.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('FreezeTronKMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

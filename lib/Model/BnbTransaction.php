@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTransaction Model
  */
@@ -25,19 +23,19 @@ class BnbTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTransaction";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
-        "tx_type" => ["txType", "string", null, "getTxType", "setTxType", null], 
-        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp", null], 
-        "from_addr" => ["fromAddr", "string", null, "getFromAddr", "setFromAddr", null], 
-        "to_addr" => ["toAddr", "string", null, "getToAddr", "setToAddr", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "tx_asset" => ["txAsset", "string", null, "getTxAsset", "setTxAsset", null], 
-        "tx_fee" => ["txFee", "string", null, "getTxFee", "setTxFee", null], 
-        "code" => ["code", "float", null, "getCode", "setCode", null], 
-        "memo" => ["memo", "string", null, "getMemo", "setMemo", null], 
-        "source" => ["source", "float", null, "getSource", "setSource", null], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 0]], 
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null, ["r" => 0]], 
+        "tx_type" => ["txType", "string", null, "getTxType", "setTxType", null, ["r" => 0]], 
+        "time_stamp" => ["timeStamp", "string", null, "getTimeStamp", "setTimeStamp", null, ["r" => 0]], 
+        "from_addr" => ["fromAddr", "string", null, "getFromAddr", "setFromAddr", null, ["r" => 0]], 
+        "to_addr" => ["toAddr", "string", null, "getToAddr", "setToAddr", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "tx_asset" => ["txAsset", "string", null, "getTxAsset", "setTxAsset", null, ["r" => 0]], 
+        "tx_fee" => ["txFee", "string", null, "getTxFee", "setTxFee", null, ["r" => 0]], 
+        "code" => ["code", "float", null, "getCode", "setCode", null, ["r" => 0]], 
+        "memo" => ["memo", "string", null, "getMemo", "setMemo", null, ["r" => 0]], 
+        "source" => ["source", "float", null, "getSource", "setSource", null, ["r" => 0]], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]]
     ];
 
     /**
@@ -49,14 +47,6 @@ class BnbTransaction extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -73,12 +63,11 @@ class BnbTransaction extends AbstractModel {
      * Set tx_hash
      * 
      * @param string|null $tx_hash tx_hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxHash(?string $tx_hash) {
-        $this->_data['tx_hash'] = $tx_hash;
-
-        return $this;
+        return $this->_set("tx_hash", $tx_hash);
     }
 
     /**
@@ -94,12 +83,11 @@ class BnbTransaction extends AbstractModel {
      * Set block_height
      * 
      * @param float|null $block_height block_height
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHeight(?float $block_height) {
-        $this->_data['block_height'] = $block_height;
-
-        return $this;
+        return $this->_set("block_height", $block_height);
     }
 
     /**
@@ -115,12 +103,11 @@ class BnbTransaction extends AbstractModel {
      * Set tx_type
      * 
      * @param string|null $tx_type tx_type
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxType(?string $tx_type) {
-        $this->_data['tx_type'] = $tx_type;
-
-        return $this;
+        return $this->_set("tx_type", $tx_type);
     }
 
     /**
@@ -136,12 +123,11 @@ class BnbTransaction extends AbstractModel {
      * Set time_stamp
      * 
      * @param string|null $time_stamp time_stamp
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimeStamp(?string $time_stamp) {
-        $this->_data['time_stamp'] = $time_stamp;
-
-        return $this;
+        return $this->_set("time_stamp", $time_stamp);
     }
 
     /**
@@ -157,12 +143,11 @@ class BnbTransaction extends AbstractModel {
      * Set from_addr
      * 
      * @param string|null $from_addr from_addr
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAddr(?string $from_addr) {
-        $this->_data['from_addr'] = $from_addr;
-
-        return $this;
+        return $this->_set("from_addr", $from_addr);
     }
 
     /**
@@ -178,12 +163,11 @@ class BnbTransaction extends AbstractModel {
      * Set to_addr
      * 
      * @param string|null $to_addr to_addr
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToAddr(?string $to_addr) {
-        $this->_data['to_addr'] = $to_addr;
-
-        return $this;
+        return $this->_set("to_addr", $to_addr);
     }
 
     /**
@@ -199,12 +183,11 @@ class BnbTransaction extends AbstractModel {
      * Set value
      * 
      * @param string|null $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -220,12 +203,11 @@ class BnbTransaction extends AbstractModel {
      * Set tx_asset
      * 
      * @param string|null $tx_asset tx_asset
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxAsset(?string $tx_asset) {
-        $this->_data['tx_asset'] = $tx_asset;
-
-        return $this;
+        return $this->_set("tx_asset", $tx_asset);
     }
 
     /**
@@ -241,12 +223,11 @@ class BnbTransaction extends AbstractModel {
      * Set tx_fee
      * 
      * @param string|null $tx_fee tx_fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxFee(?string $tx_fee) {
-        $this->_data['tx_fee'] = $tx_fee;
-
-        return $this;
+        return $this->_set("tx_fee", $tx_fee);
     }
 
     /**
@@ -262,12 +243,11 @@ class BnbTransaction extends AbstractModel {
      * Set code
      * 
      * @param float|null $code code
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCode(?float $code) {
-        $this->_data['code'] = $code;
-
-        return $this;
+        return $this->_set("code", $code);
     }
 
     /**
@@ -283,12 +263,11 @@ class BnbTransaction extends AbstractModel {
      * Set memo
      * 
      * @param string|null $memo memo
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMemo(?string $memo) {
-        $this->_data['memo'] = $memo;
-
-        return $this;
+        return $this->_set("memo", $memo);
     }
 
     /**
@@ -304,12 +283,11 @@ class BnbTransaction extends AbstractModel {
      * Set source
      * 
      * @param float|null $source source
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSource(?float $source) {
-        $this->_data['source'] = $source;
-
-        return $this;
+        return $this->_set("source", $source);
     }
 
     /**
@@ -325,11 +303,10 @@ class BnbTransaction extends AbstractModel {
      * Set sequence
      * 
      * @param float|null $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 }

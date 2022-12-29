@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTx_rawData_contract_inner_parameter_value Model
  */
@@ -25,11 +23,11 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_rawData_contract_inner_parameter_value";
     protected static $_definition = [
-        "amount" => ["amount", "float", null, "getAmount", "setAmount", null], 
-        "owner_address" => ["owner_address", "string", null, "getOwnerAddress", "setOwnerAddress", null], 
-        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress", null], 
-        "owner_address_base58" => ["ownerAddressBase58", "string", null, "getOwnerAddressBase58", "setOwnerAddressBase58", null], 
-        "to_address_base58" => ["toAddressBase58", "string", null, "getToAddressBase58", "setToAddressBase58", null]
+        "amount" => ["amount", "float", null, "getAmount", "setAmount", null, ["r" => 0]], 
+        "owner_address" => ["owner_address", "string", null, "getOwnerAddress", "setOwnerAddress", null, ["r" => 0]], 
+        "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress", null, ["r" => 0]], 
+        "owner_address_base58" => ["ownerAddressBase58", "string", null, "getOwnerAddressBase58", "setOwnerAddressBase58", null, ["r" => 0]], 
+        "to_address_base58" => ["toAddressBase58", "string", null, "getToAddressBase58", "setToAddressBase58", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
      * Set amount
      * 
      * @param float|null $amount The amount transferred within the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?float $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -86,12 +75,11 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
      * Set owner_address
      * 
      * @param string|null $owner_address Address of the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwnerAddress(?string $owner_address) {
-        $this->_data['owner_address'] = $owner_address;
-
-        return $this;
+        return $this->_set("owner_address", $owner_address);
     }
 
     /**
@@ -107,12 +95,11 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
      * Set to_address
      * 
      * @param string|null $to_address Address of the recipient.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToAddress(?string $to_address) {
-        $this->_data['to_address'] = $to_address;
-
-        return $this;
+        return $this->_set("to_address", $to_address);
     }
 
     /**
@@ -128,12 +115,11 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
      * Set owner_address_base58
      * 
      * @param string|null $owner_address_base58 Address of the sender in Base58 encoding.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwnerAddressBase58(?string $owner_address_base58) {
-        $this->_data['owner_address_base58'] = $owner_address_base58;
-
-        return $this;
+        return $this->_set("owner_address_base58", $owner_address_base58);
     }
 
     /**
@@ -149,11 +135,10 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
      * Set to_address_base58
      * 
      * @param string|null $to_address_base58 Address of the recipient in Base58 encoding.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToAddressBase58(?string $to_address_base58) {
-        $this->_data['to_address_base58'] = $to_address_base58;
-
-        return $this;
+        return $this->_set("to_address_base58", $to_address_base58);
     }
 }

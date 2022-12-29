@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferBtcKeyPair Model
  */
@@ -25,16 +23,16 @@ class TransferBtcKeyPair extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferBtcKeyPair";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null], 
-        "key_pair" => ["keyPair", "\Tatum\Model\TransferLtcKeyPairKeyPairInner[]", null, "getKeyPair", "setKeyPair", null], 
-        "attr" => ["attr", "string", null, "getAttr", "setAttr", null], 
-        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null], 
-        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 1, "xl" => 10000]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
+        "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "multiple_amounts" => ["multipleAmounts", "string[]", null, "getMultipleAmounts", "setMultipleAmounts", null, ["r" => 0, "c" => 1]], 
+        "key_pair" => ["keyPair", "\Tatum\Model\TransferLtcKeyPairKeyPairInner[]", null, "getKeyPair", "setKeyPair", null, ["r" => 1, "c" => 1]], 
+        "attr" => ["attr", "string", null, "getAttr", "setAttr", null, ["r" => 1, "nl" => 1, "xl" => 256]], 
+        "payment_id" => ["paymentId", "string", null, "getPaymentId", "setPaymentId", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "sender_note" => ["senderNote", "string", null, "getSenderNote", "setSenderNote", null, ["r" => 0, "nl" => 1, "xl" => 500]]
     ];
 
     /**
@@ -46,68 +44,6 @@ class TransferBtcKeyPair extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['sender_account_id'])) {
-            $ip[] = "'sender_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) > 24)) {
-            $ip[] = "'sender_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
-            $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if ((mb_strlen($this->_data['address']) > 10000)) {
-            $ip[] = "'address' length must be <= 10000";
-        }
-        if ((mb_strlen($this->_data['address']) < 1)) {
-            $ip[] = "'address' length must be >= 1";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if ((mb_strlen($this->_data['amount']) > 38)) {
-            $ip[] = "'amount' length must be <= 38";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (!is_null($this->_data['fee']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['fee'])) {
-            $ip[] = "'fee' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['key_pair'])) {
-            $ip[] = "'key_pair' can't be null";
-        }
-        if (is_null($this->_data['attr'])) {
-            $ip[] = "'attr' can't be null";
-        }
-        if ((mb_strlen($this->_data['attr']) > 256)) {
-            $ip[] = "'attr' length must be <= 256";
-        }
-        if ((mb_strlen($this->_data['attr']) < 1)) {
-            $ip[] = "'attr' length must be >= 1";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) > 100)) {
-            $ip[] = "'payment_id' length must be <= 100";
-        }
-        if (!is_null($this->_data['payment_id']) && (mb_strlen($this->_data['payment_id']) < 1)) {
-            $ip[] = "'payment_id' length must be >= 1";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) > 500)) {
-            $ip[] = "'sender_note' length must be <= 500";
-        }
-        if (!is_null($this->_data['sender_note']) && (mb_strlen($this->_data['sender_note']) < 1)) {
-            $ip[] = "'sender_note' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -124,18 +60,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set sender_account_id
      * 
      * @param string $sender_account_id Sender account ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderAccountId(string $sender_account_id) {
-        if ((mb_strlen($sender_account_id) > 24)) {
-            throw new IAE('TransferBtcKeyPair.setSenderAccountId: $sender_account_id length must be <= 24');
-        }
-        if ((mb_strlen($sender_account_id) < 24)) {
-            throw new IAE('TransferBtcKeyPair.setSenderAccountId: $sender_account_id length must be >= 24');
-        }
-        $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
+        return $this->_set("sender_account_id", $sender_account_id);
     }
 
     /**
@@ -151,18 +80,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set address
      * 
      * @param string $address Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        if ((mb_strlen($address) > 10000)) {
-            throw new IAE('TransferBtcKeyPair.setAddress: $address length must be <= 10000');
-        }
-        if ((mb_strlen($address) < 1)) {
-            throw new IAE('TransferBtcKeyPair.setAddress: $address length must be >= 1');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -178,18 +100,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be withdrawn to blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((mb_strlen($amount) > 38)) {
-            throw new IAE('TransferBtcKeyPair.setAmount: $amount length must be <= 38');
-        }
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferBtcKeyPair.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -205,12 +120,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set compliant
      * 
      * @param bool|null $compliant Compliance check, if withdrawal is not compliant, it will not be processed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCompliant(?bool $compliant) {
-        $this->_data['compliant'] = $compliant;
-
-        return $this;
+        return $this->_set("compliant", $compliant);
     }
 
     /**
@@ -226,15 +140,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 0.0005 BTC is used. Minimum fee is 0.00001 BTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        if (!is_null($fee) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $fee))) {
-            throw new IAE('TransferBtcKeyPair.setFee: $fee must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($fee, true) . ' given');
-        }
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -250,12 +160,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set multiple_amounts
      * 
      * @param string[]|null $multiple_amounts For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMultipleAmounts(?array $multiple_amounts) {
-        $this->_data['multiple_amounts'] = $multiple_amounts;
-
-        return $this;
+        return $this->_set("multiple_amounts", $multiple_amounts);
     }
 
     /**
@@ -271,12 +180,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set key_pair
      * 
      * @param \Tatum\Model\TransferLtcKeyPairKeyPairInner[] $key_pair Array of assigned blockchain addresses with their private keys. Either mnemonic, keyPair or signature Id must be present - depends on the type of account and xpub. Tatum KMS does not support keyPair type of off-chain transaction, only mnemonic based.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setKeyPair(array $key_pair) {
-        $this->_data['key_pair'] = $key_pair;
-
-        return $this;
+        return $this->_set("key_pair", $key_pair);
     }
 
     /**
@@ -292,18 +200,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set attr
      * 
      * @param string $attr Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr must be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAttr(string $attr) {
-        if ((mb_strlen($attr) > 256)) {
-            throw new IAE('TransferBtcKeyPair.setAttr: $attr length must be <= 256');
-        }
-        if ((mb_strlen($attr) < 1)) {
-            throw new IAE('TransferBtcKeyPair.setAttr: $attr length must be >= 1');
-        }
-        $this->_data['attr'] = $attr;
-
-        return $this;
+        return $this->_set("attr", $attr);
     }
 
     /**
@@ -319,18 +220,11 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set payment_id
      * 
      * @param string|null $payment_id Identifier of the payment, shown for created Transaction within Tatum sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentId(?string $payment_id) {
-        if (!is_null($payment_id) && (mb_strlen($payment_id) > 100)) {
-            throw new IAE('TransferBtcKeyPair.setPaymentId: $payment_id length must be <= 100');
-        }
-        if (!is_null($payment_id) && (mb_strlen($payment_id) < 1)) {
-            throw new IAE('TransferBtcKeyPair.setPaymentId: $payment_id length must be >= 1');
-        }
-        $this->_data['payment_id'] = $payment_id;
-
-        return $this;
+        return $this->_set("payment_id", $payment_id);
     }
 
     /**
@@ -346,17 +240,10 @@ class TransferBtcKeyPair extends AbstractModel {
      * Set sender_note
      * 
      * @param string|null $sender_note Note visible to owner of withdrawing account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderNote(?string $sender_note) {
-        if (!is_null($sender_note) && (mb_strlen($sender_note) > 500)) {
-            throw new IAE('TransferBtcKeyPair.setSenderNote: $sender_note length must be <= 500');
-        }
-        if (!is_null($sender_note) && (mb_strlen($sender_note) < 1)) {
-            throw new IAE('TransferBtcKeyPair.setSenderNote: $sender_note length must be >= 1');
-        }
-        $this->_data['sender_note'] = $sender_note;
-
-        return $this;
+        return $this->_set("sender_note", $sender_note);
     }
 }

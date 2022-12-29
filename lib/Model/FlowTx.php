@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowTx Model
  */
@@ -25,18 +23,18 @@ class FlowTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowTx";
     protected static $_definition = [
-        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId", null], 
-        "script" => ["script", "string", null, "getScript", "setScript", null], 
-        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs", null], 
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null], 
-        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey", null], 
-        "payer" => ["payer", "string", null, "getPayer", "setPayer", null], 
-        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures", null], 
-        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures", null], 
-        "status" => ["status", "float", null, "getStatus", "setStatus", null], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null], 
-        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage", null], 
-        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents", null]
+        "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId", null, ["r" => 0]], 
+        "script" => ["script", "string", null, "getScript", "setScript", null, ["r" => 0]], 
+        "args" => ["args", "\Tatum\Model\FlowTxArgsInner[]", null, "getArgs", "setArgs", null, ["r" => 0, "c" => 1]], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 0]], 
+        "proposal_key" => ["proposalKey", "\Tatum\Model\FlowTxProposalKey", null, "getProposalKey", "setProposalKey", null, ["r" => 0]], 
+        "payer" => ["payer", "string", null, "getPayer", "setPayer", null, ["r" => 0]], 
+        "payload_signatures" => ["payloadSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getPayloadSignatures", "setPayloadSignatures", null, ["r" => 0, "c" => 1]], 
+        "envelope_signatures" => ["envelopeSignatures", "\Tatum\Model\FlowTxPayloadSignaturesInner[]", null, "getEnvelopeSignatures", "setEnvelopeSignatures", null, ["r" => 0, "c" => 1]], 
+        "status" => ["status", "float", null, "getStatus", "setStatus", null, ["r" => 0]], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null, ["r" => 0]], 
+        "error_message" => ["errorMessage", "string", null, "getErrorMessage", "setErrorMessage", null, ["r" => 0]], 
+        "events" => ["events", "\Tatum\Model\FlowTxEventsInner[]", null, "getEvents", "setEvents", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -48,14 +46,6 @@ class FlowTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -72,12 +62,11 @@ class FlowTx extends AbstractModel {
      * Set reference_block_id
      * 
      * @param string|null $reference_block_id Id of the block
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReferenceBlockId(?string $reference_block_id) {
-        $this->_data['reference_block_id'] = $reference_block_id;
-
-        return $this;
+        return $this->_set("reference_block_id", $reference_block_id);
     }
 
     /**
@@ -93,12 +82,11 @@ class FlowTx extends AbstractModel {
      * Set script
      * 
      * @param string|null $script Script to execute in the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScript(?string $script) {
-        $this->_data['script'] = $script;
-
-        return $this;
+        return $this->_set("script", $script);
     }
 
     /**
@@ -114,12 +102,11 @@ class FlowTx extends AbstractModel {
      * Set args
      * 
      * @param \Tatum\Model\FlowTxArgsInner[]|null $args Args to the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setArgs(?array $args) {
-        $this->_data['args'] = $args;
-
-        return $this;
+        return $this->_set("args", $args);
     }
 
     /**
@@ -135,12 +122,11 @@ class FlowTx extends AbstractModel {
      * Set gas_limit
      * 
      * @param float|null $gas_limit Gas limit for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasLimit(?float $gas_limit) {
-        $this->_data['gas_limit'] = $gas_limit;
-
-        return $this;
+        return $this->_set("gas_limit", $gas_limit);
     }
 
     /**
@@ -156,12 +142,11 @@ class FlowTx extends AbstractModel {
      * Set proposal_key
      * 
      * @param \Tatum\Model\FlowTxProposalKey|null $proposal_key proposal_key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProposalKey(?\Tatum\Model\FlowTxProposalKey $proposal_key) {
-        $this->_data['proposal_key'] = $proposal_key;
-
-        return $this;
+        return $this->_set("proposal_key", $proposal_key);
     }
 
     /**
@@ -177,12 +162,11 @@ class FlowTx extends AbstractModel {
      * Set payer
      * 
      * @param string|null $payer Address from which the assets and fees were debited
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPayer(?string $payer) {
-        $this->_data['payer'] = $payer;
-
-        return $this;
+        return $this->_set("payer", $payer);
     }
 
     /**
@@ -198,12 +182,11 @@ class FlowTx extends AbstractModel {
      * Set payload_signatures
      * 
      * @param \Tatum\Model\FlowTxPayloadSignaturesInner[]|null $payload_signatures Array of payload signatures.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPayloadSignatures(?array $payload_signatures) {
-        $this->_data['payload_signatures'] = $payload_signatures;
-
-        return $this;
+        return $this->_set("payload_signatures", $payload_signatures);
     }
 
     /**
@@ -219,12 +202,11 @@ class FlowTx extends AbstractModel {
      * Set envelope_signatures
      * 
      * @param \Tatum\Model\FlowTxPayloadSignaturesInner[]|null $envelope_signatures Array of envelope signatures.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEnvelopeSignatures(?array $envelope_signatures) {
-        $this->_data['envelope_signatures'] = $envelope_signatures;
-
-        return $this;
+        return $this->_set("envelope_signatures", $envelope_signatures);
     }
 
     /**
@@ -240,12 +222,11 @@ class FlowTx extends AbstractModel {
      * Set status
      * 
      * @param float|null $status Status of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?float $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 
     /**
@@ -261,12 +242,11 @@ class FlowTx extends AbstractModel {
      * Set status_code
      * 
      * @param float|null $status_code Status cofe of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatusCode(?float $status_code) {
-        $this->_data['status_code'] = $status_code;
-
-        return $this;
+        return $this->_set("status_code", $status_code);
     }
 
     /**
@@ -282,12 +262,11 @@ class FlowTx extends AbstractModel {
      * Set error_message
      * 
      * @param string|null $error_message error_message
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErrorMessage(?string $error_message) {
-        $this->_data['error_message'] = $error_message;
-
-        return $this;
+        return $this->_set("error_message", $error_message);
     }
 
     /**
@@ -303,11 +282,10 @@ class FlowTx extends AbstractModel {
      * Set events
      * 
      * @param \Tatum\Model\FlowTxEventsInner[]|null $events events
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEvents(?array $events) {
-        $this->_data['events'] = $events;
-
-        return $this;
+        return $this->_set("events", $events);
     }
 }

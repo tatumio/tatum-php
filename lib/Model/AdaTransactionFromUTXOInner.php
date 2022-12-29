@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaTransaction_fromUTXO_inner Model
  */
@@ -25,10 +23,10 @@ class AdaTransactionFromUTXOInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaTransaction_fromUTXO_inner";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0], "x" => [2147483647]]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 0, "nl" => 192, "xl" => 192]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 0]]
     ];
 
     /**
@@ -40,38 +38,6 @@ class AdaTransactionFromUTXOInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_hash'])) {
-            $ip[] = "'tx_hash' can't be null";
-        }
-        if ((mb_strlen($this->_data['tx_hash']) > 64)) {
-            $ip[] = "'tx_hash' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['tx_hash']) < 64)) {
-            $ip[] = "'tx_hash' length must be >= 64";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] > 2147483647)) {
-            $ip[] = "'index' must be <= 2147483647";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (!is_null($this->_data['private_key']) && (mb_strlen($this->_data['private_key']) > 192)) {
-            $ip[] = "'private_key' length must be <= 192";
-        }
-        if (!is_null($this->_data['private_key']) && (mb_strlen($this->_data['private_key']) < 192)) {
-            $ip[] = "'private_key' length must be >= 192";
-        }
-        return $ip;
     }
 
 
@@ -88,18 +54,11 @@ class AdaTransactionFromUTXOInner extends AbstractModel {
      * Set tx_hash
      * 
      * @param string $tx_hash Transaction hash of the UTXO to be spent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxHash(string $tx_hash) {
-        if ((mb_strlen($tx_hash) > 64)) {
-            throw new IAE('AdaTransactionFromUTXOInner.setTxHash: $tx_hash length must be <= 64');
-        }
-        if ((mb_strlen($tx_hash) < 64)) {
-            throw new IAE('AdaTransactionFromUTXOInner.setTxHash: $tx_hash length must be >= 64');
-        }
-        $this->_data['tx_hash'] = $tx_hash;
-
-        return $this;
+        return $this->_set("tx_hash", $tx_hash);
     }
 
     /**
@@ -115,18 +74,11 @@ class AdaTransactionFromUTXOInner extends AbstractModel {
      * Set index
      * 
      * @param float $index Index of the UTXO to be spent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index > 2147483647)) {
-            throw new IAE('AdaTransactionFromUTXOInner.setIndex: $index must be <=2147483647');
-        }
-        if (($index < 0)) {
-            throw new IAE('AdaTransactionFromUTXOInner.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -142,18 +94,11 @@ class AdaTransactionFromUTXOInner extends AbstractModel {
      * Set private_key
      * 
      * @param string|null $private_key Private key of the UTXO to be spent. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(?string $private_key) {
-        if (!is_null($private_key) && (mb_strlen($private_key) > 192)) {
-            throw new IAE('AdaTransactionFromUTXOInner.setPrivateKey: $private_key length must be <= 192');
-        }
-        if (!is_null($private_key) && (mb_strlen($private_key) < 192)) {
-            throw new IAE('AdaTransactionFromUTXOInner.setPrivateKey: $private_key length must be >= 192');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -169,11 +114,10 @@ class AdaTransactionFromUTXOInner extends AbstractModel {
      * Set signature_id
      * 
      * @param string|null $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(?string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

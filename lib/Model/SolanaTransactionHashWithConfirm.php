@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaTransactionHashWithConfirm Model
  */
@@ -25,8 +23,8 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTransactionHashWithConfirm";
     protected static $_definition = [
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null], 
-        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", null]
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 
+        "confirmed" => ["confirmed", "bool", null, "getConfirmed", "setConfirmed", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        if (is_null($this->_data['confirmed'])) {
-            $ip[] = "'confirmed' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id TX hash of successful transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 
     /**
@@ -89,11 +72,10 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
      * Set confirmed
      * 
      * @param bool $confirmed Indicates whether or not the transferred commitment has been fulfilled
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setConfirmed(bool $confirmed) {
-        $this->_data['confirmed'] = $confirmed;
-
-        return $this;
+        return $this->_set("confirmed", $confirmed);
     }
 }

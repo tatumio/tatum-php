@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpFee_drops Model
  * 
@@ -27,10 +25,10 @@ class XrpFeeDrops extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpFee_drops";
     protected static $_definition = [
-        "base_fee" => ["base_fee", "string", null, "getBaseFee", "setBaseFee", null], 
-        "median_fee" => ["median_fee", "string", null, "getMedianFee", "setMedianFee", null], 
-        "minimum_fee" => ["minimum_fee", "string", null, "getMinimumFee", "setMinimumFee", null], 
-        "open_ledger_fee" => ["open_ledger_fee", "string", null, "getOpenLedgerFee", "setOpenLedgerFee", null]
+        "base_fee" => ["base_fee", "string", null, "getBaseFee", "setBaseFee", null, ["r" => 0]], 
+        "median_fee" => ["median_fee", "string", null, "getMedianFee", "setMedianFee", null, ["r" => 0]], 
+        "minimum_fee" => ["minimum_fee", "string", null, "getMinimumFee", "setMinimumFee", null, ["r" => 0]], 
+        "open_ledger_fee" => ["open_ledger_fee", "string", null, "getOpenLedgerFee", "setOpenLedgerFee", null, ["r" => 0]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class XrpFeeDrops extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class XrpFeeDrops extends AbstractModel {
      * Set base_fee
      * 
      * @param string|null $base_fee The transaction cost required for a reference transaction to be included in a ledger under minimum load, represented in drops of XRP.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseFee(?string $base_fee) {
-        $this->_data['base_fee'] = $base_fee;
-
-        return $this;
+        return $this->_set("base_fee", $base_fee);
     }
 
     /**
@@ -87,12 +76,11 @@ class XrpFeeDrops extends AbstractModel {
      * Set median_fee
      * 
      * @param string|null $median_fee An approximation of the median transaction cost among transactions included in the previous validated ledger, represented in drops of XRP.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMedianFee(?string $median_fee) {
-        $this->_data['median_fee'] = $median_fee;
-
-        return $this;
+        return $this->_set("median_fee", $median_fee);
     }
 
     /**
@@ -108,12 +96,11 @@ class XrpFeeDrops extends AbstractModel {
      * Set minimum_fee
      * 
      * @param string|null $minimum_fee The minimum transaction cost for a reference transaction to be queued for a later ledger, represented in drops of XRP. If greater than base_fee, the transaction queue is full.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMinimumFee(?string $minimum_fee) {
-        $this->_data['minimum_fee'] = $minimum_fee;
-
-        return $this;
+        return $this->_set("minimum_fee", $minimum_fee);
     }
 
     /**
@@ -129,11 +116,10 @@ class XrpFeeDrops extends AbstractModel {
      * Set open_ledger_fee
      * 
      * @param string|null $open_ledger_fee The minimum transaction cost that a reference transaction must pay to be included in the current open ledger, represented in drops of XRP.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOpenLedgerFee(?string $open_ledger_fee) {
-        $this->_data['open_ledger_fee'] = $open_ledger_fee;
-
-        return $this;
+        return $this->_set("open_ledger_fee", $open_ledger_fee);
     }
 }

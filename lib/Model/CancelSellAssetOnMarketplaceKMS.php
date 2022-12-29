@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CancelSellAssetOnMarketplaceKMS Model
  */
@@ -30,14 +28,14 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
     public const CHAIN_MATIC = 'MATIC';
     protected static $_name = "CancelSellAssetOnMarketplaceKMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
-        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "listing_id" => ["listingId", "string", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 1, "xl" => 200]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -49,52 +47,6 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) > 42)) {
-            $ip[] = "'erc20_address' length must be <= 42";
-        }
-        if (!is_null($this->_data['erc20_address']) && (mb_strlen($this->_data['erc20_address']) < 42)) {
-            $ip[] = "'erc20_address' length must be >= 42";
-        }
-        if (is_null($this->_data['listing_id'])) {
-            $ip[] = "'listing_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['listing_id']) > 200)) {
-            $ip[] = "'listing_id' length must be <= 200";
-        }
-        if ((mb_strlen($this->_data['listing_id']) < 1)) {
-            $ip[] = "'listing_id' length must be >= 1";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -125,16 +77,11 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CancelSellAssetOnMarketplaceKMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -150,18 +97,11 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Address of the marketplace smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('CancelSellAssetOnMarketplaceKMS.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('CancelSellAssetOnMarketplaceKMS.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -177,18 +117,11 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set erc20_address
      * 
      * @param string|null $erc20_address Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErc20Address(?string $erc20_address) {
-        if (!is_null($erc20_address) && (mb_strlen($erc20_address) > 42)) {
-            throw new IAE('CancelSellAssetOnMarketplaceKMS.setErc20Address: $erc20_address length must be <= 42');
-        }
-        if (!is_null($erc20_address) && (mb_strlen($erc20_address) < 42)) {
-            throw new IAE('CancelSellAssetOnMarketplaceKMS.setErc20Address: $erc20_address length must be >= 42');
-        }
-        $this->_data['erc20_address'] = $erc20_address;
-
-        return $this;
+        return $this->_set("erc20_address", $erc20_address);
     }
 
     /**
@@ -204,18 +137,11 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set listing_id
      * 
      * @param string $listing_id ID of the listing. It's up to the developer to generate unique ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setListingId(string $listing_id) {
-        if ((mb_strlen($listing_id) > 200)) {
-            throw new IAE('CancelSellAssetOnMarketplaceKMS.setListingId: $listing_id length must be <= 200');
-        }
-        if ((mb_strlen($listing_id) < 1)) {
-            throw new IAE('CancelSellAssetOnMarketplaceKMS.setListingId: $listing_id length must be >= 1');
-        }
-        $this->_data['listing_id'] = $listing_id;
-
-        return $this;
+        return $this->_set("listing_id", $listing_id);
     }
 
     /**
@@ -231,12 +157,11 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -252,15 +177,11 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('CancelSellAssetOnMarketplaceKMS.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -276,12 +197,11 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -297,11 +217,10 @@ class CancelSellAssetOnMarketplaceKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

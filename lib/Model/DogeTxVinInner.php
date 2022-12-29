@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DogeTx_vin_inner Model
  */
@@ -25,10 +23,10 @@ class DogeTxVinInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTx_vin_inner";
     protected static $_definition = [
-        "txid" => ["txid", "string", null, "getTxid", "setTxid", null], 
-        "vout" => ["vout", "float", null, "getVout", "setVout", null], 
-        "script_sig" => ["scriptSig", "\Tatum\Model\DogeTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig", null], 
-        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null]
+        "txid" => ["txid", "string", null, "getTxid", "setTxid", null, ["r" => 0]], 
+        "vout" => ["vout", "float", null, "getVout", "setVout", null, ["r" => 0]], 
+        "script_sig" => ["scriptSig", "\Tatum\Model\DogeTxVinInnerScriptSig", null, "getScriptSig", "setScriptSig", null, ["r" => 0]], 
+        "sequence" => ["sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class DogeTxVinInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class DogeTxVinInner extends AbstractModel {
      * Set txid
      * 
      * @param string|null $txid Transaction hash of the input.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxid(?string $txid) {
-        $this->_data['txid'] = $txid;
-
-        return $this;
+        return $this->_set("txid", $txid);
     }
 
     /**
@@ -85,12 +74,11 @@ class DogeTxVinInner extends AbstractModel {
      * Set vout
      * 
      * @param float|null $vout Transaction index of the input.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVout(?float $vout) {
-        $this->_data['vout'] = $vout;
-
-        return $this;
+        return $this->_set("vout", $vout);
     }
 
     /**
@@ -106,12 +94,11 @@ class DogeTxVinInner extends AbstractModel {
      * Set script_sig
      * 
      * @param \Tatum\Model\DogeTxVinInnerScriptSig|null $script_sig script_sig
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScriptSig(?\Tatum\Model\DogeTxVinInnerScriptSig $script_sig) {
-        $this->_data['script_sig'] = $script_sig;
-
-        return $this;
+        return $this->_set("script_sig", $script_sig);
     }
 
     /**
@@ -127,11 +114,10 @@ class DogeTxVinInner extends AbstractModel {
      * Set sequence
      * 
      * @param float|null $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 }

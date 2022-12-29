@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbTxInAccount Model
  */
@@ -25,8 +23,8 @@ class BnbTxInAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbTxInAccount";
     protected static $_definition = [
-        "total" => ["total", "float", null, "getTotal", "setTotal", null], 
-        "tx" => ["tx", "\Tatum\Model\BnbTransaction[]", null, "getTx", "setTx", null]
+        "total" => ["total", "float", null, "getTotal", "setTotal", null, ["r" => 0]], 
+        "tx" => ["tx", "\Tatum\Model\BnbTransaction[]", null, "getTx", "setTx", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class BnbTxInAccount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class BnbTxInAccount extends AbstractModel {
      * Set total
      * 
      * @param float|null $total total
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotal(?float $total) {
-        $this->_data['total'] = $total;
-
-        return $this;
+        return $this->_set("total", $total);
     }
 
     /**
@@ -83,11 +72,10 @@ class BnbTxInAccount extends AbstractModel {
      * Set tx
      * 
      * @param \Tatum\Model\BnbTransaction[]|null $tx tx
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTx(?array $tx) {
-        $this->_data['tx'] = $tx;
-
-        return $this;
+        return $this->_set("tx", $tx);
     }
 }

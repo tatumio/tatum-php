@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowEvent_payload Model
  */
@@ -26,8 +24,8 @@ class FlowEventPayload extends AbstractModel {
     public const TYPE_EVENT = 'Event';
     protected static $_name = "FlowEvent_payload";
     protected static $_definition = [
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "value" => ["value", "\Tatum\Model\FlowEventPayloadValue", null, "getValue", "setValue", null]
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0, "e" => 1]], 
+        "value" => ["value", "\Tatum\Model\FlowEventPayloadValue", null, "getValue", "setValue", null, ["r" => 0]]
     ];
 
     /**
@@ -39,19 +37,6 @@ class FlowEventPayload extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -78,16 +63,11 @@ class FlowEventPayload extends AbstractModel {
      * Set type
      * 
      * @param string|null $type Type of payload.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(?string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("FlowEventPayload.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -103,11 +83,10 @@ class FlowEventPayload extends AbstractModel {
      * Set value
      * 
      * @param \Tatum\Model\FlowEventPayloadValue|null $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?\Tatum\Model\FlowEventPayloadValue $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 }

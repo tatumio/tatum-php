@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VC Model
  */
@@ -227,19 +225,19 @@ class VC extends AbstractModel {
     public const CHAIN_XLM = 'XLM';
     protected static $_name = "VC";
     protected static $_definition = [
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "supply" => ["supply", "string", null, "getSupply", "setSupply", null], 
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1], 
-        "precision" => ["precision", "float", null, "getPrecision", "setPrecision", null], 
-        "trc_type" => ["trcType", "string", null, "getTrcType", "setTrcType", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null], 
-        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
-        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "initial_address" => ["initialAddress", "string", null, "getInitialAddress", "setInitialAddress", null]
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1]], 
+        "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1]], 
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 1]], 
+        "precision" => ["precision", "float", null, "getPrecision", "setPrecision", null, ["r" => 0]], 
+        "trc_type" => ["trcType", "string", null, "getTrcType", "setTrcType", null, ["r" => 0, "e" => 1]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1]], 
+        "customer_id" => ["customerId", "string", null, "getCustomerId", "setCustomerId", null, ["r" => 0]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 0]], 
+        "erc20_address" => ["erc20Address", "string", null, "getErc20Address", "setErc20Address", null, ["r" => 0]], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null, ["r" => 0]], 
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 0, "e" => 1]], 
+        "initial_address" => ["initialAddress", "string", null, "getInitialAddress", "setInitialAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -251,44 +249,6 @@ class VC extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        if (is_null($this->_data['supply'])) {
-            $ip[] = "'supply' can't be null";
-        }
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        if (is_null($this->_data['base_rate'])) {
-            $ip[] = "'base_rate' can't be null";
-        }
-        $allowed = $this->getTrcTypeAllowableValues();
-        $value = $this->_data['trc_type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'trc_type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -534,12 +494,11 @@ class VC extends AbstractModel {
      * Set name
      * 
      * @param string $name Virtual currency name. Must be prefixed with 'VC_'.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -555,12 +514,11 @@ class VC extends AbstractModel {
      * Set supply
      * 
      * @param string $supply Supply of virtual currency.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSupply(string $supply) {
-        $this->_data['supply'] = $supply;
-
-        return $this;
+        return $this->_set("supply", $supply);
     }
 
     /**
@@ -576,12 +534,11 @@ class VC extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id Virtual currency account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -597,12 +554,11 @@ class VC extends AbstractModel {
      * Set base_rate
      * 
      * @param float $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(float $base_rate) {
-        $this->_data['base_rate'] = $base_rate;
-
-        return $this;
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -618,12 +574,11 @@ class VC extends AbstractModel {
      * Set precision
      * 
      * @param float|null $precision Number of decimal places of this virtual currency.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrecision(?float $precision) {
-        $this->_data['precision'] = $precision;
-
-        return $this;
+        return $this->_set("precision", $precision);
     }
 
     /**
@@ -639,16 +594,11 @@ class VC extends AbstractModel {
      * Set trc_type
      * 
      * @param string|null $trc_type Type of Tron token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTrcType(?string $trc_type) {
-        $allowed = $this->getTrcTypeAllowableValues();
-        if (!is_null($trc_type) && !in_array($trc_type, $allowed, true)) {
-            throw new IAE(sprintf("VC.setTrcType: trc_type invalid value '%s', must be one of '%s'", $trc_type, implode("', '", $allowed)));
-        }
-        $this->_data['trc_type'] = $trc_type;
-
-        return $this;
+        return $this->_set("trc_type", $trc_type);
     }
 
     /**
@@ -664,16 +614,11 @@ class VC extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("VC.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 
     /**
@@ -689,12 +634,11 @@ class VC extends AbstractModel {
      * Set customer_id
      * 
      * @param string|null $customer_id ID of customer associated with virtual currency.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustomerId(?string $customer_id) {
-        $this->_data['customer_id'] = $customer_id;
-
-        return $this;
+        return $this->_set("customer_id", $customer_id);
     }
 
     /**
@@ -710,12 +654,11 @@ class VC extends AbstractModel {
      * Set description
      * 
      * @param string|null $description Used as a description within Tatum system.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(?string $description) {
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 
     /**
@@ -731,12 +674,11 @@ class VC extends AbstractModel {
      * Set erc20_address
      * 
      * @param string|null $erc20_address Address of ERC20 token, when virtual currency is based on the Ethereum blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErc20Address(?string $erc20_address) {
-        $this->_data['erc20_address'] = $erc20_address;
-
-        return $this;
+        return $this->_set("erc20_address", $erc20_address);
     }
 
     /**
@@ -752,12 +694,11 @@ class VC extends AbstractModel {
      * Set issuer_account
      * 
      * @param string|null $issuer_account Blockchain account for XLM or XRP based virtual currencies, which is marked as the issuer of the custom blockchain asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIssuerAccount(?string $issuer_account) {
-        $this->_data['issuer_account'] = $issuer_account;
-
-        return $this;
+        return $this->_set("issuer_account", $issuer_account);
     }
 
     /**
@@ -773,16 +714,11 @@ class VC extends AbstractModel {
      * Set chain
      * 
      * @param string|null $chain Blockchain, on which this virtual currency is paired on. Not present, when Tatum's private ledger is used as a base ledger.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(?string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!is_null($chain) && !in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("VC.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -798,11 +734,10 @@ class VC extends AbstractModel {
      * Set initial_address
      * 
      * @param string|null $initial_address Ethereum address, where initial supply was minted, when virtual currency is based on the Ethereum blockchain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInitialAddress(?string $initial_address) {
-        $this->_data['initial_address'] = $initial_address;
-
-        return $this;
+        return $this->_set("initial_address", $initial_address);
     }
 }

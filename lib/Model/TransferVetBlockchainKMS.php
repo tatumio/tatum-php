@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferVetBlockchainKMS Model
  */
@@ -25,11 +23,11 @@ class TransferVetBlockchainKMS extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferVetBlockchainKMS";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "data" => ["data", "string", null, "getData", "setData", null], 
-        "fee" => ["fee", "\Tatum\Model\TransferVetBlockchainFee", null, "getFee", "setFee", null]
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0, "xl" => 10000]], 
+        "fee" => ["fee", "\Tatum\Model\TransferVetBlockchainFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -41,35 +39,6 @@ class TransferVetBlockchainKMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 100)) {
-            $ip[] = "'to' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['to']) < 1)) {
-            $ip[] = "'to' length must be >= 1";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['data']) && (mb_strlen($this->_data['data']) > 10000)) {
-            $ip[] = "'data' length must be <= 10000";
-        }
-        return $ip;
     }
 
 
@@ -86,18 +55,11 @@ class TransferVetBlockchainKMS extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 100)) {
-            throw new IAE('TransferVetBlockchainKMS.setTo: $to length must be <= 100');
-        }
-        if ((mb_strlen($to) < 1)) {
-            throw new IAE('TransferVetBlockchainKMS.setTo: $to length must be >= 1');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -113,15 +75,11 @@ class TransferVetBlockchainKMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in VET
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferVetBlockchainKMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -137,12 +95,11 @@ class TransferVetBlockchainKMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -158,15 +115,11 @@ class TransferVetBlockchainKMS extends AbstractModel {
      * Set data
      * 
      * @param string|null $data Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        if (!is_null($data) && (mb_strlen($data) > 10000)) {
-            throw new IAE('TransferVetBlockchainKMS.setData: $data length must be <= 10000');
-        }
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 
     /**
@@ -182,11 +135,10 @@ class TransferVetBlockchainKMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\TransferVetBlockchainFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\TransferVetBlockchainFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

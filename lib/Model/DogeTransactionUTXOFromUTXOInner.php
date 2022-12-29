@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DogeTransactionUTXO_fromUTXO_inner Model
  */
@@ -25,11 +23,11 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeTransactionUTXO_fromUTXO_inner";
     protected static $_definition = [
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null]
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 1]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 1, "n" => [0], "x" => [2147483647]]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 52, "xl" => 52]]
     ];
 
     /**
@@ -41,47 +39,6 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['tx_hash'])) {
-            $ip[] = "'tx_hash' can't be null";
-        }
-        if ((mb_strlen($this->_data['tx_hash']) > 64)) {
-            $ip[] = "'tx_hash' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['tx_hash']) < 64)) {
-            $ip[] = "'tx_hash' length must be >= 64";
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['index'])) {
-            $ip[] = "'index' can't be null";
-        }
-        if (($this->_data['index'] > 2147483647)) {
-            $ip[] = "'index' must be <= 2147483647";
-        }
-        if (($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['private_key'])) {
-            $ip[] = "'private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['private_key']) > 52)) {
-            $ip[] = "'private_key' length must be <= 52";
-        }
-        if ((mb_strlen($this->_data['private_key']) < 52)) {
-            $ip[] = "'private_key' length must be >= 52";
-        }
-        return $ip;
     }
 
 
@@ -98,18 +55,11 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      * Set tx_hash
      * 
      * @param string $tx_hash The transaction hash of the UTXO to be spent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxHash(string $tx_hash) {
-        if ((mb_strlen($tx_hash) > 64)) {
-            throw new IAE('DogeTransactionUTXOFromUTXOInner.setTxHash: $tx_hash length must be <= 64');
-        }
-        if ((mb_strlen($tx_hash) < 64)) {
-            throw new IAE('DogeTransactionUTXOFromUTXOInner.setTxHash: $tx_hash length must be >= 64');
-        }
-        $this->_data['tx_hash'] = $tx_hash;
-
-        return $this;
+        return $this->_set("tx_hash", $tx_hash);
     }
 
     /**
@@ -125,12 +75,11 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      * Set value
      * 
      * @param string $value The amount to send (in DOGE)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -146,12 +95,11 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      * Set address
      * 
      * @param string $address The blockchain address to receive the assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -167,18 +115,11 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      * Set index
      * 
      * @param float $index The index of the UTXO to be spent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(float $index) {
-        if (($index > 2147483647)) {
-            throw new IAE('DogeTransactionUTXOFromUTXOInner.setIndex: $index must be <=2147483647');
-        }
-        if (($index < 0)) {
-            throw new IAE('DogeTransactionUTXOFromUTXOInner.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -194,17 +135,10 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      * Set private_key
      * 
      * @param string $private_key The private key of the blockchain address that holds the UTXO to be spent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
-        if ((mb_strlen($private_key) > 52)) {
-            throw new IAE('DogeTransactionUTXOFromUTXOInner.setPrivateKey: $private_key length must be <= 52');
-        }
-        if ((mb_strlen($private_key) < 52)) {
-            throw new IAE('DogeTransactionUTXOFromUTXOInner.setPrivateKey: $private_key length must be >= 52');
-        }
-        $this->_data['private_key'] = $private_key;
-
-        return $this;
+        return $this->_set("private_key", $private_key);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * getTransactionsByAccountId_200_response Model
  */
@@ -34,13 +32,6 @@ class GetTransactionsByAccountId200Response extends AbstractModel {
      */
     public function __construct($data = null) {
         $this->_data = $data;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        return [];
     }
 
     /**

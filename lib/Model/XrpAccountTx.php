@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccountTx Model
  */
@@ -25,11 +23,11 @@ class XrpAccountTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx";
     protected static $_definition = [
-        "account" => ["account", "string", null, "getAccount", "setAccount", null], 
-        "ledger_index_max" => ["ledger_index_max", "float", null, "getLedgerIndexMax", "setLedgerIndexMax", null], 
-        "ledger_index_min" => ["ledger_index_min", "float", null, "getLedgerIndexMin", "setLedgerIndexMin", null], 
-        "marker" => ["marker", "\Tatum\Model\XrpAccountTxMarker", null, "getMarker", "setMarker", null], 
-        "transactions" => ["transactions", "\Tatum\Model\XrpAccountTxTransactionsInner[]", null, "getTransactions", "setTransactions", null]
+        "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 0]], 
+        "ledger_index_max" => ["ledger_index_max", "float", null, "getLedgerIndexMax", "setLedgerIndexMax", null, ["r" => 0]], 
+        "ledger_index_min" => ["ledger_index_min", "float", null, "getLedgerIndexMin", "setLedgerIndexMin", null, ["r" => 0]], 
+        "marker" => ["marker", "\Tatum\Model\XrpAccountTxMarker", null, "getMarker", "setMarker", null, ["r" => 0]], 
+        "transactions" => ["transactions", "\Tatum\Model\XrpAccountTxTransactionsInner[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class XrpAccountTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class XrpAccountTx extends AbstractModel {
      * Set account
      * 
      * @param string|null $account Unique Address identifying the related account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(?string $account) {
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -86,12 +75,11 @@ class XrpAccountTx extends AbstractModel {
      * Set ledger_index_max
      * 
      * @param float|null $ledger_index_max The ledger index of the earliest ledger actually searched for transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerIndexMax(?float $ledger_index_max) {
-        $this->_data['ledger_index_max'] = $ledger_index_max;
-
-        return $this;
+        return $this->_set("ledger_index_max", $ledger_index_max);
     }
 
     /**
@@ -107,12 +95,11 @@ class XrpAccountTx extends AbstractModel {
      * Set ledger_index_min
      * 
      * @param float|null $ledger_index_min The ledger index of the most recent ledger actually searched for transactions.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerIndexMin(?float $ledger_index_min) {
-        $this->_data['ledger_index_min'] = $ledger_index_min;
-
-        return $this;
+        return $this->_set("ledger_index_min", $ledger_index_min);
     }
 
     /**
@@ -128,12 +115,11 @@ class XrpAccountTx extends AbstractModel {
      * Set marker
      * 
      * @param \Tatum\Model\XrpAccountTxMarker|null $marker marker
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMarker(?\Tatum\Model\XrpAccountTxMarker $marker) {
-        $this->_data['marker'] = $marker;
-
-        return $this;
+        return $this->_set("marker", $marker);
     }
 
     /**
@@ -149,11 +135,10 @@ class XrpAccountTx extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\XrpAccountTxTransactionsInner[]|null $transactions Array of transactions matching the request's criteria, as explained below.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

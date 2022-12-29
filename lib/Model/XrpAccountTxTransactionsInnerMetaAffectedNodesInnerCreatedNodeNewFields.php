@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode_NewFields Model
  */
@@ -25,9 +23,9 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields ex
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode_NewFields";
     protected static $_definition = [
-        "account" => ["Account", "string", null, "getAccount", "setAccount", null], 
-        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null]
+        "account" => ["Account", "string", null, "getAccount", "setAccount", null, ["r" => 0]], 
+        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields ex
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields ex
      * Set account
      * 
      * @param string|null $account account
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(?string $account) {
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -84,12 +73,11 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields ex
      * Set balance
      * 
      * @param string|null $balance balance
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?string $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -105,11 +93,10 @@ class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields ex
      * Set sequence
      * 
      * @param float|null $sequence sequence
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 }

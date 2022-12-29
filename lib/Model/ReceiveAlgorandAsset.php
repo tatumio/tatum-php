@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ReceiveAlgorandAsset Model
  */
@@ -25,8 +23,8 @@ class ReceiveAlgorandAsset extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "ReceiveAlgorandAsset";
     protected static $_definition = [
-        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
+        "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null, ["r" => 1]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class ReceiveAlgorandAsset extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['asset_id'])) {
-            $ip[] = "'asset_id' can't be null";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class ReceiveAlgorandAsset extends AbstractModel {
      * Set asset_id
      * 
      * @param float $asset_id AssetID of the asset you wanna enable for the sender.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAssetId(float $asset_id) {
-        $this->_data['asset_id'] = $asset_id;
-
-        return $this;
+        return $this->_set("asset_id", $asset_id);
     }
 
     /**
@@ -89,11 +72,10 @@ class ReceiveAlgorandAsset extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 }

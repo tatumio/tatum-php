@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Chart Model
  * 
@@ -27,12 +25,12 @@ class Chart extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Chart";
     protected static $_definition = [
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "high" => ["high", "string", null, "getHigh", "setHigh", null], 
-        "low" => ["low", "string", null, "getLow", "setLow", null], 
-        "open" => ["open", "string", null, "getOpen", "setOpen", null], 
-        "close" => ["close", "string", null, "getClose", "setClose", null], 
-        "volume" => ["volume", "string", null, "getVolume", "setVolume", null]
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 1]], 
+        "high" => ["high", "string", null, "getHigh", "setHigh", null, ["r" => 1]], 
+        "low" => ["low", "string", null, "getLow", "setLow", null, ["r" => 1]], 
+        "open" => ["open", "string", null, "getOpen", "setOpen", null, ["r" => 1]], 
+        "close" => ["close", "string", null, "getClose", "setClose", null, ["r" => 1]], 
+        "volume" => ["volume", "string", null, "getVolume", "setVolume", null, ["r" => 1]]
     ];
 
     /**
@@ -44,32 +42,6 @@ class Chart extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['timestamp'])) {
-            $ip[] = "'timestamp' can't be null";
-        }
-        if (is_null($this->_data['high'])) {
-            $ip[] = "'high' can't be null";
-        }
-        if (is_null($this->_data['low'])) {
-            $ip[] = "'low' can't be null";
-        }
-        if (is_null($this->_data['open'])) {
-            $ip[] = "'open' can't be null";
-        }
-        if (is_null($this->_data['close'])) {
-            $ip[] = "'close' can't be null";
-        }
-        if (is_null($this->_data['volume'])) {
-            $ip[] = "'volume' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -86,12 +58,11 @@ class Chart extends AbstractModel {
      * Set timestamp
      * 
      * @param float $timestamp Milliseconds in UTC of the time interval.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -107,12 +78,11 @@ class Chart extends AbstractModel {
      * Set high
      * 
      * @param string $high Highest trade value in the current interval.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHigh(string $high) {
-        $this->_data['high'] = $high;
-
-        return $this;
+        return $this->_set("high", $high);
     }
 
     /**
@@ -128,12 +98,11 @@ class Chart extends AbstractModel {
      * Set low
      * 
      * @param string $low Lowest trade value in the current interval.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLow(string $low) {
-        $this->_data['low'] = $low;
-
-        return $this;
+        return $this->_set("low", $low);
     }
 
     /**
@@ -149,12 +118,11 @@ class Chart extends AbstractModel {
      * Set open
      * 
      * @param string $open Open trade value in the current interval.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOpen(string $open) {
-        $this->_data['open'] = $open;
-
-        return $this;
+        return $this->_set("open", $open);
     }
 
     /**
@@ -170,12 +138,11 @@ class Chart extends AbstractModel {
      * Set close
      * 
      * @param string $close Close trade value in the current interval.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setClose(string $close) {
-        $this->_data['close'] = $close;
-
-        return $this;
+        return $this->_set("close", $close);
     }
 
     /**
@@ -191,11 +158,10 @@ class Chart extends AbstractModel {
      * Set volume
      * 
      * @param string $volume Total volume of assets traded in the current interval. Volume is in currency1 asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVolume(string $volume) {
-        $this->_data['volume'] = $volume;
-
-        return $this;
+        return $this->_set("volume", $volume);
     }
 }

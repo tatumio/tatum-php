@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoTx Model
  */
@@ -25,24 +23,24 @@ class AlgoTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoTx";
     protected static $_definition = [
-        "close_rewards" => ["closeRewards", "float", null, "getCloseRewards", "setCloseRewards", null], 
-        "closing_amount" => ["closingAmount", "float", null, "getClosingAmount", "setClosingAmount", null], 
-        "confirmed_round" => ["confirmedRound", "float", null, "getConfirmedRound", "setConfirmedRound", null], 
-        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
-        "first_valid" => ["firstValid", "float", null, "getFirstValid", "setFirstValid", null], 
-        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash", null], 
-        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId", null], 
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "intra_round_offset" => ["intraRoundOffset", "float", null, "getIntraRoundOffset", "setIntraRoundOffset", null], 
-        "last_valid" => ["lastValid", "float", null, "getLastValid", "setLastValid", null], 
-        "note" => ["note", "string", null, "getNote", "setNote", null], 
-        "payment_transaction" => ["paymentTransaction", "object", null, "getPaymentTransaction", "setPaymentTransaction", null], 
-        "receiver_rewards" => ["receiverRewards", "float", null, "getReceiverRewards", "setReceiverRewards", null], 
-        "round_time" => ["roundTime", "float", null, "getRoundTime", "setRoundTime", null], 
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "sender_rewards" => ["senderRewards", "float", null, "getSenderRewards", "setSenderRewards", null], 
-        "signature" => ["signature", "object", null, "getSignature", "setSignature", null], 
-        "tx_type" => ["txType", "string", null, "getTxType", "setTxType", null]
+        "close_rewards" => ["closeRewards", "float", null, "getCloseRewards", "setCloseRewards", null, ["r" => 0]], 
+        "closing_amount" => ["closingAmount", "float", null, "getClosingAmount", "setClosingAmount", null, ["r" => 0]], 
+        "confirmed_round" => ["confirmedRound", "float", null, "getConfirmedRound", "setConfirmedRound", null, ["r" => 0]], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null, ["r" => 0]], 
+        "first_valid" => ["firstValid", "float", null, "getFirstValid", "setFirstValid", null, ["r" => 0]], 
+        "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash", null, ["r" => 0]], 
+        "genesis_id" => ["genesisId", "string", null, "getGenesisId", "setGenesisId", null, ["r" => 0]], 
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "intra_round_offset" => ["intraRoundOffset", "float", null, "getIntraRoundOffset", "setIntraRoundOffset", null, ["r" => 0]], 
+        "last_valid" => ["lastValid", "float", null, "getLastValid", "setLastValid", null, ["r" => 0]], 
+        "note" => ["note", "string", null, "getNote", "setNote", null, ["r" => 0]], 
+        "payment_transaction" => ["paymentTransaction", "object", null, "getPaymentTransaction", "setPaymentTransaction", null, ["r" => 0]], 
+        "receiver_rewards" => ["receiverRewards", "float", null, "getReceiverRewards", "setReceiverRewards", null, ["r" => 0]], 
+        "round_time" => ["roundTime", "float", null, "getRoundTime", "setRoundTime", null, ["r" => 0]], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 0]], 
+        "sender_rewards" => ["senderRewards", "float", null, "getSenderRewards", "setSenderRewards", null, ["r" => 0]], 
+        "signature" => ["signature", "object", null, "getSignature", "setSignature", null, ["r" => 0]], 
+        "tx_type" => ["txType", "string", null, "getTxType", "setTxType", null, ["r" => 0]]
     ];
 
     /**
@@ -54,14 +52,6 @@ class AlgoTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -78,12 +68,11 @@ class AlgoTx extends AbstractModel {
      * Set close_rewards
      * 
      * @param float|null $close_rewards rewards applied to close-remainder-to account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCloseRewards(?float $close_rewards) {
-        $this->_data['close_rewards'] = $close_rewards;
-
-        return $this;
+        return $this->_set("close_rewards", $close_rewards);
     }
 
     /**
@@ -99,12 +88,11 @@ class AlgoTx extends AbstractModel {
      * Set closing_amount
      * 
      * @param float|null $closing_amount closing amount for transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setClosingAmount(?float $closing_amount) {
-        $this->_data['closing_amount'] = $closing_amount;
-
-        return $this;
+        return $this->_set("closing_amount", $closing_amount);
     }
 
     /**
@@ -120,12 +108,11 @@ class AlgoTx extends AbstractModel {
      * Set confirmed_round
      * 
      * @param float|null $confirmed_round Round when the transaction was confirmed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setConfirmedRound(?float $confirmed_round) {
-        $this->_data['confirmed_round'] = $confirmed_round;
-
-        return $this;
+        return $this->_set("confirmed_round", $confirmed_round);
     }
 
     /**
@@ -141,12 +128,11 @@ class AlgoTx extends AbstractModel {
      * Set fee
      * 
      * @param float|null $fee Transaction fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?float $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -162,12 +148,11 @@ class AlgoTx extends AbstractModel {
      * Set first_valid
      * 
      * @param float|null $first_valid First valid round for this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFirstValid(?float $first_valid) {
-        $this->_data['first_valid'] = $first_valid;
-
-        return $this;
+        return $this->_set("first_valid", $first_valid);
     }
 
     /**
@@ -183,12 +168,11 @@ class AlgoTx extends AbstractModel {
      * Set genesis_hash
      * 
      * @param string|null $genesis_hash Hash of genesis block
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGenesisHash(?string $genesis_hash) {
-        $this->_data['genesis_hash'] = $genesis_hash;
-
-        return $this;
+        return $this->_set("genesis_hash", $genesis_hash);
     }
 
     /**
@@ -204,12 +188,11 @@ class AlgoTx extends AbstractModel {
      * Set genesis_id
      * 
      * @param string|null $genesis_id genesis block ID.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGenesisId(?string $genesis_id) {
-        $this->_data['genesis_id'] = $genesis_id;
-
-        return $this;
+        return $this->_set("genesis_id", $genesis_id);
     }
 
     /**
@@ -225,12 +208,11 @@ class AlgoTx extends AbstractModel {
      * Set id
      * 
      * @param string|null $id transaction ID
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -246,12 +228,11 @@ class AlgoTx extends AbstractModel {
      * Set intra_round_offset
      * 
      * @param float|null $intra_round_offset Offset into the round where this transaction was confirmed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIntraRoundOffset(?float $intra_round_offset) {
-        $this->_data['intra_round_offset'] = $intra_round_offset;
-
-        return $this;
+        return $this->_set("intra_round_offset", $intra_round_offset);
     }
 
     /**
@@ -267,12 +248,11 @@ class AlgoTx extends AbstractModel {
      * Set last_valid
      * 
      * @param float|null $last_valid Last valid round for this transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLastValid(?float $last_valid) {
-        $this->_data['last_valid'] = $last_valid;
-
-        return $this;
+        return $this->_set("last_valid", $last_valid);
     }
 
     /**
@@ -288,12 +268,11 @@ class AlgoTx extends AbstractModel {
      * Set note
      * 
      * @param string|null $note Free form data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNote(?string $note) {
-        $this->_data['note'] = $note;
-
-        return $this;
+        return $this->_set("note", $note);
     }
 
     /**
@@ -309,12 +288,11 @@ class AlgoTx extends AbstractModel {
      * Set payment_transaction
      * 
      * @param object|null $payment_transaction payment Transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPaymentTransaction(?object $payment_transaction) {
-        $this->_data['payment_transaction'] = $payment_transaction;
-
-        return $this;
+        return $this->_set("payment_transaction", $payment_transaction);
     }
 
     /**
@@ -330,12 +308,11 @@ class AlgoTx extends AbstractModel {
      * Set receiver_rewards
      * 
      * @param float|null $receiver_rewards rewards applied to receiver account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReceiverRewards(?float $receiver_rewards) {
-        $this->_data['receiver_rewards'] = $receiver_rewards;
-
-        return $this;
+        return $this->_set("receiver_rewards", $receiver_rewards);
     }
 
     /**
@@ -351,12 +328,11 @@ class AlgoTx extends AbstractModel {
      * Set round_time
      * 
      * @param float|null $round_time Time when the block this transaction is in was confirmed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRoundTime(?float $round_time) {
-        $this->_data['round_time'] = $round_time;
-
-        return $this;
+        return $this->_set("round_time", $round_time);
     }
 
     /**
@@ -372,12 +348,11 @@ class AlgoTx extends AbstractModel {
      * Set sender
      * 
      * @param string|null $sender Sender's address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(?string $sender) {
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -393,12 +368,11 @@ class AlgoTx extends AbstractModel {
      * Set sender_rewards
      * 
      * @param float|null $sender_rewards rewards applied to sender account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderRewards(?float $sender_rewards) {
-        $this->_data['sender_rewards'] = $sender_rewards;
-
-        return $this;
+        return $this->_set("sender_rewards", $sender_rewards);
     }
 
     /**
@@ -414,12 +388,11 @@ class AlgoTx extends AbstractModel {
      * Set signature
      * 
      * @param object|null $signature signature
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignature(?object $signature) {
-        $this->_data['signature'] = $signature;
-
-        return $this;
+        return $this->_set("signature", $signature);
     }
 
     /**
@@ -435,11 +408,10 @@ class AlgoTx extends AbstractModel {
      * Set tx_type
      * 
      * @param string|null $tx_type indicates what type of transaction this is. Different types have differnet fields.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxType(?string $tx_type) {
-        $this->_data['tx_type'] = $tx_type;
-
-        return $this;
+        return $this->_set("tx_type", $tx_type);
     }
 }

@@ -116,6 +116,126 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * {@inheritdoc}
      *
+     * @param string $property (optional) Perform checks for this item only; default <b>null</b>
+     */
+    public function listInvalidProperties($property = null): array {
+        // Invalid properties
+        $ip = [];
+
+        // Go through all properties
+        foreach (static::$_definition as $name => $def) {
+            // Perform check for the specified property only
+            if (null !== $property && $name !== $property) {
+                continue;
+            }
+
+            $prop = $def[6];
+            $getter = $def[3];
+
+            // Required
+            if ($prop["r"]) {
+                if (is_null($this->_data[$name])) {
+                    $ip[] = "'$name' cannot be null";
+                }
+            }
+
+            // Enum and not container
+            if (isset($prop["e"]) && !isset($prop["c"])) {
+                $methodName = $getter . "AllowableValues";
+                if (method_exists($this, $methodName)) {
+                    $allowed = $this->$methodName();
+                    $value = $this->_data[$name];
+
+                    if (!is_null($value) && !in_array($value, $allowed, true)) {
+                        $ip[] = sprintf(
+                            "'$name' has invalid value '%s', must be one of '%s'",
+                            $value,
+                            implode("', '", $allowed)
+                        );
+                    }
+                }
+            }
+
+            // Pattern
+            if (isset($prop["p"])) {
+                if ($prop["r"] && !preg_match($prop["p"], $this->_data[$name])) {
+                    $ip[] = sprintf(
+                        "'$name' must mach pattern %s, '%s' provided",
+                        $prop["p"],
+                        var_export($this->_data[$name], true)
+                    );
+                }
+            }
+
+            // Minimum
+            if (isset($prop["n"])) {
+                if (
+                    $prop["r"] &&
+                    (isset($prop["n"][1])
+                        ? // Exclusive
+                            $this->_data[$name] <= $prop["n"][0]
+                        : // Non-exclusive
+                            $this->_data[$name] < $prop["n"][0])
+                ) {
+                    $ip[] = sprintf(
+                        "'$name' must be %s {$prop["n"][0]}",
+                        isset($prop["n"][1]) ? "greater than" : "greater than or equal to"
+                    );
+                }
+            }
+
+            // Maximum
+            if (isset($prop["x"])) {
+                if (
+                    $prop["r"] &&
+                    (isset($prop["x"][1])
+                        ? // Exclusive
+                            $this->_data[$name] >= $prop["x"][0]
+                        : // Non-exclusive
+                            $this->_data[$name] > $prop["x"][0])
+                ) {
+                    $ip[] = sprintf(
+                        "'$name' must be %s {$prop["x"][0]}",
+                        isset($prop["x"][1]) ? "smaller than" : "smaller than or equal to"
+                    );
+                }
+            }
+
+            // Minimum length
+            if (isset($prop["nl"])) {
+                if ($prop["r"] && mb_strlen($this->_data[$name]) < $prop["nl"]) {
+                    $ip[] = "'$name' length must be greater than or equal to {$prop["nl"]}";
+                }
+            }
+
+            // Maximum length
+            if (isset($prop["xl"])) {
+                if ($prop["r"] && mb_strlen($this->_data[$name]) > $prop["xl"]) {
+                    $ip[] = "'$name' length must be smaller than or equal to {$prop["xl"]}";
+                }
+            }
+
+            // Minimum items
+            if (isset($prop["ni"])) {
+                if ($prop["r"] && is_array($this->_data[$name]) && count($this->_data[$name]) < $prop["ni"]) {
+                    $ip[] = "'$name' count must be greater than or equal to {$prop["ni"]}";
+                }
+            }
+
+            // Maximum items
+            if (isset($prop["xi"])) {
+                if ($prop["r"] && is_array($this->_data[$name]) && count($this->_data[$name]) > $prop["xi"]) {
+                    $ip[] = "'$name' count must be smaller than or equal to {$prop["xi"]}";
+                }
+            }
+        }
+
+        return $ip;
+    }
+
+    /**
+     * {@inheritdoc}
+     *
      * @return $this
      */
     public function setAdditionalProperties(array $fields) {
@@ -221,5 +341,35 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __toString() {
         return json_encode(Serializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
+    }
+
+    /**
+     * Store property and perform validation
+     *
+     * @param string $name  Property name
+     * @param mixed  $value Property value
+     * @throws \InvalidArgumentException
+     *
+     * @return $this
+     */
+    protected function _set($name, $value) {
+        if (!isset(static::$_definition[$name])) {
+            throw new InvalidArgumentException(sprintf("%s: Property '%s' not declared", get_called_class(), $name));
+        }
+
+        // Store
+        $this->_data[$name] = $value;
+
+        // Validate
+        $issues = $this->listInvalidProperties($name);
+
+        // Something went wrong
+        if (count($issues)) {
+            throw new InvalidArgumentException(
+                sprintf("%s::%s() %s", get_called_class(), static::$_definition[$name][4], current($issues))
+            );
+        }
+
+        return $this;
     }
 }

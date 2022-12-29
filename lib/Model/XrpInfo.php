@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpInfo Model
  */
@@ -25,8 +23,8 @@ class XrpInfo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpInfo";
     protected static $_definition = [
-        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null], 
-        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex", null]
+        "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null, ["r" => 0]], 
+        "ledger_index" => ["ledger_index", "float", null, "getLedgerIndex", "setLedgerIndex", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class XrpInfo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class XrpInfo extends AbstractModel {
      * Set ledger_hash
      * 
      * @param string|null $ledger_hash Current ledger hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerHash(?string $ledger_hash) {
-        $this->_data['ledger_hash'] = $ledger_hash;
-
-        return $this;
+        return $this->_set("ledger_hash", $ledger_hash);
     }
 
     /**
@@ -83,11 +72,10 @@ class XrpInfo extends AbstractModel {
      * Set ledger_index
      * 
      * @param float|null $ledger_index Current ledger index.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerIndex(?float $ledger_index) {
-        $this->_data['ledger_index'] = $ledger_index;
-
-        return $this;
+        return $this->_set("ledger_index", $ledger_index);
     }
 }

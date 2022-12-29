@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DeployErc20Response Model
  */
@@ -25,8 +23,8 @@ class DeployErc20Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DeployErc20Response";
     protected static $_definition = [
-        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null], 
-        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null]
+        "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1]], 
+        "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class DeployErc20Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['account_id'])) {
-            $ip[] = "'account_id' can't be null";
-        }
-        if (is_null($this->_data['tx_id'])) {
-            $ip[] = "'tx_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -68,12 +52,11 @@ class DeployErc20Response extends AbstractModel {
      * Set account_id
      * 
      * @param string $account_id Account ID with the type of currency as created ERC20/BEP20 token symbol. Account will be unfrozen when ERC20/BEP20 contract address will be set.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountId(string $account_id) {
-        $this->_data['account_id'] = $account_id;
-
-        return $this;
+        return $this->_set("account_id", $account_id);
     }
 
     /**
@@ -89,11 +72,10 @@ class DeployErc20Response extends AbstractModel {
      * Set tx_id
      * 
      * @param string $tx_id TX hash of successful transaction. From this transaction receipt contract address can be obtained.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxId(string $tx_id) {
-        $this->_data['tx_id'] = $tx_id;
-
-        return $this;
+        return $this->_set("tx_id", $tx_id);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * PrivKey Model
  */
@@ -25,7 +23,7 @@ class PrivKey extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "PrivKey";
     protected static $_definition = [
-        "key" => ["key", "string", null, "getKey", "setKey", null]
+        "key" => ["key", "string", null, "getKey", "setKey", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class PrivKey extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class PrivKey extends AbstractModel {
      * Set key
      * 
      * @param string|null $key Generated private key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setKey(?string $key) {
-        $this->_data['key'] = $key;
-
-        return $this;
+        return $this->_set("key", $key);
     }
 }

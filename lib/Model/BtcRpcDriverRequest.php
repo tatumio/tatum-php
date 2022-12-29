@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcRpcDriver_request Model
  * 
@@ -27,10 +25,10 @@ class BtcRpcDriverRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcRpcDriver_request";
     protected static $_definition = [
-        "jsonrpc" => ["jsonrpc", "string", null, "getJsonrpc", "setJsonrpc", null], 
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "method" => ["method", "string", null, "getMethod", "setMethod", null], 
-        "params" => ["params", "object[]", null, "getParams", "setParams", null]
+        "jsonrpc" => ["jsonrpc", "string", null, "getJsonrpc", "setJsonrpc", null, ["r" => 0]], 
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 
+        "method" => ["method", "string", null, "getMethod", "setMethod", null, ["r" => 0]], 
+        "params" => ["params", "object[]", null, "getParams", "setParams", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class BtcRpcDriverRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class BtcRpcDriverRequest extends AbstractModel {
      * Set jsonrpc
      * 
      * @param string|null $jsonrpc Version of the JSON RPC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setJsonrpc(?string $jsonrpc) {
-        $this->_data['jsonrpc'] = $jsonrpc;
-
-        return $this;
+        return $this->_set("jsonrpc", $jsonrpc);
     }
 
     /**
@@ -87,12 +76,11 @@ class BtcRpcDriverRequest extends AbstractModel {
      * Set id
      * 
      * @param string|null $id ID of the request, could be any arbitrary identifier.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?string $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -108,12 +96,11 @@ class BtcRpcDriverRequest extends AbstractModel {
      * Set method
      * 
      * @param string|null $method Method to invoke on the node.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMethod(?string $method) {
-        $this->_data['method'] = $method;
-
-        return $this;
+        return $this->_set("method", $method);
     }
 
     /**
@@ -129,11 +116,10 @@ class BtcRpcDriverRequest extends AbstractModel {
      * Set params
      * 
      * @param object[]|null $params Params to the method call, if required.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParams(?array $params) {
-        $this->_data['params'] = $params;
-
-        return $this;
+        return $this->_set("params", $params);
     }
 }

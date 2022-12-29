@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XlmAccount_thresholds Model
  * 
@@ -27,9 +25,9 @@ class XlmAccountThresholds extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XlmAccount_thresholds";
     protected static $_definition = [
-        "low_threshold" => ["low_threshold", "float", null, "getLowThreshold", "setLowThreshold", null], 
-        "med_threshold" => ["med_threshold", "float", null, "getMedThreshold", "setMedThreshold", null], 
-        "high_threshold" => ["high_threshold", "float", null, "getHighThreshold", "setHighThreshold", null]
+        "low_threshold" => ["low_threshold", "float", null, "getLowThreshold", "setLowThreshold", null, ["r" => 0]], 
+        "med_threshold" => ["med_threshold", "float", null, "getMedThreshold", "setMedThreshold", null, ["r" => 0]], 
+        "high_threshold" => ["high_threshold", "float", null, "getHighThreshold", "setHighThreshold", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class XlmAccountThresholds extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class XlmAccountThresholds extends AbstractModel {
      * Set low_threshold
      * 
      * @param float|null $low_threshold The weight required for a valid transaction including the Allow Trust and Bump Sequence operations.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLowThreshold(?float $low_threshold) {
-        $this->_data['low_threshold'] = $low_threshold;
-
-        return $this;
+        return $this->_set("low_threshold", $low_threshold);
     }
 
     /**
@@ -86,12 +75,11 @@ class XlmAccountThresholds extends AbstractModel {
      * Set med_threshold
      * 
      * @param float|null $med_threshold The weight required for a valid transaction including the Create Account, Payment, Path Payment, Manage Buy Offer, Manage Sell Offer, Create Passive Sell Offer, Change Trust, Inflation, and Manage Data operations.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMedThreshold(?float $med_threshold) {
-        $this->_data['med_threshold'] = $med_threshold;
-
-        return $this;
+        return $this->_set("med_threshold", $med_threshold);
     }
 
     /**
@@ -107,11 +95,10 @@ class XlmAccountThresholds extends AbstractModel {
      * Set high_threshold
      * 
      * @param float|null $high_threshold The weight required for a valid transaction including the Account Merge and Set Options operations.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHighThreshold(?float $high_threshold) {
-        $this->_data['high_threshold'] = $high_threshold;
-
-        return $this;
+        return $this->_set("high_threshold", $high_threshold);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Error403RecipientFormat Model
  */
@@ -25,9 +23,9 @@ class Error403RecipientFormat extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Error403RecipientFormat";
     protected static $_definition = [
-        "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode", null], 
-        "message" => ["message", "string", null, "getMessage", "setMessage", null], 
-        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null]
+        "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode", null, ["r" => 1]], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 1]], 
+        "status_code" => ["statusCode", "float", null, "getStatusCode", "setStatusCode", null, ["r" => 1]]
     ];
 
     /**
@@ -39,23 +37,6 @@ class Error403RecipientFormat extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['error_code'])) {
-            $ip[] = "'error_code' can't be null";
-        }
-        if (is_null($this->_data['message'])) {
-            $ip[] = "'message' can't be null";
-        }
-        if (is_null($this->_data['status_code'])) {
-            $ip[] = "'status_code' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -72,12 +53,11 @@ class Error403RecipientFormat extends AbstractModel {
      * Set error_code
      * 
      * @param string $error_code withdrawal.recipient.format
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErrorCode(string $error_code) {
-        $this->_data['error_code'] = $error_code;
-
-        return $this;
+        return $this->_set("error_code", $error_code);
     }
 
     /**
@@ -93,12 +73,11 @@ class Error403RecipientFormat extends AbstractModel {
      * Set message
      * 
      * @param string $message Recipient blockchain address has incorrect format.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(string $message) {
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 
     /**
@@ -114,11 +93,10 @@ class Error403RecipientFormat extends AbstractModel {
      * Set status_code
      * 
      * @param float $status_code 403
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatusCode(float $status_code) {
-        $this->_data['status_code'] = $status_code;
-
-        return $this;
+        return $this->_set("status_code", $status_code);
     }
 }

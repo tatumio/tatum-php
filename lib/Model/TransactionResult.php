@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransactionResult Model
  */
@@ -25,7 +23,7 @@ class TransactionResult extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransactionResult";
     protected static $_definition = [
-        "reference" => ["reference", "string", null, "getReference", "setReference", null]
+        "reference" => ["reference", "string", null, "getReference", "setReference", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class TransactionResult extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class TransactionResult extends AbstractModel {
      * Set reference
      * 
      * @param string|null $reference The internal reference to the transaction (a unique identifier of the transaction within the virtual account); if the transaction fails, use this reference to search through the logs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReference(?string $reference) {
-        $this->_data['reference'] = $reference;
-
-        return $this;
+        return $this->_set("reference", $reference);
     }
 }

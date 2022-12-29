@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * WithdrawalHint_value Model
  */
@@ -25,8 +23,8 @@ class WithdrawalHintValue extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "WithdrawalHint_value";
     protected static $_definition = [
-        "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class WithdrawalHintValue extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class WithdrawalHintValue extends AbstractModel {
      * Set address
      * 
      * @param \Tatum\Model\Address|null $address address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?\Tatum\Model\Address $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -83,11 +72,10 @@ class WithdrawalHintValue extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Balance for address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

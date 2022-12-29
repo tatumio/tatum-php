@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaBlock Model
  */
@@ -25,13 +23,13 @@ class SolanaBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaBlock";
     protected static $_definition = [
-        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null], 
-        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime", null], 
-        "blockhash" => ["blockhash", "string", null, "getBlockhash", "setBlockhash", null], 
-        "parent_slot" => ["parentSlot", "float", null, "getParentSlot", "setParentSlot", null], 
-        "previous_blockhash" => ["previousBlockhash", "string", null, "getPreviousBlockhash", "setPreviousBlockhash", null], 
-        "rewards" => ["rewards", "\Tatum\Model\SolanaBlockReward[]", null, "getRewards", "setRewards", null], 
-        "transactions" => ["transactions", "\Tatum\Model\SolanaBlockTx[]", null, "getTransactions", "setTransactions", null]
+        "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null, ["r" => 0]], 
+        "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime", null, ["r" => 0]], 
+        "blockhash" => ["blockhash", "string", null, "getBlockhash", "setBlockhash", null, ["r" => 0]], 
+        "parent_slot" => ["parentSlot", "float", null, "getParentSlot", "setParentSlot", null, ["r" => 0]], 
+        "previous_blockhash" => ["previousBlockhash", "string", null, "getPreviousBlockhash", "setPreviousBlockhash", null, ["r" => 0]], 
+        "rewards" => ["rewards", "\Tatum\Model\SolanaBlockReward[]", null, "getRewards", "setRewards", null, ["r" => 0, "c" => 1]], 
+        "transactions" => ["transactions", "\Tatum\Model\SolanaBlockTx[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -43,14 +41,6 @@ class SolanaBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -67,12 +57,11 @@ class SolanaBlock extends AbstractModel {
      * Set block_height
      * 
      * @param float|null $block_height block_height
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockHeight(?float $block_height) {
-        $this->_data['block_height'] = $block_height;
-
-        return $this;
+        return $this->_set("block_height", $block_height);
     }
 
     /**
@@ -88,12 +77,11 @@ class SolanaBlock extends AbstractModel {
      * Set block_time
      * 
      * @param float|null $block_time block_time
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockTime(?float $block_time) {
-        $this->_data['block_time'] = $block_time;
-
-        return $this;
+        return $this->_set("block_time", $block_time);
     }
 
     /**
@@ -109,12 +97,11 @@ class SolanaBlock extends AbstractModel {
      * Set blockhash
      * 
      * @param string|null $blockhash blockhash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockhash(?string $blockhash) {
-        $this->_data['blockhash'] = $blockhash;
-
-        return $this;
+        return $this->_set("blockhash", $blockhash);
     }
 
     /**
@@ -130,12 +117,11 @@ class SolanaBlock extends AbstractModel {
      * Set parent_slot
      * 
      * @param float|null $parent_slot parent_slot
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParentSlot(?float $parent_slot) {
-        $this->_data['parent_slot'] = $parent_slot;
-
-        return $this;
+        return $this->_set("parent_slot", $parent_slot);
     }
 
     /**
@@ -151,12 +137,11 @@ class SolanaBlock extends AbstractModel {
      * Set previous_blockhash
      * 
      * @param string|null $previous_blockhash previous_blockhash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousBlockhash(?string $previous_blockhash) {
-        $this->_data['previous_blockhash'] = $previous_blockhash;
-
-        return $this;
+        return $this->_set("previous_blockhash", $previous_blockhash);
     }
 
     /**
@@ -172,12 +157,11 @@ class SolanaBlock extends AbstractModel {
      * Set rewards
      * 
      * @param \Tatum\Model\SolanaBlockReward[]|null $rewards rewards
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRewards(?array $rewards) {
-        $this->_data['rewards'] = $rewards;
-
-        return $this;
+        return $this->_set("rewards", $rewards);
     }
 
     /**
@@ -193,11 +177,10 @@ class SolanaBlock extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\SolanaBlockTx[]|null $transactions transactions
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

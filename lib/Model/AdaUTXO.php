@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaUTXO Model
  */
@@ -25,10 +23,10 @@ class AdaUTXO extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaUTXO";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null]
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0]], 
+        "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class AdaUTXO extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class AdaUTXO extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Sent amount in Lovelace - 1/1000000 of ADA.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -85,12 +74,11 @@ class AdaUTXO extends AbstractModel {
      * Set index
      * 
      * @param float|null $index Index of the output in the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -106,12 +94,11 @@ class AdaUTXO extends AbstractModel {
      * Set tx_hash
      * 
      * @param string|null $tx_hash Transaction hash.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxHash(?string $tx_hash) {
-        $this->_data['tx_hash'] = $tx_hash;
-
-        return $this;
+        return $this->_set("tx_hash", $tx_hash);
     }
 
     /**
@@ -127,11 +114,10 @@ class AdaUTXO extends AbstractModel {
      * Set address
      * 
      * @param string|null $address Recipient address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 }

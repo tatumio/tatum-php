@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetTxReceipt_outputs_inner_transfers_inner Model
  */
@@ -25,9 +23,9 @@ class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTxReceipt_outputs_inner_transfers_inner";
     protected static $_definition = [
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 0]], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null, ["r" => 0]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
      * Set sender
      * 
      * @param string|null $sender sender
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(?string $sender) {
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -84,12 +73,11 @@ class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
      * Set recipient
      * 
      * @param string|null $recipient recipient
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipient(?string $recipient) {
-        $this->_data['recipient'] = $recipient;
-
-        return $this;
+        return $this->_set("recipient", $recipient);
     }
 
     /**
@@ -105,11 +93,10 @@ class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount amount
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaTxMessage Model
  */
@@ -25,11 +23,11 @@ class SolanaTxMessage extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxMessage";
     protected static $_definition = [
-        "header" => ["header", "\Tatum\Model\SolanaTxMessageHeader", null, "getHeader", "setHeader", null], 
-        "account_keys" => ["accountKeys", "string[]", null, "getAccountKeys", "setAccountKeys", null], 
-        "recent_blockhash" => ["recentBlockhash", "string", null, "getRecentBlockhash", "setRecentBlockhash", null], 
-        "instructions" => ["instructions", "\Tatum\Model\SolanaTxMessageInstruction[]", null, "getInstructions", "setInstructions", null], 
-        "index_to_program_ids" => ["indexToProgramIds", "object", null, "getIndexToProgramIds", "setIndexToProgramIds", null]
+        "header" => ["header", "\Tatum\Model\SolanaTxMessageHeader", null, "getHeader", "setHeader", null, ["r" => 0]], 
+        "account_keys" => ["accountKeys", "string[]", null, "getAccountKeys", "setAccountKeys", null, ["r" => 0, "c" => 1]], 
+        "recent_blockhash" => ["recentBlockhash", "string", null, "getRecentBlockhash", "setRecentBlockhash", null, ["r" => 0]], 
+        "instructions" => ["instructions", "\Tatum\Model\SolanaTxMessageInstruction[]", null, "getInstructions", "setInstructions", null, ["r" => 0, "c" => 1]], 
+        "index_to_program_ids" => ["indexToProgramIds", "object", null, "getIndexToProgramIds", "setIndexToProgramIds", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class SolanaTxMessage extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class SolanaTxMessage extends AbstractModel {
      * Set header
      * 
      * @param \Tatum\Model\SolanaTxMessageHeader|null $header header
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHeader(?\Tatum\Model\SolanaTxMessageHeader $header) {
-        $this->_data['header'] = $header;
-
-        return $this;
+        return $this->_set("header", $header);
     }
 
     /**
@@ -86,12 +75,11 @@ class SolanaTxMessage extends AbstractModel {
      * Set account_keys
      * 
      * @param string[]|null $account_keys account_keys
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountKeys(?array $account_keys) {
-        $this->_data['account_keys'] = $account_keys;
-
-        return $this;
+        return $this->_set("account_keys", $account_keys);
     }
 
     /**
@@ -107,12 +95,11 @@ class SolanaTxMessage extends AbstractModel {
      * Set recent_blockhash
      * 
      * @param string|null $recent_blockhash recent_blockhash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecentBlockhash(?string $recent_blockhash) {
-        $this->_data['recent_blockhash'] = $recent_blockhash;
-
-        return $this;
+        return $this->_set("recent_blockhash", $recent_blockhash);
     }
 
     /**
@@ -128,12 +115,11 @@ class SolanaTxMessage extends AbstractModel {
      * Set instructions
      * 
      * @param \Tatum\Model\SolanaTxMessageInstruction[]|null $instructions instructions
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInstructions(?array $instructions) {
-        $this->_data['instructions'] = $instructions;
-
-        return $this;
+        return $this->_set("instructions", $instructions);
     }
 
     /**
@@ -149,11 +135,10 @@ class SolanaTxMessage extends AbstractModel {
      * Set index_to_program_ids
      * 
      * @param object|null $index_to_program_ids index_to_program_ids
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndexToProgramIds(?object $index_to_program_ids) {
-        $this->_data['index_to_program_ids'] = $index_to_program_ids;
-
-        return $this;
+        return $this->_set("index_to_program_ids", $index_to_program_ids);
     }
 }

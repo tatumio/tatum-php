@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AdaBlock Model
  */
@@ -25,12 +23,12 @@ class AdaBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AdaBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "number" => ["number", "float", null, "getNumber", "setNumber", null], 
-        "epoch_no" => ["epochNo", "float", null, "getEpochNo", "setEpochNo", null], 
-        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo", null], 
-        "forged_at" => ["forgedAt", "string", null, "getForgedAt", "setForgedAt", null], 
-        "transactions" => ["transactions", "\Tatum\Model\AdaTx[]", null, "getTransactions", "setTransactions", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "number" => ["number", "float", null, "getNumber", "setNumber", null, ["r" => 0]], 
+        "epoch_no" => ["epochNo", "float", null, "getEpochNo", "setEpochNo", null, ["r" => 0]], 
+        "slot_no" => ["slotNo", "float", null, "getSlotNo", "setSlotNo", null, ["r" => 0]], 
+        "forged_at" => ["forgedAt", "string", null, "getForgedAt", "setForgedAt", null, ["r" => 0]], 
+        "transactions" => ["transactions", "\Tatum\Model\AdaTx[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class AdaBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class AdaBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Hash of block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -87,12 +76,11 @@ class AdaBlock extends AbstractModel {
      * Set number
      * 
      * @param float|null $number The number of blocks preceding a particular block on a block chain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNumber(?float $number) {
-        $this->_data['number'] = $number;
-
-        return $this;
+        return $this->_set("number", $number);
     }
 
     /**
@@ -108,12 +96,11 @@ class AdaBlock extends AbstractModel {
      * Set epoch_no
      * 
      * @param float|null $epoch_no Number of the epoch the block is included in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setEpochNo(?float $epoch_no) {
-        $this->_data['epoch_no'] = $epoch_no;
-
-        return $this;
+        return $this->_set("epoch_no", $epoch_no);
     }
 
     /**
@@ -129,12 +116,11 @@ class AdaBlock extends AbstractModel {
      * Set slot_no
      * 
      * @param float|null $slot_no Number of the slot the block is included in.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSlotNo(?float $slot_no) {
-        $this->_data['slot_no'] = $slot_no;
-
-        return $this;
+        return $this->_set("slot_no", $slot_no);
     }
 
     /**
@@ -150,12 +136,11 @@ class AdaBlock extends AbstractModel {
      * Set forged_at
      * 
      * @param string|null $forged_at Time of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setForgedAt(?string $forged_at) {
-        $this->_data['forged_at'] = $forged_at;
-
-        return $this;
+        return $this->_set("forged_at", $forged_at);
     }
 
     /**
@@ -171,11 +156,10 @@ class AdaBlock extends AbstractModel {
      * Set transactions
      * 
      * @param \Tatum\Model\AdaTx[]|null $transactions transactions
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransactions(?array $transactions) {
-        $this->_data['transactions'] = $transactions;
-
-        return $this;
+        return $this->_set("transactions", $transactions);
     }
 }

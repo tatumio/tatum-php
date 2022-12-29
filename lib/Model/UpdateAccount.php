@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * UpdateAccount Model
  */
@@ -25,8 +23,8 @@ class UpdateAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "UpdateAccount";
     protected static $_definition = [
-        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null], 
-        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null]
+        "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null, ["r" => 0, "nl" => 1, "xl" => 50]], 
+        "account_number" => ["accountNumber", "string", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0, "nl" => 1, "xl" => 50]]
     ];
 
     /**
@@ -38,26 +36,6 @@ class UpdateAccount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (!is_null($this->_data['account_code']) && (mb_strlen($this->_data['account_code']) > 50)) {
-            $ip[] = "'account_code' length must be <= 50";
-        }
-        if (!is_null($this->_data['account_code']) && (mb_strlen($this->_data['account_code']) < 1)) {
-            $ip[] = "'account_code' length must be >= 1";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) > 50)) {
-            $ip[] = "'account_number' length must be <= 50";
-        }
-        if (!is_null($this->_data['account_number']) && (mb_strlen($this->_data['account_number']) < 1)) {
-            $ip[] = "'account_number' length must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -74,18 +52,11 @@ class UpdateAccount extends AbstractModel {
      * Set account_code
      * 
      * @param string|null $account_code For bookkeeping to distinct account purpose.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountCode(?string $account_code) {
-        if (!is_null($account_code) && (mb_strlen($account_code) > 50)) {
-            throw new IAE('UpdateAccount.setAccountCode: $account_code length must be <= 50');
-        }
-        if (!is_null($account_code) && (mb_strlen($account_code) < 1)) {
-            throw new IAE('UpdateAccount.setAccountCode: $account_code length must be >= 1');
-        }
-        $this->_data['account_code'] = $account_code;
-
-        return $this;
+        return $this->_set("account_code", $account_code);
     }
 
     /**
@@ -101,17 +72,10 @@ class UpdateAccount extends AbstractModel {
      * Set account_number
      * 
      * @param string|null $account_number Account number from external system.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountNumber(?string $account_number) {
-        if (!is_null($account_number) && (mb_strlen($account_number) > 50)) {
-            throw new IAE('UpdateAccount.setAccountNumber: $account_number length must be <= 50');
-        }
-        if (!is_null($account_number) && (mb_strlen($account_number) < 1)) {
-            throw new IAE('UpdateAccount.setAccountNumber: $account_number length must be >= 1');
-        }
-        $this->_data['account_number'] = $account_number;
-
-        return $this;
+        return $this->_set("account_number", $account_number);
     }
 }

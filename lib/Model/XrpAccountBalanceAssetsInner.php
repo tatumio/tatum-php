@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccountBalance_assets_inner Model
  */
@@ -25,8 +23,8 @@ class XrpAccountBalanceAssetsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccountBalance_assets_inner";
     protected static $_definition = [
-        "balance" => ["balance", "string", null, "getBalance", "setBalance", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null]
+        "balance" => ["balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class XrpAccountBalanceAssetsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class XrpAccountBalanceAssetsInner extends AbstractModel {
      * Set balance
      * 
      * @param string|null $balance Balance of the asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?string $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -83,11 +72,10 @@ class XrpAccountBalanceAssetsInner extends AbstractModel {
      * Set currency
      * 
      * @param string|null $currency Asset identifier.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(?string $currency) {
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionTxInTheBlock_attr Model
  * 
@@ -27,7 +25,7 @@ class CreateSubscriptionTxInTheBlockAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateSubscriptionTxInTheBlock_attr";
     protected static $_definition = [
-        "url" => ["url", "string", null, "getUrl", "setUrl", null]
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 500]]
     ];
 
     /**
@@ -39,20 +37,6 @@ class CreateSubscriptionTxInTheBlockAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 500)) {
-            $ip[] = "'url' length must be <= 500";
-        }
-        return $ip;
     }
 
 
@@ -69,14 +53,10 @@ class CreateSubscriptionTxInTheBlockAttr extends AbstractModel {
      * Set url
      * 
      * @param string $url URL of the endpoint, where HTTP POST request will be sent, when outgoing ledger transaction is included in the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 500)) {
-            throw new IAE('CreateSubscriptionTxInTheBlockAttr.setUrl: $url length must be <= 500');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CancelSellAssetOnMarketplaceSolana Model
  */
@@ -26,12 +24,12 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "CancelSellAssetOnMarketplaceSolana";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null], 
-        "from" => ["from", "mixed", null, "getFrom", "setFrom", null], 
-        "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "from" => ["from", "mixed", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey", null, ["r" => 0, "nl" => 87, "xl" => 128]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 87, "xl" => 128]]
     ];
 
     /**
@@ -43,64 +41,6 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 44)) {
-            $ip[] = "'contract_address' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 44)) {
-            $ip[] = "'contract_address' length must be >= 44";
-        }
-        if (is_null($this->_data['listing_id'])) {
-            $ip[] = "'listing_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['listing_id']) > 44)) {
-            $ip[] = "'listing_id' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['listing_id']) < 44)) {
-            $ip[] = "'listing_id' length must be >= 44";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 44)) {
-            $ip[] = "'from' length must be >= 44";
-        }
-        if (!is_null($this->_data['authority_private_key']) && (mb_strlen($this->_data['authority_private_key']) > 128)) {
-            $ip[] = "'authority_private_key' length must be <= 128";
-        }
-        if (!is_null($this->_data['authority_private_key']) && (mb_strlen($this->_data['authority_private_key']) < 87)) {
-            $ip[] = "'authority_private_key' length must be >= 87";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 128)) {
-            $ip[] = "'from_private_key' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 87)) {
-            $ip[] = "'from_private_key' length must be >= 87";
-        }
-        return $ip;
     }
 
     /**
@@ -127,16 +67,11 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to work with.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CancelSellAssetOnMarketplaceSolana.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -152,18 +87,11 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Blockchain address of the smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 44)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setContractAddress: $contract_address length must be <= 44');
-        }
-        if ((mb_strlen($contract_address) < 44)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setContractAddress: $contract_address length must be >= 44');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -179,18 +107,11 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
      * Set listing_id
      * 
      * @param mixed $listing_id Blockchain address of the listing
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setListingId(mixed $listing_id) {
-        if ((mb_strlen($listing_id) > 44)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setListingId: $listing_id length must be <= 44');
-        }
-        if ((mb_strlen($listing_id) < 44)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setListingId: $listing_id length must be >= 44');
-        }
-        $this->_data['listing_id'] = $listing_id;
-
-        return $this;
+        return $this->_set("listing_id", $listing_id);
     }
 
     /**
@@ -206,18 +127,11 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
      * Set from
      * 
      * @param mixed $from Blockchain address of the asset owner
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(mixed $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 44)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setFrom: $from length must be >= 44');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -233,18 +147,11 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
      * Set authority_private_key
      * 
      * @param string|null $authority_private_key The private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to \"true\" for the marketplace
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAuthorityPrivateKey(?string $authority_private_key) {
-        if (!is_null($authority_private_key) && (mb_strlen($authority_private_key) > 128)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setAuthorityPrivateKey: $authority_private_key length must be <= 128');
-        }
-        if (!is_null($authority_private_key) && (mb_strlen($authority_private_key) < 87)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setAuthorityPrivateKey: $authority_private_key length must be >= 87');
-        }
-        $this->_data['authority_private_key'] = $authority_private_key;
-
-        return $this;
+        return $this->_set("authority_private_key", $authority_private_key);
     }
 
     /**
@@ -260,17 +167,10 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the asset owner
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 128)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setFromPrivateKey: $from_private_key length must be <= 128');
-        }
-        if ((mb_strlen($from_private_key) < 87)) {
-            throw new IAE('CancelSellAssetOnMarketplaceSolana.setFromPrivateKey: $from_private_key length must be >= 87');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 }

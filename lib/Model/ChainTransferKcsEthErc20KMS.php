@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ChainTransferKcsEthErc20KMS Model
  */
@@ -26,14 +24,14 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
     public const CHAIN_KCS = 'KCS';
     protected static $_name = "ChainTransferKcsEthErc20KMS";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "digits" => ["digits", "float", null, "getDigits", "setDigits", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 1, "xl" => 50]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 43]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "digits" => ["digits", "float", null, "getDigits", "setDigits", null, ["r" => 1, "n" => [1], "x" => [30]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -45,61 +43,6 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 50)) {
-            $ip[] = "'to' length must be <= 50";
-        }
-        if ((mb_strlen($this->_data['to']) < 1)) {
-            $ip[] = "'to' length must be >= 1";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 43)) {
-            $ip[] = "'contract_address' length must be <= 43";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['digits'])) {
-            $ip[] = "'digits' can't be null";
-        }
-        if (($this->_data['digits'] > 30)) {
-            $ip[] = "'digits' must be <= 30";
-        }
-        if (($this->_data['digits'] < 1)) {
-            $ip[] = "'digits' must be >= 1";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -126,16 +69,11 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("ChainTransferKcsEthErc20KMS.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -151,18 +89,11 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address to send the fungible tokens to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 50)) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setTo: $to length must be <= 50');
-        }
-        if ((mb_strlen($to) < 1)) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setTo: $to length must be >= 1');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -178,18 +109,11 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The blockchain address of the fungible token smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 43)) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setContractAddress: $contract_address length must be <= 43');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -205,15 +129,11 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set amount
      * 
      * @param string $amount The amount of the fungible tokens to be sent
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -229,18 +149,11 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set digits
      * 
      * @param float $digits The number of decimal places that the fungible tokens have
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDigits(float $digits) {
-        if (($digits > 30)) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setDigits: $digits must be <=30');
-        }
-        if (($digits < 1)) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setDigits: $digits must be >=1');
-        }
-        $this->_data['digits'] = $digits;
-
-        return $this;
+        return $this->_set("digits", $digits);
     }
 
     /**
@@ -256,12 +169,11 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the blockchain address from which the fee will be deducted
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -277,15 +189,11 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce The nonce to be set to the transaction; if not present, the last known nonce will be used
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('ChainTransferKcsEthErc20KMS.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -301,11 +209,10 @@ class ChainTransferKcsEthErc20KMS extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\CustomFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 }

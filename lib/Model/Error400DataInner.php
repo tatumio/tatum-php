@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Error400_data_inner Model
  */
@@ -25,10 +23,10 @@ class Error400DataInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Error400_data_inner";
     protected static $_definition = [
-        "target" => ["target", "array<string,mixed>", null, "getTarget", "setTarget", null], 
-        "value" => ["value", "float", null, "getValue", "setValue", null], 
-        "property" => ["property", "string", null, "getProperty", "setProperty", null], 
-        "constraints" => ["constraints", "array<string,mixed>", null, "getConstraints", "setConstraints", null]
+        "target" => ["target", "array<string,mixed>", null, "getTarget", "setTarget", null, ["r" => 1, "c" => 1]], 
+        "value" => ["value", "float", null, "getValue", "setValue", null, ["r" => 0]], 
+        "property" => ["property", "string", null, "getProperty", "setProperty", null, ["r" => 0]], 
+        "constraints" => ["constraints", "array<string,mixed>", null, "getConstraints", "setConstraints", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -40,17 +38,6 @@ class Error400DataInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['target'])) {
-            $ip[] = "'target' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -67,12 +54,11 @@ class Error400DataInner extends AbstractModel {
      * Set target
      * 
      * @param array<string,mixed> $target Request object present in the body of the HTTP request
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTarget(array $target) {
-        $this->_data['target'] = $target;
-
-        return $this;
+        return $this->_set("target", $target);
     }
 
     /**
@@ -88,12 +74,11 @@ class Error400DataInner extends AbstractModel {
      * Set value
      * 
      * @param float|null $value Value of the target object which validation is wrong. Can be of any data type, example here is using type number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?float $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -109,12 +94,11 @@ class Error400DataInner extends AbstractModel {
      * Set property
      * 
      * @param string|null $property Property name of the target object which validation is wrong
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProperty(?string $property) {
-        $this->_data['property'] = $property;
-
-        return $this;
+        return $this->_set("property", $property);
     }
 
     /**
@@ -130,11 +114,10 @@ class Error400DataInner extends AbstractModel {
      * Set constraints
      * 
      * @param array<string,mixed>|null $constraints Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setConstraints(?array $constraints) {
-        $this->_data['constraints'] = $constraints;
-
-        return $this;
+        return $this->_set("constraints", $constraints);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaTxMeta_status Model
  */
@@ -25,7 +23,7 @@ class SolanaTxMetaStatus extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxMeta_status";
     protected static $_definition = [
-        "ok" => ["Ok", "string", 'nullable', "getOk", "setOk", null]
+        "ok" => ["Ok", "string", 'nullable', "getOk", "setOk", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class SolanaTxMetaStatus extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class SolanaTxMetaStatus extends AbstractModel {
      * Set ok
      * 
      * @param string|null $ok ok
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOk(?string $ok) {
-        $this->_data['ok'] = $ok;
-
-        return $this;
+        return $this->_set("ok", $ok);
     }
 }

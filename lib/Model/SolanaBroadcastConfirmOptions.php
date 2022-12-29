@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaBroadcastConfirmOptions Model
  * 
@@ -36,8 +34,8 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
     public const PREFLIGHT_COMMITMENT_MAX = 'max';
     protected static $_name = "SolanaBroadcastConfirmOptions";
     protected static $_definition = [
-        "commitment" => ["commitment", "string", null, "getCommitment", "setCommitment", null], 
-        "preflight_commitment" => ["preflightCommitment", "string", null, "getPreflightCommitment", "setPreflightCommitment", null]
+        "commitment" => ["commitment", "string", null, "getCommitment", "setCommitment", null, ["r" => 0, "e" => 1]], 
+        "preflight_commitment" => ["preflightCommitment", "string", null, "getPreflightCommitment", "setPreflightCommitment", null, ["r" => 0, "e" => 1]]
     ];
 
     /**
@@ -49,24 +47,6 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        $allowed = $this->getCommitmentAllowableValues();
-        $value = $this->_data['commitment'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'commitment' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        $allowed = $this->getPreflightCommitmentAllowableValues();
-        $value = $this->_data['preflight_commitment'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'preflight_commitment' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        return $ip;
     }
 
     /**
@@ -110,16 +90,11 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
      * Set commitment
      * 
      * @param string|null $commitment Commitment to waiting for transaction confirmation
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCommitment(?string $commitment) {
-        $allowed = $this->getCommitmentAllowableValues();
-        if (!is_null($commitment) && !in_array($commitment, $allowed, true)) {
-            throw new IAE(sprintf("SolanaBroadcastConfirmOptions.setCommitment: commitment invalid value '%s', must be one of '%s'", $commitment, implode("', '", $allowed)));
-        }
-        $this->_data['commitment'] = $commitment;
-
-        return $this;
+        return $this->_set("commitment", $commitment);
     }
 
     /**
@@ -135,15 +110,10 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
      * Set preflight_commitment
      * 
      * @param string|null $preflight_commitment Preflight Commitment.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreflightCommitment(?string $preflight_commitment) {
-        $allowed = $this->getPreflightCommitmentAllowableValues();
-        if (!is_null($preflight_commitment) && !in_array($preflight_commitment, $allowed, true)) {
-            throw new IAE(sprintf("SolanaBroadcastConfirmOptions.setPreflightCommitment: preflight_commitment invalid value '%s', must be one of '%s'", $preflight_commitment, implode("', '", $allowed)));
-        }
-        $this->_data['preflight_commitment'] = $preflight_commitment;
-
-        return $this;
+        return $this->_set("preflight_commitment", $preflight_commitment);
     }
 }

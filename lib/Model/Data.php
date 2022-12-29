@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Data Model
  */
@@ -25,7 +23,7 @@ class Data extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "Data";
     protected static $_definition = [
-        "data" => ["data", "\Tatum\Model\DataData", null, "getData", "setData", null]
+        "data" => ["data", "\Tatum\Model\DataData", null, "getData", "setData", null, ["r" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class Data extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['data'])) {
-            $ip[] = "'data' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class Data extends AbstractModel {
      * Set data
      * 
      * @param \Tatum\Model\DataData $data data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(\Tatum\Model\DataData $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

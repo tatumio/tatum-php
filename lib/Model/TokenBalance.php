@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TokenBalance Model
  */
@@ -25,11 +23,11 @@ class TokenBalance extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TokenBalance";
     protected static $_definition = [
-        "account_index" => ["accountIndex", "float", null, "getAccountIndex", "setAccountIndex", null], 
-        "mint" => ["mint", "string", null, "getMint", "setMint", null], 
-        "owner" => ["owner", "string", null, "getOwner", "setOwner", null], 
-        "program_id" => ["programId", "string", null, "getProgramId", "setProgramId", null], 
-        "ui_token_amount" => ["uiTokenAmount", "\Tatum\Model\UiTokenAmount", null, "getUiTokenAmount", "setUiTokenAmount", null]
+        "account_index" => ["accountIndex", "float", null, "getAccountIndex", "setAccountIndex", null, ["r" => 0]], 
+        "mint" => ["mint", "string", null, "getMint", "setMint", null, ["r" => 0]], 
+        "owner" => ["owner", "string", null, "getOwner", "setOwner", null, ["r" => 0]], 
+        "program_id" => ["programId", "string", null, "getProgramId", "setProgramId", null, ["r" => 0]], 
+        "ui_token_amount" => ["uiTokenAmount", "\Tatum\Model\UiTokenAmount", null, "getUiTokenAmount", "setUiTokenAmount", null, ["r" => 0]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class TokenBalance extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class TokenBalance extends AbstractModel {
      * Set account_index
      * 
      * @param float|null $account_index Index of the account in which the token balance is provided for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccountIndex(?float $account_index) {
-        $this->_data['account_index'] = $account_index;
-
-        return $this;
+        return $this->_set("account_index", $account_index);
     }
 
     /**
@@ -86,12 +75,11 @@ class TokenBalance extends AbstractModel {
      * Set mint
      * 
      * @param string|null $mint Pubkey of the token's mint.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMint(?string $mint) {
-        $this->_data['mint'] = $mint;
-
-        return $this;
+        return $this->_set("mint", $mint);
     }
 
     /**
@@ -107,12 +95,11 @@ class TokenBalance extends AbstractModel {
      * Set owner
      * 
      * @param string|null $owner Pubkey of token balance's owner.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwner(?string $owner) {
-        $this->_data['owner'] = $owner;
-
-        return $this;
+        return $this->_set("owner", $owner);
     }
 
     /**
@@ -128,12 +115,11 @@ class TokenBalance extends AbstractModel {
      * Set program_id
      * 
      * @param string|null $program_id Pubkey of the Token program that owns the account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setProgramId(?string $program_id) {
-        $this->_data['program_id'] = $program_id;
-
-        return $this;
+        return $this->_set("program_id", $program_id);
     }
 
     /**
@@ -149,11 +135,10 @@ class TokenBalance extends AbstractModel {
      * Set ui_token_amount
      * 
      * @param \Tatum\Model\UiTokenAmount|null $ui_token_amount ui_token_amount
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUiTokenAmount(?\Tatum\Model\UiTokenAmount $ui_token_amount) {
-        $this->_data['ui_token_amount'] = $ui_token_amount;
-
-        return $this;
+        return $this->_set("ui_token_amount", $ui_token_amount);
     }
 }

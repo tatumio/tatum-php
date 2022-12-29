@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BnbAccount_balances_inner Model
  */
@@ -25,10 +23,10 @@ class BnbAccountBalancesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BnbAccount_balances_inner";
     protected static $_definition = [
-        "free" => ["free", "string", null, "getFree", "setFree", null], 
-        "frozen" => ["frozen", "string", null, "getFrozen", "setFrozen", null], 
-        "locked" => ["locked", "string", null, "getLocked", "setLocked", null], 
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null]
+        "free" => ["free", "string", null, "getFree", "setFree", null, ["r" => 0]], 
+        "frozen" => ["frozen", "string", null, "getFrozen", "setFrozen", null, ["r" => 0]], 
+        "locked" => ["locked", "string", null, "getLocked", "setLocked", null, ["r" => 0]], 
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class BnbAccountBalancesInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class BnbAccountBalancesInner extends AbstractModel {
      * Set free
      * 
      * @param string|null $free free
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFree(?string $free) {
-        $this->_data['free'] = $free;
-
-        return $this;
+        return $this->_set("free", $free);
     }
 
     /**
@@ -85,12 +74,11 @@ class BnbAccountBalancesInner extends AbstractModel {
      * Set frozen
      * 
      * @param string|null $frozen frozen
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrozen(?string $frozen) {
-        $this->_data['frozen'] = $frozen;
-
-        return $this;
+        return $this->_set("frozen", $frozen);
     }
 
     /**
@@ -106,12 +94,11 @@ class BnbAccountBalancesInner extends AbstractModel {
      * Set locked
      * 
      * @param string|null $locked locked
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLocked(?string $locked) {
-        $this->_data['locked'] = $locked;
-
-        return $this;
+        return $this->_set("locked", $locked);
     }
 
     /**
@@ -127,11 +114,10 @@ class BnbAccountBalancesInner extends AbstractModel {
      * Set symbol
      * 
      * @param string|null $symbol symbol
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(?string $symbol) {
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 }

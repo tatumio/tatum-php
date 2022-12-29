@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferTronTrc20Blockchain Model
  */
@@ -25,11 +23,11 @@ class TransferTronTrc20Blockchain extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferTronTrc20Blockchain";
     protected static $_definition = [
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress", null], 
-        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "token_address" => ["tokenAddress", "string", null, "getTokenAddress", "setTokenAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "fee_limit" => ["feeLimit", "float", null, "getFeeLimit", "setFeeLimit", null, ["r" => 1, "n" => [0]]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]]
     ];
 
     /**
@@ -41,53 +39,6 @@ class TransferTronTrc20Blockchain extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 64)) {
-            $ip[] = "'from_private_key' length must be <= 64";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 34)) {
-            $ip[] = "'to' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['to']) < 34)) {
-            $ip[] = "'to' length must be >= 34";
-        }
-        if (is_null($this->_data['token_address'])) {
-            $ip[] = "'token_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_address']) > 34)) {
-            $ip[] = "'token_address' length must be <= 34";
-        }
-        if ((mb_strlen($this->_data['token_address']) < 34)) {
-            $ip[] = "'token_address' length must be >= 34";
-        }
-        if (is_null($this->_data['fee_limit'])) {
-            $ip[] = "'fee_limit' can't be null";
-        }
-        if (($this->_data['fee_limit'] < 0)) {
-            $ip[] = "'fee_limit' must be >= 0";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
 
@@ -104,18 +55,11 @@ class TransferTronTrc20Blockchain extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of the address, from which the TRX will be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 64)) {
-            throw new IAE('TransferTronTrc20Blockchain.setFromPrivateKey: $from_private_key length must be <= 64');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('TransferTronTrc20Blockchain.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -131,18 +75,11 @@ class TransferTronTrc20Blockchain extends AbstractModel {
      * Set to
      * 
      * @param string $to Recipient address of TRON account in Base58 format.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 34)) {
-            throw new IAE('TransferTronTrc20Blockchain.setTo: $to length must be <= 34');
-        }
-        if ((mb_strlen($to) < 34)) {
-            throw new IAE('TransferTronTrc20Blockchain.setTo: $to length must be >= 34');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -158,18 +95,11 @@ class TransferTronTrc20Blockchain extends AbstractModel {
      * Set token_address
      * 
      * @param string $token_address Address of the TRC20 token to transfer.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenAddress(string $token_address) {
-        if ((mb_strlen($token_address) > 34)) {
-            throw new IAE('TransferTronTrc20Blockchain.setTokenAddress: $token_address length must be <= 34');
-        }
-        if ((mb_strlen($token_address) < 34)) {
-            throw new IAE('TransferTronTrc20Blockchain.setTokenAddress: $token_address length must be >= 34');
-        }
-        $this->_data['token_address'] = $token_address;
-
-        return $this;
+        return $this->_set("token_address", $token_address);
     }
 
     /**
@@ -185,15 +115,11 @@ class TransferTronTrc20Blockchain extends AbstractModel {
      * Set fee_limit
      * 
      * @param float $fee_limit Fee in TRX to be paid.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFeeLimit(float $fee_limit) {
-        if (($fee_limit < 0)) {
-            throw new IAE('TransferTronTrc20Blockchain.setFeeLimit: $fee_limit must be >=0');
-        }
-        $this->_data['fee_limit'] = $fee_limit;
-
-        return $this;
+        return $this->_set("fee_limit", $fee_limit);
     }
 
     /**
@@ -209,14 +135,10 @@ class TransferTronTrc20Blockchain extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in TRX.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferTronTrc20Blockchain.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MintNftSolana Model
  * 
@@ -28,12 +26,12 @@ class MintNftSolana extends AbstractModel {
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "MintNftSolana";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey", null], 
-        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadata", null, "getMetadata", "setMetadata", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 128]], 
+        "collection_verifier_private_key" => ["collectionVerifierPrivateKey", "string", null, "getCollectionVerifierPrivateKey", "setCollectionVerifierPrivateKey", null, ["r" => 0, "nl" => 64, "xl" => 128]], 
+        "metadata" => ["metadata", "\Tatum\Model\SolanaNftMetadata", null, "getMetadata", "setMetadata", null, ["r" => 1]]
     ];
 
     /**
@@ -45,58 +43,6 @@ class MintNftSolana extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 44)) {
-            $ip[] = "'to' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['to']) < 43)) {
-            $ip[] = "'to' length must be >= 43";
-        }
-        if (is_null($this->_data['from'])) {
-            $ip[] = "'from' can't be null";
-        }
-        if ((mb_strlen($this->_data['from']) > 44)) {
-            $ip[] = "'from' length must be <= 44";
-        }
-        if ((mb_strlen($this->_data['from']) < 43)) {
-            $ip[] = "'from' length must be >= 43";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 128)) {
-            $ip[] = "'from_private_key' length must be <= 128";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 64)) {
-            $ip[] = "'from_private_key' length must be >= 64";
-        }
-        if (!is_null($this->_data['collection_verifier_private_key']) && (mb_strlen($this->_data['collection_verifier_private_key']) > 128)) {
-            $ip[] = "'collection_verifier_private_key' length must be <= 128";
-        }
-        if (!is_null($this->_data['collection_verifier_private_key']) && (mb_strlen($this->_data['collection_verifier_private_key']) < 64)) {
-            $ip[] = "'collection_verifier_private_key' length must be >= 64";
-        }
-        if (is_null($this->_data['metadata'])) {
-            $ip[] = "'metadata' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -123,16 +69,11 @@ class MintNftSolana extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain to work with
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("MintNftSolana.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -148,18 +89,11 @@ class MintNftSolana extends AbstractModel {
      * Set to
      * 
      * @param string $to The blockchain address to send the NFT to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 44)) {
-            throw new IAE('MintNftSolana.setTo: $to length must be <= 44');
-        }
-        if ((mb_strlen($to) < 43)) {
-            throw new IAE('MintNftSolana.setTo: $to length must be >= 43');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -175,18 +109,11 @@ class MintNftSolana extends AbstractModel {
      * Set from
      * 
      * @param string $from The blockchain address that will pay the fee for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFrom(string $from) {
-        if ((mb_strlen($from) > 44)) {
-            throw new IAE('MintNftSolana.setFrom: $from length must be <= 44');
-        }
-        if ((mb_strlen($from) < 43)) {
-            throw new IAE('MintNftSolana.setFrom: $from length must be >= 43');
-        }
-        $this->_data['from'] = $from;
-
-        return $this;
+        return $this->_set("from", $from);
     }
 
     /**
@@ -202,18 +129,11 @@ class MintNftSolana extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key The private key of the blockchain address that will pay the fee for the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 128)) {
-            throw new IAE('MintNftSolana.setFromPrivateKey: $from_private_key length must be <= 128');
-        }
-        if ((mb_strlen($from_private_key) < 64)) {
-            throw new IAE('MintNftSolana.setFromPrivateKey: $from_private_key length must be >= 64');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -229,18 +149,11 @@ class MintNftSolana extends AbstractModel {
      * Set collection_verifier_private_key
      * 
      * @param string|null $collection_verifier_private_key The private key of the collection verifier (owner) who will verify the NFT in the NFT collection where the NFT is minted in. The blockchain address of this collection is specified in the <code>collection</code> parameter in the <code>metadata</code> section of the request body. To know more about Solana collections and verification, refer to the <a href=\"https://docs.metaplex.com/programs/token-metadata/certified-collections\" target=\"_blank\">Solana user documentation</a>.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCollectionVerifierPrivateKey(?string $collection_verifier_private_key) {
-        if (!is_null($collection_verifier_private_key) && (mb_strlen($collection_verifier_private_key) > 128)) {
-            throw new IAE('MintNftSolana.setCollectionVerifierPrivateKey: $collection_verifier_private_key length must be <= 128');
-        }
-        if (!is_null($collection_verifier_private_key) && (mb_strlen($collection_verifier_private_key) < 64)) {
-            throw new IAE('MintNftSolana.setCollectionVerifierPrivateKey: $collection_verifier_private_key length must be >= 64');
-        }
-        $this->_data['collection_verifier_private_key'] = $collection_verifier_private_key;
-
-        return $this;
+        return $this->_set("collection_verifier_private_key", $collection_verifier_private_key);
     }
 
     /**
@@ -256,11 +169,10 @@ class MintNftSolana extends AbstractModel {
      * Set metadata
      * 
      * @param \Tatum\Model\SolanaNftMetadata $metadata metadata
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(\Tatum\Model\SolanaNftMetadata $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 }

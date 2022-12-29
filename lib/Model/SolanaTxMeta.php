@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * SolanaTxMeta Model
  */
@@ -25,16 +23,16 @@ class SolanaTxMeta extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "SolanaTxMeta";
     protected static $_definition = [
-        "err" => ["err", "object", null, "getErr", "setErr", null], 
-        "fee" => ["fee", "float", null, "getFee", "setFee", null], 
-        "inner_instructions" => ["innerInstructions", "object[]", null, "getInnerInstructions", "setInnerInstructions", null], 
-        "log_messages" => ["logMessages", "string[]", null, "getLogMessages", "setLogMessages", null], 
-        "post_balances" => ["postBalances", "float[]", null, "getPostBalances", "setPostBalances", null], 
-        "post_token_balances" => ["postTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPostTokenBalances", "setPostTokenBalances", null], 
-        "pre_balances" => ["preBalances", "float[]", null, "getPreBalances", "setPreBalances", null], 
-        "pre_token_balances" => ["preTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPreTokenBalances", "setPreTokenBalances", null], 
-        "rewards" => ["rewards", "object[]", null, "getRewards", "setRewards", null], 
-        "status" => ["status", "\Tatum\Model\SolanaTxMetaStatus", null, "getStatus", "setStatus", null]
+        "err" => ["err", "object", null, "getErr", "setErr", null, ["r" => 0]], 
+        "fee" => ["fee", "float", null, "getFee", "setFee", null, ["r" => 0]], 
+        "inner_instructions" => ["innerInstructions", "object[]", null, "getInnerInstructions", "setInnerInstructions", null, ["r" => 0, "c" => 1]], 
+        "log_messages" => ["logMessages", "string[]", null, "getLogMessages", "setLogMessages", null, ["r" => 0, "c" => 1]], 
+        "post_balances" => ["postBalances", "float[]", null, "getPostBalances", "setPostBalances", null, ["r" => 0, "c" => 1]], 
+        "post_token_balances" => ["postTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPostTokenBalances", "setPostTokenBalances", null, ["r" => 0, "c" => 1]], 
+        "pre_balances" => ["preBalances", "float[]", null, "getPreBalances", "setPreBalances", null, ["r" => 0, "c" => 1]], 
+        "pre_token_balances" => ["preTokenBalances", "\Tatum\Model\TokenBalance[]", null, "getPreTokenBalances", "setPreTokenBalances", null, ["r" => 0, "c" => 1]], 
+        "rewards" => ["rewards", "object[]", null, "getRewards", "setRewards", null, ["r" => 0, "c" => 1]], 
+        "status" => ["status", "\Tatum\Model\SolanaTxMetaStatus", null, "getStatus", "setStatus", null, ["r" => 0]]
     ];
 
     /**
@@ -46,14 +44,6 @@ class SolanaTxMeta extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -70,12 +60,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set err
      * 
      * @param object|null $err err
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setErr(?object $err) {
-        $this->_data['err'] = $err;
-
-        return $this;
+        return $this->_set("err", $err);
     }
 
     /**
@@ -91,12 +80,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set fee
      * 
      * @param float|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?float $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -112,12 +100,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set inner_instructions
      * 
      * @param object[]|null $inner_instructions inner_instructions
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInnerInstructions(?array $inner_instructions) {
-        $this->_data['inner_instructions'] = $inner_instructions;
-
-        return $this;
+        return $this->_set("inner_instructions", $inner_instructions);
     }
 
     /**
@@ -133,12 +120,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set log_messages
      * 
      * @param string[]|null $log_messages log_messages
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLogMessages(?array $log_messages) {
-        $this->_data['log_messages'] = $log_messages;
-
-        return $this;
+        return $this->_set("log_messages", $log_messages);
     }
 
     /**
@@ -154,12 +140,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set post_balances
      * 
      * @param float[]|null $post_balances post_balances
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPostBalances(?array $post_balances) {
-        $this->_data['post_balances'] = $post_balances;
-
-        return $this;
+        return $this->_set("post_balances", $post_balances);
     }
 
     /**
@@ -175,12 +160,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set post_token_balances
      * 
      * @param \Tatum\Model\TokenBalance[]|null $post_token_balances post_token_balances
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPostTokenBalances(?array $post_token_balances) {
-        $this->_data['post_token_balances'] = $post_token_balances;
-
-        return $this;
+        return $this->_set("post_token_balances", $post_token_balances);
     }
 
     /**
@@ -196,12 +180,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set pre_balances
      * 
      * @param float[]|null $pre_balances pre_balances
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreBalances(?array $pre_balances) {
-        $this->_data['pre_balances'] = $pre_balances;
-
-        return $this;
+        return $this->_set("pre_balances", $pre_balances);
     }
 
     /**
@@ -217,12 +200,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set pre_token_balances
      * 
      * @param \Tatum\Model\TokenBalance[]|null $pre_token_balances pre_token_balances
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreTokenBalances(?array $pre_token_balances) {
-        $this->_data['pre_token_balances'] = $pre_token_balances;
-
-        return $this;
+        return $this->_set("pre_token_balances", $pre_token_balances);
     }
 
     /**
@@ -238,12 +220,11 @@ class SolanaTxMeta extends AbstractModel {
      * Set rewards
      * 
      * @param object[]|null $rewards rewards
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRewards(?array $rewards) {
-        $this->_data['rewards'] = $rewards;
-
-        return $this;
+        return $this->_set("rewards", $rewards);
     }
 
     /**
@@ -259,11 +240,10 @@ class SolanaTxMeta extends AbstractModel {
      * Set status
      * 
      * @param \Tatum\Model\SolanaTxMetaStatus|null $status status
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setStatus(?\Tatum\Model\SolanaTxMetaStatus $status) {
-        $this->_data['status'] = $status;
-
-        return $this;
+        return $this->_set("status", $status);
     }
 }

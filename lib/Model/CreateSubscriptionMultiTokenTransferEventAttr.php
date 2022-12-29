@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionMultiTokenTransferEvent_attr Model
  * 
@@ -32,8 +30,8 @@ class CreateSubscriptionMultiTokenTransferEventAttr extends AbstractModel {
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "CreateSubscriptionMultiTokenTransferEvent_attr";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 500]]
     ];
 
     /**
@@ -45,28 +43,6 @@ class CreateSubscriptionMultiTokenTransferEventAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['url'])) {
-            $ip[] = "'url' can't be null";
-        }
-        if ((mb_strlen($this->_data['url']) > 500)) {
-            $ip[] = "'url' length must be <= 500";
-        }
-        return $ip;
     }
 
     /**
@@ -97,16 +73,11 @@ class CreateSubscriptionMultiTokenTransferEventAttr extends AbstractModel {
      * Set chain
      * 
      * @param string $chain The blockchain on which events should be monitored.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("CreateSubscriptionMultiTokenTransferEventAttr.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -122,14 +93,10 @@ class CreateSubscriptionMultiTokenTransferEventAttr extends AbstractModel {
      * Set url
      * 
      * @param string $url The URL of the endpoint where an HTTP POST request will be sent when the block where the events from the smart contracts are reflected gets completed.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(string $url) {
-        if ((mb_strlen($url) > 500)) {
-            throw new IAE('CreateSubscriptionMultiTokenTransferEventAttr.setUrl: $url length must be <= 500');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 }

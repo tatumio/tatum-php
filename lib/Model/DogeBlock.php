@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DogeBlock Model
  */
@@ -25,18 +23,18 @@ class DogeBlock extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeBlock";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null], 
-        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
-        "size" => ["size", "float", null, "getSize", "setSize", null], 
-        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations", null], 
-        "weight" => ["weight", "float", null, "getWeight", "setWeight", null], 
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash", null], 
-        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot", null], 
-        "time" => ["time", "float", null, "getTime", "setTime", null], 
-        "bits" => ["bits", "float", null, "getBits", "setBits", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "txs" => ["txs", "\Tatum\Model\DogeTx[]", null, "getTxs", "setTxs", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null, ["r" => 0]], 
+        "size" => ["size", "float", null, "getSize", "setSize", null, ["r" => 0]], 
+        "confirmations" => ["confirmations", "float", null, "getConfirmations", "setConfirmations", null, ["r" => 0]], 
+        "weight" => ["weight", "float", null, "getWeight", "setWeight", null, ["r" => 0]], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "previousblockhash" => ["previousblockhash", "string", null, "getPreviousblockhash", "setPreviousblockhash", null, ["r" => 0]], 
+        "merkle_root" => ["merkleRoot", "string", null, "getMerkleRoot", "setMerkleRoot", null, ["r" => 0]], 
+        "time" => ["time", "float", null, "getTime", "setTime", null, ["r" => 0]], 
+        "bits" => ["bits", "float", null, "getBits", "setBits", null, ["r" => 0]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
+        "txs" => ["txs", "\Tatum\Model\DogeTx[]", null, "getTxs", "setTxs", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -48,14 +46,6 @@ class DogeBlock extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -72,12 +62,11 @@ class DogeBlock extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Hash of block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 
     /**
@@ -93,12 +82,11 @@ class DogeBlock extends AbstractModel {
      * Set height
      * 
      * @param float|null $height The number of blocks preceding a particular block on a block chain.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHeight(?float $height) {
-        $this->_data['height'] = $height;
-
-        return $this;
+        return $this->_set("height", $height);
     }
 
     /**
@@ -114,12 +102,11 @@ class DogeBlock extends AbstractModel {
      * Set size
      * 
      * @param float|null $size The size of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSize(?float $size) {
-        $this->_data['size'] = $size;
-
-        return $this;
+        return $this->_set("size", $size);
     }
 
     /**
@@ -135,12 +122,11 @@ class DogeBlock extends AbstractModel {
      * Set confirmations
      * 
      * @param float|null $confirmations Number of confirmations of that block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setConfirmations(?float $confirmations) {
-        $this->_data['confirmations'] = $confirmations;
-
-        return $this;
+        return $this->_set("confirmations", $confirmations);
     }
 
     /**
@@ -156,12 +142,11 @@ class DogeBlock extends AbstractModel {
      * Set weight
      * 
      * @param float|null $weight The weight of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setWeight(?float $weight) {
-        $this->_data['weight'] = $weight;
-
-        return $this;
+        return $this->_set("weight", $weight);
     }
 
     /**
@@ -177,12 +162,11 @@ class DogeBlock extends AbstractModel {
      * Set version
      * 
      * @param float|null $version Block version.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -198,12 +182,11 @@ class DogeBlock extends AbstractModel {
      * Set previousblockhash
      * 
      * @param string|null $previousblockhash Hash of the previous block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousblockhash(?string $previousblockhash) {
-        $this->_data['previousblockhash'] = $previousblockhash;
-
-        return $this;
+        return $this->_set("previousblockhash", $previousblockhash);
     }
 
     /**
@@ -219,12 +202,11 @@ class DogeBlock extends AbstractModel {
      * Set merkle_root
      * 
      * @param string|null $merkle_root The root node of a merkle tree, a descendant of all the hashed pairs in the tree.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMerkleRoot(?string $merkle_root) {
-        $this->_data['merkle_root'] = $merkle_root;
-
-        return $this;
+        return $this->_set("merkle_root", $merkle_root);
     }
 
     /**
@@ -240,12 +222,11 @@ class DogeBlock extends AbstractModel {
      * Set time
      * 
      * @param float|null $time Time of the block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTime(?float $time) {
-        $this->_data['time'] = $time;
-
-        return $this;
+        return $this->_set("time", $time);
     }
 
     /**
@@ -261,12 +242,11 @@ class DogeBlock extends AbstractModel {
      * Set bits
      * 
      * @param float|null $bits bits
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBits(?float $bits) {
-        $this->_data['bits'] = $bits;
-
-        return $this;
+        return $this->_set("bits", $bits);
     }
 
     /**
@@ -282,12 +262,11 @@ class DogeBlock extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Arbitrary number that is used in Litecoin's proof of work consensus algorithm.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -303,11 +282,10 @@ class DogeBlock extends AbstractModel {
      * Set txs
      * 
      * @param \Tatum\Model\DogeTx[]|null $txs txs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxs(?array $txs) {
-        $this->_data['txs'] = $txs;
-
-        return $this;
+        return $this->_set("txs", $txs);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowAccount Model
  */
@@ -25,11 +23,11 @@ class FlowAccount extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowAccount";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "balance" => ["balance", "float", null, "getBalance", "setBalance", null], 
-        "code" => ["code", "string", null, "getCode", "setCode", null], 
-        "contracts" => ["contracts", "object", null, "getContracts", "setContracts", null], 
-        "keys" => ["keys", "\Tatum\Model\FlowAccountKeysInner[]", null, "getKeys", "setKeys", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "balance" => ["balance", "float", null, "getBalance", "setBalance", null, ["r" => 0]], 
+        "code" => ["code", "string", null, "getCode", "setCode", null, ["r" => 0]], 
+        "contracts" => ["contracts", "object", null, "getContracts", "setContracts", null, ["r" => 0]], 
+        "keys" => ["keys", "\Tatum\Model\FlowAccountKeysInner[]", null, "getKeys", "setKeys", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class FlowAccount extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class FlowAccount extends AbstractModel {
      * Set address
      * 
      * @param string|null $address Account address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -86,12 +75,11 @@ class FlowAccount extends AbstractModel {
      * Set balance
      * 
      * @param float|null $balance Balance of the account in smallest FLOW unit = 1 FLOW = 1e8 unit
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?float $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -107,12 +95,11 @@ class FlowAccount extends AbstractModel {
      * Set code
      * 
      * @param string|null $code Account code
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCode(?string $code) {
-        $this->_data['code'] = $code;
-
-        return $this;
+        return $this->_set("code", $code);
     }
 
     /**
@@ -128,12 +115,11 @@ class FlowAccount extends AbstractModel {
      * Set contracts
      * 
      * @param object|null $contracts contracts
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContracts(?object $contracts) {
-        $this->_data['contracts'] = $contracts;
-
-        return $this;
+        return $this->_set("contracts", $contracts);
     }
 
     /**
@@ -149,11 +135,10 @@ class FlowAccount extends AbstractModel {
      * Set keys
      * 
      * @param \Tatum\Model\FlowAccountKeysInner[]|null $keys Array of public keys assigned.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setKeys(?array $keys) {
-        $this->_data['keys'] = $keys;
-
-        return $this;
+        return $this->_set("keys", $keys);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTrc10Detail Model
  */
@@ -25,14 +23,14 @@ class TronTrc10Detail extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTrc10Detail";
     protected static $_definition = [
-        "owner_address" => ["ownerAddress", "string", null, "getOwnerAddress", "setOwnerAddress", null], 
-        "name" => ["name", "string", null, "getName", "setName", null], 
-        "abbr" => ["abbr", "string", null, "getAbbr", "setAbbr", null], 
-        "description" => ["description", "string", null, "getDescription", "setDescription", null], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null], 
-        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply", null], 
-        "precision" => ["precision", "float", null, "getPrecision", "setPrecision", null], 
-        "id" => ["id", "float", null, "getId", "setId", null]
+        "owner_address" => ["ownerAddress", "string", null, "getOwnerAddress", "setOwnerAddress", null, ["r" => 0, "nl" => 34, "xl" => 34]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "abbr" => ["abbr", "string", null, "getAbbr", "setAbbr", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "total_supply" => ["totalSupply", "float", null, "getTotalSupply", "setTotalSupply", null, ["r" => 0, "n" => [0]]], 
+        "precision" => ["precision", "float", null, "getPrecision", "setPrecision", null, ["r" => 0, "n" => [0], "x" => [5]]], 
+        "id" => ["id", "float", null, "getId", "setId", null, ["r" => 0]]
     ];
 
     /**
@@ -44,53 +42,6 @@ class TronTrc10Detail extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (!is_null($this->_data['owner_address']) && (mb_strlen($this->_data['owner_address']) > 34)) {
-            $ip[] = "'owner_address' length must be <= 34";
-        }
-        if (!is_null($this->_data['owner_address']) && (mb_strlen($this->_data['owner_address']) < 34)) {
-            $ip[] = "'owner_address' length must be >= 34";
-        }
-        if (!is_null($this->_data['name']) && (mb_strlen($this->_data['name']) > 100)) {
-            $ip[] = "'name' length must be <= 100";
-        }
-        if (!is_null($this->_data['name']) && (mb_strlen($this->_data['name']) < 1)) {
-            $ip[] = "'name' length must be >= 1";
-        }
-        if (!is_null($this->_data['abbr']) && (mb_strlen($this->_data['abbr']) > 100)) {
-            $ip[] = "'abbr' length must be <= 100";
-        }
-        if (!is_null($this->_data['abbr']) && (mb_strlen($this->_data['abbr']) < 1)) {
-            $ip[] = "'abbr' length must be >= 1";
-        }
-        if (!is_null($this->_data['description']) && (mb_strlen($this->_data['description']) > 100)) {
-            $ip[] = "'description' length must be <= 100";
-        }
-        if (!is_null($this->_data['description']) && (mb_strlen($this->_data['description']) < 1)) {
-            $ip[] = "'description' length must be >= 1";
-        }
-        if (!is_null($this->_data['url']) && (mb_strlen($this->_data['url']) > 100)) {
-            $ip[] = "'url' length must be <= 100";
-        }
-        if (!is_null($this->_data['url']) && (mb_strlen($this->_data['url']) < 1)) {
-            $ip[] = "'url' length must be >= 1";
-        }
-        if (!is_null($this->_data['total_supply']) && ($this->_data['total_supply'] < 0)) {
-            $ip[] = "'total_supply' must be >= 0";
-        }
-        if (!is_null($this->_data['precision']) && ($this->_data['precision'] > 5)) {
-            $ip[] = "'precision' must be <= 5";
-        }
-        if (!is_null($this->_data['precision']) && ($this->_data['precision'] < 0)) {
-            $ip[] = "'precision' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -107,18 +58,11 @@ class TronTrc10Detail extends AbstractModel {
      * Set owner_address
      * 
      * @param string|null $owner_address The address of the TRC-10 token's owner in the hexadecimal format
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwnerAddress(?string $owner_address) {
-        if (!is_null($owner_address) && (mb_strlen($owner_address) > 34)) {
-            throw new IAE('TronTrc10Detail.setOwnerAddress: $owner_address length must be <= 34');
-        }
-        if (!is_null($owner_address) && (mb_strlen($owner_address) < 34)) {
-            throw new IAE('TronTrc10Detail.setOwnerAddress: $owner_address length must be >= 34');
-        }
-        $this->_data['owner_address'] = $owner_address;
-
-        return $this;
+        return $this->_set("owner_address", $owner_address);
     }
 
     /**
@@ -134,18 +78,11 @@ class TronTrc10Detail extends AbstractModel {
      * Set name
      * 
      * @param string|null $name The name of the TRC-10 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(?string $name) {
-        if (!is_null($name) && (mb_strlen($name) > 100)) {
-            throw new IAE('TronTrc10Detail.setName: $name length must be <= 100');
-        }
-        if (!is_null($name) && (mb_strlen($name) < 1)) {
-            throw new IAE('TronTrc10Detail.setName: $name length must be >= 1');
-        }
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 
     /**
@@ -161,18 +98,11 @@ class TronTrc10Detail extends AbstractModel {
      * Set abbr
      * 
      * @param string|null $abbr The abbreviated name of the TRC-10 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAbbr(?string $abbr) {
-        if (!is_null($abbr) && (mb_strlen($abbr) > 100)) {
-            throw new IAE('TronTrc10Detail.setAbbr: $abbr length must be <= 100');
-        }
-        if (!is_null($abbr) && (mb_strlen($abbr) < 1)) {
-            throw new IAE('TronTrc10Detail.setAbbr: $abbr length must be >= 1');
-        }
-        $this->_data['abbr'] = $abbr;
-
-        return $this;
+        return $this->_set("abbr", $abbr);
     }
 
     /**
@@ -188,18 +118,11 @@ class TronTrc10Detail extends AbstractModel {
      * Set description
      * 
      * @param string|null $description The description of the TRC-10 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(?string $description) {
-        if (!is_null($description) && (mb_strlen($description) > 100)) {
-            throw new IAE('TronTrc10Detail.setDescription: $description length must be <= 100');
-        }
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new IAE('TronTrc10Detail.setDescription: $description length must be >= 1');
-        }
-        $this->_data['description'] = $description;
-
-        return $this;
+        return $this->_set("description", $description);
     }
 
     /**
@@ -215,18 +138,11 @@ class TronTrc10Detail extends AbstractModel {
      * Set url
      * 
      * @param string|null $url The URL of the TRC-10 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setUrl(?string $url) {
-        if (!is_null($url) && (mb_strlen($url) > 100)) {
-            throw new IAE('TronTrc10Detail.setUrl: $url length must be <= 100');
-        }
-        if (!is_null($url) && (mb_strlen($url) < 1)) {
-            throw new IAE('TronTrc10Detail.setUrl: $url length must be >= 1');
-        }
-        $this->_data['url'] = $url;
-
-        return $this;
+        return $this->_set("url", $url);
     }
 
     /**
@@ -242,15 +158,11 @@ class TronTrc10Detail extends AbstractModel {
      * Set total_supply
      * 
      * @param float|null $total_supply The total supply of tokens in the TRC-10 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTotalSupply(?float $total_supply) {
-        if (!is_null($total_supply) && ($total_supply < 0)) {
-            throw new IAE('TronTrc10Detail.setTotalSupply: $total_supply must be >=0');
-        }
-        $this->_data['total_supply'] = $total_supply;
-
-        return $this;
+        return $this->_set("total_supply", $total_supply);
     }
 
     /**
@@ -266,18 +178,11 @@ class TronTrc10Detail extends AbstractModel {
      * Set precision
      * 
      * @param float|null $precision The number of decimal places
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrecision(?float $precision) {
-        if (!is_null($precision) && ($precision > 5)) {
-            throw new IAE('TronTrc10Detail.setPrecision: $precision must be <=5');
-        }
-        if (!is_null($precision) && ($precision < 0)) {
-            throw new IAE('TronTrc10Detail.setPrecision: $precision must be >=0');
-        }
-        $this->_data['precision'] = $precision;
-
-        return $this;
+        return $this->_set("precision", $precision);
     }
 
     /**
@@ -293,11 +198,10 @@ class TronTrc10Detail extends AbstractModel {
      * Set id
      * 
      * @param float|null $id The ID of the TRC-10 token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(?float $id) {
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 }

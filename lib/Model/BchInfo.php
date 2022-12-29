@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BchInfo Model
  */
@@ -25,10 +23,10 @@ class BchInfo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchInfo";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "blocks" => ["blocks", "float", null, "getBlocks", "setBlocks", null], 
-        "bestblockhash" => ["bestblockhash", "string", null, "getBestblockhash", "setBestblockhash", null], 
-        "difficulty" => ["difficulty", "float", null, "getDifficulty", "setDifficulty", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 0]], 
+        "blocks" => ["blocks", "float", null, "getBlocks", "setBlocks", null, ["r" => 0]], 
+        "bestblockhash" => ["bestblockhash", "string", null, "getBestblockhash", "setBestblockhash", null, ["r" => 0]], 
+        "difficulty" => ["difficulty", "float", null, "getDifficulty", "setDifficulty", null, ["r" => 0]]
     ];
 
     /**
@@ -40,14 +38,6 @@ class BchInfo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -64,12 +54,11 @@ class BchInfo extends AbstractModel {
      * Set chain
      * 
      * @param string|null $chain Chain of the blockchain, main or test.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(?string $chain) {
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -85,12 +74,11 @@ class BchInfo extends AbstractModel {
      * Set blocks
      * 
      * @param float|null $blocks Last block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlocks(?float $blocks) {
-        $this->_data['blocks'] = $blocks;
-
-        return $this;
+        return $this->_set("blocks", $blocks);
     }
 
     /**
@@ -106,12 +94,11 @@ class BchInfo extends AbstractModel {
      * Set bestblockhash
      * 
      * @param string|null $bestblockhash Hash of the last block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBestblockhash(?string $bestblockhash) {
-        $this->_data['bestblockhash'] = $bestblockhash;
-
-        return $this;
+        return $this->_set("bestblockhash", $bestblockhash);
     }
 
     /**
@@ -127,11 +114,10 @@ class BchInfo extends AbstractModel {
      * Set difficulty
      * 
      * @param float|null $difficulty Difficulty of the PoW algorithm.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDifficulty(?float $difficulty) {
-        $this->_data['difficulty'] = $difficulty;
-
-        return $this;
+        return $this->_set("difficulty", $difficulty);
     }
 }

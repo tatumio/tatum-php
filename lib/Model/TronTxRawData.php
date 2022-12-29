@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTx_rawData Model
  * 
@@ -27,11 +25,11 @@ class TronTxRawData extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx_rawData";
     protected static $_definition = [
-        "contract" => ["contract", "\Tatum\Model\TronTxRawDataContractInner[]", null, "getContract", "setContract", null], 
-        "ref_block_bytes" => ["ref_block_bytes", "float", null, "getRefBlockBytes", "setRefBlockBytes", null], 
-        "ref_block_hash" => ["ref_block_hash", "float", null, "getRefBlockHash", "setRefBlockHash", null], 
-        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null]
+        "contract" => ["contract", "\Tatum\Model\TronTxRawDataContractInner[]", null, "getContract", "setContract", null, ["r" => 1, "c" => 1]], 
+        "ref_block_bytes" => ["ref_block_bytes", "float", null, "getRefBlockBytes", "setRefBlockBytes", null, ["r" => 0]], 
+        "ref_block_hash" => ["ref_block_hash", "float", null, "getRefBlockHash", "setRefBlockHash", null, ["r" => 0]], 
+        "expiration" => ["expiration", "float", null, "getExpiration", "setExpiration", null, ["r" => 1]], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 1]]
     ];
 
     /**
@@ -43,23 +41,6 @@ class TronTxRawData extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['contract'])) {
-            $ip[] = "'contract' can't be null";
-        }
-        if (is_null($this->_data['expiration'])) {
-            $ip[] = "'expiration' can't be null";
-        }
-        if (is_null($this->_data['timestamp'])) {
-            $ip[] = "'timestamp' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -76,12 +57,11 @@ class TronTxRawData extends AbstractModel {
      * Set contract
      * 
      * @param \Tatum\Model\TronTxRawDataContractInner[] $contract Smart contract invocations details.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContract(array $contract) {
-        $this->_data['contract'] = $contract;
-
-        return $this;
+        return $this->_set("contract", $contract);
     }
 
     /**
@@ -97,12 +77,11 @@ class TronTxRawData extends AbstractModel {
      * Set ref_block_bytes
      * 
      * @param float|null $ref_block_bytes The height of the transaction reference block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRefBlockBytes(?float $ref_block_bytes) {
-        $this->_data['ref_block_bytes'] = $ref_block_bytes;
-
-        return $this;
+        return $this->_set("ref_block_bytes", $ref_block_bytes);
     }
 
     /**
@@ -118,12 +97,11 @@ class TronTxRawData extends AbstractModel {
      * Set ref_block_hash
      * 
      * @param float|null $ref_block_hash The hash of the transaction reference block.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRefBlockHash(?float $ref_block_hash) {
-        $this->_data['ref_block_hash'] = $ref_block_hash;
-
-        return $this;
+        return $this->_set("ref_block_hash", $ref_block_hash);
     }
 
     /**
@@ -139,12 +117,11 @@ class TronTxRawData extends AbstractModel {
      * Set expiration
      * 
      * @param float $expiration Expiration of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setExpiration(float $expiration) {
-        $this->_data['expiration'] = $expiration;
-
-        return $this;
+        return $this->_set("expiration", $expiration);
     }
 
     /**
@@ -160,11 +137,10 @@ class TronTxRawData extends AbstractModel {
      * Set timestamp
      * 
      * @param float $timestamp Time of the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * MultiTokenGetContractAddress_200_response Model
  */
@@ -25,7 +23,7 @@ class MultiTokenGetContractAddress200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "MultiTokenGetContractAddress_200_response";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class MultiTokenGetContractAddress200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class MultiTokenGetContractAddress200Response extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address Address of the Multi Token token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 }

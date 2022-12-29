@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XrpAccount_account_data Model
  * 
@@ -27,15 +25,15 @@ class XrpAccountAccountData extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XrpAccount_account_data";
     protected static $_definition = [
-        "account" => ["Account", "string", null, "getAccount", "setAccount", null], 
-        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null], 
-        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null], 
-        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null], 
-        "owner_count" => ["OwnerCount", "float", null, "getOwnerCount", "setOwnerCount", null], 
-        "previous_txn_id" => ["PreviousTxnID", "string", null, "getPreviousTxnId", "setPreviousTxnId", null], 
-        "previous_txn_lgr_seq" => ["PreviousTxnLgrSeq", "float", null, "getPreviousTxnLgrSeq", "setPreviousTxnLgrSeq", null], 
-        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null], 
-        "index" => ["index", "string", null, "getIndex", "setIndex", null]
+        "account" => ["Account", "string", null, "getAccount", "setAccount", null, ["r" => 0]], 
+        "balance" => ["Balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]], 
+        "flags" => ["Flags", "float", null, "getFlags", "setFlags", null, ["r" => 0]], 
+        "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null, ["r" => 0]], 
+        "owner_count" => ["OwnerCount", "float", null, "getOwnerCount", "setOwnerCount", null, ["r" => 0]], 
+        "previous_txn_id" => ["PreviousTxnID", "string", null, "getPreviousTxnId", "setPreviousTxnId", null, ["r" => 0]], 
+        "previous_txn_lgr_seq" => ["PreviousTxnLgrSeq", "float", null, "getPreviousTxnLgrSeq", "setPreviousTxnLgrSeq", null, ["r" => 0]], 
+        "sequence" => ["Sequence", "float", null, "getSequence", "setSequence", null, ["r" => 0]], 
+        "index" => ["index", "string", null, "getIndex", "setIndex", null, ["r" => 0]]
     ];
 
     /**
@@ -47,14 +45,6 @@ class XrpAccountAccountData extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -71,12 +61,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set account
      * 
      * @param string|null $account The identifying address of this account, such as rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccount(?string $account) {
-        $this->_data['account'] = $account;
-
-        return $this;
+        return $this->_set("account", $account);
     }
 
     /**
@@ -92,12 +81,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set balance
      * 
      * @param string|null $balance The account's current XRP balance in drops, represented as a string.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?string $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 
     /**
@@ -113,12 +101,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set flags
      * 
      * @param float|null $flags A bit-map of boolean flags enabled for this account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFlags(?float $flags) {
-        $this->_data['flags'] = $flags;
-
-        return $this;
+        return $this->_set("flags", $flags);
     }
 
     /**
@@ -134,12 +121,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set ledger_entry_type
      * 
      * @param string|null $ledger_entry_type The value 0x0061, mapped to the string AccountRoot, indicates that this is an AccountRoot object.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLedgerEntryType(?string $ledger_entry_type) {
-        $this->_data['ledger_entry_type'] = $ledger_entry_type;
-
-        return $this;
+        return $this->_set("ledger_entry_type", $ledger_entry_type);
     }
 
     /**
@@ -155,12 +141,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set owner_count
      * 
      * @param float|null $owner_count The number of objects this account owns in the ledger, which contributes to its owner reserve.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setOwnerCount(?float $owner_count) {
-        $this->_data['owner_count'] = $owner_count;
-
-        return $this;
+        return $this->_set("owner_count", $owner_count);
     }
 
     /**
@@ -176,12 +161,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set previous_txn_id
      * 
      * @param string|null $previous_txn_id The identifying hash of the transaction that most recently modified this object.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousTxnId(?string $previous_txn_id) {
-        $this->_data['previous_txn_id'] = $previous_txn_id;
-
-        return $this;
+        return $this->_set("previous_txn_id", $previous_txn_id);
     }
 
     /**
@@ -197,12 +181,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set previous_txn_lgr_seq
      * 
      * @param float|null $previous_txn_lgr_seq The index of the ledger that contains the transaction that most recently modified this object.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPreviousTxnLgrSeq(?float $previous_txn_lgr_seq) {
-        $this->_data['previous_txn_lgr_seq'] = $previous_txn_lgr_seq;
-
-        return $this;
+        return $this->_set("previous_txn_lgr_seq", $previous_txn_lgr_seq);
     }
 
     /**
@@ -218,12 +201,11 @@ class XrpAccountAccountData extends AbstractModel {
      * Set sequence
      * 
      * @param float|null $sequence The sequence number of the next valid transaction for this account. (Each account starts with Sequence = 1 and increases each time a transaction is made.)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSequence(?float $sequence) {
-        $this->_data['sequence'] = $sequence;
-
-        return $this;
+        return $this->_set("sequence", $sequence);
     }
 
     /**
@@ -239,11 +221,10 @@ class XrpAccountAccountData extends AbstractModel {
      * Set index
      * 
      * @param string|null $index index
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?string $index) {
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 }

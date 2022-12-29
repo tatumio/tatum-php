@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcBlockHash Model
  */
@@ -25,7 +23,7 @@ class BtcBlockHash extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcBlockHash";
     protected static $_definition = [
-        "hash" => ["hash", "string", null, "getHash", "setHash", null]
+        "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class BtcBlockHash extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class BtcBlockHash extends AbstractModel {
      * Set hash
      * 
      * @param string|null $hash Block hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHash(?string $hash) {
-        $this->_data['hash'] = $hash;
-
-        return $this;
+        return $this->_set("hash", $hash);
     }
 }

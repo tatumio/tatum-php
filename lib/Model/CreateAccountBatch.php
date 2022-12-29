@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateAccountBatch Model
  */
@@ -25,7 +23,7 @@ class CreateAccountBatch extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateAccountBatch";
     protected static $_definition = [
-        "accounts" => ["accounts", "\Tatum\Model\CreateAccount[]", null, "getAccounts", "setAccounts", null]
+        "accounts" => ["accounts", "\Tatum\Model\CreateAccount[]", null, "getAccounts", "setAccounts", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -37,17 +35,6 @@ class CreateAccountBatch extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['accounts'])) {
-            $ip[] = "'accounts' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -64,11 +51,10 @@ class CreateAccountBatch extends AbstractModel {
      * Set accounts
      * 
      * @param \Tatum\Model\CreateAccount[] $accounts accounts
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAccounts(array $accounts) {
-        $this->_data['accounts'] = $accounts;
-
-        return $this;
+        return $this->_set("accounts", $accounts);
     }
 }

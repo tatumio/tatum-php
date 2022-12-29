@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetTx_clauses_inner Model
  */
@@ -25,9 +23,9 @@ class VetTxClausesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTx_clauses_inner";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "data" => ["data", "string", null, "getData", "setData", null]
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class VetTxClausesInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class VetTxClausesInner extends AbstractModel {
      * Set to
      * 
      * @param string|null $to to
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(?string $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -84,12 +73,11 @@ class VetTxClausesInner extends AbstractModel {
      * Set value
      * 
      * @param string|null $value value
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -105,11 +93,10 @@ class VetTxClausesInner extends AbstractModel {
      * Set data
      * 
      * @param string|null $data data
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?string $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

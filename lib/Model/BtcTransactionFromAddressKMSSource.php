@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BtcTransactionFromAddressKMSSource Model
  */
@@ -25,9 +23,9 @@ class BtcTransactionFromAddressKMSSource extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BtcTransactionFromAddressKMSSource";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0], "x" => [2147483647]]]
     ];
 
     /**
@@ -39,26 +37,6 @@ class BtcTransactionFromAddressKMSSource extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] > 2147483647)) {
-            $ip[] = "'index' must be <= 2147483647";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        return $ip;
     }
 
 
@@ -75,12 +53,11 @@ class BtcTransactionFromAddressKMSSource extends AbstractModel {
      * Set address
      * 
      * @param string $address The blockchain address to send the assets from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -96,12 +73,11 @@ class BtcTransactionFromAddressKMSSource extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id The KMS identifier of the private key of the address to send the assets from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
@@ -117,17 +93,10 @@ class BtcTransactionFromAddressKMSSource extends AbstractModel {
      * Set index
      * 
      * @param float|null $index (Only if the signature ID is mnemonic-based and you run KMS v6.2 or later) The index of the address to send the assets from that was generated from the mnemonic
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index > 2147483647)) {
-            throw new IAE('BtcTransactionFromAddressKMSSource.setIndex: $index must be <=2147483647');
-        }
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('BtcTransactionFromAddressKMSSource.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferBnbBlockchain Model
  */
@@ -26,11 +24,11 @@ class TransferBnbBlockchain extends AbstractModel {
     public const CURRENCY_BNB = 'BNB';
     protected static $_name = "TransferBnbBlockchain";
     protected static $_definition = [
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "message" => ["message", "string", null, "getMessage", "setMessage", null]
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "e" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 0, "nl" => 1, "xl" => 50]]
     ];
 
     /**
@@ -42,52 +40,6 @@ class TransferBnbBlockchain extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 100)) {
-            $ip[] = "'to' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['to']) < 1)) {
-            $ip[] = "'to' length must be >= 1";
-        }
-        if (is_null($this->_data['currency'])) {
-            $ip[] = "'currency' can't be null";
-        }
-        $allowed = $this->getCurrencyAllowableValues();
-        $value = $this->_data['currency'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'currency' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 100)) {
-            $ip[] = "'from_private_key' length must be <= 100";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 1)) {
-            $ip[] = "'from_private_key' length must be >= 1";
-        }
-        if (!is_null($this->_data['message']) && (mb_strlen($this->_data['message']) > 50)) {
-            $ip[] = "'message' length must be <= 50";
-        }
-        if (!is_null($this->_data['message']) && (mb_strlen($this->_data['message']) < 1)) {
-            $ip[] = "'message' length must be >= 1";
-        }
-        return $ip;
     }
 
     /**
@@ -114,18 +66,11 @@ class TransferBnbBlockchain extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 100)) {
-            throw new IAE('TransferBnbBlockchain.setTo: $to length must be <= 100');
-        }
-        if ((mb_strlen($to) < 1)) {
-            throw new IAE('TransferBnbBlockchain.setTo: $to length must be >= 1');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -141,16 +86,11 @@ class TransferBnbBlockchain extends AbstractModel {
      * Set currency
      * 
      * @param string $currency Currency to transfer from Binance Blockchain Account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCurrency(string $currency) {
-        $allowed = $this->getCurrencyAllowableValues();
-        if (!in_array($currency, $allowed, true)) {
-            throw new IAE(sprintf("TransferBnbBlockchain.setCurrency: currency invalid value '%s', must be one of '%s'", $currency, implode("', '", $allowed)));
-        }
-        $this->_data['currency'] = $currency;
-
-        return $this;
+        return $this->_set("currency", $currency);
     }
 
     /**
@@ -166,15 +106,11 @@ class TransferBnbBlockchain extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in BNB.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferBnbBlockchain.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -190,18 +126,11 @@ class TransferBnbBlockchain extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 100)) {
-            throw new IAE('TransferBnbBlockchain.setFromPrivateKey: $from_private_key length must be <= 100');
-        }
-        if ((mb_strlen($from_private_key) < 1)) {
-            throw new IAE('TransferBnbBlockchain.setFromPrivateKey: $from_private_key length must be >= 1');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -217,17 +146,10 @@ class TransferBnbBlockchain extends AbstractModel {
      * Set message
      * 
      * @param string|null $message Message to recipient.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(?string $message) {
-        if (!is_null($message) && (mb_strlen($message) > 50)) {
-            throw new IAE('TransferBnbBlockchain.setMessage: $message length must be <= 50');
-        }
-        if (!is_null($message) && (mb_strlen($message) < 1)) {
-            throw new IAE('TransferBnbBlockchain.setMessage: $message length must be >= 1');
-        }
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 }

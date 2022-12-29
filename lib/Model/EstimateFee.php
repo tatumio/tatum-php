@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFee Model
  */
@@ -40,12 +38,12 @@ class EstimateFee extends AbstractModel {
     public const TYPE_DEPLOY_MARKETPLACE = 'DEPLOY_MARKETPLACE';
     protected static $_name = "EstimateFee";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]]
     ];
 
     /**
@@ -57,51 +55,6 @@ class EstimateFee extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (!is_null($this->_data['sender']) && (mb_strlen($this->_data['sender']) > 42)) {
-            $ip[] = "'sender' length must be <= 42";
-        }
-        if (!is_null($this->_data['sender']) && (mb_strlen($this->_data['sender']) < 42)) {
-            $ip[] = "'sender' length must be >= 42";
-        }
-        if (!is_null($this->_data['recipient']) && (mb_strlen($this->_data['recipient']) > 42)) {
-            $ip[] = "'recipient' length must be <= 42";
-        }
-        if (!is_null($this->_data['recipient']) && (mb_strlen($this->_data['recipient']) < 42)) {
-            $ip[] = "'recipient' length must be >= 42";
-        }
-        if (!is_null($this->_data['contract_address']) && (mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if (!is_null($this->_data['contract_address']) && (mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (!is_null($this->_data['amount']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        return $ip;
     }
 
     /**
@@ -151,16 +104,11 @@ class EstimateFee extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to estimate fee for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFee.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -176,16 +124,11 @@ class EstimateFee extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFee.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -201,18 +144,11 @@ class EstimateFee extends AbstractModel {
      * Set sender
      * 
      * @param string|null $sender Sender address, if type is TRANSFER_ERC20
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(?string $sender) {
-        if (!is_null($sender) && (mb_strlen($sender) > 42)) {
-            throw new IAE('EstimateFee.setSender: $sender length must be <= 42');
-        }
-        if (!is_null($sender) && (mb_strlen($sender) < 42)) {
-            throw new IAE('EstimateFee.setSender: $sender length must be >= 42');
-        }
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -228,18 +164,11 @@ class EstimateFee extends AbstractModel {
      * Set recipient
      * 
      * @param string|null $recipient Blockchain address to send assets, if type is TRANSFER_ERC20
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipient(?string $recipient) {
-        if (!is_null($recipient) && (mb_strlen($recipient) > 42)) {
-            throw new IAE('EstimateFee.setRecipient: $recipient length must be <= 42');
-        }
-        if (!is_null($recipient) && (mb_strlen($recipient) < 42)) {
-            throw new IAE('EstimateFee.setRecipient: $recipient length must be >= 42');
-        }
-        $this->_data['recipient'] = $recipient;
-
-        return $this;
+        return $this->_set("recipient", $recipient);
     }
 
     /**
@@ -255,18 +184,11 @@ class EstimateFee extends AbstractModel {
      * Set contract_address
      * 
      * @param string|null $contract_address Contract address of ERC20 token, if type is TRANSFER_ERC20
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(?string $contract_address) {
-        if (!is_null($contract_address) && (mb_strlen($contract_address) > 42)) {
-            throw new IAE('EstimateFee.setContractAddress: $contract_address length must be <= 42');
-        }
-        if (!is_null($contract_address) && (mb_strlen($contract_address) < 42)) {
-            throw new IAE('EstimateFee.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -282,14 +204,10 @@ class EstimateFee extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Amount to be sent in ERC20, if type is TRANSFER_ERC20
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        if (!is_null($amount) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('EstimateFee.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 }

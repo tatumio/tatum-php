@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftGetBalanceSc Model
  */
@@ -25,7 +23,7 @@ class NftGetBalanceSc extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftGetBalanceSc";
     protected static $_definition = [
-        "data" => ["data", "string[]", 'uint256', "getData", "setData", null]
+        "data" => ["data", "string[]", 'uint256', "getData", "setData", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class NftGetBalanceSc extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class NftGetBalanceSc extends AbstractModel {
      * Set data
      * 
      * @param string[]|null $data The array returning the ID of the NFTs
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setData(?array $data) {
-        $this->_data['data'] = $data;
-
-        return $this;
+        return $this->_set("data", $data);
     }
 }

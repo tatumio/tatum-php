@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BchTx Model
  */
@@ -25,11 +23,11 @@ class BchTx extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BchTx";
     protected static $_definition = [
-        "txid" => ["txid", "string", null, "getTxid", "setTxid", null], 
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null], 
-        "vin" => ["vin", "\Tatum\Model\BchTxVinInner[]", null, "getVin", "setVin", null], 
-        "vout" => ["vout", "\Tatum\Model\BchTxVoutInner[]", null, "getVout", "setVout", null]
+        "txid" => ["txid", "string", null, "getTxid", "setTxid", null, ["r" => 0]], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "locktime" => ["locktime", "float", null, "getLocktime", "setLocktime", null, ["r" => 0]], 
+        "vin" => ["vin", "\Tatum\Model\BchTxVinInner[]", null, "getVin", "setVin", null, ["r" => 0, "c" => 1]], 
+        "vout" => ["vout", "\Tatum\Model\BchTxVoutInner[]", null, "getVout", "setVout", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -41,14 +39,6 @@ class BchTx extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -65,12 +55,11 @@ class BchTx extends AbstractModel {
      * Set txid
      * 
      * @param string|null $txid txid
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTxid(?string $txid) {
-        $this->_data['txid'] = $txid;
-
-        return $this;
+        return $this->_set("txid", $txid);
     }
 
     /**
@@ -86,12 +75,11 @@ class BchTx extends AbstractModel {
      * Set version
      * 
      * @param float|null $version version
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -107,12 +95,11 @@ class BchTx extends AbstractModel {
      * Set locktime
      * 
      * @param float|null $locktime locktime
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setLocktime(?float $locktime) {
-        $this->_data['locktime'] = $locktime;
-
-        return $this;
+        return $this->_set("locktime", $locktime);
     }
 
     /**
@@ -128,12 +115,11 @@ class BchTx extends AbstractModel {
      * Set vin
      * 
      * @param \Tatum\Model\BchTxVinInner[]|null $vin vin
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVin(?array $vin) {
-        $this->_data['vin'] = $vin;
-
-        return $this;
+        return $this->_set("vin", $vin);
     }
 
     /**
@@ -149,11 +135,10 @@ class BchTx extends AbstractModel {
      * Set vout
      * 
      * @param \Tatum\Model\BchTxVoutInner[]|null $vout vout
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVout(?array $vout) {
-        $this->_data['vout'] = $vout;
-
-        return $this;
+        return $this->_set("vout", $vout);
     }
 }

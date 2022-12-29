@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * LtcTransferBlockchain_request Model
  */
@@ -25,11 +23,11 @@ class LtcTransferBlockchainRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "LtcTransferBlockchain_request";
     protected static $_definition = [
-        "from_address" => ["fromAddress", "\Tatum\Model\LtcTransactionAddressKMSFromAddressInner[]", null, "getFromAddress", "setFromAddress", null], 
-        "to" => ["to", "\Tatum\Model\LtcTransactionAddressToInner[]", null, "getTo", "setTo", null], 
-        "fee" => ["fee", "string", null, "getFee", "setFee", null], 
-        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null], 
-        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOKMSFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null]
+        "from_address" => ["fromAddress", "\Tatum\Model\LtcTransactionAddressKMSFromAddressInner[]", null, "getFromAddress", "setFromAddress", null, ["r" => 1, "c" => 1]], 
+        "to" => ["to", "\Tatum\Model\LtcTransactionAddressToInner[]", null, "getTo", "setTo", null, ["r" => 1, "c" => 1]], 
+        "fee" => ["fee", "string", null, "getFee", "setFee", null, ["r" => 0]], 
+        "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null, ["r" => 0]], 
+        "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOKMSFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 1, "c" => 1]]
     ];
 
     /**
@@ -41,23 +39,6 @@ class LtcTransferBlockchainRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_address'])) {
-            $ip[] = "'from_address' can't be null";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if (is_null($this->_data['from_utxo'])) {
-            $ip[] = "'from_utxo' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -74,12 +55,11 @@ class LtcTransferBlockchainRequest extends AbstractModel {
      * Set from_address
      * 
      * @param \Tatum\Model\LtcTransactionAddressKMSFromAddressInner[] $from_address The array of blockchain addresses to send the assets from and their signature IDs. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAddress(array $from_address) {
-        $this->_data['from_address'] = $from_address;
-
-        return $this;
+        return $this->_set("from_address", $from_address);
     }
 
     /**
@@ -95,12 +75,11 @@ class LtcTransferBlockchainRequest extends AbstractModel {
      * Set to
      * 
      * @param \Tatum\Model\LtcTransactionAddressToInner[] $to The array of blockchain addresses to send the assets to and the amounts that each address should receive (in LTC). The difference between the UTXOs calculated in the <code>fromUTXO</code> section and the total amount to receive calculated in the <code>to</code> section will be used as the gas fee. To explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent, set the <code>fee</code> and <code>changeAddress</code> parameters.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(array $to) {
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -116,12 +95,11 @@ class LtcTransferBlockchainRequest extends AbstractModel {
      * Set fee
      * 
      * @param string|null $fee The fee to be paid for the transaction (in LTC); if you are using this parameter, you have to also use the <code>changeAddress</code> parameter because these two parameters only work together.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?string $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -137,12 +115,11 @@ class LtcTransferBlockchainRequest extends AbstractModel {
      * Set change_address
      * 
      * @param string|null $change_address The blockchain address to send any extra assets remaning after covering the fee; if you are using this parameter, you have to also use the <code>fee</code> parameter because these two parameters only work together.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChangeAddress(?string $change_address) {
-        $this->_data['change_address'] = $change_address;
-
-        return $this;
+        return $this->_set("change_address", $change_address);
     }
 
     /**
@@ -158,11 +135,10 @@ class LtcTransferBlockchainRequest extends AbstractModel {
      * Set from_utxo
      * 
      * @param \Tatum\Model\AdaTransactionFromUTXOKMSFromUTXOInner[] $from_utxo The array of transaction hashes, indexes of its UTXOs, and the signature IDs of the associated blockchain addresses
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromUtxo(array $from_utxo) {
-        $this->_data['from_utxo'] = $from_utxo;
-
-        return $this;
+        return $this->_set("from_utxo", $from_utxo);
     }
 }

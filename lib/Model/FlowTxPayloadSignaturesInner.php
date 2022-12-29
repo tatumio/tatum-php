@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * FlowTx_payloadSignatures_inner Model
  */
@@ -25,9 +23,9 @@ class FlowTxPayloadSignaturesInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "FlowTx_payloadSignatures_inner";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "key_id" => ["keyId", "float", null, "getKeyId", "setKeyId", null], 
-        "signature" => ["signature", "string", null, "getSignature", "setSignature", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "key_id" => ["keyId", "float", null, "getKeyId", "setKeyId", null, ["r" => 0]], 
+        "signature" => ["signature", "string", null, "getSignature", "setSignature", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class FlowTxPayloadSignaturesInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class FlowTxPayloadSignaturesInner extends AbstractModel {
      * Set address
      * 
      * @param string|null $address address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -84,12 +73,11 @@ class FlowTxPayloadSignaturesInner extends AbstractModel {
      * Set key_id
      * 
      * @param float|null $key_id key_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setKeyId(?float $key_id) {
-        $this->_data['key_id'] = $key_id;
-
-        return $this;
+        return $this->_set("key_id", $key_id);
     }
 
     /**
@@ -105,11 +93,10 @@ class FlowTxPayloadSignaturesInner extends AbstractModel {
      * Set signature
      * 
      * @param string|null $signature signature
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignature(?string $signature) {
-        $this->_data['signature'] = $signature;
-
-        return $this;
+        return $this->_set("signature", $signature);
     }
 }

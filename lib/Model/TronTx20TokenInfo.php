@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TronTx20_tokenInfo Model
  */
@@ -25,10 +23,10 @@ class TronTx20TokenInfo extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TronTx20_tokenInfo";
     protected static $_definition = [
-        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null], 
-        "name" => ["name", "string", null, "getName", "setName", null]
+        "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 
+        "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 1]], 
+        "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1]]
     ];
 
     /**
@@ -40,26 +38,6 @@ class TronTx20TokenInfo extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['symbol'])) {
-            $ip[] = "'symbol' can't be null";
-        }
-        if (is_null($this->_data['address'])) {
-            $ip[] = "'address' can't be null";
-        }
-        if (is_null($this->_data['decimals'])) {
-            $ip[] = "'decimals' can't be null";
-        }
-        if (is_null($this->_data['name'])) {
-            $ip[] = "'name' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -76,12 +54,11 @@ class TronTx20TokenInfo extends AbstractModel {
      * Set symbol
      * 
      * @param string $symbol symbol
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSymbol(string $symbol) {
-        $this->_data['symbol'] = $symbol;
-
-        return $this;
+        return $this->_set("symbol", $symbol);
     }
 
     /**
@@ -97,12 +74,11 @@ class TronTx20TokenInfo extends AbstractModel {
      * Set address
      * 
      * @param string $address address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -118,12 +94,11 @@ class TronTx20TokenInfo extends AbstractModel {
      * Set decimals
      * 
      * @param float $decimals decimals
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDecimals(float $decimals) {
-        $this->_data['decimals'] = $decimals;
-
-        return $this;
+        return $this->_set("decimals", $decimals);
     }
 
     /**
@@ -139,11 +114,10 @@ class TronTx20TokenInfo extends AbstractModel {
      * Set name
      * 
      * @param string $name name
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setName(string $name) {
-        $this->_data['name'] = $name;
-
-        return $this;
+        return $this->_set("name", $name);
     }
 }

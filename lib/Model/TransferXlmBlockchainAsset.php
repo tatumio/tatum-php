@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * TransferXlmBlockchainAsset Model
  */
@@ -25,14 +23,14 @@ class TransferXlmBlockchainAsset extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "TransferXlmBlockchainAsset";
     protected static $_definition = [
-        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null], 
-        "to" => ["to", "string", null, "getTo", "setTo", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null], 
-        "initialize" => ["initialize", "bool", null, "getInitialize", "setInitialize", false], 
-        "token" => ["token", "string", null, "getToken", "setToken", null], 
-        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null], 
-        "message" => ["message", "string", null, "getMessage", "setMessage", null]
+        "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "from_secret" => ["fromSecret", "string", null, "getFromSecret", "setFromSecret", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "initialize" => ["initialize", "bool", null, "getInitialize", "setInitialize", false, ["r" => 0]], 
+        "token" => ["token", "string", null, "getToken", "setToken", null, ["r" => 1, "p" => "/^[a-zA-Z0-9]{1,12}$/", "nl" => 1, "xl" => 12]], 
+        "issuer_account" => ["issuerAccount", "string", null, "getIssuerAccount", "setIssuerAccount", null, ["r" => 1, "nl" => 56, "xl" => 56]], 
+        "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 0, "p" => "/^[ -~]{0,64}$/", "xl" => 64]]
     ];
 
     /**
@@ -44,74 +42,6 @@ class TransferXlmBlockchainAsset extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['from_account'])) {
-            $ip[] = "'from_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_account']) > 56)) {
-            $ip[] = "'from_account' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['from_account']) < 56)) {
-            $ip[] = "'from_account' length must be >= 56";
-        }
-        if (is_null($this->_data['to'])) {
-            $ip[] = "'to' can't be null";
-        }
-        if ((mb_strlen($this->_data['to']) > 56)) {
-            $ip[] = "'to' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['to']) < 56)) {
-            $ip[] = "'to' length must be >= 56";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['from_secret'])) {
-            $ip[] = "'from_secret' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_secret']) > 56)) {
-            $ip[] = "'from_secret' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['from_secret']) < 56)) {
-            $ip[] = "'from_secret' length must be >= 56";
-        }
-        if (is_null($this->_data['token'])) {
-            $ip[] = "'token' can't be null";
-        }
-        if ((mb_strlen($this->_data['token']) > 12)) {
-            $ip[] = "'token' length must be <= 12";
-        }
-        if ((mb_strlen($this->_data['token']) < 1)) {
-            $ip[] = "'token' length must be >= 1";
-        }
-        if (!preg_match("/^[a-zA-Z0-9]{1,12}$/", $this->_data['token'])) {
-            $ip[] = "'token' must match /^[a-zA-Z0-9]{1,12}$/";
-        }
-        if (is_null($this->_data['issuer_account'])) {
-            $ip[] = "'issuer_account' can't be null";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) > 56)) {
-            $ip[] = "'issuer_account' length must be <= 56";
-        }
-        if ((mb_strlen($this->_data['issuer_account']) < 56)) {
-            $ip[] = "'issuer_account' length must be >= 56";
-        }
-        if (!is_null($this->_data['message']) && (mb_strlen($this->_data['message']) > 64)) {
-            $ip[] = "'message' length must be <= 64";
-        }
-        if (!is_null($this->_data['message']) && !preg_match("/^[ -~]{0,64}$/", $this->_data['message'])) {
-            $ip[] = "'message' must match /^[ -~]{0,64}$/";
-        }
-        return $ip;
     }
 
 
@@ -128,18 +58,11 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set from_account
      * 
      * @param string $from_account Blockchain account to send assets from
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromAccount(string $from_account) {
-        if ((mb_strlen($from_account) > 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setFromAccount: $from_account length must be <= 56');
-        }
-        if ((mb_strlen($from_account) < 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setFromAccount: $from_account length must be >= 56');
-        }
-        $this->_data['from_account'] = $from_account;
-
-        return $this;
+        return $this->_set("from_account", $from_account);
     }
 
     /**
@@ -155,18 +78,11 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set to
      * 
      * @param string $to Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTo(string $to) {
-        if ((mb_strlen($to) > 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setTo: $to length must be <= 56');
-        }
-        if ((mb_strlen($to) < 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setTo: $to length must be >= 56');
-        }
-        $this->_data['to'] = $to;
-
-        return $this;
+        return $this->_set("to", $to);
     }
 
     /**
@@ -182,15 +98,11 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent, in XLM.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('TransferXlmBlockchainAsset.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -206,18 +118,11 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set from_secret
      * 
      * @param string $from_secret Secret for account. Secret, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromSecret(string $from_secret) {
-        if ((mb_strlen($from_secret) > 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setFromSecret: $from_secret length must be <= 56');
-        }
-        if ((mb_strlen($from_secret) < 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setFromSecret: $from_secret length must be >= 56');
-        }
-        $this->_data['from_secret'] = $from_secret;
-
-        return $this;
+        return $this->_set("from_secret", $from_secret);
     }
 
     /**
@@ -233,12 +138,11 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set initialize
      * 
      * @param bool|null $initialize Set to true, if the destination address is not yet initialized and should be funded for the first time.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInitialize(?bool $initialize) {
-        $this->_data['initialize'] = $initialize;
-
-        return $this;
+        return $this->_set("initialize", $initialize);
     }
 
     /**
@@ -254,21 +158,11 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set token
      * 
      * @param string $token Asset name. If not defined, transaction is being sent in native XLM asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setToken(string $token) {
-        if ((mb_strlen($token) > 12)) {
-            throw new IAE('TransferXlmBlockchainAsset.setToken: $token length must be <= 12');
-        }
-        if ((mb_strlen($token) < 1)) {
-            throw new IAE('TransferXlmBlockchainAsset.setToken: $token length must be >= 1');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9]{1,12}$/", $token))) {
-            throw new IAE('TransferXlmBlockchainAsset.setToken: $token must match /^[a-zA-Z0-9]{1,12}$/, ' . var_export($token, true) . ' given');
-        }
-        $this->_data['token'] = $token;
-
-        return $this;
+        return $this->_set("token", $token);
     }
 
     /**
@@ -284,18 +178,11 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set issuer_account
      * 
      * @param string $issuer_account Blockchain address of the issuer of the assets to send, if not native XLM asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIssuerAccount(string $issuer_account) {
-        if ((mb_strlen($issuer_account) > 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setIssuerAccount: $issuer_account length must be <= 56');
-        }
-        if ((mb_strlen($issuer_account) < 56)) {
-            throw new IAE('TransferXlmBlockchainAsset.setIssuerAccount: $issuer_account length must be >= 56');
-        }
-        $this->_data['issuer_account'] = $issuer_account;
-
-        return $this;
+        return $this->_set("issuer_account", $issuer_account);
     }
 
     /**
@@ -311,17 +198,10 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      * Set message
      * 
      * @param string|null $message Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMessage(?string $message) {
-        if (!is_null($message) && (mb_strlen($message) > 64)) {
-            throw new IAE('TransferXlmBlockchainAsset.setMessage: $message length must be <= 64');
-        }
-        if (!is_null($message) && (!preg_match("/^[ -~]{0,64}$/", $message))) {
-            throw new IAE('TransferXlmBlockchainAsset.setMessage: $message must match /^[ -~]{0,64}$/, ' . var_export($message, true) . ' given');
-        }
-        $this->_data['message'] = $message;
-
-        return $this;
+        return $this->_set("message", $message);
     }
 }

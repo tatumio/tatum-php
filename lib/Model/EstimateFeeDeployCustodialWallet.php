@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFeeDeployCustodialWallet Model
  */
@@ -33,9 +31,9 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
     public const TYPE_DEPLOY_CUSTODIAL_WALLET_BATCH = 'DEPLOY_CUSTODIAL_WALLET_BATCH';
     protected static $_name = "EstimateFeeDeployCustodialWallet";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "batch_count" => ["batchCount", "float", null, "getBatchCount", "setBatchCount", null, ["r" => 1, "n" => [1], "x" => [300]]]
     ];
 
     /**
@@ -47,39 +45,6 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['batch_count'])) {
-            $ip[] = "'batch_count' can't be null";
-        }
-        if (($this->_data['batch_count'] > 300)) {
-            $ip[] = "'batch_count' must be <= 300";
-        }
-        if (($this->_data['batch_count'] < 1)) {
-            $ip[] = "'batch_count' must be >= 1";
-        }
-        return $ip;
     }
 
     /**
@@ -122,16 +87,11 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to estimate fee for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeDeployCustodialWallet.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -147,16 +107,11 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeDeployCustodialWallet.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -172,17 +127,10 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      * Set batch_count
      * 
      * @param float $batch_count Number of addresses to create
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBatchCount(float $batch_count) {
-        if (($batch_count > 300)) {
-            throw new IAE('EstimateFeeDeployCustodialWallet.setBatchCount: $batch_count must be <=300');
-        }
-        if (($batch_count < 1)) {
-            throw new IAE('EstimateFeeDeployCustodialWallet.setBatchCount: $batch_count must be >=1');
-        }
-        $this->_data['batch_count'] = $batch_count;
-
-        return $this;
+        return $this->_set("batch_count", $batch_count);
     }
 }

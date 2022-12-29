@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * LtcTx_outputs_inner Model
  */
@@ -25,9 +23,9 @@ class LtcTxOutputsInner extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "LtcTx_outputs_inner";
     protected static $_definition = [
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "script" => ["script", "string", null, "getScript", "setScript", null], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null]
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 
+        "script" => ["script", "string", null, "getScript", "setScript", null, ["r" => 0]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class LtcTxOutputsInner extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class LtcTxOutputsInner extends AbstractModel {
      * Set value
      * 
      * @param string|null $value Sent amount in LTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -84,12 +73,11 @@ class LtcTxOutputsInner extends AbstractModel {
      * Set script
      * 
      * @param string|null $script Transaction script.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScript(?string $script) {
-        $this->_data['script'] = $script;
-
-        return $this;
+        return $this->_set("script", $script);
     }
 
     /**
@@ -105,11 +93,10 @@ class LtcTxOutputsInner extends AbstractModel {
      * Set address
      * 
      * @param string|null $address Recipient address.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 }

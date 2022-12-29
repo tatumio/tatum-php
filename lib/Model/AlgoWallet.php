@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * AlgoWallet Model
  */
@@ -25,8 +23,8 @@ class AlgoWallet extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "AlgoWallet";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "secret" => ["secret", "string", null, "getSecret", "setSecret", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0, "nl" => 58, "xl" => 58]], 
+        "secret" => ["secret", "string", null, "getSecret", "setSecret", null, ["r" => 0, "nl" => 103, "xl" => 103]]
     ];
 
     /**
@@ -38,26 +36,6 @@ class AlgoWallet extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (!is_null($this->_data['address']) && (mb_strlen($this->_data['address']) > 58)) {
-            $ip[] = "'address' length must be <= 58";
-        }
-        if (!is_null($this->_data['address']) && (mb_strlen($this->_data['address']) < 58)) {
-            $ip[] = "'address' length must be >= 58";
-        }
-        if (!is_null($this->_data['secret']) && (mb_strlen($this->_data['secret']) > 103)) {
-            $ip[] = "'secret' length must be <= 103";
-        }
-        if (!is_null($this->_data['secret']) && (mb_strlen($this->_data['secret']) < 103)) {
-            $ip[] = "'secret' length must be >= 103";
-        }
-        return $ip;
     }
 
 
@@ -74,18 +52,11 @@ class AlgoWallet extends AbstractModel {
      * Set address
      * 
      * @param string|null $address address of Algorand account.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        if (!is_null($address) && (mb_strlen($address) > 58)) {
-            throw new IAE('AlgoWallet.setAddress: $address length must be <= 58');
-        }
-        if (!is_null($address) && (mb_strlen($address) < 58)) {
-            throw new IAE('AlgoWallet.setAddress: $address length must be >= 58');
-        }
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -101,17 +72,10 @@ class AlgoWallet extends AbstractModel {
      * Set secret
      * 
      * @param string|null $secret secretKey can generate Mnemonic, similar to private Key.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSecret(?string $secret) {
-        if (!is_null($secret) && (mb_strlen($secret) > 103)) {
-            throw new IAE('AlgoWallet.setSecret: $secret length must be <= 103');
-        }
-        if (!is_null($secret) && (mb_strlen($secret) < 103)) {
-            throw new IAE('AlgoWallet.setSecret: $secret length must be >= 103');
-        }
-        $this->_data['secret'] = $secret;
-
-        return $this;
+        return $this->_set("secret", $secret);
     }
 }

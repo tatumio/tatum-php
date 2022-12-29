@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * CreateSubscriptionInterval_attr Model
  * 
@@ -27,7 +25,7 @@ class CreateSubscriptionIntervalAttr extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "CreateSubscriptionInterval_attr";
     protected static $_definition = [
-        "interval" => ["interval", "float", null, "getInterval", "setInterval", null]
+        "interval" => ["interval", "float", null, "getInterval", "setInterval", null, ["r" => 1, "n" => [1], "x" => [720]]]
     ];
 
     /**
@@ -39,23 +37,6 @@ class CreateSubscriptionIntervalAttr extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['interval'])) {
-            $ip[] = "'interval' can't be null";
-        }
-        if (($this->_data['interval'] > 720)) {
-            $ip[] = "'interval' must be <= 720";
-        }
-        if (($this->_data['interval'] < 1)) {
-            $ip[] = "'interval' must be >= 1";
-        }
-        return $ip;
     }
 
 
@@ -72,17 +53,10 @@ class CreateSubscriptionIntervalAttr extends AbstractModel {
      * Set interval
      * 
      * @param float $interval Number of hours to obtain transactions for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setInterval(float $interval) {
-        if (($interval > 720)) {
-            throw new IAE('CreateSubscriptionIntervalAttr.setInterval: $interval must be <=720');
-        }
-        if (($interval < 1)) {
-            throw new IAE('CreateSubscriptionIntervalAttr.setInterval: $interval must be >=1');
-        }
-        $this->_data['interval'] = $interval;
-
-        return $this;
+        return $this->_set("interval", $interval);
     }
 }

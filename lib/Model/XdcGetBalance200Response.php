@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * XdcGetBalance_200_response Model
  */
@@ -25,7 +23,7 @@ class XdcGetBalance200Response extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "XdcGetBalance_200_response";
     protected static $_definition = [
-        "balance" => ["balance", "string", null, "getBalance", "setBalance", null]
+        "balance" => ["balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]]
     ];
 
     /**
@@ -37,14 +35,6 @@ class XdcGetBalance200Response extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -61,11 +51,10 @@ class XdcGetBalance200Response extends AbstractModel {
      * Set balance
      * 
      * @param string|null $balance Balance in XDC
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBalance(?string $balance) {
-        $this->_data['balance'] = $balance;
-
-        return $this;
+        return $this->_set("balance", $balance);
     }
 }

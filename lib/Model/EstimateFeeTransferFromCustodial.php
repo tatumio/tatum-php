@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * EstimateFeeTransferFromCustodial Model
  */
@@ -33,14 +31,14 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     public const TYPE_TRANSFER_CUSTODIAL = 'TRANSFER_CUSTODIAL';
     protected static $_name = "EstimateFeeTransferFromCustodial";
     protected static $_definition = [
-        "chain" => ["chain", "string", null, "getChain", "setChain", null], 
-        "type" => ["type", "string", null, "getType", "setType", null], 
-        "sender" => ["sender", "string", null, "getSender", "setSender", null], 
-        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null]
+        "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
+        "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
+        "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null, ["r" => 1, "n" => [0], "x" => [3]]]
     ];
 
     /**
@@ -52,81 +50,6 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['chain'])) {
-            $ip[] = "'chain' can't be null";
-        }
-        $allowed = $this->getChainAllowableValues();
-        $value = $this->_data['chain'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'chain' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['type'])) {
-            $ip[] = "'type' can't be null";
-        }
-        $allowed = $this->getTypeAllowableValues();
-        $value = $this->_data['type'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'type' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['sender'])) {
-            $ip[] = "'sender' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender']) > 42)) {
-            $ip[] = "'sender' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['sender']) < 42)) {
-            $ip[] = "'sender' length must be >= 42";
-        }
-        if (is_null($this->_data['recipient'])) {
-            $ip[] = "'recipient' can't be null";
-        }
-        if ((mb_strlen($this->_data['recipient']) > 42)) {
-            $ip[] = "'recipient' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['recipient']) < 42)) {
-            $ip[] = "'recipient' length must be >= 42";
-        }
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['custodial_address'])) {
-            $ip[] = "'custodial_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) > 42)) {
-            $ip[] = "'custodial_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['custodial_address']) < 42)) {
-            $ip[] = "'custodial_address' length must be >= 42";
-        }
-        if (is_null($this->_data['amount'])) {
-            $ip[] = "'amount' can't be null";
-        }
-        if (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['token_type'])) {
-            $ip[] = "'token_type' can't be null";
-        }
-        if (($this->_data['token_type'] > 3)) {
-            $ip[] = "'token_type' must be <= 3";
-        }
-        if (($this->_data['token_type'] < 0)) {
-            $ip[] = "'token_type' must be >= 0";
-        }
-        return $ip;
     }
 
     /**
@@ -169,16 +92,11 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set chain
      * 
      * @param string $chain Blockchain to estimate fee for.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setChain(string $chain) {
-        $allowed = $this->getChainAllowableValues();
-        if (!in_array($chain, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeTransferFromCustodial.setChain: chain invalid value '%s', must be one of '%s'", $chain, implode("', '", $allowed)));
-        }
-        $this->_data['chain'] = $chain;
-
-        return $this;
+        return $this->_set("chain", $chain);
     }
 
     /**
@@ -194,16 +112,11 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set type
      * 
      * @param string $type Type of transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setType(string $type) {
-        $allowed = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed, true)) {
-            throw new IAE(sprintf("EstimateFeeTransferFromCustodial.setType: type invalid value '%s', must be one of '%s'", $type, implode("', '", $allowed)));
-        }
-        $this->_data['type'] = $type;
-
-        return $this;
+        return $this->_set("type", $type);
     }
 
     /**
@@ -219,18 +132,11 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set sender
      * 
      * @param string $sender Sender address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSender(string $sender) {
-        if ((mb_strlen($sender) > 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setSender: $sender length must be <= 42');
-        }
-        if ((mb_strlen($sender) < 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setSender: $sender length must be >= 42');
-        }
-        $this->_data['sender'] = $sender;
-
-        return $this;
+        return $this->_set("sender", $sender);
     }
 
     /**
@@ -246,18 +152,11 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set recipient
      * 
      * @param string $recipient Blockchain address to send assets
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipient(string $recipient) {
-        if ((mb_strlen($recipient) > 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setRecipient: $recipient length must be <= 42');
-        }
-        if ((mb_strlen($recipient) < 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setRecipient: $recipient length must be >= 42');
-        }
-        $this->_data['recipient'] = $recipient;
-
-        return $this;
+        return $this->_set("recipient", $recipient);
     }
 
     /**
@@ -273,18 +172,11 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address Contract address of the token
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -300,18 +192,11 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set custodial_address
      * 
      * @param string $custodial_address Contract address of custodial wallet contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustodialAddress(string $custodial_address) {
-        if ((mb_strlen($custodial_address) > 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setCustodialAddress: $custodial_address length must be <= 42');
-        }
-        if ((mb_strlen($custodial_address) < 42)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setCustodialAddress: $custodial_address length must be >= 42');
-        }
-        $this->_data['custodial_address'] = $custodial_address;
-
-        return $this;
+        return $this->_set("custodial_address", $custodial_address);
     }
 
     /**
@@ -327,15 +212,11 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set amount
      * 
      * @param string $amount Amount to be sent in native asset, ERC20 or ERC1155
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(string $amount) {
-        if ((!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -351,17 +232,10 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
      * Set token_type
      * 
      * @param float $token_type Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenType(float $token_type) {
-        if (($token_type > 3)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setTokenType: $token_type must be <=3');
-        }
-        if (($token_type < 0)) {
-            throw new IAE('EstimateFeeTransferFromCustodial.setTokenType: $token_type must be >=0');
-        }
-        $this->_data['token_type'] = $token_type;
-
-        return $this;
+        return $this->_set("token_type", $token_type);
     }
 }

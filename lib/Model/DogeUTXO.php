@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * DogeUTXO Model
  */
@@ -25,12 +23,12 @@ class DogeUTXO extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "DogeUTXO";
     protected static $_definition = [
-        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\DogeTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey", null], 
-        "version" => ["version", "float", null, "getVersion", "setVersion", null], 
-        "height" => ["height", "float", null, "getHeight", "setHeight", null], 
-        "value" => ["value", "float", null, "getValue", "setValue", null], 
-        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase", null], 
-        "bestblock" => ["bestblock", "string", null, "getBestblock", "setBestblock", null]
+        "script_pub_key" => ["scriptPubKey", "\Tatum\Model\DogeTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey", null, ["r" => 0]], 
+        "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 
+        "height" => ["height", "float", null, "getHeight", "setHeight", null, ["r" => 0]], 
+        "value" => ["value", "float", null, "getValue", "setValue", null, ["r" => 0]], 
+        "coinbase" => ["coinbase", "bool", null, "getCoinbase", "setCoinbase", null, ["r" => 0]], 
+        "bestblock" => ["bestblock", "string", null, "getBestblock", "setBestblock", null, ["r" => 0]]
     ];
 
     /**
@@ -42,14 +40,6 @@ class DogeUTXO extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -66,12 +56,11 @@ class DogeUTXO extends AbstractModel {
      * Set script_pub_key
      * 
      * @param \Tatum\Model\DogeTxVoutInnerScriptPubKey|null $script_pub_key script_pub_key
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setScriptPubKey(?\Tatum\Model\DogeTxVoutInnerScriptPubKey $script_pub_key) {
-        $this->_data['script_pub_key'] = $script_pub_key;
-
-        return $this;
+        return $this->_set("script_pub_key", $script_pub_key);
     }
 
     /**
@@ -87,12 +76,11 @@ class DogeUTXO extends AbstractModel {
      * Set version
      * 
      * @param float|null $version The version of the transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setVersion(?float $version) {
-        $this->_data['version'] = $version;
-
-        return $this;
+        return $this->_set("version", $version);
     }
 
     /**
@@ -108,12 +96,11 @@ class DogeUTXO extends AbstractModel {
      * Set height
      * 
      * @param float|null $height The height (number) of the block where the transaction is included in
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setHeight(?float $height) {
-        $this->_data['height'] = $height;
-
-        return $this;
+        return $this->_set("height", $height);
     }
 
     /**
@@ -129,12 +116,11 @@ class DogeUTXO extends AbstractModel {
      * Set value
      * 
      * @param float|null $value The amount of the UTXO (in 1/1000000 DOGE)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(?float $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -150,12 +136,11 @@ class DogeUTXO extends AbstractModel {
      * Set coinbase
      * 
      * @param bool|null $coinbase If set to \"true\", the transaction is a coinbase transaction (a transaction created by a Bitcoin miner to collect their reward)
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCoinbase(?bool $coinbase) {
-        $this->_data['coinbase'] = $coinbase;
-
-        return $this;
+        return $this->_set("coinbase", $coinbase);
     }
 
     /**
@@ -171,11 +156,10 @@ class DogeUTXO extends AbstractModel {
      * Set bestblock
      * 
      * @param string|null $bestblock The block hash
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBestblock(?string $bestblock) {
-        $this->_data['bestblock'] = $bestblock;
-
-        return $this;
+        return $this->_set("bestblock", $bestblock);
     }
 }

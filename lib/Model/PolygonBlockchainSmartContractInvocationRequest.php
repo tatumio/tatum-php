@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * PolygonBlockchainSmartContractInvocation_request Model
  */
@@ -25,17 +23,17 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "PolygonBlockchainSmartContractInvocation_request";
     protected static $_definition = [
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null], 
-        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null], 
-        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null], 
-        "params" => ["params", "string[]", null, "getParams", "setParams", null], 
-        "amount" => ["amount", "string", null, "getAmount", "setAmount", null], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null], 
-        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null], 
-        "caller" => ["caller", "string", null, "getCaller", "setCaller", null], 
-        "index" => ["index", "float", null, "getIndex", "setIndex", null], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "method_name" => ["methodName", "string", null, "getMethodName", "setMethodName", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
+        "method_abi" => ["methodABI", "object", null, "getMethodAbi", "setMethodAbi", null, ["r" => 1]], 
+        "params" => ["params", "string[]", null, "getParams", "setParams", null, ["r" => 1, "c" => 1]], 
+        "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
+        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "caller" => ["caller", "string", null, "getCaller", "setCaller", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 
     /**
@@ -47,68 +45,6 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['contract_address'])) {
-            $ip[] = "'contract_address' can't be null";
-        }
-        if ((mb_strlen($this->_data['contract_address']) > 42)) {
-            $ip[] = "'contract_address' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['contract_address']) < 42)) {
-            $ip[] = "'contract_address' length must be >= 42";
-        }
-        if (is_null($this->_data['method_name'])) {
-            $ip[] = "'method_name' can't be null";
-        }
-        if ((mb_strlen($this->_data['method_name']) > 500)) {
-            $ip[] = "'method_name' length must be <= 500";
-        }
-        if ((mb_strlen($this->_data['method_name']) < 1)) {
-            $ip[] = "'method_name' length must be >= 1";
-        }
-        if (is_null($this->_data['method_abi'])) {
-            $ip[] = "'method_abi' can't be null";
-        }
-        if (is_null($this->_data['params'])) {
-            $ip[] = "'params' can't be null";
-        }
-        if (!is_null($this->_data['amount']) && !preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $this->_data['amount'])) {
-            $ip[] = "'amount' must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/";
-        }
-        if (is_null($this->_data['from_private_key'])) {
-            $ip[] = "'from_private_key' can't be null";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) > 66)) {
-            $ip[] = "'from_private_key' length must be <= 66";
-        }
-        if ((mb_strlen($this->_data['from_private_key']) < 66)) {
-            $ip[] = "'from_private_key' length must be >= 66";
-        }
-        if (!is_null($this->_data['nonce']) && ($this->_data['nonce'] < 0)) {
-            $ip[] = "'nonce' must be >= 0";
-        }
-        if (is_null($this->_data['caller'])) {
-            $ip[] = "'caller' can't be null";
-        }
-        if ((mb_strlen($this->_data['caller']) > 42)) {
-            $ip[] = "'caller' length must be <= 42";
-        }
-        if ((mb_strlen($this->_data['caller']) < 42)) {
-            $ip[] = "'caller' length must be >= 42";
-        }
-        if (!is_null($this->_data['index']) && ($this->_data['index'] < 0)) {
-            $ip[] = "'index' must be >= 0";
-        }
-        if (is_null($this->_data['signature_id'])) {
-            $ip[] = "'signature_id' can't be null";
-        }
-        return $ip;
     }
 
 
@@ -125,18 +61,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set contract_address
      * 
      * @param string $contract_address The address of the smart contract
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setContractAddress(string $contract_address) {
-        if ((mb_strlen($contract_address) > 42)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setContractAddress: $contract_address length must be <= 42');
-        }
-        if ((mb_strlen($contract_address) < 42)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setContractAddress: $contract_address length must be >= 42');
-        }
-        $this->_data['contract_address'] = $contract_address;
-
-        return $this;
+        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -152,18 +81,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set method_name
      * 
      * @param string $method_name Name of the method to invoke on smart contract.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMethodName(string $method_name) {
-        if ((mb_strlen($method_name) > 500)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setMethodName: $method_name length must be <= 500');
-        }
-        if ((mb_strlen($method_name) < 1)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setMethodName: $method_name length must be >= 1');
-        }
-        $this->_data['method_name'] = $method_name;
-
-        return $this;
+        return $this->_set("method_name", $method_name);
     }
 
     /**
@@ -179,12 +101,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set method_abi
      * 
      * @param object $method_abi ABI of the method to invoke.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMethodAbi(object $method_abi) {
-        $this->_data['method_abi'] = $method_abi;
-
-        return $this;
+        return $this->_set("method_abi", $method_abi);
     }
 
     /**
@@ -200,12 +121,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set params
      * 
      * @param string[] $params Parameters of the method to be invoked.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setParams(array $params) {
-        $this->_data['params'] = $params;
-
-        return $this;
+        return $this->_set("params", $params);
     }
 
     /**
@@ -221,15 +141,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set amount
      * 
      * @param string|null $amount Amount of the assets to be sent.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAmount(?string $amount) {
-        if (!is_null($amount) && (!preg_match("/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", $amount))) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setAmount: $amount must match /^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/, ' . var_export($amount, true) . ' given');
-        }
-        $this->_data['amount'] = $amount;
-
-        return $this;
+        return $this->_set("amount", $amount);
     }
 
     /**
@@ -245,18 +161,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set from_private_key
      * 
      * @param string $from_private_key Private key of sender address. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFromPrivateKey(string $from_private_key) {
-        if ((mb_strlen($from_private_key) > 66)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setFromPrivateKey: $from_private_key length must be <= 66');
-        }
-        if ((mb_strlen($from_private_key) < 66)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setFromPrivateKey: $from_private_key length must be >= 66');
-        }
-        $this->_data['from_private_key'] = $from_private_key;
-
-        return $this;
+        return $this->_set("from_private_key", $from_private_key);
     }
 
     /**
@@ -272,15 +181,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set nonce
      * 
      * @param float|null $nonce Nonce to be set to Polygon transaction. If not present, last known nonce will be used.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setNonce(?float $nonce) {
-        if (!is_null($nonce) && ($nonce < 0)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setNonce: $nonce must be >=0');
-        }
-        $this->_data['nonce'] = $nonce;
-
-        return $this;
+        return $this->_set("nonce", $nonce);
     }
 
     /**
@@ -296,12 +201,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set fee
      * 
      * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setFee(?\Tatum\Model\CustomFee $fee) {
-        $this->_data['fee'] = $fee;
-
-        return $this;
+        return $this->_set("fee", $fee);
     }
 
     /**
@@ -317,18 +221,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set caller
      * 
      * @param string $caller The address of the account, which will be sender and fee payer of this transaction
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCaller(string $caller) {
-        if ((mb_strlen($caller) > 42)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setCaller: $caller length must be <= 42');
-        }
-        if ((mb_strlen($caller) < 42)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setCaller: $caller length must be >= 42');
-        }
-        $this->_data['caller'] = $caller;
-
-        return $this;
+        return $this->_set("caller", $caller);
     }
 
     /**
@@ -344,15 +241,11 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set index
      * 
      * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(?float $index) {
-        if (!is_null($index) && ($index < 0)) {
-            throw new IAE('PolygonBlockchainSmartContractInvocationRequest.setIndex: $index must be >=0');
-        }
-        $this->_data['index'] = $index;
-
-        return $this;
+        return $this->_set("index", $index);
     }
 
     /**
@@ -368,11 +261,10 @@ class PolygonBlockchainSmartContractInvocationRequest extends AbstractModel {
      * Set signature_id
      * 
      * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSignatureId(string $signature_id) {
-        $this->_data['signature_id'] = $signature_id;
-
-        return $this;
+        return $this->_set("signature_id", $signature_id);
     }
 }

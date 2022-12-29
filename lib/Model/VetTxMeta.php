@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * VetTx_meta Model
  */
@@ -25,9 +23,9 @@ class VetTxMeta extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "VetTx_meta";
     protected static $_definition = [
-        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId", null], 
-        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null], 
-        "block_timestamp" => ["blockTimestamp", "float", null, "getBlockTimestamp", "setBlockTimestamp", null]
+        "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId", null, ["r" => 0]], 
+        "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 
+        "block_timestamp" => ["blockTimestamp", "float", null, "getBlockTimestamp", "setBlockTimestamp", null, ["r" => 0]]
     ];
 
     /**
@@ -39,14 +37,6 @@ class VetTxMeta extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -63,12 +53,11 @@ class VetTxMeta extends AbstractModel {
      * Set block_id
      * 
      * @param string|null $block_id block_id
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockId(?string $block_id) {
-        $this->_data['block_id'] = $block_id;
-
-        return $this;
+        return $this->_set("block_id", $block_id);
     }
 
     /**
@@ -84,12 +73,11 @@ class VetTxMeta extends AbstractModel {
      * Set block_number
      * 
      * @param float|null $block_number block_number
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockNumber(?float $block_number) {
-        $this->_data['block_number'] = $block_number;
-
-        return $this;
+        return $this->_set("block_number", $block_number);
     }
 
     /**
@@ -105,11 +93,10 @@ class VetTxMeta extends AbstractModel {
      * Set block_timestamp
      * 
      * @param float|null $block_timestamp block_timestamp
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockTimestamp(?float $block_timestamp) {
-        $this->_data['block_timestamp'] = $block_timestamp;
-
-        return $this;
+        return $this->_set("block_timestamp", $block_timestamp);
     }
 }

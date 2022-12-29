@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * InvalidGasPumpAddress Model
  */
@@ -25,8 +23,8 @@ class InvalidGasPumpAddress extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "InvalidGasPumpAddress";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null], 
-        "reason" => ["reason", "string", null, "getReason", "setReason", null]
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 
+        "reason" => ["reason", "string", null, "getReason", "setReason", null, ["r" => 0]]
     ];
 
     /**
@@ -38,14 +36,6 @@ class InvalidGasPumpAddress extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        return $ip;
     }
 
 
@@ -62,12 +52,11 @@ class InvalidGasPumpAddress extends AbstractModel {
      * Set address
      * 
      * @param string|null $address The not activated gas pump address
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setAddress(?string $address) {
-        $this->_data['address'] = $address;
-
-        return $this;
+        return $this->_set("address", $address);
     }
 
     /**
@@ -83,11 +72,10 @@ class InvalidGasPumpAddress extends AbstractModel {
      * Set reason
      * 
      * @param string|null $reason The reason why the gas pump address did not get activated
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setReason(?string $reason) {
-        $this->_data['reason'] = $reason;
-
-        return $this;
+        return $this->_set("reason", $reason);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * Data_data Model
  * 
@@ -36,13 +34,6 @@ class DataData extends AbstractModel {
      */
     public function __construct($data = null) {
         $this->_data = $data;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        return [];
     }
 
     /**

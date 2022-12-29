@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * BatchCreateTransaction Model
  */
@@ -25,8 +23,8 @@ class BatchCreateTransaction extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "BatchCreateTransaction";
     protected static $_definition = [
-        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null], 
-        "transaction" => ["transaction", "\Tatum\Model\BatchCreateTransactionTransactionInner[]", null, "getTransaction", "setTransaction", null]
+        "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 
+        "transaction" => ["transaction", "\Tatum\Model\BatchCreateTransactionTransactionInner[]", null, "getTransaction", "setTransaction", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -38,23 +36,6 @@ class BatchCreateTransaction extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['sender_account_id'])) {
-            $ip[] = "'sender_account_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) > 24)) {
-            $ip[] = "'sender_account_id' length must be <= 24";
-        }
-        if ((mb_strlen($this->_data['sender_account_id']) < 24)) {
-            $ip[] = "'sender_account_id' length must be >= 24";
-        }
-        return $ip;
     }
 
 
@@ -71,18 +52,11 @@ class BatchCreateTransaction extends AbstractModel {
      * Set sender_account_id
      * 
      * @param string $sender_account_id Internal sender account ID within Tatum platform
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSenderAccountId(string $sender_account_id) {
-        if ((mb_strlen($sender_account_id) > 24)) {
-            throw new IAE('BatchCreateTransaction.setSenderAccountId: $sender_account_id length must be <= 24');
-        }
-        if ((mb_strlen($sender_account_id) < 24)) {
-            throw new IAE('BatchCreateTransaction.setSenderAccountId: $sender_account_id length must be >= 24');
-        }
-        $this->_data['sender_account_id'] = $sender_account_id;
-
-        return $this;
+        return $this->_set("sender_account_id", $sender_account_id);
     }
 
     /**
@@ -98,11 +72,10 @@ class BatchCreateTransaction extends AbstractModel {
      * Set transaction
      * 
      * @param \Tatum\Model\BatchCreateTransactionTransactionInner[]|null $transaction Array of block seals.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTransaction(?array $transaction) {
-        $this->_data['transaction'] = $transaction;
-
-        return $this;
+        return $this->_set("transaction", $transaction);
     }
 }

@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * NftTokenByCollectionErc721 Model
  */
@@ -25,8 +23,8 @@ class NftTokenByCollectionErc721 extends AbstractModel {
     public const DISCRIMINATOR = null;
     protected static $_name = "NftTokenByCollectionErc721";
     protected static $_definition = [
-        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null], 
-        "metadata" => ["metadata", "\Tatum\Model\NftTokenByCollectionErc721TokenMetadata", null, "getMetadata", "setMetadata", null]
+        "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 
+        "metadata" => ["metadata", "\Tatum\Model\NftTokenByCollectionErc721TokenMetadata", null, "getMetadata", "setMetadata", null, ["r" => 0]]
     ];
 
     /**
@@ -38,20 +36,6 @@ class NftTokenByCollectionErc721 extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['token_id'])) {
-            $ip[] = "'token_id' can't be null";
-        }
-        if ((mb_strlen($this->_data['token_id']) > 78)) {
-            $ip[] = "'token_id' length must be <= 78";
-        }
-        return $ip;
     }
 
 
@@ -68,15 +52,11 @@ class NftTokenByCollectionErc721 extends AbstractModel {
      * Set token_id
      * 
      * @param string $token_id ID of the token.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenId(string $token_id) {
-        if ((mb_strlen($token_id) > 78)) {
-            throw new IAE('NftTokenByCollectionErc721.setTokenId: $token_id length must be <= 78');
-        }
-        $this->_data['token_id'] = $token_id;
-
-        return $this;
+        return $this->_set("token_id", $token_id);
     }
 
     /**
@@ -92,11 +72,10 @@ class NftTokenByCollectionErc721 extends AbstractModel {
      * Set metadata
      * 
      * @param \Tatum\Model\NftTokenByCollectionErc721TokenMetadata|null $metadata metadata
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setMetadata(?\Tatum\Model\NftTokenByCollectionErc721TokenMetadata $metadata) {
-        $this->_data['metadata'] = $metadata;
-
-        return $this;
+        return $this->_set("metadata", $metadata);
     }
 }

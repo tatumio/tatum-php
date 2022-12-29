@@ -15,8 +15,6 @@
 
 namespace Tatum\Model;
 
-use InvalidArgumentException as IAE;
-
 /**
  * ExchangeRate Model
  * 
@@ -421,11 +419,11 @@ class ExchangeRate extends AbstractModel {
     public const BASE_PAIR_ZWL = 'ZWL';
     protected static $_name = "ExchangeRate";
     protected static $_definition = [
-        "id" => ["id", "string", null, "getId", "setId", null], 
-        "value" => ["value", "string", null, "getValue", "setValue", null], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", 'EUR'], 
-        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null], 
-        "source" => ["source", "string", null, "getSource", "setSource", null]
+        "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1, "e" => 1]], 
+        "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 1]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", 'EUR', ["r" => 1, "e" => 1]], 
+        "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 1]], 
+        "source" => ["source", "string", null, "getSource", "setSource", null, ["r" => 1]]
     ];
 
     /**
@@ -437,39 +435,6 @@ class ExchangeRate extends AbstractModel {
         foreach(static::$_definition as $k => $v) {
             $this->_data[$k] = isset($data[$k]) ? $data[$k] : $v[5];
         }
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function listInvalidProperties(): array {
-        $ip = [];
-        if (is_null($this->_data['id'])) {
-            $ip[] = "'id' can't be null";
-        }
-        $allowed = $this->getIdAllowableValues();
-        $value = $this->_data['id'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'id' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['value'])) {
-            $ip[] = "'value' can't be null";
-        }
-        if (is_null($this->_data['base_pair'])) {
-            $ip[] = "'base_pair' can't be null";
-        }
-        $allowed = $this->getBasePairAllowableValues();
-        $value = $this->_data['base_pair'];
-        if (!is_null($value) && !in_array($value, $allowed, true)) {
-            $ip[] = sprintf("'base_pair' invalid value '%s', must be one of '%s'", $value, implode("', '", $allowed));
-        }
-        if (is_null($this->_data['timestamp'])) {
-            $ip[] = "'timestamp' can't be null";
-        }
-        if (is_null($this->_data['source'])) {
-            $ip[] = "'source' can't be null";
-        }
-        return $ip;
     }
 
     /**
@@ -898,16 +863,11 @@ class ExchangeRate extends AbstractModel {
      * Set id
      * 
      * @param string $id FIAT or crypto asset.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setId(string $id) {
-        $allowed = $this->getIdAllowableValues();
-        if (!in_array($id, $allowed, true)) {
-            throw new IAE(sprintf("ExchangeRate.setId: id invalid value '%s', must be one of '%s'", $id, implode("', '", $allowed)));
-        }
-        $this->_data['id'] = $id;
-
-        return $this;
+        return $this->_set("id", $id);
     }
 
     /**
@@ -923,12 +883,11 @@ class ExchangeRate extends AbstractModel {
      * Set value
      * 
      * @param string $value FIAT value of the asset in given base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setValue(string $value) {
-        $this->_data['value'] = $value;
-
-        return $this;
+        return $this->_set("value", $value);
     }
 
     /**
@@ -944,16 +903,11 @@ class ExchangeRate extends AbstractModel {
      * Set base_pair
      * 
      * @param string $base_pair Base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBasePair(string $base_pair) {
-        $allowed = $this->getBasePairAllowableValues();
-        if (!in_array($base_pair, $allowed, true)) {
-            throw new IAE(sprintf("ExchangeRate.setBasePair: base_pair invalid value '%s', must be one of '%s'", $base_pair, implode("', '", $allowed)));
-        }
-        $this->_data['base_pair'] = $base_pair;
-
-        return $this;
+        return $this->_set("base_pair", $base_pair);
     }
 
     /**
@@ -969,12 +923,11 @@ class ExchangeRate extends AbstractModel {
      * Set timestamp
      * 
      * @param float $timestamp Date of validity of rate in UTC.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTimestamp(float $timestamp) {
-        $this->_data['timestamp'] = $timestamp;
-
-        return $this;
+        return $this->_set("timestamp", $timestamp);
     }
 
     /**
@@ -990,11 +943,10 @@ class ExchangeRate extends AbstractModel {
      * Set source
      * 
      * @param string $source Source of base pair.
+     * @throws \InvalidArgumentException
      * @return $this
      */
     public function setSource(string $source) {
-        $this->_data['source'] = $source;
-
-        return $this;
+        return $this->_set("source", $source);
     }
 }
