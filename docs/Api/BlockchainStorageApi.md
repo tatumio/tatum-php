@@ -23,8 +23,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainStorage()->getLog(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to get the log record from |
- **$id** | **string**| The ID of the log record or transaction to get from the blockchain |
+ **$chain** | **string**  | The blockchain to get the log record from |
+ **$id** | **string**  | The ID of the log record or transaction to get from the blockchain |
 
 ### Return type
 
@@ -38,37 +38,7 @@ Get a log record
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to get the log record from
-$chain = 'ETH';
-
-// The ID of the log record or transaction to get from the blockchain
-$id = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-try {
-    /** @var \Tatum\Model\GetLog200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainStorage()
-        ->getLog($chain, $id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainStorage()->getLog(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainStorage()->getLog(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getLog.php"](../../samples/Api/BlockchainStorageApi/getLog.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -86,7 +56,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainStorage()->storeLog(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$store_log_request** | [**\Tatum\Model\StoreLogRequest**](../Model/StoreLogRequest.md)|  |
+ **$store_log_request** | [**\Tatum\Model\StoreLogRequest**](../Model/StoreLogRequest.md) |  |
 
 ### Return type
 
@@ -100,32 +70,6 @@ Store a log record
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$store_log_request = new \Tatum\Model\StoreLogRequest();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainStorage()
-        ->storeLog($store_log_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainStorage()->storeLog(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainStorage()->storeLog(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "storeLog.php"](../../samples/Api/BlockchainStorageApi/storeLog.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -36,8 +36,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiToke
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$add_multi_token_minter_request** | [**\Tatum\Model\AddMultiTokenMinterRequest**](../Model/AddMultiTokenMinterRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$add_multi_token_minter_request** | [**\Tatum\Model\AddMultiTokenMinterRequest**](../Model/AddMultiTokenMinterRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -51,36 +51,7 @@ Add a Multi Token minter
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$add_multi_token_minter_request = new \Tatum\Model\AddMultiTokenMinterRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->addMultiTokenMinter($add_multi_token_minter_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->addMultiTokenMinter(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->addMultiTokenMinter(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "addMultiTokenMinter.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -99,8 +70,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_request** | [**\Tatum\Model\BurnMultiTokenRequest**](../Model/BurnMultiTokenRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$burn_multi_token_request** | [**\Tatum\Model\BurnMultiTokenRequest**](../Model/BurnMultiTokenRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -114,36 +85,7 @@ Burn a Multi Token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$burn_multi_token_request = new \Tatum\Model\BurnMultiTokenRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->burnMultiToken($burn_multi_token_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->burnMultiToken(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->burnMultiToken(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "burnMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -162,8 +104,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_batch_request** | [**\Tatum\Model\BurnMultiTokenBatchRequest**](../Model/BurnMultiTokenBatchRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$burn_multi_token_batch_request** | [**\Tatum\Model\BurnMultiTokenBatchRequest**](../Model/BurnMultiTokenBatchRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -177,36 +119,7 @@ Burn multiple Multi Tokens
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$burn_multi_token_batch_request = new \Tatum\Model\BurnMultiTokenBatchRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->burnMultiTokenBatch($burn_multi_token_batch_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->burnMultiTokenBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->burnMultiTokenBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "burnMultiTokenBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -225,8 +138,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_multi_token_request** | [**\Tatum\Model\DeployMultiTokenRequest**](../Model/DeployMultiTokenRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$deploy_multi_token_request** | [**\Tatum\Model\DeployMultiTokenRequest**](../Model/DeployMultiTokenRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -240,36 +153,7 @@ Deploy a Multi Token smart contract
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$deploy_multi_token_request = new \Tatum\Model\DeployMultiTokenRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->deployMultiToken($deploy_multi_token_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->deployMultiToken(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->deployMultiToken(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deployMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -288,8 +172,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_request** | [**\Tatum\Model\MintMultiTokenRequest**](../Model/MintMultiTokenRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$mint_multi_token_request** | [**\Tatum\Model\MintMultiTokenRequest**](../Model/MintMultiTokenRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -303,36 +187,7 @@ Mint a Multi Token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$mint_multi_token_request = new \Tatum\Model\MintMultiTokenRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->mintMultiToken($mint_multi_token_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->mintMultiToken(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->mintMultiToken(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "mintMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -351,8 +206,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_batch_request** | [**\Tatum\Model\MintMultiTokenBatchRequest**](../Model/MintMultiTokenBatchRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$mint_multi_token_batch_request** | [**\Tatum\Model\MintMultiTokenBatchRequest**](../Model/MintMultiTokenBatchRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -366,36 +221,7 @@ Mint multiple Multi Tokens
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$mint_multi_token_batch_request = new \Tatum\Model\MintMultiTokenBatchRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->mintMultiTokenBatch($mint_multi_token_batch_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->mintMultiTokenBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->mintMultiTokenBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "mintMultiTokenBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -415,9 +241,9 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$address** | **string**| Blockchain address |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | Blockchain to work with |
+ **$address** | **string**  | Blockchain address |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -431,40 +257,7 @@ Get all Multi Tokens that a blockchain address holds
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'ETH';
-
-// Blockchain address
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->multiTokenGetAddressBalance($chain, $address, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "multiTokenGetAddressBalance.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -486,11 +279,11 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$address** | **string**| The blockchain address that you want to get the token balance of |
- **$contract_address** | **string**| The address of the Multi Token smart contract |
- **$token_id** | **string**| The ID of the Multi Token |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | Blockchain to work with |
+ **$address** | **string**  | The blockchain address that you want to get the token balance of |
+ **$contract_address** | **string**  | The address of the Multi Token smart contract |
+ **$token_id** | **string**  | The ID of the Multi Token |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -504,46 +297,7 @@ Get the amount of a specific MultiToken that a blockchain address holds
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// The blockchain address that you want to get the token balance of
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-// The address of the Multi Token smart contract
-$contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-// The ID of the Multi Token
-$token_id = 100;
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\MultiTokenGetBalance200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->multiTokenGetBalance($chain, $address, $contract_address, $token_id, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "multiTokenGetBalance.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -565,11 +319,11 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| The address of the Multi Token smart contract |
- **$token_id** | **string**| Comma-separated IDs of the Multi Tokens to get the amounts for |
- **$address** | **string**| Comma-separated blockchain addresses to get the token balance for |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | The address of the Multi Token smart contract |
+ **$token_id** | **string**  | Comma-separated IDs of the Multi Tokens to get the amounts for |
+ **$address** | **string**  | Comma-separated blockchain addresses to get the token balance for |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -583,46 +337,7 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// The address of the Multi Token smart contract
-$contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-// Comma-separated IDs of the Multi Tokens to get the amounts for
-$token_id = 1,2,3;
-
-// Comma-separated blockchain addresses to get the token balance for
-$address = 0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B,0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B,0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B;
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->multiTokenGetBalanceBatch($chain, $contract_address, $token_id, $address, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "multiTokenGetBalanceBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -642,9 +357,9 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$hash** | **string**| Transaction hash |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | Blockchain to work with |
+ **$hash** | **string**  | Transaction hash |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -658,40 +373,7 @@ Get the address of a Multi Token smart contract by its transaction hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\MultiTokenGetContractAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->multiTokenGetContractAddress($chain, $hash, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "multiTokenGetContractAddress.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetContractAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -712,10 +394,10 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$token** | **string**| Token ID |
- **$contract_address** | **string**| Multi Token contract address |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | Blockchain to work with |
+ **$token** | **string**  | Token ID |
+ **$contract_address** | **string**  | Multi Token contract address |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -729,43 +411,7 @@ Get Multi Token metadata
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Token ID
-$token = 1;
-
-// Multi Token contract address
-$contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\MultiTokenGetMetadata200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->multiTokenGetMetadata($chain, $token, $contract_address, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetMetadata(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetMetadata(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "multiTokenGetMetadata.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -785,9 +431,9 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$hash** | **string**| Transaction hash |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | Blockchain to work with |
+ **$hash** | **string**  | Transaction hash |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -801,40 +447,7 @@ Get a Multi Token transaction by its hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\MultiTokenGetTransaction200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->multiTokenGetTransaction($chain, $hash, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "multiTokenGetTransaction.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -858,13 +471,13 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$address** | **string**| Account address you want to get balance of |
- **$token_address** | **string**| Address of the token smart contract |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
+ **$chain** | **string**  | Blockchain to work with |
+ **$address** | **string**  | Account address you want to get balance of |
+ **$token_address** | **string**  | Address of the token smart contract |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$from** | **float**  | Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**  | Transactions up to this block will be included. | [optional]
 
 ### Return type
 
@@ -878,52 +491,7 @@ Get Multi Token transactions on a blockchain address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'CELO';
-
-// Account address you want to get balance of
-$address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
-
-// Address of the token smart contract
-$token_address = '0x1ce4e40889a13971681391aad29e88efaf91f784';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Transactions from this block onwards will be included.
-$from = 1087623;
-
-// Transactions up to this block will be included.
-$to = 1087823;
-
-try {
-    /** @var \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->multiTokenGetTransactionByAddress($chain, $address, $token_address, $page_size, $offset, $from, $to);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "multiTokenGetTransactionByAddress.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -942,8 +510,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_request** | [**\Tatum\Model\TransferMultiTokenRequest**](../Model/TransferMultiTokenRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$transfer_multi_token_request** | [**\Tatum\Model\TransferMultiTokenRequest**](../Model/TransferMultiTokenRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -957,36 +525,7 @@ Transfer a Multi Token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$transfer_multi_token_request = new \Tatum\Model\TransferMultiTokenRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->transferMultiToken($transfer_multi_token_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->transferMultiToken(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->transferMultiToken(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "transferMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1005,8 +544,8 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_batch_request** | [**\Tatum\Model\TransferMultiTokenBatchRequest**](../Model/TransferMultiTokenBatchRequest.md)|  |
- **$x_testnet_type** | **string**| Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$transfer_multi_token_batch_request** | [**\Tatum\Model\TransferMultiTokenBatchRequest**](../Model/TransferMultiTokenBatchRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -1020,35 +559,6 @@ Transfer multiple Multi Tokens
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$transfer_multi_token_batch_request = new \Tatum\Model\TransferMultiTokenBatchRequest();
-
-// Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->multiTokensERC1155OrCompatible()
-        ->transferMultiTokenBatch($transfer_multi_token_batch_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "transferMultiTokenBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

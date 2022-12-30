@@ -38,7 +38,7 @@ $sdk->{mainnet/testnet}()->api()->account()->activateAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -52,31 +52,7 @@ Activate account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->activateAccount($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->activateAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->activateAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "activateAccount.php"](../../samples/Api/AccountApi/activateAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -95,8 +71,8 @@ $sdk->{mainnet/testnet}()->api()->account()->blockAmount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$block_amount** | [**\Tatum\Model\BlockAmount**](../Model/BlockAmount.md)|  |
+ **$id** | **string**  | Account ID |
+ **$block_amount** | [**\Tatum\Model\BlockAmount**](../Model/BlockAmount.md) |  |
 
 ### Return type
 
@@ -110,36 +86,7 @@ Block an amount in an account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e6be89ee6aa436299950c3f';
-
-$block_amount = new \Tatum\Model\BlockAmount();
-
-try {
-    /** @var \Tatum\Model\Id $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->blockAmount($id, $block_amount);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->blockAmount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->blockAmount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "blockAmount.php"](../../samples/Api/AccountApi/blockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -157,7 +104,7 @@ $sdk->{mainnet/testnet}()->api()->account()->createAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_account_request** | [**\Tatum\Model\CreateAccountRequest**](../Model/CreateAccountRequest.md)|  |
+ **$create_account_request** | [**\Tatum\Model\CreateAccountRequest**](../Model/CreateAccountRequest.md) |  |
 
 ### Return type
 
@@ -171,33 +118,7 @@ Create a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_account_request = new \Tatum\Model\CreateAccountRequest();
-
-try {
-    /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->createAccount($create_account_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->createAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->createAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createAccount.php"](../../samples/Api/AccountApi/createAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -215,7 +136,7 @@ $sdk->{mainnet/testnet}()->api()->account()->createAccountBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_account_batch** | [**\Tatum\Model\CreateAccountBatch**](../Model/CreateAccountBatch.md)|  |
+ **$create_account_batch** | [**\Tatum\Model\CreateAccountBatch**](../Model/CreateAccountBatch.md) |  |
 
 ### Return type
 
@@ -229,33 +150,7 @@ Create multiple accounts in a batch call
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_account_batch = new \Tatum\Model\CreateAccountBatch();
-
-try {
-    /** @var \Tatum\Model\Account[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->createAccountBatch($create_account_batch);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->createAccountBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->createAccountBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createAccountBatch.php"](../../samples/Api/AccountApi/createAccountBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -273,7 +168,7 @@ $sdk->{mainnet/testnet}()->api()->account()->deactivateAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -287,31 +182,7 @@ Deactivate account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->deactivateAccount($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->deactivateAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->deactivateAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deactivateAccount.php"](../../samples/Api/AccountApi/deactivateAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -329,7 +200,7 @@ $sdk->{mainnet/testnet}()->api()->account()->deleteAllBlockAmount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -343,31 +214,7 @@ Unblock all blocked amounts in an account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e6be89ee6aa436299950c3f';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->deleteAllBlockAmount($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->deleteAllBlockAmount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->deleteAllBlockAmount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deleteAllBlockAmount.php"](../../samples/Api/AccountApi/deleteAllBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -385,7 +232,7 @@ $sdk->{mainnet/testnet}()->api()->account()->deleteBlockAmount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Blockage ID |
+ **$id** | **string**  | Blockage ID |
 
 ### Return type
 
@@ -399,31 +246,7 @@ Unblock a blocked amount in an account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockage ID
-$id = '5e6be89ee6aa436299950c3f';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->deleteBlockAmount($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->deleteBlockAmount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->deleteBlockAmount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deleteBlockAmount.php"](../../samples/Api/AccountApi/deleteBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -441,7 +264,7 @@ $sdk->{mainnet/testnet}()->api()->account()->freezeAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -455,31 +278,7 @@ Freeze account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->freezeAccount($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->freezeAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->freezeAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "freezeAccount.php"](../../samples/Api/AccountApi/freezeAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -497,7 +296,7 @@ $sdk->{mainnet/testnet}()->api()->account()->getAccountBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -511,34 +310,7 @@ Get account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-    /** @var \Tatum\Model\AccountBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->getAccountBalance($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->getAccountBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->getAccountBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAccountBalance.php"](../../samples/Api/AccountApi/getAccountBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -556,7 +328,7 @@ $sdk->{mainnet/testnet}()->api()->account()->getAccountByAccountId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -570,34 +342,7 @@ Get account by ID
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-    /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->getAccountByAccountId($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->getAccountByAccountId(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->getAccountByAccountId(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAccountByAccountId.php"](../../samples/Api/AccountApi/getAccountByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -623,15 +368,15 @@ $sdk->{mainnet/testnet}()->api()->account()->getAccounts(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. | [optional]
- **$page** | **float**| Page number | [optional]
- **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
- **$sort_by** | **string**| Sort by | [optional]
- **$active** | **bool**| Filter only active or non active accounts | [optional]
- **$only_non_zero_balance** | **bool**| Filter only accounts with non zero balances | [optional]
- **$frozen** | **bool**| Filter only frozen or non frozen accounts | [optional]
- **$currency** | **string**| Filter by currency | [optional]
- **$account_number** | **string**| Filter by account number | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. | [optional]
+ **$page** | **float**  | Page number | [optional]
+ **$sort** | **string**  | Direction of sorting. Can be asc or desc | [optional]
+ **$sort_by** | **string**  | Sort by | [optional]
+ **$active** | **bool**  | Filter only active or non active accounts | [optional]
+ **$only_non_zero_balance** | **bool**  | Filter only accounts with non zero balances | [optional]
+ **$frozen** | **bool**  | Filter only frozen or non frozen accounts | [optional]
+ **$currency** | **string**  | Filter by currency | [optional]
+ **$account_number** | **string**  | Filter by account number | [optional]
 
 ### Return type
 
@@ -645,58 +390,7 @@ List all accounts
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 20;
-
-// Page number
-$page = 0;
-
-// Direction of sorting. Can be asc or desc
-$sort = 'asc';
-
-// Sort by
-$sort_by = '_id';
-
-// Filter only active or non active accounts
-$active = 'true';
-
-// Filter only accounts with non zero balances
-$only_non_zero_balance = 'true';
-
-// Filter only frozen or non frozen accounts
-$frozen = 'true';
-
-// Filter by currency
-$currency = 'BTC';
-
-// Filter by account number
-$account_number = 'AC_1011_B';
-
-try {
-    /** @var \Tatum\Model\Account[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->getAccounts($page_size, $page, $sort, $sort_by, $active, $only_non_zero_balance, $frozen, $currency, $account_number);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->getAccounts(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->getAccounts(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAccounts.php"](../../samples/Api/AccountApi/getAccounts.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -717,10 +411,10 @@ $sdk->{mainnet/testnet}()->api()->account()->getAccountsByCustomerId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Internal customer ID |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$account_code** | **string**| For bookkeeping to distinct account purpose. | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$id** | **string**  | Internal customer ID |
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
+ **$account_code** | **string**  | For bookkeeping to distinct account purpose. | [optional]
 
 ### Return type
 
@@ -734,43 +428,7 @@ List all customer accounts
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Internal customer ID
-$id = '5e68c66581f2ee32bc354087';
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-// For bookkeeping to distinct account purpose.
-$account_code = 'AC_1011_B';
-
-try {
-    /** @var \Tatum\Model\Account[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->getAccountsByCustomerId($page_size, $id, $offset, $account_code);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->getAccountsByCustomerId(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->getAccountsByCustomerId(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAccountsByCustomerId.php"](../../samples/Api/AccountApi/getAccountsByCustomerId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -796,15 +454,15 @@ $sdk->{mainnet/testnet}()->api()->account()->getAccountsCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. | [optional]
- **$page** | **float**| Page number | [optional]
- **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
- **$sort_by** | **string**| Sort by | [optional]
- **$active** | **bool**| Filter only active or non active accounts | [optional]
- **$only_non_zero_balance** | **bool**| Filter only accounts with non zero balances | [optional]
- **$frozen** | **bool**| Filter only frozen or non frozen accounts | [optional]
- **$currency** | **string**| Filter by currency | [optional]
- **$account_number** | **string**| Filter by account number | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. | [optional]
+ **$page** | **float**  | Page number | [optional]
+ **$sort** | **string**  | Direction of sorting. Can be asc or desc | [optional]
+ **$sort_by** | **string**  | Sort by | [optional]
+ **$active** | **bool**  | Filter only active or non active accounts | [optional]
+ **$only_non_zero_balance** | **bool**  | Filter only accounts with non zero balances | [optional]
+ **$frozen** | **bool**  | Filter only frozen or non frozen accounts | [optional]
+ **$currency** | **string**  | Filter by currency | [optional]
+ **$account_number** | **string**  | Filter by account number | [optional]
 
 ### Return type
 
@@ -818,58 +476,7 @@ Count of found entities for get accounts request
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 20;
-
-// Page number
-$page = 0;
-
-// Direction of sorting. Can be asc or desc
-$sort = 'sort_example';
-
-// Sort by
-$sort_by = '_id';
-
-// Filter only active or non active accounts
-$active = 'true';
-
-// Filter only accounts with non zero balances
-$only_non_zero_balance = 'true';
-
-// Filter only frozen or non frozen accounts
-$frozen = 'true';
-
-// Filter by currency
-$currency = 'BTC';
-
-// Filter by account number
-$account_number = 'AC_1011_B';
-
-try {
-    /** @var \Tatum\Model\EntitiesCount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->getAccountsCount($page_size, $page, $sort, $sort_by, $active, $only_non_zero_balance, $frozen, $currency, $account_number);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->getAccountsCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->getAccountsCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAccountsCount.php"](../../samples/Api/AccountApi/getAccountsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -889,9 +496,9 @@ $sdk->{mainnet/testnet}()->api()->account()->getBlockAmount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$id** | **string**  | Account ID |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
 
 ### Return type
 
@@ -905,40 +512,7 @@ Get blocked amounts in an account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e6be89ee6aa436299950c3f';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-try {
-    /** @var \Tatum\Model\Blockage[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->getBlockAmount($id, $page_size, $offset);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->getBlockAmount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->getBlockAmount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getBlockAmount.php"](../../samples/Api/AccountApi/getBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -956,7 +530,7 @@ $sdk->{mainnet/testnet}()->api()->account()->getBlockAmountById(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Blocked amount ID |
+ **$id** | **string**  | Blocked amount ID |
 
 ### Return type
 
@@ -970,34 +544,7 @@ Get blocked amount by ID
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blocked amount ID
-$id = '5e6be89ee6aa436299950c3f';
-
-try {
-    /** @var \Tatum\Model\Blockage $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->getBlockAmountById($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->getBlockAmountById(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->getBlockAmountById(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getBlockAmountById.php"](../../samples/Api/AccountApi/getBlockAmountById.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1016,8 +563,8 @@ $sdk->{mainnet/testnet}()->api()->account()->unblockAmountWithTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Blockage ID |
- **$unblock_amount** | [**\Tatum\Model\UnblockAmount**](../Model/UnblockAmount.md)|  |
+ **$id** | **string**  | Blockage ID |
+ **$unblock_amount** | [**\Tatum\Model\UnblockAmount**](../Model/UnblockAmount.md) |  |
 
 ### Return type
 
@@ -1031,36 +578,7 @@ Unblock an amount in an account and perform a transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockage ID
-$id = '5e6be89ee6aa436299950c3f';
-
-$unblock_amount = new \Tatum\Model\UnblockAmount();
-
-try {
-    /** @var \Tatum\Model\TransactionResult $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->unblockAmountWithTransaction($id, $unblock_amount);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->unblockAmountWithTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->unblockAmountWithTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "unblockAmountWithTransaction.php"](../../samples/Api/AccountApi/unblockAmountWithTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1078,7 +596,7 @@ $sdk->{mainnet/testnet}()->api()->account()->unfreezeAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -1092,31 +610,7 @@ Unfreeze account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->unfreezeAccount($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->unfreezeAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->unfreezeAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "unfreezeAccount.php"](../../samples/Api/AccountApi/unfreezeAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1135,8 +629,8 @@ $sdk->{mainnet/testnet}()->api()->account()->updateAccountByAccountId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$update_account** | [**\Tatum\Model\UpdateAccount**](../Model/UpdateAccount.md)|  |
+ **$id** | **string**  | Account ID |
+ **$update_account** | [**\Tatum\Model\UpdateAccount**](../Model/UpdateAccount.md) |  |
 
 ### Return type
 
@@ -1150,32 +644,6 @@ Update account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-$update_account = new \Tatum\Model\UpdateAccount();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->account()
-        ->updateAccountByAccountId($id, $update_account);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling account()->updateAccountByAccountId(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling account()->updateAccountByAccountId(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateAccountByAccountId.php"](../../samples/Api/AccountApi/updateAccountByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

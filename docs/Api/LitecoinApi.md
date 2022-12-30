@@ -34,7 +34,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -48,33 +48,7 @@ Broadcast signed Litecoin transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcBroadcast.php"](../../samples/Api/LitecoinApi/ltcBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -93,8 +67,8 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -108,37 +82,7 @@ Generate Litecoin deposit address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\LtcGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGenerateAddress.php"](../../samples/Api/LitecoinApi/ltcGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -156,7 +100,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -170,33 +114,7 @@ Generate Litecoin private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGenerateAddressPrivateKey.php"](../../samples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,7 +132,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -228,34 +146,7 @@ Generate Litecoin wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGenerateWallet.php"](../../samples/Api/LitecoinApi/ltcGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -273,7 +164,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBalanceOfAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
+ **$address** | **string**  | Address |
 
 ### Return type
 
@@ -287,34 +178,7 @@ Get the balance of a Litecoin address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address
-$address = 'n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or';
-
-try {
-    /** @var \Tatum\Model\BtcBasedBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetBalanceOfAddress($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetBalanceOfAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetBalanceOfAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetBalanceOfAddress.php"](../../samples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -332,7 +196,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
+ **$hash** | **string**  | Block hash or height. |
 
 ### Return type
 
@@ -346,34 +210,7 @@ Get Litecoin Block by hash or height
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or height.
-$hash = 1234314;
-
-try {
-    /** @var \Tatum\Model\LtcBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetBlock.php"](../../samples/Api/LitecoinApi/ltcGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -402,31 +239,7 @@ Get Litecoin Blockchain Information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\LtcInfo $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetBlockChainInfo();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetBlockChainInfo.php"](../../samples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -444,7 +257,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockHash(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
+ **$i** | **float**  | The number of blocks preceding a particular block on a block chain. |
 
 ### Return type
 
@@ -458,34 +271,7 @@ Get Litecoin Block hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The number of blocks preceding a particular block on a block chain.
-$i = 1234314;
-
-try {
-    /** @var \Tatum\Model\LtcGetBlockHash200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetBlockHash($i);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetBlockHash(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetBlockHash(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetBlockHash.php"](../../samples/Api/LitecoinApi/ltcGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -514,31 +300,7 @@ Get Mempool Transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetMempool();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetMempool(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetMempool(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetMempool.php"](../../samples/Api/LitecoinApi/ltcGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -556,7 +318,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetRawTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -570,34 +332,7 @@ Get Litecoin Transaction by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = 'd60631d8e5c8b6eb0557b5181cf28564d771c628a08abc414e87ad7c05ff2fc2';
-
-try {
-    /** @var \Tatum\Model\LtcTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetRawTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetRawTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetRawTransaction.php"](../../samples/Api/LitecoinApi/ltcGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -617,9 +352,9 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetTxByAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$address** | **string**  | Address |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
 
 ### Return type
 
@@ -633,40 +368,7 @@ Get Litecoin Transactions by address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address
-$address = 'n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-try {
-    /** @var \Tatum\Model\LtcTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetTxByAddress($address, $page_size, $offset);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetTxByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetTxByAddress.php"](../../samples/Api/LitecoinApi/ltcGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -685,8 +387,8 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| The transaction hash |
- **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+ **$hash** | **string**  | The transaction hash |
+ **$index** | **float**  | The index of the transaction output that you want to check for the UTXO |
 
 ### Return type
 
@@ -700,37 +402,7 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The transaction hash
-$hash = '5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a';
-
-// The index of the transaction output that you want to check for the UTXO
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\LtcUTXO $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcGetUTXO($hash, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcGetUTXO(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcGetUTXO(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcGetUTXO.php"](../../samples/Api/LitecoinApi/ltcGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -748,7 +420,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md) |  |
 
 ### Return type
 
@@ -762,33 +434,7 @@ JSON RPC HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bch_rpc_driver_request = new \Tatum\Model\BchRpcDriverRequest();
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcRpcDriver($bch_rpc_driver_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcRpcDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcRpcDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcRpcDriver.php"](../../samples/Api/LitecoinApi/ltcRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -806,7 +452,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransferBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ltc_transfer_blockchain_request** | [**\Tatum\Model\LtcTransferBlockchainRequest**](../Model/LtcTransferBlockchainRequest.md)|  |
+ **$ltc_transfer_blockchain_request** | [**\Tatum\Model\LtcTransferBlockchainRequest**](../Model/LtcTransferBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -820,32 +466,6 @@ Send LTC to Litecoin addresses
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$ltc_transfer_blockchain_request = new \Tatum\Model\LtcTransferBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->litecoin()
-        ->ltcTransferBlockchain($ltc_transfer_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling litecoin()->ltcTransferBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling litecoin()->ltcTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcTransferBlockchain.php"](../../samples/Api/LitecoinApi/ltcTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

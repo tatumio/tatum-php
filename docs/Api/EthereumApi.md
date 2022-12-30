@@ -35,8 +35,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainSmartContractInvocati
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\EthBlockchainSmartContractInvocationRequest**](../Model/EthBlockchainSmartContractInvocationRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$eth_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\EthBlockchainSmartContractInvocationRequest**](../Model/EthBlockchainSmartContractInvocationRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -50,36 +50,7 @@ Invoke a method in a smart contract on Ethereum
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_blockchain_smart_contract_invocation_request = new \Tatum\Model\EthBlockchainSmartContractInvocationRequest();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethBlockchainSmartContractInvocation($eth_blockchain_smart_contract_invocation_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethBlockchainSmartContractInvocation.php"](../../samples/Api/EthereumApi/ethBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -98,8 +69,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_blockchain_transfer_request** | [**\Tatum\Model\EthBlockchainTransferRequest**](../Model/EthBlockchainTransferRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$eth_blockchain_transfer_request** | [**\Tatum\Model\EthBlockchainTransferRequest**](../Model/EthBlockchainTransferRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -113,36 +84,7 @@ Send Ethereum / ERC20 from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_blockchain_transfer_request = new \Tatum\Model\EthBlockchainTransferRequest();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethBlockchainTransfer($eth_blockchain_transfer_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethBlockchainTransfer.php"](../../samples/Api/EthereumApi/ethBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -161,8 +103,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -176,36 +118,7 @@ Broadcast signed Ethereum transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethBroadcast($broadcast_kms, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethBroadcast.php"](../../samples/Api/EthereumApi/ethBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -225,9 +138,9 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of the address to be generated. |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of the address to be generated. |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -241,40 +154,7 @@ Generate Ethereum account address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of the address to be generated.
-$index = 0;
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\GeneratedAddressEth $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGenerateAddress($xpub, $index, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGenerateAddress.php"](../../samples/Api/EthereumApi/ethGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -293,8 +173,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -308,36 +188,7 @@ Generate Ethereum private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGenerateAddressPrivateKey($priv_key_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGenerateAddressPrivateKey.php"](../../samples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -356,8 +207,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generating extended public and private keys. | [optional]
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$mnemonic** | **string**  | Mnemonic to use for generating extended public and private keys. | [optional]
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -371,37 +222,7 @@ Generate Ethereum wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generating extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGenerateWallet($mnemonic, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGenerateWallet.php"](../../samples/Api/EthereumApi/ethGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -420,8 +241,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$address** | **string**  | Account address you want to get balance of |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -435,37 +256,7 @@ Get the ETH balance of an Ethereum account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGetBalance($address, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGetBalance.php"](../../samples/Api/EthereumApi/ethGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -484,8 +275,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$hash** | **string**  | Block hash or block number |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -499,37 +290,7 @@ Get Ethereum block by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or block number
-$hash = 6470657;
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGetBlock($hash, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGetBlock.php"](../../samples/Api/EthereumApi/ethGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -547,7 +308,7 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetCurrentBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -561,34 +322,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGetCurrentBlock($x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGetCurrentBlock.php"](../../samples/Api/EthereumApi/ethGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -609,10 +343,10 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetInternalTransactionByAddress
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$address** | **string**  | Account address you want to get balance of |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -626,43 +360,7 @@ Get Ethereum internal transactions by address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthTxInternal[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGetInternalTransactionByAddress($address, $page_size, $offset, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGetInternalTransactionByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGetInternalTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGetInternalTransactionByAddress.php"](../../samples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -681,8 +379,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$hash** | **string**  | Transaction hash |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -696,37 +394,7 @@ Get Ethereum Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGetTransaction($hash, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGetTransaction.php"](../../samples/Api/EthereumApi/ethGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -750,13 +418,13 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionByAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
- **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$address** | **string**  | Account address you want to get balance of |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$from** | **float**  | Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**  | Transactions up to this block will be included. | [optional]
+ **$sort** | **string**  | Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -770,52 +438,7 @@ Get Ethereum transactions by address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Transactions from this block onwards will be included.
-$from = 1087623;
-
-// Transactions up to this block will be included.
-$to = 1087823;
-
-// Sorting of the data. ASC - oldest first, DESC - newest first.
-$sort = 'ASC';
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGetTransactionByAddress($address, $page_size, $offset, $from, $to, $sort, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGetTransactionByAddress.php"](../../samples/Api/EthereumApi/ethGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -834,8 +457,8 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$address** | **string**  | address |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -849,37 +472,7 @@ Get count of outgoing Ethereum transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// address
-$address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethGetTransactionCount($address, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethGetTransactionCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethGetTransactionCount.php"](../../samples/Api/EthereumApi/ethGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -899,9 +492,9 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethWeb3Driver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
- **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$body** | **object**  |  |
+ **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -915,38 +508,6 @@ Web3 HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-$body = array('key' => new \stdClass);
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->ethereum()
-        ->ethWeb3Driver($x_api_key, $body, $testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling ethereum()->ethWeb3Driver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling ethereum()->ethWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethWeb3Driver.php"](../../samples/Api/EthereumApi/ethWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

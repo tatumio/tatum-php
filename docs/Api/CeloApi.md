@@ -33,7 +33,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoBlockchainSmartContractInvocation(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\CeloBlockchainSmartContractInvocationRequest**](../Model/CeloBlockchainSmartContractInvocationRequest.md)|  |
+ **$celo_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\CeloBlockchainSmartContractInvocationRequest**](../Model/CeloBlockchainSmartContractInvocationRequest.md) |  |
 
 ### Return type
 
@@ -47,33 +47,7 @@ Invoke a method in a smart contract on Celo
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$celo_blockchain_smart_contract_invocation_request = new \Tatum\Model\CeloBlockchainSmartContractInvocationRequest();
-
-try {
-    /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoBlockchainSmartContractInvocation($celo_blockchain_smart_contract_invocation_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoBlockchainSmartContractInvocation.php"](../../samples/Api/CeloApi/celoBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -91,7 +65,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_blockchain_transfer_request** | [**\Tatum\Model\CeloBlockchainTransferRequest**](../Model/CeloBlockchainTransferRequest.md)|  |
+ **$celo_blockchain_transfer_request** | [**\Tatum\Model\CeloBlockchainTransferRequest**](../Model/CeloBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -105,33 +79,7 @@ Send Celo / ERC20 from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$celo_blockchain_transfer_request = new \Tatum\Model\CeloBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoBlockchainTransfer($celo_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoBlockchainTransfer.php"](../../samples/Api/CeloApi/celoBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -149,7 +97,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -163,33 +111,7 @@ Broadcast signed Celo transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoBroadcast.php"](../../samples/Api/CeloApi/celoBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -208,8 +130,8 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -223,37 +145,7 @@ Generate Celo account address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\CeloGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGenerateAddress.php"](../../samples/Api/CeloApi/celoGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -271,7 +163,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -285,33 +177,7 @@ Generate Celo private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGenerateAddressPrivateKey.php"](../../samples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -329,7 +195,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -343,34 +209,7 @@ Generate Celo wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGenerateWallet.php"](../../samples/Api/CeloApi/celoGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -388,7 +227,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -402,34 +241,7 @@ Get Celo Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-try {
-    /** @var \Tatum\Model\CeloGetBalance200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGetBalance($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGetBalance.php"](../../samples/Api/CeloApi/celoGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -447,7 +259,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
+ **$hash** | **string**  | Block hash or block number |
 
 ### Return type
 
@@ -461,34 +273,7 @@ Get Celo block by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or block number
-$hash = 6470657;
-
-try {
-    /** @var \Tatum\Model\CeloBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGetBlock.php"](../../samples/Api/CeloApi/celoGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -517,31 +302,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGetCurrentBlock.php"](../../samples/Api/CeloApi/celoGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -559,7 +320,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -573,34 +334,7 @@ Get Celo Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-try {
-    /** @var \Tatum\Model\CeloTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGetTransaction.php"](../../samples/Api/CeloApi/celoGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -623,12 +357,12 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionByAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
- **$sort** | **string**| Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
+ **$address** | **string**  | Account address you want to get balance of |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$from** | **float**  | Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**  | Transactions up to this block will be included. | [optional]
+ **$sort** | **string**  | Sorting of the data. ASC - oldest first, DESC - newest first. | [optional] [default to &#39;DESC&#39;]
 
 ### Return type
 
@@ -642,49 +376,7 @@ Get Celo transactions by address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Transactions from this block onwards will be included.
-$from = 1087623;
-
-// Transactions up to this block will be included.
-$to = 1087823;
-
-// Sorting of the data. ASC - oldest first, DESC - newest first.
-$sort = 'ASC';
-
-try {
-    /** @var \Tatum\Model\CeloTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGetTransactionByAddress($address, $page_size, $offset, $from, $to, $sort);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGetTransactionByAddress.php"](../../samples/Api/CeloApi/celoGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -702,7 +394,7 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
+ **$address** | **string**  | address |
 
 ### Return type
 
@@ -716,34 +408,7 @@ Get count of outgoing Celo transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// address
-$address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoGetTransactionCount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoGetTransactionCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoGetTransactionCount.php"](../../samples/Api/CeloApi/celoGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -762,8 +427,8 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoWeb3Driver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$body** | **object**  |  |
 
 ### Return type
 
@@ -777,35 +442,6 @@ Web3 HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-$body = array('key' => new \stdClass);
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->celo()
-        ->celoWeb3Driver($x_api_key, $body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling celo()->celoWeb3Driver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling celo()->celoWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoWeb3Driver.php"](../../samples/Api/CeloApi/celoWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

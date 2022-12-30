@@ -25,7 +25,7 @@ $sdk->{mainnet/testnet}()->api()->withdrawal()->broadcastBlockchainTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_withdrawal** | [**\Tatum\Model\BroadcastWithdrawal**](../Model/BroadcastWithdrawal.md)|  |
+ **$broadcast_withdrawal** | [**\Tatum\Model\BroadcastWithdrawal**](../Model/BroadcastWithdrawal.md) |  |
 
 ### Return type
 
@@ -39,33 +39,7 @@ Broadcast signed transaction and complete withdrawal
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_withdrawal = new \Tatum\Model\BroadcastWithdrawal();
-
-try {
-    /** @var \Tatum\Model\BroadcastResponse $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->withdrawal()
-        ->broadcastBlockchainTransaction($broadcast_withdrawal);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling withdrawal()->broadcastBlockchainTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling withdrawal()->broadcastBlockchainTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "broadcastBlockchainTransaction.php"](../../samples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -84,8 +58,8 @@ $sdk->{mainnet/testnet}()->api()->withdrawal()->cancelInProgressWithdrawal(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of created withdrawal |
- **$revert** | **bool**| Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum based currencies when gas was consumed but transaction was reverted. | [optional] [default to true]
+ **$id** | **string**  | ID of created withdrawal |
+ **$revert** | **bool**  | Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum based currencies when gas was consumed but transaction was reverted. | [optional] [default to true]
 
 ### Return type
 
@@ -99,34 +73,7 @@ Cancel withdrawal
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// ID of created withdrawal
-$id = 'id_example';
-
-// Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum based currencies when gas was consumed but transaction was reverted.
-$revert = 'true';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->withdrawal()
-        ->cancelInProgressWithdrawal($id, $revert);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling withdrawal()->cancelInProgressWithdrawal(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling withdrawal()->cancelInProgressWithdrawal(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "cancelInProgressWithdrawal.php"](../../samples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -145,8 +92,8 @@ $sdk->{mainnet/testnet}()->api()->withdrawal()->completeWithdrawal(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of created withdrawal |
- **$tx_id** | **string**| Blockchain transaction ID of created withdrawal |
+ **$id** | **string**  | ID of created withdrawal |
+ **$tx_id** | **string**  | Blockchain transaction ID of created withdrawal |
 
 ### Return type
 
@@ -160,34 +107,7 @@ Complete withdrawal
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// ID of created withdrawal
-$id = 'id_example';
-
-// Blockchain transaction ID of created withdrawal
-$tx_id = 'tx_id_example';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->withdrawal()
-        ->completeWithdrawal($id, $tx_id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling withdrawal()->completeWithdrawal(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling withdrawal()->completeWithdrawal(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "completeWithdrawal.php"](../../samples/Api/WithdrawalApi/completeWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -208,10 +128,10 @@ $sdk->{mainnet/testnet}()->api()->withdrawal()->getWithdrawals(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$currency** | **string**| Currency of the withdrawal | [optional]
- **$status** | **string**| Status of the withdrawal | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$currency** | **string**  | Currency of the withdrawal | [optional]
+ **$status** | **string**  | Status of the withdrawal | [optional]
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
 
 ### Return type
 
@@ -225,43 +145,7 @@ Get withdrawals
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Currency of the withdrawal
-$currency = 'BTC';
-
-// Status of the withdrawal
-$status = 'Done';
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-try {
-    /** @var \Tatum\Model\WithdrawalObject[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->withdrawal()
-        ->getWithdrawals($page_size, $currency, $status, $offset);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling withdrawal()->getWithdrawals(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling withdrawal()->getWithdrawals(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getWithdrawals.php"](../../samples/Api/WithdrawalApi/getWithdrawals.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -279,7 +163,7 @@ $sdk->{mainnet/testnet}()->api()->withdrawal()->storeWithdrawal(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdrawal** | [**\Tatum\Model\Withdrawal**](../Model/Withdrawal.md)|  |
+ **$withdrawal** | [**\Tatum\Model\Withdrawal**](../Model/Withdrawal.md) |  |
 
 ### Return type
 
@@ -293,32 +177,6 @@ Store withdrawal
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$withdrawal = new \Tatum\Model\Withdrawal();
-
-try {
-    /** @var \Tatum\Model\WithdrawalResponse $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->withdrawal()
-        ->storeWithdrawal($withdrawal);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling withdrawal()->storeWithdrawal(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling withdrawal()->storeWithdrawal(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "storeWithdrawal.php"](../../samples/Api/WithdrawalApi/storeWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

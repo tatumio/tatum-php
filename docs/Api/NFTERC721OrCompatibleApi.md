@@ -39,8 +39,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftAddMinter(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_add_minter_request** | [**\Tatum\Model\NftAddMinterRequest**](../Model/NftAddMinterRequest.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$nft_add_minter_request** | [**\Tatum\Model\NftAddMinterRequest**](../Model/NftAddMinterRequest.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -54,36 +54,7 @@ Add an NFT minter to an NFT smart contract
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_add_minter_request = new \Tatum\Model\NftAddMinterRequest();
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftAddMinter($nft_add_minter_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftAddMinter(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftAddMinter(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftAddMinter.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftAddMinter.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -102,8 +73,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_burn_erc721_request** | [**\Tatum\Model\NftBurnErc721Request**](../Model/NftBurnErc721Request.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$nft_burn_erc721_request** | [**\Tatum\Model\NftBurnErc721Request**](../Model/NftBurnErc721Request.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -117,36 +88,7 @@ Burn an NFT
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_burn_erc721_request = new \Tatum\Model\NftBurnErc721Request();
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftBurnErc721($nft_burn_erc721_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftBurnErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftBurnErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftBurnErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftBurnErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -165,8 +107,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_deploy_erc721_request** | [**\Tatum\Model\NftDeployErc721Request**](../Model/NftDeployErc721Request.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$nft_deploy_erc721_request** | [**\Tatum\Model\NftDeployErc721Request**](../Model/NftDeployErc721Request.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -180,36 +122,7 @@ Deploy an NFT smart contract
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_deploy_erc721_request = new \Tatum\Model\NftDeployErc721Request();
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftDeployErc721($nft_deploy_erc721_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftDeployErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftDeployErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftDeployErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftDeployErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -230,10 +143,10 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetBalanceErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$address** | **string**| The blockchain address that you want to get the token balance of |
- **$contract_address** | **string**| The address of the NFT smart contract |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | The blockchain to work with |
+ **$address** | **string**  | The blockchain address that you want to get the token balance of |
+ **$contract_address** | **string**  | The address of the NFT smart contract |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -247,43 +160,7 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// The blockchain address that you want to get the token balance of
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-// The address of the NFT smart contract
-$contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftGetBalanceErc721200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetBalanceErc721($chain, $address, $contract_address, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetBalanceErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetBalanceErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetBalanceErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -303,9 +180,9 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetContractAddress
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$hash** | **string**| Transaction hash |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | The blockchain to work with |
+ **$hash** | **string**  | Transaction hash |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -319,40 +196,7 @@ Get the address of an NFT smart contract by its transaction hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftGetContractAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetContractAddress($chain, $hash, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetContractAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetContractAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetContractAddress.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetContractAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -374,11 +218,11 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetMetadataErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$contract_address** | **string**| The blockchain address of the NFT to get metadata for |
- **$token_id** | **string**| The ID of the NFT to get metadata for&lt;br/&gt;Do &lt;b&gt;not&lt;/b&gt; use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana. |
- **$account** | **string**| (Flow only) The account that holds the NFT | [optional]
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | The blockchain to work with |
+ **$contract_address** | **string**  | The blockchain address of the NFT to get metadata for |
+ **$token_id** | **string**  | The ID of the NFT to get metadata for&lt;br/&gt;Do &lt;b&gt;not&lt;/b&gt; use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana. |
+ **$account** | **string**  | (Flow only) The account that holds the NFT | [optional]
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -392,46 +236,7 @@ Get NFT metadata
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// The blockchain address of the NFT to get metadata for
-$contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-// The ID of the NFT to get metadata for<br/>Do <b>not</b> use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana.
-$token_id = 123;
-
-// (Flow only) The account that holds the NFT
-$account = '0xc1b45bc27b9c61c3';
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftMetadataErc721 $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetMetadataErc721($chain, $contract_address, $token_id, $account, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetMetadataErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetMetadataErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetMetadataErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -452,10 +257,10 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetProvenanceDataE
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$contract_address** | **string**| The blockchain address of the NFT to get provenance information for |
- **$token_id** | **string**| The ID of the NFT to get provenance information for |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | The blockchain to work with |
+ **$contract_address** | **string**  | The blockchain address of the NFT to get provenance information for |
+ **$token_id** | **string**  | The ID of the NFT to get provenance information for |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -469,43 +274,7 @@ Get NFT provenance information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// The blockchain address of the NFT to get provenance information for
-$contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-// The ID of the NFT to get provenance information for
-$token_id = 123;
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftProvenanceDataErc721[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetProvenanceDataErc721($chain, $contract_address, $token_id, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetProvenanceDataErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetProvenanceDataErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetProvenanceDataErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -526,10 +295,10 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetRoyaltyErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$contract_address** | **string**| The blockchain address of the NFT to get royalty information for |
- **$token_id** | **string**| The ID of the NFT to get royalty information for&lt;br/&gt;Do &lt;b&gt;not&lt;/b&gt; use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana. |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | The blockchain to work with |
+ **$contract_address** | **string**  | The blockchain address of the NFT to get royalty information for |
+ **$token_id** | **string**  | The ID of the NFT to get royalty information for&lt;br/&gt;Do &lt;b&gt;not&lt;/b&gt; use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana. |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -543,43 +312,7 @@ Get NFT royalty information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// The blockchain address of the NFT to get royalty information for
-$contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-// The ID of the NFT to get royalty information for<br/>Do <b>not</b> use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana.
-$token_id = 123;
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftRoyaltyErc721 $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetRoyaltyErc721($chain, $contract_address, $token_id, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetRoyaltyErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetRoyaltyErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetRoyaltyErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -598,8 +331,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByAddress
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$address** | **string**| The blockchain address that you want to get the token balance of |
+ **$chain** | **string**  | The blockchain to work with |
+ **$address** | **string**  | The blockchain address that you want to get the token balance of |
 
 ### Return type
 
@@ -613,37 +346,7 @@ Get all NFTs that a blockchain address holds
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'SOL';
-
-// The blockchain address that you want to get the token balance of
-$address = 'FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ';
-
-try {
-    /** @var \Tatum\Model\NftTokenByAddressErc721[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetTokensByAddressErc721($chain, $address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetTokensByAddressErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -664,10 +367,10 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByCollect
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$address** | **string**| The blockchain address of the collection |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$chain** | **string**  | The blockchain to work with |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$address** | **string**  | The blockchain address of the collection |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
 
 ### Return type
 
@@ -681,43 +384,7 @@ Get all NFTs from a collection
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'ETH';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// The blockchain address of the collection
-$address = '0x80d8bac9a6901698b3749fe336bbd1385c1f98f2';
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-try {
-    /** @var \Tatum\Model\NftTokenByCollectionErc721[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetTokensByCollectionErc721($chain, $page_size, $address, $offset);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetTokensByCollectionErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -737,9 +404,9 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$hash** | **string**| The hash (ID) of the NFT transaction |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain** | **string**  | The blockchain to work with |
+ **$hash** | **string**  | The hash (ID) of the NFT transaction |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -753,40 +420,7 @@ Get an NFT transaction by its hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// The hash (ID) of the NFT transaction
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftGetTransactErc721200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetTransactErc721($chain, $hash, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetTransactErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetTransactErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetTransactErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -810,13 +444,13 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByAd
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$address** | **string**| Account address you want to get balance of |
- **$token_address** | **string**| Address of the token smart contract |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
+ **$chain** | **string**  | The blockchain to work with |
+ **$address** | **string**  | Account address you want to get balance of |
+ **$token_address** | **string**  | Address of the token smart contract |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$from** | **float**  | Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**  | Transactions up to this block will be included. | [optional]
 
 ### Return type
 
@@ -830,52 +464,7 @@ Get NFT transactions on a blockchain address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'CELO';
-
-// Account address you want to get balance of
-$address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
-
-// Address of the token smart contract
-$token_address = '0x1ce4e40889a13971681391aad29e88efaf91f784';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Transactions from this block onwards will be included.
-$from = 1087623;
-
-// Transactions up to this block will be included.
-$to = 1087823;
-
-try {
-    /** @var \Tatum\Model\NftTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetTransactionByAddress($chain, $address, $token_address, $page_size, $offset, $from, $to);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetTransactionByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetTransactionByAddress.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -899,13 +488,13 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByTo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$token_id** | **string**| NFT Token ID. |
- **$token_address** | **string**| Address of the token smart contract |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$from** | **float**| Transactions from this block onwards will be included. | [optional]
- **$to** | **float**| Transactions up to this block will be included. | [optional]
+ **$chain** | **string**  | The blockchain to work with |
+ **$token_id** | **string**  | NFT Token ID. |
+ **$token_address** | **string**  | Address of the token smart contract |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$from** | **float**  | Transactions from this block onwards will be included. | [optional]
+ **$to** | **float**  | Transactions up to this block will be included. | [optional]
 
 ### Return type
 
@@ -919,52 +508,7 @@ Get NFT transactions for an NFT
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'CELO';
-
-// NFT Token ID.
-$token_id = 123;
-
-// Address of the token smart contract
-$token_address = '0x1ce4e40889a13971681391aad29e88efaf91f784';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Transactions from this block onwards will be included.
-$from = 1087623;
-
-// Transactions up to this block will be included.
-$to = 1087823;
-
-try {
-    /** @var \Tatum\Model\NftTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftGetTransactionByToken($chain, $token_id, $token_address, $page_size, $offset, $from, $to);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftGetTransactionByToken(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftGetTransactionByToken(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftGetTransactionByToken.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -983,8 +527,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_mint_erc721_request** | [**\Tatum\Model\NftMintErc721Request**](../Model/NftMintErc721Request.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$nft_mint_erc721_request** | [**\Tatum\Model\NftMintErc721Request**](../Model/NftMintErc721Request.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -998,36 +542,7 @@ Mint an NFT
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_mint_erc721_request = new \Tatum\Model\NftMintErc721Request();
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftMintErc721200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftMintErc721($nft_mint_erc721_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftMintErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftMintErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftMintErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftMintErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1046,8 +561,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintMultipleErc721
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_mint_multiple_erc721_request** | [**\Tatum\Model\NftMintMultipleErc721Request**](../Model/NftMintMultipleErc721Request.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$nft_mint_multiple_erc721_request** | [**\Tatum\Model\NftMintMultipleErc721Request**](../Model/NftMintMultipleErc721Request.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -1061,36 +576,7 @@ Mint multiple NFTs
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_mint_multiple_erc721_request = new \Tatum\Model\NftMintMultipleErc721Request();
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\NftMintMultipleErc721200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftMintMultipleErc721($nft_mint_multiple_erc721_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftMintMultipleErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftMintMultipleErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftMintMultipleErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftMintMultipleErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1109,8 +595,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransferErc721(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_transfer_erc721_request** | [**\Tatum\Model\NftTransferErc721Request**](../Model/NftTransferErc721Request.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$nft_transfer_erc721_request** | [**\Tatum\Model\NftTransferErc721Request**](../Model/NftTransferErc721Request.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -1124,36 +610,7 @@ Transfer an NFT
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_transfer_erc721_request = new \Tatum\Model\NftTransferErc721Request();
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftTransferErc721($nft_transfer_erc721_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftTransferErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftTransferErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftTransferErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftTransferErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1172,8 +629,8 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftUpdateCashbackErc7
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_update_cashback_erc721_request** | [**\Tatum\Model\NftUpdateCashbackErc721Request**](../Model/NftUpdateCashbackErc721Request.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$nft_update_cashback_erc721_request** | [**\Tatum\Model\NftUpdateCashbackErc721Request**](../Model/NftUpdateCashbackErc721Request.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -1187,36 +644,7 @@ Update NFT royalty information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_update_cashback_erc721_request = new \Tatum\Model\NftUpdateCashbackErc721Request();
-
-// Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftUpdateCashbackErc721($nft_update_cashback_erc721_request, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftUpdateCashbackErc721(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftUpdateCashbackErc721(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftUpdateCashbackErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftUpdateCashbackErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1234,7 +662,7 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftVerifyInCollection
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_verify_in_collection_request** | [**\Tatum\Model\NftVerifyInCollectionRequest**](../Model/NftVerifyInCollectionRequest.md)|  |
+ **$nft_verify_in_collection_request** | [**\Tatum\Model\NftVerifyInCollectionRequest**](../Model/NftVerifyInCollectionRequest.md) |  |
 
 ### Return type
 
@@ -1248,32 +676,6 @@ Verify an NFT in an NFT collection on Solana
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$nft_verify_in_collection_request = new \Tatum\Model\NftVerifyInCollectionRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nFTERC721OrCompatible()
-        ->nftVerifyInCollection($nft_verify_in_collection_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nFTERC721OrCompatible()->nftVerifyInCollection(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nFTERC721OrCompatible()->nftVerifyInCollection(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nftVerifyInCollection.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftVerifyInCollection.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

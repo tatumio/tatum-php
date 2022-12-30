@@ -34,7 +34,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace_request** | [**\Tatum\Model\BuyAssetOnMarketplaceRequest**](../Model/BuyAssetOnMarketplaceRequest.md)|  |
+ **$buy_asset_on_marketplace_request** | [**\Tatum\Model\BuyAssetOnMarketplaceRequest**](../Model/BuyAssetOnMarketplaceRequest.md) |  |
 
 ### Return type
 
@@ -48,33 +48,7 @@ Buy an asset on the NFT marketplace
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$buy_asset_on_marketplace_request = new \Tatum\Model\BuyAssetOnMarketplaceRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->buyAssetOnMarketplace($buy_asset_on_marketplace_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->buyAssetOnMarketplace(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->buyAssetOnMarketplace(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "buyAssetOnMarketplace.php"](../../samples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -92,7 +66,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellMarketplaceListing(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_marketplace_listing_request** | [**\Tatum\Model\CancelSellMarketplaceListingRequest**](../Model/CancelSellMarketplaceListingRequest.md)|  |
+ **$cancel_sell_marketplace_listing_request** | [**\Tatum\Model\CancelSellMarketplaceListingRequest**](../Model/CancelSellMarketplaceListingRequest.md) |  |
 
 ### Return type
 
@@ -106,33 +80,7 @@ Cancel the selling of an asset on the NFT marketplace
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$cancel_sell_marketplace_listing_request = new \Tatum\Model\CancelSellMarketplaceListingRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->cancelSellMarketplaceListing($cancel_sell_marketplace_listing_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->cancelSellMarketplaceListing(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->cancelSellMarketplaceListing(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "cancelSellMarketplaceListing.php"](../../samples/Api/MarketplaceApi/cancelSellMarketplaceListing.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -150,7 +98,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_marketplace_request** | [**\Tatum\Model\GenerateMarketplaceRequest**](../Model/GenerateMarketplaceRequest.md)|  |
+ **$generate_marketplace_request** | [**\Tatum\Model\GenerateMarketplaceRequest**](../Model/GenerateMarketplaceRequest.md) |  |
 
 ### Return type
 
@@ -164,33 +112,7 @@ Create an NFT marketplace
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$generate_marketplace_request = new \Tatum\Model\GenerateMarketplaceRequest();
-
-try {
-    /** @var \Tatum\Model\GenerateMarketplace200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->generateMarketplace($generate_marketplace_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->generateMarketplace(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->generateMarketplace(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "generateMarketplace.php"](../../samples/Api/MarketplaceApi/generateMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -209,8 +131,8 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFee(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
 
 ### Return type
 
@@ -224,37 +146,7 @@ Get the NFT marketplace fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Contract address
-$contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->getMarketplaceFee($chain, $contract_address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->getMarketplaceFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->getMarketplaceFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getMarketplaceFee.php"](../../samples/Api/MarketplaceApi/getMarketplaceFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -273,8 +165,8 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFeeRecipient(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
 
 ### Return type
 
@@ -288,37 +180,7 @@ Get the recipient of the NFT marketplace fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Contract address
-$contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
-
-try {
-    /** @var \Tatum\Model\GetMarketplaceFeeRecipient200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->getMarketplaceFeeRecipient($chain, $contract_address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->getMarketplaceFeeRecipient(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->getMarketplaceFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getMarketplaceFeeRecipient.php"](../../samples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -337,8 +199,8 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceInfo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
 
 ### Return type
 
@@ -352,37 +214,7 @@ Get information about an NFT marketplace on Solana
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'SOL';
-
-// Contract address
-$contract_address = '3MgkEwYY4b8iSX2yMLnbQ7n8KzNRKNAgTGJwVbEcKkUz';
-
-try {
-    /** @var \Tatum\Model\GetMarketplaceInfo200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->getMarketplaceInfo($chain, $contract_address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->getMarketplaceInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->getMarketplaceInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getMarketplaceInfo.php"](../../samples/Api/MarketplaceApi/getMarketplaceInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -402,9 +234,9 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListing(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
- **$id** | **string**| Listing ID |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
+ **$id** | **string**  | Listing ID |
 
 ### Return type
 
@@ -418,40 +250,7 @@ Get information about a listing on the NFT marketplace
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Contract address
-$contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
-
-// Listing ID
-$id = 123456;
-
-try {
-    /** @var \Tatum\Model\GetMarketplaceListing200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->getMarketplaceListing($chain, $contract_address, $id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->getMarketplaceListing(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->getMarketplaceListing(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getMarketplaceListing.php"](../../samples/Api/MarketplaceApi/getMarketplaceListing.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -471,9 +270,9 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListings(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
- **$type** | **string**| The type of listings to return |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
+ **$type** | **string**  | The type of listings to return |
 
 ### Return type
 
@@ -487,40 +286,7 @@ Get the listings of a certain type from the NFT marketplace
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'CELO';
-
-// Contract address
-$contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
-
-// The type of listings to return
-$type = 'INITIATED';
-
-try {
-    /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->getMarketplaceListings($chain, $contract_address, $type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->getMarketplaceListings(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->getMarketplaceListings(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getMarketplaceListings.php"](../../samples/Api/MarketplaceApi/getMarketplaceListings.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -538,7 +304,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_request** | [**\Tatum\Model\SellAssetOnMarketplaceRequest**](../Model/SellAssetOnMarketplaceRequest.md)|  |
+ **$sell_asset_on_marketplace_request** | [**\Tatum\Model\SellAssetOnMarketplaceRequest**](../Model/SellAssetOnMarketplaceRequest.md) |  |
 
 ### Return type
 
@@ -552,33 +318,7 @@ Sell an asset on the NFT marketplace
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$sell_asset_on_marketplace_request = new \Tatum\Model\SellAssetOnMarketplaceRequest();
-
-try {
-    /** @var \Tatum\Model\SellAssetOnMarketplace200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->sellAssetOnMarketplace($sell_asset_on_marketplace_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->sellAssetOnMarketplace(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->sellAssetOnMarketplace(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "sellAssetOnMarketplace.php"](../../samples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -596,7 +336,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFee(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_request** | [**\Tatum\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md)|  |
+ **$update_fee_request** | [**\Tatum\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md) |  |
 
 ### Return type
 
@@ -610,33 +350,7 @@ Update the NFT marketplace fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$update_fee_request = new \Tatum\Model\UpdateFeeRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->updateFee($update_fee_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->updateFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->updateFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateFee.php"](../../samples/Api/MarketplaceApi/updateFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -654,7 +368,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipient(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_request** | [**\Tatum\Model\UpdateFeeRecipientRequest**](../Model/UpdateFeeRecipientRequest.md)|  |
+ **$update_fee_recipient_request** | [**\Tatum\Model\UpdateFeeRecipientRequest**](../Model/UpdateFeeRecipientRequest.md) |  |
 
 ### Return type
 
@@ -668,33 +382,7 @@ Update the recipient of the NFT marketplace fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$update_fee_recipient_request = new \Tatum\Model\UpdateFeeRecipientRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->updateFeeRecipient($update_fee_recipient_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->updateFeeRecipient(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->updateFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateFeeRecipient.php"](../../samples/Api/MarketplaceApi/updateFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -712,7 +400,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_marketplace_request** | [**\Tatum\Model\UpdateMarketplaceRequest**](../Model/UpdateMarketplaceRequest.md)|  |
+ **$update_marketplace_request** | [**\Tatum\Model\UpdateMarketplaceRequest**](../Model/UpdateMarketplaceRequest.md) |  |
 
 ### Return type
 
@@ -726,33 +414,7 @@ Update an NFT marketplace on Solana
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$update_marketplace_request = new \Tatum\Model\UpdateMarketplaceRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->updateMarketplace($update_marketplace_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->updateMarketplace(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->updateMarketplace(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateMarketplace.php"](../../samples/Api/MarketplaceApi/updateMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -770,7 +432,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFeeFromMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md)|  |
+ **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md) |  |
 
 ### Return type
 
@@ -784,33 +446,7 @@ Withdraw funds from the marketplace fee account on Solana
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$withdraw_fee_from_marketplace_request = new \Tatum\Model\WithdrawFeeFromMarketplaceRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->withdrawFeeFromMarketplace($withdraw_fee_from_marketplace_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->withdrawFeeFromMarketplace(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->withdrawFeeFromMarketplace(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "withdrawFeeFromMarketplace.php"](../../samples/Api/MarketplaceApi/withdrawFeeFromMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -828,7 +464,7 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->withdrawTreasuryFromMarketplace
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md)|  |
+ **$withdraw_fee_from_marketplace_request** | [**\Tatum\Model\WithdrawFeeFromMarketplaceRequest**](../Model/WithdrawFeeFromMarketplaceRequest.md) |  |
 
 ### Return type
 
@@ -842,32 +478,6 @@ Withdraw funds from the marketplace treasury account on Solana
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$withdraw_fee_from_marketplace_request = new \Tatum\Model\WithdrawFeeFromMarketplaceRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->marketplace()
-        ->withdrawTreasuryFromMarketplace($withdraw_fee_from_marketplace_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling marketplace()->withdrawTreasuryFromMarketplace(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling marketplace()->withdrawTreasuryFromMarketplace(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "withdrawTreasuryFromMarketplace.php"](../../samples/Api/MarketplaceApi/withdrawTreasuryFromMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

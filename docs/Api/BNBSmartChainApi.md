@@ -32,7 +32,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainSmartContractInv
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\BscBlockchainSmartContractInvocationRequest**](../Model/BscBlockchainSmartContractInvocationRequest.md)|  |
+ **$bsc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\BscBlockchainSmartContractInvocationRequest**](../Model/BscBlockchainSmartContractInvocationRequest.md) |  |
 
 ### Return type
 
@@ -46,33 +46,7 @@ Invoke a method in a smart contract on BNB Smart Chain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bsc_blockchain_smart_contract_invocation_request = new \Tatum\Model\BscBlockchainSmartContractInvocationRequest();
-
-try {
-    /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscBlockchainSmartContractInvocation($bsc_blockchain_smart_contract_invocation_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscBlockchainSmartContractInvocation.php"](../../samples/Api/BNBSmartChainApi/bscBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -90,7 +64,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_blockchain_transfer_request** | [**\Tatum\Model\BscBlockchainTransferRequest**](../Model/BscBlockchainTransferRequest.md)|  |
+ **$bsc_blockchain_transfer_request** | [**\Tatum\Model\BscBlockchainTransferRequest**](../Model/BscBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -104,33 +78,7 @@ Send BSC / BEP20 from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bsc_blockchain_transfer_request = new \Tatum\Model\BscBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscBlockchainTransfer($bsc_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscBlockchainTransfer.php"](../../samples/Api/BNBSmartChainApi/bscBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -148,7 +96,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -162,33 +110,7 @@ Broadcast signed BSC transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscBroadcast.php"](../../samples/Api/BNBSmartChainApi/bscBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -207,8 +129,8 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -222,37 +144,7 @@ Generate BSC account address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\GeneratedAddressBsc $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGenerateAddress.php"](../../samples/Api/BNBSmartChainApi/bscGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -270,7 +162,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -284,33 +176,7 @@ Generate BSC private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGenerateAddressPrivateKey.php"](../../samples/Api/BNBSmartChainApi/bscGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -328,7 +194,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -342,34 +208,7 @@ Generate BSC wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGenerateWallet.php"](../../samples/Api/BNBSmartChainApi/bscGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -387,7 +226,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -401,34 +240,7 @@ Get BSC Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-try {
-    /** @var \Tatum\Model\BscBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGetBalance($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGetBalance.php"](../../samples/Api/BNBSmartChainApi/bscGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -446,7 +258,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
+ **$hash** | **string**  | Block hash or block number |
 
 ### Return type
 
@@ -460,34 +272,7 @@ Get BSC block by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or block number
-$hash = 6470657;
-
-try {
-    /** @var \Tatum\Model\EthBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGetBlock.php"](../../samples/Api/BNBSmartChainApi/bscGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -516,31 +301,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGetCurrentBlock.php"](../../samples/Api/BNBSmartChainApi/bscGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -558,7 +319,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -572,34 +333,7 @@ Get BSC Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-try {
-    /** @var \Tatum\Model\BscTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGetTransaction.php"](../../samples/Api/BNBSmartChainApi/bscGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -617,7 +351,7 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransactionCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
+ **$address** | **string**  | address |
 
 ### Return type
 
@@ -631,34 +365,7 @@ Get count of outgoing BSC transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// address
-$address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscGetTransactionCount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscGetTransactionCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscGetTransactionCount.php"](../../samples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -677,8 +384,8 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscWeb3Driver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$body** | **object**  |  |
 
 ### Return type
 
@@ -692,35 +399,6 @@ Web3 HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-$body = array('key' => new \stdClass);
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBSmartChain()
-        ->bscWeb3Driver($x_api_key, $body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBSmartChain()->bscWeb3Driver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBSmartChain()->bscWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscWeb3Driver.php"](../../samples/Api/BNBSmartChainApi/bscWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

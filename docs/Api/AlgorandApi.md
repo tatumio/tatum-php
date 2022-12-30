@@ -34,8 +34,8 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algoNodeGetDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$algod_path** | **string**| &#x60;**&#x60; path of algod. |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$algod_path** | **string**  | &#x60;**&#x60; path of algod. |
 
 ### Return type
 
@@ -49,37 +49,7 @@ Access Algorand Algod GET node endpoints
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-// `**` path of algod.
-$algod_path = v2/accounts;
-
-try {
-    /** @var \Tatum\Model\AlgoBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algoNodeGetDriver($x_api_key, $algod_path);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algoNodeGetDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algoNodeGetDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algoNodeGetDriver.php"](../../samples/Api/AlgorandApi/algoNodeGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -98,8 +68,8 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algoNodeIndexerGetDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$indexer_path** | **string**| &#x60;**&#x60; path of indexer. |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$indexer_path** | **string**  | &#x60;**&#x60; path of indexer. |
 
 ### Return type
 
@@ -113,37 +83,7 @@ Access Algorand Indexer GET node endpoints
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-// `**` path of indexer.
-$indexer_path = v2/accounts;
-
-try {
-    /** @var \Tatum\Model\AlgoTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algoNodeIndexerGetDriver($x_api_key, $indexer_path);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algoNodeIndexerGetDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algoNodeIndexerGetDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algoNodeIndexerGetDriver.php"](../../samples/Api/AlgorandApi/algoNodeIndexerGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -163,9 +103,9 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algoNodePostDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$algod_path** | **string**| &#x60;**&#x60; path of algod. |
- **$algo_node_post_driver_request** | [**\Tatum\Model\AlgoNodePostDriverRequest**](../Model/AlgoNodePostDriverRequest.md)|  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$algod_path** | **string**  | &#x60;**&#x60; path of algod. |
+ **$algo_node_post_driver_request** | [**\Tatum\Model\AlgoNodePostDriverRequest**](../Model/AlgoNodePostDriverRequest.md) |  |
 
 ### Return type
 
@@ -179,39 +119,7 @@ Access Algorand Algod POST node endpoints
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-// `**` path of algod.
-$algod_path = v2/accounts;
-
-$algo_node_post_driver_request = new \Tatum\Model\AlgoNodePostDriverRequest();
-
-try {
-    /** @var \Tatum\Model\AlgoNodePostDriver200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algoNodePostDriver($x_api_key, $algod_path, $algo_node_post_driver_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algoNodePostDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algoNodePostDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algoNodePostDriver.php"](../../samples/Api/AlgorandApi/algoNodePostDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -229,7 +137,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algoandBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -243,33 +151,7 @@ Broadcast signed Algorand transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\AlgoTransactionHashKMS $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algoandBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algoandBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algoandBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algoandBroadcast.php"](../../samples/Api/AlgorandApi/algoandBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -287,7 +169,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainReceiveAsset(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algorand_blockchain_receive_asset_request** | [**\Tatum\Model\AlgorandBlockchainReceiveAssetRequest**](../Model/AlgorandBlockchainReceiveAssetRequest.md)|  |
+ **$algorand_blockchain_receive_asset_request** | [**\Tatum\Model\AlgorandBlockchainReceiveAssetRequest**](../Model/AlgorandBlockchainReceiveAssetRequest.md) |  |
 
 ### Return type
 
@@ -301,33 +183,7 @@ Enable receiving asset on account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$algorand_blockchain_receive_asset_request = new \Tatum\Model\AlgorandBlockchainReceiveAssetRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandBlockchainReceiveAsset($algorand_blockchain_receive_asset_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandBlockchainReceiveAsset(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandBlockchainReceiveAsset(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandBlockchainReceiveAsset.php"](../../samples/Api/AlgorandApi/algorandBlockchainReceiveAsset.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -345,7 +201,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algorand_blockchain_transfer_request** | [**\Tatum\Model\AlgorandBlockchainTransferRequest**](../Model/AlgorandBlockchainTransferRequest.md)|  |
+ **$algorand_blockchain_transfer_request** | [**\Tatum\Model\AlgorandBlockchainTransferRequest**](../Model/AlgorandBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -359,33 +215,7 @@ Send Algos to an Algorand account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$algorand_blockchain_transfer_request = new \Tatum\Model\AlgorandBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandBlockchainTransfer($algorand_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandBlockchainTransfer.php"](../../samples/Api/AlgorandApi/algorandBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -403,7 +233,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv** | **string**| private key of wallet. |
+ **$priv** | **string**  | private key of wallet. |
 
 ### Return type
 
@@ -417,34 +247,7 @@ Generate Algorand account address from private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// private key of wallet.
-$priv = 'NBYMCVEEDFYV3TPWVRE6APE7PKHUJD4XAKXCKNCLKGUXOC3LFNJGZQCJCRA53HB7ZAHF6NFJH2QIVQ5USQNWG35QCJLD4KZ5IWMB24Q';
-
-try {
-    /** @var \Tatum\Model\AlgorandGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandGenerateAddress($priv);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandGenerateAddress.php"](../../samples/Api/AlgorandApi/algorandGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -462,7 +265,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -476,34 +279,7 @@ Generate Algorand wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\AlgoWallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandGenerateWallet.php"](../../samples/Api/AlgorandApi/algorandGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -521,7 +297,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -535,34 +311,7 @@ Get Algorand Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = 'TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4';
-
-try {
-    /** @var \Tatum\Model\AlgorandGetBalance200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandGetBalance($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandGetBalance.php"](../../samples/Api/AlgorandApi/algorandGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -580,7 +329,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$round_number** | **float**| Block round number |
+ **$round_number** | **float**  | Block round number |
 
 ### Return type
 
@@ -594,34 +343,7 @@ Get Algorand block by block round number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block round number
-$round_number = 16775567;
-
-try {
-    /** @var \Tatum\Model\AlgoBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandGetBlock($round_number);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandGetBlock.php"](../../samples/Api/AlgorandApi/algorandGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -650,31 +372,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandGetCurrentBlock.php"](../../samples/Api/AlgorandApi/algorandGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -695,10 +393,10 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetPayTransactionsByFromTo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$from** | **string**| Start timestamp in specified period of time |
- **$to** | **string**| End timestamp in specified period of time |
- **$limit** | **string**| page size for pagination | [optional]
- **$next** | **string**| Algorand Next Token for getting the next page results | [optional]
+ **$from** | **string**  | Start timestamp in specified period of time |
+ **$to** | **string**  | End timestamp in specified period of time |
+ **$limit** | **string**  | page size for pagination | [optional]
+ **$next** | **string**  | Algorand Next Token for getting the next page results | [optional]
 
 ### Return type
 
@@ -712,43 +410,7 @@ Get Algorand Transactions between from and to
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Start timestamp in specified period of time
-$from = 2021-05-01T20:44:39Z;
-
-// End timestamp in specified period of time
-$to = 2021-06-01T20:44:39Z;
-
-// page size for pagination
-$limit = 5;
-
-// Algorand Next Token for getting the next page results
-$next = 'ywAAAAAAAAAAAAAA';
-
-try {
-    /** @var \Tatum\Model\AlgoTxsWithPagination $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandGetPayTransactionsByFromTo($from, $to, $limit, $next);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandGetPayTransactionsByFromTo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandGetPayTransactionsByFromTo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandGetPayTransactionsByFromTo.php"](../../samples/Api/AlgorandApi/algorandGetPayTransactionsByFromTo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -766,7 +428,7 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algorandGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$txid** | **string**| Transaction id |
+ **$txid** | **string**  | Transaction id |
 
 ### Return type
 
@@ -780,33 +442,6 @@ Get Algorand Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction id
-$txid = 'LXEBXIBDAIF72NRI76SU252QSOGFCKEHTG7AI4P6W25V35PETU3Q';
-
-try {
-    /** @var \Tatum\Model\AlgoTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->algorand()
-        ->algorandGetTransaction($txid);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling algorand()->algorandGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling algorand()->algorandGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algorandGetTransaction.php"](../../samples/Api/AlgorandApi/algorandGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

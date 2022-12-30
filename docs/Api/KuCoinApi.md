@@ -32,7 +32,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBlockchainSmartContractInvocation
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KcsBlockchainSmartContractInvocationRequest**](../Model/KcsBlockchainSmartContractInvocationRequest.md)|  |
+ **$kcs_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KcsBlockchainSmartContractInvocationRequest**](../Model/KcsBlockchainSmartContractInvocationRequest.md) |  |
 
 ### Return type
 
@@ -46,33 +46,7 @@ Invoke a method in a smart contract on KuCoin Community Chain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$kcs_blockchain_smart_contract_invocation_request = new \Tatum\Model\KcsBlockchainSmartContractInvocationRequest();
-
-try {
-    /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsBlockchainSmartContractInvocation($kcs_blockchain_smart_contract_invocation_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsBlockchainSmartContractInvocation.php"](../../samples/Api/KuCoinApi/kcsBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -90,7 +64,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_blockchain_transfer_request** | [**\Tatum\Model\KcsBlockchainTransferRequest**](../Model/KcsBlockchainTransferRequest.md)|  |
+ **$kcs_blockchain_transfer_request** | [**\Tatum\Model\KcsBlockchainTransferRequest**](../Model/KcsBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -104,33 +78,7 @@ Send KCS from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$kcs_blockchain_transfer_request = new \Tatum\Model\KcsBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsBlockchainTransfer($kcs_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsBlockchainTransfer.php"](../../samples/Api/KuCoinApi/kcsBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -148,7 +96,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -162,33 +110,7 @@ Broadcast signed Kcs transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsBroadcast.php"](../../samples/Api/KuCoinApi/kcsBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -207,8 +129,8 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -222,37 +144,7 @@ Generate Kcs account address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\KcsGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGenerateAddress.php"](../../samples/Api/KuCoinApi/kcsGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -270,7 +162,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -284,33 +176,7 @@ Generate Kcs private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGenerateAddressPrivateKey.php"](../../samples/Api/KuCoinApi/kcsGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -328,7 +194,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -342,34 +208,7 @@ Generate Kcs wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGenerateWallet.php"](../../samples/Api/KuCoinApi/kcsGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -387,7 +226,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -401,34 +240,7 @@ Get Kcs Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-try {
-    /** @var \Tatum\Model\KcsGetBalance200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGetBalance($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGetBalance.php"](../../samples/Api/KuCoinApi/kcsGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -446,7 +258,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
+ **$hash** | **string**  | Block hash or block number |
 
 ### Return type
 
@@ -460,34 +272,7 @@ Get Kcs block by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or block number
-$hash = 6470657;
-
-try {
-    /** @var \Tatum\Model\EthBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGetBlock.php"](../../samples/Api/KuCoinApi/kcsGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -516,31 +301,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGetCurrentBlock.php"](../../samples/Api/KuCoinApi/kcsGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -558,7 +319,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -572,34 +333,7 @@ Get Kcs Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-try {
-    /** @var \Tatum\Model\KcsTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGetTransaction.php"](../../samples/Api/KuCoinApi/kcsGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -617,7 +351,7 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransactionCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
+ **$address** | **string**  | address |
 
 ### Return type
 
@@ -631,34 +365,7 @@ Get count of outgoing Kcs transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// address
-$address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsGetTransactionCount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsGetTransactionCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsGetTransactionCount.php"](../../samples/Api/KuCoinApi/kcsGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -677,8 +384,8 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsWeb3Driver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$body** | **object**  |  |
 
 ### Return type
 
@@ -692,35 +399,6 @@ Web3 HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-$body = array('key' => new \stdClass);
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->kuCoin()
-        ->kcsWeb3Driver($x_api_key, $body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling kuCoin()->kcsWeb3Driver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling kuCoin()->kcsWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsWeb3Driver.php"](../../samples/Api/KuCoinApi/kcsWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

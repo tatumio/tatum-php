@@ -32,7 +32,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->chartRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chart_request** | [**\Tatum\Model\ChartRequest**](../Model/ChartRequest.md)|  |
+ **$chart_request** | [**\Tatum\Model\ChartRequest**](../Model/ChartRequest.md) |  |
 
 ### Return type
 
@@ -46,33 +46,7 @@ Obtain chart data from historical closed trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$chart_request = new \Tatum\Model\ChartRequest();
-
-try {
-    /** @var \Tatum\Model\Chart[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->chartRequest($chart_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->chartRequest(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->chartRequest(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "chartRequest.php"](../../samples/Api/OrderBookApi/chartRequest.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -90,7 +64,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->deleteAccountTrades(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
+ **$id** | **string**  | Account ID |
 
 ### Return type
 
@@ -104,31 +78,7 @@ Cancel all existing trades for account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->deleteAccountTrades($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->deleteAccountTrades(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->deleteAccountTrades(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deleteAccountTrades.php"](../../samples/Api/OrderBookApi/deleteAccountTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -146,7 +96,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->deleteTrade(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Trade ID |
+ **$id** | **string**  | Trade ID |
 
 ### Return type
 
@@ -160,31 +110,7 @@ Cancel existing trade
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Trade ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->deleteTrade($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->deleteTrade(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->deleteTrade(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deleteTrade.php"](../../samples/Api/OrderBookApi/deleteTrade.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -208,13 +134,13 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTrades(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Account ID. If present, list current active buy trades for that account. | [optional]
- **$customer_id** | **string**| Customer ID. If present, list current active buy trades for that customer. | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$pair** | **string**| Trade pair. If present, list current active buy trades for that pair. | [optional]
- **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$trade_type** | **string**| Trade type. | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$id** | **string**  | Account ID. If present, list current active buy trades for that account. | [optional]
+ **$customer_id** | **string**  | Customer ID. If present, list current active buy trades for that customer. | [optional]
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$pair** | **string**  | Trade pair. If present, list current active buy trades for that pair. | [optional]
+ **$count** | **bool**  | Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$trade_type** | **string**  | Trade type. | [optional]
 
 ### Return type
 
@@ -228,52 +154,7 @@ List all active buy trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Account ID. If present, list current active buy trades for that account.
-$id = '5e68c66581f2ee32bc354087';
-
-// Customer ID. If present, list current active buy trades for that customer.
-$customer_id = '5e68c66581f2ee32bc354087';
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Trade pair. If present, list current active buy trades for that pair.
-$pair = BTC/EUR;
-
-// Get the total trade pair count based on the filter. Either count or pageSize is accepted.
-$count = 'true';
-
-// Trade type.
-$trade_type = 'BUY';
-
-try {
-    /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getBuyTrades($page_size, $id, $customer_id, $offset, $pair, $count, $trade_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getBuyTrades(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getBuyTrades(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getBuyTrades.php"](../../samples/Api/OrderBookApi/getBuyTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -291,7 +172,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTradesBody(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_active_buy_body** | [**\Tatum\Model\ListOderBookActiveBuyBody**](../Model/ListOderBookActiveBuyBody.md)|  |
+ **$list_oder_book_active_buy_body** | [**\Tatum\Model\ListOderBookActiveBuyBody**](../Model/ListOderBookActiveBuyBody.md) |  |
 
 ### Return type
 
@@ -305,33 +186,7 @@ List all active buy trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$list_oder_book_active_buy_body = new \Tatum\Model\ListOderBookActiveBuyBody();
-
-try {
-    /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getBuyTradesBody($list_oder_book_active_buy_body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getBuyTradesBody(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getBuyTradesBody(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getBuyTradesBody.php"](../../samples/Api/OrderBookApi/getBuyTradesBody.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -354,12 +209,12 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTrades(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Account ID. If present, only closed trades for given account will be present. | [optional]
- **$pair** | **string**| Trade pair. If present, only closed trades on given trade pair will be present. | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$types** | [**string[]**](../Model/string.md)| Trade types. | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$id** | **string**  | Account ID. If present, only closed trades for given account will be present. | [optional]
+ **$pair** | **string**  | Trade pair. If present, only closed trades on given trade pair will be present. | [optional]
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$count** | **bool**  | Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$types** | [**string[]**](../Model/string.md) | Trade types. | [optional]
 
 ### Return type
 
@@ -373,49 +228,7 @@ List all historical trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Account ID. If present, only closed trades for given account will be present.
-$id = '5e68c66581f2ee32bc354087';
-
-// Trade pair. If present, only closed trades on given trade pair will be present.
-$pair = BTC/ETH;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Get the total trade pair count based on the filter. Either count or pageSize is accepted.
-$count = 'true';
-
-// Trade types.
-$types = array('types_example');
-
-try {
-    /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getHistoricalTrades($page_size, $id, $pair, $offset, $count, $types);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getHistoricalTrades(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getHistoricalTrades(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getHistoricalTrades.php"](../../samples/Api/OrderBookApi/getHistoricalTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -433,7 +246,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTradesBody(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_history_body** | [**\Tatum\Model\ListOderBookHistoryBody**](../Model/ListOderBookHistoryBody.md)|  | [optional]
+ **$list_oder_book_history_body** | [**\Tatum\Model\ListOderBookHistoryBody**](../Model/ListOderBookHistoryBody.md) |  | [optional]
 
 ### Return type
 
@@ -447,33 +260,7 @@ List all historical trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$list_oder_book_history_body = new \Tatum\Model\ListOderBookHistoryBody();
-
-try {
-    /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getHistoricalTradesBody($list_oder_book_history_body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getHistoricalTradesBody(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getHistoricalTradesBody(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getHistoricalTradesBody.php"](../../samples/Api/OrderBookApi/getHistoricalTradesBody.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -491,7 +278,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getMatchedTrades(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_matched_body** | [**\Tatum\Model\ListOderBookMatchedBody**](../Model/ListOderBookMatchedBody.md)|  |
+ **$list_oder_book_matched_body** | [**\Tatum\Model\ListOderBookMatchedBody**](../Model/ListOderBookMatchedBody.md) |  |
 
 ### Return type
 
@@ -505,33 +292,7 @@ List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$list_oder_book_matched_body = new \Tatum\Model\ListOderBookMatchedBody();
-
-try {
-    /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getMatchedTrades($list_oder_book_matched_body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getMatchedTrades(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getMatchedTrades(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getMatchedTrades.php"](../../samples/Api/OrderBookApi/getMatchedTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -555,13 +316,13 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getSellTrades(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$id** | **string**| Account ID. If present, list current active sell trades for that account. | [optional]
- **$customer_id** | **string**| Customer ID. If present, list current active buy trades for that customer. | [optional]
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$pair** | **string**| Trade pair. If present, list current active sell trades for that pair. | [optional]
- **$count** | **bool**| Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$trade_type** | **string**| Trade type. | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$id** | **string**  | Account ID. If present, list current active sell trades for that account. | [optional]
+ **$customer_id** | **string**  | Customer ID. If present, list current active buy trades for that customer. | [optional]
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$pair** | **string**  | Trade pair. If present, list current active sell trades for that pair. | [optional]
+ **$count** | **bool**  | Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$trade_type** | **string**  | Trade type. | [optional]
 
 ### Return type
 
@@ -575,52 +336,7 @@ List all active sell trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Account ID. If present, list current active sell trades for that account.
-$id = '5e68c66581f2ee32bc354087';
-
-// Customer ID. If present, list current active buy trades for that customer.
-$customer_id = '5e68c66581f2ee32bc354087';
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Trade pair. If present, list current active sell trades for that pair.
-$pair = BTC/EUR;
-
-// Get the total trade pair count based on the filter. Either count or pageSize is accepted.
-$count = 'true';
-
-// Trade type.
-$trade_type = 'SELL';
-
-try {
-    /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getSellTrades($page_size, $id, $customer_id, $offset, $pair, $count, $trade_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getSellTrades(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getSellTrades(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getSellTrades.php"](../../samples/Api/OrderBookApi/getSellTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -638,7 +354,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getSellTradesBody(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_active_sell_body** | [**\Tatum\Model\ListOderBookActiveSellBody**](../Model/ListOderBookActiveSellBody.md)|  |
+ **$list_oder_book_active_sell_body** | [**\Tatum\Model\ListOderBookActiveSellBody**](../Model/ListOderBookActiveSellBody.md) |  |
 
 ### Return type
 
@@ -652,33 +368,7 @@ List all active sell trades
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$list_oder_book_active_sell_body = new \Tatum\Model\ListOderBookActiveSellBody();
-
-try {
-    /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getSellTradesBody($list_oder_book_active_sell_body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getSellTradesBody(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getSellTradesBody(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getSellTradesBody.php"](../../samples/Api/OrderBookApi/getSellTradesBody.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -696,7 +386,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getTradeById(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Trade ID |
+ **$id** | **string**  | Trade ID |
 
 ### Return type
 
@@ -710,34 +400,7 @@ Get existing trade
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Trade ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-    /** @var \Tatum\Model\Trade $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->getTradeById($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->getTradeById(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->getTradeById(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getTradeById.php"](../../samples/Api/OrderBookApi/getTradeById.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -755,7 +418,7 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->storeTrade(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$store_trade_request** | [**\Tatum\Model\StoreTradeRequest**](../Model/StoreTradeRequest.md)|  |
+ **$store_trade_request** | [**\Tatum\Model\StoreTradeRequest**](../Model/StoreTradeRequest.md) |  |
 
 ### Return type
 
@@ -769,32 +432,6 @@ Store buy / sell trade
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$store_trade_request = new \Tatum\Model\StoreTradeRequest();
-
-try {
-    /** @var \Tatum\Model\Id $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->orderBook()
-        ->storeTrade($store_trade_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling orderBook()->storeTrade(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling orderBook()->storeTrade(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "storeTrade.php"](../../samples/Api/OrderBookApi/storeTrade.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -31,7 +31,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$vet_blockchain_transfer_request** | [**\Tatum\Model\VetBlockchainTransferRequest**](../Model/VetBlockchainTransferRequest.md)|  |
+ **$vet_blockchain_transfer_request** | [**\Tatum\Model\VetBlockchainTransferRequest**](../Model/VetBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -45,33 +45,7 @@ Send VeChain from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$vet_blockchain_transfer_request = new \Tatum\Model\VetBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetBlockchainTransfer($vet_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetBlockchainTransfer.php"](../../samples/Api/VeChainApi/vetBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -89,7 +63,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -103,33 +77,7 @@ Broadcast signed VeChain transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetBroadcast.php"](../../samples/Api/VeChainApi/vetBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -148,8 +96,8 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -163,37 +111,7 @@ Generate VeChain account address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\VetGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGenerateAddress.php"](../../samples/Api/VeChainApi/vetGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -211,7 +129,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -225,33 +143,7 @@ Generate VeChain private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGenerateAddressPrivateKey.php"](../../samples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -269,7 +161,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -283,34 +175,7 @@ Generate VeChain wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGenerateWallet.php"](../../samples/Api/VeChainApi/vetGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -328,7 +193,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -342,34 +207,7 @@ Get VeChain Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x5034aa590125b64023a0262112b98d72e3c8e40e';
-
-try {
-    /** @var \Tatum\Model\VetGetBalance200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGetBalance($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGetBalance.php"](../../samples/Api/VeChainApi/vetGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -387,7 +225,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
+ **$hash** | **string**  | Block hash or block number |
 
 ### Return type
 
@@ -401,34 +239,7 @@ Get VeChain Block by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or block number
-$hash = 325324;
-
-try {
-    /** @var \Tatum\Model\VetBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGetBlock.php"](../../samples/Api/VeChainApi/vetGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -457,31 +268,7 @@ Get VeChain current block
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGetCurrentBlock.php"](../../samples/Api/VeChainApi/vetGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -499,7 +286,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGetEnergy(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -513,34 +300,7 @@ Get VeChain Account energy (VTHO)
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x5034aa590125b64023a0262112b98d72e3c8e40e';
-
-try {
-    /** @var \Tatum\Model\VetGetEnergy200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGetEnergy($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGetEnergy(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGetEnergy(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGetEnergy.php"](../../samples/Api/VeChainApi/vetGetEnergy.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -558,7 +318,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -572,34 +332,7 @@ Get VeChain Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7';
-
-try {
-    /** @var \Tatum\Model\VetTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGetTransaction.php"](../../samples/Api/VeChainApi/vetGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -617,7 +350,7 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransactionReceipt(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -631,33 +364,6 @@ Get VeChain Transaction Receipt
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7';
-
-try {
-    /** @var \Tatum\Model\VetTxReceipt $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->veChain()
-        ->vetGetTransactionReceipt($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling veChain()->vetGetTransactionReceipt(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling veChain()->vetGetTransactionReceipt(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetGetTransactionReceipt.php"](../../samples/Api/VeChainApi/vetGetTransactionReceipt.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

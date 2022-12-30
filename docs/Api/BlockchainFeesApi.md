@@ -32,7 +32,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->bscEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_estimate_gas** | [**\Tatum\Model\BscEstimateGas**](../Model/BscEstimateGas.md)|  |
+ **$bsc_estimate_gas** | [**\Tatum\Model\BscEstimateGas**](../Model/BscEstimateGas.md) |  |
 
 ### Return type
 
@@ -46,33 +46,7 @@ Estimate BNB Smart Chain transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bsc_estimate_gas = new \Tatum\Model\BscEstimateGas();
-
-try {
-    /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->bscEstimateGas($bsc_estimate_gas);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->bscEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->bscEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscEstimateGas.php"](../../samples/Api/BlockchainFeesApi/bscEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -90,7 +64,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->celoEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_estimate_gas** | [**\Tatum\Model\CeloEstimateGas**](../Model/CeloEstimateGas.md)|  |
+ **$celo_estimate_gas** | [**\Tatum\Model\CeloEstimateGas**](../Model/CeloEstimateGas.md) |  |
 
 ### Return type
 
@@ -104,33 +78,7 @@ Estimate Celo Chain transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$celo_estimate_gas = new \Tatum\Model\CeloEstimateGas();
-
-try {
-    /** @var \Tatum\Model\CeloEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->celoEstimateGas($celo_estimate_gas);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->celoEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->celoEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoEstimateGas.php"](../../samples/Api/BlockchainFeesApi/celoEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -148,7 +96,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->egldEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_fee_egld_blockchain** | [**\Tatum\Model\TransactionFeeEgldBlockchain**](../Model/TransactionFeeEgldBlockchain.md)|  |
+ **$transaction_fee_egld_blockchain** | [**\Tatum\Model\TransactionFeeEgldBlockchain**](../Model/TransactionFeeEgldBlockchain.md) |  |
 
 ### Return type
 
@@ -162,33 +110,7 @@ Estimate EGLD transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$transaction_fee_egld_blockchain = new \Tatum\Model\TransactionFeeEgldBlockchain();
-
-try {
-    /** @var \Tatum\Model\EgldEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->egldEstimateGas($transaction_fee_egld_blockchain);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->egldEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->egldEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldEstimateGas.php"](../../samples/Api/BlockchainFeesApi/egldEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -206,7 +128,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$estimate_fee_blockchain_request** | [**\Tatum\Model\EstimateFeeBlockchainRequest**](../Model/EstimateFeeBlockchainRequest.md)|  |
+ **$estimate_fee_blockchain_request** | [**\Tatum\Model\EstimateFeeBlockchainRequest**](../Model/EstimateFeeBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -220,33 +142,7 @@ Estimate the fee for a transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$estimate_fee_blockchain_request = new \Tatum\Model\EstimateFeeBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\EstimateFeeBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->estimateFeeBlockchain($estimate_fee_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->estimateFeeBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->estimateFeeBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "estimateFeeBlockchain.php"](../../samples/Api/BlockchainFeesApi/estimateFeeBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -265,8 +161,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_estimate_gas** | [**\Tatum\Model\EthEstimateGas**](../Model/EthEstimateGas.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$eth_estimate_gas** | [**\Tatum\Model\EthEstimateGas**](../Model/EthEstimateGas.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -280,36 +176,7 @@ Estimate Ethereum transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_estimate_gas = new \Tatum\Model\EthEstimateGas();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthGasEstimation $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->ethEstimateGas($eth_estimate_gas, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->ethEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->ethEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethEstimateGas.php"](../../samples/Api/BlockchainFeesApi/ethEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -328,8 +195,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGasBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_estimate_gas_array** | [**\Tatum\Model\EthEstimateGasArray**](../Model/EthEstimateGasArray.md)|  |
- **$x_testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$eth_estimate_gas_array** | [**\Tatum\Model\EthEstimateGasArray**](../Model/EthEstimateGasArray.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -343,36 +210,7 @@ Estimate multiple Ethereum transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_estimate_gas_array = new \Tatum\Model\EthEstimateGasArray();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$x_testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\EthGasEstimationBatch $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->ethEstimateGasBatch($eth_estimate_gas_array, $x_testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->ethEstimateGasBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->ethEstimateGasBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethEstimateGasBatch.php"](../../samples/Api/BlockchainFeesApi/ethEstimateGasBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -390,7 +228,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->getBlockchainFee(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Chain |
+ **$chain** | **string**  | Chain |
 
 ### Return type
 
@@ -404,34 +242,7 @@ Get recommended blockchain fee / gas price
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Chain
-$chain = 'BTC';
-
-try {
-    /** @var \Tatum\Model\BlockchainFee $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->getBlockchainFee($chain);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->getBlockchainFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->getBlockchainFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getBlockchainFee.php"](../../samples/Api/BlockchainFeesApi/getBlockchainFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -449,7 +260,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->kcsEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_estimate_gas** | [**\Tatum\Model\KcsEstimateGas**](../Model/KcsEstimateGas.md)|  |
+ **$kcs_estimate_gas** | [**\Tatum\Model\KcsEstimateGas**](../Model/KcsEstimateGas.md) |  |
 
 ### Return type
 
@@ -463,33 +274,7 @@ Estimate KuCoin Community Chain transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$kcs_estimate_gas = new \Tatum\Model\KcsEstimateGas();
-
-try {
-    /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->kcsEstimateGas($kcs_estimate_gas);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->kcsEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->kcsEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsEstimateGas.php"](../../samples/Api/BlockchainFeesApi/kcsEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -507,7 +292,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->klaytnEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$klaytn_estimate_gas** | [**\Tatum\Model\KlaytnEstimateGas**](../Model/KlaytnEstimateGas.md)|  |
+ **$klaytn_estimate_gas** | [**\Tatum\Model\KlaytnEstimateGas**](../Model/KlaytnEstimateGas.md) |  |
 
 ### Return type
 
@@ -521,33 +306,7 @@ Estimate Klaytn transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$klaytn_estimate_gas = new \Tatum\Model\KlaytnEstimateGas();
-
-try {
-    /** @var \Tatum\Model\KlaytnEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->klaytnEstimateGas($klaytn_estimate_gas);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->klaytnEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->klaytnEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "klaytnEstimateGas.php"](../../samples/Api/BlockchainFeesApi/klaytnEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -565,7 +324,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->polygonEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$polygon_estimate_gas** | [**\Tatum\Model\PolygonEstimateGas**](../Model/PolygonEstimateGas.md)|  |
+ **$polygon_estimate_gas** | [**\Tatum\Model\PolygonEstimateGas**](../Model/PolygonEstimateGas.md) |  |
 
 ### Return type
 
@@ -579,33 +338,7 @@ Estimate Polygon transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$polygon_estimate_gas = new \Tatum\Model\PolygonEstimateGas();
-
-try {
-    /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->polygonEstimateGas($polygon_estimate_gas);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->polygonEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->polygonEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "polygonEstimateGas.php"](../../samples/Api/BlockchainFeesApi/polygonEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -623,7 +356,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->vetEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$vet_estimate_gas** | [**\Tatum\Model\VetEstimateGas**](../Model/VetEstimateGas.md)|  |
+ **$vet_estimate_gas** | [**\Tatum\Model\VetEstimateGas**](../Model/VetEstimateGas.md) |  |
 
 ### Return type
 
@@ -637,33 +370,7 @@ Estimate VeChain Gas for transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$vet_estimate_gas = new \Tatum\Model\VetEstimateGas();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->vetEstimateGas($vet_estimate_gas);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->vetEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->vetEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "vetEstimateGas.php"](../../samples/Api/BlockchainFeesApi/vetEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -681,7 +388,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->xdcEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xdc_estimate_gas** | [**\Tatum\Model\XdcEstimateGas**](../Model/XdcEstimateGas.md)|  |
+ **$xdc_estimate_gas** | [**\Tatum\Model\XdcEstimateGas**](../Model/XdcEstimateGas.md) |  |
 
 ### Return type
 
@@ -695,32 +402,6 @@ Estimate XinFin transaction fees
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xdc_estimate_gas = new \Tatum\Model\XdcEstimateGas();
-
-try {
-    /** @var \Tatum\Model\XdcEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainFees()
-        ->xdcEstimateGas($xdc_estimate_gas);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainFees()->xdcEstimateGas(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainFees()->xdcEstimateGas(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xdcEstimateGas.php"](../../samples/Api/BlockchainFeesApi/xdcEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

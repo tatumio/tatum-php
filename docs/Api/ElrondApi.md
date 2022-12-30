@@ -44,31 +44,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->eGldGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->eGldGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->eGldGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "eGldGetCurrentBlock.php"](../../samples/Api/ElrondApi/eGldGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -86,7 +62,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$egld_blockchain_transfer_request** | [**\Tatum\Model\EgldBlockchainTransferRequest**](../Model/EgldBlockchainTransferRequest.md)|  |
+ **$egld_blockchain_transfer_request** | [**\Tatum\Model\EgldBlockchainTransferRequest**](../Model/EgldBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -100,33 +76,7 @@ Send EGLD from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$egld_blockchain_transfer_request = new \Tatum\Model\EgldBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldBlockchainTransfer($egld_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldBlockchainTransfer.php"](../../samples/Api/ElrondApi/egldBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -144,7 +94,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -158,33 +108,7 @@ Broadcast signed EGLD transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldBroadcast.php"](../../samples/Api/ElrondApi/egldBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -203,8 +127,8 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of address. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$mnemonic** | **string**  | Mnemonic to use for generation of address. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -218,37 +142,7 @@ Generate EGLD account address from mnemonic
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of address.
-$mnemonic = quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten;
-
-// Derivation index of desired address to be generated.
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\EgldGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGenerateAddress($mnemonic, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGenerateAddress.php"](../../samples/Api/ElrondApi/egldGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -266,7 +160,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -280,33 +174,7 @@ Generate EGLD private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGenerateAddressPrivateKey.php"](../../samples/Api/ElrondApi/egldGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -324,7 +192,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of private key. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of private key. | [optional]
 
 ### Return type
 
@@ -338,34 +206,7 @@ Generate EGLD wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of private key.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\EgldGenerateWallet200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGenerateWallet.php"](../../samples/Api/ElrondApi/egldGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -383,7 +224,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -397,34 +238,7 @@ Get EGLD Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = 'erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7';
-
-try {
-    /** @var \Tatum\Model\EgldGetBalance200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGetBalance($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGetBalance.php"](../../samples/Api/ElrondApi/egldGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -442,7 +256,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or nonce |
+ **$hash** | **string**  | Block hash or nonce |
 
 ### Return type
 
@@ -456,34 +270,7 @@ Get EGLD block by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or nonce
-$hash = 'a6f2ac15a6b1bafdde9afff2297cef49c4c523c516f8ee12fed54be070e9512b';
-
-try {
-    /** @var \Tatum\Model\EgldBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGetBlock.php"](../../samples/Api/ElrondApi/egldGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -501,7 +288,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -515,34 +302,7 @@ Get EGLD Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '99996224823736c1e9b8484ed74c1573049478f871d6f94b86811fb1c7b2addd';
-
-try {
-    /** @var \Tatum\Model\EgldTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGetTransaction.php"](../../samples/Api/ElrondApi/egldGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -560,7 +320,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
+ **$address** | **string**  | address |
 
 ### Return type
 
@@ -574,34 +334,7 @@ Get count of outgoing EGLD transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// address
-$address = 'erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7';
-
-try {
-    /** @var object[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGetTransactionAddress($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGetTransactionAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGetTransactionAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGetTransactionAddress.php"](../../samples/Api/ElrondApi/egldGetTransactionAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -619,7 +352,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
+ **$address** | **string**  | address |
 
 ### Return type
 
@@ -633,34 +366,7 @@ Get count of outgoing EGLD transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// address
-$address = 'erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldGetTransactionCount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldGetTransactionCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldGetTransactionCount.php"](../../samples/Api/ElrondApi/egldGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -678,7 +384,7 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldNodeGet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
 
 ### Return type
 
@@ -692,34 +398,7 @@ Node HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = /v3/egld/node/asdlkfjnqunalkwjf12341kljl/network/config;
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldNodeGet($x_api_key);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldNodeGet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldNodeGet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldNodeGet.php"](../../samples/Api/ElrondApi/egldNodeGet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -738,8 +417,8 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldNodePost(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$body** | **object**  |  |
 
 ### Return type
 
@@ -753,35 +432,6 @@ Node HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = /v3/egld/node/asdlkfjnqunalkwjf124387ad/transaction/cost;
-
-$body = array('key' => new \stdClass);
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->elrond()
-        ->egldNodePost($x_api_key, $body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling elrond()->egldNodePost(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling elrond()->egldNodePost(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldNodePost.php"](../../samples/Api/ElrondApi/egldNodePost.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

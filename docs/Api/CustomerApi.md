@@ -27,7 +27,7 @@ $sdk->{mainnet/testnet}()->api()->customer()->activateCustomer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer internal ID |
+ **$id** | **string**  | Customer internal ID |
 
 ### Return type
 
@@ -41,31 +41,7 @@ Activate customer
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Customer internal ID
-$id = 'id_example';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->customer()
-        ->activateCustomer($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling customer()->activateCustomer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling customer()->activateCustomer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "activateCustomer.php"](../../samples/Api/CustomerApi/activateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -83,7 +59,7 @@ $sdk->{mainnet/testnet}()->api()->customer()->deactivateCustomer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer internal ID |
+ **$id** | **string**  | Customer internal ID |
 
 ### Return type
 
@@ -97,31 +73,7 @@ Deactivate customer
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Customer internal ID
-$id = 'id_example';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->customer()
-        ->deactivateCustomer($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling customer()->deactivateCustomer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling customer()->deactivateCustomer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deactivateCustomer.php"](../../samples/Api/CustomerApi/deactivateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -139,7 +91,7 @@ $sdk->{mainnet/testnet}()->api()->customer()->disableCustomer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer internal ID |
+ **$id** | **string**  | Customer internal ID |
 
 ### Return type
 
@@ -153,31 +105,7 @@ Disable customer
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Customer internal ID
-$id = 'id_example';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->customer()
-        ->disableCustomer($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling customer()->disableCustomer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling customer()->disableCustomer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "disableCustomer.php"](../../samples/Api/CustomerApi/disableCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -195,7 +123,7 @@ $sdk->{mainnet/testnet}()->api()->customer()->enableCustomer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer internal ID |
+ **$id** | **string**  | Customer internal ID |
 
 ### Return type
 
@@ -209,31 +137,7 @@ Enable customer
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Customer internal ID
-$id = 'id_example';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->customer()
-        ->enableCustomer($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling customer()->enableCustomer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling customer()->enableCustomer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "enableCustomer.php"](../../samples/Api/CustomerApi/enableCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -252,8 +156,8 @@ $sdk->{mainnet/testnet}()->api()->customer()->findAllCustomers(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
 
 ### Return type
 
@@ -267,37 +171,7 @@ List all customers
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-try {
-    /** @var \Tatum\Model\Customer[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->customer()
-        ->findAllCustomers($page_size, $offset);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling customer()->findAllCustomers(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling customer()->findAllCustomers(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "findAllCustomers.php"](../../samples/Api/CustomerApi/findAllCustomers.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -315,7 +189,7 @@ $sdk->{mainnet/testnet}()->api()->customer()->getCustomerByExternalOrInternalId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer external or internal ID |
+ **$id** | **string**  | Customer external or internal ID |
 
 ### Return type
 
@@ -329,34 +203,7 @@ Get customer details
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Customer external or internal ID
-$id = 'id_example';
-
-try {
-    /** @var \Tatum\Model\Customer $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->customer()
-        ->getCustomerByExternalOrInternalId($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling customer()->getCustomerByExternalOrInternalId(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling customer()->getCustomerByExternalOrInternalId(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getCustomerByExternalOrInternalId.php"](../../samples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -375,8 +222,8 @@ $sdk->{mainnet/testnet}()->api()->customer()->updateCustomer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Customer internal ID |
- **$customer_update** | [**\Tatum\Model\CustomerUpdate**](../Model/CustomerUpdate.md)|  |
+ **$id** | **string**  | Customer internal ID |
+ **$customer_update** | [**\Tatum\Model\CustomerUpdate**](../Model/CustomerUpdate.md) |  |
 
 ### Return type
 
@@ -390,35 +237,6 @@ Update customer
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Customer internal ID
-$id = 'id_example';
-
-$customer_update = new \Tatum\Model\CustomerUpdate();
-
-try {
-    /** @var \Tatum\Model\Customer $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->customer()
-        ->updateCustomer($id, $customer_update);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling customer()->updateCustomer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling customer()->updateCustomer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateCustomer.php"](../../samples/Api/CustomerApi/updateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

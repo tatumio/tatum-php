@@ -29,10 +29,10 @@ $sdk->{mainnet/testnet}()->api()->transaction()->getTransactions(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter_ledger** | [**\Tatum\Model\TransactionFilterLedger**](../Model/TransactionFilterLedger.md)|  |
- **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$count** | **bool**| Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$transaction_filter_ledger** | [**\Tatum\Model\TransactionFilterLedger**](../Model/TransactionFilterLedger.md) |  |
+ **$page_size** | **float**  | Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
+ **$count** | **bool**  | Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
 
 ### Return type
 
@@ -46,42 +46,7 @@ Find transactions within the ledger.
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$transaction_filter_ledger = new \Tatum\Model\TransactionFilterLedger();
-
-// Max number of items per page is 50. Either count or pageSize is accepted.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-// Get the total transaction count based on the filter. Either count or pageSize is accepted.
-$count = 'true';
-
-try {
-    /** @var \Tatum\Model\GetTransactionsByAccountId200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->transaction()
-        ->getTransactions($transaction_filter_ledger, $page_size, $offset, $count);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling transaction()->getTransactions(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling transaction()->getTransactions(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getTransactions.php"](../../samples/Api/TransactionApi/getTransactions.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -102,10 +67,10 @@ $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByAccountId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter** | [**\Tatum\Model\TransactionFilter**](../Model/TransactionFilter.md)|  |
- **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$count** | **bool**| Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$transaction_filter** | [**\Tatum\Model\TransactionFilter**](../Model/TransactionFilter.md) |  |
+ **$page_size** | **float**  | Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
+ **$count** | **bool**  | Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
 
 ### Return type
 
@@ -119,42 +84,7 @@ Find transactions for account.
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$transaction_filter = new \Tatum\Model\TransactionFilter();
-
-// Max number of items per page is 50. Either count or pageSize is accepted.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-// Get the total transaction count based on the filter. Either count or pageSize is accepted.
-$count = 'true';
-
-try {
-    /** @var \Tatum\Model\GetTransactionsByAccountId200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->transaction()
-        ->getTransactionsByAccountId($transaction_filter, $page_size, $offset, $count);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling transaction()->getTransactionsByAccountId(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling transaction()->getTransactionsByAccountId(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getTransactionsByAccountId.php"](../../samples/Api/TransactionApi/getTransactionsByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -175,10 +105,10 @@ $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByCustomerId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter_customer** | [**\Tatum\Model\TransactionFilterCustomer**](../Model/TransactionFilterCustomer.md)|  |
- **$page_size** | **float**| Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$count** | **bool**| Get total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
+ **$transaction_filter_customer** | [**\Tatum\Model\TransactionFilterCustomer**](../Model/TransactionFilterCustomer.md) |  |
+ **$page_size** | **float**  | Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
+ **$count** | **bool**  | Get total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
 
 ### Return type
 
@@ -192,42 +122,7 @@ Find transactions for a customer across all of the customer's accounts.
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$transaction_filter_customer = new \Tatum\Model\TransactionFilterCustomer();
-
-// Max number of items per page is 50. Either count or pageSize is accepted.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-// Get total transaction count based on the filter. Either count or pageSize is accepted.
-$count = 'true';
-
-try {
-    /** @var \Tatum\Model\GetTransactionsByAccountId200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->transaction()
-        ->getTransactionsByCustomerId($transaction_filter_customer, $page_size, $offset, $count);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling transaction()->getTransactionsByCustomerId(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling transaction()->getTransactionsByCustomerId(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getTransactionsByCustomerId.php"](../../samples/Api/TransactionApi/getTransactionsByCustomerId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -245,7 +140,7 @@ $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByReference(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$reference** | **string**|  |
+ **$reference** | **string**  |  |
 
 ### Return type
 
@@ -259,33 +154,7 @@ Find transactions with a given reference across all accounts.
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$reference = 'reference_example';
-
-try {
-    /** @var \Tatum\Model\Transaction[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->transaction()
-        ->getTransactionsByReference($reference);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling transaction()->getTransactionsByReference(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling transaction()->getTransactionsByReference(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getTransactionsByReference.php"](../../samples/Api/TransactionApi/getTransactionsByReference.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -303,7 +172,7 @@ $sdk->{mainnet/testnet}()->api()->transaction()->sendTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_transaction** | [**\Tatum\Model\CreateTransaction**](../Model/CreateTransaction.md)|  |
+ **$create_transaction** | [**\Tatum\Model\CreateTransaction**](../Model/CreateTransaction.md) |  |
 
 ### Return type
 
@@ -317,33 +186,7 @@ Send payment
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_transaction = new \Tatum\Model\CreateTransaction();
-
-try {
-    /** @var \Tatum\Model\TransactionResult $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->transaction()
-        ->sendTransaction($create_transaction);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling transaction()->sendTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling transaction()->sendTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "sendTransaction.php"](../../samples/Api/TransactionApi/sendTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -361,7 +204,7 @@ $sdk->{mainnet/testnet}()->api()->transaction()->sendTransactionBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$batch_create_transaction** | [**\Tatum\Model\BatchCreateTransaction**](../Model/BatchCreateTransaction.md)|  |
+ **$batch_create_transaction** | [**\Tatum\Model\BatchCreateTransaction**](../Model/BatchCreateTransaction.md) |  |
 
 ### Return type
 
@@ -375,32 +218,6 @@ Send payment in batch
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$batch_create_transaction = new \Tatum\Model\BatchCreateTransaction();
-
-try {
-    /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->transaction()
-        ->sendTransactionBatch($batch_create_transaction);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling transaction()->sendTransactionBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling transaction()->sendTransactionBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "sendTransactionBatch.php"](../../samples/Api/TransactionApi/sendTransactionBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

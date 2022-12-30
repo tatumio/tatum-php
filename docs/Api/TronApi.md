@@ -37,7 +37,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->generateTronwallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -51,34 +51,7 @@ Generate a TRON wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\TronWallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->generateTronwallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->generateTronwallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->generateTronwallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "generateTronwallet.php"](../../samples/Api/TronApi/generateTronwallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -97,8 +70,8 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| The address of the TRON account to get all transactions for |
- **$next** | **string**| The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
+ **$address** | **string**  | The address of the TRON account to get all transactions for |
+ **$next** | **string**  | The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
 
 ### Return type
 
@@ -112,37 +85,7 @@ Get all transactions for a TRON account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The address of the TRON account to get all transactions for
-$address = 'TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8';
-
-// The ID of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
-$next = '81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991';
-
-try {
-    /** @var \Tatum\Model\TronAccountTx200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronAccountTx($address, $next);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronAccountTx(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronAccountTx(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronAccountTx.php"](../../samples/Api/TronApi/tronAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -161,8 +104,8 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| The address of the TRON account to get TRC-20 transactions for |
- **$next** | **string**| The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
+ **$address** | **string**  | The address of the TRON account to get TRC-20 transactions for |
+ **$next** | **string**  | The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API). | [optional]
 
 ### Return type
 
@@ -176,37 +119,7 @@ Get TRC-20 transactions for a TRON account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The address of the TRON account to get TRC-20 transactions for
-$address = 'TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8';
-
-// The ID of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
-$next = '81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991';
-
-try {
-    /** @var \Tatum\Model\TronAccountTx20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronAccountTx20($address, $next);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronAccountTx20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronAccountTx20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronAccountTx20.php"](../../samples/Api/TronApi/tronAccountTx20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -224,7 +137,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_broadcast** | [**\Tatum\Model\TronBroadcast**](../Model/TronBroadcast.md)|  |
+ **$tron_broadcast** | [**\Tatum\Model\TronBroadcast**](../Model/TronBroadcast.md) |  |
 
 ### Return type
 
@@ -238,33 +151,7 @@ Broadcast a TRON transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_broadcast = new \Tatum\Model\TronBroadcast();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronBroadcast($tron_broadcast);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronBroadcast.php"](../../samples/Api/TronApi/tronBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -282,7 +169,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronCreateTrc10(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_create_trc10_request** | [**\Tatum\Model\TronCreateTrc10Request**](../Model/TronCreateTrc10Request.md)|  |
+ **$tron_create_trc10_request** | [**\Tatum\Model\TronCreateTrc10Request**](../Model/TronCreateTrc10Request.md) |  |
 
 ### Return type
 
@@ -296,33 +183,7 @@ Create a TRC-10 token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_create_trc10_request = new \Tatum\Model\TronCreateTrc10Request();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronCreateTrc10($tron_create_trc10_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronCreateTrc10(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronCreateTrc10(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronCreateTrc10.php"](../../samples/Api/TronApi/tronCreateTrc10.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -340,7 +201,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronCreateTrc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_create_trc20_request** | [**\Tatum\Model\TronCreateTrc20Request**](../Model/TronCreateTrc20Request.md)|  |
+ **$tron_create_trc20_request** | [**\Tatum\Model\TronCreateTrc20Request**](../Model/TronCreateTrc20Request.md) |  |
 
 ### Return type
 
@@ -354,33 +215,7 @@ Create a TRC-20 token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_create_trc20_request = new \Tatum\Model\TronCreateTrc20Request();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronCreateTrc20($tron_create_trc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronCreateTrc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronCreateTrc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronCreateTrc20.php"](../../samples/Api/TronApi/tronCreateTrc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -398,7 +233,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronFreeze(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_freeze_request** | [**\Tatum\Model\TronFreezeRequest**](../Model/TronFreezeRequest.md)|  |
+ **$tron_freeze_request** | [**\Tatum\Model\TronFreezeRequest**](../Model/TronFreezeRequest.md) |  |
 
 ### Return type
 
@@ -412,33 +247,7 @@ Freeze the balance of a TRON account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_freeze_request = new \Tatum\Model\TronFreezeRequest();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronFreeze($tron_freeze_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronFreeze(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronFreeze(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronFreeze.php"](../../samples/Api/TronApi/tronFreeze.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -457,8 +266,8 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters) |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters) |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -472,37 +281,7 @@ Generate a TRON address from the wallet's extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters)
-$xpub = '0244b3f40c6e570ae0032f6d7be87737a6c4e5314a4a1a82e22d0460a0d0cd794936c61f0c80dc74ace4cd04690d4eeb1aa6555883be006e1748306faa7ed3a26a';
-
-// Derivation index of desired address to be generated.
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\TronGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronGenerateAddress.php"](../../samples/Api/TronApi/tronGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -520,7 +299,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -534,33 +313,7 @@ Generate the private key for a TRON address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronGenerateAddressPrivateKey.php"](../../samples/Api/TronApi/tronGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -578,7 +331,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronGetAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address. |
+ **$address** | **string**  | Account address. |
 
 ### Return type
 
@@ -592,34 +345,7 @@ Get the TRON account by its address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address.
-$address = 'TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8';
-
-try {
-    /** @var \Tatum\Model\TronAccount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronGetAccount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronGetAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronGetAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronGetAccount.php"](../../samples/Api/TronApi/tronGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -637,7 +363,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
+ **$hash** | **string**  | Block hash or height. |
 
 ### Return type
 
@@ -651,34 +377,7 @@ Get a TRON block by its hash or height
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or height.
-$hash = '000000000195a8cfe2ea4ca60ce921b30e95980a96c6bb1da4a35aa03da9c5a8';
-
-try {
-    /** @var \Tatum\Model\TronBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronGetBlock.php"](../../samples/Api/TronApi/tronGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -707,31 +406,7 @@ Get the current TRON block
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\TronGetCurrentBlock200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronGetCurrentBlock.php"](../../samples/Api/TronApi/tronGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -749,7 +424,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash. |
+ **$hash** | **string**  | Transaction hash. |
 
 ### Return type
 
@@ -763,34 +438,7 @@ Get a TRON transaction by its hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash.
-$hash = '81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991';
-
-try {
-    /** @var \Tatum\Model\TronTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronGetTransaction.php"](../../samples/Api/TronApi/tronGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -808,7 +456,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_request** | [**\Tatum\Model\TronTransferRequest**](../Model/TronTransferRequest.md)|  |
+ **$tron_transfer_request** | [**\Tatum\Model\TronTransferRequest**](../Model/TronTransferRequest.md) |  |
 
 ### Return type
 
@@ -822,33 +470,7 @@ Send TRX to a TRON account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_transfer_request = new \Tatum\Model\TronTransferRequest();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronTransfer($tron_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronTransfer.php"](../../samples/Api/TronApi/tronTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -866,7 +488,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronTransferTrc10(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_trc10_request** | [**\Tatum\Model\TronTransferTrc10Request**](../Model/TronTransferTrc10Request.md)|  |
+ **$tron_transfer_trc10_request** | [**\Tatum\Model\TronTransferTrc10Request**](../Model/TronTransferTrc10Request.md) |  |
 
 ### Return type
 
@@ -880,33 +502,7 @@ Send TRC-10 tokens to a TRON account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_transfer_trc10_request = new \Tatum\Model\TronTransferTrc10Request();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronTransferTrc10($tron_transfer_trc10_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronTransferTrc10(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronTransferTrc10(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronTransferTrc10.php"](../../samples/Api/TronApi/tronTransferTrc10.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -924,7 +520,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronTransferTrc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_trc20_request** | [**\Tatum\Model\TronTransferTrc20Request**](../Model/TronTransferTrc20Request.md)|  |
+ **$tron_transfer_trc20_request** | [**\Tatum\Model\TronTransferTrc20Request**](../Model/TronTransferTrc20Request.md) |  |
 
 ### Return type
 
@@ -938,33 +534,7 @@ Send TRC-20 tokens to a TRON account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_transfer_trc20_request = new \Tatum\Model\TronTransferTrc20Request();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronTransferTrc20($tron_transfer_trc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronTransferTrc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronTransferTrc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronTransferTrc20.php"](../../samples/Api/TronApi/tronTransferTrc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -982,7 +552,7 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronTrc10Detail(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id_or_owner_address** | **string**| The ID of the TRC-10 token or the address of the token&#39;s owner |
+ **$id_or_owner_address** | **string**  | The ID of the TRC-10 token or the address of the token&#39;s owner |
 
 ### Return type
 
@@ -996,33 +566,6 @@ Get information about a TRC-10 token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The ID of the TRC-10 token or the address of the token's owner
-$id_or_owner_address = 1000540;
-
-try {
-    /** @var \Tatum\Model\TronTrc10Detail $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->tron()
-        ->tronTrc10Detail($id_or_owner_address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling tron()->tronTrc10Detail(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling tron()->tronTrc10Detail(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronTrc10Detail.php"](../../samples/Api/TronApi/tronTrc10Detail.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

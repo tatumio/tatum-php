@@ -22,7 +22,7 @@ $sdk->{mainnet/testnet}()->api()->iPFS()->getIPFSData(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| IPFS CID of the file |
+ **$id** | **string**  | IPFS CID of the file |
 
 ### Return type
 
@@ -36,34 +36,7 @@ Get file from IPFS
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// IPFS CID of the file
-$id = 'QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj';
-
-try {
-    /** @var \SplFileObject $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->iPFS()
-        ->getIPFSData($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling iPFS()->getIPFSData(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling iPFS()->getIPFSData(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getIPFSData.php"](../../samples/Api/IPFSApi/getIPFSData.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -81,7 +54,7 @@ $sdk->{mainnet/testnet}()->api()->iPFS()->storeIPFS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$file** | **\SplFileObject****\SplFileObject**| Your file to store | [optional]
+ **$file** | **\SplFileObject** **\SplFileObject**  | Your file to store | [optional]
 
 ### Return type
 
@@ -95,33 +68,6 @@ Store data to IPFS
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Your file to store
-$file = "/path/to/file.txt";
-
-try {
-    /** @var \Tatum\Model\StoreIPFS200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->iPFS()
-        ->storeIPFS($file);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling iPFS()->storeIPFS(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling iPFS()->storeIPFS(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "storeIPFS.php"](../../samples/Api/IPFSApi/storeIPFS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -35,30 +35,7 @@ Generate wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// 24-word mnemonic
-$mnemonic = "police hat quantum advance enroll glove thank build warfare inject invite obscure enable inflict seek web cable answer chest suspect comfort tent source seven";
-
-try {
-    /** @var \Tatum\Model\Wallet $result */
-    $result = $sdk
-        ->testnet()
-        ->local()->wallet()
-        ->bitcoin()
-        ->generateWallet($mnemonic);
-    
-    var_dump($result);
-} catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->bitcoin()->generateWallet(): ', $exc->getMessage(), PHP_EOL;
-}
-```
+[✨ View "generateWallet.php"](../../../samples/Local/Wallet/Bitcoin/generateWallet.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -91,33 +68,7 @@ Generate address from xPub and index
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key
-$xpub = "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2";
-
-// Derivation index
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\GeneratedAddressBtc $result */
-    $result = $sdk
-        ->testnet()
-        ->local()->wallet()
-        ->bitcoin()
-        ->generateAddressFromXpub($xpub, $index);
-    
-    var_dump($result);
-} catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->bitcoin()->generateAddressFromXpub(): ', $exc->getMessage(), PHP_EOL;
-}
-```
+[✨ View "generateAddressFromXpub.php"](../../../samples/Local/Wallet/Bitcoin/generateAddressFromXpub.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -148,30 +99,7 @@ Generate address from xPub and index
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Private Key
-$privateKey = (new \Tatum\Model\PrivKey())->setKey("cTPGqe6hkwVY6JNHJUZ4wSUvPo8GNMe2cDFTsFV1jSqCBMDKpfSU");
-
-try {
-    /** @var \Tatum\Model\GeneratedAddressBtc $result */
-    $result = $sdk
-        ->testnet()
-        ->local()->wallet()
-        ->bitcoin()
-        ->generateAddressFromPrivateKey($privateKey);
-    
-    var_dump($result);
-} catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->bitcoin()->generateAddressFromPrivateKey(): ', $exc->getMessage(), PHP_EOL;
-}
-```
+[✨ View "generateAddressFromPrivateKey.php"](../../../samples/Local/Wallet/Bitcoin/generateAddressFromPrivateKey.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -204,33 +132,7 @@ Generate private key from mnemonic and index
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// 24-word mnemonic
-$mnemonic = "police hat quantum advance enroll glove thank build warfare inject invite obscure enable inflict seek web cable answer chest suspect comfort tent source seven";
-
-// Derivation index
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\PrivKey $result */
-    $result = $sdk
-        ->testnet()
-        ->local()->wallet()
-        ->bitcoin()
-        ->generatePrivateKey($mnemonic, $index);
-    
-    var_dump($result);
-} catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->bitcoin()->generatePrivateKey(): ', $exc->getMessage(), PHP_EOL;
-}
-```
+[✨ View "generatePrivateKey.php"](../../../samples/Local/Wallet/Bitcoin/generatePrivateKey.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 

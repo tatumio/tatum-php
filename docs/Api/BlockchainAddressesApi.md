@@ -28,9 +28,9 @@ $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->addressExists(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$currency** | **string**| The cryptocurrency of the blockchain address to check |
- **$address** | **string**| The blockchain address to check |
- **$index** | **float**| In case of XLM or XRP, this is a memo or DestinationTag to search for. | [optional]
+ **$currency** | **string**  | The cryptocurrency of the blockchain address to check |
+ **$address** | **string**  | The blockchain address to check |
+ **$index** | **float**  | In case of XLM or XRP, this is a memo or DestinationTag to search for. | [optional]
 
 ### Return type
 
@@ -44,40 +44,7 @@ Check whether a blockchain address is assigned to a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The cryptocurrency of the blockchain address to check
-$currency = 'BNB';
-
-// The blockchain address to check
-$address = 'tbnb1sfj9981j2eo1ij2e09';
-
-// In case of XLM or XRP, this is a memo or DestinationTag to search for.
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainAddresses()
-        ->addressExists($currency, $address, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainAddresses()->addressExists(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainAddresses()->addressExists(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "addressExists.php"](../../samples/Api/BlockchainAddressesApi/addressExists.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -97,9 +64,9 @@ $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->assignAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| The ID of the virtual account to assign a blockchain address to |
- **$address** | **string**| The blockchain address to assign to the virtual account |
- **$index** | **float**| Destination tag or memo attribute for XRP or XLM addresses | [optional]
+ **$id** | **string**  | The ID of the virtual account to assign a blockchain address to |
+ **$address** | **string**  | The blockchain address to assign to the virtual account |
+ **$index** | **float**  | Destination tag or memo attribute for XRP or XLM addresses | [optional]
 
 ### Return type
 
@@ -113,40 +80,7 @@ Assign a blockchain address to a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The ID of the virtual account to assign a blockchain address to
-$id = '5e68c66581f2ee32bc354087';
-
-// The blockchain address to assign to the virtual account
-$address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
-
-// Destination tag or memo attribute for XRP or XLM addresses
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\Address $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainAddresses()
-        ->assignAddress($id, $address, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainAddresses()->assignAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainAddresses()->assignAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "assignAddress.php"](../../samples/Api/BlockchainAddressesApi/assignAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -165,8 +99,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$index** | **float**| &lt;p&gt;Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.&lt;/p&gt; | [optional]
+ **$id** | **string**  | Account ID |
+ **$index** | **float**  | &lt;p&gt;Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.&lt;/p&gt; | [optional]
 
 ### Return type
 
@@ -180,37 +114,7 @@ Create a deposit address for a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-// <p>Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.</p>
-$index = 2;
-
-try {
-    /** @var \Tatum\Model\Address $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainAddresses()
-        ->generateDepositAddress($id, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainAddresses()->generateDepositAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainAddresses()->generateDepositAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "generateDepositAddress.php"](../../samples/Api/BlockchainAddressesApi/generateDepositAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -228,7 +132,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddresse
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$offchain_addresses** | [**\Tatum\Model\OffchainAddresses**](../Model/OffchainAddresses.md)|  |
+ **$offchain_addresses** | [**\Tatum\Model\OffchainAddresses**](../Model/OffchainAddresses.md) |  |
 
 ### Return type
 
@@ -242,33 +146,7 @@ Create multiple deposit addresses for a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$offchain_addresses = new \Tatum\Model\OffchainAddresses();
-
-try {
-    /** @var \Tatum\Model\Address[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainAddresses()
-        ->generateDepositAddressesBatch($offchain_addresses);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainAddresses()->generateDepositAddressesBatch(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainAddresses()->generateDepositAddressesBatch(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "generateDepositAddressesBatch.php"](../../samples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -286,7 +164,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->getAllDepositAddresses(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| The ID of the virtual account to get deposit addresses for |
+ **$id** | **string**  | The ID of the virtual account to get deposit addresses for |
 
 ### Return type
 
@@ -300,34 +178,7 @@ Get all deposit addresses for a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The ID of the virtual account to get deposit addresses for
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-    /** @var \Tatum\Model\Address[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainAddresses()
-        ->getAllDepositAddresses($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainAddresses()->getAllDepositAddresses(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainAddresses()->getAllDepositAddresses(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAllDepositAddresses.php"](../../samples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -347,9 +198,9 @@ $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->removeAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Account ID |
- **$address** | **string**| Blockchain address |
- **$index** | **float**| Destination tag or memo attribute for XRP, BNB or XLM addresses | [optional]
+ **$id** | **string**  | Account ID |
+ **$address** | **string**  | Blockchain address |
+ **$index** | **float**  | Destination tag or memo attribute for XRP, BNB or XLM addresses | [optional]
 
 ### Return type
 
@@ -363,36 +214,6 @@ Remove a deposit address from a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account ID
-$id = '5e68c66581f2ee32bc354087';
-
-// Blockchain address
-$address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
-
-// Destination tag or memo attribute for XRP, BNB or XLM addresses
-$index = 1;
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainAddresses()
-        ->removeAddress($id, $address, $index);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainAddresses()->removeAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainAddresses()->removeAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "removeAddress.php"](../../samples/Api/BlockchainAddressesApi/removeAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

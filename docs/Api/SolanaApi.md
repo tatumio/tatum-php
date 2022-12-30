@@ -28,7 +28,7 @@ $sdk->{mainnet/testnet}()->api()->solana()->solanaBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$solana_blockchain_transfer_request** | [**\Tatum\Model\SolanaBlockchainTransferRequest**](../Model/SolanaBlockchainTransferRequest.md)|  |
+ **$solana_blockchain_transfer_request** | [**\Tatum\Model\SolanaBlockchainTransferRequest**](../Model/SolanaBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -42,33 +42,7 @@ Send SOL from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$solana_blockchain_transfer_request = new \Tatum\Model\SolanaBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaBlockchainTransfer($solana_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaBlockchainTransfer.php"](../../samples/Api/SolanaApi/solanaBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -86,7 +60,7 @@ $sdk->{mainnet/testnet}()->api()->solana()->solanaBroadcastConfirm(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$solana_broadcast_confirm** | [**\Tatum\Model\SolanaBroadcastConfirm**](../Model/SolanaBroadcastConfirm.md)|  |
+ **$solana_broadcast_confirm** | [**\Tatum\Model\SolanaBroadcastConfirm**](../Model/SolanaBroadcastConfirm.md) |  |
 
 ### Return type
 
@@ -100,33 +74,7 @@ Broadcast and confirm signed Solana transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$solana_broadcast_confirm = new \Tatum\Model\SolanaBroadcastConfirm();
-
-try {
-    /** @var \Tatum\Model\SolanaTransactionHashWithConfirm $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaBroadcastConfirm($solana_broadcast_confirm);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaBroadcastConfirm(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaBroadcastConfirm(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaBroadcastConfirm.php"](../../samples/Api/SolanaApi/solanaBroadcastConfirm.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -155,31 +103,7 @@ Generate Solana wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\SolanaWallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaGenerateWallet();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaGenerateWallet.php"](../../samples/Api/SolanaApi/solanaGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -197,7 +121,7 @@ $sdk->{mainnet/testnet}()->api()->solana()->solanaGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -211,34 +135,7 @@ Get Solana Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = 'FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ';
-
-try {
-    /** @var \Tatum\Model\SolBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaGetBalance($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaGetBalance.php"](../../samples/Api/SolanaApi/solanaGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -256,7 +153,7 @@ $sdk->{mainnet/testnet}()->api()->solana()->solanaGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$height** | **float**| Block number |
+ **$height** | **float**  | Block number |
 
 ### Return type
 
@@ -270,34 +167,7 @@ Get Solana block by number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block number
-$height = 6470657;
-
-try {
-    /** @var \Tatum\Model\SolanaBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaGetBlock($height);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaGetBlock.php"](../../samples/Api/SolanaApi/solanaGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -326,31 +196,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaGetCurrentBlock.php"](../../samples/Api/SolanaApi/solanaGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -369,8 +215,8 @@ $sdk->{mainnet/testnet}()->api()->solana()->solanaGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
- **$commitment** | **string**| Commitment of the transaction. If not defined, all transactions are being scanned. | [optional]
+ **$hash** | **string**  | Transaction hash |
+ **$commitment** | **string**  | Commitment of the transaction. If not defined, all transactions are being scanned. | [optional]
 
 ### Return type
 
@@ -384,37 +230,7 @@ Get Solana Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '5oSXZkPregqGhHrTcbWhgHQJETvBHtBYssuuCMJ3qroAgHsHndsr8fyY8kY76AgwmMaZBZW8ThHAXwjDaUSweApS';
-
-// Commitment of the transaction. If not defined, all transactions are being scanned.
-$commitment = 'commitment_example';
-
-try {
-    /** @var \Tatum\Model\SolanaTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaGetTransaction($hash, $commitment);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaGetTransaction.php"](../../samples/Api/SolanaApi/solanaGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -433,8 +249,8 @@ $sdk->{mainnet/testnet}()->api()->solana()->solanaWeb3Driver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$body** | **object**  |  |
 
 ### Return type
 
@@ -448,35 +264,6 @@ JSON RPC HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-$body = array('key' => new \stdClass);
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->solana()
-        ->solanaWeb3Driver($x_api_key, $body);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling solana()->solanaWeb3Driver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling solana()->solanaWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solanaWeb3Driver.php"](../../samples/Api/SolanaApi/solanaWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

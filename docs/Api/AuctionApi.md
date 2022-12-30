@@ -31,7 +31,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->approveNftAuctionSpending(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_nft_auction_spending_request** | [**\Tatum\Model\ApproveNftAuctionSpendingRequest**](../Model/ApproveNftAuctionSpendingRequest.md)|  |
+ **$approve_nft_auction_spending_request** | [**\Tatum\Model\ApproveNftAuctionSpendingRequest**](../Model/ApproveNftAuctionSpendingRequest.md) |  |
 
 ### Return type
 
@@ -45,33 +45,7 @@ Allow the NFT auction or marketplace to transfer an asset
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$approve_nft_auction_spending_request = new \Tatum\Model\ApproveNftAuctionSpendingRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->approveNftAuctionSpending($approve_nft_auction_spending_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->approveNftAuctionSpending(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->approveNftAuctionSpending(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "approveNftAuctionSpending.php"](../../samples/Api/AuctionApi/approveNftAuctionSpending.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -89,7 +63,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->bidOnAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bid_on_auction_request** | [**\Tatum\Model\BidOnAuctionRequest**](../Model/BidOnAuctionRequest.md)|  |
+ **$bid_on_auction_request** | [**\Tatum\Model\BidOnAuctionRequest**](../Model/BidOnAuctionRequest.md) |  |
 
 ### Return type
 
@@ -103,33 +77,7 @@ Bid for an asset at the NFT auction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bid_on_auction_request = new \Tatum\Model\BidOnAuctionRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->bidOnAuction($bid_on_auction_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->bidOnAuction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->bidOnAuction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bidOnAuction.php"](../../samples/Api/AuctionApi/bidOnAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -147,7 +95,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->cancelAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction_request** | [**\Tatum\Model\CancelAuctionRequest**](../Model/CancelAuctionRequest.md)|  |
+ **$cancel_auction_request** | [**\Tatum\Model\CancelAuctionRequest**](../Model/CancelAuctionRequest.md) |  |
 
 ### Return type
 
@@ -161,33 +109,7 @@ Cancel the selling of an asset at the NFT auction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$cancel_auction_request = new \Tatum\Model\CancelAuctionRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->cancelAuction($cancel_auction_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->cancelAuction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->cancelAuction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "cancelAuction.php"](../../samples/Api/AuctionApi/cancelAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -205,7 +127,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->createAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_auction_request** | [**\Tatum\Model\CreateAuctionRequest**](../Model/CreateAuctionRequest.md)|  |
+ **$create_auction_request** | [**\Tatum\Model\CreateAuctionRequest**](../Model/CreateAuctionRequest.md) |  |
 
 ### Return type
 
@@ -219,33 +141,7 @@ Sell an asset at the NFT auction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_auction_request = new \Tatum\Model\CreateAuctionRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->createAuction($create_auction_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->createAuction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->createAuction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createAuction.php"](../../samples/Api/AuctionApi/createAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -263,7 +159,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->generateAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_auction_request** | [**\Tatum\Model\GenerateAuctionRequest**](../Model/GenerateAuctionRequest.md)|  |
+ **$generate_auction_request** | [**\Tatum\Model\GenerateAuctionRequest**](../Model/GenerateAuctionRequest.md) |  |
 
 ### Return type
 
@@ -277,33 +173,7 @@ Create an NFT auction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$generate_auction_request = new \Tatum\Model\GenerateAuctionRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->generateAuction($generate_auction_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->generateAuction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->generateAuction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "generateAuction.php"](../../samples/Api/AuctionApi/generateAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -323,9 +193,9 @@ $sdk->{mainnet/testnet}()->api()->auction()->getAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
- **$id** | **string**| Auction ID |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
+ **$id** | **string**  | Auction ID |
 
 ### Return type
 
@@ -339,40 +209,7 @@ Get information about an auctioned asset at the NFT auction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Contract address
-$contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
-
-// Auction ID
-$id = 123456;
-
-try {
-    /** @var \Tatum\Model\GetAuction200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->getAuction($chain, $contract_address, $id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->getAuction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->getAuction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAuction.php"](../../samples/Api/AuctionApi/getAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -391,8 +228,8 @@ $sdk->{mainnet/testnet}()->api()->auction()->getAuctionFee(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
 
 ### Return type
 
@@ -406,37 +243,7 @@ Get the NFT auction fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Contract address
-$contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->getAuctionFee($chain, $contract_address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->getAuctionFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->getAuctionFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAuctionFee.php"](../../samples/Api/AuctionApi/getAuctionFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -455,8 +262,8 @@ $sdk->{mainnet/testnet}()->api()->auction()->getAuctionFeeRecipient(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$contract_address** | **string**| Contract address |
+ **$chain** | **string**  | Blockchain to work with |
+ **$contract_address** | **string**  | Contract address |
 
 ### Return type
 
@@ -470,37 +277,7 @@ Get the recipient of the NFT auction fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'chain_example';
-
-// Contract address
-$contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
-
-try {
-    /** @var \Tatum\Model\GetAuctionFeeRecipient200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->getAuctionFeeRecipient($chain, $contract_address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->getAuctionFeeRecipient(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->getAuctionFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAuctionFeeRecipient.php"](../../samples/Api/AuctionApi/getAuctionFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -518,7 +295,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->settleAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$settle_auction_request** | [**\Tatum\Model\SettleAuctionRequest**](../Model/SettleAuctionRequest.md)|  |
+ **$settle_auction_request** | [**\Tatum\Model\SettleAuctionRequest**](../Model/SettleAuctionRequest.md) |  |
 
 ### Return type
 
@@ -532,33 +309,7 @@ Settle an NFT auction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$settle_auction_request = new \Tatum\Model\SettleAuctionRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->settleAuction($settle_auction_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->settleAuction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->settleAuction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "settleAuction.php"](../../samples/Api/AuctionApi/settleAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -576,7 +327,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFee(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_auction_fee_request** | [**\Tatum\Model\UpdateAuctionFeeRequest**](../Model/UpdateAuctionFeeRequest.md)|  |
+ **$update_auction_fee_request** | [**\Tatum\Model\UpdateAuctionFeeRequest**](../Model/UpdateAuctionFeeRequest.md) |  |
 
 ### Return type
 
@@ -590,33 +341,7 @@ Update the NFT auction fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$update_auction_fee_request = new \Tatum\Model\UpdateAuctionFeeRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->updateAuctionFee($update_auction_fee_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->updateAuctionFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->updateAuctionFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateAuctionFee.php"](../../samples/Api/AuctionApi/updateAuctionFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -634,7 +359,7 @@ $sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFeeRecipient(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_auction_fee_recipient_request** | [**\Tatum\Model\UpdateAuctionFeeRecipientRequest**](../Model/UpdateAuctionFeeRecipientRequest.md)|  |
+ **$update_auction_fee_recipient_request** | [**\Tatum\Model\UpdateAuctionFeeRecipientRequest**](../Model/UpdateAuctionFeeRecipientRequest.md) |  |
 
 ### Return type
 
@@ -648,32 +373,6 @@ Update the recipient of the NFT auction fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$update_auction_fee_recipient_request = new \Tatum\Model\UpdateAuctionFeeRecipientRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->auction()
-        ->updateAuctionFeeRecipient($update_auction_fee_recipient_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling auction()->updateAuctionFeeRecipient(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling auction()->updateAuctionFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateAuctionFeeRecipient.php"](../../samples/Api/AuctionApi/updateAuctionFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

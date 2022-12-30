@@ -28,7 +28,7 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bnb_blockchain_transfer_request** | [**\Tatum\Model\BnbBlockchainTransferRequest**](../Model/BnbBlockchainTransferRequest.md)|  |
+ **$bnb_blockchain_transfer_request** | [**\Tatum\Model\BnbBlockchainTransferRequest**](../Model/BnbBlockchainTransferRequest.md) |  |
 
 ### Return type
 
@@ -42,33 +42,7 @@ Send Binance / Binance Token from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bnb_blockchain_transfer_request = new \Tatum\Model\BnbBlockchainTransferRequest();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbBlockchainTransfer($bnb_blockchain_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbBlockchainTransfer.php"](../../samples/Api/BNBBeaconChainApi/bnbBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -86,7 +60,7 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast** | [**\Tatum\Model\Broadcast**](../Model/Broadcast.md)|  |
+ **$broadcast** | [**\Tatum\Model\Broadcast**](../Model/Broadcast.md) |  |
 
 ### Return type
 
@@ -100,33 +74,7 @@ Broadcast signed BNB transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast = new \Tatum\Model\Broadcast();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbBroadcast($broadcast);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbBroadcast.php"](../../samples/Api/BNBBeaconChainApi/bnbBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -155,31 +103,7 @@ Generate Binance wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\BnbWallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbGenerateWallet();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbGenerateWallet.php"](../../samples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -197,7 +121,7 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -211,34 +135,7 @@ Get Binance Account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = 'tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn';
-
-try {
-    /** @var \Tatum\Model\BnbAccount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbGetAccount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbGetAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbGetAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbGetAccount.php"](../../samples/Api/BNBBeaconChainApi/bnbGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -256,7 +153,7 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$height** | **float**| Block height |
+ **$height** | **float**  | Block height |
 
 ### Return type
 
@@ -270,34 +167,7 @@ Get Binance Transactions in Block
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block height
-$height = 6470657;
-
-try {
-    /** @var \Tatum\Model\BnbBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbGetBlock($height);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbGetBlock.php"](../../samples/Api/BNBBeaconChainApi/bnbGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -326,31 +196,7 @@ Get Binance current block
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbGetCurrentBlock.php"](../../samples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -368,7 +214,7 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -382,34 +228,7 @@ Get Binance Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '4B944BBF78F3ADE3A377551B5EA7AD0FEDBDA13165D932F94B106EF7A8E16C1A';
-
-try {
-    /** @var \Tatum\Model\BnbTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbGetTransaction.php"](../../samples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -433,13 +252,13 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTxByAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address |
- **$start_time** | **float**| Start time in milliseconds |
- **$end_time** | **float**| End time in milliseconds |
- **$limit** | **float**| Items per page. | [optional]
- **$offset** | **float**| Pagination offset | [optional]
- **$asset** | **string**| Asset name | [optional]
- **$address_type** | **string**| Address type | [optional]
+ **$address** | **string**  | Account address |
+ **$start_time** | **float**  | Start time in milliseconds |
+ **$end_time** | **float**  | End time in milliseconds |
+ **$limit** | **float**  | Items per page. | [optional]
+ **$offset** | **float**  | Pagination offset | [optional]
+ **$asset** | **string**  | Asset name | [optional]
+ **$address_type** | **string**  | Address type | [optional]
 
 ### Return type
 
@@ -453,51 +272,6 @@ Get Binance Transactions By Address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address
-$address = 'tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn';
-
-// Start time in milliseconds
-$start_time = 1651831727871;
-
-// End time in milliseconds
-$end_time = 1651831727871;
-
-// Items per page.
-$limit = 10;
-
-// Pagination offset
-$offset = 10;
-
-// Asset name
-$asset = 'BNB';
-
-// Address type
-$address_type = 'FROM';
-
-try {
-    /** @var \Tatum\Model\BnbTxInAccount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bNBBeaconChain()
-        ->bnbGetTxByAccount($address, $start_time, $end_time, $limit, $offset, $asset, $address_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bNBBeaconChain()->bnbGetTxByAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bNBBeaconChain()->bnbGetTxByAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbGetTxByAccount.php"](../../samples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

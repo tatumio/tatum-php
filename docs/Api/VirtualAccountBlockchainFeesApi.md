@@ -21,7 +21,7 @@ $sdk->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()->offchainEstima
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$offchain_estimate_fee** | [**\Tatum\Model\OffchainEstimateFee**](../Model/OffchainEstimateFee.md)|  |
+ **$offchain_estimate_fee** | [**\Tatum\Model\OffchainEstimateFee**](../Model/OffchainEstimateFee.md) |  |
 
 ### Return type
 
@@ -35,32 +35,6 @@ Estimate ledger to blockchain transaction fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$offchain_estimate_fee = new \Tatum\Model\OffchainEstimateFee();
-
-try {
-    /** @var \Tatum\Model\FeeBtc $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->virtualAccountBlockchainFees()
-        ->offchainEstimateFee($offchain_estimate_fee);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling virtualAccountBlockchainFees()->offchainEstimateFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling virtualAccountBlockchainFees()->offchainEstimateFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "offchainEstimateFee.php"](../../samples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -32,7 +32,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -46,33 +46,7 @@ Broadcast signed Dogecoin transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeBroadcast.php"](../../samples/Api/DogecoinApi/dogeBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -91,8 +65,8 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -106,37 +80,7 @@ Generate Dogecoin deposit address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\DogeGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGenerateAddress.php"](../../samples/Api/DogecoinApi/dogeGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -154,7 +98,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -168,33 +112,7 @@ Generate Dogecoin private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGenerateAddressPrivateKey.php"](../../samples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -212,7 +130,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -226,34 +144,7 @@ Generate Dogecoin wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGenerateWallet.php"](../../samples/Api/DogecoinApi/dogeGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -271,7 +162,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
+ **$hash** | **string**  | Block hash or height. |
 
 ### Return type
 
@@ -285,34 +176,7 @@ Get Dogecoin Block by hash or height
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or height.
-$hash = 1234314;
-
-try {
-    /** @var \Tatum\Model\DogeBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGetBlock.php"](../../samples/Api/DogecoinApi/dogeGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -341,31 +205,7 @@ Get Dogecoin Blockchain Information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\DogeInfo $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGetBlockChainInfo();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGetBlockChainInfo.php"](../../samples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -383,7 +223,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockHash(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$i** | **float**| The number of blocks preceding a particular block on a block chain. |
+ **$i** | **float**  | The number of blocks preceding a particular block on a block chain. |
 
 ### Return type
 
@@ -397,34 +237,7 @@ Get Dogecoin Block hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The number of blocks preceding a particular block on a block chain.
-$i = 1234314;
-
-try {
-    /** @var \Tatum\Model\LtcGetBlockHash200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGetBlockHash($i);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGetBlockHash(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGetBlockHash(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGetBlockHash.php"](../../samples/Api/DogecoinApi/dogeGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -453,31 +266,7 @@ Get Mempool Transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGetMempool();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGetMempool(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGetMempool(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGetMempool.php"](../../samples/Api/DogecoinApi/dogeGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -495,7 +284,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetRawTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -509,34 +298,7 @@ Get Dogecoin Transaction by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = 'd60631d8e5c8b6eb0557b5181cf28564d771c628a08abc414e87ad7c05ff2fc2';
-
-try {
-    /** @var \Tatum\Model\DogeTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGetRawTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGetRawTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGetRawTransaction.php"](../../samples/Api/DogecoinApi/dogeGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -555,8 +317,8 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| The transaction hash |
- **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+ **$hash** | **string**  | The transaction hash |
+ **$index** | **float**  | The index of the transaction output that you want to check for the UTXO |
 
 ### Return type
 
@@ -570,37 +332,7 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The transaction hash
-$hash = '5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a';
-
-// The index of the transaction output that you want to check for the UTXO
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\DogeUTXO $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeGetUTXO($hash, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeGetUTXO(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeGetUTXO(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeGetUTXO.php"](../../samples/Api/DogecoinApi/dogeGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -618,7 +350,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md)|  |
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md) |  |
 
 ### Return type
 
@@ -632,33 +364,7 @@ JSON RPC HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bch_rpc_driver_request = new \Tatum\Model\BchRpcDriverRequest();
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeRpcDriver($bch_rpc_driver_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeRpcDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeRpcDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeRpcDriver.php"](../../samples/Api/DogecoinApi/dogeRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -676,7 +382,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransferBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$doge_transfer_blockchain_request** | [**\Tatum\Model\DogeTransferBlockchainRequest**](../Model/DogeTransferBlockchainRequest.md)|  |
+ **$doge_transfer_blockchain_request** | [**\Tatum\Model\DogeTransferBlockchainRequest**](../Model/DogeTransferBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -690,32 +396,6 @@ Send DOGE to Dogecoin addresses
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$doge_transfer_blockchain_request = new \Tatum\Model\DogeTransferBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->dogecoin()
-        ->dogeTransferBlockchain($doge_transfer_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling dogecoin()->dogeTransferBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling dogecoin()->dogeTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeTransferBlockchain.php"](../../samples/Api/DogecoinApi/dogeTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

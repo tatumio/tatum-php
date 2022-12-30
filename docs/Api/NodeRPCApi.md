@@ -29,13 +29,13 @@ $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonPostRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to communicate with. |
- **$body** | **object**|  |
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
- **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
- **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
- **$chain_type** | **string**| Type of Avalanche network. Defaults to Avalanche C-Chain. | [optional] [default to &#39;avax-c&#39;]
- **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
+ **$chain** | **string**  | Blockchain to communicate with. |
+ **$body** | **object**  |  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
+ **$node_type** | **string**  | Type of the node to access for Algorand. | [optional]
+ **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$chain_type** | **string**  | Type of Avalanche network. Defaults to Avalanche C-Chain. | [optional] [default to &#39;avax-c&#39;]
+ **$rpc_path** | **string**  | Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
 
 ### Return type
 
@@ -49,51 +49,7 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to communicate with.
-$chain = 'ALGO';
-
-$body = array('key' => new \stdClass);
-
-// Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header.
-$x_api_key = 'ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5';
-
-// Type of the node to access for Algorand.
-$node_type = 'node_type_example';
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$testnet_type = 'ethereum-sepolia';
-
-// Type of Avalanche network. Defaults to Avalanche C-Chain.
-$chain_type = 'avax-c';
-
-// Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
-$rpc_path = v2/accounts;
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nodeRPC()
-        ->nodeJsonPostRpcDriver($chain, $body, $x_api_key, $node_type, $testnet_type, $chain_type, $rpc_path);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nodeRPC()->nodeJsonPostRpcDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nodeRPC()->nodeJsonPostRpcDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nodeJsonPostRpcDriver.php"](../../samples/Api/NodeRPCApi/nodeJsonPostRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -114,10 +70,10 @@ $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcGetDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to communicate with. |
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
- **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
- **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
+ **$chain** | **string**  | Blockchain to communicate with. |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
+ **$node_type** | **string**  | Type of the node to access for Algorand. | [optional]
+ **$rpc_path** | **string**  | Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
 
 ### Return type
 
@@ -131,43 +87,7 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to communicate with.
-$chain = 'ALGO';
-
-// Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header.
-$x_api_key = 'ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5';
-
-// Type of the node to access for Algorand.
-$node_type = 'node_type_example';
-
-// Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
-$rpc_path = v2/accounts;
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nodeRPC()
-        ->nodeJsonRpcGetDriver($chain, $x_api_key, $node_type, $rpc_path);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nodeRPC()->nodeJsonRpcGetDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nodeRPC()->nodeJsonRpcGetDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nodeJsonRpcGetDriver.php"](../../samples/Api/NodeRPCApi/nodeJsonRpcGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -189,11 +109,11 @@ $sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcPutDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to communicate with. |
- **$body** | **object**|  |
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
- **$node_type** | **string**| Type of the node to access for Algorand. | [optional]
- **$rpc_path** | **string**| Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
+ **$chain** | **string**  | Blockchain to communicate with. |
+ **$body** | **object**  |  |
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header. | [optional]
+ **$node_type** | **string**  | Type of the node to access for Algorand. | [optional]
+ **$rpc_path** | **string**  | Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar. | [optional]
 
 ### Return type
 
@@ -207,44 +127,6 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to communicate with.
-$chain = 'ALGO';
-
-$body = array('key' => new \stdClass);
-
-// Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header.
-$x_api_key = 'ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5';
-
-// Type of the node to access for Algorand.
-$node_type = 'node_type_example';
-
-// Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
-$rpc_path = v2/accounts;
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->nodeRPC()
-        ->nodeJsonRpcPutDriver($chain, $body, $x_api_key, $node_type, $rpc_path);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling nodeRPC()->nodeJsonRpcPutDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling nodeRPC()->nodeJsonRpcPutDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "nodeJsonRpcPutDriver.php"](../../samples/Api/NodeRPCApi/nodeJsonRpcPutDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

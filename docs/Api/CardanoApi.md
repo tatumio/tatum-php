@@ -31,7 +31,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -45,33 +45,7 @@ Broadcast signed Ada transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaBroadcast.php"](../../samples/Api/CardanoApi/adaBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -90,8 +64,8 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of a wallet. |
- **$index** | **float**| Derivation index of the desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of a wallet. |
+ **$index** | **float**  | Derivation index of the desired address to be generated. |
 
 ### Return type
 
@@ -105,37 +79,7 @@ Generate Ada deposit address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of a wallet.
-$xpub = '30e96a57be6235c686da968c1860f69d1871a692b29626b7ebb923aff8c6731cb9fef3a26b7eba8a07653483d06427d0c07966c5f81c69a7925d714530bedb1ef9e9103547b54ad0954b3569785ca70e1fd08313f92a3a9d31efa216b2b9adac4678455e66c97b53cd589f9da70a14265cf15cd4c1e0ce914407008f4a65f316';
-
-// Derivation index of the desired address to be generated.
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\AdaGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGenerateAddress.php"](../../samples/Api/CardanoApi/adaGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -153,7 +97,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -167,33 +111,7 @@ Generate Ada private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGenerateAddressPrivateKey.php"](../../samples/Api/CardanoApi/adaGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -211,7 +129,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -225,34 +143,7 @@ Generate Ada wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGenerateWallet.php"](../../samples/Api/CardanoApi/adaGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -270,7 +161,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGetAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
+ **$address** | **string**  | Address |
 
 ### Return type
 
@@ -284,34 +175,7 @@ Gets a Ada account by address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address
-$address = 'Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz';
-
-try {
-    /** @var array[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGetAccount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGetAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGetAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGetAccount.php"](../../samples/Api/CardanoApi/adaGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -329,7 +193,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
+ **$hash** | **string**  | Block hash or height. |
 
 ### Return type
 
@@ -343,34 +207,7 @@ Get Block by hash or height
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or height.
-$hash = '00000000ca231a439a5c0a86a5a5dd6dc1918a8e897b96522fa9499288e70183';
-
-try {
-    /** @var \Tatum\Model\AdaBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGetBlock.php"](../../samples/Api/CardanoApi/adaGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -399,31 +236,7 @@ Get Blockchain information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\AdaInfo $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGetBlockChainInfo();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGetBlockChainInfo.php"](../../samples/Api/CardanoApi/adaGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -441,7 +254,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGetRawTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -455,34 +268,7 @@ Get transaction by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '1451692ebbfbea1a2d2ec6fe6782596b6aa2e46c0589d04c406f491b5b46bc6a';
-
-try {
-    /** @var \Tatum\Model\AdaTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGetRawTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGetRawTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGetRawTransaction.php"](../../samples/Api/CardanoApi/adaGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -502,9 +288,9 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGetTxByAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$address** | **string**  | Address |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
 
 ### Return type
 
@@ -518,40 +304,7 @@ Get transactions by address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address
-$address = 'Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-try {
-    /** @var \Tatum\Model\AdaTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGetTxByAddress($address, $page_size, $offset);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGetTxByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGetTxByAddress.php"](../../samples/Api/CardanoApi/adaGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -569,7 +322,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGetUTXOByAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
+ **$address** | **string**  | Address |
 
 ### Return type
 
@@ -583,34 +336,7 @@ Get UTXOs by address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address
-$address = 'Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz';
-
-try {
-    /** @var \Tatum\Model\AdaUTXO[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaGetUTXOByAddress($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaGetUTXOByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaGetUTXOByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaGetUTXOByAddress.php"](../../samples/Api/CardanoApi/adaGetUTXOByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -628,7 +354,7 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaTransferBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ada_transfer_blockchain_request** | [**\Tatum\Model\AdaTransferBlockchainRequest**](../Model/AdaTransferBlockchainRequest.md)|  |
+ **$ada_transfer_blockchain_request** | [**\Tatum\Model\AdaTransferBlockchainRequest**](../Model/AdaTransferBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -642,32 +368,6 @@ Send ADA to Cardano addresses
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$ada_transfer_blockchain_request = new \Tatum\Model\AdaTransferBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->cardano()
-        ->adaTransferBlockchain($ada_transfer_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling cardano()->adaTransferBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling cardano()->adaTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaTransferBlockchain.php"](../../samples/Api/CardanoApi/adaTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

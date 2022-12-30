@@ -26,8 +26,8 @@ $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->completePendingSignatur
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of pending transaction |
- **$tx_id** | **string**| transaction ID of blockchain transaction |
+ **$id** | **string**  | ID of pending transaction |
+ **$tx_id** | **string**  | transaction ID of blockchain transaction |
 
 ### Return type
 
@@ -41,34 +41,7 @@ Complete pending transaction to sign
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// ID of pending transaction
-$id = 'f91827364f91827364ajdur7';
-
-// transaction ID of blockchain transaction
-$tx_id = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->keyManagementSystem()
-        ->completePendingSignature($id, $tx_id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling keyManagementSystem()->completePendingSignature(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling keyManagementSystem()->completePendingSignature(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "completePendingSignature.php"](../../samples/Api/KeyManagementSystemApi/completePendingSignature.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -87,8 +60,8 @@ $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->deletePendingTransactio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of transaction |
- **$revert** | **bool**| Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum ERC20 based currencies. | [optional] [default to true]
+ **$id** | **string**  | ID of transaction |
+ **$revert** | **bool**  | Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum ERC20 based currencies. | [optional] [default to true]
 
 ### Return type
 
@@ -102,34 +75,7 @@ Delete transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// ID of transaction
-$id = 'id_example';
-
-// Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum ERC20 based currencies.
-$revert = 'true';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->keyManagementSystem()
-        ->deletePendingTransactionToSign($id, $revert);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling keyManagementSystem()->deletePendingTransactionToSign(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling keyManagementSystem()->deletePendingTransactionToSign(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deletePendingTransactionToSign.php"](../../samples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -147,7 +93,7 @@ $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionTo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| ID of transaction |
+ **$id** | **string**  | ID of transaction |
 
 ### Return type
 
@@ -161,34 +107,7 @@ Get transaction details
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// ID of transaction
-$id = 'id_example';
-
-try {
-    /** @var \Tatum\Model\PendingTransaction $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->keyManagementSystem()
-        ->getPendingTransactionToSign($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling keyManagementSystem()->getPendingTransactionToSign(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling keyManagementSystem()->getPendingTransactionToSign(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getPendingTransactionToSign.php"](../../samples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -207,8 +126,8 @@ $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionsT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to get pending transactions for. |
- **$signatures** | **string**| Signature IDs of the KMS which invokes this endpoint. If multiple, they should be separated by comma. | [optional]
+ **$chain** | **string**  | Blockchain to get pending transactions for. |
+ **$signatures** | **string**  | Signature IDs of the KMS which invokes this endpoint. If multiple, they should be separated by comma. | [optional]
 
 ### Return type
 
@@ -222,37 +141,7 @@ Get pending transactions to sign
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to get pending transactions for.
-$chain = 'chain_example';
-
-// Signature IDs of the KMS which invokes this endpoint. If multiple, they should be separated by comma.
-$signatures = 6d78dad2-518f-4e76-8255-8f1df0de6884,6d78dad2-518f-4e76-8255-8f1df0de6885,6d78dad2-518f-4e76-8255-8f1df0de6886;
-
-try {
-    /** @var \Tatum\Model\PendingTransaction[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->keyManagementSystem()
-        ->getPendingTransactionsToSign($chain, $signatures);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling keyManagementSystem()->getPendingTransactionsToSign(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling keyManagementSystem()->getPendingTransactionsToSign(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getPendingTransactionsToSign.php"](../../samples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -271,8 +160,8 @@ $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->receivePendingTransacti
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to get pending transactions for. |
- **$kms_signature_ids** | [**\Tatum\Model\KmsSignatureIds**](../Model/KmsSignatureIds.md)| Signature IDs of the KMS which invokes this endpoint. | [optional]
+ **$chain** | **string**  | Blockchain to get pending transactions for. |
+ **$kms_signature_ids** | [**\Tatum\Model\KmsSignatureIds**](../Model/KmsSignatureIds.md) | Signature IDs of the KMS which invokes this endpoint. | [optional]
 
 ### Return type
 
@@ -286,36 +175,6 @@ Get pending transactions to sign
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to get pending transactions for.
-$chain = 'chain_example';
-
-// Signature IDs of the KMS which invokes this endpoint.
-$kms_signature_ids = new \Tatum\Model\KmsSignatureIds();
-
-try {
-    /** @var \Tatum\Model\PendingTransaction[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->keyManagementSystem()
-        ->receivePendingTransactionsToSign($chain, $kms_signature_ids);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling keyManagementSystem()->receivePendingTransactionsToSign(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling keyManagementSystem()->receivePendingTransactionsToSign(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "receivePendingTransactionsToSign.php"](../../samples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

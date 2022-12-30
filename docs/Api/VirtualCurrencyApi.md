@@ -25,7 +25,7 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->createCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency** | [**\Tatum\Model\VirtualCurrency**](../Model/VirtualCurrency.md)|  |
+ **$virtual_currency** | [**\Tatum\Model\VirtualCurrency**](../Model/VirtualCurrency.md) |  |
 
 ### Return type
 
@@ -39,33 +39,7 @@ Create new virtual currency
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$virtual_currency = new \Tatum\Model\VirtualCurrency();
-
-try {
-    /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->virtualCurrency()
-        ->createCurrency($virtual_currency);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling virtualCurrency()->createCurrency(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling virtualCurrency()->createCurrency(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createCurrency.php"](../../samples/Api/VirtualCurrencyApi/createCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -83,7 +57,7 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->getCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$name** | **string**|  |
+ **$name** | **string**  |  |
 
 ### Return type
 
@@ -97,33 +71,7 @@ Get virtual currency
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$name = 'name_example';
-
-try {
-    /** @var \Tatum\Model\VC $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->virtualCurrency()
-        ->getCurrency($name);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling virtualCurrency()->getCurrency(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling virtualCurrency()->getCurrency(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getCurrency.php"](../../samples/Api/VirtualCurrencyApi/getCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -141,7 +89,7 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->mintCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md)|  |
+ **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md) |  |
 
 ### Return type
 
@@ -155,33 +103,7 @@ Create new supply of virtual currency
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$virtual_currency_operation = new \Tatum\Model\VirtualCurrencyOperation();
-
-try {
-    /** @var \Tatum\Model\TransactionResult $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->virtualCurrency()
-        ->mintCurrency($virtual_currency_operation);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling virtualCurrency()->mintCurrency(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling virtualCurrency()->mintCurrency(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "mintCurrency.php"](../../samples/Api/VirtualCurrencyApi/mintCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -199,7 +121,7 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->revokeCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md)|  |
+ **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md) |  |
 
 ### Return type
 
@@ -213,33 +135,7 @@ Destroy supply of virtual currency
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$virtual_currency_operation = new \Tatum\Model\VirtualCurrencyOperation();
-
-try {
-    /** @var \Tatum\Model\TransactionResult $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->virtualCurrency()
-        ->revokeCurrency($virtual_currency_operation);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling virtualCurrency()->revokeCurrency(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling virtualCurrency()->revokeCurrency(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "revokeCurrency.php"](../../samples/Api/VirtualCurrencyApi/revokeCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -257,7 +153,7 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->updateCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency_update** | [**\Tatum\Model\VirtualCurrencyUpdate**](../Model/VirtualCurrencyUpdate.md)|  |
+ **$virtual_currency_update** | [**\Tatum\Model\VirtualCurrencyUpdate**](../Model/VirtualCurrencyUpdate.md) |  |
 
 ### Return type
 
@@ -271,29 +167,6 @@ Update virtual currency
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$virtual_currency_update = new \Tatum\Model\VirtualCurrencyUpdate();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->virtualCurrency()
-        ->updateCurrency($virtual_currency_update);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling virtualCurrency()->updateCurrency(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling virtualCurrency()->updateCurrency(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "updateCurrency.php"](../../samples/Api/VirtualCurrencyApi/updateCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

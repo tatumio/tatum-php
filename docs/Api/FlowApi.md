@@ -33,7 +33,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeyToAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_add_pub_key_to_address_request** | [**\Tatum\Model\FlowAddPubKeyToAddressRequest**](../Model/FlowAddPubKeyToAddressRequest.md)|  |
+ **$flow_add_pub_key_to_address_request** | [**\Tatum\Model\FlowAddPubKeyToAddressRequest**](../Model/FlowAddPubKeyToAddressRequest.md) |  |
 
 ### Return type
 
@@ -47,33 +47,7 @@ Add public key to Flow address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$flow_add_pub_key_to_address_request = new \Tatum\Model\FlowAddPubKeyToAddressRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowAddPubKeyToAddress($flow_add_pub_key_to_address_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowAddPubKeyToAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowAddPubKeyToAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowAddPubKeyToAddress.php"](../../samples/Api/FlowApi/flowAddPubKeyToAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -91,7 +65,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_create_address_from_pub_key_request** | [**\Tatum\Model\FlowCreateAddressFromPubKeyRequest**](../Model/FlowCreateAddressFromPubKeyRequest.md)|  |
+ **$flow_create_address_from_pub_key_request** | [**\Tatum\Model\FlowCreateAddressFromPubKeyRequest**](../Model/FlowCreateAddressFromPubKeyRequest.md) |  |
 
 ### Return type
 
@@ -105,33 +79,7 @@ Create Flow address from public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$flow_create_address_from_pub_key_request = new \Tatum\Model\FlowCreateAddressFromPubKeyRequest();
-
-try {
-    /** @var \Tatum\Model\FlowCreateAddressFromPubKey200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowCreateAddressFromPubKey($flow_create_address_from_pub_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowCreateAddressFromPubKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowCreateAddressFromPubKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowCreateAddressFromPubKey.php"](../../samples/Api/FlowApi/flowCreateAddressFromPubKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -150,8 +98,8 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -165,37 +113,7 @@ Generate Flow address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\FlowGenerateAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGenerateAddress.php"](../../samples/Api/FlowApi/flowGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,8 +132,8 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -229,37 +147,7 @@ Generate Flow public key from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\FlowGeneratePubKey200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGeneratePubKey($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGeneratePubKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGeneratePubKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGeneratePubKey.php"](../../samples/Api/FlowApi/flowGeneratePubKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -277,7 +165,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKeyPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -291,33 +179,7 @@ Generate Flow private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGeneratePubKeyPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGeneratePubKeyPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGeneratePubKeyPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGeneratePubKeyPrivateKey.php"](../../samples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -335,7 +197,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -349,34 +211,7 @@ Generate Flow wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGenerateWallet.php"](../../samples/Api/FlowApi/flowGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -394,7 +229,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGetAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
+ **$address** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -408,34 +243,7 @@ Get the balance of a Flow account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x955cd3f17b2fd8ad';
-
-try {
-    /** @var \Tatum\Model\FlowAccount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGetAccount($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGetAccount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGetAccount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGetAccount.php"](../../samples/Api/FlowApi/flowGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -453,7 +261,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
+ **$hash** | **string**  | Block hash or height. |
 
 ### Return type
 
@@ -467,34 +275,7 @@ Get Flow Block by hash or height
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or height.
-$hash = 1234314;
-
-try {
-    /** @var \Tatum\Model\FlowBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGetBlock.php"](../../samples/Api/FlowApi/flowGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -523,31 +304,7 @@ Get Flow current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGetBlockChainInfo();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGetBlockChainInfo.php"](../../samples/Api/FlowApi/flowGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -567,9 +324,9 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGetBlockEvents(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$type** | **string**| Event type to search for |
- **$from** | **float**| Block height to start searching |
- **$to** | **float**| Block height to end searching |
+ **$type** | **string**  | Event type to search for |
+ **$from** | **float**  | Block height to start searching |
+ **$to** | **float**  | Block height to end searching |
 
 ### Return type
 
@@ -583,40 +340,7 @@ Get Flow events from blocks
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Event type to search for
-$type = A.7e60df042a9c0868.FlowToken.TokensWithdrawn;
-
-// Block height to start searching
-$from = 654321;
-
-// Block height to end searching
-$to = 654326;
-
-try {
-    /** @var \Tatum\Model\FlowEvent[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGetBlockEvents($type, $from, $to);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGetBlockEvents(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGetBlockEvents(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGetBlockEvents.php"](../../samples/Api/FlowApi/flowGetBlockEvents.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -634,7 +358,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGetRawTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -648,34 +372,7 @@ Get Flow Transaction by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = 'd60631d8e5c8b6eb0557b5181cf28564d771c628a08abc414e87ad7c05ff2fc2';
-
-try {
-    /** @var \Tatum\Model\FlowTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowGetRawTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowGetRawTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowGetRawTransaction.php"](../../samples/Api/FlowApi/flowGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -693,7 +390,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowTransferBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transfer_blockchain_request** | [**\Tatum\Model\FlowTransferBlockchainRequest**](../Model/FlowTransferBlockchainRequest.md)|  |
+ **$flow_transfer_blockchain_request** | [**\Tatum\Model\FlowTransferBlockchainRequest**](../Model/FlowTransferBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -707,33 +404,7 @@ Send Flow to blockchain addresses
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$flow_transfer_blockchain_request = new \Tatum\Model\FlowTransferBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowTransferBlockchain($flow_transfer_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowTransferBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowTransferBlockchain.php"](../../samples/Api/FlowApi/flowTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -751,7 +422,7 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowTransferCustomBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transfer_custom_blockchain_request** | [**\Tatum\Model\FlowTransferCustomBlockchainRequest**](../Model/FlowTransferCustomBlockchainRequest.md)|  |
+ **$flow_transfer_custom_blockchain_request** | [**\Tatum\Model\FlowTransferCustomBlockchainRequest**](../Model/FlowTransferCustomBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -765,32 +436,6 @@ Send arbitrary transaction to blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$flow_transfer_custom_blockchain_request = new \Tatum\Model\FlowTransferCustomBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->flow()
-        ->flowTransferCustomBlockchain($flow_transfer_custom_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling flow()->flowTransferCustomBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling flow()->flowTransferCustomBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowTransferCustomBlockchain.php"](../../samples/Api/FlowApi/flowTransferCustomBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

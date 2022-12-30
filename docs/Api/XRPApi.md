@@ -32,7 +32,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettings(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_account_settings_request** | [**\Tatum\Model\XrpAccountSettingsRequest**](../Model/XrpAccountSettingsRequest.md)|  |
+ **$xrp_account_settings_request** | [**\Tatum\Model\XrpAccountSettingsRequest**](../Model/XrpAccountSettingsRequest.md) |  |
 
 ### Return type
 
@@ -46,33 +46,7 @@ Modify XRP account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xrp_account_settings_request = new \Tatum\Model\XrpAccountSettingsRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpAccountSettings($xrp_account_settings_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpAccountSettings(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpAccountSettings(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpAccountSettings.php"](../../samples/Api/XRPApi/xrpAccountSettings.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -90,7 +64,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -104,33 +78,7 @@ Broadcast signed XRP transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpBroadcast.php"](../../samples/Api/XRPApi/xrpBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -148,7 +96,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$account** | **string**| Account address you want to get balance of |
+ **$account** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -162,34 +110,7 @@ Get Account Balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$account = 'rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF';
-
-try {
-    /** @var \Tatum\Model\XrpAccountBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpGetAccountBalance($account);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpGetAccountBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpGetAccountBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpGetAccountBalance.php"](../../samples/Api/XRPApi/xrpGetAccountBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -207,7 +128,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountInfo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$account** | **string**| Account address you want to get balance of |
+ **$account** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -221,34 +142,7 @@ Get Account info
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$account = 'rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF';
-
-try {
-    /** @var \Tatum\Model\XrpAccount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpGetAccountInfo($account);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpGetAccountInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpGetAccountInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpGetAccountInfo.php"](../../samples/Api/XRPApi/xrpGetAccountInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -268,9 +162,9 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountTx(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$account** | **string**| Address of XRP account. |
- **$min** | **float**| Ledger version to start scanning for transactions from. | [optional]
- **$marker** | **string**| Marker from the last paginated request. It is stringified JSON from previous response. | [optional]
+ **$account** | **string**  | Address of XRP account. |
+ **$min** | **float**  | Ledger version to start scanning for transactions from. | [optional]
+ **$marker** | **string**  | Marker from the last paginated request. It is stringified JSON from previous response. | [optional]
 
 ### Return type
 
@@ -284,40 +178,7 @@ Get Account transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address of XRP account.
-$account = 'account_example';
-
-// Ledger version to start scanning for transactions from.
-$min = 3.4;
-
-// Marker from the last paginated request. It is stringified JSON from previous response.
-$marker = 'marker_example';
-
-try {
-    /** @var \Tatum\Model\XrpAccountTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpGetAccountTx($account, $min, $marker);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpGetAccountTx(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpGetAccountTx(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpGetAccountTx.php"](../../samples/Api/XRPApi/xrpGetAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -346,31 +207,7 @@ Get actual Blockchain fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\XrpFee $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpGetFee();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpGetFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpGetFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpGetFee.php"](../../samples/Api/XRPApi/xrpGetFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -399,31 +236,7 @@ Get XRP Blockchain Information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\XrpInfo $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpGetLastClosedLedger();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpGetLastClosedLedger(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpGetLastClosedLedger(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpGetLastClosedLedger.php"](../../samples/Api/XRPApi/xrpGetLastClosedLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -441,7 +254,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetLedger(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$i** | **float**| Sequence of XRP ledger. |
+ **$i** | **float**  | Sequence of XRP ledger. |
 
 ### Return type
 
@@ -455,34 +268,7 @@ Get Ledger
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Sequence of XRP ledger.
-$i = 3.4;
-
-try {
-    /** @var \Tatum\Model\XrpLedger $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpGetLedger($i);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpGetLedger(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpGetLedger(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpGetLedger.php"](../../samples/Api/XRPApi/xrpGetLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -500,7 +286,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -514,34 +300,7 @@ Get XRP Transaction by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '1A32A054B04AC9D6814710DDCA416E72C4CD2D78D6C3DFC06CC9369CC4F6B250';
-
-try {
-    /** @var \Tatum\Model\XrpTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpGetTransaction.php"](../../samples/Api/XRPApi/xrpGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -559,7 +318,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpTransferBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_transfer_blockchain_request** | [**\Tatum\Model\XrpTransferBlockchainRequest**](../Model/XrpTransferBlockchainRequest.md)|  |
+ **$xrp_transfer_blockchain_request** | [**\Tatum\Model\XrpTransferBlockchainRequest**](../Model/XrpTransferBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -573,33 +332,7 @@ Send XRP from address to address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xrp_transfer_blockchain_request = new \Tatum\Model\XrpTransferBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpTransferBlockchain($xrp_transfer_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpTransferBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpTransferBlockchain.php"](../../samples/Api/XRPApi/xrpTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -617,7 +350,7 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_trust_line_blockchain_request** | [**\Tatum\Model\XrpTrustLineBlockchainRequest**](../Model/XrpTrustLineBlockchainRequest.md)|  |
+ **$xrp_trust_line_blockchain_request** | [**\Tatum\Model\XrpTrustLineBlockchainRequest**](../Model/XrpTrustLineBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -631,33 +364,7 @@ Create / Update / Delete XRP trust line
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xrp_trust_line_blockchain_request = new \Tatum\Model\XrpTrustLineBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpTrustLineBlockchain($xrp_trust_line_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpTrustLineBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpTrustLineBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpTrustLineBlockchain.php"](../../samples/Api/XRPApi/xrpTrustLineBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -686,30 +393,6 @@ Generate XRP account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\XrpWallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->xRP()
-        ->xrpWallet();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling xRP()->xrpWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling xRP()->xrpWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpWallet.php"](../../samples/Api/XRPApi/xrpWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -31,7 +31,7 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -45,33 +45,7 @@ Broadcast signed XLM transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmBroadcast.php"](../../samples/Api/StellarApi/xlmBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -89,7 +63,7 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountInfo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$account** | **string**| Account address you want to get balance of |
+ **$account** | **string**  | Account address you want to get balance of |
 
 ### Return type
 
@@ -103,34 +77,7 @@ Get XLM Account info
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$account = 'GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H';
-
-try {
-    /** @var \Tatum\Model\XlmAccount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmGetAccountInfo($account);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmGetAccountInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmGetAccountInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmGetAccountInfo.php"](../../samples/Api/StellarApi/xlmGetAccountInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -149,8 +96,8 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountTx(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$account** | **string**| Address of XLM account. |
- **$pagination** | **string**| Paging token from the last transaction gives you next page | [optional]
+ **$account** | **string**  | Address of XLM account. |
+ **$pagination** | **string**  | Paging token from the last transaction gives you next page | [optional]
 
 ### Return type
 
@@ -164,37 +111,7 @@ Get XLM Account transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address of XLM account.
-$account = 'GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H';
-
-// Paging token from the last transaction gives you next page
-$pagination = 1348087155011584;
-
-try {
-    /** @var \Tatum\Model\XlmTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmGetAccountTx($account, $pagination);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmGetAccountTx(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmGetAccountTx(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmGetAccountTx.php"](../../samples/Api/StellarApi/xlmGetAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -223,31 +140,7 @@ Get actual XLM fee
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmGetFee();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmGetFee(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmGetFee(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmGetFee.php"](../../samples/Api/StellarApi/xlmGetFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -276,31 +169,7 @@ Get XLM Blockchain Information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\XlmLedger $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmGetLastClosedLedger();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmGetLastClosedLedger(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmGetLastClosedLedger(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmGetLastClosedLedger.php"](../../samples/Api/StellarApi/xlmGetLastClosedLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -318,7 +187,7 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedger(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sequence** | **string**| Sequence of the ledger. |
+ **$sequence** | **string**  | Sequence of the ledger. |
 
 ### Return type
 
@@ -332,34 +201,7 @@ Get XLM Blockchain Ledger by sequence
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Sequence of the ledger.
-$sequence = 1;
-
-try {
-    /** @var \Tatum\Model\XlmLedger $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmGetLedger($sequence);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmGetLedger(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmGetLedger(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmGetLedger.php"](../../samples/Api/StellarApi/xlmGetLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -377,7 +219,7 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedgerTx(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sequence** | **string**| Sequence of the ledger. |
+ **$sequence** | **string**  | Sequence of the ledger. |
 
 ### Return type
 
@@ -391,34 +233,7 @@ Get XLM Blockchain Transactions in Ledger
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Sequence of the ledger.
-$sequence = 1;
-
-try {
-    /** @var \Tatum\Model\XlmTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmGetLedgerTx($sequence);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmGetLedgerTx(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmGetLedgerTx(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmGetLedgerTx.php"](../../samples/Api/StellarApi/xlmGetLedgerTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -436,7 +251,7 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -450,34 +265,7 @@ Get XLM Transaction by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '749e4f8933221b9942ef38a02856803f379789ec8d971f1f60535db70135673e';
-
-try {
-    /** @var \Tatum\Model\XlmTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmGetTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmGetTransaction.php"](../../samples/Api/StellarApi/xlmGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -495,7 +283,7 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmTransferBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xlm_transfer_blockchain_request** | [**\Tatum\Model\XlmTransferBlockchainRequest**](../Model/XlmTransferBlockchainRequest.md)|  |
+ **$xlm_transfer_blockchain_request** | [**\Tatum\Model\XlmTransferBlockchainRequest**](../Model/XlmTransferBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -509,33 +297,7 @@ Send XLM from address to address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xlm_transfer_blockchain_request = new \Tatum\Model\XlmTransferBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmTransferBlockchain($xlm_transfer_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmTransferBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmTransferBlockchain.php"](../../samples/Api/StellarApi/xlmTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -553,7 +315,7 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xlm_trust_line_blockchain_request** | [**\Tatum\Model\XlmTrustLineBlockchainRequest**](../Model/XlmTrustLineBlockchainRequest.md)|  |
+ **$xlm_trust_line_blockchain_request** | [**\Tatum\Model\XlmTrustLineBlockchainRequest**](../Model/XlmTrustLineBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -567,33 +329,7 @@ Create / Update / Delete XLM trust line
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xlm_trust_line_blockchain_request = new \Tatum\Model\XlmTrustLineBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmTrustLineBlockchain($xlm_trust_line_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmTrustLineBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmTrustLineBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmTrustLineBlockchain.php"](../../samples/Api/StellarApi/xlmTrustLineBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -622,30 +358,6 @@ Generate XLM account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\XlmWallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->stellar()
-        ->xlmWallet();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling stellar()->xlmWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling stellar()->xlmWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmWallet.php"](../../samples/Api/StellarApi/xlmWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

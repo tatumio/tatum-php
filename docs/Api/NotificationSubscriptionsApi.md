@@ -30,8 +30,8 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_request** | [**\Tatum\Model\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  |
- **$testnet_type** | **string**| Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+ **$create_subscription_request** | [**\Tatum\Model\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md) |  |
+ **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
@@ -45,36 +45,7 @@ Create a subscription
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_subscription_request = new \Tatum\Model\CreateSubscriptionRequest();
-
-// Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$testnet_type = 'ethereum-sepolia';
-
-try {
-    /** @var \Tatum\Model\Id $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->createSubscription($create_subscription_request, $testnet_type);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->createSubscription(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->createSubscription(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createSubscription.php"](../../samples/Api/NotificationSubscriptionsApi/createSubscription.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -92,7 +63,7 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->deleteSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Subscription ID |
+ **$id** | **string**  | Subscription ID |
 
 ### Return type
 
@@ -106,31 +77,7 @@ Cancel existing subscription
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Subscription ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->deleteSubscription($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->deleteSubscription(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->deleteSubscription(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "deleteSubscription.php"](../../samples/Api/NotificationSubscriptionsApi/deleteSubscription.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -159,28 +106,7 @@ Disable HMAC webhook digest
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->disableWebHookHmac();
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->disableWebHookHmac(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->disableWebHookHmac(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "disableWebHookHmac.php"](../../samples/Api/NotificationSubscriptionsApi/disableWebHookHmac.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -198,7 +124,7 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->enableWebHookHmac
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hmac_web_hook** | [**\Tatum\Model\HmacWebHook**](../Model/HmacWebHook.md)|  |
+ **$hmac_web_hook** | [**\Tatum\Model\HmacWebHook**](../Model/HmacWebHook.md) |  |
 
 ### Return type
 
@@ -212,30 +138,7 @@ Enable HMAC webhook digest
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$hmac_web_hook = new \Tatum\Model\HmacWebHook();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->enableWebHookHmac($hmac_web_hook);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->enableWebHookHmac(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->enableWebHookHmac(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "enableWebHookHmac.php"](../../samples/Api/NotificationSubscriptionsApi/enableWebHookHmac.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -256,10 +159,10 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooks(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$direction** | **string**| Direction of sorting | [optional]
- **$failed** | **bool**| Flag indicating whether the webhook was successful or not | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
+ **$direction** | **string**  | Direction of sorting | [optional]
+ **$failed** | **bool**  | Flag indicating whether the webhook was successful or not | [optional]
 
 ### Return type
 
@@ -273,43 +176,7 @@ List all executed webhooks
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-// Direction of sorting
-$direction = 'asc';
-
-// Flag indicating whether the webhook was successful or not
-$failed = 'false';
-
-try {
-    /** @var \Tatum\Model\WebHook[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->getAllWebhooks($page_size, $offset, $direction, $failed);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->getAllWebhooks(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->getAllWebhooks(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAllWebhooks.php"](../../samples/Api/NotificationSubscriptionsApi/getAllWebhooks.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -330,10 +197,10 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooksCou
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
- **$direction** | **string**| Direction of sorting | [optional]
- **$failed** | **bool**| Flag indicating whether the webhook was successful or not | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
+ **$direction** | **string**  | Direction of sorting | [optional]
+ **$failed** | **bool**  | Flag indicating whether the webhook was successful or not | [optional]
 
 ### Return type
 
@@ -347,43 +214,7 @@ Count of found entities for get webhook request
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-// Direction of sorting
-$direction = 'asc';
-
-// Flag indicating whether the webhook was successful or not
-$failed = 'false';
-
-try {
-    /** @var \Tatum\Model\EntitiesCount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->getAllWebhooksCount($page_size, $offset, $direction, $failed);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->getAllWebhooksCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->getAllWebhooksCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAllWebhooksCount.php"](../../samples/Api/NotificationSubscriptionsApi/getAllWebhooksCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -401,7 +232,7 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| Subscription ID |
+ **$id** | **string**  | Subscription ID |
 
 ### Return type
 
@@ -415,34 +246,7 @@ Obtain report for subscription
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Subscription ID
-$id = '5e68c66581f2ee32bc354087';
-
-try {
-    /** @var \Tatum\Model\GetSubscriptionReport200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->getSubscriptionReport($id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->getSubscriptionReport(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->getSubscriptionReport(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getSubscriptionReport.php"](../../samples/Api/NotificationSubscriptionsApi/getSubscriptionReport.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -462,9 +266,9 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptions(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$address** | **string**| Value for filtering by address | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$address** | **string**  | Value for filtering by address | [optional]
 
 ### Return type
 
@@ -478,40 +282,7 @@ List all active subscriptions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Value for filtering by address
-$address = 'address_example';
-
-try {
-    /** @var \Tatum\Model\Subscription[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->getSubscriptions($page_size, $offset, $address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->getSubscriptions(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->getSubscriptions(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getSubscriptions.php"](../../samples/Api/NotificationSubscriptionsApi/getSubscriptions.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -531,9 +302,9 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionsC
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain next page of the data. | [optional]
- **$address** | **string**| Value for filtering by address | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
+ **$address** | **string**  | Value for filtering by address | [optional]
 
 ### Return type
 
@@ -547,39 +318,6 @@ Count of found entities for get webhook request
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain next page of the data.
-$offset = 0;
-
-// Value for filtering by address
-$address = 'address_example';
-
-try {
-    /** @var \Tatum\Model\EntitiesCount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->notificationSubscriptions()
-        ->getSubscriptionsCount($page_size, $offset, $address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling notificationSubscriptions()->getSubscriptionsCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling notificationSubscriptions()->getSubscriptionsCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getSubscriptionsCount.php"](../../samples/Api/NotificationSubscriptionsApi/getSubscriptionsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

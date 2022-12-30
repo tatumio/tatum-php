@@ -22,8 +22,8 @@ $sdk->{mainnet/testnet}()->api()->exchangeRate()->getExchangeRate(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$currency** | **string**| The fiat or crypto asset to exchange |
- **$base_pair** | **string**| The target fiat asset to get the exchange rate for | [optional] [default to &#39;EUR&#39;]
+ **$currency** | **string**  | The fiat or crypto asset to exchange |
+ **$base_pair** | **string**  | The target fiat asset to get the exchange rate for | [optional] [default to &#39;EUR&#39;]
 
 ### Return type
 
@@ -37,36 +37,6 @@ Get the current exchange rate for exchanging fiat/crypto assets
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The fiat or crypto asset to exchange
-$currency = 'BTC';
-
-// The target fiat asset to get the exchange rate for
-$base_pair = 'USD';
-
-try {
-    /** @var \Tatum\Model\ExchangeRate $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->exchangeRate()
-        ->getExchangeRate($currency, $base_pair);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling exchangeRate()->getExchangeRate(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling exchangeRate()->getExchangeRate(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getExchangeRate.php"](../../samples/Api/ExchangeRateApi/getExchangeRate.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

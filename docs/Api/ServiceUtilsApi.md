@@ -35,28 +35,7 @@ Freeze API Key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->serviceUtils()
-        ->freezeApiKey();
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling serviceUtils()->freezeApiKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling serviceUtils()->freezeApiKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "freezeApiKey.php"](../../samples/Api/ServiceUtilsApi/freezeApiKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -85,31 +64,7 @@ Get information about your credit consumption for the last month
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\Consumption[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->serviceUtils()
-        ->getCredits();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling serviceUtils()->getCredits(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling serviceUtils()->getCredits(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getCredits.php"](../../samples/Api/ServiceUtilsApi/getCredits.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -138,31 +93,7 @@ Get API version
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\GetVersion200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->serviceUtils()
-        ->getVersion();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling serviceUtils()->getVersion(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling serviceUtils()->getVersion(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getVersion.php"](../../samples/Api/ServiceUtilsApi/getVersion.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -191,27 +122,6 @@ Unfreeze API Key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->serviceUtils()
-        ->unfreezeApiKey();
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling serviceUtils()->unfreezeApiKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling serviceUtils()->unfreezeApiKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "unfreezeApiKey.php"](../../samples/Api/ServiceUtilsApi/unfreezeApiKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

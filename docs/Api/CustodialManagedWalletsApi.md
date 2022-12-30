@@ -25,7 +25,7 @@ $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialCreateWall
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$custodial_create_wallet_request** | [**\Tatum\Model\CustodialCreateWalletRequest**](../Model/CustodialCreateWalletRequest.md)|  | [optional]
+ **$custodial_create_wallet_request** | [**\Tatum\Model\CustodialCreateWalletRequest**](../Model/CustodialCreateWalletRequest.md) |  | [optional]
 
 ### Return type
 
@@ -39,33 +39,7 @@ Create managed address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$custodial_create_wallet_request = new \Tatum\Model\CustodialCreateWalletRequest();
-
-try {
-    /** @var \Tatum\Model\CustodialManagedAddress $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->custodialManagedWallets()
-        ->custodialCreateWallet($custodial_create_wallet_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling custodialManagedWallets()->custodialCreateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling custodialManagedWallets()->custodialCreateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "custodialCreateWallet.php"](../../samples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -83,7 +57,7 @@ $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialDeleteWall
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| WalletID of the managed address |
+ **$id** | **string**  | WalletID of the managed address |
 
 ### Return type
 
@@ -97,31 +71,7 @@ Delete managed address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// WalletID of the managed address
-$id = '3ad54647-4166-4d34-9186-fd46caaba945';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->custodialManagedWallets()
-        ->custodialDeleteWallet($id);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling custodialManagedWallets()->custodialDeleteWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling custodialManagedWallets()->custodialDeleteWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "custodialDeleteWallet.php"](../../samples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -140,8 +90,8 @@ $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$id** | **string**| WalletID of the managed address |
- **$export** | **bool**| If set to \&quot;true\&quot;, returns the private key in the response; if not set, defaults to \&quot;false\&quot; (the private key is not included in the response) | [optional] [default to false]
+ **$id** | **string**  | WalletID of the managed address |
+ **$export** | **bool**  | If set to \&quot;true\&quot;, returns the private key in the response; if not set, defaults to \&quot;false\&quot; (the private key is not included in the response) | [optional] [default to false]
 
 ### Return type
 
@@ -155,37 +105,7 @@ Get managed address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// WalletID of the managed address
-$id = '3ad54647-4166-4d34-9186-fd46caaba945';
-
-// If set to "true", returns the private key in the response; if not set, defaults to "false" (the private key is not included in the response)
-$export = 'false';
-
-try {
-    /** @var \Tatum\Model\CustodialManagedAddress[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->custodialManagedWallets()
-        ->custodialGetWallet($id, $export);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling custodialManagedWallets()->custodialGetWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling custodialManagedWallets()->custodialGetWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "custodialGetWallet.php"](../../samples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,31 +134,7 @@ Get managed addresses
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\CustodialManagedAddress[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->custodialManagedWallets()
-        ->custodialGetWallets();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling custodialManagedWallets()->custodialGetWallets(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling custodialManagedWallets()->custodialGetWallets(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "custodialGetWallets.php"](../../samples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -256,7 +152,7 @@ $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialTransferMa
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_managed_address** | [**\Tatum\Model\TransferManagedAddress**](../Model/TransferManagedAddress.md)|  | [optional]
+ **$transfer_managed_address** | [**\Tatum\Model\TransferManagedAddress**](../Model/TransferManagedAddress.md) |  | [optional]
 
 ### Return type
 
@@ -270,32 +166,6 @@ Sign and transfer using managed address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$transfer_managed_address = new \Tatum\Model\TransferManagedAddress();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->custodialManagedWallets()
-        ->custodialTransferManagedAddress($transfer_managed_address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling custodialManagedWallets()->custodialTransferManagedAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling custodialManagedWallets()->custodialTransferManagedAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "custodialTransferManagedAddress.php"](../../samples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

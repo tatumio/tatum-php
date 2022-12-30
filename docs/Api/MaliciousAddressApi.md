@@ -21,7 +21,7 @@ $sdk->{mainnet/testnet}()->api()->maliciousAddress()->checkMalicousAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Blockchain Address to check |
+ **$address** | **string**  | Blockchain Address to check |
 
 ### Return type
 
@@ -35,33 +35,6 @@ Check malicous address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain Address to check
-$address = '0x002Bf459dC58584D58886169EA0E80f3Ca95FFAF';
-
-try {
-    /** @var \Tatum\Model\CheckMalicousAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->maliciousAddress()
-        ->checkMalicousAddress($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling maliciousAddress()->checkMalicousAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling maliciousAddress()->checkMalicousAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "checkMalicousAddress.php"](../../samples/Api/MaliciousAddressApi/checkMalicousAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

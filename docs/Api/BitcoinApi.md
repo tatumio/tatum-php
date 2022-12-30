@@ -34,7 +34,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
 
 ### Return type
 
@@ -48,33 +48,7 @@ Broadcast a signed Bitcoin transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcBroadcast($broadcast_kms);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcBroadcast.php"](../../samples/Api/BitcoinApi/btcBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -93,8 +67,8 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of a wallet. |
- **$index** | **float**| Derivation index of the desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of a wallet. |
+ **$index** | **float**  | Derivation index of the desired address to be generated. |
 
 ### Return type
 
@@ -108,37 +82,7 @@ Generate a Bitcoin address from the wallet's extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of a wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of the desired address to be generated.
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\GeneratedAddressBtc $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGenerateAddress.php"](../../samples/Api/BitcoinApi/btcGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -156,7 +100,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -170,33 +114,7 @@ Generate the private key for a Bitcoin address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGenerateAddressPrivateKey.php"](../../samples/Api/BitcoinApi/btcGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,7 +132,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -228,34 +146,7 @@ Generate a Bitcoin wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGenerateWallet.php"](../../samples/Api/BitcoinApi/btcGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -273,7 +164,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBalanceOfAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| The blockchain address to get the balance for |
+ **$address** | **string**  | The blockchain address to get the balance for |
 
 ### Return type
 
@@ -287,34 +178,7 @@ Get the balance of a Bitcoin address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain address to get the balance for
-$address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
-
-try {
-    /** @var \Tatum\Model\BtcBasedBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetBalanceOfAddress($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetBalanceOfAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetBalanceOfAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetBalanceOfAddress.php"](../../samples/Api/BitcoinApi/btcGetBalanceOfAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -332,7 +196,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or height. |
+ **$hash** | **string**  | Block hash or height. |
 
 ### Return type
 
@@ -346,34 +210,7 @@ Get a Bitcoin block by its hash or height
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or height.
-$hash = '00000000ca231a439a5c0a86a5a5dd6dc1918a8e897b96522fa9499288e70183';
-
-try {
-    /** @var \Tatum\Model\BtcBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetBlock($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetBlock.php"](../../samples/Api/BitcoinApi/btcGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -402,31 +239,7 @@ Get Bitcoin blockchain information
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\BtcInfo $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetBlockChainInfo();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetBlockChainInfo(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetBlockChainInfo.php"](../../samples/Api/BitcoinApi/btcGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -444,7 +257,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockHash(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$i** | **float**| The number of blocks preceding a particular block on a blockchain. |
+ **$i** | **float**  | The number of blocks preceding a particular block on a blockchain. |
 
 ### Return type
 
@@ -458,34 +271,7 @@ Get the hash of a Bitcoin block
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The number of blocks preceding a particular block on a blockchain.
-$i = 1580117;
-
-try {
-    /** @var \Tatum\Model\BtcBlockHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetBlockHash($i);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetBlockHash(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetBlockHash(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetBlockHash.php"](../../samples/Api/BitcoinApi/btcGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -514,31 +300,7 @@ Get transactions from the Bitcoin mempool
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetMempool();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetMempool(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetMempool(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetMempool.php"](../../samples/Api/BitcoinApi/btcGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -556,7 +318,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetRawTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
+ **$hash** | **string**  | Transaction hash |
 
 ### Return type
 
@@ -570,34 +332,7 @@ Get a Bitcoin transaction by its hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '1451692ebbfbea1a2d2ec6fe6782596b6aa2e46c0589d04c406f491b5b46bc6a';
-
-try {
-    /** @var \Tatum\Model\BtcTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetRawTransaction($hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetRawTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetRawTransaction.php"](../../samples/Api/BitcoinApi/btcGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -617,9 +352,9 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetTxByAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address |
- **$page_size** | **float**| Max number of items per page is 50. |
- **$offset** | **float**| Offset to obtain the next page of data. | [optional]
+ **$address** | **string**  | Address |
+ **$page_size** | **float**  | Max number of items per page is 50. |
+ **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
 
 ### Return type
 
@@ -633,40 +368,7 @@ Get all transactions for a Bitcoin address
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address
-$address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
-
-// Max number of items per page is 50.
-$page_size = 10;
-
-// Offset to obtain the next page of data.
-$offset = 0;
-
-try {
-    /** @var \Tatum\Model\BtcTx[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetTxByAddress($address, $page_size, $offset);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetTxByAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetTxByAddress.php"](../../samples/Api/BitcoinApi/btcGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -685,8 +387,8 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| The transaction hash |
- **$index** | **float**| The index of the transaction output that you want to check for the UTXO |
+ **$hash** | **string**  | The transaction hash |
+ **$index** | **float**  | The index of the transaction output that you want to check for the UTXO |
 
 ### Return type
 
@@ -700,37 +402,7 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The transaction hash
-$hash = '53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc';
-
-// The index of the transaction output that you want to check for the UTXO
-$index = 0;
-
-try {
-    /** @var \Tatum\Model\BtcUTXO $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcGetUTXO($hash, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcGetUTXO(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcGetUTXO(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcGetUTXO.php"](../../samples/Api/BitcoinApi/btcGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -748,7 +420,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_rpc_driver_request** | [**\Tatum\Model\BtcRpcDriverRequest**](../Model/BtcRpcDriverRequest.md)|  |
+ **$btc_rpc_driver_request** | [**\Tatum\Model\BtcRpcDriverRequest**](../Model/BtcRpcDriverRequest.md) |  |
 
 ### Return type
 
@@ -762,33 +434,7 @@ Connect to a Bitcoin node through an RPC driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$btc_rpc_driver_request = new \Tatum\Model\BtcRpcDriverRequest();
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcRpcDriver($btc_rpc_driver_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcRpcDriver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcRpcDriver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcRpcDriver.php"](../../samples/Api/BitcoinApi/btcRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -806,7 +452,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransferBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_transfer_blockchain_request** | [**\Tatum\Model\BtcTransferBlockchainRequest**](../Model/BtcTransferBlockchainRequest.md)|  |
+ **$btc_transfer_blockchain_request** | [**\Tatum\Model\BtcTransferBlockchainRequest**](../Model/BtcTransferBlockchainRequest.md) |  |
 
 ### Return type
 
@@ -820,32 +466,6 @@ Send BTC to Bitcoin addresses
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$btc_transfer_blockchain_request = new \Tatum\Model\BtcTransferBlockchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->bitcoin()
-        ->btcTransferBlockchain($btc_transfer_blockchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling bitcoin()->btcTransferBlockchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling bitcoin()->btcTransferBlockchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcTransferBlockchain.php"](../../samples/Api/BitcoinApi/btcTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

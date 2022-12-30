@@ -64,7 +64,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->adaTransferOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ada_transfer_offchain_request** | [**\Tatum\Model\AdaTransferOffchainRequest**](../Model/AdaTransferOffchainRequest.md)|  |
+ **$ada_transfer_offchain_request** | [**\Tatum\Model\AdaTransferOffchainRequest**](../Model/AdaTransferOffchainRequest.md) |  |
 
 ### Return type
 
@@ -78,33 +78,7 @@ Send ADA from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$ada_transfer_offchain_request = new \Tatum\Model\AdaTransferOffchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->adaTransferOffchain($ada_transfer_offchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->adaTransferOffchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->adaTransferOffchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "adaTransferOffchain.php"](../../samples/Api/BlockchainOperationsApi/adaTransferOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -122,7 +96,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->algoDeployErc20Ledger(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algo_deploy_erc20_ledger_request** | [**\Tatum\Model\AlgoDeployErc20LedgerRequest**](../Model/AlgoDeployErc20LedgerRequest.md)|  |
+ **$algo_deploy_erc20_ledger_request** | [**\Tatum\Model\AlgoDeployErc20LedgerRequest**](../Model/AlgoDeployErc20LedgerRequest.md) |  |
 
 ### Return type
 
@@ -136,33 +110,7 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$algo_deploy_erc20_ledger_request = new \Tatum\Model\AlgoDeployErc20LedgerRequest();
-
-try {
-    /** @var \Tatum\Model\AlgoDeployErc20Ledger200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->algoDeployErc20Ledger($algo_deploy_erc20_ledger_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->algoDeployErc20Ledger(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->algoDeployErc20Ledger(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algoDeployErc20Ledger.php"](../../samples/Api/BlockchainOperationsApi/algoDeployErc20Ledger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -180,7 +128,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->algoTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algo_transfer_request** | [**\Tatum\Model\AlgoTransferRequest**](../Model/AlgoTransferRequest.md)|  |
+ **$algo_transfer_request** | [**\Tatum\Model\AlgoTransferRequest**](../Model/AlgoTransferRequest.md) |  |
 
 ### Return type
 
@@ -194,33 +142,7 @@ Send ALGO from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$algo_transfer_request = new \Tatum\Model\AlgoTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->algoTransfer($algo_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->algoTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->algoTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "algoTransfer.php"](../../samples/Api/BlockchainOperationsApi/algoTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -238,7 +160,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bchTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_transfer_request** | [**\Tatum\Model\BchTransferRequest**](../Model/BchTransferRequest.md)|  |
+ **$bch_transfer_request** | [**\Tatum\Model\BchTransferRequest**](../Model/BchTransferRequest.md) |  |
 
 ### Return type
 
@@ -252,33 +174,7 @@ Send BCH from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bch_transfer_request = new \Tatum\Model\BchTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->bchTransfer($bch_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->bchTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->bchTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bchTransfer.php"](../../samples/Api/BlockchainOperationsApi/bchTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -296,7 +192,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbAssetOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_bnb_asset** | [**\Tatum\Model\CreateBnbAsset**](../Model/CreateBnbAsset.md)|  |
+ **$create_bnb_asset** | [**\Tatum\Model\CreateBnbAsset**](../Model/CreateBnbAsset.md) |  |
 
 ### Return type
 
@@ -310,30 +206,7 @@ Create a BNB-based asset
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_bnb_asset = new \Tatum\Model\CreateBnbAsset();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->bnbAssetOffchain($create_bnb_asset);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->bnbAssetOffchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->bnbAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbAssetOffchain.php"](../../samples/Api/BlockchainOperationsApi/bnbAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -351,7 +224,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bnb_transfer_request** | [**\Tatum\Model\BnbTransferRequest**](../Model/BnbTransferRequest.md)|  |
+ **$bnb_transfer_request** | [**\Tatum\Model\BnbTransferRequest**](../Model/BnbTransferRequest.md) |  |
 
 ### Return type
 
@@ -365,33 +238,7 @@ Send BNB from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bnb_transfer_request = new \Tatum\Model\BnbTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->bnbTransfer($bnb_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->bnbTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->bnbTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bnbTransfer.php"](../../samples/Api/BlockchainOperationsApi/bnbTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -409,7 +256,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bscDeployBep20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md) |  |
 
 ### Return type
 
@@ -423,33 +270,7 @@ Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual a
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->bscDeployBep20($eth_deploy_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->bscDeployBep20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->bscDeployBep20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscDeployBep20.php"](../../samples/Api/BlockchainOperationsApi/bscDeployBep20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -467,7 +288,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bscOrBepTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_or_bep_transfer_request** | [**\Tatum\Model\BscOrBepTransferRequest**](../Model/BscOrBepTransferRequest.md)|  |
+ **$bsc_or_bep_transfer_request** | [**\Tatum\Model\BscOrBepTransferRequest**](../Model/BscOrBepTransferRequest.md) |  |
 
 ### Return type
 
@@ -481,33 +302,7 @@ Send BSC from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$bsc_or_bep_transfer_request = new \Tatum\Model\BscOrBepTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->bscOrBepTransfer($bsc_or_bep_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->bscOrBepTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->bscOrBepTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "bscOrBepTransfer.php"](../../samples/Api/BlockchainOperationsApi/bscOrBepTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -525,7 +320,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->btcTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_transfer_request** | [**\Tatum\Model\BtcTransferRequest**](../Model/BtcTransferRequest.md)|  |
+ **$btc_transfer_request** | [**\Tatum\Model\BtcTransferRequest**](../Model/BtcTransferRequest.md) |  |
 
 ### Return type
 
@@ -539,33 +334,7 @@ Send BTC from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$btc_transfer_request = new \Tatum\Model\BtcTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->btcTransfer($btc_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->btcTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->btcTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "btcTransfer.php"](../../samples/Api/BlockchainOperationsApi/btcTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -583,7 +352,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->celoDeployErc20Ledger(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_deploy_erc20_ledger_request** | [**\Tatum\Model\CeloDeployErc20LedgerRequest**](../Model/CeloDeployErc20LedgerRequest.md)|  |
+ **$celo_deploy_erc20_ledger_request** | [**\Tatum\Model\CeloDeployErc20LedgerRequest**](../Model/CeloDeployErc20LedgerRequest.md) |  |
 
 ### Return type
 
@@ -597,33 +366,7 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$celo_deploy_erc20_ledger_request = new \Tatum\Model\CeloDeployErc20LedgerRequest();
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->celoDeployErc20Ledger($celo_deploy_erc20_ledger_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->celoDeployErc20Ledger(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->celoDeployErc20Ledger(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoDeployErc20Ledger.php"](../../samples/Api/BlockchainOperationsApi/celoDeployErc20Ledger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -641,7 +384,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->celoOrErc20Transfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_or_erc20_transfer_request** | [**\Tatum\Model\CeloOrErc20TransferRequest**](../Model/CeloOrErc20TransferRequest.md)|  |
+ **$celo_or_erc20_transfer_request** | [**\Tatum\Model\CeloOrErc20TransferRequest**](../Model/CeloOrErc20TransferRequest.md) |  |
 
 ### Return type
 
@@ -655,33 +398,7 @@ Send CELO from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$celo_or_erc20_transfer_request = new \Tatum\Model\CeloOrErc20TransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->celoOrErc20Transfer($celo_or_erc20_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->celoOrErc20Transfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->celoOrErc20Transfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "celoOrErc20Transfer.php"](../../samples/Api/BlockchainOperationsApi/celoOrErc20Transfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -699,7 +416,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createBep20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md) |  |
 
 ### Return type
 
@@ -713,33 +430,7 @@ Register a new BNB Smart Chain BEP-20 token in the virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_erc20_request = new \Tatum\Model\CreateErc20Request();
-
-try {
-    /** @var \Tatum\Model\Erc20Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->createBep20($create_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->createBep20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->createBep20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createBep20.php"](../../samples/Api/BlockchainOperationsApi/createBep20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -757,7 +448,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createCeloErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md) |  |
 
 ### Return type
 
@@ -771,33 +462,7 @@ Register a new Celo ERC-20-equivalent token in the virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_erc20_request = new \Tatum\Model\CreateErc20Request();
-
-try {
-    /** @var \Tatum\Model\Erc20Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->createCeloErc20($create_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->createCeloErc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->createCeloErc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createCeloErc20.php"](../../samples/Api/BlockchainOperationsApi/createCeloErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -815,7 +480,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md) |  |
 
 ### Return type
 
@@ -829,33 +494,7 @@ Register a new Ethereum ERC-20 token in the virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_erc20_request = new \Tatum\Model\CreateErc20Request();
-
-try {
-    /** @var \Tatum\Model\Erc20Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->createErc20($create_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->createErc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->createErc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createErc20.php"](../../samples/Api/BlockchainOperationsApi/createErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -873,7 +512,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createHrm20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md) |  |
 
 ### Return type
 
@@ -887,33 +526,7 @@ Register a new Harmony HRM-20 token in the virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_erc20_request = new \Tatum\Model\CreateErc20Request();
-
-try {
-    /** @var \Tatum\Model\Erc20Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->createHrm20($create_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->createHrm20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->createHrm20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createHrm20.php"](../../samples/Api/BlockchainOperationsApi/createHrm20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -931,7 +544,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createTrc(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_trc_request** | [**\Tatum\Model\CreateTrcRequest**](../Model/CreateTrcRequest.md)|  |
+ **$create_trc_request** | [**\Tatum\Model\CreateTrcRequest**](../Model/CreateTrcRequest.md) |  |
 
 ### Return type
 
@@ -945,33 +558,7 @@ Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_trc_request = new \Tatum\Model\CreateTrcRequest();
-
-try {
-    /** @var \Tatum\Model\Trc20Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->createTrc($create_trc_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->createTrc(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->createTrc(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createTrc.php"](../../samples/Api/BlockchainOperationsApi/createTrc.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -989,7 +576,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->createXdc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md) |  |
 
 ### Return type
 
@@ -1003,33 +590,7 @@ Register a new XinFin ERC-20-equivalent token in the virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_erc20_request = new \Tatum\Model\CreateErc20Request();
-
-try {
-    /** @var \Tatum\Model\Erc20Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->createXdc20($create_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->createXdc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->createXdc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "createXdc20.php"](../../samples/Api/BlockchainOperationsApi/createXdc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1047,7 +608,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->dogeTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$doge_transfer_request** | [**\Tatum\Model\DogeTransferRequest**](../Model/DogeTransferRequest.md)|  |
+ **$doge_transfer_request** | [**\Tatum\Model\DogeTransferRequest**](../Model/DogeTransferRequest.md) |  |
 
 ### Return type
 
@@ -1061,33 +622,7 @@ Send DOGE from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$doge_transfer_request = new \Tatum\Model\DogeTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->dogeTransfer($doge_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->dogeTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->dogeTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "dogeTransfer.php"](../../samples/Api/BlockchainOperationsApi/dogeTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1105,7 +640,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->egldTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md) |  |
 
 ### Return type
 
@@ -1119,33 +654,7 @@ Send EGLD from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_transfer_request = new \Tatum\Model\EthTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->egldTransfer($eth_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->egldTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->egldTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "egldTransfer.php"](../../samples/Api/BlockchainOperationsApi/egldTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1163,7 +672,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethDeployErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md) |  |
 
 ### Return type
 
@@ -1177,33 +686,7 @@ Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->ethDeployErc20($eth_deploy_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->ethDeployErc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->ethDeployErc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethDeployErc20.php"](../../samples/Api/BlockchainOperationsApi/ethDeployErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1221,7 +704,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md) |  |
 
 ### Return type
 
@@ -1235,33 +718,7 @@ Send ETH from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_transfer_request = new \Tatum\Model\EthTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->ethTransfer($eth_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->ethTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->ethTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethTransfer.php"](../../samples/Api/BlockchainOperationsApi/ethTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1279,7 +736,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ethTransferErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_erc20_request** | [**\Tatum\Model\EthTransferErc20Request**](../Model/EthTransferErc20Request.md)|  |
+ **$eth_transfer_erc20_request** | [**\Tatum\Model\EthTransferErc20Request**](../Model/EthTransferErc20Request.md) |  |
 
 ### Return type
 
@@ -1293,33 +750,7 @@ Send Ethereum ERC-20 tokens from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_transfer_erc20_request = new \Tatum\Model\EthTransferErc20Request();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->ethTransferErc20($eth_transfer_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->ethTransferErc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->ethTransferErc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ethTransferErc20.php"](../../samples/Api/BlockchainOperationsApi/ethTransferErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1337,7 +768,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->flowTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transfer_request** | [**\Tatum\Model\FlowTransferRequest**](../Model/FlowTransferRequest.md)|  |
+ **$flow_transfer_request** | [**\Tatum\Model\FlowTransferRequest**](../Model/FlowTransferRequest.md) |  |
 
 ### Return type
 
@@ -1351,33 +782,7 @@ Send FLOW from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$flow_transfer_request = new \Tatum\Model\FlowTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->flowTransfer($flow_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->flowTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->flowTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "flowTransfer.php"](../../samples/Api/BlockchainOperationsApi/flowTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1395,7 +800,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->kcsDeployErc20Ledger(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_deploy_erc20_ledger_request** | [**\Tatum\Model\KcsDeployErc20LedgerRequest**](../Model/KcsDeployErc20LedgerRequest.md)|  |
+ **$kcs_deploy_erc20_ledger_request** | [**\Tatum\Model\KcsDeployErc20LedgerRequest**](../Model/KcsDeployErc20LedgerRequest.md) |  |
 
 ### Return type
 
@@ -1409,33 +814,7 @@ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the bl
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$kcs_deploy_erc20_ledger_request = new \Tatum\Model\KcsDeployErc20LedgerRequest();
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->kcsDeployErc20Ledger($kcs_deploy_erc20_ledger_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->kcsDeployErc20Ledger(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->kcsDeployErc20Ledger(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsDeployErc20Ledger.php"](../../samples/Api/BlockchainOperationsApi/kcsDeployErc20Ledger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1453,7 +832,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->kcsTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_transfer_request** | [**\Tatum\Model\KcsTransferRequest**](../Model/KcsTransferRequest.md)|  |
+ **$kcs_transfer_request** | [**\Tatum\Model\KcsTransferRequest**](../Model/KcsTransferRequest.md) |  |
 
 ### Return type
 
@@ -1467,33 +846,7 @@ Send KCS from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$kcs_transfer_request = new \Tatum\Model\KcsTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->kcsTransfer($kcs_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->kcsTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->kcsTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "kcsTransfer.php"](../../samples/Api/BlockchainOperationsApi/kcsTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1511,7 +864,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->klayDeployErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md) |  |
 
 ### Return type
 
@@ -1525,33 +878,7 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->klayDeployErc20($eth_deploy_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->klayDeployErc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->klayDeployErc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "klayDeployErc20.php"](../../samples/Api/BlockchainOperationsApi/klayDeployErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1569,7 +896,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->klayTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md) |  |
 
 ### Return type
 
@@ -1583,33 +910,7 @@ Send KLAY from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_transfer_request = new \Tatum\Model\EthTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->klayTransfer($eth_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->klayTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->klayTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "klayTransfer.php"](../../samples/Api/BlockchainOperationsApi/klayTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1627,7 +928,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->ltcTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ltc_transfer_request** | [**\Tatum\Model\LtcTransferRequest**](../Model/LtcTransferRequest.md)|  |
+ **$ltc_transfer_request** | [**\Tatum\Model\LtcTransferRequest**](../Model/LtcTransferRequest.md) |  |
 
 ### Return type
 
@@ -1641,33 +942,7 @@ Send LTC from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$ltc_transfer_request = new \Tatum\Model\LtcTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->ltcTransfer($ltc_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->ltcTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->ltcTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "ltcTransfer.php"](../../samples/Api/BlockchainOperationsApi/ltcTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1686,8 +961,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneDeployHrm20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
- **$shard_id** | **float**| Shard to operate on | [optional] [default to 0]
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md) |  |
+ **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
 
 ### Return type
 
@@ -1701,36 +976,7 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
-
-// Shard to operate on
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->oneDeployHrm20($eth_deploy_erc20_request, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->oneDeployHrm20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->oneDeployHrm20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneDeployHrm20.php"](../../samples/Api/BlockchainOperationsApi/oneDeployHrm20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1749,8 +995,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->oneTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
- **$shard_id** | **float**| Shard to operate on | [optional] [default to 0]
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md) |  |
+ **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
 
 ### Return type
 
@@ -1764,36 +1010,7 @@ Send ONE from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_transfer_request = new \Tatum\Model\EthTransferRequest();
-
-// Shard to operate on
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->oneTransfer($eth_transfer_request, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->oneTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->oneTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneTransfer.php"](../../samples/Api/BlockchainOperationsApi/oneTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1811,7 +1028,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->polygonTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md) |  |
 
 ### Return type
 
@@ -1825,33 +1042,7 @@ Send MATIC from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_transfer_request = new \Tatum\Model\EthTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->polygonTransfer($eth_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->polygonTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->polygonTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "polygonTransfer.php"](../../samples/Api/BlockchainOperationsApi/polygonTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1870,8 +1061,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->registerErc20Token(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| Blockchain to work with |
- **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md)|  |
+ **$chain** | **string**  | Blockchain to work with |
+ **$create_erc20_request** | [**\Tatum\Model\CreateErc20Request**](../Model/CreateErc20Request.md) |  |
 
 ### Return type
 
@@ -1885,36 +1076,7 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Blockchain to work with
-$chain = 'ETH';
-
-$create_erc20_request = new \Tatum\Model\CreateErc20Request();
-
-try {
-    /** @var \Tatum\Model\Erc20Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->registerErc20Token($chain, $create_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->registerErc20Token(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->registerErc20Token(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "registerErc20Token.php"](../../samples/Api/BlockchainOperationsApi/registerErc20Token.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1932,7 +1094,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->solTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sol_transfer_request** | [**\Tatum\Model\SolTransferRequest**](../Model/SolTransferRequest.md)|  |
+ **$sol_transfer_request** | [**\Tatum\Model\SolTransferRequest**](../Model/SolTransferRequest.md) |  |
 
 ### Return type
 
@@ -1946,33 +1108,7 @@ Send SOL from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$sol_transfer_request = new \Tatum\Model\SolTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->solTransfer($sol_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->solTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->solTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "solTransfer.php"](../../samples/Api/BlockchainOperationsApi/solTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1991,8 +1127,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeCeloErc20Address(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| ERC-20 contract address |
- **$name** | **string**| ERC-20 symbol name. |
+ **$address** | **string**  | ERC-20 contract address |
+ **$name** | **string**  | ERC-20 symbol name. |
 
 ### Return type
 
@@ -2006,34 +1142,7 @@ Set the contract address of a Celo ERC-20-equivalent token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// ERC-20 contract address
-$address = '0x687422eEA2cB73B5d3e242bA5456b782919AFc85';
-
-// ERC-20 symbol name.
-$name = 'MY_TOKEN';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->storeCeloErc20Address($address, $name);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->storeCeloErc20Address(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->storeCeloErc20Address(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "storeCeloErc20Address.php"](../../samples/Api/BlockchainOperationsApi/storeCeloErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2052,8 +1161,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Contract address or token ID |
- **$name** | **string**| Symbol name. |
+ **$address** | **string**  | Contract address or token ID |
+ **$name** | **string**  | Symbol name. |
 
 ### Return type
 
@@ -2067,34 +1176,7 @@ Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Contract address or token ID
-$address = '0x687422eEA2cB73B5d3e242bA5456b782919AFc85';
-
-// Symbol name.
-$name = 'MY_TOKEN';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->storeTokenAddress($address, $name);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->storeTokenAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->storeTokenAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "storeTokenAddress.php"](../../samples/Api/BlockchainOperationsApi/storeTokenAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2113,8 +1195,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTrcAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| TRC-10 Token ID or TRC-20 contract address |
- **$name** | **string**| TRC 10/20 symbol name. |
+ **$address** | **string**  | TRC-10 Token ID or TRC-20 contract address |
+ **$name** | **string**  | TRC 10/20 symbol name. |
 
 ### Return type
 
@@ -2128,34 +1210,7 @@ Set the contract address of a TRC-10 or TRC-20 token
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// TRC-10 Token ID or TRC-20 contract address
-$address = 'TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW';
-
-// TRC 10/20 symbol name.
-$name = 'MY_TOKEN';
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->storeTrcAddress($address, $name);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->storeTrcAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->storeTrcAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "storeTrcAddress.php"](../../samples/Api/BlockchainOperationsApi/storeTrcAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2173,7 +1228,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->tronDeployTrc(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_deploy_trc_request** | [**\Tatum\Model\TronDeployTrcRequest**](../Model/TronDeployTrcRequest.md)|  |
+ **$tron_deploy_trc_request** | [**\Tatum\Model\TronDeployTrcRequest**](../Model/TronDeployTrcRequest.md) |  |
 
 ### Return type
 
@@ -2187,33 +1242,7 @@ Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual ac
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_deploy_trc_request = new \Tatum\Model\TronDeployTrcRequest();
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->tronDeployTrc($tron_deploy_trc_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->tronDeployTrc(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->tronDeployTrc(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronDeployTrc.php"](../../samples/Api/BlockchainOperationsApi/tronDeployTrc.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2231,7 +1260,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->tronTransferOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_transfer_offchain_request** | [**\Tatum\Model\TronTransferOffchainRequest**](../Model/TronTransferOffchainRequest.md)|  |
+ **$tron_transfer_offchain_request** | [**\Tatum\Model\TronTransferOffchainRequest**](../Model/TronTransferOffchainRequest.md) |  |
 
 ### Return type
 
@@ -2245,33 +1274,7 @@ Send TRON from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$tron_transfer_offchain_request = new \Tatum\Model\TronTransferOffchainRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->tronTransferOffchain($tron_transfer_offchain_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->tronTransferOffchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->tronTransferOffchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "tronTransferOffchain.php"](../../samples/Api/BlockchainOperationsApi/tronTransferOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2289,7 +1292,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xdcDeployErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md)|  |
+ **$eth_deploy_erc20_request** | [**\Tatum\Model\EthDeployErc20Request**](../Model/EthDeployErc20Request.md) |  |
 
 ### Return type
 
@@ -2303,33 +1306,7 @@ Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_deploy_erc20_request = new \Tatum\Model\EthDeployErc20Request();
-
-try {
-    /** @var \Tatum\Model\EthDeployErc20200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->xdcDeployErc20($eth_deploy_erc20_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->xdcDeployErc20(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->xdcDeployErc20(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xdcDeployErc20.php"](../../samples/Api/BlockchainOperationsApi/xdcDeployErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2347,7 +1324,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xdcTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md)|  |
+ **$eth_transfer_request** | [**\Tatum\Model\EthTransferRequest**](../Model/EthTransferRequest.md) |  |
 
 ### Return type
 
@@ -2361,33 +1338,7 @@ Send XDC from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$eth_transfer_request = new \Tatum\Model\EthTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->xdcTransfer($eth_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->xdcTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->xdcTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xdcTransfer.php"](../../samples/Api/BlockchainOperationsApi/xdcTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2405,7 +1356,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmAssetOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_xlm_asset** | [**\Tatum\Model\CreateXlmAsset**](../Model/CreateXlmAsset.md)|  |
+ **$create_xlm_asset** | [**\Tatum\Model\CreateXlmAsset**](../Model/CreateXlmAsset.md) |  |
 
 ### Return type
 
@@ -2419,30 +1370,7 @@ Create an XLM-based asset
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_xlm_asset = new \Tatum\Model\CreateXlmAsset();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->xlmAssetOffchain($create_xlm_asset);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->xlmAssetOffchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->xlmAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmAssetOffchain.php"](../../samples/Api/BlockchainOperationsApi/xlmAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2460,7 +1388,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xlm_transfer_request** | [**\Tatum\Model\XlmTransferRequest**](../Model/XlmTransferRequest.md)|  |
+ **$xlm_transfer_request** | [**\Tatum\Model\XlmTransferRequest**](../Model/XlmTransferRequest.md) |  |
 
 ### Return type
 
@@ -2474,33 +1402,7 @@ Send XLM from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xlm_transfer_request = new \Tatum\Model\XlmTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->xlmTransfer($xlm_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->xlmTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->xlmTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xlmTransfer.php"](../../samples/Api/BlockchainOperationsApi/xlmTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2518,7 +1420,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpAssetOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_xrp_asset** | [**\Tatum\Model\CreateXrpAsset**](../Model/CreateXrpAsset.md)|  |
+ **$create_xrp_asset** | [**\Tatum\Model\CreateXrpAsset**](../Model/CreateXrpAsset.md) |  |
 
 ### Return type
 
@@ -2532,30 +1434,7 @@ Create XRP based Asset
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$create_xrp_asset = new \Tatum\Model\CreateXrpAsset();
-
-try {
-        $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->xrpAssetOffchain($create_xrp_asset);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->xrpAssetOffchain(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->xrpAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpAssetOffchain.php"](../../samples/Api/BlockchainOperationsApi/xrpAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -2573,7 +1452,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_transfer_request** | [**\Tatum\Model\XrpTransferRequest**](../Model/XrpTransferRequest.md)|  |
+ **$xrp_transfer_request** | [**\Tatum\Model\XrpTransferRequest**](../Model/XrpTransferRequest.md) |  |
 
 ### Return type
 
@@ -2587,32 +1466,6 @@ Send XRP from a virtual account to the blockchain
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$xrp_transfer_request = new \Tatum\Model\XrpTransferRequest();
-
-try {
-    /** @var \Tatum\Model\BtcTransfer200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainOperations()
-        ->xrpTransfer($xrp_transfer_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainOperations()->xrpTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainOperations()->xrpTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "xrpTransfer.php"](../../samples/Api/BlockchainOperationsApi/xrpTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

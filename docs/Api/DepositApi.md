@@ -29,14 +29,14 @@ $sdk->{mainnet/testnet}()->api()->deposit()->getDeposits(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. | [optional]
- **$page** | **float**| Page number | [optional]
- **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
- **$status** | **string**| Status of the deposit | [optional]
- **$currency** | **string**| Filter by currency | [optional]
- **$tx_id** | **string**| Filter by txId | [optional]
- **$to** | **string**| Filter by to address | [optional]
- **$account_id** | **string**| Filter by account id | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. | [optional]
+ **$page** | **float**  | Page number | [optional]
+ **$sort** | **string**  | Direction of sorting. Can be asc or desc | [optional]
+ **$status** | **string**  | Status of the deposit | [optional]
+ **$currency** | **string**  | Filter by currency | [optional]
+ **$tx_id** | **string**  | Filter by txId | [optional]
+ **$to** | **string**  | Filter by to address | [optional]
+ **$account_id** | **string**  | Filter by account id | [optional]
 
 ### Return type
 
@@ -50,55 +50,7 @@ List all deposits for product
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 20;
-
-// Page number
-$page = 0;
-
-// Direction of sorting. Can be asc or desc
-$sort = 'asc';
-
-// Status of the deposit
-$status = 'Done';
-
-// Filter by currency
-$currency = 'BTC';
-
-// Filter by txId
-$tx_id = 2.0589336591536965E+76;
-
-// Filter by to address
-$to = 9.557027372635822E+47;
-
-// Filter by account id
-$account_id = '628bae6095e9ad06b52eb229';
-
-try {
-    /** @var \Tatum\Model\Deposit[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->deposit()
-        ->getDeposits($page_size, $page, $sort, $status, $currency, $tx_id, $to, $account_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling deposit()->getDeposits(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling deposit()->getDeposits(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getDeposits.php"](../../samples/Api/DepositApi/getDeposits.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -123,14 +75,14 @@ $sdk->{mainnet/testnet}()->api()->deposit()->getDepositsCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$page_size** | **float**| Max number of items per page is 50. | [optional]
- **$page** | **float**| Page number | [optional]
- **$sort** | **string**| Direction of sorting. Can be asc or desc | [optional]
- **$status** | **string**| Type of the deposit | [optional]
- **$currency** | **string**| Filter by currency | [optional]
- **$tx_id** | **string**| Filter by txId | [optional]
- **$to** | **string**| Filter by to address | [optional]
- **$account_id** | **string**| Filter by account id | [optional]
+ **$page_size** | **float**  | Max number of items per page is 50. | [optional]
+ **$page** | **float**  | Page number | [optional]
+ **$sort** | **string**  | Direction of sorting. Can be asc or desc | [optional]
+ **$status** | **string**  | Type of the deposit | [optional]
+ **$currency** | **string**  | Filter by currency | [optional]
+ **$tx_id** | **string**  | Filter by txId | [optional]
+ **$to** | **string**  | Filter by to address | [optional]
+ **$account_id** | **string**  | Filter by account id | [optional]
 
 ### Return type
 
@@ -144,54 +96,6 @@ Count of found entities for get deposits request
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Max number of items per page is 50.
-$page_size = 20;
-
-// Page number
-$page = 0;
-
-// Direction of sorting. Can be asc or desc
-$sort = 'asc';
-
-// Type of the deposit
-$status = 'Done';
-
-// Filter by currency
-$currency = 'BTC';
-
-// Filter by txId
-$tx_id = 2.0589336591536965E+76;
-
-// Filter by to address
-$to = 9.557027372635822E+47;
-
-// Filter by account id
-$account_id = '628bae6095e9ad06b52eb229';
-
-try {
-    /** @var \Tatum\Model\EntitiesCount $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->deposit()
-        ->getDepositsCount($page_size, $page, $sort, $status, $currency, $tx_id, $to, $account_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling deposit()->getDepositsCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling deposit()->getDepositsCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getDepositsCount.php"](../../samples/Api/DepositApi/getDepositsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -23,8 +23,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainUtils()->getAuctionEstimatedTime(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$date** | **string**| The date and time in the ISO 8601 standard format |
+ **$chain** | **string**  | The blockchain to work with |
+ **$date** | **string**  | The date and time in the ISO 8601 standard format |
 
 ### Return type
 
@@ -38,37 +38,7 @@ Estimate the block height for a future point in time
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// The date and time in the ISO 8601 standard format
-$date = 2021-09-17T07:55:54Z;
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainUtils()
-        ->getAuctionEstimatedTime($chain, $date);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainUtils()->getAuctionEstimatedTime(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainUtils()->getAuctionEstimatedTime(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "getAuctionEstimatedTime.php"](../../samples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -87,8 +57,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainUtils()->sCGetContractAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain** | **string**| The blockchain to work with |
- **$hash** | **string**| The ID (hash) of the deployment transaction |
+ **$chain** | **string**  | The blockchain to work with |
+ **$hash** | **string**  | The ID (hash) of the deployment transaction |
 
 ### Return type
 
@@ -102,36 +72,6 @@ Get the blockchain address of a smart contract by the deployment transaction ID
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// The blockchain to work with
-$chain = 'chain_example';
-
-// The ID (hash) of the deployment transaction
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-try {
-    /** @var \Tatum\Model\SCGetContractAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->blockchainUtils()
-        ->sCGetContractAddress($chain, $hash);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling blockchainUtils()->sCGetContractAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling blockchainUtils()->sCGetContractAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "sCGetContractAddress.php"](../../samples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

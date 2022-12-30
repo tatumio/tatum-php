@@ -34,8 +34,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneBlockchainSmartContractInvocatio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$one_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\OneBlockchainSmartContractInvocationRequest**](../Model/OneBlockchainSmartContractInvocationRequest.md)|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$one_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\OneBlockchainSmartContractInvocationRequest**](../Model/OneBlockchainSmartContractInvocationRequest.md) |  |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -49,36 +49,7 @@ Invoke a method in a smart contract on Harmony
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$one_blockchain_smart_contract_invocation_request = new \Tatum\Model\OneBlockchainSmartContractInvocationRequest();
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneBlockchainSmartContractInvocation($one_blockchain_smart_contract_invocation_request, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneBlockchainSmartContractInvocation(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneBlockchainSmartContractInvocation(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneBlockchainSmartContractInvocation.php"](../../samples/Api/HarmonyApi/oneBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -97,8 +68,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneBlockchainTransfer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$one_blockchain_transfer_request** | [**\Tatum\Model\OneBlockchainTransferRequest**](../Model/OneBlockchainTransferRequest.md)|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$one_blockchain_transfer_request** | [**\Tatum\Model\OneBlockchainTransferRequest**](../Model/OneBlockchainTransferRequest.md) |  |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -112,36 +83,7 @@ Send ONE / HRM20 from account to account
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$one_blockchain_transfer_request = new \Tatum\Model\OneBlockchainTransferRequest();
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\BtcTransferBlockchain200Response $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneBlockchainTransfer($one_blockchain_transfer_request, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneBlockchainTransfer(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneBlockchainTransfer(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneBlockchainTransfer.php"](../../samples/Api/HarmonyApi/oneBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -160,8 +102,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md)|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -175,36 +117,7 @@ Broadcast signed ONE transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$broadcast_kms = new \Tatum\Model\BroadcastKMS();
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneBroadcast($broadcast_kms, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneBroadcast(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneBroadcast(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneBroadcast.php"](../../samples/Api/HarmonyApi/oneBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -222,7 +135,7 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneFormatAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Address in HEX (ETH compatible) format. |
+ **$address** | **string**  | Address in HEX (ETH compatible) format. |
 
 ### Return type
 
@@ -236,34 +149,7 @@ Transform HEX address to Bech32 ONE address format
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Address in HEX (ETH compatible) format.
-$address = '0xa7673161CbfE0116A4De9E341f8465940c2211d4';
-
-try {
-    /** @var \Tatum\Model\GeneratedAddressOne $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneFormatAddress($address);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneFormatAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneFormatAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneFormatAddress.php"](../../samples/Api/HarmonyApi/oneFormatAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -282,8 +168,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xpub** | **string**| Extended public key of wallet. |
- **$index** | **float**| Derivation index of desired address to be generated. |
+ **$xpub** | **string**  | Extended public key of wallet. |
+ **$index** | **float**  | Derivation index of desired address to be generated. |
 
 ### Return type
 
@@ -297,37 +183,7 @@ Generate ONE account address from Extended public key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Extended public key of wallet.
-$xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid';
-
-// Derivation index of desired address to be generated.
-$index = 1;
-
-try {
-    /** @var \Tatum\Model\GeneratedAddressOne $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGenerateAddress($xpub, $index);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGenerateAddress(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGenerateAddress.php"](../../samples/Api/HarmonyApi/oneGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -345,7 +201,7 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md)|  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
 
 ### Return type
 
@@ -359,33 +215,7 @@ Generate ONE private key
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-$priv_key_request = new \Tatum\Model\PrivKeyRequest();
-
-try {
-    /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGenerateAddressPrivateKey($priv_key_request);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGenerateAddressPrivateKey(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGenerateAddressPrivateKey.php"](../../samples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -403,7 +233,7 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mnemonic** | **string**| Mnemonic to use for generation of extended public and private keys. | [optional]
+ **$mnemonic** | **string**  | Mnemonic to use for generation of extended public and private keys. | [optional]
 
 ### Return type
 
@@ -417,34 +247,7 @@ Generate ONE wallet
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Mnemonic to use for generation of extended public and private keys.
-$mnemonic = 'mnemonic_example';
-
-try {
-    /** @var \Tatum\Model\Wallet $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGenerateWallet($mnemonic);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGenerateWallet(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGenerateWallet.php"](../../samples/Api/HarmonyApi/oneGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -463,8 +266,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGetBalance(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| Account address you want to get balance of |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$address** | **string**  | Account address you want to get balance of |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -478,37 +281,7 @@ Get ONE Account balance
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Account address you want to get balance of
-$address = '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\OneBalance $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGetBalance($address, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGetBalance(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGetBalance(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGetBalance.php"](../../samples/Api/HarmonyApi/oneGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -527,8 +300,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGetBlock(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Block hash or block number |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$hash** | **string**  | Block hash or block number |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -542,37 +315,7 @@ Get ONE block by hash
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Block hash or block number
-$hash = 6470657;
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\EthBlock $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGetBlock($hash, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGetBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGetBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGetBlock.php"](../../samples/Api/HarmonyApi/oneGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -601,31 +344,7 @@ Get current block number
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-try {
-    /** @var \Tatum\Model\OneBlockCurrent[] $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGetCurrentBlock();
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGetCurrentBlock(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGetCurrentBlock.php"](../../samples/Api/HarmonyApi/oneGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -644,8 +363,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hash** | **string**| Transaction hash |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$hash** | **string**  | Transaction hash |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -659,37 +378,7 @@ Get ONE Transaction
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Transaction hash
-$hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var \Tatum\Model\OneTx $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGetTransaction($hash, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGetTransaction(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGetTransaction(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGetTransaction.php"](../../samples/Api/HarmonyApi/oneGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -708,8 +397,8 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransactionCount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**| address |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$address** | **string**  | address |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -723,37 +412,7 @@ Get count of outgoing ONE transactions
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// address
-$address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var float $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneGetTransactionCount($address, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneGetTransactionCount(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneGetTransactionCount.php"](../../samples/Api/HarmonyApi/oneGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -773,9 +432,9 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneWeb3Driver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**| Tatum X-API-Key used for authorization. |
- **$body** | **object**|  |
- **$shard_id** | **float**| Shard to read data from | [optional] [default to 0]
+ **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
+ **$body** | **object**  |  |
+ **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
@@ -789,38 +448,6 @@ Web3 HTTP driver
 
 ### Example
 
-```php
-<?php
-
-require_once(__DIR__ . '/autoload.php');
-
-// Tatum SDK
-$sdk = new \Tatum\Sdk();
-
-// Tatum X-API-Key used for authorization.
-$x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
-
-$body = array('key' => new \stdClass);
-
-// Shard to read data from
-$shard_id = 0;
-
-try {
-    /** @var object $response */
-    $response = $sdk
-        ->mainnet()
-        ->api()
-        ->harmony()
-        ->oneWeb3Driver($x_api_key, $body, $shard_id);
-    
-    var_dump($response);
-} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling harmony()->oneWeb3Driver(): ",
-        var_export($apiExc->getResponseBody(), true),
-        PHP_EOL;
-} catch (\Exception $exc) {
-    echo "Exception when calling harmony()->oneWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
-}
-```
+[✨ View "oneWeb3Driver.php"](../../samples/Api/HarmonyApi/oneWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
