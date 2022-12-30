@@ -39,7 +39,7 @@ Broadcast signed transaction and complete withdrawal
 
 ### Example
 
-[✨ View "broadcastBlockchainTransaction.php"](../../samples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
+[✨ View "broadcastBlockchainTransaction.php"](../../examples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -73,7 +73,7 @@ Cancel withdrawal
 
 ### Example
 
-[✨ View "cancelInProgressWithdrawal.php"](../../samples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
+[✨ View "cancelInProgressWithdrawal.php"](../../examples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -107,7 +107,7 @@ Complete withdrawal
 
 ### Example
 
-[✨ View "completeWithdrawal.php"](../../samples/Api/WithdrawalApi/completeWithdrawal.php)
+[✨ View "completeWithdrawal.php"](../../examples/Api/WithdrawalApi/completeWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -145,7 +145,7 @@ Get withdrawals
 
 ### Example
 
-[✨ View "getWithdrawals.php"](../../samples/Api/WithdrawalApi/getWithdrawals.php)
+[✨ View "getWithdrawals.php"](../../examples/Api/WithdrawalApi/getWithdrawals.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -177,6 +177,6 @@ Store withdrawal
 
 ### Example
 
-[✨ View "storeWithdrawal.php"](../../samples/Api/WithdrawalApi/storeWithdrawal.php)
+[✨ View "storeWithdrawal.php"](../../examples/Api/WithdrawalApi/storeWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

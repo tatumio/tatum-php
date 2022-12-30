@@ -46,7 +46,7 @@ Invoke a method in a smart contract on Klaytn
 
 ### Example
 
-[✨ View "klaytnBlockchainSmartContractInvocation.php"](../../samples/Api/KlaytnApi/klaytnBlockchainSmartContractInvocation.php)
+[✨ View "klaytnBlockchainSmartContractInvocation.php"](../../examples/Api/KlaytnApi/klaytnBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Send KLAY from account to account
 
 ### Example
 
-[✨ View "klaytnBlockchainTransfer.php"](../../samples/Api/KlaytnApi/klaytnBlockchainTransfer.php)
+[✨ View "klaytnBlockchainTransfer.php"](../../examples/Api/KlaytnApi/klaytnBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Broadcast signed Klaytn transaction
 
 ### Example
 
-[✨ View "klaytnBroadcast.php"](../../samples/Api/KlaytnApi/klaytnBroadcast.php)
+[✨ View "klaytnBroadcast.php"](../../examples/Api/KlaytnApi/klaytnBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -144,7 +144,7 @@ Generate Klaytn account address from Extended public key
 
 ### Example
 
-[✨ View "klaytnGenerateAddress.php"](../../samples/Api/KlaytnApi/klaytnGenerateAddress.php)
+[✨ View "klaytnGenerateAddress.php"](../../examples/Api/KlaytnApi/klaytnGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -176,7 +176,7 @@ Generate Klaytn private key
 
 ### Example
 
-[✨ View "klaytnGenerateAddressPrivateKey.php"](../../samples/Api/KlaytnApi/klaytnGenerateAddressPrivateKey.php)
+[✨ View "klaytnGenerateAddressPrivateKey.php"](../../examples/Api/KlaytnApi/klaytnGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -208,7 +208,7 @@ Generate Klaytn wallet
 
 ### Example
 
-[✨ View "klaytnGenerateWallet.php"](../../samples/Api/KlaytnApi/klaytnGenerateWallet.php)
+[✨ View "klaytnGenerateWallet.php"](../../examples/Api/KlaytnApi/klaytnGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -240,7 +240,7 @@ Get Klaytn Account balance
 
 ### Example
 
-[✨ View "klaytnGetBalance.php"](../../samples/Api/KlaytnApi/klaytnGetBalance.php)
+[✨ View "klaytnGetBalance.php"](../../examples/Api/KlaytnApi/klaytnGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -272,7 +272,7 @@ Get Klaytn block by hash
 
 ### Example
 
-[✨ View "klaytnGetBlock.php"](../../samples/Api/KlaytnApi/klaytnGetBlock.php)
+[✨ View "klaytnGetBlock.php"](../../examples/Api/KlaytnApi/klaytnGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -301,7 +301,7 @@ Get current block number
 
 ### Example
 
-[✨ View "klaytnGetCurrentBlock.php"](../../samples/Api/KlaytnApi/klaytnGetCurrentBlock.php)
+[✨ View "klaytnGetCurrentBlock.php"](../../examples/Api/KlaytnApi/klaytnGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -333,7 +333,7 @@ Get Klaytn Transaction
 
 ### Example
 
-[✨ View "klaytnGetTransaction.php"](../../samples/Api/KlaytnApi/klaytnGetTransaction.php)
+[✨ View "klaytnGetTransaction.php"](../../examples/Api/KlaytnApi/klaytnGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -365,7 +365,7 @@ Get count of outgoing Klaytn transactions
 
 ### Example
 
-[✨ View "klaytnGetTransactionCount.php"](../../samples/Api/KlaytnApi/klaytnGetTransactionCount.php)
+[✨ View "klaytnGetTransactionCount.php"](../../examples/Api/KlaytnApi/klaytnGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -399,6 +399,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "klaytnWeb3Driver.php"](../../samples/Api/KlaytnApi/klaytnWeb3Driver.php)
+[✨ View "klaytnWeb3Driver.php"](../../examples/Api/KlaytnApi/klaytnWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

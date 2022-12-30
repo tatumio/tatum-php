@@ -54,7 +54,7 @@ Add an NFT minter to an NFT smart contract
 
 ### Example
 
-[✨ View "nftAddMinter.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftAddMinter.php)
+[✨ View "nftAddMinter.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftAddMinter.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -88,7 +88,7 @@ Burn an NFT
 
 ### Example
 
-[✨ View "nftBurnErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftBurnErc721.php)
+[✨ View "nftBurnErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -122,7 +122,7 @@ Deploy an NFT smart contract
 
 ### Example
 
-[✨ View "nftDeployErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftDeployErc721.php)
+[✨ View "nftDeployErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -160,7 +160,7 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 ### Example
 
-[✨ View "nftGetBalanceErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php)
+[✨ View "nftGetBalanceErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -196,7 +196,7 @@ Get the address of an NFT smart contract by its transaction hash
 
 ### Example
 
-[✨ View "nftGetContractAddress.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetContractAddress.php)
+[✨ View "nftGetContractAddress.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetContractAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -236,7 +236,7 @@ Get NFT metadata
 
 ### Example
 
-[✨ View "nftGetMetadataErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php)
+[✨ View "nftGetMetadataErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -274,7 +274,7 @@ Get NFT provenance information
 
 ### Example
 
-[✨ View "nftGetProvenanceDataErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php)
+[✨ View "nftGetProvenanceDataErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -312,7 +312,7 @@ Get NFT royalty information
 
 ### Example
 
-[✨ View "nftGetRoyaltyErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php)
+[✨ View "nftGetRoyaltyErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -346,7 +346,7 @@ Get all NFTs that a blockchain address holds
 
 ### Example
 
-[✨ View "nftGetTokensByAddressErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php)
+[✨ View "nftGetTokensByAddressErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -384,7 +384,7 @@ Get all NFTs from a collection
 
 ### Example
 
-[✨ View "nftGetTokensByCollectionErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php)
+[✨ View "nftGetTokensByCollectionErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -420,7 +420,7 @@ Get an NFT transaction by its hash
 
 ### Example
 
-[✨ View "nftGetTransactErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php)
+[✨ View "nftGetTransactErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -464,7 +464,7 @@ Get NFT transactions on a blockchain address
 
 ### Example
 
-[✨ View "nftGetTransactionByAddress.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php)
+[✨ View "nftGetTransactionByAddress.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -508,7 +508,7 @@ Get NFT transactions for an NFT
 
 ### Example
 
-[✨ View "nftGetTransactionByToken.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php)
+[✨ View "nftGetTransactionByToken.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -542,7 +542,7 @@ Mint an NFT
 
 ### Example
 
-[✨ View "nftMintErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftMintErc721.php)
+[✨ View "nftMintErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -576,7 +576,7 @@ Mint multiple NFTs
 
 ### Example
 
-[✨ View "nftMintMultipleErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftMintMultipleErc721.php)
+[✨ View "nftMintMultipleErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintMultipleErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -610,7 +610,7 @@ Transfer an NFT
 
 ### Example
 
-[✨ View "nftTransferErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftTransferErc721.php)
+[✨ View "nftTransferErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransferErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -644,7 +644,7 @@ Update NFT royalty information
 
 ### Example
 
-[✨ View "nftUpdateCashbackErc721.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftUpdateCashbackErc721.php)
+[✨ View "nftUpdateCashbackErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftUpdateCashbackErc721.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -676,6 +676,6 @@ Verify an NFT in an NFT collection on Solana
 
 ### Example
 
-[✨ View "nftVerifyInCollection.php"](../../samples/Api/NFTERC721OrCompatibleApi/nftVerifyInCollection.php)
+[✨ View "nftVerifyInCollection.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftVerifyInCollection.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

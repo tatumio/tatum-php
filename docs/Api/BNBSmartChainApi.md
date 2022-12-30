@@ -46,7 +46,7 @@ Invoke a method in a smart contract on BNB Smart Chain
 
 ### Example
 
-[✨ View "bscBlockchainSmartContractInvocation.php"](../../samples/Api/BNBSmartChainApi/bscBlockchainSmartContractInvocation.php)
+[✨ View "bscBlockchainSmartContractInvocation.php"](../../examples/Api/BNBSmartChainApi/bscBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Send BSC / BEP20 from account to account
 
 ### Example
 
-[✨ View "bscBlockchainTransfer.php"](../../samples/Api/BNBSmartChainApi/bscBlockchainTransfer.php)
+[✨ View "bscBlockchainTransfer.php"](../../examples/Api/BNBSmartChainApi/bscBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Broadcast signed BSC transaction
 
 ### Example
 
-[✨ View "bscBroadcast.php"](../../samples/Api/BNBSmartChainApi/bscBroadcast.php)
+[✨ View "bscBroadcast.php"](../../examples/Api/BNBSmartChainApi/bscBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -144,7 +144,7 @@ Generate BSC account address from Extended public key
 
 ### Example
 
-[✨ View "bscGenerateAddress.php"](../../samples/Api/BNBSmartChainApi/bscGenerateAddress.php)
+[✨ View "bscGenerateAddress.php"](../../examples/Api/BNBSmartChainApi/bscGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -176,7 +176,7 @@ Generate BSC private key
 
 ### Example
 
-[✨ View "bscGenerateAddressPrivateKey.php"](../../samples/Api/BNBSmartChainApi/bscGenerateAddressPrivateKey.php)
+[✨ View "bscGenerateAddressPrivateKey.php"](../../examples/Api/BNBSmartChainApi/bscGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -208,7 +208,7 @@ Generate BSC wallet
 
 ### Example
 
-[✨ View "bscGenerateWallet.php"](../../samples/Api/BNBSmartChainApi/bscGenerateWallet.php)
+[✨ View "bscGenerateWallet.php"](../../examples/Api/BNBSmartChainApi/bscGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -240,7 +240,7 @@ Get BSC Account balance
 
 ### Example
 
-[✨ View "bscGetBalance.php"](../../samples/Api/BNBSmartChainApi/bscGetBalance.php)
+[✨ View "bscGetBalance.php"](../../examples/Api/BNBSmartChainApi/bscGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -272,7 +272,7 @@ Get BSC block by hash
 
 ### Example
 
-[✨ View "bscGetBlock.php"](../../samples/Api/BNBSmartChainApi/bscGetBlock.php)
+[✨ View "bscGetBlock.php"](../../examples/Api/BNBSmartChainApi/bscGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -301,7 +301,7 @@ Get current block number
 
 ### Example
 
-[✨ View "bscGetCurrentBlock.php"](../../samples/Api/BNBSmartChainApi/bscGetCurrentBlock.php)
+[✨ View "bscGetCurrentBlock.php"](../../examples/Api/BNBSmartChainApi/bscGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -333,7 +333,7 @@ Get BSC Transaction
 
 ### Example
 
-[✨ View "bscGetTransaction.php"](../../samples/Api/BNBSmartChainApi/bscGetTransaction.php)
+[✨ View "bscGetTransaction.php"](../../examples/Api/BNBSmartChainApi/bscGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -365,7 +365,7 @@ Get count of outgoing BSC transactions
 
 ### Example
 
-[✨ View "bscGetTransactionCount.php"](../../samples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
+[✨ View "bscGetTransactionCount.php"](../../examples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -399,6 +399,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "bscWeb3Driver.php"](../../samples/Api/BNBSmartChainApi/bscWeb3Driver.php)
+[✨ View "bscWeb3Driver.php"](../../examples/Api/BNBSmartChainApi/bscWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

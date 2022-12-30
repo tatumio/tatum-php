@@ -42,7 +42,7 @@ Send SOL from account to account
 
 ### Example
 
-[✨ View "solanaBlockchainTransfer.php"](../../samples/Api/SolanaApi/solanaBlockchainTransfer.php)
+[✨ View "solanaBlockchainTransfer.php"](../../examples/Api/SolanaApi/solanaBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -74,7 +74,7 @@ Broadcast and confirm signed Solana transaction
 
 ### Example
 
-[✨ View "solanaBroadcastConfirm.php"](../../samples/Api/SolanaApi/solanaBroadcastConfirm.php)
+[✨ View "solanaBroadcastConfirm.php"](../../examples/Api/SolanaApi/solanaBroadcastConfirm.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -103,7 +103,7 @@ Generate Solana wallet
 
 ### Example
 
-[✨ View "solanaGenerateWallet.php"](../../samples/Api/SolanaApi/solanaGenerateWallet.php)
+[✨ View "solanaGenerateWallet.php"](../../examples/Api/SolanaApi/solanaGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -135,7 +135,7 @@ Get Solana Account balance
 
 ### Example
 
-[✨ View "solanaGetBalance.php"](../../samples/Api/SolanaApi/solanaGetBalance.php)
+[✨ View "solanaGetBalance.php"](../../examples/Api/SolanaApi/solanaGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -167,7 +167,7 @@ Get Solana block by number
 
 ### Example
 
-[✨ View "solanaGetBlock.php"](../../samples/Api/SolanaApi/solanaGetBlock.php)
+[✨ View "solanaGetBlock.php"](../../examples/Api/SolanaApi/solanaGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -196,7 +196,7 @@ Get current block number
 
 ### Example
 
-[✨ View "solanaGetCurrentBlock.php"](../../samples/Api/SolanaApi/solanaGetCurrentBlock.php)
+[✨ View "solanaGetCurrentBlock.php"](../../examples/Api/SolanaApi/solanaGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -230,7 +230,7 @@ Get Solana Transaction
 
 ### Example
 
-[✨ View "solanaGetTransaction.php"](../../samples/Api/SolanaApi/solanaGetTransaction.php)
+[✨ View "solanaGetTransaction.php"](../../examples/Api/SolanaApi/solanaGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -264,6 +264,6 @@ JSON RPC HTTP driver
 
 ### Example
 
-[✨ View "solanaWeb3Driver.php"](../../samples/Api/SolanaApi/solanaWeb3Driver.php)
+[✨ View "solanaWeb3Driver.php"](../../examples/Api/SolanaApi/solanaWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

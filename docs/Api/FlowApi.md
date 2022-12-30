@@ -47,7 +47,7 @@ Add public key to Flow address
 
 ### Example
 
-[✨ View "flowAddPubKeyToAddress.php"](../../samples/Api/FlowApi/flowAddPubKeyToAddress.php)
+[✨ View "flowAddPubKeyToAddress.php"](../../examples/Api/FlowApi/flowAddPubKeyToAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -79,7 +79,7 @@ Create Flow address from public key
 
 ### Example
 
-[✨ View "flowCreateAddressFromPubKey.php"](../../samples/Api/FlowApi/flowCreateAddressFromPubKey.php)
+[✨ View "flowCreateAddressFromPubKey.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -113,7 +113,7 @@ Generate Flow address from Extended public key
 
 ### Example
 
-[✨ View "flowGenerateAddress.php"](../../samples/Api/FlowApi/flowGenerateAddress.php)
+[✨ View "flowGenerateAddress.php"](../../examples/Api/FlowApi/flowGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -147,7 +147,7 @@ Generate Flow public key from Extended public key
 
 ### Example
 
-[✨ View "flowGeneratePubKey.php"](../../samples/Api/FlowApi/flowGeneratePubKey.php)
+[✨ View "flowGeneratePubKey.php"](../../examples/Api/FlowApi/flowGeneratePubKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -179,7 +179,7 @@ Generate Flow private key
 
 ### Example
 
-[✨ View "flowGeneratePubKeyPrivateKey.php"](../../samples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
+[✨ View "flowGeneratePubKeyPrivateKey.php"](../../examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -211,7 +211,7 @@ Generate Flow wallet
 
 ### Example
 
-[✨ View "flowGenerateWallet.php"](../../samples/Api/FlowApi/flowGenerateWallet.php)
+[✨ View "flowGenerateWallet.php"](../../examples/Api/FlowApi/flowGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -243,7 +243,7 @@ Get the balance of a Flow account
 
 ### Example
 
-[✨ View "flowGetAccount.php"](../../samples/Api/FlowApi/flowGetAccount.php)
+[✨ View "flowGetAccount.php"](../../examples/Api/FlowApi/flowGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -275,7 +275,7 @@ Get Flow Block by hash or height
 
 ### Example
 
-[✨ View "flowGetBlock.php"](../../samples/Api/FlowApi/flowGetBlock.php)
+[✨ View "flowGetBlock.php"](../../examples/Api/FlowApi/flowGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -304,7 +304,7 @@ Get Flow current block number
 
 ### Example
 
-[✨ View "flowGetBlockChainInfo.php"](../../samples/Api/FlowApi/flowGetBlockChainInfo.php)
+[✨ View "flowGetBlockChainInfo.php"](../../examples/Api/FlowApi/flowGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -340,7 +340,7 @@ Get Flow events from blocks
 
 ### Example
 
-[✨ View "flowGetBlockEvents.php"](../../samples/Api/FlowApi/flowGetBlockEvents.php)
+[✨ View "flowGetBlockEvents.php"](../../examples/Api/FlowApi/flowGetBlockEvents.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -372,7 +372,7 @@ Get Flow Transaction by hash
 
 ### Example
 
-[✨ View "flowGetRawTransaction.php"](../../samples/Api/FlowApi/flowGetRawTransaction.php)
+[✨ View "flowGetRawTransaction.php"](../../examples/Api/FlowApi/flowGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -404,7 +404,7 @@ Send Flow to blockchain addresses
 
 ### Example
 
-[✨ View "flowTransferBlockchain.php"](../../samples/Api/FlowApi/flowTransferBlockchain.php)
+[✨ View "flowTransferBlockchain.php"](../../examples/Api/FlowApi/flowTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -436,6 +436,6 @@ Send arbitrary transaction to blockchain
 
 ### Example
 
-[✨ View "flowTransferCustomBlockchain.php"](../../samples/Api/FlowApi/flowTransferCustomBlockchain.php)
+[✨ View "flowTransferCustomBlockchain.php"](../../examples/Api/FlowApi/flowTransferCustomBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

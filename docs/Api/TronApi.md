@@ -51,7 +51,7 @@ Generate a TRON wallet
 
 ### Example
 
-[✨ View "generateTronwallet.php"](../../samples/Api/TronApi/generateTronwallet.php)
+[✨ View "generateTronwallet.php"](../../examples/Api/TronApi/generateTronwallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -85,7 +85,7 @@ Get all transactions for a TRON account
 
 ### Example
 
-[✨ View "tronAccountTx.php"](../../samples/Api/TronApi/tronAccountTx.php)
+[✨ View "tronAccountTx.php"](../../examples/Api/TronApi/tronAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -119,7 +119,7 @@ Get TRC-20 transactions for a TRON account
 
 ### Example
 
-[✨ View "tronAccountTx20.php"](../../samples/Api/TronApi/tronAccountTx20.php)
+[✨ View "tronAccountTx20.php"](../../examples/Api/TronApi/tronAccountTx20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -151,7 +151,7 @@ Broadcast a TRON transaction
 
 ### Example
 
-[✨ View "tronBroadcast.php"](../../samples/Api/TronApi/tronBroadcast.php)
+[✨ View "tronBroadcast.php"](../../examples/Api/TronApi/tronBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -183,7 +183,7 @@ Create a TRC-10 token
 
 ### Example
 
-[✨ View "tronCreateTrc10.php"](../../samples/Api/TronApi/tronCreateTrc10.php)
+[✨ View "tronCreateTrc10.php"](../../examples/Api/TronApi/tronCreateTrc10.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -215,7 +215,7 @@ Create a TRC-20 token
 
 ### Example
 
-[✨ View "tronCreateTrc20.php"](../../samples/Api/TronApi/tronCreateTrc20.php)
+[✨ View "tronCreateTrc20.php"](../../examples/Api/TronApi/tronCreateTrc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -247,7 +247,7 @@ Freeze the balance of a TRON account
 
 ### Example
 
-[✨ View "tronFreeze.php"](../../samples/Api/TronApi/tronFreeze.php)
+[✨ View "tronFreeze.php"](../../examples/Api/TronApi/tronFreeze.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -281,7 +281,7 @@ Generate a TRON address from the wallet's extended public key
 
 ### Example
 
-[✨ View "tronGenerateAddress.php"](../../samples/Api/TronApi/tronGenerateAddress.php)
+[✨ View "tronGenerateAddress.php"](../../examples/Api/TronApi/tronGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -313,7 +313,7 @@ Generate the private key for a TRON address
 
 ### Example
 
-[✨ View "tronGenerateAddressPrivateKey.php"](../../samples/Api/TronApi/tronGenerateAddressPrivateKey.php)
+[✨ View "tronGenerateAddressPrivateKey.php"](../../examples/Api/TronApi/tronGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -345,7 +345,7 @@ Get the TRON account by its address
 
 ### Example
 
-[✨ View "tronGetAccount.php"](../../samples/Api/TronApi/tronGetAccount.php)
+[✨ View "tronGetAccount.php"](../../examples/Api/TronApi/tronGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -377,7 +377,7 @@ Get a TRON block by its hash or height
 
 ### Example
 
-[✨ View "tronGetBlock.php"](../../samples/Api/TronApi/tronGetBlock.php)
+[✨ View "tronGetBlock.php"](../../examples/Api/TronApi/tronGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -406,7 +406,7 @@ Get the current TRON block
 
 ### Example
 
-[✨ View "tronGetCurrentBlock.php"](../../samples/Api/TronApi/tronGetCurrentBlock.php)
+[✨ View "tronGetCurrentBlock.php"](../../examples/Api/TronApi/tronGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -438,7 +438,7 @@ Get a TRON transaction by its hash
 
 ### Example
 
-[✨ View "tronGetTransaction.php"](../../samples/Api/TronApi/tronGetTransaction.php)
+[✨ View "tronGetTransaction.php"](../../examples/Api/TronApi/tronGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -470,7 +470,7 @@ Send TRX to a TRON account
 
 ### Example
 
-[✨ View "tronTransfer.php"](../../samples/Api/TronApi/tronTransfer.php)
+[✨ View "tronTransfer.php"](../../examples/Api/TronApi/tronTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -502,7 +502,7 @@ Send TRC-10 tokens to a TRON account
 
 ### Example
 
-[✨ View "tronTransferTrc10.php"](../../samples/Api/TronApi/tronTransferTrc10.php)
+[✨ View "tronTransferTrc10.php"](../../examples/Api/TronApi/tronTransferTrc10.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -534,7 +534,7 @@ Send TRC-20 tokens to a TRON account
 
 ### Example
 
-[✨ View "tronTransferTrc20.php"](../../samples/Api/TronApi/tronTransferTrc20.php)
+[✨ View "tronTransferTrc20.php"](../../examples/Api/TronApi/tronTransferTrc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -566,6 +566,6 @@ Get information about a TRC-10 token
 
 ### Example
 
-[✨ View "tronTrc10Detail.php"](../../samples/Api/TronApi/tronTrc10Detail.php)
+[✨ View "tronTrc10Detail.php"](../../examples/Api/TronApi/tronTrc10Detail.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

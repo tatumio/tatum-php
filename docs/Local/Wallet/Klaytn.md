@@ -35,7 +35,7 @@ Generate wallet
 
 ### Example
 
-[✨ View "generateWallet.php"](../../../samples/Local/Wallet/Klaytn/generateWallet.php)
+[✨ View "generateWallet.php"](../../../examples/Local/Wallet/Klaytn/generateWallet.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -68,7 +68,7 @@ Generate address from xPub and index
 
 ### Example
 
-[✨ View "generateAddressFromXpub.php"](../../../samples/Local/Wallet/Klaytn/generateAddressFromXpub.php)
+[✨ View "generateAddressFromXpub.php"](../../../examples/Local/Wallet/Klaytn/generateAddressFromXpub.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -99,7 +99,7 @@ Generate address from xPub and index
 
 ### Example
 
-[✨ View "generateAddressFromPrivateKey.php"](../../../samples/Local/Wallet/Klaytn/generateAddressFromPrivateKey.php)
+[✨ View "generateAddressFromPrivateKey.php"](../../../examples/Local/Wallet/Klaytn/generateAddressFromPrivateKey.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -132,7 +132,7 @@ Generate private key from mnemonic and index
 
 ### Example
 
-[✨ View "generatePrivateKey.php"](../../../samples/Local/Wallet/Klaytn/generatePrivateKey.php)
+[✨ View "generatePrivateKey.php"](../../../examples/Local/Wallet/Klaytn/generatePrivateKey.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 

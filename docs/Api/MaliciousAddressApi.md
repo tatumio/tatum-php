@@ -35,6 +35,6 @@ Check malicous address
 
 ### Example
 
-[✨ View "checkMalicousAddress.php"](../../samples/Api/MaliciousAddressApi/checkMalicousAddress.php)
+[✨ View "checkMalicousAddress.php"](../../examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

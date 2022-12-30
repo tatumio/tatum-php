@@ -44,7 +44,7 @@ Allow a blockchain address to transfer and burn fungible tokens
 
 ### Example
 
-[✨ View "erc20Approve.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20Approve.php)
+[✨ View "erc20Approve.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20Approve.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Burn fungible tokens
 
 ### Example
 
-[✨ View "erc20Burn.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20Burn.php)
+[✨ View "erc20Burn.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20Burn.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -112,7 +112,7 @@ Deploy a fungible token smart contract
 
 ### Example
 
-[✨ View "erc20Deploy.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20Deploy.php)
+[✨ View "erc20Deploy.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20Deploy.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -150,7 +150,7 @@ Get the number of fungible tokens that a blockchain address holds in a smart con
 
 ### Example
 
-[✨ View "erc20GetBalance.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalance.php)
+[✨ View "erc20GetBalance.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -184,7 +184,7 @@ Get the total number of fungible tokens that a blockchain address holds
 
 ### Example
 
-[✨ View "erc20GetBalanceAddress.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalanceAddress.php)
+[✨ View "erc20GetBalanceAddress.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalanceAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -230,7 +230,7 @@ Get fungible token transactions on a blockchain address
 
 ### Example
 
-[✨ View "erc20GetTransactionByAddress.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetTransactionByAddress.php)
+[✨ View "erc20GetTransactionByAddress.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -264,7 +264,7 @@ Mint fungible tokens
 
 ### Example
 
-[✨ View "erc20Mint.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20Mint.php)
+[✨ View "erc20Mint.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20Mint.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -298,6 +298,6 @@ Transfer fungible tokens
 
 ### Example
 
-[✨ View "erc20Transfer.php"](../../samples/Api/FungibleTokensERC20OrCompatibleApi/erc20Transfer.php)
+[✨ View "erc20Transfer.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/erc20Transfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

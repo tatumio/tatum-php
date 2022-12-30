@@ -41,7 +41,7 @@ Activate customer
 
 ### Example
 
-[✨ View "activateCustomer.php"](../../samples/Api/CustomerApi/activateCustomer.php)
+[✨ View "activateCustomer.php"](../../examples/Api/CustomerApi/activateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -73,7 +73,7 @@ Deactivate customer
 
 ### Example
 
-[✨ View "deactivateCustomer.php"](../../samples/Api/CustomerApi/deactivateCustomer.php)
+[✨ View "deactivateCustomer.php"](../../examples/Api/CustomerApi/deactivateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -105,7 +105,7 @@ Disable customer
 
 ### Example
 
-[✨ View "disableCustomer.php"](../../samples/Api/CustomerApi/disableCustomer.php)
+[✨ View "disableCustomer.php"](../../examples/Api/CustomerApi/disableCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -137,7 +137,7 @@ Enable customer
 
 ### Example
 
-[✨ View "enableCustomer.php"](../../samples/Api/CustomerApi/enableCustomer.php)
+[✨ View "enableCustomer.php"](../../examples/Api/CustomerApi/enableCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -171,7 +171,7 @@ List all customers
 
 ### Example
 
-[✨ View "findAllCustomers.php"](../../samples/Api/CustomerApi/findAllCustomers.php)
+[✨ View "findAllCustomers.php"](../../examples/Api/CustomerApi/findAllCustomers.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -203,7 +203,7 @@ Get customer details
 
 ### Example
 
-[✨ View "getCustomerByExternalOrInternalId.php"](../../samples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
+[✨ View "getCustomerByExternalOrInternalId.php"](../../examples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -237,6 +237,6 @@ Update customer
 
 ### Example
 
-[✨ View "updateCustomer.php"](../../samples/Api/CustomerApi/updateCustomer.php)
+[✨ View "updateCustomer.php"](../../examples/Api/CustomerApi/updateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

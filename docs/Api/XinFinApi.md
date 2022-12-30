@@ -46,7 +46,7 @@ Invoke a method in a smart contract on XinFin
 
 ### Example
 
-[✨ View "xdcBlockchainSmartContractInvocation.php"](../../samples/Api/XinFinApi/xdcBlockchainSmartContractInvocation.php)
+[✨ View "xdcBlockchainSmartContractInvocation.php"](../../examples/Api/XinFinApi/xdcBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Send XDC / ERC20 from account to account
 
 ### Example
 
-[✨ View "xdcBlockchainTransfer.php"](../../samples/Api/XinFinApi/xdcBlockchainTransfer.php)
+[✨ View "xdcBlockchainTransfer.php"](../../examples/Api/XinFinApi/xdcBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Broadcast signed XDC transaction
 
 ### Example
 
-[✨ View "xdcBroadcast.php"](../../samples/Api/XinFinApi/xdcBroadcast.php)
+[✨ View "xdcBroadcast.php"](../../examples/Api/XinFinApi/xdcBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -144,7 +144,7 @@ Generate XDC account address from Extended public key
 
 ### Example
 
-[✨ View "xdcGenerateAddress.php"](../../samples/Api/XinFinApi/xdcGenerateAddress.php)
+[✨ View "xdcGenerateAddress.php"](../../examples/Api/XinFinApi/xdcGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -176,7 +176,7 @@ Generate XDC private key
 
 ### Example
 
-[✨ View "xdcGenerateAddressPrivateKey.php"](../../samples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
+[✨ View "xdcGenerateAddressPrivateKey.php"](../../examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -208,7 +208,7 @@ Generate XDC wallet
 
 ### Example
 
-[✨ View "xdcGenerateWallet.php"](../../samples/Api/XinFinApi/xdcGenerateWallet.php)
+[✨ View "xdcGenerateWallet.php"](../../examples/Api/XinFinApi/xdcGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -240,7 +240,7 @@ Get XDC Account balance
 
 ### Example
 
-[✨ View "xdcGetBalance.php"](../../samples/Api/XinFinApi/xdcGetBalance.php)
+[✨ View "xdcGetBalance.php"](../../examples/Api/XinFinApi/xdcGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -272,7 +272,7 @@ Get XDC block by hash
 
 ### Example
 
-[✨ View "xdcGetBlock.php"](../../samples/Api/XinFinApi/xdcGetBlock.php)
+[✨ View "xdcGetBlock.php"](../../examples/Api/XinFinApi/xdcGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -301,7 +301,7 @@ Get current block number
 
 ### Example
 
-[✨ View "xdcGetCurrentBlock.php"](../../samples/Api/XinFinApi/xdcGetCurrentBlock.php)
+[✨ View "xdcGetCurrentBlock.php"](../../examples/Api/XinFinApi/xdcGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -333,7 +333,7 @@ Get XDC Transaction
 
 ### Example
 
-[✨ View "xdcGetTransaction.php"](../../samples/Api/XinFinApi/xdcGetTransaction.php)
+[✨ View "xdcGetTransaction.php"](../../examples/Api/XinFinApi/xdcGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -365,7 +365,7 @@ Get count of outgoing XDC transactions
 
 ### Example
 
-[✨ View "xdcGetTransactionCount.php"](../../samples/Api/XinFinApi/xdcGetTransactionCount.php)
+[✨ View "xdcGetTransactionCount.php"](../../examples/Api/XinFinApi/xdcGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -399,6 +399,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "xdcWeb3Driver.php"](../../samples/Api/XinFinApi/xdcWeb3Driver.php)
+[✨ View "xdcWeb3Driver.php"](../../examples/Api/XinFinApi/xdcWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

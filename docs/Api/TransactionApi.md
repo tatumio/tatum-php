@@ -46,7 +46,7 @@ Find transactions within the ledger.
 
 ### Example
 
-[✨ View "getTransactions.php"](../../samples/Api/TransactionApi/getTransactions.php)
+[✨ View "getTransactions.php"](../../examples/Api/TransactionApi/getTransactions.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -84,7 +84,7 @@ Find transactions for account.
 
 ### Example
 
-[✨ View "getTransactionsByAccountId.php"](../../samples/Api/TransactionApi/getTransactionsByAccountId.php)
+[✨ View "getTransactionsByAccountId.php"](../../examples/Api/TransactionApi/getTransactionsByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -122,7 +122,7 @@ Find transactions for a customer across all of the customer's accounts.
 
 ### Example
 
-[✨ View "getTransactionsByCustomerId.php"](../../samples/Api/TransactionApi/getTransactionsByCustomerId.php)
+[✨ View "getTransactionsByCustomerId.php"](../../examples/Api/TransactionApi/getTransactionsByCustomerId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -154,7 +154,7 @@ Find transactions with a given reference across all accounts.
 
 ### Example
 
-[✨ View "getTransactionsByReference.php"](../../samples/Api/TransactionApi/getTransactionsByReference.php)
+[✨ View "getTransactionsByReference.php"](../../examples/Api/TransactionApi/getTransactionsByReference.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -186,7 +186,7 @@ Send payment
 
 ### Example
 
-[✨ View "sendTransaction.php"](../../samples/Api/TransactionApi/sendTransaction.php)
+[✨ View "sendTransaction.php"](../../examples/Api/TransactionApi/sendTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -218,6 +218,6 @@ Send payment in batch
 
 ### Example
 
-[✨ View "sendTransactionBatch.php"](../../samples/Api/TransactionApi/sendTransactionBatch.php)
+[✨ View "sendTransactionBatch.php"](../../examples/Api/TransactionApi/sendTransactionBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

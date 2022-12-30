@@ -45,7 +45,7 @@ Broadcast signed Ada transaction
 
 ### Example
 
-[✨ View "adaBroadcast.php"](../../samples/Api/CardanoApi/adaBroadcast.php)
+[✨ View "adaBroadcast.php"](../../examples/Api/CardanoApi/adaBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -79,7 +79,7 @@ Generate Ada deposit address from Extended public key
 
 ### Example
 
-[✨ View "adaGenerateAddress.php"](../../samples/Api/CardanoApi/adaGenerateAddress.php)
+[✨ View "adaGenerateAddress.php"](../../examples/Api/CardanoApi/adaGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -111,7 +111,7 @@ Generate Ada private key
 
 ### Example
 
-[✨ View "adaGenerateAddressPrivateKey.php"](../../samples/Api/CardanoApi/adaGenerateAddressPrivateKey.php)
+[✨ View "adaGenerateAddressPrivateKey.php"](../../examples/Api/CardanoApi/adaGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -143,7 +143,7 @@ Generate Ada wallet
 
 ### Example
 
-[✨ View "adaGenerateWallet.php"](../../samples/Api/CardanoApi/adaGenerateWallet.php)
+[✨ View "adaGenerateWallet.php"](../../examples/Api/CardanoApi/adaGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -175,7 +175,7 @@ Gets a Ada account by address
 
 ### Example
 
-[✨ View "adaGetAccount.php"](../../samples/Api/CardanoApi/adaGetAccount.php)
+[✨ View "adaGetAccount.php"](../../examples/Api/CardanoApi/adaGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -207,7 +207,7 @@ Get Block by hash or height
 
 ### Example
 
-[✨ View "adaGetBlock.php"](../../samples/Api/CardanoApi/adaGetBlock.php)
+[✨ View "adaGetBlock.php"](../../examples/Api/CardanoApi/adaGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -236,7 +236,7 @@ Get Blockchain information
 
 ### Example
 
-[✨ View "adaGetBlockChainInfo.php"](../../samples/Api/CardanoApi/adaGetBlockChainInfo.php)
+[✨ View "adaGetBlockChainInfo.php"](../../examples/Api/CardanoApi/adaGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -268,7 +268,7 @@ Get transaction by hash
 
 ### Example
 
-[✨ View "adaGetRawTransaction.php"](../../samples/Api/CardanoApi/adaGetRawTransaction.php)
+[✨ View "adaGetRawTransaction.php"](../../examples/Api/CardanoApi/adaGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -304,7 +304,7 @@ Get transactions by address
 
 ### Example
 
-[✨ View "adaGetTxByAddress.php"](../../samples/Api/CardanoApi/adaGetTxByAddress.php)
+[✨ View "adaGetTxByAddress.php"](../../examples/Api/CardanoApi/adaGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -336,7 +336,7 @@ Get UTXOs by address
 
 ### Example
 
-[✨ View "adaGetUTXOByAddress.php"](../../samples/Api/CardanoApi/adaGetUTXOByAddress.php)
+[✨ View "adaGetUTXOByAddress.php"](../../examples/Api/CardanoApi/adaGetUTXOByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -368,6 +368,6 @@ Send ADA to Cardano addresses
 
 ### Example
 
-[✨ View "adaTransferBlockchain.php"](../../samples/Api/CardanoApi/adaTransferBlockchain.php)
+[✨ View "adaTransferBlockchain.php"](../../examples/Api/CardanoApi/adaTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

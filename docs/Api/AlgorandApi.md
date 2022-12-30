@@ -49,7 +49,7 @@ Access Algorand Algod GET node endpoints
 
 ### Example
 
-[✨ View "algoNodeGetDriver.php"](../../samples/Api/AlgorandApi/algoNodeGetDriver.php)
+[✨ View "algoNodeGetDriver.php"](../../examples/Api/AlgorandApi/algoNodeGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -83,7 +83,7 @@ Access Algorand Indexer GET node endpoints
 
 ### Example
 
-[✨ View "algoNodeIndexerGetDriver.php"](../../samples/Api/AlgorandApi/algoNodeIndexerGetDriver.php)
+[✨ View "algoNodeIndexerGetDriver.php"](../../examples/Api/AlgorandApi/algoNodeIndexerGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -119,7 +119,7 @@ Access Algorand Algod POST node endpoints
 
 ### Example
 
-[✨ View "algoNodePostDriver.php"](../../samples/Api/AlgorandApi/algoNodePostDriver.php)
+[✨ View "algoNodePostDriver.php"](../../examples/Api/AlgorandApi/algoNodePostDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -151,7 +151,7 @@ Broadcast signed Algorand transaction
 
 ### Example
 
-[✨ View "algoandBroadcast.php"](../../samples/Api/AlgorandApi/algoandBroadcast.php)
+[✨ View "algoandBroadcast.php"](../../examples/Api/AlgorandApi/algoandBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -183,7 +183,7 @@ Enable receiving asset on account
 
 ### Example
 
-[✨ View "algorandBlockchainReceiveAsset.php"](../../samples/Api/AlgorandApi/algorandBlockchainReceiveAsset.php)
+[✨ View "algorandBlockchainReceiveAsset.php"](../../examples/Api/AlgorandApi/algorandBlockchainReceiveAsset.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -215,7 +215,7 @@ Send Algos to an Algorand account
 
 ### Example
 
-[✨ View "algorandBlockchainTransfer.php"](../../samples/Api/AlgorandApi/algorandBlockchainTransfer.php)
+[✨ View "algorandBlockchainTransfer.php"](../../examples/Api/AlgorandApi/algorandBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -247,7 +247,7 @@ Generate Algorand account address from private key
 
 ### Example
 
-[✨ View "algorandGenerateAddress.php"](../../samples/Api/AlgorandApi/algorandGenerateAddress.php)
+[✨ View "algorandGenerateAddress.php"](../../examples/Api/AlgorandApi/algorandGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -279,7 +279,7 @@ Generate Algorand wallet
 
 ### Example
 
-[✨ View "algorandGenerateWallet.php"](../../samples/Api/AlgorandApi/algorandGenerateWallet.php)
+[✨ View "algorandGenerateWallet.php"](../../examples/Api/AlgorandApi/algorandGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -311,7 +311,7 @@ Get Algorand Account balance
 
 ### Example
 
-[✨ View "algorandGetBalance.php"](../../samples/Api/AlgorandApi/algorandGetBalance.php)
+[✨ View "algorandGetBalance.php"](../../examples/Api/AlgorandApi/algorandGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -343,7 +343,7 @@ Get Algorand block by block round number
 
 ### Example
 
-[✨ View "algorandGetBlock.php"](../../samples/Api/AlgorandApi/algorandGetBlock.php)
+[✨ View "algorandGetBlock.php"](../../examples/Api/AlgorandApi/algorandGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -372,7 +372,7 @@ Get current block number
 
 ### Example
 
-[✨ View "algorandGetCurrentBlock.php"](../../samples/Api/AlgorandApi/algorandGetCurrentBlock.php)
+[✨ View "algorandGetCurrentBlock.php"](../../examples/Api/AlgorandApi/algorandGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -410,7 +410,7 @@ Get Algorand Transactions between from and to
 
 ### Example
 
-[✨ View "algorandGetPayTransactionsByFromTo.php"](../../samples/Api/AlgorandApi/algorandGetPayTransactionsByFromTo.php)
+[✨ View "algorandGetPayTransactionsByFromTo.php"](../../examples/Api/AlgorandApi/algorandGetPayTransactionsByFromTo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -442,6 +442,6 @@ Get Algorand Transaction
 
 ### Example
 
-[✨ View "algorandGetTransaction.php"](../../samples/Api/AlgorandApi/algorandGetTransaction.php)
+[✨ View "algorandGetTransaction.php"](../../examples/Api/AlgorandApi/algorandGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

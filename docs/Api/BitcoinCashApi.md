@@ -45,7 +45,7 @@ Broadcast signed Bitcoin Cash transaction
 
 ### Example
 
-[✨ View "bchBroadcast.php"](../../samples/Api/BitcoinCashApi/bchBroadcast.php)
+[✨ View "bchBroadcast.php"](../../examples/Api/BitcoinCashApi/bchBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -79,7 +79,7 @@ Generate Bitcoin Cash deposit address from Extended public key
 
 ### Example
 
-[✨ View "bchGenerateAddress.php"](../../samples/Api/BitcoinCashApi/bchGenerateAddress.php)
+[✨ View "bchGenerateAddress.php"](../../examples/Api/BitcoinCashApi/bchGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -111,7 +111,7 @@ Generate Bitcoin Cash private key
 
 ### Example
 
-[✨ View "bchGenerateAddressPrivateKey.php"](../../samples/Api/BitcoinCashApi/bchGenerateAddressPrivateKey.php)
+[✨ View "bchGenerateAddressPrivateKey.php"](../../examples/Api/BitcoinCashApi/bchGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -143,7 +143,7 @@ Generate Bitcoin Cash wallet
 
 ### Example
 
-[✨ View "bchGenerateWallet.php"](../../samples/Api/BitcoinCashApi/bchGenerateWallet.php)
+[✨ View "bchGenerateWallet.php"](../../examples/Api/BitcoinCashApi/bchGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -175,7 +175,7 @@ Get Bitcoin Cash Block by hash
 
 ### Example
 
-[✨ View "bchGetBlock.php"](../../samples/Api/BitcoinCashApi/bchGetBlock.php)
+[✨ View "bchGetBlock.php"](../../examples/Api/BitcoinCashApi/bchGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -204,7 +204,7 @@ Get Bitcoin Cash Blockchain Information
 
 ### Example
 
-[✨ View "bchGetBlockChainInfo.php"](../../samples/Api/BitcoinCashApi/bchGetBlockChainInfo.php)
+[✨ View "bchGetBlockChainInfo.php"](../../examples/Api/BitcoinCashApi/bchGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -236,7 +236,7 @@ Get Bitcoin Cash Block hash
 
 ### Example
 
-[✨ View "bchGetBlockHash.php"](../../samples/Api/BitcoinCashApi/bchGetBlockHash.php)
+[✨ View "bchGetBlockHash.php"](../../examples/Api/BitcoinCashApi/bchGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -268,7 +268,7 @@ Get Bitcoin Cash Transaction by hash
 
 ### Example
 
-[✨ View "bchGetRawTransaction.php"](../../samples/Api/BitcoinCashApi/bchGetRawTransaction.php)
+[✨ View "bchGetRawTransaction.php"](../../examples/Api/BitcoinCashApi/bchGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -302,7 +302,7 @@ Get Bitcoin Cash Transactions by address
 
 ### Example
 
-[✨ View "bchGetTxByAddress.php"](../../samples/Api/BitcoinCashApi/bchGetTxByAddress.php)
+[✨ View "bchGetTxByAddress.php"](../../examples/Api/BitcoinCashApi/bchGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -334,7 +334,7 @@ JSON RPC HTTP driver
 
 ### Example
 
-[✨ View "bchRpcDriver.php"](../../samples/Api/BitcoinCashApi/bchRpcDriver.php)
+[✨ View "bchRpcDriver.php"](../../examples/Api/BitcoinCashApi/bchRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -366,6 +366,6 @@ Send BCH to Bitcoin Cash addresses
 
 ### Example
 
-[✨ View "bchTransferBlockchain.php"](../../samples/Api/BitcoinCashApi/bchTransferBlockchain.php)
+[✨ View "bchTransferBlockchain.php"](../../examples/Api/BitcoinCashApi/bchTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

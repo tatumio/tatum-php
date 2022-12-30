@@ -35,7 +35,7 @@ Freeze API Key
 
 ### Example
 
-[✨ View "freezeApiKey.php"](../../samples/Api/ServiceUtilsApi/freezeApiKey.php)
+[✨ View "freezeApiKey.php"](../../examples/Api/ServiceUtilsApi/freezeApiKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -64,7 +64,7 @@ Get information about your credit consumption for the last month
 
 ### Example
 
-[✨ View "getCredits.php"](../../samples/Api/ServiceUtilsApi/getCredits.php)
+[✨ View "getCredits.php"](../../examples/Api/ServiceUtilsApi/getCredits.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -93,7 +93,7 @@ Get API version
 
 ### Example
 
-[✨ View "getVersion.php"](../../samples/Api/ServiceUtilsApi/getVersion.php)
+[✨ View "getVersion.php"](../../examples/Api/ServiceUtilsApi/getVersion.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -122,6 +122,6 @@ Unfreeze API Key
 
 ### Example
 
-[✨ View "unfreezeApiKey.php"](../../samples/Api/ServiceUtilsApi/unfreezeApiKey.php)
+[✨ View "unfreezeApiKey.php"](../../examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

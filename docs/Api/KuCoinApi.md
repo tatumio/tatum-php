@@ -46,7 +46,7 @@ Invoke a method in a smart contract on KuCoin Community Chain
 
 ### Example
 
-[✨ View "kcsBlockchainSmartContractInvocation.php"](../../samples/Api/KuCoinApi/kcsBlockchainSmartContractInvocation.php)
+[✨ View "kcsBlockchainSmartContractInvocation.php"](../../examples/Api/KuCoinApi/kcsBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Send KCS from account to account
 
 ### Example
 
-[✨ View "kcsBlockchainTransfer.php"](../../samples/Api/KuCoinApi/kcsBlockchainTransfer.php)
+[✨ View "kcsBlockchainTransfer.php"](../../examples/Api/KuCoinApi/kcsBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Broadcast signed Kcs transaction
 
 ### Example
 
-[✨ View "kcsBroadcast.php"](../../samples/Api/KuCoinApi/kcsBroadcast.php)
+[✨ View "kcsBroadcast.php"](../../examples/Api/KuCoinApi/kcsBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -144,7 +144,7 @@ Generate Kcs account address from Extended public key
 
 ### Example
 
-[✨ View "kcsGenerateAddress.php"](../../samples/Api/KuCoinApi/kcsGenerateAddress.php)
+[✨ View "kcsGenerateAddress.php"](../../examples/Api/KuCoinApi/kcsGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -176,7 +176,7 @@ Generate Kcs private key
 
 ### Example
 
-[✨ View "kcsGenerateAddressPrivateKey.php"](../../samples/Api/KuCoinApi/kcsGenerateAddressPrivateKey.php)
+[✨ View "kcsGenerateAddressPrivateKey.php"](../../examples/Api/KuCoinApi/kcsGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -208,7 +208,7 @@ Generate Kcs wallet
 
 ### Example
 
-[✨ View "kcsGenerateWallet.php"](../../samples/Api/KuCoinApi/kcsGenerateWallet.php)
+[✨ View "kcsGenerateWallet.php"](../../examples/Api/KuCoinApi/kcsGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -240,7 +240,7 @@ Get Kcs Account balance
 
 ### Example
 
-[✨ View "kcsGetBalance.php"](../../samples/Api/KuCoinApi/kcsGetBalance.php)
+[✨ View "kcsGetBalance.php"](../../examples/Api/KuCoinApi/kcsGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -272,7 +272,7 @@ Get Kcs block by hash
 
 ### Example
 
-[✨ View "kcsGetBlock.php"](../../samples/Api/KuCoinApi/kcsGetBlock.php)
+[✨ View "kcsGetBlock.php"](../../examples/Api/KuCoinApi/kcsGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -301,7 +301,7 @@ Get current block number
 
 ### Example
 
-[✨ View "kcsGetCurrentBlock.php"](../../samples/Api/KuCoinApi/kcsGetCurrentBlock.php)
+[✨ View "kcsGetCurrentBlock.php"](../../examples/Api/KuCoinApi/kcsGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -333,7 +333,7 @@ Get Kcs Transaction
 
 ### Example
 
-[✨ View "kcsGetTransaction.php"](../../samples/Api/KuCoinApi/kcsGetTransaction.php)
+[✨ View "kcsGetTransaction.php"](../../examples/Api/KuCoinApi/kcsGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -365,7 +365,7 @@ Get count of outgoing Kcs transactions
 
 ### Example
 
-[✨ View "kcsGetTransactionCount.php"](../../samples/Api/KuCoinApi/kcsGetTransactionCount.php)
+[✨ View "kcsGetTransactionCount.php"](../../examples/Api/KuCoinApi/kcsGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -399,6 +399,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "kcsWeb3Driver.php"](../../samples/Api/KuCoinApi/kcsWeb3Driver.php)
+[✨ View "kcsWeb3Driver.php"](../../examples/Api/KuCoinApi/kcsWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

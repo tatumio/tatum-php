@@ -45,7 +45,7 @@ Allow the NFT auction or marketplace to transfer an asset
 
 ### Example
 
-[✨ View "approveNftAuctionSpending.php"](../../samples/Api/AuctionApi/approveNftAuctionSpending.php)
+[✨ View "approveNftAuctionSpending.php"](../../examples/Api/AuctionApi/approveNftAuctionSpending.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -77,7 +77,7 @@ Bid for an asset at the NFT auction
 
 ### Example
 
-[✨ View "bidOnAuction.php"](../../samples/Api/AuctionApi/bidOnAuction.php)
+[✨ View "bidOnAuction.php"](../../examples/Api/AuctionApi/bidOnAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -109,7 +109,7 @@ Cancel the selling of an asset at the NFT auction
 
 ### Example
 
-[✨ View "cancelAuction.php"](../../samples/Api/AuctionApi/cancelAuction.php)
+[✨ View "cancelAuction.php"](../../examples/Api/AuctionApi/cancelAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -141,7 +141,7 @@ Sell an asset at the NFT auction
 
 ### Example
 
-[✨ View "createAuction.php"](../../samples/Api/AuctionApi/createAuction.php)
+[✨ View "createAuction.php"](../../examples/Api/AuctionApi/createAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -173,7 +173,7 @@ Create an NFT auction
 
 ### Example
 
-[✨ View "generateAuction.php"](../../samples/Api/AuctionApi/generateAuction.php)
+[✨ View "generateAuction.php"](../../examples/Api/AuctionApi/generateAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -209,7 +209,7 @@ Get information about an auctioned asset at the NFT auction
 
 ### Example
 
-[✨ View "getAuction.php"](../../samples/Api/AuctionApi/getAuction.php)
+[✨ View "getAuction.php"](../../examples/Api/AuctionApi/getAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -243,7 +243,7 @@ Get the NFT auction fee
 
 ### Example
 
-[✨ View "getAuctionFee.php"](../../samples/Api/AuctionApi/getAuctionFee.php)
+[✨ View "getAuctionFee.php"](../../examples/Api/AuctionApi/getAuctionFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -277,7 +277,7 @@ Get the recipient of the NFT auction fee
 
 ### Example
 
-[✨ View "getAuctionFeeRecipient.php"](../../samples/Api/AuctionApi/getAuctionFeeRecipient.php)
+[✨ View "getAuctionFeeRecipient.php"](../../examples/Api/AuctionApi/getAuctionFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -309,7 +309,7 @@ Settle an NFT auction
 
 ### Example
 
-[✨ View "settleAuction.php"](../../samples/Api/AuctionApi/settleAuction.php)
+[✨ View "settleAuction.php"](../../examples/Api/AuctionApi/settleAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -341,7 +341,7 @@ Update the NFT auction fee
 
 ### Example
 
-[✨ View "updateAuctionFee.php"](../../samples/Api/AuctionApi/updateAuctionFee.php)
+[✨ View "updateAuctionFee.php"](../../examples/Api/AuctionApi/updateAuctionFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -373,6 +373,6 @@ Update the recipient of the NFT auction fee
 
 ### Example
 
-[✨ View "updateAuctionFeeRecipient.php"](../../samples/Api/AuctionApi/updateAuctionFeeRecipient.php)
+[✨ View "updateAuctionFeeRecipient.php"](../../examples/Api/AuctionApi/updateAuctionFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

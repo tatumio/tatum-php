@@ -32,7 +32,7 @@ Sign transaction
 
 ### Example
 
-[✨ View "sign.php"](../../../samples/Local/Transaction/Litecoin/sign.php)
+[✨ View "sign.php"](../../../examples/Local/Transaction/Litecoin/sign.php)
 
 [[Back to top]](#) | [[Back to Local Transaction]](../../index.md#local-transaction)
 

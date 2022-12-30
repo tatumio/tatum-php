@@ -44,7 +44,7 @@ Activate gas pump addresses
 
 ### Example
 
-[✨ View "activateGasPumpAddresses.php"](../../samples/Api/GasPumpApi/activateGasPumpAddresses.php)
+[✨ View "activateGasPumpAddresses.php"](../../examples/Api/GasPumpApi/activateGasPumpAddresses.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Get the results of the address activation transaction
 
 ### Example
 
-[✨ View "activatedNotActivatedGasPumpAddresses.php"](../../samples/Api/GasPumpApi/activatedNotActivatedGasPumpAddresses.php)
+[✨ View "activatedNotActivatedGasPumpAddresses.php"](../../examples/Api/GasPumpApi/activatedNotActivatedGasPumpAddresses.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Approve the transfer of an asset from a gas pump address
 
 ### Example
 
-[✨ View "approveTransferCustodialWallet.php"](../../samples/Api/GasPumpApi/approveTransferCustodialWallet.php)
+[✨ View "approveTransferCustodialWallet.php"](../../examples/Api/GasPumpApi/approveTransferCustodialWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -146,7 +146,7 @@ Check whether the gas pump address with a specified index is activated
 
 ### Example
 
-[✨ View "gasPumpAddressesActivatedOrNot.php"](../../samples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
+[✨ View "gasPumpAddressesActivatedOrNot.php"](../../examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -178,7 +178,7 @@ Generate a custodial wallet address
 
 ### Example
 
-[✨ View "generateCustodialWallet.php"](../../samples/Api/GasPumpApi/generateCustodialWallet.php)
+[✨ View "generateCustodialWallet.php"](../../examples/Api/GasPumpApi/generateCustodialWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -212,7 +212,7 @@ Generate a gas pump wallet address
 
 ### Example
 
-[✨ View "generateCustodialWalletBatch.php"](../../samples/Api/GasPumpApi/generateCustodialWalletBatch.php)
+[✨ View "generateCustodialWalletBatch.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -244,7 +244,7 @@ Precalculate gas pump addresses
 
 ### Example
 
-[✨ View "precalculateGasPumpAddresses.php"](../../samples/Api/GasPumpApi/precalculateGasPumpAddresses.php)
+[✨ View "precalculateGasPumpAddresses.php"](../../examples/Api/GasPumpApi/precalculateGasPumpAddresses.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -278,7 +278,7 @@ Get the custodial wallet address from the transaction
 
 ### Example
 
-[✨ View "sCGetCustodialAddresses.php"](../../samples/Api/GasPumpApi/sCGetCustodialAddresses.php)
+[✨ View "sCGetCustodialAddresses.php"](../../examples/Api/GasPumpApi/sCGetCustodialAddresses.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -310,7 +310,7 @@ Transfer an asset from a gas pump address
 
 ### Example
 
-[✨ View "transferCustodialWallet.php"](../../samples/Api/GasPumpApi/transferCustodialWallet.php)
+[✨ View "transferCustodialWallet.php"](../../examples/Api/GasPumpApi/transferCustodialWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -342,6 +342,6 @@ Transfer multiple assets from a gas pump address
 
 ### Example
 
-[✨ View "transferCustodialWalletBatch.php"](../../samples/Api/GasPumpApi/transferCustodialWalletBatch.php)
+[✨ View "transferCustodialWalletBatch.php"](../../examples/Api/GasPumpApi/transferCustodialWalletBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -35,6 +35,6 @@ Estimate ledger to blockchain transaction fee
 
 ### Example
 
-[✨ View "offchainEstimateFee.php"](../../samples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php)
+[✨ View "offchainEstimateFee.php"](../../examples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

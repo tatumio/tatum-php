@@ -51,7 +51,7 @@ Add a Multi Token minter
 
 ### Example
 
-[✨ View "addMultiTokenMinter.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
+[✨ View "addMultiTokenMinter.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -85,7 +85,7 @@ Burn a Multi Token
 
 ### Example
 
-[✨ View "burnMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
+[✨ View "burnMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -119,7 +119,7 @@ Burn multiple Multi Tokens
 
 ### Example
 
-[✨ View "burnMultiTokenBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
+[✨ View "burnMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -153,7 +153,7 @@ Deploy a Multi Token smart contract
 
 ### Example
 
-[✨ View "deployMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
+[✨ View "deployMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -187,7 +187,7 @@ Mint a Multi Token
 
 ### Example
 
-[✨ View "mintMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
+[✨ View "mintMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -221,7 +221,7 @@ Mint multiple Multi Tokens
 
 ### Example
 
-[✨ View "mintMultiTokenBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
+[✨ View "mintMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -257,7 +257,7 @@ Get all Multi Tokens that a blockchain address holds
 
 ### Example
 
-[✨ View "multiTokenGetAddressBalance.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
+[✨ View "multiTokenGetAddressBalance.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -297,7 +297,7 @@ Get the amount of a specific MultiToken that a blockchain address holds
 
 ### Example
 
-[✨ View "multiTokenGetBalance.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
+[✨ View "multiTokenGetBalance.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -337,7 +337,7 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 ### Example
 
-[✨ View "multiTokenGetBalanceBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
+[✨ View "multiTokenGetBalanceBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -373,7 +373,7 @@ Get the address of a Multi Token smart contract by its transaction hash
 
 ### Example
 
-[✨ View "multiTokenGetContractAddress.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetContractAddress.php)
+[✨ View "multiTokenGetContractAddress.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetContractAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -411,7 +411,7 @@ Get Multi Token metadata
 
 ### Example
 
-[✨ View "multiTokenGetMetadata.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
+[✨ View "multiTokenGetMetadata.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -447,7 +447,7 @@ Get a Multi Token transaction by its hash
 
 ### Example
 
-[✨ View "multiTokenGetTransaction.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
+[✨ View "multiTokenGetTransaction.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -491,7 +491,7 @@ Get Multi Token transactions on a blockchain address
 
 ### Example
 
-[✨ View "multiTokenGetTransactionByAddress.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
+[✨ View "multiTokenGetTransactionByAddress.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -525,7 +525,7 @@ Transfer a Multi Token
 
 ### Example
 
-[✨ View "transferMultiToken.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
+[✨ View "transferMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -559,6 +559,6 @@ Transfer multiple Multi Tokens
 
 ### Example
 
-[✨ View "transferMultiTokenBatch.php"](../../samples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
+[✨ View "transferMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

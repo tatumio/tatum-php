@@ -45,7 +45,7 @@ Broadcast signed XLM transaction
 
 ### Example
 
-[✨ View "xlmBroadcast.php"](../../samples/Api/StellarApi/xlmBroadcast.php)
+[✨ View "xlmBroadcast.php"](../../examples/Api/StellarApi/xlmBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -77,7 +77,7 @@ Get XLM Account info
 
 ### Example
 
-[✨ View "xlmGetAccountInfo.php"](../../samples/Api/StellarApi/xlmGetAccountInfo.php)
+[✨ View "xlmGetAccountInfo.php"](../../examples/Api/StellarApi/xlmGetAccountInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -111,7 +111,7 @@ Get XLM Account transactions
 
 ### Example
 
-[✨ View "xlmGetAccountTx.php"](../../samples/Api/StellarApi/xlmGetAccountTx.php)
+[✨ View "xlmGetAccountTx.php"](../../examples/Api/StellarApi/xlmGetAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -140,7 +140,7 @@ Get actual XLM fee
 
 ### Example
 
-[✨ View "xlmGetFee.php"](../../samples/Api/StellarApi/xlmGetFee.php)
+[✨ View "xlmGetFee.php"](../../examples/Api/StellarApi/xlmGetFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -169,7 +169,7 @@ Get XLM Blockchain Information
 
 ### Example
 
-[✨ View "xlmGetLastClosedLedger.php"](../../samples/Api/StellarApi/xlmGetLastClosedLedger.php)
+[✨ View "xlmGetLastClosedLedger.php"](../../examples/Api/StellarApi/xlmGetLastClosedLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -201,7 +201,7 @@ Get XLM Blockchain Ledger by sequence
 
 ### Example
 
-[✨ View "xlmGetLedger.php"](../../samples/Api/StellarApi/xlmGetLedger.php)
+[✨ View "xlmGetLedger.php"](../../examples/Api/StellarApi/xlmGetLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -233,7 +233,7 @@ Get XLM Blockchain Transactions in Ledger
 
 ### Example
 
-[✨ View "xlmGetLedgerTx.php"](../../samples/Api/StellarApi/xlmGetLedgerTx.php)
+[✨ View "xlmGetLedgerTx.php"](../../examples/Api/StellarApi/xlmGetLedgerTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -265,7 +265,7 @@ Get XLM Transaction by hash
 
 ### Example
 
-[✨ View "xlmGetTransaction.php"](../../samples/Api/StellarApi/xlmGetTransaction.php)
+[✨ View "xlmGetTransaction.php"](../../examples/Api/StellarApi/xlmGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -297,7 +297,7 @@ Send XLM from address to address
 
 ### Example
 
-[✨ View "xlmTransferBlockchain.php"](../../samples/Api/StellarApi/xlmTransferBlockchain.php)
+[✨ View "xlmTransferBlockchain.php"](../../examples/Api/StellarApi/xlmTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -329,7 +329,7 @@ Create / Update / Delete XLM trust line
 
 ### Example
 
-[✨ View "xlmTrustLineBlockchain.php"](../../samples/Api/StellarApi/xlmTrustLineBlockchain.php)
+[✨ View "xlmTrustLineBlockchain.php"](../../examples/Api/StellarApi/xlmTrustLineBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -358,6 +358,6 @@ Generate XLM account
 
 ### Example
 
-[✨ View "xlmWallet.php"](../../samples/Api/StellarApi/xlmWallet.php)
+[✨ View "xlmWallet.php"](../../examples/Api/StellarApi/xlmWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

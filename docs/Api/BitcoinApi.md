@@ -48,7 +48,7 @@ Broadcast a signed Bitcoin transaction
 
 ### Example
 
-[✨ View "btcBroadcast.php"](../../samples/Api/BitcoinApi/btcBroadcast.php)
+[✨ View "btcBroadcast.php"](../../examples/Api/BitcoinApi/btcBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -82,7 +82,7 @@ Generate a Bitcoin address from the wallet's extended public key
 
 ### Example
 
-[✨ View "btcGenerateAddress.php"](../../samples/Api/BitcoinApi/btcGenerateAddress.php)
+[✨ View "btcGenerateAddress.php"](../../examples/Api/BitcoinApi/btcGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -114,7 +114,7 @@ Generate the private key for a Bitcoin address
 
 ### Example
 
-[✨ View "btcGenerateAddressPrivateKey.php"](../../samples/Api/BitcoinApi/btcGenerateAddressPrivateKey.php)
+[✨ View "btcGenerateAddressPrivateKey.php"](../../examples/Api/BitcoinApi/btcGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -146,7 +146,7 @@ Generate a Bitcoin wallet
 
 ### Example
 
-[✨ View "btcGenerateWallet.php"](../../samples/Api/BitcoinApi/btcGenerateWallet.php)
+[✨ View "btcGenerateWallet.php"](../../examples/Api/BitcoinApi/btcGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -178,7 +178,7 @@ Get the balance of a Bitcoin address
 
 ### Example
 
-[✨ View "btcGetBalanceOfAddress.php"](../../samples/Api/BitcoinApi/btcGetBalanceOfAddress.php)
+[✨ View "btcGetBalanceOfAddress.php"](../../examples/Api/BitcoinApi/btcGetBalanceOfAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -210,7 +210,7 @@ Get a Bitcoin block by its hash or height
 
 ### Example
 
-[✨ View "btcGetBlock.php"](../../samples/Api/BitcoinApi/btcGetBlock.php)
+[✨ View "btcGetBlock.php"](../../examples/Api/BitcoinApi/btcGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -239,7 +239,7 @@ Get Bitcoin blockchain information
 
 ### Example
 
-[✨ View "btcGetBlockChainInfo.php"](../../samples/Api/BitcoinApi/btcGetBlockChainInfo.php)
+[✨ View "btcGetBlockChainInfo.php"](../../examples/Api/BitcoinApi/btcGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -271,7 +271,7 @@ Get the hash of a Bitcoin block
 
 ### Example
 
-[✨ View "btcGetBlockHash.php"](../../samples/Api/BitcoinApi/btcGetBlockHash.php)
+[✨ View "btcGetBlockHash.php"](../../examples/Api/BitcoinApi/btcGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -300,7 +300,7 @@ Get transactions from the Bitcoin mempool
 
 ### Example
 
-[✨ View "btcGetMempool.php"](../../samples/Api/BitcoinApi/btcGetMempool.php)
+[✨ View "btcGetMempool.php"](../../examples/Api/BitcoinApi/btcGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -332,7 +332,7 @@ Get a Bitcoin transaction by its hash
 
 ### Example
 
-[✨ View "btcGetRawTransaction.php"](../../samples/Api/BitcoinApi/btcGetRawTransaction.php)
+[✨ View "btcGetRawTransaction.php"](../../examples/Api/BitcoinApi/btcGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -368,7 +368,7 @@ Get all transactions for a Bitcoin address
 
 ### Example
 
-[✨ View "btcGetTxByAddress.php"](../../samples/Api/BitcoinApi/btcGetTxByAddress.php)
+[✨ View "btcGetTxByAddress.php"](../../examples/Api/BitcoinApi/btcGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -402,7 +402,7 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
 ### Example
 
-[✨ View "btcGetUTXO.php"](../../samples/Api/BitcoinApi/btcGetUTXO.php)
+[✨ View "btcGetUTXO.php"](../../examples/Api/BitcoinApi/btcGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -434,7 +434,7 @@ Connect to a Bitcoin node through an RPC driver
 
 ### Example
 
-[✨ View "btcRpcDriver.php"](../../samples/Api/BitcoinApi/btcRpcDriver.php)
+[✨ View "btcRpcDriver.php"](../../examples/Api/BitcoinApi/btcRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -466,6 +466,6 @@ Send BTC to Bitcoin addresses
 
 ### Example
 
-[✨ View "btcTransferBlockchain.php"](../../samples/Api/BitcoinApi/btcTransferBlockchain.php)
+[✨ View "btcTransferBlockchain.php"](../../examples/Api/BitcoinApi/btcTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -78,7 +78,7 @@ Send ADA from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "adaTransferOffchain.php"](../../samples/Api/BlockchainOperationsApi/adaTransferOffchain.php)
+[✨ View "adaTransferOffchain.php"](../../examples/Api/BlockchainOperationsApi/adaTransferOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 
 ### Example
 
-[✨ View "algoDeployErc20Ledger.php"](../../samples/Api/BlockchainOperationsApi/algoDeployErc20Ledger.php)
+[✨ View "algoDeployErc20Ledger.php"](../../examples/Api/BlockchainOperationsApi/algoDeployErc20Ledger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -142,7 +142,7 @@ Send ALGO from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "algoTransfer.php"](../../samples/Api/BlockchainOperationsApi/algoTransfer.php)
+[✨ View "algoTransfer.php"](../../examples/Api/BlockchainOperationsApi/algoTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -174,7 +174,7 @@ Send BCH from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "bchTransfer.php"](../../samples/Api/BlockchainOperationsApi/bchTransfer.php)
+[✨ View "bchTransfer.php"](../../examples/Api/BlockchainOperationsApi/bchTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -206,7 +206,7 @@ Create a BNB-based asset
 
 ### Example
 
-[✨ View "bnbAssetOffchain.php"](../../samples/Api/BlockchainOperationsApi/bnbAssetOffchain.php)
+[✨ View "bnbAssetOffchain.php"](../../examples/Api/BlockchainOperationsApi/bnbAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -238,7 +238,7 @@ Send BNB from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "bnbTransfer.php"](../../samples/Api/BlockchainOperationsApi/bnbTransfer.php)
+[✨ View "bnbTransfer.php"](../../examples/Api/BlockchainOperationsApi/bnbTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -270,7 +270,7 @@ Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual a
 
 ### Example
 
-[✨ View "bscDeployBep20.php"](../../samples/Api/BlockchainOperationsApi/bscDeployBep20.php)
+[✨ View "bscDeployBep20.php"](../../examples/Api/BlockchainOperationsApi/bscDeployBep20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -302,7 +302,7 @@ Send BSC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "bscOrBepTransfer.php"](../../samples/Api/BlockchainOperationsApi/bscOrBepTransfer.php)
+[✨ View "bscOrBepTransfer.php"](../../examples/Api/BlockchainOperationsApi/bscOrBepTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -334,7 +334,7 @@ Send BTC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "btcTransfer.php"](../../samples/Api/BlockchainOperationsApi/btcTransfer.php)
+[✨ View "btcTransfer.php"](../../examples/Api/BlockchainOperationsApi/btcTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -366,7 +366,7 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 
 ### Example
 
-[✨ View "celoDeployErc20Ledger.php"](../../samples/Api/BlockchainOperationsApi/celoDeployErc20Ledger.php)
+[✨ View "celoDeployErc20Ledger.php"](../../examples/Api/BlockchainOperationsApi/celoDeployErc20Ledger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -398,7 +398,7 @@ Send CELO from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "celoOrErc20Transfer.php"](../../samples/Api/BlockchainOperationsApi/celoOrErc20Transfer.php)
+[✨ View "celoOrErc20Transfer.php"](../../examples/Api/BlockchainOperationsApi/celoOrErc20Transfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -430,7 +430,7 @@ Register a new BNB Smart Chain BEP-20 token in the virtual account
 
 ### Example
 
-[✨ View "createBep20.php"](../../samples/Api/BlockchainOperationsApi/createBep20.php)
+[✨ View "createBep20.php"](../../examples/Api/BlockchainOperationsApi/createBep20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -462,7 +462,7 @@ Register a new Celo ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "createCeloErc20.php"](../../samples/Api/BlockchainOperationsApi/createCeloErc20.php)
+[✨ View "createCeloErc20.php"](../../examples/Api/BlockchainOperationsApi/createCeloErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -494,7 +494,7 @@ Register a new Ethereum ERC-20 token in the virtual account
 
 ### Example
 
-[✨ View "createErc20.php"](../../samples/Api/BlockchainOperationsApi/createErc20.php)
+[✨ View "createErc20.php"](../../examples/Api/BlockchainOperationsApi/createErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -526,7 +526,7 @@ Register a new Harmony HRM-20 token in the virtual account
 
 ### Example
 
-[✨ View "createHrm20.php"](../../samples/Api/BlockchainOperationsApi/createHrm20.php)
+[✨ View "createHrm20.php"](../../examples/Api/BlockchainOperationsApi/createHrm20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -558,7 +558,7 @@ Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
 ### Example
 
-[✨ View "createTrc.php"](../../samples/Api/BlockchainOperationsApi/createTrc.php)
+[✨ View "createTrc.php"](../../examples/Api/BlockchainOperationsApi/createTrc.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -590,7 +590,7 @@ Register a new XinFin ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "createXdc20.php"](../../samples/Api/BlockchainOperationsApi/createXdc20.php)
+[✨ View "createXdc20.php"](../../examples/Api/BlockchainOperationsApi/createXdc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -622,7 +622,7 @@ Send DOGE from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "dogeTransfer.php"](../../samples/Api/BlockchainOperationsApi/dogeTransfer.php)
+[✨ View "dogeTransfer.php"](../../examples/Api/BlockchainOperationsApi/dogeTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -654,7 +654,7 @@ Send EGLD from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "egldTransfer.php"](../../samples/Api/BlockchainOperationsApi/egldTransfer.php)
+[✨ View "egldTransfer.php"](../../examples/Api/BlockchainOperationsApi/egldTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -686,7 +686,7 @@ Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
 ### Example
 
-[✨ View "ethDeployErc20.php"](../../samples/Api/BlockchainOperationsApi/ethDeployErc20.php)
+[✨ View "ethDeployErc20.php"](../../examples/Api/BlockchainOperationsApi/ethDeployErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -718,7 +718,7 @@ Send ETH from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "ethTransfer.php"](../../samples/Api/BlockchainOperationsApi/ethTransfer.php)
+[✨ View "ethTransfer.php"](../../examples/Api/BlockchainOperationsApi/ethTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -750,7 +750,7 @@ Send Ethereum ERC-20 tokens from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "ethTransferErc20.php"](../../samples/Api/BlockchainOperationsApi/ethTransferErc20.php)
+[✨ View "ethTransferErc20.php"](../../examples/Api/BlockchainOperationsApi/ethTransferErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -782,7 +782,7 @@ Send FLOW from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "flowTransfer.php"](../../samples/Api/BlockchainOperationsApi/flowTransfer.php)
+[✨ View "flowTransfer.php"](../../examples/Api/BlockchainOperationsApi/flowTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -814,7 +814,7 @@ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the bl
 
 ### Example
 
-[✨ View "kcsDeployErc20Ledger.php"](../../samples/Api/BlockchainOperationsApi/kcsDeployErc20Ledger.php)
+[✨ View "kcsDeployErc20Ledger.php"](../../examples/Api/BlockchainOperationsApi/kcsDeployErc20Ledger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -846,7 +846,7 @@ Send KCS from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "kcsTransfer.php"](../../samples/Api/BlockchainOperationsApi/kcsTransfer.php)
+[✨ View "kcsTransfer.php"](../../examples/Api/BlockchainOperationsApi/kcsTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -878,7 +878,7 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ### Example
 
-[✨ View "klayDeployErc20.php"](../../samples/Api/BlockchainOperationsApi/klayDeployErc20.php)
+[✨ View "klayDeployErc20.php"](../../examples/Api/BlockchainOperationsApi/klayDeployErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -910,7 +910,7 @@ Send KLAY from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "klayTransfer.php"](../../samples/Api/BlockchainOperationsApi/klayTransfer.php)
+[✨ View "klayTransfer.php"](../../examples/Api/BlockchainOperationsApi/klayTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -942,7 +942,7 @@ Send LTC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "ltcTransfer.php"](../../samples/Api/BlockchainOperationsApi/ltcTransfer.php)
+[✨ View "ltcTransfer.php"](../../examples/Api/BlockchainOperationsApi/ltcTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -976,7 +976,7 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
 ### Example
 
-[✨ View "oneDeployHrm20.php"](../../samples/Api/BlockchainOperationsApi/oneDeployHrm20.php)
+[✨ View "oneDeployHrm20.php"](../../examples/Api/BlockchainOperationsApi/oneDeployHrm20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1010,7 +1010,7 @@ Send ONE from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "oneTransfer.php"](../../samples/Api/BlockchainOperationsApi/oneTransfer.php)
+[✨ View "oneTransfer.php"](../../examples/Api/BlockchainOperationsApi/oneTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1042,7 +1042,7 @@ Send MATIC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "polygonTransfer.php"](../../samples/Api/BlockchainOperationsApi/polygonTransfer.php)
+[✨ View "polygonTransfer.php"](../../examples/Api/BlockchainOperationsApi/polygonTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1076,7 +1076,7 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "registerErc20Token.php"](../../samples/Api/BlockchainOperationsApi/registerErc20Token.php)
+[✨ View "registerErc20Token.php"](../../examples/Api/BlockchainOperationsApi/registerErc20Token.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1108,7 +1108,7 @@ Send SOL from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "solTransfer.php"](../../samples/Api/BlockchainOperationsApi/solTransfer.php)
+[✨ View "solTransfer.php"](../../examples/Api/BlockchainOperationsApi/solTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1142,7 +1142,7 @@ Set the contract address of a Celo ERC-20-equivalent token
 
 ### Example
 
-[✨ View "storeCeloErc20Address.php"](../../samples/Api/BlockchainOperationsApi/storeCeloErc20Address.php)
+[✨ View "storeCeloErc20Address.php"](../../examples/Api/BlockchainOperationsApi/storeCeloErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1176,7 +1176,7 @@ Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
 
 ### Example
 
-[✨ View "storeTokenAddress.php"](../../samples/Api/BlockchainOperationsApi/storeTokenAddress.php)
+[✨ View "storeTokenAddress.php"](../../examples/Api/BlockchainOperationsApi/storeTokenAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1210,7 +1210,7 @@ Set the contract address of a TRC-10 or TRC-20 token
 
 ### Example
 
-[✨ View "storeTrcAddress.php"](../../samples/Api/BlockchainOperationsApi/storeTrcAddress.php)
+[✨ View "storeTrcAddress.php"](../../examples/Api/BlockchainOperationsApi/storeTrcAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1242,7 +1242,7 @@ Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual ac
 
 ### Example
 
-[✨ View "tronDeployTrc.php"](../../samples/Api/BlockchainOperationsApi/tronDeployTrc.php)
+[✨ View "tronDeployTrc.php"](../../examples/Api/BlockchainOperationsApi/tronDeployTrc.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1274,7 +1274,7 @@ Send TRON from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "tronTransferOffchain.php"](../../samples/Api/BlockchainOperationsApi/tronTransferOffchain.php)
+[✨ View "tronTransferOffchain.php"](../../examples/Api/BlockchainOperationsApi/tronTransferOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1306,7 +1306,7 @@ Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ### Example
 
-[✨ View "xdcDeployErc20.php"](../../samples/Api/BlockchainOperationsApi/xdcDeployErc20.php)
+[✨ View "xdcDeployErc20.php"](../../examples/Api/BlockchainOperationsApi/xdcDeployErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1338,7 +1338,7 @@ Send XDC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "xdcTransfer.php"](../../samples/Api/BlockchainOperationsApi/xdcTransfer.php)
+[✨ View "xdcTransfer.php"](../../examples/Api/BlockchainOperationsApi/xdcTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1370,7 +1370,7 @@ Create an XLM-based asset
 
 ### Example
 
-[✨ View "xlmAssetOffchain.php"](../../samples/Api/BlockchainOperationsApi/xlmAssetOffchain.php)
+[✨ View "xlmAssetOffchain.php"](../../examples/Api/BlockchainOperationsApi/xlmAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1402,7 +1402,7 @@ Send XLM from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "xlmTransfer.php"](../../samples/Api/BlockchainOperationsApi/xlmTransfer.php)
+[✨ View "xlmTransfer.php"](../../examples/Api/BlockchainOperationsApi/xlmTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1434,7 +1434,7 @@ Create XRP based Asset
 
 ### Example
 
-[✨ View "xrpAssetOffchain.php"](../../samples/Api/BlockchainOperationsApi/xrpAssetOffchain.php)
+[✨ View "xrpAssetOffchain.php"](../../examples/Api/BlockchainOperationsApi/xrpAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1466,6 +1466,6 @@ Send XRP from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "xrpTransfer.php"](../../samples/Api/BlockchainOperationsApi/xrpTransfer.php)
+[✨ View "xrpTransfer.php"](../../examples/Api/BlockchainOperationsApi/xrpTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

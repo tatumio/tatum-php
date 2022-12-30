@@ -50,7 +50,7 @@ List all deposits for product
 
 ### Example
 
-[✨ View "getDeposits.php"](../../samples/Api/DepositApi/getDeposits.php)
+[✨ View "getDeposits.php"](../../examples/Api/DepositApi/getDeposits.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -96,6 +96,6 @@ Count of found entities for get deposits request
 
 ### Example
 
-[✨ View "getDepositsCount.php"](../../samples/Api/DepositApi/getDepositsCount.php)
+[✨ View "getDepositsCount.php"](../../examples/Api/DepositApi/getDepositsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

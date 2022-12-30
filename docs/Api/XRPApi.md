@@ -46,7 +46,7 @@ Modify XRP account
 
 ### Example
 
-[✨ View "xrpAccountSettings.php"](../../samples/Api/XRPApi/xrpAccountSettings.php)
+[✨ View "xrpAccountSettings.php"](../../examples/Api/XRPApi/xrpAccountSettings.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Broadcast signed XRP transaction
 
 ### Example
 
-[✨ View "xrpBroadcast.php"](../../samples/Api/XRPApi/xrpBroadcast.php)
+[✨ View "xrpBroadcast.php"](../../examples/Api/XRPApi/xrpBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Get Account Balance
 
 ### Example
 
-[✨ View "xrpGetAccountBalance.php"](../../samples/Api/XRPApi/xrpGetAccountBalance.php)
+[✨ View "xrpGetAccountBalance.php"](../../examples/Api/XRPApi/xrpGetAccountBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -142,7 +142,7 @@ Get Account info
 
 ### Example
 
-[✨ View "xrpGetAccountInfo.php"](../../samples/Api/XRPApi/xrpGetAccountInfo.php)
+[✨ View "xrpGetAccountInfo.php"](../../examples/Api/XRPApi/xrpGetAccountInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -178,7 +178,7 @@ Get Account transactions
 
 ### Example
 
-[✨ View "xrpGetAccountTx.php"](../../samples/Api/XRPApi/xrpGetAccountTx.php)
+[✨ View "xrpGetAccountTx.php"](../../examples/Api/XRPApi/xrpGetAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -207,7 +207,7 @@ Get actual Blockchain fee
 
 ### Example
 
-[✨ View "xrpGetFee.php"](../../samples/Api/XRPApi/xrpGetFee.php)
+[✨ View "xrpGetFee.php"](../../examples/Api/XRPApi/xrpGetFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -236,7 +236,7 @@ Get XRP Blockchain Information
 
 ### Example
 
-[✨ View "xrpGetLastClosedLedger.php"](../../samples/Api/XRPApi/xrpGetLastClosedLedger.php)
+[✨ View "xrpGetLastClosedLedger.php"](../../examples/Api/XRPApi/xrpGetLastClosedLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -268,7 +268,7 @@ Get Ledger
 
 ### Example
 
-[✨ View "xrpGetLedger.php"](../../samples/Api/XRPApi/xrpGetLedger.php)
+[✨ View "xrpGetLedger.php"](../../examples/Api/XRPApi/xrpGetLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -300,7 +300,7 @@ Get XRP Transaction by hash
 
 ### Example
 
-[✨ View "xrpGetTransaction.php"](../../samples/Api/XRPApi/xrpGetTransaction.php)
+[✨ View "xrpGetTransaction.php"](../../examples/Api/XRPApi/xrpGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -332,7 +332,7 @@ Send XRP from address to address
 
 ### Example
 
-[✨ View "xrpTransferBlockchain.php"](../../samples/Api/XRPApi/xrpTransferBlockchain.php)
+[✨ View "xrpTransferBlockchain.php"](../../examples/Api/XRPApi/xrpTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -364,7 +364,7 @@ Create / Update / Delete XRP trust line
 
 ### Example
 
-[✨ View "xrpTrustLineBlockchain.php"](../../samples/Api/XRPApi/xrpTrustLineBlockchain.php)
+[✨ View "xrpTrustLineBlockchain.php"](../../examples/Api/XRPApi/xrpTrustLineBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -393,6 +393,6 @@ Generate XRP account
 
 ### Example
 
-[✨ View "xrpWallet.php"](../../samples/Api/XRPApi/xrpWallet.php)
+[✨ View "xrpWallet.php"](../../examples/Api/XRPApi/xrpWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

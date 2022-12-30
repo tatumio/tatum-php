@@ -39,7 +39,7 @@ Create managed address
 
 ### Example
 
-[✨ View "custodialCreateWallet.php"](../../samples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
+[✨ View "custodialCreateWallet.php"](../../examples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -71,7 +71,7 @@ Delete managed address
 
 ### Example
 
-[✨ View "custodialDeleteWallet.php"](../../samples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
+[✨ View "custodialDeleteWallet.php"](../../examples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -105,7 +105,7 @@ Get managed address
 
 ### Example
 
-[✨ View "custodialGetWallet.php"](../../samples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
+[✨ View "custodialGetWallet.php"](../../examples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -134,7 +134,7 @@ Get managed addresses
 
 ### Example
 
-[✨ View "custodialGetWallets.php"](../../samples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
+[✨ View "custodialGetWallets.php"](../../examples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -166,6 +166,6 @@ Sign and transfer using managed address
 
 ### Example
 
-[✨ View "custodialTransferManagedAddress.php"](../../samples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
+[✨ View "custodialTransferManagedAddress.php"](../../examples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

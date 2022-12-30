@@ -41,7 +41,7 @@ Complete pending transaction to sign
 
 ### Example
 
-[✨ View "completePendingSignature.php"](../../samples/Api/KeyManagementSystemApi/completePendingSignature.php)
+[✨ View "completePendingSignature.php"](../../examples/Api/KeyManagementSystemApi/completePendingSignature.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -75,7 +75,7 @@ Delete transaction
 
 ### Example
 
-[✨ View "deletePendingTransactionToSign.php"](../../samples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
+[✨ View "deletePendingTransactionToSign.php"](../../examples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -107,7 +107,7 @@ Get transaction details
 
 ### Example
 
-[✨ View "getPendingTransactionToSign.php"](../../samples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
+[✨ View "getPendingTransactionToSign.php"](../../examples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -141,7 +141,7 @@ Get pending transactions to sign
 
 ### Example
 
-[✨ View "getPendingTransactionsToSign.php"](../../samples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
+[✨ View "getPendingTransactionsToSign.php"](../../examples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -175,6 +175,6 @@ Get pending transactions to sign
 
 ### Example
 
-[✨ View "receivePendingTransactionsToSign.php"](../../samples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
+[✨ View "receivePendingTransactionsToSign.php"](../../examples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

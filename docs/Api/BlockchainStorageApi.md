@@ -38,7 +38,7 @@ Get a log record
 
 ### Example
 
-[✨ View "getLog.php"](../../samples/Api/BlockchainStorageApi/getLog.php)
+[✨ View "getLog.php"](../../examples/Api/BlockchainStorageApi/getLog.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -70,6 +70,6 @@ Store a log record
 
 ### Example
 
-[✨ View "storeLog.php"](../../samples/Api/BlockchainStorageApi/storeLog.php)
+[✨ View "storeLog.php"](../../examples/Api/BlockchainStorageApi/storeLog.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

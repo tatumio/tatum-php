@@ -42,7 +42,7 @@ Send Binance / Binance Token from account to account
 
 ### Example
 
-[✨ View "bnbBlockchainTransfer.php"](../../samples/Api/BNBBeaconChainApi/bnbBlockchainTransfer.php)
+[✨ View "bnbBlockchainTransfer.php"](../../examples/Api/BNBBeaconChainApi/bnbBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -74,7 +74,7 @@ Broadcast signed BNB transaction
 
 ### Example
 
-[✨ View "bnbBroadcast.php"](../../samples/Api/BNBBeaconChainApi/bnbBroadcast.php)
+[✨ View "bnbBroadcast.php"](../../examples/Api/BNBBeaconChainApi/bnbBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -103,7 +103,7 @@ Generate Binance wallet
 
 ### Example
 
-[✨ View "bnbGenerateWallet.php"](../../samples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
+[✨ View "bnbGenerateWallet.php"](../../examples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -135,7 +135,7 @@ Get Binance Account
 
 ### Example
 
-[✨ View "bnbGetAccount.php"](../../samples/Api/BNBBeaconChainApi/bnbGetAccount.php)
+[✨ View "bnbGetAccount.php"](../../examples/Api/BNBBeaconChainApi/bnbGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -167,7 +167,7 @@ Get Binance Transactions in Block
 
 ### Example
 
-[✨ View "bnbGetBlock.php"](../../samples/Api/BNBBeaconChainApi/bnbGetBlock.php)
+[✨ View "bnbGetBlock.php"](../../examples/Api/BNBBeaconChainApi/bnbGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -196,7 +196,7 @@ Get Binance current block
 
 ### Example
 
-[✨ View "bnbGetCurrentBlock.php"](../../samples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
+[✨ View "bnbGetCurrentBlock.php"](../../examples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -228,7 +228,7 @@ Get Binance Transaction
 
 ### Example
 
-[✨ View "bnbGetTransaction.php"](../../samples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
+[✨ View "bnbGetTransaction.php"](../../examples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -272,6 +272,6 @@ Get Binance Transactions By Address
 
 ### Example
 
-[✨ View "bnbGetTxByAccount.php"](../../samples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
+[✨ View "bnbGetTxByAccount.php"](../../examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

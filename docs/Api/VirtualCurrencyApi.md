@@ -39,7 +39,7 @@ Create new virtual currency
 
 ### Example
 
-[✨ View "createCurrency.php"](../../samples/Api/VirtualCurrencyApi/createCurrency.php)
+[✨ View "createCurrency.php"](../../examples/Api/VirtualCurrencyApi/createCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -71,7 +71,7 @@ Get virtual currency
 
 ### Example
 
-[✨ View "getCurrency.php"](../../samples/Api/VirtualCurrencyApi/getCurrency.php)
+[✨ View "getCurrency.php"](../../examples/Api/VirtualCurrencyApi/getCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -103,7 +103,7 @@ Create new supply of virtual currency
 
 ### Example
 
-[✨ View "mintCurrency.php"](../../samples/Api/VirtualCurrencyApi/mintCurrency.php)
+[✨ View "mintCurrency.php"](../../examples/Api/VirtualCurrencyApi/mintCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -135,7 +135,7 @@ Destroy supply of virtual currency
 
 ### Example
 
-[✨ View "revokeCurrency.php"](../../samples/Api/VirtualCurrencyApi/revokeCurrency.php)
+[✨ View "revokeCurrency.php"](../../examples/Api/VirtualCurrencyApi/revokeCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -167,6 +167,6 @@ Update virtual currency
 
 ### Example
 
-[✨ View "updateCurrency.php"](../../samples/Api/VirtualCurrencyApi/updateCurrency.php)
+[✨ View "updateCurrency.php"](../../examples/Api/VirtualCurrencyApi/updateCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

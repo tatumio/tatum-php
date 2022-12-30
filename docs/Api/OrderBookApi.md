@@ -46,7 +46,7 @@ Obtain chart data from historical closed trades
 
 ### Example
 
-[✨ View "chartRequest.php"](../../samples/Api/OrderBookApi/chartRequest.php)
+[✨ View "chartRequest.php"](../../examples/Api/OrderBookApi/chartRequest.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Cancel all existing trades for account
 
 ### Example
 
-[✨ View "deleteAccountTrades.php"](../../samples/Api/OrderBookApi/deleteAccountTrades.php)
+[✨ View "deleteAccountTrades.php"](../../examples/Api/OrderBookApi/deleteAccountTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Cancel existing trade
 
 ### Example
 
-[✨ View "deleteTrade.php"](../../samples/Api/OrderBookApi/deleteTrade.php)
+[✨ View "deleteTrade.php"](../../examples/Api/OrderBookApi/deleteTrade.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -154,7 +154,7 @@ List all active buy trades
 
 ### Example
 
-[✨ View "getBuyTrades.php"](../../samples/Api/OrderBookApi/getBuyTrades.php)
+[✨ View "getBuyTrades.php"](../../examples/Api/OrderBookApi/getBuyTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -186,7 +186,7 @@ List all active buy trades
 
 ### Example
 
-[✨ View "getBuyTradesBody.php"](../../samples/Api/OrderBookApi/getBuyTradesBody.php)
+[✨ View "getBuyTradesBody.php"](../../examples/Api/OrderBookApi/getBuyTradesBody.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -228,7 +228,7 @@ List all historical trades
 
 ### Example
 
-[✨ View "getHistoricalTrades.php"](../../samples/Api/OrderBookApi/getHistoricalTrades.php)
+[✨ View "getHistoricalTrades.php"](../../examples/Api/OrderBookApi/getHistoricalTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -260,7 +260,7 @@ List all historical trades
 
 ### Example
 
-[✨ View "getHistoricalTradesBody.php"](../../samples/Api/OrderBookApi/getHistoricalTradesBody.php)
+[✨ View "getHistoricalTradesBody.php"](../../examples/Api/OrderBookApi/getHistoricalTradesBody.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -292,7 +292,7 @@ List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
 ### Example
 
-[✨ View "getMatchedTrades.php"](../../samples/Api/OrderBookApi/getMatchedTrades.php)
+[✨ View "getMatchedTrades.php"](../../examples/Api/OrderBookApi/getMatchedTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -336,7 +336,7 @@ List all active sell trades
 
 ### Example
 
-[✨ View "getSellTrades.php"](../../samples/Api/OrderBookApi/getSellTrades.php)
+[✨ View "getSellTrades.php"](../../examples/Api/OrderBookApi/getSellTrades.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -368,7 +368,7 @@ List all active sell trades
 
 ### Example
 
-[✨ View "getSellTradesBody.php"](../../samples/Api/OrderBookApi/getSellTradesBody.php)
+[✨ View "getSellTradesBody.php"](../../examples/Api/OrderBookApi/getSellTradesBody.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -400,7 +400,7 @@ Get existing trade
 
 ### Example
 
-[✨ View "getTradeById.php"](../../samples/Api/OrderBookApi/getTradeById.php)
+[✨ View "getTradeById.php"](../../examples/Api/OrderBookApi/getTradeById.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -432,6 +432,6 @@ Store buy / sell trade
 
 ### Example
 
-[✨ View "storeTrade.php"](../../samples/Api/OrderBookApi/storeTrade.php)
+[✨ View "storeTrade.php"](../../examples/Api/OrderBookApi/storeTrade.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

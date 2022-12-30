@@ -36,7 +36,7 @@ Get file from IPFS
 
 ### Example
 
-[✨ View "getIPFSData.php"](../../samples/Api/IPFSApi/getIPFSData.php)
+[✨ View "getIPFSData.php"](../../examples/Api/IPFSApi/getIPFSData.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -68,6 +68,6 @@ Store data to IPFS
 
 ### Example
 
-[✨ View "storeIPFS.php"](../../samples/Api/IPFSApi/storeIPFS.php)
+[✨ View "storeIPFS.php"](../../examples/Api/IPFSApi/storeIPFS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

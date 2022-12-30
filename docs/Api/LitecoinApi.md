@@ -48,7 +48,7 @@ Broadcast signed Litecoin transaction
 
 ### Example
 
-[✨ View "ltcBroadcast.php"](../../samples/Api/LitecoinApi/ltcBroadcast.php)
+[✨ View "ltcBroadcast.php"](../../examples/Api/LitecoinApi/ltcBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -82,7 +82,7 @@ Generate Litecoin deposit address from Extended public key
 
 ### Example
 
-[✨ View "ltcGenerateAddress.php"](../../samples/Api/LitecoinApi/ltcGenerateAddress.php)
+[✨ View "ltcGenerateAddress.php"](../../examples/Api/LitecoinApi/ltcGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -114,7 +114,7 @@ Generate Litecoin private key
 
 ### Example
 
-[✨ View "ltcGenerateAddressPrivateKey.php"](../../samples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
+[✨ View "ltcGenerateAddressPrivateKey.php"](../../examples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -146,7 +146,7 @@ Generate Litecoin wallet
 
 ### Example
 
-[✨ View "ltcGenerateWallet.php"](../../samples/Api/LitecoinApi/ltcGenerateWallet.php)
+[✨ View "ltcGenerateWallet.php"](../../examples/Api/LitecoinApi/ltcGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -178,7 +178,7 @@ Get the balance of a Litecoin address
 
 ### Example
 
-[✨ View "ltcGetBalanceOfAddress.php"](../../samples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
+[✨ View "ltcGetBalanceOfAddress.php"](../../examples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -210,7 +210,7 @@ Get Litecoin Block by hash or height
 
 ### Example
 
-[✨ View "ltcGetBlock.php"](../../samples/Api/LitecoinApi/ltcGetBlock.php)
+[✨ View "ltcGetBlock.php"](../../examples/Api/LitecoinApi/ltcGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -239,7 +239,7 @@ Get Litecoin Blockchain Information
 
 ### Example
 
-[✨ View "ltcGetBlockChainInfo.php"](../../samples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
+[✨ View "ltcGetBlockChainInfo.php"](../../examples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -271,7 +271,7 @@ Get Litecoin Block hash
 
 ### Example
 
-[✨ View "ltcGetBlockHash.php"](../../samples/Api/LitecoinApi/ltcGetBlockHash.php)
+[✨ View "ltcGetBlockHash.php"](../../examples/Api/LitecoinApi/ltcGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -300,7 +300,7 @@ Get Mempool Transactions
 
 ### Example
 
-[✨ View "ltcGetMempool.php"](../../samples/Api/LitecoinApi/ltcGetMempool.php)
+[✨ View "ltcGetMempool.php"](../../examples/Api/LitecoinApi/ltcGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -332,7 +332,7 @@ Get Litecoin Transaction by hash
 
 ### Example
 
-[✨ View "ltcGetRawTransaction.php"](../../samples/Api/LitecoinApi/ltcGetRawTransaction.php)
+[✨ View "ltcGetRawTransaction.php"](../../examples/Api/LitecoinApi/ltcGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -368,7 +368,7 @@ Get Litecoin Transactions by address
 
 ### Example
 
-[✨ View "ltcGetTxByAddress.php"](../../samples/Api/LitecoinApi/ltcGetTxByAddress.php)
+[✨ View "ltcGetTxByAddress.php"](../../examples/Api/LitecoinApi/ltcGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -402,7 +402,7 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 ### Example
 
-[✨ View "ltcGetUTXO.php"](../../samples/Api/LitecoinApi/ltcGetUTXO.php)
+[✨ View "ltcGetUTXO.php"](../../examples/Api/LitecoinApi/ltcGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -434,7 +434,7 @@ JSON RPC HTTP driver
 
 ### Example
 
-[✨ View "ltcRpcDriver.php"](../../samples/Api/LitecoinApi/ltcRpcDriver.php)
+[✨ View "ltcRpcDriver.php"](../../examples/Api/LitecoinApi/ltcRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -466,6 +466,6 @@ Send LTC to Litecoin addresses
 
 ### Example
 
-[✨ View "ltcTransferBlockchain.php"](../../samples/Api/LitecoinApi/ltcTransferBlockchain.php)
+[✨ View "ltcTransferBlockchain.php"](../../examples/Api/LitecoinApi/ltcTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

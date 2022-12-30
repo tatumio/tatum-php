@@ -48,7 +48,7 @@ Buy an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "buyAssetOnMarketplace.php"](../../samples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
+[✨ View "buyAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -80,7 +80,7 @@ Cancel the selling of an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "cancelSellMarketplaceListing.php"](../../samples/Api/MarketplaceApi/cancelSellMarketplaceListing.php)
+[✨ View "cancelSellMarketplaceListing.php"](../../examples/Api/MarketplaceApi/cancelSellMarketplaceListing.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -112,7 +112,7 @@ Create an NFT marketplace
 
 ### Example
 
-[✨ View "generateMarketplace.php"](../../samples/Api/MarketplaceApi/generateMarketplace.php)
+[✨ View "generateMarketplace.php"](../../examples/Api/MarketplaceApi/generateMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -146,7 +146,7 @@ Get the NFT marketplace fee
 
 ### Example
 
-[✨ View "getMarketplaceFee.php"](../../samples/Api/MarketplaceApi/getMarketplaceFee.php)
+[✨ View "getMarketplaceFee.php"](../../examples/Api/MarketplaceApi/getMarketplaceFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -180,7 +180,7 @@ Get the recipient of the NFT marketplace fee
 
 ### Example
 
-[✨ View "getMarketplaceFeeRecipient.php"](../../samples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
+[✨ View "getMarketplaceFeeRecipient.php"](../../examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,7 +214,7 @@ Get information about an NFT marketplace on Solana
 
 ### Example
 
-[✨ View "getMarketplaceInfo.php"](../../samples/Api/MarketplaceApi/getMarketplaceInfo.php)
+[✨ View "getMarketplaceInfo.php"](../../examples/Api/MarketplaceApi/getMarketplaceInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -250,7 +250,7 @@ Get information about a listing on the NFT marketplace
 
 ### Example
 
-[✨ View "getMarketplaceListing.php"](../../samples/Api/MarketplaceApi/getMarketplaceListing.php)
+[✨ View "getMarketplaceListing.php"](../../examples/Api/MarketplaceApi/getMarketplaceListing.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -286,7 +286,7 @@ Get the listings of a certain type from the NFT marketplace
 
 ### Example
 
-[✨ View "getMarketplaceListings.php"](../../samples/Api/MarketplaceApi/getMarketplaceListings.php)
+[✨ View "getMarketplaceListings.php"](../../examples/Api/MarketplaceApi/getMarketplaceListings.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -318,7 +318,7 @@ Sell an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "sellAssetOnMarketplace.php"](../../samples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
+[✨ View "sellAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -350,7 +350,7 @@ Update the NFT marketplace fee
 
 ### Example
 
-[✨ View "updateFee.php"](../../samples/Api/MarketplaceApi/updateFee.php)
+[✨ View "updateFee.php"](../../examples/Api/MarketplaceApi/updateFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -382,7 +382,7 @@ Update the recipient of the NFT marketplace fee
 
 ### Example
 
-[✨ View "updateFeeRecipient.php"](../../samples/Api/MarketplaceApi/updateFeeRecipient.php)
+[✨ View "updateFeeRecipient.php"](../../examples/Api/MarketplaceApi/updateFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -414,7 +414,7 @@ Update an NFT marketplace on Solana
 
 ### Example
 
-[✨ View "updateMarketplace.php"](../../samples/Api/MarketplaceApi/updateMarketplace.php)
+[✨ View "updateMarketplace.php"](../../examples/Api/MarketplaceApi/updateMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -446,7 +446,7 @@ Withdraw funds from the marketplace fee account on Solana
 
 ### Example
 
-[✨ View "withdrawFeeFromMarketplace.php"](../../samples/Api/MarketplaceApi/withdrawFeeFromMarketplace.php)
+[✨ View "withdrawFeeFromMarketplace.php"](../../examples/Api/MarketplaceApi/withdrawFeeFromMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -478,6 +478,6 @@ Withdraw funds from the marketplace treasury account on Solana
 
 ### Example
 
-[✨ View "withdrawTreasuryFromMarketplace.php"](../../samples/Api/MarketplaceApi/withdrawTreasuryFromMarketplace.php)
+[✨ View "withdrawTreasuryFromMarketplace.php"](../../examples/Api/MarketplaceApi/withdrawTreasuryFromMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

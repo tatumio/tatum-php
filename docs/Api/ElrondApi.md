@@ -44,7 +44,7 @@ Get current block number
 
 ### Example
 
-[✨ View "eGldGetCurrentBlock.php"](../../samples/Api/ElrondApi/eGldGetCurrentBlock.php)
+[✨ View "eGldGetCurrentBlock.php"](../../examples/Api/ElrondApi/eGldGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -76,7 +76,7 @@ Send EGLD from account to account
 
 ### Example
 
-[✨ View "egldBlockchainTransfer.php"](../../samples/Api/ElrondApi/egldBlockchainTransfer.php)
+[✨ View "egldBlockchainTransfer.php"](../../examples/Api/ElrondApi/egldBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -108,7 +108,7 @@ Broadcast signed EGLD transaction
 
 ### Example
 
-[✨ View "egldBroadcast.php"](../../samples/Api/ElrondApi/egldBroadcast.php)
+[✨ View "egldBroadcast.php"](../../examples/Api/ElrondApi/egldBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -142,7 +142,7 @@ Generate EGLD account address from mnemonic
 
 ### Example
 
-[✨ View "egldGenerateAddress.php"](../../samples/Api/ElrondApi/egldGenerateAddress.php)
+[✨ View "egldGenerateAddress.php"](../../examples/Api/ElrondApi/egldGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -174,7 +174,7 @@ Generate EGLD private key
 
 ### Example
 
-[✨ View "egldGenerateAddressPrivateKey.php"](../../samples/Api/ElrondApi/egldGenerateAddressPrivateKey.php)
+[✨ View "egldGenerateAddressPrivateKey.php"](../../examples/Api/ElrondApi/egldGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -206,7 +206,7 @@ Generate EGLD wallet
 
 ### Example
 
-[✨ View "egldGenerateWallet.php"](../../samples/Api/ElrondApi/egldGenerateWallet.php)
+[✨ View "egldGenerateWallet.php"](../../examples/Api/ElrondApi/egldGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -238,7 +238,7 @@ Get EGLD Account balance
 
 ### Example
 
-[✨ View "egldGetBalance.php"](../../samples/Api/ElrondApi/egldGetBalance.php)
+[✨ View "egldGetBalance.php"](../../examples/Api/ElrondApi/egldGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -270,7 +270,7 @@ Get EGLD block by hash
 
 ### Example
 
-[✨ View "egldGetBlock.php"](../../samples/Api/ElrondApi/egldGetBlock.php)
+[✨ View "egldGetBlock.php"](../../examples/Api/ElrondApi/egldGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -302,7 +302,7 @@ Get EGLD Transaction
 
 ### Example
 
-[✨ View "egldGetTransaction.php"](../../samples/Api/ElrondApi/egldGetTransaction.php)
+[✨ View "egldGetTransaction.php"](../../examples/Api/ElrondApi/egldGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -334,7 +334,7 @@ Get count of outgoing EGLD transactions
 
 ### Example
 
-[✨ View "egldGetTransactionAddress.php"](../../samples/Api/ElrondApi/egldGetTransactionAddress.php)
+[✨ View "egldGetTransactionAddress.php"](../../examples/Api/ElrondApi/egldGetTransactionAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -366,7 +366,7 @@ Get count of outgoing EGLD transactions
 
 ### Example
 
-[✨ View "egldGetTransactionCount.php"](../../samples/Api/ElrondApi/egldGetTransactionCount.php)
+[✨ View "egldGetTransactionCount.php"](../../examples/Api/ElrondApi/egldGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -398,7 +398,7 @@ Node HTTP driver
 
 ### Example
 
-[✨ View "egldNodeGet.php"](../../samples/Api/ElrondApi/egldNodeGet.php)
+[✨ View "egldNodeGet.php"](../../examples/Api/ElrondApi/egldNodeGet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -432,6 +432,6 @@ Node HTTP driver
 
 ### Example
 
-[✨ View "egldNodePost.php"](../../samples/Api/ElrondApi/egldNodePost.php)
+[✨ View "egldNodePost.php"](../../examples/Api/ElrondApi/egldNodePost.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

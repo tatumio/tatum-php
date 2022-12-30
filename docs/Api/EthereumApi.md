@@ -50,7 +50,7 @@ Invoke a method in a smart contract on Ethereum
 
 ### Example
 
-[✨ View "ethBlockchainSmartContractInvocation.php"](../../samples/Api/EthereumApi/ethBlockchainSmartContractInvocation.php)
+[✨ View "ethBlockchainSmartContractInvocation.php"](../../examples/Api/EthereumApi/ethBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -84,7 +84,7 @@ Send Ethereum / ERC20 from account to account
 
 ### Example
 
-[✨ View "ethBlockchainTransfer.php"](../../samples/Api/EthereumApi/ethBlockchainTransfer.php)
+[✨ View "ethBlockchainTransfer.php"](../../examples/Api/EthereumApi/ethBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -118,7 +118,7 @@ Broadcast signed Ethereum transaction
 
 ### Example
 
-[✨ View "ethBroadcast.php"](../../samples/Api/EthereumApi/ethBroadcast.php)
+[✨ View "ethBroadcast.php"](../../examples/Api/EthereumApi/ethBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -154,7 +154,7 @@ Generate Ethereum account address from Extended public key
 
 ### Example
 
-[✨ View "ethGenerateAddress.php"](../../samples/Api/EthereumApi/ethGenerateAddress.php)
+[✨ View "ethGenerateAddress.php"](../../examples/Api/EthereumApi/ethGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -188,7 +188,7 @@ Generate Ethereum private key
 
 ### Example
 
-[✨ View "ethGenerateAddressPrivateKey.php"](../../samples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
+[✨ View "ethGenerateAddressPrivateKey.php"](../../examples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -222,7 +222,7 @@ Generate Ethereum wallet
 
 ### Example
 
-[✨ View "ethGenerateWallet.php"](../../samples/Api/EthereumApi/ethGenerateWallet.php)
+[✨ View "ethGenerateWallet.php"](../../examples/Api/EthereumApi/ethGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -256,7 +256,7 @@ Get the ETH balance of an Ethereum account
 
 ### Example
 
-[✨ View "ethGetBalance.php"](../../samples/Api/EthereumApi/ethGetBalance.php)
+[✨ View "ethGetBalance.php"](../../examples/Api/EthereumApi/ethGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -290,7 +290,7 @@ Get Ethereum block by hash
 
 ### Example
 
-[✨ View "ethGetBlock.php"](../../samples/Api/EthereumApi/ethGetBlock.php)
+[✨ View "ethGetBlock.php"](../../examples/Api/EthereumApi/ethGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -322,7 +322,7 @@ Get current block number
 
 ### Example
 
-[✨ View "ethGetCurrentBlock.php"](../../samples/Api/EthereumApi/ethGetCurrentBlock.php)
+[✨ View "ethGetCurrentBlock.php"](../../examples/Api/EthereumApi/ethGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -360,7 +360,7 @@ Get Ethereum internal transactions by address
 
 ### Example
 
-[✨ View "ethGetInternalTransactionByAddress.php"](../../samples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
+[✨ View "ethGetInternalTransactionByAddress.php"](../../examples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -394,7 +394,7 @@ Get Ethereum Transaction
 
 ### Example
 
-[✨ View "ethGetTransaction.php"](../../samples/Api/EthereumApi/ethGetTransaction.php)
+[✨ View "ethGetTransaction.php"](../../examples/Api/EthereumApi/ethGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -438,7 +438,7 @@ Get Ethereum transactions by address
 
 ### Example
 
-[✨ View "ethGetTransactionByAddress.php"](../../samples/Api/EthereumApi/ethGetTransactionByAddress.php)
+[✨ View "ethGetTransactionByAddress.php"](../../examples/Api/EthereumApi/ethGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -472,7 +472,7 @@ Get count of outgoing Ethereum transactions
 
 ### Example
 
-[✨ View "ethGetTransactionCount.php"](../../samples/Api/EthereumApi/ethGetTransactionCount.php)
+[✨ View "ethGetTransactionCount.php"](../../examples/Api/EthereumApi/ethGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -508,6 +508,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "ethWeb3Driver.php"](../../samples/Api/EthereumApi/ethWeb3Driver.php)
+[✨ View "ethWeb3Driver.php"](../../examples/Api/EthereumApi/ethWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

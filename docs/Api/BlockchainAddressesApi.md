@@ -44,7 +44,7 @@ Check whether a blockchain address is assigned to a virtual account
 
 ### Example
 
-[✨ View "addressExists.php"](../../samples/Api/BlockchainAddressesApi/addressExists.php)
+[✨ View "addressExists.php"](../../examples/Api/BlockchainAddressesApi/addressExists.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -80,7 +80,7 @@ Assign a blockchain address to a virtual account
 
 ### Example
 
-[✨ View "assignAddress.php"](../../samples/Api/BlockchainAddressesApi/assignAddress.php)
+[✨ View "assignAddress.php"](../../examples/Api/BlockchainAddressesApi/assignAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -114,7 +114,7 @@ Create a deposit address for a virtual account
 
 ### Example
 
-[✨ View "generateDepositAddress.php"](../../samples/Api/BlockchainAddressesApi/generateDepositAddress.php)
+[✨ View "generateDepositAddress.php"](../../examples/Api/BlockchainAddressesApi/generateDepositAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -146,7 +146,7 @@ Create multiple deposit addresses for a virtual account
 
 ### Example
 
-[✨ View "generateDepositAddressesBatch.php"](../../samples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
+[✨ View "generateDepositAddressesBatch.php"](../../examples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -178,7 +178,7 @@ Get all deposit addresses for a virtual account
 
 ### Example
 
-[✨ View "getAllDepositAddresses.php"](../../samples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
+[✨ View "getAllDepositAddresses.php"](../../examples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,6 +214,6 @@ Remove a deposit address from a virtual account
 
 ### Example
 
-[✨ View "removeAddress.php"](../../samples/Api/BlockchainAddressesApi/removeAddress.php)
+[✨ View "removeAddress.php"](../../examples/Api/BlockchainAddressesApi/removeAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

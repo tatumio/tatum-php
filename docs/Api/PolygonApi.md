@@ -47,7 +47,7 @@ Invoke a method in a smart contract on Polygon
 
 ### Example
 
-[✨ View "polygonBlockchainSmartContractInvocation.php"](../../samples/Api/PolygonApi/polygonBlockchainSmartContractInvocation.php)
+[✨ View "polygonBlockchainSmartContractInvocation.php"](../../examples/Api/PolygonApi/polygonBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -79,7 +79,7 @@ Send MATIC from account to account
 
 ### Example
 
-[✨ View "polygonBlockchainTransfer.php"](../../samples/Api/PolygonApi/polygonBlockchainTransfer.php)
+[✨ View "polygonBlockchainTransfer.php"](../../examples/Api/PolygonApi/polygonBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -111,7 +111,7 @@ Broadcast signed Polygon transaction
 
 ### Example
 
-[✨ View "polygonBroadcast.php"](../../samples/Api/PolygonApi/polygonBroadcast.php)
+[✨ View "polygonBroadcast.php"](../../examples/Api/PolygonApi/polygonBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -145,7 +145,7 @@ Generate Polygon account address from Extended public key
 
 ### Example
 
-[✨ View "polygonGenerateAddress.php"](../../samples/Api/PolygonApi/polygonGenerateAddress.php)
+[✨ View "polygonGenerateAddress.php"](../../examples/Api/PolygonApi/polygonGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -177,7 +177,7 @@ Generate Polygon private key
 
 ### Example
 
-[✨ View "polygonGenerateAddressPrivateKey.php"](../../samples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php)
+[✨ View "polygonGenerateAddressPrivateKey.php"](../../examples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -209,7 +209,7 @@ Generate Polygon wallet
 
 ### Example
 
-[✨ View "polygonGenerateWallet.php"](../../samples/Api/PolygonApi/polygonGenerateWallet.php)
+[✨ View "polygonGenerateWallet.php"](../../examples/Api/PolygonApi/polygonGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -241,7 +241,7 @@ Get Polygon Account balance
 
 ### Example
 
-[✨ View "polygonGetBalance.php"](../../samples/Api/PolygonApi/polygonGetBalance.php)
+[✨ View "polygonGetBalance.php"](../../examples/Api/PolygonApi/polygonGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -273,7 +273,7 @@ Get Polygon block by hash
 
 ### Example
 
-[✨ View "polygonGetBlock.php"](../../samples/Api/PolygonApi/polygonGetBlock.php)
+[✨ View "polygonGetBlock.php"](../../examples/Api/PolygonApi/polygonGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -302,7 +302,7 @@ Get current block number
 
 ### Example
 
-[✨ View "polygonGetCurrentBlock.php"](../../samples/Api/PolygonApi/polygonGetCurrentBlock.php)
+[✨ View "polygonGetCurrentBlock.php"](../../examples/Api/PolygonApi/polygonGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -334,7 +334,7 @@ Get Polygon Transaction
 
 ### Example
 
-[✨ View "polygonGetTransaction.php"](../../samples/Api/PolygonApi/polygonGetTransaction.php)
+[✨ View "polygonGetTransaction.php"](../../examples/Api/PolygonApi/polygonGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -376,7 +376,7 @@ Get Polygon transactions by address
 
 ### Example
 
-[✨ View "polygonGetTransactionByAddress.php"](../../samples/Api/PolygonApi/polygonGetTransactionByAddress.php)
+[✨ View "polygonGetTransactionByAddress.php"](../../examples/Api/PolygonApi/polygonGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -408,7 +408,7 @@ Get count of outgoing Polygon transactions
 
 ### Example
 
-[✨ View "polygonGetTransactionCount.php"](../../samples/Api/PolygonApi/polygonGetTransactionCount.php)
+[✨ View "polygonGetTransactionCount.php"](../../examples/Api/PolygonApi/polygonGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -442,6 +442,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "polygonWeb3Driver.php"](../../samples/Api/PolygonApi/polygonWeb3Driver.php)
+[✨ View "polygonWeb3Driver.php"](../../examples/Api/PolygonApi/polygonWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

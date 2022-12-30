@@ -46,7 +46,7 @@ Estimate BNB Smart Chain transaction fees
 
 ### Example
 
-[✨ View "bscEstimateGas.php"](../../samples/Api/BlockchainFeesApi/bscEstimateGas.php)
+[✨ View "bscEstimateGas.php"](../../examples/Api/BlockchainFeesApi/bscEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -78,7 +78,7 @@ Estimate Celo Chain transaction fees
 
 ### Example
 
-[✨ View "celoEstimateGas.php"](../../samples/Api/BlockchainFeesApi/celoEstimateGas.php)
+[✨ View "celoEstimateGas.php"](../../examples/Api/BlockchainFeesApi/celoEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -110,7 +110,7 @@ Estimate EGLD transaction fees
 
 ### Example
 
-[✨ View "egldEstimateGas.php"](../../samples/Api/BlockchainFeesApi/egldEstimateGas.php)
+[✨ View "egldEstimateGas.php"](../../examples/Api/BlockchainFeesApi/egldEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -142,7 +142,7 @@ Estimate the fee for a transaction
 
 ### Example
 
-[✨ View "estimateFeeBlockchain.php"](../../samples/Api/BlockchainFeesApi/estimateFeeBlockchain.php)
+[✨ View "estimateFeeBlockchain.php"](../../examples/Api/BlockchainFeesApi/estimateFeeBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -176,7 +176,7 @@ Estimate Ethereum transaction fees
 
 ### Example
 
-[✨ View "ethEstimateGas.php"](../../samples/Api/BlockchainFeesApi/ethEstimateGas.php)
+[✨ View "ethEstimateGas.php"](../../examples/Api/BlockchainFeesApi/ethEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -210,7 +210,7 @@ Estimate multiple Ethereum transaction fees
 
 ### Example
 
-[✨ View "ethEstimateGasBatch.php"](../../samples/Api/BlockchainFeesApi/ethEstimateGasBatch.php)
+[✨ View "ethEstimateGasBatch.php"](../../examples/Api/BlockchainFeesApi/ethEstimateGasBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -242,7 +242,7 @@ Get recommended blockchain fee / gas price
 
 ### Example
 
-[✨ View "getBlockchainFee.php"](../../samples/Api/BlockchainFeesApi/getBlockchainFee.php)
+[✨ View "getBlockchainFee.php"](../../examples/Api/BlockchainFeesApi/getBlockchainFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -274,7 +274,7 @@ Estimate KuCoin Community Chain transaction fees
 
 ### Example
 
-[✨ View "kcsEstimateGas.php"](../../samples/Api/BlockchainFeesApi/kcsEstimateGas.php)
+[✨ View "kcsEstimateGas.php"](../../examples/Api/BlockchainFeesApi/kcsEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -306,7 +306,7 @@ Estimate Klaytn transaction fees
 
 ### Example
 
-[✨ View "klaytnEstimateGas.php"](../../samples/Api/BlockchainFeesApi/klaytnEstimateGas.php)
+[✨ View "klaytnEstimateGas.php"](../../examples/Api/BlockchainFeesApi/klaytnEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -338,7 +338,7 @@ Estimate Polygon transaction fees
 
 ### Example
 
-[✨ View "polygonEstimateGas.php"](../../samples/Api/BlockchainFeesApi/polygonEstimateGas.php)
+[✨ View "polygonEstimateGas.php"](../../examples/Api/BlockchainFeesApi/polygonEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -370,7 +370,7 @@ Estimate VeChain Gas for transaction
 
 ### Example
 
-[✨ View "vetEstimateGas.php"](../../samples/Api/BlockchainFeesApi/vetEstimateGas.php)
+[✨ View "vetEstimateGas.php"](../../examples/Api/BlockchainFeesApi/vetEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -402,6 +402,6 @@ Estimate XinFin transaction fees
 
 ### Example
 
-[✨ View "xdcEstimateGas.php"](../../samples/Api/BlockchainFeesApi/xdcEstimateGas.php)
+[✨ View "xdcEstimateGas.php"](../../examples/Api/BlockchainFeesApi/xdcEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

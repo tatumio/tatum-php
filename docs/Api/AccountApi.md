@@ -52,7 +52,7 @@ Activate account
 
 ### Example
 
-[✨ View "activateAccount.php"](../../samples/Api/AccountApi/activateAccount.php)
+[✨ View "activateAccount.php"](../../examples/Api/AccountApi/activateAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -86,7 +86,7 @@ Block an amount in an account
 
 ### Example
 
-[✨ View "blockAmount.php"](../../samples/Api/AccountApi/blockAmount.php)
+[✨ View "blockAmount.php"](../../examples/Api/AccountApi/blockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -118,7 +118,7 @@ Create a virtual account
 
 ### Example
 
-[✨ View "createAccount.php"](../../samples/Api/AccountApi/createAccount.php)
+[✨ View "createAccount.php"](../../examples/Api/AccountApi/createAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -150,7 +150,7 @@ Create multiple accounts in a batch call
 
 ### Example
 
-[✨ View "createAccountBatch.php"](../../samples/Api/AccountApi/createAccountBatch.php)
+[✨ View "createAccountBatch.php"](../../examples/Api/AccountApi/createAccountBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -182,7 +182,7 @@ Deactivate account
 
 ### Example
 
-[✨ View "deactivateAccount.php"](../../samples/Api/AccountApi/deactivateAccount.php)
+[✨ View "deactivateAccount.php"](../../examples/Api/AccountApi/deactivateAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,7 +214,7 @@ Unblock all blocked amounts in an account
 
 ### Example
 
-[✨ View "deleteAllBlockAmount.php"](../../samples/Api/AccountApi/deleteAllBlockAmount.php)
+[✨ View "deleteAllBlockAmount.php"](../../examples/Api/AccountApi/deleteAllBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -246,7 +246,7 @@ Unblock a blocked amount in an account
 
 ### Example
 
-[✨ View "deleteBlockAmount.php"](../../samples/Api/AccountApi/deleteBlockAmount.php)
+[✨ View "deleteBlockAmount.php"](../../examples/Api/AccountApi/deleteBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -278,7 +278,7 @@ Freeze account
 
 ### Example
 
-[✨ View "freezeAccount.php"](../../samples/Api/AccountApi/freezeAccount.php)
+[✨ View "freezeAccount.php"](../../examples/Api/AccountApi/freezeAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -310,7 +310,7 @@ Get account balance
 
 ### Example
 
-[✨ View "getAccountBalance.php"](../../samples/Api/AccountApi/getAccountBalance.php)
+[✨ View "getAccountBalance.php"](../../examples/Api/AccountApi/getAccountBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -342,7 +342,7 @@ Get account by ID
 
 ### Example
 
-[✨ View "getAccountByAccountId.php"](../../samples/Api/AccountApi/getAccountByAccountId.php)
+[✨ View "getAccountByAccountId.php"](../../examples/Api/AccountApi/getAccountByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -390,7 +390,7 @@ List all accounts
 
 ### Example
 
-[✨ View "getAccounts.php"](../../samples/Api/AccountApi/getAccounts.php)
+[✨ View "getAccounts.php"](../../examples/Api/AccountApi/getAccounts.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -428,7 +428,7 @@ List all customer accounts
 
 ### Example
 
-[✨ View "getAccountsByCustomerId.php"](../../samples/Api/AccountApi/getAccountsByCustomerId.php)
+[✨ View "getAccountsByCustomerId.php"](../../examples/Api/AccountApi/getAccountsByCustomerId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -476,7 +476,7 @@ Count of found entities for get accounts request
 
 ### Example
 
-[✨ View "getAccountsCount.php"](../../samples/Api/AccountApi/getAccountsCount.php)
+[✨ View "getAccountsCount.php"](../../examples/Api/AccountApi/getAccountsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -512,7 +512,7 @@ Get blocked amounts in an account
 
 ### Example
 
-[✨ View "getBlockAmount.php"](../../samples/Api/AccountApi/getBlockAmount.php)
+[✨ View "getBlockAmount.php"](../../examples/Api/AccountApi/getBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -544,7 +544,7 @@ Get blocked amount by ID
 
 ### Example
 
-[✨ View "getBlockAmountById.php"](../../samples/Api/AccountApi/getBlockAmountById.php)
+[✨ View "getBlockAmountById.php"](../../examples/Api/AccountApi/getBlockAmountById.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -578,7 +578,7 @@ Unblock an amount in an account and perform a transaction
 
 ### Example
 
-[✨ View "unblockAmountWithTransaction.php"](../../samples/Api/AccountApi/unblockAmountWithTransaction.php)
+[✨ View "unblockAmountWithTransaction.php"](../../examples/Api/AccountApi/unblockAmountWithTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -610,7 +610,7 @@ Unfreeze account
 
 ### Example
 
-[✨ View "unfreezeAccount.php"](../../samples/Api/AccountApi/unfreezeAccount.php)
+[✨ View "unfreezeAccount.php"](../../examples/Api/AccountApi/unfreezeAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -644,6 +644,6 @@ Update account
 
 ### Example
 
-[✨ View "updateAccountByAccountId.php"](../../samples/Api/AccountApi/updateAccountByAccountId.php)
+[✨ View "updateAccountByAccountId.php"](../../examples/Api/AccountApi/updateAccountByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

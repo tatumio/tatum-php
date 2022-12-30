@@ -38,7 +38,7 @@ Estimate the block height for a future point in time
 
 ### Example
 
-[✨ View "getAuctionEstimatedTime.php"](../../samples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
+[✨ View "getAuctionEstimatedTime.php"](../../examples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -72,6 +72,6 @@ Get the blockchain address of a smart contract by the deployment transaction ID
 
 ### Example
 
-[✨ View "sCGetContractAddress.php"](../../samples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
+[✨ View "sCGetContractAddress.php"](../../examples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -49,7 +49,7 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-[✨ View "nodeJsonPostRpcDriver.php"](../../samples/Api/NodeRPCApi/nodeJsonPostRpcDriver.php)
+[✨ View "nodeJsonPostRpcDriver.php"](../../examples/Api/NodeRPCApi/nodeJsonPostRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -87,7 +87,7 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-[✨ View "nodeJsonRpcGetDriver.php"](../../samples/Api/NodeRPCApi/nodeJsonRpcGetDriver.php)
+[✨ View "nodeJsonRpcGetDriver.php"](../../examples/Api/NodeRPCApi/nodeJsonRpcGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -127,6 +127,6 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-[✨ View "nodeJsonRpcPutDriver.php"](../../samples/Api/NodeRPCApi/nodeJsonRpcPutDriver.php)
+[✨ View "nodeJsonRpcPutDriver.php"](../../examples/Api/NodeRPCApi/nodeJsonRpcPutDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

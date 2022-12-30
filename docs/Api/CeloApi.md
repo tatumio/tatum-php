@@ -47,7 +47,7 @@ Invoke a method in a smart contract on Celo
 
 ### Example
 
-[✨ View "celoBlockchainSmartContractInvocation.php"](../../samples/Api/CeloApi/celoBlockchainSmartContractInvocation.php)
+[✨ View "celoBlockchainSmartContractInvocation.php"](../../examples/Api/CeloApi/celoBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -79,7 +79,7 @@ Send Celo / ERC20 from account to account
 
 ### Example
 
-[✨ View "celoBlockchainTransfer.php"](../../samples/Api/CeloApi/celoBlockchainTransfer.php)
+[✨ View "celoBlockchainTransfer.php"](../../examples/Api/CeloApi/celoBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -111,7 +111,7 @@ Broadcast signed Celo transaction
 
 ### Example
 
-[✨ View "celoBroadcast.php"](../../samples/Api/CeloApi/celoBroadcast.php)
+[✨ View "celoBroadcast.php"](../../examples/Api/CeloApi/celoBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -145,7 +145,7 @@ Generate Celo account address from Extended public key
 
 ### Example
 
-[✨ View "celoGenerateAddress.php"](../../samples/Api/CeloApi/celoGenerateAddress.php)
+[✨ View "celoGenerateAddress.php"](../../examples/Api/CeloApi/celoGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -177,7 +177,7 @@ Generate Celo private key
 
 ### Example
 
-[✨ View "celoGenerateAddressPrivateKey.php"](../../samples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
+[✨ View "celoGenerateAddressPrivateKey.php"](../../examples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -209,7 +209,7 @@ Generate Celo wallet
 
 ### Example
 
-[✨ View "celoGenerateWallet.php"](../../samples/Api/CeloApi/celoGenerateWallet.php)
+[✨ View "celoGenerateWallet.php"](../../examples/Api/CeloApi/celoGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -241,7 +241,7 @@ Get Celo Account balance
 
 ### Example
 
-[✨ View "celoGetBalance.php"](../../samples/Api/CeloApi/celoGetBalance.php)
+[✨ View "celoGetBalance.php"](../../examples/Api/CeloApi/celoGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -273,7 +273,7 @@ Get Celo block by hash
 
 ### Example
 
-[✨ View "celoGetBlock.php"](../../samples/Api/CeloApi/celoGetBlock.php)
+[✨ View "celoGetBlock.php"](../../examples/Api/CeloApi/celoGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -302,7 +302,7 @@ Get current block number
 
 ### Example
 
-[✨ View "celoGetCurrentBlock.php"](../../samples/Api/CeloApi/celoGetCurrentBlock.php)
+[✨ View "celoGetCurrentBlock.php"](../../examples/Api/CeloApi/celoGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -334,7 +334,7 @@ Get Celo Transaction
 
 ### Example
 
-[✨ View "celoGetTransaction.php"](../../samples/Api/CeloApi/celoGetTransaction.php)
+[✨ View "celoGetTransaction.php"](../../examples/Api/CeloApi/celoGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -376,7 +376,7 @@ Get Celo transactions by address
 
 ### Example
 
-[✨ View "celoGetTransactionByAddress.php"](../../samples/Api/CeloApi/celoGetTransactionByAddress.php)
+[✨ View "celoGetTransactionByAddress.php"](../../examples/Api/CeloApi/celoGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -408,7 +408,7 @@ Get count of outgoing Celo transactions
 
 ### Example
 
-[✨ View "celoGetTransactionCount.php"](../../samples/Api/CeloApi/celoGetTransactionCount.php)
+[✨ View "celoGetTransactionCount.php"](../../examples/Api/CeloApi/celoGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -442,6 +442,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "celoWeb3Driver.php"](../../samples/Api/CeloApi/celoWeb3Driver.php)
+[✨ View "celoWeb3Driver.php"](../../examples/Api/CeloApi/celoWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

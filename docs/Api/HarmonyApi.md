@@ -49,7 +49,7 @@ Invoke a method in a smart contract on Harmony
 
 ### Example
 
-[✨ View "oneBlockchainSmartContractInvocation.php"](../../samples/Api/HarmonyApi/oneBlockchainSmartContractInvocation.php)
+[✨ View "oneBlockchainSmartContractInvocation.php"](../../examples/Api/HarmonyApi/oneBlockchainSmartContractInvocation.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -83,7 +83,7 @@ Send ONE / HRM20 from account to account
 
 ### Example
 
-[✨ View "oneBlockchainTransfer.php"](../../samples/Api/HarmonyApi/oneBlockchainTransfer.php)
+[✨ View "oneBlockchainTransfer.php"](../../examples/Api/HarmonyApi/oneBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -117,7 +117,7 @@ Broadcast signed ONE transaction
 
 ### Example
 
-[✨ View "oneBroadcast.php"](../../samples/Api/HarmonyApi/oneBroadcast.php)
+[✨ View "oneBroadcast.php"](../../examples/Api/HarmonyApi/oneBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -149,7 +149,7 @@ Transform HEX address to Bech32 ONE address format
 
 ### Example
 
-[✨ View "oneFormatAddress.php"](../../samples/Api/HarmonyApi/oneFormatAddress.php)
+[✨ View "oneFormatAddress.php"](../../examples/Api/HarmonyApi/oneFormatAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -183,7 +183,7 @@ Generate ONE account address from Extended public key
 
 ### Example
 
-[✨ View "oneGenerateAddress.php"](../../samples/Api/HarmonyApi/oneGenerateAddress.php)
+[✨ View "oneGenerateAddress.php"](../../examples/Api/HarmonyApi/oneGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -215,7 +215,7 @@ Generate ONE private key
 
 ### Example
 
-[✨ View "oneGenerateAddressPrivateKey.php"](../../samples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
+[✨ View "oneGenerateAddressPrivateKey.php"](../../examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -247,7 +247,7 @@ Generate ONE wallet
 
 ### Example
 
-[✨ View "oneGenerateWallet.php"](../../samples/Api/HarmonyApi/oneGenerateWallet.php)
+[✨ View "oneGenerateWallet.php"](../../examples/Api/HarmonyApi/oneGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -281,7 +281,7 @@ Get ONE Account balance
 
 ### Example
 
-[✨ View "oneGetBalance.php"](../../samples/Api/HarmonyApi/oneGetBalance.php)
+[✨ View "oneGetBalance.php"](../../examples/Api/HarmonyApi/oneGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -315,7 +315,7 @@ Get ONE block by hash
 
 ### Example
 
-[✨ View "oneGetBlock.php"](../../samples/Api/HarmonyApi/oneGetBlock.php)
+[✨ View "oneGetBlock.php"](../../examples/Api/HarmonyApi/oneGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -344,7 +344,7 @@ Get current block number
 
 ### Example
 
-[✨ View "oneGetCurrentBlock.php"](../../samples/Api/HarmonyApi/oneGetCurrentBlock.php)
+[✨ View "oneGetCurrentBlock.php"](../../examples/Api/HarmonyApi/oneGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -378,7 +378,7 @@ Get ONE Transaction
 
 ### Example
 
-[✨ View "oneGetTransaction.php"](../../samples/Api/HarmonyApi/oneGetTransaction.php)
+[✨ View "oneGetTransaction.php"](../../examples/Api/HarmonyApi/oneGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -412,7 +412,7 @@ Get count of outgoing ONE transactions
 
 ### Example
 
-[✨ View "oneGetTransactionCount.php"](../../samples/Api/HarmonyApi/oneGetTransactionCount.php)
+[✨ View "oneGetTransactionCount.php"](../../examples/Api/HarmonyApi/oneGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -448,6 +448,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "oneWeb3Driver.php"](../../samples/Api/HarmonyApi/oneWeb3Driver.php)
+[✨ View "oneWeb3Driver.php"](../../examples/Api/HarmonyApi/oneWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -37,6 +37,6 @@ Get the current exchange rate for exchanging fiat/crypto assets
 
 ### Example
 
-[✨ View "getExchangeRate.php"](../../samples/Api/ExchangeRateApi/getExchangeRate.php)
+[✨ View "getExchangeRate.php"](../../examples/Api/ExchangeRateApi/getExchangeRate.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

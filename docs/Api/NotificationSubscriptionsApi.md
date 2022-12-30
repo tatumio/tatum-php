@@ -45,7 +45,7 @@ Create a subscription
 
 ### Example
 
-[✨ View "createSubscription.php"](../../samples/Api/NotificationSubscriptionsApi/createSubscription.php)
+[✨ View "createSubscription.php"](../../examples/Api/NotificationSubscriptionsApi/createSubscription.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -77,7 +77,7 @@ Cancel existing subscription
 
 ### Example
 
-[✨ View "deleteSubscription.php"](../../samples/Api/NotificationSubscriptionsApi/deleteSubscription.php)
+[✨ View "deleteSubscription.php"](../../examples/Api/NotificationSubscriptionsApi/deleteSubscription.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -106,7 +106,7 @@ Disable HMAC webhook digest
 
 ### Example
 
-[✨ View "disableWebHookHmac.php"](../../samples/Api/NotificationSubscriptionsApi/disableWebHookHmac.php)
+[✨ View "disableWebHookHmac.php"](../../examples/Api/NotificationSubscriptionsApi/disableWebHookHmac.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -138,7 +138,7 @@ Enable HMAC webhook digest
 
 ### Example
 
-[✨ View "enableWebHookHmac.php"](../../samples/Api/NotificationSubscriptionsApi/enableWebHookHmac.php)
+[✨ View "enableWebHookHmac.php"](../../examples/Api/NotificationSubscriptionsApi/enableWebHookHmac.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -176,7 +176,7 @@ List all executed webhooks
 
 ### Example
 
-[✨ View "getAllWebhooks.php"](../../samples/Api/NotificationSubscriptionsApi/getAllWebhooks.php)
+[✨ View "getAllWebhooks.php"](../../examples/Api/NotificationSubscriptionsApi/getAllWebhooks.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -214,7 +214,7 @@ Count of found entities for get webhook request
 
 ### Example
 
-[✨ View "getAllWebhooksCount.php"](../../samples/Api/NotificationSubscriptionsApi/getAllWebhooksCount.php)
+[✨ View "getAllWebhooksCount.php"](../../examples/Api/NotificationSubscriptionsApi/getAllWebhooksCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -246,7 +246,7 @@ Obtain report for subscription
 
 ### Example
 
-[✨ View "getSubscriptionReport.php"](../../samples/Api/NotificationSubscriptionsApi/getSubscriptionReport.php)
+[✨ View "getSubscriptionReport.php"](../../examples/Api/NotificationSubscriptionsApi/getSubscriptionReport.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -282,7 +282,7 @@ List all active subscriptions
 
 ### Example
 
-[✨ View "getSubscriptions.php"](../../samples/Api/NotificationSubscriptionsApi/getSubscriptions.php)
+[✨ View "getSubscriptions.php"](../../examples/Api/NotificationSubscriptionsApi/getSubscriptions.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -318,6 +318,6 @@ Count of found entities for get webhook request
 
 ### Example
 
-[✨ View "getSubscriptionsCount.php"](../../samples/Api/NotificationSubscriptionsApi/getSubscriptionsCount.php)
+[✨ View "getSubscriptionsCount.php"](../../examples/Api/NotificationSubscriptionsApi/getSubscriptionsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

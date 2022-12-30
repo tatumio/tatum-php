@@ -46,7 +46,7 @@ Broadcast signed Dogecoin transaction
 
 ### Example
 
-[✨ View "dogeBroadcast.php"](../../samples/Api/DogecoinApi/dogeBroadcast.php)
+[✨ View "dogeBroadcast.php"](../../examples/Api/DogecoinApi/dogeBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -80,7 +80,7 @@ Generate Dogecoin deposit address from Extended public key
 
 ### Example
 
-[✨ View "dogeGenerateAddress.php"](../../samples/Api/DogecoinApi/dogeGenerateAddress.php)
+[✨ View "dogeGenerateAddress.php"](../../examples/Api/DogecoinApi/dogeGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -112,7 +112,7 @@ Generate Dogecoin private key
 
 ### Example
 
-[✨ View "dogeGenerateAddressPrivateKey.php"](../../samples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
+[✨ View "dogeGenerateAddressPrivateKey.php"](../../examples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -144,7 +144,7 @@ Generate Dogecoin wallet
 
 ### Example
 
-[✨ View "dogeGenerateWallet.php"](../../samples/Api/DogecoinApi/dogeGenerateWallet.php)
+[✨ View "dogeGenerateWallet.php"](../../examples/Api/DogecoinApi/dogeGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -176,7 +176,7 @@ Get Dogecoin Block by hash or height
 
 ### Example
 
-[✨ View "dogeGetBlock.php"](../../samples/Api/DogecoinApi/dogeGetBlock.php)
+[✨ View "dogeGetBlock.php"](../../examples/Api/DogecoinApi/dogeGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -205,7 +205,7 @@ Get Dogecoin Blockchain Information
 
 ### Example
 
-[✨ View "dogeGetBlockChainInfo.php"](../../samples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
+[✨ View "dogeGetBlockChainInfo.php"](../../examples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -237,7 +237,7 @@ Get Dogecoin Block hash
 
 ### Example
 
-[✨ View "dogeGetBlockHash.php"](../../samples/Api/DogecoinApi/dogeGetBlockHash.php)
+[✨ View "dogeGetBlockHash.php"](../../examples/Api/DogecoinApi/dogeGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -266,7 +266,7 @@ Get Mempool Transactions
 
 ### Example
 
-[✨ View "dogeGetMempool.php"](../../samples/Api/DogecoinApi/dogeGetMempool.php)
+[✨ View "dogeGetMempool.php"](../../examples/Api/DogecoinApi/dogeGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -298,7 +298,7 @@ Get Dogecoin Transaction by hash
 
 ### Example
 
-[✨ View "dogeGetRawTransaction.php"](../../samples/Api/DogecoinApi/dogeGetRawTransaction.php)
+[✨ View "dogeGetRawTransaction.php"](../../examples/Api/DogecoinApi/dogeGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -332,7 +332,7 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 ### Example
 
-[✨ View "dogeGetUTXO.php"](../../samples/Api/DogecoinApi/dogeGetUTXO.php)
+[✨ View "dogeGetUTXO.php"](../../examples/Api/DogecoinApi/dogeGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -364,7 +364,7 @@ JSON RPC HTTP driver
 
 ### Example
 
-[✨ View "dogeRpcDriver.php"](../../samples/Api/DogecoinApi/dogeRpcDriver.php)
+[✨ View "dogeRpcDriver.php"](../../examples/Api/DogecoinApi/dogeRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -396,6 +396,6 @@ Send DOGE to Dogecoin addresses
 
 ### Example
 
-[✨ View "dogeTransferBlockchain.php"](../../samples/Api/DogecoinApi/dogeTransferBlockchain.php)
+[✨ View "dogeTransferBlockchain.php"](../../examples/Api/DogecoinApi/dogeTransferBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

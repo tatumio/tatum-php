@@ -45,7 +45,7 @@ Send VeChain from account to account
 
 ### Example
 
-[✨ View "vetBlockchainTransfer.php"](../../samples/Api/VeChainApi/vetBlockchainTransfer.php)
+[✨ View "vetBlockchainTransfer.php"](../../examples/Api/VeChainApi/vetBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -77,7 +77,7 @@ Broadcast signed VeChain transaction
 
 ### Example
 
-[✨ View "vetBroadcast.php"](../../samples/Api/VeChainApi/vetBroadcast.php)
+[✨ View "vetBroadcast.php"](../../examples/Api/VeChainApi/vetBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -111,7 +111,7 @@ Generate VeChain account address from Extended public key
 
 ### Example
 
-[✨ View "vetGenerateAddress.php"](../../samples/Api/VeChainApi/vetGenerateAddress.php)
+[✨ View "vetGenerateAddress.php"](../../examples/Api/VeChainApi/vetGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -143,7 +143,7 @@ Generate VeChain private key
 
 ### Example
 
-[✨ View "vetGenerateAddressPrivateKey.php"](../../samples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
+[✨ View "vetGenerateAddressPrivateKey.php"](../../examples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -175,7 +175,7 @@ Generate VeChain wallet
 
 ### Example
 
-[✨ View "vetGenerateWallet.php"](../../samples/Api/VeChainApi/vetGenerateWallet.php)
+[✨ View "vetGenerateWallet.php"](../../examples/Api/VeChainApi/vetGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -207,7 +207,7 @@ Get VeChain Account balance
 
 ### Example
 
-[✨ View "vetGetBalance.php"](../../samples/Api/VeChainApi/vetGetBalance.php)
+[✨ View "vetGetBalance.php"](../../examples/Api/VeChainApi/vetGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -239,7 +239,7 @@ Get VeChain Block by hash
 
 ### Example
 
-[✨ View "vetGetBlock.php"](../../samples/Api/VeChainApi/vetGetBlock.php)
+[✨ View "vetGetBlock.php"](../../examples/Api/VeChainApi/vetGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -268,7 +268,7 @@ Get VeChain current block
 
 ### Example
 
-[✨ View "vetGetCurrentBlock.php"](../../samples/Api/VeChainApi/vetGetCurrentBlock.php)
+[✨ View "vetGetCurrentBlock.php"](../../examples/Api/VeChainApi/vetGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -300,7 +300,7 @@ Get VeChain Account energy (VTHO)
 
 ### Example
 
-[✨ View "vetGetEnergy.php"](../../samples/Api/VeChainApi/vetGetEnergy.php)
+[✨ View "vetGetEnergy.php"](../../examples/Api/VeChainApi/vetGetEnergy.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -332,7 +332,7 @@ Get VeChain Transaction
 
 ### Example
 
-[✨ View "vetGetTransaction.php"](../../samples/Api/VeChainApi/vetGetTransaction.php)
+[✨ View "vetGetTransaction.php"](../../examples/Api/VeChainApi/vetGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -364,6 +364,6 @@ Get VeChain Transaction Receipt
 
 ### Example
 
-[✨ View "vetGetTransactionReceipt.php"](../../samples/Api/VeChainApi/vetGetTransactionReceipt.php)
+[✨ View "vetGetTransactionReceipt.php"](../../examples/Api/VeChainApi/vetGetTransactionReceipt.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
