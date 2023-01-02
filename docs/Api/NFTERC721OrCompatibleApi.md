@@ -4,24 +4,24 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**nftAddMinter()**](#nftaddminter) | **POST** /v3/nft/mint/add | Add an NFT minter to an NFT smart contract
-[**nftBurnErc721()**](#nftburnerc721) | **POST** /v3/nft/burn | Burn an NFT
-[**nftDeployErc721()**](#nftdeployerc721) | **POST** /v3/nft/deploy | Deploy an NFT smart contract
-[**nftGetBalanceErc721()**](#nftgetbalanceerc721) | **GET** /v3/nft/balance/{chain}/{contractAddress}/{address} | Get the NFTs from a specific smart contract that a blockchain address holds
-[**nftGetContractAddress()**](#nftgetcontractaddress) | **GET** /v3/nft/address/{chain}/{hash} | Get the address of an NFT smart contract by its transaction hash
-[**nftGetMetadataErc721()**](#nftgetmetadataerc721) | **GET** /v3/nft/metadata/{chain}/{contractAddress}/{tokenId} | Get NFT metadata
-[**nftGetProvenanceDataErc721()**](#nftgetprovenancedataerc721) | **GET** /v3/nft/provenance/{chain}/{contractAddress}/{tokenId} | Get NFT provenance information
-[**nftGetRoyaltyErc721()**](#nftgetroyaltyerc721) | **GET** /v3/nft/royalty/{chain}/{contractAddress}/{tokenId} | Get NFT royalty information
-[**nftGetTokensByAddressErc721()**](#nftgettokensbyaddresserc721) | **GET** /v3/nft/address/balance/{chain}/{address} | Get all NFTs that a blockchain address holds
-[**nftGetTokensByCollectionErc721()**](#nftgettokensbycollectionerc721) | **GET** /v3/nft/collection/{chain}/{address} | Get all NFTs from a collection
-[**nftGetTransactErc721()**](#nftgettransacterc721) | **GET** /v3/nft/transaction/{chain}/{hash} | Get an NFT transaction by its hash
-[**nftGetTransactionByAddress()**](#nftgettransactionbyaddress) | **GET** /v3/nft/transaction/{chain}/{address}/{tokenAddress} | Get NFT transactions on a blockchain address
-[**nftGetTransactionByToken()**](#nftgettransactionbytoken) | **GET** /v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId} | Get NFT transactions for an NFT
-[**nftMintErc721()**](#nftminterc721) | **POST** /v3/nft/mint | Mint an NFT
-[**nftMintMultipleErc721()**](#nftmintmultipleerc721) | **POST** /v3/nft/mint/batch | Mint multiple NFTs
-[**nftTransferErc721()**](#nfttransfererc721) | **POST** /v3/nft/transaction | Transfer an NFT
-[**nftUpdateCashbackErc721()**](#nftupdatecashbackerc721) | **PUT** /v3/nft/royalty | Update NFT royalty information
-[**nftVerifyInCollection()**](#nftverifyincollection) | **POST** /v3/nft/verify | Verify an NFT in an NFT collection on Solana
+[**nftAddMinter()**](#nftaddminter) | **POST** [/v3/nft/mint/add](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftAddMinter) | Add an NFT minter to an NFT smart contract
+[**nftBurnErc721()**](#nftburnerc721) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftBurnErc721) | Burn an NFT
+[**nftDeployErc721()**](#nftdeployerc721) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftDeployErc721) | Deploy an NFT smart contract
+[**nftGetBalanceErc721()**](#nftgetbalanceerc721) | **GET** [/v3/nft/balance/{chain}/{contractAddress}/{address}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetBalanceErc721) | Get the NFTs from a specific smart contract that a blockchain address holds
+[**nftGetContractAddress()**](#nftgetcontractaddress) | **GET** [/v3/nft/address/{chain}/{hash}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetContractAddress) | Get the address of an NFT smart contract by its transaction hash
+[**nftGetMetadataErc721()**](#nftgetmetadataerc721) | **GET** [/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetMetadataErc721) | Get NFT metadata
+[**nftGetProvenanceDataErc721()**](#nftgetprovenancedataerc721) | **GET** [/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetProvenanceDataErc721) | Get NFT provenance information
+[**nftGetRoyaltyErc721()**](#nftgetroyaltyerc721) | **GET** [/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetRoyaltyErc721) | Get NFT royalty information
+[**nftGetTokensByAddressErc721()**](#nftgettokensbyaddresserc721) | **GET** [/v3/nft/address/balance/{chain}/{address}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTokensByAddressErc721) | Get all NFTs that a blockchain address holds
+[**nftGetTokensByCollectionErc721()**](#nftgettokensbycollectionerc721) | **GET** [/v3/nft/collection/{chain}/{address}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTokensByCollectionErc721) | Get all NFTs from a collection
+[**nftGetTransactErc721()**](#nftgettransacterc721) | **GET** [/v3/nft/transaction/{chain}/{hash}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTransactErc721) | Get an NFT transaction by its hash
+[**nftGetTransactionByAddress()**](#nftgettransactionbyaddress) | **GET** [/v3/nft/transaction/{chain}/{address}/{tokenAddress}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTransactionByAddress) | Get NFT transactions on a blockchain address
+[**nftGetTransactionByToken()**](#nftgettransactionbytoken) | **GET** [/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTransactionByToken) | Get NFT transactions for an NFT
+[**nftMintErc721()**](#nftminterc721) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftMintErc721) | Mint an NFT
+[**nftMintMultipleErc721()**](#nftmintmultipleerc721) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftMintMultipleErc721) | Mint multiple NFTs
+[**nftTransferErc721()**](#nfttransfererc721) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftTransferErc721) | Transfer an NFT
+[**nftUpdateCashbackErc721()**](#nftupdatecashbackerc721) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftUpdateCashbackErc721) | Update NFT royalty information
+[**nftVerifyInCollection()**](#nftverifyincollection) | **POST** [/v3/nft/verify](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftVerifyInCollection) | Verify an NFT in an NFT collection on Solana
 
 
 ## `nftAddMinter()`

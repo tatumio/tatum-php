@@ -36,7 +36,7 @@ class Local {
     protected $_transaction;
 
     /**
-     * SDK caller {{api}}
+     * SDK caller
      *
      * @param \Tatum\Sdk\Caller $caller Caller object
      */

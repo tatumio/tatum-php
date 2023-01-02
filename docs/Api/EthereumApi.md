@@ -4,20 +4,20 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ethBlockchainSmartContractInvocation()**](#ethblockchainsmartcontractinvocation) | **POST** /v3/ethereum/smartcontract | Invoke a method in a smart contract on Ethereum
-[**ethBlockchainTransfer()**](#ethblockchaintransfer) | **POST** /v3/ethereum/transaction | Send Ethereum / ERC20 from account to account
-[**ethBroadcast()**](#ethbroadcast) | **POST** /v3/ethereum/broadcast | Broadcast signed Ethereum transaction
-[**ethGenerateAddress()**](#ethgenerateaddress) | **GET** /v3/ethereum/address/{xpub}/{index} | Generate Ethereum account address from Extended public key
-[**ethGenerateAddressPrivateKey()**](#ethgenerateaddressprivatekey) | **POST** /v3/ethereum/wallet/priv | Generate Ethereum private key
-[**ethGenerateWallet()**](#ethgeneratewallet) | **GET** /v3/ethereum/wallet | Generate Ethereum wallet
-[**ethGetBalance()**](#ethgetbalance) | **GET** /v3/ethereum/account/balance/{address} | Get the ETH balance of an Ethereum account
-[**ethGetBlock()**](#ethgetblock) | **GET** /v3/ethereum/block/{hash} | Get Ethereum block by hash
-[**ethGetCurrentBlock()**](#ethgetcurrentblock) | **GET** /v3/ethereum/block/current | Get current block number
-[**ethGetInternalTransactionByAddress()**](#ethgetinternaltransactionbyaddress) | **GET** /v3/ethereum/account/transaction/erc20/internal/{address} | Get Ethereum internal transactions by address
-[**ethGetTransaction()**](#ethgettransaction) | **GET** /v3/ethereum/transaction/{hash} | Get Ethereum Transaction
-[**ethGetTransactionByAddress()**](#ethgettransactionbyaddress) | **GET** /v3/ethereum/account/transaction/{address} | Get Ethereum transactions by address
-[**ethGetTransactionCount()**](#ethgettransactioncount) | **GET** /v3/ethereum/transaction/count/{address} | Get count of outgoing Ethereum transactions
-[**ethWeb3Driver()**](#ethweb3driver) | **POST** /v3/ethereum/web3/{xApiKey} | Web3 HTTP driver
+[**ethBlockchainSmartContractInvocation()**](#ethblockchainsmartcontractinvocation) | **POST** [/v3/ethereum/smartcontract](https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainSmartContractInvocation) | Invoke a method in a smart contract on Ethereum
+[**ethBlockchainTransfer()**](#ethblockchaintransfer) | **POST** [/v3/ethereum/transaction](https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer) | Send Ethereum / ERC20 from account to account
+[**ethBroadcast()**](#ethbroadcast) | **POST** [/v3/ethereum/broadcast](https://apidoc.tatum.io/tag/Ethereum#operation/EthBroadcast) | Broadcast signed Ethereum transaction
+[**ethGenerateAddress()**](#ethgenerateaddress) | **GET** [/v3/ethereum/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateAddress) | Generate Ethereum account address from Extended public key
+[**ethGenerateAddressPrivateKey()**](#ethgenerateaddressprivatekey) | **POST** [/v3/ethereum/wallet/priv](https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateAddressPrivateKey) | Generate Ethereum private key
+[**ethGenerateWallet()**](#ethgeneratewallet) | **GET** [/v3/ethereum/wallet](https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateWallet) | Generate Ethereum wallet
+[**ethGetBalance()**](#ethgetbalance) | **GET** [/v3/ethereum/account/balance/{address}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetBalance) | Get the ETH balance of an Ethereum account
+[**ethGetBlock()**](#ethgetblock) | **GET** [/v3/ethereum/block/{hash}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetBlock) | Get Ethereum block by hash
+[**ethGetCurrentBlock()**](#ethgetcurrentblock) | **GET** [/v3/ethereum/block/current](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetCurrentBlock) | Get current block number
+[**ethGetInternalTransactionByAddress()**](#ethgetinternaltransactionbyaddress) | **GET** [/v3/ethereum/account/transaction/erc20/internal/{address}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetInternalTransactionByAddress) | Get Ethereum internal transactions by address
+[**ethGetTransaction()**](#ethgettransaction) | **GET** [/v3/ethereum/transaction/{hash}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetTransaction) | Get Ethereum Transaction
+[**ethGetTransactionByAddress()**](#ethgettransactionbyaddress) | **GET** [/v3/ethereum/account/transaction/{address}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetTransactionByAddress) | Get Ethereum transactions by address
+[**ethGetTransactionCount()**](#ethgettransactioncount) | **GET** [/v3/ethereum/transaction/count/{address}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetTransactionCount) | Get count of outgoing Ethereum transactions
+[**ethWeb3Driver()**](#ethweb3driver) | **POST** [/v3/ethereum/web3/{xApiKey}](https://apidoc.tatum.io/tag/Ethereum#operation/EthWeb3Driver) | Web3 HTTP driver
 
 
 ## `ethBlockchainSmartContractInvocation()`

@@ -4,21 +4,21 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultiTokenMinter()**](#addmultitokenminter) | **POST** /v3/multitoken/mint/add | Add a Multi Token minter
-[**burnMultiToken()**](#burnmultitoken) | **POST** /v3/multitoken/burn | Burn a Multi Token
-[**burnMultiTokenBatch()**](#burnmultitokenbatch) | **POST** /v3/multitoken/burn/batch | Burn multiple Multi Tokens
-[**deployMultiToken()**](#deploymultitoken) | **POST** /v3/multitoken/deploy | Deploy a Multi Token smart contract
-[**mintMultiToken()**](#mintmultitoken) | **POST** /v3/multitoken/mint | Mint a Multi Token
-[**mintMultiTokenBatch()**](#mintmultitokenbatch) | **POST** /v3/multitoken/mint/batch | Mint multiple Multi Tokens
-[**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | **GET** /v3/multitoken/address/balance/{chain}/{address} | Get all Multi Tokens that a blockchain address holds
-[**multiTokenGetBalance()**](#multitokengetbalance) | **GET** /v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId} | Get the amount of a specific MultiToken that a blockchain address holds
-[**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | **GET** /v3/multitoken/balance/batch/{chain}/{contractAddress} | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-[**multiTokenGetContractAddress()**](#multitokengetcontractaddress) | **GET** /v3/multitoken/address/{chain}/{hash} | Get the address of a Multi Token smart contract by its transaction hash
-[**multiTokenGetMetadata()**](#multitokengetmetadata) | **GET** /v3/multitoken/metadata/{chain}/{contractAddress}/{token} | Get Multi Token metadata
-[**multiTokenGetTransaction()**](#multitokengettransaction) | **GET** /v3/multitoken/transaction/{chain}/{hash} | Get a Multi Token transaction by its hash
-[**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | **GET** /v3/multitoken/transaction/{chain}/{address}/{tokenAddress} | Get Multi Token transactions on a blockchain address
-[**transferMultiToken()**](#transfermultitoken) | **POST** /v3/multitoken/transaction | Transfer a Multi Token
-[**transferMultiTokenBatch()**](#transfermultitokenbatch) | **POST** /v3/multitoken/transaction/batch | Transfer multiple Multi Tokens
+[**addMultiTokenMinter()**](#addmultitokenminter) | **POST** [/v3/multitoken/mint/add](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/AddMultiTokenMinter) | Add a Multi Token minter
+[**burnMultiToken()**](#burnmultitoken) | **POST** [/v3/multitoken/burn](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/BurnMultiToken) | Burn a Multi Token
+[**burnMultiTokenBatch()**](#burnmultitokenbatch) | **POST** [/v3/multitoken/burn/batch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/BurnMultiTokenBatch) | Burn multiple Multi Tokens
+[**deployMultiToken()**](#deploymultitoken) | **POST** [/v3/multitoken/deploy](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/DeployMultiToken) | Deploy a Multi Token smart contract
+[**mintMultiToken()**](#mintmultitoken) | **POST** [/v3/multitoken/mint](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MintMultiToken) | Mint a Multi Token
+[**mintMultiTokenBatch()**](#mintmultitokenbatch) | **POST** [/v3/multitoken/mint/batch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MintMultiTokenBatch) | Mint multiple Multi Tokens
+[**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | **GET** [/v3/multitoken/address/balance/{chain}/{address}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetAddressBalance) | Get all Multi Tokens that a blockchain address holds
+[**multiTokenGetBalance()**](#multitokengetbalance) | **GET** [/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetBalance) | Get the amount of a specific MultiToken that a blockchain address holds
+[**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | **GET** [/v3/multitoken/balance/batch/{chain}/{contractAddress}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetBalanceBatch) | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
+[**multiTokenGetContractAddress()**](#multitokengetcontractaddress) | **GET** [/v3/multitoken/address/{chain}/{hash}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetContractAddress) | Get the address of a Multi Token smart contract by its transaction hash
+[**multiTokenGetMetadata()**](#multitokengetmetadata) | **GET** [/v3/multitoken/metadata/{chain}/{contractAddress}/{token}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetMetadata) | Get Multi Token metadata
+[**multiTokenGetTransaction()**](#multitokengettransaction) | **GET** [/v3/multitoken/transaction/{chain}/{hash}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetTransaction) | Get a Multi Token transaction by its hash
+[**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | **GET** [/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetTransactionByAddress) | Get Multi Token transactions on a blockchain address
+[**transferMultiToken()**](#transfermultitoken) | **POST** [/v3/multitoken/transaction](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/TransferMultiToken) | Transfer a Multi Token
+[**transferMultiTokenBatch()**](#transfermultitokenbatch) | **POST** [/v3/multitoken/transaction/batch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/TransferMultiTokenBatch) | Transfer multiple Multi Tokens
 
 
 ## `addMultiTokenMinter()`

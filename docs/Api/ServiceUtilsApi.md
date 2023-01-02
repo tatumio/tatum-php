@@ -4,10 +4,10 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**freezeApiKey()**](#freezeapikey) | **PUT** /v3/tatum/freeze | Freeze API Key
-[**getCredits()**](#getcredits) | **GET** /v3/tatum/usage | Get information about your credit consumption for the last month
-[**getVersion()**](#getversion) | **GET** /v3/tatum/version | Get API version
-[**unfreezeApiKey()**](#unfreezeapikey) | **DELETE** /v3/tatum/freeze | Unfreeze API Key
+[**freezeApiKey()**](#freezeapikey) | **PUT** [/v3/tatum/freeze](https://apidoc.tatum.io/tag/ServiceUtils#operation/freezeApiKey) | Freeze API Key
+[**getCredits()**](#getcredits) | **GET** [/v3/tatum/usage](https://apidoc.tatum.io/tag/ServiceUtils#operation/getCredits) | Get information about your credit consumption for the last month
+[**getVersion()**](#getversion) | **GET** [/v3/tatum/version](https://apidoc.tatum.io/tag/ServiceUtils#operation/getVersion) | Get API version
+[**unfreezeApiKey()**](#unfreezeapikey) | **DELETE** [/v3/tatum/freeze](https://apidoc.tatum.io/tag/ServiceUtils#operation/unfreezeApiKey) | Unfreeze API Key
 
 
 ## `freezeApiKey()`

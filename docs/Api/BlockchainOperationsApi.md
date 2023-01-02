@@ -4,50 +4,50 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adaTransferOffchain()**](#adatransferoffchain) | **POST** /v3/offchain/ada/transfer | Send ADA from a virtual account to the blockchain
-[**algoDeployErc20Ledger()**](#algodeployerc20ledger) | **POST** /v3/offchain/algo/erc20/deploy | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**algoTransfer()**](#algotransfer) | **POST** /v3/offchain/algorand/transfer | Send ALGO from a virtual account to the blockchain
-[**bchTransfer()**](#bchtransfer) | **POST** /v3/offchain/bcash/transfer | Send BCH from a virtual account to the blockchain
-[**bnbAssetOffchain()**](#bnbassetoffchain) | **POST** /v3/offchain/bnb/asset | Create a BNB-based asset
-[**bnbTransfer()**](#bnbtransfer) | **POST** /v3/offchain/bnb/transfer | Send BNB from a virtual account to the blockchain
-[**bscDeployBep20()**](#bscdeploybep20) | **POST** /v3/offchain/bsc/bep20/deploy | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**bscOrBepTransfer()**](#bscorbeptransfer) | **POST** /v3/offchain/bsc/transfer | Send BSC from a virtual account to the blockchain
-[**btcTransfer()**](#btctransfer) | **POST** /v3/offchain/bitcoin/transfer | Send BTC from a virtual account to the blockchain
-[**celoDeployErc20Ledger()**](#celodeployerc20ledger) | **POST** /v3/offchain/celo/erc20/deploy | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**celoOrErc20Transfer()**](#celoorerc20transfer) | **POST** /v3/offchain/celo/transfer | Send CELO from a virtual account to the blockchain
-[**createBep20()**](#createbep20) | **POST** /v3/offchain/bsc/bep20 | Register a new BNB Smart Chain BEP-20 token in the virtual account
-[**createCeloErc20()**](#createceloerc20) | **POST** /v3/offchain/celo/erc20 | Register a new Celo ERC-20-equivalent token in the virtual account
-[**createErc20()**](#createerc20) | **POST** /v3/offchain/ethereum/erc20 | Register a new Ethereum ERC-20 token in the virtual account
-[**createHrm20()**](#createhrm20) | **POST** /v3/offchain/one/hrm20 | Register a new Harmony HRM-20 token in the virtual account
-[**createTrc()**](#createtrc) | **POST** /v3/offchain/tron/trc | Register a new TRON TRC-10 or TRC-20 token in the virtual account
-[**createXdc20()**](#createxdc20) | **POST** /v3/offchain/xdc/erc20 | Register a new XinFin ERC-20-equivalent token in the virtual account
-[**dogeTransfer()**](#dogetransfer) | **POST** /v3/offchain/dogecoin/transfer | Send DOGE from a virtual account to the blockchain
-[**egldTransfer()**](#egldtransfer) | **POST** /v3/offchain/egld/transfer | Send EGLD from a virtual account to the blockchain
-[**ethDeployErc20()**](#ethdeployerc20) | **POST** /v3/offchain/ethereum/erc20/deploy | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**ethTransfer()**](#ethtransfer) | **POST** /v3/offchain/ethereum/transfer | Send ETH from a virtual account to the blockchain
-[**ethTransferErc20()**](#ethtransfererc20) | **POST** /v3/offchain/ethereum/erc20/transfer | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**flowTransfer()**](#flowtransfer) | **POST** /v3/offchain/flow/transfer | Send FLOW from a virtual account to the blockchain
-[**kcsDeployErc20Ledger()**](#kcsdeployerc20ledger) | **POST** /v3/offchain/kcs/erc20/deploy | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**kcsTransfer()**](#kcstransfer) | **POST** /v3/offchain/kcs/transfer | Send KCS from a virtual account to the blockchain
-[**klayDeployErc20()**](#klaydeployerc20) | **POST** /v3/offchain/klaytn/erc20/deploy | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**klayTransfer()**](#klaytransfer) | **POST** /v3/offchain/klaytn/transfer | Send KLAY from a virtual account to the blockchain
-[**ltcTransfer()**](#ltctransfer) | **POST** /v3/offchain/litecoin/transfer | Send LTC from a virtual account to the blockchain
-[**oneDeployHrm20()**](#onedeployhrm20) | **POST** /v3/offchain/one/hrm20/deploy | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**oneTransfer()**](#onetransfer) | **POST** /v3/offchain/one/transfer | Send ONE from a virtual account to the blockchain
-[**polygonTransfer()**](#polygontransfer) | **POST** /v3/offchain/polygon/transfer | Send MATIC from a virtual account to the blockchain
-[**registerErc20Token()**](#registererc20token) | **POST** /v3/offchain/token/{chain} | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-[**solTransfer()**](#soltransfer) | **POST** /v3/offchain/solana/transfer | Send SOL from a virtual account to the blockchain
-[**storeCeloErc20Address()**](#storeceloerc20address) | **POST** /v3/offchain/celo/erc20/{name}/{address} | Set the contract address of a Celo ERC-20-equivalent token
-[**storeTokenAddress()**](#storetokenaddress) | **POST** /v3/offchain/token/{name}/{address} | Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
-[**storeTrcAddress()**](#storetrcaddress) | **POST** /v3/offchain/tron/trc/{name}/{address} | Set the contract address of a TRC-10 or TRC-20 token
-[**tronDeployTrc()**](#trondeploytrc) | **POST** /v3/offchain/tron/trc/deploy | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**tronTransferOffchain()**](#trontransferoffchain) | **POST** /v3/offchain/tron/transfer | Send TRON from a virtual account to the blockchain
-[**xdcDeployErc20()**](#xdcdeployerc20) | **POST** /v3/offchain/xdc/erc20/deploy | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**xdcTransfer()**](#xdctransfer) | **POST** /v3/offchain/xdc/transfer | Send XDC from a virtual account to the blockchain
-[**xlmAssetOffchain()**](#xlmassetoffchain) | **POST** /v3/offchain/xlm/asset | Create an XLM-based asset
-[**xlmTransfer()**](#xlmtransfer) | **POST** /v3/offchain/xlm/transfer | Send XLM from a virtual account to the blockchain
-[**xrpAssetOffchain()**](#xrpassetoffchain) | **POST** /v3/offchain/xrp/asset | Create XRP based Asset
-[**xrpTransfer()**](#xrptransfer) | **POST** /v3/offchain/xrp/transfer | Send XRP from a virtual account to the blockchain
+[**adaTransferOffchain()**](#adatransferoffchain) | **POST** [/v3/offchain/ada/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/AdaTransferOffchain) | Send ADA from a virtual account to the blockchain
+[**algoDeployErc20Ledger()**](#algodeployerc20ledger) | **POST** [/v3/offchain/algo/erc20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/AlgoDeployErc20Ledger) | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**algoTransfer()**](#algotransfer) | **POST** [/v3/offchain/algorand/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/AlgoTransfer) | Send ALGO from a virtual account to the blockchain
+[**bchTransfer()**](#bchtransfer) | **POST** [/v3/offchain/bcash/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/BchTransfer) | Send BCH from a virtual account to the blockchain
+[**bnbAssetOffchain()**](#bnbassetoffchain) | **POST** [/v3/offchain/bnb/asset](https://apidoc.tatum.io/tag/BlockchainOperations#operation/BnbAssetOffchain) | Create a BNB-based asset
+[**bnbTransfer()**](#bnbtransfer) | **POST** [/v3/offchain/bnb/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/BnbTransfer) | Send BNB from a virtual account to the blockchain
+[**bscDeployBep20()**](#bscdeploybep20) | **POST** [/v3/offchain/bsc/bep20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/BscDeployBep20) | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**bscOrBepTransfer()**](#bscorbeptransfer) | **POST** [/v3/offchain/bsc/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/BscOrBepTransfer) | Send BSC from a virtual account to the blockchain
+[**btcTransfer()**](#btctransfer) | **POST** [/v3/offchain/bitcoin/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/BtcTransfer) | Send BTC from a virtual account to the blockchain
+[**celoDeployErc20Ledger()**](#celodeployerc20ledger) | **POST** [/v3/offchain/celo/erc20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/CeloDeployErc20Ledger) | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**celoOrErc20Transfer()**](#celoorerc20transfer) | **POST** [/v3/offchain/celo/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/CeloOrErc20Transfer) | Send CELO from a virtual account to the blockchain
+[**createBep20()**](#createbep20) | **POST** [/v3/offchain/bsc/bep20](https://apidoc.tatum.io/tag/BlockchainOperations#operation/createBep20) | Register a new BNB Smart Chain BEP-20 token in the virtual account
+[**createCeloErc20()**](#createceloerc20) | **POST** [/v3/offchain/celo/erc20](https://apidoc.tatum.io/tag/BlockchainOperations#operation/createCeloErc20) | Register a new Celo ERC-20-equivalent token in the virtual account
+[**createErc20()**](#createerc20) | **POST** [/v3/offchain/ethereum/erc20](https://apidoc.tatum.io/tag/BlockchainOperations#operation/createErc20) | Register a new Ethereum ERC-20 token in the virtual account
+[**createHrm20()**](#createhrm20) | **POST** [/v3/offchain/one/hrm20](https://apidoc.tatum.io/tag/BlockchainOperations#operation/createHrm20) | Register a new Harmony HRM-20 token in the virtual account
+[**createTrc()**](#createtrc) | **POST** [/v3/offchain/tron/trc](https://apidoc.tatum.io/tag/BlockchainOperations#operation/createTrc) | Register a new TRON TRC-10 or TRC-20 token in the virtual account
+[**createXdc20()**](#createxdc20) | **POST** [/v3/offchain/xdc/erc20](https://apidoc.tatum.io/tag/BlockchainOperations#operation/createXdc20) | Register a new XinFin ERC-20-equivalent token in the virtual account
+[**dogeTransfer()**](#dogetransfer) | **POST** [/v3/offchain/dogecoin/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/DogeTransfer) | Send DOGE from a virtual account to the blockchain
+[**egldTransfer()**](#egldtransfer) | **POST** [/v3/offchain/egld/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/EgldTransfer) | Send EGLD from a virtual account to the blockchain
+[**ethDeployErc20()**](#ethdeployerc20) | **POST** [/v3/offchain/ethereum/erc20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/EthDeployErc20) | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**ethTransfer()**](#ethtransfer) | **POST** [/v3/offchain/ethereum/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/EthTransfer) | Send ETH from a virtual account to the blockchain
+[**ethTransferErc20()**](#ethtransfererc20) | **POST** [/v3/offchain/ethereum/erc20/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/EthTransferErc20) | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+[**flowTransfer()**](#flowtransfer) | **POST** [/v3/offchain/flow/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/FlowTransfer) | Send FLOW from a virtual account to the blockchain
+[**kcsDeployErc20Ledger()**](#kcsdeployerc20ledger) | **POST** [/v3/offchain/kcs/erc20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/KcsDeployErc20Ledger) | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**kcsTransfer()**](#kcstransfer) | **POST** [/v3/offchain/kcs/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/KcsTransfer) | Send KCS from a virtual account to the blockchain
+[**klayDeployErc20()**](#klaydeployerc20) | **POST** [/v3/offchain/klaytn/erc20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/KlayDeployErc20) | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**klayTransfer()**](#klaytransfer) | **POST** [/v3/offchain/klaytn/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/KlayTransfer) | Send KLAY from a virtual account to the blockchain
+[**ltcTransfer()**](#ltctransfer) | **POST** [/v3/offchain/litecoin/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/LtcTransfer) | Send LTC from a virtual account to the blockchain
+[**oneDeployHrm20()**](#onedeployhrm20) | **POST** [/v3/offchain/one/hrm20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/OneDeployHrm20) | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**oneTransfer()**](#onetransfer) | **POST** [/v3/offchain/one/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/OneTransfer) | Send ONE from a virtual account to the blockchain
+[**polygonTransfer()**](#polygontransfer) | **POST** [/v3/offchain/polygon/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/PolygonTransfer) | Send MATIC from a virtual account to the blockchain
+[**registerErc20Token()**](#registererc20token) | **POST** [/v3/offchain/token/{chain}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/registerErc20Token) | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+[**solTransfer()**](#soltransfer) | **POST** [/v3/offchain/solana/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/SolTransfer) | Send SOL from a virtual account to the blockchain
+[**storeCeloErc20Address()**](#storeceloerc20address) | **POST** [/v3/offchain/celo/erc20/{name}/{address}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/storeCeloErc20Address) | Set the contract address of a Celo ERC-20-equivalent token
+[**storeTokenAddress()**](#storetokenaddress) | **POST** [/v3/offchain/token/{name}/{address}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/storeTokenAddress) | Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
+[**storeTrcAddress()**](#storetrcaddress) | **POST** [/v3/offchain/tron/trc/{name}/{address}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/storeTrcAddress) | Set the contract address of a TRC-10 or TRC-20 token
+[**tronDeployTrc()**](#trondeploytrc) | **POST** [/v3/offchain/tron/trc/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/TronDeployTrc) | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**tronTransferOffchain()**](#trontransferoffchain) | **POST** [/v3/offchain/tron/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/TronTransferOffchain) | Send TRON from a virtual account to the blockchain
+[**xdcDeployErc20()**](#xdcdeployerc20) | **POST** [/v3/offchain/xdc/erc20/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/XdcDeployErc20) | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**xdcTransfer()**](#xdctransfer) | **POST** [/v3/offchain/xdc/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/XdcTransfer) | Send XDC from a virtual account to the blockchain
+[**xlmAssetOffchain()**](#xlmassetoffchain) | **POST** [/v3/offchain/xlm/asset](https://apidoc.tatum.io/tag/BlockchainOperations#operation/XlmAssetOffchain) | Create an XLM-based asset
+[**xlmTransfer()**](#xlmtransfer) | **POST** [/v3/offchain/xlm/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/XlmTransfer) | Send XLM from a virtual account to the blockchain
+[**xrpAssetOffchain()**](#xrpassetoffchain) | **POST** [/v3/offchain/xrp/asset](https://apidoc.tatum.io/tag/BlockchainOperations#operation/XrpAssetOffchain) | Create XRP based Asset
+[**xrpTransfer()**](#xrptransfer) | **POST** [/v3/offchain/xrp/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/XrpTransfer) | Send XRP from a virtual account to the blockchain
 
 
 ## `adaTransferOffchain()`

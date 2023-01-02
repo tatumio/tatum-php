@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bscBlockchainSmartContractInvocation()**](#bscblockchainsmartcontractinvocation) | **POST** /v3/bsc/smartcontract | Invoke a method in a smart contract on BNB Smart Chain
-[**bscBlockchainTransfer()**](#bscblockchaintransfer) | **POST** /v3/bsc/transaction | Send BSC / BEP20 from account to account
-[**bscBroadcast()**](#bscbroadcast) | **POST** /v3/bsc/broadcast | Broadcast signed BSC transaction
-[**bscGenerateAddress()**](#bscgenerateaddress) | **GET** /v3/bsc/address/{xpub}/{index} | Generate BSC account address from Extended public key
-[**bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) | **POST** /v3/bsc/wallet/priv | Generate BSC private key
-[**bscGenerateWallet()**](#bscgeneratewallet) | **GET** /v3/bsc/wallet | Generate BSC wallet
-[**bscGetBalance()**](#bscgetbalance) | **GET** /v3/bsc/account/balance/{address} | Get BSC Account balance
-[**bscGetBlock()**](#bscgetblock) | **GET** /v3/bsc/block/{hash} | Get BSC block by hash
-[**bscGetCurrentBlock()**](#bscgetcurrentblock) | **GET** /v3/bsc/block/current | Get current block number
-[**bscGetTransaction()**](#bscgettransaction) | **GET** /v3/bsc/transaction/{hash} | Get BSC Transaction
-[**bscGetTransactionCount()**](#bscgettransactioncount) | **GET** /v3/bsc/transaction/count/{address} | Get count of outgoing BSC transactions
-[**bscWeb3Driver()**](#bscweb3driver) | **POST** /v3/bsc/web3/{xApiKey} | Web3 HTTP driver
+[**bscBlockchainSmartContractInvocation()**](#bscblockchainsmartcontractinvocation) | **POST** [/v3/bsc/smartcontract](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscBlockchainSmartContractInvocation) | Invoke a method in a smart contract on BNB Smart Chain
+[**bscBlockchainTransfer()**](#bscblockchaintransfer) | **POST** [/v3/bsc/transaction](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscBlockchainTransfer) | Send BSC / BEP20 from account to account
+[**bscBroadcast()**](#bscbroadcast) | **POST** [/v3/bsc/broadcast](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscBroadcast) | Broadcast signed BSC transaction
+[**bscGenerateAddress()**](#bscgenerateaddress) | **GET** [/v3/bsc/address/{xpub}/{index}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGenerateAddress) | Generate BSC account address from Extended public key
+[**bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) | **POST** [/v3/bsc/wallet/priv](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGenerateAddressPrivateKey) | Generate BSC private key
+[**bscGenerateWallet()**](#bscgeneratewallet) | **GET** [/v3/bsc/wallet](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGenerateWallet) | Generate BSC wallet
+[**bscGetBalance()**](#bscgetbalance) | **GET** [/v3/bsc/account/balance/{address}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetBalance) | Get BSC Account balance
+[**bscGetBlock()**](#bscgetblock) | **GET** [/v3/bsc/block/{hash}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetBlock) | Get BSC block by hash
+[**bscGetCurrentBlock()**](#bscgetcurrentblock) | **GET** [/v3/bsc/block/current](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetCurrentBlock) | Get current block number
+[**bscGetTransaction()**](#bscgettransaction) | **GET** [/v3/bsc/transaction/{hash}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetTransaction) | Get BSC Transaction
+[**bscGetTransactionCount()**](#bscgettransactioncount) | **GET** [/v3/bsc/transaction/count/{address}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetTransactionCount) | Get count of outgoing BSC transactions
+[**bscWeb3Driver()**](#bscweb3driver) | **POST** [/v3/bsc/web3/{xApiKey}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscWeb3Driver) | Web3 HTTP driver
 
 
 ## `bscBlockchainSmartContractInvocation()`

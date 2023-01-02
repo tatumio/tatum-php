@@ -4,9 +4,9 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) | **POST** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
-[**nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) | **GET** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
-[**nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) | **PUT** /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath} | Connect to the blockchain node through an RPC driver
+[**nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) | **POST** [/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}](https://apidoc.tatum.io/tag/NodeRPC#operation/NodeJsonPostRpcDriver) | Connect to the blockchain node through an RPC driver
+[**nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) | **GET** [/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}](https://apidoc.tatum.io/tag/NodeRPC#operation/NodeJsonRpcGetDriver) | Connect to the blockchain node through an RPC driver
+[**nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) | **PUT** [/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}](https://apidoc.tatum.io/tag/NodeRPC#operation/NodeJsonRpcPutDriver) | Connect to the blockchain node through an RPC driver
 
 
 ## `nodeJsonPostRpcDriver()`

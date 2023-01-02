@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**algoNodeGetDriver()**](#algonodegetdriver) | **GET** /v3/algorand/node/algod/{xApiKey}/{algodPath} | Access Algorand Algod GET node endpoints
-[**algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) | **GET** /v3/algorand/node/indexer/{xApiKey}/{indexerPath} | Access Algorand Indexer GET node endpoints
-[**algoNodePostDriver()**](#algonodepostdriver) | **POST** /v3/algorand/node/algod/{xApiKey}/{algodPath} | Access Algorand Algod POST node endpoints
-[**algoandBroadcast()**](#algoandbroadcast) | **POST** /v3/algorand/broadcast | Broadcast signed Algorand transaction
-[**algorandBlockchainReceiveAsset()**](#algorandblockchainreceiveasset) | **POST** /v3/algorand/asset/receive | Enable receiving asset on account
-[**algorandBlockchainTransfer()**](#algorandblockchaintransfer) | **POST** /v3/algorand/transaction | Send Algos to an Algorand account
-[**algorandGenerateAddress()**](#algorandgenerateaddress) | **GET** /v3/algorand/address/{priv} | Generate Algorand account address from private key
-[**algorandGenerateWallet()**](#algorandgeneratewallet) | **GET** /v3/algorand/wallet | Generate Algorand wallet
-[**algorandGetBalance()**](#algorandgetbalance) | **GET** /v3/algorand/account/balance/{address} | Get Algorand Account balance
-[**algorandGetBlock()**](#algorandgetblock) | **GET** /v3/algorand/block/{roundNumber} | Get Algorand block by block round number
-[**algorandGetCurrentBlock()**](#algorandgetcurrentblock) | **GET** /v3/algorand/block/current | Get current block number
-[**algorandGetPayTransactionsByFromTo()**](#algorandgetpaytransactionsbyfromto) | **GET** /v3/algorand/transactions/{from}/{to} | Get Algorand Transactions between from and to
-[**algorandGetTransaction()**](#algorandgettransaction) | **GET** /v3/algorand/transaction/{txid} | Get Algorand Transaction
+[**algoNodeGetDriver()**](#algonodegetdriver) | **GET** [/v3/algorand/node/algod/{xApiKey}/{algodPath}](https://apidoc.tatum.io/tag/Algorand#operation/AlgoNodeGetDriver) | Access Algorand Algod GET node endpoints
+[**algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) | **GET** [/v3/algorand/node/indexer/{xApiKey}/{indexerPath}](https://apidoc.tatum.io/tag/Algorand#operation/AlgoNodeIndexerGetDriver) | Access Algorand Indexer GET node endpoints
+[**algoNodePostDriver()**](#algonodepostdriver) | **POST** [/v3/algorand/node/algod/{xApiKey}/{algodPath}](https://apidoc.tatum.io/tag/Algorand#operation/AlgoNodePostDriver) | Access Algorand Algod POST node endpoints
+[**algoandBroadcast()**](#algoandbroadcast) | **POST** [/v3/algorand/broadcast](https://apidoc.tatum.io/tag/Algorand#operation/AlgoandBroadcast) | Broadcast signed Algorand transaction
+[**algorandBlockchainReceiveAsset()**](#algorandblockchainreceiveasset) | **POST** [/v3/algorand/asset/receive](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset) | Enable receiving asset on account
+[**algorandBlockchainTransfer()**](#algorandblockchaintransfer) | **POST** [/v3/algorand/transaction](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainTransfer) | Send Algos to an Algorand account
+[**algorandGenerateAddress()**](#algorandgenerateaddress) | **GET** [/v3/algorand/address/{priv}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGenerateAddress) | Generate Algorand account address from private key
+[**algorandGenerateWallet()**](#algorandgeneratewallet) | **GET** [/v3/algorand/wallet](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGenerateWallet) | Generate Algorand wallet
+[**algorandGetBalance()**](#algorandgetbalance) | **GET** [/v3/algorand/account/balance/{address}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetBalance) | Get Algorand Account balance
+[**algorandGetBlock()**](#algorandgetblock) | **GET** [/v3/algorand/block/{roundNumber}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetBlock) | Get Algorand block by block round number
+[**algorandGetCurrentBlock()**](#algorandgetcurrentblock) | **GET** [/v3/algorand/block/current](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetCurrentBlock) | Get current block number
+[**algorandGetPayTransactionsByFromTo()**](#algorandgetpaytransactionsbyfromto) | **GET** [/v3/algorand/transactions/{from}/{to}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetPayTransactionsByFromTo) | Get Algorand Transactions between from and to
+[**algorandGetTransaction()**](#algorandgettransaction) | **GET** [/v3/algorand/transaction/{txid}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetTransaction) | Get Algorand Transaction
 
 
 ## `algoNodeGetDriver()`

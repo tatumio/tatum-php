@@ -4,12 +4,12 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addressExists()**](#addressexists) | **GET** /v3/offchain/account/address/{address}/{currency} | Check whether a blockchain address is assigned to a virtual account
-[**assignAddress()**](#assignaddress) | **POST** /v3/offchain/account/{id}/address/{address} | Assign a blockchain address to a virtual account
-[**generateDepositAddress()**](#generatedepositaddress) | **POST** /v3/offchain/account/{id}/address | Create a deposit address for a virtual account
-[**generateDepositAddressesBatch()**](#generatedepositaddressesbatch) | **POST** /v3/offchain/account/address/batch | Create multiple deposit addresses for a virtual account
-[**getAllDepositAddresses()**](#getalldepositaddresses) | **GET** /v3/offchain/account/{id}/address | Get all deposit addresses for a virtual account
-[**removeAddress()**](#removeaddress) | **DELETE** /v3/offchain/account/{id}/address/{address} | Remove a deposit address from a virtual account
+[**addressExists()**](#addressexists) | **GET** [/v3/offchain/account/address/{address}/{currency}](https://apidoc.tatum.io/tag/BlockchainAddresses#operation/addressExists) | Check whether a blockchain address is assigned to a virtual account
+[**assignAddress()**](#assignaddress) | **POST** [/v3/offchain/account/{id}/address/{address}](https://apidoc.tatum.io/tag/BlockchainAddresses#operation/assignAddress) | Assign a blockchain address to a virtual account
+[**generateDepositAddress()**](#generatedepositaddress) | **POST** [/v3/offchain/account/{id}/address](https://apidoc.tatum.io/tag/BlockchainAddresses#operation/generateDepositAddress) | Create a deposit address for a virtual account
+[**generateDepositAddressesBatch()**](#generatedepositaddressesbatch) | **POST** [/v3/offchain/account/address/batch](https://apidoc.tatum.io/tag/BlockchainAddresses#operation/generateDepositAddressesBatch) | Create multiple deposit addresses for a virtual account
+[**getAllDepositAddresses()**](#getalldepositaddresses) | **GET** [/v3/offchain/account/{id}/address](https://apidoc.tatum.io/tag/BlockchainAddresses#operation/getAllDepositAddresses) | Get all deposit addresses for a virtual account
+[**removeAddress()**](#removeaddress) | **DELETE** [/v3/offchain/account/{id}/address/{address}](https://apidoc.tatum.io/tag/BlockchainAddresses#operation/removeAddress) | Remove a deposit address from a virtual account
 
 
 ## `addressExists()`

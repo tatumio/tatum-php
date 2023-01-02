@@ -4,16 +4,16 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activateGasPumpAddresses()**](#activategaspumpaddresses) | **POST** /v3/gas-pump/activate | Activate gas pump addresses
-[**activatedNotActivatedGasPumpAddresses()**](#activatednotactivatedgaspumpaddresses) | **GET** /v3/gas-pump/address/{chain}/{txId} | Get the results of the address activation transaction
-[**approveTransferCustodialWallet()**](#approvetransfercustodialwallet) | **POST** /v3/blockchain/sc/custodial/approve | Approve the transfer of an asset from a gas pump address
-[**gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) | **GET** /v3/gas-pump/activated/{chain}/{owner}/{index} | Check whether the gas pump address with a specified index is activated
-[**generateCustodialWallet()**](#generatecustodialwallet) | **POST** /v3/blockchain/sc/custodial | Generate a custodial wallet address
-[**generateCustodialWalletBatch()**](#generatecustodialwalletbatch) | **POST** /v3/blockchain/sc/custodial/batch | Generate a gas pump wallet address
-[**precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) | **POST** /v3/gas-pump | Precalculate gas pump addresses
-[**sCGetCustodialAddresses()**](#scgetcustodialaddresses) | **GET** /v3/blockchain/sc/custodial/{chain}/{hash} | Get the custodial wallet address from the transaction
-[**transferCustodialWallet()**](#transfercustodialwallet) | **POST** /v3/blockchain/sc/custodial/transfer | Transfer an asset from a gas pump address
-[**transferCustodialWalletBatch()**](#transfercustodialwalletbatch) | **POST** /v3/blockchain/sc/custodial/transfer/batch | Transfer multiple assets from a gas pump address
+[**activateGasPumpAddresses()**](#activategaspumpaddresses) | **POST** [/v3/gas-pump/activate](https://apidoc.tatum.io/tag/GasPump#operation/ActivateGasPumpAddresses) | Activate gas pump addresses
+[**activatedNotActivatedGasPumpAddresses()**](#activatednotactivatedgaspumpaddresses) | **GET** [/v3/gas-pump/address/{chain}/{txId}](https://apidoc.tatum.io/tag/GasPump#operation/ActivatedNotActivatedGasPumpAddresses) | Get the results of the address activation transaction
+[**approveTransferCustodialWallet()**](#approvetransfercustodialwallet) | **POST** [/v3/blockchain/sc/custodial/approve](https://apidoc.tatum.io/tag/GasPump#operation/ApproveTransferCustodialWallet) | Approve the transfer of an asset from a gas pump address
+[**gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) | **GET** [/v3/gas-pump/activated/{chain}/{owner}/{index}](https://apidoc.tatum.io/tag/GasPump#operation/GasPumpAddressesActivatedOrNot) | Check whether the gas pump address with a specified index is activated
+[**generateCustodialWallet()**](#generatecustodialwallet) | **POST** [/v3/blockchain/sc/custodial](https://apidoc.tatum.io/tag/GasPump#operation/GenerateCustodialWallet) | Generate a custodial wallet address
+[**generateCustodialWalletBatch()**](#generatecustodialwalletbatch) | **POST** [/v3/blockchain/sc/custodial/batch](https://apidoc.tatum.io/tag/GasPump#operation/GenerateCustodialWalletBatch) | Generate a gas pump wallet address
+[**precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) | **POST** [/v3/gas-pump](https://apidoc.tatum.io/tag/GasPump#operation/PrecalculateGasPumpAddresses) | Precalculate gas pump addresses
+[**sCGetCustodialAddresses()**](#scgetcustodialaddresses) | **GET** [/v3/blockchain/sc/custodial/{chain}/{hash}](https://apidoc.tatum.io/tag/GasPump#operation/SCGetCustodialAddresses) | Get the custodial wallet address from the transaction
+[**transferCustodialWallet()**](#transfercustodialwallet) | **POST** [/v3/blockchain/sc/custodial/transfer](https://apidoc.tatum.io/tag/GasPump#operation/TransferCustodialWallet) | Transfer an asset from a gas pump address
+[**transferCustodialWalletBatch()**](#transfercustodialwalletbatch) | **POST** [/v3/blockchain/sc/custodial/transfer/batch](https://apidoc.tatum.io/tag/GasPump#operation/TransferCustodialWalletBatch) | Transfer multiple assets from a gas pump address
 
 
 ## `activateGasPumpAddresses()`

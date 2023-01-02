@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bchBroadcast()**](#bchbroadcast) | **POST** /v3/bcash/broadcast | Broadcast signed Bitcoin Cash transaction
-[**bchGenerateAddress()**](#bchgenerateaddress) | **GET** /v3/bcash/address/{xpub}/{index} | Generate Bitcoin Cash deposit address from Extended public key
-[**bchGenerateAddressPrivateKey()**](#bchgenerateaddressprivatekey) | **POST** /v3/bcash/wallet/priv | Generate Bitcoin Cash private key
-[**bchGenerateWallet()**](#bchgeneratewallet) | **GET** /v3/bcash/wallet | Generate Bitcoin Cash wallet
-[**bchGetBlock()**](#bchgetblock) | **GET** /v3/bcash/block/{hash} | Get Bitcoin Cash Block by hash
-[**bchGetBlockChainInfo()**](#bchgetblockchaininfo) | **GET** /v3/bcash/info | Get Bitcoin Cash Blockchain Information
-[**bchGetBlockHash()**](#bchgetblockhash) | **GET** /v3/bcash/block/hash/{i} | Get Bitcoin Cash Block hash
-[**bchGetRawTransaction()**](#bchgetrawtransaction) | **GET** /v3/bcash/transaction/{hash} | Get Bitcoin Cash Transaction by hash
-[**bchGetTxByAddress()**](#bchgettxbyaddress) | **GET** /v3/bcash/transaction/address/{address} | Get Bitcoin Cash Transactions by address
-[**bchRpcDriver()**](#bchrpcdriver) | **POST** /v3/bcash/node | JSON RPC HTTP driver
-[**bchTransferBlockchain()**](#bchtransferblockchain) | **POST** /v3/bcash/transaction | Send BCH to Bitcoin Cash addresses
+[**bchBroadcast()**](#bchbroadcast) | **POST** [/v3/bcash/broadcast](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchBroadcast) | Broadcast signed Bitcoin Cash transaction
+[**bchGenerateAddress()**](#bchgenerateaddress) | **GET** [/v3/bcash/address/{xpub}/{index}](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGenerateAddress) | Generate Bitcoin Cash deposit address from Extended public key
+[**bchGenerateAddressPrivateKey()**](#bchgenerateaddressprivatekey) | **POST** [/v3/bcash/wallet/priv](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGenerateAddressPrivateKey) | Generate Bitcoin Cash private key
+[**bchGenerateWallet()**](#bchgeneratewallet) | **GET** [/v3/bcash/wallet](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGenerateWallet) | Generate Bitcoin Cash wallet
+[**bchGetBlock()**](#bchgetblock) | **GET** [/v3/bcash/block/{hash}](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGetBlock) | Get Bitcoin Cash Block by hash
+[**bchGetBlockChainInfo()**](#bchgetblockchaininfo) | **GET** [/v3/bcash/info](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGetBlockChainInfo) | Get Bitcoin Cash Blockchain Information
+[**bchGetBlockHash()**](#bchgetblockhash) | **GET** [/v3/bcash/block/hash/{i}](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGetBlockHash) | Get Bitcoin Cash Block hash
+[**bchGetRawTransaction()**](#bchgetrawtransaction) | **GET** [/v3/bcash/transaction/{hash}](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGetRawTransaction) | Get Bitcoin Cash Transaction by hash
+[**bchGetTxByAddress()**](#bchgettxbyaddress) | **GET** [/v3/bcash/transaction/address/{address}](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchGetTxByAddress) | Get Bitcoin Cash Transactions by address
+[**bchRpcDriver()**](#bchrpcdriver) | **POST** [/v3/bcash/node](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchRpcDriver) | JSON RPC HTTP driver
+[**bchTransferBlockchain()**](#bchtransferblockchain) | **POST** [/v3/bcash/transaction](https://apidoc.tatum.io/tag/BitcoinCash#operation/BchTransferBlockchain) | Send BCH to Bitcoin Cash addresses
 
 
 ## `bchBroadcast()`

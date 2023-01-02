@@ -4,14 +4,14 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**erc20Approve()**](#erc20approve) | **POST** /v3/blockchain/token/approve | Allow a blockchain address to transfer and burn fungible tokens
-[**erc20Burn()**](#erc20burn) | **POST** /v3/blockchain/token/burn | Burn fungible tokens
-[**erc20Deploy()**](#erc20deploy) | **POST** /v3/blockchain/token/deploy | Deploy a fungible token smart contract
-[**erc20GetBalance()**](#erc20getbalance) | **GET** /v3/blockchain/token/balance/{chain}/{contractAddress}/{address} | Get the number of fungible tokens that a blockchain address holds in a smart contract
-[**erc20GetBalanceAddress()**](#erc20getbalanceaddress) | **GET** /v3/blockchain/token/address/{chain}/{address} | Get the total number of fungible tokens that a blockchain address holds
-[**erc20GetTransactionByAddress()**](#erc20gettransactionbyaddress) | **GET** /v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress} | Get fungible token transactions on a blockchain address
-[**erc20Mint()**](#erc20mint) | **POST** /v3/blockchain/token/mint | Mint fungible tokens
-[**erc20Transfer()**](#erc20transfer) | **POST** /v3/blockchain/token/transaction | Transfer fungible tokens
+[**erc20Approve()**](#erc20approve) | **POST** [/v3/blockchain/token/approve](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20Approve) | Allow a blockchain address to transfer and burn fungible tokens
+[**erc20Burn()**](#erc20burn) | **POST** [/v3/blockchain/token/burn](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20Burn) | Burn fungible tokens
+[**erc20Deploy()**](#erc20deploy) | **POST** [/v3/blockchain/token/deploy](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20Deploy) | Deploy a fungible token smart contract
+[**erc20GetBalance()**](#erc20getbalance) | **GET** [/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20GetBalance) | Get the number of fungible tokens that a blockchain address holds in a smart contract
+[**erc20GetBalanceAddress()**](#erc20getbalanceaddress) | **GET** [/v3/blockchain/token/address/{chain}/{address}](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20GetBalanceAddress) | Get the total number of fungible tokens that a blockchain address holds
+[**erc20GetTransactionByAddress()**](#erc20gettransactionbyaddress) | **GET** [/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20GetTransactionByAddress) | Get fungible token transactions on a blockchain address
+[**erc20Mint()**](#erc20mint) | **POST** [/v3/blockchain/token/mint](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20Mint) | Mint fungible tokens
+[**erc20Transfer()**](#erc20transfer) | **POST** [/v3/blockchain/token/transaction](https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/Erc20Transfer) | Transfer fungible tokens
 
 
 ## `erc20Approve()`

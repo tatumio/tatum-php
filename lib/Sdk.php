@@ -47,13 +47,13 @@ class Sdk {
      * Tatum SDK
      *
      * @see https://apidoc.tatum.io/#section/Authentication
-     * @var string $apiKeyMainnet (optional) MainNet Tatum API Key; default <b>empty string</b>
-     * @var string $apiKeyTestnet (optional) TestNet Tatum API Key; default <b>empty string</b>
+     * @var string $apiKeyMainnet (optional) MainNet Tatum API Key; default <b>null</b>
+     * @var string $apiKeyTestnet (optional) TestNet Tatum API Key; default <b>null</b>
      * @throws \RuntimeException
      */
-    public function __construct(string $apiKeyMainnet = "", string $apiKeyTestnet = "") {
-        $this->_apiKeyMainnet = $apiKeyMainnet;
-        $this->_apiKeyTestnet = $apiKeyTestnet;
+    public function __construct(?string $apiKeyMainnet = null, ?string $apiKeyTestnet = null) {
+        $this->_apiKeyMainnet = "$apiKeyMainnet";
+        $this->_apiKeyTestnet = "$apiKeyTestnet";
 
         // System check
         if (PHP_INT_SIZE < 8) {

@@ -4,15 +4,15 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSubscription()**](#createsubscription) | **POST** /v3/subscription | Create a subscription
-[**deleteSubscription()**](#deletesubscription) | **DELETE** /v3/subscription/{id} | Cancel existing subscription
-[**disableWebHookHmac()**](#disablewebhookhmac) | **DELETE** /v3/subscription | Disable HMAC webhook digest
-[**enableWebHookHmac()**](#enablewebhookhmac) | **PUT** /v3/subscription | Enable HMAC webhook digest
-[**getAllWebhooks()**](#getallwebhooks) | **GET** /v3/subscription/webhook | List all executed webhooks
-[**getAllWebhooksCount()**](#getallwebhookscount) | **GET** /v3/subscription/webhook/count | Count of found entities for get webhook request
-[**getSubscriptionReport()**](#getsubscriptionreport) | **GET** /v3/subscription/report/{id} | Obtain report for subscription
-[**getSubscriptions()**](#getsubscriptions) | **GET** /v3/subscription | List all active subscriptions
-[**getSubscriptionsCount()**](#getsubscriptionscount) | **GET** /v3/subscription/count | Count of found entities for get webhook request
+[**createSubscription()**](#createsubscription) | **POST** [/v3/subscription](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/createSubscription) | Create a subscription
+[**deleteSubscription()**](#deletesubscription) | **DELETE** [/v3/subscription/{id}](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/deleteSubscription) | Cancel existing subscription
+[**disableWebHookHmac()**](#disablewebhookhmac) | **DELETE** [/v3/subscription](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/disableWebHookHmac) | Disable HMAC webhook digest
+[**enableWebHookHmac()**](#enablewebhookhmac) | **PUT** [/v3/subscription](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/enableWebHookHmac) | Enable HMAC webhook digest
+[**getAllWebhooks()**](#getallwebhooks) | **GET** [/v3/subscription/webhook](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/getAllWebhooks) | List all executed webhooks
+[**getAllWebhooksCount()**](#getallwebhookscount) | **GET** [/v3/subscription/webhook/count](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/getAllWebhooksCount) | Count of found entities for get webhook request
+[**getSubscriptionReport()**](#getsubscriptionreport) | **GET** [/v3/subscription/report/{id}](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/getSubscriptionReport) | Obtain report for subscription
+[**getSubscriptions()**](#getsubscriptions) | **GET** [/v3/subscription](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/getSubscriptions) | List all active subscriptions
+[**getSubscriptionsCount()**](#getsubscriptionscount) | **GET** [/v3/subscription/count](https://apidoc.tatum.io/tag/NotificationSubscriptions#operation/getSubscriptionsCount) | Count of found entities for get webhook request
 
 
 ## `createSubscription()`

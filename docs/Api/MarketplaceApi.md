@@ -4,20 +4,20 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**buyAssetOnMarketplace()**](#buyassetonmarketplace) | **POST** /v3/blockchain/marketplace/listing/buy | Buy an asset on the NFT marketplace
-[**cancelSellMarketplaceListing()**](#cancelsellmarketplacelisting) | **POST** /v3/blockchain/marketplace/listing/cancel | Cancel the selling of an asset on the NFT marketplace
-[**generateMarketplace()**](#generatemarketplace) | **POST** /v3/blockchain/marketplace/listing | Create an NFT marketplace
-[**getMarketplaceFee()**](#getmarketplacefee) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee | Get the NFT marketplace fee
-[**getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient | Get the recipient of the NFT marketplace fee
-[**getMarketplaceInfo()**](#getmarketplaceinfo) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress} | Get information about an NFT marketplace on Solana
-[**getMarketplaceListing()**](#getmarketplacelisting) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id} | Get information about a listing on the NFT marketplace
-[**getMarketplaceListings()**](#getmarketplacelistings) | **GET** /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type} | Get the listings of a certain type from the NFT marketplace
-[**sellAssetOnMarketplace()**](#sellassetonmarketplace) | **POST** /v3/blockchain/marketplace/listing/sell | Sell an asset on the NFT marketplace
-[**updateFee()**](#updatefee) | **PUT** /v3/blockchain/marketplace/listing/fee | Update the NFT marketplace fee
-[**updateFeeRecipient()**](#updatefeerecipient) | **PUT** /v3/blockchain/marketplace/listing/recipient | Update the recipient of the NFT marketplace fee
-[**updateMarketplace()**](#updatemarketplace) | **PUT** /v3/blockchain/marketplace/listing | Update an NFT marketplace on Solana
-[**withdrawFeeFromMarketplace()**](#withdrawfeefrommarketplace) | **POST** /v3/blockchain/marketplace/withdraw/fee | Withdraw funds from the marketplace fee account on Solana
-[**withdrawTreasuryFromMarketplace()**](#withdrawtreasuryfrommarketplace) | **POST** /v3/blockchain/marketplace/withdraw/treasury | Withdraw funds from the marketplace treasury account on Solana
+[**buyAssetOnMarketplace()**](#buyassetonmarketplace) | **POST** [/v3/blockchain/marketplace/listing/buy](https://apidoc.tatum.io/tag/Marketplace#operation/BuyAssetOnMarketplace) | Buy an asset on the NFT marketplace
+[**cancelSellMarketplaceListing()**](#cancelsellmarketplacelisting) | **POST** [/v3/blockchain/marketplace/listing/cancel](https://apidoc.tatum.io/tag/Marketplace#operation/CancelSellMarketplaceListing) | Cancel the selling of an asset on the NFT marketplace
+[**generateMarketplace()**](#generatemarketplace) | **POST** [/v3/blockchain/marketplace/listing](https://apidoc.tatum.io/tag/Marketplace#operation/GenerateMarketplace) | Create an NFT marketplace
+[**getMarketplaceFee()**](#getmarketplacefee) | **GET** [/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee](https://apidoc.tatum.io/tag/Marketplace#operation/GetMarketplaceFee) | Get the NFT marketplace fee
+[**getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) | **GET** [/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient](https://apidoc.tatum.io/tag/Marketplace#operation/GetMarketplaceFeeRecipient) | Get the recipient of the NFT marketplace fee
+[**getMarketplaceInfo()**](#getmarketplaceinfo) | **GET** [/v3/blockchain/marketplace/listing/{chain}/{contractAddress}](https://apidoc.tatum.io/tag/Marketplace#operation/GetMarketplaceInfo) | Get information about an NFT marketplace on Solana
+[**getMarketplaceListing()**](#getmarketplacelisting) | **GET** [/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}](https://apidoc.tatum.io/tag/Marketplace#operation/GetMarketplaceListing) | Get information about a listing on the NFT marketplace
+[**getMarketplaceListings()**](#getmarketplacelistings) | **GET** [/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}](https://apidoc.tatum.io/tag/Marketplace#operation/GetMarketplaceListings) | Get the listings of a certain type from the NFT marketplace
+[**sellAssetOnMarketplace()**](#sellassetonmarketplace) | **POST** [/v3/blockchain/marketplace/listing/sell](https://apidoc.tatum.io/tag/Marketplace#operation/SellAssetOnMarketplace) | Sell an asset on the NFT marketplace
+[**updateFee()**](#updatefee) | **PUT** [/v3/blockchain/marketplace/listing/fee](https://apidoc.tatum.io/tag/Marketplace#operation/UpdateFee) | Update the NFT marketplace fee
+[**updateFeeRecipient()**](#updatefeerecipient) | **PUT** [/v3/blockchain/marketplace/listing/recipient](https://apidoc.tatum.io/tag/Marketplace#operation/UpdateFeeRecipient) | Update the recipient of the NFT marketplace fee
+[**updateMarketplace()**](#updatemarketplace) | **PUT** [/v3/blockchain/marketplace/listing](https://apidoc.tatum.io/tag/Marketplace#operation/UpdateMarketplace) | Update an NFT marketplace on Solana
+[**withdrawFeeFromMarketplace()**](#withdrawfeefrommarketplace) | **POST** [/v3/blockchain/marketplace/withdraw/fee](https://apidoc.tatum.io/tag/Marketplace#operation/WithdrawFeeFromMarketplace) | Withdraw funds from the marketplace fee account on Solana
+[**withdrawTreasuryFromMarketplace()**](#withdrawtreasuryfrommarketplace) | **POST** [/v3/blockchain/marketplace/withdraw/treasury](https://apidoc.tatum.io/tag/Marketplace#operation/WithdrawTreasuryFromMarketplace) | Withdraw funds from the marketplace treasury account on Solana
 
 
 ## `buyAssetOnMarketplace()`

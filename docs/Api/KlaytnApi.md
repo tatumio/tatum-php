@@ -4,18 +4,18 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**klaytnBlockchainSmartContractInvocation()**](#klaytnblockchainsmartcontractinvocation) | **POST** /v3/klaytn/smartcontract | Invoke a method in a smart contract on Klaytn
-[**klaytnBlockchainTransfer()**](#klaytnblockchaintransfer) | **POST** /v3/klaytn/transaction | Send KLAY from account to account
-[**klaytnBroadcast()**](#klaytnbroadcast) | **POST** /v3/klaytn/broadcast | Broadcast signed Klaytn transaction
-[**klaytnGenerateAddress()**](#klaytngenerateaddress) | **GET** /v3/klaytn/address/{xpub}/{index} | Generate Klaytn account address from Extended public key
-[**klaytnGenerateAddressPrivateKey()**](#klaytngenerateaddressprivatekey) | **POST** /v3/klaytn/wallet/priv | Generate Klaytn private key
-[**klaytnGenerateWallet()**](#klaytngeneratewallet) | **GET** /v3/klaytn/wallet | Generate Klaytn wallet
-[**klaytnGetBalance()**](#klaytngetbalance) | **GET** /v3/klaytn/account/balance/{address} | Get Klaytn Account balance
-[**klaytnGetBlock()**](#klaytngetblock) | **GET** /v3/klaytn/block/{hash} | Get Klaytn block by hash
-[**klaytnGetCurrentBlock()**](#klaytngetcurrentblock) | **GET** /v3/klaytn/block/current | Get current block number
-[**klaytnGetTransaction()**](#klaytngettransaction) | **GET** /v3/klaytn/transaction/{hash} | Get Klaytn Transaction
-[**klaytnGetTransactionCount()**](#klaytngettransactioncount) | **GET** /v3/klaytn/transaction/count/{address} | Get count of outgoing Klaytn transactions
-[**klaytnWeb3Driver()**](#klaytnweb3driver) | **POST** /v3/klaytn/web3/{xApiKey} | Web3 HTTP driver
+[**klaytnBlockchainSmartContractInvocation()**](#klaytnblockchainsmartcontractinvocation) | **POST** [/v3/klaytn/smartcontract](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnBlockchainSmartContractInvocation) | Invoke a method in a smart contract on Klaytn
+[**klaytnBlockchainTransfer()**](#klaytnblockchaintransfer) | **POST** [/v3/klaytn/transaction](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnBlockchainTransfer) | Send KLAY from account to account
+[**klaytnBroadcast()**](#klaytnbroadcast) | **POST** [/v3/klaytn/broadcast](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnBroadcast) | Broadcast signed Klaytn transaction
+[**klaytnGenerateAddress()**](#klaytngenerateaddress) | **GET** [/v3/klaytn/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateAddress) | Generate Klaytn account address from Extended public key
+[**klaytnGenerateAddressPrivateKey()**](#klaytngenerateaddressprivatekey) | **POST** [/v3/klaytn/wallet/priv](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateAddressPrivateKey) | Generate Klaytn private key
+[**klaytnGenerateWallet()**](#klaytngeneratewallet) | **GET** [/v3/klaytn/wallet](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateWallet) | Generate Klaytn wallet
+[**klaytnGetBalance()**](#klaytngetbalance) | **GET** [/v3/klaytn/account/balance/{address}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetBalance) | Get Klaytn Account balance
+[**klaytnGetBlock()**](#klaytngetblock) | **GET** [/v3/klaytn/block/{hash}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetBlock) | Get Klaytn block by hash
+[**klaytnGetCurrentBlock()**](#klaytngetcurrentblock) | **GET** [/v3/klaytn/block/current](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetCurrentBlock) | Get current block number
+[**klaytnGetTransaction()**](#klaytngettransaction) | **GET** [/v3/klaytn/transaction/{hash}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetTransaction) | Get Klaytn Transaction
+[**klaytnGetTransactionCount()**](#klaytngettransactioncount) | **GET** [/v3/klaytn/transaction/count/{address}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetTransactionCount) | Get count of outgoing Klaytn transactions
+[**klaytnWeb3Driver()**](#klaytnweb3driver) | **POST** [/v3/klaytn/web3/{xApiKey}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnWeb3Driver) | Web3 HTTP driver
 
 
 ## `klaytnBlockchainSmartContractInvocation()`

@@ -15,20 +15,21 @@
 
 namespace Tatum\Sdk;
 
+use Tatum\Sdk\Debugger;
+
 /**
  * Configuration
  */
 class Config {
-
     /**
      * Blockchain networks
      */
-    const NETWORK_MAINNET = 'MainNet';
-    const NETWORK_TESTNET = 'TestNet';
+    const NETWORK_MAINNET = "MainNet";
+    const NETWORK_TESTNET = "TestNet";
 
     /**
      * Current network
-     * 
+     *
      * @var string
      */
     protected $_network = self::NETWORK_TESTNET;
@@ -38,11 +39,11 @@ class Config {
      *
      * @var string
      */
-    protected $_apiKey = '';
+    protected $_apiKey = "";
 
     /**
      * The host
-     * 
+     *
      * @var string
      */
     protected $_host = 'https://api.tatum.io';
@@ -52,7 +53,7 @@ class Config {
      * 
      * @var string
      */
-    protected $_userAgent = 'Tatum_SDK_PHP/2.0.0';
+    protected $_userAgent = "Tatum_SDK_PHP/2.0.0";
 
     /**
      * Debug switch (default set to false)
@@ -66,18 +67,25 @@ class Config {
      *
      * @var string
      */
-    protected $_debugFile = 'php://output';
+    protected $_debugFile = "php://output";
+
+    /**
+     * Debugger
+     * 
+     * @var \Tatum\Sdk\Debugger|null
+     */
+    protected $_debugger = null;
 
     /**
      * Debug file location (log to STDOUT by default)
-     * 
+     *
      * @var string
      */
     protected $_tempFolderPath;
 
     /**
      * Constructor
-     * 
+     *
      * @param string $apiKey    API Key
      * @param bool   $isMainNet MainNet configuration
      */
@@ -203,7 +211,21 @@ class Config {
     }
 
     /**
-     * Sets the temp folder path
+     * Fetch the debugger object
+     * 
+     * @return \Tatum\Sdk\Debugger
+     */
+    public function debugger(): Debugger {
+        if (null === $this->_debugger) {
+            $this->_debugger = new Debugger($this);
+        }
+
+        return $this->_debugger;
+    }
+
+    /**
+     * Sets the temp folder path; creates the directory with chmod 0644
+     * Used to store files downloaded with the API via \SplFileObject
      *
      * @param string $tempFolderPath Temp folder path
      *
@@ -212,11 +234,17 @@ class Config {
     public function setTempFolderPath(string $tempFolderPath) {
         $this->_tempFolderPath = $tempFolderPath;
 
+        // Create the path
+        if (!is_dir($this->_tempFolderPath)) {
+            mkdir($this->_tempFolderPath, 0664, true);
+        }
+
         return $this;
     }
 
     /**
-     * Gets the temp folder path
+     * Gets the temp folder path; by default it's "{system temporary folder}/tatum-php"
+     * Used to store files downloaded with the API via \SplFileObject
      *
      * @return string Temp folder path
      */
@@ -225,17 +253,17 @@ class Config {
     }
 
     /**
-     * Get the essential information for debugging
+     * Get the essential header information for debugging
      *
-     * @return string The report for debugging
+     * @return string
      */
-    public function getReport(): string {
-        $report  = 'PHP SDK (Tatum) Debug Report:' . PHP_EOL;
-        $report .= '    OS: ' . php_uname() . PHP_EOL;
-        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 3.17.2' . PHP_EOL;
-        $report .= '    SDK Package Version: 2.0.0' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . $this->getTempFolderPath() . PHP_EOL;
+    public function getDebugHeader(): string {
+        $report  = "PHP SDK (Tatum) Debug Report:" . PHP_EOL;
+        $report .= "    OS: " . php_uname() . PHP_EOL;
+        $report .= "    PHP Version: " . PHP_VERSION . PHP_EOL;
+        $report .= "    OpenAPI Spec Version: 3.17.2" . PHP_EOL;
+        $report .= "    SDK Package Version: 2.0.0" . PHP_EOL;
+        $report .= "    Temp Folder Path: " . $this->getTempFolderPath() . PHP_EOL;
 
         return $report;
     }
@@ -271,13 +299,13 @@ class Config {
 
         // go through variable and assign a value
         foreach ($host["variables"] ?? [] as $name => $variable) {
-            if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
+            if (array_key_exists($name, $variables)) {
                 if (in_array($variables[$name], $variable["enum_values"], true)) {
                     $url = str_replace("{" . $name . "}", $variables[$name], $url);
                 } else {
                     throw new \InvalidArgumentException(
-                        "The variable '$name' in the host URL has invalid value " . var_export($variables[$name], true) . '. '
-                        . 'Must be ' . join(',', $variable['enum_values']) . '.'
+                        "The variable '$name' in the host URL has invalid value: " . var_export($variables[$name], true) . ". "
+                        . "Must be one of: " . join(", ", $variable["enum_values"]) . "."
                     );
                 }
             } else {

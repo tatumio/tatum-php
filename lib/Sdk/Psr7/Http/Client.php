@@ -10,8 +10,7 @@
  */
 namespace Tatum\Sdk\Psr7\Http;
 
-use RuntimeException;
-use InvalidArgumentException;
+use Tatum\Sdk\Config;
 use Tatum\Sdk\Psr7\Response;
 use Tatum\Sdk\Psr7\Request;
 use Tatum\Sdk\Psr7\Exception\RequestException;
@@ -26,11 +25,16 @@ class Client {
     /**
      * Send an HTTP request with CURL
      *
-     * @param \Tatum\Sdk\Psr7\Request $request
+     * @param \Tatum\Sdk\Psr7\Request $request Request object
+     * @param \Tatum\Sdk\Config       $config  Configuration object
      * @return \Tatum\Sdk\Psr7\Response
      * @throws \Tatum\Sdk\Psr7\Exception\RequestException
      */
-    public static function send(Request $request): Response {
+    public static function send(Request $request, Config $config): Response {
+        // Log the request; use the current UNIX timestamp in milliseconds
+        $config->debugger()->logTag($logTag = "Tatum API Call - " . floor(microtime(true) * 1000));
+        $config->debugger()->logRequest($request);
+
         // Prepare the headers
         $requestHeaders = [];
         $responseHeaders = [];
@@ -76,6 +80,10 @@ class Client {
         $error = curl_error($curlHandle);
         $info = curl_getinfo($curlHandle);
         curl_close($curlHandle);
+
+        // Log the request
+        $config->debugger()->logResponse((int) $info["http_code"], $responseHeaders, "$stream", $error);
+        $config->debugger()->logTag($logTag, true);
 
         // Prepare the response object
         $response = new Response((int) $info["http_code"], $responseHeaders, "$stream", strval($info["http_version"]));

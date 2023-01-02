@@ -53,16 +53,18 @@ abstract class AbstractApi {
      *
      * @param \Tatum\Sdk\Psr7\Request $request    An initialized request object.
      * @param string|null             $returnType (optional) Return type
-     * @throws \{{invokerPackage}}\Sdk\ApiException on non-2xx response
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @return \Tatum\Model\ModelInterface|\Tatum\Sdk\Psr7\Http\ResponseInterface
      */
     protected function exec(Request $request, ?string $returnType = null) {
         // Set the user agent and API key
         $request->setHeader("User-Agent", $this->_caller->config()->getUserAgent());
-        $request->setHeader("x-api-key", $this->_caller->config()->getApiKey());
+        if (strlen($this->_caller->config()->getApiKey())) {
+            $request->setHeader("x-api-key", $this->_caller->config()->getApiKey());
+        }
 
         try {
-            $response = Client::send($request);
+            $response = Client::send($request, $this->_caller->config());
         } catch (RequestException $exc) {
             $response = $exc->getResponse();
 

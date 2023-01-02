@@ -4,14 +4,14 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bnbBlockchainTransfer()**](#bnbblockchaintransfer) | **POST** /v3/bnb/transaction | Send Binance / Binance Token from account to account
-[**bnbBroadcast()**](#bnbbroadcast) | **POST** /v3/bnb/broadcast | Broadcast signed BNB transaction
-[**bnbGenerateWallet()**](#bnbgeneratewallet) | **GET** /v3/bnb/account | Generate Binance wallet
-[**bnbGetAccount()**](#bnbgetaccount) | **GET** /v3/bnb/account/{address} | Get Binance Account
-[**bnbGetBlock()**](#bnbgetblock) | **GET** /v3/bnb/block/{height} | Get Binance Transactions in Block
-[**bnbGetCurrentBlock()**](#bnbgetcurrentblock) | **GET** /v3/bnb/block/current | Get Binance current block
-[**bnbGetTransaction()**](#bnbgettransaction) | **GET** /v3/bnb/transaction/{hash} | Get Binance Transaction
-[**bnbGetTxByAccount()**](#bnbgettxbyaccount) | **GET** /v3/bnb/account/transaction/{address} | Get Binance Transactions By Address
+[**bnbBlockchainTransfer()**](#bnbblockchaintransfer) | **POST** [/v3/bnb/transaction](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbBlockchainTransfer) | Send Binance / Binance Token from account to account
+[**bnbBroadcast()**](#bnbbroadcast) | **POST** [/v3/bnb/broadcast](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbBroadcast) | Broadcast signed BNB transaction
+[**bnbGenerateWallet()**](#bnbgeneratewallet) | **GET** [/v3/bnb/account](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGenerateWallet) | Generate Binance wallet
+[**bnbGetAccount()**](#bnbgetaccount) | **GET** [/v3/bnb/account/{address}](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetAccount) | Get Binance Account
+[**bnbGetBlock()**](#bnbgetblock) | **GET** [/v3/bnb/block/{height}](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetBlock) | Get Binance Transactions in Block
+[**bnbGetCurrentBlock()**](#bnbgetcurrentblock) | **GET** [/v3/bnb/block/current](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetCurrentBlock) | Get Binance current block
+[**bnbGetTransaction()**](#bnbgettransaction) | **GET** [/v3/bnb/transaction/{hash}](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetTransaction) | Get Binance Transaction
+[**bnbGetTxByAccount()**](#bnbgettxbyaccount) | **GET** [/v3/bnb/account/transaction/{address}](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetTxByAccount) | Get Binance Transactions By Address
 
 
 ## `bnbBlockchainTransfer()`

@@ -4,8 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLog()**](#getlog) | **GET** /v3/record | Get a log record
-[**storeLog()**](#storelog) | **POST** /v3/record | Store a log record
+[**getLog()**](#getlog) | **GET** [/v3/record](https://apidoc.tatum.io/tag/BlockchainStorage#operation/GetLog) | Get a log record
+[**storeLog()**](#storelog) | **POST** [/v3/record](https://apidoc.tatum.io/tag/BlockchainStorage#operation/StoreLog) | Store a log record
 
 
 ## `getLog()`

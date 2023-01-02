@@ -141,6 +141,23 @@ class Serializer {
     }
 
     /**
+     * Replace OpenAPI curly-brace syntax variables in paths
+     * 
+     * @param string $path     Curly-brace syntax path
+     * @param array  $pathArgs Associative array of path arguments
+     * @return string
+     */
+    public static function parse($path, $pathArgs = []) { 
+        if (is_array($pathArgs)) {
+            foreach ($pathArgs as $key => $value) {
+                $path = str_replace("{" . $key . "}", self::toPathValue($value), $path);
+            }
+        }
+
+        return $path;
+    }
+
+    /**
      * Convert value to string or comma-separated list of strings
      *
      * @param \scalar[]|\scalar|string[]|string|\DateTime $value Object to serialize to string

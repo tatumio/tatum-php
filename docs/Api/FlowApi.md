@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**flowAddPubKeyToAddress()**](#flowaddpubkeytoaddress) | **PUT** /v3/flow/account | Add public key to Flow address
-[**flowCreateAddressFromPubKey()**](#flowcreateaddressfrompubkey) | **POST** /v3/flow/account | Create Flow address from public key
-[**flowGenerateAddress()**](#flowgenerateaddress) | **GET** /v3/flow/address/{xpub}/{index} | Generate Flow address from Extended public key
-[**flowGeneratePubKey()**](#flowgeneratepubkey) | **GET** /v3/flow/pubkey/{xpub}/{index} | Generate Flow public key from Extended public key
-[**flowGeneratePubKeyPrivateKey()**](#flowgeneratepubkeyprivatekey) | **POST** /v3/flow/wallet/priv | Generate Flow private key
-[**flowGenerateWallet()**](#flowgeneratewallet) | **GET** /v3/flow/wallet | Generate Flow wallet
-[**flowGetAccount()**](#flowgetaccount) | **GET** /v3/flow/account/{address} | Get the balance of a Flow account
-[**flowGetBlock()**](#flowgetblock) | **GET** /v3/flow/block/{hash} | Get Flow Block by hash or height
-[**flowGetBlockChainInfo()**](#flowgetblockchaininfo) | **GET** /v3/flow/block/current | Get Flow current block number
-[**flowGetBlockEvents()**](#flowgetblockevents) | **GET** /v3/flow/block/events | Get Flow events from blocks
-[**flowGetRawTransaction()**](#flowgetrawtransaction) | **GET** /v3/flow/transaction/{hash} | Get Flow Transaction by hash
-[**flowTransferBlockchain()**](#flowtransferblockchain) | **POST** /v3/flow/transaction | Send Flow to blockchain addresses
-[**flowTransferCustomBlockchain()**](#flowtransfercustomblockchain) | **POST** /v3/flow/transaction/custom | Send arbitrary transaction to blockchain
+[**flowAddPubKeyToAddress()**](#flowaddpubkeytoaddress) | **PUT** [/v3/flow/account](https://apidoc.tatum.io/tag/Flow#operation/FlowAddPubKeyToAddress) | Add public key to Flow address
+[**flowCreateAddressFromPubKey()**](#flowcreateaddressfrompubkey) | **POST** [/v3/flow/account](https://apidoc.tatum.io/tag/Flow#operation/FlowCreateAddressFromPubKey) | Create Flow address from public key
+[**flowGenerateAddress()**](#flowgenerateaddress) | **GET** [/v3/flow/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateAddress) | Generate Flow address from Extended public key
+[**flowGeneratePubKey()**](#flowgeneratepubkey) | **GET** [/v3/flow/pubkey/{xpub}/{index}](https://apidoc.tatum.io/tag/Flow#operation/FlowGeneratePubKey) | Generate Flow public key from Extended public key
+[**flowGeneratePubKeyPrivateKey()**](#flowgeneratepubkeyprivatekey) | **POST** [/v3/flow/wallet/priv](https://apidoc.tatum.io/tag/Flow#operation/FlowGeneratePubKeyPrivateKey) | Generate Flow private key
+[**flowGenerateWallet()**](#flowgeneratewallet) | **GET** [/v3/flow/wallet](https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateWallet) | Generate Flow wallet
+[**flowGetAccount()**](#flowgetaccount) | **GET** [/v3/flow/account/{address}](https://apidoc.tatum.io/tag/Flow#operation/FlowGetAccount) | Get the balance of a Flow account
+[**flowGetBlock()**](#flowgetblock) | **GET** [/v3/flow/block/{hash}](https://apidoc.tatum.io/tag/Flow#operation/FlowGetBlock) | Get Flow Block by hash or height
+[**flowGetBlockChainInfo()**](#flowgetblockchaininfo) | **GET** [/v3/flow/block/current](https://apidoc.tatum.io/tag/Flow#operation/FlowGetBlockChainInfo) | Get Flow current block number
+[**flowGetBlockEvents()**](#flowgetblockevents) | **GET** [/v3/flow/block/events](https://apidoc.tatum.io/tag/Flow#operation/FlowGetBlockEvents) | Get Flow events from blocks
+[**flowGetRawTransaction()**](#flowgetrawtransaction) | **GET** [/v3/flow/transaction/{hash}](https://apidoc.tatum.io/tag/Flow#operation/FlowGetRawTransaction) | Get Flow Transaction by hash
+[**flowTransferBlockchain()**](#flowtransferblockchain) | **POST** [/v3/flow/transaction](https://apidoc.tatum.io/tag/Flow#operation/FlowTransferBlockchain) | Send Flow to blockchain addresses
+[**flowTransferCustomBlockchain()**](#flowtransfercustomblockchain) | **POST** [/v3/flow/transaction/custom](https://apidoc.tatum.io/tag/Flow#operation/FlowTransferCustomBlockchain) | Send arbitrary transaction to blockchain
 
 
 ## `flowAddPubKeyToAddress()`

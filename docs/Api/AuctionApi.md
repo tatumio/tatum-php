@@ -4,17 +4,17 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**approveNftAuctionSpending()**](#approvenftauctionspending) | **POST** /v3/blockchain/auction/approve | Allow the NFT auction or marketplace to transfer an asset
-[**bidOnAuction()**](#bidonauction) | **POST** /v3/blockchain/auction/bid | Bid for an asset at the NFT auction
-[**cancelAuction()**](#cancelauction) | **POST** /v3/blockchain/auction/cancel | Cancel the selling of an asset at the NFT auction
-[**createAuction()**](#createauction) | **POST** /v3/blockchain/auction/sell | Sell an asset at the NFT auction
-[**generateAuction()**](#generateauction) | **POST** /v3/blockchain/auction | Create an NFT auction
-[**getAuction()**](#getauction) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/{id} | Get information about an auctioned asset at the NFT auction
-[**getAuctionFee()**](#getauctionfee) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/fee | Get the NFT auction fee
-[**getAuctionFeeRecipient()**](#getauctionfeerecipient) | **GET** /v3/blockchain/auction/{chain}/{contractAddress}/recipient | Get the recipient of the NFT auction fee
-[**settleAuction()**](#settleauction) | **POST** /v3/blockchain/auction/settle | Settle an NFT auction
-[**updateAuctionFee()**](#updateauctionfee) | **PUT** /v3/blockchain/auction/fee | Update the NFT auction fee
-[**updateAuctionFeeRecipient()**](#updateauctionfeerecipient) | **PUT** /v3/blockchain/auction/recipient | Update the recipient of the NFT auction fee
+[**approveNftAuctionSpending()**](#approvenftauctionspending) | **POST** [/v3/blockchain/auction/approve](https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending) | Allow the NFT auction or marketplace to transfer an asset
+[**bidOnAuction()**](#bidonauction) | **POST** [/v3/blockchain/auction/bid](https://apidoc.tatum.io/tag/Auction#operation/BidOnAuction) | Bid for an asset at the NFT auction
+[**cancelAuction()**](#cancelauction) | **POST** [/v3/blockchain/auction/cancel](https://apidoc.tatum.io/tag/Auction#operation/CancelAuction) | Cancel the selling of an asset at the NFT auction
+[**createAuction()**](#createauction) | **POST** [/v3/blockchain/auction/sell](https://apidoc.tatum.io/tag/Auction#operation/CreateAuction) | Sell an asset at the NFT auction
+[**generateAuction()**](#generateauction) | **POST** [/v3/blockchain/auction](https://apidoc.tatum.io/tag/Auction#operation/GenerateAuction) | Create an NFT auction
+[**getAuction()**](#getauction) | **GET** [/v3/blockchain/auction/{chain}/{contractAddress}/{id}](https://apidoc.tatum.io/tag/Auction#operation/GetAuction) | Get information about an auctioned asset at the NFT auction
+[**getAuctionFee()**](#getauctionfee) | **GET** [/v3/blockchain/auction/{chain}/{contractAddress}/fee](https://apidoc.tatum.io/tag/Auction#operation/GetAuctionFee) | Get the NFT auction fee
+[**getAuctionFeeRecipient()**](#getauctionfeerecipient) | **GET** [/v3/blockchain/auction/{chain}/{contractAddress}/recipient](https://apidoc.tatum.io/tag/Auction#operation/GetAuctionFeeRecipient) | Get the recipient of the NFT auction fee
+[**settleAuction()**](#settleauction) | **POST** [/v3/blockchain/auction/settle](https://apidoc.tatum.io/tag/Auction#operation/SettleAuction) | Settle an NFT auction
+[**updateAuctionFee()**](#updateauctionfee) | **PUT** [/v3/blockchain/auction/fee](https://apidoc.tatum.io/tag/Auction#operation/UpdateAuctionFee) | Update the NFT auction fee
+[**updateAuctionFeeRecipient()**](#updateauctionfeerecipient) | **PUT** [/v3/blockchain/auction/recipient](https://apidoc.tatum.io/tag/Auction#operation/UpdateAuctionFeeRecipient) | Update the recipient of the NFT auction fee
 
 
 ## `approveNftAuctionSpending()`

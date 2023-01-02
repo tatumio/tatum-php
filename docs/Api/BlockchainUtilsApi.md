@@ -4,8 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAuctionEstimatedTime()**](#getauctionestimatedtime) | **GET** /v3/blockchain/auction/time/{chain}/{date} | Estimate the block height for a future point in time
-[**sCGetContractAddress()**](#scgetcontractaddress) | **GET** /v3/blockchain/sc/address/{chain}/{hash} | Get the blockchain address of a smart contract by the deployment transaction ID
+[**getAuctionEstimatedTime()**](#getauctionestimatedtime) | **GET** [/v3/blockchain/auction/time/{chain}/{date}](https://apidoc.tatum.io/tag/BlockchainUtils#operation/GetAuctionEstimatedTime) | Estimate the block height for a future point in time
+[**sCGetContractAddress()**](#scgetcontractaddress) | **GET** [/v3/blockchain/sc/address/{chain}/{hash}](https://apidoc.tatum.io/tag/BlockchainUtils#operation/SCGetContractAddress) | Get the blockchain address of a smart contract by the deployment transaction ID
 
 
 ## `getAuctionEstimatedTime()`

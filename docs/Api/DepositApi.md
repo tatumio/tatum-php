@@ -4,8 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDeposits()**](#getdeposits) | **GET** /v3/ledger/deposits | List all deposits for product
-[**getDepositsCount()**](#getdepositscount) | **GET** /v3/ledger/deposits/count | Count of found entities for get deposits request
+[**getDeposits()**](#getdeposits) | **GET** [/v3/ledger/deposits](https://apidoc.tatum.io/tag/Deposit#operation/getDeposits) | List all deposits for product
+[**getDepositsCount()**](#getdepositscount) | **GET** [/v3/ledger/deposits/count](https://apidoc.tatum.io/tag/Deposit#operation/getDepositsCount) | Count of found entities for get deposits request
 
 
 ## `getDeposits()`

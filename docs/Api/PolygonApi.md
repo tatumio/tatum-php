@@ -4,19 +4,19 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**polygonBlockchainSmartContractInvocation()**](#polygonblockchainsmartcontractinvocation) | **POST** /v3/polygon/smartcontract | Invoke a method in a smart contract on Polygon
-[**polygonBlockchainTransfer()**](#polygonblockchaintransfer) | **POST** /v3/polygon/transaction | Send MATIC from account to account
-[**polygonBroadcast()**](#polygonbroadcast) | **POST** /v3/polygon/broadcast | Broadcast signed Polygon transaction
-[**polygonGenerateAddress()**](#polygongenerateaddress) | **GET** /v3/polygon/address/{xpub}/{index} | Generate Polygon account address from Extended public key
-[**polygonGenerateAddressPrivateKey()**](#polygongenerateaddressprivatekey) | **POST** /v3/polygon/wallet/priv | Generate Polygon private key
-[**polygonGenerateWallet()**](#polygongeneratewallet) | **GET** /v3/polygon/wallet | Generate Polygon wallet
-[**polygonGetBalance()**](#polygongetbalance) | **GET** /v3/polygon/account/balance/{address} | Get Polygon Account balance
-[**polygonGetBlock()**](#polygongetblock) | **GET** /v3/polygon/block/{hash} | Get Polygon block by hash
-[**polygonGetCurrentBlock()**](#polygongetcurrentblock) | **GET** /v3/polygon/block/current | Get current block number
-[**polygonGetTransaction()**](#polygongettransaction) | **GET** /v3/polygon/transaction/{hash} | Get Polygon Transaction
-[**polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) | **GET** /v3/polygon/account/transaction/{address} | Get Polygon transactions by address
-[**polygonGetTransactionCount()**](#polygongettransactioncount) | **GET** /v3/polygon/transaction/count/{address} | Get count of outgoing Polygon transactions
-[**polygonWeb3Driver()**](#polygonweb3driver) | **POST** /v3/polygon/web3/{xApiKey} | Web3 HTTP driver
+[**polygonBlockchainSmartContractInvocation()**](#polygonblockchainsmartcontractinvocation) | **POST** [/v3/polygon/smartcontract](https://apidoc.tatum.io/tag/Polygon#operation/PolygonBlockchainSmartContractInvocation) | Invoke a method in a smart contract on Polygon
+[**polygonBlockchainTransfer()**](#polygonblockchaintransfer) | **POST** [/v3/polygon/transaction](https://apidoc.tatum.io/tag/Polygon#operation/PolygonBlockchainTransfer) | Send MATIC from account to account
+[**polygonBroadcast()**](#polygonbroadcast) | **POST** [/v3/polygon/broadcast](https://apidoc.tatum.io/tag/Polygon#operation/PolygonBroadcast) | Broadcast signed Polygon transaction
+[**polygonGenerateAddress()**](#polygongenerateaddress) | **GET** [/v3/polygon/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGenerateAddress) | Generate Polygon account address from Extended public key
+[**polygonGenerateAddressPrivateKey()**](#polygongenerateaddressprivatekey) | **POST** [/v3/polygon/wallet/priv](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGenerateAddressPrivateKey) | Generate Polygon private key
+[**polygonGenerateWallet()**](#polygongeneratewallet) | **GET** [/v3/polygon/wallet](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGenerateWallet) | Generate Polygon wallet
+[**polygonGetBalance()**](#polygongetbalance) | **GET** [/v3/polygon/account/balance/{address}](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGetBalance) | Get Polygon Account balance
+[**polygonGetBlock()**](#polygongetblock) | **GET** [/v3/polygon/block/{hash}](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGetBlock) | Get Polygon block by hash
+[**polygonGetCurrentBlock()**](#polygongetcurrentblock) | **GET** [/v3/polygon/block/current](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGetCurrentBlock) | Get current block number
+[**polygonGetTransaction()**](#polygongettransaction) | **GET** [/v3/polygon/transaction/{hash}](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGetTransaction) | Get Polygon Transaction
+[**polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) | **GET** [/v3/polygon/account/transaction/{address}](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGetTransactionByAddress) | Get Polygon transactions by address
+[**polygonGetTransactionCount()**](#polygongettransactioncount) | **GET** [/v3/polygon/transaction/count/{address}](https://apidoc.tatum.io/tag/Polygon#operation/PolygonGetTransactionCount) | Get count of outgoing Polygon transactions
+[**polygonWeb3Driver()**](#polygonweb3driver) | **POST** [/v3/polygon/web3/{xApiKey}](https://apidoc.tatum.io/tag/Polygon#operation/PolygonWeb3Driver) | Web3 HTTP driver
 
 
 ## `polygonBlockchainSmartContractInvocation()`
