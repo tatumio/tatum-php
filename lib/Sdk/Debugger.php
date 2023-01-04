@@ -49,7 +49,11 @@ class Debugger {
      */
     protected function _init() {
         if ($this->_config->getDebug() && null === $this->_fileHandler) {
-            $this->_fileHandler = @fopen($this->_config->getDebugFile(), "w");
+            if (!file_exists($this->_config->getDebugFile()) && is_dir(dirname($this->_config->getDebugFile()))) {
+                touch($this->_config->getDebugFile());
+            }
+
+            $this->_fileHandler = @fopen($this->_config->getDebugFile(), "a");
         }
 
         return $this->_fileHandler;
@@ -70,14 +74,12 @@ class Debugger {
     /**
      * Save a log delimiter tag
      *
-     * @param string $tag
-     * @param bool $endTag
+     * @param string $tag       Log tag
+     * @param string $character Fill character
      * @return void
      */
-    public function logTag(string $tag, bool $endTag = false) {
-        $this->print(
-            str_pad(" <" . ($endTag ? "/" : "") . " $tag > ", 80, "#", STR_PAD_BOTH) . ($endTag ? PHP_EOL : "")
-        );
+    public function logTag(string $tag, string $character = "#") {
+        $this->print(PHP_EOL . str_pad(" $tag ", 80, $character, STR_PAD_BOTH));
     }
 
     protected function _sanitize(&$data, $source) {
@@ -142,7 +144,7 @@ class Debugger {
         }
 
         $curl = "curl -i -X {$request->getMethod()}$eof";
-        $curl .= "    {$uri}$eof";
+        $curl .= "    '{$uri}'$eof";
 
         // Prepare the headers
         $headers = $request->getHeaders();
@@ -218,7 +220,7 @@ class Debugger {
 
         // File download
         if ($fileDownload) {
-            $response .= "Body: {binary data}";
+            $response .= "Body: ( binary data )";
         } else {
             // JSON payload
             $response .= "Body:\n";

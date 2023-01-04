@@ -33,9 +33,8 @@ class Client {
     public static function send(Request $request, Config $config): Response {
         // Log the request; use the current UNIX timestamp in milliseconds
         $logId = ($config->isMainNet() ? "MainNet" : "TestNet") . "-" . uniqid();
-        $config->debugger()->logTag($logTag = "Tatum API REQUEST {$logId}");
+        $config->debugger()->logTag("Tatum API REQUEST {$logId}", ">");
         $config->debugger()->logRequest($request);
-        $config->debugger()->logTag($logTag, true);
 
         // Prepare the headers
         $requestHeaders = [];
@@ -84,9 +83,8 @@ class Client {
         curl_close($curlHandle);
 
         // Log the request
-        $config->debugger()->logTag($logTag = "Tatum API RESPONSE {$logId}");
+        $config->debugger()->logTag("Tatum API RESPONSE {$logId}", "<");
         $config->debugger()->logResponse((int) $info["http_code"], $responseHeaders, "$stream", $error);
-        $config->debugger()->logTag($logTag, true);
 
         // Prepare the response object
         $response = new Response((int) $info["http_code"], $responseHeaders, "$stream", strval($info["http_version"]));
