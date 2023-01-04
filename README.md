@@ -171,16 +171,16 @@ $sdk->testnet()->config()->setDebugFile('/path/to/file.log');
 
 Example debugger output for CURL requests:
 ```
-####################### <Tatum API Call - 1672737039842> #######################
-REQUEST (TestNet)
+################# < Tatum API REQUEST TestNet-63b5524b8bfd7 > ##################
 curl --location --request GET '/v3/bitcoin/wallet?mnemonic=pol---ven'
 --header 'Host: api.tatum.io'
 --header 'Content-Type: application/json'
 --header 'Accept: application/json'
 --header 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0'
 --header 'x-api-key: abc---def'
+################# </ Tatum API REQUEST TestNet-63b5524b8bfd7 > #################
 
-RESPONSE (TestNet)
+################# < Tatum API RESPONSE TestNet-63b5524b8bfd7 > #################
 Status code: 200
 Headers:
  * Content-Type: application/json; charset=utf-8
@@ -191,7 +191,7 @@ Body:
     "mnemonic": "pol---ven",
     "xpub": "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2"
 }
-###################### </Tatum API Call - 1672737039842> #######################
+################ </ Tatum API RESPONSE TestNet-63b5524b8bfd7 > #################
 ```
 
 > Providing these logs to Tatum Support can help us identify the issue faster

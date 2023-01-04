@@ -76,7 +76,7 @@ class Debugger {
      */
     public function logTag(string $tag, bool $endTag = false) {
         $this->print(
-            str_pad(" <" . ($endTag ? "/" : "") . "$tag> ", 80, "#", STR_PAD_BOTH) . ($endTag ? PHP_EOL . PHP_EOL : "")
+            str_pad(" <" . ($endTag ? "/" : "") . " $tag > ", 80, "#", STR_PAD_BOTH) . ($endTag ? PHP_EOL : "")
         );
     }
 
@@ -141,8 +141,7 @@ class Debugger {
             }
         }
 
-        $curl = "REQUEST (" . ($this->_config->isMainNet() ? "MainNet" : "TestNet") . ")\n";
-        $curl .= "curl --location --request {$request->getMethod()} '$uri'$eof";
+        $curl = "curl --location --request {$request->getMethod()} '$uri'$eof";
 
         // Prepare the headers
         $headers = $request->getHeaders();
@@ -180,7 +179,7 @@ class Debugger {
             }
         }
 
-        $this->print($curl);
+        $this->print(trim($curl));
     }
 
     /**
@@ -194,8 +193,7 @@ class Debugger {
      */
     public function logResponse(int $statusCode, $headers, $body, $error) {
         // Status code
-        $response = "RESPONSE (" . ($this->_config->isMainNet() ? "MainNet" : "TestNet") . ")\n";
-        $response .= "Status code: $statusCode\n";
+        $response = "Status code: $statusCode\n";
 
         // File download
         $fileDownload = false;
