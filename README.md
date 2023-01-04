@@ -2,7 +2,7 @@
 
 [![Total Downloads][badge-downloads]][packagist]
 [![Release Version][badge-release]][packagist]
-[![OpenAPI Version][badge-openapi]][openapi]
+[![OpenAPI Version][badge-api]][api]
 [![PHP Version][badge-php]][php]
 [![Software License][badge-license]][license]
 
@@ -17,6 +17,10 @@
   - [Examples](#examples)
   - [Tests](#tests)
   - [Debugging](#debugging)
+    - [Enable debugging](#enable-debugging)
+    - [Change output location](#change-output-location)
+    - [Disable sanitizer](#disable-sanitizer)
+    - [Example output](#example-output)
 
 ## Welcome!
 
@@ -152,15 +156,18 @@ vendor/bin/phpunit
 
 The debugger allows you to get detailed information on API requests made by the SDK.
 
+#### Enable debugging
+
 Debugging is disabled by default but you can enable it with ease:
 
 ```php
-$sdk->mainnet()->config()->setDebug(true);
-$sdk->testnet()->config()->setDebug(true);
+$sdk->{mainnet/testnet}()->config()->setDebug(true);
 ```
 
 Notice that the debugger functionality is strictly tied to your `$sdk` instance and you can have
 different debugger behaviors on the mainnet and testnet.
+
+#### Change output location
 
 If you have enabled debugging, additional information will be written to the specified location.
 
@@ -169,11 +176,22 @@ By default, the write location for the `debugger` is your standard CLI output, o
 You can redirect the output of the debugger to any other file:
 
 ```php
-$sdk->mainnet()->config()->setDebugFile('/path/to/file.log');
-$sdk->testnet()->config()->setDebugFile('/path/to/file.log');
+$sdk->{mainnet/testnet}()->config()->setDebugFile('/path/to/file.log');
 ```
 
-Example debugger output for CURL requests:
+#### Disable sanitizer
+
+By default, sensitive values like `x-api-key`, `private key` and `mnemonic` are partially obfuscated.
+You can disable this functionality for local testing only.
+
+**WARNING**: Never share logs that were produced with the `debug sanitizer` turned off!
+
+```php
+$sdk->{mainnet/testnet}()->config()->setDebugSanitizer(false);
+```
+
+#### Example output
+
 ```
 ################# < Tatum API REQUEST TestNet-63b5524b8bfd7 > ##################
 curl -i -X GET \
@@ -199,22 +217,19 @@ Body:
 ################ </ Tatum API RESPONSE TestNet-63b5524b8bfd7 > #################
 ```
 
-> Providing these logs to Tatum Support can help us identify the issue faster
-
-**WARNING**: Never share logs that were produced with the `debug sanitizer` turned off!
-
-```php
-$sdk->mainnet()->config()->setDebugSanitizer(false);
-$sdk->testnet()->config()->setDebugSanitizer(false);
-```
+> ===
+> 
+> Providing these logs to [Tatum Support](https://discord.com/invite/tatum) can help us identify and fix issues faster.
+> 
+> ===
 
 [badge-downloads]: https://img.shields.io/packagist/dt/tatumio/tatum-php.svg?style=flat&colorB=green
 [badge-release]: https://img.shields.io/packagist/v/tatumio/tatum-php.svg?style=flat&label=release&color=blue
 [badge-php]: https://img.shields.io/packagist/php-v/tatumio/tatum-php.svg?style=flat
 [badge-license]: https://img.shields.io/packagist/l/tatumio/tatum-php.svg?style=flat&color=blue
-[badge-openapi]: https://img.shields.io/badge/openapi-v3.17.2-blue
+[badge-api]: https://img.shields.io/badge/api-v3.17.2-blue
 
 [packagist]: https://packagist.org/packages/tatumio/tatum-php
 [php]: https://www.php.net/supported-versions.php
 [license]: https://github.com/tatumio/tatum-php/blob/master/LICENSE.txt
-[openapi]: https://apidoc.tatum.io
+[api]: https://apidoc.tatum.io
