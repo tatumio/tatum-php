@@ -175,7 +175,7 @@ $sdk->testnet()->config()->setDebugFile('/path/to/file.log');
 Example debugger output for CURL requests:
 ```
 ################# < Tatum API REQUEST TestNet-63b5524b8bfd7 > ##################
-curl -i -X -L GET \
+curl -i -X GET \
     https://api.tatum.io/v3/bitcoin/wallet?mnemonic=pol---ven&type=testnet \
     -H 'Host: api.tatum.io' \
     -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
