@@ -126,7 +126,7 @@ class Debugger {
      * @return void
      */
     public function logRequest(Request $request) {
-        $eof = $this->_config->getDebugSanitizer() ? "\n" : " \\\n";
+        $eof = " \\\n";
 
         // Prepare the uri
         $uri = "{$request->getUri()}";
@@ -137,17 +137,18 @@ class Debugger {
 
             if (count($queryData)) {
                 $this->_sanitize($queryData, self::SANITIZE_QUERY);
-                $uri = $request->getUri()->getPath() . "?" . http_build_query($queryData);
+                $uri = preg_replace('%\?.*$%', "?" . http_build_query($queryData), $uri);
             }
         }
 
-        $curl = "curl --location --request {$request->getMethod()} '$uri'$eof";
+        $curl = "curl -i -X {$request->getMethod()}$eof";
+        $curl .= "    {$uri}$eof";
 
         // Prepare the headers
         $headers = $request->getHeaders();
         $this->_config->getDebugSanitizer() && $this->_sanitize($headers, self::SANITIZE_HEADERS);
         foreach ($headers as $headerName => $headerValue) {
-            $curl .= "--header '{$headerName}: " . implode("; ", $headerValue) . "'$eof";
+            $curl .= "    -H '{$headerName}: " . implode("; ", $headerValue) . "'$eof";
         }
 
         // Body
@@ -158,28 +159,26 @@ class Debugger {
                     $fileName = $this->_config->getDebugSanitizer()
                         ? basename($fileObject->getFilename())
                         : $fileObject->getFilename();
-                    $curl .= "-F $fieldName=@{$fileName}$eof";
+                    $curl .= "    -F $fieldName=@{$fileName}$eof";
                 }
             } else {
-                // POST payload
-                $body = "'{$request->getStream()}'";
+                // JSON payload
+                $bodyJson = @json_decode("{$request->getStream()}", true);
 
                 // Sanitizer on
-                if ($this->_config->getDebugSanitizer()) {
-                    $bodyJson = @json_decode($body, true);
-                    if (is_array($bodyJson)) {
-                        $this->_sanitize($bodyJson, self::SANITIZE_BODY);
-
-                        // Legibility
-                        $body = json_encode($bodyJson, JSON_PRETTY_PRINT);
-                    }
+                if ($this->_config->getDebugSanitizer() && is_array($bodyJson)) {
+                    $this->_sanitize($bodyJson, self::SANITIZE_BODY);
                 }
 
-                $curl .= "--data-raw {$body}{$eof}";
+                // Legibility
+                $body = null !== $bodyJson ? json_encode($bodyJson, JSON_PRETTY_PRINT) : "{$request->getStream()}";
+
+                // Append line
+                $curl .= "    -d '{$body}'{$eof}";
             }
         }
 
-        $this->print(trim($curl));
+        $this->print(trim($curl, "\\\n"));
     }
 
     /**
