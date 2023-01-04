@@ -148,6 +148,8 @@ vendor/bin/phpunit
 
 ## Debugging
 
+The debugger allows you to get detailed information on API requests made by the SDK.
+
 Debugging is disabled by default but you can enable it with ease:
 
 ```php
