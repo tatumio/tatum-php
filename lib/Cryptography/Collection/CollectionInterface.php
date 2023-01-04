@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tatum\Cryptography\Collection;
 
 /**
- * @deprecated v2.0.0
+ * @deprecated
  */
 interface CollectionInterface extends \Iterator, \ArrayAccess, \Countable {
     /**

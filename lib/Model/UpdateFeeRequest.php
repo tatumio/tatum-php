@@ -32,7 +32,7 @@ class UpdateFeeRequest extends AbstractModel {
         "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 87, "xl" => 128]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
         "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
@@ -85,7 +85,7 @@ class UpdateFeeRequest extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to work with.
+     * @param string $chain The blockchain to work with
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -105,7 +105,7 @@ class UpdateFeeRequest extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address Blockchain address of the smart contract
+     * @param string $contract_address The blockchain address of the marketplace smart contract
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -176,20 +176,20 @@ class UpdateFeeRequest extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\DeployErc20Fee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\DeployErc20Fee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         return $this->_set("fee", $fee);
     }
 
@@ -225,7 +225,7 @@ class UpdateFeeRequest extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
      * @throws \InvalidArgumentException
      * @return $this
      */

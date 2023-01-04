@@ -13,8 +13,9 @@
   - [Requirements](#requirements)
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)
+- [Examples](#examples)
 - [Tests](#tests)
-  - [Debugging](#debugging)
+- [Debugging](#debugging)
 - [About](#about-this-repository)
 
 ## Welcome!
@@ -116,9 +117,25 @@ try {
 }
 ```
 
+Please note that both **api keys** are optional when creating a new instance of `\Tatum\Sdk()`.
+
+If you don't provide an API key, a new one is generated automatically for you based on your IP address.
+
+> Please note that some parts of the API require using your own API key with either a free or paid plan.
+
 ## Documentation
 
 Learn more about [available methods](./docs/index.md).
+
+## Examples
+
+To run the examples, use:
+
+```bash
+php -f ./examples/{path-to-example-file}.php
+```
+
+For security reaons you cannot execute these files from a server request.
 
 ## Tests
 
@@ -129,7 +146,7 @@ composer install
 vendor/bin/phpunit
 ```
 
-### Debugging
+## Debugging
 
 Debugging is disabled by default but you can enable it with ease:
 
@@ -154,31 +171,37 @@ $sdk->testnet()->config()->setDebugFile('/path/to/file.log');
 
 Example debugger output for CURL requests:
 ```
-######################## <Tatum API Call - 1672654686123> #########################
-REQUEST:
-curl --location --request GET 'https://api.tatum.io/v3/bitcoin/address/xpub6EpS4SGGLmDmVJLLbuAudraunFMMJo1gGxmeVkbvp1VBCjCiqmxvrtfaLHQZ33k8Ag5mrwGppgHe38HMaDyTFhCfZ2C7EH2Vc8PMZsEkuh3/1'
+####################### <Tatum API Call - 1672737039842> #######################
+REQUEST (TestNet)
+curl --location --request GET '/v3/bitcoin/wallet?mnemonic=pol---ven'
 --header 'Host: api.tatum.io'
 --header 'Content-Type: application/json'
 --header 'Accept: application/json'
---header 'User-Agent: Tatum_SDK_PHP/2.0.0'
---header 'x-api-key: ********'
+--header 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0'
+--header 'x-api-key: abc---def'
 
-RESPONSE:
+RESPONSE (TestNet)
 Status code: 200
 Headers:
  * Content-Type: application/json; charset=utf-8
- * Content-Length: 56
+ * Content-Length: 294
+ * Connection: keep-alive
 Body:
 {
-    "address": "bc1q7v70d7pt6zfxdz6hh7w07qyfk4hwev2v4chmj5"
+    "mnemonic": "pol---ven",
+    "xpub": "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2"
 }
-######################## </Tatum API Call - 1672654686123> ########################
+###################### </Tatum API Call - 1672737039842> #######################
 ```
 
-**When contacting Tatum Support providing these logs can help us identify the issue faster.**
+> Providing these logs to Tatum Support can help us identify the issue faster
 
-**WARNING**: please **hide any private information** such as your private keys when sharing logs with Tatum Support!
-The `x-api-key` header value is automatically removed from the logs.
+**WARNING**: Never share logs that were produced with the `debug sanitizer` turned off!
+
+```php
+$sdk->mainnet()->config()->setDebugSanitizer(false);
+$sdk->testnet()->config()->setDebugSanitizer(false);
+```
 
 ## About this repository
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2022-2023 Tatum.io
+ * Copyright (c) 2022-2023 tatum.io
  * 
  * @license MIT
  * @author  Mark Jivko

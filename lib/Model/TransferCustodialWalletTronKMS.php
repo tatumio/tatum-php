@@ -266,7 +266,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the \"master address\" that was generated from the mnemonic
      * @throws \InvalidArgumentException
      * @return $this
      */

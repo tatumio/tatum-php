@@ -34,7 +34,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
         "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
-        "fee" => ["fee", "\Tatum\Model\DeployErc20Fee", null, "getFee", "setFee", null, ["r" => 0]]
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -83,7 +83,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to work with.
+     * @param string $chain The blockchain to work with
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -103,7 +103,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address Address of the marketplace smart contract.
+     * @param string $contract_address The blockchain address of the marketplace smart contract
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -163,7 +163,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Set signature_id
      * 
-     * @param string $signature_id Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+     * @param string $signature_id The KMS identifier of the private key of the blockchain address from which the fee will be deducted
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -183,7 +183,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -214,20 +214,20 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\DeployErc20Fee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\DeployErc20Fee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\DeployErc20Fee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFee(?\Tatum\Model\DeployErc20Fee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         return $this->_set("fee", $fee);
     }
 }

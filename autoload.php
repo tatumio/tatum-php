@@ -1,6 +1,4 @@
 <?php
-define('TATUM', '2.0.0');
-
 /**
  * Autoloader
  *

@@ -13,9 +13,9 @@ Method name | Return type | Description | Notes
 **getTokenId()** | **string** | (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the asset is a fungible token. | [optional]
 **getFromPrivateKey()** | **string** | The private key of the blockchain address that owns the gas pump address ("master address") |
 **getNonce()** | **float** | The nonce to be set to the transfer transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\ApproveTransferCustodialWalletFee**](ApproveTransferCustodialWalletFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 **getSignatureId()** | **string** | The KMS identifier of the private key of the blockchain address that owns the gas pump address key ("master address") |
-**getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic | [optional]
+**getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the "master address" that was generated from the mnemonic | [optional]
 **getFeeCurrency()** | **string** | The currency to pay for the gas fee |
 
 [[Back to Index]](../index.md)

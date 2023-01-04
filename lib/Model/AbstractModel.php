@@ -366,7 +366,7 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
         // Something went wrong
         if (count($issues)) {
             throw new InvalidArgumentException(
-                sprintf("%s::%s() %s", get_called_class(), static::$_definition[$name][4], current($issues))
+                sprintf("%s::%s() %s", get_called_class(), static::$_definition[$name][4], implode(", ", $issues))
             );
         }
 

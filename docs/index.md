@@ -275,7 +275,7 @@ API | Method | Description
 *blockchainOperations()* | [**registerErc20Token()**](./Api/BlockchainOperationsApi.md#registererc20token) | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 *blockchainOperations()* | [**solTransfer()**](./Api/BlockchainOperationsApi.md#soltransfer) | Send SOL from a virtual account to the blockchain
 *blockchainOperations()* | [**storeCeloErc20Address()**](./Api/BlockchainOperationsApi.md#storeceloerc20address) | Set the contract address of a Celo ERC-20-equivalent token
-*blockchainOperations()* | [**storeTokenAddress()**](./Api/BlockchainOperationsApi.md#storetokenaddress) | Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
+*blockchainOperations()* | [**storeTokenAddress()**](./Api/BlockchainOperationsApi.md#storetokenaddress) | Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 *blockchainOperations()* | [**storeTrcAddress()**](./Api/BlockchainOperationsApi.md#storetrcaddress) | Set the contract address of a TRC-10 or TRC-20 token
 *blockchainOperations()* | [**tronDeployTrc()**](./Api/BlockchainOperationsApi.md#trondeploytrc) | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
 *blockchainOperations()* | [**tronTransferOffchain()**](./Api/BlockchainOperationsApi.md#trontransferoffchain) | Send TRON from a virtual account to the blockchain

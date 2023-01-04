@@ -825,10 +825,10 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
+     * Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
      *
-     * @param string $address Contract address or token ID
-     * @param string $name Symbol name.
+     * @param string $address On Algorand, this is the asset ID; on TRON, this is the token ID; on the other blockchains, this is the address of the smart contract.
+     * @param string $name The name of the token (the token symbol)
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 

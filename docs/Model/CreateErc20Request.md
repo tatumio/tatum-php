@@ -14,6 +14,6 @@ Method name | Return type | Description | Notes
 **getBaseRate()** | **float** | The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code> | [optional] [default to 1]
 **getCustomer()** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
 **getAccountingCurrency()** | **string** | AThe ISO 4217 code of the currency in which all transactions for the created virtual account will be billed | [optional] [default to 'EUR']
-**getAddress()** | **string** | The blockchain address to be assigned to the virtual account as a deposit address. |
+**getAddress()** | **string** | The blockchain address to be assigned to the virtual account as a deposit address |
 
 [[Back to Index]](../index.md)

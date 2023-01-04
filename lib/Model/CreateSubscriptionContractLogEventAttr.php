@@ -73,7 +73,7 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
     /**
      * Set event
      * 
-     * @param string $event Hexadecimal data representing the event emitted from the smart contract; represents \"topic[0,1,2,...]\" from the event log.
+     * @param string $event Hexadecimal data representing the event emitted from the smart contract; represents \"topic[0]\" from the event log.
      * @throws \InvalidArgumentException
      * @return $this
      */

@@ -896,7 +896,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set address
      * 
-     * @param string $address The blockchain address to be assigned to the virtual account as a deposit address.
+     * @param string $address The blockchain address to be assigned to the virtual account as a deposit address
      * @throws \InvalidArgumentException
      * @return $this
      */

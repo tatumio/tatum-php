@@ -65,7 +65,7 @@ class UpdateFeeSolanaKMS extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to work with.
+     * @param string $chain The blockchain to work with
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -85,7 +85,7 @@ class UpdateFeeSolanaKMS extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address Blockchain address of the smart contract
+     * @param string $contract_address The blockchain address of the marketplace smart contract
      * @throws \InvalidArgumentException
      * @return $this
      */

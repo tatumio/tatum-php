@@ -42,7 +42,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
         "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null, ["r" => 0]]
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
@@ -264,7 +264,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the \"master address\" that was generated from the mnemonic
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -315,20 +315,20 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\ApproveTransferCustodialWalletFee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\ApproveTransferCustodialWalletFee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\ApproveTransferCustodialWalletFee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFee(?\Tatum\Model\ApproveTransferCustodialWalletFee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         return $this->_set("fee", $fee);
     }
 }

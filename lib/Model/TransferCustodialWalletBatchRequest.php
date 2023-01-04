@@ -39,7 +39,7 @@ class TransferCustodialWalletBatchRequest extends AbstractModel {
         "token_id" => ["tokenId", "string[]", null, "getTokenId", "setTokenId", null, ["r" => 1, "c" => 1]], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
-        "fee" => ["fee", "\Tatum\Model\ApproveTransferCustodialWalletFee", null, "getFee", "setFee", null, ["r" => 0]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
         "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
@@ -276,20 +276,20 @@ class TransferCustodialWalletBatchRequest extends AbstractModel {
     /**
      * Get fee
      *
-     * @return \Tatum\Model\ApproveTransferCustodialWalletFee|null
+     * @return \Tatum\Model\CustomFee|null
      */
-    public function getFee(): ?\Tatum\Model\ApproveTransferCustodialWalletFee {
+    public function getFee(): ?\Tatum\Model\CustomFee {
         return $this->_data["fee"];
     }
 
     /**
      * Set fee
      * 
-     * @param \Tatum\Model\ApproveTransferCustodialWalletFee|null $fee fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFee(?\Tatum\Model\ApproveTransferCustodialWalletFee $fee) {
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
         return $this->_set("fee", $fee);
     }
 
@@ -325,7 +325,7 @@ class TransferCustodialWalletBatchRequest extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the \"master address\" that was generated from the mnemonic
      * @throws \InvalidArgumentException
      * @return $this
      */

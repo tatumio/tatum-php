@@ -7,7 +7,7 @@ namespace Tatum\Cryptography\Collection;
 use Tatum\Cryptography\Buffertools\BufferInterface;
 
 /**
- * @deprecated v2.0.0
+ * @deprecated
  */
 abstract class StaticCollection implements CollectionInterface {
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2022-2023 Tatum.io
+ * Copyright (c) 2022-2023 tatum.io
  * 
  * @license MIT
  * @author  Mark Jivko
@@ -18,10 +18,10 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-// Contract address or token ID
+// On Algorand, this is the asset ID; on TRON, this is the token ID; on the other blockchains, this is the address of the smart contract.
 $arg_address = '0x687422eEA2cB73B5d3e242bA5456b782919AFc85';
 
-// Symbol name.
+// The name of the token (the token symbol)
 $arg_name = 'MY_TOKEN';
 
 try {

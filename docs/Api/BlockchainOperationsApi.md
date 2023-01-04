@@ -38,7 +38,7 @@ Method | HTTP request | Description
 [**registerErc20Token()**](#registererc20token) | **POST** [/v3/offchain/token/{chain}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/registerErc20Token) | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 [**solTransfer()**](#soltransfer) | **POST** [/v3/offchain/solana/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/SolTransfer) | Send SOL from a virtual account to the blockchain
 [**storeCeloErc20Address()**](#storeceloerc20address) | **POST** [/v3/offchain/celo/erc20/{name}/{address}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/storeCeloErc20Address) | Set the contract address of a Celo ERC-20-equivalent token
-[**storeTokenAddress()**](#storetokenaddress) | **POST** [/v3/offchain/token/{name}/{address}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/storeTokenAddress) | Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
+[**storeTokenAddress()**](#storetokenaddress) | **POST** [/v3/offchain/token/{name}/{address}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/storeTokenAddress) | Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 [**storeTrcAddress()**](#storetrcaddress) | **POST** [/v3/offchain/tron/trc/{name}/{address}](https://apidoc.tatum.io/tag/BlockchainOperations#operation/storeTrcAddress) | Set the contract address of a TRC-10 or TRC-20 token
 [**tronDeployTrc()**](#trondeploytrc) | **POST** [/v3/offchain/tron/trc/deploy](https://apidoc.tatum.io/tag/BlockchainOperations#operation/TronDeployTrc) | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
 [**tronTransferOffchain()**](#trontransferoffchain) | **POST** [/v3/offchain/tron/transfer](https://apidoc.tatum.io/tag/BlockchainOperations#operation/TronTransferOffchain) | Send TRON from a virtual account to the blockchain
@@ -1161,8 +1161,8 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address** | **string**  | Contract address or token ID |
- **$name** | **string**  | Symbol name. |
+ **$address** | **string**  | On Algorand, this is the asset ID; on TRON, this is the token ID; on the other blockchains, this is the address of the smart contract. |
+ **$name** | **string**  | The name of the token (the token symbol) |
 
 ### Return type
 
@@ -1170,9 +1170,9 @@ void (empty response body)
 
 ### Description
 
-Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token
+Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 
-<h4>2 credits per API call.</h4><br/> <p>Set the contract address of an ERC-20, ERC-20-equivalent or TRC-10 token (for example, BEP-20, HRM-20, and so on) to be able to communicate with the smart contract. <br/> <br/> <p>After creating and deploying an ERC-20, ERC-20-equivalent or TRC-10 token to the blockchain, the smart contract address is generated and must be set within Tatum. If the address is not set, the Tatum platform will not be able to detect incoming deposits of the tokens and transfer the tokens from virtual accounts to blockchain addresses.</p> <p><b>NOTE:</b> For Algorand, the contract address should be the token asset ID (AssetID), for example, <code>55351976</code>.</p> <p><b>NOTE:</b> For Tron, the contract address should be the token ID (tokenId), for example, <code>1234567</code>.</p>
+<p><b>2 credits per API call</b></p> <p>Set the contract address of an ERC-20, ERC-20-equivalent (for example, BEP-20, HRM-20, and so on), or TRC-10 token to be able to communicate with the smart contract.</p> <p>After creating and deploying the token to the blockchain, the smart contract address is generated and must be set within Tatum. If the address is not set, the Tatum platform will not be able to detect incoming deposits of the tokens and transfer the tokens from virtual accounts to blockchain addresses.</p> <p><b>NOTE:</b></p> <ul> <li>For <b>Algorand</b>, the contract address is the asset ID (<code>assetId</code>), for example, <code>55351976</code>.</li> <li>For <b>TRON</b>, the contract address is the token ID (<code>tokenId</code>), for example, <code>1234567</code>.</li> </ul>
 
 ### Example
 

@@ -70,6 +70,13 @@ class Config {
     protected $_debugFile = "php://output";
 
     /**
+     * Debug sanitization switch (default set to true)
+     * 
+     * @var bool
+     */
+    protected $_debugSanitize = true;
+
+    /**
      * Debugger
      * 
      * @var \Tatum\Sdk\Debugger|null
@@ -165,7 +172,9 @@ class Config {
      * @return string User agent
      */
     public function getUserAgent(): string {
-        return $this->_userAgent;
+        return $this->getDebug() 
+            ? preg_replace("%^(\w+)\/%", "$1_DebugMode/", $this->_userAgent) 
+            : $this->_userAgent;
     }
 
     /**
@@ -208,6 +217,27 @@ class Config {
      */
     public function getDebugFile(): string {
         return $this->_debugFile;
+    }
+
+    /**
+     * Switch debug sanitizer on or off
+     * 
+     * @param bool $sanitize
+     * @return $this
+     */
+    public function setDebugSanitizer(bool $sanitize) {
+        $this->_debugSanitize = !!$sanitize;
+
+        return $this;
+    }
+
+    /**
+     * Get whether the debug sanitizer is enabled
+     * 
+     * @return bool
+     */
+    public function getDebugSanitizer() {
+        return $this->_debugSanitize;
     }
 
     /**

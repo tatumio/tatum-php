@@ -7,7 +7,7 @@ namespace Tatum\Cryptography\Script\Interpreter;
 use Tatum\Cryptography\Buffertools\BufferInterface;
 
 /**
- * @deprecated v2.0.0 Unused in project
+ * @deprecated Unused in project
  */
 interface StackInterface extends \ArrayAccess, \Iterator {
     /**

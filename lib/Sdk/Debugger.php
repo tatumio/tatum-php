@@ -14,6 +14,11 @@ use Tatum\Sdk\Config;
 use Tatum\Sdk\Psr7\Request;
 
 class Debugger {
+    // Sanitization data sources
+    const SANITIZE_QUERY = "query";
+    const SANITIZE_HEADERS = "headers";
+    const SANITIZE_BODY = "body";
+
     /**
      * Configuration object
      *
@@ -75,6 +80,45 @@ class Debugger {
         );
     }
 
+    protected function _sanitize(&$data, $source) {
+        /**
+         * Hide parts of string
+         *
+         * @param string $string Input
+         * @return string Hidden input
+         */
+        $cleanUp = function ($string) {
+            do {
+                if (strlen($string) >= 10) {
+                    $result = substr($string, 0, 3) . "---" . substr($string, -3);
+                    break;
+                }
+
+                if (strlen($string) >= 5) {
+                    $result = substr($string, 0, 1) . "---" . substr($string, -1);
+                    break;
+                }
+
+                $result = str_repeat("-", strlen($string));
+            } while (false);
+
+            return $result;
+        };
+
+        // Go throught the data
+        foreach ($data as $key => &$value) {
+            if (preg_match("%^(?:mnemonic|x-api-key|.*?private.*?)$%i", $key)) {
+                if (self::SANITIZE_HEADERS === $source || is_array($value)) {
+                    foreach ($value as $vKey => $vData) {
+                        $value[$vKey] = $cleanUp($vData);
+                    }
+                } else {
+                    $value = $cleanUp($value);
+                }
+            }
+        }
+    }
+
     /**
      * Log a cURL request
      *
@@ -82,15 +126,58 @@ class Debugger {
      * @return void
      */
     public function logRequest(Request $request) {
-        $curl = "REQUEST:\n";
-        $curl .= "curl --location --request {$request->getMethod()} '{$request->getUri()}'\n";
-        foreach ($request->getHeaders() as $headerName => $headerValue) {
-            // Hide the API key
-            if ("x-api-key" === $headerName) {
-                $headerValue = [str_repeat("*", 8)];
-            }
+        $eof = $this->_config->getDebugSanitizer() ? "\n" : " \\\n";
 
-            $curl .= "--header '{$headerName}: " . implode("; ", $headerValue) . "'\n";
+        // Prepare the uri
+        $uri = "{$request->getUri()}";
+
+        // Sanitize GET arguments
+        if ($this->_config->getDebugSanitizer()) {
+            parse_str($request->getUri()->getQuery(), $queryData);
+
+            if (count($queryData)) {
+                $this->_sanitize($queryData, self::SANITIZE_QUERY);
+                $uri = $request->getUri()->getPath() . "?" . http_build_query($queryData);
+            }
+        }
+
+        $curl = "REQUEST (" . ($this->_config->isMainNet() ? "MainNet" : "TestNet") . ")\n";
+        $curl .= "curl --location --request {$request->getMethod()} '$uri'$eof";
+
+        // Prepare the headers
+        $headers = $request->getHeaders();
+        $this->_config->getDebugSanitizer() && $this->_sanitize($headers, self::SANITIZE_HEADERS);
+        foreach ($headers as $headerName => $headerValue) {
+            $curl .= "--header '{$headerName}: " . implode("; ", $headerValue) . "'$eof";
+        }
+
+        // Body
+        if ("POST" === $request->getMethod()) {
+            // Multi-part form data
+            if (count($request->getFiles())) {
+                foreach ($request->getFiles() as $fieldName => $fileObject) {
+                    $fileName = $this->_config->getDebugSanitizer()
+                        ? basename($fileObject->getFilename())
+                        : $fileObject->getFilename();
+                    $curl .= "-F $fieldName=@{$fileName}$eof";
+                }
+            } else {
+                // POST payload
+                $body = "'{$request->getStream()}'";
+
+                // Sanitizer on
+                if ($this->_config->getDebugSanitizer()) {
+                    $bodyJson = @json_decode($body, true);
+                    if (is_array($bodyJson)) {
+                        $this->_sanitize($bodyJson, self::SANITIZE_BODY);
+
+                        // Legibility
+                        $body = json_encode($bodyJson, JSON_PRETTY_PRINT);
+                    }
+                }
+
+                $curl .= "--data-raw {$body}{$eof}";
+            }
         }
 
         $this->print($curl);
@@ -107,15 +194,23 @@ class Debugger {
      */
     public function logResponse(int $statusCode, $headers, $body, $error) {
         // Status code
-        $response = "RESPONSE:\n";
+        $response = "RESPONSE (" . ($this->_config->isMainNet() ? "MainNet" : "TestNet") . ")\n";
         $response .= "Status code: $statusCode\n";
+
+        // File download
+        $fileDownload = false;
 
         // Response headers
         $response .= "Headers:\n";
         foreach ($headers as $headerName => $headerValue) {
-            if (0 !== strpos($headerName, "Content")) {
+            if (!preg_match("%^(?:content\-(?:type|length)|transfer-encoding|connection)%i", $headerName)) {
                 continue;
             }
+
+            if ("transfer-encoding" === strtolower(trim($headerName)) && "chunked" === strtolower(trim($headerValue))) {
+                $fileDownload = true;
+            }
+
             $response .= " * {$headerName}: {$headerValue}\n";
         }
 
@@ -124,15 +219,23 @@ class Debugger {
             $response .= "Error: {$error}\n";
         }
 
-        // Response body
-        $response .= "Body:\n";
-
-        // Attempt pretty print
-        $bodyJson = @json_decode($body, true);
-        if (null !== $bodyJson) {
-            $response .= json_encode($bodyJson, JSON_PRETTY_PRINT);
+        // File download
+        if ($fileDownload) {
+            $response .= "Body: {binary data}";
         } else {
-            $response .= $body;
+            // JSON payload
+            $response .= "Body:\n";
+
+            // Attempt decoding
+            $bodyJson = @json_decode($body, true);
+            if (null !== $bodyJson) {
+                if ($this->_config->getDebugSanitizer() && is_array($bodyJson)) {
+                    $this->_sanitize($bodyJson, self::SANITIZE_BODY);
+                }
+                $response .= json_encode($bodyJson, JSON_PRETTY_PRINT);
+            } else {
+                $response .= $body;
+            }
         }
 
         $this->print($response);
