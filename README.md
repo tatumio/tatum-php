@@ -193,7 +193,7 @@ $sdk->{mainnet/testnet}()->config()->setDebugSanitizer(false);
 #### Example output
 
 ```
-################# < Tatum API REQUEST TestNet-63b5524b8bfd7 > ##################
+>>>>>>>>>>>>>>> Tatum API REQUEST TestNet-63b5524b8bfd7 >>>>>>>>>>>>>>>>>
 curl -i -X GET \
     https://api.tatum.io/v3/bitcoin/wallet?mnemonic=pol---ven&type=testnet \
     -H 'Host: api.tatum.io' \
@@ -201,9 +201,8 @@ curl -i -X GET \
     -H 'Content-Type: application/json' \
     -H 'x-api-key: abc---def' \
     -H 'Accept: application/json'
-################# </ Tatum API REQUEST TestNet-63b5524b8bfd7 > #################
 
-################# < Tatum API RESPONSE TestNet-63b5524b8bfd7 > #################
+<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet-63b5524b8bfd7 <<<<<<<<<<<<<<<<<
 Status code: 200
 Headers:
  * Content-Type: application/json; charset=utf-8
@@ -214,7 +213,6 @@ Body:
     "mnemonic": "pol---ven",
     "xpub": "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2"
 }
-################ </ Tatum API RESPONSE TestNet-63b5524b8bfd7 > #################
 ```
 
 > ===
