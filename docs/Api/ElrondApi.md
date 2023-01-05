@@ -1,23 +1,24 @@
 # Tatum/Api/ElrondApi
 
-All URIs are relative to https://api.tatum.io.
+* Elrond [documentation](https://apidoc.tatum.io/tag/Elrond/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eGldGetCurrentBlock()**](#egldgetcurrentblock) | **GET** [/v3/egld/block/current](https://apidoc.tatum.io/tag/Elrond/#operation/EGldGetCurrentBlock) | Get current block number
-[**egldBroadcast()**](#egldbroadcast) | **POST** [/v3/egld/broadcast](https://apidoc.tatum.io/tag/Elrond/#operation/EgldBroadcast) | Broadcast signed EGLD transaction
-[**egldGenerateAddress()**](#egldgenerateaddress) | **GET** [/v3/egld/address/{mnemonic}/{index}](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateAddress) | Generate EGLD account address from mnemonic
-[**egldGenerateAddressPrivateKey()**](#egldgenerateaddressprivatekey) | **POST** [/v3/egld/wallet/priv](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateAddressPrivateKey) | Generate EGLD private key
-[**egldGenerateWallet()**](#egldgeneratewallet) | **GET** [/v3/egld/wallet](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateWallet) | Generate EGLD wallet
-[**egldGetBalance()**](#egldgetbalance) | **GET** [/v3/egld/account/balance/{address}](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGetBalance) | Get EGLD Account balance
-[**egldGetBlock()**](#egldgetblock) | **GET** [/v3/egld/block/{hash}](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGetBlock) | Get EGLD block by hash
-[**egldGetTransaction()**](#egldgettransaction) | **GET** [/v3/egld/transaction/{hash}](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGetTransaction) | Get EGLD Transaction
-[**egldGetTransactionAddress()**](#egldgettransactionaddress) | **GET** [/v3/egld/transaction/address/{address}](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGetTransactionAddress) | Get count of outgoing EGLD transactions
-[**egldGetTransactionCount()**](#egldgettransactioncount) | **GET** [/v3/egld/transaction/count/{address}](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGetTransactionCount) | Get count of outgoing EGLD transactions
-[**egldNodeGet()**](#egldnodeget) | **GET** [/v3/egld/node/{xApiKey}/*](https://apidoc.tatum.io/tag/Elrond/#operation/EgldNodeGet) | Node HTTP driver
-[**egldNodePost()**](#egldnodepost) | **POST** [/v3/egld/node/{xApiKey}/*](https://apidoc.tatum.io/tag/Elrond/#operation/EgldNodePost) | Node HTTP driver
-[**egldTransactionTransferEgldBlockchain()**](#egldtransactiontransferegldblockchain) | **POST** [/v3/egld/transaction](https://apidoc.tatum.io/tag/Elrond/#operation/egldTransactionTransferEgldBlockchain) | Send EGLD from account to account
-[**egldTransactionTransferEgldBlockchainKMS()**](#egldtransactiontransferegldblockchainkms) | **POST** [/v3/egld/transaction](https://apidoc.tatum.io/tag/Elrond/#operation/egldTransactionTransferEgldBlockchainKMS) | Send EGLD from account to account
+[**eGldGetCurrentBlock()**](#egldgetcurrentblock) | **GET** `/v3/egld/block/current` | Get current block number
+[**egldBroadcast()**](#egldbroadcast) | **POST** `/v3/egld/broadcast` | Broadcast signed EGLD transaction
+[**egldGenerateAddress()**](#egldgenerateaddress) | **GET** `/v3/egld/address/{mnemonic}/{index}` | Generate EGLD account address from mnemonic
+[**egldGenerateAddressPrivateKey()**](#egldgenerateaddressprivatekey) | **POST** `/v3/egld/wallet/priv` | Generate EGLD private key
+[**egldGenerateWallet()**](#egldgeneratewallet) | **GET** `/v3/egld/wallet` | Generate EGLD wallet
+[**egldGetBalance()**](#egldgetbalance) | **GET** `/v3/egld/account/balance/{address}` | Get EGLD Account balance
+[**egldGetBlock()**](#egldgetblock) | **GET** `/v3/egld/block/{hash}` | Get EGLD block by hash
+[**egldGetTransaction()**](#egldgettransaction) | **GET** `/v3/egld/transaction/{hash}` | Get EGLD Transaction
+[**egldGetTransactionAddress()**](#egldgettransactionaddress) | **GET** `/v3/egld/transaction/address/{address}` | Get count of outgoing EGLD transactions
+[**egldGetTransactionCount()**](#egldgettransactioncount) | **GET** `/v3/egld/transaction/count/{address}` | Get count of outgoing EGLD transactions
+[**egldNodeGet()**](#egldnodeget) | **GET** `/v3/egld/node/{xApiKey}/*` | Node HTTP driver
+[**egldNodePost()**](#egldnodepost) | **POST** `/v3/egld/node/{xApiKey}/*` | Node HTTP driver
+[**egldTransactionTransferEgldBlockchain()**](#egldtransactiontransferegldblockchain) | **POST** `/v3/egld/transaction` | Send EGLD from account to account
+[**egldTransactionTransferEgldBlockchainKMS()**](#egldtransactiontransferegldblockchainkms) | **POST** `/v3/egld/transaction` | Send EGLD from account to account
 
 
 ## `eGldGetCurrentBlock()`

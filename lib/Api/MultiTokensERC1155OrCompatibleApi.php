@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     /**
      * Get all Multi Tokens that a blockchain address holds
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetAddressBalance
      *
      * @param string $chain Blockchain to work with
      * @param string $address Blockchain address
@@ -56,8 +54,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Get the amount of a specific MultiToken that a blockchain address holds
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetBalance
      *
      * @param string $chain Blockchain to work with
      * @param string $address The blockchain address that you want to get the token balance of
@@ -91,8 +87,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetBalanceBatch
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address The address of the Multi Token smart contract
@@ -129,8 +123,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Get the address of a Multi Token smart contract by its transaction hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetContractAddress
      *
      * @param string $chain Blockchain to work with
      * @param string $hash Transaction hash
@@ -162,8 +154,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Get Multi Token metadata
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetMetadata
      *
      * @param string $chain Blockchain to work with
      * @param string $token Token ID
@@ -200,8 +190,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Get a Multi Token transaction by its hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetTransaction
      *
      * @param string $chain Blockchain to work with
      * @param string $hash Transaction hash
@@ -233,8 +221,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Get Multi Token transactions on a blockchain address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetTransactionByAddress
      *
      * @param string $chain Blockchain to work with
      * @param string $address Account address you want to get balance of
@@ -285,8 +271,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatch
      *
      * @param \Tatum\Model\BurnMultiTokenBatch $burn_multi_token_batch 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -317,8 +301,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatchCelo
      *
      * @param \Tatum\Model\BurnMultiTokenBatchCelo $burn_multi_token_batch_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -349,8 +331,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatchKMS
      *
      * @param \Tatum\Model\BurnMultiTokenBatchKMS $burn_multi_token_batch_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -381,8 +361,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatchKMSCelo
      *
      * @param \Tatum\Model\BurnMultiTokenBatchKMSCelo $burn_multi_token_batch_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -413,8 +391,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiToken
      *
      * @param \Tatum\Model\BurnMultiToken $burn_multi_token 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -445,8 +421,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiTokenCelo
      *
      * @param \Tatum\Model\BurnMultiTokenCelo $burn_multi_token_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -477,8 +451,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiTokenKMS
      *
      * @param \Tatum\Model\BurnMultiTokenKMS $burn_multi_token_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -509,8 +481,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiTokenKMSCelo
      *
      * @param \Tatum\Model\BurnMultiTokenKMSCelo $burn_multi_token_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -541,8 +511,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a Multi Token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiToken
      *
      * @param \Tatum\Model\DeployMultiToken $deploy_multi_token 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -573,8 +541,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a Multi Token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiTokenCelo
      *
      * @param \Tatum\Model\DeployMultiTokenCelo $deploy_multi_token_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -605,8 +571,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a Multi Token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiTokenCeloKMS
      *
      * @param \Tatum\Model\DeployMultiTokenCeloKMS $deploy_multi_token_celo_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -637,8 +601,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a Multi Token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiTokenKMS
      *
      * @param \Tatum\Model\DeployMultiTokenKMS $deploy_multi_token_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -669,8 +631,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Add a Multi Token minter
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintAddMultiTokenMinter
      *
      * @param \Tatum\Model\AddMultiTokenMinter $add_multi_token_minter 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -701,8 +661,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Add a Multi Token minter
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintAddMultiTokenMinterKMS
      *
      * @param \Tatum\Model\AddMultiTokenMinterKMS $add_multi_token_minter_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -733,8 +691,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatch
      *
      * @param \Tatum\Model\MintMultiTokenBatch $mint_multi_token_batch 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -765,8 +721,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatchCelo
      *
      * @param \Tatum\Model\MintMultiTokenBatchCelo $mint_multi_token_batch_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -797,8 +751,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatchKMS
      *
      * @param \Tatum\Model\MintMultiTokenBatchKMS $mint_multi_token_batch_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -829,8 +781,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatchKMSCelo
      *
      * @param \Tatum\Model\MintMultiTokenBatchKMSCelo $mint_multi_token_batch_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -861,8 +811,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiToken
      *
      * @param \Tatum\Model\MintMultiToken $mint_multi_token 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -893,8 +841,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiTokenCelo
      *
      * @param \Tatum\Model\MintMultiTokenCelo $mint_multi_token_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -925,8 +871,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiTokenKMS
      *
      * @param \Tatum\Model\MintMultiTokenKMS $mint_multi_token_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -957,8 +901,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiTokenKMSCelo
      *
      * @param \Tatum\Model\MintMultiTokenKMSCelo $mint_multi_token_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -989,8 +931,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatch
      *
      * @param \Tatum\Model\TransferMultiTokenBatch $transfer_multi_token_batch 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -1021,8 +961,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatchCelo
      *
      * @param \Tatum\Model\TransferMultiTokenBatchCelo $transfer_multi_token_batch_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -1053,8 +991,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatchKMS
      *
      * @param \Tatum\Model\TransferMultiTokenBatchKMS $transfer_multi_token_batch_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -1085,8 +1021,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer multiple Multi Tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatchKMSCelo
      *
      * @param \Tatum\Model\TransferMultiTokenBatchKMSCelo $transfer_multi_token_batch_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -1117,8 +1051,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiToken
      *
      * @param \Tatum\Model\TransferMultiToken $transfer_multi_token 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -1149,8 +1081,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiTokenCelo
      *
      * @param \Tatum\Model\TransferMultiTokenCelo $transfer_multi_token_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -1181,8 +1111,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiTokenKMS
      *
      * @param \Tatum\Model\TransferMultiTokenKMS $transfer_multi_token_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -1213,8 +1141,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer a Multi Token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiTokenKMSCelo
      *
      * @param \Tatum\Model\TransferMultiTokenKMSCelo $transfer_multi_token_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.

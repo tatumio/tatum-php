@@ -1,46 +1,47 @@
 # Tatum/Api/MultiTokensERC1155OrCompatibleApi
 
-All URIs are relative to https://api.tatum.io.
+* Multi Tokens (ERC-1155 or compatible) [documentation](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | **GET** [/v3/multitoken/address/balance/{chain}/{address}](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetAddressBalance) | Get all Multi Tokens that a blockchain address holds
-[**multiTokenGetBalance()**](#multitokengetbalance) | **GET** [/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetBalance) | Get the amount of a specific MultiToken that a blockchain address holds
-[**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | **GET** [/v3/multitoken/balance/batch/{chain}/{contractAddress}](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetBalanceBatch) | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-[**multiTokenGetContractAddress()**](#multitokengetcontractaddress) | **GET** [/v3/multitoken/address/{chain}/{hash}](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetContractAddress) | Get the address of a Multi Token smart contract by its transaction hash
-[**multiTokenGetMetadata()**](#multitokengetmetadata) | **GET** [/v3/multitoken/metadata/{chain}/{contractAddress}/{token}](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetMetadata) | Get Multi Token metadata
-[**multiTokenGetTransaction()**](#multitokengettransaction) | **GET** [/v3/multitoken/transaction/{chain}/{hash}](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetTransaction) | Get a Multi Token transaction by its hash
-[**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | **GET** [/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/MultiTokenGetTransactionByAddress) | Get Multi Token transactions on a blockchain address
-[**multitokenBurnBatchBurnMultiTokenBatch()**](#multitokenburnbatchburnmultitokenbatch) | **POST** [/v3/multitoken/burn/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatch) | Burn multiple Multi Tokens
-[**multitokenBurnBatchBurnMultiTokenBatchCelo()**](#multitokenburnbatchburnmultitokenbatchcelo) | **POST** [/v3/multitoken/burn/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatchCelo) | Burn multiple Multi Tokens
-[**multitokenBurnBatchBurnMultiTokenBatchKMS()**](#multitokenburnbatchburnmultitokenbatchkms) | **POST** [/v3/multitoken/burn/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatchKMS) | Burn multiple Multi Tokens
-[**multitokenBurnBatchBurnMultiTokenBatchKMSCelo()**](#multitokenburnbatchburnmultitokenbatchkmscelo) | **POST** [/v3/multitoken/burn/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnBatchBurnMultiTokenBatchKMSCelo) | Burn multiple Multi Tokens
-[**multitokenBurnMultiToken()**](#multitokenburnmultitoken) | **POST** [/v3/multitoken/burn](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiToken) | Burn a Multi Token
-[**multitokenBurnMultiTokenCelo()**](#multitokenburnmultitokencelo) | **POST** [/v3/multitoken/burn](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiTokenCelo) | Burn a Multi Token
-[**multitokenBurnMultiTokenKMS()**](#multitokenburnmultitokenkms) | **POST** [/v3/multitoken/burn](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiTokenKMS) | Burn a Multi Token
-[**multitokenBurnMultiTokenKMSCelo()**](#multitokenburnmultitokenkmscelo) | **POST** [/v3/multitoken/burn](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenBurnMultiTokenKMSCelo) | Burn a Multi Token
-[**multitokenDeployMultiToken()**](#multitokendeploymultitoken) | **POST** [/v3/multitoken/deploy](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiToken) | Deploy a Multi Token smart contract
-[**multitokenDeployMultiTokenCelo()**](#multitokendeploymultitokencelo) | **POST** [/v3/multitoken/deploy](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiTokenCelo) | Deploy a Multi Token smart contract
-[**multitokenDeployMultiTokenCeloKMS()**](#multitokendeploymultitokencelokms) | **POST** [/v3/multitoken/deploy](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiTokenCeloKMS) | Deploy a Multi Token smart contract
-[**multitokenDeployMultiTokenKMS()**](#multitokendeploymultitokenkms) | **POST** [/v3/multitoken/deploy](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenDeployMultiTokenKMS) | Deploy a Multi Token smart contract
-[**multitokenMintAddMultiTokenMinter()**](#multitokenmintaddmultitokenminter) | **POST** [/v3/multitoken/mint/add](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintAddMultiTokenMinter) | Add a Multi Token minter
-[**multitokenMintAddMultiTokenMinterKMS()**](#multitokenmintaddmultitokenminterkms) | **POST** [/v3/multitoken/mint/add](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintAddMultiTokenMinterKMS) | Add a Multi Token minter
-[**multitokenMintBatchMintMultiTokenBatch()**](#multitokenmintbatchmintmultitokenbatch) | **POST** [/v3/multitoken/mint/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatch) | Mint multiple Multi Tokens
-[**multitokenMintBatchMintMultiTokenBatchCelo()**](#multitokenmintbatchmintmultitokenbatchcelo) | **POST** [/v3/multitoken/mint/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatchCelo) | Mint multiple Multi Tokens
-[**multitokenMintBatchMintMultiTokenBatchKMS()**](#multitokenmintbatchmintmultitokenbatchkms) | **POST** [/v3/multitoken/mint/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatchKMS) | Mint multiple Multi Tokens
-[**multitokenMintBatchMintMultiTokenBatchKMSCelo()**](#multitokenmintbatchmintmultitokenbatchkmscelo) | **POST** [/v3/multitoken/mint/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintBatchMintMultiTokenBatchKMSCelo) | Mint multiple Multi Tokens
-[**multitokenMintMultiToken()**](#multitokenmintmultitoken) | **POST** [/v3/multitoken/mint](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiToken) | Mint a Multi Token
-[**multitokenMintMultiTokenCelo()**](#multitokenmintmultitokencelo) | **POST** [/v3/multitoken/mint](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiTokenCelo) | Mint a Multi Token
-[**multitokenMintMultiTokenKMS()**](#multitokenmintmultitokenkms) | **POST** [/v3/multitoken/mint](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiTokenKMS) | Mint a Multi Token
-[**multitokenMintMultiTokenKMSCelo()**](#multitokenmintmultitokenkmscelo) | **POST** [/v3/multitoken/mint](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenMintMultiTokenKMSCelo) | Mint a Multi Token
-[**multitokenTransactionBatchTransferMultiTokenBatch()**](#multitokentransactionbatchtransfermultitokenbatch) | **POST** [/v3/multitoken/transaction/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatch) | Transfer multiple Multi Tokens
-[**multitokenTransactionBatchTransferMultiTokenBatchCelo()**](#multitokentransactionbatchtransfermultitokenbatchcelo) | **POST** [/v3/multitoken/transaction/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatchCelo) | Transfer multiple Multi Tokens
-[**multitokenTransactionBatchTransferMultiTokenBatchKMS()**](#multitokentransactionbatchtransfermultitokenbatchkms) | **POST** [/v3/multitoken/transaction/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatchKMS) | Transfer multiple Multi Tokens
-[**multitokenTransactionBatchTransferMultiTokenBatchKMSCelo()**](#multitokentransactionbatchtransfermultitokenbatchkmscelo) | **POST** [/v3/multitoken/transaction/batch](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionBatchTransferMultiTokenBatchKMSCelo) | Transfer multiple Multi Tokens
-[**multitokenTransactionTransferMultiToken()**](#multitokentransactiontransfermultitoken) | **POST** [/v3/multitoken/transaction](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiToken) | Transfer a Multi Token
-[**multitokenTransactionTransferMultiTokenCelo()**](#multitokentransactiontransfermultitokencelo) | **POST** [/v3/multitoken/transaction](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiTokenCelo) | Transfer a Multi Token
-[**multitokenTransactionTransferMultiTokenKMS()**](#multitokentransactiontransfermultitokenkms) | **POST** [/v3/multitoken/transaction](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiTokenKMS) | Transfer a Multi Token
-[**multitokenTransactionTransferMultiTokenKMSCelo()**](#multitokentransactiontransfermultitokenkmscelo) | **POST** [/v3/multitoken/transaction](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/#operation/multitokenTransactionTransferMultiTokenKMSCelo) | Transfer a Multi Token
+[**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | **GET** `/v3/multitoken/address/balance/{chain}/{address}` | Get all Multi Tokens that a blockchain address holds
+[**multiTokenGetBalance()**](#multitokengetbalance) | **GET** `/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}` | Get the amount of a specific MultiToken that a blockchain address holds
+[**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | **GET** `/v3/multitoken/balance/batch/{chain}/{contractAddress}` | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
+[**multiTokenGetContractAddress()**](#multitokengetcontractaddress) | **GET** `/v3/multitoken/address/{chain}/{hash}` | Get the address of a Multi Token smart contract by its transaction hash
+[**multiTokenGetMetadata()**](#multitokengetmetadata) | **GET** `/v3/multitoken/metadata/{chain}/{contractAddress}/{token}` | Get Multi Token metadata
+[**multiTokenGetTransaction()**](#multitokengettransaction) | **GET** `/v3/multitoken/transaction/{chain}/{hash}` | Get a Multi Token transaction by its hash
+[**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | **GET** `/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}` | Get Multi Token transactions on a blockchain address
+[**multitokenBurnBatchBurnMultiTokenBatch()**](#multitokenburnbatchburnmultitokenbatch) | **POST** `/v3/multitoken/burn/batch` | Burn multiple Multi Tokens
+[**multitokenBurnBatchBurnMultiTokenBatchCelo()**](#multitokenburnbatchburnmultitokenbatchcelo) | **POST** `/v3/multitoken/burn/batch` | Burn multiple Multi Tokens
+[**multitokenBurnBatchBurnMultiTokenBatchKMS()**](#multitokenburnbatchburnmultitokenbatchkms) | **POST** `/v3/multitoken/burn/batch` | Burn multiple Multi Tokens
+[**multitokenBurnBatchBurnMultiTokenBatchKMSCelo()**](#multitokenburnbatchburnmultitokenbatchkmscelo) | **POST** `/v3/multitoken/burn/batch` | Burn multiple Multi Tokens
+[**multitokenBurnMultiToken()**](#multitokenburnmultitoken) | **POST** `/v3/multitoken/burn` | Burn a Multi Token
+[**multitokenBurnMultiTokenCelo()**](#multitokenburnmultitokencelo) | **POST** `/v3/multitoken/burn` | Burn a Multi Token
+[**multitokenBurnMultiTokenKMS()**](#multitokenburnmultitokenkms) | **POST** `/v3/multitoken/burn` | Burn a Multi Token
+[**multitokenBurnMultiTokenKMSCelo()**](#multitokenburnmultitokenkmscelo) | **POST** `/v3/multitoken/burn` | Burn a Multi Token
+[**multitokenDeployMultiToken()**](#multitokendeploymultitoken) | **POST** `/v3/multitoken/deploy` | Deploy a Multi Token smart contract
+[**multitokenDeployMultiTokenCelo()**](#multitokendeploymultitokencelo) | **POST** `/v3/multitoken/deploy` | Deploy a Multi Token smart contract
+[**multitokenDeployMultiTokenCeloKMS()**](#multitokendeploymultitokencelokms) | **POST** `/v3/multitoken/deploy` | Deploy a Multi Token smart contract
+[**multitokenDeployMultiTokenKMS()**](#multitokendeploymultitokenkms) | **POST** `/v3/multitoken/deploy` | Deploy a Multi Token smart contract
+[**multitokenMintAddMultiTokenMinter()**](#multitokenmintaddmultitokenminter) | **POST** `/v3/multitoken/mint/add` | Add a Multi Token minter
+[**multitokenMintAddMultiTokenMinterKMS()**](#multitokenmintaddmultitokenminterkms) | **POST** `/v3/multitoken/mint/add` | Add a Multi Token minter
+[**multitokenMintBatchMintMultiTokenBatch()**](#multitokenmintbatchmintmultitokenbatch) | **POST** `/v3/multitoken/mint/batch` | Mint multiple Multi Tokens
+[**multitokenMintBatchMintMultiTokenBatchCelo()**](#multitokenmintbatchmintmultitokenbatchcelo) | **POST** `/v3/multitoken/mint/batch` | Mint multiple Multi Tokens
+[**multitokenMintBatchMintMultiTokenBatchKMS()**](#multitokenmintbatchmintmultitokenbatchkms) | **POST** `/v3/multitoken/mint/batch` | Mint multiple Multi Tokens
+[**multitokenMintBatchMintMultiTokenBatchKMSCelo()**](#multitokenmintbatchmintmultitokenbatchkmscelo) | **POST** `/v3/multitoken/mint/batch` | Mint multiple Multi Tokens
+[**multitokenMintMultiToken()**](#multitokenmintmultitoken) | **POST** `/v3/multitoken/mint` | Mint a Multi Token
+[**multitokenMintMultiTokenCelo()**](#multitokenmintmultitokencelo) | **POST** `/v3/multitoken/mint` | Mint a Multi Token
+[**multitokenMintMultiTokenKMS()**](#multitokenmintmultitokenkms) | **POST** `/v3/multitoken/mint` | Mint a Multi Token
+[**multitokenMintMultiTokenKMSCelo()**](#multitokenmintmultitokenkmscelo) | **POST** `/v3/multitoken/mint` | Mint a Multi Token
+[**multitokenTransactionBatchTransferMultiTokenBatch()**](#multitokentransactionbatchtransfermultitokenbatch) | **POST** `/v3/multitoken/transaction/batch` | Transfer multiple Multi Tokens
+[**multitokenTransactionBatchTransferMultiTokenBatchCelo()**](#multitokentransactionbatchtransfermultitokenbatchcelo) | **POST** `/v3/multitoken/transaction/batch` | Transfer multiple Multi Tokens
+[**multitokenTransactionBatchTransferMultiTokenBatchKMS()**](#multitokentransactionbatchtransfermultitokenbatchkms) | **POST** `/v3/multitoken/transaction/batch` | Transfer multiple Multi Tokens
+[**multitokenTransactionBatchTransferMultiTokenBatchKMSCelo()**](#multitokentransactionbatchtransfermultitokenbatchkmscelo) | **POST** `/v3/multitoken/transaction/batch` | Transfer multiple Multi Tokens
+[**multitokenTransactionTransferMultiToken()**](#multitokentransactiontransfermultitoken) | **POST** `/v3/multitoken/transaction` | Transfer a Multi Token
+[**multitokenTransactionTransferMultiTokenCelo()**](#multitokentransactiontransfermultitokencelo) | **POST** `/v3/multitoken/transaction` | Transfer a Multi Token
+[**multitokenTransactionTransferMultiTokenKMS()**](#multitokentransactiontransfermultitokenkms) | **POST** `/v3/multitoken/transaction` | Transfer a Multi Token
+[**multitokenTransactionTransferMultiTokenKMSCelo()**](#multitokentransactiontransfermultitokenkmscelo) | **POST** `/v3/multitoken/transaction` | Transfer a Multi Token
 
 
 ## `multiTokenGetAddressBalance()`

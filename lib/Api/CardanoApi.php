@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class CardanoApi extends AbstractApi {
     /**
      * Broadcast signed Ada transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Generate Ada deposit address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGenerateAddress
      *
      * @param string $xpub Extended public key of a wallet.
      * @param float $index Derivation index of the desired address to be generated.
@@ -78,8 +74,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Generate Ada private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -103,8 +97,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Generate Ada wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -134,8 +126,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Gets a Ada account by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGetAccount
      *
      * @param string $address Address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -159,8 +149,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Get Block by hash or height
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGetBlock
      *
      * @param string $hash Block hash or height.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -184,8 +172,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Get Blockchain information
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGetBlockChainInfo
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -207,8 +193,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Get transaction by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGetRawTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -232,8 +216,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Get transactions by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGetTxByAddress
      *
      * @param string $address Address
      * @param float $page_size Max number of items per page is 50.
@@ -270,8 +252,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Get UTXOs by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/AdaGetUTXOByAddress
      *
      * @param string $address Address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -295,8 +275,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Send ADA to Cardano addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/adaTransactionAdaTransactionFromAddress
      *
      * @param \Tatum\Model\AdaTransactionFromAddress $ada_transaction_from_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -320,8 +298,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Send ADA to Cardano addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/adaTransactionAdaTransactionFromAddressKMS
      *
      * @param \Tatum\Model\AdaTransactionFromAddressKMS $ada_transaction_from_address_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -345,8 +321,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Send ADA to Cardano addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/adaTransactionAdaTransactionFromUTXO
      *
      * @param \Tatum\Model\AdaTransactionFromUTXO $ada_transaction_from_utxo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -370,8 +344,6 @@ class CardanoApi extends AbstractApi {
     
     /**
      * Send ADA to Cardano addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Cardano/#operation/adaTransactionAdaTransactionFromUTXOKMS
      *
      * @param \Tatum\Model\AdaTransactionFromUTXOKMS $ada_transaction_from_utxokms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

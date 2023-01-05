@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BlockchainUtilsApi extends AbstractApi {
     /**
      * Estimate the block height for a future point in time
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-utils/#operation/GetAuctionEstimatedTime
      *
      * @param string $chain The blockchain to work with
      * @param string $date The date and time in the ISO 8601 standard format
@@ -49,8 +47,6 @@ class BlockchainUtilsApi extends AbstractApi {
     
     /**
      * Get the blockchain address of a smart contract by the deployment transaction ID
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-utils/#operation/SCGetContractAddress
      *
      * @param string $chain The blockchain to work with
      * @param string $hash The ID (hash) of the deployment transaction

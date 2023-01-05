@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class AuctionApi extends AbstractApi {
     /**
      * Allow the NFT auction or marketplace to transfer an asset
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionApproveNftSpending
      *
      * @param \Tatum\Model\ApproveNftSpending $approve_nft_spending 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Allow the NFT auction or marketplace to transfer an asset
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionApproveNftSpendingCelo
      *
      * @param \Tatum\Model\ApproveNftSpendingCelo $approve_nft_spending_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Allow the NFT auction or marketplace to transfer an asset
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionApproveNftSpendingCeloKMS
      *
      * @param \Tatum\Model\ApproveNftSpendingCeloKMS $approve_nft_spending_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Allow the NFT auction or marketplace to transfer an asset
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionApproveNftSpendingKMS
      *
      * @param \Tatum\Model\ApproveNftSpendingKMS $approve_nft_spending_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -123,8 +115,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Bid for an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionBidOnAuction
      *
      * @param \Tatum\Model\BidOnAuction $bid_on_auction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -148,8 +138,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Bid for an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionBidOnAuctionCelo
      *
      * @param \Tatum\Model\BidOnAuctionCelo $bid_on_auction_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -173,8 +161,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Bid for an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionBidOnAuctionCeloKMS
      *
      * @param \Tatum\Model\BidOnAuctionCeloKMS $bid_on_auction_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -198,8 +184,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Bid for an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionBidOnAuctionKMS
      *
      * @param \Tatum\Model\BidOnAuctionKMS $bid_on_auction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -223,8 +207,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionCancelAuction
      *
      * @param \Tatum\Model\CancelAuction $cancel_auction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -248,8 +230,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionCancelAuctionCelo
      *
      * @param \Tatum\Model\CancelAuctionCelo $cancel_auction_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -273,8 +253,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionCancelAuctionCeloKMS
      *
      * @param \Tatum\Model\CancelAuctionCeloKMS $cancel_auction_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -298,8 +276,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionCancelAuctionKMS
      *
      * @param \Tatum\Model\CancelAuctionKMS $cancel_auction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -323,8 +299,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -348,8 +322,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionFeeUpdateFeeAuctionCeloUpdate
      *
      * @param \Tatum\Model\UpdateFeeAuctionCelo $update_fee_auction_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -373,8 +345,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionFeeUpdateFeeAuctionKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -398,8 +368,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionFeeUpdateFeeAuctionUpdate
      *
      * @param \Tatum\Model\UpdateFeeAuction $update_fee_auction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -423,8 +391,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Create an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionGenerateAuction
      *
      * @param \Tatum\Model\GenerateAuction $generate_auction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -448,8 +414,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Create an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionGenerateAuctionCelo
      *
      * @param \Tatum\Model\GenerateAuctionCelo $generate_auction_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -473,8 +437,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Create an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionGenerateAuctionCeloKMS
      *
      * @param \Tatum\Model\GenerateAuctionCeloKMS $generate_auction_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -498,8 +460,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Create an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionGenerateAuctionKMS
      *
      * @param \Tatum\Model\GenerateAuctionKMS $generate_auction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -523,8 +483,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -548,8 +506,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -573,8 +529,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -598,8 +552,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionRecipientUpdateFeeRecipientUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipient $update_fee_recipient 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -623,8 +575,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Sell an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSellCreateAuction
      *
      * @param \Tatum\Model\CreateAuction $create_auction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -648,8 +598,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Sell an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSellCreateAuctionCelo
      *
      * @param \Tatum\Model\CreateAuctionCelo $create_auction_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -673,8 +621,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Sell an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSellCreateAuctionCeloKMS
      *
      * @param \Tatum\Model\CreateAuctionCeloKMS $create_auction_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -698,8 +644,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Sell an asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSellCreateAuctionKMS
      *
      * @param \Tatum\Model\CreateAuctionKMS $create_auction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -723,8 +667,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Settle an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSettleAuction
      *
      * @param \Tatum\Model\SettleAuction $settle_auction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -748,8 +690,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Settle an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSettleAuctionCelo
      *
      * @param \Tatum\Model\SettleAuctionCelo $settle_auction_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -773,8 +713,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Settle an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSettleAuctionCeloKMS
      *
      * @param \Tatum\Model\SettleAuctionCeloKMS $settle_auction_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -798,8 +736,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Settle an NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/blockchainAuctionSettleAuctionKMS
      *
      * @param \Tatum\Model\SettleAuctionKMS $settle_auction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -823,8 +759,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Get information about an auctioned asset at the NFT auction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/GetAuction
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -850,8 +784,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Get the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/GetAuctionFee
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -876,8 +808,6 @@ class AuctionApi extends AbstractApi {
     
     /**
      * Get the recipient of the NFT auction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Auction/#operation/GetAuctionFeeRecipient
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address

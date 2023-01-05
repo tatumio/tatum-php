@@ -1,10 +1,11 @@
 # Tatum/Api/VirtualAccountBlockchainFeesApi
 
-All URIs are relative to https://api.tatum.io.
+* Virtual account blockchain fees [documentation](https://apidoc.tatum.io/tag/Virtual-account-blockchain-fees/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**offchainEstimateFee()**](#offchainestimatefee) | **POST** [/v3/offchain/blockchain/estimate](https://apidoc.tatum.io/tag/Virtual-account-blockchain-fees/#operation/offchainEstimateFee) | Estimate ledger to blockchain transaction fee
+[**offchainEstimateFee()**](#offchainestimatefee) | **POST** `/v3/offchain/blockchain/estimate` | Estimate ledger to blockchain transaction fee
 
 
 ## `offchainEstimateFee()`

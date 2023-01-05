@@ -1,14 +1,15 @@
 # Tatum/Api/VirtualCurrencyApi
 
-All URIs are relative to https://api.tatum.io.
+* Virtual Currency [documentation](https://apidoc.tatum.io/tag/Virtual-Currency/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCurrency()**](#createcurrency) | **POST** [/v3/ledger/virtualCurrency](https://apidoc.tatum.io/tag/Virtual-Currency/#operation/createCurrency) | Create new virtual currency
-[**getCurrency()**](#getcurrency) | **GET** [/v3/ledger/virtualCurrency/{name}](https://apidoc.tatum.io/tag/Virtual-Currency/#operation/getCurrency) | Get virtual currency
-[**mintCurrency()**](#mintcurrency) | **PUT** [/v3/ledger/virtualCurrency/mint](https://apidoc.tatum.io/tag/Virtual-Currency/#operation/mintCurrency) | Create new supply of virtual currency
-[**revokeCurrency()**](#revokecurrency) | **PUT** [/v3/ledger/virtualCurrency/revoke](https://apidoc.tatum.io/tag/Virtual-Currency/#operation/revokeCurrency) | Destroy supply of virtual currency
-[**updateCurrency()**](#updatecurrency) | **PUT** [/v3/ledger/virtualCurrency](https://apidoc.tatum.io/tag/Virtual-Currency/#operation/updateCurrency) | Update virtual currency
+[**createCurrency()**](#createcurrency) | **POST** `/v3/ledger/virtualCurrency` | Create new virtual currency
+[**getCurrency()**](#getcurrency) | **GET** `/v3/ledger/virtualCurrency/{name}` | Get virtual currency
+[**mintCurrency()**](#mintcurrency) | **PUT** `/v3/ledger/virtualCurrency/mint` | Create new supply of virtual currency
+[**revokeCurrency()**](#revokecurrency) | **PUT** `/v3/ledger/virtualCurrency/revoke` | Destroy supply of virtual currency
+[**updateCurrency()**](#updatecurrency) | **PUT** `/v3/ledger/virtualCurrency` | Update virtual currency
 
 
 ## `createCurrency()`

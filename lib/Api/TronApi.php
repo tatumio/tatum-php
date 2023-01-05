@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class TronApi extends AbstractApi {
     /**
      * Generate a TRON wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/GenerateTronwallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -54,8 +52,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Get all transactions for a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronAccountTx
      *
      * @param string $address The address of the TRON account to get all transactions for
      * @param string|null $next The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
@@ -82,8 +78,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Get TRC-20 transactions for a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronAccountTx20
      *
      * @param string $address The address of the TRON account to get TRC-20 transactions for
      * @param string|null $next The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
@@ -110,8 +104,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Broadcast a TRON transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronBroadcast
      *
      * @param \Tatum\Model\TronBroadcast $tron_broadcast 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -135,8 +127,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Freeze the balance of a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronFreezeBalanceFreezeTron
      *
      * @param \Tatum\Model\FreezeTron $freeze_tron 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -160,8 +150,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Freeze the balance of a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronFreezeBalanceFreezeTronKMS
      *
      * @param \Tatum\Model\FreezeTronKMS $freeze_tron_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -185,8 +173,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Generate a TRON address from the wallet's extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronGenerateAddress
      *
      * @param string $xpub The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters)
      * @param float $index Derivation index of desired address to be generated.
@@ -215,8 +201,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Generate the private key for a TRON address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -240,8 +224,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Get the TRON account by its address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronGetAccount
      *
      * @param string $address Account address.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -265,8 +247,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Get a TRON block by its hash or height
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronGetBlock
      *
      * @param string $hash Block hash or height.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -290,8 +270,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Get the current TRON block
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -313,8 +291,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Get a TRON transaction by its hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronGetTransaction
      *
      * @param string $hash Transaction hash.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -338,8 +314,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Send TRX to a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTransactionTransferTronBlockchain
      *
      * @param \Tatum\Model\TransferTronBlockchain $transfer_tron_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -363,8 +337,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Send TRX to a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTransactionTransferTronBlockchainKMS
      *
      * @param \Tatum\Model\TransferTronBlockchainKMS $transfer_tron_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -388,8 +360,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Create a TRC-10 token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc10DeployCreateTronTrc10Blockchain
      *
      * @param \Tatum\Model\CreateTronTrc10Blockchain $create_tron_trc10_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -413,8 +383,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Create a TRC-10 token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc10DeployCreateTronTrc10BlockchainKMS
      *
      * @param \Tatum\Model\CreateTronTrc10BlockchainKMS $create_tron_trc10_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -438,8 +406,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Get information about a TRC-10 token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/TronTrc10Detail
      *
      * @param string $id_or_owner_address The ID of the TRC-10 token or the address of the token&#39;s owner
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -463,8 +429,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Send TRC-10 tokens to a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc10TransactionTransferTronTrc10Blockchain
      *
      * @param \Tatum\Model\TransferTronTrc10Blockchain $transfer_tron_trc10_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -488,8 +452,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Send TRC-10 tokens to a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc10TransactionTransferTronTrc10BlockchainKMS
      *
      * @param \Tatum\Model\TransferTronTrc10BlockchainKMS $transfer_tron_trc10_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -513,8 +475,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Create a TRC-20 token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc20DeployCreateTronTrc20Blockchain
      *
      * @param \Tatum\Model\CreateTronTrc20Blockchain $create_tron_trc20_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -538,8 +498,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Create a TRC-20 token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc20DeployCreateTronTrc20BlockchainKMS
      *
      * @param \Tatum\Model\CreateTronTrc20BlockchainKMS $create_tron_trc20_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -563,8 +521,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Send TRC-20 tokens to a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc20TransactionTransferTronTrc20Blockchain
      *
      * @param \Tatum\Model\TransferTronTrc20Blockchain $transfer_tron_trc20_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -588,8 +544,6 @@ class TronApi extends AbstractApi {
     
     /**
      * Send TRC-20 tokens to a TRON account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Tron/#operation/tronTrc20TransactionTransferTronTrc20BlockchainKMS
      *
      * @param \Tatum\Model\TransferTronTrc20BlockchainKMS $transfer_tron_trc20_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

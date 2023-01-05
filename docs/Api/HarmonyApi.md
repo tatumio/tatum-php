@@ -1,25 +1,26 @@
 # Tatum/Api/HarmonyApi
 
-All URIs are relative to https://api.tatum.io.
+* Harmony [documentation](https://apidoc.tatum.io/tag/Harmony/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oneBroadcast()**](#onebroadcast) | **POST** [/v3/one/broadcast](https://apidoc.tatum.io/tag/Harmony/#operation/OneBroadcast) | Broadcast signed ONE transaction
-[**oneFormatAddress()**](#oneformataddress) | **GET** [/v3/one/address/format/{address}](https://apidoc.tatum.io/tag/Harmony/#operation/OneFormatAddress) | Transform HEX address to Bech32 ONE address format
-[**oneGenerateAddress()**](#onegenerateaddress) | **GET** [/v3/one/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Harmony/#operation/OneGenerateAddress) | Generate ONE account address from Extended public key
-[**oneGenerateAddressPrivateKey()**](#onegenerateaddressprivatekey) | **POST** [/v3/one/wallet/priv](https://apidoc.tatum.io/tag/Harmony/#operation/OneGenerateAddressPrivateKey) | Generate ONE private key
-[**oneGenerateWallet()**](#onegeneratewallet) | **GET** [/v3/one/wallet](https://apidoc.tatum.io/tag/Harmony/#operation/OneGenerateWallet) | Generate ONE wallet
-[**oneGetBalance()**](#onegetbalance) | **GET** [/v3/one/account/balance/{address}](https://apidoc.tatum.io/tag/Harmony/#operation/OneGetBalance) | Get ONE Account balance
-[**oneGetBlock()**](#onegetblock) | **GET** [/v3/one/block/{hash}](https://apidoc.tatum.io/tag/Harmony/#operation/OneGetBlock) | Get ONE block by hash
-[**oneGetCurrentBlock()**](#onegetcurrentblock) | **GET** [/v3/one/block/current](https://apidoc.tatum.io/tag/Harmony/#operation/OneGetCurrentBlock) | Get current block number
-[**oneGetTransaction()**](#onegettransaction) | **GET** [/v3/one/transaction/{hash}](https://apidoc.tatum.io/tag/Harmony/#operation/OneGetTransaction) | Get ONE Transaction
-[**oneGetTransactionCount()**](#onegettransactioncount) | **GET** [/v3/one/transaction/count/{address}](https://apidoc.tatum.io/tag/Harmony/#operation/OneGetTransactionCount) | Get count of outgoing ONE transactions
-[**oneSmartcontractCallOneReadSmartContractMethod()**](#onesmartcontractcallonereadsmartcontractmethod) | **POST** [/v3/one/smartcontract](https://apidoc.tatum.io/tag/Harmony/#operation/oneSmartcontractCallOneReadSmartContractMethod) | Invoke a method in a smart contract on Harmony
-[**oneSmartcontractCallOneSmartContractMethod()**](#onesmartcontractcallonesmartcontractmethod) | **POST** [/v3/one/smartcontract](https://apidoc.tatum.io/tag/Harmony/#operation/oneSmartcontractCallOneSmartContractMethod) | Invoke a method in a smart contract on Harmony
-[**oneSmartcontractCallOneSmartContractMethodKMS()**](#onesmartcontractcallonesmartcontractmethodkms) | **POST** [/v3/one/smartcontract](https://apidoc.tatum.io/tag/Harmony/#operation/oneSmartcontractCallOneSmartContractMethodKMS) | Invoke a method in a smart contract on Harmony
-[**oneTransactionTransferOneBlockchain()**](#onetransactiontransferoneblockchain) | **POST** [/v3/one/transaction](https://apidoc.tatum.io/tag/Harmony/#operation/oneTransactionTransferOneBlockchain) | Send ONE / HRM20 from account to account
-[**oneTransactionTransferOneBlockchainKMS()**](#onetransactiontransferoneblockchainkms) | **POST** [/v3/one/transaction](https://apidoc.tatum.io/tag/Harmony/#operation/oneTransactionTransferOneBlockchainKMS) | Send ONE / HRM20 from account to account
-[**oneWeb3Driver()**](#oneweb3driver) | **POST** [/v3/one/web3/{xApiKey}](https://apidoc.tatum.io/tag/Harmony/#operation/OneWeb3Driver) | Web3 HTTP driver
+[**oneBroadcast()**](#onebroadcast) | **POST** `/v3/one/broadcast` | Broadcast signed ONE transaction
+[**oneFormatAddress()**](#oneformataddress) | **GET** `/v3/one/address/format/{address}` | Transform HEX address to Bech32 ONE address format
+[**oneGenerateAddress()**](#onegenerateaddress) | **GET** `/v3/one/address/{xpub}/{index}` | Generate ONE account address from Extended public key
+[**oneGenerateAddressPrivateKey()**](#onegenerateaddressprivatekey) | **POST** `/v3/one/wallet/priv` | Generate ONE private key
+[**oneGenerateWallet()**](#onegeneratewallet) | **GET** `/v3/one/wallet` | Generate ONE wallet
+[**oneGetBalance()**](#onegetbalance) | **GET** `/v3/one/account/balance/{address}` | Get ONE Account balance
+[**oneGetBlock()**](#onegetblock) | **GET** `/v3/one/block/{hash}` | Get ONE block by hash
+[**oneGetCurrentBlock()**](#onegetcurrentblock) | **GET** `/v3/one/block/current` | Get current block number
+[**oneGetTransaction()**](#onegettransaction) | **GET** `/v3/one/transaction/{hash}` | Get ONE Transaction
+[**oneGetTransactionCount()**](#onegettransactioncount) | **GET** `/v3/one/transaction/count/{address}` | Get count of outgoing ONE transactions
+[**oneSmartcontractCallOneReadSmartContractMethod()**](#onesmartcontractcallonereadsmartcontractmethod) | **POST** `/v3/one/smartcontract` | Invoke a method in a smart contract on Harmony
+[**oneSmartcontractCallOneSmartContractMethod()**](#onesmartcontractcallonesmartcontractmethod) | **POST** `/v3/one/smartcontract` | Invoke a method in a smart contract on Harmony
+[**oneSmartcontractCallOneSmartContractMethodKMS()**](#onesmartcontractcallonesmartcontractmethodkms) | **POST** `/v3/one/smartcontract` | Invoke a method in a smart contract on Harmony
+[**oneTransactionTransferOneBlockchain()**](#onetransactiontransferoneblockchain) | **POST** `/v3/one/transaction` | Send ONE / HRM20 from account to account
+[**oneTransactionTransferOneBlockchainKMS()**](#onetransactiontransferoneblockchainkms) | **POST** `/v3/one/transaction` | Send ONE / HRM20 from account to account
+[**oneWeb3Driver()**](#oneweb3driver) | **POST** `/v3/one/web3/{xApiKey}` | Web3 HTTP driver
 
 
 ## `oneBroadcast()`

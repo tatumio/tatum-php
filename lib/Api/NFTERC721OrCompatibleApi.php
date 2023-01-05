@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNft
      *
      * @param \Tatum\Model\BurnNft $burn_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -55,8 +53,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftAlgo
      *
      * @param \Tatum\Model\BurnNftAlgo $burn_nft_algo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -87,8 +83,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftCelo
      *
      * @param \Tatum\Model\BurnNftCelo $burn_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -119,8 +113,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftFlowKMS
      *
      * @param \Tatum\Model\BurnNftFlowKMS $burn_nft_flow_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -151,8 +143,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftFlowMnemonic
      *
      * @param \Tatum\Model\BurnNftFlowMnemonic $burn_nft_flow_mnemonic 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -183,8 +173,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftFlowPK
      *
      * @param \Tatum\Model\BurnNftFlowPK $burn_nft_flow_pk 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -215,8 +203,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftKMS
      *
      * @param \Tatum\Model\BurnNftKMS $burn_nft_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -247,8 +233,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftKMSCelo
      *
      * @param \Tatum\Model\BurnNftKMSCelo $burn_nft_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -279,8 +263,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftKMSTron
      *
      * @param \Tatum\Model\BurnNftKMSTron $burn_nft_kms_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -311,8 +293,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftTron
      *
      * @param \Tatum\Model\BurnNftTron $burn_nft_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -343,8 +323,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNft
      *
      * @param \Tatum\Model\DeployNft $deploy_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -375,8 +353,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftCelo
      *
      * @param \Tatum\Model\DeployNftCelo $deploy_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -407,8 +383,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftCeloKMS
      *
      * @param \Tatum\Model\DeployNftCeloKMS $deploy_nft_celo_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -439,8 +413,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftFlowKMS
      *
      * @param \Tatum\Model\DeployNftFlowKMS $deploy_nft_flow_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -471,8 +443,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftFlowMnemonic
      *
      * @param \Tatum\Model\DeployNftFlowMnemonic $deploy_nft_flow_mnemonic 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -503,8 +473,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftFlowPK
      *
      * @param \Tatum\Model\DeployNftFlowPK $deploy_nft_flow_pk 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -535,8 +503,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftKMS
      *
      * @param \Tatum\Model\DeployNftKMS $deploy_nft_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -567,8 +533,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftTron
      *
      * @param \Tatum\Model\DeployNftTron $deploy_nft_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -599,8 +563,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftTronKMS
      *
      * @param \Tatum\Model\DeployNftTronKMS $deploy_nft_tron_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -631,8 +593,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get the NFTs from a specific smart contract that a blockchain address holds
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetBalanceErc721
      *
      * @param string $chain The blockchain to work with
      * @param string $address The blockchain address that you want to get the token balance of
@@ -665,8 +625,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get the address of an NFT smart contract by its transaction hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetContractAddress
      *
      * @param string $chain The blockchain to work with
      * @param string $hash Transaction hash
@@ -698,8 +656,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get NFT metadata
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetMetadataErc721
      *
      * @param string $chain The blockchain to work with
      * @param string $contract_address The blockchain address of the NFT to get metadata for
@@ -739,8 +695,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get NFT provenance information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetProvenanceDataErc721
      *
      * @param string $chain The blockchain to work with
      * @param string $contract_address The blockchain address of the NFT to get provenance information for
@@ -777,8 +731,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get NFT royalty information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetRoyaltyErc721
      *
      * @param string $chain The blockchain to work with
      * @param string $contract_address The blockchain address of the NFT to get royalty information for
@@ -815,8 +767,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get all NFTs that a blockchain address holds
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTokensByAddressErc721
      *
      * @param string $chain The blockchain to work with
      * @param string $address The blockchain address that you want to get the token balance of
@@ -841,8 +791,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get all NFTs from a collection
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTokensByCollectionErc721
      *
      * @param string $chain The blockchain to work with
      * @param float $page_size Max number of items per page is 50.
@@ -880,8 +828,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get an NFT transaction by its hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTransactErc721
      *
      * @param string $chain The blockchain to work with
      * @param string $hash The hash (ID) of the NFT transaction
@@ -913,8 +859,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get NFT transactions on a blockchain address
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTransactionByAddress
      *
      * @param string $chain The blockchain to work with
      * @param string $address Account address you want to get balance of
@@ -965,8 +909,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Get NFT transactions for an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTransactionByToken
      *
      * @param string $chain The blockchain to work with
      * @param string $token_id NFT Token ID.
@@ -1021,8 +963,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Add an NFT minter to an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintAddNftMinter
      *
      * @param \Tatum\Model\AddNftMinter $add_nft_minter 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1053,8 +993,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Add an NFT minter to an NFT smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintAddNftMinterKMS
      *
      * @param \Tatum\Model\AddNftMinterKMS $add_nft_minter_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1085,8 +1023,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNft
      *
      * @param \Tatum\Model\MintMultipleNft $mint_multiple_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1117,8 +1053,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftCelo
      *
      * @param \Tatum\Model\MintMultipleNftCelo $mint_multiple_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1149,8 +1083,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftFlowKMS
      *
      * @param \Tatum\Model\MintMultipleNftFlowKMS $mint_multiple_nft_flow_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1181,8 +1113,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftFlowMnemonic
      *
      * @param \Tatum\Model\MintMultipleNftFlowMnemonic $mint_multiple_nft_flow_mnemonic 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1213,8 +1143,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftFlowPK
      *
      * @param \Tatum\Model\MintMultipleNftFlowPK $mint_multiple_nft_flow_pk 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1245,8 +1173,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftKMS
      *
      * @param \Tatum\Model\MintMultipleNftKMS $mint_multiple_nft_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1277,8 +1203,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftKMSCelo
      *
      * @param \Tatum\Model\MintMultipleNftKMSCelo $mint_multiple_nft_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1309,8 +1233,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftKMSTron
      *
      * @param \Tatum\Model\MintMultipleNftKMSTron $mint_multiple_nft_kms_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1341,8 +1263,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftMinter
      *
      * @param \Tatum\Model\MintMultipleNftMinter $mint_multiple_nft_minter 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1373,8 +1293,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint multiple NFTs
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftTron
      *
      * @param \Tatum\Model\MintMultipleNftTron $mint_multiple_nft_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1405,8 +1323,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNft
      *
      * @param \Tatum\Model\MintNft $mint_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1437,8 +1353,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftAlgorand
      *
      * @param \Tatum\Model\MintNftAlgorand $mint_nft_algorand 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1469,8 +1383,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftAlgorandKMS
      *
      * @param \Tatum\Model\MintNftAlgorandKMS $mint_nft_algorand_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1501,8 +1413,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftCelo
      *
      * @param \Tatum\Model\MintNftCelo $mint_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1533,8 +1443,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftExpress
      *
      * @param \Tatum\Model\MintNftExpress $mint_nft_express 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1565,8 +1473,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftExpressAlgorand
      *
      * @param \Tatum\Model\MintNftExpressAlgorand $mint_nft_express_algorand 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1597,8 +1503,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftExpressSolana
      *
      * @param \Tatum\Model\MintNftExpressSolana $mint_nft_express_solana 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1629,8 +1533,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftFlowKMS
      *
      * @param \Tatum\Model\MintNftFlowKMS $mint_nft_flow_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1661,8 +1563,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftFlowMnemonic
      *
      * @param \Tatum\Model\MintNftFlowMnemonic $mint_nft_flow_mnemonic 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1693,8 +1593,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftFlowPK
      *
      * @param \Tatum\Model\MintNftFlowPK $mint_nft_flow_pk 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1725,8 +1623,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftKMS
      *
      * @param \Tatum\Model\MintNftKMS $mint_nft_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1757,8 +1653,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftKMSCelo
      *
      * @param \Tatum\Model\MintNftKMSCelo $mint_nft_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1789,8 +1683,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftKMSTron
      *
      * @param \Tatum\Model\MintNftKMSTron $mint_nft_kms_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1821,8 +1713,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftMinter
      *
      * @param \Tatum\Model\MintNftMinter $mint_nft_minter 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1853,8 +1743,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftSolana
      *
      * @param \Tatum\Model\MintNftSolana $mint_nft_solana 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1885,8 +1773,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftSolanaKMS
      *
      * @param \Tatum\Model\MintNftSolanaKMS $mint_nft_solana_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1917,8 +1803,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftTron
      *
      * @param \Tatum\Model\MintNftTron $mint_nft_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1949,8 +1833,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Update NFT royalty information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate
      *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1981,8 +1863,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Update NFT royalty information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate
      *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2013,8 +1893,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Update NFT royalty information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate
      *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2045,8 +1923,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Update NFT royalty information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate
      *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2077,8 +1953,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Update NFT royalty information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate
      *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2109,8 +1983,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Update NFT royalty information
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftUpdate
      *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2141,8 +2013,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNft
      *
      * @param \Tatum\Model\TransferNft $transfer_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2173,8 +2043,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftAlgo
      *
      * @param \Tatum\Model\TransferNftAlgo $transfer_nft_algo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2205,8 +2073,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftAlgoExpress
      *
      * @param \Tatum\Model\TransferNftAlgoExpress $transfer_nft_algo_express 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2237,8 +2103,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftAlgoKMS
      *
      * @param \Tatum\Model\TransferNftAlgoKMS $transfer_nft_algo_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2269,8 +2133,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftCelo
      *
      * @param \Tatum\Model\TransferNftCelo $transfer_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2301,8 +2163,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftFlowKMS
      *
      * @param \Tatum\Model\TransferNftFlowKMS $transfer_nft_flow_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2333,8 +2193,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftFlowMnemonic
      *
      * @param \Tatum\Model\TransferNftFlowMnemonic $transfer_nft_flow_mnemonic 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2365,8 +2223,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftFlowPK
      *
      * @param \Tatum\Model\TransferNftFlowPK $transfer_nft_flow_pk 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2397,8 +2253,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftKMS
      *
      * @param \Tatum\Model\TransferNftKMS $transfer_nft_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2429,8 +2283,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftKMSCelo
      *
      * @param \Tatum\Model\TransferNftKMSCelo $transfer_nft_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2461,8 +2313,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftKMSTron
      *
      * @param \Tatum\Model\TransferNftKMSTron $transfer_nft_kms_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2493,8 +2343,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftSolana
      *
      * @param \Tatum\Model\TransferNftSolana $transfer_nft_solana 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2525,8 +2373,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftSolanaKMS
      *
      * @param \Tatum\Model\TransferNftSolanaKMS $transfer_nft_solana_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2557,8 +2403,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer an NFT
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftTron
      *
      * @param \Tatum\Model\TransferNftTron $transfer_nft_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -2589,8 +2433,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Verify an NFT in an NFT collection on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftVerifySolanaNFT
      *
      * @param \Tatum\Model\VerifySolanaNFT $verify_solana_nft 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2614,8 +2456,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     
     /**
      * Verify an NFT in an NFT collection on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftVerifySolanaNFTKMS
      *
      * @param \Tatum\Model\VerifySolanaNFTKMS $verify_solana_nftkms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

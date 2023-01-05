@@ -1,10 +1,11 @@
 # Tatum/Api/ExchangeRateApi
 
-All URIs are relative to https://api.tatum.io.
+* Exchange rate [documentation](https://apidoc.tatum.io/tag/Exchange-rate/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getExchangeRate()**](#getexchangerate) | **GET** [/v3/tatum/rate/{currency}](https://apidoc.tatum.io/tag/Exchange-rate/#operation/getExchangeRate) | Get the current exchange rate for exchanging fiat/crypto assets
+[**getExchangeRate()**](#getexchangerate) | **GET** `/v3/tatum/rate/{currency}` | Get the current exchange rate for exchanging fiat/crypto assets
 
 
 ## `getExchangeRate()`

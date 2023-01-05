@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class VeChainApi extends AbstractApi {
     /**
      * Broadcast signed VeChain transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Generate VeChain account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Generate VeChain private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Generate VeChain wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Get VeChain Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Get VeChain Block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGetBlock
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Get VeChain current block
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -203,8 +189,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Get VeChain Account energy (VTHO)
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGetEnergy
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -228,8 +212,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Get VeChain Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -253,8 +235,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Get VeChain Transaction Receipt
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/VetGetTransactionReceipt
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -278,8 +258,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Send VeChain from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/vetTransactionTransferVetBlockchain
      *
      * @param \Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -303,8 +281,6 @@ class VeChainApi extends AbstractApi {
     
     /**
      * Send VeChain from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/VeChain/#operation/vetTransactionTransferVetBlockchainKMS
      *
      * @param \Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

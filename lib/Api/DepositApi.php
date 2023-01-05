@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class DepositApi extends AbstractApi {
     /**
      * List all deposits for product
-     * 
-     * @see   https://apidoc.tatum.io/tag/Deposit/#operation/getDeposits
      *
      * @param float|null $page_size Max number of items per page is 50.
      * @param float|null $page Page number
@@ -80,8 +78,6 @@ class DepositApi extends AbstractApi {
     
     /**
      * Count of found entities for get deposits request
-     * 
-     * @see   https://apidoc.tatum.io/tag/Deposit/#operation/getDepositsCount
      *
      * @param float|null $page_size Max number of items per page is 50.
      * @param float|null $page Page number

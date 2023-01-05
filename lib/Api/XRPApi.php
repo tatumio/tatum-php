@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class XRPApi extends AbstractApi {
     /**
      * Modify XRP account
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpAccountSettingsAccountSettingsXrpBlockchain
      *
      * @param \Tatum\Model\AccountSettingsXrpBlockchain $account_settings_xrp_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Modify XRP account
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpAccountSettingsAccountSettingsXrpBlockchainKMS
      *
      * @param \Tatum\Model\AccountSettingsXrpBlockchainKMS $account_settings_xrp_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Broadcast signed XRP transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Get Account Balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpGetAccountBalance
      *
      * @param string $account Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -123,8 +115,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Get Account info
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpGetAccountInfo
      *
      * @param string $account Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -148,8 +138,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Get Account transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpGetAccountTx
      *
      * @param string $account Address of XRP account.
      * @param float|null $min Ledger version to start scanning for transactions from.
@@ -178,8 +166,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Get actual Blockchain fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpGetFee
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -201,8 +187,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Get XRP Blockchain Information
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpGetLastClosedLedger
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -224,8 +208,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Get Ledger
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpGetLedger
      *
      * @param float $i Sequence of XRP ledger.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -253,8 +235,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Get XRP Transaction by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -286,8 +266,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Send XRP from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpTransactionTransferXrpBlockchain
      *
      * @param \Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -311,8 +289,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Send XRP from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpTransactionTransferXrpBlockchainAsset
      *
      * @param \Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -336,8 +312,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Send XRP from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpTransactionTransferXrpBlockchainAssetKMS
      *
      * @param \Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -361,8 +335,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Send XRP from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpTransactionTransferXrpBlockchainKMS
      *
      * @param \Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -386,8 +358,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Create / Update / Delete XRP trust line
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpTrustLineXrpBlockchain
      *
      * @param \Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -411,8 +381,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Create / Update / Delete XRP trust line
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/xrpTrustLineXrpBlockchainKMS
      *
      * @param \Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -436,8 +404,6 @@ class XRPApi extends AbstractApi {
     
     /**
      * Generate XRP account
-     * 
-     * @see   https://apidoc.tatum.io/tag/XRP/#operation/XrpWallet
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 

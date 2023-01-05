@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     /**
      * Allow a blockchain address to transfer and burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenApproveCeloErc20
      *
      * @param \Tatum\Model\ApproveCeloErc20 $approve_celo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -55,8 +53,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Allow a blockchain address to transfer and burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenApproveCeloErc20KMS
      *
      * @param \Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -87,8 +83,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Allow a blockchain address to transfer and burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenApproveErc20
      *
      * @param \Tatum\Model\ApproveErc20 $approve_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -119,8 +113,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Allow a blockchain address to transfer and burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenApproveErc20KMS
      *
      * @param \Tatum\Model\ApproveErc20KMS $approve_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -151,8 +143,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenBurnChainBurnCeloErc20
      *
      * @param \Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -183,8 +173,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenBurnChainBurnCeloErc20KMS
      *
      * @param \Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -215,8 +203,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenBurnChainBurnErc20
      *
      * @param \Tatum\Model\ChainBurnErc20 $chain_burn_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -247,8 +233,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenBurnChainBurnErc20KMS
      *
      * @param \Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -279,8 +263,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenBurnChainBurnKcsErc20
      *
      * @param \Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -311,8 +293,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Burn fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenBurnChainBurnKcsErc20KMS
      *
      * @param \Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -343,8 +323,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployAlgoErc20
      *
      * @param \Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -375,8 +353,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployAlgoErc20KMS
      *
      * @param \Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -407,8 +383,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployCeloErc20
      *
      * @param \Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -439,8 +413,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployCeloErc20KMS
      *
      * @param \Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -471,8 +443,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployErc20
      *
      * @param \Tatum\Model\ChainDeployErc20 $chain_deploy_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -503,8 +473,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployErc20KMS
      *
      * @param \Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -535,8 +503,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployKcsErc20
      *
      * @param \Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -567,8 +533,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeployKcsErc20KMS
      *
      * @param \Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -599,8 +563,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeploySolanaSpl
      *
      * @param \Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -631,8 +593,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Deploy a fungible token smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenDeployChainDeploySolanaSplKMS
      *
      * @param \Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -663,8 +623,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenMintChainMintCeloErc20
      *
      * @param \Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -695,8 +653,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenMintChainMintCeloErc20KMS
      *
      * @param \Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -727,8 +683,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenMintChainMintErc20
      *
      * @param \Tatum\Model\ChainMintErc20 $chain_mint_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -759,8 +713,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenMintChainMintErc20KMS
      *
      * @param \Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -791,8 +743,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenMintChainMintKcsErc20
      *
      * @param \Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -823,8 +773,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Mint fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenMintChainMintKcsErc20KMS
      *
      * @param \Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -855,8 +803,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferAlgoErc20
      *
      * @param \Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -887,8 +833,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferAlgoErc20KMS
      *
      * @param \Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -919,8 +863,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferBscBep20
      *
      * @param \Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -951,8 +893,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferBscBep20KMS
      *
      * @param \Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -983,8 +923,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferCeloErc20Token
      *
      * @param \Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1015,8 +953,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferCeloErc20TokenKMS
      *
      * @param \Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1047,8 +983,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferEthErc20
      *
      * @param \Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1079,8 +1013,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferEthErc20KMS
      *
      * @param \Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1111,8 +1043,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferKcsEthErc20
      *
      * @param \Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1143,8 +1073,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferKcsEthErc20KMS
      *
      * @param \Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1175,8 +1103,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferSolanaSpl
      *
      * @param \Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1207,8 +1133,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Transfer fungible tokens
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/blockchainTokenTransactionChainTransferSolanaSplKMS
      *
      * @param \Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -1239,8 +1163,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Get the number of fungible tokens that a blockchain address holds in a smart contract
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/Erc20GetBalance
      *
      * @param string $chain Network name
      * @param string $address The blockchain address that you want to get the token balance of
@@ -1273,8 +1195,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Get the total number of fungible tokens that a blockchain address holds
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/Erc20GetBalanceAddress
      *
      * @param string $chain Network name
      * @param string $address The blockchain address that you want to get the token balance of
@@ -1299,8 +1219,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     
     /**
      * Get fungible token transactions on a blockchain address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/#operation/Erc20GetTransactionByAddress
      *
      * @param string $chain The blockchain to work with
      * @param string $address Account address you want to get balance of

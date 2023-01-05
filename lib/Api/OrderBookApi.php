@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class OrderBookApi extends AbstractApi {
     /**
      * Obtain chart data from historical closed trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/chartRequest
      *
      * @param \Tatum\Model\ChartRequest $chart_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * Cancel all existing trades for account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/deleteAccountTrades
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -69,8 +65,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * Cancel existing trade
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/deleteTrade
      *
      * @param string $id Trade ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -90,8 +84,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * List all active buy trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getBuyTrades
      *
      * @param float $page_size Max number of items per page is 50.
      * @param string|null $id Account ID. If present, list current active buy trades for that account.
@@ -149,8 +141,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * List all active buy trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getBuyTradesBody
      *
      * @param \Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -174,8 +164,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * List all historical trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getHistoricalTrades
      *
      * @param float $page_size Max number of items per page is 50.
      * @param string|null $id Account ID. If present, only closed trades for given account will be present.
@@ -231,8 +219,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * List all historical trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getHistoricalTradesBody
      *
      * @param \Tatum\Model\ListOderBookHistoryBody|null $list_oder_book_history_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -256,8 +242,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getMatchedTrades
      *
      * @param \Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -281,8 +265,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * List all active sell trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getSellTrades
      *
      * @param float $page_size Max number of items per page is 50.
      * @param string|null $id Account ID. If present, list current active sell trades for that account.
@@ -340,8 +322,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * List all active sell trades
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getSellTradesBody
      *
      * @param \Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -365,8 +345,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * Get existing trade
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/getTradeById
      *
      * @param string $id Trade ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -390,8 +368,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * Store buy / sell trade
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/tradeCreateFutureTrade
      *
      * @param \Tatum\Model\CreateFutureTrade $create_future_trade 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -415,8 +391,6 @@ class OrderBookApi extends AbstractApi {
     
     /**
      * Store buy / sell trade
-     * 
-     * @see   https://apidoc.tatum.io/tag/Order-Book/#operation/tradeCreateTrade
      *
      * @param \Tatum\Model\CreateTrade $create_trade 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

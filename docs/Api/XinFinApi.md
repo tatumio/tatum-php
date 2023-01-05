@@ -1,24 +1,25 @@
 # Tatum/Api/XinFinApi
 
-All URIs are relative to https://api.tatum.io.
+* XinFin [documentation](https://apidoc.tatum.io/tag/XinFin/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xdcBroadcast()**](#xdcbroadcast) | **POST** [/v3/xdc/broadcast](https://apidoc.tatum.io/tag/XinFin/#operation/XdcBroadcast) | Broadcast signed XDC transaction
-[**xdcGenerateAddress()**](#xdcgenerateaddress) | **GET** [/v3/xdc/address/{xpub}/{index}](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGenerateAddress) | Generate XDC account address from Extended public key
-[**xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) | **POST** [/v3/xdc/wallet/priv](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGenerateAddressPrivateKey) | Generate XDC private key
-[**xdcGenerateWallet()**](#xdcgeneratewallet) | **GET** [/v3/xdc/wallet](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGenerateWallet) | Generate XDC wallet
-[**xdcGetBalance()**](#xdcgetbalance) | **GET** [/v3/xdc/account/balance/{address}](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetBalance) | Get XDC Account balance
-[**xdcGetBlock()**](#xdcgetblock) | **GET** [/v3/xdc/block/{hash}](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetBlock) | Get XDC block by hash
-[**xdcGetCurrentBlock()**](#xdcgetcurrentblock) | **GET** [/v3/xdc/block/current](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetCurrentBlock) | Get current block number
-[**xdcGetTransaction()**](#xdcgettransaction) | **GET** [/v3/xdc/transaction/{hash}](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetTransaction) | Get XDC Transaction
-[**xdcGetTransactionCount()**](#xdcgettransactioncount) | **GET** [/v3/xdc/transaction/count/{address}](https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetTransactionCount) | Get count of outgoing XDC transactions
-[**xdcSmartcontractCallXdcReadSmartContractMethod()**](#xdcsmartcontractcallxdcreadsmartcontractmethod) | **POST** [/v3/xdc/smartcontract](https://apidoc.tatum.io/tag/XinFin/#operation/xdcSmartcontractCallXdcReadSmartContractMethod) | Invoke a method in a smart contract on XinFin
-[**xdcSmartcontractCallXdcSmartContractMethod()**](#xdcsmartcontractcallxdcsmartcontractmethod) | **POST** [/v3/xdc/smartcontract](https://apidoc.tatum.io/tag/XinFin/#operation/xdcSmartcontractCallXdcSmartContractMethod) | Invoke a method in a smart contract on XinFin
-[**xdcSmartcontractCallXdcSmartContractMethodKMS()**](#xdcsmartcontractcallxdcsmartcontractmethodkms) | **POST** [/v3/xdc/smartcontract](https://apidoc.tatum.io/tag/XinFin/#operation/xdcSmartcontractCallXdcSmartContractMethodKMS) | Invoke a method in a smart contract on XinFin
-[**xdcTransactionTransferXdcBlockchain()**](#xdctransactiontransferxdcblockchain) | **POST** [/v3/xdc/transaction](https://apidoc.tatum.io/tag/XinFin/#operation/xdcTransactionTransferXdcBlockchain) | Send XDC / ERC20 from account to account
-[**xdcTransactionTransferXdcBlockchainKMS()**](#xdctransactiontransferxdcblockchainkms) | **POST** [/v3/xdc/transaction](https://apidoc.tatum.io/tag/XinFin/#operation/xdcTransactionTransferXdcBlockchainKMS) | Send XDC / ERC20 from account to account
-[**xdcWeb3Driver()**](#xdcweb3driver) | **POST** [/v3/xdc/web3/{xApiKey}](https://apidoc.tatum.io/tag/XinFin/#operation/XdcWeb3Driver) | Web3 HTTP driver
+[**xdcBroadcast()**](#xdcbroadcast) | **POST** `/v3/xdc/broadcast` | Broadcast signed XDC transaction
+[**xdcGenerateAddress()**](#xdcgenerateaddress) | **GET** `/v3/xdc/address/{xpub}/{index}` | Generate XDC account address from Extended public key
+[**xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) | **POST** `/v3/xdc/wallet/priv` | Generate XDC private key
+[**xdcGenerateWallet()**](#xdcgeneratewallet) | **GET** `/v3/xdc/wallet` | Generate XDC wallet
+[**xdcGetBalance()**](#xdcgetbalance) | **GET** `/v3/xdc/account/balance/{address}` | Get XDC Account balance
+[**xdcGetBlock()**](#xdcgetblock) | **GET** `/v3/xdc/block/{hash}` | Get XDC block by hash
+[**xdcGetCurrentBlock()**](#xdcgetcurrentblock) | **GET** `/v3/xdc/block/current` | Get current block number
+[**xdcGetTransaction()**](#xdcgettransaction) | **GET** `/v3/xdc/transaction/{hash}` | Get XDC Transaction
+[**xdcGetTransactionCount()**](#xdcgettransactioncount) | **GET** `/v3/xdc/transaction/count/{address}` | Get count of outgoing XDC transactions
+[**xdcSmartcontractCallXdcReadSmartContractMethod()**](#xdcsmartcontractcallxdcreadsmartcontractmethod) | **POST** `/v3/xdc/smartcontract` | Invoke a method in a smart contract on XinFin
+[**xdcSmartcontractCallXdcSmartContractMethod()**](#xdcsmartcontractcallxdcsmartcontractmethod) | **POST** `/v3/xdc/smartcontract` | Invoke a method in a smart contract on XinFin
+[**xdcSmartcontractCallXdcSmartContractMethodKMS()**](#xdcsmartcontractcallxdcsmartcontractmethodkms) | **POST** `/v3/xdc/smartcontract` | Invoke a method in a smart contract on XinFin
+[**xdcTransactionTransferXdcBlockchain()**](#xdctransactiontransferxdcblockchain) | **POST** `/v3/xdc/transaction` | Send XDC / ERC20 from account to account
+[**xdcTransactionTransferXdcBlockchainKMS()**](#xdctransactiontransferxdcblockchainkms) | **POST** `/v3/xdc/transaction` | Send XDC / ERC20 from account to account
+[**xdcWeb3Driver()**](#xdcweb3driver) | **POST** `/v3/xdc/web3/{xApiKey}` | Web3 HTTP driver
 
 
 ## `xdcBroadcast()`

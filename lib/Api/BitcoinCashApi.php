@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BitcoinCashApi extends AbstractApi {
     /**
      * Send BCH to Bitcoin Cash addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/bcashTransactionBchTransaction
      *
      * @param \Tatum\Model\BchTransaction $bch_transaction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Send BCH to Bitcoin Cash addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/bcashTransactionBchTransactionKMS
      *
      * @param \Tatum\Model\BchTransactionKMS $bch_transaction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Broadcast signed Bitcoin Cash transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Generate Bitcoin Cash deposit address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -124,8 +116,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Generate Bitcoin Cash private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -149,8 +139,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Generate Bitcoin Cash wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Get Bitcoin Cash Block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGetBlock
      *
      * @param string $hash Block hash or height
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -205,8 +191,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Get Bitcoin Cash Blockchain Information
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGetBlockChainInfo
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -228,8 +212,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Get Bitcoin Cash Block hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGetBlockHash
      *
      * @param float $i The number of blocks preceding a particular block on a block chain.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -253,8 +235,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Get Bitcoin Cash Transaction by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGetRawTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -278,8 +258,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * Get Bitcoin Cash Transactions by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchGetTxByAddress
      *
      * @param string $address Address
      * @param int|null $skip Define, how much transactions should be skipped to obtain another page.
@@ -306,8 +284,6 @@ class BitcoinCashApi extends AbstractApi {
     
     /**
      * JSON RPC HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin-Cash/#operation/BchRpcDriver
      *
      * @param \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

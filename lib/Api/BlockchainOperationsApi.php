@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BlockchainOperationsApi extends AbstractApi {
     /**
      * Create a BNB-based asset
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/BnbAssetOffchain
      *
      * @param \Tatum\Model\CreateBnbAsset $create_bnb_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -44,8 +42,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ADA from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAdaTransferAdaKMS
      *
      * @param \Tatum\Model\TransferAdaKMS $transfer_ada_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -69,8 +65,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ADA from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAdaTransferAdaKeyPair
      *
      * @param \Tatum\Model\TransferAdaKeyPair $transfer_ada_key_pair 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -94,8 +88,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ADA from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAdaTransferAdaMnemonic
      *
      * @param \Tatum\Model\TransferAdaMnemonic $transfer_ada_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -119,8 +111,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAlgoErc20DeployAlgoErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployAlgoErc20OffchainKMSAddress $deploy_algo_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -144,8 +134,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress $deploy_algo_erc20_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -169,8 +157,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAlgoErc20DeployAlgoErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployAlgoErc20OffchainPKAddress $deploy_algo_erc20_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -194,8 +180,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ALGO from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAlgorandTransferAlgo
      *
      * @param \Tatum\Model\TransferAlgo $transfer_algo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -219,8 +203,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ALGO from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAlgorandTransferAlgoErc20
      *
      * @param \Tatum\Model\TransferAlgoErc20 $transfer_algo_erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -244,8 +226,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ALGO from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainAlgorandTransferAlgoKMS
      *
      * @param \Tatum\Model\TransferAlgoKMS $transfer_algo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -269,8 +249,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BCH from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBcashTransferBchKMS
      *
      * @param \Tatum\Model\TransferBchKMS $transfer_bch_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -294,8 +272,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BCH from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBcashTransferBchKeyPair
      *
      * @param \Tatum\Model\TransferBchKeyPair $transfer_bch_key_pair 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -319,8 +295,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BCH from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBcashTransferBchMnemonic
      *
      * @param \Tatum\Model\TransferBchMnemonic $transfer_bch_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -344,8 +318,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BTC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBitcoinTransferBtcKMS
      *
      * @param \Tatum\Model\TransferBtcKMS $transfer_btc_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -369,8 +341,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BTC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBitcoinTransferBtcKeyPair
      *
      * @param \Tatum\Model\TransferBtcKeyPair $transfer_btc_key_pair 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -394,8 +364,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BTC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBitcoinTransferBtcMnemonic
      *
      * @param \Tatum\Model\TransferBtcMnemonic $transfer_btc_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -419,8 +387,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BNB from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBnbTransferBnb
      *
      * @param \Tatum\Model\TransferBnb $transfer_bnb 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -444,8 +410,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BNB from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBnbTransferBnbKMS
      *
      * @param \Tatum\Model\TransferBnbKMS $transfer_bnb_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -469,8 +433,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20DeployErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -494,8 +456,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20DeployErc20OffchainKMSXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -519,8 +479,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20DeployErc20OffchainMnemXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -544,8 +502,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20DeployErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -569,8 +525,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20DeployErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -594,8 +548,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20DeployErc20OffchainPKXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -619,8 +571,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new BNB Smart Chain BEP-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20Erc20
      *
      * @param \Tatum\Model\Erc20 $erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -644,8 +594,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new BNB Smart Chain BEP-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscBep20Erc20Address
      *
      * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -669,8 +617,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BSC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscTransferBsc
      *
      * @param \Tatum\Model\TransferBsc $transfer_bsc 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -694,8 +640,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BSC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscTransferBscKMS
      *
      * @param \Tatum\Model\TransferBscKMS $transfer_bsc_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -719,8 +663,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send BSC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainBscTransferBscMnemonic
      *
      * @param \Tatum\Model\TransferBscMnemonic $transfer_bsc_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -744,8 +686,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new Celo ERC-20-equivalent token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20
      *
      * @param \Tatum\Model\Erc20 $erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -769,8 +709,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new Celo ERC-20-equivalent token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20Address
      *
      * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -794,8 +732,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20DeployCeloErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployCeloErc20OffchainKMSAddress $deploy_celo_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -819,8 +755,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20DeployCeloErc20OffchainKMSXpub
      *
      * @param \Tatum\Model\DeployCeloErc20OffchainKMSXpub $deploy_celo_erc20_offchain_kms_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -844,8 +778,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20DeployCeloErc20OffchainMnemXpub
      *
      * @param \Tatum\Model\DeployCeloErc20OffchainMnemXpub $deploy_celo_erc20_offchain_mnem_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -869,8 +801,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20DeployCeloErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployCeloErc20OffchainMnemonicAddress $deploy_celo_erc20_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -894,8 +824,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20DeployCeloErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployCeloErc20OffchainPKAddress $deploy_celo_erc20_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -919,8 +847,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloErc20DeployCeloErc20OffchainPKXpub
      *
      * @param \Tatum\Model\DeployCeloErc20OffchainPKXpub $deploy_celo_erc20_offchain_pk_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -944,8 +870,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send CELO from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloTransferCelo
      *
      * @param \Tatum\Model\TransferCelo $transfer_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -969,8 +893,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send CELO from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloTransferCeloKMS
      *
      * @param \Tatum\Model\TransferCeloKMS $transfer_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -994,8 +916,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send CELO from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainCeloTransferCeloMnemonic
      *
      * @param \Tatum\Model\TransferCeloMnemonic $transfer_celo_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1019,8 +939,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send DOGE from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainDogecoinTransferDogeKMS
      *
      * @param \Tatum\Model\TransferDogeKMS $transfer_doge_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1044,8 +962,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send DOGE from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainDogecoinTransferDogeKeyPair
      *
      * @param \Tatum\Model\TransferDogeKeyPair $transfer_doge_key_pair 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1069,8 +985,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send DOGE from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainDogecoinTransferDogeMnemonic
      *
      * @param \Tatum\Model\TransferDogeMnemonic $transfer_doge_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1094,8 +1008,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send EGLD from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEgldTransferEth
      *
      * @param \Tatum\Model\TransferEth $transfer_eth 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1119,8 +1031,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send EGLD from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEgldTransferEthKMS
      *
      * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1144,8 +1054,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send EGLD from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEgldTransferEthMnemonic
      *
      * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1169,8 +1077,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new Ethereum ERC-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20
      *
      * @param \Tatum\Model\Erc20 $erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1194,8 +1100,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new Ethereum ERC-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20Address
      *
      * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1219,8 +1123,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20DeployErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1244,8 +1146,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20DeployErc20OffchainKMSXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1269,8 +1169,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20DeployErc20OffchainMnemXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1294,8 +1192,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20DeployErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1319,8 +1215,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20DeployErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1344,8 +1238,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20DeployErc20OffchainPKXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1369,8 +1261,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20TransferErc20
      *
      * @param \Tatum\Model\TransferErc20 $transfer_erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1394,8 +1284,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20TransferErc20KMS
      *
      * @param \Tatum\Model\TransferErc20KMS $transfer_erc20_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1419,8 +1307,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumErc20TransferErc20Mnemonic
      *
      * @param \Tatum\Model\TransferErc20Mnemonic $transfer_erc20_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1444,8 +1330,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ETH from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumTransferEth
      *
      * @param \Tatum\Model\TransferEth $transfer_eth 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1469,8 +1353,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ETH from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumTransferEthKMS
      *
      * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1494,8 +1376,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ETH from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainEthereumTransferEthMnemonic
      *
      * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1519,8 +1399,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send FLOW from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainFlowTransferFlowKMS
      *
      * @param \Tatum\Model\TransferFlowKMS $transfer_flow_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1544,8 +1422,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send FLOW from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainFlowTransferFlowMnemonic
      *
      * @param \Tatum\Model\TransferFlowMnemonic $transfer_flow_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1569,8 +1445,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send FLOW from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainFlowTransferFlowPK
      *
      * @param \Tatum\Model\TransferFlowPK $transfer_flow_pk 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1594,8 +1468,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsErc20DeployKCSErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1619,8 +1491,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsErc20DeployKCSErc20OffchainKMSXpub
      *
      * @param \Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1644,8 +1514,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsErc20DeployKCSErc20OffchainMnemXpub
      *
      * @param \Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1669,8 +1537,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsErc20DeployKCSErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1694,8 +1560,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsErc20DeployKCSErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1719,8 +1583,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsErc20DeployKCSErc20OffchainPKXpub
      *
      * @param \Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1744,8 +1606,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send KCS from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsTransferKCS
      *
      * @param \Tatum\Model\TransferKCS $transfer_kcs 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1769,8 +1629,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send KCS from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsTransferKCSKMS
      *
      * @param \Tatum\Model\TransferKCSKMS $transfer_kcskms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1794,8 +1652,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send KCS from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKcsTransferKCSMnemonic
      *
      * @param \Tatum\Model\TransferKCSMnemonic $transfer_kcs_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1819,8 +1675,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnErc20DeployErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1844,8 +1698,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnErc20DeployErc20OffchainKMSXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1869,8 +1721,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnErc20DeployErc20OffchainMnemXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1894,8 +1744,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnErc20DeployErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1919,8 +1767,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnErc20DeployErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1944,8 +1790,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnErc20DeployErc20OffchainPKXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1969,8 +1813,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send KLAY from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnTransferEth
      *
      * @param \Tatum\Model\TransferEth $transfer_eth 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1994,8 +1836,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send KLAY from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnTransferEthKMS
      *
      * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2019,8 +1859,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send KLAY from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainKlaytnTransferEthMnemonic
      *
      * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2044,8 +1882,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send LTC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainLitecoinTransferLtcKMS
      *
      * @param \Tatum\Model\TransferLtcKMS $transfer_ltc_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2069,8 +1905,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send LTC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainLitecoinTransferLtcKeyPair
      *
      * @param \Tatum\Model\TransferLtcKeyPair $transfer_ltc_key_pair 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2094,8 +1928,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send LTC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainLitecoinTransferLtcMnemonic
      *
      * @param \Tatum\Model\TransferLtcMnemonic $transfer_ltc_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2119,8 +1951,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20DeployErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
      * @param float|0 $shard_id Shard to operate on
@@ -2147,8 +1977,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20DeployErc20OffchainKMSXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
      * @param float|0 $shard_id Shard to operate on
@@ -2175,8 +2003,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20DeployErc20OffchainMnemXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
      * @param float|0 $shard_id Shard to operate on
@@ -2203,8 +2029,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20DeployErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
      * @param float|0 $shard_id Shard to operate on
@@ -2231,8 +2055,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20DeployErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
      * @param float|0 $shard_id Shard to operate on
@@ -2259,8 +2081,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20DeployErc20OffchainPKXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
      * @param float|0 $shard_id Shard to operate on
@@ -2287,8 +2107,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new Harmony HRM-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20Erc20
      *
      * @param \Tatum\Model\Erc20 $erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2312,8 +2130,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new Harmony HRM-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneHrm20Erc20Address
      *
      * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2337,8 +2153,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ONE from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneTransferEth
      *
      * @param \Tatum\Model\TransferEth $transfer_eth 
      * @param float|0 $shard_id Shard to operate on
@@ -2365,8 +2179,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ONE from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneTransferEthKMS
      *
      * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
      * @param float|0 $shard_id Shard to operate on
@@ -2393,8 +2205,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send ONE from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainOneTransferEthMnemonic
      *
      * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
      * @param float|0 $shard_id Shard to operate on
@@ -2421,8 +2231,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send MATIC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainPolygonTransferEth
      *
      * @param \Tatum\Model\TransferEth $transfer_eth 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2446,8 +2254,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send MATIC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainPolygonTransferEthKMS
      *
      * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2471,8 +2277,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send MATIC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainPolygonTransferEthMnemonic
      *
      * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2496,8 +2300,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send SOL from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainSolanaTransferSol
      *
      * @param \Tatum\Model\TransferSol $transfer_sol 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2521,8 +2323,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send SOL from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainSolanaTransferSolKMS
      *
      * @param \Tatum\Model\TransferSolKMS $transfer_sol_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2546,8 +2346,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainToken{chain}Erc20
      *
      * @param string $chain Blockchain to work with
      * @param \Tatum\Model\Erc20 $erc20 
@@ -2572,8 +2370,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainToken{chain}Erc20Address
      *
      * @param string $chain Blockchain to work with
      * @param \Tatum\Model\Erc20Address $erc20_address 
@@ -2598,8 +2394,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send TRON from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTransferTron
      *
      * @param \Tatum\Model\TransferTron $transfer_tron 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2623,8 +2417,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send TRON from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTransferTronKMS
      *
      * @param \Tatum\Model\TransferTronKMS $transfer_tron_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2648,8 +2440,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send TRON from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTransferTronMnemonic
      *
      * @param \Tatum\Model\TransferTronMnemonic $transfer_tron_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2673,8 +2463,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new TRON TRC-10 or TRC-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcAddress
      *
      * @param \Tatum\Model\TrcAddress $trc_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2698,8 +2486,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcDeployTrcOffchainKMSAddress
      *
      * @param \Tatum\Model\DeployTrcOffchainKMSAddress $deploy_trc_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2723,8 +2509,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcDeployTrcOffchainKMSXpub
      *
      * @param \Tatum\Model\DeployTrcOffchainKMSXpub $deploy_trc_offchain_kms_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2748,8 +2532,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcDeployTrcOffchainMnemXpub
      *
      * @param \Tatum\Model\DeployTrcOffchainMnemXpub $deploy_trc_offchain_mnem_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2773,8 +2555,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcDeployTrcOffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployTrcOffchainMnemonicAddress $deploy_trc_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2798,8 +2578,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcDeployTrcOffchainPKAddress
      *
      * @param \Tatum\Model\DeployTrcOffchainPKAddress $deploy_trc_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2823,8 +2601,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcDeployTrcOffchainPKXpub
      *
      * @param \Tatum\Model\DeployTrcOffchainPKXpub $deploy_trc_offchain_pk_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2848,8 +2624,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new TRON TRC-10 or TRC-20 token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainTronTrcXpub
      *
      * @param \Tatum\Model\TrcXpub $trc_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2873,8 +2647,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new XinFin ERC-20-equivalent token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20
      *
      * @param \Tatum\Model\Erc20 $erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2898,8 +2670,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Register a new XinFin ERC-20-equivalent token in the virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20Address
      *
      * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2923,8 +2693,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20DeployErc20OffchainKMSAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2948,8 +2716,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20DeployErc20OffchainKMSXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2973,8 +2739,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20DeployErc20OffchainMnemXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -2998,8 +2762,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20DeployErc20OffchainMnemonicAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3023,8 +2785,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20DeployErc20OffchainPKAddress
      *
      * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3048,8 +2808,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcErc20DeployErc20OffchainPKXpub
      *
      * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3073,8 +2831,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send XDC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcTransferEth
      *
      * @param \Tatum\Model\TransferEth $transfer_eth 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3098,8 +2854,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send XDC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcTransferEthKMS
      *
      * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3123,8 +2877,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send XDC from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXdcTransferEthMnemonic
      *
      * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3148,8 +2900,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send XLM from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXlmTransferXlm
      *
      * @param \Tatum\Model\TransferXlm $transfer_xlm 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3173,8 +2923,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send XLM from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXlmTransferXlmKMS
      *
      * @param \Tatum\Model\TransferXlmKMS $transfer_xlm_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3198,8 +2946,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send XRP from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXrpTransferXrp
      *
      * @param \Tatum\Model\TransferXrp $transfer_xrp 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3223,8 +2969,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Send XRP from a virtual account to the blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/offchainXrpTransferXrpKMS
      *
      * @param \Tatum\Model\TransferXrpKMS $transfer_xrp_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3248,8 +2992,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Set the contract address of a Celo ERC-20-equivalent token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storeCeloErc20Address
      *
      * @param string $address ERC-20 contract address
      * @param string $name ERC-20 symbol name.
@@ -3290,8 +3032,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storeTokenAddress
      *
      * @param string $address On Algorand, this is the asset ID; on TRON, this is the token ID; on the other blockchains, this is the address of the smart contract.
      * @param string $name The name of the token (the token symbol)
@@ -3332,8 +3072,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Set the contract address of a TRC-10 or TRC-20 token
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storeTrcAddress
      *
      * @param string $address TRC-10 Token ID or TRC-20 contract address
      * @param string $name TRC 10/20 symbol name.
@@ -3374,8 +3112,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Create an XLM-based asset
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/XlmAssetOffchain
      *
      * @param \Tatum\Model\CreateXlmAsset $create_xlm_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -3395,8 +3131,6 @@ class BlockchainOperationsApi extends AbstractApi {
     
     /**
      * Create XRP based Asset
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-operations/#operation/XrpAssetOffchain
      *
      * @param \Tatum\Model\CreateXrpAsset $create_xrp_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

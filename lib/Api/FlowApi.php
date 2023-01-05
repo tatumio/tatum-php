@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class FlowApi extends AbstractApi {
     /**
      * Add public key to Flow address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowAccountFlowAddPubKeyMnemonicUpdate
      *
      * @param \Tatum\Model\FlowAddPubKeyMnemonic $flow_add_pub_key_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Add public key to Flow address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowAccountFlowAddPubKeySecretKMSUpdate
      *
      * @param \Tatum\Model\FlowAddPubKeySecretKMS $flow_add_pub_key_secret_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Add public key to Flow address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowAccountFlowAddPubKeySecretUpdate
      *
      * @param \Tatum\Model\FlowAddPubKeySecret $flow_add_pub_key_secret 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Create Flow address from public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowAccountFlowCreateAddressFromPubKeyKMS
      *
      * @param \Tatum\Model\FlowCreateAddressFromPubKeyKMS $flow_create_address_from_pub_key_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -123,8 +115,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Create Flow address from public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowAccountFlowCreateAddressFromPubKeyMnemonic
      *
      * @param \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic $flow_create_address_from_pub_key_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -148,8 +138,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Create Flow address from public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowAccountFlowCreateAddressFromPubKeySecret
      *
      * @param \Tatum\Model\FlowCreateAddressFromPubKeySecret $flow_create_address_from_pub_key_secret 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -173,8 +161,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Generate Flow address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -199,8 +185,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Generate Flow public key from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGeneratePubKey
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -225,8 +209,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Generate Flow private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGeneratePubKeyPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -250,8 +232,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Generate Flow wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -281,8 +261,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Get the balance of a Flow account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGetAccount
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -306,8 +284,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Get Flow Block by hash or height
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGetBlock
      *
      * @param string $hash Block hash or height.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -331,8 +307,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Get Flow current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGetBlockChainInfo
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -354,8 +328,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Get Flow events from blocks
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGetBlockEvents
      *
      * @param string $type Event type to search for
      * @param float $from Block height to start searching
@@ -385,8 +357,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Get Flow Transaction by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/FlowGetRawTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -410,8 +380,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Send arbitrary transaction to blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowTransactionCustomFlowCustomTransactionKMS
      *
      * @param \Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -435,8 +403,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Send arbitrary transaction to blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowTransactionCustomFlowCustomTransactionMnemonic
      *
      * @param \Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -460,8 +426,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Send arbitrary transaction to blockchain
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowTransactionCustomFlowCustomTransactionPK
      *
      * @param \Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -485,8 +449,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Send Flow to blockchain addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowTransactionFlowTransactionKMS
      *
      * @param \Tatum\Model\FlowTransactionKMS $flow_transaction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -510,8 +472,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Send Flow to blockchain addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowTransactionFlowTransactionMnemonic
      *
      * @param \Tatum\Model\FlowTransactionMnemonic $flow_transaction_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -535,8 +495,6 @@ class FlowApi extends AbstractApi {
     
     /**
      * Send Flow to blockchain addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Flow/#operation/flowTransactionFlowTransactionPK
      *
      * @param \Tatum\Model\FlowTransactionPK $flow_transaction_pk 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

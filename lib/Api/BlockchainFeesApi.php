@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BlockchainFeesApi extends AbstractApi {
     /**
      * Estimate the fee for a transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFee
      *
      * @param \Tatum\Model\EstimateFee $estimate_fee 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate the fee for a transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeBatchMintNft
      *
      * @param \Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate the fee for a transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeDeployCustodialWallet
      *
      * @param \Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate the fee for a transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeFromAddress
      *
      * @param \Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -123,8 +115,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate the fee for a transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeFromUTXO
      *
      * @param \Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -148,8 +138,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate the fee for a transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeTransferFromCustodial
      *
      * @param \Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -173,8 +161,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate BNB Smart Chain transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/BscEstimateGas
      *
      * @param \Tatum\Model\BscEstimateGas $bsc_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -198,8 +184,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate Celo Chain transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/CeloEstimateGas
      *
      * @param \Tatum\Model\CeloEstimateGas $celo_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -223,8 +207,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate EGLD transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/EgldEstimateGas
      *
      * @param \Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -248,8 +230,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate Ethereum transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/EthEstimateGas
      *
      * @param \Tatum\Model\EthEstimateGas $eth_estimate_gas 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -280,8 +260,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate multiple Ethereum transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/EthEstimateGasBatch
      *
      * @param \Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -312,8 +290,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Get recommended blockchain fee / gas price
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/getBlockchainFee
      *
      * @param string $chain Chain
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -337,8 +313,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate KuCoin Community Chain transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/KcsEstimateGas
      *
      * @param \Tatum\Model\KcsEstimateGas $kcs_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -362,8 +336,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate Klaytn transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/KlaytnEstimateGas
      *
      * @param \Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -387,8 +359,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate Polygon transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/PolygonEstimateGas
      *
      * @param \Tatum\Model\PolygonEstimateGas $polygon_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -412,8 +382,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate VeChain Gas for transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/VetEstimateGas
      *
      * @param \Tatum\Model\VetEstimateGas $vet_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -437,8 +405,6 @@ class BlockchainFeesApi extends AbstractApi {
     
     /**
      * Estimate XinFin transaction fees
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-fees/#operation/XdcEstimateGas
      *
      * @param \Tatum\Model\XdcEstimateGas $xdc_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

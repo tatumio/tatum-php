@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class KuCoinApi extends AbstractApi {
     /**
      * Broadcast signed Kcs transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Generate Kcs account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Generate Kcs private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Generate Kcs wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Get Kcs Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Get Kcs block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetBlock
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -203,8 +189,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Get Kcs Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -228,8 +212,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Get count of outgoing Kcs transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetTransactionCount
      *
      * @param string $address address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -261,8 +243,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on KuCoin Community Chain
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/kcsSmartcontractCallKcsSmartContractMethod
      *
      * @param \Tatum\Model\CallKcsSmartContractMethod $call_kcs_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -286,8 +266,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on KuCoin Community Chain
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/kcsSmartcontractCallKcsSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallKcsSmartContractMethodKMS $call_kcs_smart_contract_method_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -311,8 +289,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on KuCoin Community Chain
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/kcsSmartcontractCallKcsSmartContractReadMethod
      *
      * @param \Tatum\Model\CallKcsSmartContractReadMethod $call_kcs_smart_contract_read_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -336,8 +312,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Send KCS from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/kcsTransactionTransferKcsBlockchain
      *
      * @param \Tatum\Model\TransferKcsBlockchain $transfer_kcs_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -361,8 +335,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Send KCS from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/kcsTransactionTransferKcsBlockchainKMS
      *
      * @param \Tatum\Model\TransferKcsBlockchainKMS $transfer_kcs_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -386,8 +358,6 @@ class KuCoinApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/KuCoin/#operation/KcsWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

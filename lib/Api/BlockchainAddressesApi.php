@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BlockchainAddressesApi extends AbstractApi {
     /**
      * Check whether a blockchain address is assigned to a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-addresses/#operation/addressExists
      *
      * @param string $currency The cryptocurrency of the blockchain address to check
      * @param string $address The blockchain address to check
@@ -52,8 +50,6 @@ class BlockchainAddressesApi extends AbstractApi {
     
     /**
      * Assign a blockchain address to a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-addresses/#operation/assignAddress
      *
      * @param string $id The ID of the virtual account to assign a blockchain address to
      * @param string $address The blockchain address to assign to the virtual account
@@ -85,8 +81,6 @@ class BlockchainAddressesApi extends AbstractApi {
     
     /**
      * Create a deposit address for a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-addresses/#operation/generateDepositAddress
      *
      * @param string $id Account ID
      * @param float|null $index &lt;p&gt;Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.&lt;/p&gt;
@@ -113,8 +107,6 @@ class BlockchainAddressesApi extends AbstractApi {
     
     /**
      * Create multiple deposit addresses for a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-addresses/#operation/generateDepositAddressesBatch
      *
      * @param \Tatum\Model\OffchainAddresses $offchain_addresses 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -138,8 +130,6 @@ class BlockchainAddressesApi extends AbstractApi {
     
     /**
      * Get all deposit addresses for a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-addresses/#operation/getAllDepositAddresses
      *
      * @param string $id The ID of the virtual account to get deposit addresses for
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -163,8 +153,6 @@ class BlockchainAddressesApi extends AbstractApi {
     
     /**
      * Remove a deposit address from a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-addresses/#operation/removeAddress
      *
      * @param string $id Account ID
      * @param string $address Blockchain address

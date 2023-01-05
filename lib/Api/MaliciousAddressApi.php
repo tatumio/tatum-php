@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class MaliciousAddressApi extends AbstractApi {
     /**
      * Check malicous address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Malicious-address/#operation/CheckMalicousAddress
      *
      * @param string $address Blockchain Address to check
      * @throws \Tatum\Sdk\ApiException on non-2xx response

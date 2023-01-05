@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class StellarApi extends AbstractApi {
     /**
      * Broadcast signed XLM transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Get XLM Account info
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetAccountInfo
      *
      * @param string $account Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Get XLM Account transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetAccountTx
      *
      * @param string $account Address of XLM account.
      * @param string|null $pagination Paging token from the last transaction gives you next page
@@ -101,8 +95,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Get actual XLM fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetFee
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -124,8 +116,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Get XLM Blockchain Information
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetLastClosedLedger
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -147,8 +137,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Get XLM Blockchain Ledger by sequence
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetLedger
      *
      * @param string $sequence Sequence of the ledger.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -172,8 +160,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Get XLM Blockchain Transactions in Ledger
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetLedgerTx
      *
      * @param string $sequence Sequence of the ledger.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -197,8 +183,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Get XLM Transaction by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -222,8 +206,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Send XLM from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchain
      *
      * @param \Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -247,8 +229,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Send XLM from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchainAsset
      *
      * @param \Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -272,8 +252,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Send XLM from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchainKMS
      *
      * @param \Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -297,8 +275,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Send XLM from address to address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchainKMSAsset
      *
      * @param \Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -322,8 +298,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Create / Update / Delete XLM trust line
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/xlmTrustLineXlmBlockchain
      *
      * @param \Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -347,8 +321,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Create / Update / Delete XLM trust line
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/xlmTrustLineXlmBlockchainKMS
      *
      * @param \Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -372,8 +344,6 @@ class StellarApi extends AbstractApi {
     
     /**
      * Generate XLM account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Stellar/#operation/XlmWallet
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 

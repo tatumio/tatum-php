@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class TransactionApi extends AbstractApi {
     /**
      * Find transactions within the ledger.
-     * 
-     * @see   https://apidoc.tatum.io/tag/Transaction/#operation/getTransactions
      *
      * @param \Tatum\Model\TransactionFilterLedger $transaction_filter_ledger 
      * @param float|null $page_size Max number of items per page is 50. Either count or pageSize is accepted.
@@ -63,8 +61,6 @@ class TransactionApi extends AbstractApi {
     
     /**
      * Find transactions for account.
-     * 
-     * @see   https://apidoc.tatum.io/tag/Transaction/#operation/getTransactionsByAccountId
      *
      * @param \Tatum\Model\TransactionFilter $transaction_filter 
      * @param float|null $page_size Max number of items per page is 50. Either count or pageSize is accepted.
@@ -103,8 +99,6 @@ class TransactionApi extends AbstractApi {
     
     /**
      * Find transactions for a customer across all of the customer's accounts.
-     * 
-     * @see   https://apidoc.tatum.io/tag/Transaction/#operation/getTransactionsByCustomerId
      *
      * @param \Tatum\Model\TransactionFilterCustomer $transaction_filter_customer 
      * @param float|null $page_size Max number of items per page is 50. Either count or pageSize is accepted.
@@ -143,8 +137,6 @@ class TransactionApi extends AbstractApi {
     
     /**
      * Find transactions with a given reference across all accounts.
-     * 
-     * @see   https://apidoc.tatum.io/tag/Transaction/#operation/getTransactionsByReference
      *
      * @param string $reference 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -176,8 +168,6 @@ class TransactionApi extends AbstractApi {
     
     /**
      * Send payment
-     * 
-     * @see   https://apidoc.tatum.io/tag/Transaction/#operation/sendTransaction
      *
      * @param \Tatum\Model\CreateTransaction $create_transaction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -201,8 +191,6 @@ class TransactionApi extends AbstractApi {
     
     /**
      * Send payment in batch
-     * 
-     * @see   https://apidoc.tatum.io/tag/Transaction/#operation/sendTransactionBatch
      *
      * @param \Tatum\Model\BatchCreateTransaction $batch_create_transaction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

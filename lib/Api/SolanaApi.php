@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class SolanaApi extends AbstractApi {
     /**
      * Broadcast and confirm signed Solana transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/SolanaBroadcastConfirm
      *
      * @param \Tatum\Model\SolanaBroadcastConfirm $solana_broadcast_confirm 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * Generate Solana wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/SolanaGenerateWallet
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -71,8 +67,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * Get Solana Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/SolanaGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -96,8 +90,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * Get Solana block by number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/SolanaGetBlock
      *
      * @param float $height Block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -121,8 +113,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/SolanaGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -144,8 +134,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * Get Solana Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/SolanaGetTransaction
      *
      * @param string $hash Transaction hash
      * @param string|null $commitment Commitment of the transaction. If not defined, all transactions are being scanned.
@@ -172,8 +160,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * Send SOL from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/solanaTransactionTransferSolanaBlockchain
      *
      * @param \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -197,8 +183,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * Send SOL from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/solanaTransactionTransferSolanaBlockchainKMS
      *
      * @param \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -222,8 +206,6 @@ class SolanaApi extends AbstractApi {
     
     /**
      * JSON RPC HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Solana/#operation/SolanaWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

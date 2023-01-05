@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class ExchangeRateApi extends AbstractApi {
     /**
      * Get the current exchange rate for exchanging fiat/crypto assets
-     * 
-     * @see   https://apidoc.tatum.io/tag/Exchange-rate/#operation/getExchangeRate
      *
      * @param string $currency The fiat or crypto asset to exchange
      * @param string|'EUR' $base_pair The target fiat asset to get the exchange rate for

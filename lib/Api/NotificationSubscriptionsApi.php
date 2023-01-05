@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class NotificationSubscriptionsApi extends AbstractApi {
     /**
      * Cancel existing subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/deleteSubscription
      *
      * @param string $id Subscription ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -44,8 +42,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Disable HMAC webhook digest
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/disableWebHookHmac
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -63,8 +59,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Enable HMAC webhook digest
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/enableWebHookHmac
      *
      * @param \Tatum\Model\HmacWebHook $hmac_web_hook 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -84,8 +78,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * List all executed webhooks
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/getAllWebhooks
      *
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain the next page of data.
@@ -125,8 +117,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Count of found entities for get webhook request
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/getAllWebhooksCount
      *
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain the next page of data.
@@ -166,8 +156,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Obtain report for subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/getSubscriptionReport
      *
      * @param string $id Subscription ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -191,8 +179,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * List all active subscriptions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/getSubscriptions
      *
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain next page of the data.
@@ -230,8 +216,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Count of found entities for get webhook request
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/getSubscriptionsCount
      *
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain next page of the data.
@@ -269,8 +253,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionBalance
      *
      * @param \Tatum\Model\CreateSubscriptionBalance $create_subscription_balance 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -297,8 +279,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionContractLogEvent
      *
      * @param \Tatum\Model\CreateSubscriptionContractLogEvent $create_subscription_contract_log_event 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -325,8 +305,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionIncoming
      *
      * @param \Tatum\Model\CreateSubscriptionIncoming $create_subscription_incoming 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -353,8 +331,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionInterval
      *
      * @param \Tatum\Model\CreateSubscriptionInterval $create_subscription_interval 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -381,8 +357,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionKMSError
      *
      * @param \Tatum\Model\CreateSubscriptionKMSError $create_subscription_kms_error 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -409,8 +383,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionKMSSuccess
      *
      * @param \Tatum\Model\CreateSubscriptionKMSSuccess $create_subscription_kms_success 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -437,8 +409,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionMultiTokenTransferEvent
      *
      * @param \Tatum\Model\CreateSubscriptionMultiTokenTransferEvent $create_subscription_multi_token_transfer_event 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -465,8 +435,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionNftTransferEvent
      *
      * @param \Tatum\Model\CreateSubscriptionNftTransferEvent $create_subscription_nft_transfer_event 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -493,8 +461,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionNotification
      *
      * @param \Tatum\Model\CreateSubscriptionNotification $create_subscription_notification 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -521,8 +487,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionPartialTradeMatch
      *
      * @param \Tatum\Model\CreateSubscriptionPartialTradeMatch $create_subscription_partial_trade_match 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -549,8 +513,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionPending
      *
      * @param \Tatum\Model\CreateSubscriptionPending $create_subscription_pending 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -577,8 +539,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionTradeMatch
      *
      * @param \Tatum\Model\CreateSubscriptionTradeMatch $create_subscription_trade_match 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -605,8 +565,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
     
     /**
      * Create a subscription
-     * 
-     * @see   https://apidoc.tatum.io/tag/Notification-subscriptions/#operation/subscriptionCreateSubscriptionTxInTheBlock
      *
      * @param \Tatum\Model\CreateSubscriptionTxInTheBlock $create_subscription_tx_in_the_block 
      * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.

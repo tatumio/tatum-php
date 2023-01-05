@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class IPFSApi extends AbstractApi {
     /**
      * Get file from IPFS
-     * 
-     * @see   https://apidoc.tatum.io/tag/IPFS/#operation/GetIPFSData
      *
      * @param string $id IPFS CID of the file
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class IPFSApi extends AbstractApi {
     
     /**
      * Store data to IPFS
-     * 
-     * @see   https://apidoc.tatum.io/tag/IPFS/#operation/StoreIPFS
      *
      * @param \SplFileObject|null $file Your file to store
      * @throws \Tatum\Sdk\ApiException on non-2xx response

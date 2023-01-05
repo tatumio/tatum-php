@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class AlgorandApi extends AbstractApi {
     /**
      * Access Algorand Algod GET node endpoints
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgoNodeGetDriver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param string $algod_path &#x60;**&#x60; path of algod.
@@ -49,8 +47,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Access Algorand Indexer GET node endpoints
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgoNodeIndexerGetDriver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param string $indexer_path &#x60;**&#x60; path of indexer.
@@ -75,8 +71,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Access Algorand Algod POST node endpoints
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgoNodePostDriver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param string $algod_path &#x60;**&#x60; path of algod.
@@ -102,8 +96,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Broadcast signed Algorand transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgoandBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -127,8 +119,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Enable receiving asset on account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/algorandAssetReceiveAlgorandAsset
      *
      * @param \Tatum\Model\ReceiveAlgorandAsset $receive_algorand_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -152,8 +142,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Enable receiving asset on account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/algorandAssetReceiveAlgorandAssetKMS
      *
      * @param \Tatum\Model\ReceiveAlgorandAssetKMS $receive_algorand_asset_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -177,8 +165,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Generate Algorand account address from private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgorandGenerateAddress
      *
      * @param string $priv private key of wallet.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -202,8 +188,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Generate Algorand wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgorandGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -233,8 +217,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Get Algorand Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgorandGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -258,8 +240,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Get Algorand block by block round number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgorandGetBlock
      *
      * @param float $round_number Block round number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -283,8 +263,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgorandGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -306,8 +284,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Get Algorand Transactions between from and to
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgorandGetPayTransactionsByFromTo
      *
      * @param string $from Start timestamp in specified period of time
      * @param string $to End timestamp in specified period of time
@@ -337,8 +313,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Get Algorand Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/AlgorandGetTransaction
      *
      * @param string $txid Transaction id
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -362,8 +336,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Send Algos to an Algorand account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/algorandTransactionTransferAlgorandBlockchain
      *
      * @param \Tatum\Model\TransferAlgorandBlockchain $transfer_algorand_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -387,8 +359,6 @@ class AlgorandApi extends AbstractApi {
     
     /**
      * Send Algos to an Algorand account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Algorand/#operation/algorandTransactionTransferAlgorandBlockchainKMS
      *
      * @param \Tatum\Model\TransferAlgorandBlockchainKMS $transfer_algorand_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

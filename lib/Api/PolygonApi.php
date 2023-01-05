@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class PolygonApi extends AbstractApi {
     /**
      * Broadcast signed Polygon transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Generate Polygon account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Generate Polygon private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Generate Polygon wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Get Polygon Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Get Polygon block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGetBlock
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -203,8 +189,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Get Polygon Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -228,8 +212,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Get Polygon transactions by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGetTransactionByAddress
      *
      * @param string $address Account address you want to get balance of
      * @param float $page_size Max number of items per page is 50.
@@ -280,8 +262,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Get count of outgoing Polygon transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonGetTransactionCount
      *
      * @param string $address address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -313,8 +293,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Polygon
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/polygonSmartcontractCallPolygonSmartContractMethod
      *
      * @param \Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -338,8 +316,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Polygon
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/polygonSmartcontractCallPolygonSmartContractMethodCaller
      *
      * @param \Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -363,8 +339,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Polygon
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/polygonSmartcontractCallPolygonSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -388,8 +362,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Polygon
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/polygonSmartcontractCallPolygonSmartContractReadMethod
      *
      * @param \Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -413,8 +385,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Send MATIC from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/polygonTransactionTransferPolygonBlockchain
      *
      * @param \Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -438,8 +408,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Send MATIC from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/polygonTransactionTransferPolygonBlockchainKMS
      *
      * @param \Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -463,8 +431,6 @@ class PolygonApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Polygon/#operation/PolygonWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

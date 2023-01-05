@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BNBBeaconChainApi extends AbstractApi {
     /**
      * Broadcast signed BNB transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/BnbBroadcast
      *
      * @param \Tatum\Model\Broadcast $broadcast 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Generate Binance wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/BnbGenerateWallet
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -71,8 +67,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Get Binance Account
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/BnbGetAccount
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -96,8 +90,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Get Binance Transactions in Block
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/BnbGetBlock
      *
      * @param float $height Block height
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -121,8 +113,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Get Binance current block
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/BnbGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -144,8 +134,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Get Binance Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/BnbGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -169,8 +157,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Get Binance Transactions By Address
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/BnbGetTxByAccount
      *
      * @param string $address Account address
      * @param float $start_time Start time in milliseconds
@@ -227,8 +213,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Send Binance / Binance Token from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/bnbTransactionTransferBnbBlockchain
      *
      * @param \Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -252,8 +236,6 @@ class BNBBeaconChainApi extends AbstractApi {
     
     /**
      * Send Binance / Binance Token from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Beacon-Chain/#operation/bnbTransactionTransferBnbBlockchainKMS
      *
      * @param \Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

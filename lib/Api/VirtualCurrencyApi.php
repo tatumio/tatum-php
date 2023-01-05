@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class VirtualCurrencyApi extends AbstractApi {
     /**
      * Create new virtual currency
-     * 
-     * @see   https://apidoc.tatum.io/tag/Virtual-Currency/#operation/createCurrency
      *
      * @param \Tatum\Model\VirtualCurrency $virtual_currency 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class VirtualCurrencyApi extends AbstractApi {
     
     /**
      * Get virtual currency
-     * 
-     * @see   https://apidoc.tatum.io/tag/Virtual-Currency/#operation/getCurrency
      *
      * @param string $name 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -81,8 +77,6 @@ class VirtualCurrencyApi extends AbstractApi {
     
     /**
      * Create new supply of virtual currency
-     * 
-     * @see   https://apidoc.tatum.io/tag/Virtual-Currency/#operation/mintCurrency
      *
      * @param \Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -106,8 +100,6 @@ class VirtualCurrencyApi extends AbstractApi {
     
     /**
      * Destroy supply of virtual currency
-     * 
-     * @see   https://apidoc.tatum.io/tag/Virtual-Currency/#operation/revokeCurrency
      *
      * @param \Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -131,8 +123,6 @@ class VirtualCurrencyApi extends AbstractApi {
     
     /**
      * Update virtual currency
-     * 
-     * @see   https://apidoc.tatum.io/tag/Virtual-Currency/#operation/updateCurrency
      *
      * @param \Tatum\Model\VirtualCurrencyUpdate $virtual_currency_update 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

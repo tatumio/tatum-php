@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class VirtualAccountBlockchainFeesApi extends AbstractApi {
     /**
      * Estimate ledger to blockchain transaction fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Virtual-account-blockchain-fees/#operation/offchainEstimateFee
      *
      * @param \Tatum\Model\OffchainEstimateFee $offchain_estimate_fee 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

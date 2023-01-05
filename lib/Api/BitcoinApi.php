@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BitcoinApi extends AbstractApi {
     /**
      * Send BTC to Bitcoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/bitcoinTransactionBtcTransactionFromAddress
      *
      * @param \Tatum\Model\BtcTransactionFromAddress $btc_transaction_from_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Send BTC to Bitcoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/bitcoinTransactionBtcTransactionFromAddressKMS
      *
      * @param \Tatum\Model\BtcTransactionFromAddressKMS $btc_transaction_from_address_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Send BTC to Bitcoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/bitcoinTransactionBtcTransactionFromUTXO
      *
      * @param \Tatum\Model\BtcTransactionFromUTXO $btc_transaction_from_utxo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Send BTC to Bitcoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/bitcoinTransactionBtcTransactionFromUTXOKMS
      *
      * @param \Tatum\Model\BtcTransactionFromUTXOKMS $btc_transaction_from_utxokms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -123,8 +115,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Broadcast a signed Bitcoin transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -148,8 +138,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Generate a Bitcoin address from the wallet's extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGenerateAddress
      *
      * @param string $xpub Extended public key of a wallet.
      * @param float $index Derivation index of the desired address to be generated.
@@ -178,8 +166,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Generate the private key for a Bitcoin address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -203,8 +189,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Generate a Bitcoin wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -234,8 +218,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get the balance of a Bitcoin address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetBalanceOfAddress
      *
      * @param string $address The blockchain address to get the balance for
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -259,8 +241,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get a Bitcoin block by its hash or height
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetBlock
      *
      * @param string $hash Block hash or height.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -284,8 +264,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get Bitcoin blockchain information
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetBlockChainInfo
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -307,8 +285,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get the hash of a Bitcoin block
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetBlockHash
      *
      * @param float $i The number of blocks preceding a particular block on a blockchain.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -332,8 +308,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get transactions from the Bitcoin mempool
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetMempool
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -355,8 +329,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get a Bitcoin transaction by its hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetRawTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -380,8 +352,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get all transactions for a Bitcoin address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetTxByAddress
      *
      * @param string $address Address
      * @param float $page_size Max number of items per page is 50.
@@ -418,8 +388,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Get information about a transaction output (UTXO) in a Bitcoin transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcGetUTXO
      *
      * @param string $hash The transaction hash
      * @param float $index The index of the transaction output that you want to check for the UTXO
@@ -456,8 +424,6 @@ class BitcoinApi extends AbstractApi {
     
     /**
      * Connect to a Bitcoin node through an RPC driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Bitcoin/#operation/BtcRpcDriver
      *
      * @param \Tatum\Model\BtcRpcDriverRequest $btc_rpc_driver_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

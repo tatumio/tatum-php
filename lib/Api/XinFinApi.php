@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class XinFinApi extends AbstractApi {
     /**
      * Broadcast signed XDC transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Generate XDC account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Generate XDC private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Generate XDC wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Get XDC Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Get XDC block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetBlock
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -203,8 +189,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Get XDC Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -228,8 +212,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Get count of outgoing XDC transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcGetTransactionCount
      *
      * @param string $address address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -261,8 +243,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on XinFin
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/xdcSmartcontractCallXdcReadSmartContractMethod
      *
      * @param \Tatum\Model\CallXdcReadSmartContractMethod $call_xdc_read_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -286,8 +266,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on XinFin
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/xdcSmartcontractCallXdcSmartContractMethod
      *
      * @param \Tatum\Model\CallXdcSmartContractMethod $call_xdc_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -311,8 +289,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on XinFin
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/xdcSmartcontractCallXdcSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallXdcSmartContractMethodKMS $call_xdc_smart_contract_method_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -336,8 +312,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Send XDC / ERC20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/xdcTransactionTransferXdcBlockchain
      *
      * @param \Tatum\Model\TransferXdcBlockchain $transfer_xdc_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -361,8 +335,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Send XDC / ERC20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/xdcTransactionTransferXdcBlockchainKMS
      *
      * @param \Tatum\Model\TransferXdcBlockchainKMS $transfer_xdc_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -386,8 +358,6 @@ class XinFinApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/XinFin/#operation/XdcWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

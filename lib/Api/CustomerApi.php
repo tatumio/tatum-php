@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class CustomerApi extends AbstractApi {
     /**
      * Activate customer
-     * 
-     * @see   https://apidoc.tatum.io/tag/Customer/#operation/activateCustomer
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -52,8 +50,6 @@ class CustomerApi extends AbstractApi {
     
     /**
      * Deactivate customer
-     * 
-     * @see   https://apidoc.tatum.io/tag/Customer/#operation/deactivateCustomer
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -81,8 +77,6 @@ class CustomerApi extends AbstractApi {
     
     /**
      * Disable customer
-     * 
-     * @see   https://apidoc.tatum.io/tag/Customer/#operation/disableCustomer
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -110,8 +104,6 @@ class CustomerApi extends AbstractApi {
     
     /**
      * Enable customer
-     * 
-     * @see   https://apidoc.tatum.io/tag/Customer/#operation/enableCustomer
      *
      * @param string $id Customer internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -139,8 +131,6 @@ class CustomerApi extends AbstractApi {
     
     /**
      * List all customers
-     * 
-     * @see   https://apidoc.tatum.io/tag/Customer/#operation/findAllCustomers
      *
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain next page of the data.
@@ -176,8 +166,6 @@ class CustomerApi extends AbstractApi {
     
     /**
      * Get customer details
-     * 
-     * @see   https://apidoc.tatum.io/tag/Customer/#operation/getCustomerByExternalOrInternalId
      *
      * @param string $id Customer external or internal ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -209,8 +197,6 @@ class CustomerApi extends AbstractApi {
     
     /**
      * Update customer
-     * 
-     * @see   https://apidoc.tatum.io/tag/Customer/#operation/updateCustomer
      *
      * @param string $id Customer internal ID
      * @param \Tatum\Model\CustomerUpdate $customer_update 

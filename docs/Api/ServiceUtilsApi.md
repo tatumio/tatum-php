@@ -1,13 +1,14 @@
 # Tatum/Api/ServiceUtilsApi
 
-All URIs are relative to https://api.tatum.io.
+* Service utils [documentation](https://apidoc.tatum.io/tag/Service-utils/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**freezeApiKey()**](#freezeapikey) | **PUT** [/v3/tatum/freeze](https://apidoc.tatum.io/tag/Service-utils/#operation/freezeApiKey) | Freeze API Key
-[**getCredits()**](#getcredits) | **GET** [/v3/tatum/usage](https://apidoc.tatum.io/tag/Service-utils/#operation/getCredits) | Get information about your credit consumption for the last month
-[**getVersion()**](#getversion) | **GET** [/v3/tatum/version](https://apidoc.tatum.io/tag/Service-utils/#operation/getVersion) | Get API version
-[**unfreezeApiKey()**](#unfreezeapikey) | **DELETE** [/v3/tatum/freeze](https://apidoc.tatum.io/tag/Service-utils/#operation/unfreezeApiKey) | Unfreeze API Key
+[**freezeApiKey()**](#freezeapikey) | **PUT** `/v3/tatum/freeze` | Freeze API Key
+[**getCredits()**](#getcredits) | **GET** `/v3/tatum/usage` | Get information about your credit consumption for the last month
+[**getVersion()**](#getversion) | **GET** `/v3/tatum/version` | Get API version
+[**unfreezeApiKey()**](#unfreezeapikey) | **DELETE** `/v3/tatum/freeze` | Unfreeze API Key
 
 
 ## `freezeApiKey()`

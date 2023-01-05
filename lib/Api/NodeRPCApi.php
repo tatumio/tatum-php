@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class NodeRPCApi extends AbstractApi {
     /**
      * Connect to the blockchain node through an RPC driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Node-RPC/#operation/NodeJsonPostRpcDriver
      *
      * @param string $chain Blockchain to communicate with.
      * @param object $body 
@@ -58,8 +56,6 @@ class NodeRPCApi extends AbstractApi {
     
     /**
      * Connect to the blockchain node through an RPC driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Node-RPC/#operation/NodeJsonRpcGetDriver
      *
      * @param string $chain Blockchain to communicate with.
      * @param string|null $x_api_key Tatum X-API-Key used for authorization. You can omit this path parameter and either use the X-Api-Key header, or the API key tied to your IP address without any header.
@@ -88,8 +84,6 @@ class NodeRPCApi extends AbstractApi {
     
     /**
      * Connect to the blockchain node through an RPC driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Node-RPC/#operation/NodeJsonRpcPutDriver
      *
      * @param string $chain Blockchain to communicate with.
      * @param object $body 

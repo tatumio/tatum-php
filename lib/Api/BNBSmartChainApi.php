@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BNBSmartChainApi extends AbstractApi {
     /**
      * Broadcast signed BSC transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Generate BSC account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Generate BSC private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Generate BSC wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Get BSC Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Get BSC block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGetBlock
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -203,8 +189,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Get BSC Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -228,8 +212,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Get count of outgoing BSC transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscGetTransactionCount
      *
      * @param string $address address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -261,8 +243,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on BNB Smart Chain
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/bscSmartcontractCallBscSmartContractMethod
      *
      * @param \Tatum\Model\CallBscSmartContractMethod $call_bsc_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -286,8 +266,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on BNB Smart Chain
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/bscSmartcontractCallBscSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallBscSmartContractMethodKMS $call_bsc_smart_contract_method_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -311,8 +289,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on BNB Smart Chain
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/bscSmartcontractCallBscSmartContractReadMethod
      *
      * @param \Tatum\Model\CallBscSmartContractReadMethod $call_bsc_smart_contract_read_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -336,8 +312,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Send BSC / BEP20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/bscTransactionTransferBscBlockchain
      *
      * @param \Tatum\Model\TransferBscBlockchain $transfer_bsc_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -361,8 +335,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Send BSC / BEP20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/bscTransactionTransferBscBlockchainKMS
      *
      * @param \Tatum\Model\TransferBscBlockchainKMS $transfer_bsc_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -386,8 +358,6 @@ class BNBSmartChainApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/BNB-Smart-Chain/#operation/BscWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

@@ -1,89 +1,90 @@
 # Tatum/Api/NFTERC721OrCompatibleApi
 
-All URIs are relative to https://api.tatum.io.
+* NFT (ERC-721 or compatible) [documentation](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**nftBurnNft()**](#nftburnnft) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNft) | Burn an NFT
-[**nftBurnNftAlgo()**](#nftburnnftalgo) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftAlgo) | Burn an NFT
-[**nftBurnNftCelo()**](#nftburnnftcelo) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftCelo) | Burn an NFT
-[**nftBurnNftFlowKMS()**](#nftburnnftflowkms) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftFlowKMS) | Burn an NFT
-[**nftBurnNftFlowMnemonic()**](#nftburnnftflowmnemonic) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftFlowMnemonic) | Burn an NFT
-[**nftBurnNftFlowPK()**](#nftburnnftflowpk) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftFlowPK) | Burn an NFT
-[**nftBurnNftKMS()**](#nftburnnftkms) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftKMS) | Burn an NFT
-[**nftBurnNftKMSCelo()**](#nftburnnftkmscelo) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftKMSCelo) | Burn an NFT
-[**nftBurnNftKMSTron()**](#nftburnnftkmstron) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftKMSTron) | Burn an NFT
-[**nftBurnNftTron()**](#nftburnnfttron) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftBurnNftTron) | Burn an NFT
-[**nftDeployNft()**](#nftdeploynft) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNft) | Deploy an NFT smart contract
-[**nftDeployNftCelo()**](#nftdeploynftcelo) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftCelo) | Deploy an NFT smart contract
-[**nftDeployNftCeloKMS()**](#nftdeploynftcelokms) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftCeloKMS) | Deploy an NFT smart contract
-[**nftDeployNftFlowKMS()**](#nftdeploynftflowkms) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftFlowKMS) | Deploy an NFT smart contract
-[**nftDeployNftFlowMnemonic()**](#nftdeploynftflowmnemonic) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftFlowMnemonic) | Deploy an NFT smart contract
-[**nftDeployNftFlowPK()**](#nftdeploynftflowpk) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftFlowPK) | Deploy an NFT smart contract
-[**nftDeployNftKMS()**](#nftdeploynftkms) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftKMS) | Deploy an NFT smart contract
-[**nftDeployNftTron()**](#nftdeploynfttron) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftTron) | Deploy an NFT smart contract
-[**nftDeployNftTronKMS()**](#nftdeploynfttronkms) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftDeployNftTronKMS) | Deploy an NFT smart contract
-[**nftGetBalanceErc721()**](#nftgetbalanceerc721) | **GET** [/v3/nft/balance/{chain}/{contractAddress}/{address}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetBalanceErc721) | Get the NFTs from a specific smart contract that a blockchain address holds
-[**nftGetContractAddress()**](#nftgetcontractaddress) | **GET** [/v3/nft/address/{chain}/{hash}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetContractAddress) | Get the address of an NFT smart contract by its transaction hash
-[**nftGetMetadataErc721()**](#nftgetmetadataerc721) | **GET** [/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetMetadataErc721) | Get NFT metadata
-[**nftGetProvenanceDataErc721()**](#nftgetprovenancedataerc721) | **GET** [/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetProvenanceDataErc721) | Get NFT provenance information
-[**nftGetRoyaltyErc721()**](#nftgetroyaltyerc721) | **GET** [/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetRoyaltyErc721) | Get NFT royalty information
-[**nftGetTokensByAddressErc721()**](#nftgettokensbyaddresserc721) | **GET** [/v3/nft/address/balance/{chain}/{address}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTokensByAddressErc721) | Get all NFTs that a blockchain address holds
-[**nftGetTokensByCollectionErc721()**](#nftgettokensbycollectionerc721) | **GET** [/v3/nft/collection/{chain}/{address}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTokensByCollectionErc721) | Get all NFTs from a collection
-[**nftGetTransactErc721()**](#nftgettransacterc721) | **GET** [/v3/nft/transaction/{chain}/{hash}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTransactErc721) | Get an NFT transaction by its hash
-[**nftGetTransactionByAddress()**](#nftgettransactionbyaddress) | **GET** [/v3/nft/transaction/{chain}/{address}/{tokenAddress}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTransactionByAddress) | Get NFT transactions on a blockchain address
-[**nftGetTransactionByToken()**](#nftgettransactionbytoken) | **GET** [/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetTransactionByToken) | Get NFT transactions for an NFT
-[**nftMintAddNftMinter()**](#nftmintaddnftminter) | **POST** [/v3/nft/mint/add](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintAddNftMinter) | Add an NFT minter to an NFT smart contract
-[**nftMintAddNftMinterKMS()**](#nftmintaddnftminterkms) | **POST** [/v3/nft/mint/add](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintAddNftMinterKMS) | Add an NFT minter to an NFT smart contract
-[**nftMintBatchMintMultipleNft()**](#nftmintbatchmintmultiplenft) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNft) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftCelo()**](#nftmintbatchmintmultiplenftcelo) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftCelo) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftFlowKMS()**](#nftmintbatchmintmultiplenftflowkms) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftFlowKMS) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftFlowMnemonic()**](#nftmintbatchmintmultiplenftflowmnemonic) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftFlowMnemonic) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftFlowPK()**](#nftmintbatchmintmultiplenftflowpk) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftFlowPK) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftKMS()**](#nftmintbatchmintmultiplenftkms) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftKMS) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftKMSCelo()**](#nftmintbatchmintmultiplenftkmscelo) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftKMSCelo) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftKMSTron()**](#nftmintbatchmintmultiplenftkmstron) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftKMSTron) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftMinter()**](#nftmintbatchmintmultiplenftminter) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftMinter) | Mint multiple NFTs
-[**nftMintBatchMintMultipleNftTron()**](#nftmintbatchmintmultiplenfttron) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintBatchMintMultipleNftTron) | Mint multiple NFTs
-[**nftMintNft()**](#nftmintnft) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNft) | Mint an NFT
-[**nftMintNftAlgorand()**](#nftmintnftalgorand) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftAlgorand) | Mint an NFT
-[**nftMintNftAlgorandKMS()**](#nftmintnftalgorandkms) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftAlgorandKMS) | Mint an NFT
-[**nftMintNftCelo()**](#nftmintnftcelo) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftCelo) | Mint an NFT
-[**nftMintNftExpress()**](#nftmintnftexpress) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftExpress) | Mint an NFT
-[**nftMintNftExpressAlgorand()**](#nftmintnftexpressalgorand) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftExpressAlgorand) | Mint an NFT
-[**nftMintNftExpressSolana()**](#nftmintnftexpresssolana) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftExpressSolana) | Mint an NFT
-[**nftMintNftFlowKMS()**](#nftmintnftflowkms) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftFlowKMS) | Mint an NFT
-[**nftMintNftFlowMnemonic()**](#nftmintnftflowmnemonic) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftFlowMnemonic) | Mint an NFT
-[**nftMintNftFlowPK()**](#nftmintnftflowpk) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftFlowPK) | Mint an NFT
-[**nftMintNftKMS()**](#nftmintnftkms) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftKMS) | Mint an NFT
-[**nftMintNftKMSCelo()**](#nftmintnftkmscelo) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftKMSCelo) | Mint an NFT
-[**nftMintNftKMSTron()**](#nftmintnftkmstron) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftKMSTron) | Mint an NFT
-[**nftMintNftMinter()**](#nftmintnftminter) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftMinter) | Mint an NFT
-[**nftMintNftSolana()**](#nftmintnftsolana) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftSolana) | Mint an NFT
-[**nftMintNftSolanaKMS()**](#nftmintnftsolanakms) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftSolanaKMS) | Mint an NFT
-[**nftMintNftTron()**](#nftmintnfttron) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftMintNftTron) | Mint an NFT
-[**nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftceloupdate) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate) | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsceloupdate) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate) | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmstronupdate) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate) | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsupdate) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate) | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornfttronupdate) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate) | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftupdate) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftRoyaltyUpdateCashbackValueForAuthorNftUpdate) | Update NFT royalty information
-[**nftTransactionTransferNft()**](#nfttransactiontransfernft) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNft) | Transfer an NFT
-[**nftTransactionTransferNftAlgo()**](#nfttransactiontransfernftalgo) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftAlgo) | Transfer an NFT
-[**nftTransactionTransferNftAlgoExpress()**](#nfttransactiontransfernftalgoexpress) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftAlgoExpress) | Transfer an NFT
-[**nftTransactionTransferNftAlgoKMS()**](#nfttransactiontransfernftalgokms) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftAlgoKMS) | Transfer an NFT
-[**nftTransactionTransferNftCelo()**](#nfttransactiontransfernftcelo) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftCelo) | Transfer an NFT
-[**nftTransactionTransferNftFlowKMS()**](#nfttransactiontransfernftflowkms) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftFlowKMS) | Transfer an NFT
-[**nftTransactionTransferNftFlowMnemonic()**](#nfttransactiontransfernftflowmnemonic) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftFlowMnemonic) | Transfer an NFT
-[**nftTransactionTransferNftFlowPK()**](#nfttransactiontransfernftflowpk) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftFlowPK) | Transfer an NFT
-[**nftTransactionTransferNftKMS()**](#nfttransactiontransfernftkms) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftKMS) | Transfer an NFT
-[**nftTransactionTransferNftKMSCelo()**](#nfttransactiontransfernftkmscelo) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftKMSCelo) | Transfer an NFT
-[**nftTransactionTransferNftKMSTron()**](#nfttransactiontransfernftkmstron) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftKMSTron) | Transfer an NFT
-[**nftTransactionTransferNftSolana()**](#nfttransactiontransfernftsolana) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftSolana) | Transfer an NFT
-[**nftTransactionTransferNftSolanaKMS()**](#nfttransactiontransfernftsolanakms) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftSolanaKMS) | Transfer an NFT
-[**nftTransactionTransferNftTron()**](#nfttransactiontransfernfttron) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftTransactionTransferNftTron) | Transfer an NFT
-[**nftVerifySolanaNFT()**](#nftverifysolananft) | **POST** [/v3/nft/verify](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftVerifySolanaNFT) | Verify an NFT in an NFT collection on Solana
-[**nftVerifySolanaNFTKMS()**](#nftverifysolananftkms) | **POST** [/v3/nft/verify](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftVerifySolanaNFTKMS) | Verify an NFT in an NFT collection on Solana
+[**nftBurnNft()**](#nftburnnft) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftAlgo()**](#nftburnnftalgo) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftCelo()**](#nftburnnftcelo) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftFlowKMS()**](#nftburnnftflowkms) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftFlowMnemonic()**](#nftburnnftflowmnemonic) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftFlowPK()**](#nftburnnftflowpk) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftKMS()**](#nftburnnftkms) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftKMSCelo()**](#nftburnnftkmscelo) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftKMSTron()**](#nftburnnftkmstron) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftBurnNftTron()**](#nftburnnfttron) | **POST** `/v3/nft/burn` | Burn an NFT
+[**nftDeployNft()**](#nftdeploynft) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftCelo()**](#nftdeploynftcelo) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftCeloKMS()**](#nftdeploynftcelokms) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftFlowKMS()**](#nftdeploynftflowkms) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftFlowMnemonic()**](#nftdeploynftflowmnemonic) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftFlowPK()**](#nftdeploynftflowpk) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftKMS()**](#nftdeploynftkms) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftTron()**](#nftdeploynfttron) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftDeployNftTronKMS()**](#nftdeploynfttronkms) | **POST** `/v3/nft/deploy` | Deploy an NFT smart contract
+[**nftGetBalanceErc721()**](#nftgetbalanceerc721) | **GET** `/v3/nft/balance/{chain}/{contractAddress}/{address}` | Get the NFTs from a specific smart contract that a blockchain address holds
+[**nftGetContractAddress()**](#nftgetcontractaddress) | **GET** `/v3/nft/address/{chain}/{hash}` | Get the address of an NFT smart contract by its transaction hash
+[**nftGetMetadataErc721()**](#nftgetmetadataerc721) | **GET** `/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}` | Get NFT metadata
+[**nftGetProvenanceDataErc721()**](#nftgetprovenancedataerc721) | **GET** `/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}` | Get NFT provenance information
+[**nftGetRoyaltyErc721()**](#nftgetroyaltyerc721) | **GET** `/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}` | Get NFT royalty information
+[**nftGetTokensByAddressErc721()**](#nftgettokensbyaddresserc721) | **GET** `/v3/nft/address/balance/{chain}/{address}` | Get all NFTs that a blockchain address holds
+[**nftGetTokensByCollectionErc721()**](#nftgettokensbycollectionerc721) | **GET** `/v3/nft/collection/{chain}/{address}` | Get all NFTs from a collection
+[**nftGetTransactErc721()**](#nftgettransacterc721) | **GET** `/v3/nft/transaction/{chain}/{hash}` | Get an NFT transaction by its hash
+[**nftGetTransactionByAddress()**](#nftgettransactionbyaddress) | **GET** `/v3/nft/transaction/{chain}/{address}/{tokenAddress}` | Get NFT transactions on a blockchain address
+[**nftGetTransactionByToken()**](#nftgettransactionbytoken) | **GET** `/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}` | Get NFT transactions for an NFT
+[**nftMintAddNftMinter()**](#nftmintaddnftminter) | **POST** `/v3/nft/mint/add` | Add an NFT minter to an NFT smart contract
+[**nftMintAddNftMinterKMS()**](#nftmintaddnftminterkms) | **POST** `/v3/nft/mint/add` | Add an NFT minter to an NFT smart contract
+[**nftMintBatchMintMultipleNft()**](#nftmintbatchmintmultiplenft) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftCelo()**](#nftmintbatchmintmultiplenftcelo) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftFlowKMS()**](#nftmintbatchmintmultiplenftflowkms) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftFlowMnemonic()**](#nftmintbatchmintmultiplenftflowmnemonic) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftFlowPK()**](#nftmintbatchmintmultiplenftflowpk) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftKMS()**](#nftmintbatchmintmultiplenftkms) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftKMSCelo()**](#nftmintbatchmintmultiplenftkmscelo) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftKMSTron()**](#nftmintbatchmintmultiplenftkmstron) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftMinter()**](#nftmintbatchmintmultiplenftminter) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftTron()**](#nftmintbatchmintmultiplenfttron) | **POST** `/v3/nft/mint/batch` | Mint multiple NFTs
+[**nftMintNft()**](#nftmintnft) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftAlgorand()**](#nftmintnftalgorand) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftAlgorandKMS()**](#nftmintnftalgorandkms) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftCelo()**](#nftmintnftcelo) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftExpress()**](#nftmintnftexpress) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftExpressAlgorand()**](#nftmintnftexpressalgorand) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftExpressSolana()**](#nftmintnftexpresssolana) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftFlowKMS()**](#nftmintnftflowkms) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftFlowMnemonic()**](#nftmintnftflowmnemonic) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftFlowPK()**](#nftmintnftflowpk) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftKMS()**](#nftmintnftkms) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftKMSCelo()**](#nftmintnftkmscelo) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftKMSTron()**](#nftmintnftkmstron) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftMinter()**](#nftmintnftminter) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftSolana()**](#nftmintnftsolana) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftSolanaKMS()**](#nftmintnftsolanakms) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftMintNftTron()**](#nftmintnfttron) | **POST** `/v3/nft/mint` | Mint an NFT
+[**nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftceloupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsceloupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmstronupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornfttronupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftTransactionTransferNft()**](#nfttransactiontransfernft) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftAlgo()**](#nfttransactiontransfernftalgo) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftAlgoExpress()**](#nfttransactiontransfernftalgoexpress) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftAlgoKMS()**](#nfttransactiontransfernftalgokms) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftCelo()**](#nfttransactiontransfernftcelo) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftFlowKMS()**](#nfttransactiontransfernftflowkms) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftFlowMnemonic()**](#nfttransactiontransfernftflowmnemonic) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftFlowPK()**](#nfttransactiontransfernftflowpk) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftKMS()**](#nfttransactiontransfernftkms) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftKMSCelo()**](#nfttransactiontransfernftkmscelo) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftKMSTron()**](#nfttransactiontransfernftkmstron) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftSolana()**](#nfttransactiontransfernftsolana) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftSolanaKMS()**](#nfttransactiontransfernftsolanakms) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftTransactionTransferNftTron()**](#nfttransactiontransfernfttron) | **POST** `/v3/nft/transaction` | Transfer an NFT
+[**nftVerifySolanaNFT()**](#nftverifysolananft) | **POST** `/v3/nft/verify` | Verify an NFT in an NFT collection on Solana
+[**nftVerifySolanaNFTKMS()**](#nftverifysolananftkms) | **POST** `/v3/nft/verify` | Verify an NFT in an NFT collection on Solana
 
 
 ## `nftBurnNft()`

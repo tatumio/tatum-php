@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class LitecoinApi extends AbstractApi {
     /**
      * Send LTC to Litecoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/litecoinTransactionLtcTransactionAddress
      *
      * @param \Tatum\Model\LtcTransactionAddress $ltc_transaction_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Send LTC to Litecoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/litecoinTransactionLtcTransactionAddressKMS
      *
      * @param \Tatum\Model\LtcTransactionAddressKMS $ltc_transaction_address_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Send LTC to Litecoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/litecoinTransactionLtcTransactionUTXO
      *
      * @param \Tatum\Model\LtcTransactionUTXO $ltc_transaction_utxo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Send LTC to Litecoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/litecoinTransactionLtcTransactionUTXOKMS
      *
      * @param \Tatum\Model\LtcTransactionUTXOKMS $ltc_transaction_utxokms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -123,8 +115,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Broadcast signed Litecoin transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -148,8 +138,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Generate Litecoin deposit address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -174,8 +162,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Generate Litecoin private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -199,8 +185,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Generate Litecoin wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -230,8 +214,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get the balance of a Litecoin address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetBalanceOfAddress
      *
      * @param string $address Address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -255,8 +237,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get Litecoin Block by hash or height
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetBlock
      *
      * @param string $hash Block hash or height.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -280,8 +260,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get Litecoin Blockchain Information
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetBlockChainInfo
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -303,8 +281,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get Litecoin Block hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetBlockHash
      *
      * @param float $i The number of blocks preceding a particular block on a block chain.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -328,8 +304,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get Mempool Transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetMempool
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -351,8 +325,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get Litecoin Transaction by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetRawTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -376,8 +348,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get Litecoin Transactions by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetTxByAddress
      *
      * @param string $address Address
      * @param float $page_size Max number of items per page is 50.
@@ -414,8 +384,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * Get information about a transaction output (UTXO) in a Litecoin transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcGetUTXO
      *
      * @param string $hash The transaction hash
      * @param float $index The index of the transaction output that you want to check for the UTXO
@@ -452,8 +420,6 @@ class LitecoinApi extends AbstractApi {
     
     /**
      * JSON RPC HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Litecoin/#operation/LtcRpcDriver
      *
      * @param \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

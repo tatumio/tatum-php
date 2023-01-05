@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class DogecoinApi extends AbstractApi {
     /**
      * Broadcast signed Dogecoin transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Generate Dogecoin deposit address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Generate Dogecoin private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Generate Dogecoin wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Get Dogecoin Block by hash or height
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGetBlock
      *
      * @param string $hash Block hash or height.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Get Dogecoin Blockchain Information
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGetBlockChainInfo
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -178,8 +166,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Get Dogecoin Block hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGetBlockHash
      *
      * @param float $i The number of blocks preceding a particular block on a block chain.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -203,8 +189,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Get Mempool Transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGetMempool
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -226,8 +210,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Get Dogecoin Transaction by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGetRawTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -251,8 +233,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Get information about a transaction output (UTXO) in a Dogecoin transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeGetUTXO
      *
      * @param string $hash The transaction hash
      * @param float $index The index of the transaction output that you want to check for the UTXO
@@ -289,8 +269,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * JSON RPC HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/DogeRpcDriver
      *
      * @param \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -314,8 +292,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Send DOGE to Dogecoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/dogecoinTransactionDogeTransactionUTXO
      *
      * @param \Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -339,8 +315,6 @@ class DogecoinApi extends AbstractApi {
     
     /**
      * Send DOGE to Dogecoin addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Dogecoin/#operation/dogecoinTransactionDogeTransactionUTXOKMS
      *
      * @param \Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

@@ -1,24 +1,25 @@
 # Tatum/Api/KuCoinApi
 
-All URIs are relative to https://api.tatum.io.
+* KuCoin [documentation](https://apidoc.tatum.io/tag/KuCoin/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**kcsBroadcast()**](#kcsbroadcast) | **POST** [/v3/kcs/broadcast](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsBroadcast) | Broadcast signed Kcs transaction
-[**kcsGenerateAddress()**](#kcsgenerateaddress) | **GET** [/v3/kcs/address/{xpub}/{index}](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGenerateAddress) | Generate Kcs account address from Extended public key
-[**kcsGenerateAddressPrivateKey()**](#kcsgenerateaddressprivatekey) | **POST** [/v3/kcs/wallet/priv](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGenerateAddressPrivateKey) | Generate Kcs private key
-[**kcsGenerateWallet()**](#kcsgeneratewallet) | **GET** [/v3/kcs/wallet](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGenerateWallet) | Generate Kcs wallet
-[**kcsGetBalance()**](#kcsgetbalance) | **GET** [/v3/kcs/account/balance/{address}](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetBalance) | Get Kcs Account balance
-[**kcsGetBlock()**](#kcsgetblock) | **GET** [/v3/kcs/block/{hash}](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetBlock) | Get Kcs block by hash
-[**kcsGetCurrentBlock()**](#kcsgetcurrentblock) | **GET** [/v3/kcs/block/current](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetCurrentBlock) | Get current block number
-[**kcsGetTransaction()**](#kcsgettransaction) | **GET** [/v3/kcs/transaction/{hash}](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetTransaction) | Get Kcs Transaction
-[**kcsGetTransactionCount()**](#kcsgettransactioncount) | **GET** [/v3/kcs/transaction/count/{address}](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsGetTransactionCount) | Get count of outgoing Kcs transactions
-[**kcsSmartcontractCallKcsSmartContractMethod()**](#kcssmartcontractcallkcssmartcontractmethod) | **POST** [/v3/kcs/smartcontract](https://apidoc.tatum.io/tag/KuCoin/#operation/kcsSmartcontractCallKcsSmartContractMethod) | Invoke a method in a smart contract on KuCoin Community Chain
-[**kcsSmartcontractCallKcsSmartContractMethodKMS()**](#kcssmartcontractcallkcssmartcontractmethodkms) | **POST** [/v3/kcs/smartcontract](https://apidoc.tatum.io/tag/KuCoin/#operation/kcsSmartcontractCallKcsSmartContractMethodKMS) | Invoke a method in a smart contract on KuCoin Community Chain
-[**kcsSmartcontractCallKcsSmartContractReadMethod()**](#kcssmartcontractcallkcssmartcontractreadmethod) | **POST** [/v3/kcs/smartcontract](https://apidoc.tatum.io/tag/KuCoin/#operation/kcsSmartcontractCallKcsSmartContractReadMethod) | Invoke a method in a smart contract on KuCoin Community Chain
-[**kcsTransactionTransferKcsBlockchain()**](#kcstransactiontransferkcsblockchain) | **POST** [/v3/kcs/transaction](https://apidoc.tatum.io/tag/KuCoin/#operation/kcsTransactionTransferKcsBlockchain) | Send KCS from account to account
-[**kcsTransactionTransferKcsBlockchainKMS()**](#kcstransactiontransferkcsblockchainkms) | **POST** [/v3/kcs/transaction](https://apidoc.tatum.io/tag/KuCoin/#operation/kcsTransactionTransferKcsBlockchainKMS) | Send KCS from account to account
-[**kcsWeb3Driver()**](#kcsweb3driver) | **POST** [/v3/kcs/web3/{xApiKey}](https://apidoc.tatum.io/tag/KuCoin/#operation/KcsWeb3Driver) | Web3 HTTP driver
+[**kcsBroadcast()**](#kcsbroadcast) | **POST** `/v3/kcs/broadcast` | Broadcast signed Kcs transaction
+[**kcsGenerateAddress()**](#kcsgenerateaddress) | **GET** `/v3/kcs/address/{xpub}/{index}` | Generate Kcs account address from Extended public key
+[**kcsGenerateAddressPrivateKey()**](#kcsgenerateaddressprivatekey) | **POST** `/v3/kcs/wallet/priv` | Generate Kcs private key
+[**kcsGenerateWallet()**](#kcsgeneratewallet) | **GET** `/v3/kcs/wallet` | Generate Kcs wallet
+[**kcsGetBalance()**](#kcsgetbalance) | **GET** `/v3/kcs/account/balance/{address}` | Get Kcs Account balance
+[**kcsGetBlock()**](#kcsgetblock) | **GET** `/v3/kcs/block/{hash}` | Get Kcs block by hash
+[**kcsGetCurrentBlock()**](#kcsgetcurrentblock) | **GET** `/v3/kcs/block/current` | Get current block number
+[**kcsGetTransaction()**](#kcsgettransaction) | **GET** `/v3/kcs/transaction/{hash}` | Get Kcs Transaction
+[**kcsGetTransactionCount()**](#kcsgettransactioncount) | **GET** `/v3/kcs/transaction/count/{address}` | Get count of outgoing Kcs transactions
+[**kcsSmartcontractCallKcsSmartContractMethod()**](#kcssmartcontractcallkcssmartcontractmethod) | **POST** `/v3/kcs/smartcontract` | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsSmartcontractCallKcsSmartContractMethodKMS()**](#kcssmartcontractcallkcssmartcontractmethodkms) | **POST** `/v3/kcs/smartcontract` | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsSmartcontractCallKcsSmartContractReadMethod()**](#kcssmartcontractcallkcssmartcontractreadmethod) | **POST** `/v3/kcs/smartcontract` | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsTransactionTransferKcsBlockchain()**](#kcstransactiontransferkcsblockchain) | **POST** `/v3/kcs/transaction` | Send KCS from account to account
+[**kcsTransactionTransferKcsBlockchainKMS()**](#kcstransactiontransferkcsblockchainkms) | **POST** `/v3/kcs/transaction` | Send KCS from account to account
+[**kcsWeb3Driver()**](#kcsweb3driver) | **POST** `/v3/kcs/web3/{xApiKey}` | Web3 HTTP driver
 
 
 ## `kcsBroadcast()`

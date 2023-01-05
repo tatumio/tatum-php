@@ -1,22 +1,23 @@
 # Tatum/Api/OrderBookApi
 
-All URIs are relative to https://api.tatum.io.
+* Order Book [documentation](https://apidoc.tatum.io/tag/Order-Book/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chartRequest()**](#chartrequest) | **POST** [/v3/trade/chart](https://apidoc.tatum.io/tag/Order-Book/#operation/chartRequest) | Obtain chart data from historical closed trades
-[**deleteAccountTrades()**](#deleteaccounttrades) | **DELETE** [/v3/trade/account/{id}](https://apidoc.tatum.io/tag/Order-Book/#operation/deleteAccountTrades) | Cancel all existing trades for account
-[**deleteTrade()**](#deletetrade) | **DELETE** [/v3/trade/{id}](https://apidoc.tatum.io/tag/Order-Book/#operation/deleteTrade) | Cancel existing trade
-[**getBuyTrades()**](#getbuytrades) | **GET** [/v3/trade/buy](https://apidoc.tatum.io/tag/Order-Book/#operation/getBuyTrades) | List all active buy trades
-[**getBuyTradesBody()**](#getbuytradesbody) | **POST** [/v3/trade/buy](https://apidoc.tatum.io/tag/Order-Book/#operation/getBuyTradesBody) | List all active buy trades
-[**getHistoricalTrades()**](#gethistoricaltrades) | **GET** [/v3/trade/history](https://apidoc.tatum.io/tag/Order-Book/#operation/getHistoricalTrades) | List all historical trades
-[**getHistoricalTradesBody()**](#gethistoricaltradesbody) | **POST** [/v3/trade/history](https://apidoc.tatum.io/tag/Order-Book/#operation/getHistoricalTradesBody) | List all historical trades
-[**getMatchedTrades()**](#getmatchedtrades) | **POST** [/v3/trade/matched](https://apidoc.tatum.io/tag/Order-Book/#operation/getMatchedTrades) | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-[**getSellTrades()**](#getselltrades) | **GET** [/v3/trade/sell](https://apidoc.tatum.io/tag/Order-Book/#operation/getSellTrades) | List all active sell trades
-[**getSellTradesBody()**](#getselltradesbody) | **POST** [/v3/trade/sell](https://apidoc.tatum.io/tag/Order-Book/#operation/getSellTradesBody) | List all active sell trades
-[**getTradeById()**](#gettradebyid) | **GET** [/v3/trade/{id}](https://apidoc.tatum.io/tag/Order-Book/#operation/getTradeById) | Get existing trade
-[**tradeCreateFutureTrade()**](#tradecreatefuturetrade) | **POST** [/v3/trade](https://apidoc.tatum.io/tag/Order-Book/#operation/tradeCreateFutureTrade) | Store buy / sell trade
-[**tradeCreateTrade()**](#tradecreatetrade) | **POST** [/v3/trade](https://apidoc.tatum.io/tag/Order-Book/#operation/tradeCreateTrade) | Store buy / sell trade
+[**chartRequest()**](#chartrequest) | **POST** `/v3/trade/chart` | Obtain chart data from historical closed trades
+[**deleteAccountTrades()**](#deleteaccounttrades) | **DELETE** `/v3/trade/account/{id}` | Cancel all existing trades for account
+[**deleteTrade()**](#deletetrade) | **DELETE** `/v3/trade/{id}` | Cancel existing trade
+[**getBuyTrades()**](#getbuytrades) | **GET** `/v3/trade/buy` | List all active buy trades
+[**getBuyTradesBody()**](#getbuytradesbody) | **POST** `/v3/trade/buy` | List all active buy trades
+[**getHistoricalTrades()**](#gethistoricaltrades) | **GET** `/v3/trade/history` | List all historical trades
+[**getHistoricalTradesBody()**](#gethistoricaltradesbody) | **POST** `/v3/trade/history` | List all historical trades
+[**getMatchedTrades()**](#getmatchedtrades) | **POST** `/v3/trade/matched` | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
+[**getSellTrades()**](#getselltrades) | **GET** `/v3/trade/sell` | List all active sell trades
+[**getSellTradesBody()**](#getselltradesbody) | **POST** `/v3/trade/sell` | List all active sell trades
+[**getTradeById()**](#gettradebyid) | **GET** `/v3/trade/{id}` | Get existing trade
+[**tradeCreateFutureTrade()**](#tradecreatefuturetrade) | **POST** `/v3/trade` | Store buy / sell trade
+[**tradeCreateTrade()**](#tradecreatetrade) | **POST** `/v3/trade` | Store buy / sell trade
 
 
 ## `chartRequest()`

@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class GasPumpApi extends AbstractApi {
     /**
      * Get the results of the address activation transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/ActivatedNotActivatedGasPumpAddresses
      *
      * @param string $chain The blockchain to work with
      * @param string $tx_id The ID of the address activation transaction
@@ -57,8 +55,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Approve the transfer of an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialApproveTransferCustodialWallet
      *
      * @param \Tatum\Model\ApproveTransferCustodialWallet $approve_transfer_custodial_wallet 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -82,8 +78,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Approve the transfer of an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialApproveTransferCustodialWalletCelo
      *
      * @param \Tatum\Model\ApproveTransferCustodialWalletCelo $approve_transfer_custodial_wallet_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -107,8 +101,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Approve the transfer of an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialApproveTransferCustodialWalletCeloKMS
      *
      * @param \Tatum\Model\ApproveTransferCustodialWalletCeloKMS $approve_transfer_custodial_wallet_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -132,8 +124,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Approve the transfer of an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialApproveTransferCustodialWalletKMS
      *
      * @param \Tatum\Model\ApproveTransferCustodialWalletKMS $approve_transfer_custodial_wallet_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -157,8 +147,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a gas pump wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialBatchGenerateCustodialWalletBatch
      *
      * @param \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -189,8 +177,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a gas pump wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialBatchGenerateCustodialWalletBatchCelo
      *
      * @param \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -221,8 +207,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a gas pump wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialBatchGenerateCustodialWalletBatchCeloKMS
      *
      * @param \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -253,8 +237,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a gas pump wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialBatchGenerateCustodialWalletBatchKMS
      *
      * @param \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -285,8 +267,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a gas pump wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialBatchGenerateCustodialWalletBatchPayer
      *
      * @param \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -317,8 +297,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a gas pump wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialBatchGenerateCustodialWalletBatchTron
      *
      * @param \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -349,8 +327,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a gas pump wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialBatchGenerateCustodialWalletBatchTronKMS
      *
      * @param \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -381,8 +357,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a custodial wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialGenerateCustodialWallet
      *
      * @param \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -406,8 +380,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a custodial wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialGenerateCustodialWalletCelo
      *
      * @param \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -431,8 +403,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a custodial wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialGenerateCustodialWalletCeloKMS
      *
      * @param \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -456,8 +426,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a custodial wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialGenerateCustodialWalletKMS
      *
      * @param \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -481,8 +449,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a custodial wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialGenerateCustodialWalletTron
      *
      * @param \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -506,8 +472,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Generate a custodial wallet address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialGenerateCustodialWalletTronKMS
      *
      * @param \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -531,8 +495,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer multiple assets from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferBatchTransferCustodialWalletBatch
      *
      * @param \Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -556,8 +518,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer multiple assets from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferBatchTransferCustodialWalletBatchCelo
      *
      * @param \Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -581,8 +541,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer multiple assets from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferBatchTransferCustodialWalletBatchCeloKMS
      *
      * @param \Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -606,8 +564,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer multiple assets from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferBatchTransferCustodialWalletBatchKMS
      *
      * @param \Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -631,8 +587,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer multiple assets from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferBatchTransferCustodialWalletBatchTron
      *
      * @param \Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -656,8 +610,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer multiple assets from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferBatchTransferCustodialWalletBatchTronKMS
      *
      * @param \Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -681,8 +633,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferCustodialWallet
      *
      * @param \Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -706,8 +656,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferCustodialWalletCelo
      *
      * @param \Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -731,8 +679,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferCustodialWalletCeloKMS
      *
      * @param \Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -756,8 +702,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferCustodialWalletKMS
      *
      * @param \Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -781,8 +725,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferCustodialWalletTron
      *
      * @param \Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -806,8 +748,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Transfer an asset from a gas pump address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/blockchainScCustodialTransferCustodialWalletTronKMS
      *
      * @param \Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -831,8 +771,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Activate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/gas-pumpActivateGasPump
      *
      * @param \Tatum\Model\ActivateGasPump $activate_gas_pump 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -856,8 +794,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Activate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/gas-pumpActivateGasPumpCelo
      *
      * @param \Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -881,8 +817,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Activate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/gas-pumpActivateGasPumpCeloKMS
      *
      * @param \Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -906,8 +840,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Activate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/gas-pumpActivateGasPumpKMS
      *
      * @param \Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -931,8 +863,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Activate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/gas-pumpActivateGasPumpTatum
      *
      * @param \Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -956,8 +886,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Activate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/gas-pumpActivateGasPumpTron
      *
      * @param \Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -981,8 +909,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Activate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/gas-pumpActivateGasPumpTronKMS
      *
      * @param \Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1006,8 +932,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Check whether the gas pump address with a specified index is activated
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/GasPumpAddressesActivatedOrNot
      *
      * @param string $chain The blockchain to work with
      * @param string $owner The blockchain address that owns the gas pump address to check; can be referred to as \&quot;master address\&quot;
@@ -1033,8 +957,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Precalculate gas pump addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/PrecalculateGasPumpAddresses
      *
      * @param \Tatum\Model\CreateGasPump|null $create_gas_pump 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1058,8 +980,6 @@ class GasPumpApi extends AbstractApi {
     
     /**
      * Get the custodial wallet address from the transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Gas-pump/#operation/SCGetCustodialAddresses
      *
      * @param string $chain Blockchain to work with
      * @param string $hash Transaction hash

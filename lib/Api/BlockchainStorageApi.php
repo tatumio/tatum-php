@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class BlockchainStorageApi extends AbstractApi {
     /**
      * Get a log record
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-storage/#operation/GetLog
      *
      * @param string $chain The blockchain to get the log record from
      * @param string $id The ID of the log record or transaction to get from the blockchain
@@ -60,8 +58,6 @@ class BlockchainStorageApi extends AbstractApi {
     
     /**
      * Store a log record
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-storage/#operation/recordCreateRecord
      *
      * @param \Tatum\Model\CreateRecord $create_record 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -85,8 +81,6 @@ class BlockchainStorageApi extends AbstractApi {
     
     /**
      * Store a log record
-     * 
-     * @see   https://apidoc.tatum.io/tag/Blockchain-storage/#operation/recordCreateRecordCelo
      *
      * @param \Tatum\Model\CreateRecordCelo $create_record_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

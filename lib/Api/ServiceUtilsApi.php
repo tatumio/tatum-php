@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class ServiceUtilsApi extends AbstractApi {
     /**
      * Freeze API Key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Service-utils/#operation/freezeApiKey
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -42,8 +40,6 @@ class ServiceUtilsApi extends AbstractApi {
     
     /**
      * Get information about your credit consumption for the last month
-     * 
-     * @see   https://apidoc.tatum.io/tag/Service-utils/#operation/getCredits
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -65,8 +61,6 @@ class ServiceUtilsApi extends AbstractApi {
     
     /**
      * Get API version
-     * 
-     * @see   https://apidoc.tatum.io/tag/Service-utils/#operation/getVersion
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -88,8 +82,6 @@ class ServiceUtilsApi extends AbstractApi {
     
     /**
      * Unfreeze API Key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Service-utils/#operation/unfreezeApiKey
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 

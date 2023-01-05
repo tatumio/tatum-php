@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class HarmonyApi extends AbstractApi {
     /**
      * Broadcast signed ONE transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @param float|0 $shard_id Shard to read data from
@@ -51,8 +49,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Transform HEX address to Bech32 ONE address format
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneFormatAddress
      *
      * @param string $address Address in HEX (ETH compatible) format.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -76,8 +72,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Generate ONE account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -102,8 +96,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Generate ONE private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -127,8 +119,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Generate ONE wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -158,8 +148,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Get ONE Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @param float|0 $shard_id Shard to read data from
@@ -186,8 +174,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Get ONE block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGetBlock
      *
      * @param string $hash Block hash or block number
      * @param float|0 $shard_id Shard to read data from
@@ -214,8 +200,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -237,8 +221,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Get ONE Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGetTransaction
      *
      * @param string $hash Transaction hash
      * @param float|0 $shard_id Shard to read data from
@@ -265,8 +247,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Get count of outgoing ONE transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneGetTransactionCount
      *
      * @param string $address address
      * @param float|0 $shard_id Shard to read data from
@@ -301,8 +281,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Harmony
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/oneSmartcontractCallOneReadSmartContractMethod
      *
      * @param \Tatum\Model\CallOneReadSmartContractMethod $call_one_read_smart_contract_method 
      * @param float|0 $shard_id Shard to read data from
@@ -329,8 +307,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Harmony
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/oneSmartcontractCallOneSmartContractMethod
      *
      * @param \Tatum\Model\CallOneSmartContractMethod $call_one_smart_contract_method 
      * @param float|0 $shard_id Shard to read data from
@@ -357,8 +333,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Harmony
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/oneSmartcontractCallOneSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallOneSmartContractMethodKMS $call_one_smart_contract_method_kms 
      * @param float|0 $shard_id Shard to read data from
@@ -385,8 +359,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Send ONE / HRM20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/oneTransactionTransferOneBlockchain
      *
      * @param \Tatum\Model\TransferOneBlockchain $transfer_one_blockchain 
      * @param float|0 $shard_id Shard to read data from
@@ -413,8 +385,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Send ONE / HRM20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/oneTransactionTransferOneBlockchainKMS
      *
      * @param \Tatum\Model\TransferOneBlockchainKMS $transfer_one_blockchain_kms 
      * @param float|0 $shard_id Shard to read data from
@@ -441,8 +411,6 @@ class HarmonyApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Harmony/#operation/OneWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

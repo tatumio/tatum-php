@@ -1,28 +1,29 @@
 # Tatum/Api/AccountApi
 
-All URIs are relative to https://api.tatum.io.
+* Account [documentation](https://apidoc.tatum.io/tag/Account/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activateAccount()**](#activateaccount) | **PUT** [/v3/ledger/account/{id}/activate](https://apidoc.tatum.io/tag/Account/#operation/activateAccount) | Activate account
-[**blockAmount()**](#blockamount) | **POST** [/v3/ledger/account/block/{id}](https://apidoc.tatum.io/tag/Account/#operation/blockAmount) | Block an amount in an account
-[**createAccountBatch()**](#createaccountbatch) | **POST** [/v3/ledger/account/batch](https://apidoc.tatum.io/tag/Account/#operation/createAccountBatch) | Create multiple accounts in a batch call
-[**deactivateAccount()**](#deactivateaccount) | **PUT** [/v3/ledger/account/{id}/deactivate](https://apidoc.tatum.io/tag/Account/#operation/deactivateAccount) | Deactivate account
-[**deleteAllBlockAmount()**](#deleteallblockamount) | **DELETE** [/v3/ledger/account/block/account/{id}](https://apidoc.tatum.io/tag/Account/#operation/deleteAllBlockAmount) | Unblock all blocked amounts in an account
-[**deleteBlockAmount()**](#deleteblockamount) | **DELETE** [/v3/ledger/account/block/{id}](https://apidoc.tatum.io/tag/Account/#operation/deleteBlockAmount) | Unblock a blocked amount in an account
-[**freezeAccount()**](#freezeaccount) | **PUT** [/v3/ledger/account/{id}/freeze](https://apidoc.tatum.io/tag/Account/#operation/freezeAccount) | Freeze account
-[**getAccountBalance()**](#getaccountbalance) | **GET** [/v3/ledger/account/{id}/balance](https://apidoc.tatum.io/tag/Account/#operation/getAccountBalance) | Get account balance
-[**getAccountByAccountId()**](#getaccountbyaccountid) | **GET** [/v3/ledger/account/{id}](https://apidoc.tatum.io/tag/Account/#operation/getAccountByAccountId) | Get account by ID
-[**getAccounts()**](#getaccounts) | **GET** [/v3/ledger/account](https://apidoc.tatum.io/tag/Account/#operation/getAccounts) | List all accounts
-[**getAccountsByCustomerId()**](#getaccountsbycustomerid) | **GET** [/v3/ledger/account/customer/{id}](https://apidoc.tatum.io/tag/Account/#operation/getAccountsByCustomerId) | List all customer accounts
-[**getAccountsCount()**](#getaccountscount) | **GET** [/v3/ledger/account/count](https://apidoc.tatum.io/tag/Account/#operation/getAccountsCount) | Count of found entities for get accounts request
-[**getBlockAmount()**](#getblockamount) | **GET** [/v3/ledger/account/block/{id}](https://apidoc.tatum.io/tag/Account/#operation/getBlockAmount) | Get blocked amounts in an account
-[**getBlockAmountById()**](#getblockamountbyid) | **GET** [/v3/ledger/account/block/{id}/detail](https://apidoc.tatum.io/tag/Account/#operation/getBlockAmountById) | Get blocked amount by ID
-[**ledgerAccountCreateAccount()**](#ledgeraccountcreateaccount) | **POST** [/v3/ledger/account](https://apidoc.tatum.io/tag/Account/#operation/ledgerAccountCreateAccount) | Create a virtual account
-[**ledgerAccountCreateAccountXpub()**](#ledgeraccountcreateaccountxpub) | **POST** [/v3/ledger/account](https://apidoc.tatum.io/tag/Account/#operation/ledgerAccountCreateAccountXpub) | Create a virtual account
-[**unblockAmountWithTransaction()**](#unblockamountwithtransaction) | **PUT** [/v3/ledger/account/block/{id}](https://apidoc.tatum.io/tag/Account/#operation/unblockAmountWithTransaction) | Unblock an amount in an account and perform a transaction
-[**unfreezeAccount()**](#unfreezeaccount) | **PUT** [/v3/ledger/account/{id}/unfreeze](https://apidoc.tatum.io/tag/Account/#operation/unfreezeAccount) | Unfreeze account
-[**updateAccountByAccountId()**](#updateaccountbyaccountid) | **PUT** [/v3/ledger/account/{id}](https://apidoc.tatum.io/tag/Account/#operation/updateAccountByAccountId) | Update account
+[**activateAccount()**](#activateaccount) | **PUT** `/v3/ledger/account/{id}/activate` | Activate account
+[**blockAmount()**](#blockamount) | **POST** `/v3/ledger/account/block/{id}` | Block an amount in an account
+[**createAccountBatch()**](#createaccountbatch) | **POST** `/v3/ledger/account/batch` | Create multiple accounts in a batch call
+[**deactivateAccount()**](#deactivateaccount) | **PUT** `/v3/ledger/account/{id}/deactivate` | Deactivate account
+[**deleteAllBlockAmount()**](#deleteallblockamount) | **DELETE** `/v3/ledger/account/block/account/{id}` | Unblock all blocked amounts in an account
+[**deleteBlockAmount()**](#deleteblockamount) | **DELETE** `/v3/ledger/account/block/{id}` | Unblock a blocked amount in an account
+[**freezeAccount()**](#freezeaccount) | **PUT** `/v3/ledger/account/{id}/freeze` | Freeze account
+[**getAccountBalance()**](#getaccountbalance) | **GET** `/v3/ledger/account/{id}/balance` | Get account balance
+[**getAccountByAccountId()**](#getaccountbyaccountid) | **GET** `/v3/ledger/account/{id}` | Get account by ID
+[**getAccounts()**](#getaccounts) | **GET** `/v3/ledger/account` | List all accounts
+[**getAccountsByCustomerId()**](#getaccountsbycustomerid) | **GET** `/v3/ledger/account/customer/{id}` | List all customer accounts
+[**getAccountsCount()**](#getaccountscount) | **GET** `/v3/ledger/account/count` | Count of found entities for get accounts request
+[**getBlockAmount()**](#getblockamount) | **GET** `/v3/ledger/account/block/{id}` | Get blocked amounts in an account
+[**getBlockAmountById()**](#getblockamountbyid) | **GET** `/v3/ledger/account/block/{id}/detail` | Get blocked amount by ID
+[**ledgerAccountCreateAccount()**](#ledgeraccountcreateaccount) | **POST** `/v3/ledger/account` | Create a virtual account
+[**ledgerAccountCreateAccountXpub()**](#ledgeraccountcreateaccountxpub) | **POST** `/v3/ledger/account` | Create a virtual account
+[**unblockAmountWithTransaction()**](#unblockamountwithtransaction) | **PUT** `/v3/ledger/account/block/{id}` | Unblock an amount in an account and perform a transaction
+[**unfreezeAccount()**](#unfreezeaccount) | **PUT** `/v3/ledger/account/{id}/unfreeze` | Unfreeze account
+[**updateAccountByAccountId()**](#updateaccountbyaccountid) | **PUT** `/v3/ledger/account/{id}` | Update account
 
 
 ## `activateAccount()`

@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class CeloApi extends AbstractApi {
     /**
      * Broadcast signed Celo transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Generate Celo account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Generate Celo private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Generate Celo wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Get Celo Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Get Celo block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGetBlock
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -203,8 +189,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Get Celo Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -228,8 +212,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Get Celo transactions by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGetTransactionByAddress
      *
      * @param string $address Account address you want to get balance of
      * @param float $page_size Max number of items per page is 50.
@@ -280,8 +262,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Get count of outgoing Celo transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloGetTransactionCount
      *
      * @param string $address address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -313,8 +293,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Celo
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/celoSmartcontractCallCeloReadSmartContractMethod
      *
      * @param \Tatum\Model\CallCeloReadSmartContractMethod $call_celo_read_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -338,8 +316,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Celo
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/celoSmartcontractCallCeloSmartContractMethod
      *
      * @param \Tatum\Model\CallCeloSmartContractMethod $call_celo_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -363,8 +339,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Celo
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/celoSmartcontractCallCeloSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallCeloSmartContractMethodKMS $call_celo_smart_contract_method_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -388,8 +362,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Send Celo / ERC20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/celoTransactionTransferCeloBlockchain
      *
      * @param \Tatum\Model\TransferCeloBlockchain $transfer_celo_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -413,8 +385,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Send Celo / ERC20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/celoTransactionTransferCeloBlockchainKMS
      *
      * @param \Tatum\Model\TransferCeloBlockchainKMS $transfer_celo_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -438,8 +408,6 @@ class CeloApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Celo/#operation/CeloWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

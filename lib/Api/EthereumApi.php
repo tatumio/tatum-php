@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class EthereumApi extends AbstractApi {
     /**
      * Broadcast signed Ethereum transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -55,8 +53,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Generate Ethereum account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of the address to be generated.
@@ -88,8 +84,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Generate Ethereum private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -120,8 +114,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Generate Ethereum wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generating extended public and private keys.
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -158,8 +150,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Get the ETH balance of an Ethereum account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -190,8 +180,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Get Ethereum block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGetBlock
      *
      * @param string $hash Block hash or block number
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -222,8 +210,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGetCurrentBlock
      *
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -253,8 +239,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Get Ethereum internal transactions by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGetInternalTransactionByAddress
      *
      * @param string $address Account address you want to get balance of
      * @param float $page_size Max number of items per page is 50.
@@ -298,8 +282,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Get Ethereum Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGetTransaction
      *
      * @param string $hash Transaction hash
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -330,8 +312,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Get Ethereum transactions by address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGetTransactionByAddress
      *
      * @param string $address Account address you want to get balance of
      * @param float $page_size Max number of items per page is 50.
@@ -389,8 +369,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Get count of outgoing Ethereum transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthGetTransactionCount
      *
      * @param string $address address
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -429,8 +407,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/EthWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 
@@ -458,8 +434,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Ethereum
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/ethereumSmartcontractCallReadSmartContractMethod
      *
      * @param \Tatum\Model\CallReadSmartContractMethod $call_read_smart_contract_method 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -490,8 +464,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Ethereum
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/ethereumSmartcontractCallSmartContractMethod
      *
      * @param \Tatum\Model\CallSmartContractMethod $call_smart_contract_method 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -522,8 +494,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Ethereum
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/ethereumSmartcontractCallSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallSmartContractMethodKMS $call_smart_contract_method_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -554,8 +524,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Send Ethereum / ERC20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/ethereumTransactionTransferEthBlockchain
      *
      * @param \Tatum\Model\TransferEthBlockchain $transfer_eth_blockchain 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -586,8 +554,6 @@ class EthereumApi extends AbstractApi {
     
     /**
      * Send Ethereum / ERC20 from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Ethereum/#operation/ethereumTransactionTransferEthBlockchainKMS
      *
      * @param \Tatum\Model\TransferEthBlockchainKMS $transfer_eth_blockchain_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.

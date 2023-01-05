@@ -1,26 +1,27 @@
 # Tatum/Api/BlockchainFeesApi
 
-All URIs are relative to https://api.tatum.io.
+* Blockchain fees [documentation](https://apidoc.tatum.io/tag/Blockchain-fees/)
+* HTTP requests are relative to https://api.tatum.io
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blockchainEstimateFee()**](#blockchainestimatefee) | **POST** [/v3/blockchain/estimate](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFee) | Estimate the fee for a transaction
-[**blockchainEstimateFeeBatchMintNft()**](#blockchainestimatefeebatchmintnft) | **POST** [/v3/blockchain/estimate](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeBatchMintNft) | Estimate the fee for a transaction
-[**blockchainEstimateFeeDeployCustodialWallet()**](#blockchainestimatefeedeploycustodialwallet) | **POST** [/v3/blockchain/estimate](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeDeployCustodialWallet) | Estimate the fee for a transaction
-[**blockchainEstimateFeeFromAddress()**](#blockchainestimatefeefromaddress) | **POST** [/v3/blockchain/estimate](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeFromAddress) | Estimate the fee for a transaction
-[**blockchainEstimateFeeFromUTXO()**](#blockchainestimatefeefromutxo) | **POST** [/v3/blockchain/estimate](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeFromUTXO) | Estimate the fee for a transaction
-[**blockchainEstimateFeeTransferFromCustodial()**](#blockchainestimatefeetransferfromcustodial) | **POST** [/v3/blockchain/estimate](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/blockchainEstimateFeeTransferFromCustodial) | Estimate the fee for a transaction
-[**bscEstimateGas()**](#bscestimategas) | **POST** [/v3/bsc/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/BscEstimateGas) | Estimate BNB Smart Chain transaction fees
-[**celoEstimateGas()**](#celoestimategas) | **POST** [/v3/celo/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/CeloEstimateGas) | Estimate Celo Chain transaction fees
-[**egldEstimateGas()**](#egldestimategas) | **POST** [/v3/egld/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/EgldEstimateGas) | Estimate EGLD transaction fees
-[**ethEstimateGas()**](#ethestimategas) | **POST** [/v3/ethereum/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/EthEstimateGas) | Estimate Ethereum transaction fees
-[**ethEstimateGasBatch()**](#ethestimategasbatch) | **POST** [/v3/ethereum/gas/batch](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/EthEstimateGasBatch) | Estimate multiple Ethereum transaction fees
-[**getBlockchainFee()**](#getblockchainfee) | **GET** [/v3/blockchain/fee/{chain}](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/getBlockchainFee) | Get recommended blockchain fee / gas price
-[**kcsEstimateGas()**](#kcsestimategas) | **POST** [/v3/kcs/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/KcsEstimateGas) | Estimate KuCoin Community Chain transaction fees
-[**klaytnEstimateGas()**](#klaytnestimategas) | **POST** [/v3/klaytn/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/KlaytnEstimateGas) | Estimate Klaytn transaction fees
-[**polygonEstimateGas()**](#polygonestimategas) | **POST** [/v3/polygon/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/PolygonEstimateGas) | Estimate Polygon transaction fees
-[**vetEstimateGas()**](#vetestimategas) | **POST** [/v3/vet/transaction/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/VetEstimateGas) | Estimate VeChain Gas for transaction
-[**xdcEstimateGas()**](#xdcestimategas) | **POST** [/v3/xdc/gas](https://apidoc.tatum.io/tag/Blockchain-fees/#operation/XdcEstimateGas) | Estimate XinFin transaction fees
+[**blockchainEstimateFee()**](#blockchainestimatefee) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
+[**blockchainEstimateFeeBatchMintNft()**](#blockchainestimatefeebatchmintnft) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
+[**blockchainEstimateFeeDeployCustodialWallet()**](#blockchainestimatefeedeploycustodialwallet) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
+[**blockchainEstimateFeeFromAddress()**](#blockchainestimatefeefromaddress) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
+[**blockchainEstimateFeeFromUTXO()**](#blockchainestimatefeefromutxo) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
+[**blockchainEstimateFeeTransferFromCustodial()**](#blockchainestimatefeetransferfromcustodial) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
+[**bscEstimateGas()**](#bscestimategas) | **POST** `/v3/bsc/gas` | Estimate BNB Smart Chain transaction fees
+[**celoEstimateGas()**](#celoestimategas) | **POST** `/v3/celo/gas` | Estimate Celo Chain transaction fees
+[**egldEstimateGas()**](#egldestimategas) | **POST** `/v3/egld/gas` | Estimate EGLD transaction fees
+[**ethEstimateGas()**](#ethestimategas) | **POST** `/v3/ethereum/gas` | Estimate Ethereum transaction fees
+[**ethEstimateGasBatch()**](#ethestimategasbatch) | **POST** `/v3/ethereum/gas/batch` | Estimate multiple Ethereum transaction fees
+[**getBlockchainFee()**](#getblockchainfee) | **GET** `/v3/blockchain/fee/{chain}` | Get recommended blockchain fee / gas price
+[**kcsEstimateGas()**](#kcsestimategas) | **POST** `/v3/kcs/gas` | Estimate KuCoin Community Chain transaction fees
+[**klaytnEstimateGas()**](#klaytnestimategas) | **POST** `/v3/klaytn/gas` | Estimate Klaytn transaction fees
+[**polygonEstimateGas()**](#polygonestimategas) | **POST** `/v3/polygon/gas` | Estimate Polygon transaction fees
+[**vetEstimateGas()**](#vetestimategas) | **POST** `/v3/vet/transaction/gas` | Estimate VeChain Gas for transaction
+[**xdcEstimateGas()**](#xdcestimategas) | **POST** `/v3/xdc/gas` | Estimate XinFin transaction fees
 
 
 ## `blockchainEstimateFee()`

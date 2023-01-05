@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class AccountApi extends AbstractApi {
     /**
      * Activate account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/activateAccount
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -44,8 +42,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Block an amount in an account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/blockAmount
      *
      * @param string $id Account ID
      * @param \Tatum\Model\BlockAmount $block_amount 
@@ -70,8 +66,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Create multiple accounts in a batch call
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/createAccountBatch
      *
      * @param \Tatum\Model\CreateAccountBatch $create_account_batch 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -95,8 +89,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Deactivate account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/deactivateAccount
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -116,8 +108,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Unblock all blocked amounts in an account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/deleteAllBlockAmount
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -137,8 +127,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Unblock a blocked amount in an account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/deleteBlockAmount
      *
      * @param string $id Blockage ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -158,8 +146,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Freeze account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/freezeAccount
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -179,8 +165,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Get account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/getAccountBalance
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -204,8 +188,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Get account by ID
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/getAccountByAccountId
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -229,8 +211,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * List all accounts
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/getAccounts
      *
      * @param float|null $page_size Max number of items per page is 50.
      * @param float|null $page Page number
@@ -288,8 +268,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * List all customer accounts
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/getAccountsByCustomerId
      *
      * @param float $page_size Max number of items per page is 50.
      * @param string $id Internal customer ID
@@ -336,8 +314,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Count of found entities for get accounts request
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/getAccountsCount
      *
      * @param float|null $page_size Max number of items per page is 50.
      * @param float|null $page Page number
@@ -395,8 +371,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Get blocked amounts in an account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/getBlockAmount
      *
      * @param string $id Account ID
      * @param float $page_size Max number of items per page is 50.
@@ -433,8 +407,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Get blocked amount by ID
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/getBlockAmountById
      *
      * @param string $id Blocked amount ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -458,8 +430,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Create a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/ledgerAccountCreateAccount
      *
      * @param \Tatum\Model\CreateAccount $create_account 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -483,8 +453,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Create a virtual account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/ledgerAccountCreateAccountXpub
      *
      * @param \Tatum\Model\CreateAccountXpub $create_account_xpub 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -508,8 +476,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Unblock an amount in an account and perform a transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/unblockAmountWithTransaction
      *
      * @param string $id Blockage ID
      * @param \Tatum\Model\UnblockAmount $unblock_amount 
@@ -534,8 +500,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Unfreeze account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/unfreezeAccount
      *
      * @param string $id Account ID
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -555,8 +519,6 @@ class AccountApi extends AbstractApi {
     
     /**
      * Update account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Account/#operation/updateAccountByAccountId
      *
      * @param string $id Account ID
      * @param \Tatum\Model\UpdateAccount $update_account 

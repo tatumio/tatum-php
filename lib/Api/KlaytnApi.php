@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class KlaytnApi extends AbstractApi {
     /**
      * Broadcast signed Klaytn transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnBroadcast
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Generate Klaytn account address from Extended public key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGenerateAddress
      *
      * @param string $xpub Extended public key of wallet.
      * @param float $index Derivation index of desired address to be generated.
@@ -74,8 +70,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Generate Klaytn private key
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGenerateAddressPrivateKey
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -99,8 +93,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Generate Klaytn wallet
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGenerateWallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -130,8 +122,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Get Klaytn Account balance
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGetBalance
      *
      * @param string $address Account address you want to get balance of
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -155,8 +145,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Get Klaytn block by hash
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGetBlock
      *
      * @param string $hash Block hash or block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -180,8 +168,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Get current block number
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGetCurrentBlock
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -203,8 +189,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Get Klaytn Transaction
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGetTransaction
      *
      * @param string $hash Transaction hash
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -228,8 +212,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Get count of outgoing Klaytn transactions
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnGetTransactionCount
      *
      * @param string $address address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -261,8 +243,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Klaytn
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/klaytnSmartcontractCallKlaytnSmartContractMethod
      *
      * @param \Tatum\Model\CallKlaytnSmartContractMethod $call_klaytn_smart_contract_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -286,8 +266,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Klaytn
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/klaytnSmartcontractCallKlaytnSmartContractMethodKMS
      *
      * @param \Tatum\Model\CallKlaytnSmartContractMethodKMS $call_klaytn_smart_contract_method_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -311,8 +289,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Invoke a method in a smart contract on Klaytn
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/klaytnSmartcontractCallKlaytnSmartContractReadMethod
      *
      * @param \Tatum\Model\CallKlaytnSmartContractReadMethod $call_klaytn_smart_contract_read_method 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -336,8 +312,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Send KLAY from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/klaytnTransactionTransferKlaytnBlockchain
      *
      * @param \Tatum\Model\TransferKlaytnBlockchain $transfer_klaytn_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -361,8 +335,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Send KLAY from account to account
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/klaytnTransactionTransferKlaytnBlockchainKMS
      *
      * @param \Tatum\Model\TransferKlaytnBlockchainKMS $transfer_klaytn_blockchain_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -386,8 +358,6 @@ class KlaytnApi extends AbstractApi {
     
     /**
      * Web3 HTTP driver
-     * 
-     * @see   https://apidoc.tatum.io/tag/Klaytn/#operation/KlaytnWeb3Driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 

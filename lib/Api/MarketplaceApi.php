@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class MarketplaceApi extends AbstractApi {
     /**
      * Buy an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingBuyAssetOnMarketplace
      *
      * @param \Tatum\Model\BuyAssetOnMarketplace $buy_asset_on_marketplace 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Buy an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingBuyAssetOnMarketplaceCelo
      *
      * @param \Tatum\Model\BuyAssetOnMarketplaceCelo $buy_asset_on_marketplace_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,8 +69,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Buy an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingBuyAssetOnMarketplaceCeloKMS
      *
      * @param \Tatum\Model\BuyAssetOnMarketplaceCeloKMS $buy_asset_on_marketplace_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -98,8 +92,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Buy an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingBuyAssetOnMarketplaceKMS
      *
      * @param \Tatum\Model\BuyAssetOnMarketplaceKMS $buy_asset_on_marketplace_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -123,8 +115,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Buy an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingBuyAssetOnMarketplaceSolana
      *
      * @param \Tatum\Model\BuyAssetOnMarketplaceSolana $buy_asset_on_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -148,8 +138,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Buy an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingBuyAssetOnMarketplaceSolanaKMS
      *
      * @param \Tatum\Model\BuyAssetOnMarketplaceSolanaKMS $buy_asset_on_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -173,8 +161,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingCancelSellAssetOnMarketplace
      *
      * @param \Tatum\Model\CancelSellAssetOnMarketplace $cancel_sell_asset_on_marketplace 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -198,8 +184,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingCancelSellAssetOnMarketplaceCelo
      *
      * @param \Tatum\Model\CancelSellAssetOnMarketplaceCelo $cancel_sell_asset_on_marketplace_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -223,8 +207,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingCancelSellAssetOnMarketplaceCeloKMS
      *
      * @param \Tatum\Model\CancelSellAssetOnMarketplaceCeloKMS $cancel_sell_asset_on_marketplace_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -248,8 +230,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS
      *
      * @param \Tatum\Model\CancelSellAssetOnMarketplaceKMS $cancel_sell_asset_on_marketplace_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -273,8 +253,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana
      *
      * @param \Tatum\Model\CancelSellAssetOnMarketplaceSolana $cancel_sell_asset_on_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -298,8 +276,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Cancel the selling of an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS
      *
      * @param \Tatum\Model\CancelSellAssetOnMarketplaceSolanaKMS $cancel_sell_asset_on_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -323,8 +299,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -348,8 +322,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingFeeUpdateFeeCeloUpdate
      *
      * @param \Tatum\Model\UpdateFeeCelo $update_fee_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -373,8 +345,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingFeeUpdateFeeKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeKMS $update_fee_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -398,8 +368,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -423,8 +391,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate
      *
      * @param \Tatum\Model\UpdateFeeSolana $update_fee_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -448,8 +414,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingFeeUpdateFeeUpdate
      *
      * @param \Tatum\Model\UpdateFee $update_fee 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -473,8 +437,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Create an NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingGenerateMarketplace
      *
      * @param \Tatum\Model\GenerateMarketplace $generate_marketplace 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -498,8 +460,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Create an NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingGenerateMarketplaceCelo
      *
      * @param \Tatum\Model\GenerateMarketplaceCelo $generate_marketplace_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -523,8 +483,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Create an NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingGenerateMarketplaceCeloKMS
      *
      * @param \Tatum\Model\GenerateMarketplaceCeloKMS $generate_marketplace_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -548,8 +506,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Create an NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingGenerateMarketplaceKMS
      *
      * @param \Tatum\Model\GenerateMarketplaceKMS $generate_marketplace_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -573,8 +529,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Create an NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingGenerateMarketplaceSolana
      *
      * @param \Tatum\Model\GenerateMarketplaceSolana $generate_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -598,8 +552,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Create an NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingGenerateMarketplaceSolanaKMS
      *
      * @param \Tatum\Model\GenerateMarketplaceSolanaKMS $generate_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -623,8 +575,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -648,8 +598,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -673,8 +621,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -698,8 +644,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -723,8 +667,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -748,8 +690,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update the recipient of the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate
      *
      * @param \Tatum\Model\UpdateFeeRecipient $update_fee_recipient 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -773,8 +713,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Sell an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingSellAssetOnMarketplace
      *
      * @param \Tatum\Model\SellAssetOnMarketplace $sell_asset_on_marketplace 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -798,8 +736,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Sell an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingSellAssetOnMarketplaceCelo
      *
      * @param \Tatum\Model\SellAssetOnMarketplaceCelo $sell_asset_on_marketplace_celo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -823,8 +759,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Sell an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS
      *
      * @param \Tatum\Model\SellAssetOnMarketplaceCeloKMS $sell_asset_on_marketplace_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -848,8 +782,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Sell an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingSellAssetOnMarketplaceKMS
      *
      * @param \Tatum\Model\SellAssetOnMarketplaceKMS $sell_asset_on_marketplace_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -873,8 +805,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Sell an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingSellAssetOnMarketplaceSolana
      *
      * @param \Tatum\Model\SellAssetOnMarketplaceSolana $sell_asset_on_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -898,8 +828,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Sell an asset on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS
      *
      * @param \Tatum\Model\SellAssetOnMarketplaceSolanaKMS $sell_asset_on_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -923,8 +851,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update an NFT marketplace on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate
      *
      * @param \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -948,8 +874,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Update an NFT marketplace on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate
      *
      * @param \Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -973,8 +897,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Withdraw funds from the marketplace fee account on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana
      *
      * @param \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -998,8 +920,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Withdraw funds from the marketplace fee account on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS
      *
      * @param \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1023,8 +943,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Withdraw funds from the marketplace treasury account on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana
      *
      * @param \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1048,8 +966,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Withdraw funds from the marketplace treasury account on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolanaKMS
      *
      * @param \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1073,8 +989,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Get the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/GetMarketplaceFee
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -1099,8 +1013,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Get the recipient of the NFT marketplace fee
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/GetMarketplaceFeeRecipient
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -1125,8 +1037,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Get information about an NFT marketplace on Solana
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/GetMarketplaceInfo
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -1151,8 +1061,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Get information about a listing on the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/GetMarketplaceListing
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address
@@ -1178,8 +1086,6 @@ class MarketplaceApi extends AbstractApi {
     
     /**
      * Get the listings of a certain type from the NFT marketplace
-     * 
-     * @see   https://apidoc.tatum.io/tag/Marketplace/#operation/GetMarketplaceListings
      *
      * @param string $chain Blockchain to work with
      * @param string $contract_address Contract address

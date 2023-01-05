@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class WithdrawalApi extends AbstractApi {
     /**
      * Broadcast signed transaction and complete withdrawal
-     * 
-     * @see   https://apidoc.tatum.io/tag/Withdrawal/#operation/broadcastBlockchainTransaction
      *
      * @param \Tatum\Model\BroadcastWithdrawal $broadcast_withdrawal 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class WithdrawalApi extends AbstractApi {
     
     /**
      * Cancel withdrawal
-     * 
-     * @see   https://apidoc.tatum.io/tag/Withdrawal/#operation/cancelInProgressWithdrawal
      *
      * @param string $id ID of created withdrawal
      * @param bool|true $revert Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum based currencies when gas was consumed but transaction was reverted.
@@ -80,8 +76,6 @@ class WithdrawalApi extends AbstractApi {
     
     /**
      * Complete withdrawal
-     * 
-     * @see   https://apidoc.tatum.io/tag/Withdrawal/#operation/completeWithdrawal
      *
      * @param string $id ID of created withdrawal
      * @param string $tx_id Blockchain transaction ID of created withdrawal
@@ -118,8 +112,6 @@ class WithdrawalApi extends AbstractApi {
     
     /**
      * Get withdrawals
-     * 
-     * @see   https://apidoc.tatum.io/tag/Withdrawal/#operation/GetWithdrawals
      *
      * @param float $page_size Max number of items per page is 50.
      * @param string|null $currency Currency of the withdrawal
@@ -167,8 +159,6 @@ class WithdrawalApi extends AbstractApi {
     
     /**
      * Store withdrawal
-     * 
-     * @see   https://apidoc.tatum.io/tag/Withdrawal/#operation/storeWithdrawal
      *
      * @param \Tatum\Model\Withdrawal $withdrawal 
      * @throws \Tatum\Sdk\ApiException on non-2xx response

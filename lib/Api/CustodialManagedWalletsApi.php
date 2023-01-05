@@ -23,8 +23,6 @@ use Tatum\Sdk\Serializer as S;
 class CustodialManagedWalletsApi extends AbstractApi {
     /**
      * Create managed address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialCreateWallet
      *
      * @param \Tatum\Model\CustodialCreateWalletRequest|null $custodial_create_wallet_request 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -48,8 +46,6 @@ class CustodialManagedWalletsApi extends AbstractApi {
     
     /**
      * Delete managed address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialDeleteWallet
      *
      * @param string $id WalletID of the managed address
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -69,8 +65,6 @@ class CustodialManagedWalletsApi extends AbstractApi {
     
     /**
      * Get managed address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialGetWallet
      *
      * @param string $id WalletID of the managed address
      * @param bool|false $export If set to \&quot;true\&quot;, returns the private key in the response; if not set, defaults to \&quot;false\&quot; (the private key is not included in the response)
@@ -97,8 +91,6 @@ class CustodialManagedWalletsApi extends AbstractApi {
     
     /**
      * Get managed addresses
-     * 
-     * @see   https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialGetWallets
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -120,8 +112,6 @@ class CustodialManagedWalletsApi extends AbstractApi {
     
     /**
      * Sign and transfer using managed address
-     * 
-     * @see   https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialTransferManagedAddress
      *
      * @param \Tatum\Model\TransferManagedAddress|null $transfer_managed_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
