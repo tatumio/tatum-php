@@ -74,7 +74,7 @@ class Transaction extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getOperationTypeAllowableValues(): array {
         return [
@@ -91,7 +91,7 @@ class Transaction extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTransactionTypeAllowableValues(): array {
         return [

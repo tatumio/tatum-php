@@ -4,22 +4,22 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**celoBroadcast()**](#celobroadcast) | **POST** [/v3/celo/broadcast](https://apidoc.tatum.io/tag/Celo#operation/CeloBroadcast) | Broadcast signed Celo transaction
-[**celoGenerateAddress()**](#celogenerateaddress) | **GET** [/v3/celo/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Celo#operation/CeloGenerateAddress) | Generate Celo account address from Extended public key
-[**celoGenerateAddressPrivateKey()**](#celogenerateaddressprivatekey) | **POST** [/v3/celo/wallet/priv](https://apidoc.tatum.io/tag/Celo#operation/CeloGenerateAddressPrivateKey) | Generate Celo private key
-[**celoGenerateWallet()**](#celogeneratewallet) | **GET** [/v3/celo/wallet](https://apidoc.tatum.io/tag/Celo#operation/CeloGenerateWallet) | Generate Celo wallet
-[**celoGetBalance()**](#celogetbalance) | **GET** [/v3/celo/account/balance/{address}](https://apidoc.tatum.io/tag/Celo#operation/CeloGetBalance) | Get Celo Account balance
-[**celoGetBlock()**](#celogetblock) | **GET** [/v3/celo/block/{hash}](https://apidoc.tatum.io/tag/Celo#operation/CeloGetBlock) | Get Celo block by hash
-[**celoGetCurrentBlock()**](#celogetcurrentblock) | **GET** [/v3/celo/block/current](https://apidoc.tatum.io/tag/Celo#operation/CeloGetCurrentBlock) | Get current block number
-[**celoGetTransaction()**](#celogettransaction) | **GET** [/v3/celo/transaction/{hash}](https://apidoc.tatum.io/tag/Celo#operation/CeloGetTransaction) | Get Celo Transaction
-[**celoGetTransactionByAddress()**](#celogettransactionbyaddress) | **GET** [/v3/celo/account/transaction/{address}](https://apidoc.tatum.io/tag/Celo#operation/CeloGetTransactionByAddress) | Get Celo transactions by address
-[**celoGetTransactionCount()**](#celogettransactioncount) | **GET** [/v3/celo/transaction/count/{address}](https://apidoc.tatum.io/tag/Celo#operation/CeloGetTransactionCount) | Get count of outgoing Celo transactions
-[**celoSmartcontractCallCeloReadSmartContractMethod()**](#celosmartcontractcallceloreadsmartcontractmethod) | **POST** [/v3/celo/smartcontract#postCallCeloReadSmartContractMethod](https://apidoc.tatum.io/tag/Celo#operation/celoSmartcontractCallCeloReadSmartContractMethod) | Invoke a method in a smart contract on Celo
-[**celoSmartcontractCallCeloSmartContractMethod()**](#celosmartcontractcallcelosmartcontractmethod) | **POST** [/v3/celo/smartcontract#postCallCeloSmartContractMethod](https://apidoc.tatum.io/tag/Celo#operation/celoSmartcontractCallCeloSmartContractMethod) | Invoke a method in a smart contract on Celo
-[**celoSmartcontractCallCeloSmartContractMethodKMS()**](#celosmartcontractcallcelosmartcontractmethodkms) | **POST** [/v3/celo/smartcontract#postCallCeloSmartContractMethodKMS](https://apidoc.tatum.io/tag/Celo#operation/celoSmartcontractCallCeloSmartContractMethodKMS) | Invoke a method in a smart contract on Celo
-[**celoTransactionTransferCeloBlockchain()**](#celotransactiontransferceloblockchain) | **POST** [/v3/celo/transaction#postTransferCeloBlockchain](https://apidoc.tatum.io/tag/Celo#operation/celoTransactionTransferCeloBlockchain) | Send Celo / ERC20 from account to account
-[**celoTransactionTransferCeloBlockchainKMS()**](#celotransactiontransferceloblockchainkms) | **POST** [/v3/celo/transaction#postTransferCeloBlockchainKMS](https://apidoc.tatum.io/tag/Celo#operation/celoTransactionTransferCeloBlockchainKMS) | Send Celo / ERC20 from account to account
-[**celoWeb3Driver()**](#celoweb3driver) | **POST** [/v3/celo/web3/{xApiKey}](https://apidoc.tatum.io/tag/Celo#operation/CeloWeb3Driver) | Web3 HTTP driver
+[**celoBroadcast()**](#celobroadcast) | **POST** [/v3/celo/broadcast](https://apidoc.tatum.io/tag/Celo/#operation/CeloBroadcast) | Broadcast signed Celo transaction
+[**celoGenerateAddress()**](#celogenerateaddress) | **GET** [/v3/celo/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Celo/#operation/CeloGenerateAddress) | Generate Celo account address from Extended public key
+[**celoGenerateAddressPrivateKey()**](#celogenerateaddressprivatekey) | **POST** [/v3/celo/wallet/priv](https://apidoc.tatum.io/tag/Celo/#operation/CeloGenerateAddressPrivateKey) | Generate Celo private key
+[**celoGenerateWallet()**](#celogeneratewallet) | **GET** [/v3/celo/wallet](https://apidoc.tatum.io/tag/Celo/#operation/CeloGenerateWallet) | Generate Celo wallet
+[**celoGetBalance()**](#celogetbalance) | **GET** [/v3/celo/account/balance/{address}](https://apidoc.tatum.io/tag/Celo/#operation/CeloGetBalance) | Get Celo Account balance
+[**celoGetBlock()**](#celogetblock) | **GET** [/v3/celo/block/{hash}](https://apidoc.tatum.io/tag/Celo/#operation/CeloGetBlock) | Get Celo block by hash
+[**celoGetCurrentBlock()**](#celogetcurrentblock) | **GET** [/v3/celo/block/current](https://apidoc.tatum.io/tag/Celo/#operation/CeloGetCurrentBlock) | Get current block number
+[**celoGetTransaction()**](#celogettransaction) | **GET** [/v3/celo/transaction/{hash}](https://apidoc.tatum.io/tag/Celo/#operation/CeloGetTransaction) | Get Celo Transaction
+[**celoGetTransactionByAddress()**](#celogettransactionbyaddress) | **GET** [/v3/celo/account/transaction/{address}](https://apidoc.tatum.io/tag/Celo/#operation/CeloGetTransactionByAddress) | Get Celo transactions by address
+[**celoGetTransactionCount()**](#celogettransactioncount) | **GET** [/v3/celo/transaction/count/{address}](https://apidoc.tatum.io/tag/Celo/#operation/CeloGetTransactionCount) | Get count of outgoing Celo transactions
+[**celoSmartcontractCallCeloReadSmartContractMethod()**](#celosmartcontractcallceloreadsmartcontractmethod) | **POST** [/v3/celo/smartcontract](https://apidoc.tatum.io/tag/Celo/#operation/celoSmartcontractCallCeloReadSmartContractMethod) | Invoke a method in a smart contract on Celo
+[**celoSmartcontractCallCeloSmartContractMethod()**](#celosmartcontractcallcelosmartcontractmethod) | **POST** [/v3/celo/smartcontract](https://apidoc.tatum.io/tag/Celo/#operation/celoSmartcontractCallCeloSmartContractMethod) | Invoke a method in a smart contract on Celo
+[**celoSmartcontractCallCeloSmartContractMethodKMS()**](#celosmartcontractcallcelosmartcontractmethodkms) | **POST** [/v3/celo/smartcontract](https://apidoc.tatum.io/tag/Celo/#operation/celoSmartcontractCallCeloSmartContractMethodKMS) | Invoke a method in a smart contract on Celo
+[**celoTransactionTransferCeloBlockchain()**](#celotransactiontransferceloblockchain) | **POST** [/v3/celo/transaction](https://apidoc.tatum.io/tag/Celo/#operation/celoTransactionTransferCeloBlockchain) | Send Celo / ERC20 from account to account
+[**celoTransactionTransferCeloBlockchainKMS()**](#celotransactiontransferceloblockchainkms) | **POST** [/v3/celo/transaction](https://apidoc.tatum.io/tag/Celo/#operation/celoTransactionTransferCeloBlockchainKMS) | Send Celo / ERC20 from account to account
+[**celoWeb3Driver()**](#celoweb3driver) | **POST** [/v3/celo/web3/{xApiKey}](https://apidoc.tatum.io/tag/Celo/#operation/CeloWeb3Driver) | Web3 HTTP driver
 
 
 ## `celoBroadcast()`

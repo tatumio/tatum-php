@@ -415,7 +415,7 @@ class VirtualCurrency extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [
@@ -621,7 +621,7 @@ class VirtualCurrency extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getAccountingCurrencyAllowableValues(): array {
         return [

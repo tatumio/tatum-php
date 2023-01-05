@@ -57,7 +57,7 @@ class Deposit extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getStatusAllowableValues(): array {
         return [

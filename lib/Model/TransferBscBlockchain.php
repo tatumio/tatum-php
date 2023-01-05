@@ -62,7 +62,7 @@ class TransferBscBlockchain extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getCurrencyAllowableValues(): array {
         return [

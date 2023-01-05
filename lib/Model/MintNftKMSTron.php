@@ -53,7 +53,7 @@ class MintNftKMSTron extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getChainAllowableValues(): array {
         return [

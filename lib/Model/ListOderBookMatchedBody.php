@@ -63,7 +63,7 @@ class ListOderBookMatchedBody extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTypeAllowableValues(): array {
         return [
@@ -74,7 +74,7 @@ class ListOderBookMatchedBody extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getSortAllowableValues(): array {
         return [

@@ -4,13 +4,13 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activateCustomer()**](#activatecustomer) | **PUT** [/v3/ledger/customer/{id}/activate](https://apidoc.tatum.io/tag/Customer#operation/activateCustomer) | Activate customer
-[**deactivateCustomer()**](#deactivatecustomer) | **PUT** [/v3/ledger/customer/{id}/deactivate](https://apidoc.tatum.io/tag/Customer#operation/deactivateCustomer) | Deactivate customer
-[**disableCustomer()**](#disablecustomer) | **PUT** [/v3/ledger/customer/{id}/disable](https://apidoc.tatum.io/tag/Customer#operation/disableCustomer) | Disable customer
-[**enableCustomer()**](#enablecustomer) | **PUT** [/v3/ledger/customer/{id}/enable](https://apidoc.tatum.io/tag/Customer#operation/enableCustomer) | Enable customer
-[**findAllCustomers()**](#findallcustomers) | **GET** [/v3/ledger/customer](https://apidoc.tatum.io/tag/Customer#operation/findAllCustomers) | List all customers
-[**getCustomerByExternalOrInternalId()**](#getcustomerbyexternalorinternalid) | **GET** [/v3/ledger/customer/{id}](https://apidoc.tatum.io/tag/Customer#operation/getCustomerByExternalOrInternalId) | Get customer details
-[**updateCustomer()**](#updatecustomer) | **PUT** [/v3/ledger/customer/{id}](https://apidoc.tatum.io/tag/Customer#operation/updateCustomer) | Update customer
+[**activateCustomer()**](#activatecustomer) | **PUT** [/v3/ledger/customer/{id}/activate](https://apidoc.tatum.io/tag/Customer/#operation/activateCustomer) | Activate customer
+[**deactivateCustomer()**](#deactivatecustomer) | **PUT** [/v3/ledger/customer/{id}/deactivate](https://apidoc.tatum.io/tag/Customer/#operation/deactivateCustomer) | Deactivate customer
+[**disableCustomer()**](#disablecustomer) | **PUT** [/v3/ledger/customer/{id}/disable](https://apidoc.tatum.io/tag/Customer/#operation/disableCustomer) | Disable customer
+[**enableCustomer()**](#enablecustomer) | **PUT** [/v3/ledger/customer/{id}/enable](https://apidoc.tatum.io/tag/Customer/#operation/enableCustomer) | Enable customer
+[**findAllCustomers()**](#findallcustomers) | **GET** [/v3/ledger/customer](https://apidoc.tatum.io/tag/Customer/#operation/findAllCustomers) | List all customers
+[**getCustomerByExternalOrInternalId()**](#getcustomerbyexternalorinternalid) | **GET** [/v3/ledger/customer/{id}](https://apidoc.tatum.io/tag/Customer/#operation/getCustomerByExternalOrInternalId) | Get customer details
+[**updateCustomer()**](#updatecustomer) | **PUT** [/v3/ledger/customer/{id}](https://apidoc.tatum.io/tag/Customer/#operation/updateCustomer) | Update customer
 
 
 ## `activateCustomer()`

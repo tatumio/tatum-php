@@ -4,11 +4,11 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**completePendingSignature()**](#completependingsignature) | **PUT** [/v3/kms/{id}/{txId}](https://apidoc.tatum.io/tag/KeyManagementSystem#operation/CompletePendingSignature) | Complete pending transaction to sign
-[**deletePendingTransactionToSign()**](#deletependingtransactiontosign) | **DELETE** [/v3/kms/{id}](https://apidoc.tatum.io/tag/KeyManagementSystem#operation/DeletePendingTransactionToSign) | Delete transaction
-[**getPendingTransactionToSign()**](#getpendingtransactiontosign) | **GET** [/v3/kms/{id}](https://apidoc.tatum.io/tag/KeyManagementSystem#operation/GetPendingTransactionToSign) | Get transaction details
-[**getPendingTransactionsToSign()**](#getpendingtransactionstosign) | **GET** [/v3/kms/pending/{chain}](https://apidoc.tatum.io/tag/KeyManagementSystem#operation/GetPendingTransactionsToSign) | Get pending transactions to sign
-[**receivePendingTransactionsToSign()**](#receivependingtransactionstosign) | **POST** [/v3/kms/pending/{chain}](https://apidoc.tatum.io/tag/KeyManagementSystem#operation/ReceivePendingTransactionsToSign) | Get pending transactions to sign
+[**completePendingSignature()**](#completependingsignature) | **PUT** [/v3/kms/{id}/{txId}](https://apidoc.tatum.io/tag/Key-Management-System/#operation/CompletePendingSignature) | Complete pending transaction to sign
+[**deletePendingTransactionToSign()**](#deletependingtransactiontosign) | **DELETE** [/v3/kms/{id}](https://apidoc.tatum.io/tag/Key-Management-System/#operation/DeletePendingTransactionToSign) | Delete transaction
+[**getPendingTransactionToSign()**](#getpendingtransactiontosign) | **GET** [/v3/kms/{id}](https://apidoc.tatum.io/tag/Key-Management-System/#operation/GetPendingTransactionToSign) | Get transaction details
+[**getPendingTransactionsToSign()**](#getpendingtransactionstosign) | **GET** [/v3/kms/pending/{chain}](https://apidoc.tatum.io/tag/Key-Management-System/#operation/GetPendingTransactionsToSign) | Get pending transactions to sign
+[**receivePendingTransactionsToSign()**](#receivependingtransactionstosign) | **POST** [/v3/kms/pending/{chain}](https://apidoc.tatum.io/tag/Key-Management-System/#operation/ReceivePendingTransactionsToSign) | Get pending transactions to sign
 
 
 ## `completePendingSignature()`

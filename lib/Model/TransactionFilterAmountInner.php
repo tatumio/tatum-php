@@ -47,7 +47,7 @@ class TransactionFilterAmountInner extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getOpAllowableValues(): array {
         return [

@@ -4,9 +4,9 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLog()**](#getlog) | **GET** [/v3/record](https://apidoc.tatum.io/tag/BlockchainStorage#operation/GetLog) | Get a log record
-[**recordCreateRecord()**](#recordcreaterecord) | **POST** [/v3/record#postCreateRecord](https://apidoc.tatum.io/tag/BlockchainStorage#operation/recordCreateRecord) | Store a log record
-[**recordCreateRecordCelo()**](#recordcreaterecordcelo) | **POST** [/v3/record#postCreateRecordCelo](https://apidoc.tatum.io/tag/BlockchainStorage#operation/recordCreateRecordCelo) | Store a log record
+[**getLog()**](#getlog) | **GET** [/v3/record](https://apidoc.tatum.io/tag/Blockchain-storage/#operation/GetLog) | Get a log record
+[**recordCreateRecord()**](#recordcreaterecord) | **POST** [/v3/record](https://apidoc.tatum.io/tag/Blockchain-storage/#operation/recordCreateRecord) | Store a log record
+[**recordCreateRecordCelo()**](#recordcreaterecordcelo) | **POST** [/v3/record](https://apidoc.tatum.io/tag/Blockchain-storage/#operation/recordCreateRecordCelo) | Store a log record
 
 
 ## `getLog()`

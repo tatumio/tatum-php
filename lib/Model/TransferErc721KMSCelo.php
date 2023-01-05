@@ -49,7 +49,7 @@ class TransferErc721KMSCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getFeeCurrencyAllowableValues(): array {
         return [

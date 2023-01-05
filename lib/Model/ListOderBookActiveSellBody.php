@@ -63,7 +63,7 @@ class ListOderBookActiveSellBody extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTradeTypeAllowableValues(): array {
         return [
@@ -74,7 +74,7 @@ class ListOderBookActiveSellBody extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getSortAllowableValues(): array {
         return [

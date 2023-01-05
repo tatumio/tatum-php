@@ -84,7 +84,7 @@ class TransactionFilterCustomer extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTransactionTypeAllowableValues(): array {
         return [
@@ -104,7 +104,7 @@ class TransactionFilterCustomer extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTransactionTypesAllowableValues(): array {
         return [
@@ -124,7 +124,7 @@ class TransactionFilterCustomer extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getOpTypeAllowableValues(): array {
         return [

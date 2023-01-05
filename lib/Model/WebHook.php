@@ -58,7 +58,7 @@ class WebHook extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTypeAllowableValues(): array {
         return [

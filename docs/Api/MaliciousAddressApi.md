@@ -4,7 +4,7 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkMalicousAddress()**](#checkmalicousaddress) | **GET** [/v3/security/address/{address}](https://apidoc.tatum.io/tag/MaliciousAddress#operation/CheckMalicousAddress) | Check malicous address
+[**checkMalicousAddress()**](#checkmalicousaddress) | **GET** [/v3/security/address/{address}](https://apidoc.tatum.io/tag/Malicious-address/#operation/CheckMalicousAddress) | Check malicous address
 
 
 ## `checkMalicousAddress()`

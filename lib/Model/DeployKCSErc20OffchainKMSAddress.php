@@ -245,7 +245,7 @@ class DeployKCSErc20OffchainKMSAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [

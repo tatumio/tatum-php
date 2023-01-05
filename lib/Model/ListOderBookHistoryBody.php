@@ -65,7 +65,7 @@ class ListOderBookHistoryBody extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTypesAllowableValues(): array {
         return [
@@ -78,7 +78,7 @@ class ListOderBookHistoryBody extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getSortAllowableValues(): array {
         return [

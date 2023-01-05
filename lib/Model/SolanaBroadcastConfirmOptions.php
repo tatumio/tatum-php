@@ -52,7 +52,7 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getCommitmentAllowableValues(): array {
         return [
@@ -63,7 +63,7 @@ class SolanaBroadcastConfirmOptions extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getPreflightCommitmentAllowableValues(): array {
         return [

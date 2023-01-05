@@ -440,7 +440,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getIdAllowableValues(): array {
         return [
@@ -646,7 +646,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [

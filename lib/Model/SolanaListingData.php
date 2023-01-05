@@ -52,7 +52,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getStateAllowableValues(): array {
         return [

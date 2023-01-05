@@ -4,11 +4,11 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**custodialCreateWallet()**](#custodialcreatewallet) | **POST** [/v3/custodial/wallet](https://apidoc.tatum.io/tag/CustodialManagedWallets#operation/CustodialCreateWallet) | Create managed address
-[**custodialDeleteWallet()**](#custodialdeletewallet) | **DELETE** [/v3/custodial/wallet/{id}](https://apidoc.tatum.io/tag/CustodialManagedWallets#operation/CustodialDeleteWallet) | Delete managed address
-[**custodialGetWallet()**](#custodialgetwallet) | **GET** [/v3/custodial/wallet/{id}](https://apidoc.tatum.io/tag/CustodialManagedWallets#operation/CustodialGetWallet) | Get managed address
-[**custodialGetWallets()**](#custodialgetwallets) | **GET** [/v3/custodial/wallet](https://apidoc.tatum.io/tag/CustodialManagedWallets#operation/CustodialGetWallets) | Get managed addresses
-[**custodialTransferManagedAddress()**](#custodialtransfermanagedaddress) | **POST** [/v3/custodial/transaction](https://apidoc.tatum.io/tag/CustodialManagedWallets#operation/CustodialTransferManagedAddress) | Sign and transfer using managed address
+[**custodialCreateWallet()**](#custodialcreatewallet) | **POST** [/v3/custodial/wallet](https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialCreateWallet) | Create managed address
+[**custodialDeleteWallet()**](#custodialdeletewallet) | **DELETE** [/v3/custodial/wallet/{id}](https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialDeleteWallet) | Delete managed address
+[**custodialGetWallet()**](#custodialgetwallet) | **GET** [/v3/custodial/wallet/{id}](https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialGetWallet) | Get managed address
+[**custodialGetWallets()**](#custodialgetwallets) | **GET** [/v3/custodial/wallet](https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialGetWallets) | Get managed addresses
+[**custodialTransferManagedAddress()**](#custodialtransfermanagedaddress) | **POST** [/v3/custodial/transaction](https://apidoc.tatum.io/tag/Custodial-managed-wallets/#operation/CustodialTransferManagedAddress) | Sign and transfer using managed address
 
 
 ## `custodialCreateWallet()`

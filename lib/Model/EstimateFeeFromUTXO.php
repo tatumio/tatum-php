@@ -46,7 +46,7 @@ class EstimateFeeFromUTXO extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getChainAllowableValues(): array {
         return [
@@ -57,7 +57,7 @@ class EstimateFeeFromUTXO extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTypeAllowableValues(): array {
         return [

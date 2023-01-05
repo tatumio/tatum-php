@@ -245,7 +245,7 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [

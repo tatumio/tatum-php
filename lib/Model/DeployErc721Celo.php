@@ -47,7 +47,7 @@ class DeployErc721Celo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getFeeCurrencyAllowableValues(): array {
         return [

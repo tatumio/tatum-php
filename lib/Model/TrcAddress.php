@@ -419,7 +419,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTypeAllowableValues(): array {
         return [
@@ -430,7 +430,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [
@@ -636,7 +636,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getAccountingCurrencyAllowableValues(): array {
         return [

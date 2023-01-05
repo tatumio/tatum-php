@@ -250,7 +250,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTypeAllowableValues(): array {
         return [
@@ -261,7 +261,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [

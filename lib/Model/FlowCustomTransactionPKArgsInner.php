@@ -108,7 +108,7 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTypeAllowableValues(): array {
         return [
@@ -150,7 +150,7 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getSubTypeAllowableValues(): array {
         return [

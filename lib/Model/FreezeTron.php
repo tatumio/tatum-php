@@ -46,7 +46,7 @@ class FreezeTron extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getResourceAllowableValues(): array {
         return [

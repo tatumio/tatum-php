@@ -57,7 +57,7 @@ class Serializer {
      * @param mixed  $data   Data to serialize
      * @param string $format (optional) Format of the OpenAPITools type of the data; default <b>null</b>
      *
-     * @return \scalar|string|\object|\mixed[]|null serialized form of $data
+     * @return string|\object|\mixed[]|null serialized form of $data
      */
     public static function sanitizeForSerialization($data, string $format = null) {
         $result = $data;
@@ -132,7 +132,7 @@ class Serializer {
     /**
      * URL-encode query parameter
      *
-     * @param \scalar[]|\scalar|string[]|string|\DateTime $value Value to serialize to string and url-encode
+     * @param string[]|string|\DateTime $value Value to serialize to string and url-encode
      *
      * @return string Serialized and url-encoded parameter
      */
@@ -160,7 +160,7 @@ class Serializer {
     /**
      * Convert value to string or comma-separated list of strings
      *
-     * @param \scalar[]|\scalar|string[]|string|\DateTime $value Object to serialize to string
+     * @param string[]|string|\DateTime $value Object to serialize to string
      *
      * @return string|null Serialized parameter
      */
@@ -179,7 +179,7 @@ class Serializer {
      * Convert value to a header string
      * If it's a datetime object, format it in ISO8601
      *
-     * @param \Tatum\Model\ModelInterface|\scalar|string $value a string which will be part of the header.
+     * @param \Tatum\Model\ModelInterface|string $value a string which will be part of the header.
      * @return string Header string
      */
     public static function toHeaderValue($value): string {
@@ -221,7 +221,7 @@ class Serializer {
      * If it's a DateTime object, format it in ISO8601
      * If it's a boolean, convert it to "true" or "false"
      *
-     * @param \scalar|string|\DateTime|\SplFileObject $value Parameter value
+     * @param string|\DateTime|\SplFileObject $value Parameter value
      *
      * @return string Stringified value
      * @throws RuntimeException
@@ -280,7 +280,7 @@ class Serializer {
     /**
      * Serialize an array to a string
      *
-     * @param \scalar[]|string[] $collection                 Collection to serialize to a string
+     * @param string[] $collection                 Collection to serialize to a string
      * @param string             $style                      The format use for serialization (csv, ssv, tsv, pipes, multi)
      * @param bool               $allowCollectionFormatMulti (optional); Allow collection format to be a multidimensional array; default <b>false</b>
      *
@@ -585,7 +585,7 @@ class Serializer {
         // Preapre request
         return new Request(
             $method,
-            $config->getHost() . preg_replace('%#.*?$%', "", $uri) . ($queryString ? "?{$queryString}" : ""),
+            $config->getHost() . $uri . ($queryString ? "?{$queryString}" : ""),
             $headers,
             $multipart ? $form : (!empty($body) ? self::toBodyValue($body, $headers["Content-Type"] ?? "") : "")
         );

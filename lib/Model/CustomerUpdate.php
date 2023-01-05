@@ -709,7 +709,7 @@ class CustomerUpdate extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getAccountingCurrencyAllowableValues(): array {
         return [
@@ -888,7 +888,7 @@ class CustomerUpdate extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getCustomerCountryAllowableValues(): array {
         return [
@@ -1145,7 +1145,7 @@ class CustomerUpdate extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getProviderCountryAllowableValues(): array {
         return [

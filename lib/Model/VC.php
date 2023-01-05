@@ -254,7 +254,7 @@ class VC extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTrcTypeAllowableValues(): array {
         return [
@@ -265,7 +265,7 @@ class VC extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [
@@ -471,7 +471,7 @@ class VC extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getChainAllowableValues(): array {
         return [

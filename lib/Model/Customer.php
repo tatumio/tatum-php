@@ -216,7 +216,7 @@ class Customer extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getAccountingCurrencyAllowableValues(): array {
         return [

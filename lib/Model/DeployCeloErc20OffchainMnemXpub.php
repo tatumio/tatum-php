@@ -251,7 +251,7 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getBasePairAllowableValues(): array {
         return [
@@ -457,7 +457,7 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getFeeCurrencyAllowableValues(): array {
         return [

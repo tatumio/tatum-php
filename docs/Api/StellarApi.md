@@ -4,21 +4,21 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xlmBroadcast()**](#xlmbroadcast) | **POST** [/v3/xlm/broadcast](https://apidoc.tatum.io/tag/Stellar#operation/XlmBroadcast) | Broadcast signed XLM transaction
-[**xlmGetAccountInfo()**](#xlmgetaccountinfo) | **GET** [/v3/xlm/account/{account}](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetAccountInfo) | Get XLM Account info
-[**xlmGetAccountTx()**](#xlmgetaccounttx) | **GET** [/v3/xlm/account/tx/{account}](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetAccountTx) | Get XLM Account transactions
-[**xlmGetFee()**](#xlmgetfee) | **GET** [/v3/xlm/fee](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetFee) | Get actual XLM fee
-[**xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) | **GET** [/v3/xlm/info](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetLastClosedLedger) | Get XLM Blockchain Information
-[**xlmGetLedger()**](#xlmgetledger) | **GET** [/v3/xlm/ledger/{sequence}](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetLedger) | Get XLM Blockchain Ledger by sequence
-[**xlmGetLedgerTx()**](#xlmgetledgertx) | **GET** [/v3/xlm/ledger/{sequence}/transaction](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetLedgerTx) | Get XLM Blockchain Transactions in Ledger
-[**xlmGetTransaction()**](#xlmgettransaction) | **GET** [/v3/xlm/transaction/{hash}](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetTransaction) | Get XLM Transaction by hash
-[**xlmTransactionTransferXlmBlockchain()**](#xlmtransactiontransferxlmblockchain) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchain](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchain) | Send XLM from address to address
-[**xlmTransactionTransferXlmBlockchainAsset()**](#xlmtransactiontransferxlmblockchainasset) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchainAsset](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchainAsset) | Send XLM from address to address
-[**xlmTransactionTransferXlmBlockchainKMS()**](#xlmtransactiontransferxlmblockchainkms) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchainKMS](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchainKMS) | Send XLM from address to address
-[**xlmTransactionTransferXlmBlockchainKMSAsset()**](#xlmtransactiontransferxlmblockchainkmsasset) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchainKMSAsset](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchainKMSAsset) | Send XLM from address to address
-[**xlmTrustLineXlmBlockchain()**](#xlmtrustlinexlmblockchain) | **POST** [/v3/xlm/trust#postTrustLineXlmBlockchain](https://apidoc.tatum.io/tag/Stellar#operation/xlmTrustLineXlmBlockchain) | Create / Update / Delete XLM trust line
-[**xlmTrustLineXlmBlockchainKMS()**](#xlmtrustlinexlmblockchainkms) | **POST** [/v3/xlm/trust#postTrustLineXlmBlockchainKMS](https://apidoc.tatum.io/tag/Stellar#operation/xlmTrustLineXlmBlockchainKMS) | Create / Update / Delete XLM trust line
-[**xlmWallet()**](#xlmwallet) | **GET** [/v3/xlm/account](https://apidoc.tatum.io/tag/Stellar#operation/XlmWallet) | Generate XLM account
+[**xlmBroadcast()**](#xlmbroadcast) | **POST** [/v3/xlm/broadcast](https://apidoc.tatum.io/tag/Stellar/#operation/XlmBroadcast) | Broadcast signed XLM transaction
+[**xlmGetAccountInfo()**](#xlmgetaccountinfo) | **GET** [/v3/xlm/account/{account}](https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetAccountInfo) | Get XLM Account info
+[**xlmGetAccountTx()**](#xlmgetaccounttx) | **GET** [/v3/xlm/account/tx/{account}](https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetAccountTx) | Get XLM Account transactions
+[**xlmGetFee()**](#xlmgetfee) | **GET** [/v3/xlm/fee](https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetFee) | Get actual XLM fee
+[**xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) | **GET** [/v3/xlm/info](https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetLastClosedLedger) | Get XLM Blockchain Information
+[**xlmGetLedger()**](#xlmgetledger) | **GET** [/v3/xlm/ledger/{sequence}](https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetLedger) | Get XLM Blockchain Ledger by sequence
+[**xlmGetLedgerTx()**](#xlmgetledgertx) | **GET** [/v3/xlm/ledger/{sequence}/transaction](https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetLedgerTx) | Get XLM Blockchain Transactions in Ledger
+[**xlmGetTransaction()**](#xlmgettransaction) | **GET** [/v3/xlm/transaction/{hash}](https://apidoc.tatum.io/tag/Stellar/#operation/XlmGetTransaction) | Get XLM Transaction by hash
+[**xlmTransactionTransferXlmBlockchain()**](#xlmtransactiontransferxlmblockchain) | **POST** [/v3/xlm/transaction](https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchain) | Send XLM from address to address
+[**xlmTransactionTransferXlmBlockchainAsset()**](#xlmtransactiontransferxlmblockchainasset) | **POST** [/v3/xlm/transaction](https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchainAsset) | Send XLM from address to address
+[**xlmTransactionTransferXlmBlockchainKMS()**](#xlmtransactiontransferxlmblockchainkms) | **POST** [/v3/xlm/transaction](https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchainKMS) | Send XLM from address to address
+[**xlmTransactionTransferXlmBlockchainKMSAsset()**](#xlmtransactiontransferxlmblockchainkmsasset) | **POST** [/v3/xlm/transaction](https://apidoc.tatum.io/tag/Stellar/#operation/xlmTransactionTransferXlmBlockchainKMSAsset) | Send XLM from address to address
+[**xlmTrustLineXlmBlockchain()**](#xlmtrustlinexlmblockchain) | **POST** [/v3/xlm/trust](https://apidoc.tatum.io/tag/Stellar/#operation/xlmTrustLineXlmBlockchain) | Create / Update / Delete XLM trust line
+[**xlmTrustLineXlmBlockchainKMS()**](#xlmtrustlinexlmblockchainkms) | **POST** [/v3/xlm/trust](https://apidoc.tatum.io/tag/Stellar/#operation/xlmTrustLineXlmBlockchainKMS) | Create / Update / Delete XLM trust line
+[**xlmWallet()**](#xlmwallet) | **GET** [/v3/xlm/account](https://apidoc.tatum.io/tag/Stellar/#operation/XlmWallet) | Generate XLM account
 
 
 ## `xlmBroadcast()`

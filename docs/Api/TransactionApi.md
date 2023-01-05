@@ -4,12 +4,12 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTransactions()**](#gettransactions) | **POST** [/v3/ledger/transaction/ledger](https://apidoc.tatum.io/tag/Transaction#operation/getTransactions) | Find transactions within the ledger.
-[**getTransactionsByAccountId()**](#gettransactionsbyaccountid) | **POST** [/v3/ledger/transaction/account](https://apidoc.tatum.io/tag/Transaction#operation/getTransactionsByAccountId) | Find transactions for account.
-[**getTransactionsByCustomerId()**](#gettransactionsbycustomerid) | **POST** [/v3/ledger/transaction/customer](https://apidoc.tatum.io/tag/Transaction#operation/getTransactionsByCustomerId) | Find transactions for a customer across all of the customer's accounts.
-[**getTransactionsByReference()**](#gettransactionsbyreference) | **GET** [/v3/ledger/transaction/reference/{reference}](https://apidoc.tatum.io/tag/Transaction#operation/getTransactionsByReference) | Find transactions with a given reference across all accounts.
-[**sendTransaction()**](#sendtransaction) | **POST** [/v3/ledger/transaction](https://apidoc.tatum.io/tag/Transaction#operation/sendTransaction) | Send payment
-[**sendTransactionBatch()**](#sendtransactionbatch) | **POST** [/v3/ledger/transaction/batch](https://apidoc.tatum.io/tag/Transaction#operation/sendTransactionBatch) | Send payment in batch
+[**getTransactions()**](#gettransactions) | **POST** [/v3/ledger/transaction/ledger](https://apidoc.tatum.io/tag/Transaction/#operation/getTransactions) | Find transactions within the ledger.
+[**getTransactionsByAccountId()**](#gettransactionsbyaccountid) | **POST** [/v3/ledger/transaction/account](https://apidoc.tatum.io/tag/Transaction/#operation/getTransactionsByAccountId) | Find transactions for account.
+[**getTransactionsByCustomerId()**](#gettransactionsbycustomerid) | **POST** [/v3/ledger/transaction/customer](https://apidoc.tatum.io/tag/Transaction/#operation/getTransactionsByCustomerId) | Find transactions for a customer across all of the customer's accounts.
+[**getTransactionsByReference()**](#gettransactionsbyreference) | **GET** [/v3/ledger/transaction/reference/{reference}](https://apidoc.tatum.io/tag/Transaction/#operation/getTransactionsByReference) | Find transactions with a given reference across all accounts.
+[**sendTransaction()**](#sendtransaction) | **POST** [/v3/ledger/transaction](https://apidoc.tatum.io/tag/Transaction/#operation/sendTransaction) | Send payment
+[**sendTransactionBatch()**](#sendtransactionbatch) | **POST** [/v3/ledger/transaction/batch](https://apidoc.tatum.io/tag/Transaction/#operation/sendTransactionBatch) | Send payment in batch
 
 
 ## `getTransactions()`

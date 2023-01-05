@@ -55,7 +55,7 @@ class ChartRequest extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return scalar[]
+     * @return string[]
      */
     public function getTimeFrameAllowableValues(): array {
         return [
