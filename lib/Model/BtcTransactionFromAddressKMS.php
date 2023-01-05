@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BtcTransactionFromAddressKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BtcTransactionFromAddressKMS";
     protected static $_definition = [
         "from_address" => ["fromAddress", "\Tatum\Model\BtcTransactionFromAddressKMSSource[]", null, "getFromAddress", "setFromAddress", null, ["r" => 1, "c" => 1]], 

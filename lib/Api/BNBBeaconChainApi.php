@@ -23,29 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class BNBBeaconChainApi extends AbstractApi {
     /**
-     * Send Binance / Binance Token from account to account
-     *
-     * @param \Tatum\Model\BnbBlockchainTransferRequest $bnb_blockchain_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\TransactionHash
-     */
-    public function bnbBlockchainTransfer(\Tatum\Model\BnbBlockchainTransferRequest $bnb_blockchain_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionHash $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bnb/transaction", [], $rHeaders, [], $bnb_blockchain_transfer_request
-            ), 
-            "\Tatum\Model\TransactionHash"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast signed BNB transaction
      *
      * @param \Tatum\Model\Broadcast $broadcast 
@@ -230,6 +207,52 @@ class BNBBeaconChainApi extends AbstractApi {
                 ], $rHeaders, []
             ), 
             "\Tatum\Model\BnbTxInAccount"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Binance / Binance Token from account to account
+     *
+     * @param \Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionHash
+     */
+    public function bnbTransactionTransferBnbBlockchain(\Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionHash $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bnb/transaction#postTransferBnbBlockchain", [], $rHeaders, [], $transfer_bnb_blockchain
+            ), 
+            "\Tatum\Model\TransactionHash"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Binance / Binance Token from account to account
+     *
+     * @param \Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionHash
+     */
+    public function bnbTransactionTransferBnbBlockchainKMS(\Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionHash $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bnb/transaction#postTransferBnbBlockchainKMS", [], $rHeaders, [], $transfer_bnb_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionHash"
         );
             
         return $result;

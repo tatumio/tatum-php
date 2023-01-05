@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class CreateFutureTradeAttr extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateFutureTrade_attr";
     protected static $_definition = [
         "seal_date" => ["sealDate", "float", null, "getSealDate", "setSealDate", null, ["r" => 1, "n" => [0]]], 

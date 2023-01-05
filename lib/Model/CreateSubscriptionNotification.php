@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionNotification extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_ADDRESS_TRANSACTION = 'ADDRESS_TRANSACTION';
     protected static $_name = "CreateSubscriptionNotification";
     protected static $_definition = [

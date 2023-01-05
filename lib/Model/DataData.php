@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class DataData extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Data_data";
     protected static $_definition = [
     ];

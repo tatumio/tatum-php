@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionTxInTheBlockAttr extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateSubscriptionTxInTheBlock_attr";
     protected static $_definition = [
         "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 500]]

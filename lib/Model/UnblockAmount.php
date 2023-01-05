@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class UnblockAmount extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "UnblockAmount";
     protected static $_definition = [
         "recipient_account_id" => ["recipientAccountId", "string", null, "getRecipientAccountId", "setRecipientAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 

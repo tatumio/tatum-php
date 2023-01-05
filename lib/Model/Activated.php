@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Activated extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Activated";
     protected static $_definition = [
         "activated" => ["activated", "bool", null, "getActivated", "setActivated", null, ["r" => 0]]

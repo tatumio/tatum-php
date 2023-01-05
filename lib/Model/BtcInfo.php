@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BtcInfo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BtcInfo";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 0]], 

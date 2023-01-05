@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BchTransaction extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BchTransaction";
     protected static $_definition = [
         "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 1, "c" => 1]], 

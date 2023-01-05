@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateFutureTrade extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_BUY = 'FUTURE_BUY';
     public const TYPE_SELL = 'FUTURE_SELL';
     protected static $_name = "CreateFutureTrade";

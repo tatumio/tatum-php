@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class OffchainTransactionSignatureResult extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "OffchainTransactionSignatureResult";
     protected static $_definition = [
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]

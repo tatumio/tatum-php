@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AlgoTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AlgoTx";
     protected static $_definition = [
         "close_rewards" => ["closeRewards", "float", null, "getCloseRewards", "setCloseRewards", null, ["r" => 0]], 

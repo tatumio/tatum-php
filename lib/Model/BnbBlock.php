@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbBlock extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbBlock";
     protected static $_definition = [
         "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 

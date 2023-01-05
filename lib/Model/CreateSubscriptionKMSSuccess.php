@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionKMSSuccess extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_KMS_COMPLETED_TX = 'KMS_COMPLETED_TX';
     protected static $_name = "CreateSubscriptionKMSSuccess";
     protected static $_definition = [

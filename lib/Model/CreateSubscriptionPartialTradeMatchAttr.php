@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionPartialTradeMatchAttr extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateSubscriptionPartialTradeMatch_attr";
     protected static $_definition = [
         "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class NftMetadataErc721 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "NftMetadataErc721";
     protected static $_definition = [
         "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]]

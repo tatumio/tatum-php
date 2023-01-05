@@ -20,11 +20,11 @@ class Ethereum extends AbstractTransaction {
     /**
      * Sign transaction
      *
-     * @param \Tatum\Model\EthBlockchainTransferRequest $transaction Blockchain transaction
+     * @param \Tatum\Model\TransferEthBlockchain $transaction Blockchain transaction
      *
      * @return string Hex-encoded signed transaction
      */
-    public function sign(Model\EthBlockchainTransferRequest $transaction): string {
+    public function sign(Model\TransferEthBlockchain $transaction): string {
         // Fetch the sender address
         $fromAddress = (new Wallet($this->_caller))
             ->ethereum()

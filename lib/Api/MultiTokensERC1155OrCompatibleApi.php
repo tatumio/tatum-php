@@ -23,186 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     /**
-     * Add a Multi Token minter
-     *
-     * @param \Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function addMultiTokenMinter(\Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/mint/add", [], $rHeaders, [], $add_multi_token_minter_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Burn a Multi Token
-     *
-     * @param \Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function burnMultiToken(\Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/burn", [], $rHeaders, [], $burn_multi_token_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Burn multiple Multi Tokens
-     *
-     * @param \Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function burnMultiTokenBatch(\Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/burn/batch", [], $rHeaders, [], $burn_multi_token_batch_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a Multi Token smart contract
-     *
-     * @param \Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function deployMultiToken(\Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/deploy", [], $rHeaders, [], $deploy_multi_token_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Mint a Multi Token
-     *
-     * @param \Tatum\Model\MintMultiTokenRequest $mint_multi_token_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function mintMultiToken(\Tatum\Model\MintMultiTokenRequest $mint_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/mint", [], $rHeaders, [], $mint_multi_token_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Mint multiple Multi Tokens
-     *
-     * @param \Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function mintMultiTokenBatch(\Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/mint/batch", [], $rHeaders, [], $mint_multi_token_batch_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Get all Multi Tokens that a blockchain address holds
      *
      * @param string $chain Blockchain to work with
@@ -451,16 +271,16 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     }
     
     /**
-     * Transfer a Multi Token
+     * Burn multiple Multi Tokens
      *
-     * @param \Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request 
+     * @param \Tatum\Model\BurnMultiTokenBatch $burn_multi_token_batch 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function transferMultiToken(\Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function multitokenBurnBatchBurnMultiTokenBatch(\Tatum\Model\BurnMultiTokenBatch $burn_multi_token_batch, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -469,12 +289,642 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/transaction", [], $rHeaders, [], $transfer_multi_token_request
+                $this->_caller->config(), "POST", "/v3/multitoken/burn/batch#postBurnMultiTokenBatch", [], $rHeaders, [], $burn_multi_token_batch
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn multiple Multi Tokens
+     *
+     * @param \Tatum\Model\BurnMultiTokenBatchCelo $burn_multi_token_batch_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenBurnBatchBurnMultiTokenBatchCelo(\Tatum\Model\BurnMultiTokenBatchCelo $burn_multi_token_batch_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/burn/batch#postBurnMultiTokenBatchCelo", [], $rHeaders, [], $burn_multi_token_batch_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn multiple Multi Tokens
+     *
+     * @param \Tatum\Model\BurnMultiTokenBatchKMS $burn_multi_token_batch_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenBurnBatchBurnMultiTokenBatchKMS(\Tatum\Model\BurnMultiTokenBatchKMS $burn_multi_token_batch_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/burn/batch#postBurnMultiTokenBatchKMS", [], $rHeaders, [], $burn_multi_token_batch_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn multiple Multi Tokens
+     *
+     * @param \Tatum\Model\BurnMultiTokenBatchKMSCelo $burn_multi_token_batch_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenBurnBatchBurnMultiTokenBatchKMSCelo(\Tatum\Model\BurnMultiTokenBatchKMSCelo $burn_multi_token_batch_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/burn/batch#postBurnMultiTokenBatchKMSCelo", [], $rHeaders, [], $burn_multi_token_batch_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn a Multi Token
+     *
+     * @param \Tatum\Model\BurnMultiToken $burn_multi_token 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenBurnMultiToken(\Tatum\Model\BurnMultiToken $burn_multi_token, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/burn#postBurnMultiToken", [], $rHeaders, [], $burn_multi_token
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn a Multi Token
+     *
+     * @param \Tatum\Model\BurnMultiTokenCelo $burn_multi_token_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenBurnMultiTokenCelo(\Tatum\Model\BurnMultiTokenCelo $burn_multi_token_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/burn#postBurnMultiTokenCelo", [], $rHeaders, [], $burn_multi_token_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn a Multi Token
+     *
+     * @param \Tatum\Model\BurnMultiTokenKMS $burn_multi_token_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenBurnMultiTokenKMS(\Tatum\Model\BurnMultiTokenKMS $burn_multi_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/burn#postBurnMultiTokenKMS", [], $rHeaders, [], $burn_multi_token_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn a Multi Token
+     *
+     * @param \Tatum\Model\BurnMultiTokenKMSCelo $burn_multi_token_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenBurnMultiTokenKMSCelo(\Tatum\Model\BurnMultiTokenKMSCelo $burn_multi_token_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/burn#postBurnMultiTokenKMSCelo", [], $rHeaders, [], $burn_multi_token_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Multi Token smart contract
+     *
+     * @param \Tatum\Model\DeployMultiToken $deploy_multi_token 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenDeployMultiToken(\Tatum\Model\DeployMultiToken $deploy_multi_token, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/deploy#postDeployMultiToken", [], $rHeaders, [], $deploy_multi_token
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Multi Token smart contract
+     *
+     * @param \Tatum\Model\DeployMultiTokenCelo $deploy_multi_token_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenDeployMultiTokenCelo(\Tatum\Model\DeployMultiTokenCelo $deploy_multi_token_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/deploy#postDeployMultiTokenCelo", [], $rHeaders, [], $deploy_multi_token_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Multi Token smart contract
+     *
+     * @param \Tatum\Model\DeployMultiTokenCeloKMS $deploy_multi_token_celo_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenDeployMultiTokenCeloKMS(\Tatum\Model\DeployMultiTokenCeloKMS $deploy_multi_token_celo_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/deploy#postDeployMultiTokenCeloKMS", [], $rHeaders, [], $deploy_multi_token_celo_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Multi Token smart contract
+     *
+     * @param \Tatum\Model\DeployMultiTokenKMS $deploy_multi_token_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenDeployMultiTokenKMS(\Tatum\Model\DeployMultiTokenKMS $deploy_multi_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/deploy#postDeployMultiTokenKMS", [], $rHeaders, [], $deploy_multi_token_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Add a Multi Token minter
+     *
+     * @param \Tatum\Model\AddMultiTokenMinter $add_multi_token_minter 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintAddMultiTokenMinter(\Tatum\Model\AddMultiTokenMinter $add_multi_token_minter, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint/add#postAddMultiTokenMinter", [], $rHeaders, [], $add_multi_token_minter
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Add a Multi Token minter
+     *
+     * @param \Tatum\Model\AddMultiTokenMinterKMS $add_multi_token_minter_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintAddMultiTokenMinterKMS(\Tatum\Model\AddMultiTokenMinterKMS $add_multi_token_minter_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint/add#postAddMultiTokenMinterKMS", [], $rHeaders, [], $add_multi_token_minter_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple Multi Tokens
+     *
+     * @param \Tatum\Model\MintMultiTokenBatch $mint_multi_token_batch 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintBatchMintMultiTokenBatch(\Tatum\Model\MintMultiTokenBatch $mint_multi_token_batch, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint/batch#postMintMultiTokenBatch", [], $rHeaders, [], $mint_multi_token_batch
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple Multi Tokens
+     *
+     * @param \Tatum\Model\MintMultiTokenBatchCelo $mint_multi_token_batch_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintBatchMintMultiTokenBatchCelo(\Tatum\Model\MintMultiTokenBatchCelo $mint_multi_token_batch_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint/batch#postMintMultiTokenBatchCelo", [], $rHeaders, [], $mint_multi_token_batch_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple Multi Tokens
+     *
+     * @param \Tatum\Model\MintMultiTokenBatchKMS $mint_multi_token_batch_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintBatchMintMultiTokenBatchKMS(\Tatum\Model\MintMultiTokenBatchKMS $mint_multi_token_batch_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint/batch#postMintMultiTokenBatchKMS", [], $rHeaders, [], $mint_multi_token_batch_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple Multi Tokens
+     *
+     * @param \Tatum\Model\MintMultiTokenBatchKMSCelo $mint_multi_token_batch_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintBatchMintMultiTokenBatchKMSCelo(\Tatum\Model\MintMultiTokenBatchKMSCelo $mint_multi_token_batch_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint/batch#postMintMultiTokenBatchKMSCelo", [], $rHeaders, [], $mint_multi_token_batch_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint a Multi Token
+     *
+     * @param \Tatum\Model\MintMultiToken $mint_multi_token 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintMultiToken(\Tatum\Model\MintMultiToken $mint_multi_token, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint#postMintMultiToken", [], $rHeaders, [], $mint_multi_token
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint a Multi Token
+     *
+     * @param \Tatum\Model\MintMultiTokenCelo $mint_multi_token_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintMultiTokenCelo(\Tatum\Model\MintMultiTokenCelo $mint_multi_token_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint#postMintMultiTokenCelo", [], $rHeaders, [], $mint_multi_token_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint a Multi Token
+     *
+     * @param \Tatum\Model\MintMultiTokenKMS $mint_multi_token_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintMultiTokenKMS(\Tatum\Model\MintMultiTokenKMS $mint_multi_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint#postMintMultiTokenKMS", [], $rHeaders, [], $mint_multi_token_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint a Multi Token
+     *
+     * @param \Tatum\Model\MintMultiTokenKMSCelo $mint_multi_token_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenMintMultiTokenKMSCelo(\Tatum\Model\MintMultiTokenKMSCelo $mint_multi_token_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/mint#postMintMultiTokenKMSCelo", [], $rHeaders, [], $mint_multi_token_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -483,14 +933,14 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
     /**
      * Transfer multiple Multi Tokens
      *
-     * @param \Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request 
+     * @param \Tatum\Model\TransferMultiTokenBatch $transfer_multi_token_batch 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function transferMultiTokenBatch(\Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function multitokenTransactionBatchTransferMultiTokenBatch(\Tatum\Model\TransferMultiTokenBatch $transfer_multi_token_batch, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -499,12 +949,222 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/multitoken/transaction/batch", [], $rHeaders, [], $transfer_multi_token_batch_request
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction/batch#postTransferMultiTokenBatch", [], $rHeaders, [], $transfer_multi_token_batch
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple Multi Tokens
+     *
+     * @param \Tatum\Model\TransferMultiTokenBatchCelo $transfer_multi_token_batch_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenTransactionBatchTransferMultiTokenBatchCelo(\Tatum\Model\TransferMultiTokenBatchCelo $transfer_multi_token_batch_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction/batch#postTransferMultiTokenBatchCelo", [], $rHeaders, [], $transfer_multi_token_batch_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple Multi Tokens
+     *
+     * @param \Tatum\Model\TransferMultiTokenBatchKMS $transfer_multi_token_batch_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenTransactionBatchTransferMultiTokenBatchKMS(\Tatum\Model\TransferMultiTokenBatchKMS $transfer_multi_token_batch_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction/batch#postTransferMultiTokenBatchKMS", [], $rHeaders, [], $transfer_multi_token_batch_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple Multi Tokens
+     *
+     * @param \Tatum\Model\TransferMultiTokenBatchKMSCelo $transfer_multi_token_batch_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenTransactionBatchTransferMultiTokenBatchKMSCelo(\Tatum\Model\TransferMultiTokenBatchKMSCelo $transfer_multi_token_batch_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction/batch#postTransferMultiTokenBatchKMSCelo", [], $rHeaders, [], $transfer_multi_token_batch_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer a Multi Token
+     *
+     * @param \Tatum\Model\TransferMultiToken $transfer_multi_token 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenTransactionTransferMultiToken(\Tatum\Model\TransferMultiToken $transfer_multi_token, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction#postTransferMultiToken", [], $rHeaders, [], $transfer_multi_token
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer a Multi Token
+     *
+     * @param \Tatum\Model\TransferMultiTokenCelo $transfer_multi_token_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenTransactionTransferMultiTokenCelo(\Tatum\Model\TransferMultiTokenCelo $transfer_multi_token_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction#postTransferMultiTokenCelo", [], $rHeaders, [], $transfer_multi_token_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer a Multi Token
+     *
+     * @param \Tatum\Model\TransferMultiTokenKMS $transfer_multi_token_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenTransactionTransferMultiTokenKMS(\Tatum\Model\TransferMultiTokenKMS $transfer_multi_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction#postTransferMultiTokenKMS", [], $rHeaders, [], $transfer_multi_token_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer a Multi Token
+     *
+     * @param \Tatum\Model\TransferMultiTokenKMSCelo $transfer_multi_token_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function multitokenTransactionTransferMultiTokenKMSCelo(\Tatum\Model\TransferMultiTokenKMSCelo $transfer_multi_token_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/multitoken/transaction#postTransferMultiTokenKMSCelo", [], $rHeaders, [], $transfer_multi_token_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

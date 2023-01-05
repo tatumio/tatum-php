@@ -25,14 +25,14 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     /**
      * Allow a blockchain address to transfer and burn fungible tokens
      *
-     * @param \Tatum\Model\Erc20ApproveRequest $erc20_approve_request 
+     * @param \Tatum\Model\ApproveCeloErc20 $approve_celo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function erc20Approve(\Tatum\Model\Erc20ApproveRequest $erc20_approve_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function blockchainTokenApproveCeloErc20(\Tatum\Model\ApproveCeloErc20 $approve_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -41,12 +41,102 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $erc20_approve_request
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve#postApproveCeloErc20", [], $rHeaders, [], $approve_celo_erc20
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Allow a blockchain address to transfer and burn fungible tokens
+     *
+     * @param \Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenApproveCeloErc20KMS(\Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve#postApproveCeloErc20KMS", [], $rHeaders, [], $approve_celo_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Allow a blockchain address to transfer and burn fungible tokens
+     *
+     * @param \Tatum\Model\ApproveErc20 $approve_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenApproveErc20(\Tatum\Model\ApproveErc20 $approve_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve#postApproveErc20", [], $rHeaders, [], $approve_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Allow a blockchain address to transfer and burn fungible tokens
+     *
+     * @param \Tatum\Model\ApproveErc20KMS $approve_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenApproveErc20KMS(\Tatum\Model\ApproveErc20KMS $approve_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve#postApproveErc20KMS", [], $rHeaders, [], $approve_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -55,14 +145,14 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     /**
      * Burn fungible tokens
      *
-     * @param \Tatum\Model\Erc20BurnRequest $erc20_burn_request 
+     * @param \Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function erc20Burn(\Tatum\Model\Erc20BurnRequest $erc20_burn_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function blockchainTokenBurnChainBurnCeloErc20(\Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -71,12 +161,162 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $erc20_burn_request
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn#postChainBurnCeloErc20", [], $rHeaders, [], $chain_burn_celo_erc20
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn fungible tokens
+     *
+     * @param \Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenBurnChainBurnCeloErc20KMS(\Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn#postChainBurnCeloErc20KMS", [], $rHeaders, [], $chain_burn_celo_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn fungible tokens
+     *
+     * @param \Tatum\Model\ChainBurnErc20 $chain_burn_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenBurnChainBurnErc20(\Tatum\Model\ChainBurnErc20 $chain_burn_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn#postChainBurnErc20", [], $rHeaders, [], $chain_burn_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn fungible tokens
+     *
+     * @param \Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenBurnChainBurnErc20KMS(\Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn#postChainBurnErc20KMS", [], $rHeaders, [], $chain_burn_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn fungible tokens
+     *
+     * @param \Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenBurnChainBurnKcsErc20(\Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn#postChainBurnKcsErc20", [], $rHeaders, [], $chain_burn_kcs_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn fungible tokens
+     *
+     * @param \Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenBurnChainBurnKcsErc20KMS(\Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn#postChainBurnKcsErc20KMS", [], $rHeaders, [], $chain_burn_kcs_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -85,14 +325,14 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
     /**
      * Deploy a fungible token smart contract
      *
-     * @param \Tatum\Model\Erc20DeployRequest $erc20_deploy_request 
+     * @param \Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function erc20Deploy(\Tatum\Model\Erc20DeployRequest $erc20_deploy_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function blockchainTokenDeployChainDeployAlgoErc20(\Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -101,12 +341,822 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $erc20_deploy_request
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployAlgoErc20", [], $rHeaders, [], $chain_deploy_algo_erc20
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeployAlgoErc20KMS(\Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployAlgoErc20KMS", [], $rHeaders, [], $chain_deploy_algo_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeployCeloErc20(\Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployCeloErc20", [], $rHeaders, [], $chain_deploy_celo_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeployCeloErc20KMS(\Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployCeloErc20KMS", [], $rHeaders, [], $chain_deploy_celo_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeployErc20 $chain_deploy_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeployErc20(\Tatum\Model\ChainDeployErc20 $chain_deploy_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployErc20", [], $rHeaders, [], $chain_deploy_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeployErc20KMS(\Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployErc20KMS", [], $rHeaders, [], $chain_deploy_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeployKcsErc20(\Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployKcsErc20", [], $rHeaders, [], $chain_deploy_kcs_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeployKcsErc20KMS(\Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeployKcsErc20KMS", [], $rHeaders, [], $chain_deploy_kcs_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeploySolanaSpl(\Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeploySolanaSpl", [], $rHeaders, [], $chain_deploy_solana_spl
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a fungible token smart contract
+     *
+     * @param \Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenDeployChainDeploySolanaSplKMS(\Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy#postChainDeploySolanaSplKMS", [], $rHeaders, [], $chain_deploy_solana_spl_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint fungible tokens
+     *
+     * @param \Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenMintChainMintCeloErc20(\Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint#postChainMintCeloErc20", [], $rHeaders, [], $chain_mint_celo_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint fungible tokens
+     *
+     * @param \Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenMintChainMintCeloErc20KMS(\Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint#postChainMintCeloErc20KMS", [], $rHeaders, [], $chain_mint_celo_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint fungible tokens
+     *
+     * @param \Tatum\Model\ChainMintErc20 $chain_mint_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenMintChainMintErc20(\Tatum\Model\ChainMintErc20 $chain_mint_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint#postChainMintErc20", [], $rHeaders, [], $chain_mint_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint fungible tokens
+     *
+     * @param \Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenMintChainMintErc20KMS(\Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint#postChainMintErc20KMS", [], $rHeaders, [], $chain_mint_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint fungible tokens
+     *
+     * @param \Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenMintChainMintKcsErc20(\Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint#postChainMintKcsErc20", [], $rHeaders, [], $chain_mint_kcs_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint fungible tokens
+     *
+     * @param \Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenMintChainMintKcsErc20KMS(\Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint#postChainMintKcsErc20KMS", [], $rHeaders, [], $chain_mint_kcs_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferAlgoErc20(\Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferAlgoErc20", [], $rHeaders, [], $chain_transfer_algo_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferAlgoErc20KMS(\Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferAlgoErc20KMS", [], $rHeaders, [], $chain_transfer_algo_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferBscBep20(\Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferBscBep20", [], $rHeaders, [], $chain_transfer_bsc_bep20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferBscBep20KMS(\Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferBscBep20KMS", [], $rHeaders, [], $chain_transfer_bsc_bep20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferCeloErc20Token(\Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferCeloErc20Token", [], $rHeaders, [], $chain_transfer_celo_erc20_token
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferCeloErc20TokenKMS(\Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferCeloErc20TokenKMS", [], $rHeaders, [], $chain_transfer_celo_erc20_token_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferEthErc20(\Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferEthErc20", [], $rHeaders, [], $chain_transfer_eth_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferEthErc20KMS(\Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferEthErc20KMS", [], $rHeaders, [], $chain_transfer_eth_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferKcsEthErc20(\Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferKcsEthErc20", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferKcsEthErc20KMS(\Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferKcsEthErc20KMS", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferSolanaSpl(\Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferSolanaSpl", [], $rHeaders, [], $chain_transfer_solana_spl
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer fungible tokens
+     *
+     * @param \Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainTokenTransactionChainTransferSolanaSplKMS(\Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction#postChainTransferSolanaSplKMS", [], $rHeaders, [], $chain_transfer_solana_spl_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -215,66 +1265,6 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
                 ], $rHeaders, []
             ), 
             "\Tatum\Model\FungibleTx[]"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Mint fungible tokens
-     *
-     * @param \Tatum\Model\Erc20MintRequest $erc20_mint_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function erc20Mint(\Tatum\Model\Erc20MintRequest $erc20_mint_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $erc20_mint_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer fungible tokens
-     *
-     * @param \Tatum\Model\Erc20TransferRequest $erc20_transfer_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function erc20Transfer(\Tatum\Model\Erc20TransferRequest $erc20_transfer_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $erc20_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
             
         return $result;

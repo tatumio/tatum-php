@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferBscBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_BSC = 'BSC';
     public const CURRENCY_BETH = 'BETH';
     public const CURRENCY_BBTC = 'BBTC';

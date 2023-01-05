@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionPending extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION = 'ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION';
     protected static $_name = "CreateSubscriptionPending";
     protected static $_definition = [

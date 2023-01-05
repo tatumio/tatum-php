@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowBlockBlockSealsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowBlock_blockSeals_inner";
     protected static $_definition = [
         "block_id" => ["blockId", "string", null, "getBlockId", "setBlockId", null, ["r" => 0]], 

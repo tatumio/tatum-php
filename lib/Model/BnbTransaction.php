@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbTransaction extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbTransaction";
     protected static $_definition = [
         "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 0]], 

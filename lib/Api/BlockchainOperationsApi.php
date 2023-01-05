@@ -23,98 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class BlockchainOperationsApi extends AbstractApi {
     /**
-     * Send ADA from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function adaTransferOffchain(\Tatum\Model\AdaTransferOffchainRequest $ada_transfer_offchain_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/ada/transfer", [], $rHeaders, [], $ada_transfer_offchain_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\AlgoDeployErc20Ledger200Response
-     */
-    public function algoDeployErc20Ledger(\Tatum\Model\AlgoDeployErc20LedgerRequest $algo_deploy_erc20_ledger_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\AlgoDeployErc20Ledger200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/algo/erc20/deploy", [], $rHeaders, [], $algo_deploy_erc20_ledger_request
-            ), 
-            "\Tatum\Model\AlgoDeployErc20Ledger200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send ALGO from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\AlgoTransferRequest $algo_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function algoTransfer(\Tatum\Model\AlgoTransferRequest $algo_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/algorand/transfer", [], $rHeaders, [], $algo_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send BCH from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\BchTransferRequest $bch_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function bchTransfer(\Tatum\Model\BchTransferRequest $bch_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/bcash/transfer", [], $rHeaders, [], $bch_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Create a BNB-based asset
      *
      * @param \Tatum\Model\CreateBnbAsset $create_bnb_asset 
@@ -134,69 +42,276 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Send BNB from a virtual account to the blockchain
+     * Send ADA from a virtual account to the blockchain
      *
-     * @param \Tatum\Model\BnbTransferRequest $bnb_transfer_request 
+     * @param \Tatum\Model\TransferAdaKMS $transfer_ada_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransfer200Response
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
      */
-    public function bnbTransfer(\Tatum\Model\BnbTransferRequest $bnb_transfer_request) {
+    public function offchainAdaTransferAdaKMS(\Tatum\Model\TransferAdaKMS $transfer_ada_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/bnb/transfer", [], $rHeaders, [], $bnb_transfer_request
+                $this->_caller->config(), "POST", "/v3/offchain/ada/transfer#postTransferAdaKMS", [], $rHeaders, [], $transfer_ada_kms
             ), 
-            "\Tatum\Model\BtcTransfer200Response"
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
         );
             
         return $result;
     }
     
     /**
-     * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+     * Send ADA from a virtual account to the blockchain
      *
-     * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
+     * @param \Tatum\Model\TransferAdaKeyPair $transfer_ada_key_pair 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\EthDeployErc20200Response
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
      */
-    public function bscDeployBep20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
+    public function offchainAdaTransferAdaKeyPair(\Tatum\Model\TransferAdaKeyPair $transfer_ada_key_pair) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20/deploy", [], $rHeaders, [], $eth_deploy_erc20_request
+                $this->_caller->config(), "POST", "/v3/offchain/ada/transfer#postTransferAdaKeyPair", [], $rHeaders, [], $transfer_ada_key_pair
             ), 
-            "\Tatum\Model\EthDeployErc20200Response"
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
         );
             
         return $result;
     }
     
     /**
-     * Send BSC from a virtual account to the blockchain
+     * Send ADA from a virtual account to the blockchain
      *
-     * @param \Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request 
+     * @param \Tatum\Model\TransferAdaMnemonic $transfer_ada_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransfer200Response
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
      */
-    public function bscOrBepTransfer(\Tatum\Model\BscOrBepTransferRequest $bsc_or_bep_transfer_request) {
+    public function offchainAdaTransferAdaMnemonic(\Tatum\Model\TransferAdaMnemonic $transfer_ada_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/bsc/transfer", [], $rHeaders, [], $bsc_or_bep_transfer_request
+                $this->_caller->config(), "POST", "/v3/offchain/ada/transfer#postTransferAdaMnemonic", [], $rHeaders, [], $transfer_ada_mnemonic
             ), 
-            "\Tatum\Model\BtcTransfer200Response"
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployAlgoErc20OffchainKMSAddress $deploy_algo_erc20_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainAlgoErc20DeployAlgoErc20OffchainKMSAddress(\Tatum\Model\DeployAlgoErc20OffchainKMSAddress $deploy_algo_erc20_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/algo/erc20/deploy#postDeployAlgoErc20OffchainKMSAddress", [], $rHeaders, [], $deploy_algo_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress $deploy_algo_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress(\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress $deploy_algo_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/algo/erc20/deploy#postDeployAlgoErc20OffchainMnemonicAddress", [], $rHeaders, [], $deploy_algo_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployAlgoErc20OffchainPKAddress $deploy_algo_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainAlgoErc20DeployAlgoErc20OffchainPKAddress(\Tatum\Model\DeployAlgoErc20OffchainPKAddress $deploy_algo_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/algo/erc20/deploy#postDeployAlgoErc20OffchainPKAddress", [], $rHeaders, [], $deploy_algo_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ALGO from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferAlgo $transfer_algo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainAlgorandTransferAlgo(\Tatum\Model\TransferAlgo $transfer_algo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/algorand/transfer#postTransferAlgo", [], $rHeaders, [], $transfer_algo
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ALGO from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferAlgoErc20 $transfer_algo_erc20 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainAlgorandTransferAlgoErc20(\Tatum\Model\TransferAlgoErc20 $transfer_algo_erc20) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/algorand/transfer#postTransferAlgoErc20", [], $rHeaders, [], $transfer_algo_erc20
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ALGO from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferAlgoKMS $transfer_algo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainAlgorandTransferAlgoKMS(\Tatum\Model\TransferAlgoKMS $transfer_algo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/algorand/transfer#postTransferAlgoKMS", [], $rHeaders, [], $transfer_algo_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BCH from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBchKMS $transfer_bch_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBcashTransferBchKMS(\Tatum\Model\TransferBchKMS $transfer_bch_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bcash/transfer#postTransferBchKMS", [], $rHeaders, [], $transfer_bch_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BCH from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBchKeyPair $transfer_bch_key_pair 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBcashTransferBchKeyPair(\Tatum\Model\TransferBchKeyPair $transfer_bch_key_pair) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bcash/transfer#postTransferBchKeyPair", [], $rHeaders, [], $transfer_bch_key_pair
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BCH from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBchMnemonic $transfer_bch_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBcashTransferBchMnemonic(\Tatum\Model\TransferBchMnemonic $transfer_bch_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bcash/transfer#postTransferBchMnemonic", [], $rHeaders, [], $transfer_bch_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
         );
             
         return $result;
@@ -205,67 +320,251 @@ class BlockchainOperationsApi extends AbstractApi {
     /**
      * Send BTC from a virtual account to the blockchain
      *
-     * @param \Tatum\Model\BtcTransferRequest $btc_transfer_request 
+     * @param \Tatum\Model\TransferBtcKMS $transfer_btc_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransfer200Response
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
      */
-    public function btcTransfer(\Tatum\Model\BtcTransferRequest $btc_transfer_request) {
+    public function offchainBitcoinTransferBtcKMS(\Tatum\Model\TransferBtcKMS $transfer_btc_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/bitcoin/transfer", [], $rHeaders, [], $btc_transfer_request
+                $this->_caller->config(), "POST", "/v3/offchain/bitcoin/transfer#postTransferBtcKMS", [], $rHeaders, [], $transfer_btc_kms
             ), 
-            "\Tatum\Model\BtcTransfer200Response"
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
         );
             
         return $result;
     }
     
     /**
-     * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+     * Send BTC from a virtual account to the blockchain
      *
-     * @param \Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request 
+     * @param \Tatum\Model\TransferBtcKeyPair $transfer_btc_key_pair 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\EthDeployErc20200Response
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
      */
-    public function celoDeployErc20Ledger(\Tatum\Model\CeloDeployErc20LedgerRequest $celo_deploy_erc20_ledger_request) {
+    public function offchainBitcoinTransferBtcKeyPair(\Tatum\Model\TransferBtcKeyPair $transfer_btc_key_pair) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20/deploy", [], $rHeaders, [], $celo_deploy_erc20_ledger_request
+                $this->_caller->config(), "POST", "/v3/offchain/bitcoin/transfer#postTransferBtcKeyPair", [], $rHeaders, [], $transfer_btc_key_pair
             ), 
-            "\Tatum\Model\EthDeployErc20200Response"
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
         );
             
         return $result;
     }
     
     /**
-     * Send CELO from a virtual account to the blockchain
+     * Send BTC from a virtual account to the blockchain
      *
-     * @param \Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request 
+     * @param \Tatum\Model\TransferBtcMnemonic $transfer_btc_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransfer200Response
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
      */
-    public function celoOrErc20Transfer(\Tatum\Model\CeloOrErc20TransferRequest $celo_or_erc20_transfer_request) {
+    public function offchainBitcoinTransferBtcMnemonic(\Tatum\Model\TransferBtcMnemonic $transfer_btc_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/celo/transfer", [], $rHeaders, [], $celo_or_erc20_transfer_request
+                $this->_caller->config(), "POST", "/v3/offchain/bitcoin/transfer#postTransferBtcMnemonic", [], $rHeaders, [], $transfer_btc_mnemonic
             ), 
-            "\Tatum\Model\BtcTransfer200Response"
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BNB from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBnb $transfer_bnb 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBnbTransferBnb(\Tatum\Model\TransferBnb $transfer_bnb) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bnb/transfer#postTransferBnb", [], $rHeaders, [], $transfer_bnb
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BNB from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBnbKMS $transfer_bnb_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBnbTransferBnbKMS(\Tatum\Model\TransferBnbKMS $transfer_bnb_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bnb/transfer#postTransferBnbKMS", [], $rHeaders, [], $transfer_bnb_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainBscBep20DeployErc20OffchainKMSAddress(\Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20/deploy#postDeployErc20OffchainKMSAddress", [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainBscBep20DeployErc20OffchainKMSXpub(\Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20/deploy#postDeployErc20OffchainKMSXpub", [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainBscBep20DeployErc20OffchainMnemXpub(\Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20/deploy#postDeployErc20OffchainMnemXpub", [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainBscBep20DeployErc20OffchainMnemonicAddress(\Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20/deploy#postDeployErc20OffchainMnemonicAddress", [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainBscBep20DeployErc20OffchainPKAddress(\Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20/deploy#postDeployErc20OffchainPKAddress", [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainBscBep20DeployErc20OffchainPKXpub(\Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20/deploy#postDeployErc20OffchainPKXpub", [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
         );
             
         return $result;
@@ -274,19 +573,134 @@ class BlockchainOperationsApi extends AbstractApi {
     /**
      * Register a new BNB Smart Chain BEP-20 token in the virtual account
      *
-     * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
+     * @param \Tatum\Model\Erc20 $erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createBep20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+    public function offchainBscBep20Erc20(\Tatum\Model\Erc20 $erc20) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20", [], $rHeaders, [], $create_erc20_request
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20#postErc20", [], $rHeaders, [], $erc20
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new BNB Smart Chain BEP-20 token in the virtual account
+     *
+     * @param \Tatum\Model\Erc20Address $erc20_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function offchainBscBep20Erc20Address(\Tatum\Model\Erc20Address $erc20_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/bep20#postErc20Address", [], $rHeaders, [], $erc20_address
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BSC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBsc $transfer_bsc 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBscTransferBsc(\Tatum\Model\TransferBsc $transfer_bsc) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/transfer#postTransferBsc", [], $rHeaders, [], $transfer_bsc
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BSC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBscKMS $transfer_bsc_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBscTransferBscKMS(\Tatum\Model\TransferBscKMS $transfer_bsc_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/transfer#postTransferBscKMS", [], $rHeaders, [], $transfer_bsc_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BSC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferBscMnemonic $transfer_bsc_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainBscTransferBscMnemonic(\Tatum\Model\TransferBscMnemonic $transfer_bsc_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/bsc/transfer#postTransferBscMnemonic", [], $rHeaders, [], $transfer_bsc_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new Celo ERC-20-equivalent token in the virtual account
+     *
+     * @param \Tatum\Model\Erc20 $erc20 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function offchainCeloErc20(\Tatum\Model\Erc20 $erc20) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20#postErc20", [], $rHeaders, [], $erc20
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -297,19 +711,387 @@ class BlockchainOperationsApi extends AbstractApi {
     /**
      * Register a new Celo ERC-20-equivalent token in the virtual account
      *
-     * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
+     * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createCeloErc20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+    public function offchainCeloErc20Address(\Tatum\Model\Erc20Address $erc20_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20", [], $rHeaders, [], $create_erc20_request
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20#postErc20Address", [], $rHeaders, [], $erc20_address
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployCeloErc20OffchainKMSAddress $deploy_celo_erc20_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainCeloErc20DeployCeloErc20OffchainKMSAddress(\Tatum\Model\DeployCeloErc20OffchainKMSAddress $deploy_celo_erc20_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20/deploy#postDeployCeloErc20OffchainKMSAddress", [], $rHeaders, [], $deploy_celo_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployCeloErc20OffchainKMSXpub $deploy_celo_erc20_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainCeloErc20DeployCeloErc20OffchainKMSXpub(\Tatum\Model\DeployCeloErc20OffchainKMSXpub $deploy_celo_erc20_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20/deploy#postDeployCeloErc20OffchainKMSXpub", [], $rHeaders, [], $deploy_celo_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployCeloErc20OffchainMnemXpub $deploy_celo_erc20_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainCeloErc20DeployCeloErc20OffchainMnemXpub(\Tatum\Model\DeployCeloErc20OffchainMnemXpub $deploy_celo_erc20_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20/deploy#postDeployCeloErc20OffchainMnemXpub", [], $rHeaders, [], $deploy_celo_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployCeloErc20OffchainMnemonicAddress $deploy_celo_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainCeloErc20DeployCeloErc20OffchainMnemonicAddress(\Tatum\Model\DeployCeloErc20OffchainMnemonicAddress $deploy_celo_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20/deploy#postDeployCeloErc20OffchainMnemonicAddress", [], $rHeaders, [], $deploy_celo_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployCeloErc20OffchainPKAddress $deploy_celo_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainCeloErc20DeployCeloErc20OffchainPKAddress(\Tatum\Model\DeployCeloErc20OffchainPKAddress $deploy_celo_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20/deploy#postDeployCeloErc20OffchainPKAddress", [], $rHeaders, [], $deploy_celo_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployCeloErc20OffchainPKXpub $deploy_celo_erc20_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainCeloErc20DeployCeloErc20OffchainPKXpub(\Tatum\Model\DeployCeloErc20OffchainPKXpub $deploy_celo_erc20_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/erc20/deploy#postDeployCeloErc20OffchainPKXpub", [], $rHeaders, [], $deploy_celo_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send CELO from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferCelo $transfer_celo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainCeloTransferCelo(\Tatum\Model\TransferCelo $transfer_celo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/transfer#postTransferCelo", [], $rHeaders, [], $transfer_celo
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send CELO from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferCeloKMS $transfer_celo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainCeloTransferCeloKMS(\Tatum\Model\TransferCeloKMS $transfer_celo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/transfer#postTransferCeloKMS", [], $rHeaders, [], $transfer_celo_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send CELO from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferCeloMnemonic $transfer_celo_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainCeloTransferCeloMnemonic(\Tatum\Model\TransferCeloMnemonic $transfer_celo_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/celo/transfer#postTransferCeloMnemonic", [], $rHeaders, [], $transfer_celo_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send DOGE from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferDogeKMS $transfer_doge_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainDogecoinTransferDogeKMS(\Tatum\Model\TransferDogeKMS $transfer_doge_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/dogecoin/transfer#postTransferDogeKMS", [], $rHeaders, [], $transfer_doge_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send DOGE from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferDogeKeyPair $transfer_doge_key_pair 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainDogecoinTransferDogeKeyPair(\Tatum\Model\TransferDogeKeyPair $transfer_doge_key_pair) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/dogecoin/transfer#postTransferDogeKeyPair", [], $rHeaders, [], $transfer_doge_key_pair
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send DOGE from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferDogeMnemonic $transfer_doge_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainDogecoinTransferDogeMnemonic(\Tatum\Model\TransferDogeMnemonic $transfer_doge_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/dogecoin/transfer#postTransferDogeMnemonic", [], $rHeaders, [], $transfer_doge_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send EGLD from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEth $transfer_eth 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEgldTransferEth(\Tatum\Model\TransferEth $transfer_eth) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/egld/transfer#postTransferEth", [], $rHeaders, [], $transfer_eth
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send EGLD from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEgldTransferEthKMS(\Tatum\Model\TransferEthKMS $transfer_eth_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/egld/transfer#postTransferEthKMS", [], $rHeaders, [], $transfer_eth_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send EGLD from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEgldTransferEthMnemonic(\Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/egld/transfer#postTransferEthMnemonic", [], $rHeaders, [], $transfer_eth_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new Ethereum ERC-20 token in the virtual account
+     *
+     * @param \Tatum\Model\Erc20 $erc20 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function offchainEthereumErc20(\Tatum\Model\Erc20 $erc20) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20#postErc20", [], $rHeaders, [], $erc20
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -320,19 +1102,1026 @@ class BlockchainOperationsApi extends AbstractApi {
     /**
      * Register a new Ethereum ERC-20 token in the virtual account
      *
-     * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
+     * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createErc20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+    public function offchainEthereumErc20Address(\Tatum\Model\Erc20Address $erc20_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20", [], $rHeaders, [], $create_erc20_request
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20#postErc20Address", [], $rHeaders, [], $erc20_address
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainEthereumErc20DeployErc20OffchainKMSAddress(\Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/deploy#postDeployErc20OffchainKMSAddress", [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainEthereumErc20DeployErc20OffchainKMSXpub(\Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/deploy#postDeployErc20OffchainKMSXpub", [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainEthereumErc20DeployErc20OffchainMnemXpub(\Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/deploy#postDeployErc20OffchainMnemXpub", [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainEthereumErc20DeployErc20OffchainMnemonicAddress(\Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/deploy#postDeployErc20OffchainMnemonicAddress", [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainEthereumErc20DeployErc20OffchainPKAddress(\Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/deploy#postDeployErc20OffchainPKAddress", [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainEthereumErc20DeployErc20OffchainPKXpub(\Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/deploy#postDeployErc20OffchainPKXpub", [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferErc20 $transfer_erc20 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEthereumErc20TransferErc20(\Tatum\Model\TransferErc20 $transfer_erc20) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/transfer#postTransferErc20", [], $rHeaders, [], $transfer_erc20
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferErc20KMS $transfer_erc20_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEthereumErc20TransferErc20KMS(\Tatum\Model\TransferErc20KMS $transfer_erc20_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/transfer#postTransferErc20KMS", [], $rHeaders, [], $transfer_erc20_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferErc20Mnemonic $transfer_erc20_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEthereumErc20TransferErc20Mnemonic(\Tatum\Model\TransferErc20Mnemonic $transfer_erc20_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/transfer#postTransferErc20Mnemonic", [], $rHeaders, [], $transfer_erc20_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ETH from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEth $transfer_eth 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEthereumTransferEth(\Tatum\Model\TransferEth $transfer_eth) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/transfer#postTransferEth", [], $rHeaders, [], $transfer_eth
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ETH from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEthereumTransferEthKMS(\Tatum\Model\TransferEthKMS $transfer_eth_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/transfer#postTransferEthKMS", [], $rHeaders, [], $transfer_eth_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ETH from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainEthereumTransferEthMnemonic(\Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/ethereum/transfer#postTransferEthMnemonic", [], $rHeaders, [], $transfer_eth_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send FLOW from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferFlowKMS $transfer_flow_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainFlowTransferFlowKMS(\Tatum\Model\TransferFlowKMS $transfer_flow_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/flow/transfer#postTransferFlowKMS", [], $rHeaders, [], $transfer_flow_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send FLOW from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferFlowMnemonic $transfer_flow_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainFlowTransferFlowMnemonic(\Tatum\Model\TransferFlowMnemonic $transfer_flow_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/flow/transfer#postTransferFlowMnemonic", [], $rHeaders, [], $transfer_flow_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send FLOW from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferFlowPK $transfer_flow_pk 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainFlowTransferFlowPK(\Tatum\Model\TransferFlowPK $transfer_flow_pk) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/flow/transfer#postTransferFlowPK", [], $rHeaders, [], $transfer_flow_pk
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKcsErc20DeployKCSErc20OffchainKMSAddress(\Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy#postDeployKCSErc20OffchainKMSAddress", [], $rHeaders, [], $deploy_kcs_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKcsErc20DeployKCSErc20OffchainKMSXpub(\Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy#postDeployKCSErc20OffchainKMSXpub", [], $rHeaders, [], $deploy_kcs_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKcsErc20DeployKCSErc20OffchainMnemXpub(\Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy#postDeployKCSErc20OffchainMnemXpub", [], $rHeaders, [], $deploy_kcs_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKcsErc20DeployKCSErc20OffchainMnemonicAddress(\Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy#postDeployKCSErc20OffchainMnemonicAddress", [], $rHeaders, [], $deploy_kcs_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKcsErc20DeployKCSErc20OffchainPKAddress(\Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy#postDeployKCSErc20OffchainPKAddress", [], $rHeaders, [], $deploy_kcs_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKcsErc20DeployKCSErc20OffchainPKXpub(\Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy#postDeployKCSErc20OffchainPKXpub", [], $rHeaders, [], $deploy_kcs_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KCS from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferKCS $transfer_kcs 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainKcsTransferKCS(\Tatum\Model\TransferKCS $transfer_kcs) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/transfer#postTransferKCS", [], $rHeaders, [], $transfer_kcs
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KCS from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferKCSKMS $transfer_kcskms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainKcsTransferKCSKMS(\Tatum\Model\TransferKCSKMS $transfer_kcskms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/transfer#postTransferKCSKMS", [], $rHeaders, [], $transfer_kcskms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KCS from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferKCSMnemonic $transfer_kcs_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainKcsTransferKCSMnemonic(\Tatum\Model\TransferKCSMnemonic $transfer_kcs_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/transfer#postTransferKCSMnemonic", [], $rHeaders, [], $transfer_kcs_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKlaytnErc20DeployErc20OffchainKMSAddress(\Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/erc20/deploy#postDeployErc20OffchainKMSAddress", [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKlaytnErc20DeployErc20OffchainKMSXpub(\Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/erc20/deploy#postDeployErc20OffchainKMSXpub", [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKlaytnErc20DeployErc20OffchainMnemXpub(\Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/erc20/deploy#postDeployErc20OffchainMnemXpub", [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKlaytnErc20DeployErc20OffchainMnemonicAddress(\Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/erc20/deploy#postDeployErc20OffchainMnemonicAddress", [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKlaytnErc20DeployErc20OffchainPKAddress(\Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/erc20/deploy#postDeployErc20OffchainPKAddress", [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainKlaytnErc20DeployErc20OffchainPKXpub(\Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/erc20/deploy#postDeployErc20OffchainPKXpub", [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KLAY from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEth $transfer_eth 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainKlaytnTransferEth(\Tatum\Model\TransferEth $transfer_eth) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/transfer#postTransferEth", [], $rHeaders, [], $transfer_eth
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KLAY from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainKlaytnTransferEthKMS(\Tatum\Model\TransferEthKMS $transfer_eth_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/transfer#postTransferEthKMS", [], $rHeaders, [], $transfer_eth_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KLAY from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainKlaytnTransferEthMnemonic(\Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/klaytn/transfer#postTransferEthMnemonic", [], $rHeaders, [], $transfer_eth_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send LTC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferLtcKMS $transfer_ltc_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainLitecoinTransferLtcKMS(\Tatum\Model\TransferLtcKMS $transfer_ltc_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/litecoin/transfer#postTransferLtcKMS", [], $rHeaders, [], $transfer_ltc_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send LTC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferLtcKeyPair $transfer_ltc_key_pair 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainLitecoinTransferLtcKeyPair(\Tatum\Model\TransferLtcKeyPair $transfer_ltc_key_pair) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/litecoin/transfer#postTransferLtcKeyPair", [], $rHeaders, [], $transfer_ltc_key_pair
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send LTC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferLtcMnemonic $transfer_ltc_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainLitecoinTransferLtcMnemonic(\Tatum\Model\TransferLtcMnemonic $transfer_ltc_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/litecoin/transfer#postTransferLtcMnemonic", [], $rHeaders, [], $transfer_ltc_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainOneHrm20DeployErc20OffchainKMSAddress(\Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20/deploy#postDeployErc20OffchainKMSAddress", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $deploy_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainOneHrm20DeployErc20OffchainKMSXpub(\Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20/deploy#postDeployErc20OffchainKMSXpub", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainOneHrm20DeployErc20OffchainMnemXpub(\Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20/deploy#postDeployErc20OffchainMnemXpub", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainOneHrm20DeployErc20OffchainMnemonicAddress(\Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20/deploy#postDeployErc20OffchainMnemonicAddress", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainOneHrm20DeployErc20OffchainPKAddress(\Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20/deploy#postDeployErc20OffchainPKAddress", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $deploy_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainOneHrm20DeployErc20OffchainPKXpub(\Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20/deploy#postDeployErc20OffchainPKXpub", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new Harmony HRM-20 token in the virtual account
+     *
+     * @param \Tatum\Model\Erc20 $erc20 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function offchainOneHrm20Erc20(\Tatum\Model\Erc20 $erc20) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20#postErc20", [], $rHeaders, [], $erc20
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -343,19 +2132,19 @@ class BlockchainOperationsApi extends AbstractApi {
     /**
      * Register a new Harmony HRM-20 token in the virtual account
      *
-     * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
+     * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createHrm20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+    public function offchainOneHrm20Erc20Address(\Tatum\Model\Erc20Address $erc20_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20", [], $rHeaders, [], $create_erc20_request
+                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20#postErc20Address", [], $rHeaders, [], $erc20_address
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -364,21 +2153,492 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
+     * Send ONE from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEth $transfer_eth 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainOneTransferEth(\Tatum\Model\TransferEth $transfer_eth, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/transfer#postTransferEth", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $transfer_eth
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ONE from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainOneTransferEthKMS(\Tatum\Model\TransferEthKMS $transfer_eth_kms, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/transfer#postTransferEthKMS", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $transfer_eth_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ONE from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
+     * @param float|0 $shard_id Shard to operate on
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainOneTransferEthMnemonic(\Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/one/transfer#postTransferEthMnemonic", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $transfer_eth_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send MATIC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEth $transfer_eth 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainPolygonTransferEth(\Tatum\Model\TransferEth $transfer_eth) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/polygon/transfer#postTransferEth", [], $rHeaders, [], $transfer_eth
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send MATIC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainPolygonTransferEthKMS(\Tatum\Model\TransferEthKMS $transfer_eth_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/polygon/transfer#postTransferEthKMS", [], $rHeaders, [], $transfer_eth_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send MATIC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainPolygonTransferEthMnemonic(\Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/polygon/transfer#postTransferEthMnemonic", [], $rHeaders, [], $transfer_eth_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send SOL from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferSol $transfer_sol 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainSolanaTransferSol(\Tatum\Model\TransferSol $transfer_sol) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/solana/transfer#postTransferSol", [], $rHeaders, [], $transfer_sol
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send SOL from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferSolKMS $transfer_sol_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainSolanaTransferSolKMS(\Tatum\Model\TransferSolKMS $transfer_sol_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/solana/transfer#postTransferSolKMS", [], $rHeaders, [], $transfer_sol_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+     *
+     * @param string $chain Blockchain to work with
+     * @param \Tatum\Model\Erc20 $erc20 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function offchainTokenchainErc20(string $chain, \Tatum\Model\Erc20 $erc20) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", S::parse("/v3/offchain/token/{chain}#postErc20", ["chain" => $chain]), [], $rHeaders, [], $erc20
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+     *
+     * @param string $chain Blockchain to work with
+     * @param \Tatum\Model\Erc20Address $erc20_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function offchainTokenchainErc20Address(string $chain, \Tatum\Model\Erc20Address $erc20_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", S::parse("/v3/offchain/token/{chain}#postErc20Address", ["chain" => $chain]), [], $rHeaders, [], $erc20_address
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send TRON from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferTron $transfer_tron 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainTronTransferTron(\Tatum\Model\TransferTron $transfer_tron) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/transfer#postTransferTron", [], $rHeaders, [], $transfer_tron
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send TRON from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferTronKMS $transfer_tron_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainTronTransferTronKMS(\Tatum\Model\TransferTronKMS $transfer_tron_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/transfer#postTransferTronKMS", [], $rHeaders, [], $transfer_tron_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send TRON from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferTronMnemonic $transfer_tron_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainTronTransferTronMnemonic(\Tatum\Model\TransferTronMnemonic $transfer_tron_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/transfer#postTransferTronMnemonic", [], $rHeaders, [], $transfer_tron_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Register a new TRON TRC-10 or TRC-20 token in the virtual account
      *
-     * @param \Tatum\Model\CreateTrcRequest $create_trc_request 
+     * @param \Tatum\Model\TrcAddress $trc_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Trc20Response
      */
-    public function createTrc(\Tatum\Model\CreateTrcRequest $create_trc_request) {
+    public function offchainTronTrcAddress(\Tatum\Model\TrcAddress $trc_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Trc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/tron/trc", [], $rHeaders, [], $create_trc_request
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc#postTrcAddress", [], $rHeaders, [], $trc_address
+            ), 
+            "\Tatum\Model\Trc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployTrcOffchainKMSAddress $deploy_trc_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainTronTrcDeployTrcOffchainKMSAddress(\Tatum\Model\DeployTrcOffchainKMSAddress $deploy_trc_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc/deploy#postDeployTrcOffchainKMSAddress", [], $rHeaders, [], $deploy_trc_offchain_kms_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployTrcOffchainKMSXpub $deploy_trc_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainTronTrcDeployTrcOffchainKMSXpub(\Tatum\Model\DeployTrcOffchainKMSXpub $deploy_trc_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc/deploy#postDeployTrcOffchainKMSXpub", [], $rHeaders, [], $deploy_trc_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployTrcOffchainMnemXpub $deploy_trc_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainTronTrcDeployTrcOffchainMnemXpub(\Tatum\Model\DeployTrcOffchainMnemXpub $deploy_trc_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc/deploy#postDeployTrcOffchainMnemXpub", [], $rHeaders, [], $deploy_trc_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployTrcOffchainMnemonicAddress $deploy_trc_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainTronTrcDeployTrcOffchainMnemonicAddress(\Tatum\Model\DeployTrcOffchainMnemonicAddress $deploy_trc_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc/deploy#postDeployTrcOffchainMnemonicAddress", [], $rHeaders, [], $deploy_trc_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployTrcOffchainPKAddress $deploy_trc_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainTronTrcDeployTrcOffchainPKAddress(\Tatum\Model\DeployTrcOffchainPKAddress $deploy_trc_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc/deploy#postDeployTrcOffchainPKAddress", [], $rHeaders, [], $deploy_trc_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployTrcOffchainPKXpub $deploy_trc_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainTronTrcDeployTrcOffchainPKXpub(\Tatum\Model\DeployTrcOffchainPKXpub $deploy_trc_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc/deploy#postDeployTrcOffchainPKXpub", [], $rHeaders, [], $deploy_trc_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new TRON TRC-10 or TRC-20 token in the virtual account
+     *
+     * @param \Tatum\Model\TrcXpub $trc_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Trc20Response
+     */
+    public function offchainTronTrcXpub(\Tatum\Model\TrcXpub $trc_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Trc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/tron/trc#postTrcXpub", [], $rHeaders, [], $trc_xpub
             ), 
             "\Tatum\Model\Trc20Response"
         );
@@ -389,19 +2649,19 @@ class BlockchainOperationsApi extends AbstractApi {
     /**
      * Register a new XinFin ERC-20-equivalent token in the virtual account
      *
-     * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
+     * @param \Tatum\Model\Erc20 $erc20 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function createXdc20(\Tatum\Model\CreateErc20Request $create_erc20_request) {
+    public function offchainXdcErc20(\Tatum\Model\Erc20 $erc20) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20", [], $rHeaders, [], $create_erc20_request
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20#postErc20", [], $rHeaders, [], $erc20
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -410,350 +2670,21 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Send DOGE from a virtual account to the blockchain
+     * Register a new XinFin ERC-20-equivalent token in the virtual account
      *
-     * @param \Tatum\Model\DogeTransferRequest $doge_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function dogeTransfer(\Tatum\Model\DogeTransferRequest $doge_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/dogecoin/transfer", [], $rHeaders, [], $doge_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send EGLD from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function egldTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/egld/transfer", [], $rHeaders, [], $eth_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthDeployErc20200Response
-     */
-    public function ethDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/deploy", [], $rHeaders, [], $eth_deploy_erc20_request
-            ), 
-            "\Tatum\Model\EthDeployErc20200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send ETH from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function ethTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/ethereum/transfer", [], $rHeaders, [], $eth_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function ethTransferErc20(\Tatum\Model\EthTransferErc20Request $eth_transfer_erc20_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/ethereum/erc20/transfer", [], $rHeaders, [], $eth_transfer_erc20_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send FLOW from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\FlowTransferRequest $flow_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function flowTransfer(\Tatum\Model\FlowTransferRequest $flow_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/flow/transfer", [], $rHeaders, [], $flow_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthDeployErc20200Response
-     */
-    public function kcsDeployErc20Ledger(\Tatum\Model\KcsDeployErc20LedgerRequest $kcs_deploy_erc20_ledger_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $kcs_deploy_erc20_ledger_request
-            ), 
-            "\Tatum\Model\EthDeployErc20200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send KCS from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\KcsTransferRequest $kcs_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function kcsTransfer(\Tatum\Model\KcsTransferRequest $kcs_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/transfer", [], $rHeaders, [], $kcs_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthDeployErc20200Response
-     */
-    public function klayDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/klaytn/erc20/deploy", [], $rHeaders, [], $eth_deploy_erc20_request
-            ), 
-            "\Tatum\Model\EthDeployErc20200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send KLAY from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function klayTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/klaytn/transfer", [], $rHeaders, [], $eth_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send LTC from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\LtcTransferRequest $ltc_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function ltcTransfer(\Tatum\Model\LtcTransferRequest $ltc_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/litecoin/transfer", [], $rHeaders, [], $ltc_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
-     * @param float|0 $shard_id Shard to operate on
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthDeployErc20200Response
-     */
-    public function oneDeployHrm20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request, float $shard_id = 0) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/one/hrm20/deploy", [
-                    "shardID" => S::toQueryValue($shard_id),
-                ], $rHeaders, [], $eth_deploy_erc20_request
-            ), 
-            "\Tatum\Model\EthDeployErc20200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send ONE from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
-     * @param float|0 $shard_id Shard to operate on
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function oneTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request, float $shard_id = 0) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/one/transfer", [
-                    "shardID" => S::toQueryValue($shard_id),
-                ], $rHeaders, [], $eth_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send MATIC from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function polygonTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/polygon/transfer", [], $rHeaders, [], $eth_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-     *
-     * @param string $chain Blockchain to work with
-     * @param \Tatum\Model\CreateErc20Request $create_erc20_request 
+     * @param \Tatum\Model\Erc20Address $erc20_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function registerErc20Token(string $chain, \Tatum\Model\CreateErc20Request $create_erc20_request) {
+    public function offchainXdcErc20Address(\Tatum\Model\Erc20Address $erc20_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/offchain/token/{chain}", ["chain" => $chain]), [], $rHeaders, [], $create_erc20_request
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20#postErc20Address", [], $rHeaders, [], $erc20_address
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -762,23 +2693,299 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Send SOL from a virtual account to the blockchain
+     * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
-     * @param \Tatum\Model\SolTransferRequest $sol_transfer_request 
+     * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransfer200Response
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
      */
-    public function solTransfer(\Tatum\Model\SolTransferRequest $sol_transfer_request) {
+    public function offchainXdcErc20DeployErc20OffchainKMSAddress(\Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/solana/transfer", [], $rHeaders, [], $sol_transfer_request
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20/deploy#postDeployErc20OffchainKMSAddress", [], $rHeaders, [], $deploy_erc20_offchain_kms_address
             ), 
-            "\Tatum\Model\BtcTransfer200Response"
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainXdcErc20DeployErc20OffchainKMSXpub(\Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20/deploy#postDeployErc20OffchainKMSXpub", [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainXdcErc20DeployErc20OffchainMnemXpub(\Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20/deploy#postDeployErc20OffchainMnemXpub", [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainXdcErc20DeployErc20OffchainMnemonicAddress(\Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20/deploy#postDeployErc20OffchainMnemonicAddress", [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainXdcErc20DeployErc20OffchainPKAddress(\Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20/deploy#postDeployErc20OffchainPKAddress", [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offchainXdcErc20DeployErc20OffchainPKXpub(\Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20/deploy#postDeployErc20OffchainPKXpub", [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XDC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEth $transfer_eth 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainXdcTransferEth(\Tatum\Model\TransferEth $transfer_eth) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/transfer#postTransferEth", [], $rHeaders, [], $transfer_eth
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XDC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthKMS $transfer_eth_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainXdcTransferEthKMS(\Tatum\Model\TransferEthKMS $transfer_eth_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/transfer#postTransferEthKMS", [], $rHeaders, [], $transfer_eth_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XDC from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainXdcTransferEthMnemonic(\Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xdc/transfer#postTransferEthMnemonic", [], $rHeaders, [], $transfer_eth_mnemonic
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XLM from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferXlm $transfer_xlm 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainXlmTransferXlm(\Tatum\Model\TransferXlm $transfer_xlm) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xlm/transfer#postTransferXlm", [], $rHeaders, [], $transfer_xlm
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XLM from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferXlmKMS $transfer_xlm_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainXlmTransferXlmKMS(\Tatum\Model\TransferXlmKMS $transfer_xlm_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xlm/transfer#postTransferXlmKMS", [], $rHeaders, [], $transfer_xlm_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XRP from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferXrp $transfer_xrp 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainXrpTransferXrp(\Tatum\Model\TransferXrp $transfer_xrp) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xrp/transfer#postTransferXrp", [], $rHeaders, [], $transfer_xrp
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XRP from a virtual account to the blockchain
+     *
+     * @param \Tatum\Model\TransferXrpKMS $transfer_xrp_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+     */
+    public function offchainXrpTransferXrpKMS(\Tatum\Model\TransferXrpKMS $transfer_xrp_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/xrp/transfer#postTransferXrpKMS", [], $rHeaders, [], $transfer_xrp_kms
+            ), 
+            "\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response"
         );
             
         return $result;
@@ -905,98 +3112,6 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthDeployErc20200Response
-     */
-    public function tronDeployTrc(\Tatum\Model\TronDeployTrcRequest $tron_deploy_trc_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/tron/trc/deploy", [], $rHeaders, [], $tron_deploy_trc_request
-            ), 
-            "\Tatum\Model\EthDeployErc20200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send TRON from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function tronTransferOffchain(\Tatum\Model\TronTransferOffchainRequest $tron_transfer_offchain_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/tron/transfer", [], $rHeaders, [], $tron_transfer_offchain_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthDeployErc20200Response
-     */
-    public function xdcDeployErc20(\Tatum\Model\EthDeployErc20Request $eth_deploy_erc20_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthDeployErc20200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/xdc/erc20/deploy", [], $rHeaders, [], $eth_deploy_erc20_request
-            ), 
-            "\Tatum\Model\EthDeployErc20200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send XDC from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\EthTransferRequest $eth_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function xdcTransfer(\Tatum\Model\EthTransferRequest $eth_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/xdc/transfer", [], $rHeaders, [], $eth_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Create an XLM-based asset
      *
      * @param \Tatum\Model\CreateXlmAsset $create_xlm_asset 
@@ -1016,29 +3131,6 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Send XLM from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\XlmTransferRequest $xlm_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function xlmTransfer(\Tatum\Model\XlmTransferRequest $xlm_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/xlm/transfer", [], $rHeaders, [], $xlm_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Create XRP based Asset
      *
      * @param \Tatum\Model\CreateXrpAsset $create_xrp_asset 
@@ -1055,29 +3147,6 @@ class BlockchainOperationsApi extends AbstractApi {
                 $this->_caller->config(), "POST", "/v3/offchain/xrp/asset", [], $rHeaders, [], $create_xrp_asset
             )
         );
-    }
-    
-    /**
-     * Send XRP from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\XrpTransferRequest $xrp_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransfer200Response
-     */
-    public function xrpTransfer(\Tatum\Model\XrpTransferRequest $xrp_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransfer200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/xrp/transfer", [], $rHeaders, [], $xrp_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransfer200Response"
-        );
-            
-        return $result;
     }
     
 }

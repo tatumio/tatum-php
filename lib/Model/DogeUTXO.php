@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DogeUTXO extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DogeUTXO";
     protected static $_definition = [
         "script_pub_key" => ["scriptPubKey", "\Tatum\Model\DogeTxVoutInnerScriptPubKey", null, "getScriptPubKey", "setScriptPubKey", null, ["r" => 0]], 

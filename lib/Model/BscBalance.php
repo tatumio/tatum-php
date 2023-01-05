@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BscBalance extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BscBalance";
     protected static $_definition = [
         "balance" => ["balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]]

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class KmsSignatureIds extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "KmsSignatureIds";
     protected static $_definition = [
         "signature_ids" => ["signatureIds", "string[]", 'uuid', "getSignatureIds", "setSignatureIds", null, ["r" => 0, "c" => 1]]

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaBlockReward extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaBlockReward";
     protected static $_definition = [
         "commission" => ["commission", "string", 'nullable', "getCommission", "setCommission", null, ["r" => 0]], 

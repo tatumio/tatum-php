@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class StoreIPFS200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "StoreIPFS_200_response";
     protected static $_definition = [
         "ipfs_hash" => ["ipfsHash", "string", null, "getIpfsHash", "setIpfsHash", null, ["r" => 0]]

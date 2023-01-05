@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowCreateAddressFromPubKeyKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowCreateAddressFromPubKeyKMS";
     protected static $_definition = [
         "account" => ["account", "string", null, "getAccount", "setAccount", null, ["r" => 1, "nl" => 18, "xl" => 18]], 

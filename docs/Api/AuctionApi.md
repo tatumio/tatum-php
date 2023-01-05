@@ -4,38 +4,62 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**approveNftAuctionSpending()**](#approvenftauctionspending) | **POST** [/v3/blockchain/auction/approve](https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending) | Allow the NFT auction or marketplace to transfer an asset
-[**bidOnAuction()**](#bidonauction) | **POST** [/v3/blockchain/auction/bid](https://apidoc.tatum.io/tag/Auction#operation/BidOnAuction) | Bid for an asset at the NFT auction
-[**cancelAuction()**](#cancelauction) | **POST** [/v3/blockchain/auction/cancel](https://apidoc.tatum.io/tag/Auction#operation/CancelAuction) | Cancel the selling of an asset at the NFT auction
-[**createAuction()**](#createauction) | **POST** [/v3/blockchain/auction/sell](https://apidoc.tatum.io/tag/Auction#operation/CreateAuction) | Sell an asset at the NFT auction
-[**generateAuction()**](#generateauction) | **POST** [/v3/blockchain/auction](https://apidoc.tatum.io/tag/Auction#operation/GenerateAuction) | Create an NFT auction
+[**blockchainAuctionApproveNftSpending()**](#blockchainauctionapprovenftspending) | **POST** [/v3/blockchain/auction/approve#postApproveNftSpending](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionApproveNftSpending) | Allow the NFT auction or marketplace to transfer an asset
+[**blockchainAuctionApproveNftSpendingCelo()**](#blockchainauctionapprovenftspendingcelo) | **POST** [/v3/blockchain/auction/approve#postApproveNftSpendingCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionApproveNftSpendingCelo) | Allow the NFT auction or marketplace to transfer an asset
+[**blockchainAuctionApproveNftSpendingCeloKMS()**](#blockchainauctionapprovenftspendingcelokms) | **POST** [/v3/blockchain/auction/approve#postApproveNftSpendingCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionApproveNftSpendingCeloKMS) | Allow the NFT auction or marketplace to transfer an asset
+[**blockchainAuctionApproveNftSpendingKMS()**](#blockchainauctionapprovenftspendingkms) | **POST** [/v3/blockchain/auction/approve#postApproveNftSpendingKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionApproveNftSpendingKMS) | Allow the NFT auction or marketplace to transfer an asset
+[**blockchainAuctionBidOnAuction()**](#blockchainauctionbidonauction) | **POST** [/v3/blockchain/auction/bid#postBidOnAuction](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionBidOnAuction) | Bid for an asset at the NFT auction
+[**blockchainAuctionBidOnAuctionCelo()**](#blockchainauctionbidonauctioncelo) | **POST** [/v3/blockchain/auction/bid#postBidOnAuctionCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionBidOnAuctionCelo) | Bid for an asset at the NFT auction
+[**blockchainAuctionBidOnAuctionCeloKMS()**](#blockchainauctionbidonauctioncelokms) | **POST** [/v3/blockchain/auction/bid#postBidOnAuctionCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionBidOnAuctionCeloKMS) | Bid for an asset at the NFT auction
+[**blockchainAuctionBidOnAuctionKMS()**](#blockchainauctionbidonauctionkms) | **POST** [/v3/blockchain/auction/bid#postBidOnAuctionKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionBidOnAuctionKMS) | Bid for an asset at the NFT auction
+[**blockchainAuctionCancelAuction()**](#blockchainauctioncancelauction) | **POST** [/v3/blockchain/auction/cancel#postCancelAuction](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionCancelAuction) | Cancel the selling of an asset at the NFT auction
+[**blockchainAuctionCancelAuctionCelo()**](#blockchainauctioncancelauctioncelo) | **POST** [/v3/blockchain/auction/cancel#postCancelAuctionCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionCancelAuctionCelo) | Cancel the selling of an asset at the NFT auction
+[**blockchainAuctionCancelAuctionCeloKMS()**](#blockchainauctioncancelauctioncelokms) | **POST** [/v3/blockchain/auction/cancel#postCancelAuctionCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionCancelAuctionCeloKMS) | Cancel the selling of an asset at the NFT auction
+[**blockchainAuctionCancelAuctionKMS()**](#blockchainauctioncancelauctionkms) | **POST** [/v3/blockchain/auction/cancel#postCancelAuctionKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionCancelAuctionKMS) | Cancel the selling of an asset at the NFT auction
+[**blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate()**](#blockchainauctionfeeupdatefeeauctioncelokmsupdate) | **PUT** [/v3/blockchain/auction/fee#putUpdateFeeAuctionCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate) | Update the NFT auction fee
+[**blockchainAuctionFeeUpdateFeeAuctionCeloUpdate()**](#blockchainauctionfeeupdatefeeauctionceloupdate) | **PUT** [/v3/blockchain/auction/fee#putUpdateFeeAuctionCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionFeeUpdateFeeAuctionCeloUpdate) | Update the NFT auction fee
+[**blockchainAuctionFeeUpdateFeeAuctionKMSUpdate()**](#blockchainauctionfeeupdatefeeauctionkmsupdate) | **PUT** [/v3/blockchain/auction/fee#putUpdateFeeAuctionKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionFeeUpdateFeeAuctionKMSUpdate) | Update the NFT auction fee
+[**blockchainAuctionFeeUpdateFeeAuctionUpdate()**](#blockchainauctionfeeupdatefeeauctionupdate) | **PUT** [/v3/blockchain/auction/fee#putUpdateFeeAuction](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionFeeUpdateFeeAuctionUpdate) | Update the NFT auction fee
+[**blockchainAuctionGenerateAuction()**](#blockchainauctiongenerateauction) | **POST** [/v3/blockchain/auction#postGenerateAuction](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionGenerateAuction) | Create an NFT auction
+[**blockchainAuctionGenerateAuctionCelo()**](#blockchainauctiongenerateauctioncelo) | **POST** [/v3/blockchain/auction#postGenerateAuctionCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionGenerateAuctionCelo) | Create an NFT auction
+[**blockchainAuctionGenerateAuctionCeloKMS()**](#blockchainauctiongenerateauctioncelokms) | **POST** [/v3/blockchain/auction#postGenerateAuctionCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionGenerateAuctionCeloKMS) | Create an NFT auction
+[**blockchainAuctionGenerateAuctionKMS()**](#blockchainauctiongenerateauctionkms) | **POST** [/v3/blockchain/auction#postGenerateAuctionKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionGenerateAuctionKMS) | Create an NFT auction
+[**blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate()**](#blockchainauctionrecipientupdatefeerecipientcelokmsupdate) | **PUT** [/v3/blockchain/auction/recipient#putUpdateFeeRecipientCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate) | Update the recipient of the NFT auction fee
+[**blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate()**](#blockchainauctionrecipientupdatefeerecipientceloupdate) | **PUT** [/v3/blockchain/auction/recipient#putUpdateFeeRecipientCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate) | Update the recipient of the NFT auction fee
+[**blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate()**](#blockchainauctionrecipientupdatefeerecipientkmsupdate) | **PUT** [/v3/blockchain/auction/recipient#putUpdateFeeRecipientKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate) | Update the recipient of the NFT auction fee
+[**blockchainAuctionRecipientUpdateFeeRecipientUpdate()**](#blockchainauctionrecipientupdatefeerecipientupdate) | **PUT** [/v3/blockchain/auction/recipient#putUpdateFeeRecipient](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionRecipientUpdateFeeRecipientUpdate) | Update the recipient of the NFT auction fee
+[**blockchainAuctionSellCreateAuction()**](#blockchainauctionsellcreateauction) | **POST** [/v3/blockchain/auction/sell#postCreateAuction](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSellCreateAuction) | Sell an asset at the NFT auction
+[**blockchainAuctionSellCreateAuctionCelo()**](#blockchainauctionsellcreateauctioncelo) | **POST** [/v3/blockchain/auction/sell#postCreateAuctionCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSellCreateAuctionCelo) | Sell an asset at the NFT auction
+[**blockchainAuctionSellCreateAuctionCeloKMS()**](#blockchainauctionsellcreateauctioncelokms) | **POST** [/v3/blockchain/auction/sell#postCreateAuctionCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSellCreateAuctionCeloKMS) | Sell an asset at the NFT auction
+[**blockchainAuctionSellCreateAuctionKMS()**](#blockchainauctionsellcreateauctionkms) | **POST** [/v3/blockchain/auction/sell#postCreateAuctionKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSellCreateAuctionKMS) | Sell an asset at the NFT auction
+[**blockchainAuctionSettleAuction()**](#blockchainauctionsettleauction) | **POST** [/v3/blockchain/auction/settle#postSettleAuction](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSettleAuction) | Settle an NFT auction
+[**blockchainAuctionSettleAuctionCelo()**](#blockchainauctionsettleauctioncelo) | **POST** [/v3/blockchain/auction/settle#postSettleAuctionCelo](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSettleAuctionCelo) | Settle an NFT auction
+[**blockchainAuctionSettleAuctionCeloKMS()**](#blockchainauctionsettleauctioncelokms) | **POST** [/v3/blockchain/auction/settle#postSettleAuctionCeloKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSettleAuctionCeloKMS) | Settle an NFT auction
+[**blockchainAuctionSettleAuctionKMS()**](#blockchainauctionsettleauctionkms) | **POST** [/v3/blockchain/auction/settle#postSettleAuctionKMS](https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionSettleAuctionKMS) | Settle an NFT auction
 [**getAuction()**](#getauction) | **GET** [/v3/blockchain/auction/{chain}/{contractAddress}/{id}](https://apidoc.tatum.io/tag/Auction#operation/GetAuction) | Get information about an auctioned asset at the NFT auction
 [**getAuctionFee()**](#getauctionfee) | **GET** [/v3/blockchain/auction/{chain}/{contractAddress}/fee](https://apidoc.tatum.io/tag/Auction#operation/GetAuctionFee) | Get the NFT auction fee
 [**getAuctionFeeRecipient()**](#getauctionfeerecipient) | **GET** [/v3/blockchain/auction/{chain}/{contractAddress}/recipient](https://apidoc.tatum.io/tag/Auction#operation/GetAuctionFeeRecipient) | Get the recipient of the NFT auction fee
-[**settleAuction()**](#settleauction) | **POST** [/v3/blockchain/auction/settle](https://apidoc.tatum.io/tag/Auction#operation/SettleAuction) | Settle an NFT auction
-[**updateAuctionFee()**](#updateauctionfee) | **PUT** [/v3/blockchain/auction/fee](https://apidoc.tatum.io/tag/Auction#operation/UpdateAuctionFee) | Update the NFT auction fee
-[**updateAuctionFeeRecipient()**](#updateauctionfeerecipient) | **PUT** [/v3/blockchain/auction/recipient](https://apidoc.tatum.io/tag/Auction#operation/UpdateAuctionFeeRecipient) | Update the recipient of the NFT auction fee
 
 
-## `approveNftAuctionSpending()`
+## `blockchainAuctionApproveNftSpending()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->approveNftAuctionSpending(
-    \Tatum\Model\ApproveNftAuctionSpendingRequest $approve_nft_auction_spending_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionApproveNftSpending(
+    \Tatum\Model\ApproveNftSpending $approve_nft_spending
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_nft_auction_spending_request** | [**\Tatum\Model\ApproveNftAuctionSpendingRequest**](../Model/ApproveNftAuctionSpendingRequest.md) |  |
+ **$approve_nft_spending** | [**\Tatum\Model\ApproveNftSpending**](../Model/ApproveNftSpending.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -45,29 +69,125 @@ Allow the NFT auction or marketplace to transfer an asset
 
 ### Example
 
-[✨ View "approveNftAuctionSpending.php"](../../examples/Api/AuctionApi/approveNftAuctionSpending.php)
+[✨ View "blockchainAuctionApproveNftSpending.php"](../../examples/Api/AuctionApi/blockchainAuctionApproveNftSpending.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `bidOnAuction()`
+## `blockchainAuctionApproveNftSpendingCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bidOnAuction(
-    \Tatum\Model\BidOnAuctionRequest $bid_on_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionApproveNftSpendingCelo(
+    \Tatum\Model\ApproveNftSpendingCelo $approve_nft_spending_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bid_on_auction_request** | [**\Tatum\Model\BidOnAuctionRequest**](../Model/BidOnAuctionRequest.md) |  |
+ **$approve_nft_spending_celo** | [**\Tatum\Model\ApproveNftSpendingCelo**](../Model/ApproveNftSpendingCelo.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Allow the NFT auction or marketplace to transfer an asset
+
+ApproveNftSpendingCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionApproveNftSpendingCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionApproveNftSpendingCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionApproveNftSpendingCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionApproveNftSpendingCeloKMS(
+    \Tatum\Model\ApproveNftSpendingCeloKMS $approve_nft_spending_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$approve_nft_spending_celo_kms** | [**\Tatum\Model\ApproveNftSpendingCeloKMS**](../Model/ApproveNftSpendingCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Allow the NFT auction or marketplace to transfer an asset
+
+ApproveNftSpendingCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionApproveNftSpendingCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionApproveNftSpendingCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionApproveNftSpendingKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionApproveNftSpendingKMS(
+    \Tatum\Model\ApproveNftSpendingKMS $approve_nft_spending_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$approve_nft_spending_kms** | [**\Tatum\Model\ApproveNftSpendingKMS**](../Model/ApproveNftSpendingKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Allow the NFT auction or marketplace to transfer an asset
+
+ApproveNftSpendingKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionApproveNftSpendingKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionApproveNftSpendingKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionBidOnAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionBidOnAuction(
+    \Tatum\Model\BidOnAuction $bid_on_auction
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$bid_on_auction** | [**\Tatum\Model\BidOnAuction**](../Model/BidOnAuction.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -77,29 +197,125 @@ Bid for an asset at the NFT auction
 
 ### Example
 
-[✨ View "bidOnAuction.php"](../../examples/Api/AuctionApi/bidOnAuction.php)
+[✨ View "blockchainAuctionBidOnAuction.php"](../../examples/Api/AuctionApi/blockchainAuctionBidOnAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `cancelAuction()`
+## `blockchainAuctionBidOnAuctionCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->cancelAuction(
-    \Tatum\Model\CancelAuctionRequest $cancel_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionBidOnAuctionCelo(
+    \Tatum\Model\BidOnAuctionCelo $bid_on_auction_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction_request** | [**\Tatum\Model\CancelAuctionRequest**](../Model/CancelAuctionRequest.md) |  |
+ **$bid_on_auction_celo** | [**\Tatum\Model\BidOnAuctionCelo**](../Model/BidOnAuctionCelo.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Bid for an asset at the NFT auction
+
+BidOnAuctionCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionBidOnAuctionCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionBidOnAuctionCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionBidOnAuctionCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionBidOnAuctionCeloKMS(
+    \Tatum\Model\BidOnAuctionCeloKMS $bid_on_auction_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$bid_on_auction_celo_kms** | [**\Tatum\Model\BidOnAuctionCeloKMS**](../Model/BidOnAuctionCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Bid for an asset at the NFT auction
+
+BidOnAuctionCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionBidOnAuctionCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionBidOnAuctionCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionBidOnAuctionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionBidOnAuctionKMS(
+    \Tatum\Model\BidOnAuctionKMS $bid_on_auction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$bid_on_auction_kms** | [**\Tatum\Model\BidOnAuctionKMS**](../Model/BidOnAuctionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Bid for an asset at the NFT auction
+
+BidOnAuctionKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionBidOnAuctionKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionBidOnAuctionKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionCancelAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionCancelAuction(
+    \Tatum\Model\CancelAuction $cancel_auction
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$cancel_auction** | [**\Tatum\Model\CancelAuction**](../Model/CancelAuction.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -109,61 +325,253 @@ Cancel the selling of an asset at the NFT auction
 
 ### Example
 
-[✨ View "cancelAuction.php"](../../examples/Api/AuctionApi/cancelAuction.php)
+[✨ View "blockchainAuctionCancelAuction.php"](../../examples/Api/AuctionApi/blockchainAuctionCancelAuction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `createAuction()`
+## `blockchainAuctionCancelAuctionCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->createAuction(
-    \Tatum\Model\CreateAuctionRequest $create_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionCancelAuctionCelo(
+    \Tatum\Model\CancelAuctionCelo $cancel_auction_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_auction_request** | [**\Tatum\Model\CreateAuctionRequest**](../Model/CreateAuctionRequest.md) |  |
+ **$cancel_auction_celo** | [**\Tatum\Model\CancelAuctionCelo**](../Model/CancelAuctionCelo.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
-Sell an asset at the NFT auction
+Cancel the selling of an asset at the NFT auction
 
-<p><b>2 credits per API call</b></p> <p>Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="#operation/ApproveNftAuctionSpending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset. <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When selling an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+CancelAuctionCelo operation
 
 ### Example
 
-[✨ View "createAuction.php"](../../examples/Api/AuctionApi/createAuction.php)
+[✨ View "blockchainAuctionCancelAuctionCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionCancelAuctionCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `generateAuction()`
+## `blockchainAuctionCancelAuctionCeloKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->generateAuction(
-    \Tatum\Model\GenerateAuctionRequest $generate_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionCancelAuctionCeloKMS(
+    \Tatum\Model\CancelAuctionCeloKMS $cancel_auction_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_auction_request** | [**\Tatum\Model\GenerateAuctionRequest**](../Model/GenerateAuctionRequest.md) |  |
+ **$cancel_auction_celo_kms** | [**\Tatum\Model\CancelAuctionCeloKMS**](../Model/CancelAuctionCeloKMS.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Cancel the selling of an asset at the NFT auction
+
+CancelAuctionCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionCancelAuctionCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionCancelAuctionCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionCancelAuctionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionCancelAuctionKMS(
+    \Tatum\Model\CancelAuctionKMS $cancel_auction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$cancel_auction_kms** | [**\Tatum\Model\CancelAuctionKMS**](../Model/CancelAuctionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Cancel the selling of an asset at the NFT auction
+
+CancelAuctionKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionCancelAuctionKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionCancelAuctionKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate(
+    \Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_auction_celo_kms** | [**\Tatum\Model\UpdateFeeAuctionCeloKMS**](../Model/UpdateFeeAuctionCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT auction fee
+
+UpdateFeeAuctionCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionFeeUpdateFeeAuctionCeloUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionCeloUpdate(
+    \Tatum\Model\UpdateFeeAuctionCelo $update_fee_auction_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_auction_celo** | [**\Tatum\Model\UpdateFeeAuctionCelo**](../Model/UpdateFeeAuctionCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT auction fee
+
+UpdateFeeAuctionCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionFeeUpdateFeeAuctionCeloUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionCeloUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionFeeUpdateFeeAuctionKMSUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionKMSUpdate(
+    \Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_auction_kms** | [**\Tatum\Model\UpdateFeeAuctionKMS**](../Model/UpdateFeeAuctionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT auction fee
+
+UpdateFeeAuctionKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionFeeUpdateFeeAuctionKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionKMSUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionFeeUpdateFeeAuctionUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionUpdate(
+    \Tatum\Model\UpdateFeeAuction $update_fee_auction
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_auction** | [**\Tatum\Model\UpdateFeeAuction**](../Model/UpdateFeeAuction.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT auction fee
+
+<p><b>2 credits per API call</b></p> <p>Update the NFT auction fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When updating the NFT auction fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "blockchainAuctionFeeUpdateFeeAuctionUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionGenerateAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionGenerateAuction(
+    \Tatum\Model\GenerateAuction $generate_auction
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_auction** | [**\Tatum\Model\GenerateAuction**](../Model/GenerateAuction.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -173,7 +581,487 @@ Create an NFT auction
 
 ### Example
 
-[✨ View "generateAuction.php"](../../examples/Api/AuctionApi/generateAuction.php)
+[✨ View "blockchainAuctionGenerateAuction.php"](../../examples/Api/AuctionApi/blockchainAuctionGenerateAuction.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionGenerateAuctionCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionGenerateAuctionCelo(
+    \Tatum\Model\GenerateAuctionCelo $generate_auction_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_auction_celo** | [**\Tatum\Model\GenerateAuctionCelo**](../Model/GenerateAuctionCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Create an NFT auction
+
+GenerateAuctionCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionGenerateAuctionCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionGenerateAuctionCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionGenerateAuctionCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionGenerateAuctionCeloKMS(
+    \Tatum\Model\GenerateAuctionCeloKMS $generate_auction_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_auction_celo_kms** | [**\Tatum\Model\GenerateAuctionCeloKMS**](../Model/GenerateAuctionCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Create an NFT auction
+
+GenerateAuctionCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionGenerateAuctionCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionGenerateAuctionCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionGenerateAuctionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionGenerateAuctionKMS(
+    \Tatum\Model\GenerateAuctionKMS $generate_auction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_auction_kms** | [**\Tatum\Model\GenerateAuctionKMS**](../Model/GenerateAuctionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Create an NFT auction
+
+GenerateAuctionKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionGenerateAuctionKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionGenerateAuctionKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate(
+    \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT auction fee
+
+UpdateFeeRecipientCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate(
+    \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT auction fee
+
+UpdateFeeRecipientCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate(
+    \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT auction fee
+
+UpdateFeeRecipientKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionRecipientUpdateFeeRecipientUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientUpdate(
+    \Tatum\Model\UpdateFeeRecipient $update_fee_recipient
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient** | [**\Tatum\Model\UpdateFeeRecipient**](../Model/UpdateFeeRecipient.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT auction fee
+
+<p><b>2 credits per API call</b></p> <p>Update the recipient of the NFT auction fee.<br/> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When updating the recipient of the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipientUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSellCreateAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSellCreateAuction(
+    \Tatum\Model\CreateAuction $create_auction
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_auction** | [**\Tatum\Model\CreateAuction**](../Model/CreateAuction.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Sell an asset at the NFT auction
+
+<p><b>2 credits per API call</b></p> <p>Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="#operation/ApproveNftAuctionSpending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset. <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When selling an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "blockchainAuctionSellCreateAuction.php"](../../examples/Api/AuctionApi/blockchainAuctionSellCreateAuction.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSellCreateAuctionCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSellCreateAuctionCelo(
+    \Tatum\Model\CreateAuctionCelo $create_auction_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_auction_celo** | [**\Tatum\Model\CreateAuctionCelo**](../Model/CreateAuctionCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Sell an asset at the NFT auction
+
+CreateAuctionCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionSellCreateAuctionCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionSellCreateAuctionCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSellCreateAuctionCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSellCreateAuctionCeloKMS(
+    \Tatum\Model\CreateAuctionCeloKMS $create_auction_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_auction_celo_kms** | [**\Tatum\Model\CreateAuctionCeloKMS**](../Model/CreateAuctionCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Sell an asset at the NFT auction
+
+CreateAuctionCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionSellCreateAuctionCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionSellCreateAuctionCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSellCreateAuctionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSellCreateAuctionKMS(
+    \Tatum\Model\CreateAuctionKMS $create_auction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_auction_kms** | [**\Tatum\Model\CreateAuctionKMS**](../Model/CreateAuctionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Sell an asset at the NFT auction
+
+CreateAuctionKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionSellCreateAuctionKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionSellCreateAuctionKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSettleAuction()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSettleAuction(
+    \Tatum\Model\SettleAuction $settle_auction
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$settle_auction** | [**\Tatum\Model\SettleAuction**](../Model/SettleAuction.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Settle an NFT auction
+
+<p><b>2 credits per API call</b></p> <p>Settle an auction once it has ended and there is a buyer of the asset at this auction. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.<br/>Both seller and buyer can settle the auction.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When settling the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "blockchainAuctionSettleAuction.php"](../../examples/Api/AuctionApi/blockchainAuctionSettleAuction.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSettleAuctionCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSettleAuctionCelo(
+    \Tatum\Model\SettleAuctionCelo $settle_auction_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$settle_auction_celo** | [**\Tatum\Model\SettleAuctionCelo**](../Model/SettleAuctionCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Settle an NFT auction
+
+SettleAuctionCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionSettleAuctionCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionSettleAuctionCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSettleAuctionCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSettleAuctionCeloKMS(
+    \Tatum\Model\SettleAuctionCeloKMS $settle_auction_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$settle_auction_celo_kms** | [**\Tatum\Model\SettleAuctionCeloKMS**](../Model/SettleAuctionCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Settle an NFT auction
+
+SettleAuctionCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionSettleAuctionCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionSettleAuctionCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionSettleAuctionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionSettleAuctionKMS(
+    \Tatum\Model\SettleAuctionKMS $settle_auction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$settle_auction_kms** | [**\Tatum\Model\SettleAuctionKMS**](../Model/SettleAuctionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Settle an NFT auction
+
+SettleAuctionKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionSettleAuctionKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionSettleAuctionKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -278,101 +1166,5 @@ Get the recipient of the NFT auction fee
 ### Example
 
 [✨ View "getAuctionFeeRecipient.php"](../../examples/Api/AuctionApi/getAuctionFeeRecipient.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `settleAuction()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->settleAuction(
-    \Tatum\Model\SettleAuctionRequest $settle_auction_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$settle_auction_request** | [**\Tatum\Model\SettleAuctionRequest**](../Model/SettleAuctionRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Settle an NFT auction
-
-<p><b>2 credits per API call</b></p> <p>Settle an auction once it has ended and there is a buyer of the asset at this auction. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.<br/>Both seller and buyer can settle the auction.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When settling the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "settleAuction.php"](../../examples/Api/AuctionApi/settleAuction.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `updateAuctionFee()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFee(
-    \Tatum\Model\UpdateAuctionFeeRequest $update_auction_fee_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_auction_fee_request** | [**\Tatum\Model\UpdateAuctionFeeRequest**](../Model/UpdateAuctionFeeRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Update the NFT auction fee
-
-<p><b>2 credits per API call</b></p> <p>Update the NFT auction fee.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When updating the NFT auction fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "updateAuctionFee.php"](../../examples/Api/AuctionApi/updateAuctionFee.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `updateAuctionFeeRecipient()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->updateAuctionFeeRecipient(
-    \Tatum\Model\UpdateAuctionFeeRecipientRequest $update_auction_fee_recipient_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_auction_fee_recipient_request** | [**\Tatum\Model\UpdateAuctionFeeRecipientRequest**](../Model/UpdateAuctionFeeRecipientRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Update the recipient of the NFT auction fee
-
-<p><b>2 credits per API call</b></p> <p>Update the recipient of the NFT auction fee.<br/> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When updating the recipient of the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "updateAuctionFeeRecipient.php"](../../examples/Api/AuctionApi/updateAuctionFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

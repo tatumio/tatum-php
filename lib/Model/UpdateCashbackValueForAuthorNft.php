@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class UpdateCashbackValueForAuthorNft extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_BSC = 'BSC';
     public const CHAIN_ETH = 'ETH';
     public const CHAIN_KCS = 'KCS';

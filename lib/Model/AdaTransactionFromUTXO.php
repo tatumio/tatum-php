@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AdaTransactionFromUTXO extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AdaTransactionFromUTXO";
     protected static $_definition = [
         "from_utxo" => ["fromUTXO", "\Tatum\Model\AdaTransactionFromUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 1, "c" => 1]], 

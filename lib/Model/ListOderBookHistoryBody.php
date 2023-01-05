@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ListOderBookHistoryBody extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPES_FUTURE_BUY = 'FUTURE_BUY';
     public const TYPES_FUTURE_SELL = 'FUTURE_SELL';
     public const TYPES_BUY = 'BUY';

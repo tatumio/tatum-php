@@ -23,29 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class SolanaApi extends AbstractApi {
     /**
-     * Send SOL from account to account
-     *
-     * @param \Tatum\Model\SolanaBlockchainTransferRequest $solana_blockchain_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function solanaBlockchainTransfer(\Tatum\Model\SolanaBlockchainTransferRequest $solana_blockchain_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/solana/transaction", [], $rHeaders, [], $solana_blockchain_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast and confirm signed Solana transaction
      *
      * @param \Tatum\Model\SolanaBroadcastConfirm $solana_broadcast_confirm 
@@ -177,6 +154,52 @@ class SolanaApi extends AbstractApi {
                 ], $rHeaders, []
             ), 
             "\Tatum\Model\SolanaTx"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send SOL from account to account
+     *
+     * @param \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function solanaTransactionTransferSolanaBlockchain(\Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/solana/transaction#postTransferSolanaBlockchain", [], $rHeaders, [], $transfer_solana_blockchain
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send SOL from account to account
+     *
+     * @param \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function solanaTransactionTransferSolanaBlockchainKMS(\Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/solana/transaction#postTransferSolanaBlockchainKMS", [], $rHeaders, [], $transfer_solana_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

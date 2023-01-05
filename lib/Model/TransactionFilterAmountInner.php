@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransactionFilterAmountInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const OP_GTE = 'gte';
     public const OP_LTE = 'lte';
     public const OP_GT = 'gt';

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ChainTransferBscBep20 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_BSC = 'BSC';
     protected static $_name = "ChainTransferBscBep20";
     protected static $_definition = [

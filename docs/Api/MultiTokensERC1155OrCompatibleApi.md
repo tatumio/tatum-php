@@ -4,12 +4,6 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMultiTokenMinter()**](#addmultitokenminter) | **POST** [/v3/multitoken/mint/add](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/AddMultiTokenMinter) | Add a Multi Token minter
-[**burnMultiToken()**](#burnmultitoken) | **POST** [/v3/multitoken/burn](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/BurnMultiToken) | Burn a Multi Token
-[**burnMultiTokenBatch()**](#burnmultitokenbatch) | **POST** [/v3/multitoken/burn/batch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/BurnMultiTokenBatch) | Burn multiple Multi Tokens
-[**deployMultiToken()**](#deploymultitoken) | **POST** [/v3/multitoken/deploy](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/DeployMultiToken) | Deploy a Multi Token smart contract
-[**mintMultiToken()**](#mintmultitoken) | **POST** [/v3/multitoken/mint](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MintMultiToken) | Mint a Multi Token
-[**mintMultiTokenBatch()**](#mintmultitokenbatch) | **POST** [/v3/multitoken/mint/batch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MintMultiTokenBatch) | Mint multiple Multi Tokens
 [**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | **GET** [/v3/multitoken/address/balance/{chain}/{address}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetAddressBalance) | Get all Multi Tokens that a blockchain address holds
 [**multiTokenGetBalance()**](#multitokengetbalance) | **GET** [/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetBalance) | Get the amount of a specific MultiToken that a blockchain address holds
 [**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | **GET** [/v3/multitoken/balance/batch/{chain}/{contractAddress}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetBalanceBatch) | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
@@ -17,213 +11,37 @@ Method | HTTP request | Description
 [**multiTokenGetMetadata()**](#multitokengetmetadata) | **GET** [/v3/multitoken/metadata/{chain}/{contractAddress}/{token}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetMetadata) | Get Multi Token metadata
 [**multiTokenGetTransaction()**](#multitokengettransaction) | **GET** [/v3/multitoken/transaction/{chain}/{hash}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetTransaction) | Get a Multi Token transaction by its hash
 [**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | **GET** [/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/MultiTokenGetTransactionByAddress) | Get Multi Token transactions on a blockchain address
-[**transferMultiToken()**](#transfermultitoken) | **POST** [/v3/multitoken/transaction](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/TransferMultiToken) | Transfer a Multi Token
-[**transferMultiTokenBatch()**](#transfermultitokenbatch) | **POST** [/v3/multitoken/transaction/batch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/TransferMultiTokenBatch) | Transfer multiple Multi Tokens
+[**multitokenBurnBatchBurnMultiTokenBatch()**](#multitokenburnbatchburnmultitokenbatch) | **POST** [/v3/multitoken/burn/batch#postBurnMultiTokenBatch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnBatchBurnMultiTokenBatch) | Burn multiple Multi Tokens
+[**multitokenBurnBatchBurnMultiTokenBatchCelo()**](#multitokenburnbatchburnmultitokenbatchcelo) | **POST** [/v3/multitoken/burn/batch#postBurnMultiTokenBatchCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnBatchBurnMultiTokenBatchCelo) | Burn multiple Multi Tokens
+[**multitokenBurnBatchBurnMultiTokenBatchKMS()**](#multitokenburnbatchburnmultitokenbatchkms) | **POST** [/v3/multitoken/burn/batch#postBurnMultiTokenBatchKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnBatchBurnMultiTokenBatchKMS) | Burn multiple Multi Tokens
+[**multitokenBurnBatchBurnMultiTokenBatchKMSCelo()**](#multitokenburnbatchburnmultitokenbatchkmscelo) | **POST** [/v3/multitoken/burn/batch#postBurnMultiTokenBatchKMSCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnBatchBurnMultiTokenBatchKMSCelo) | Burn multiple Multi Tokens
+[**multitokenBurnMultiToken()**](#multitokenburnmultitoken) | **POST** [/v3/multitoken/burn#postBurnMultiToken](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnMultiToken) | Burn a Multi Token
+[**multitokenBurnMultiTokenCelo()**](#multitokenburnmultitokencelo) | **POST** [/v3/multitoken/burn#postBurnMultiTokenCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnMultiTokenCelo) | Burn a Multi Token
+[**multitokenBurnMultiTokenKMS()**](#multitokenburnmultitokenkms) | **POST** [/v3/multitoken/burn#postBurnMultiTokenKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnMultiTokenKMS) | Burn a Multi Token
+[**multitokenBurnMultiTokenKMSCelo()**](#multitokenburnmultitokenkmscelo) | **POST** [/v3/multitoken/burn#postBurnMultiTokenKMSCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenBurnMultiTokenKMSCelo) | Burn a Multi Token
+[**multitokenDeployMultiToken()**](#multitokendeploymultitoken) | **POST** [/v3/multitoken/deploy#postDeployMultiToken](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenDeployMultiToken) | Deploy a Multi Token smart contract
+[**multitokenDeployMultiTokenCelo()**](#multitokendeploymultitokencelo) | **POST** [/v3/multitoken/deploy#postDeployMultiTokenCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenDeployMultiTokenCelo) | Deploy a Multi Token smart contract
+[**multitokenDeployMultiTokenCeloKMS()**](#multitokendeploymultitokencelokms) | **POST** [/v3/multitoken/deploy#postDeployMultiTokenCeloKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenDeployMultiTokenCeloKMS) | Deploy a Multi Token smart contract
+[**multitokenDeployMultiTokenKMS()**](#multitokendeploymultitokenkms) | **POST** [/v3/multitoken/deploy#postDeployMultiTokenKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenDeployMultiTokenKMS) | Deploy a Multi Token smart contract
+[**multitokenMintAddMultiTokenMinter()**](#multitokenmintaddmultitokenminter) | **POST** [/v3/multitoken/mint/add#postAddMultiTokenMinter](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintAddMultiTokenMinter) | Add a Multi Token minter
+[**multitokenMintAddMultiTokenMinterKMS()**](#multitokenmintaddmultitokenminterkms) | **POST** [/v3/multitoken/mint/add#postAddMultiTokenMinterKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintAddMultiTokenMinterKMS) | Add a Multi Token minter
+[**multitokenMintBatchMintMultiTokenBatch()**](#multitokenmintbatchmintmultitokenbatch) | **POST** [/v3/multitoken/mint/batch#postMintMultiTokenBatch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintBatchMintMultiTokenBatch) | Mint multiple Multi Tokens
+[**multitokenMintBatchMintMultiTokenBatchCelo()**](#multitokenmintbatchmintmultitokenbatchcelo) | **POST** [/v3/multitoken/mint/batch#postMintMultiTokenBatchCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintBatchMintMultiTokenBatchCelo) | Mint multiple Multi Tokens
+[**multitokenMintBatchMintMultiTokenBatchKMS()**](#multitokenmintbatchmintmultitokenbatchkms) | **POST** [/v3/multitoken/mint/batch#postMintMultiTokenBatchKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintBatchMintMultiTokenBatchKMS) | Mint multiple Multi Tokens
+[**multitokenMintBatchMintMultiTokenBatchKMSCelo()**](#multitokenmintbatchmintmultitokenbatchkmscelo) | **POST** [/v3/multitoken/mint/batch#postMintMultiTokenBatchKMSCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintBatchMintMultiTokenBatchKMSCelo) | Mint multiple Multi Tokens
+[**multitokenMintMultiToken()**](#multitokenmintmultitoken) | **POST** [/v3/multitoken/mint#postMintMultiToken](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintMultiToken) | Mint a Multi Token
+[**multitokenMintMultiTokenCelo()**](#multitokenmintmultitokencelo) | **POST** [/v3/multitoken/mint#postMintMultiTokenCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintMultiTokenCelo) | Mint a Multi Token
+[**multitokenMintMultiTokenKMS()**](#multitokenmintmultitokenkms) | **POST** [/v3/multitoken/mint#postMintMultiTokenKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintMultiTokenKMS) | Mint a Multi Token
+[**multitokenMintMultiTokenKMSCelo()**](#multitokenmintmultitokenkmscelo) | **POST** [/v3/multitoken/mint#postMintMultiTokenKMSCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenMintMultiTokenKMSCelo) | Mint a Multi Token
+[**multitokenTransactionBatchTransferMultiTokenBatch()**](#multitokentransactionbatchtransfermultitokenbatch) | **POST** [/v3/multitoken/transaction/batch#postTransferMultiTokenBatch](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionBatchTransferMultiTokenBatch) | Transfer multiple Multi Tokens
+[**multitokenTransactionBatchTransferMultiTokenBatchCelo()**](#multitokentransactionbatchtransfermultitokenbatchcelo) | **POST** [/v3/multitoken/transaction/batch#postTransferMultiTokenBatchCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionBatchTransferMultiTokenBatchCelo) | Transfer multiple Multi Tokens
+[**multitokenTransactionBatchTransferMultiTokenBatchKMS()**](#multitokentransactionbatchtransfermultitokenbatchkms) | **POST** [/v3/multitoken/transaction/batch#postTransferMultiTokenBatchKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionBatchTransferMultiTokenBatchKMS) | Transfer multiple Multi Tokens
+[**multitokenTransactionBatchTransferMultiTokenBatchKMSCelo()**](#multitokentransactionbatchtransfermultitokenbatchkmscelo) | **POST** [/v3/multitoken/transaction/batch#postTransferMultiTokenBatchKMSCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionBatchTransferMultiTokenBatchKMSCelo) | Transfer multiple Multi Tokens
+[**multitokenTransactionTransferMultiToken()**](#multitokentransactiontransfermultitoken) | **POST** [/v3/multitoken/transaction#postTransferMultiToken](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionTransferMultiToken) | Transfer a Multi Token
+[**multitokenTransactionTransferMultiTokenCelo()**](#multitokentransactiontransfermultitokencelo) | **POST** [/v3/multitoken/transaction#postTransferMultiTokenCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionTransferMultiTokenCelo) | Transfer a Multi Token
+[**multitokenTransactionTransferMultiTokenKMS()**](#multitokentransactiontransfermultitokenkms) | **POST** [/v3/multitoken/transaction#postTransferMultiTokenKMS](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionTransferMultiTokenKMS) | Transfer a Multi Token
+[**multitokenTransactionTransferMultiTokenKMSCelo()**](#multitokentransactiontransfermultitokenkmscelo) | **POST** [/v3/multitoken/transaction#postTransferMultiTokenKMSCelo](https://apidoc.tatum.io/tag/MultiTokensERC1155OrCompatible#operation/multitokenTransactionTransferMultiTokenKMSCelo) | Transfer a Multi Token
 
-
-## `addMultiTokenMinter()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiTokenMinter(
-    \Tatum\Model\AddMultiTokenMinterRequest $add_multi_token_minter_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$add_multi_token_minter_request** | [**\Tatum\Model\AddMultiTokenMinterRequest**](../Model/AddMultiTokenMinterRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Add a Multi Token minter
-
-<p><b>2 credits per API call</b></p> <p>Add Multi Token minter.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When adding a Multi Token minter, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "addMultiTokenMinter.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `burnMultiToken()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiToken(
-    \Tatum\Model\BurnMultiTokenRequest $burn_multi_token_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$burn_multi_token_request** | [**\Tatum\Model\BurnMultiTokenRequest**](../Model/BurnMultiTokenRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Burn a Multi Token
-
-<p><b>2 credits per API call</b></p> <p>Burn a fixed amount of Multi Tokens by id. This method destroys Multi Tokens from smart contract defined in contractAddress.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When burning a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "burnMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `burnMultiTokenBatch()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatch(
-    \Tatum\Model\BurnMultiTokenBatchRequest $burn_multi_token_batch_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$burn_multi_token_batch_request** | [**\Tatum\Model\BurnMultiTokenBatchRequest**](../Model/BurnMultiTokenBatchRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Burn multiple Multi Tokens
-
-<p><b>2 credits per API call</b></p> <p>Burn multiple Multi Token Tokens by id assigned to same address in one transaction. This method destroys any Multi Tokens token from smart contract defined in contractAddress.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When burning multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "burnMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `deployMultiToken()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiToken(
-    \Tatum\Model\DeployMultiTokenRequest $deploy_multi_token_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_multi_token_request** | [**\Tatum\Model\DeployMultiTokenRequest**](../Model/DeployMultiTokenRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Deploy a Multi Token smart contract
-
-<p><b>2 credits per API call</b></p> <p>Deploy Multi Token Smart Contract. This method creates new ERC1155 Smart Contract (Multi Tokens) on the blockchain. Smart contract is standardized and audited. It is possible to mint, burn and transfer tokens. It is also possible to mint multiple tokens at once.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When deploying a Multi Token smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "deployMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `mintMultiToken()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiToken(
-    \Tatum\Model\MintMultiTokenRequest $mint_multi_token_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$mint_multi_token_request** | [**\Tatum\Model\MintMultiTokenRequest**](../Model/MintMultiTokenRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Mint a Multi Token
-
-<p><b>2 credits per API call</b></p> <p>Mint a fixed amount of Multi Token and transfer it to destination account. Create and transfer any Multi Token token from smart contract defined in contractAddress. It is possible to add Metadata to the created token with a more detailed information about instead.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When minting a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "mintMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `mintMultiTokenBatch()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatch(
-    \Tatum\Model\MintMultiTokenBatchRequest $mint_multi_token_batch_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$mint_multi_token_batch_request** | [**\Tatum\Model\MintMultiTokenBatchRequest**](../Model/MintMultiTokenBatchRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Mint multiple Multi Tokens
-
-<p><b>2 credits per API call</b></p> <p>Create a fixed amount of multiple Multi Tokens Tokens and transfer them to destination account in one transaction. Create and transfer Multi Tokens tokens from smart contract defined in contractAddress.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When minting multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "mintMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `multiTokenGetAddressBalance()`
 
@@ -495,61 +313,775 @@ Get Multi Token transactions on a blockchain address
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `transferMultiToken()`
+## `multitokenBurnBatchBurnMultiTokenBatch()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiToken(
-    \Tatum\Model\TransferMultiTokenRequest $transfer_multi_token_request,
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnBatchBurnMultiTokenBatch(
+    \Tatum\Model\BurnMultiTokenBatch $burn_multi_token_batch,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_request** | [**\Tatum\Model\TransferMultiTokenRequest**](../Model/TransferMultiTokenRequest.md) |  |
+ **$burn_multi_token_batch** | [**\Tatum\Model\BurnMultiTokenBatch**](../Model/BurnMultiTokenBatch.md) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
-Transfer a Multi Token
+Burn multiple Multi Tokens
 
-<p><b>2 credits per API call</b></p> <p>Transfer a certain amount of Multi Token from account to another account. Transfer Multi Tokens token from smart contract defined in contractAddress.</p> <p>Only 1 specific token with specified tokenId and value can be transferred. This method invokes ERC1155 method safeTransfer() to transfer the token in case of ETH, Celo and blockchains.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When transferring a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Burn multiple Multi Token Tokens by id assigned to same address in one transaction. This method destroys any Multi Tokens token from smart contract defined in contractAddress.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When burning multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
-[✨ View "transferMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
+[✨ View "multitokenBurnBatchBurnMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnBatchBurnMultiTokenBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `transferMultiTokenBatch()`
+## `multitokenBurnBatchBurnMultiTokenBatchCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(
-    \Tatum\Model\TransferMultiTokenBatchRequest $transfer_multi_token_batch_request,
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnBatchBurnMultiTokenBatchCelo(
+    \Tatum\Model\BurnMultiTokenBatchCelo $burn_multi_token_batch_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_batch_request** | [**\Tatum\Model\TransferMultiTokenBatchRequest**](../Model/TransferMultiTokenBatchRequest.md) |  |
+ **$burn_multi_token_batch_celo** | [**\Tatum\Model\BurnMultiTokenBatchCelo**](../Model/BurnMultiTokenBatchCelo.md) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn multiple Multi Tokens
+
+BurnMultiTokenBatchCelo operation
+
+### Example
+
+[✨ View "multitokenBurnBatchBurnMultiTokenBatchCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnBatchBurnMultiTokenBatchCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenBurnBatchBurnMultiTokenBatchKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnBatchBurnMultiTokenBatchKMS(
+    \Tatum\Model\BurnMultiTokenBatchKMS $burn_multi_token_batch_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_multi_token_batch_kms** | [**\Tatum\Model\BurnMultiTokenBatchKMS**](../Model/BurnMultiTokenBatchKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn multiple Multi Tokens
+
+BurnMultiTokenBatchKMS operation
+
+### Example
+
+[✨ View "multitokenBurnBatchBurnMultiTokenBatchKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnBatchBurnMultiTokenBatchKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenBurnBatchBurnMultiTokenBatchKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnBatchBurnMultiTokenBatchKMSCelo(
+    \Tatum\Model\BurnMultiTokenBatchKMSCelo $burn_multi_token_batch_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_multi_token_batch_kms_celo** | [**\Tatum\Model\BurnMultiTokenBatchKMSCelo**](../Model/BurnMultiTokenBatchKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn multiple Multi Tokens
+
+BurnMultiTokenBatchKMSCelo operation
+
+### Example
+
+[✨ View "multitokenBurnBatchBurnMultiTokenBatchKMSCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnBatchBurnMultiTokenBatchKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenBurnMultiToken()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnMultiToken(
+    \Tatum\Model\BurnMultiToken $burn_multi_token,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_multi_token** | [**\Tatum\Model\BurnMultiToken**](../Model/BurnMultiToken.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn a Multi Token
+
+<p><b>2 credits per API call</b></p> <p>Burn a fixed amount of Multi Tokens by id. This method destroys Multi Tokens from smart contract defined in contractAddress.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When burning a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "multitokenBurnMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnMultiToken.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenBurnMultiTokenCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnMultiTokenCelo(
+    \Tatum\Model\BurnMultiTokenCelo $burn_multi_token_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_multi_token_celo** | [**\Tatum\Model\BurnMultiTokenCelo**](../Model/BurnMultiTokenCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn a Multi Token
+
+BurnMultiTokenCelo operation
+
+### Example
+
+[✨ View "multitokenBurnMultiTokenCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnMultiTokenCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenBurnMultiTokenKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnMultiTokenKMS(
+    \Tatum\Model\BurnMultiTokenKMS $burn_multi_token_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_multi_token_kms** | [**\Tatum\Model\BurnMultiTokenKMS**](../Model/BurnMultiTokenKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn a Multi Token
+
+BurnMultiTokenKMS operation
+
+### Example
+
+[✨ View "multitokenBurnMultiTokenKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnMultiTokenKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenBurnMultiTokenKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenBurnMultiTokenKMSCelo(
+    \Tatum\Model\BurnMultiTokenKMSCelo $burn_multi_token_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_multi_token_kms_celo** | [**\Tatum\Model\BurnMultiTokenKMSCelo**](../Model/BurnMultiTokenKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn a Multi Token
+
+BurnMultiTokenKMSCelo operation
+
+### Example
+
+[✨ View "multitokenBurnMultiTokenKMSCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenBurnMultiTokenKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenDeployMultiToken()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenDeployMultiToken(
+    \Tatum\Model\DeployMultiToken $deploy_multi_token,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_multi_token** | [**\Tatum\Model\DeployMultiToken**](../Model/DeployMultiToken.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy a Multi Token smart contract
+
+<p><b>2 credits per API call</b></p> <p>Deploy Multi Token Smart Contract. This method creates new ERC1155 Smart Contract (Multi Tokens) on the blockchain. Smart contract is standardized and audited. It is possible to mint, burn and transfer tokens. It is also possible to mint multiple tokens at once.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When deploying a Multi Token smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "multitokenDeployMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenDeployMultiToken.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenDeployMultiTokenCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenDeployMultiTokenCelo(
+    \Tatum\Model\DeployMultiTokenCelo $deploy_multi_token_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_multi_token_celo** | [**\Tatum\Model\DeployMultiTokenCelo**](../Model/DeployMultiTokenCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy a Multi Token smart contract
+
+DeployMultiTokenCelo operation
+
+### Example
+
+[✨ View "multitokenDeployMultiTokenCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenDeployMultiTokenCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenDeployMultiTokenCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenDeployMultiTokenCeloKMS(
+    \Tatum\Model\DeployMultiTokenCeloKMS $deploy_multi_token_celo_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_multi_token_celo_kms** | [**\Tatum\Model\DeployMultiTokenCeloKMS**](../Model/DeployMultiTokenCeloKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy a Multi Token smart contract
+
+DeployMultiTokenCeloKMS operation
+
+### Example
+
+[✨ View "multitokenDeployMultiTokenCeloKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenDeployMultiTokenCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenDeployMultiTokenKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenDeployMultiTokenKMS(
+    \Tatum\Model\DeployMultiTokenKMS $deploy_multi_token_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_multi_token_kms** | [**\Tatum\Model\DeployMultiTokenKMS**](../Model/DeployMultiTokenKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy a Multi Token smart contract
+
+DeployMultiTokenKMS operation
+
+### Example
+
+[✨ View "multitokenDeployMultiTokenKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenDeployMultiTokenKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintAddMultiTokenMinter()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintAddMultiTokenMinter(
+    \Tatum\Model\AddMultiTokenMinter $add_multi_token_minter,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$add_multi_token_minter** | [**\Tatum\Model\AddMultiTokenMinter**](../Model/AddMultiTokenMinter.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Add a Multi Token minter
+
+<p><b>2 credits per API call</b></p> <p>Add Multi Token minter.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When adding a Multi Token minter, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "multitokenMintAddMultiTokenMinter.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintAddMultiTokenMinter.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintAddMultiTokenMinterKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintAddMultiTokenMinterKMS(
+    \Tatum\Model\AddMultiTokenMinterKMS $add_multi_token_minter_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$add_multi_token_minter_kms** | [**\Tatum\Model\AddMultiTokenMinterKMS**](../Model/AddMultiTokenMinterKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Add a Multi Token minter
+
+AddMultiTokenMinterKMS operation
+
+### Example
+
+[✨ View "multitokenMintAddMultiTokenMinterKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintAddMultiTokenMinterKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintBatchMintMultiTokenBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintBatchMintMultiTokenBatch(
+    \Tatum\Model\MintMultiTokenBatch $mint_multi_token_batch,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token_batch** | [**\Tatum\Model\MintMultiTokenBatch**](../Model/MintMultiTokenBatch.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint multiple Multi Tokens
+
+<p><b>2 credits per API call</b></p> <p>Create a fixed amount of multiple Multi Tokens Tokens and transfer them to destination account in one transaction. Create and transfer Multi Tokens tokens from smart contract defined in contractAddress.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When minting multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "multitokenMintBatchMintMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintBatchMintMultiTokenBatch.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintBatchMintMultiTokenBatchCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintBatchMintMultiTokenBatchCelo(
+    \Tatum\Model\MintMultiTokenBatchCelo $mint_multi_token_batch_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token_batch_celo** | [**\Tatum\Model\MintMultiTokenBatchCelo**](../Model/MintMultiTokenBatchCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint multiple Multi Tokens
+
+MintMultiTokenBatchCelo operation
+
+### Example
+
+[✨ View "multitokenMintBatchMintMultiTokenBatchCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintBatchMintMultiTokenBatchCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintBatchMintMultiTokenBatchKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintBatchMintMultiTokenBatchKMS(
+    \Tatum\Model\MintMultiTokenBatchKMS $mint_multi_token_batch_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token_batch_kms** | [**\Tatum\Model\MintMultiTokenBatchKMS**](../Model/MintMultiTokenBatchKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint multiple Multi Tokens
+
+MintMultiTokenBatchKMS operation
+
+### Example
+
+[✨ View "multitokenMintBatchMintMultiTokenBatchKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintBatchMintMultiTokenBatchKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintBatchMintMultiTokenBatchKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintBatchMintMultiTokenBatchKMSCelo(
+    \Tatum\Model\MintMultiTokenBatchKMSCelo $mint_multi_token_batch_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token_batch_kms_celo** | [**\Tatum\Model\MintMultiTokenBatchKMSCelo**](../Model/MintMultiTokenBatchKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint multiple Multi Tokens
+
+MintMultiTokenBatchKMSCelo operation
+
+### Example
+
+[✨ View "multitokenMintBatchMintMultiTokenBatchKMSCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintBatchMintMultiTokenBatchKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintMultiToken()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintMultiToken(
+    \Tatum\Model\MintMultiToken $mint_multi_token,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token** | [**\Tatum\Model\MintMultiToken**](../Model/MintMultiToken.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint a Multi Token
+
+<p><b>2 credits per API call</b></p> <p>Mint a fixed amount of Multi Token and transfer it to destination account. Create and transfer any Multi Token token from smart contract defined in contractAddress. It is possible to add Metadata to the created token with a more detailed information about instead.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When minting a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "multitokenMintMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintMultiToken.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintMultiTokenCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintMultiTokenCelo(
+    \Tatum\Model\MintMultiTokenCelo $mint_multi_token_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token_celo** | [**\Tatum\Model\MintMultiTokenCelo**](../Model/MintMultiTokenCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint a Multi Token
+
+MintMultiTokenCelo operation
+
+### Example
+
+[✨ View "multitokenMintMultiTokenCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintMultiTokenCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintMultiTokenKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintMultiTokenKMS(
+    \Tatum\Model\MintMultiTokenKMS $mint_multi_token_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token_kms** | [**\Tatum\Model\MintMultiTokenKMS**](../Model/MintMultiTokenKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint a Multi Token
+
+MintMultiTokenKMS operation
+
+### Example
+
+[✨ View "multitokenMintMultiTokenKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintMultiTokenKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenMintMultiTokenKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenMintMultiTokenKMSCelo(
+    \Tatum\Model\MintMultiTokenKMSCelo $mint_multi_token_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multi_token_kms_celo** | [**\Tatum\Model\MintMultiTokenKMSCelo**](../Model/MintMultiTokenKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Mint a Multi Token
+
+MintMultiTokenKMSCelo operation
+
+### Example
+
+[✨ View "multitokenMintMultiTokenKMSCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenMintMultiTokenKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionBatchTransferMultiTokenBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionBatchTransferMultiTokenBatch(
+    \Tatum\Model\TransferMultiTokenBatch $transfer_multi_token_batch,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_batch** | [**\Tatum\Model\TransferMultiTokenBatch**](../Model/TransferMultiTokenBatch.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -559,6 +1091,244 @@ Transfer multiple Multi Tokens
 
 ### Example
 
-[✨ View "transferMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
+[✨ View "multitokenTransactionBatchTransferMultiTokenBatch.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionBatchTransferMultiTokenBatch.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionBatchTransferMultiTokenBatchCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionBatchTransferMultiTokenBatchCelo(
+    \Tatum\Model\TransferMultiTokenBatchCelo $transfer_multi_token_batch_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_batch_celo** | [**\Tatum\Model\TransferMultiTokenBatchCelo**](../Model/TransferMultiTokenBatchCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer multiple Multi Tokens
+
+TransferMultiTokenBatchCelo operation
+
+### Example
+
+[✨ View "multitokenTransactionBatchTransferMultiTokenBatchCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionBatchTransferMultiTokenBatchCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionBatchTransferMultiTokenBatchKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionBatchTransferMultiTokenBatchKMS(
+    \Tatum\Model\TransferMultiTokenBatchKMS $transfer_multi_token_batch_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_batch_kms** | [**\Tatum\Model\TransferMultiTokenBatchKMS**](../Model/TransferMultiTokenBatchKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer multiple Multi Tokens
+
+TransferMultiTokenBatchKMS operation
+
+### Example
+
+[✨ View "multitokenTransactionBatchTransferMultiTokenBatchKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionBatchTransferMultiTokenBatchKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionBatchTransferMultiTokenBatchKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionBatchTransferMultiTokenBatchKMSCelo(
+    \Tatum\Model\TransferMultiTokenBatchKMSCelo $transfer_multi_token_batch_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_batch_kms_celo** | [**\Tatum\Model\TransferMultiTokenBatchKMSCelo**](../Model/TransferMultiTokenBatchKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer multiple Multi Tokens
+
+TransferMultiTokenBatchKMSCelo operation
+
+### Example
+
+[✨ View "multitokenTransactionBatchTransferMultiTokenBatchKMSCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionBatchTransferMultiTokenBatchKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionTransferMultiToken()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionTransferMultiToken(
+    \Tatum\Model\TransferMultiToken $transfer_multi_token,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token** | [**\Tatum\Model\TransferMultiToken**](../Model/TransferMultiToken.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer a Multi Token
+
+<p><b>2 credits per API call</b></p> <p>Transfer a certain amount of Multi Token from account to another account. Transfer Multi Tokens token from smart contract defined in contractAddress.</p> <p>Only 1 specific token with specified tokenId and value can be transferred. This method invokes ERC1155 method safeTransfer() to transfer the token in case of ETH, Celo and blockchains.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b></p> <p>When transferring a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "multitokenTransactionTransferMultiToken.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionTransferMultiToken.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionTransferMultiTokenCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionTransferMultiTokenCelo(
+    \Tatum\Model\TransferMultiTokenCelo $transfer_multi_token_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_celo** | [**\Tatum\Model\TransferMultiTokenCelo**](../Model/TransferMultiTokenCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer a Multi Token
+
+TransferMultiTokenCelo operation
+
+### Example
+
+[✨ View "multitokenTransactionTransferMultiTokenCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionTransferMultiTokenCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionTransferMultiTokenKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionTransferMultiTokenKMS(
+    \Tatum\Model\TransferMultiTokenKMS $transfer_multi_token_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_kms** | [**\Tatum\Model\TransferMultiTokenKMS**](../Model/TransferMultiTokenKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer a Multi Token
+
+TransferMultiTokenKMS operation
+
+### Example
+
+[✨ View "multitokenTransactionTransferMultiTokenKMS.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionTransferMultiTokenKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `multitokenTransactionTransferMultiTokenKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multitokenTransactionTransferMultiTokenKMSCelo(
+    \Tatum\Model\TransferMultiTokenKMSCelo $transfer_multi_token_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_multi_token_kms_celo** | [**\Tatum\Model\TransferMultiTokenKMSCelo**](../Model/TransferMultiTokenKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer a Multi Token
+
+TransferMultiTokenKMSCelo operation
+
+### Example
+
+[✨ View "multitokenTransactionTransferMultiTokenKMSCelo.php"](../../examples/Api/MultiTokensERC1155OrCompatibleApi/multitokenTransactionTransferMultiTokenKMSCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

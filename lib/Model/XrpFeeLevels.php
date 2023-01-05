@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class XrpFeeLevels extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpFee_levels";
     protected static $_definition = [
         "median_level" => ["median_level", "string", null, "getMedianLevel", "setMedianLevel", null, ["r" => 0]], 

@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class EthGasEstimationDetails extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "EthGasEstimationDetails";
     protected static $_definition = [
         "safe" => ["safe", "string", null, "getSafe", "setSafe", null, ["r" => 1]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaTxMetaStatus extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaTxMeta_status";
     protected static $_definition = [
         "ok" => ["Ok", "string", 'nullable', "getOk", "setOk", null, ["r" => 0]]

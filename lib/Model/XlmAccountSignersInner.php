@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XlmAccountSignersInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_SHA256_HASH = 'sha256_hash';
     public const TYPE_ED25519_PUBLIC_KEY = 'ed25519_public_key';
     public const TYPE_PREAUTH_TX = 'preauth_tx';

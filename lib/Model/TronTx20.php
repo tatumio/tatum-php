@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TronTx20 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronTx20";
     protected static $_definition = [
         "tx_id" => ["txID", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 

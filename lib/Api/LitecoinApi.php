@@ -23,6 +23,98 @@ use Tatum\Sdk\Serializer as S;
  */
 class LitecoinApi extends AbstractApi {
     /**
+     * Send LTC to Litecoin addresses
+     *
+     * @param \Tatum\Model\LtcTransactionAddress $ltc_transaction_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function litecoinTransactionLtcTransactionAddress(\Tatum\Model\LtcTransactionAddress $ltc_transaction_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/litecoin/transaction#postLtcTransactionAddress", [], $rHeaders, [], $ltc_transaction_address
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send LTC to Litecoin addresses
+     *
+     * @param \Tatum\Model\LtcTransactionAddressKMS $ltc_transaction_address_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function litecoinTransactionLtcTransactionAddressKMS(\Tatum\Model\LtcTransactionAddressKMS $ltc_transaction_address_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/litecoin/transaction#postLtcTransactionAddressKMS", [], $rHeaders, [], $ltc_transaction_address_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send LTC to Litecoin addresses
+     *
+     * @param \Tatum\Model\LtcTransactionUTXO $ltc_transaction_utxo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function litecoinTransactionLtcTransactionUTXO(\Tatum\Model\LtcTransactionUTXO $ltc_transaction_utxo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/litecoin/transaction#postLtcTransactionUTXO", [], $rHeaders, [], $ltc_transaction_utxo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send LTC to Litecoin addresses
+     *
+     * @param \Tatum\Model\LtcTransactionUTXOKMS $ltc_transaction_utxokms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function litecoinTransactionLtcTransactionUTXOKMS(\Tatum\Model\LtcTransactionUTXOKMS $ltc_transaction_utxokms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/litecoin/transaction#postLtcTransactionUTXOKMS", [], $rHeaders, [], $ltc_transaction_utxokms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast signed Litecoin transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -345,29 +437,6 @@ class LitecoinApi extends AbstractApi {
                 $this->_caller->config(), "POST", "/v3/litecoin/node", [], $rHeaders, [], $bch_rpc_driver_request
             ), 
             "object"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send LTC to Litecoin addresses
-     *
-     * @param \Tatum\Model\LtcTransferBlockchainRequest $ltc_transfer_blockchain_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function ltcTransferBlockchain(\Tatum\Model\LtcTransferBlockchainRequest $ltc_transfer_blockchain_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/transaction", [], $rHeaders, [], $ltc_transfer_blockchain_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
             
         return $result;

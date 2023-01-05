@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CallOneReadSmartContractMethod extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CallOneReadSmartContractMethod";
     protected static $_definition = [
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class EstimateFeeFromUTXO extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_BTC = 'BTC';
     public const CHAIN_LTC = 'LTC';
     public const TYPE_TRANSFER = 'TRANSFER';

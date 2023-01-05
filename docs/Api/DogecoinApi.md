@@ -15,7 +15,8 @@ Method | HTTP request | Description
 [**dogeGetRawTransaction()**](#dogegetrawtransaction) | **GET** [/v3/dogecoin/transaction/{hash}](https://apidoc.tatum.io/tag/Dogecoin#operation/DogeGetRawTransaction) | Get Dogecoin Transaction by hash
 [**dogeGetUTXO()**](#dogegetutxo) | **GET** [/v3/dogecoin/utxo/{hash}/{index}](https://apidoc.tatum.io/tag/Dogecoin#operation/DogeGetUTXO) | Get information about a transaction output (UTXO) in a Dogecoin transaction
 [**dogeRpcDriver()**](#dogerpcdriver) | **POST** [/v3/dogecoin/node](https://apidoc.tatum.io/tag/Dogecoin#operation/DogeRpcDriver) | JSON RPC HTTP driver
-[**dogeTransferBlockchain()**](#dogetransferblockchain) | **POST** [/v3/dogecoin/transaction](https://apidoc.tatum.io/tag/Dogecoin#operation/DogeTransferBlockchain) | Send DOGE to Dogecoin addresses
+[**dogecoinTransactionDogeTransactionUTXO()**](#dogecointransactiondogetransactionutxo) | **POST** [/v3/dogecoin/transaction#postDogeTransactionUTXO](https://apidoc.tatum.io/tag/Dogecoin#operation/dogecoinTransactionDogeTransactionUTXO) | Send DOGE to Dogecoin addresses
+[**dogecoinTransactionDogeTransactionUTXOKMS()**](#dogecointransactiondogetransactionutxokms) | **POST** [/v3/dogecoin/transaction#postDogeTransactionUTXOKMS](https://apidoc.tatum.io/tag/Dogecoin#operation/dogecoinTransactionDogeTransactionUTXOKMS) | Send DOGE to Dogecoin addresses
 
 
 ## `dogeBroadcast()`
@@ -368,25 +369,25 @@ JSON RPC HTTP driver
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `dogeTransferBlockchain()`
+## `dogecoinTransactionDogeTransactionUTXO()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransferBlockchain(
-    \Tatum\Model\DogeTransferBlockchainRequest $doge_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogecoinTransactionDogeTransactionUTXO(
+    \Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$doge_transfer_blockchain_request** | [**\Tatum\Model\DogeTransferBlockchainRequest**](../Model/DogeTransferBlockchainRequest.md) |  |
+ **$doge_transaction_utxo** | [**\Tatum\Model\DogeTransactionUTXO**](../Model/DogeTransactionUTXO.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -396,6 +397,38 @@ Send DOGE to Dogecoin addresses
 
 ### Example
 
-[✨ View "dogeTransferBlockchain.php"](../../examples/Api/DogecoinApi/dogeTransferBlockchain.php)
+[✨ View "dogecoinTransactionDogeTransactionUTXO.php"](../../examples/Api/DogecoinApi/dogecoinTransactionDogeTransactionUTXO.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `dogecoinTransactionDogeTransactionUTXOKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogecoinTransactionDogeTransactionUTXOKMS(
+    \Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$doge_transaction_utxokms** | [**\Tatum\Model\DogeTransactionUTXOKMS**](../Model/DogeTransactionUTXOKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send DOGE to Dogecoin addresses
+
+DogeTransactionUTXOKMS operation
+
+### Example
+
+[✨ View "dogecoinTransactionDogeTransactionUTXOKMS.php"](../../examples/Api/DogecoinApi/dogecoinTransactionDogeTransactionUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

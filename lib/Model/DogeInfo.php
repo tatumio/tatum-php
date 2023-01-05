@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DogeInfo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DogeInfo";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 0]], 

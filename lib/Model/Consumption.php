@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Consumption extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Consumption";
     protected static $_definition = [
         "day" => ["day", "string", null, "getDay", "setDay", null, ["r" => 0]], 

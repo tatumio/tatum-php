@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaTx";
     protected static $_definition = [
         "block_time" => ["blockTime", "float", null, "getBlockTime", "setBlockTime", null, ["r" => 0]], 

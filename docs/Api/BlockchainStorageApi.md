@@ -5,7 +5,8 @@ All URIs are relative to https://api.tatum.io.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getLog()**](#getlog) | **GET** [/v3/record](https://apidoc.tatum.io/tag/BlockchainStorage#operation/GetLog) | Get a log record
-[**storeLog()**](#storelog) | **POST** [/v3/record](https://apidoc.tatum.io/tag/BlockchainStorage#operation/StoreLog) | Store a log record
+[**recordCreateRecord()**](#recordcreaterecord) | **POST** [/v3/record#postCreateRecord](https://apidoc.tatum.io/tag/BlockchainStorage#operation/recordCreateRecord) | Store a log record
+[**recordCreateRecordCelo()**](#recordcreaterecordcelo) | **POST** [/v3/record#postCreateRecordCelo](https://apidoc.tatum.io/tag/BlockchainStorage#operation/recordCreateRecordCelo) | Store a log record
 
 
 ## `getLog()`
@@ -42,13 +43,13 @@ Get a log record
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `storeLog()`
+## `recordCreateRecord()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()->storeLog(
-    \Tatum\Model\StoreLogRequest $store_log_request
+$sdk->{mainnet/testnet}()->api()->blockchainStorage()->recordCreateRecord(
+    \Tatum\Model\CreateRecord $create_record
 ): \Tatum\Model\TransactionHash
 ```
 
@@ -56,7 +57,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainStorage()->storeLog(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$store_log_request** | [**\Tatum\Model\StoreLogRequest**](../Model/StoreLogRequest.md) |  |
+ **$create_record** | [**\Tatum\Model\CreateRecord**](../Model/CreateRecord.md) |  |
 
 ### Return type
 
@@ -70,6 +71,38 @@ Store a log record
 
 ### Example
 
-[✨ View "storeLog.php"](../../examples/Api/BlockchainStorageApi/storeLog.php)
+[✨ View "recordCreateRecord.php"](../../examples/Api/BlockchainStorageApi/recordCreateRecord.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `recordCreateRecordCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainStorage()->recordCreateRecordCelo(
+    \Tatum\Model\CreateRecordCelo $create_record_celo
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_record_celo** | [**\Tatum\Model\CreateRecordCelo**](../Model/CreateRecordCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Store a log record
+
+CreateRecordCelo operation
+
+### Example
+
+[✨ View "recordCreateRecordCelo.php"](../../examples/Api/BlockchainStorageApi/recordCreateRecordCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

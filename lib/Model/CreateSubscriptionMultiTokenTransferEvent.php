@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_CONTRACT_MULTITOKEN_TXS_PER_BLOCK = 'CONTRACT_MULTITOKEN_TXS_PER_BLOCK';
     protected static $_name = "CreateSubscriptionMultiTokenTransferEvent";
     protected static $_definition = [

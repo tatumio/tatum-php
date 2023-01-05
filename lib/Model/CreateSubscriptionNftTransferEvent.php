@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionNftTransferEvent extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_CONTRACT_NFT_TXS_PER_BLOCK = 'CONTRACT_NFT_TXS_PER_BLOCK';
     protected static $_name = "CreateSubscriptionNftTransferEvent";
     protected static $_definition = [

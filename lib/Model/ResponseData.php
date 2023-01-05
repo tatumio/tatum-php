@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ResponseData extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "ResponseData";
     protected static $_definition = [
         "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress", null, ["r" => 0]], 

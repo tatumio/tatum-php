@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class LtcTxInputsInnerCoin extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "LtcTx_inputs_inner_coin";
     protected static $_definition = [
         "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 

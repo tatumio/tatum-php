@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class VetBlock extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "VetBlock";
     protected static $_definition = [
         "number" => ["number", "int", 'uint32', "getNumber", "setNumber", null, ["r" => 0]], 

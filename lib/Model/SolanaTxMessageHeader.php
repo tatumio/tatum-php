@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaTxMessageHeader extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaTxMessageHeader";
     protected static $_definition = [
         "num_readonly_signed_accounts" => ["numReadonlySignedAccounts", "float", null, "getNumReadonlySignedAccounts", "setNumReadonlySignedAccounts", null, ["r" => 0]], 

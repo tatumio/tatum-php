@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AlgoBlock extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AlgoBlock";
     protected static $_definition = [
         "genesis_hash" => ["genesisHash", "string", null, "getGenesisHash", "setGenesisHash", null, ["r" => 0]], 

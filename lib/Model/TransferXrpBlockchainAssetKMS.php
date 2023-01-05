@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferXrpBlockchainAssetKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferXrpBlockchainAssetKMS";
     protected static $_definition = [
         "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbTxTxValueMsgInnerValueInputsInnerCoinsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbTx_tx_value_msg_inner_value_inputs_inner_coins_inner";
     protected static $_definition = [
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 

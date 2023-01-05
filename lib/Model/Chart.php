@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class Chart extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Chart";
     protected static $_definition = [
         "timestamp" => ["timestamp", "float", null, "getTimestamp", "setTimestamp", null, ["r" => 1]], 

@@ -4,10 +4,15 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**blockchainEstimateFee()**](#blockchainestimatefee) | **POST** [/v3/blockchain/estimate#postEstimateFee](https://apidoc.tatum.io/tag/BlockchainFees#operation/blockchainEstimateFee) | Estimate the fee for a transaction
+[**blockchainEstimateFeeBatchMintNft()**](#blockchainestimatefeebatchmintnft) | **POST** [/v3/blockchain/estimate#postEstimateFeeBatchMintNft](https://apidoc.tatum.io/tag/BlockchainFees#operation/blockchainEstimateFeeBatchMintNft) | Estimate the fee for a transaction
+[**blockchainEstimateFeeDeployCustodialWallet()**](#blockchainestimatefeedeploycustodialwallet) | **POST** [/v3/blockchain/estimate#postEstimateFeeDeployCustodialWallet](https://apidoc.tatum.io/tag/BlockchainFees#operation/blockchainEstimateFeeDeployCustodialWallet) | Estimate the fee for a transaction
+[**blockchainEstimateFeeFromAddress()**](#blockchainestimatefeefromaddress) | **POST** [/v3/blockchain/estimate#postEstimateFeeFromAddress](https://apidoc.tatum.io/tag/BlockchainFees#operation/blockchainEstimateFeeFromAddress) | Estimate the fee for a transaction
+[**blockchainEstimateFeeFromUTXO()**](#blockchainestimatefeefromutxo) | **POST** [/v3/blockchain/estimate#postEstimateFeeFromUTXO](https://apidoc.tatum.io/tag/BlockchainFees#operation/blockchainEstimateFeeFromUTXO) | Estimate the fee for a transaction
+[**blockchainEstimateFeeTransferFromCustodial()**](#blockchainestimatefeetransferfromcustodial) | **POST** [/v3/blockchain/estimate#postEstimateFeeTransferFromCustodial](https://apidoc.tatum.io/tag/BlockchainFees#operation/blockchainEstimateFeeTransferFromCustodial) | Estimate the fee for a transaction
 [**bscEstimateGas()**](#bscestimategas) | **POST** [/v3/bsc/gas](https://apidoc.tatum.io/tag/BlockchainFees#operation/BscEstimateGas) | Estimate BNB Smart Chain transaction fees
 [**celoEstimateGas()**](#celoestimategas) | **POST** [/v3/celo/gas](https://apidoc.tatum.io/tag/BlockchainFees#operation/CeloEstimateGas) | Estimate Celo Chain transaction fees
 [**egldEstimateGas()**](#egldestimategas) | **POST** [/v3/egld/gas](https://apidoc.tatum.io/tag/BlockchainFees#operation/EgldEstimateGas) | Estimate EGLD transaction fees
-[**estimateFeeBlockchain()**](#estimatefeeblockchain) | **POST** [/v3/blockchain/estimate](https://apidoc.tatum.io/tag/BlockchainFees#operation/EstimateFeeBlockchain) | Estimate the fee for a transaction
 [**ethEstimateGas()**](#ethestimategas) | **POST** [/v3/ethereum/gas](https://apidoc.tatum.io/tag/BlockchainFees#operation/EthEstimateGas) | Estimate Ethereum transaction fees
 [**ethEstimateGasBatch()**](#ethestimategasbatch) | **POST** [/v3/ethereum/gas/batch](https://apidoc.tatum.io/tag/BlockchainFees#operation/EthEstimateGasBatch) | Estimate multiple Ethereum transaction fees
 [**getBlockchainFee()**](#getblockchainfee) | **GET** [/v3/blockchain/fee/{chain}](https://apidoc.tatum.io/tag/BlockchainFees#operation/getBlockchainFee) | Get recommended blockchain fee / gas price
@@ -17,6 +22,198 @@ Method | HTTP request | Description
 [**vetEstimateGas()**](#vetestimategas) | **POST** [/v3/vet/transaction/gas](https://apidoc.tatum.io/tag/BlockchainFees#operation/VetEstimateGas) | Estimate VeChain Gas for transaction
 [**xdcEstimateGas()**](#xdcestimategas) | **POST** [/v3/xdc/gas](https://apidoc.tatum.io/tag/BlockchainFees#operation/XdcEstimateGas) | Estimate XinFin transaction fees
 
+
+## `blockchainEstimateFee()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFee(
+    \Tatum\Model\EstimateFee $estimate_fee
+): \Tatum\Model\BlockchainEstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee** | [**\Tatum\Model\EstimateFee**](../Model/EstimateFee.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+<h4>10 credits per API call.</h4><br/> <p>Estimate current transaction fee for different operations.<br/> Supported blockchains: <ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Harmony.ONE</li> <li>The XDC Network</li> <li>Ethereum</li> <li>Celo</li> <li>Klaytn</li> <li>Binance Smart Chain</li> <li>Polygon</li> </ul> </p>
+
+### Example
+
+[✨ View "blockchainEstimateFee.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFee.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainEstimateFeeBatchMintNft()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeBatchMintNft(
+    \Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft
+): \Tatum\Model\BlockchainEstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_batch_mint_nft** | [**\Tatum\Model\EstimateFeeBatchMintNft**](../Model/EstimateFeeBatchMintNft.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeBatchMintNft operation
+
+### Example
+
+[✨ View "blockchainEstimateFeeBatchMintNft.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeBatchMintNft.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainEstimateFeeDeployCustodialWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeDeployCustodialWallet(
+    \Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet
+): \Tatum\Model\BlockchainEstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_deploy_custodial_wallet** | [**\Tatum\Model\EstimateFeeDeployCustodialWallet**](../Model/EstimateFeeDeployCustodialWallet.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeDeployCustodialWallet operation
+
+### Example
+
+[✨ View "blockchainEstimateFeeDeployCustodialWallet.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeDeployCustodialWallet.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainEstimateFeeFromAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeFromAddress(
+    \Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address
+): \Tatum\Model\BlockchainEstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_from_address** | [**\Tatum\Model\EstimateFeeFromAddress**](../Model/EstimateFeeFromAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeFromAddress operation
+
+### Example
+
+[✨ View "blockchainEstimateFeeFromAddress.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeFromAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainEstimateFeeFromUTXO()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeFromUTXO(
+    \Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo
+): \Tatum\Model\BlockchainEstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_from_utxo** | [**\Tatum\Model\EstimateFeeFromUTXO**](../Model/EstimateFeeFromUTXO.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeFromUTXO operation
+
+### Example
+
+[✨ View "blockchainEstimateFeeFromUTXO.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeFromUTXO.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainEstimateFeeTransferFromCustodial()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeTransferFromCustodial(
+    \Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial
+): \Tatum\Model\BlockchainEstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_transfer_from_custodial** | [**\Tatum\Model\EstimateFeeTransferFromCustodial**](../Model/EstimateFeeTransferFromCustodial.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeTransferFromCustodial operation
+
+### Example
+
+[✨ View "blockchainEstimateFeeTransferFromCustodial.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeTransferFromCustodial.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bscEstimateGas()`
 
@@ -111,38 +308,6 @@ Estimate EGLD transaction fees
 ### Example
 
 [✨ View "egldEstimateGas.php"](../../examples/Api/BlockchainFeesApi/egldEstimateGas.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `estimateFeeBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBlockchain(
-    \Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request
-): \Tatum\Model\EstimateFeeBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee_blockchain_request** | [**\Tatum\Model\EstimateFeeBlockchainRequest**](../Model/EstimateFeeBlockchainRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EstimateFeeBlockchain200Response**](../Model/EstimateFeeBlockchain200Response.md)
-
-### Description
-
-Estimate the fee for a transaction
-
-<h4>10 credits per API call.</h4><br/> <p>Estimate current transaction fee for different operations.<br/> Supported blockchains: <ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Harmony.ONE</li> <li>The XDC Network</li> <li>Ethereum</li> <li>Celo</li> <li>Klaytn</li> <li>Binance Smart Chain</li> <li>Polygon</li> </ul> </p>
-
-### Example
-
-[✨ View "estimateFeeBlockchain.php"](../../examples/Api/BlockchainFeesApi/estimateFeeBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

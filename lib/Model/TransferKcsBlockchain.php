@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferKcsBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_KCS = 'KCS';
     public const CURRENCY_USDC_KCS = 'USDC_KCS';
     public const CURRENCY_USDT_KCS = 'USDT_KCS';

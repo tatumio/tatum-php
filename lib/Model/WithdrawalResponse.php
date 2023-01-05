@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class WithdrawalResponse extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "WithdrawalResponse";
     protected static $_definition = [
         "reference" => ["reference", "string", null, "getReference", "setReference", null, ["r" => 0]], 

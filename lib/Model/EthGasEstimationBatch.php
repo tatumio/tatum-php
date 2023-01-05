@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class EthGasEstimationBatch extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "EthGasEstimationBatch";
     protected static $_definition = [
         "error" => ["error", "bool", null, "getError", "setError", null, ["r" => 1]], 

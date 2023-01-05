@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbTxTxValueSignaturesInnerPubKey extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbTx_tx_value_signatures_inner_pub_key";
     protected static $_definition = [
         "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 

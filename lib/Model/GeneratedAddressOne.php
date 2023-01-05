@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GeneratedAddressOne extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "GeneratedAddressOne";
     protected static $_definition = [
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]]

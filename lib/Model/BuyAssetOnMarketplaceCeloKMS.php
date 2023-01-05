@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BuyAssetOnMarketplaceCeloKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_CELO = 'CELO';
     public const FEE_CURRENCY_CELO = 'CELO';
     public const FEE_CURRENCY_CUSD = 'CUSD';

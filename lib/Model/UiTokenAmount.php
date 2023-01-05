@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class UiTokenAmount extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "UiTokenAmount";
     protected static $_definition = [
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0]], 

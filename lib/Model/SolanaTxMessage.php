@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaTxMessage extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaTxMessage";
     protected static $_definition = [
         "header" => ["header", "\Tatum\Model\SolanaTxMessageHeader", null, "getHeader", "setHeader", null, ["r" => 0]], 

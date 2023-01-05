@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BurnErc721KMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BurnErc721KMS";
     protected static $_definition = [
         "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 32]], 

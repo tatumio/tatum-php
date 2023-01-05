@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FungibleTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FungibleTx";
     protected static $_definition = [
         "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 1]], 

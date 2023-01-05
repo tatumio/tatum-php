@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) | **GET** [/v3/algorand/node/indexer/{xApiKey}/{indexerPath}](https://apidoc.tatum.io/tag/Algorand#operation/AlgoNodeIndexerGetDriver) | Access Algorand Indexer GET node endpoints
 [**algoNodePostDriver()**](#algonodepostdriver) | **POST** [/v3/algorand/node/algod/{xApiKey}/{algodPath}](https://apidoc.tatum.io/tag/Algorand#operation/AlgoNodePostDriver) | Access Algorand Algod POST node endpoints
 [**algoandBroadcast()**](#algoandbroadcast) | **POST** [/v3/algorand/broadcast](https://apidoc.tatum.io/tag/Algorand#operation/AlgoandBroadcast) | Broadcast signed Algorand transaction
-[**algorandBlockchainReceiveAsset()**](#algorandblockchainreceiveasset) | **POST** [/v3/algorand/asset/receive](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset) | Enable receiving asset on account
-[**algorandBlockchainTransfer()**](#algorandblockchaintransfer) | **POST** [/v3/algorand/transaction](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainTransfer) | Send Algos to an Algorand account
+[**algorandAssetReceiveAlgorandAsset()**](#algorandassetreceivealgorandasset) | **POST** [/v3/algorand/asset/receive#postReceiveAlgorandAsset](https://apidoc.tatum.io/tag/Algorand#operation/algorandAssetReceiveAlgorandAsset) | Enable receiving asset on account
+[**algorandAssetReceiveAlgorandAssetKMS()**](#algorandassetreceivealgorandassetkms) | **POST** [/v3/algorand/asset/receive#postReceiveAlgorandAssetKMS](https://apidoc.tatum.io/tag/Algorand#operation/algorandAssetReceiveAlgorandAssetKMS) | Enable receiving asset on account
 [**algorandGenerateAddress()**](#algorandgenerateaddress) | **GET** [/v3/algorand/address/{priv}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGenerateAddress) | Generate Algorand account address from private key
 [**algorandGenerateWallet()**](#algorandgeneratewallet) | **GET** [/v3/algorand/wallet](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGenerateWallet) | Generate Algorand wallet
 [**algorandGetBalance()**](#algorandgetbalance) | **GET** [/v3/algorand/account/balance/{address}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetBalance) | Get Algorand Account balance
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**algorandGetCurrentBlock()**](#algorandgetcurrentblock) | **GET** [/v3/algorand/block/current](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetCurrentBlock) | Get current block number
 [**algorandGetPayTransactionsByFromTo()**](#algorandgetpaytransactionsbyfromto) | **GET** [/v3/algorand/transactions/{from}/{to}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetPayTransactionsByFromTo) | Get Algorand Transactions between from and to
 [**algorandGetTransaction()**](#algorandgettransaction) | **GET** [/v3/algorand/transaction/{txid}](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGetTransaction) | Get Algorand Transaction
+[**algorandTransactionTransferAlgorandBlockchain()**](#algorandtransactiontransferalgorandblockchain) | **POST** [/v3/algorand/transaction#postTransferAlgorandBlockchain](https://apidoc.tatum.io/tag/Algorand#operation/algorandTransactionTransferAlgorandBlockchain) | Send Algos to an Algorand account
+[**algorandTransactionTransferAlgorandBlockchainKMS()**](#algorandtransactiontransferalgorandblockchainkms) | **POST** [/v3/algorand/transaction#postTransferAlgorandBlockchainKMS](https://apidoc.tatum.io/tag/Algorand#operation/algorandTransactionTransferAlgorandBlockchainKMS) | Send Algos to an Algorand account
 
 
 ## `algoNodeGetDriver()`
@@ -155,25 +157,25 @@ Broadcast signed Algorand transaction
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `algorandBlockchainReceiveAsset()`
+## `algorandAssetReceiveAlgorandAsset()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainReceiveAsset(
-    \Tatum\Model\AlgorandBlockchainReceiveAssetRequest $algorand_blockchain_receive_asset_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandAssetReceiveAlgorandAsset(
+    \Tatum\Model\ReceiveAlgorandAsset $receive_algorand_asset
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algorand_blockchain_receive_asset_request** | [**\Tatum\Model\AlgorandBlockchainReceiveAssetRequest**](../Model/AlgorandBlockchainReceiveAssetRequest.md) |  |
+ **$receive_algorand_asset** | [**\Tatum\Model\ReceiveAlgorandAsset**](../Model/ReceiveAlgorandAsset.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -183,39 +185,39 @@ Enable receiving asset on account
 
 ### Example
 
-[✨ View "algorandBlockchainReceiveAsset.php"](../../examples/Api/AlgorandApi/algorandBlockchainReceiveAsset.php)
+[✨ View "algorandAssetReceiveAlgorandAsset.php"](../../examples/Api/AlgorandApi/algorandAssetReceiveAlgorandAsset.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `algorandBlockchainTransfer()`
+## `algorandAssetReceiveAlgorandAssetKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandBlockchainTransfer(
-    \Tatum\Model\AlgorandBlockchainTransferRequest $algorand_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandAssetReceiveAlgorandAssetKMS(
+    \Tatum\Model\ReceiveAlgorandAssetKMS $receive_algorand_asset_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$algorand_blockchain_transfer_request** | [**\Tatum\Model\AlgorandBlockchainTransferRequest**](../Model/AlgorandBlockchainTransferRequest.md) |  |
+ **$receive_algorand_asset_kms** | [**\Tatum\Model\ReceiveAlgorandAssetKMS**](../Model/ReceiveAlgorandAssetKMS.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
-Send Algos to an Algorand account
+Enable receiving asset on account
 
-<p><b>2 credits per API call</b></p> <p>Send Algos from one Algorand address to the other one.</p> <p><b>Signing a transaction</b></p> <p>When sending Algos, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+ReceiveAlgorandAssetKMS operation
 
 ### Example
 
-[✨ View "algorandBlockchainTransfer.php"](../../examples/Api/AlgorandApi/algorandBlockchainTransfer.php)
+[✨ View "algorandAssetReceiveAlgorandAssetKMS.php"](../../examples/Api/AlgorandApi/algorandAssetReceiveAlgorandAssetKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -443,5 +445,69 @@ Get Algorand Transaction
 ### Example
 
 [✨ View "algorandGetTransaction.php"](../../examples/Api/AlgorandApi/algorandGetTransaction.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandTransactionTransferAlgorandBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandTransactionTransferAlgorandBlockchain(
+    \Tatum\Model\TransferAlgorandBlockchain $transfer_algorand_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_algorand_blockchain** | [**\Tatum\Model\TransferAlgorandBlockchain**](../Model/TransferAlgorandBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send Algos to an Algorand account
+
+<p><b>2 credits per API call</b></p> <p>Send Algos from one Algorand address to the other one.</p> <p><b>Signing a transaction</b></p> <p>When sending Algos, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "algorandTransactionTransferAlgorandBlockchain.php"](../../examples/Api/AlgorandApi/algorandTransactionTransferAlgorandBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `algorandTransactionTransferAlgorandBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()->algorandTransactionTransferAlgorandBlockchainKMS(
+    \Tatum\Model\TransferAlgorandBlockchainKMS $transfer_algorand_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_algorand_blockchain_kms** | [**\Tatum\Model\TransferAlgorandBlockchainKMS**](../Model/TransferAlgorandBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send Algos to an Algorand account
+
+TransferAlgorandBlockchainKMS operation
+
+### Example
+
+[✨ View "algorandTransactionTransferAlgorandBlockchainKMS.php"](../../examples/Api/AlgorandApi/algorandTransactionTransferAlgorandBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

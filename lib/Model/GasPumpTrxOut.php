@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GasPumpTrxOut extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "GasPumpTrxOut";
     protected static $_definition = [
         "valid" => ["valid", "\Tatum\Model\ValidGasPumpAddress[]", null, "getValid", "setValid", null, ["r" => 0, "c" => 1]], 

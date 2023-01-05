@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class VetTxReceiptOutputsInnerTransfersInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "VetTxReceipt_outputs_inner_transfers_inner";
     protected static $_definition = [
         "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 0]], 

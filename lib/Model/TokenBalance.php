@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TokenBalance extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TokenBalance";
     protected static $_definition = [
         "account_index" => ["accountIndex", "float", null, "getAccountIndex", "setAccountIndex", null, ["r" => 0]], 

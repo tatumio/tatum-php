@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class HmacWebHook extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "HmacWebHook";
     protected static $_definition = [
         "hmac_secret" => ["hmacSecret", "string", null, "getHmacSecret", "setHmacSecret", null, ["r" => 1, "xl" => 100]]

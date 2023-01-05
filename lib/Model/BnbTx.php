@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbTx";
     protected static $_definition = [
         "code" => ["code", "float", null, "getCode", "setCode", null, ["r" => 0]], 

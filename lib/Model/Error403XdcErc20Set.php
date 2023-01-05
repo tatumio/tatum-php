@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Error403XdcErc20Set extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Error403XdcErc20Set";
     protected static $_definition = [
         "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode", null, ["r" => 1]], 

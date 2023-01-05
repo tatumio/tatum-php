@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpWallet extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpWallet";
     protected static $_definition = [
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 

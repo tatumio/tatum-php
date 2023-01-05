@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateXrpAsset extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const BASE_PAIR_AED = 'AED';
     public const BASE_PAIR_AFN = 'AFN';
     public const BASE_PAIR_ALL = 'ALL';

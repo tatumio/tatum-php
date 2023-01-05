@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class MintErc721 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "MintErc721";
     protected static $_definition = [
         "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 32]], 

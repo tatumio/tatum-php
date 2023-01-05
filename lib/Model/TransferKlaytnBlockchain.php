@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferKlaytnBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_KLAY = 'KLAY';
     protected static $_name = "TransferKlaytnBlockchain";
     protected static $_definition = [

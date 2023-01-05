@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class OffchainAddressesAddressesInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "OffchainAddresses_addresses_inner";
     protected static $_definition = [
         "account_id" => ["accountId", "string", null, "getAccountId", "setAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 

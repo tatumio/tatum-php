@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransactionFeeEgldBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransactionFeeEgldBlockchain";
     protected static $_definition = [
         "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 1, "nl" => 62, "xl" => 62]], 

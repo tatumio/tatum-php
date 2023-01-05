@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class LtcTxInputsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "LtcTx_inputs_inner";
     protected static $_definition = [
         "prevout" => ["prevout", "\Tatum\Model\LtcTxInputsInnerPrevout", null, "getPrevout", "setPrevout", null, ["r" => 0]], 

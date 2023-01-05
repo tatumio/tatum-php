@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AdaInfoTipEpoch extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AdaInfo_tip_epoch";
     protected static $_definition = [
         "number" => ["number", "float", null, "getNumber", "setNumber", null, ["r" => 0]]

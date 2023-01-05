@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CallPolygonSmartContractMethodCaller extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CallPolygonSmartContractMethodCaller";
     protected static $_definition = [
         "caller" => ["caller", "string", null, "getCaller", "setCaller", null, ["r" => 1, "nl" => 42, "xl" => 42]], 

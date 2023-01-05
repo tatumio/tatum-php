@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ReceiveAlgorandAssetKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "ReceiveAlgorandAssetKMS";
     protected static $_definition = [
         "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 58, "xl" => 58]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class MultiTokenGetAddressBalance200ResponseInnerBalancesInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "MultiTokenGetAddressBalance_200_response_inner_balances_inner";
     protected static $_definition = [
         "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 0]], 

@@ -5,7 +5,6 @@ All URIs are relative to https://api.tatum.io.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**eGldGetCurrentBlock()**](#egldgetcurrentblock) | **GET** [/v3/egld/block/current](https://apidoc.tatum.io/tag/Elrond#operation/EGldGetCurrentBlock) | Get current block number
-[**egldBlockchainTransfer()**](#egldblockchaintransfer) | **POST** [/v3/egld/transaction](https://apidoc.tatum.io/tag/Elrond#operation/EgldBlockchainTransfer) | Send EGLD from account to account
 [**egldBroadcast()**](#egldbroadcast) | **POST** [/v3/egld/broadcast](https://apidoc.tatum.io/tag/Elrond#operation/EgldBroadcast) | Broadcast signed EGLD transaction
 [**egldGenerateAddress()**](#egldgenerateaddress) | **GET** [/v3/egld/address/{mnemonic}/{index}](https://apidoc.tatum.io/tag/Elrond#operation/EgldGenerateAddress) | Generate EGLD account address from mnemonic
 [**egldGenerateAddressPrivateKey()**](#egldgenerateaddressprivatekey) | **POST** [/v3/egld/wallet/priv](https://apidoc.tatum.io/tag/Elrond#operation/EgldGenerateAddressPrivateKey) | Generate EGLD private key
@@ -17,6 +16,8 @@ Method | HTTP request | Description
 [**egldGetTransactionCount()**](#egldgettransactioncount) | **GET** [/v3/egld/transaction/count/{address}](https://apidoc.tatum.io/tag/Elrond#operation/EgldGetTransactionCount) | Get count of outgoing EGLD transactions
 [**egldNodeGet()**](#egldnodeget) | **GET** [/v3/egld/node/{xApiKey}/*](https://apidoc.tatum.io/tag/Elrond#operation/EgldNodeGet) | Node HTTP driver
 [**egldNodePost()**](#egldnodepost) | **POST** [/v3/egld/node/{xApiKey}/*](https://apidoc.tatum.io/tag/Elrond#operation/EgldNodePost) | Node HTTP driver
+[**egldTransactionTransferEgldBlockchain()**](#egldtransactiontransferegldblockchain) | **POST** [/v3/egld/transaction#postTransferEgldBlockchain](https://apidoc.tatum.io/tag/Elrond#operation/egldTransactionTransferEgldBlockchain) | Send EGLD from account to account
+[**egldTransactionTransferEgldBlockchainKMS()**](#egldtransactiontransferegldblockchainkms) | **POST** [/v3/egld/transaction#postTransferEgldBlockchainKMS](https://apidoc.tatum.io/tag/Elrond#operation/egldTransactionTransferEgldBlockchainKMS) | Send EGLD from account to account
 
 
 ## `eGldGetCurrentBlock()`
@@ -45,38 +46,6 @@ Get current block number
 ### Example
 
 [✨ View "eGldGetCurrentBlock.php"](../../examples/Api/ElrondApi/eGldGetCurrentBlock.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `egldBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldBlockchainTransfer(
-    \Tatum\Model\EgldBlockchainTransferRequest $egld_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$egld_blockchain_transfer_request** | [**\Tatum\Model\EgldBlockchainTransferRequest**](../Model/EgldBlockchainTransferRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Send EGLD from account to account
-
-<h4>2 credits per API call.</h4><br/> <p>Send EGLD from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on devnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "egldBlockchainTransfer.php"](../../examples/Api/ElrondApi/egldBlockchainTransfer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -433,5 +402,69 @@ Node HTTP driver
 ### Example
 
 [✨ View "egldNodePost.php"](../../examples/Api/ElrondApi/egldNodePost.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldTransactionTransferEgldBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldTransactionTransferEgldBlockchain(
+    \Tatum\Model\TransferEgldBlockchain $transfer_egld_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_egld_blockchain** | [**\Tatum\Model\TransferEgldBlockchain**](../Model/TransferEgldBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send EGLD from account to account
+
+<h4>2 credits per API call.</h4><br/> <p>Send EGLD from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on devnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "egldTransactionTransferEgldBlockchain.php"](../../examples/Api/ElrondApi/egldTransactionTransferEgldBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `egldTransactionTransferEgldBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()->egldTransactionTransferEgldBlockchainKMS(
+    \Tatum\Model\TransferEgldBlockchainKMS $transfer_egld_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_egld_blockchain_kms** | [**\Tatum\Model\TransferEgldBlockchainKMS**](../Model/TransferEgldBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send EGLD from account to account
+
+TransferEgldBlockchainKMS operation
+
+### Example
+
+[✨ View "egldTransactionTransferEgldBlockchainKMS.php"](../../examples/Api/ElrondApi/egldTransactionTransferEgldBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

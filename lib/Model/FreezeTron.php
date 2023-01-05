@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FreezeTron extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const RESOURCE_BANDWIDTH = 'BANDWIDTH';
     public const RESOURCE_ENERGY = 'ENERGY';
     protected static $_name = "FreezeTron";

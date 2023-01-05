@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferNftTron extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "TransferNftTron";
     protected static $_definition = [

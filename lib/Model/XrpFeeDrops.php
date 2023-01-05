@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class XrpFeeDrops extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpFee_drops";
     protected static $_definition = [
         "base_fee" => ["base_fee", "string", null, "getBaseFee", "setBaseFee", null, ["r" => 0]], 

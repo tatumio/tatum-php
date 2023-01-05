@@ -18,11 +18,11 @@ namespace Tatum\Model;
 /**
  * MintNftMinter Model
  * 
- * @description &lt;p&gt;The &lt;code&gt;MintNftMinter&lt;/code&gt; schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using the &lt;b&gt;NTF minter&lt;/b&gt;, a special blockchain address provided by Tatum that will cover the minting fees.&lt;br/&gt;For more information, see \&quot;Use your own smart contract to mint NFTs\&quot; in &lt;a href&#x3D;\&quot;#operation/NftMintErc721\&quot;&gt;Mint an NFT&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
+ * @description <p>The <code>MintNftMinter</code> schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using the <b>NTF minter</b>, a special blockchain address provided by Tatum that will cover the minting fees.<br/>For more information, see \"Use your own smart contract to mint NFTs\" in <a href=\"#operation/NftMintErc721\">Mint an NFT</a>.</p><br/>
  */
 class MintNftMinter extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_BSC = 'BSC';
     public const CHAIN_CELO = 'CELO';
     public const CHAIN_ETH = 'ETH';

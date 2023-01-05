@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DeployErc721KMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DeployErc721KMS";
     protected static $_definition = [
         "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "nl" => 1, "xl" => 100]], 

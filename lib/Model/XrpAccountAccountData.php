@@ -18,11 +18,11 @@ namespace Tatum\Model;
 /**
  * XrpAccount_account_data Model
  * 
- * @description The AccountRoot ledger object with this account&#39;s information, as stored in the ledger.
+ * @description The AccountRoot ledger object with this account's information, as stored in the ledger.
  */
 class XrpAccountAccountData extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpAccount_account_data";
     protected static $_definition = [
         "account" => ["Account", "string", null, "getAccount", "setAccount", null, ["r" => 0]], 

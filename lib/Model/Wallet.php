@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Wallet extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Wallet";
     protected static $_definition = [
         "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 0]], 

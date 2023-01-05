@@ -12,8 +12,12 @@ Method | HTTP request | Description
 [**xlmGetLedger()**](#xlmgetledger) | **GET** [/v3/xlm/ledger/{sequence}](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetLedger) | Get XLM Blockchain Ledger by sequence
 [**xlmGetLedgerTx()**](#xlmgetledgertx) | **GET** [/v3/xlm/ledger/{sequence}/transaction](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetLedgerTx) | Get XLM Blockchain Transactions in Ledger
 [**xlmGetTransaction()**](#xlmgettransaction) | **GET** [/v3/xlm/transaction/{hash}](https://apidoc.tatum.io/tag/Stellar#operation/XlmGetTransaction) | Get XLM Transaction by hash
-[**xlmTransferBlockchain()**](#xlmtransferblockchain) | **POST** [/v3/xlm/transaction](https://apidoc.tatum.io/tag/Stellar#operation/XlmTransferBlockchain) | Send XLM from address to address
-[**xlmTrustLineBlockchain()**](#xlmtrustlineblockchain) | **POST** [/v3/xlm/trust](https://apidoc.tatum.io/tag/Stellar#operation/XlmTrustLineBlockchain) | Create / Update / Delete XLM trust line
+[**xlmTransactionTransferXlmBlockchain()**](#xlmtransactiontransferxlmblockchain) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchain](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchain) | Send XLM from address to address
+[**xlmTransactionTransferXlmBlockchainAsset()**](#xlmtransactiontransferxlmblockchainasset) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchainAsset](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchainAsset) | Send XLM from address to address
+[**xlmTransactionTransferXlmBlockchainKMS()**](#xlmtransactiontransferxlmblockchainkms) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchainKMS](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchainKMS) | Send XLM from address to address
+[**xlmTransactionTransferXlmBlockchainKMSAsset()**](#xlmtransactiontransferxlmblockchainkmsasset) | **POST** [/v3/xlm/transaction#postTransferXlmBlockchainKMSAsset](https://apidoc.tatum.io/tag/Stellar#operation/xlmTransactionTransferXlmBlockchainKMSAsset) | Send XLM from address to address
+[**xlmTrustLineXlmBlockchain()**](#xlmtrustlinexlmblockchain) | **POST** [/v3/xlm/trust#postTrustLineXlmBlockchain](https://apidoc.tatum.io/tag/Stellar#operation/xlmTrustLineXlmBlockchain) | Create / Update / Delete XLM trust line
+[**xlmTrustLineXlmBlockchainKMS()**](#xlmtrustlinexlmblockchainkms) | **POST** [/v3/xlm/trust#postTrustLineXlmBlockchainKMS](https://apidoc.tatum.io/tag/Stellar#operation/xlmTrustLineXlmBlockchainKMS) | Create / Update / Delete XLM trust line
 [**xlmWallet()**](#xlmwallet) | **GET** [/v3/xlm/account](https://apidoc.tatum.io/tag/Stellar#operation/XlmWallet) | Generate XLM account
 
 
@@ -269,25 +273,25 @@ Get XLM Transaction by hash
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `xlmTransferBlockchain()`
+## `xlmTransactionTransferXlmBlockchain()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransferBlockchain(
-    \Tatum\Model\XlmTransferBlockchainRequest $xlm_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchain(
+    \Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xlm_transfer_blockchain_request** | [**\Tatum\Model\XlmTransferBlockchainRequest**](../Model/XlmTransferBlockchainRequest.md) |  |
+ **$transfer_xlm_blockchain** | [**\Tatum\Model\TransferXlmBlockchain**](../Model/TransferXlmBlockchain.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -297,29 +301,125 @@ Send XLM from address to address
 
 ### Example
 
-[✨ View "xlmTransferBlockchain.php"](../../examples/Api/StellarApi/xlmTransferBlockchain.php)
+[✨ View "xlmTransactionTransferXlmBlockchain.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `xlmTrustLineBlockchain()`
+## `xlmTransactionTransferXlmBlockchainAsset()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineBlockchain(
-    \Tatum\Model\XlmTrustLineBlockchainRequest $xlm_trust_line_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchainAsset(
+    \Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xlm_trust_line_blockchain_request** | [**\Tatum\Model\XlmTrustLineBlockchainRequest**](../Model/XlmTrustLineBlockchainRequest.md) |  |
+ **$transfer_xlm_blockchain_asset** | [**\Tatum\Model\TransferXlmBlockchainAsset**](../Model/TransferXlmBlockchainAsset.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XLM from address to address
+
+TransferXlmBlockchainAsset operation
+
+### Example
+
+[✨ View "xlmTransactionTransferXlmBlockchainAsset.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchainAsset.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmTransactionTransferXlmBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchainKMS(
+    \Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm_blockchain_kms** | [**\Tatum\Model\TransferXlmBlockchainKMS**](../Model/TransferXlmBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XLM from address to address
+
+TransferXlmBlockchainKMS operation
+
+### Example
+
+[✨ View "xlmTransactionTransferXlmBlockchainKMS.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmTransactionTransferXlmBlockchainKMSAsset()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchainKMSAsset(
+    \Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm_blockchain_kms_asset** | [**\Tatum\Model\TransferXlmBlockchainKMSAsset**](../Model/TransferXlmBlockchainKMSAsset.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XLM from address to address
+
+TransferXlmBlockchainKMSAsset operation
+
+### Example
+
+[✨ View "xlmTransactionTransferXlmBlockchainKMSAsset.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchainKMSAsset.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmTrustLineXlmBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineXlmBlockchain(
+    \Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xlm_blockchain** | [**\Tatum\Model\TrustLineXlmBlockchain**](../Model/TrustLineXlmBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -329,7 +429,39 @@ Create / Update / Delete XLM trust line
 
 ### Example
 
-[✨ View "xlmTrustLineBlockchain.php"](../../examples/Api/StellarApi/xlmTrustLineBlockchain.php)
+[✨ View "xlmTrustLineXlmBlockchain.php"](../../examples/Api/StellarApi/xlmTrustLineXlmBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xlmTrustLineXlmBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineXlmBlockchainKMS(
+    \Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xlm_blockchain_kms** | [**\Tatum\Model\TrustLineXlmBlockchainKMS**](../Model/TrustLineXlmBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Create / Update / Delete XLM trust line
+
+TrustLineXlmBlockchainKMS operation
+
+### Example
+
+[✨ View "xlmTrustLineXlmBlockchainKMS.php"](../../examples/Api/StellarApi/xlmTrustLineXlmBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

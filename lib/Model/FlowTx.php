@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowTx";
     protected static $_definition = [
         "reference_block_id" => ["referenceBlockId", "string", null, "getReferenceBlockId", "setReferenceBlockId", null, ["r" => 0]], 

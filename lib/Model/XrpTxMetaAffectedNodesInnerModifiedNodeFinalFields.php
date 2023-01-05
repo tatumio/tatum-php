@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode_FinalFields";
     protected static $_definition = [
         "account" => ["Account", "string", null, "getAccount", "setAccount", null, ["r" => 0]], 

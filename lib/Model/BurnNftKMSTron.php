@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BurnNftKMSTron extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "BurnNftKMSTron";
     protected static $_definition = [

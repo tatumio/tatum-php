@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TronTrc10Detail extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronTrc10Detail";
     protected static $_definition = [
         "owner_address" => ["ownerAddress", "string", null, "getOwnerAddress", "setOwnerAddress", null, ["r" => 0, "nl" => 34, "xl" => 34]], 

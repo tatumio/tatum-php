@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowEventPayloadValueFieldsInnerValueOneOf1 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowEvent_payload_value_fields_inner_value_oneOf_1";
     protected static $_definition = [
         "type" => ["type", "string", null, "getType", "setType", null, ["r" => 0]], 

@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class XrpLedgerLedger extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpLedger_ledger";
     protected static $_definition = [
         "accepted" => ["accepted", "bool", null, "getAccepted", "setAccepted", null, ["r" => 0]], 

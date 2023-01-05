@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class TronAccountTrc10Inner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronAccount_trc10_inner";
     protected static $_definition = [
         "key" => ["key", "string", null, "getKey", "setKey", null, ["r" => 1]], 

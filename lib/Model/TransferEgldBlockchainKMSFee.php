@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class TransferEgldBlockchainKMSFee extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferEgldBlockchainKMS_fee";
     protected static $_definition = [
         "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 0, "p" => "/^[+]?\\d+$/"]], 

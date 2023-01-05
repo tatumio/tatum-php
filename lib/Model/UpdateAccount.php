@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class UpdateAccount extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "UpdateAccount";
     protected static $_definition = [
         "account_code" => ["accountCode", "string", null, "getAccountCode", "setAccountCode", null, ["r" => 0, "nl" => 1, "xl" => 50]], 

@@ -4,8 +4,6 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xdcBlockchainSmartContractInvocation()**](#xdcblockchainsmartcontractinvocation) | **POST** [/v3/xdc/smartcontract](https://apidoc.tatum.io/tag/XinFin#operation/XdcBlockchainSmartContractInvocation) | Invoke a method in a smart contract on XinFin
-[**xdcBlockchainTransfer()**](#xdcblockchaintransfer) | **POST** [/v3/xdc/transaction](https://apidoc.tatum.io/tag/XinFin#operation/XdcBlockchainTransfer) | Send XDC / ERC20 from account to account
 [**xdcBroadcast()**](#xdcbroadcast) | **POST** [/v3/xdc/broadcast](https://apidoc.tatum.io/tag/XinFin#operation/XdcBroadcast) | Broadcast signed XDC transaction
 [**xdcGenerateAddress()**](#xdcgenerateaddress) | **GET** [/v3/xdc/address/{xpub}/{index}](https://apidoc.tatum.io/tag/XinFin#operation/XdcGenerateAddress) | Generate XDC account address from Extended public key
 [**xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) | **POST** [/v3/xdc/wallet/priv](https://apidoc.tatum.io/tag/XinFin#operation/XdcGenerateAddressPrivateKey) | Generate XDC private key
@@ -15,72 +13,13 @@ Method | HTTP request | Description
 [**xdcGetCurrentBlock()**](#xdcgetcurrentblock) | **GET** [/v3/xdc/block/current](https://apidoc.tatum.io/tag/XinFin#operation/XdcGetCurrentBlock) | Get current block number
 [**xdcGetTransaction()**](#xdcgettransaction) | **GET** [/v3/xdc/transaction/{hash}](https://apidoc.tatum.io/tag/XinFin#operation/XdcGetTransaction) | Get XDC Transaction
 [**xdcGetTransactionCount()**](#xdcgettransactioncount) | **GET** [/v3/xdc/transaction/count/{address}](https://apidoc.tatum.io/tag/XinFin#operation/XdcGetTransactionCount) | Get count of outgoing XDC transactions
+[**xdcSmartcontractCallXdcReadSmartContractMethod()**](#xdcsmartcontractcallxdcreadsmartcontractmethod) | **POST** [/v3/xdc/smartcontract#postCallXdcReadSmartContractMethod](https://apidoc.tatum.io/tag/XinFin#operation/xdcSmartcontractCallXdcReadSmartContractMethod) | Invoke a method in a smart contract on XinFin
+[**xdcSmartcontractCallXdcSmartContractMethod()**](#xdcsmartcontractcallxdcsmartcontractmethod) | **POST** [/v3/xdc/smartcontract#postCallXdcSmartContractMethod](https://apidoc.tatum.io/tag/XinFin#operation/xdcSmartcontractCallXdcSmartContractMethod) | Invoke a method in a smart contract on XinFin
+[**xdcSmartcontractCallXdcSmartContractMethodKMS()**](#xdcsmartcontractcallxdcsmartcontractmethodkms) | **POST** [/v3/xdc/smartcontract#postCallXdcSmartContractMethodKMS](https://apidoc.tatum.io/tag/XinFin#operation/xdcSmartcontractCallXdcSmartContractMethodKMS) | Invoke a method in a smart contract on XinFin
+[**xdcTransactionTransferXdcBlockchain()**](#xdctransactiontransferxdcblockchain) | **POST** [/v3/xdc/transaction#postTransferXdcBlockchain](https://apidoc.tatum.io/tag/XinFin#operation/xdcTransactionTransferXdcBlockchain) | Send XDC / ERC20 from account to account
+[**xdcTransactionTransferXdcBlockchainKMS()**](#xdctransactiontransferxdcblockchainkms) | **POST** [/v3/xdc/transaction#postTransferXdcBlockchainKMS](https://apidoc.tatum.io/tag/XinFin#operation/xdcTransactionTransferXdcBlockchainKMS) | Send XDC / ERC20 from account to account
 [**xdcWeb3Driver()**](#xdcweb3driver) | **POST** [/v3/xdc/web3/{xApiKey}](https://apidoc.tatum.io/tag/XinFin#operation/XdcWeb3Driver) | Web3 HTTP driver
 
-
-## `xdcBlockchainSmartContractInvocation()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcBlockchainSmartContractInvocation(
-    \Tatum\Model\XdcBlockchainSmartContractInvocationRequest $xdc_blockchain_smart_contract_invocation_request
-): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$xdc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\XdcBlockchainSmartContractInvocationRequest**](../Model/XdcBlockchainSmartContractInvocationRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on XinFin
-
-<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on XinFin.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "xdcBlockchainSmartContractInvocation.php"](../../examples/Api/XinFinApi/xdcBlockchainSmartContractInvocation.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xdcBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcBlockchainTransfer(
-    \Tatum\Model\XdcBlockchainTransferRequest $xdc_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$xdc_blockchain_transfer_request** | [**\Tatum\Model\XdcBlockchainTransferRequest**](../Model/XdcBlockchainTransferRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Send XDC / ERC20 from account to account
-
-<p><b>2 credits per API call</b></p> <p>Send XDC or Tatum supported ERC20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending XDC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p> Alternatively, using the Tatum client library for supported languages.</p>
-
-### Example
-
-[✨ View "xdcBlockchainTransfer.php"](../../examples/Api/XinFinApi/xdcBlockchainTransfer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcBroadcast()`
 
@@ -366,6 +305,166 @@ Get count of outgoing XDC transactions
 ### Example
 
 [✨ View "xdcGetTransactionCount.php"](../../examples/Api/XinFinApi/xdcGetTransactionCount.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcSmartcontractCallXdcReadSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcSmartcontractCallXdcReadSmartContractMethod(
+    \Tatum\Model\CallXdcReadSmartContractMethod $call_xdc_read_smart_contract_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_xdc_read_smart_contract_method** | [**\Tatum\Model\CallXdcReadSmartContractMethod**](../Model/CallXdcReadSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on XinFin
+
+<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on XinFin.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "xdcSmartcontractCallXdcReadSmartContractMethod.php"](../../examples/Api/XinFinApi/xdcSmartcontractCallXdcReadSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcSmartcontractCallXdcSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcSmartcontractCallXdcSmartContractMethod(
+    \Tatum\Model\CallXdcSmartContractMethod $call_xdc_smart_contract_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_xdc_smart_contract_method** | [**\Tatum\Model\CallXdcSmartContractMethod**](../Model/CallXdcSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on XinFin
+
+CallXdcSmartContractMethod operation
+
+### Example
+
+[✨ View "xdcSmartcontractCallXdcSmartContractMethod.php"](../../examples/Api/XinFinApi/xdcSmartcontractCallXdcSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcSmartcontractCallXdcSmartContractMethodKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcSmartcontractCallXdcSmartContractMethodKMS(
+    \Tatum\Model\CallXdcSmartContractMethodKMS $call_xdc_smart_contract_method_kms
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_xdc_smart_contract_method_kms** | [**\Tatum\Model\CallXdcSmartContractMethodKMS**](../Model/CallXdcSmartContractMethodKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on XinFin
+
+CallXdcSmartContractMethodKMS operation
+
+### Example
+
+[✨ View "xdcSmartcontractCallXdcSmartContractMethodKMS.php"](../../examples/Api/XinFinApi/xdcSmartcontractCallXdcSmartContractMethodKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcTransactionTransferXdcBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcTransactionTransferXdcBlockchain(
+    \Tatum\Model\TransferXdcBlockchain $transfer_xdc_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xdc_blockchain** | [**\Tatum\Model\TransferXdcBlockchain**](../Model/TransferXdcBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XDC / ERC20 from account to account
+
+<p><b>2 credits per API call</b></p> <p>Send XDC or Tatum supported ERC20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending XDC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p> Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "xdcTransactionTransferXdcBlockchain.php"](../../examples/Api/XinFinApi/xdcTransactionTransferXdcBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xdcTransactionTransferXdcBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()->xdcTransactionTransferXdcBlockchainKMS(
+    \Tatum\Model\TransferXdcBlockchainKMS $transfer_xdc_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xdc_blockchain_kms** | [**\Tatum\Model\TransferXdcBlockchainKMS**](../Model/TransferXdcBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XDC / ERC20 from account to account
+
+TransferXdcBlockchainKMS operation
+
+### Example
+
+[✨ View "xdcTransactionTransferXdcBlockchainKMS.php"](../../examples/Api/XinFinApi/xdcTransactionTransferXdcBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

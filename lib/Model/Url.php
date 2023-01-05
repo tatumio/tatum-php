@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Url extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Url";
     protected static $_definition = [
         "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0]]

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpFee extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpFee";
     protected static $_definition = [
         "current_ledger_size" => ["current_ledger_size", "string", null, "getCurrentLedgerSize", "setCurrentLedgerSize", null, ["r" => 0]], 

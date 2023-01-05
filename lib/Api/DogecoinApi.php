@@ -294,21 +294,44 @@ class DogecoinApi extends AbstractApi {
     /**
      * Send DOGE to Dogecoin addresses
      *
-     * @param \Tatum\Model\DogeTransferBlockchainRequest $doge_transfer_blockchain_request 
+     * @param \Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function dogeTransferBlockchain(\Tatum\Model\DogeTransferBlockchainRequest $doge_transfer_blockchain_request) {
+    public function dogecoinTransactionDogeTransactionUTXO(\Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/dogecoin/transaction", [], $rHeaders, [], $doge_transfer_blockchain_request
+                $this->_caller->config(), "POST", "/v3/dogecoin/transaction#postDogeTransactionUTXO", [], $rHeaders, [], $doge_transaction_utxo
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send DOGE to Dogecoin addresses
+     *
+     * @param \Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function dogecoinTransactionDogeTransactionUTXOKMS(\Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/dogecoin/transaction#postDogeTransactionUTXOKMS", [], $rHeaders, [], $doge_transaction_utxokms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

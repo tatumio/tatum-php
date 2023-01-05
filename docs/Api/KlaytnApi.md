@@ -4,8 +4,6 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**klaytnBlockchainSmartContractInvocation()**](#klaytnblockchainsmartcontractinvocation) | **POST** [/v3/klaytn/smartcontract](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnBlockchainSmartContractInvocation) | Invoke a method in a smart contract on Klaytn
-[**klaytnBlockchainTransfer()**](#klaytnblockchaintransfer) | **POST** [/v3/klaytn/transaction](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnBlockchainTransfer) | Send KLAY from account to account
 [**klaytnBroadcast()**](#klaytnbroadcast) | **POST** [/v3/klaytn/broadcast](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnBroadcast) | Broadcast signed Klaytn transaction
 [**klaytnGenerateAddress()**](#klaytngenerateaddress) | **GET** [/v3/klaytn/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateAddress) | Generate Klaytn account address from Extended public key
 [**klaytnGenerateAddressPrivateKey()**](#klaytngenerateaddressprivatekey) | **POST** [/v3/klaytn/wallet/priv](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateAddressPrivateKey) | Generate Klaytn private key
@@ -15,72 +13,13 @@ Method | HTTP request | Description
 [**klaytnGetCurrentBlock()**](#klaytngetcurrentblock) | **GET** [/v3/klaytn/block/current](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetCurrentBlock) | Get current block number
 [**klaytnGetTransaction()**](#klaytngettransaction) | **GET** [/v3/klaytn/transaction/{hash}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetTransaction) | Get Klaytn Transaction
 [**klaytnGetTransactionCount()**](#klaytngettransactioncount) | **GET** [/v3/klaytn/transaction/count/{address}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGetTransactionCount) | Get count of outgoing Klaytn transactions
+[**klaytnSmartcontractCallKlaytnSmartContractMethod()**](#klaytnsmartcontractcallklaytnsmartcontractmethod) | **POST** [/v3/klaytn/smartcontract#postCallKlaytnSmartContractMethod](https://apidoc.tatum.io/tag/Klaytn#operation/klaytnSmartcontractCallKlaytnSmartContractMethod) | Invoke a method in a smart contract on Klaytn
+[**klaytnSmartcontractCallKlaytnSmartContractMethodKMS()**](#klaytnsmartcontractcallklaytnsmartcontractmethodkms) | **POST** [/v3/klaytn/smartcontract#postCallKlaytnSmartContractMethodKMS](https://apidoc.tatum.io/tag/Klaytn#operation/klaytnSmartcontractCallKlaytnSmartContractMethodKMS) | Invoke a method in a smart contract on Klaytn
+[**klaytnSmartcontractCallKlaytnSmartContractReadMethod()**](#klaytnsmartcontractcallklaytnsmartcontractreadmethod) | **POST** [/v3/klaytn/smartcontract#postCallKlaytnSmartContractReadMethod](https://apidoc.tatum.io/tag/Klaytn#operation/klaytnSmartcontractCallKlaytnSmartContractReadMethod) | Invoke a method in a smart contract on Klaytn
+[**klaytnTransactionTransferKlaytnBlockchain()**](#klaytntransactiontransferklaytnblockchain) | **POST** [/v3/klaytn/transaction#postTransferKlaytnBlockchain](https://apidoc.tatum.io/tag/Klaytn#operation/klaytnTransactionTransferKlaytnBlockchain) | Send KLAY from account to account
+[**klaytnTransactionTransferKlaytnBlockchainKMS()**](#klaytntransactiontransferklaytnblockchainkms) | **POST** [/v3/klaytn/transaction#postTransferKlaytnBlockchainKMS](https://apidoc.tatum.io/tag/Klaytn#operation/klaytnTransactionTransferKlaytnBlockchainKMS) | Send KLAY from account to account
 [**klaytnWeb3Driver()**](#klaytnweb3driver) | **POST** [/v3/klaytn/web3/{xApiKey}](https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnWeb3Driver) | Web3 HTTP driver
 
-
-## `klaytnBlockchainSmartContractInvocation()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnBlockchainSmartContractInvocation(
-    \Tatum\Model\KlaytnBlockchainSmartContractInvocationRequest $klaytn_blockchain_smart_contract_invocation_request
-): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$klaytn_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KlaytnBlockchainSmartContractInvocationRequest**](../Model/KlaytnBlockchainSmartContractInvocationRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Klaytn
-
-<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Klaytn.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "klaytnBlockchainSmartContractInvocation.php"](../../examples/Api/KlaytnApi/klaytnBlockchainSmartContractInvocation.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `klaytnBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnBlockchainTransfer(
-    \Tatum\Model\KlaytnBlockchainTransferRequest $klaytn_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$klaytn_blockchain_transfer_request** | [**\Tatum\Model\KlaytnBlockchainTransferRequest**](../Model/KlaytnBlockchainTransferRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Send KLAY from account to account
-
-<p><b>2 credits per API call</b></p> <p>Send KLAY from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending KLAY, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "klaytnBlockchainTransfer.php"](../../examples/Api/KlaytnApi/klaytnBlockchainTransfer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `klaytnBroadcast()`
 
@@ -366,6 +305,166 @@ Get count of outgoing Klaytn transactions
 ### Example
 
 [✨ View "klaytnGetTransactionCount.php"](../../examples/Api/KlaytnApi/klaytnGetTransactionCount.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnSmartcontractCallKlaytnSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnSmartcontractCallKlaytnSmartContractMethod(
+    \Tatum\Model\CallKlaytnSmartContractMethod $call_klaytn_smart_contract_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_klaytn_smart_contract_method** | [**\Tatum\Model\CallKlaytnSmartContractMethod**](../Model/CallKlaytnSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Klaytn
+
+CallKlaytnSmartContractMethod operation
+
+### Example
+
+[✨ View "klaytnSmartcontractCallKlaytnSmartContractMethod.php"](../../examples/Api/KlaytnApi/klaytnSmartcontractCallKlaytnSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnSmartcontractCallKlaytnSmartContractMethodKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnSmartcontractCallKlaytnSmartContractMethodKMS(
+    \Tatum\Model\CallKlaytnSmartContractMethodKMS $call_klaytn_smart_contract_method_kms
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_klaytn_smart_contract_method_kms** | [**\Tatum\Model\CallKlaytnSmartContractMethodKMS**](../Model/CallKlaytnSmartContractMethodKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Klaytn
+
+CallKlaytnSmartContractMethodKMS operation
+
+### Example
+
+[✨ View "klaytnSmartcontractCallKlaytnSmartContractMethodKMS.php"](../../examples/Api/KlaytnApi/klaytnSmartcontractCallKlaytnSmartContractMethodKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnSmartcontractCallKlaytnSmartContractReadMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnSmartcontractCallKlaytnSmartContractReadMethod(
+    \Tatum\Model\CallKlaytnSmartContractReadMethod $call_klaytn_smart_contract_read_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_klaytn_smart_contract_read_method** | [**\Tatum\Model\CallKlaytnSmartContractReadMethod**](../Model/CallKlaytnSmartContractReadMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Klaytn
+
+<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Klaytn.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "klaytnSmartcontractCallKlaytnSmartContractReadMethod.php"](../../examples/Api/KlaytnApi/klaytnSmartcontractCallKlaytnSmartContractReadMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnTransactionTransferKlaytnBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnTransactionTransferKlaytnBlockchain(
+    \Tatum\Model\TransferKlaytnBlockchain $transfer_klaytn_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_klaytn_blockchain** | [**\Tatum\Model\TransferKlaytnBlockchain**](../Model/TransferKlaytnBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send KLAY from account to account
+
+<p><b>2 credits per API call</b></p> <p>Send KLAY from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending KLAY, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "klaytnTransactionTransferKlaytnBlockchain.php"](../../examples/Api/KlaytnApi/klaytnTransactionTransferKlaytnBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `klaytnTransactionTransferKlaytnBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnTransactionTransferKlaytnBlockchainKMS(
+    \Tatum\Model\TransferKlaytnBlockchainKMS $transfer_klaytn_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_klaytn_blockchain_kms** | [**\Tatum\Model\TransferKlaytnBlockchainKMS**](../Model/TransferKlaytnBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send KLAY from account to account
+
+TransferKlaytnBlockchainKMS operation
+
+### Example
+
+[✨ View "klaytnTransactionTransferKlaytnBlockchainKMS.php"](../../examples/Api/KlaytnApi/klaytnTransactionTransferKlaytnBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

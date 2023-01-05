@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferBnbBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_BNB = 'BNB';
     protected static $_name = "TransferBnbBlockchain";
     protected static $_definition = [

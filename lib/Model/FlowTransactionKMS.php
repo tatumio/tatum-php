@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowTransactionKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_FLOW = 'FLOW';
     public const CURRENCY_FUSD = 'FUSD';
     protected static $_name = "FlowTransactionKMS";

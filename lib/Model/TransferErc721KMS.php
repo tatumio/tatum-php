@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferErc721KMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferErc721KMS";
     protected static $_definition = [
         "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 42, "xl" => 42]], 

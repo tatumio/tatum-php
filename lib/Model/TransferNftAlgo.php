@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferNftAlgo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "TransferNftAlgo";
     protected static $_definition = [

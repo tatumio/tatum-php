@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpAccountTxTransactionsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpAccountTx_transactions_inner";
     protected static $_definition = [
         "meta" => ["meta", "\Tatum\Model\XrpAccountTxTransactionsInnerMeta", null, "getMeta", "setMeta", null, ["r" => 0]], 

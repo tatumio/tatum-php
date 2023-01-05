@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FeeETH extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FeeETH";
     protected static $_definition = [
         "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 1]], 

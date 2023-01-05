@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AlgoNodePostDriverRequest extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AlgoNodePostDriver_request";
     protected static $_definition = [
         "rawtxn" => ["rawtxn", "string", null, "getRawtxn", "setRawtxn", null, ["r" => 0]]

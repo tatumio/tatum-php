@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 4) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Transfer request
-$arg_transfer = (new \Tatum\Model\EthBlockchainTransferRequest())
+$arg_transfer = (new \Tatum\Model\TransferEthBlockchain())
   ->setFromPrivateKey('0xad25407b6dba3907b1d001ddfecf909ba94fcdf4f4aead108709598b125e9585')
   ->setTo('0x9266045eea878f35e0041d3140f0d79f8606f04c')
   ->setAmount(1)

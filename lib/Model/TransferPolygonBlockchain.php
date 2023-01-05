@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferPolygonBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_MATIC = 'MATIC';
     public const CURRENCY_USDC_MATIC = 'USDC_MATIC';
     public const CURRENCY_USDT_MATIC = 'USDT_MATIC';

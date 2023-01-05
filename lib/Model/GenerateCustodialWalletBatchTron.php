@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GenerateCustodialWalletBatchTron extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "GenerateCustodialWalletBatchTron";
     protected static $_definition = [

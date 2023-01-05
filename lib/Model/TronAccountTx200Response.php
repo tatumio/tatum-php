@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TronAccountTx200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronAccountTx_200_response";
     protected static $_definition = [
         "next" => ["next", "string", null, "getNext", "setNext", null, ["r" => 0]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Error403FeeFormat extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Error403FeeFormat";
     protected static $_definition = [
         "error_code" => ["errorCode", "string", null, "getErrorCode", "setErrorCode", null, ["r" => 1]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNode extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode";
     protected static $_definition = [
         "ledger_entry_type" => ["LedgerEntryType", "string", null, "getLedgerEntryType", "setLedgerEntryType", null, ["r" => 0]], 

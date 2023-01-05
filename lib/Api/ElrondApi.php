@@ -44,29 +44,6 @@ class ElrondApi extends AbstractApi {
     }
     
     /**
-     * Send EGLD from account to account
-     *
-     * @param \Tatum\Model\EgldBlockchainTransferRequest $egld_blockchain_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function egldBlockchainTransfer(\Tatum\Model\EgldBlockchainTransferRequest $egld_blockchain_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/egld/transaction", [], $rHeaders, [], $egld_blockchain_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast signed EGLD transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -338,6 +315,52 @@ class ElrondApi extends AbstractApi {
                 $this->_caller->config(), "POST", S::parse("/v3/egld/node/{xApiKey}/*", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send EGLD from account to account
+     *
+     * @param \Tatum\Model\TransferEgldBlockchain $transfer_egld_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function egldTransactionTransferEgldBlockchain(\Tatum\Model\TransferEgldBlockchain $transfer_egld_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/egld/transaction#postTransferEgldBlockchain", [], $rHeaders, [], $transfer_egld_blockchain
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send EGLD from account to account
+     *
+     * @param \Tatum\Model\TransferEgldBlockchainKMS $transfer_egld_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function egldTransactionTransferEgldBlockchainKMS(\Tatum\Model\TransferEgldBlockchainKMS $transfer_egld_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/egld/transaction#postTransferEgldBlockchainKMS", [], $rHeaders, [], $transfer_egld_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

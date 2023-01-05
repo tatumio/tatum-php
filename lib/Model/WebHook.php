@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class WebHook extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_INCOMING_BLOCKCHAIN_HOOK = 'INCOMING_BLOCKCHAIN_HOOK';
     public const TYPE_ADDRESS_TRANSACTION = 'ADDRESS_TRANSACTION';
     public const TYPE_CONTRACT_LOG_EVENT = 'CONTRACT_LOG_EVENT';

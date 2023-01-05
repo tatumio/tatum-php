@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class NftGetContractAddress200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "NftGetContractAddress_200_response";
     protected static $_definition = [
         "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0]]

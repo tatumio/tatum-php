@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AdaInfo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AdaInfo";
     protected static $_definition = [
         "testnet" => ["testnet", "string", null, "getTestnet", "setTestnet", null, ["r" => 0]], 

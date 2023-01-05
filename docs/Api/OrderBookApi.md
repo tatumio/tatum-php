@@ -15,7 +15,8 @@ Method | HTTP request | Description
 [**getSellTrades()**](#getselltrades) | **GET** [/v3/trade/sell](https://apidoc.tatum.io/tag/OrderBook#operation/getSellTrades) | List all active sell trades
 [**getSellTradesBody()**](#getselltradesbody) | **POST** [/v3/trade/sell](https://apidoc.tatum.io/tag/OrderBook#operation/getSellTradesBody) | List all active sell trades
 [**getTradeById()**](#gettradebyid) | **GET** [/v3/trade/{id}](https://apidoc.tatum.io/tag/OrderBook#operation/getTradeById) | Get existing trade
-[**storeTrade()**](#storetrade) | **POST** [/v3/trade](https://apidoc.tatum.io/tag/OrderBook#operation/storeTrade) | Store buy / sell trade
+[**tradeCreateFutureTrade()**](#tradecreatefuturetrade) | **POST** [/v3/trade#postCreateFutureTrade](https://apidoc.tatum.io/tag/OrderBook#operation/tradeCreateFutureTrade) | Store buy / sell trade
+[**tradeCreateTrade()**](#tradecreatetrade) | **POST** [/v3/trade#postCreateTrade](https://apidoc.tatum.io/tag/OrderBook#operation/tradeCreateTrade) | Store buy / sell trade
 
 
 ## `chartRequest()`
@@ -404,13 +405,13 @@ Get existing trade
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `storeTrade()`
+## `tradeCreateFutureTrade()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->storeTrade(
-    \Tatum\Model\StoreTradeRequest $store_trade_request
+$sdk->{mainnet/testnet}()->api()->orderBook()->tradeCreateFutureTrade(
+    \Tatum\Model\CreateFutureTrade $create_future_trade
 ): \Tatum\Model\Id
 ```
 
@@ -418,7 +419,39 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->storeTrade(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$store_trade_request** | [**\Tatum\Model\StoreTradeRequest**](../Model/StoreTradeRequest.md) |  |
+ **$create_future_trade** | [**\Tatum\Model\CreateFutureTrade**](../Model/CreateFutureTrade.md) |  |
+
+### Return type
+
+[**\Tatum\Model\Id**](../Model/Id.md)
+
+### Description
+
+Store buy / sell trade
+
+CreateFutureTrade operation
+
+### Example
+
+[✨ View "tradeCreateFutureTrade.php"](../../examples/Api/OrderBookApi/tradeCreateFutureTrade.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `tradeCreateTrade()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->tradeCreateTrade(
+    \Tatum\Model\CreateTrade $create_trade
+): \Tatum\Model\Id
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_trade** | [**\Tatum\Model\CreateTrade**](../Model/CreateTrade.md) |  |
 
 ### Return type
 
@@ -432,6 +465,6 @@ Store buy / sell trade
 
 ### Example
 
-[✨ View "storeTrade.php"](../../examples/Api/OrderBookApi/storeTrade.php)
+[✨ View "tradeCreateTrade.php"](../../examples/Api/OrderBookApi/tradeCreateTrade.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

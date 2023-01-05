@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class EthEstimateGasArray extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "EthEstimateGasArray";
     protected static $_definition = [
         "estimations" => ["estimations", "\Tatum\Model\EthEstimateGas[]", null, "getEstimations", "setEstimations", null, ["r" => 1, "c" => 1]]

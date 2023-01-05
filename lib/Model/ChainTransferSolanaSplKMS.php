@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ChainTransferSolanaSplKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "ChainTransferSolanaSplKMS";
     protected static $_definition = [

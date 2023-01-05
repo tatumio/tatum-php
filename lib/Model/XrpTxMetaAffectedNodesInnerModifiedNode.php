@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpTxMetaAffectedNodesInnerModifiedNode extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpTx_meta_AffectedNodes_inner_ModifiedNode";
     protected static $_definition = [
         "final_fields" => ["FinalFields", "\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields", null, "getFinalFields", "setFinalFields", null, ["r" => 0]], 

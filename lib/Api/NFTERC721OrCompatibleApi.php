@@ -23,16 +23,16 @@ use Tatum\Sdk\Serializer as S;
  */
 class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
-     * Add an NFT minter to an NFT smart contract
+     * Burn an NFT
      *
-     * @param \Tatum\Model\NftAddMinterRequest $nft_add_minter_request 
+     * @param \Tatum\Model\BurnNft $burn_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftAddMinter(\Tatum\Model\NftAddMinterRequest $nft_add_minter_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftBurnNft(\Tatum\Model\BurnNft $burn_nft, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -41,12 +41,12 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/add", [], $rHeaders, [], $nft_add_minter_request
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNft", [], $rHeaders, [], $burn_nft
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -55,14 +55,14 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Burn an NFT
      *
-     * @param \Tatum\Model\NftBurnErc721Request $nft_burn_erc721_request 
+     * @param \Tatum\Model\BurnNftAlgo $burn_nft_algo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftBurnErc721(\Tatum\Model\NftBurnErc721Request $nft_burn_erc721_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftBurnNftAlgo(\Tatum\Model\BurnNftAlgo $burn_nft_algo, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -71,12 +71,252 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", [], $rHeaders, [], $nft_burn_erc721_request
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftAlgo", [], $rHeaders, [], $burn_nft_algo
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftCelo $burn_nft_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftCelo(\Tatum\Model\BurnNftCelo $burn_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftCelo", [], $rHeaders, [], $burn_nft_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftFlowKMS $burn_nft_flow_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftFlowKMS(\Tatum\Model\BurnNftFlowKMS $burn_nft_flow_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftFlowKMS", [], $rHeaders, [], $burn_nft_flow_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftFlowMnemonic $burn_nft_flow_mnemonic 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftFlowMnemonic(\Tatum\Model\BurnNftFlowMnemonic $burn_nft_flow_mnemonic, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftFlowMnemonic", [], $rHeaders, [], $burn_nft_flow_mnemonic
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftFlowPK $burn_nft_flow_pk 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftFlowPK(\Tatum\Model\BurnNftFlowPK $burn_nft_flow_pk, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftFlowPK", [], $rHeaders, [], $burn_nft_flow_pk
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftKMS $burn_nft_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftKMS(\Tatum\Model\BurnNftKMS $burn_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftKMS", [], $rHeaders, [], $burn_nft_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftKMSCelo $burn_nft_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftKMSCelo(\Tatum\Model\BurnNftKMSCelo $burn_nft_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftKMSCelo", [], $rHeaders, [], $burn_nft_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftKMSTron $burn_nft_kms_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftKMSTron(\Tatum\Model\BurnNftKMSTron $burn_nft_kms_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftKMSTron", [], $rHeaders, [], $burn_nft_kms_tron
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Burn an NFT
+     *
+     * @param \Tatum\Model\BurnNftTron $burn_nft_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftBurnNftTron(\Tatum\Model\BurnNftTron $burn_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/burn#postBurnNftTron", [], $rHeaders, [], $burn_nft_tron
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -85,14 +325,14 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Deploy an NFT smart contract
      *
-     * @param \Tatum\Model\NftDeployErc721Request $nft_deploy_erc721_request 
+     * @param \Tatum\Model\DeployNft $deploy_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftDeployErc721(\Tatum\Model\NftDeployErc721Request $nft_deploy_erc721_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftDeployNft(\Tatum\Model\DeployNft $deploy_nft, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -101,12 +341,252 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", [], $rHeaders, [], $nft_deploy_erc721_request
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNft", [], $rHeaders, [], $deploy_nft
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftCelo $deploy_nft_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftCelo(\Tatum\Model\DeployNftCelo $deploy_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftCelo", [], $rHeaders, [], $deploy_nft_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftCeloKMS $deploy_nft_celo_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftCeloKMS(\Tatum\Model\DeployNftCeloKMS $deploy_nft_celo_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftCeloKMS", [], $rHeaders, [], $deploy_nft_celo_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftFlowKMS $deploy_nft_flow_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftFlowKMS(\Tatum\Model\DeployNftFlowKMS $deploy_nft_flow_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftFlowKMS", [], $rHeaders, [], $deploy_nft_flow_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftFlowMnemonic $deploy_nft_flow_mnemonic 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftFlowMnemonic(\Tatum\Model\DeployNftFlowMnemonic $deploy_nft_flow_mnemonic, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftFlowMnemonic", [], $rHeaders, [], $deploy_nft_flow_mnemonic
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftFlowPK $deploy_nft_flow_pk 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftFlowPK(\Tatum\Model\DeployNftFlowPK $deploy_nft_flow_pk, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftFlowPK", [], $rHeaders, [], $deploy_nft_flow_pk
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftKMS $deploy_nft_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftKMS(\Tatum\Model\DeployNftKMS $deploy_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftKMS", [], $rHeaders, [], $deploy_nft_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftTron $deploy_nft_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftTron(\Tatum\Model\DeployNftTron $deploy_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftTron", [], $rHeaders, [], $deploy_nft_tron
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy an NFT smart contract
+     *
+     * @param \Tatum\Model\DeployNftTronKMS $deploy_nft_tron_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftDeployNftTronKMS(\Tatum\Model\DeployNftTronKMS $deploy_nft_tron_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/deploy#postDeployNftTronKMS", [], $rHeaders, [], $deploy_nft_tron_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -483,16 +963,16 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     }
     
     /**
-     * Mint an NFT
+     * Add an NFT minter to an NFT smart contract
      *
-     * @param \Tatum\Model\NftMintErc721Request $nft_mint_erc721_request 
+     * @param \Tatum\Model\AddNftMinter $add_nft_minter 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\NftMintErc721200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftMintErc721(\Tatum\Model\NftMintErc721Request $nft_mint_erc721_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftMintAddNftMinter(\Tatum\Model\AddNftMinter $add_nft_minter, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -501,12 +981,42 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\NftMintErc721200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", [], $rHeaders, [], $nft_mint_erc721_request
+                $this->_caller->config(), "POST", "/v3/nft/mint/add#postAddNftMinter", [], $rHeaders, [], $add_nft_minter
             ), 
-            "\Tatum\Model\NftMintErc721200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Add an NFT minter to an NFT smart contract
+     *
+     * @param \Tatum\Model\AddNftMinterKMS $add_nft_minter_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftMintAddNftMinterKMS(\Tatum\Model\AddNftMinterKMS $add_nft_minter_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/add#postAddNftMinterKMS", [], $rHeaders, [], $add_nft_minter_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -515,14 +1025,14 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Mint multiple NFTs
      *
-     * @param \Tatum\Model\NftMintMultipleErc721Request $nft_mint_multiple_erc721_request 
+     * @param \Tatum\Model\MintMultipleNft $mint_multiple_nft 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\NftMintMultipleErc721200Response
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
      */
-    public function nftMintMultipleErc721(\Tatum\Model\NftMintMultipleErc721Request $nft_mint_multiple_erc721_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftMintBatchMintMultipleNft(\Tatum\Model\MintMultipleNft $mint_multiple_nft, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -531,28 +1041,28 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\NftMintMultipleErc721200Response $result */
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", [], $rHeaders, [], $nft_mint_multiple_erc721_request
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNft", [], $rHeaders, [], $mint_multiple_nft
             ), 
-            "\Tatum\Model\NftMintMultipleErc721200Response"
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
         );
             
         return $result;
     }
     
     /**
-     * Transfer an NFT
+     * Mint multiple NFTs
      *
-     * @param \Tatum\Model\NftTransferErc721Request $nft_transfer_erc721_request 
+     * @param \Tatum\Model\MintMultipleNftCelo $mint_multiple_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
      */
-    public function nftTransferErc721(\Tatum\Model\NftTransferErc721Request $nft_transfer_erc721_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftMintBatchMintMultipleNftCelo(\Tatum\Model\MintMultipleNftCelo $mint_multiple_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -561,12 +1071,762 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", [], $rHeaders, [], $nft_transfer_erc721_request
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftCelo", [], $rHeaders, [], $mint_multiple_nft_celo
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftFlowKMS $mint_multiple_nft_flow_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftFlowKMS(\Tatum\Model\MintMultipleNftFlowKMS $mint_multiple_nft_flow_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftFlowKMS", [], $rHeaders, [], $mint_multiple_nft_flow_kms
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftFlowMnemonic $mint_multiple_nft_flow_mnemonic 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftFlowMnemonic(\Tatum\Model\MintMultipleNftFlowMnemonic $mint_multiple_nft_flow_mnemonic, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftFlowMnemonic", [], $rHeaders, [], $mint_multiple_nft_flow_mnemonic
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftFlowPK $mint_multiple_nft_flow_pk 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftFlowPK(\Tatum\Model\MintMultipleNftFlowPK $mint_multiple_nft_flow_pk, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftFlowPK", [], $rHeaders, [], $mint_multiple_nft_flow_pk
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftKMS $mint_multiple_nft_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftKMS(\Tatum\Model\MintMultipleNftKMS $mint_multiple_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftKMS", [], $rHeaders, [], $mint_multiple_nft_kms
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftKMSCelo $mint_multiple_nft_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftKMSCelo(\Tatum\Model\MintMultipleNftKMSCelo $mint_multiple_nft_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftKMSCelo", [], $rHeaders, [], $mint_multiple_nft_kms_celo
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftKMSTron $mint_multiple_nft_kms_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftKMSTron(\Tatum\Model\MintMultipleNftKMSTron $mint_multiple_nft_kms_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftKMSTron", [], $rHeaders, [], $mint_multiple_nft_kms_tron
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftMinter $mint_multiple_nft_minter 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftMinter(\Tatum\Model\MintMultipleNftMinter $mint_multiple_nft_minter, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftMinter", [], $rHeaders, [], $mint_multiple_nft_minter
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint multiple NFTs
+     *
+     * @param \Tatum\Model\MintMultipleNftTron $mint_multiple_nft_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+     */
+    public function nftMintBatchMintMultipleNftTron(\Tatum\Model\MintMultipleNftTron $mint_multiple_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint/batch#postMintMultipleNftTron", [], $rHeaders, [], $mint_multiple_nft_tron
+            ), 
+            "\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNft $mint_nft 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNft(\Tatum\Model\MintNft $mint_nft, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNft", [], $rHeaders, [], $mint_nft
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftAlgorand $mint_nft_algorand 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftAlgorand(\Tatum\Model\MintNftAlgorand $mint_nft_algorand, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftAlgorand", [], $rHeaders, [], $mint_nft_algorand
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftAlgorandKMS $mint_nft_algorand_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftAlgorandKMS(\Tatum\Model\MintNftAlgorandKMS $mint_nft_algorand_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftAlgorandKMS", [], $rHeaders, [], $mint_nft_algorand_kms
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftCelo $mint_nft_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftCelo(\Tatum\Model\MintNftCelo $mint_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftCelo", [], $rHeaders, [], $mint_nft_celo
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftExpress $mint_nft_express 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftExpress(\Tatum\Model\MintNftExpress $mint_nft_express, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftExpress", [], $rHeaders, [], $mint_nft_express
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftExpressAlgorand $mint_nft_express_algorand 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftExpressAlgorand(\Tatum\Model\MintNftExpressAlgorand $mint_nft_express_algorand, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftExpressAlgorand", [], $rHeaders, [], $mint_nft_express_algorand
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftExpressSolana $mint_nft_express_solana 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftExpressSolana(\Tatum\Model\MintNftExpressSolana $mint_nft_express_solana, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftExpressSolana", [], $rHeaders, [], $mint_nft_express_solana
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftFlowKMS $mint_nft_flow_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftFlowKMS(\Tatum\Model\MintNftFlowKMS $mint_nft_flow_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftFlowKMS", [], $rHeaders, [], $mint_nft_flow_kms
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftFlowMnemonic $mint_nft_flow_mnemonic 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftFlowMnemonic(\Tatum\Model\MintNftFlowMnemonic $mint_nft_flow_mnemonic, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftFlowMnemonic", [], $rHeaders, [], $mint_nft_flow_mnemonic
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftFlowPK $mint_nft_flow_pk 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftFlowPK(\Tatum\Model\MintNftFlowPK $mint_nft_flow_pk, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftFlowPK", [], $rHeaders, [], $mint_nft_flow_pk
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftKMS $mint_nft_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftKMS(\Tatum\Model\MintNftKMS $mint_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftKMS", [], $rHeaders, [], $mint_nft_kms
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftKMSCelo $mint_nft_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftKMSCelo(\Tatum\Model\MintNftKMSCelo $mint_nft_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftKMSCelo", [], $rHeaders, [], $mint_nft_kms_celo
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftKMSTron $mint_nft_kms_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftKMSTron(\Tatum\Model\MintNftKMSTron $mint_nft_kms_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftKMSTron", [], $rHeaders, [], $mint_nft_kms_tron
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftMinter $mint_nft_minter 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftMinter(\Tatum\Model\MintNftMinter $mint_nft_minter, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftMinter", [], $rHeaders, [], $mint_nft_minter
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftSolana $mint_nft_solana 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftSolana(\Tatum\Model\MintNftSolana $mint_nft_solana, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftSolana", [], $rHeaders, [], $mint_nft_solana
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftSolanaKMS $mint_nft_solana_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftSolanaKMS(\Tatum\Model\MintNftSolanaKMS $mint_nft_solana_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftSolanaKMS", [], $rHeaders, [], $mint_nft_solana_kms
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Mint an NFT
+     *
+     * @param \Tatum\Model\MintNftTron $mint_nft_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\NftMintNftExpress200Response
+     */
+    public function nftMintNftTron(\Tatum\Model\MintNftTron $mint_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\NftMintNftExpress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/mint#postMintNftTron", [], $rHeaders, [], $mint_nft_tron
+            ), 
+            "\Tatum\Model\NftMintNftExpress200Response"
         );
             
         return $result;
@@ -575,14 +1835,14 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Update NFT royalty information
      *
-     * @param \Tatum\Model\NftUpdateCashbackErc721Request $nft_update_cashback_erc721_request 
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftUpdateCashbackErc721(\Tatum\Model\NftUpdateCashbackErc721Request $nft_update_cashback_erc721_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -591,12 +1851,582 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", [], $rHeaders, [], $nft_update_cashback_erc721_request
+                $this->_caller->config(), "PUT", "/v3/nft/royalty#putUpdateCashbackValueForAuthorNftCelo", [], $rHeaders, [], $update_cashback_value_for_author_nft_celo
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update NFT royalty information
+     *
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/nft/royalty#putUpdateCashbackValueForAuthorNftKMSCelo", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update NFT royalty information
+     *
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/nft/royalty#putUpdateCashbackValueForAuthorNftKMSTron", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_tron
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update NFT royalty information
+     *
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/nft/royalty#putUpdateCashbackValueForAuthorNftKMS", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update NFT royalty information
+     *
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/nft/royalty#putUpdateCashbackValueForAuthorNftTron", [], $rHeaders, [], $update_cashback_value_for_author_nft_tron
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update NFT royalty information
+     *
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/nft/royalty#putUpdateCashbackValueForAuthorNft", [], $rHeaders, [], $update_cashback_value_for_author_nft
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNft $transfer_nft 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNft(\Tatum\Model\TransferNft $transfer_nft, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNft", [], $rHeaders, [], $transfer_nft
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftAlgo $transfer_nft_algo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftAlgo(\Tatum\Model\TransferNftAlgo $transfer_nft_algo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftAlgo", [], $rHeaders, [], $transfer_nft_algo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftAlgoExpress $transfer_nft_algo_express 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftAlgoExpress(\Tatum\Model\TransferNftAlgoExpress $transfer_nft_algo_express, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftAlgoExpress", [], $rHeaders, [], $transfer_nft_algo_express
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftAlgoKMS $transfer_nft_algo_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftAlgoKMS(\Tatum\Model\TransferNftAlgoKMS $transfer_nft_algo_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftAlgoKMS", [], $rHeaders, [], $transfer_nft_algo_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftCelo $transfer_nft_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftCelo(\Tatum\Model\TransferNftCelo $transfer_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftCelo", [], $rHeaders, [], $transfer_nft_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftFlowKMS $transfer_nft_flow_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftFlowKMS(\Tatum\Model\TransferNftFlowKMS $transfer_nft_flow_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftFlowKMS", [], $rHeaders, [], $transfer_nft_flow_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftFlowMnemonic $transfer_nft_flow_mnemonic 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftFlowMnemonic(\Tatum\Model\TransferNftFlowMnemonic $transfer_nft_flow_mnemonic, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftFlowMnemonic", [], $rHeaders, [], $transfer_nft_flow_mnemonic
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftFlowPK $transfer_nft_flow_pk 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftFlowPK(\Tatum\Model\TransferNftFlowPK $transfer_nft_flow_pk, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftFlowPK", [], $rHeaders, [], $transfer_nft_flow_pk
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftKMS $transfer_nft_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftKMS(\Tatum\Model\TransferNftKMS $transfer_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftKMS", [], $rHeaders, [], $transfer_nft_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftKMSCelo $transfer_nft_kms_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftKMSCelo(\Tatum\Model\TransferNftKMSCelo $transfer_nft_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftKMSCelo", [], $rHeaders, [], $transfer_nft_kms_celo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftKMSTron $transfer_nft_kms_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftKMSTron(\Tatum\Model\TransferNftKMSTron $transfer_nft_kms_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftKMSTron", [], $rHeaders, [], $transfer_nft_kms_tron
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftSolana $transfer_nft_solana 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftSolana(\Tatum\Model\TransferNftSolana $transfer_nft_solana, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftSolana", [], $rHeaders, [], $transfer_nft_solana
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftSolanaKMS $transfer_nft_solana_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftSolanaKMS(\Tatum\Model\TransferNftSolanaKMS $transfer_nft_solana_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftSolanaKMS", [], $rHeaders, [], $transfer_nft_solana_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an NFT
+     *
+     * @param \Tatum\Model\TransferNftTron $transfer_nft_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftTransactionTransferNftTron(\Tatum\Model\TransferNftTron $transfer_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/transaction#postTransferNftTron", [], $rHeaders, [], $transfer_nft_tron
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -605,21 +2435,44 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Verify an NFT in an NFT collection on Solana
      *
-     * @param \Tatum\Model\NftVerifyInCollectionRequest $nft_verify_in_collection_request 
+     * @param \Tatum\Model\VerifySolanaNFT $verify_solana_nft 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftVerifyInCollection(\Tatum\Model\NftVerifyInCollectionRequest $nft_verify_in_collection_request) {
+    public function nftVerifySolanaNFT(\Tatum\Model\VerifySolanaNFT $verify_solana_nft) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/verify", [], $rHeaders, [], $nft_verify_in_collection_request
+                $this->_caller->config(), "POST", "/v3/nft/verify#postVerifySolanaNFT", [], $rHeaders, [], $verify_solana_nft
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Verify an NFT in an NFT collection on Solana
+     *
+     * @param \Tatum\Model\VerifySolanaNFTKMS $verify_solana_nftkms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftVerifySolanaNFTKMS(\Tatum\Model\VerifySolanaNFTKMS $verify_solana_nftkms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/nft/verify#postVerifySolanaNFTKMS", [], $rHeaders, [], $verify_solana_nftkms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

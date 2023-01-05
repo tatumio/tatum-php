@@ -4,8 +4,6 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ethBlockchainSmartContractInvocation()**](#ethblockchainsmartcontractinvocation) | **POST** [/v3/ethereum/smartcontract](https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainSmartContractInvocation) | Invoke a method in a smart contract on Ethereum
-[**ethBlockchainTransfer()**](#ethblockchaintransfer) | **POST** [/v3/ethereum/transaction](https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer) | Send Ethereum / ERC20 from account to account
 [**ethBroadcast()**](#ethbroadcast) | **POST** [/v3/ethereum/broadcast](https://apidoc.tatum.io/tag/Ethereum#operation/EthBroadcast) | Broadcast signed Ethereum transaction
 [**ethGenerateAddress()**](#ethgenerateaddress) | **GET** [/v3/ethereum/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateAddress) | Generate Ethereum account address from Extended public key
 [**ethGenerateAddressPrivateKey()**](#ethgenerateaddressprivatekey) | **POST** [/v3/ethereum/wallet/priv](https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateAddressPrivateKey) | Generate Ethereum private key
@@ -18,75 +16,12 @@ Method | HTTP request | Description
 [**ethGetTransactionByAddress()**](#ethgettransactionbyaddress) | **GET** [/v3/ethereum/account/transaction/{address}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetTransactionByAddress) | Get Ethereum transactions by address
 [**ethGetTransactionCount()**](#ethgettransactioncount) | **GET** [/v3/ethereum/transaction/count/{address}](https://apidoc.tatum.io/tag/Ethereum#operation/EthGetTransactionCount) | Get count of outgoing Ethereum transactions
 [**ethWeb3Driver()**](#ethweb3driver) | **POST** [/v3/ethereum/web3/{xApiKey}](https://apidoc.tatum.io/tag/Ethereum#operation/EthWeb3Driver) | Web3 HTTP driver
+[**ethereumSmartcontractCallReadSmartContractMethod()**](#ethereumsmartcontractcallreadsmartcontractmethod) | **POST** [/v3/ethereum/smartcontract#postCallReadSmartContractMethod](https://apidoc.tatum.io/tag/Ethereum#operation/ethereumSmartcontractCallReadSmartContractMethod) | Invoke a method in a smart contract on Ethereum
+[**ethereumSmartcontractCallSmartContractMethod()**](#ethereumsmartcontractcallsmartcontractmethod) | **POST** [/v3/ethereum/smartcontract#postCallSmartContractMethod](https://apidoc.tatum.io/tag/Ethereum#operation/ethereumSmartcontractCallSmartContractMethod) | Invoke a method in a smart contract on Ethereum
+[**ethereumSmartcontractCallSmartContractMethodKMS()**](#ethereumsmartcontractcallsmartcontractmethodkms) | **POST** [/v3/ethereum/smartcontract#postCallSmartContractMethodKMS](https://apidoc.tatum.io/tag/Ethereum#operation/ethereumSmartcontractCallSmartContractMethodKMS) | Invoke a method in a smart contract on Ethereum
+[**ethereumTransactionTransferEthBlockchain()**](#ethereumtransactiontransferethblockchain) | **POST** [/v3/ethereum/transaction#postTransferEthBlockchain](https://apidoc.tatum.io/tag/Ethereum#operation/ethereumTransactionTransferEthBlockchain) | Send Ethereum / ERC20 from account to account
+[**ethereumTransactionTransferEthBlockchainKMS()**](#ethereumtransactiontransferethblockchainkms) | **POST** [/v3/ethereum/transaction#postTransferEthBlockchainKMS](https://apidoc.tatum.io/tag/Ethereum#operation/ethereumTransactionTransferEthBlockchainKMS) | Send Ethereum / ERC20 from account to account
 
-
-## `ethBlockchainSmartContractInvocation()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainSmartContractInvocation(
-    \Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$eth_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\EthBlockchainSmartContractInvocationRequest**](../Model/EthBlockchainSmartContractInvocationRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Ethereum
-
-<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Ethereum.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul> <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "ethBlockchainSmartContractInvocation.php"](../../examples/Api/EthereumApi/ethBlockchainSmartContractInvocation.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `ethBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethBlockchainTransfer(
-    \Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$eth_blockchain_transfer_request** | [**\Tatum\Model\EthBlockchainTransferRequest**](../Model/EthBlockchainTransferRequest.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Send Ethereum / ERC20 from account to account
-
-<p><b>2 credits per API call</b></p> <p>Send Ethereum or Tatum supported ERC20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending ETH, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "ethBlockchainTransfer.php"](../../examples/Api/EthereumApi/ethBlockchainTransfer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethBroadcast()`
 
@@ -509,5 +444,175 @@ Web3 HTTP driver
 ### Example
 
 [✨ View "ethWeb3Driver.php"](../../examples/Api/EthereumApi/ethWeb3Driver.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethereumSmartcontractCallReadSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethereumSmartcontractCallReadSmartContractMethod(
+    \Tatum\Model\CallReadSmartContractMethod $call_read_smart_contract_method,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_read_smart_contract_method** | [**\Tatum\Model\CallReadSmartContractMethod**](../Model/CallReadSmartContractMethod.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Ethereum
+
+CallReadSmartContractMethod operation
+
+### Example
+
+[✨ View "ethereumSmartcontractCallReadSmartContractMethod.php"](../../examples/Api/EthereumApi/ethereumSmartcontractCallReadSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethereumSmartcontractCallSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethereumSmartcontractCallSmartContractMethod(
+    \Tatum\Model\CallSmartContractMethod $call_smart_contract_method,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_smart_contract_method** | [**\Tatum\Model\CallSmartContractMethod**](../Model/CallSmartContractMethod.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Ethereum
+
+<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Ethereum.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul> <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "ethereumSmartcontractCallSmartContractMethod.php"](../../examples/Api/EthereumApi/ethereumSmartcontractCallSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethereumSmartcontractCallSmartContractMethodKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethereumSmartcontractCallSmartContractMethodKMS(
+    \Tatum\Model\CallSmartContractMethodKMS $call_smart_contract_method_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_smart_contract_method_kms** | [**\Tatum\Model\CallSmartContractMethodKMS**](../Model/CallSmartContractMethodKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Ethereum
+
+CallSmartContractMethodKMS operation
+
+### Example
+
+[✨ View "ethereumSmartcontractCallSmartContractMethodKMS.php"](../../examples/Api/EthereumApi/ethereumSmartcontractCallSmartContractMethodKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethereumTransactionTransferEthBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethereumTransactionTransferEthBlockchain(
+    \Tatum\Model\TransferEthBlockchain $transfer_eth_blockchain,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_eth_blockchain** | [**\Tatum\Model\TransferEthBlockchain**](../Model/TransferEthBlockchain.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send Ethereum / ERC20 from account to account
+
+<p><b>2 credits per API call</b></p> <p>Send Ethereum or Tatum supported ERC20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending ETH, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "ethereumTransactionTransferEthBlockchain.php"](../../examples/Api/EthereumApi/ethereumTransactionTransferEthBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ethereumTransactionTransferEthBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->ethereum()->ethereumTransactionTransferEthBlockchainKMS(
+    \Tatum\Model\TransferEthBlockchainKMS $transfer_eth_blockchain_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_eth_blockchain_kms** | [**\Tatum\Model\TransferEthBlockchainKMS**](../Model/TransferEthBlockchainKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send Ethereum / ERC20 from account to account
+
+TransferEthBlockchainKMS operation
+
+### Example
+
+[✨ View "ethereumTransactionTransferEthBlockchainKMS.php"](../../examples/Api/EthereumApi/ethereumTransactionTransferEthBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

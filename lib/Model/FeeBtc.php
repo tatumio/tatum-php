@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FeeBtc extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FeeBtc";
     protected static $_definition = [
         "fast" => ["fast", "string", null, "getFast", "setFast", null, ["r" => 1]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowAccount extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowAccount";
     protected static $_definition = [
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0]], 

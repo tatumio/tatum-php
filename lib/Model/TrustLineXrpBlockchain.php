@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TrustLineXrpBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TrustLineXrpBlockchain";
     protected static $_definition = [
         "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 33, "xl" => 34]], 

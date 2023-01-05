@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DogeTxVinInnerScriptSig extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DogeTx_vin_inner_scriptSig";
     protected static $_definition = [
         "asm" => ["asm", "string", null, "getAsm", "setAsm", null, ["r" => 0]], 

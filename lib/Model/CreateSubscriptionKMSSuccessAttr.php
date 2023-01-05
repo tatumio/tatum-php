@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionKMSSuccessAttr extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateSubscriptionKMSSuccess_attr";
     protected static $_definition = [
         "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "xl" => 500]]

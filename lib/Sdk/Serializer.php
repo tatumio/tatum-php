@@ -471,8 +471,8 @@ class Serializer {
             }
             return $data;
         } else {
-            // If a discriminator is defined and points to a valid subclass, use it.
-            $discriminator = $type::DISCRIMINATOR;
+            // If a discriminator is defined and points to a valid subclass, use it
+            $discriminator = $type::_D;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
                 $subclass = '\Tatum\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $type)) {
@@ -585,7 +585,7 @@ class Serializer {
         // Preapre request
         return new Request(
             $method,
-            $config->getHost() . $uri . ($queryString ? "?{$queryString}" : ""),
+            $config->getHost() . preg_replace('%#.*?$%', "", $uri) . ($queryString ? "?{$queryString}" : ""),
             $headers,
             $multipart ? $form : (!empty($body) ? self::toBodyValue($body, $headers["Content-Type"] ?? "") : "")
         );

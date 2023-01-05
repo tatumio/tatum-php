@@ -4,9 +4,25 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**nftAddMinter()**](#nftaddminter) | **POST** [/v3/nft/mint/add](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftAddMinter) | Add an NFT minter to an NFT smart contract
-[**nftBurnErc721()**](#nftburnerc721) | **POST** [/v3/nft/burn](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftBurnErc721) | Burn an NFT
-[**nftDeployErc721()**](#nftdeployerc721) | **POST** [/v3/nft/deploy](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftDeployErc721) | Deploy an NFT smart contract
+[**nftBurnNft()**](#nftburnnft) | **POST** [/v3/nft/burn#postBurnNft](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNft) | Burn an NFT
+[**nftBurnNftAlgo()**](#nftburnnftalgo) | **POST** [/v3/nft/burn#postBurnNftAlgo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftAlgo) | Burn an NFT
+[**nftBurnNftCelo()**](#nftburnnftcelo) | **POST** [/v3/nft/burn#postBurnNftCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftCelo) | Burn an NFT
+[**nftBurnNftFlowKMS()**](#nftburnnftflowkms) | **POST** [/v3/nft/burn#postBurnNftFlowKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftFlowKMS) | Burn an NFT
+[**nftBurnNftFlowMnemonic()**](#nftburnnftflowmnemonic) | **POST** [/v3/nft/burn#postBurnNftFlowMnemonic](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftFlowMnemonic) | Burn an NFT
+[**nftBurnNftFlowPK()**](#nftburnnftflowpk) | **POST** [/v3/nft/burn#postBurnNftFlowPK](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftFlowPK) | Burn an NFT
+[**nftBurnNftKMS()**](#nftburnnftkms) | **POST** [/v3/nft/burn#postBurnNftKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftKMS) | Burn an NFT
+[**nftBurnNftKMSCelo()**](#nftburnnftkmscelo) | **POST** [/v3/nft/burn#postBurnNftKMSCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftKMSCelo) | Burn an NFT
+[**nftBurnNftKMSTron()**](#nftburnnftkmstron) | **POST** [/v3/nft/burn#postBurnNftKMSTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftKMSTron) | Burn an NFT
+[**nftBurnNftTron()**](#nftburnnfttron) | **POST** [/v3/nft/burn#postBurnNftTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftBurnNftTron) | Burn an NFT
+[**nftDeployNft()**](#nftdeploynft) | **POST** [/v3/nft/deploy#postDeployNft](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNft) | Deploy an NFT smart contract
+[**nftDeployNftCelo()**](#nftdeploynftcelo) | **POST** [/v3/nft/deploy#postDeployNftCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftCelo) | Deploy an NFT smart contract
+[**nftDeployNftCeloKMS()**](#nftdeploynftcelokms) | **POST** [/v3/nft/deploy#postDeployNftCeloKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftCeloKMS) | Deploy an NFT smart contract
+[**nftDeployNftFlowKMS()**](#nftdeploynftflowkms) | **POST** [/v3/nft/deploy#postDeployNftFlowKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftFlowKMS) | Deploy an NFT smart contract
+[**nftDeployNftFlowMnemonic()**](#nftdeploynftflowmnemonic) | **POST** [/v3/nft/deploy#postDeployNftFlowMnemonic](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftFlowMnemonic) | Deploy an NFT smart contract
+[**nftDeployNftFlowPK()**](#nftdeploynftflowpk) | **POST** [/v3/nft/deploy#postDeployNftFlowPK](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftFlowPK) | Deploy an NFT smart contract
+[**nftDeployNftKMS()**](#nftdeploynftkms) | **POST** [/v3/nft/deploy#postDeployNftKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftKMS) | Deploy an NFT smart contract
+[**nftDeployNftTron()**](#nftdeploynfttron) | **POST** [/v3/nft/deploy#postDeployNftTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftTron) | Deploy an NFT smart contract
+[**nftDeployNftTronKMS()**](#nftdeploynfttronkms) | **POST** [/v3/nft/deploy#postDeployNftTronKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftDeployNftTronKMS) | Deploy an NFT smart contract
 [**nftGetBalanceErc721()**](#nftgetbalanceerc721) | **GET** [/v3/nft/balance/{chain}/{contractAddress}/{address}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetBalanceErc721) | Get the NFTs from a specific smart contract that a blockchain address holds
 [**nftGetContractAddress()**](#nftgetcontractaddress) | **GET** [/v3/nft/address/{chain}/{hash}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetContractAddress) | Get the address of an NFT smart contract by its transaction hash
 [**nftGetMetadataErc721()**](#nftgetmetadataerc721) | **GET** [/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetMetadataErc721) | Get NFT metadata
@@ -17,68 +33,80 @@ Method | HTTP request | Description
 [**nftGetTransactErc721()**](#nftgettransacterc721) | **GET** [/v3/nft/transaction/{chain}/{hash}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTransactErc721) | Get an NFT transaction by its hash
 [**nftGetTransactionByAddress()**](#nftgettransactionbyaddress) | **GET** [/v3/nft/transaction/{chain}/{address}/{tokenAddress}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTransactionByAddress) | Get NFT transactions on a blockchain address
 [**nftGetTransactionByToken()**](#nftgettransactionbytoken) | **GET** [/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftGetTransactionByToken) | Get NFT transactions for an NFT
-[**nftMintErc721()**](#nftminterc721) | **POST** [/v3/nft/mint](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftMintErc721) | Mint an NFT
-[**nftMintMultipleErc721()**](#nftmintmultipleerc721) | **POST** [/v3/nft/mint/batch](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftMintMultipleErc721) | Mint multiple NFTs
-[**nftTransferErc721()**](#nfttransfererc721) | **POST** [/v3/nft/transaction](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftTransferErc721) | Transfer an NFT
-[**nftUpdateCashbackErc721()**](#nftupdatecashbackerc721) | **PUT** [/v3/nft/royalty](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftUpdateCashbackErc721) | Update NFT royalty information
-[**nftVerifyInCollection()**](#nftverifyincollection) | **POST** [/v3/nft/verify](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/NftVerifyInCollection) | Verify an NFT in an NFT collection on Solana
+[**nftMintAddNftMinter()**](#nftmintaddnftminter) | **POST** [/v3/nft/mint/add#postAddNftMinter](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintAddNftMinter) | Add an NFT minter to an NFT smart contract
+[**nftMintAddNftMinterKMS()**](#nftmintaddnftminterkms) | **POST** [/v3/nft/mint/add#postAddNftMinterKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintAddNftMinterKMS) | Add an NFT minter to an NFT smart contract
+[**nftMintBatchMintMultipleNft()**](#nftmintbatchmintmultiplenft) | **POST** [/v3/nft/mint/batch#postMintMultipleNft](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNft) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftCelo()**](#nftmintbatchmintmultiplenftcelo) | **POST** [/v3/nft/mint/batch#postMintMultipleNftCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftCelo) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftFlowKMS()**](#nftmintbatchmintmultiplenftflowkms) | **POST** [/v3/nft/mint/batch#postMintMultipleNftFlowKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftFlowKMS) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftFlowMnemonic()**](#nftmintbatchmintmultiplenftflowmnemonic) | **POST** [/v3/nft/mint/batch#postMintMultipleNftFlowMnemonic](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftFlowMnemonic) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftFlowPK()**](#nftmintbatchmintmultiplenftflowpk) | **POST** [/v3/nft/mint/batch#postMintMultipleNftFlowPK](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftFlowPK) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftKMS()**](#nftmintbatchmintmultiplenftkms) | **POST** [/v3/nft/mint/batch#postMintMultipleNftKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftKMS) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftKMSCelo()**](#nftmintbatchmintmultiplenftkmscelo) | **POST** [/v3/nft/mint/batch#postMintMultipleNftKMSCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftKMSCelo) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftKMSTron()**](#nftmintbatchmintmultiplenftkmstron) | **POST** [/v3/nft/mint/batch#postMintMultipleNftKMSTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftKMSTron) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftMinter()**](#nftmintbatchmintmultiplenftminter) | **POST** [/v3/nft/mint/batch#postMintMultipleNftMinter](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftMinter) | Mint multiple NFTs
+[**nftMintBatchMintMultipleNftTron()**](#nftmintbatchmintmultiplenfttron) | **POST** [/v3/nft/mint/batch#postMintMultipleNftTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintBatchMintMultipleNftTron) | Mint multiple NFTs
+[**nftMintNft()**](#nftmintnft) | **POST** [/v3/nft/mint#postMintNft](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNft) | Mint an NFT
+[**nftMintNftAlgorand()**](#nftmintnftalgorand) | **POST** [/v3/nft/mint#postMintNftAlgorand](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftAlgorand) | Mint an NFT
+[**nftMintNftAlgorandKMS()**](#nftmintnftalgorandkms) | **POST** [/v3/nft/mint#postMintNftAlgorandKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftAlgorandKMS) | Mint an NFT
+[**nftMintNftCelo()**](#nftmintnftcelo) | **POST** [/v3/nft/mint#postMintNftCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftCelo) | Mint an NFT
+[**nftMintNftExpress()**](#nftmintnftexpress) | **POST** [/v3/nft/mint#postMintNftExpress](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftExpress) | Mint an NFT
+[**nftMintNftExpressAlgorand()**](#nftmintnftexpressalgorand) | **POST** [/v3/nft/mint#postMintNftExpressAlgorand](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftExpressAlgorand) | Mint an NFT
+[**nftMintNftExpressSolana()**](#nftmintnftexpresssolana) | **POST** [/v3/nft/mint#postMintNftExpressSolana](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftExpressSolana) | Mint an NFT
+[**nftMintNftFlowKMS()**](#nftmintnftflowkms) | **POST** [/v3/nft/mint#postMintNftFlowKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftFlowKMS) | Mint an NFT
+[**nftMintNftFlowMnemonic()**](#nftmintnftflowmnemonic) | **POST** [/v3/nft/mint#postMintNftFlowMnemonic](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftFlowMnemonic) | Mint an NFT
+[**nftMintNftFlowPK()**](#nftmintnftflowpk) | **POST** [/v3/nft/mint#postMintNftFlowPK](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftFlowPK) | Mint an NFT
+[**nftMintNftKMS()**](#nftmintnftkms) | **POST** [/v3/nft/mint#postMintNftKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftKMS) | Mint an NFT
+[**nftMintNftKMSCelo()**](#nftmintnftkmscelo) | **POST** [/v3/nft/mint#postMintNftKMSCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftKMSCelo) | Mint an NFT
+[**nftMintNftKMSTron()**](#nftmintnftkmstron) | **POST** [/v3/nft/mint#postMintNftKMSTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftKMSTron) | Mint an NFT
+[**nftMintNftMinter()**](#nftmintnftminter) | **POST** [/v3/nft/mint#postMintNftMinter](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftMinter) | Mint an NFT
+[**nftMintNftSolana()**](#nftmintnftsolana) | **POST** [/v3/nft/mint#postMintNftSolana](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftSolana) | Mint an NFT
+[**nftMintNftSolanaKMS()**](#nftmintnftsolanakms) | **POST** [/v3/nft/mint#postMintNftSolanaKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftSolanaKMS) | Mint an NFT
+[**nftMintNftTron()**](#nftmintnfttron) | **POST** [/v3/nft/mint#postMintNftTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftMintNftTron) | Mint an NFT
+[**nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftceloupdate) | **PUT** [/v3/nft/royalty#putUpdateCashbackValueForAuthorNftCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate) | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsceloupdate) | **PUT** [/v3/nft/royalty#putUpdateCashbackValueForAuthorNftKMSCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate) | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmstronupdate) | **PUT** [/v3/nft/royalty#putUpdateCashbackValueForAuthorNftKMSTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate) | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsupdate) | **PUT** [/v3/nft/royalty#putUpdateCashbackValueForAuthorNftKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate) | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornfttronupdate) | **PUT** [/v3/nft/royalty#putUpdateCashbackValueForAuthorNftTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate) | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftupdate) | **PUT** [/v3/nft/royalty#putUpdateCashbackValueForAuthorNft](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftUpdate) | Update NFT royalty information
+[**nftTransactionTransferNft()**](#nfttransactiontransfernft) | **POST** [/v3/nft/transaction#postTransferNft](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNft) | Transfer an NFT
+[**nftTransactionTransferNftAlgo()**](#nfttransactiontransfernftalgo) | **POST** [/v3/nft/transaction#postTransferNftAlgo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftAlgo) | Transfer an NFT
+[**nftTransactionTransferNftAlgoExpress()**](#nfttransactiontransfernftalgoexpress) | **POST** [/v3/nft/transaction#postTransferNftAlgoExpress](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftAlgoExpress) | Transfer an NFT
+[**nftTransactionTransferNftAlgoKMS()**](#nfttransactiontransfernftalgokms) | **POST** [/v3/nft/transaction#postTransferNftAlgoKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftAlgoKMS) | Transfer an NFT
+[**nftTransactionTransferNftCelo()**](#nfttransactiontransfernftcelo) | **POST** [/v3/nft/transaction#postTransferNftCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftCelo) | Transfer an NFT
+[**nftTransactionTransferNftFlowKMS()**](#nfttransactiontransfernftflowkms) | **POST** [/v3/nft/transaction#postTransferNftFlowKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftFlowKMS) | Transfer an NFT
+[**nftTransactionTransferNftFlowMnemonic()**](#nfttransactiontransfernftflowmnemonic) | **POST** [/v3/nft/transaction#postTransferNftFlowMnemonic](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftFlowMnemonic) | Transfer an NFT
+[**nftTransactionTransferNftFlowPK()**](#nfttransactiontransfernftflowpk) | **POST** [/v3/nft/transaction#postTransferNftFlowPK](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftFlowPK) | Transfer an NFT
+[**nftTransactionTransferNftKMS()**](#nfttransactiontransfernftkms) | **POST** [/v3/nft/transaction#postTransferNftKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftKMS) | Transfer an NFT
+[**nftTransactionTransferNftKMSCelo()**](#nfttransactiontransfernftkmscelo) | **POST** [/v3/nft/transaction#postTransferNftKMSCelo](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftKMSCelo) | Transfer an NFT
+[**nftTransactionTransferNftKMSTron()**](#nfttransactiontransfernftkmstron) | **POST** [/v3/nft/transaction#postTransferNftKMSTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftKMSTron) | Transfer an NFT
+[**nftTransactionTransferNftSolana()**](#nfttransactiontransfernftsolana) | **POST** [/v3/nft/transaction#postTransferNftSolana](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftSolana) | Transfer an NFT
+[**nftTransactionTransferNftSolanaKMS()**](#nfttransactiontransfernftsolanakms) | **POST** [/v3/nft/transaction#postTransferNftSolanaKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftSolanaKMS) | Transfer an NFT
+[**nftTransactionTransferNftTron()**](#nfttransactiontransfernfttron) | **POST** [/v3/nft/transaction#postTransferNftTron](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftTransactionTransferNftTron) | Transfer an NFT
+[**nftVerifySolanaNFT()**](#nftverifysolananft) | **POST** [/v3/nft/verify#postVerifySolanaNFT](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftVerifySolanaNFT) | Verify an NFT in an NFT collection on Solana
+[**nftVerifySolanaNFTKMS()**](#nftverifysolananftkms) | **POST** [/v3/nft/verify#postVerifySolanaNFTKMS](https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftVerifySolanaNFTKMS) | Verify an NFT in an NFT collection on Solana
 
 
-## `nftAddMinter()`
+## `nftBurnNft()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftAddMinter(
-    \Tatum\Model\NftAddMinterRequest $nft_add_minter_request,
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNft(
+    \Tatum\Model\BurnNft $burn_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_add_minter_request** | [**\Tatum\Model\NftAddMinterRequest**](../Model/NftAddMinterRequest.md) |  |
+ **$burn_nft** | [**\Tatum\Model\BurnNft**](../Model/BurnNft.md) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Add an NFT minter to an NFT smart contract
-
-<p><b>2 credits per API call</b></p> <p>Allow a blockchain address (the <code>minter</code> parameter in the request body) to mint NFTs on the NFT smart contract (the <code>contractAddress</code> parameter in the request body). </br>Use this API when you are using NFT Express with your own smart contract to mint NFTs and need to add the Tatum NFT minter's address as an NFT minter to your smart contract. For more information about the Tatum NFT minter, see "Use your own smart contract to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When adding an NFT minter, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "nftAddMinter.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftAddMinter.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `nftBurnErc721()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnErc721(
-    \Tatum\Model\NftBurnErc721Request $nft_burn_erc721_request,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$nft_burn_erc721_request** | [**\Tatum\Model\NftBurnErc721Request**](../Model/NftBurnErc721Request.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -88,31 +116,337 @@ Burn an NFT
 
 ### Example
 
-[✨ View "nftBurnErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnErc721.php)
+[✨ View "nftBurnNft.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNft.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `nftDeployErc721()`
+## `nftBurnNftAlgo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployErc721(
-    \Tatum\Model\NftDeployErc721Request $nft_deploy_erc721_request,
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftAlgo(
+    \Tatum\Model\BurnNftAlgo $burn_nft_algo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_deploy_erc721_request** | [**\Tatum\Model\NftDeployErc721Request**](../Model/NftDeployErc721Request.md) |  |
+ **$burn_nft_algo** | [**\Tatum\Model\BurnNftAlgo**](../Model/BurnNftAlgo.md) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftAlgo operation
+
+### Example
+
+[✨ View "nftBurnNftAlgo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftAlgo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftCelo(
+    \Tatum\Model\BurnNftCelo $burn_nft_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_celo** | [**\Tatum\Model\BurnNftCelo**](../Model/BurnNftCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftCelo operation
+
+### Example
+
+[✨ View "nftBurnNftCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftFlowKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftFlowKMS(
+    \Tatum\Model\BurnNftFlowKMS $burn_nft_flow_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_flow_kms** | [**\Tatum\Model\BurnNftFlowKMS**](../Model/BurnNftFlowKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftFlowKMS operation
+
+### Example
+
+[✨ View "nftBurnNftFlowKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftFlowKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftFlowMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftFlowMnemonic(
+    \Tatum\Model\BurnNftFlowMnemonic $burn_nft_flow_mnemonic,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_flow_mnemonic** | [**\Tatum\Model\BurnNftFlowMnemonic**](../Model/BurnNftFlowMnemonic.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftFlowMnemonic operation
+
+### Example
+
+[✨ View "nftBurnNftFlowMnemonic.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftFlowMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftFlowPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftFlowPK(
+    \Tatum\Model\BurnNftFlowPK $burn_nft_flow_pk,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_flow_pk** | [**\Tatum\Model\BurnNftFlowPK**](../Model/BurnNftFlowPK.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftFlowPK operation
+
+### Example
+
+[✨ View "nftBurnNftFlowPK.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftFlowPK.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftKMS(
+    \Tatum\Model\BurnNftKMS $burn_nft_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_kms** | [**\Tatum\Model\BurnNftKMS**](../Model/BurnNftKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftKMS operation
+
+### Example
+
+[✨ View "nftBurnNftKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftKMSCelo(
+    \Tatum\Model\BurnNftKMSCelo $burn_nft_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_kms_celo** | [**\Tatum\Model\BurnNftKMSCelo**](../Model/BurnNftKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftKMSCelo operation
+
+### Example
+
+[✨ View "nftBurnNftKMSCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftKMSTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftKMSTron(
+    \Tatum\Model\BurnNftKMSTron $burn_nft_kms_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_kms_tron** | [**\Tatum\Model\BurnNftKMSTron**](../Model/BurnNftKMSTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftKMSTron operation
+
+### Example
+
+[✨ View "nftBurnNftKMSTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftKMSTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftBurnNftTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftBurnNftTron(
+    \Tatum\Model\BurnNftTron $burn_nft_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$burn_nft_tron** | [**\Tatum\Model\BurnNftTron**](../Model/BurnNftTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Burn an NFT
+
+BurnNftTron operation
+
+### Example
+
+[✨ View "nftBurnNftTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftBurnNftTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNft()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNft(
+    \Tatum\Model\DeployNft $deploy_nft,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft** | [**\Tatum\Model\DeployNft**](../Model/DeployNft.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -122,7 +456,279 @@ Deploy an NFT smart contract
 
 ### Example
 
-[✨ View "nftDeployErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployErc721.php)
+[✨ View "nftDeployNft.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNft.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftCelo(
+    \Tatum\Model\DeployNftCelo $deploy_nft_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_celo** | [**\Tatum\Model\DeployNftCelo**](../Model/DeployNftCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftCelo operation
+
+### Example
+
+[✨ View "nftDeployNftCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftCeloKMS(
+    \Tatum\Model\DeployNftCeloKMS $deploy_nft_celo_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_celo_kms** | [**\Tatum\Model\DeployNftCeloKMS**](../Model/DeployNftCeloKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftCeloKMS operation
+
+### Example
+
+[✨ View "nftDeployNftCeloKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftFlowKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftFlowKMS(
+    \Tatum\Model\DeployNftFlowKMS $deploy_nft_flow_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_flow_kms** | [**\Tatum\Model\DeployNftFlowKMS**](../Model/DeployNftFlowKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftFlowKMS operation
+
+### Example
+
+[✨ View "nftDeployNftFlowKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftFlowKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftFlowMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftFlowMnemonic(
+    \Tatum\Model\DeployNftFlowMnemonic $deploy_nft_flow_mnemonic,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_flow_mnemonic** | [**\Tatum\Model\DeployNftFlowMnemonic**](../Model/DeployNftFlowMnemonic.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftFlowMnemonic operation
+
+### Example
+
+[✨ View "nftDeployNftFlowMnemonic.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftFlowMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftFlowPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftFlowPK(
+    \Tatum\Model\DeployNftFlowPK $deploy_nft_flow_pk,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_flow_pk** | [**\Tatum\Model\DeployNftFlowPK**](../Model/DeployNftFlowPK.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftFlowPK operation
+
+### Example
+
+[✨ View "nftDeployNftFlowPK.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftFlowPK.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftKMS(
+    \Tatum\Model\DeployNftKMS $deploy_nft_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_kms** | [**\Tatum\Model\DeployNftKMS**](../Model/DeployNftKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftKMS operation
+
+### Example
+
+[✨ View "nftDeployNftKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftTron(
+    \Tatum\Model\DeployNftTron $deploy_nft_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_tron** | [**\Tatum\Model\DeployNftTron**](../Model/DeployNftTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftTron operation
+
+### Example
+
+[✨ View "nftDeployNftTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftDeployNftTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftDeployNftTronKMS(
+    \Tatum\Model\DeployNftTronKMS $deploy_nft_tron_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_nft_tron_kms** | [**\Tatum\Model\DeployNftTronKMS**](../Model/DeployNftTronKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Deploy an NFT smart contract
+
+DeployNftTronKMS operation
+
+### Example
+
+[✨ View "nftDeployNftTronKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftDeployNftTronKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -512,61 +1118,367 @@ Get NFT transactions for an NFT
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `nftMintErc721()`
+## `nftMintAddNftMinter()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintErc721(
-    \Tatum\Model\NftMintErc721Request $nft_mint_erc721_request,
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintAddNftMinter(
+    \Tatum\Model\AddNftMinter $add_nft_minter,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\NftMintErc721200Response
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_mint_erc721_request** | [**\Tatum\Model\NftMintErc721Request**](../Model/NftMintErc721Request.md) |  |
+ **$add_nft_minter** | [**\Tatum\Model\AddNftMinter**](../Model/AddNftMinter.md) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\NftMintErc721200Response**](../Model/NftMintErc721200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
-Mint an NFT
+Add an NFT minter to an NFT smart contract
 
-<p><b>100 credits per API call on Flow<br/> 2 credits per API call on the other blockchains</b></p> <p>You can mint NFTs using either of the following methods:</p> <ul> <li><a href="#NftExpress">Using NFT Express</a></li> <li><a href="#NftNative">Natively on a blockchain</a></li> </ul> <h3 id="NftExpress">Minting NFTs using NFT Express</h3> <p>NFT Express is Tatum's feature that helps you mint NFTs easier than minting natively on a blockchain.</p> <ul> <li><b>You do not need to enter your private key or signature ID.</b><br/>NFT Express uses the private key provided by Tatum.</li> <li><b>You do not need to hold crypto or keep addresses topped up with crypto to pay for minting transactions.</b> <ul> <li>To use NFT Express on the <b>mainnet</b>, you have to have a <a href="https://tatum.io/pricing" target="_blank">paid pricing plan</a>.<br/>Tatum covers your transaction fees for NFT minting and pays for them from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan.<br/>The transaction fees and the corresponding numbers of credits deducted from your allowance vary depending on what blockchain you mint NFTs on.</li> <li>On the <b>testnet</b>, no credits are deducted from the monthly credit allowance. You can mint NFTs with NFT Express regardless of your pricing plan.</li> </ul> </li> </ul> <p>With NFT Express, you can choose whether to mint NFTs on the <a href="#NftExpressPrebuilt">pre-built NFT smart contract provided by Tatum</a> or on <a href="#NftExpressOwn">your own smart contract</a>.</p> <h4 id="NftExpressPrebuilt">Use the pre-built smart contract provided by Tatum to mint NFTs</h4> <p>If you want to mint NFTs using the pre-built smart contract, you do not need to deploy your own NFT smart contract. You do not need to provide the address of the NFT smart contract and the token ID in the request body either. The address of the smart contract and the token ID are provided automatically by Tatum.<br/>The token ID is autogenerated. It starts with 0 and is increased by 1 for each new NFT. The token ID is calculated separately for each supported blockchain and its mainnet and testnet.<br/> For more information, see <a href="https://docs.tatum.io/nft-express/mint-nfts-with-tatums-nft-express" target="_blank">our user documentation</a>.</p> <p>You can mint NFTs on the pre-built smart contract provided by Tatum on the following blockchains:</p> <ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana</li> </ul> <p>Depending on what blockchain you use, choose the request body schema to use in the API call.</p> <ul> <li>To mint NFTs on <b>BNB Smart Chain</b>, <b>Celo</b>, <b>Ethereum</b>, <b>Harmony</b>, <b>Klaytn</b>, or <b>Polygon</b>, use this API with the <code>MintNftExpress</code> schema of the request body.</li> <li>To mint NFTs on <b>Algorand</b>, use this API with the <code>MintNftExpressAlgorand</code> schema of the request body.<br/>To be able to <a href="#operation/NftBurnErc721">burn the minted NFTs</a> any time later, specify the address of the manager account in the <code>manager</code> parameter.<br/>An NFT minted on Algorand is automatically transferred to your blockchain address. After the NFT is minted, you have to transfer it to the recipient's address. The recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed.<br/>This how it works: <ol> <li>The recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">agrees to receive the NFT</a> to their address.</li> <li>You <a href="#operation/NftTransferErc721">transfer the NFT</a> to the recipient's address (use the <code>transferNftAlgoExpress</code> schema of the request body).<br /><b>NOTE:</b> On the <b>mainnet</b>, Tatum covers your transaction fees for the NFT transfer and pays for them from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. On the <b>testnet</b>, no credits are deducted from the monthly credit allowance.</li> </ol></li> <li>To mint NFTs on <b>Solana</b>, use this API with the <code>MintNftExpressSolana</code> schema of the request body.<br/>Solana uses the <a href="https://www.metaplex.com/" target="_blank">Metaplex Protocol</a>, a smart contract and metadata standard for creating and working with NFTs. When you mint an NFT on Solana with NFT Express, the pre-built smart contract based on the Metaplex Protocol is used.<br/>When an NFT is minted on Solana, a new blockchain address is created to receive the NFT under the recipient's account address (the one in the <code>to</code> parameter of the request body). This address is returned in the <code>nftAccountAddress</code> parameter in the response body, is owned by the recipient's address, and has the same private key.<br/>The response body also returns the address of the minted NFT itself, which is held in the <code>nftAddress</code> parameter.</li></ul> <h4 id="NftExpressOwn">Use your own smart contract to mint NFTs</h4> <p>If you want to mint NFTs using your own smart contract, you are going to use an <b>NTF minter</b>, a special blockchain address provided by Tatum that will cover the minting fees. The number of credits equivalent to the fees will be then deducted from the monthly credit allowance of your paid pricing plan.</br> <b>IMPORTANT!</b> Your smart contract must be deployed as a <a href="#operation/NftDeployErc721">general NFT smart contract</a>. You cannot use cashback and provenance smart contracts with NFT Express.</p> <p>For more information, see <a href="https://docs.tatum.io/nft-express/use-nft-express-with-your-own-smart-contract" target="_blank">our user documentation</a> and the <a href="https://blog.tatum.io/how-to-mint-nfts-using-tatums-nft-minter-965194d53c9f" target="_blank">article in the Tatum blog</a>.</p> <p>You can mint NFTs on your own smart contract on the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul> <p>To mint NFTs using your own smart contract, do the following:</p> <ol> <li>In the table located under this section, find the blockchain address of the Tatum NFT minter for your blockchain and network (mainnet or testnet).</li> <li><a href="#operation/NftAddMinter">Add the minter address as an NFT minter to your smart contract</a>.</li> <li>Use this API with the <code>MintNftMinter</code> schema of the request body.<br />In the request body, enter the following information: <ul> <li><code>chain</code> is the blockchain that you use.</li> <li><code>to</code> is the blockchain address where to send the minted NFT to.</li> <li><code>url</code> is the URL of the NFT metadata.</li> <li><code>minter</code> is the address of the NFT minter that you found in Step 1.</li> <li><code>contractAddress</code> is the address of your NFT smart contract.</li> <li><code>tokenId</code> is the the token ID of the NFT.<br />For example: <pre> {   "chain": "CELO",   "to": "0x8ce4e40889a13971681391aad29e88efaf91f784",   "url": "ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj",   "contractAddress": "0x687422eEA2cB73B5d3e242bA5456b782919AFc85",   "tokenId": "0123",   "minter": "0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F" } </pre> When you make an API call with this request body, the private key of the NFT minter will be added to the request body automatically: <pre> {   "chain": "CELO",   "to": "0x8ce4e40889a13971681391aad29e88efaf91f784",   "url": "ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj",   "contractAddress": "0x687422eEA2cB73B5d3e242bA5456b782919AFc85",   "tokenId": "0123",   "minter": "0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F",   "fromPrivateKey": "0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2" } </pre>                                </li></ul></li> </ol> <p>The following table lists the blockchain addresses of the Tatum NFT minters for the testnet and mainnet of the supported blockchains:</p> <table>   <tr>     <th>Blockchain</th>     <th>Minter address - testnet*</th>     <th>Minter address - mainnet</th>   </tr>   <tr>     <td>BNB Smart Chain</td>     <td>0xc16ae5e8c985b906935a0cadf4e24f0400531883</td>     <td>0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94</td>   </tr>   <tr>     <td>Celo</td>     <td>0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F</td>     <td>0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94</td>   </tr>   <tr>     <td>Ethereum</td>     <td>0x53e8577C4347C365E4e0DA5B57A589cB6f2AB848</td>     <td>0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94</td>   </tr>   <tr>     <td>Harmony</td>     <td>0x8906f62d40293ddca77fdf6714c3f63265deddf0</td>     <td>0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94</td>   </tr>   <tr>     <td>Klaytn</td>     <td>0x80d8bac9a6901698b3749fe336bbd1385c1f98f2</td>     <td>0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94</td>   </tr>   <tr>     <td>Polygon</td>     <td>0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5</td>     <td>0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94</td>   </tr> </table> <p>*If a minter blockchain address on the testnet does not have sufficient funds to cover the transaction fee, add some amount to it using a crypto faucet of the blockchain.</p> <h3 id="NftNative">Minting NFTs natively on a blockchain</h3> <p>When minting an NFT natively on a blockchain, you are using your own smart contract. You are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p> <p>You can mint NFTs natively on the following blockchains:</p> <ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>         <p>Depending on what blockchain you use, choose the request body schema to use in the API call.</p> <ul> <li>To mint NFTs natively on <b>Algorand</b> and: <ul><li>To sign the transaction with your <b>private key</b>, use this API with the <code>MintNftAlgorand</code> schema of the request body.</li> <li>To sign the transaction with your <b>signature ID</b>, use this API the <code>MintNftAlgorandKMS</code> schema of the request body.<br/><b>NOTE:</b><ul><li>To be able to <a href="#operation/NftBurnErc721">burn the minted NFTs</a> any time later, specify the address of the manager account in the <code>manager</code> parameter.</li><li>An NFT minted on Algorand is automatically transferred to your blockchain address. After the NFT is minted, you have to transfer it to the recipient's address. The recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed. For more information about how it works, see the section about minting NFTs on Algorand using the <a href="#NftExpressPrebuilt">pre-built NFT smart contract provided by Tatum</a>.</li></ul></li></ul></li> <li>To mint NFTs natively on <b>BNB Smart Chain</b>, <b>Ethereum</b>, <b>Harmony</b>, <b>Klaytn</b>, <b>KuCoin Community Chain</b>, or <b>Polygon</b>, and: <ul><li>To sign the transaction with your <b>private key</b>, use this API with the <code>MintNft</code> schema of the request body.</li> <li>To sign the transaction with your <b>signature ID</b>, use this API the <code>MintNftKMS</code> schema of the request body.</li></ul></li> <li>To mint NFTs natively on <b>Celo</b> and: <ul><li>To sign the transaction with your <b>private key</b>, use this API with the <code>MintNftCelo</code> schema of the request body.</li> <li>To sign the transaction with your <b>signature ID</b>, use this API the <code>MintNftKMSCelo</code> schema of the request body.</li></ul></li> <li>To mint NFTs natively on <b>Flow</b> and: <ul><li>To sign the transaction with your <b>private key</b>, use this API with the <code>MintNftFlowPK</code> schema of the request body.</li> <li>To sign the transaction with your <b>signature ID</b>, use this API the <code>MintNftFlowMnemonic</code> schema of the request body.</li> <li>To sign the transaction with your <b>wallet mnemonic</b>, use this API the <code>MintNftFlowKMS</code> schema of the request body.</li></ul></li> <li>To mint NFTs natively on <b>Solana</b> and: <ul><li>To sign the transaction with your <b>private key</b>, use this API with the <code>MintNftSolana</code> schema of the request body.</li> <li>To sign the transaction with your <b>signature ID</b>, use this API the <code>MintNftSolanaKMS</code> schema of the request body.<br/><b>NOTE:</b> When an NFT is minted on Solana, a new blockchain address is created to receive the NFT under the recipient's account address. After the NFT is minted, you have to transfer it to the recipient's address. For more information about how it works, see the section about minting NFTs on Solana using the <a href="#NftExpressPrebuilt">pre-built NFT smart contract provided by Tatum</a>.</li></ul></li> <li>To mint NFTs natively on <b>TRON</b> and: <ul><li>To sign the transaction with your <b>private key</b>, use this API with the <code>MintNftTron</code> schema of the request body.</li> <li>To sign the transaction with your <b>signature ID</b>, use this API the <code>MintNftKMSTron</code> schema of the request body.</li></ul></li> </ul>
+<p><b>2 credits per API call</b></p> <p>Allow a blockchain address (the <code>minter</code> parameter in the request body) to mint NFTs on the NFT smart contract (the <code>contractAddress</code> parameter in the request body). </br>Use this API when you are using NFT Express with your own smart contract to mint NFTs and need to add the Tatum NFT minter's address as an NFT minter to your smart contract. For more information about the Tatum NFT minter, see "Use your own smart contract to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When adding an NFT minter, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
-[✨ View "nftMintErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintErc721.php)
+[✨ View "nftMintAddNftMinter.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintAddNftMinter.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `nftMintMultipleErc721()`
+## `nftMintAddNftMinterKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintMultipleErc721(
-    \Tatum\Model\NftMintMultipleErc721Request $nft_mint_multiple_erc721_request,
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintAddNftMinterKMS(
+    \Tatum\Model\AddNftMinterKMS $add_nft_minter_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\NftMintMultipleErc721200Response
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_mint_multiple_erc721_request** | [**\Tatum\Model\NftMintMultipleErc721Request**](../Model/NftMintMultipleErc721Request.md) |  |
+ **$add_nft_minter_kms** | [**\Tatum\Model\AddNftMinterKMS**](../Model/AddNftMinterKMS.md) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\NftMintMultipleErc721200Response**](../Model/NftMintMultipleErc721200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Add an NFT minter to an NFT smart contract
+
+AddNftMinterKMS operation
+
+### Example
+
+[✨ View "nftMintAddNftMinterKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintAddNftMinterKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNft()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNft(
+    \Tatum\Model\MintMultipleNft $mint_multiple_nft,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft** | [**\Tatum\Model\MintMultipleNft**](../Model/MintMultipleNft.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNft operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNft.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNft.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftCelo(
+    \Tatum\Model\MintMultipleNftCelo $mint_multiple_nft_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_celo** | [**\Tatum\Model\MintMultipleNftCelo**](../Model/MintMultipleNftCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNftCelo operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNftCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftFlowKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftFlowKMS(
+    \Tatum\Model\MintMultipleNftFlowKMS $mint_multiple_nft_flow_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_flow_kms** | [**\Tatum\Model\MintMultipleNftFlowKMS**](../Model/MintMultipleNftFlowKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNftFlowKMS operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNftFlowKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftFlowKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftFlowMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftFlowMnemonic(
+    \Tatum\Model\MintMultipleNftFlowMnemonic $mint_multiple_nft_flow_mnemonic,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_flow_mnemonic** | [**\Tatum\Model\MintMultipleNftFlowMnemonic**](../Model/MintMultipleNftFlowMnemonic.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNftFlowMnemonic operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNftFlowMnemonic.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftFlowMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftFlowPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftFlowPK(
+    \Tatum\Model\MintMultipleNftFlowPK $mint_multiple_nft_flow_pk,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_flow_pk** | [**\Tatum\Model\MintMultipleNftFlowPK**](../Model/MintMultipleNftFlowPK.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNftFlowPK operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNftFlowPK.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftFlowPK.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftKMS(
+    \Tatum\Model\MintMultipleNftKMS $mint_multiple_nft_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_kms** | [**\Tatum\Model\MintMultipleNftKMS**](../Model/MintMultipleNftKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNftKMS operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNftKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftKMSCelo(
+    \Tatum\Model\MintMultipleNftKMSCelo $mint_multiple_nft_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_kms_celo** | [**\Tatum\Model\MintMultipleNftKMSCelo**](../Model/MintMultipleNftKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNftKMSCelo operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNftKMSCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftKMSTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftKMSTron(
+    \Tatum\Model\MintMultipleNftKMSTron $mint_multiple_nft_kms_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_kms_tron** | [**\Tatum\Model\MintMultipleNftKMSTron**](../Model/MintMultipleNftKMSTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
+
+### Description
+
+Mint multiple NFTs
+
+MintMultipleNftKMSTron operation
+
+### Example
+
+[✨ View "nftMintBatchMintMultipleNftKMSTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftKMSTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintBatchMintMultipleNftMinter()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftMinter(
+    \Tatum\Model\MintMultipleNftMinter $mint_multiple_nft_minter,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_multiple_nft_minter** | [**\Tatum\Model\MintMultipleNftMinter**](../Model/MintMultipleNftMinter.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
 
 ### Description
 
@@ -576,65 +1488,813 @@ Mint multiple NFTs
 
 ### Example
 
-[✨ View "nftMintMultipleErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintMultipleErc721.php)
+[✨ View "nftMintBatchMintMultipleNftMinter.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftMinter.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `nftTransferErc721()`
+## `nftMintBatchMintMultipleNftTron()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransferErc721(
-    \Tatum\Model\NftTransferErc721Request $nft_transfer_erc721_request,
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintBatchMintMultipleNftTron(
+    \Tatum\Model\MintMultipleNftTron $mint_multiple_nft_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\NftMintBatchMintMultipleNftMinter200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_transfer_erc721_request** | [**\Tatum\Model\NftTransferErc721Request**](../Model/NftTransferErc721Request.md) |  |
+ **$mint_multiple_nft_tron** | [**\Tatum\Model\MintMultipleNftTron**](../Model/MintMultipleNftTron.md) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\NftMintBatchMintMultipleNftMinter200Response**](../Model/NftMintBatchMintMultipleNftMinter200Response.md)
 
 ### Description
 
-Transfer an NFT
+Mint multiple NFTs
 
-<p><b>100 credits per API call on Flow<br/> 2 credits per API call on the other blockchains</b></p> <p>Transfer an NFT from the smart contract (the <code>contractAddress</code> parameter in the request body) to the specified blockchain address (the <code>to</code> parameter in the request body).</p> <p>In one API call, you can transfer only one NFT.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul> <p>For Ethereum, Celo, and BNB Smart Chain, transferring NFTs invokes the <code>safeTransfer()</code> method.</p> <p><b>Transferring NFTs on Algorand</b></p> <ul> <li>On Algorand, the recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed. Before transferring an NFT, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the NFT</a> to their address.</li> <li>If you want to transfer an NFT that <a href="#operation/NftMintErc721">was minted using NFT Express</a>, use the <code>transferNftAlgoExpress</code> schema of the request body.<br /><b>NOTE:</b> On the <b>mainnet</b>, Tatum covers your transaction fees for the NFT transfer and pays for them from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. On the <b>testnet</b>, no credits are deducted from the monthly credit allowance.</li> </ul> <p><b>Transferring NFTs on Solana</b><br/> If you want to transfer an NFT that <a href="#operation/NftMintErc721">was minted using NFT Express</a>, use the <code>transferNftSolana</code> or <code>transferNftSolanaKMS</code> schema of the request body. In the request body: <ul> <li>Set the <code>from</code> parameter to the address that you used in the <code>to</code> parameter in the request body of the minting call.</li> <li>Set the <code>to</code> parameter to the recipient's address.</li> <li>Set the <code>contractAddress</code> parameter to the address from the <code>nftAddress</code> parameter returned in the response body of the minting call.</li> <li>Set the <code>fromPrivateKey</code>/<code>signatureId</code> parameter to the private key/signature ID of the blockchain address that you specified in the <code>from</code> parameter.</li> </ul> <p><b>Signing a transaction</b><br/> When transferring an NFT, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p> <p><b>NOTE:</b> This does not apply to transferring NFTs that were minted on Algorand using NFT Express (see earlier in this section).</p>
+MintMultipleNftTron operation
 
 ### Example
 
-[✨ View "nftTransferErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransferErc721.php)
+[✨ View "nftMintBatchMintMultipleNftTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintBatchMintMultipleNftTron.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `nftUpdateCashbackErc721()`
+## `nftMintNft()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftUpdateCashbackErc721(
-    \Tatum\Model\NftUpdateCashbackErc721Request $nft_update_cashback_erc721_request,
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNft(
+    \Tatum\Model\MintNft $mint_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BtcTransferBlockchain200Response
+): \Tatum\Model\NftMintNftExpress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_update_cashback_erc721_request** | [**\Tatum\Model\NftUpdateCashbackErc721Request**](../Model/NftUpdateCashbackErc721Request.md) |  |
+ **$mint_nft** | [**\Tatum\Model\MintNft**](../Model/MintNft.md) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNft</code> schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your private key.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNft.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNft.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftAlgorand()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftAlgorand(
+    \Tatum\Model\MintNftAlgorand $mint_nft_algorand,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_algorand** | [**\Tatum\Model\MintNftAlgorand**](../Model/MintNftAlgorand.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftAlgorand</code> schema lets you mint NFTs natively on Algorand and sign the transaction with your private key.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftAlgorand.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftAlgorand.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftAlgorandKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftAlgorandKMS(
+    \Tatum\Model\MintNftAlgorandKMS $mint_nft_algorand_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_algorand_kms** | [**\Tatum\Model\MintNftAlgorandKMS**](../Model/MintNftAlgorandKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftAlgorandKMS</code> schema lets you mint NFTs natively on Algorand and sign the transaction with your signature ID.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftAlgorandKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftAlgorandKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftCelo(
+    \Tatum\Model\MintNftCelo $mint_nft_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_celo** | [**\Tatum\Model\MintNftCelo**](../Model/MintNftCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftCelo</code> schema lets you mint NFTs natively on Celo and sign the transaction with your private key.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftExpress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftExpress(
+    \Tatum\Model\MintNftExpress $mint_nft_express,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_express** | [**\Tatum\Model\MintNftExpress**](../Model/MintNftExpress.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftExpress</code> schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using <b>NTF Express</b> with the pre-built smart contract provided by Tatum.<br/>For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftExpress.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftExpress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftExpressAlgorand()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftExpressAlgorand(
+    \Tatum\Model\MintNftExpressAlgorand $mint_nft_express_algorand,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_express_algorand** | [**\Tatum\Model\MintNftExpressAlgorand**](../Model/MintNftExpressAlgorand.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftExpressAlgorand</code> schema lets you mint NFTs on Algorand using <b>NTF Express</b> with the pre-built smart contract provided by Tatum.<br/>For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftExpressAlgorand.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftExpressAlgorand.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftExpressSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftExpressSolana(
+    \Tatum\Model\MintNftExpressSolana $mint_nft_express_solana,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_express_solana** | [**\Tatum\Model\MintNftExpressSolana**](../Model/MintNftExpressSolana.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftExpressSolana</code> schema lets you mint NFTs on Solana using <b>NTF Express</b> with the pre-built smart contract provided by Tatum.<br/>For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftExpressSolana.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftExpressSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftFlowKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftFlowKMS(
+    \Tatum\Model\MintNftFlowKMS $mint_nft_flow_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_flow_kms** | [**\Tatum\Model\MintNftFlowKMS**](../Model/MintNftFlowKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftFlowKMS</code> schema lets you mint NFTs natively on Flow and sign the transaction with your signature ID.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftFlowKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftFlowKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftFlowMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftFlowMnemonic(
+    \Tatum\Model\MintNftFlowMnemonic $mint_nft_flow_mnemonic,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_flow_mnemonic** | [**\Tatum\Model\MintNftFlowMnemonic**](../Model/MintNftFlowMnemonic.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftFlowMnemonic</code> schema lets you mint NFTs natively on Flow and sign the transaction with your wallet mnemonic.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftFlowMnemonic.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftFlowMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftFlowPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftFlowPK(
+    \Tatum\Model\MintNftFlowPK $mint_nft_flow_pk,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_flow_pk** | [**\Tatum\Model\MintNftFlowPK**](../Model/MintNftFlowPK.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftFlowPK</code> schema lets you mint NFTs natively on Flow and sign the transaction with your private key.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftFlowPK.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftFlowPK.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftKMS(
+    \Tatum\Model\MintNftKMS $mint_nft_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_kms** | [**\Tatum\Model\MintNftKMS**](../Model/MintNftKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftKMS</code> schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your signature ID.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftKMSCelo(
+    \Tatum\Model\MintNftKMSCelo $mint_nft_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_kms_celo** | [**\Tatum\Model\MintNftKMSCelo**](../Model/MintNftKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftKMSCelo</code> schema lets you mint NFTs natively on Celo and sign the transaction with your signature ID.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftKMSCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftKMSTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftKMSTron(
+    \Tatum\Model\MintNftKMSTron $mint_nft_kms_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_kms_tron** | [**\Tatum\Model\MintNftKMSTron**](../Model/MintNftKMSTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftKMSTron</code> schema lets you mint NFTs natively on TRON and sign the transaction with your signature ID.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftKMSTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftKMSTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftMinter()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftMinter(
+    \Tatum\Model\MintNftMinter $mint_nft_minter,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_minter** | [**\Tatum\Model\MintNftMinter**](../Model/MintNftMinter.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftMinter</code> schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using the <b>NTF minter</b>, a special blockchain address provided by Tatum that will cover the minting fees.<br/>For more information, see "Use your own smart contract to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftMinter.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftMinter.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftSolana(
+    \Tatum\Model\MintNftSolana $mint_nft_solana,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_solana** | [**\Tatum\Model\MintNftSolana**](../Model/MintNftSolana.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftSolana</code> schema lets you mint NFTs natively on Solana and sign the transaction with your private key.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftSolana.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftSolanaKMS(
+    \Tatum\Model\MintNftSolanaKMS $mint_nft_solana_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_solana_kms** | [**\Tatum\Model\MintNftSolanaKMS**](../Model/MintNftSolanaKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftSolanaKMS</code> schema lets you mint NFTs natively on Solana and sign the transaction with your signature ID.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftSolanaKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftSolanaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftMintNftTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftMintNftTron(
+    \Tatum\Model\MintNftTron $mint_nft_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\NftMintNftExpress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$mint_nft_tron** | [**\Tatum\Model\MintNftTron**](../Model/MintNftTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\NftMintNftExpress200Response**](../Model/NftMintNftExpress200Response.md)
+
+### Description
+
+Mint an NFT
+
+<p>The <code>MintNftTron</code> schema lets you mint NFTs natively on TRON and sign the transaction with your private key.<br/>For more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+
+### Example
+
+[✨ View "nftMintNftTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftMintNftTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftCelo**](../Model/UpdateCashbackValueForAuthorNftCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftCelo operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_kms_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo**](../Model/UpdateCashbackValueForAuthorNftKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftKMSCelo operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_kms_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron**](../Model/UpdateCashbackValueForAuthorNftKMSTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftKMSTron operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_kms** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMS**](../Model/UpdateCashbackValueForAuthorNftKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftKMS operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftTron**](../Model/UpdateCashbackValueForAuthorNftTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftTron operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftUpdate(
+    \Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft** | [**\Tatum\Model\UpdateCashbackValueForAuthorNft**](../Model/UpdateCashbackValueForAuthorNft.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -644,29 +2304,505 @@ Update NFT royalty information
 
 ### Example
 
-[✨ View "nftUpdateCashbackErc721.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftUpdateCashbackErc721.php)
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftUpdate.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `nftVerifyInCollection()`
+## `nftTransactionTransferNft()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftVerifyInCollection(
-    \Tatum\Model\NftVerifyInCollectionRequest $nft_verify_in_collection_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNft(
+    \Tatum\Model\TransferNft $transfer_nft,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$nft_verify_in_collection_request** | [**\Tatum\Model\NftVerifyInCollectionRequest**](../Model/NftVerifyInCollectionRequest.md) |  |
+ **$transfer_nft** | [**\Tatum\Model\TransferNft**](../Model/TransferNft.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+<p><b>100 credits per API call on Flow<br/> 2 credits per API call on the other blockchains</b></p> <p>Transfer an NFT from the smart contract (the <code>contractAddress</code> parameter in the request body) to the specified blockchain address (the <code>to</code> parameter in the request body).</p> <p>In one API call, you can transfer only one NFT.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul> <p>For Ethereum, Celo, and BNB Smart Chain, transferring NFTs invokes the <code>safeTransfer()</code> method.</p> <p><b>Transferring NFTs on Algorand</b></p> <ul> <li>On Algorand, the recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed. Before transferring an NFT, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the NFT</a> to their address.</li> <li>If you want to transfer an NFT that <a href="#operation/NftMintErc721">was minted using NFT Express</a>, use the <code>transferNftAlgoExpress</code> schema of the request body.<br /><b>NOTE:</b> On the <b>mainnet</b>, Tatum covers your transaction fees for the NFT transfer and pays for them from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. On the <b>testnet</b>, no credits are deducted from the monthly credit allowance.</li> </ul> <p><b>Transferring NFTs on Solana</b><br/> If you want to transfer an NFT that <a href="#operation/NftMintErc721">was minted using NFT Express</a>, use the <code>transferNftSolana</code> or <code>transferNftSolanaKMS</code> schema of the request body. In the request body: <ul> <li>Set the <code>from</code> parameter to the address that you used in the <code>to</code> parameter in the request body of the minting call.</li> <li>Set the <code>to</code> parameter to the recipient's address.</li> <li>Set the <code>contractAddress</code> parameter to the address from the <code>nftAddress</code> parameter returned in the response body of the minting call.</li> <li>Set the <code>fromPrivateKey</code>/<code>signatureId</code> parameter to the private key/signature ID of the blockchain address that you specified in the <code>from</code> parameter.</li> </ul> <p><b>Signing a transaction</b><br/> When transferring an NFT, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p> <p><b>NOTE:</b> This does not apply to transferring NFTs that were minted on Algorand using NFT Express (see earlier in this section).</p>
+
+### Example
+
+[✨ View "nftTransactionTransferNft.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNft.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftAlgo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftAlgo(
+    \Tatum\Model\TransferNftAlgo $transfer_nft_algo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_algo** | [**\Tatum\Model\TransferNftAlgo**](../Model/TransferNftAlgo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftAlgo operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftAlgo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftAlgo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftAlgoExpress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftAlgoExpress(
+    \Tatum\Model\TransferNftAlgoExpress $transfer_nft_algo_express,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_algo_express** | [**\Tatum\Model\TransferNftAlgoExpress**](../Model/TransferNftAlgoExpress.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftAlgoExpress operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftAlgoExpress.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftAlgoExpress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftAlgoKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftAlgoKMS(
+    \Tatum\Model\TransferNftAlgoKMS $transfer_nft_algo_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_algo_kms** | [**\Tatum\Model\TransferNftAlgoKMS**](../Model/TransferNftAlgoKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftAlgoKMS operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftAlgoKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftAlgoKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftCelo(
+    \Tatum\Model\TransferNftCelo $transfer_nft_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_celo** | [**\Tatum\Model\TransferNftCelo**](../Model/TransferNftCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftCelo operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftFlowKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftFlowKMS(
+    \Tatum\Model\TransferNftFlowKMS $transfer_nft_flow_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_flow_kms** | [**\Tatum\Model\TransferNftFlowKMS**](../Model/TransferNftFlowKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftFlowKMS operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftFlowKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftFlowKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftFlowMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftFlowMnemonic(
+    \Tatum\Model\TransferNftFlowMnemonic $transfer_nft_flow_mnemonic,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_flow_mnemonic** | [**\Tatum\Model\TransferNftFlowMnemonic**](../Model/TransferNftFlowMnemonic.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftFlowMnemonic operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftFlowMnemonic.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftFlowMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftFlowPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftFlowPK(
+    \Tatum\Model\TransferNftFlowPK $transfer_nft_flow_pk,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_flow_pk** | [**\Tatum\Model\TransferNftFlowPK**](../Model/TransferNftFlowPK.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftFlowPK operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftFlowPK.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftFlowPK.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftKMS(
+    \Tatum\Model\TransferNftKMS $transfer_nft_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_kms** | [**\Tatum\Model\TransferNftKMS**](../Model/TransferNftKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftKMS operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftKMSCelo(
+    \Tatum\Model\TransferNftKMSCelo $transfer_nft_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_kms_celo** | [**\Tatum\Model\TransferNftKMSCelo**](../Model/TransferNftKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftKMSCelo operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftKMSCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftKMSTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftKMSTron(
+    \Tatum\Model\TransferNftKMSTron $transfer_nft_kms_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_kms_tron** | [**\Tatum\Model\TransferNftKMSTron**](../Model/TransferNftKMSTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftKMSTron operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftKMSTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftKMSTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftSolana(
+    \Tatum\Model\TransferNftSolana $transfer_nft_solana,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_solana** | [**\Tatum\Model\TransferNftSolana**](../Model/TransferNftSolana.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftSolana operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftSolana.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftSolanaKMS(
+    \Tatum\Model\TransferNftSolanaKMS $transfer_nft_solana_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_solana_kms** | [**\Tatum\Model\TransferNftSolanaKMS**](../Model/TransferNftSolanaKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftSolanaKMS operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftSolanaKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftSolanaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftTransactionTransferNftTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftTransactionTransferNftTron(
+    \Tatum\Model\TransferNftTron $transfer_nft_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_nft_tron** | [**\Tatum\Model\TransferNftTron**](../Model/TransferNftTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Transfer an NFT
+
+TransferNftTron operation
+
+### Example
+
+[✨ View "nftTransactionTransferNftTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftTransactionTransferNftTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftVerifySolanaNFT()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftVerifySolanaNFT(
+    \Tatum\Model\VerifySolanaNFT $verify_solana_nft
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$verify_solana_nft** | [**\Tatum\Model\VerifySolanaNFT**](../Model/VerifySolanaNFT.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -676,6 +2812,38 @@ Verify an NFT in an NFT collection on Solana
 
 ### Example
 
-[✨ View "nftVerifyInCollection.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftVerifyInCollection.php)
+[✨ View "nftVerifySolanaNFT.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftVerifySolanaNFT.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftVerifySolanaNFTKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftVerifySolanaNFTKMS(
+    \Tatum\Model\VerifySolanaNFTKMS $verify_solana_nftkms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$verify_solana_nftkms** | [**\Tatum\Model\VerifySolanaNFTKMS**](../Model/VerifySolanaNFTKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Verify an NFT in an NFT collection on Solana
+
+VerifySolanaNFTKMS operation
+
+### Example
+
+[✨ View "nftVerifySolanaNFTKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftVerifySolanaNFTKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

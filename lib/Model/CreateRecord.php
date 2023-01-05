@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateRecord extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_BSC = 'BSC';
     public const CHAIN_EGLD = 'EGLD';
     public const CHAIN_ETH = 'ETH';

@@ -18,11 +18,11 @@ namespace Tatum\Model;
 /**
  * MintNftExpressSolana Model
  * 
- * @description &lt;p&gt;The &lt;code&gt;MintNftExpressSolana&lt;/code&gt; schema lets you mint NFTs on Solana using &lt;b&gt;NTF Express&lt;/b&gt; with the pre-built smart contract provided by Tatum.&lt;br/&gt;For more information, see \&quot;Use the pre-built smart contract provided by Tatum to mint NFTs\&quot; in &lt;a href&#x3D;\&quot;#operation/NftMintErc721\&quot;&gt;Mint an NFT&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
+ * @description <p>The <code>MintNftExpressSolana</code> schema lets you mint NFTs on Solana using <b>NTF Express</b> with the pre-built smart contract provided by Tatum.<br/>For more information, see \"Use the pre-built smart contract provided by Tatum to mint NFTs\" in <a href=\"#operation/NftMintErc721\">Mint an NFT</a>.</p><br/>
  */
 class MintNftExpressSolana extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "MintNftExpressSolana";
     protected static $_definition = [

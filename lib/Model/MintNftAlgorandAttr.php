@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class MintNftAlgorandAttr extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "MintNftAlgorand_attr";
     protected static $_definition = [
         "asset_unit" => ["assetUnit", "string", null, "getAssetUnit", "setAssetUnit", null, ["r" => 0, "nl" => 1, "xl" => 8]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class LtcTxOutputsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "LtcTx_outputs_inner";
     protected static $_definition = [
         "value" => ["value", "string", null, "getValue", "setValue", null, ["r" => 0]], 

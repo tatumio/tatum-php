@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class WithdrawalHintValue extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "WithdrawalHint_value";
     protected static $_definition = [
         "address" => ["address", "\Tatum\Model\Address", null, "getAddress", "setAddress", null, ["r" => 0]], 

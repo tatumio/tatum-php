@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaBlock extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaBlock";
     protected static $_definition = [
         "block_height" => ["blockHeight", "float", null, "getBlockHeight", "setBlockHeight", null, ["r" => 0]], 

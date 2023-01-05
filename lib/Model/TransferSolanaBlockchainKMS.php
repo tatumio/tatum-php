@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferSolanaBlockchainKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferSolanaBlockchainKMS";
     protected static $_definition = [
         "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 43, "xl" => 44]], 

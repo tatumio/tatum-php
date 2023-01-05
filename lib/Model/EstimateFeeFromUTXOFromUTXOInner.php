@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class EstimateFeeFromUTXOFromUTXOInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "EstimateFeeFromUTXO_fromUTXO_inner";
     protected static $_definition = [
         "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 1, "nl" => 64, "xl" => 64]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class UpdateMarketplaceSolanaKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "UpdateMarketplaceSolanaKMS";
     protected static $_definition = [

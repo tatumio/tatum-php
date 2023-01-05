@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AlgoTxsWithPagination extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AlgoTxsWithPagination";
     protected static $_definition = [
         "next_token" => ["nextToken", "string", null, "getNextToken", "setNextToken", null, ["r" => 0]], 

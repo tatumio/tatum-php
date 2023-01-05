@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ChainTransferAlgoErc20KMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_ALGO = 'ALGO';
     protected static $_name = "ChainTransferAlgoErc20KMS";
     protected static $_definition = [

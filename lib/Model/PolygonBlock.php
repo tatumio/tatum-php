@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class PolygonBlock extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "PolygonBlock";
     protected static $_definition = [
         "difficulty" => ["difficulty", "string", null, "getDifficulty", "setDifficulty", null, ["r" => 0]], 

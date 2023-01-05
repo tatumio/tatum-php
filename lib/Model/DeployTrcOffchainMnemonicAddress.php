@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DeployTrcOffchainMnemonicAddress extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_TRC10 = 'TRC10';
     public const TYPE_TRC20 = 'TRC20';
     public const BASE_PAIR_AED = 'AED';

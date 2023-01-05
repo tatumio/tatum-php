@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class SolanaBroadcastConfirmOptions extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const COMMITMENT_CONFIRMED = 'confirmed';
     public const COMMITMENT_FINALIZED = 'finalized';
     public const PREFLIGHT_COMMITMENT_CONFIRMED = 'confirmed';

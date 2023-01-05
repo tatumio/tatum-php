@@ -23,66 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class EthereumApi extends AbstractApi {
     /**
-     * Invoke a method in a smart contract on Ethereum
-     *
-     * @param \Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-     */
-    public function ethBlockchainSmartContractInvocation(\Tatum\Model\EthBlockchainSmartContractInvocationRequest $eth_blockchain_smart_contract_invocation_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract", [], $rHeaders, [], $eth_blockchain_smart_contract_invocation_request
-            ), 
-            "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send Ethereum / ERC20 from account to account
-     *
-     * @param \Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function ethBlockchainTransfer(\Tatum\Model\EthBlockchainTransferRequest $eth_blockchain_transfer_request, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/transaction", [], $rHeaders, [], $eth_blockchain_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast signed Ethereum transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -488,6 +428,156 @@ class EthereumApi extends AbstractApi {
                 ], $rHeaders, [], $body
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Ethereum
+     *
+     * @param \Tatum\Model\CallReadSmartContractMethod $call_read_smart_contract_method 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function ethereumSmartcontractCallReadSmartContractMethod(\Tatum\Model\CallReadSmartContractMethod $call_read_smart_contract_method, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract#postCallReadSmartContractMethod", [], $rHeaders, [], $call_read_smart_contract_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Ethereum
+     *
+     * @param \Tatum\Model\CallSmartContractMethod $call_smart_contract_method 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function ethereumSmartcontractCallSmartContractMethod(\Tatum\Model\CallSmartContractMethod $call_smart_contract_method, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract#postCallSmartContractMethod", [], $rHeaders, [], $call_smart_contract_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Ethereum
+     *
+     * @param \Tatum\Model\CallSmartContractMethodKMS $call_smart_contract_method_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function ethereumSmartcontractCallSmartContractMethodKMS(\Tatum\Model\CallSmartContractMethodKMS $call_smart_contract_method_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract#postCallSmartContractMethodKMS", [], $rHeaders, [], $call_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Ethereum / ERC20 from account to account
+     *
+     * @param \Tatum\Model\TransferEthBlockchain $transfer_eth_blockchain 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function ethereumTransactionTransferEthBlockchain(\Tatum\Model\TransferEthBlockchain $transfer_eth_blockchain, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ethereum/transaction#postTransferEthBlockchain", [], $rHeaders, [], $transfer_eth_blockchain
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Ethereum / ERC20 from account to account
+     *
+     * @param \Tatum\Model\TransferEthBlockchainKMS $transfer_eth_blockchain_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function ethereumTransactionTransferEthBlockchainKMS(\Tatum\Model\TransferEthBlockchainKMS $transfer_eth_blockchain_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ethereum/transaction#postTransferEthBlockchainKMS", [], $rHeaders, [], $transfer_eth_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

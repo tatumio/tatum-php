@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TronTx20TokenInfo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronTx20_tokenInfo";
     protected static $_definition = [
         "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferEthBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_USDT = 'USDT';
     public const CURRENCY_LEO = 'LEO';
     public const CURRENCY_LINK = 'LINK';

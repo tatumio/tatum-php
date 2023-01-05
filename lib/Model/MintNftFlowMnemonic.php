@@ -18,11 +18,11 @@ namespace Tatum\Model;
 /**
  * MintNftFlowMnemonic Model
  * 
- * @description &lt;p&gt;The &lt;code&gt;MintNftFlowMnemonic&lt;/code&gt; schema lets you mint NFTs natively on Flow and sign the transaction with your wallet mnemonic.&lt;br/&gt;For more information, see \&quot;Minting NFTs natively on a blockchain\&quot; in &lt;a href&#x3D;\&quot;#operation/NftMintErc721\&quot;&gt;Mint an NFT&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
+ * @description <p>The <code>MintNftFlowMnemonic</code> schema lets you mint NFTs natively on Flow and sign the transaction with your wallet mnemonic.<br/>For more information, see \"Minting NFTs natively on a blockchain\" in <a href=\"#operation/NftMintErc721\">Mint an NFT</a>.</p><br/>
  */
 class MintNftFlowMnemonic extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "MintNftFlowMnemonic";
     protected static $_definition = [

@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class CustomerRegistration extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const ACCOUNTING_CURRENCY_AED = 'AED';
     public const ACCOUNTING_CURRENCY_AFN = 'AFN';
     public const ACCOUNTING_CURRENCY_ALL = 'ALL';

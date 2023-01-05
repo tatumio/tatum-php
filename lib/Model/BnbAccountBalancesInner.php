@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbAccountBalancesInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbAccount_balances_inner";
     protected static $_definition = [
         "free" => ["free", "string", null, "getFree", "setFree", null, ["r" => 0]], 

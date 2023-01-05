@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferManagedAddressWalletIdsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_MANAGED = 'MANAGED';
     public const TYPE_RAW = 'RAW';
     protected static $_name = "TransferManagedAddress_walletIds_inner";

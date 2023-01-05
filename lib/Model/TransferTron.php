@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferTron extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferTron";
     protected static $_definition = [
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 

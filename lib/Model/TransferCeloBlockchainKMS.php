@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferCeloBlockchainKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_CELO = 'CELO';
     public const CURRENCY_CUSD = 'CUSD';
     public const CURRENCY_CEUR = 'CEUR';

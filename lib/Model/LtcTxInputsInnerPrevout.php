@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class LtcTxInputsInnerPrevout extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "LtcTx_inputs_inner_prevout";
     protected static $_definition = [
         "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 

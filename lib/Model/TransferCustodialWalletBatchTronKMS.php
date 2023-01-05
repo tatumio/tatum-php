@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferCustodialWalletBatchTronKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_TRON = 'TRON';
     public const CONTRACT_TYPE_0 = 0;
     public const CONTRACT_TYPE_1 = 1;

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "UpdateCashbackValueForAuthorNftTron";
     protected static $_definition = [

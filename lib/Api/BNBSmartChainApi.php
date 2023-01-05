@@ -23,52 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class BNBSmartChainApi extends AbstractApi {
     /**
-     * Invoke a method in a smart contract on BNB Smart Chain
-     *
-     * @param \Tatum\Model\BscBlockchainSmartContractInvocationRequest $bsc_blockchain_smart_contract_invocation_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-     */
-    public function bscBlockchainSmartContractInvocation(\Tatum\Model\BscBlockchainSmartContractInvocationRequest $bsc_blockchain_smart_contract_invocation_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/smartcontract", [], $rHeaders, [], $bsc_blockchain_smart_contract_invocation_request
-            ), 
-            "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send BSC / BEP20 from account to account
-     *
-     * @param \Tatum\Model\BscBlockchainTransferRequest $bsc_blockchain_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function bscBlockchainTransfer(\Tatum\Model\BscBlockchainTransferRequest $bsc_blockchain_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/transaction", [], $rHeaders, [], $bsc_blockchain_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast signed BSC transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -283,6 +237,121 @@ class BNBSmartChainApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/bsc/transaction/count/{address}", ["address" => $address]), [], $rHeaders, []
             ), 
             "float"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on BNB Smart Chain
+     *
+     * @param \Tatum\Model\CallBscSmartContractMethod $call_bsc_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function bscSmartcontractCallBscSmartContractMethod(\Tatum\Model\CallBscSmartContractMethod $call_bsc_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bsc/smartcontract#postCallBscSmartContractMethod", [], $rHeaders, [], $call_bsc_smart_contract_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on BNB Smart Chain
+     *
+     * @param \Tatum\Model\CallBscSmartContractMethodKMS $call_bsc_smart_contract_method_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function bscSmartcontractCallBscSmartContractMethodKMS(\Tatum\Model\CallBscSmartContractMethodKMS $call_bsc_smart_contract_method_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bsc/smartcontract#postCallBscSmartContractMethodKMS", [], $rHeaders, [], $call_bsc_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on BNB Smart Chain
+     *
+     * @param \Tatum\Model\CallBscSmartContractReadMethod $call_bsc_smart_contract_read_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function bscSmartcontractCallBscSmartContractReadMethod(\Tatum\Model\CallBscSmartContractReadMethod $call_bsc_smart_contract_read_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bsc/smartcontract#postCallBscSmartContractReadMethod", [], $rHeaders, [], $call_bsc_smart_contract_read_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BSC / BEP20 from account to account
+     *
+     * @param \Tatum\Model\TransferBscBlockchain $transfer_bsc_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function bscTransactionTransferBscBlockchain(\Tatum\Model\TransferBscBlockchain $transfer_bsc_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bsc/transaction#postTransferBscBlockchain", [], $rHeaders, [], $transfer_bsc_blockchain
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BSC / BEP20 from account to account
+     *
+     * @param \Tatum\Model\TransferBscBlockchainKMS $transfer_bsc_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function bscTransactionTransferBscBlockchainKMS(\Tatum\Model\TransferBscBlockchainKMS $transfer_bsc_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bsc/transaction#postTransferBscBlockchainKMS", [], $rHeaders, [], $transfer_bsc_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

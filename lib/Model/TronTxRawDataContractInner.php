@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TronTxRawDataContractInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronTx_rawData_contract_inner";
     protected static $_definition = [
         "parameter" => ["parameter", "\Tatum\Model\TronTxRawDataContractInnerParameter", null, "getParameter", "setParameter", null, ["r" => 0]], 

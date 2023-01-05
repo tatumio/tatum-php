@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AdaTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AdaTx";
     protected static $_definition = [
         "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]], 

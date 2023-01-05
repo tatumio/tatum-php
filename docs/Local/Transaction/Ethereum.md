@@ -12,7 +12,7 @@ Method | Description
 
 ```php
 $sdk->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
-    \Tatum\Model\EthBlockchainTransferRequest $transfer
+    \Tatum\Model\TransferEthBlockchain $transfer
 ): string
 ```
 
@@ -20,7 +20,7 @@ $sdk->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**$transfer** | [**\Tatum\Model\EthBlockchainTransferRequest**](../../Model/EthBlockchainTransferRequest.md) | Transfer request | 
+**$transfer** | [**\Tatum\Model\TransferEthBlockchain**](../../Model/TransferEthBlockchain.md) | Transfer request | 
 
 ### Return type
 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferAdaKeyPairKeyPairInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferAdaKeyPair_keyPair_inner";
     protected static $_definition = [
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0, "nl" => 30, "xl" => 150]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateTronTrc10Blockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateTronTrc10Blockchain";
     protected static $_definition = [
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class PendingTransaction extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_BNB = 'BNB';
     public const CHAIN_BTC = 'BTC';
     public const CHAIN_ETH = 'ETH';

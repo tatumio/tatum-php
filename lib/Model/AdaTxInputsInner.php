@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AdaTxInputsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AdaTx_inputs_inner";
     protected static $_definition = [
         "tx_hash" => ["txHash", "string", null, "getTxHash", "setTxHash", null, ["r" => 0]], 

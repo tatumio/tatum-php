@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionPartialTradeMatch extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_CUSTOMER_PARTIAL_TRADE_MATCH = 'CUSTOMER_PARTIAL_TRADE_MATCH';
     protected static $_name = "CreateSubscriptionPartialTradeMatch";
     protected static $_definition = [

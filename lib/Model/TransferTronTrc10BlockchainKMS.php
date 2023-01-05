@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferTronTrc10BlockchainKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferTronTrc10BlockchainKMS";
     protected static $_definition = [
         "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 34, "xl" => 34]], 

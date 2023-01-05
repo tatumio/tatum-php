@@ -66,29 +66,6 @@ class AccountApi extends AbstractApi {
     }
     
     /**
-     * Create a virtual account
-     *
-     * @param \Tatum\Model\CreateAccountRequest $create_account_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Account
-     */
-    public function createAccount(\Tatum\Model\CreateAccountRequest $create_account_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Account $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/account", [], $rHeaders, [], $create_account_request
-            ), 
-            "\Tatum\Model\Account"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Create multiple accounts in a batch call
      *
      * @param \Tatum\Model\CreateAccountBatch $create_account_batch 
@@ -447,6 +424,52 @@ class AccountApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/ledger/account/block/{id}/detail", ["id" => $id]), [], $rHeaders, []
             ), 
             "\Tatum\Model\Blockage"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a virtual account
+     *
+     * @param \Tatum\Model\CreateAccount $create_account 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Account
+     */
+    public function ledgerAccountCreateAccount(\Tatum\Model\CreateAccount $create_account) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Account $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ledger/account#postCreateAccount", [], $rHeaders, [], $create_account
+            ), 
+            "\Tatum\Model\Account"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a virtual account
+     *
+     * @param \Tatum\Model\CreateAccountXpub $create_account_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Account
+     */
+    public function ledgerAccountCreateAccountXpub(\Tatum\Model\CreateAccountXpub $create_account_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Account $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ledger/account#postCreateAccountXpub", [], $rHeaders, [], $create_account_xpub
+            ), 
+            "\Tatum\Model\Account"
         );
             
         return $result;

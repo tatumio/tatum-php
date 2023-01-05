@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaBlockTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaBlockTx";
     protected static $_definition = [
         "meta" => ["meta", "\Tatum\Model\SolanaTxMeta", null, "getMeta", "setMeta", null, ["r" => 0]], 

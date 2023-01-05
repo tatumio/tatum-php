@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ChainBurnKcsErc20 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_KCS = 'KCS';
     protected static $_name = "ChainBurnKcsErc20";
     protected static $_definition = [

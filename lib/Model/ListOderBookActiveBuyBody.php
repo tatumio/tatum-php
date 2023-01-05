@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ListOderBookActiveBuyBody extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TRADE_TYPE_FUTURE_BUY = 'FUTURE_BUY';
     public const TRADE_TYPE_BUY = 'BUY';
     public const SORT_PRICE_ASC = 'PRICE_ASC';

@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionIntervalAttr extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateSubscriptionInterval_attr";
     protected static $_definition = [
         "interval" => ["interval", "float", null, "getInterval", "setInterval", null, ["r" => 1, "n" => [1], "x" => [720]]]

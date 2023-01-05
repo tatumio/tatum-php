@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class XlmAccountThresholds extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XlmAccount_thresholds";
     protected static $_definition = [
         "low_threshold" => ["low_threshold", "float", null, "getLowThreshold", "setLowThreshold", null, ["r" => 0]], 

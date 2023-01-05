@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaMintedResult extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaMintedResult";
     protected static $_definition = [
         "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 0]], 

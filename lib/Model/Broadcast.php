@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Broadcast extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Broadcast";
     protected static $_definition = [
         "tx_data" => ["txData", "string", null, "getTxData", "setTxData", null, ["r" => 1, "nl" => 1, "xl" => 500000]], 

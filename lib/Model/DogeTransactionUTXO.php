@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DogeTransactionUTXO extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DogeTransactionUTXO";
     protected static $_definition = [
         "from_utxo" => ["fromUTXO", "\Tatum\Model\DogeTransactionUTXOFromUTXOInner[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 1, "c" => 1]], 

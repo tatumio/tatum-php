@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferNftFlowMnemonic extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "TransferNftFlowMnemonic";
     protected static $_definition = [

@@ -25,21 +25,67 @@ class FlowApi extends AbstractApi {
     /**
      * Add public key to Flow address
      *
-     * @param \Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request 
+     * @param \Tatum\Model\FlowAddPubKeyMnemonic $flow_add_pub_key_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function flowAddPubKeyToAddress(\Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request) {
+    public function flowAccountFlowAddPubKeyMnemonicUpdate(\Tatum\Model\FlowAddPubKeyMnemonic $flow_add_pub_key_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/flow/account", [], $rHeaders, [], $flow_add_pub_key_to_address_request
+                $this->_caller->config(), "PUT", "/v3/flow/account#putFlowAddPubKeyMnemonic", [], $rHeaders, [], $flow_add_pub_key_mnemonic
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Add public key to Flow address
+     *
+     * @param \Tatum\Model\FlowAddPubKeySecretKMS $flow_add_pub_key_secret_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function flowAccountFlowAddPubKeySecretKMSUpdate(\Tatum\Model\FlowAddPubKeySecretKMS $flow_add_pub_key_secret_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/flow/account#putFlowAddPubKeySecretKMS", [], $rHeaders, [], $flow_add_pub_key_secret_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Add public key to Flow address
+     *
+     * @param \Tatum\Model\FlowAddPubKeySecret $flow_add_pub_key_secret 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function flowAccountFlowAddPubKeySecretUpdate(\Tatum\Model\FlowAddPubKeySecret $flow_add_pub_key_secret) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/flow/account#putFlowAddPubKeySecret", [], $rHeaders, [], $flow_add_pub_key_secret
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -48,21 +94,67 @@ class FlowApi extends AbstractApi {
     /**
      * Create Flow address from public key
      *
-     * @param \Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request 
+     * @param \Tatum\Model\FlowCreateAddressFromPubKeyKMS $flow_create_address_from_pub_key_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\FlowCreateAddressFromPubKey200Response
+     * @return \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
      */
-    public function flowCreateAddressFromPubKey(\Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request) {
+    public function flowAccountFlowCreateAddressFromPubKeyKMS(\Tatum\Model\FlowCreateAddressFromPubKeyKMS $flow_create_address_from_pub_key_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\FlowCreateAddressFromPubKey200Response $result */
+        /** @var \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/account", [], $rHeaders, [], $flow_create_address_from_pub_key_request
+                $this->_caller->config(), "POST", "/v3/flow/account#postFlowCreateAddressFromPubKeyKMS", [], $rHeaders, [], $flow_create_address_from_pub_key_kms
             ), 
-            "\Tatum\Model\FlowCreateAddressFromPubKey200Response"
+            "\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create Flow address from public key
+     *
+     * @param \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic $flow_create_address_from_pub_key_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+     */
+    public function flowAccountFlowCreateAddressFromPubKeyMnemonic(\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic $flow_create_address_from_pub_key_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/flow/account#postFlowCreateAddressFromPubKeyMnemonic", [], $rHeaders, [], $flow_create_address_from_pub_key_mnemonic
+            ), 
+            "\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create Flow address from public key
+     *
+     * @param \Tatum\Model\FlowCreateAddressFromPubKeySecret $flow_create_address_from_pub_key_secret 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+     */
+    public function flowAccountFlowCreateAddressFromPubKeySecret(\Tatum\Model\FlowCreateAddressFromPubKeySecret $flow_create_address_from_pub_key_secret) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/flow/account#postFlowCreateAddressFromPubKeySecret", [], $rHeaders, [], $flow_create_address_from_pub_key_secret
+            ), 
+            "\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response"
         );
             
         return $result;
@@ -288,23 +380,23 @@ class FlowApi extends AbstractApi {
     }
     
     /**
-     * Send Flow to blockchain addresses
+     * Send arbitrary transaction to blockchain
      *
-     * @param \Tatum\Model\FlowTransferBlockchainRequest $flow_transfer_blockchain_request 
+     * @param \Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function flowTransferBlockchain(\Tatum\Model\FlowTransferBlockchainRequest $flow_transfer_blockchain_request) {
+    public function flowTransactionCustomFlowCustomTransactionKMS(\Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction", [], $rHeaders, [], $flow_transfer_blockchain_request
+                $this->_caller->config(), "POST", "/v3/flow/transaction/custom#postFlowCustomTransactionKMS", [], $rHeaders, [], $flow_custom_transaction_kms
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -313,21 +405,113 @@ class FlowApi extends AbstractApi {
     /**
      * Send arbitrary transaction to blockchain
      *
-     * @param \Tatum\Model\FlowTransferCustomBlockchainRequest $flow_transfer_custom_blockchain_request 
+     * @param \Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function flowTransferCustomBlockchain(\Tatum\Model\FlowTransferCustomBlockchainRequest $flow_transfer_custom_blockchain_request) {
+    public function flowTransactionCustomFlowCustomTransactionMnemonic(\Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction/custom", [], $rHeaders, [], $flow_transfer_custom_blockchain_request
+                $this->_caller->config(), "POST", "/v3/flow/transaction/custom#postFlowCustomTransactionMnemonic", [], $rHeaders, [], $flow_custom_transaction_mnemonic
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send arbitrary transaction to blockchain
+     *
+     * @param \Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function flowTransactionCustomFlowCustomTransactionPK(\Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/flow/transaction/custom#postFlowCustomTransactionPK", [], $rHeaders, [], $flow_custom_transaction_pk
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Flow to blockchain addresses
+     *
+     * @param \Tatum\Model\FlowTransactionKMS $flow_transaction_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function flowTransactionFlowTransactionKMS(\Tatum\Model\FlowTransactionKMS $flow_transaction_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/flow/transaction#postFlowTransactionKMS", [], $rHeaders, [], $flow_transaction_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Flow to blockchain addresses
+     *
+     * @param \Tatum\Model\FlowTransactionMnemonic $flow_transaction_mnemonic 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function flowTransactionFlowTransactionMnemonic(\Tatum\Model\FlowTransactionMnemonic $flow_transaction_mnemonic) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/flow/transaction#postFlowTransactionMnemonic", [], $rHeaders, [], $flow_transaction_mnemonic
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Flow to blockchain addresses
+     *
+     * @param \Tatum\Model\FlowTransactionPK $flow_transaction_pk 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function flowTransactionFlowTransactionPK(\Tatum\Model\FlowTransactionPK $flow_transaction_pk) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/flow/transaction#postFlowTransactionPK", [], $rHeaders, [], $flow_transaction_pk
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TronTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronTx";
     protected static $_definition = [
         "ret" => ["ret", "\Tatum\Model\TronTxRetInner[]", null, "getRet", "setRet", null, ["r" => 1, "c" => 1]], 

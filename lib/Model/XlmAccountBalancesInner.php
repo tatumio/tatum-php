@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XlmAccountBalancesInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XlmAccount_balances_inner";
     protected static $_definition = [
         "balance" => ["balance", "string", null, "getBalance", "setBalance", null, ["r" => 0]], 

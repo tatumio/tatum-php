@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaTransactionHashWithConfirm extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaTransactionHashWithConfirm";
     protected static $_definition = [
         "tx_id" => ["txId", "string", null, "getTxId", "setTxId", null, ["r" => 1]], 

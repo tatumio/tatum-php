@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BroadcastWithdrawal extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BroadcastWithdrawal";
     protected static $_definition = [
         "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "nl" => 2, "xl" => 40]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GetTransactionsByAccountId200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "getTransactionsByAccountId_200_response";
     protected static $_definition = [
     ];

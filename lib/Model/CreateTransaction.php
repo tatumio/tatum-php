@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateTransaction extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateTransaction";
     protected static $_definition = [
         "sender_account_id" => ["senderAccountId", "string", null, "getSenderAccountId", "setSenderAccountId", null, ["r" => 1, "nl" => 24, "xl" => 24]], 

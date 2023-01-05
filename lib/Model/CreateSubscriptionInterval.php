@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionInterval extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_TRANSACTION_HISTORY_REPORT = 'TRANSACTION_HISTORY_REPORT';
     protected static $_name = "CreateSubscriptionInterval";
     protected static $_definition = [

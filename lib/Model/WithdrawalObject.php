@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class WithdrawalObject extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const STATUS_IN_PROGRESS = 'InProgress';
     public const STATUS_DONE = 'Done';
     public const STATUS_CANCELLED = 'Cancelled';

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AlgorandGetBalance200ResponseAssetsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AlgorandGetBalance_200_response_assets_inner";
     protected static $_definition = [
         "amount" => ["amount", "float", null, "getAmount", "setAmount", null, ["r" => 0]], 

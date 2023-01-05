@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CancelSellAssetOnMarketplaceTronKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_TRON = 'TRON';
     protected static $_name = "CancelSellAssetOnMarketplaceTronKMS";
     protected static $_definition = [

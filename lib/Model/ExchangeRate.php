@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class ExchangeRate extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const ID_AED = 'AED';
     public const ID_AFN = 'AFN';
     public const ID_ALL = 'ALL';

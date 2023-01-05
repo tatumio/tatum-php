@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionKMSError extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_KMS_FAILED_TX = 'KMS_FAILED_TX';
     protected static $_name = "CreateSubscriptionKMSError";
     protected static $_definition = [

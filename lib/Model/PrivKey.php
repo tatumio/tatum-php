@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class PrivKey extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "PrivKey";
     protected static $_definition = [
         "key" => ["key", "string", null, "getKey", "setKey", null, ["r" => 0]]

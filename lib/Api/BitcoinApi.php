@@ -23,6 +23,98 @@ use Tatum\Sdk\Serializer as S;
  */
 class BitcoinApi extends AbstractApi {
     /**
+     * Send BTC to Bitcoin addresses
+     *
+     * @param \Tatum\Model\BtcTransactionFromAddress $btc_transaction_from_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function bitcoinTransactionBtcTransactionFromAddress(\Tatum\Model\BtcTransactionFromAddress $btc_transaction_from_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bitcoin/transaction#postBtcTransactionFromAddress", [], $rHeaders, [], $btc_transaction_from_address
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BTC to Bitcoin addresses
+     *
+     * @param \Tatum\Model\BtcTransactionFromAddressKMS $btc_transaction_from_address_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function bitcoinTransactionBtcTransactionFromAddressKMS(\Tatum\Model\BtcTransactionFromAddressKMS $btc_transaction_from_address_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bitcoin/transaction#postBtcTransactionFromAddressKMS", [], $rHeaders, [], $btc_transaction_from_address_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BTC to Bitcoin addresses
+     *
+     * @param \Tatum\Model\BtcTransactionFromUTXO $btc_transaction_from_utxo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function bitcoinTransactionBtcTransactionFromUTXO(\Tatum\Model\BtcTransactionFromUTXO $btc_transaction_from_utxo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bitcoin/transaction#postBtcTransactionFromUTXO", [], $rHeaders, [], $btc_transaction_from_utxo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BTC to Bitcoin addresses
+     *
+     * @param \Tatum\Model\BtcTransactionFromUTXOKMS $btc_transaction_from_utxokms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function bitcoinTransactionBtcTransactionFromUTXOKMS(\Tatum\Model\BtcTransactionFromUTXOKMS $btc_transaction_from_utxokms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bitcoin/transaction#postBtcTransactionFromUTXOKMS", [], $rHeaders, [], $btc_transaction_from_utxokms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast a signed Bitcoin transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -349,29 +441,6 @@ class BitcoinApi extends AbstractApi {
                 $this->_caller->config(), "POST", "/v3/bitcoin/node", [], $rHeaders, [], $btc_rpc_driver_request
             ), 
             "object"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send BTC to Bitcoin addresses
-     *
-     * @param \Tatum\Model\BtcTransferBlockchainRequest $btc_transfer_blockchain_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function btcTransferBlockchain(\Tatum\Model\BtcTransferBlockchainRequest $btc_transfer_blockchain_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bitcoin/transaction", [], $rHeaders, [], $btc_transfer_blockchain_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
         );
             
         return $result;

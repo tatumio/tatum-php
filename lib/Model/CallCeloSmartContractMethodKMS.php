@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CallCeloSmartContractMethodKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const FEE_CURRENCY_CELO = 'CELO';
     public const FEE_CURRENCY_CUSD = 'CUSD';
     public const FEE_CURRENCY_CEUR = 'CEUR';

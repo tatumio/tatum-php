@@ -121,44 +121,44 @@ class AlgorandApi extends AbstractApi {
     /**
      * Enable receiving asset on account
      *
-     * @param \Tatum\Model\AlgorandBlockchainReceiveAssetRequest $algorand_blockchain_receive_asset_request 
+     * @param \Tatum\Model\ReceiveAlgorandAsset $receive_algorand_asset 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function algorandBlockchainReceiveAsset(\Tatum\Model\AlgorandBlockchainReceiveAssetRequest $algorand_blockchain_receive_asset_request) {
+    public function algorandAssetReceiveAlgorandAsset(\Tatum\Model\ReceiveAlgorandAsset $receive_algorand_asset) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/algorand/asset/receive", [], $rHeaders, [], $algorand_blockchain_receive_asset_request
+                $this->_caller->config(), "POST", "/v3/algorand/asset/receive#postReceiveAlgorandAsset", [], $rHeaders, [], $receive_algorand_asset
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
     }
     
     /**
-     * Send Algos to an Algorand account
+     * Enable receiving asset on account
      *
-     * @param \Tatum\Model\AlgorandBlockchainTransferRequest $algorand_blockchain_transfer_request 
+     * @param \Tatum\Model\ReceiveAlgorandAssetKMS $receive_algorand_asset_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function algorandBlockchainTransfer(\Tatum\Model\AlgorandBlockchainTransferRequest $algorand_blockchain_transfer_request) {
+    public function algorandAssetReceiveAlgorandAssetKMS(\Tatum\Model\ReceiveAlgorandAssetKMS $receive_algorand_asset_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/algorand/transaction", [], $rHeaders, [], $algorand_blockchain_transfer_request
+                $this->_caller->config(), "POST", "/v3/algorand/asset/receive#postReceiveAlgorandAssetKMS", [], $rHeaders, [], $receive_algorand_asset_kms
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -330,6 +330,52 @@ class AlgorandApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/algorand/transaction/{txid}", ["txid" => $txid]), [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgoTx"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Algos to an Algorand account
+     *
+     * @param \Tatum\Model\TransferAlgorandBlockchain $transfer_algorand_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function algorandTransactionTransferAlgorandBlockchain(\Tatum\Model\TransferAlgorandBlockchain $transfer_algorand_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/algorand/transaction#postTransferAlgorandBlockchain", [], $rHeaders, [], $transfer_algorand_blockchain
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Algos to an Algorand account
+     *
+     * @param \Tatum\Model\TransferAlgorandBlockchainKMS $transfer_algorand_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function algorandTransactionTransferAlgorandBlockchainKMS(\Tatum\Model\TransferAlgorandBlockchainKMS $transfer_algorand_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/algorand/transaction#postTransferAlgorandBlockchainKMS", [], $rHeaders, [], $transfer_algorand_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

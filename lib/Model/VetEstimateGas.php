@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class VetEstimateGas extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "VetEstimateGas";
     protected static $_definition = [
         "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "xl" => 50]], 

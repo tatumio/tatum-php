@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferEgldBlockchain extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferEgldBlockchain";
     protected static $_definition = [
         "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 62, "xl" => 62]], 

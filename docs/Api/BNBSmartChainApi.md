@@ -4,8 +4,6 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bscBlockchainSmartContractInvocation()**](#bscblockchainsmartcontractinvocation) | **POST** [/v3/bsc/smartcontract](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscBlockchainSmartContractInvocation) | Invoke a method in a smart contract on BNB Smart Chain
-[**bscBlockchainTransfer()**](#bscblockchaintransfer) | **POST** [/v3/bsc/transaction](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscBlockchainTransfer) | Send BSC / BEP20 from account to account
 [**bscBroadcast()**](#bscbroadcast) | **POST** [/v3/bsc/broadcast](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscBroadcast) | Broadcast signed BSC transaction
 [**bscGenerateAddress()**](#bscgenerateaddress) | **GET** [/v3/bsc/address/{xpub}/{index}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGenerateAddress) | Generate BSC account address from Extended public key
 [**bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) | **POST** [/v3/bsc/wallet/priv](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGenerateAddressPrivateKey) | Generate BSC private key
@@ -15,72 +13,13 @@ Method | HTTP request | Description
 [**bscGetCurrentBlock()**](#bscgetcurrentblock) | **GET** [/v3/bsc/block/current](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetCurrentBlock) | Get current block number
 [**bscGetTransaction()**](#bscgettransaction) | **GET** [/v3/bsc/transaction/{hash}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetTransaction) | Get BSC Transaction
 [**bscGetTransactionCount()**](#bscgettransactioncount) | **GET** [/v3/bsc/transaction/count/{address}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscGetTransactionCount) | Get count of outgoing BSC transactions
+[**bscSmartcontractCallBscSmartContractMethod()**](#bscsmartcontractcallbscsmartcontractmethod) | **POST** [/v3/bsc/smartcontract#postCallBscSmartContractMethod](https://apidoc.tatum.io/tag/BNBSmartChain#operation/bscSmartcontractCallBscSmartContractMethod) | Invoke a method in a smart contract on BNB Smart Chain
+[**bscSmartcontractCallBscSmartContractMethodKMS()**](#bscsmartcontractcallbscsmartcontractmethodkms) | **POST** [/v3/bsc/smartcontract#postCallBscSmartContractMethodKMS](https://apidoc.tatum.io/tag/BNBSmartChain#operation/bscSmartcontractCallBscSmartContractMethodKMS) | Invoke a method in a smart contract on BNB Smart Chain
+[**bscSmartcontractCallBscSmartContractReadMethod()**](#bscsmartcontractcallbscsmartcontractreadmethod) | **POST** [/v3/bsc/smartcontract#postCallBscSmartContractReadMethod](https://apidoc.tatum.io/tag/BNBSmartChain#operation/bscSmartcontractCallBscSmartContractReadMethod) | Invoke a method in a smart contract on BNB Smart Chain
+[**bscTransactionTransferBscBlockchain()**](#bsctransactiontransferbscblockchain) | **POST** [/v3/bsc/transaction#postTransferBscBlockchain](https://apidoc.tatum.io/tag/BNBSmartChain#operation/bscTransactionTransferBscBlockchain) | Send BSC / BEP20 from account to account
+[**bscTransactionTransferBscBlockchainKMS()**](#bsctransactiontransferbscblockchainkms) | **POST** [/v3/bsc/transaction#postTransferBscBlockchainKMS](https://apidoc.tatum.io/tag/BNBSmartChain#operation/bscTransactionTransferBscBlockchainKMS) | Send BSC / BEP20 from account to account
 [**bscWeb3Driver()**](#bscweb3driver) | **POST** [/v3/bsc/web3/{xApiKey}](https://apidoc.tatum.io/tag/BNBSmartChain#operation/BscWeb3Driver) | Web3 HTTP driver
 
-
-## `bscBlockchainSmartContractInvocation()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainSmartContractInvocation(
-    \Tatum\Model\BscBlockchainSmartContractInvocationRequest $bsc_blockchain_smart_contract_invocation_request
-): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$bsc_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\BscBlockchainSmartContractInvocationRequest**](../Model/BscBlockchainSmartContractInvocationRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on BNB Smart Chain
-
-<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on BNB Smart Chain.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "bscBlockchainSmartContractInvocation.php"](../../examples/Api/BNBSmartChainApi/bscBlockchainSmartContractInvocation.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `bscBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBlockchainTransfer(
-    \Tatum\Model\BscBlockchainTransferRequest $bsc_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$bsc_blockchain_transfer_request** | [**\Tatum\Model\BscBlockchainTransferRequest**](../Model/BscBlockchainTransferRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Send BSC / BEP20 from account to account
-
-<p><b>2 credits per API call</b></p> <p>Send BNB or Tatum supported BEP20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending BNB, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "bscBlockchainTransfer.php"](../../examples/Api/BNBSmartChainApi/bscBlockchainTransfer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bscBroadcast()`
 
@@ -366,6 +305,166 @@ Get count of outgoing BSC transactions
 ### Example
 
 [✨ View "bscGetTransactionCount.php"](../../examples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscSmartcontractCallBscSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscSmartcontractCallBscSmartContractMethod(
+    \Tatum\Model\CallBscSmartContractMethod $call_bsc_smart_contract_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_bsc_smart_contract_method** | [**\Tatum\Model\CallBscSmartContractMethod**](../Model/CallBscSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on BNB Smart Chain
+
+CallBscSmartContractMethod operation
+
+### Example
+
+[✨ View "bscSmartcontractCallBscSmartContractMethod.php"](../../examples/Api/BNBSmartChainApi/bscSmartcontractCallBscSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscSmartcontractCallBscSmartContractMethodKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscSmartcontractCallBscSmartContractMethodKMS(
+    \Tatum\Model\CallBscSmartContractMethodKMS $call_bsc_smart_contract_method_kms
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_bsc_smart_contract_method_kms** | [**\Tatum\Model\CallBscSmartContractMethodKMS**](../Model/CallBscSmartContractMethodKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on BNB Smart Chain
+
+CallBscSmartContractMethodKMS operation
+
+### Example
+
+[✨ View "bscSmartcontractCallBscSmartContractMethodKMS.php"](../../examples/Api/BNBSmartChainApi/bscSmartcontractCallBscSmartContractMethodKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscSmartcontractCallBscSmartContractReadMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscSmartcontractCallBscSmartContractReadMethod(
+    \Tatum\Model\CallBscSmartContractReadMethod $call_bsc_smart_contract_read_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_bsc_smart_contract_read_method** | [**\Tatum\Model\CallBscSmartContractReadMethod**](../Model/CallBscSmartContractReadMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on BNB Smart Chain
+
+<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on BNB Smart Chain.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "bscSmartcontractCallBscSmartContractReadMethod.php"](../../examples/Api/BNBSmartChainApi/bscSmartcontractCallBscSmartContractReadMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscTransactionTransferBscBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscTransactionTransferBscBlockchain(
+    \Tatum\Model\TransferBscBlockchain $transfer_bsc_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bsc_blockchain** | [**\Tatum\Model\TransferBscBlockchain**](../Model/TransferBscBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send BSC / BEP20 from account to account
+
+<p><b>2 credits per API call</b></p> <p>Send BNB or Tatum supported BEP20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending BNB, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "bscTransactionTransferBscBlockchain.php"](../../examples/Api/BNBSmartChainApi/bscTransactionTransferBscBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bscTransactionTransferBscBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscTransactionTransferBscBlockchainKMS(
+    \Tatum\Model\TransferBscBlockchainKMS $transfer_bsc_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bsc_blockchain_kms** | [**\Tatum\Model\TransferBscBlockchainKMS**](../Model/TransferBscBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send BSC / BEP20 from account to account
+
+TransferBscBlockchainKMS operation
+
+### Example
+
+[✨ View "bscTransactionTransferBscBlockchainKMS.php"](../../examples/Api/BNBSmartChainApi/bscTransactionTransferBscBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

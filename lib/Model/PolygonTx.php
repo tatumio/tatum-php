@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class PolygonTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "PolygonTx";
     protected static $_definition = [
         "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 

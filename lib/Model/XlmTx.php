@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XlmTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const MEMO_TYPE_TEXT = 'MEMO_TEXT';
     public const MEMO_TYPE_ID = 'MEMO_ID';
     public const MEMO_TYPE_HASH = 'MEMO_HASH';

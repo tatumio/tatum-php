@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Error400DataInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Error400_data_inner";
     protected static $_definition = [
         "target" => ["target", "array<string,mixed>", null, "getTarget", "setTarget", null, ["r" => 1, "c" => 1]], 

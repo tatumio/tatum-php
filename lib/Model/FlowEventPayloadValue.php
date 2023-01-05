@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowEventPayloadValue extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowEvent_payload_value";
     protected static $_definition = [
         "id" => ["id", "string", null, "getId", "setId", null, ["r" => 0]], 

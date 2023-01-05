@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DogeTxVoutInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DogeTx_vout_inner";
     protected static $_definition = [
         "value" => ["value", "float", null, "getValue", "setValue", null, ["r" => 0]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BchTx extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BchTx";
     protected static $_definition = [
         "txid" => ["txid", "string", null, "getTxid", "setTxid", null, ["r" => 0]], 

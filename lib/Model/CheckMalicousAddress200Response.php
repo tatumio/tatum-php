@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CheckMalicousAddress200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const STATUS_VALID = 'valid';
     public const STATUS_INVALID = 'invalid';
     protected static $_name = "CheckMalicousAddress_200_response";

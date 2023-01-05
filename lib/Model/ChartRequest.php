@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ChartRequest extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TIME_FRAME_MIN_1 = 'MIN_1';
     public const TIME_FRAME_MIN_3 = 'MIN_3';
     public const TIME_FRAME_MIN_5 = 'MIN_5';

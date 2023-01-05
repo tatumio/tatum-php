@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DogeTxVoutInnerScriptPubKey extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DogeTx_vout_inner_scriptPubKey";
     protected static $_definition = [
         "asm" => ["asm", "string", null, "getAsm", "setAsm", null, ["r" => 0]], 

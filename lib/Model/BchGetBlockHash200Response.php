@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BchGetBlockHash200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BchGetBlockHash_200_response";
     protected static $_definition = [
         "hash" => ["hash", "string", null, "getHash", "setHash", null, ["r" => 0]]

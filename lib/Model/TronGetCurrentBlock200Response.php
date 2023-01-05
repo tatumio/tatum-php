@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TronGetCurrentBlock200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronGetCurrentBlock_200_response";
     protected static $_definition = [
         "block_number" => ["blockNumber", "float", null, "getBlockNumber", "setBlockNumber", null, ["r" => 0]], 

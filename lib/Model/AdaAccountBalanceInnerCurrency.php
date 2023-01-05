@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AdaAccountBalanceInnerCurrency extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AdaAccountBalance_inner_currency";
     protected static $_definition = [
         "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 0]], 

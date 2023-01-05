@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Data extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Data";
     protected static $_definition = [
         "data" => ["data", "\Tatum\Model\DataData", null, "getData", "setData", null, ["r" => 1]]

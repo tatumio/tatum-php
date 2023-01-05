@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BtcTxInput extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BtcTxInput";
     protected static $_definition = [
         "prevout" => ["prevout", "\Tatum\Model\BtcTxInputPrevOut", null, "getPrevout", "setPrevout", null, ["r" => 0]], 

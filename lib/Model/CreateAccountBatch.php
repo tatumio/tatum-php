@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateAccountBatch extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CreateAccountBatch";
     protected static $_definition = [
         "accounts" => ["accounts", "\Tatum\Model\CreateAccount[]", null, "getAccounts", "setAccounts", null, ["r" => 1, "c" => 1]]

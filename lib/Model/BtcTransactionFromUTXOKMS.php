@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BtcTransactionFromUTXOKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BtcTransactionFromUTXOKMS";
     protected static $_definition = [
         "from_utxo" => ["fromUTXO", "\Tatum\Model\BtcTransactionFromUTXOKMSSource[]", null, "getFromUtxo", "setFromUtxo", null, ["r" => 1, "c" => 1]], 

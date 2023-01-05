@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class LtcTransactionAddressKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "LtcTransactionAddressKMS";
     protected static $_definition = [
         "from_address" => ["fromAddress", "\Tatum\Model\LtcTransactionAddressKMSFromAddressInner[]", null, "getFromAddress", "setFromAddress", null, ["r" => 1, "c" => 1]], 

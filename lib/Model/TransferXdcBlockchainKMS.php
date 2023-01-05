@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferXdcBlockchainKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_XDC = 'XDC';
     protected static $_name = "TransferXdcBlockchainKMS";
     protected static $_definition = [

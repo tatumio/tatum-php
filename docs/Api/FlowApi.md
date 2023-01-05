@@ -4,8 +4,12 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**flowAddPubKeyToAddress()**](#flowaddpubkeytoaddress) | **PUT** [/v3/flow/account](https://apidoc.tatum.io/tag/Flow#operation/FlowAddPubKeyToAddress) | Add public key to Flow address
-[**flowCreateAddressFromPubKey()**](#flowcreateaddressfrompubkey) | **POST** [/v3/flow/account](https://apidoc.tatum.io/tag/Flow#operation/FlowCreateAddressFromPubKey) | Create Flow address from public key
+[**flowAccountFlowAddPubKeyMnemonicUpdate()**](#flowaccountflowaddpubkeymnemonicupdate) | **PUT** [/v3/flow/account#putFlowAddPubKeyMnemonic](https://apidoc.tatum.io/tag/Flow#operation/flowAccountFlowAddPubKeyMnemonicUpdate) | Add public key to Flow address
+[**flowAccountFlowAddPubKeySecretKMSUpdate()**](#flowaccountflowaddpubkeysecretkmsupdate) | **PUT** [/v3/flow/account#putFlowAddPubKeySecretKMS](https://apidoc.tatum.io/tag/Flow#operation/flowAccountFlowAddPubKeySecretKMSUpdate) | Add public key to Flow address
+[**flowAccountFlowAddPubKeySecretUpdate()**](#flowaccountflowaddpubkeysecretupdate) | **PUT** [/v3/flow/account#putFlowAddPubKeySecret](https://apidoc.tatum.io/tag/Flow#operation/flowAccountFlowAddPubKeySecretUpdate) | Add public key to Flow address
+[**flowAccountFlowCreateAddressFromPubKeyKMS()**](#flowaccountflowcreateaddressfrompubkeykms) | **POST** [/v3/flow/account#postFlowCreateAddressFromPubKeyKMS](https://apidoc.tatum.io/tag/Flow#operation/flowAccountFlowCreateAddressFromPubKeyKMS) | Create Flow address from public key
+[**flowAccountFlowCreateAddressFromPubKeyMnemonic()**](#flowaccountflowcreateaddressfrompubkeymnemonic) | **POST** [/v3/flow/account#postFlowCreateAddressFromPubKeyMnemonic](https://apidoc.tatum.io/tag/Flow#operation/flowAccountFlowCreateAddressFromPubKeyMnemonic) | Create Flow address from public key
+[**flowAccountFlowCreateAddressFromPubKeySecret()**](#flowaccountflowcreateaddressfrompubkeysecret) | **POST** [/v3/flow/account#postFlowCreateAddressFromPubKeySecret](https://apidoc.tatum.io/tag/Flow#operation/flowAccountFlowCreateAddressFromPubKeySecret) | Create Flow address from public key
 [**flowGenerateAddress()**](#flowgenerateaddress) | **GET** [/v3/flow/address/{xpub}/{index}](https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateAddress) | Generate Flow address from Extended public key
 [**flowGeneratePubKey()**](#flowgeneratepubkey) | **GET** [/v3/flow/pubkey/{xpub}/{index}](https://apidoc.tatum.io/tag/Flow#operation/FlowGeneratePubKey) | Generate Flow public key from Extended public key
 [**flowGeneratePubKeyPrivateKey()**](#flowgeneratepubkeyprivatekey) | **POST** [/v3/flow/wallet/priv](https://apidoc.tatum.io/tag/Flow#operation/FlowGeneratePubKeyPrivateKey) | Generate Flow private key
@@ -15,29 +19,33 @@ Method | HTTP request | Description
 [**flowGetBlockChainInfo()**](#flowgetblockchaininfo) | **GET** [/v3/flow/block/current](https://apidoc.tatum.io/tag/Flow#operation/FlowGetBlockChainInfo) | Get Flow current block number
 [**flowGetBlockEvents()**](#flowgetblockevents) | **GET** [/v3/flow/block/events](https://apidoc.tatum.io/tag/Flow#operation/FlowGetBlockEvents) | Get Flow events from blocks
 [**flowGetRawTransaction()**](#flowgetrawtransaction) | **GET** [/v3/flow/transaction/{hash}](https://apidoc.tatum.io/tag/Flow#operation/FlowGetRawTransaction) | Get Flow Transaction by hash
-[**flowTransferBlockchain()**](#flowtransferblockchain) | **POST** [/v3/flow/transaction](https://apidoc.tatum.io/tag/Flow#operation/FlowTransferBlockchain) | Send Flow to blockchain addresses
-[**flowTransferCustomBlockchain()**](#flowtransfercustomblockchain) | **POST** [/v3/flow/transaction/custom](https://apidoc.tatum.io/tag/Flow#operation/FlowTransferCustomBlockchain) | Send arbitrary transaction to blockchain
+[**flowTransactionCustomFlowCustomTransactionKMS()**](#flowtransactioncustomflowcustomtransactionkms) | **POST** [/v3/flow/transaction/custom#postFlowCustomTransactionKMS](https://apidoc.tatum.io/tag/Flow#operation/flowTransactionCustomFlowCustomTransactionKMS) | Send arbitrary transaction to blockchain
+[**flowTransactionCustomFlowCustomTransactionMnemonic()**](#flowtransactioncustomflowcustomtransactionmnemonic) | **POST** [/v3/flow/transaction/custom#postFlowCustomTransactionMnemonic](https://apidoc.tatum.io/tag/Flow#operation/flowTransactionCustomFlowCustomTransactionMnemonic) | Send arbitrary transaction to blockchain
+[**flowTransactionCustomFlowCustomTransactionPK()**](#flowtransactioncustomflowcustomtransactionpk) | **POST** [/v3/flow/transaction/custom#postFlowCustomTransactionPK](https://apidoc.tatum.io/tag/Flow#operation/flowTransactionCustomFlowCustomTransactionPK) | Send arbitrary transaction to blockchain
+[**flowTransactionFlowTransactionKMS()**](#flowtransactionflowtransactionkms) | **POST** [/v3/flow/transaction#postFlowTransactionKMS](https://apidoc.tatum.io/tag/Flow#operation/flowTransactionFlowTransactionKMS) | Send Flow to blockchain addresses
+[**flowTransactionFlowTransactionMnemonic()**](#flowtransactionflowtransactionmnemonic) | **POST** [/v3/flow/transaction#postFlowTransactionMnemonic](https://apidoc.tatum.io/tag/Flow#operation/flowTransactionFlowTransactionMnemonic) | Send Flow to blockchain addresses
+[**flowTransactionFlowTransactionPK()**](#flowtransactionflowtransactionpk) | **POST** [/v3/flow/transaction#postFlowTransactionPK](https://apidoc.tatum.io/tag/Flow#operation/flowTransactionFlowTransactionPK) | Send Flow to blockchain addresses
 
 
-## `flowAddPubKeyToAddress()`
+## `flowAccountFlowAddPubKeyMnemonicUpdate()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeyToAddress(
-    \Tatum\Model\FlowAddPubKeyToAddressRequest $flow_add_pub_key_to_address_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowAddPubKeyMnemonicUpdate(
+    \Tatum\Model\FlowAddPubKeyMnemonic $flow_add_pub_key_mnemonic
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_add_pub_key_to_address_request** | [**\Tatum\Model\FlowAddPubKeyToAddressRequest**](../Model/FlowAddPubKeyToAddressRequest.md) |  |
+ **$flow_add_pub_key_mnemonic** | [**\Tatum\Model\FlowAddPubKeyMnemonic**](../Model/FlowAddPubKeyMnemonic.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -47,29 +55,125 @@ Add public key to Flow address
 
 ### Example
 
-[✨ View "flowAddPubKeyToAddress.php"](../../examples/Api/FlowApi/flowAddPubKeyToAddress.php)
+[✨ View "flowAccountFlowAddPubKeyMnemonicUpdate.php"](../../examples/Api/FlowApi/flowAccountFlowAddPubKeyMnemonicUpdate.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowCreateAddressFromPubKey()`
+## `flowAccountFlowAddPubKeySecretKMSUpdate()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKey(
-    \Tatum\Model\FlowCreateAddressFromPubKeyRequest $flow_create_address_from_pub_key_request
-): \Tatum\Model\FlowCreateAddressFromPubKey200Response
+$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowAddPubKeySecretKMSUpdate(
+    \Tatum\Model\FlowAddPubKeySecretKMS $flow_add_pub_key_secret_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_create_address_from_pub_key_request** | [**\Tatum\Model\FlowCreateAddressFromPubKeyRequest**](../Model/FlowCreateAddressFromPubKeyRequest.md) |  |
+ **$flow_add_pub_key_secret_kms** | [**\Tatum\Model\FlowAddPubKeySecretKMS**](../Model/FlowAddPubKeySecretKMS.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\FlowCreateAddressFromPubKey200Response**](../Model/FlowCreateAddressFromPubKey200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Add public key to Flow address
+
+FlowAddPubKeySecretKMS operation
+
+### Example
+
+[✨ View "flowAccountFlowAddPubKeySecretKMSUpdate.php"](../../examples/Api/FlowApi/flowAccountFlowAddPubKeySecretKMSUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowAccountFlowAddPubKeySecretUpdate()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowAddPubKeySecretUpdate(
+    \Tatum\Model\FlowAddPubKeySecret $flow_add_pub_key_secret
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_add_pub_key_secret** | [**\Tatum\Model\FlowAddPubKeySecret**](../Model/FlowAddPubKeySecret.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Add public key to Flow address
+
+FlowAddPubKeySecret operation
+
+### Example
+
+[✨ View "flowAccountFlowAddPubKeySecretUpdate.php"](../../examples/Api/FlowApi/flowAccountFlowAddPubKeySecretUpdate.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowAccountFlowCreateAddressFromPubKeyKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowCreateAddressFromPubKeyKMS(
+    \Tatum\Model\FlowCreateAddressFromPubKeyKMS $flow_create_address_from_pub_key_kms
+): \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_create_address_from_pub_key_kms** | [**\Tatum\Model\FlowCreateAddressFromPubKeyKMS**](../Model/FlowCreateAddressFromPubKeyKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response.md)
+
+### Description
+
+Create Flow address from public key
+
+FlowCreateAddressFromPubKeyKMS operation
+
+### Example
+
+[✨ View "flowAccountFlowCreateAddressFromPubKeyKMS.php"](../../examples/Api/FlowApi/flowAccountFlowCreateAddressFromPubKeyKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowAccountFlowCreateAddressFromPubKeyMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowCreateAddressFromPubKeyMnemonic(
+    \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic $flow_create_address_from_pub_key_mnemonic
+): \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_create_address_from_pub_key_mnemonic** | [**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic**](../Model/FlowCreateAddressFromPubKeyMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response.md)
 
 ### Description
 
@@ -79,7 +183,39 @@ Create Flow address from public key
 
 ### Example
 
-[✨ View "flowCreateAddressFromPubKey.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKey.php)
+[✨ View "flowAccountFlowCreateAddressFromPubKeyMnemonic.php"](../../examples/Api/FlowApi/flowAccountFlowCreateAddressFromPubKeyMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowAccountFlowCreateAddressFromPubKeySecret()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowCreateAddressFromPubKeySecret(
+    \Tatum\Model\FlowCreateAddressFromPubKeySecret $flow_create_address_from_pub_key_secret
+): \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_create_address_from_pub_key_secret** | [**\Tatum\Model\FlowCreateAddressFromPubKeySecret**](../Model/FlowCreateAddressFromPubKeySecret.md) |  |
+
+### Return type
+
+[**\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response.md)
+
+### Description
+
+Create Flow address from public key
+
+FlowCreateAddressFromPubKeySecret operation
+
+### Example
+
+[✨ View "flowAccountFlowCreateAddressFromPubKeySecret.php"](../../examples/Api/FlowApi/flowAccountFlowCreateAddressFromPubKeySecret.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -376,57 +512,57 @@ Get Flow Transaction by hash
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowTransferBlockchain()`
+## `flowTransactionCustomFlowCustomTransactionKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransferBlockchain(
-    \Tatum\Model\FlowTransferBlockchainRequest $flow_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionCustomFlowCustomTransactionKMS(
+    \Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transfer_blockchain_request** | [**\Tatum\Model\FlowTransferBlockchainRequest**](../Model/FlowTransferBlockchainRequest.md) |  |
+ **$flow_custom_transaction_kms** | [**\Tatum\Model\FlowCustomTransactionKMS**](../Model/FlowCustomTransactionKMS.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
-Send Flow to blockchain addresses
+Send arbitrary transaction to blockchain
 
-<h4>100 credits per API call.</h4><br/> <p>Send Flow or FUSD to blockchain addresses. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.<br/> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul><br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+FlowCustomTransactionKMS operation
 
 ### Example
 
-[✨ View "flowTransferBlockchain.php"](../../examples/Api/FlowApi/flowTransferBlockchain.php)
+[✨ View "flowTransactionCustomFlowCustomTransactionKMS.php"](../../examples/Api/FlowApi/flowTransactionCustomFlowCustomTransactionKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowTransferCustomBlockchain()`
+## `flowTransactionCustomFlowCustomTransactionMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransferCustomBlockchain(
-    \Tatum\Model\FlowTransferCustomBlockchainRequest $flow_transfer_custom_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionCustomFlowCustomTransactionMnemonic(
+    \Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transfer_custom_blockchain_request** | [**\Tatum\Model\FlowTransferCustomBlockchainRequest**](../Model/FlowTransferCustomBlockchainRequest.md) |  |
+ **$flow_custom_transaction_mnemonic** | [**\Tatum\Model\FlowCustomTransactionMnemonic**](../Model/FlowCustomTransactionMnemonic.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -436,6 +572,134 @@ Send arbitrary transaction to blockchain
 
 ### Example
 
-[✨ View "flowTransferCustomBlockchain.php"](../../examples/Api/FlowApi/flowTransferCustomBlockchain.php)
+[✨ View "flowTransactionCustomFlowCustomTransactionMnemonic.php"](../../examples/Api/FlowApi/flowTransactionCustomFlowCustomTransactionMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowTransactionCustomFlowCustomTransactionPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionCustomFlowCustomTransactionPK(
+    \Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_custom_transaction_pk** | [**\Tatum\Model\FlowCustomTransactionPK**](../Model/FlowCustomTransactionPK.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send arbitrary transaction to blockchain
+
+FlowCustomTransactionPK operation
+
+### Example
+
+[✨ View "flowTransactionCustomFlowCustomTransactionPK.php"](../../examples/Api/FlowApi/flowTransactionCustomFlowCustomTransactionPK.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowTransactionFlowTransactionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionFlowTransactionKMS(
+    \Tatum\Model\FlowTransactionKMS $flow_transaction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_transaction_kms** | [**\Tatum\Model\FlowTransactionKMS**](../Model/FlowTransactionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send Flow to blockchain addresses
+
+FlowTransactionKMS operation
+
+### Example
+
+[✨ View "flowTransactionFlowTransactionKMS.php"](../../examples/Api/FlowApi/flowTransactionFlowTransactionKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowTransactionFlowTransactionMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionFlowTransactionMnemonic(
+    \Tatum\Model\FlowTransactionMnemonic $flow_transaction_mnemonic
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_transaction_mnemonic** | [**\Tatum\Model\FlowTransactionMnemonic**](../Model/FlowTransactionMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send Flow to blockchain addresses
+
+<h4>100 credits per API call.</h4><br/> <p>Send Flow or FUSD to blockchain addresses. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.<br/> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul><br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "flowTransactionFlowTransactionMnemonic.php"](../../examples/Api/FlowApi/flowTransactionFlowTransactionMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowTransactionFlowTransactionPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionFlowTransactionPK(
+    \Tatum\Model\FlowTransactionPK $flow_transaction_pk
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_transaction_pk** | [**\Tatum\Model\FlowTransactionPK**](../Model/FlowTransactionPK.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send Flow to blockchain addresses
+
+FlowTransactionPK operation
+
+### Example
+
+[✨ View "flowTransactionFlowTransactionPK.php"](../../examples/Api/FlowApi/flowTransactionFlowTransactionPK.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

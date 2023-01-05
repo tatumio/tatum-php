@@ -4,7 +4,8 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xrpAccountSettings()**](#xrpaccountsettings) | **POST** [/v3/xrp/account/settings](https://apidoc.tatum.io/tag/XRP#operation/XrpAccountSettings) | Modify XRP account
+[**xrpAccountSettingsAccountSettingsXrpBlockchain()**](#xrpaccountsettingsaccountsettingsxrpblockchain) | **POST** [/v3/xrp/account/settings#postAccountSettingsXrpBlockchain](https://apidoc.tatum.io/tag/XRP#operation/xrpAccountSettingsAccountSettingsXrpBlockchain) | Modify XRP account
+[**xrpAccountSettingsAccountSettingsXrpBlockchainKMS()**](#xrpaccountsettingsaccountsettingsxrpblockchainkms) | **POST** [/v3/xrp/account/settings#postAccountSettingsXrpBlockchainKMS](https://apidoc.tatum.io/tag/XRP#operation/xrpAccountSettingsAccountSettingsXrpBlockchainKMS) | Modify XRP account
 [**xrpBroadcast()**](#xrpbroadcast) | **POST** [/v3/xrp/broadcast](https://apidoc.tatum.io/tag/XRP#operation/XrpBroadcast) | Broadcast signed XRP transaction
 [**xrpGetAccountBalance()**](#xrpgetaccountbalance) | **GET** [/v3/xrp/account/{account}/balance](https://apidoc.tatum.io/tag/XRP#operation/XrpGetAccountBalance) | Get Account Balance
 [**xrpGetAccountInfo()**](#xrpgetaccountinfo) | **GET** [/v3/xrp/account/{account}](https://apidoc.tatum.io/tag/XRP#operation/XrpGetAccountInfo) | Get Account info
@@ -13,30 +14,34 @@ Method | HTTP request | Description
 [**xrpGetLastClosedLedger()**](#xrpgetlastclosedledger) | **GET** [/v3/xrp/info](https://apidoc.tatum.io/tag/XRP#operation/XrpGetLastClosedLedger) | Get XRP Blockchain Information
 [**xrpGetLedger()**](#xrpgetledger) | **GET** [/v3/xrp/ledger/{i}](https://apidoc.tatum.io/tag/XRP#operation/XrpGetLedger) | Get Ledger
 [**xrpGetTransaction()**](#xrpgettransaction) | **GET** [/v3/xrp/transaction/{hash}](https://apidoc.tatum.io/tag/XRP#operation/XrpGetTransaction) | Get XRP Transaction by hash
-[**xrpTransferBlockchain()**](#xrptransferblockchain) | **POST** [/v3/xrp/transaction](https://apidoc.tatum.io/tag/XRP#operation/XrpTransferBlockchain) | Send XRP from address to address
-[**xrpTrustLineBlockchain()**](#xrptrustlineblockchain) | **POST** [/v3/xrp/trust](https://apidoc.tatum.io/tag/XRP#operation/XrpTrustLineBlockchain) | Create / Update / Delete XRP trust line
+[**xrpTransactionTransferXrpBlockchain()**](#xrptransactiontransferxrpblockchain) | **POST** [/v3/xrp/transaction#postTransferXrpBlockchain](https://apidoc.tatum.io/tag/XRP#operation/xrpTransactionTransferXrpBlockchain) | Send XRP from address to address
+[**xrpTransactionTransferXrpBlockchainAsset()**](#xrptransactiontransferxrpblockchainasset) | **POST** [/v3/xrp/transaction#postTransferXrpBlockchainAsset](https://apidoc.tatum.io/tag/XRP#operation/xrpTransactionTransferXrpBlockchainAsset) | Send XRP from address to address
+[**xrpTransactionTransferXrpBlockchainAssetKMS()**](#xrptransactiontransferxrpblockchainassetkms) | **POST** [/v3/xrp/transaction#postTransferXrpBlockchainAssetKMS](https://apidoc.tatum.io/tag/XRP#operation/xrpTransactionTransferXrpBlockchainAssetKMS) | Send XRP from address to address
+[**xrpTransactionTransferXrpBlockchainKMS()**](#xrptransactiontransferxrpblockchainkms) | **POST** [/v3/xrp/transaction#postTransferXrpBlockchainKMS](https://apidoc.tatum.io/tag/XRP#operation/xrpTransactionTransferXrpBlockchainKMS) | Send XRP from address to address
+[**xrpTrustLineXrpBlockchain()**](#xrptrustlinexrpblockchain) | **POST** [/v3/xrp/trust#postTrustLineXrpBlockchain](https://apidoc.tatum.io/tag/XRP#operation/xrpTrustLineXrpBlockchain) | Create / Update / Delete XRP trust line
+[**xrpTrustLineXrpBlockchainKMS()**](#xrptrustlinexrpblockchainkms) | **POST** [/v3/xrp/trust#postTrustLineXrpBlockchainKMS](https://apidoc.tatum.io/tag/XRP#operation/xrpTrustLineXrpBlockchainKMS) | Create / Update / Delete XRP trust line
 [**xrpWallet()**](#xrpwallet) | **GET** [/v3/xrp/account](https://apidoc.tatum.io/tag/XRP#operation/XrpWallet) | Generate XRP account
 
 
-## `xrpAccountSettings()`
+## `xrpAccountSettingsAccountSettingsXrpBlockchain()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettings(
-    \Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettingsAccountSettingsXrpBlockchain(
+    \Tatum\Model\AccountSettingsXrpBlockchain $account_settings_xrp_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_account_settings_request** | [**\Tatum\Model\XrpAccountSettingsRequest**](../Model/XrpAccountSettingsRequest.md) |  |
+ **$account_settings_xrp_blockchain** | [**\Tatum\Model\AccountSettingsXrpBlockchain**](../Model/AccountSettingsXrpBlockchain.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -46,7 +51,39 @@ Modify XRP account
 
 ### Example
 
-[✨ View "xrpAccountSettings.php"](../../examples/Api/XRPApi/xrpAccountSettings.php)
+[✨ View "xrpAccountSettingsAccountSettingsXrpBlockchain.php"](../../examples/Api/XRPApi/xrpAccountSettingsAccountSettingsXrpBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpAccountSettingsAccountSettingsXrpBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettingsAccountSettingsXrpBlockchainKMS(
+    \Tatum\Model\AccountSettingsXrpBlockchainKMS $account_settings_xrp_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$account_settings_xrp_blockchain_kms** | [**\Tatum\Model\AccountSettingsXrpBlockchainKMS**](../Model/AccountSettingsXrpBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Modify XRP account
+
+AccountSettingsXrpBlockchainKMS operation
+
+### Example
+
+[✨ View "xrpAccountSettingsAccountSettingsXrpBlockchainKMS.php"](../../examples/Api/XRPApi/xrpAccountSettingsAccountSettingsXrpBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -304,25 +341,25 @@ Get XRP Transaction by hash
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `xrpTransferBlockchain()`
+## `xrpTransactionTransferXrpBlockchain()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransferBlockchain(
-    \Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchain(
+    \Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_transfer_blockchain_request** | [**\Tatum\Model\XrpTransferBlockchainRequest**](../Model/XrpTransferBlockchainRequest.md) |  |
+ **$transfer_xrp_blockchain** | [**\Tatum\Model\TransferXrpBlockchain**](../Model/TransferXrpBlockchain.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -332,29 +369,125 @@ Send XRP from address to address
 
 ### Example
 
-[✨ View "xrpTransferBlockchain.php"](../../examples/Api/XRPApi/xrpTransferBlockchain.php)
+[✨ View "xrpTransactionTransferXrpBlockchain.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `xrpTrustLineBlockchain()`
+## `xrpTransactionTransferXrpBlockchainAsset()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineBlockchain(
-    \Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request
-): \Tatum\Model\BtcTransferBlockchain200Response
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchainAsset(
+    \Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xrp_trust_line_blockchain_request** | [**\Tatum\Model\XrpTrustLineBlockchainRequest**](../Model/XrpTrustLineBlockchainRequest.md) |  |
+ **$transfer_xrp_blockchain_asset** | [**\Tatum\Model\TransferXrpBlockchainAsset**](../Model/TransferXrpBlockchainAsset.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XRP from address to address
+
+TransferXrpBlockchainAsset operation
+
+### Example
+
+[✨ View "xrpTransactionTransferXrpBlockchainAsset.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchainAsset.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpTransactionTransferXrpBlockchainAssetKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchainAssetKMS(
+    \Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp_blockchain_asset_kms** | [**\Tatum\Model\TransferXrpBlockchainAssetKMS**](../Model/TransferXrpBlockchainAssetKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XRP from address to address
+
+TransferXrpBlockchainAssetKMS operation
+
+### Example
+
+[✨ View "xrpTransactionTransferXrpBlockchainAssetKMS.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchainAssetKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpTransactionTransferXrpBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchainKMS(
+    \Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp_blockchain_kms** | [**\Tatum\Model\TransferXrpBlockchainKMS**](../Model/TransferXrpBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send XRP from address to address
+
+TransferXrpBlockchainKMS operation
+
+### Example
+
+[✨ View "xrpTransactionTransferXrpBlockchainKMS.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpTrustLineXrpBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineXrpBlockchain(
+    \Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xrp_blockchain** | [**\Tatum\Model\TrustLineXrpBlockchain**](../Model/TrustLineXrpBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
 
 ### Description
 
@@ -364,7 +497,39 @@ Create / Update / Delete XRP trust line
 
 ### Example
 
-[✨ View "xrpTrustLineBlockchain.php"](../../examples/Api/XRPApi/xrpTrustLineBlockchain.php)
+[✨ View "xrpTrustLineXrpBlockchain.php"](../../examples/Api/XRPApi/xrpTrustLineXrpBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `xrpTrustLineXrpBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineXrpBlockchainKMS(
+    \Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xrp_blockchain_kms** | [**\Tatum\Model\TrustLineXrpBlockchainKMS**](../Model/TrustLineXrpBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Create / Update / Delete XRP trust line
+
+TrustLineXrpBlockchainKMS operation
+
+### Example
+
+[✨ View "xrpTrustLineXrpBlockchainKMS.php"](../../examples/Api/XRPApi/xrpTrustLineXrpBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

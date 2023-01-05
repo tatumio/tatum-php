@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class LtcInfo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "LtcInfo";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 0]], 

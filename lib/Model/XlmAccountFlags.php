@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class XlmAccountFlags extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XlmAccount_flags";
     protected static $_definition = [
         "auth_required" => ["auth_required", "bool", null, "getAuthRequired", "setAuthRequired", null, ["r" => 0]], 

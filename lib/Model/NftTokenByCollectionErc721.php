@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class NftTokenByCollectionErc721 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "NftTokenByCollectionErc721";
     protected static $_definition = [
         "token_id" => ["tokenId", "string", 'uint256', "getTokenId", "setTokenId", null, ["r" => 1, "xl" => 78]], 

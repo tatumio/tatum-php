@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ApproveNftSpendingCeloKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_CELO = 'CELO';
     protected static $_name = "ApproveNftSpendingCeloKMS";
     protected static $_definition = [

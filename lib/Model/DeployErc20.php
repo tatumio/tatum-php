@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class DeployErc20 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DeployErc20";
     protected static $_definition = [
         "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "nl" => 1, "xl" => 30]], 

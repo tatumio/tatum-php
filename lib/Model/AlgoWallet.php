@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AlgoWallet extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AlgoWallet";
     protected static $_definition = [
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 0, "nl" => 58, "xl" => 58]], 

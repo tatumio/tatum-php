@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FeeAndChange extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FeeAndChange";
     protected static $_definition = [
         "change_address" => ["changeAddress", "string", null, "getChangeAddress", "setChangeAddress", null, ["r" => 1]], 

@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class XrpAccountTxTransactionsInnerMeta extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpAccountTx_transactions_inner_meta";
     protected static $_definition = [
         "affected_nodes" => ["AffectedNodes", "\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInner[]", null, "getAffectedNodes", "setAffectedNodes", null, ["r" => 0, "c" => 1]], 

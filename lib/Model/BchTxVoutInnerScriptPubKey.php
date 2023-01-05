@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BchTxVoutInnerScriptPubKey extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BchTx_vout_inner_scriptPubKey";
     protected static $_definition = [
         "hex" => ["hex", "string", null, "getHex", "setHex", null, ["r" => 0]], 

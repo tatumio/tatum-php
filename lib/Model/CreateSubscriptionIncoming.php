@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionIncoming extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION = 'ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION';
     protected static $_name = "CreateSubscriptionIncoming";
     protected static $_definition = [

@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class TronTxRawData extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TronTx_rawData";
     protected static $_definition = [
         "contract" => ["contract", "\Tatum\Model\TronTxRawDataContractInner[]", null, "getContract", "setContract", null, ["r" => 1, "c" => 1]], 

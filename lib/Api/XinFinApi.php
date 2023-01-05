@@ -23,52 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class XinFinApi extends AbstractApi {
     /**
-     * Invoke a method in a smart contract on XinFin
-     *
-     * @param \Tatum\Model\XdcBlockchainSmartContractInvocationRequest $xdc_blockchain_smart_contract_invocation_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-     */
-    public function xdcBlockchainSmartContractInvocation(\Tatum\Model\XdcBlockchainSmartContractInvocationRequest $xdc_blockchain_smart_contract_invocation_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/smartcontract", [], $rHeaders, [], $xdc_blockchain_smart_contract_invocation_request
-            ), 
-            "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send XDC / ERC20 from account to account
-     *
-     * @param \Tatum\Model\XdcBlockchainTransferRequest $xdc_blockchain_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function xdcBlockchainTransfer(\Tatum\Model\XdcBlockchainTransferRequest $xdc_blockchain_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/transaction", [], $rHeaders, [], $xdc_blockchain_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast signed XDC transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -283,6 +237,121 @@ class XinFinApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/xdc/transaction/count/{address}", ["address" => $address]), [], $rHeaders, []
             ), 
             "float"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on XinFin
+     *
+     * @param \Tatum\Model\CallXdcReadSmartContractMethod $call_xdc_read_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function xdcSmartcontractCallXdcReadSmartContractMethod(\Tatum\Model\CallXdcReadSmartContractMethod $call_xdc_read_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xdc/smartcontract#postCallXdcReadSmartContractMethod", [], $rHeaders, [], $call_xdc_read_smart_contract_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on XinFin
+     *
+     * @param \Tatum\Model\CallXdcSmartContractMethod $call_xdc_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function xdcSmartcontractCallXdcSmartContractMethod(\Tatum\Model\CallXdcSmartContractMethod $call_xdc_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xdc/smartcontract#postCallXdcSmartContractMethod", [], $rHeaders, [], $call_xdc_smart_contract_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on XinFin
+     *
+     * @param \Tatum\Model\CallXdcSmartContractMethodKMS $call_xdc_smart_contract_method_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function xdcSmartcontractCallXdcSmartContractMethodKMS(\Tatum\Model\CallXdcSmartContractMethodKMS $call_xdc_smart_contract_method_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xdc/smartcontract#postCallXdcSmartContractMethodKMS", [], $rHeaders, [], $call_xdc_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XDC / ERC20 from account to account
+     *
+     * @param \Tatum\Model\TransferXdcBlockchain $transfer_xdc_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function xdcTransactionTransferXdcBlockchain(\Tatum\Model\TransferXdcBlockchain $transfer_xdc_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xdc/transaction#postTransferXdcBlockchain", [], $rHeaders, [], $transfer_xdc_blockchain
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XDC / ERC20 from account to account
+     *
+     * @param \Tatum\Model\TransferXdcBlockchainKMS $transfer_xdc_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function xdcTransactionTransferXdcBlockchainKMS(\Tatum\Model\TransferXdcBlockchainKMS $transfer_xdc_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xdc/transaction#postTransferXdcBlockchainKMS", [], $rHeaders, [], $transfer_xdc_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

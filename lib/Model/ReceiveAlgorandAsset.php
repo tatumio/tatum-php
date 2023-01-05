@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ReceiveAlgorandAsset extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "ReceiveAlgorandAsset";
     protected static $_definition = [
         "asset_id" => ["assetId", "float", null, "getAssetId", "setAssetId", null, ["r" => 1]], 

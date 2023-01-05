@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionBalanceAttr extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_OF_BALANCE_ACCOUNT = 'account';
     public const TYPE_OF_BALANCE_AVAILABLE = 'available';
     protected static $_name = "CreateSubscriptionBalance_attr";

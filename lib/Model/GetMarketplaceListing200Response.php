@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GetMarketplaceListing200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const STATE__0 = '0';
     public const STATE__1 = '1';
     public const STATE__2 = '2';

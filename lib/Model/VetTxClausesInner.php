@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class VetTxClausesInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "VetTx_clauses_inner";
     protected static $_definition = [
         "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class KlaytnBlock extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "KlaytnBlock";
     protected static $_definition = [
         "difficulty" => ["difficulty", "string", null, "getDifficulty", "setDifficulty", null, ["r" => 0]], 

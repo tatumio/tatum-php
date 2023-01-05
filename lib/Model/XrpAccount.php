@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpAccount extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpAccount";
     protected static $_definition = [
         "account_data" => ["account_data", "\Tatum\Model\XrpAccountAccountData", null, "getAccountData", "setAccountData", null, ["r" => 0]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionTxInTheBlock extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_TRANSACTION_IN_THE_BLOCK = 'TRANSACTION_IN_THE_BLOCK';
     protected static $_name = "CreateSubscriptionTxInTheBlock";
     protected static $_definition = [

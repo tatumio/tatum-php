@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferXlmBlockchainKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferXlmBlockchainKMS";
     protected static $_definition = [
         "from_account" => ["fromAccount", "string", null, "getFromAccount", "setFromAccount", null, ["r" => 1, "nl" => 56, "xl" => 56]], 

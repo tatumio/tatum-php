@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class FlowCustomTransactionPKArgsInnerValue extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowCustomTransactionPK_args_inner_value";
     protected static $_definition = [
     ];

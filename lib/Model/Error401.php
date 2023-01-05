@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Error401 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Error401";
     protected static $_definition = [
         "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 1]], 

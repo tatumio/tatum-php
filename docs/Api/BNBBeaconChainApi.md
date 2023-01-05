@@ -4,7 +4,6 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bnbBlockchainTransfer()**](#bnbblockchaintransfer) | **POST** [/v3/bnb/transaction](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbBlockchainTransfer) | Send Binance / Binance Token from account to account
 [**bnbBroadcast()**](#bnbbroadcast) | **POST** [/v3/bnb/broadcast](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbBroadcast) | Broadcast signed BNB transaction
 [**bnbGenerateWallet()**](#bnbgeneratewallet) | **GET** [/v3/bnb/account](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGenerateWallet) | Generate Binance wallet
 [**bnbGetAccount()**](#bnbgetaccount) | **GET** [/v3/bnb/account/{address}](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetAccount) | Get Binance Account
@@ -12,39 +11,9 @@ Method | HTTP request | Description
 [**bnbGetCurrentBlock()**](#bnbgetcurrentblock) | **GET** [/v3/bnb/block/current](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetCurrentBlock) | Get Binance current block
 [**bnbGetTransaction()**](#bnbgettransaction) | **GET** [/v3/bnb/transaction/{hash}](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetTransaction) | Get Binance Transaction
 [**bnbGetTxByAccount()**](#bnbgettxbyaccount) | **GET** [/v3/bnb/account/transaction/{address}](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/BnbGetTxByAccount) | Get Binance Transactions By Address
+[**bnbTransactionTransferBnbBlockchain()**](#bnbtransactiontransferbnbblockchain) | **POST** [/v3/bnb/transaction#postTransferBnbBlockchain](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/bnbTransactionTransferBnbBlockchain) | Send Binance / Binance Token from account to account
+[**bnbTransactionTransferBnbBlockchainKMS()**](#bnbtransactiontransferbnbblockchainkms) | **POST** [/v3/bnb/transaction#postTransferBnbBlockchainKMS](https://apidoc.tatum.io/tag/BNBBeaconChain#operation/bnbTransactionTransferBnbBlockchainKMS) | Send Binance / Binance Token from account to account
 
-
-## `bnbBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBlockchainTransfer(
-    \Tatum\Model\BnbBlockchainTransferRequest $bnb_blockchain_transfer_request
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$bnb_blockchain_transfer_request** | [**\Tatum\Model\BnbBlockchainTransferRequest**](../Model/BnbBlockchainTransferRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send Binance / Binance Token from account to account
-
-<h4>10 credits per API call.</h4><br/> <p>Send Binance or Binance Token token from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production,  <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request.  Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "bnbBlockchainTransfer.php"](../../examples/Api/BNBBeaconChainApi/bnbBlockchainTransfer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bnbBroadcast()`
 
@@ -273,5 +242,69 @@ Get Binance Transactions By Address
 ### Example
 
 [✨ View "bnbGetTxByAccount.php"](../../examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bnbTransactionTransferBnbBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbTransactionTransferBnbBlockchain(
+    \Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bnb_blockchain** | [**\Tatum\Model\TransferBnbBlockchain**](../Model/TransferBnbBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send Binance / Binance Token from account to account
+
+<h4>10 credits per API call.</h4><br/> <p>Send Binance or Binance Token token from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production,  <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request.  Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "bnbTransactionTransferBnbBlockchain.php"](../../examples/Api/BNBBeaconChainApi/bnbTransactionTransferBnbBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bnbTransactionTransferBnbBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbTransactionTransferBnbBlockchainKMS(
+    \Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bnb_blockchain_kms** | [**\Tatum\Model\TransferBnbBlockchainKMS**](../Model/TransferBnbBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send Binance / Binance Token from account to account
+
+TransferBnbBlockchainKMS operation
+
+### Example
+
+[✨ View "bnbTransactionTransferBnbBlockchainKMS.php"](../../examples/Api/BNBBeaconChainApi/bnbTransactionTransferBnbBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

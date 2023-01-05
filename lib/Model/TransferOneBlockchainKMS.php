@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferOneBlockchainKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_ONE = 'ONE';
     protected static $_name = "TransferOneBlockchainKMS";
     protected static $_definition = [

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaTxTransaction extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaTxTransaction";
     protected static $_definition = [
         "message" => ["message", "\Tatum\Model\SolanaTxMessage", null, "getMessage", "setMessage", null, ["r" => 0]], 

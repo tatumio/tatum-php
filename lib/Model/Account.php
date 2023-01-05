@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Account extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "Account";
     protected static $_definition = [
         "id" => ["id", "string", null, "getId", "setId", null, ["r" => 1]], 

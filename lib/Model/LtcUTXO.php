@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class LtcUTXO extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "LtcUTXO";
     protected static $_definition = [
         "version" => ["version", "float", null, "getVersion", "setVersion", null, ["r" => 0]], 

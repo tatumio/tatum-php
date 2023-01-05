@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class DeployErc20Fee extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "DeployErc20_fee";
     protected static $_definition = [
         "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]], 

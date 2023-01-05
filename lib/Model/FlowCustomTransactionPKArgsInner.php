@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowCustomTransactionPKArgsInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_IDENTITY = 'Identity';
     public const TYPE_U_INT = 'UInt';
     public const TYPE_INT = 'Int';

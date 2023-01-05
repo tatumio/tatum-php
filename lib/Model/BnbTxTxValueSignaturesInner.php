@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbTxTxValueSignaturesInner extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbTx_tx_value_signatures_inner";
     protected static $_definition = [
         "account_number" => ["account_number", "string", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0]], 

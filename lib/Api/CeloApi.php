@@ -23,52 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class CeloApi extends AbstractApi {
     /**
-     * Invoke a method in a smart contract on Celo
-     *
-     * @param \Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-     */
-    public function celoBlockchainSmartContractInvocation(\Tatum\Model\CeloBlockchainSmartContractInvocationRequest $celo_blockchain_smart_contract_invocation_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthBlockchainSmartContractInvocation200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/smartcontract", [], $rHeaders, [], $celo_blockchain_smart_contract_invocation_request
-            ), 
-            "\Tatum\Model\EthBlockchainSmartContractInvocation200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send Celo / ERC20 from account to account
-     *
-     * @param \Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
-     */
-    public function celoBlockchainTransfer(\Tatum\Model\CeloBlockchainTransferRequest $celo_blockchain_transfer_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/transaction", [], $rHeaders, [], $celo_blockchain_transfer_request
-            ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast signed Celo transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -333,6 +287,121 @@ class CeloApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/celo/transaction/count/{address}", ["address" => $address]), [], $rHeaders, []
             ), 
             "float"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Celo
+     *
+     * @param \Tatum\Model\CallCeloReadSmartContractMethod $call_celo_read_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function celoSmartcontractCallCeloReadSmartContractMethod(\Tatum\Model\CallCeloReadSmartContractMethod $call_celo_read_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/celo/smartcontract#postCallCeloReadSmartContractMethod", [], $rHeaders, [], $call_celo_read_smart_contract_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Celo
+     *
+     * @param \Tatum\Model\CallCeloSmartContractMethod $call_celo_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function celoSmartcontractCallCeloSmartContractMethod(\Tatum\Model\CallCeloSmartContractMethod $call_celo_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/celo/smartcontract#postCallCeloSmartContractMethod", [], $rHeaders, [], $call_celo_smart_contract_method
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Celo
+     *
+     * @param \Tatum\Model\CallCeloSmartContractMethodKMS $call_celo_smart_contract_method_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+     */
+    public function celoSmartcontractCallCeloSmartContractMethodKMS(\Tatum\Model\CallCeloSmartContractMethodKMS $call_celo_smart_contract_method_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/celo/smartcontract#postCallCeloSmartContractMethodKMS", [], $rHeaders, [], $call_celo_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Celo / ERC20 from account to account
+     *
+     * @param \Tatum\Model\TransferCeloBlockchain $transfer_celo_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function celoTransactionTransferCeloBlockchain(\Tatum\Model\TransferCeloBlockchain $transfer_celo_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/celo/transaction#postTransferCeloBlockchain", [], $rHeaders, [], $transfer_celo_blockchain
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send Celo / ERC20 from account to account
+     *
+     * @param \Tatum\Model\TransferCeloBlockchainKMS $transfer_celo_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function celoTransactionTransferCeloBlockchainKMS(\Tatum\Model\TransferCeloBlockchainKMS $transfer_celo_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/celo/transaction#postTransferCeloBlockchainKMS", [], $rHeaders, [], $transfer_celo_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

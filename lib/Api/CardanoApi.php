@@ -277,21 +277,90 @@ class CardanoApi extends AbstractApi {
     /**
      * Send ADA to Cardano addresses
      *
-     * @param \Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request 
+     * @param \Tatum\Model\AdaTransactionFromAddress $ada_transaction_from_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function adaTransferBlockchain(\Tatum\Model\AdaTransferBlockchainRequest $ada_transfer_blockchain_request) {
+    public function adaTransactionAdaTransactionFromAddress(\Tatum\Model\AdaTransactionFromAddress $ada_transaction_from_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", [], $rHeaders, [], $ada_transfer_blockchain_request
+                $this->_caller->config(), "POST", "/v3/ada/transaction#postAdaTransactionFromAddress", [], $rHeaders, [], $ada_transaction_from_address
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ADA to Cardano addresses
+     *
+     * @param \Tatum\Model\AdaTransactionFromAddressKMS $ada_transaction_from_address_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function adaTransactionAdaTransactionFromAddressKMS(\Tatum\Model\AdaTransactionFromAddressKMS $ada_transaction_from_address_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ada/transaction#postAdaTransactionFromAddressKMS", [], $rHeaders, [], $ada_transaction_from_address_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ADA to Cardano addresses
+     *
+     * @param \Tatum\Model\AdaTransactionFromUTXO $ada_transaction_from_utxo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function adaTransactionAdaTransactionFromUTXO(\Tatum\Model\AdaTransactionFromUTXO $ada_transaction_from_utxo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ada/transaction#postAdaTransactionFromUTXO", [], $rHeaders, [], $ada_transaction_from_utxo
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ADA to Cardano addresses
+     *
+     * @param \Tatum\Model\AdaTransactionFromUTXOKMS $ada_transaction_from_utxokms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function adaTransactionAdaTransactionFromUTXOKMS(\Tatum\Model\AdaTransactionFromUTXOKMS $ada_transaction_from_utxokms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/ada/transaction#postAdaTransactionFromUTXOKMS", [], $rHeaders, [], $ada_transaction_from_utxokms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

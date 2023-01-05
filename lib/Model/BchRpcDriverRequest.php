@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class BchRpcDriverRequest extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BchRpcDriver_request";
     protected static $_definition = [
         "jsonrpc" => ["jsonrpc", "string", null, "getJsonrpc", "setJsonrpc", null, ["r" => 0]], 

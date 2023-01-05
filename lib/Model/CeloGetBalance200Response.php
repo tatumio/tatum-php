@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CeloGetBalance200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "CeloGetBalance_200_response";
     protected static $_definition = [
         "celo" => ["celo", "string", null, "getCelo", "setCelo", null, ["r" => 0]], 

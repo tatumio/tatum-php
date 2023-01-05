@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GetIPFSData403Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "GetIPFSData_403_response";
     protected static $_definition = [
         "message" => ["message", "string", null, "getMessage", "setMessage", null, ["r" => 1]], 

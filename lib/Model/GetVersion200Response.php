@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GetVersion200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "getVersion_200_response";
     protected static $_definition = [
         "version" => ["version", "string", null, "getVersion", "setVersion", null, ["r" => 0]], 

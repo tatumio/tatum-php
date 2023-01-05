@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class NftRoyaltyErc721 extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "NftRoyaltyErc721";
     protected static $_definition = [
         "addresses" => ["addresses", "string[]", null, "getAddresses", "setAddresses", null, ["r" => 0, "c" => 1]], 

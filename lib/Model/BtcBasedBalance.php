@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BtcBasedBalance extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BtcBasedBalance";
     protected static $_definition = [
         "incoming" => ["incoming", "string", null, "getIncoming", "setIncoming", null, ["r" => 0]], 

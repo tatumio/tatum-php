@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransactionFilterCustomer extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TRANSACTION_TYPE_FAILED = 'FAILED';
     public const TRANSACTION_TYPE_DEBIT_PAYMENT = 'DEBIT_PAYMENT';
     public const TRANSACTION_TYPE_CREDIT_PAYMENT = 'CREDIT_PAYMENT';

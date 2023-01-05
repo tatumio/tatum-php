@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpLedger extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpLedger";
     protected static $_definition = [
         "ledger" => ["ledger", "\Tatum\Model\XrpLedgerLedger", null, "getLedger", "setLedger", null, ["r" => 0]], 

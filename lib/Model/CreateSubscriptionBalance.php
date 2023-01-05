@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionBalance extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_ACCOUNT_BALANCE_LIMIT = 'ACCOUNT_BALANCE_LIMIT';
     protected static $_name = "CreateSubscriptionBalance";
     protected static $_definition = [

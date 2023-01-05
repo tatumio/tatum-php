@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class CreateSubscriptionContractLogEvent extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const TYPE_CONTRACT_LOG_EVENT = 'CONTRACT_LOG_EVENT';
     protected static $_name = "CreateSubscriptionContractLogEvent";
     protected static $_definition = [

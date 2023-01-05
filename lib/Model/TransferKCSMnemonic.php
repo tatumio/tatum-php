@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class TransferKCSMnemonic extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "TransferKCSMnemonic";
     protected static $_definition = [
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 

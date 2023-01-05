@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class MultiTokenGetTransaction200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "MultiTokenGetTransaction_200_response";
     protected static $_definition = [
         "block_hash" => ["blockHash", "string", null, "getBlockHash", "setBlockHash", null, ["r" => 0]], 

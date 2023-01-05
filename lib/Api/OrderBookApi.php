@@ -370,19 +370,42 @@ class OrderBookApi extends AbstractApi {
     /**
      * Store buy / sell trade
      *
-     * @param \Tatum\Model\StoreTradeRequest $store_trade_request 
+     * @param \Tatum\Model\CreateFutureTrade $create_future_trade 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Id
      */
-    public function storeTrade(\Tatum\Model\StoreTradeRequest $store_trade_request) {
+    public function tradeCreateFutureTrade(\Tatum\Model\CreateFutureTrade $create_future_trade) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade", [], $rHeaders, [], $store_trade_request
+                $this->_caller->config(), "POST", "/v3/trade#postCreateFutureTrade", [], $rHeaders, [], $create_future_trade
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Store buy / sell trade
+     *
+     * @param \Tatum\Model\CreateTrade $create_trade 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function tradeCreateTrade(\Tatum\Model\CreateTrade $create_trade) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/trade#postCreateTrade", [], $rHeaders, [], $create_trade
             ), 
             "\Tatum\Model\Id"
         );

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class NftGetBalanceScAlgo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "NftGetBalanceScAlgo";
     protected static $_definition = [
         "data" => ["data", "\Tatum\Model\NftGetBalanceScAlgoDataInner[]", null, "getData", "setData", null, ["r" => 0, "c" => 1]]

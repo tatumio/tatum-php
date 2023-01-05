@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class GetMarketplaceInfo200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "GetMarketplaceInfo_200_response";
     protected static $_definition = [
         "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null, ["r" => 1, "nl" => 44, "xl" => 44]], 

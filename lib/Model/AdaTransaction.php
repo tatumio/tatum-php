@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class AdaTransaction extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "AdaTransaction";
     protected static $_definition = [
         "from_address" => ["fromAddress", "\Tatum\Model\AdaTransactionFromAddressInner[]", null, "getFromAddress", "setFromAddress", null, ["r" => 0, "c" => 1]], 

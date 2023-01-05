@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BroadcastResponse extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BroadcastResponse";
     protected static $_definition = [
         "completed" => ["completed", "bool", null, "getCompleted", "setCompleted", null, ["r" => 0]], 

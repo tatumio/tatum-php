@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class XrpInfo extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpInfo";
     protected static $_definition = [
         "ledger_hash" => ["ledger_hash", "string", null, "getLedgerHash", "setLedgerHash", null, ["r" => 0]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class VetGetEnergy200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "VetGetEnergy_200_response";
     protected static $_definition = [
         "energy" => ["energy", "string", null, "getEnergy", "setEnergy", null, ["r" => 0]]

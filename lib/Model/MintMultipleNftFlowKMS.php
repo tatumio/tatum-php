@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class MintMultipleNftFlowKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_FLOW = 'FLOW';
     protected static $_name = "MintMultipleNftFlowKMS";
     protected static $_definition = [

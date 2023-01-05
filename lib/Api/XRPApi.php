@@ -25,21 +25,44 @@ class XRPApi extends AbstractApi {
     /**
      * Modify XRP account
      *
-     * @param \Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request 
+     * @param \Tatum\Model\AccountSettingsXrpBlockchain $account_settings_xrp_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function xrpAccountSettings(\Tatum\Model\XrpAccountSettingsRequest $xrp_account_settings_request) {
+    public function xrpAccountSettingsAccountSettingsXrpBlockchain(\Tatum\Model\AccountSettingsXrpBlockchain $account_settings_xrp_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/account/settings", [], $rHeaders, [], $xrp_account_settings_request
+                $this->_caller->config(), "POST", "/v3/xrp/account/settings#postAccountSettingsXrpBlockchain", [], $rHeaders, [], $account_settings_xrp_blockchain
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Modify XRP account
+     *
+     * @param \Tatum\Model\AccountSettingsXrpBlockchainKMS $account_settings_xrp_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function xrpAccountSettingsAccountSettingsXrpBlockchainKMS(\Tatum\Model\AccountSettingsXrpBlockchainKMS $account_settings_xrp_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xrp/account/settings#postAccountSettingsXrpBlockchainKMS", [], $rHeaders, [], $account_settings_xrp_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -245,21 +268,90 @@ class XRPApi extends AbstractApi {
     /**
      * Send XRP from address to address
      *
-     * @param \Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request 
+     * @param \Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function xrpTransferBlockchain(\Tatum\Model\XrpTransferBlockchainRequest $xrp_transfer_blockchain_request) {
+    public function xrpTransactionTransferXrpBlockchain(\Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/transaction", [], $rHeaders, [], $xrp_transfer_blockchain_request
+                $this->_caller->config(), "POST", "/v3/xrp/transaction#postTransferXrpBlockchain", [], $rHeaders, [], $transfer_xrp_blockchain
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XRP from address to address
+     *
+     * @param \Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function xrpTransactionTransferXrpBlockchainAsset(\Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xrp/transaction#postTransferXrpBlockchainAsset", [], $rHeaders, [], $transfer_xrp_blockchain_asset
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XRP from address to address
+     *
+     * @param \Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function xrpTransactionTransferXrpBlockchainAssetKMS(\Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xrp/transaction#postTransferXrpBlockchainAssetKMS", [], $rHeaders, [], $transfer_xrp_blockchain_asset_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XRP from address to address
+     *
+     * @param \Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function xrpTransactionTransferXrpBlockchainKMS(\Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xrp/transaction#postTransferXrpBlockchainKMS", [], $rHeaders, [], $transfer_xrp_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;
@@ -268,21 +360,44 @@ class XRPApi extends AbstractApi {
     /**
      * Create / Update / Delete XRP trust line
      *
-     * @param \Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request 
+     * @param \Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BtcTransferBlockchain200Response
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function xrpTrustLineBlockchain(\Tatum\Model\XrpTrustLineBlockchainRequest $xrp_trust_line_blockchain_request) {
+    public function xrpTrustLineXrpBlockchain(\Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BtcTransferBlockchain200Response $result */
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/trust", [], $rHeaders, [], $xrp_trust_line_blockchain_request
+                $this->_caller->config(), "POST", "/v3/xrp/trust#postTrustLineXrpBlockchain", [], $rHeaders, [], $trust_line_xrp_blockchain
             ), 
-            "\Tatum\Model\BtcTransferBlockchain200Response"
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create / Update / Delete XRP trust line
+     *
+     * @param \Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function xrpTrustLineXrpBlockchainKMS(\Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xrp/trust#postTrustLineXrpBlockchainKMS", [], $rHeaders, [], $trust_line_xrp_blockchain_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

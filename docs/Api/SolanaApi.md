@@ -4,47 +4,16 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**solanaBlockchainTransfer()**](#solanablockchaintransfer) | **POST** [/v3/solana/transaction](https://apidoc.tatum.io/tag/Solana#operation/SolanaBlockchainTransfer) | Send SOL from account to account
 [**solanaBroadcastConfirm()**](#solanabroadcastconfirm) | **POST** [/v3/solana/broadcast/confirm](https://apidoc.tatum.io/tag/Solana#operation/SolanaBroadcastConfirm) | Broadcast and confirm signed Solana transaction
 [**solanaGenerateWallet()**](#solanageneratewallet) | **GET** [/v3/solana/wallet](https://apidoc.tatum.io/tag/Solana#operation/SolanaGenerateWallet) | Generate Solana wallet
 [**solanaGetBalance()**](#solanagetbalance) | **GET** [/v3/solana/account/balance/{address}](https://apidoc.tatum.io/tag/Solana#operation/SolanaGetBalance) | Get Solana Account balance
 [**solanaGetBlock()**](#solanagetblock) | **GET** [/v3/solana/block/{height}](https://apidoc.tatum.io/tag/Solana#operation/SolanaGetBlock) | Get Solana block by number
 [**solanaGetCurrentBlock()**](#solanagetcurrentblock) | **GET** [/v3/solana/block/current](https://apidoc.tatum.io/tag/Solana#operation/SolanaGetCurrentBlock) | Get current block number
 [**solanaGetTransaction()**](#solanagettransaction) | **GET** [/v3/solana/transaction/{hash}](https://apidoc.tatum.io/tag/Solana#operation/SolanaGetTransaction) | Get Solana Transaction
+[**solanaTransactionTransferSolanaBlockchain()**](#solanatransactiontransfersolanablockchain) | **POST** [/v3/solana/transaction#postTransferSolanaBlockchain](https://apidoc.tatum.io/tag/Solana#operation/solanaTransactionTransferSolanaBlockchain) | Send SOL from account to account
+[**solanaTransactionTransferSolanaBlockchainKMS()**](#solanatransactiontransfersolanablockchainkms) | **POST** [/v3/solana/transaction#postTransferSolanaBlockchainKMS](https://apidoc.tatum.io/tag/Solana#operation/solanaTransactionTransferSolanaBlockchainKMS) | Send SOL from account to account
 [**solanaWeb3Driver()**](#solanaweb3driver) | **POST** [/v3/solana/web3/{xApiKey}](https://apidoc.tatum.io/tag/Solana#operation/SolanaWeb3Driver) | JSON RPC HTTP driver
 
-
-## `solanaBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaBlockchainTransfer(
-    \Tatum\Model\SolanaBlockchainTransferRequest $solana_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$solana_blockchain_transfer_request** | [**\Tatum\Model\SolanaBlockchainTransferRequest**](../Model/SolanaBlockchainTransferRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Send SOL from account to account
-
-<h4>2 credits per API call.</h4><br/> <p>Send SOL from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "solanaBlockchainTransfer.php"](../../examples/Api/SolanaApi/solanaBlockchainTransfer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaBroadcastConfirm()`
 
@@ -231,6 +200,70 @@ Get Solana Transaction
 ### Example
 
 [✨ View "solanaGetTransaction.php"](../../examples/Api/SolanaApi/solanaGetTransaction.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `solanaTransactionTransferSolanaBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->solana()->solanaTransactionTransferSolanaBlockchain(
+    \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_solana_blockchain** | [**\Tatum\Model\TransferSolanaBlockchain**](../Model/TransferSolanaBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send SOL from account to account
+
+<h4>2 credits per API call.</h4><br/> <p>Send SOL from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "solanaTransactionTransferSolanaBlockchain.php"](../../examples/Api/SolanaApi/solanaTransactionTransferSolanaBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `solanaTransactionTransferSolanaBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->solana()->solanaTransactionTransferSolanaBlockchainKMS(
+    \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_solana_blockchain_kms** | [**\Tatum\Model\TransferSolanaBlockchainKMS**](../Model/TransferSolanaBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send SOL from account to account
+
+TransferSolanaBlockchainKMS operation
+
+### Example
+
+[✨ View "solanaTransactionTransferSolanaBlockchainKMS.php"](../../examples/Api/SolanaApi/solanaTransactionTransferSolanaBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

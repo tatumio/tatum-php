@@ -104,7 +104,7 @@ class EthereumTest extends TestCase {
         );
 
         // Prepare the transaction
-        $transaction = (new Model\EthBlockchainTransferRequest())
+        $transaction = (new Model\TransferEthBlockchain())
             ->setFromPrivateKey($fromPrivateKey->getKey())
             ->setTo($toAddress->getAddress())
             ->setAmount(1)
@@ -132,7 +132,7 @@ class EthereumTest extends TestCase {
         );
 
         // Prepare the transaction
-        $transaction = (new Model\EthBlockchainTransferRequest())
+        $transaction = (new Model\TransferEthBlockchain())
             ->setFromPrivateKey($fromPrivateKey->getKey())
             ->setTo($toAddress->getAddress())
             ->setAmount(1)

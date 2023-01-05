@@ -23,6 +23,144 @@ use Tatum\Sdk\Serializer as S;
  */
 class BlockchainFeesApi extends AbstractApi {
     /**
+     * Estimate the fee for a transaction
+     *
+     * @param \Tatum\Model\EstimateFee $estimate_fee 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BlockchainEstimateFee200Response
+     */
+    public function blockchainEstimateFee(\Tatum\Model\EstimateFee $estimate_fee) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BlockchainEstimateFee200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/estimate#postEstimateFee", [], $rHeaders, [], $estimate_fee
+            ), 
+            "\Tatum\Model\BlockchainEstimateFee200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Estimate the fee for a transaction
+     *
+     * @param \Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BlockchainEstimateFee200Response
+     */
+    public function blockchainEstimateFeeBatchMintNft(\Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BlockchainEstimateFee200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/estimate#postEstimateFeeBatchMintNft", [], $rHeaders, [], $estimate_fee_batch_mint_nft
+            ), 
+            "\Tatum\Model\BlockchainEstimateFee200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Estimate the fee for a transaction
+     *
+     * @param \Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BlockchainEstimateFee200Response
+     */
+    public function blockchainEstimateFeeDeployCustodialWallet(\Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BlockchainEstimateFee200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/estimate#postEstimateFeeDeployCustodialWallet", [], $rHeaders, [], $estimate_fee_deploy_custodial_wallet
+            ), 
+            "\Tatum\Model\BlockchainEstimateFee200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Estimate the fee for a transaction
+     *
+     * @param \Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BlockchainEstimateFee200Response
+     */
+    public function blockchainEstimateFeeFromAddress(\Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BlockchainEstimateFee200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/estimate#postEstimateFeeFromAddress", [], $rHeaders, [], $estimate_fee_from_address
+            ), 
+            "\Tatum\Model\BlockchainEstimateFee200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Estimate the fee for a transaction
+     *
+     * @param \Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BlockchainEstimateFee200Response
+     */
+    public function blockchainEstimateFeeFromUTXO(\Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BlockchainEstimateFee200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/estimate#postEstimateFeeFromUTXO", [], $rHeaders, [], $estimate_fee_from_utxo
+            ), 
+            "\Tatum\Model\BlockchainEstimateFee200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Estimate the fee for a transaction
+     *
+     * @param \Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BlockchainEstimateFee200Response
+     */
+    public function blockchainEstimateFeeTransferFromCustodial(\Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BlockchainEstimateFee200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/estimate#postEstimateFeeTransferFromCustodial", [], $rHeaders, [], $estimate_fee_transfer_from_custodial
+            ), 
+            "\Tatum\Model\BlockchainEstimateFee200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Estimate BNB Smart Chain transaction fees
      *
      * @param \Tatum\Model\BscEstimateGas $bsc_estimate_gas 
@@ -86,29 +224,6 @@ class BlockchainFeesApi extends AbstractApi {
                 $this->_caller->config(), "POST", "/v3/egld/gas", [], $rHeaders, [], $transaction_fee_egld_blockchain
             ), 
             "\Tatum\Model\EgldEstimateGas200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Estimate the fee for a transaction
-     *
-     * @param \Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EstimateFeeBlockchain200Response
-     */
-    public function estimateFeeBlockchain(\Tatum\Model\EstimateFeeBlockchainRequest $estimate_fee_blockchain_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EstimateFeeBlockchain200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/estimate", [], $rHeaders, [], $estimate_fee_blockchain_request
-            ), 
-            "\Tatum\Model\EstimateFeeBlockchain200Response"
         );
             
         return $result;

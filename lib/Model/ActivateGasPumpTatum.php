@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ActivateGasPumpTatum extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_BSC = 'BSC';
     public const CHAIN_CELO = 'CELO';
     public const CHAIN_ETH = 'ETH';

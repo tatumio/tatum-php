@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class MarketValue extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CURRENCY_AED = 'AED';
     public const CURRENCY_AFN = 'AFN';
     public const CURRENCY_ALL = 'ALL';

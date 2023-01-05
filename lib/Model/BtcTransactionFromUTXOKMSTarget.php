@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BtcTransactionFromUTXOKMSTarget extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BtcTransactionFromUTXOKMSTarget";
     protected static $_definition = [
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1]], 

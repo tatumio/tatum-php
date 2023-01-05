@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class BnbAccount extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "BnbAccount";
     protected static $_definition = [
         "account_number" => ["account_number", "float", null, "getAccountNumber", "setAccountNumber", null, ["r" => 0]], 

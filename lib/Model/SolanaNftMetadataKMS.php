@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class SolanaNftMetadataKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "SolanaNftMetadataKMS";
     protected static $_definition = [
         "name" => ["name", "string", null, "getName", "setName", null, ["r" => 1, "xl" => 255]], 

@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class OneBlockCurrent extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "OneBlockCurrent";
     protected static $_definition = [
         "shard_id" => ["shardID", "float", null, "getShardId", "setShardId", null, ["r" => 0]], 

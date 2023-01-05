@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class Transaction extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const OPERATION_TYPE_PAYMENT = 'PAYMENT';
     public const OPERATION_TYPE_WITHDRAWAL = 'WITHDRAWAL';
     public const OPERATION_TYPE_BLOCKCHAIN_TRANSACTION = 'BLOCKCHAIN_TRANSACTION';

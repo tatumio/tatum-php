@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class FlowGeneratePubKey200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "FlowGeneratePubKey_200_response";
     protected static $_definition = [
         "pub_key" => ["pubKey", "string", null, "getPubKey", "setPubKey", null, ["r" => 0]]

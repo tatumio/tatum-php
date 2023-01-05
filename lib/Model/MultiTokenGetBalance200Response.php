@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class MultiTokenGetBalance200Response extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "MultiTokenGetBalance_200_response";
     protected static $_definition = [
         "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0]]

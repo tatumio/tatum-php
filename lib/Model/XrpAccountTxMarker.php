@@ -22,7 +22,7 @@ namespace Tatum\Model;
  */
 class XrpAccountTxMarker extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "XrpAccountTx_marker";
     protected static $_definition = [
         "ledger" => ["ledger", "float", null, "getLedger", "setLedger", null, ["r" => 0]], 

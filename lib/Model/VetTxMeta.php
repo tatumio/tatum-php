@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class VetTxMeta extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "VetTx_meta";
     protected static $_definition = [
         "block_id" => ["blockID", "string", null, "getBlockId", "setBlockId", null, ["r" => 0]], 

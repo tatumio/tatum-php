@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class PrivKeyRequest extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     protected static $_name = "PrivKeyRequest";
     protected static $_definition = [
         "index" => ["index", "int", null, "getIndex", "setIndex", null, ["r" => 1, "x" => [2147483647]]], 

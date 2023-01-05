@@ -4,8 +4,6 @@ All URIs are relative to https://api.tatum.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**kcsBlockchainSmartContractInvocation()**](#kcsblockchainsmartcontractinvocation) | **POST** [/v3/kcs/smartcontract](https://apidoc.tatum.io/tag/KuCoin#operation/KcsBlockchainSmartContractInvocation) | Invoke a method in a smart contract on KuCoin Community Chain
-[**kcsBlockchainTransfer()**](#kcsblockchaintransfer) | **POST** [/v3/kcs/transaction](https://apidoc.tatum.io/tag/KuCoin#operation/KcsBlockchainTransfer) | Send KCS from account to account
 [**kcsBroadcast()**](#kcsbroadcast) | **POST** [/v3/kcs/broadcast](https://apidoc.tatum.io/tag/KuCoin#operation/KcsBroadcast) | Broadcast signed Kcs transaction
 [**kcsGenerateAddress()**](#kcsgenerateaddress) | **GET** [/v3/kcs/address/{xpub}/{index}](https://apidoc.tatum.io/tag/KuCoin#operation/KcsGenerateAddress) | Generate Kcs account address from Extended public key
 [**kcsGenerateAddressPrivateKey()**](#kcsgenerateaddressprivatekey) | **POST** [/v3/kcs/wallet/priv](https://apidoc.tatum.io/tag/KuCoin#operation/KcsGenerateAddressPrivateKey) | Generate Kcs private key
@@ -15,72 +13,13 @@ Method | HTTP request | Description
 [**kcsGetCurrentBlock()**](#kcsgetcurrentblock) | **GET** [/v3/kcs/block/current](https://apidoc.tatum.io/tag/KuCoin#operation/KcsGetCurrentBlock) | Get current block number
 [**kcsGetTransaction()**](#kcsgettransaction) | **GET** [/v3/kcs/transaction/{hash}](https://apidoc.tatum.io/tag/KuCoin#operation/KcsGetTransaction) | Get Kcs Transaction
 [**kcsGetTransactionCount()**](#kcsgettransactioncount) | **GET** [/v3/kcs/transaction/count/{address}](https://apidoc.tatum.io/tag/KuCoin#operation/KcsGetTransactionCount) | Get count of outgoing Kcs transactions
+[**kcsSmartcontractCallKcsSmartContractMethod()**](#kcssmartcontractcallkcssmartcontractmethod) | **POST** [/v3/kcs/smartcontract#postCallKcsSmartContractMethod](https://apidoc.tatum.io/tag/KuCoin#operation/kcsSmartcontractCallKcsSmartContractMethod) | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsSmartcontractCallKcsSmartContractMethodKMS()**](#kcssmartcontractcallkcssmartcontractmethodkms) | **POST** [/v3/kcs/smartcontract#postCallKcsSmartContractMethodKMS](https://apidoc.tatum.io/tag/KuCoin#operation/kcsSmartcontractCallKcsSmartContractMethodKMS) | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsSmartcontractCallKcsSmartContractReadMethod()**](#kcssmartcontractcallkcssmartcontractreadmethod) | **POST** [/v3/kcs/smartcontract#postCallKcsSmartContractReadMethod](https://apidoc.tatum.io/tag/KuCoin#operation/kcsSmartcontractCallKcsSmartContractReadMethod) | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsTransactionTransferKcsBlockchain()**](#kcstransactiontransferkcsblockchain) | **POST** [/v3/kcs/transaction#postTransferKcsBlockchain](https://apidoc.tatum.io/tag/KuCoin#operation/kcsTransactionTransferKcsBlockchain) | Send KCS from account to account
+[**kcsTransactionTransferKcsBlockchainKMS()**](#kcstransactiontransferkcsblockchainkms) | **POST** [/v3/kcs/transaction#postTransferKcsBlockchainKMS](https://apidoc.tatum.io/tag/KuCoin#operation/kcsTransactionTransferKcsBlockchainKMS) | Send KCS from account to account
 [**kcsWeb3Driver()**](#kcsweb3driver) | **POST** [/v3/kcs/web3/{xApiKey}](https://apidoc.tatum.io/tag/KuCoin#operation/KcsWeb3Driver) | Web3 HTTP driver
 
-
-## `kcsBlockchainSmartContractInvocation()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBlockchainSmartContractInvocation(
-    \Tatum\Model\KcsBlockchainSmartContractInvocationRequest $kcs_blockchain_smart_contract_invocation_request
-): \Tatum\Model\EthBlockchainSmartContractInvocation200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$kcs_blockchain_smart_contract_invocation_request** | [**\Tatum\Model\KcsBlockchainSmartContractInvocationRequest**](../Model/KcsBlockchainSmartContractInvocationRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthBlockchainSmartContractInvocation200Response**](../Model/EthBlockchainSmartContractInvocation200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on KuCoin Community Chain
-
-<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on KuCoin Community Chain.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "kcsBlockchainSmartContractInvocation.php"](../../examples/Api/KuCoinApi/kcsBlockchainSmartContractInvocation.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `kcsBlockchainTransfer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBlockchainTransfer(
-    \Tatum\Model\KcsBlockchainTransferRequest $kcs_blockchain_transfer_request
-): \Tatum\Model\BtcTransferBlockchain200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$kcs_blockchain_transfer_request** | [**\Tatum\Model\KcsBlockchainTransferRequest**](../Model/KcsBlockchainTransferRequest.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BtcTransferBlockchain200Response**](../Model/BtcTransferBlockchain200Response.md)
-
-### Description
-
-Send KCS from account to account
-
-<p><b>2 credits per API call</b></p> <p>Send KCS from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending KCS, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p> Alternatively, using the Tatum client library for supported languages.</p>
-
-### Example
-
-[✨ View "kcsBlockchainTransfer.php"](../../examples/Api/KuCoinApi/kcsBlockchainTransfer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `kcsBroadcast()`
 
@@ -366,6 +305,166 @@ Get count of outgoing Kcs transactions
 ### Example
 
 [✨ View "kcsGetTransactionCount.php"](../../examples/Api/KuCoinApi/kcsGetTransactionCount.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsSmartcontractCallKcsSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsSmartcontractCallKcsSmartContractMethod(
+    \Tatum\Model\CallKcsSmartContractMethod $call_kcs_smart_contract_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_kcs_smart_contract_method** | [**\Tatum\Model\CallKcsSmartContractMethod**](../Model/CallKcsSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on KuCoin Community Chain
+
+CallKcsSmartContractMethod operation
+
+### Example
+
+[✨ View "kcsSmartcontractCallKcsSmartContractMethod.php"](../../examples/Api/KuCoinApi/kcsSmartcontractCallKcsSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsSmartcontractCallKcsSmartContractMethodKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsSmartcontractCallKcsSmartContractMethodKMS(
+    \Tatum\Model\CallKcsSmartContractMethodKMS $call_kcs_smart_contract_method_kms
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_kcs_smart_contract_method_kms** | [**\Tatum\Model\CallKcsSmartContractMethodKMS**](../Model/CallKcsSmartContractMethodKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on KuCoin Community Chain
+
+CallKcsSmartContractMethodKMS operation
+
+### Example
+
+[✨ View "kcsSmartcontractCallKcsSmartContractMethodKMS.php"](../../examples/Api/KuCoinApi/kcsSmartcontractCallKcsSmartContractMethodKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsSmartcontractCallKcsSmartContractReadMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsSmartcontractCallKcsSmartContractReadMethod(
+    \Tatum\Model\CallKcsSmartContractReadMethod $call_kcs_smart_contract_read_method
+): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_kcs_smart_contract_read_method** | [**\Tatum\Model\CallKcsSmartContractReadMethod**](../Model/CallKcsSmartContractReadMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on KuCoin Community Chain
+
+<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on KuCoin Community Chain.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "kcsSmartcontractCallKcsSmartContractReadMethod.php"](../../examples/Api/KuCoinApi/kcsSmartcontractCallKcsSmartContractReadMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsTransactionTransferKcsBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsTransactionTransferKcsBlockchain(
+    \Tatum\Model\TransferKcsBlockchain $transfer_kcs_blockchain
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_kcs_blockchain** | [**\Tatum\Model\TransferKcsBlockchain**](../Model/TransferKcsBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send KCS from account to account
+
+<p><b>2 credits per API call</b></p> <p>Send KCS from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending KCS, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p> Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "kcsTransactionTransferKcsBlockchain.php"](../../examples/Api/KuCoinApi/kcsTransactionTransferKcsBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `kcsTransactionTransferKcsBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsTransactionTransferKcsBlockchainKMS(
+    \Tatum\Model\TransferKcsBlockchainKMS $transfer_kcs_blockchain_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_kcs_blockchain_kms** | [**\Tatum\Model\TransferKcsBlockchainKMS**](../Model/TransferKcsBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Send KCS from account to account
+
+TransferKcsBlockchainKMS operation
+
+### Example
+
+[✨ View "kcsTransactionTransferKcsBlockchainKMS.php"](../../examples/Api/KuCoinApi/kcsTransactionTransferKcsBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

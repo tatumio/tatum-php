@@ -20,7 +20,7 @@ namespace Tatum\Model;
  */
 class ChainDeploySolanaSplKMS extends AbstractModel {
 
-    public const DISCRIMINATOR = null;
+    public const _D = null;
     public const CHAIN_SOL = 'SOL';
     protected static $_name = "ChainDeploySolanaSplKMS";
     protected static $_definition = [
