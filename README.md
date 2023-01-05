@@ -141,7 +141,7 @@ To run the examples, use:
 php -f ./examples/{path-to-example-file}.php
 ```
 
-For security reaons you cannot execute these files from a server request.
+For security reasons you cannot execute these files from a server request.
 
 ### Tests
 
