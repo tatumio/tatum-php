@@ -198,11 +198,11 @@ $sdk->{mainnet/testnet}()->config()->setDebugSanitizer(false);
 ```
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X GET \
-'https://api.tatum.io/v3/bitcoin/wallet?mnemonic=******&type=testnet' \
--H 'Host: api.tatum.io' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
--H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
+  'https://api.tatum.io/v3/bitcoin/wallet?mnemonic=******&type=testnet' \
+  -H 'Host: api.tatum.io' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
 >>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
 <<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
 Status code: 200
@@ -244,12 +244,12 @@ Body:
 ```
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X POST \
-'https://api.tatum.io/v3/bitcoin/wallet/priv?type=testnet' \
--H 'Host: api.tatum.io' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
--H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
--d '{
+  'https://api.tatum.io/v3/bitcoin/wallet/priv?type=testnet' \
+  -H 'Host: api.tatum.io' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
+  -d '{
     "index": 1,
     "mnemonic": "******"
 }' 
@@ -293,12 +293,12 @@ Body:
 ```
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X POST \
-'https://api.tatum.io/v3/ipfs' \
--H 'Host: api.tatum.io' \
--H 'Accept: application/json' \
--H 'Content-Type: multipart/form-data' \
--H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
--F file=@screen-dev-mode.png 
+  'https://api.tatum.io/v3/ipfs' \
+  -H 'Host: api.tatum.io' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
+  -F file=@screen-dev-mode.png 
 >>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>
 <<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE MainNet <<<<<<<<<<<<<<<<<<<<<<<<<<
 Status code: 201
@@ -339,11 +339,11 @@ Body:
 ```
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X GET \
-'https://api.tatum.io/v3/ipfs/bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4?type=testnet' \
--H 'Host: api.tatum.io' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
--H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
+  'https://api.tatum.io/v3/ipfs/bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4?type=testnet' \
+  -H 'Host: api.tatum.io' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
 >>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
 <<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
 Status code: 200
