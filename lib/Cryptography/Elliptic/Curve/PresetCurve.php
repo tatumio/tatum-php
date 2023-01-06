@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Elliptic\Curve;
+!defined("TATUM-SDK") && exit();
 
 class PresetCurve {
     public $curve;

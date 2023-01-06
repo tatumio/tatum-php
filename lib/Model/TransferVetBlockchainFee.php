@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * TransferVetBlockchain_fee Model

@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\Merkle;
+!defined("TATUM-SDK") && exit();
 
 /**
  * A node in a Merkle Tree

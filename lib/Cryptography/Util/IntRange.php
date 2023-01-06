@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Util;
+!defined("TATUM-SDK") && exit();
 
 class IntRange {
     const U8_MAX = (1 << 8) - 1;

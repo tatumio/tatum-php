@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Semver\Constraint;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Defines a conjunctive or disjunctive set of constraints.

@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Chain\Params;
 use Tatum\Cryptography\Chain\ParamsInterface;

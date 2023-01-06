@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * getTransactionsByAccountId_200_response Model

@@ -4,8 +4,8 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Flow#operation/flowAccountFlowAddPubKeySecretKMSUpdate
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/FlowApi.md#flowaccountflowaddpubkeysecretkmsupdate
+ * @see     API docs: https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionFeeUpdateFeeAuctionKMS
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctionkms
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!
@@ -18,21 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_flow_add_pub_key_secret_kms = new \Tatum\Model\FlowAddPubKeySecretKMS();
+$arg_update_fee_auction_kms = new \Tatum\Model\UpdateFeeAuctionKMS();
 
 try {
     /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
-        ->flow()
-        ->flowAccountFlowAddPubKeySecretKMSUpdate($arg_flow_add_pub_key_secret_kms);
+        ->auction()
+        ->blockchainAuctionFeeUpdateFeeAuctionKMS($arg_update_fee_auction_kms);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowAccountFlowAddPubKeySecretKMSUpdate(): ", 
+    echo "API Exception when calling api()->auction()->blockchainAuctionFeeUpdateFeeAuctionKMS(): ", 
         var_export($apiExc->getResponseObject(), true), 
         PHP_EOL;
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowAccountFlowAddPubKeySecretKMSUpdate(): " . $exc->getMessage() . PHP_EOL;
+    echo "Exception when calling api()->auction()->blockchainAuctionFeeUpdateFeeAuctionKMS(): " . $exc->getMessage() . PHP_EOL;
 }

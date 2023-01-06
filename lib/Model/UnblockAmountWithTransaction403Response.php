@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * unblockAmountWithTransaction_403_response Model

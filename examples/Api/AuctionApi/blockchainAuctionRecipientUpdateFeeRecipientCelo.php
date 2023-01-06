@@ -4,8 +4,8 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Marketplace#operation/blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientceloupdate
+ * @see     API docs: https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionRecipientUpdateFeeRecipientCelo
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientcelo
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!
@@ -25,14 +25,14 @@ try {
     $response = $sdk
         ->mainnet()
         ->api()
-        ->marketplace()
-        ->blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate($arg_update_fee_recipient_celo);
+        ->auction()
+        ->blockchainAuctionRecipientUpdateFeeRecipientCelo($arg_update_fee_recipient_celo);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate(): ", 
+    echo "API Exception when calling api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCelo(): ", 
         var_export($apiExc->getResponseObject(), true), 
         PHP_EOL;
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate(): " . $exc->getMessage() . PHP_EOL;
+    echo "Exception when calling api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCelo(): " . $exc->getMessage() . PHP_EOL;
 }

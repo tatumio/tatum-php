@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Address\ScriptHashAddress;
 use Tatum\Cryptography\Exceptions\P2shScriptException;

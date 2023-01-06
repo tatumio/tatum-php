@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3\Methods\Personal;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Web3\Methods\EthMethod;
 use Tatum\Cryptography\Web3\Validators\AddressValidator;

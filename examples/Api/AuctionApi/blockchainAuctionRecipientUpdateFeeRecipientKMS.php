@@ -4,8 +4,8 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientkmsupdate
+ * @see     API docs: https://apidoc.tatum.io/tag/Auction#operation/blockchainAuctionRecipientUpdateFeeRecipientKMS
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientkms
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!
@@ -26,13 +26,13 @@ try {
         ->mainnet()
         ->api()
         ->auction()
-        ->blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate($arg_update_fee_recipient_kms);
+        ->blockchainAuctionRecipientUpdateFeeRecipientKMS($arg_update_fee_recipient_kms);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate(): ", 
+    echo "API Exception when calling api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientKMS(): ", 
         var_export($apiExc->getResponseObject(), true), 
         PHP_EOL;
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate(): " . $exc->getMessage() . PHP_EOL;
+    echo "Exception when calling api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientKMS(): " . $exc->getMessage() . PHP_EOL;
 }

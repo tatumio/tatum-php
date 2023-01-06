@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Address;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Bech32;
 use Tatum\Cryptography\Base58;

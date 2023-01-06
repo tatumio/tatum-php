@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Serializer\Key\PrivateKey;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Base58;
 use Tatum\Cryptography\Bitcoin;

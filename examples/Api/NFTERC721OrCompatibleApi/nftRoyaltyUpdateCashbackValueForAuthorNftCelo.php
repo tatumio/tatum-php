@@ -4,8 +4,8 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkmsceloupdate
+ * @see     API docs: https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftCelo
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftcelo
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!
@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_update_cashback_value_for_author_nft_kms_celo = new \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo();
+$arg_update_cashback_value_for_author_nft_celo = new \Tatum\Model\UpdateCashbackValueForAuthorNftCelo();
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';
@@ -29,13 +29,13 @@ try {
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
-        ->nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate($arg_update_cashback_value_for_author_nft_kms_celo, $arg_x_testnet_type);
+        ->nftRoyaltyUpdateCashbackValueForAuthorNftCelo($arg_update_cashback_value_for_author_nft_celo, $arg_x_testnet_type);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate(): ", 
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftCelo(): ", 
         var_export($apiExc->getResponseObject(), true), 
         PHP_EOL;
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate(): " . $exc->getMessage() . PHP_EOL;
+    echo "Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftCelo(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -192,28 +192,188 @@ $sdk->{mainnet/testnet}()->config()->setDebugSanitizer(false);
 
 #### Example output
 
-```
->>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet-63b5524b8bfd7 >>>>>>>>>>>>>>>>>>>>
-curl -i -X GET \
-    'https://api.tatum.io/v3/bitcoin/wallet?mnemonic=pol---ven&type=testnet' \
-    -H 'Host: api.tatum.io' \
-    -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
-    -H 'Content-Type: application/json' \
-    -H 'x-api-key: abc---xyz' \
-    -H 'Accept: application/json'
+<details>
+<summary>👓 GET Request</summary>
 
-<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet-63b5524b8bfd7 <<<<<<<<<<<<<<<<<<<
+```
+>>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+curl -i -X GET \
+'https://api.tatum.io/v3/bitcoin/wallet?mnemonic=******&type=testnet' \
+-H 'Host: api.tatum.io' \
+-H 'Content-Type: application/json' \
+-H 'Accept: application/json' \
+-H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
+>>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
 Status code: 200
 Headers:
- * Content-Type: application/json; charset=utf-8
- * Content-Length: 294
- * Connection: keep-alive
+* Date: Fri, 06 Jan 2023 15:52:36 GMT
+* Content-Type: application/json; charset=utf-8
+* Content-Length: 294
+* Connection: keep-alive
+* x-dns-prefetch-control: off
+* expect-ct: max-age=0
+* x-frame-options: SAMEORIGIN
+* strict-transport-security: max-age=15552000; includeSubDomains
+* x-download-options: noopen
+* x-content-type-options: nosniff
+* x-permitted-cross-domain-policies: none
+* referrer-policy: no-referrer
+* x-xss-protection: 0
+* access-control-allow-origin: *
+* etag: W/"126-UEDy4ticGv1whUK9HiIOXgvCseY"
+* x-ratelimit-persec: 5
+* via: 1.1 google
+* alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+* CF-Cache-Status: DYNAMIC
+* NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+* Server: cloudflare
+* CF-RAY: 78559f2ded6e0b04-AMS
 Body:
 {
-    "mnemonic": "pol---ven",
+    "mnemonic": "******",
     "xpub": "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2"
 }
+<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
 ```
+</details>
+
+<details>
+<summary>📦 POST/PUT Request</summary>
+
+```
+>>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+curl -i -X POST \
+'https://api.tatum.io/v3/bitcoin/wallet/priv?type=testnet' \
+-H 'Host: api.tatum.io' \
+-H 'Content-Type: application/json' \
+-H 'Accept: application/json' \
+-H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
+-d '{
+    "index": 1,
+    "mnemonic": "******"
+}' 
+>>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+Status code: 200
+Headers:
+* Date: Fri, 06 Jan 2023 15:52:38 GMT
+* Content-Type: application/json; charset=utf-8
+* Content-Length: 62
+* Connection: keep-alive
+* x-dns-prefetch-control: off
+* expect-ct: max-age=0
+* x-frame-options: SAMEORIGIN
+* strict-transport-security: max-age=15552000; includeSubDomains
+* x-download-options: noopen
+* x-content-type-options: nosniff
+* x-permitted-cross-domain-policies: none
+* referrer-policy: no-referrer
+* x-xss-protection: 0
+* access-control-allow-origin: *
+* etag: W/"3e-2BVRhhNfjoTw5p9h26taGsms6ig"
+* x-ratelimit-persec: 5
+* via: 1.1 google
+* alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+* CF-Cache-Status: DYNAMIC
+* NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+* Server: cloudflare
+* CF-RAY: 78559f380aa6bba4-FRA
+Body:
+{
+    "key": "cTPGqe6hkwVY6JNHJUZ4wSUvPo8GNMe2cDFTsFV1jSqCBMDKpfSU"
+}
+<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+```
+</details>
+
+<details>
+<summary>📤 File Upload</summary>
+
+```
+>>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+curl -i -X POST \
+'https://api.tatum.io/v3/ipfs' \
+-H 'Host: api.tatum.io' \
+-H 'Accept: application/json' \
+-H 'Content-Type: multipart/form-data' \
+-H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
+-F file=@screen-dev-mode.png 
+>>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE MainNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+Status code: 201
+Headers:
+* Date: Fri, 06 Jan 2023 15:52:42 GMT
+* Content-Type: application/json; charset=utf-8
+* Content-Length: 74
+* Connection: keep-alive
+* x-dns-prefetch-control: off
+* expect-ct: max-age=0
+* x-frame-options: SAMEORIGIN
+* strict-transport-security: max-age=15552000; includeSubDomains
+* x-download-options: noopen
+* x-content-type-options: nosniff
+* x-permitted-cross-domain-policies: none
+* referrer-policy: no-referrer
+* x-xss-protection: 0
+* access-control-allow-origin: *
+* etag: W/"4a-KSwBqJVEyPOjPOyRGxy/Ms1CzHc"
+* x-ratelimit-persec: 5
+* via: 1.1 google
+* alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+* CF-Cache-Status: DYNAMIC
+* NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+* Server: cloudflare
+* CF-RAY: 78559f42ceae23b2-LHR
+Body:
+{
+    "ipfsHash": "bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4"
+}
+<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE MainNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+```
+</details>
+
+<details>
+<summary>📥 File Download</summary>
+
+```
+>>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+curl -i -X GET \
+'https://api.tatum.io/v3/ipfs/bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4?type=testnet' \
+-H 'Host: api.tatum.io' \
+-H 'Content-Type: application/json' \
+-H 'Accept: application/json' \
+-H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
+>>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+Status code: 200
+Headers:
+* Date: Fri, 06 Jan 2023 15:52:48 GMT
+* Transfer-Encoding: chunked
+* Connection: keep-alive
+* x-dns-prefetch-control: off
+* expect-ct: max-age=0
+* x-frame-options: SAMEORIGIN
+* strict-transport-security: max-age=15552000; includeSubDomains
+* x-download-options: noopen
+* x-content-type-options: nosniff
+* x-permitted-cross-domain-policies: none
+* referrer-policy: no-referrer
+* x-xss-protection: 0
+* access-control-allow-origin: *
+* x-ratelimit-persec: 5
+* via: 1.1 google
+* alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+* CF-Cache-Status: MISS
+* Last-Modified: Fri, 06 Jan 2023 15:52:48 GMT
+* NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+* Vary: Accept-Encoding
+* Server: cloudflare
+* CF-RAY: 78559f5688da0a5d-AMS
+Body: ( binary data )
+<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+```
+</details>
 
 > ===
 > 

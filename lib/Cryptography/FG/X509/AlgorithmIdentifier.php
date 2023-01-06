@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\FG\X509;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\ASN1\Universal\NullObject;
 use Tatum\Cryptography\FG\ASN1\Composite\AttributeTypeAndValue;

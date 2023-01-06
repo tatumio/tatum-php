@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Math;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Math\GmpMath;
 use Tatum\Cryptography\Ecc\Util\NumberSize;

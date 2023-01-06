@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Semver;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Semver\Constraint\Constraint;
 

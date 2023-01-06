@@ -9,6 +9,7 @@
  */
 
 namespace Tatum\Local\Transaction;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Network\NetworkFactory;
 use Tatum\Cryptography\Network\NetworkInterface;

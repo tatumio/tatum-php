@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Crypto\Signature\Signer;
 use Tatum\Cryptography\Ecc\Curves\NistCurve;

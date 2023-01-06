@@ -9,6 +9,7 @@
  * @author    Mark Jivko
  */
 namespace Tatum\Sdk;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Config;
 use Tatum\Sdk\Psr7\Request;
@@ -72,36 +73,58 @@ class Debugger {
     }
 
     /**
-     * Save a log delimiter tag
+     * Log request and response
      *
-     * @param string $tag       Log tag
-     * @param string $character Fill character
+     * @param \Tatum\Sdk\Psr7\Request $request    Request object
+     * @param int                     $resCode    Response - status code
+     * @param array                   $resHeaders Response - headers
+     * @param string                  $resBody    Response - body
+     * @param string                  $resError   Response - error
      * @return void
      */
-    public function logTag(string $tag, string $character = "#") {
-        $this->print(PHP_EOL . str_pad(" $tag ", 80, $character, STR_PAD_BOTH));
+    public function log(Request $request, int $resCode, $resHeaders, $resBody, $resError) {
+        $network = $this->_config->isMainNet() ? "MainNet" : "TestNet";
+
+        // Log the request
+        $entry = $this->_getLogTag("Tatum API REQUEST {$network}", ">");
+        $entry .= $this->_getLogRequest($request);
+        $entry .= $this->_getLogTag("/Tatum API REQUEST {$network}", ">");
+
+        // Log the response
+        $entry .= $this->_getLogTag("Tatum API RESPONSE {$network}", "<");
+        $entry .= $this->_getLogResponse($resCode, $resHeaders, $resBody, $resError);
+        $entry .= $this->_getLogTag("/Tatum API RESPONSE {$network}", "<");
+
+        // Print entry
+        $this->print($entry);
     }
 
+    /**
+     * Sanitize data
+     *
+     * @param array  $data   Associative array
+     * @param string $source
+     * @return void
+     */
     protected function _sanitize(&$data, $source) {
         /**
-         * Hide parts of string
+         * Sanitize string
          *
+         * @param string $key
          * @param string $string Input
          * @return string Hidden input
          */
-        $cleanUp = function ($string) {
+        $cleanUp = function ($key, $string) {
             do {
-                if (strlen($string) >= 10) {
-                    $result = substr($string, 0, 3) . "---" . substr($string, -3);
+                if (preg_match("%x-api-key%i", $key)) {
+                    $result =
+                        strlen($string) >= 10
+                            ? preg_replace('%^(\w{3}).*(\w{3}(?:_\d+)?)$%', '$1******$2', $string)
+                            : str_repeat("*", 6);
                     break;
                 }
 
-                if (strlen($string) >= 5) {
-                    $result = substr($string, 0, 1) . "---" . substr($string, -1);
-                    break;
-                }
-
-                $result = str_repeat("-", strlen($string));
+                $result = str_repeat("*", 6);
             } while (false);
 
             return $result;
@@ -112,22 +135,33 @@ class Debugger {
             if (preg_match("%^(?:mnemonic|x-api-key|.*?private.*?)$%i", $key)) {
                 if (self::SANITIZE_HEADERS === $source || is_array($value)) {
                     foreach ($value as $vKey => $vData) {
-                        $value[$vKey] = $cleanUp($vData);
+                        $value[$vKey] = $cleanUp($key, $vData);
                     }
                 } else {
-                    $value = $cleanUp($value);
+                    $value = $cleanUp($key, $value);
                 }
             }
         }
     }
 
     /**
+     * Save a log delimiter tag
+     *
+     * @param string $tag       Log tag
+     * @param string $character Fill character
+     * @return string
+     */
+    protected function _getLogTag(string $tag, string $character = "#") {
+        return str_pad(" $tag ", 80, $character, STR_PAD_BOTH) . PHP_EOL;
+    }
+
+    /**
      * Log a cURL request
      *
      * @param \Tatum\Sdk\Psr7\Request $request
-     * @return void
+     * @return string
      */
-    public function logRequest(Request $request) {
+    protected function _getLogRequest(Request $request) {
         $eof = " \\\n";
 
         // Prepare the uri
@@ -139,18 +173,18 @@ class Debugger {
 
             if (count($queryData)) {
                 $this->_sanitize($queryData, self::SANITIZE_QUERY);
-                $uri = preg_replace('%\?.*$%', "?" . http_build_query($queryData), $uri);
+                $uri = preg_replace('%\?.*$%', "?" . urldecode(http_build_query($queryData)), $uri);
             }
         }
 
         $curl = "curl -i -X {$request->getMethod()}$eof";
-        $curl .= "    '{$uri}'$eof";
+        $curl .= "  '{$uri}'$eof";
 
         // Prepare the headers
         $headers = $request->getHeaders();
         $this->_config->getDebugSanitizer() && $this->_sanitize($headers, self::SANITIZE_HEADERS);
         foreach ($headers as $headerName => $headerValue) {
-            $curl .= "    -H '{$headerName}: " . implode("; ", $headerValue) . "'$eof";
+            $curl .= "  -H '{$headerName}: " . implode("; ", $headerValue) . "'$eof";
         }
 
         // Body
@@ -161,7 +195,7 @@ class Debugger {
                     $fileName = $this->_config->getDebugSanitizer()
                         ? basename($fileObject->getFilename())
                         : $fileObject->getFilename();
-                    $curl .= "    -F $fieldName=@{$fileName}$eof";
+                    $curl .= "  -F $fieldName=@{$fileName}$eof";
                 }
             } else {
                 // JSON payload
@@ -176,11 +210,11 @@ class Debugger {
                 $body = null !== $bodyJson ? json_encode($bodyJson, JSON_PRETTY_PRINT) : "{$request->getStream()}";
 
                 // Append line
-                $curl .= "    -d '{$body}'{$eof}";
+                $curl .= "  -d '{$body}'{$eof}";
             }
         }
 
-        $this->print(trim($curl, "\\\n"));
+        return trim($curl, "\\\n") . PHP_EOL;
     }
 
     /**
@@ -190,9 +224,9 @@ class Debugger {
      * @param array  $headers
      * @param string $body
      * @param string $error
-     * @return void
+     * @return string
      */
-    public function logResponse(int $statusCode, $headers, $body, $error) {
+    protected function _getLogResponse(int $statusCode, $headers, $body, $error) {
         // Status code
         $response = "Status code: $statusCode\n";
 
@@ -202,7 +236,7 @@ class Debugger {
         // Response headers
         $response .= "Headers:\n";
         foreach ($headers as $headerName => $headerValue) {
-            if (!preg_match("%^(?:content\-(?:type|length)|transfer-encoding|connection)%i", $headerName)) {
+            if (preg_match("%^(?:content-security-policy|report-to)%i", $headerName)) {
                 continue;
             }
 
@@ -224,6 +258,7 @@ class Debugger {
         } else {
             // JSON payload
             $response .= "Body:\n";
+            $responseBody = "";
 
             // Attempt decoding
             $bodyJson = @json_decode($body, true);
@@ -231,12 +266,15 @@ class Debugger {
                 if ($this->_config->getDebugSanitizer() && is_array($bodyJson)) {
                     $this->_sanitize($bodyJson, self::SANITIZE_BODY);
                 }
-                $response .= json_encode($bodyJson, JSON_PRETTY_PRINT);
+                $responseBody = json_encode($bodyJson, JSON_PRETTY_PRINT);
             } else {
-                $response .= $body;
+                $responseBody = $body;
             }
+
+            // Trim to 2048
+            $response .= strlen($responseBody) > 2048 ? substr($responseBody, 0, 2045) . "..." : $responseBody;
         }
 
-        $this->print($response);
+        return $response . PHP_EOL;
     }
 }

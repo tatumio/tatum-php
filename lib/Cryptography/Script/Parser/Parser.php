@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script\Parser;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Math\Math;
 use Tatum\Cryptography\Script\Opcodes;

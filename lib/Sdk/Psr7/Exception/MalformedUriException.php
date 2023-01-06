@@ -11,6 +11,7 @@ declare(strict_types=1);
  * @author    Mark Jivko
  */
 namespace Tatum\Sdk\Psr7\Exception;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException;
 

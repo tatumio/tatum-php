@@ -1,5 +1,6 @@
 <?php
 namespace Tatum\Cryptography\Util\BN;
+!defined("TATUM-SDK") && exit();
 
 use \JsonSerializable;
 use \Exception;

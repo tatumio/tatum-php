@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3\Validators;
+!defined("TATUM-SDK") && exit();
 
 interface IValidator {
     /**

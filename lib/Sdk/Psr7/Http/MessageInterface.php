@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Sdk\Psr7\Http;
+!defined("TATUM-SDK") && exit();
 
 /**
  * HTTP messages consist of requests from a client to a server and responses

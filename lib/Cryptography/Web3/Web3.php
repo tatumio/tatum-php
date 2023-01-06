@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Web3\Eth;
 use Tatum\Cryptography\Web3\Net;

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Transaction\SignatureHash;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\ScriptInterface;
 use Tatum\Cryptography\Buffertools\BufferInterface;

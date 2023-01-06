@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Mnemonic\Bip39;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\Hash;
 use Tatum\Cryptography\Buffertools\Buffer;

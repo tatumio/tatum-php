@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script\Classifier;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Key\PublicKey;
 use Tatum\Cryptography\Script\Opcodes;

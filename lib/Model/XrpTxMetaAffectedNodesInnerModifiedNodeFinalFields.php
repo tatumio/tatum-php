@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * XrpTx_meta_AffectedNodes_inner_ModifiedNode_FinalFields Model

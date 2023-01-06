@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Crypto\EcAdapter\Adapter;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\EcAdapter\Key\PrivateKeyInterface;
 use Tatum\Cryptography\Crypto\EcAdapter\Key\PublicKeyInterface;

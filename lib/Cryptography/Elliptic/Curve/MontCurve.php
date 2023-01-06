@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Elliptic\Curve;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Elliptic\Curve\MontCurve\Point;
 use Tatum\Cryptography\Elliptic\Utils;

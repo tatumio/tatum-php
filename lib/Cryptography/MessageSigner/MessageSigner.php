@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\MessageSigner;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Address\PayToPubKeyHashAddress;
 use Tatum\Cryptography\Bitcoin;

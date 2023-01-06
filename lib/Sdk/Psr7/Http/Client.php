@@ -9,6 +9,7 @@
  * @author    Mark Jivko
  */
 namespace Tatum\Sdk\Psr7\Http;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Config;
 use Tatum\Sdk\Psr7\Response;
@@ -31,11 +32,6 @@ class Client {
      * @throws \Tatum\Sdk\Psr7\Exception\RequestException
      */
     public static function send(Request $request, Config $config): Response {
-        // Log the request; use the current UNIX timestamp in milliseconds
-        $logId = ($config->isMainNet() ? "MainNet" : "TestNet") . "-" . uniqid();
-        $config->debugger()->logTag("Tatum API REQUEST {$logId}", ">");
-        $config->debugger()->logRequest($request);
-
         // Prepare the headers
         $requestHeaders = [];
         $responseHeaders = [];
@@ -83,8 +79,7 @@ class Client {
         curl_close($curlHandle);
 
         // Log the request
-        $config->debugger()->logTag("Tatum API RESPONSE {$logId}", "<");
-        $config->debugger()->logResponse((int) $info["http_code"], $responseHeaders, "$stream", $error);
+        $config->debugger()->log($request, (int) $info["http_code"], $responseHeaders, "$stream", $error);
 
         // Prepare the response object
         $response = new Response((int) $info["http_code"], $responseHeaders, "$stream", strval($info["http_version"]));

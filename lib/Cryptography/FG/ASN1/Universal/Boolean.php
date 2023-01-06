@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\FG\ASN1\Universal;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\ASN1\ASNObject;
 use Tatum\Cryptography\FG\ASN1\Parsable;

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Block;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Serializer\Block\BlockHeaderSerializer;
 use Tatum\Cryptography\Buffertools\Buffer;

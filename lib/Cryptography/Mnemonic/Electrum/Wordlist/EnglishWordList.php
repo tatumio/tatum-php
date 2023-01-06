@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Mnemonic\Electrum\Wordlist;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Mnemonic\Electrum\ElectrumWordListInterface;
 use Tatum\Cryptography\Mnemonic\WordList;

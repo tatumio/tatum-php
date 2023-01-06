@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Chain;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Serializable;
 use Tatum\Cryptography\Serializer\Chain\BlockLocatorSerializer;

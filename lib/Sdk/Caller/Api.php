@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Sdk\Caller;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Caller;
 use Tatum\Api as A;

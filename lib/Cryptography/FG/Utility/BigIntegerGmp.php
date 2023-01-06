@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\FG\Utility;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Class BigIntegerGmp

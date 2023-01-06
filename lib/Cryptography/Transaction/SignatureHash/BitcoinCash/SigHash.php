@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Transaction\SignatureHash\BitcoinCash;
+!defined("TATUM-SDK") && exit();
 
 class SigHash {
     /**

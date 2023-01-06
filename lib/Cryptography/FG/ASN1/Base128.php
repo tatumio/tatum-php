@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\FG\ASN1;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\Utility\BigInteger;
 use InvalidArgumentException;

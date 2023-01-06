@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Script\Consensus;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Bitcoin;
 use Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface;

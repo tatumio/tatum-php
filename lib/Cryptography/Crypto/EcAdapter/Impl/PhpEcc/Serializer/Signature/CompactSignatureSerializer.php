@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Serializer\Signature;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Adapter\EcAdapter;
 use Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Signature\CompactSignature;

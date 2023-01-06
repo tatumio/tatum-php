@@ -4,8 +4,8 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Marketplace#operation/blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/MarketplaceApi.md#blockchainmarketplacelistingupdatemarketplacesolanakmsupdate
+ * @see     API docs: https://apidoc.tatum.io/tag/Marketplace#operation/blockchainMarketplaceListingUpdateMarketplaceSolanaKMS
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/MarketplaceApi.md#blockchainmarketplacelistingupdatemarketplacesolanakms
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!
@@ -26,13 +26,13 @@ try {
         ->mainnet()
         ->api()
         ->marketplace()
-        ->blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate($arg_update_marketplace_solana_kms);
+        ->blockchainMarketplaceListingUpdateMarketplaceSolanaKMS($arg_update_marketplace_solana_kms);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate(): ", 
+    echo "API Exception when calling api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaKMS(): ", 
         var_export($apiExc->getResponseObject(), true), 
         PHP_EOL;
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate(): " . $exc->getMessage() . PHP_EOL;
+    echo "Exception when calling api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaKMS(): " . $exc->getMessage() . PHP_EOL;
 }

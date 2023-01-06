@@ -10,6 +10,7 @@
  */
 
 namespace Tatum\Local\Transaction;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Model;
 use Tatum\Cryptography\Transaction\Ethereum\Transaction;

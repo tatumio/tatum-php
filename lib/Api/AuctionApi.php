@@ -13,6 +13,7 @@
  */
 
 namespace Tatum\Api;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException as IAE;
 use Tatum\Sdk\Serializer as S;
@@ -300,19 +301,19 @@ class AuctionApi extends AbstractApi {
     /**
      * Update the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms 
+     * @param \Tatum\Model\UpdateFeeAuction $update_fee_auction 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate(\Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms) {
+    public function blockchainAuctionFeeUpdateFeeAuction(\Tatum\Model\UpdateFeeAuction $update_fee_auction) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/auction/fee", [], $rHeaders, [], $update_fee_auction_celo_kms
+                $this->_caller->config(), "PUT", "/v3/blockchain/auction/fee", [], $rHeaders, [], $update_fee_auction
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -329,7 +330,7 @@ class AuctionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionFeeUpdateFeeAuctionCeloUpdate(\Tatum\Model\UpdateFeeAuctionCelo $update_fee_auction_celo) {
+    public function blockchainAuctionFeeUpdateFeeAuctionCelo(\Tatum\Model\UpdateFeeAuctionCelo $update_fee_auction_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -346,19 +347,19 @@ class AuctionApi extends AbstractApi {
     /**
      * Update the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms 
+     * @param \Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionFeeUpdateFeeAuctionKMSUpdate(\Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms) {
+    public function blockchainAuctionFeeUpdateFeeAuctionCeloKMS(\Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/auction/fee", [], $rHeaders, [], $update_fee_auction_kms
+                $this->_caller->config(), "PUT", "/v3/blockchain/auction/fee", [], $rHeaders, [], $update_fee_auction_celo_kms
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -369,19 +370,19 @@ class AuctionApi extends AbstractApi {
     /**
      * Update the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeAuction $update_fee_auction 
+     * @param \Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionFeeUpdateFeeAuctionUpdate(\Tatum\Model\UpdateFeeAuction $update_fee_auction) {
+    public function blockchainAuctionFeeUpdateFeeAuctionKMS(\Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/auction/fee", [], $rHeaders, [], $update_fee_auction
+                $this->_caller->config(), "PUT", "/v3/blockchain/auction/fee", [], $rHeaders, [], $update_fee_auction_kms
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -484,19 +485,19 @@ class AuctionApi extends AbstractApi {
     /**
      * Update the recipient of the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms 
+     * @param \Tatum\Model\UpdateFeeRecipient $update_fee_recipient 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate(\Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms) {
+    public function blockchainAuctionRecipientUpdateFeeRecipient(\Tatum\Model\UpdateFeeRecipient $update_fee_recipient) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/auction/recipient", [], $rHeaders, [], $update_fee_recipient_celo_kms
+                $this->_caller->config(), "PUT", "/v3/blockchain/auction/recipient", [], $rHeaders, [], $update_fee_recipient
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -513,7 +514,7 @@ class AuctionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate(\Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo) {
+    public function blockchainAuctionRecipientUpdateFeeRecipientCelo(\Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -530,19 +531,19 @@ class AuctionApi extends AbstractApi {
     /**
      * Update the recipient of the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms 
+     * @param \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate(\Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms) {
+    public function blockchainAuctionRecipientUpdateFeeRecipientCeloKMS(\Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/auction/recipient", [], $rHeaders, [], $update_fee_recipient_kms
+                $this->_caller->config(), "PUT", "/v3/blockchain/auction/recipient", [], $rHeaders, [], $update_fee_recipient_celo_kms
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -553,19 +554,19 @@ class AuctionApi extends AbstractApi {
     /**
      * Update the recipient of the NFT auction fee
      *
-     * @param \Tatum\Model\UpdateFeeRecipient $update_fee_recipient 
+     * @param \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainAuctionRecipientUpdateFeeRecipientUpdate(\Tatum\Model\UpdateFeeRecipient $update_fee_recipient) {
+    public function blockchainAuctionRecipientUpdateFeeRecipientKMS(\Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/auction/recipient", [], $rHeaders, [], $update_fee_recipient
+                $this->_caller->config(), "PUT", "/v3/blockchain/auction/recipient", [], $rHeaders, [], $update_fee_recipient_kms
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );

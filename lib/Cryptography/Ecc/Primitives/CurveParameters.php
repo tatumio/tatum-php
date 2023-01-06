@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Primitives;
+!defined("TATUM-SDK") && exit();
 
 class CurveParameters {
     /**

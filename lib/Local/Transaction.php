@@ -10,6 +10,7 @@
  */
 
 namespace Tatum\Local;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Caller;
 use Tatum\Local\Transaction as Tx;

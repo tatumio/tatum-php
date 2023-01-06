@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3\Providers;
+!defined("TATUM-SDK") && exit();
 
 interface IProvider {
     /**

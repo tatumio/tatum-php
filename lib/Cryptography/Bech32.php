@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Exceptions\Bech32Exception;
 

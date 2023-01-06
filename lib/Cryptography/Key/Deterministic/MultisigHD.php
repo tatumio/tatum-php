@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Key\Deterministic;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Address\Address;
 use Tatum\Cryptography\Address\BaseAddressCreator;

@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Elliptic\Curve\ShortCurve;
+!defined("TATUM-SDK") && exit();
 
 use JsonSerializable;
 use Tatum\Cryptography\Util\BN\BigNumber;

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Utxo;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Transaction\OutPointInterface;
 use Tatum\Cryptography\Transaction\TransactionOutputInterface;

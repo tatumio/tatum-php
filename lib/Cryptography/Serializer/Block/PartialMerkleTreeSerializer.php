@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Serializer\Block;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Block\PartialMerkleTree;
 use Tatum\Cryptography\Buffertools\Buffer;

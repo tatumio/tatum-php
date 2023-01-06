@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Mnemonic\Bip39\Wordlist;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Mnemonic\Bip39\Bip39WordListInterface;
 use Tatum\Cryptography\Mnemonic\WordList;

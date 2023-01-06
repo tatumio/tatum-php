@@ -9,6 +9,7 @@
  * @author    Mark Jivko
  */
 namespace Tatum\Sdk;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Config;
 use Tatum\Sdk\Caller as C;

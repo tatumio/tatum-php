@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Collection\CollectionInterface;
 use Tatum\Cryptography\Buffertools\BufferInterface;

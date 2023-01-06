@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\Merkle;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException;
 use LogicException;

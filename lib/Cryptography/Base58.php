@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\Hash;
 use Tatum\Cryptography\Exceptions\Base58ChecksumFailure;

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Transaction\Factory;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Transaction\Factory\ScriptInfo\CheckLocktimeVerify;
 use Tatum\Cryptography\Transaction\Factory\ScriptInfo\CheckSequenceVerify;

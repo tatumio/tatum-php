@@ -16,6 +16,7 @@ declare(strict_types=1);
  */
 
 namespace Tatum\Cryptography;
+!defined("TATUM-SDK") && exit();
 
 class Murmur {
     /**

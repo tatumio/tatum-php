@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * xrpAccountSettingsAccountSettingsXrpBlockchain_403_response Model

@@ -9,6 +9,7 @@
  */
 
 namespace Tatum\Local\Wallet;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Local\Chain;
 use Tatum\Cryptography\Crypto\EcAdapter\Key\PublicKeyInterface;

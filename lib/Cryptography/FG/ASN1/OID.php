@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\FG\ASN1;
+!defined("TATUM-SDK") && exit();
 
 class OID {
     const RSA_ENCRYPTION = "1.2.840.113549.1.1.1";

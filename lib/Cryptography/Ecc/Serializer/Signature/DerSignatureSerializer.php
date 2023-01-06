@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Serializer\Signature;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Crypto\Signature\SignatureInterface;
 

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Crypto\EcAdapter\Key;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Signature\CompactSignature;
 use Tatum\Cryptography\Crypto\EcAdapter\Signature\CompactSignatureInterface;

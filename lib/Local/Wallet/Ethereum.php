@@ -9,6 +9,7 @@
  */
 
 namespace Tatum\Local\Wallet;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Model;
 use Tatum\Local\Chain;

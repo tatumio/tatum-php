@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Serializer\Signature\Der;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\ASN1\ASNObject;
 use Tatum\Cryptography\FG\ASN1\Identifier;

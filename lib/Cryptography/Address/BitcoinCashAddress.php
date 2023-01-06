@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Address;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Network\BitcoinCashNetworkInterface;
 use Tatum\Cryptography\Exceptions\BitcoinCashNetworkRequiredException;

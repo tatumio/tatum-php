@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * FlowEvent_payload_value_fields_inner_value_oneOf_1_value Model

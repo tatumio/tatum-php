@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\MessageSigner;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\EcAdapter\EcSerializer;
 use Tatum\Cryptography\Crypto\EcAdapter\Serializer\Signature\CompactSignatureSerializerInterface;

@@ -182,18 +182,18 @@ API | Method | Description
 *auction()* | [**blockchainAuctionCancelAuctionCelo()**](./Api/AuctionApi.md#blockchainauctioncancelauctioncelo) | Cancel the selling of an asset at the NFT auction
 *auction()* | [**blockchainAuctionCancelAuctionCeloKMS()**](./Api/AuctionApi.md#blockchainauctioncancelauctioncelokms) | Cancel the selling of an asset at the NFT auction
 *auction()* | [**blockchainAuctionCancelAuctionKMS()**](./Api/AuctionApi.md#blockchainauctioncancelauctionkms) | Cancel the selling of an asset at the NFT auction
-*auction()* | [**blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctioncelokmsupdate) | Update the NFT auction fee
-*auction()* | [**blockchainAuctionFeeUpdateFeeAuctionCeloUpdate()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctionceloupdate) | Update the NFT auction fee
-*auction()* | [**blockchainAuctionFeeUpdateFeeAuctionKMSUpdate()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctionkmsupdate) | Update the NFT auction fee
-*auction()* | [**blockchainAuctionFeeUpdateFeeAuctionUpdate()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctionupdate) | Update the NFT auction fee
+*auction()* | [**blockchainAuctionFeeUpdateFeeAuction()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauction) | Update the NFT auction fee
+*auction()* | [**blockchainAuctionFeeUpdateFeeAuctionCelo()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctioncelo) | Update the NFT auction fee
+*auction()* | [**blockchainAuctionFeeUpdateFeeAuctionCeloKMS()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctioncelokms) | Update the NFT auction fee
+*auction()* | [**blockchainAuctionFeeUpdateFeeAuctionKMS()**](./Api/AuctionApi.md#blockchainauctionfeeupdatefeeauctionkms) | Update the NFT auction fee
 *auction()* | [**blockchainAuctionGenerateAuction()**](./Api/AuctionApi.md#blockchainauctiongenerateauction) | Create an NFT auction
 *auction()* | [**blockchainAuctionGenerateAuctionCelo()**](./Api/AuctionApi.md#blockchainauctiongenerateauctioncelo) | Create an NFT auction
 *auction()* | [**blockchainAuctionGenerateAuctionCeloKMS()**](./Api/AuctionApi.md#blockchainauctiongenerateauctioncelokms) | Create an NFT auction
 *auction()* | [**blockchainAuctionGenerateAuctionKMS()**](./Api/AuctionApi.md#blockchainauctiongenerateauctionkms) | Create an NFT auction
-*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientcelokmsupdate) | Update the recipient of the NFT auction fee
-*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientceloupdate) | Update the recipient of the NFT auction fee
-*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientkmsupdate) | Update the recipient of the NFT auction fee
-*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipientUpdate()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientupdate) | Update the recipient of the NFT auction fee
+*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipient()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipient) | Update the recipient of the NFT auction fee
+*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipientCelo()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientcelo) | Update the recipient of the NFT auction fee
+*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipientCeloKMS()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientcelokms) | Update the recipient of the NFT auction fee
+*auction()* | [**blockchainAuctionRecipientUpdateFeeRecipientKMS()**](./Api/AuctionApi.md#blockchainauctionrecipientupdatefeerecipientkms) | Update the recipient of the NFT auction fee
 *auction()* | [**blockchainAuctionSellCreateAuction()**](./Api/AuctionApi.md#blockchainauctionsellcreateauction) | Sell an asset at the NFT auction
 *auction()* | [**blockchainAuctionSellCreateAuctionCelo()**](./Api/AuctionApi.md#blockchainauctionsellcreateauctioncelo) | Sell an asset at the NFT auction
 *auction()* | [**blockchainAuctionSellCreateAuctionCeloKMS()**](./Api/AuctionApi.md#blockchainauctionsellcreateauctioncelokms) | Sell an asset at the NFT auction
@@ -508,9 +508,9 @@ API | Method | Description
 *ethereum()* | [**ethereumTransactionTransferEthBlockchain()**](./Api/EthereumApi.md#ethereumtransactiontransferethblockchain) | Send Ethereum / ERC20 from account to account
 *ethereum()* | [**ethereumTransactionTransferEthBlockchainKMS()**](./Api/EthereumApi.md#ethereumtransactiontransferethblockchainkms) | Send Ethereum / ERC20 from account to account
 *exchangeRate()* | [**getExchangeRate()**](./Api/ExchangeRateApi.md#getexchangerate) | Get the current exchange rate for exchanging fiat/crypto assets
-*flow()* | [**flowAccountFlowAddPubKeyMnemonicUpdate()**](./Api/FlowApi.md#flowaccountflowaddpubkeymnemonicupdate) | Add public key to Flow address
-*flow()* | [**flowAccountFlowAddPubKeySecretKMSUpdate()**](./Api/FlowApi.md#flowaccountflowaddpubkeysecretkmsupdate) | Add public key to Flow address
-*flow()* | [**flowAccountFlowAddPubKeySecretUpdate()**](./Api/FlowApi.md#flowaccountflowaddpubkeysecretupdate) | Add public key to Flow address
+*flow()* | [**flowAccountFlowAddPubKeyMnemonic()**](./Api/FlowApi.md#flowaccountflowaddpubkeymnemonic) | Add public key to Flow address
+*flow()* | [**flowAccountFlowAddPubKeySecret()**](./Api/FlowApi.md#flowaccountflowaddpubkeysecret) | Add public key to Flow address
+*flow()* | [**flowAccountFlowAddPubKeySecretKMS()**](./Api/FlowApi.md#flowaccountflowaddpubkeysecretkms) | Add public key to Flow address
 *flow()* | [**flowAccountFlowCreateAddressFromPubKeyKMS()**](./Api/FlowApi.md#flowaccountflowcreateaddressfrompubkeykms) | Create Flow address from public key
 *flow()* | [**flowAccountFlowCreateAddressFromPubKeyMnemonic()**](./Api/FlowApi.md#flowaccountflowcreateaddressfrompubkeymnemonic) | Create Flow address from public key
 *flow()* | [**flowAccountFlowCreateAddressFromPubKeySecret()**](./Api/FlowApi.md#flowaccountflowcreateaddressfrompubkeysecret) | Create Flow address from public key
@@ -693,32 +693,32 @@ API | Method | Description
 *marketplace()* | [**blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingcancelsellassetonmarketplacekms) | Cancel the selling of an asset on the NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingcancelsellassetonmarketplacesolana) | Cancel the selling of an asset on the NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingcancelsellassetonmarketplacesolanakms) | Cancel the selling of an asset on the NFT marketplace
-*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeecelokmsupdate) | Update the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeCeloUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeeceloupdate) | Update the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeKMSUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeekmsupdate) | Update the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeesolanakmsupdate) | Update the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeesolanaupdate) | Update the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeeupdate) | Update the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFee()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefee) | Update the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeCelo()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeecelo) | Update the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeCeloKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeecelokms) | Update the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeekms) | Update the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeesolana) | Update the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingFeeUpdateFeeSolanaKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingfeeupdatefeesolanakms) | Update the NFT marketplace fee
 *marketplace()* | [**blockchainMarketplaceListingGenerateMarketplace()**](./Api/MarketplaceApi.md#blockchainmarketplacelistinggeneratemarketplace) | Create an NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingGenerateMarketplaceCelo()**](./Api/MarketplaceApi.md#blockchainmarketplacelistinggeneratemarketplacecelo) | Create an NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingGenerateMarketplaceCeloKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistinggeneratemarketplacecelokms) | Create an NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingGenerateMarketplaceKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistinggeneratemarketplacekms) | Create an NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingGenerateMarketplaceSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacelistinggeneratemarketplacesolana) | Create an NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingGenerateMarketplaceSolanaKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistinggeneratemarketplacesolanakms) | Create an NFT marketplace
-*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientcelokmsupdate) | Update the recipient of the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientceloupdate) | Update the recipient of the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientkmsupdate) | Update the recipient of the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientsolanakmsupdate) | Update the recipient of the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientsolanaupdate) | Update the recipient of the NFT marketplace fee
-*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientupdate) | Update the recipient of the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipient()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipient) | Update the recipient of the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientcelo) | Update the recipient of the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientcelokms) | Update the recipient of the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientkms) | Update the recipient of the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientsolana) | Update the recipient of the NFT marketplace fee
+*marketplace()* | [**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingrecipientupdatefeerecipientsolanakms) | Update the recipient of the NFT marketplace fee
 *marketplace()* | [**blockchainMarketplaceListingSellAssetOnMarketplace()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingsellassetonmarketplace) | Sell an asset on the NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingSellAssetOnMarketplaceCelo()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingsellassetonmarketplacecelo) | Sell an asset on the NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingsellassetonmarketplacecelokms) | Sell an asset on the NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingSellAssetOnMarketplaceKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingsellassetonmarketplacekms) | Sell an asset on the NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingSellAssetOnMarketplaceSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingsellassetonmarketplacesolana) | Sell an asset on the NFT marketplace
 *marketplace()* | [**blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingsellassetonmarketplacesolanakms) | Sell an asset on the NFT marketplace
-*marketplace()* | [**blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingupdatemarketplacesolanakmsupdate) | Update an NFT marketplace on Solana
-*marketplace()* | [**blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingupdatemarketplacesolanaupdate) | Update an NFT marketplace on Solana
+*marketplace()* | [**blockchainMarketplaceListingUpdateMarketplaceSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingupdatemarketplacesolana) | Update an NFT marketplace on Solana
+*marketplace()* | [**blockchainMarketplaceListingUpdateMarketplaceSolanaKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacelistingupdatemarketplacesolanakms) | Update an NFT marketplace on Solana
 *marketplace()* | [**blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacewithdrawfeewithdrawfrommarketplacesolana) | Withdraw funds from the marketplace fee account on Solana
 *marketplace()* | [**blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS()**](./Api/MarketplaceApi.md#blockchainmarketplacewithdrawfeewithdrawfrommarketplacesolanakms) | Withdraw funds from the marketplace fee account on Solana
 *marketplace()* | [**blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana()**](./Api/MarketplaceApi.md#blockchainmarketplacewithdrawtreasurywithdrawfrommarketplacesolana) | Withdraw funds from the marketplace treasury account on Solana
@@ -823,12 +823,12 @@ API | Method | Description
 *nFTERC721OrCompatible()* | [**nftMintNftSolana()**](./Api/NFTERC721OrCompatibleApi.md#nftmintnftsolana) | Mint an NFT
 *nFTERC721OrCompatible()* | [**nftMintNftSolanaKMS()**](./Api/NFTERC721OrCompatibleApi.md#nftmintnftsolanakms) | Mint an NFT
 *nFTERC721OrCompatible()* | [**nftMintNftTron()**](./Api/NFTERC721OrCompatibleApi.md#nftmintnfttron) | Mint an NFT
-*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftceloupdate) | Update NFT royalty information
-*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkmsceloupdate) | Update NFT royalty information
-*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkmstronupdate) | Update NFT royalty information
-*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkmsupdate) | Update NFT royalty information
-*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornfttronupdate) | Update NFT royalty information
-*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftUpdate()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftupdate) | Update NFT royalty information
+*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNft()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornft) | Update NFT royalty information
+*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftCelo()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftcelo) | Update NFT royalty information
+*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftKMS()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkms) | Update NFT royalty information
+*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftKMSCelo()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkmscelo) | Update NFT royalty information
+*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftKMSTron()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkmstron) | Update NFT royalty information
+*nFTERC721OrCompatible()* | [**nftRoyaltyUpdateCashbackValueForAuthorNftTron()**](./Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornfttron) | Update NFT royalty information
 *nFTERC721OrCompatible()* | [**nftTransactionTransferNft()**](./Api/NFTERC721OrCompatibleApi.md#nfttransactiontransfernft) | Transfer an NFT
 *nFTERC721OrCompatible()* | [**nftTransactionTransferNftAlgo()**](./Api/NFTERC721OrCompatibleApi.md#nfttransactiontransfernftalgo) | Transfer an NFT
 *nFTERC721OrCompatible()* | [**nftTransactionTransferNftAlgoExpress()**](./Api/NFTERC721OrCompatibleApi.md#nfttransactiontransfernftalgoexpress) | Transfer an NFT

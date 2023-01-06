@@ -12,6 +12,7 @@ declare(strict_types=1);
  */
 
 namespace Tatum\Local\Transaction\Bitcoin;
+!defined("TATUM-SDK") && exit();
 
 class Transfer {
     /**

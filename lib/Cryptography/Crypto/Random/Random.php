@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Crypto\Random;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Exceptions\RandomBytesFailure;
 use Tatum\Cryptography\Buffertools\Buffer;

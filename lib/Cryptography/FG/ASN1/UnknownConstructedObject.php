@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\FG\ASN1;
+!defined("TATUM-SDK") && exit();
 
 class UnknownConstructedObject extends Construct {
     private $identifier;

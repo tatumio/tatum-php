@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * offchainEthereumErc20DeployErc20OffchainMnemonicAddress_200_response Model

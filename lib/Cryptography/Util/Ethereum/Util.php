@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Util\Ethereum;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException;
 use RuntimeException;

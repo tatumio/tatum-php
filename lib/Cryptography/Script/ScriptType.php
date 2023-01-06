@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script;
+!defined("TATUM-SDK") && exit();
 
 class ScriptType {
     const P2PK = "pubkey";

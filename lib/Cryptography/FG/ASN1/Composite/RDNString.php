@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\FG\ASN1\Composite;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\ASN1\Universal\PrintableString;
 use Tatum\Cryptography\FG\ASN1\Universal\IA5String;

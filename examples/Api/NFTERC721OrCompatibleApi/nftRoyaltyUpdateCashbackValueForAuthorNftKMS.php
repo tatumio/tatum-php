@@ -4,8 +4,8 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkmsupdate
+ * @see     API docs: https://apidoc.tatum.io/tag/NFTERC721OrCompatible#operation/nftRoyaltyUpdateCashbackValueForAuthorNftKMS
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/NFTERC721OrCompatibleApi.md#nftroyaltyupdatecashbackvalueforauthornftkms
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!
@@ -29,13 +29,13 @@ try {
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
-        ->nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate($arg_update_cashback_value_for_author_nft_kms, $arg_x_testnet_type);
+        ->nftRoyaltyUpdateCashbackValueForAuthorNftKMS($arg_update_cashback_value_for_author_nft_kms, $arg_x_testnet_type);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate(): ", 
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMS(): ", 
         var_export($apiExc->getResponseObject(), true), 
         PHP_EOL;
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate(): " . $exc->getMessage() . PHP_EOL;
+    echo "Exception when calling api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMS(): " . $exc->getMessage() . PHP_EOL;
 }

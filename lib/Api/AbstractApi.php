@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Api;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Caller;
 use Tatum\Sdk\HeaderSelector;

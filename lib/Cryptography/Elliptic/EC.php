@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Elliptic;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Elliptic\Curve\PresetCurve;
 use Tatum\Cryptography\Elliptic\EC\KeyPair;

@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Elliptic\Curve;
+!defined("TATUM-SDK") && exit();
 
 use \Exception;
 use Tatum\Cryptography\Elliptic\Utils;

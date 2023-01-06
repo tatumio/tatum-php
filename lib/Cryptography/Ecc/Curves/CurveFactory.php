@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Curves;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Exception\UnknownCurveException;
 use Tatum\Cryptography\Ecc\Exception\UnsupportedCurveException;

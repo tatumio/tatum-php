@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script\Factory;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Key\PublicKey;
 use Tatum\Cryptography\Crypto\EcAdapter\Key\PublicKeyInterface;

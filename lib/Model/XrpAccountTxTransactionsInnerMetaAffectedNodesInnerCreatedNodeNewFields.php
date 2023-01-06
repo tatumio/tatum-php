@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * XrpAccountTx_transactions_inner_meta_AffectedNodes_inner_CreatedNode_NewFields Model

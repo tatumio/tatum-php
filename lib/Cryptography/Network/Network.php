@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Network;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Exceptions\InvalidNetworkParameter;
 use Tatum\Cryptography\Exceptions\MissingBase58Prefix;

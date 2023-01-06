@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * oneSmartcontractCallOneReadSmartContractMethod_403_response Model

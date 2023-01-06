@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Sdk\Psr7;
+!defined("TATUM-SDK") && exit();
 
 final class Header {
     /**

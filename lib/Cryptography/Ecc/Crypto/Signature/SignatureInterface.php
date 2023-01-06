@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Crypto\Signature;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Copyright (C) 2012 Matyas Danter

@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * DogeTransactionUTXOKMS_fromUTXO_inner Model

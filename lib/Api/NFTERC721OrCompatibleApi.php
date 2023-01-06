@@ -13,6 +13,7 @@
  */
 
 namespace Tatum\Api;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException as IAE;
 use Tatum\Sdk\Serializer as S;
@@ -1834,6 +1835,36 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Update NFT royalty information
      *
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftRoyaltyUpdateCashbackValueForAuthorNft(\Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update NFT royalty information
+     *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1841,7 +1872,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftCelo(\Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1864,6 +1895,36 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Update NFT royalty information
      *
+     * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMS(\Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update NFT royalty information
+     *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1871,7 +1932,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSCelo(\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1901,7 +1962,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSTron(\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1924,36 +1985,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
      * Update NFT royalty information
      *
-     * @param \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Update NFT royalty information
-     *
      * @param \Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1961,7 +1992,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
+    public function nftRoyaltyUpdateCashbackValueForAuthorNftTron(\Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1974,36 +2005,6 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_tron
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Update NFT royalty information
-     *
-     * @param \Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function nftRoyaltyUpdateCashbackValueForAuthorNftUpdate(\Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Network\Slip132;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Key\Deterministic\Slip132\PrefixRegistry;
 use Tatum\Cryptography\Script\ScriptType;

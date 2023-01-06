@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Serializer\Script;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\ScriptWitness;
 use Tatum\Cryptography\Script\ScriptWitnessInterface;

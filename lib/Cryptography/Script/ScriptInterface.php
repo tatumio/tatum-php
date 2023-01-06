@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\Parser\Parser;
 use Tatum\Cryptography\SerializableInterface;

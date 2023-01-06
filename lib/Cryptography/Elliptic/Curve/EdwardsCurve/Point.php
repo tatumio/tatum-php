@@ -1,5 +1,6 @@
 <?php
 namespace Tatum\Cryptography\Elliptic\Curve\EdwardsCurve;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Util\BN\BigNumber;
 use Tatum\Cryptography\Elliptic\Curve\BaseCurve\Point as BasePoint;

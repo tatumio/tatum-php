@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Serializer\Bloom;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Bitcoin;
 use Tatum\Cryptography\Bloom\BloomFilter;

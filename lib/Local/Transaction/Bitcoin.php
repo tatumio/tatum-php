@@ -9,6 +9,7 @@
  */
 
 namespace Tatum\Local\Transaction;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException;
 use Tatum\Cryptography\Bitcoin as BTC;

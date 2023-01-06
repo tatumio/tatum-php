@@ -13,6 +13,7 @@
  */
 
 namespace Tatum\Api;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException as IAE;
 use Tatum\Sdk\Serializer as S;
@@ -300,19 +301,19 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the NFT marketplace fee
      *
-     * @param \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms 
+     * @param \Tatum\Model\UpdateFee $update_fee 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate(\Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms) {
+    public function blockchainMarketplaceListingFeeUpdateFee(\Tatum\Model\UpdateFee $update_fee) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_celo_kms
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -329,7 +330,7 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingFeeUpdateFeeCeloUpdate(\Tatum\Model\UpdateFeeCelo $update_fee_celo) {
+    public function blockchainMarketplaceListingFeeUpdateFeeCelo(\Tatum\Model\UpdateFeeCelo $update_fee_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -346,13 +347,36 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the NFT marketplace fee
      *
+     * @param \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainMarketplaceListingFeeUpdateFeeCeloKMS(\Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_celo_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update the NFT marketplace fee
+     *
      * @param \Tatum\Model\UpdateFeeKMS $update_fee_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingFeeUpdateFeeKMSUpdate(\Tatum\Model\UpdateFeeKMS $update_fee_kms) {
+    public function blockchainMarketplaceListingFeeUpdateFeeKMS(\Tatum\Model\UpdateFeeKMS $update_fee_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -369,36 +393,13 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the NFT marketplace fee
      *
-     * @param \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate(\Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_solana_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Update the NFT marketplace fee
-     *
      * @param \Tatum\Model\UpdateFeeSolana $update_fee_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate(\Tatum\Model\UpdateFeeSolana $update_fee_solana) {
+    public function blockchainMarketplaceListingFeeUpdateFeeSolana(\Tatum\Model\UpdateFeeSolana $update_fee_solana) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -415,19 +416,19 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the NFT marketplace fee
      *
-     * @param \Tatum\Model\UpdateFee $update_fee 
+     * @param \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingFeeUpdateFeeUpdate(\Tatum\Model\UpdateFee $update_fee) {
+    public function blockchainMarketplaceListingFeeUpdateFeeSolanaKMS(\Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_solana_kms
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -576,19 +577,19 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the recipient of the NFT marketplace fee
      *
-     * @param \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms 
+     * @param \Tatum\Model\UpdateFeeRecipient $update_fee_recipient 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate(\Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms) {
+    public function blockchainMarketplaceListingRecipientUpdateFeeRecipient(\Tatum\Model\UpdateFeeRecipient $update_fee_recipient) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_celo_kms
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -605,7 +606,7 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate(\Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo) {
+    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo(\Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -622,13 +623,36 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the recipient of the NFT marketplace fee
      *
+     * @param \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     */
+    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS(\Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_celo_kms
+            ), 
+            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Update the recipient of the NFT marketplace fee
+     *
      * @param \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate(\Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms) {
+    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS(\Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -645,36 +669,13 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the recipient of the NFT marketplace fee
      *
-     * @param \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate(\Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_solana_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Update the recipient of the NFT marketplace fee
-     *
      * @param \Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate(\Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana) {
+    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana(\Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
@@ -691,19 +692,19 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update the recipient of the NFT marketplace fee
      *
-     * @param \Tatum\Model\UpdateFeeRecipient $update_fee_recipient 
+     * @param \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate(\Tatum\Model\UpdateFeeRecipient $update_fee_recipient) {
+    public function blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS(\Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_solana_kms
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -852,19 +853,19 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update an NFT marketplace on Solana
      *
-     * @param \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms 
+     * @param \Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate(\Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms) {
+    public function blockchainMarketplaceListingUpdateMarketplaceSolana(\Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $update_marketplace_solana_kms
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $update_marketplace_solana
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
@@ -875,19 +876,19 @@ class MarketplaceApi extends AbstractApi {
     /**
      * Update an NFT marketplace on Solana
      *
-     * @param \Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana 
+     * @param \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
      */
-    public function blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate(\Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana) {
+    public function blockchainMarketplaceListingUpdateMarketplaceSolanaKMS(\Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $update_marketplace_solana
+                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $update_marketplace_solana_kms
             ), 
             "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );

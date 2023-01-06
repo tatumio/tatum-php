@@ -17,32 +17,32 @@ Method | HTTP request | Description
 [**blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS()**](#blockchainmarketplacelistingcancelsellassetonmarketplacekms) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
 [**blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana()**](#blockchainmarketplacelistingcancelsellassetonmarketplacesolana) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
 [**blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS()**](#blockchainmarketplacelistingcancelsellassetonmarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
-[**blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate()**](#blockchainmarketplacelistingfeeupdatefeecelokmsupdate) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeCeloUpdate()**](#blockchainmarketplacelistingfeeupdatefeeceloupdate) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeKMSUpdate()**](#blockchainmarketplacelistingfeeupdatefeekmsupdate) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate()**](#blockchainmarketplacelistingfeeupdatefeesolanakmsupdate) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate()**](#blockchainmarketplacelistingfeeupdatefeesolanaupdate) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeUpdate()**](#blockchainmarketplacelistingfeeupdatefeeupdate) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
+[**blockchainMarketplaceListingFeeUpdateFee()**](#blockchainmarketplacelistingfeeupdatefee) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
+[**blockchainMarketplaceListingFeeUpdateFeeCelo()**](#blockchainmarketplacelistingfeeupdatefeecelo) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
+[**blockchainMarketplaceListingFeeUpdateFeeCeloKMS()**](#blockchainmarketplacelistingfeeupdatefeecelokms) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
+[**blockchainMarketplaceListingFeeUpdateFeeKMS()**](#blockchainmarketplacelistingfeeupdatefeekms) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
+[**blockchainMarketplaceListingFeeUpdateFeeSolana()**](#blockchainmarketplacelistingfeeupdatefeesolana) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
+[**blockchainMarketplaceListingFeeUpdateFeeSolanaKMS()**](#blockchainmarketplacelistingfeeupdatefeesolanakms) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
 [**blockchainMarketplaceListingGenerateMarketplace()**](#blockchainmarketplacelistinggeneratemarketplace) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
 [**blockchainMarketplaceListingGenerateMarketplaceCelo()**](#blockchainmarketplacelistinggeneratemarketplacecelo) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
 [**blockchainMarketplaceListingGenerateMarketplaceCeloKMS()**](#blockchainmarketplacelistinggeneratemarketplacecelokms) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
 [**blockchainMarketplaceListingGenerateMarketplaceKMS()**](#blockchainmarketplacelistinggeneratemarketplacekms) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
 [**blockchainMarketplaceListingGenerateMarketplaceSolana()**](#blockchainmarketplacelistinggeneratemarketplacesolana) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
 [**blockchainMarketplaceListingGenerateMarketplaceSolanaKMS()**](#blockchainmarketplacelistinggeneratemarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate()**](#blockchainmarketplacelistingrecipientupdatefeerecipientcelokmsupdate) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate()**](#blockchainmarketplacelistingrecipientupdatefeerecipientceloupdate) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate()**](#blockchainmarketplacelistingrecipientupdatefeerecipientkmsupdate) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate()**](#blockchainmarketplacelistingrecipientupdatefeerecipientsolanakmsupdate) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate()**](#blockchainmarketplacelistingrecipientupdatefeerecipientsolanaupdate) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate()**](#blockchainmarketplacelistingrecipientupdatefeerecipientupdate) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
+[**blockchainMarketplaceListingRecipientUpdateFeeRecipient()**](#blockchainmarketplacelistingrecipientupdatefeerecipient) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
+[**blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo()**](#blockchainmarketplacelistingrecipientupdatefeerecipientcelo) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
+[**blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS()**](#blockchainmarketplacelistingrecipientupdatefeerecipientcelokms) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
+[**blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS()**](#blockchainmarketplacelistingrecipientupdatefeerecipientkms) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
+[**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana()**](#blockchainmarketplacelistingrecipientupdatefeerecipientsolana) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
+[**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS()**](#blockchainmarketplacelistingrecipientupdatefeerecipientsolanakms) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
 [**blockchainMarketplaceListingSellAssetOnMarketplace()**](#blockchainmarketplacelistingsellassetonmarketplace) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
 [**blockchainMarketplaceListingSellAssetOnMarketplaceCelo()**](#blockchainmarketplacelistingsellassetonmarketplacecelo) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
 [**blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS()**](#blockchainmarketplacelistingsellassetonmarketplacecelokms) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
 [**blockchainMarketplaceListingSellAssetOnMarketplaceKMS()**](#blockchainmarketplacelistingsellassetonmarketplacekms) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
 [**blockchainMarketplaceListingSellAssetOnMarketplaceSolana()**](#blockchainmarketplacelistingsellassetonmarketplacesolana) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
 [**blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS()**](#blockchainmarketplacelistingsellassetonmarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
-[**blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate()**](#blockchainmarketplacelistingupdatemarketplacesolanakmsupdate) | **PUT** `/v3/blockchain/marketplace/listing` | Update an NFT marketplace on Solana
-[**blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate()**](#blockchainmarketplacelistingupdatemarketplacesolanaupdate) | **PUT** `/v3/blockchain/marketplace/listing` | Update an NFT marketplace on Solana
+[**blockchainMarketplaceListingUpdateMarketplaceSolana()**](#blockchainmarketplacelistingupdatemarketplacesolana) | **PUT** `/v3/blockchain/marketplace/listing` | Update an NFT marketplace on Solana
+[**blockchainMarketplaceListingUpdateMarketplaceSolanaKMS()**](#blockchainmarketplacelistingupdatemarketplacesolanakms) | **PUT** `/v3/blockchain/marketplace/listing` | Update an NFT marketplace on Solana
 [**blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana()**](#blockchainmarketplacewithdrawfeewithdrawfrommarketplacesolana) | **POST** `/v3/blockchain/marketplace/withdraw/fee` | Withdraw funds from the marketplace fee account on Solana
 [**blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS()**](#blockchainmarketplacewithdrawfeewithdrawfrommarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/withdraw/fee` | Withdraw funds from the marketplace fee account on Solana
 [**blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana()**](#blockchainmarketplacewithdrawtreasurywithdrawfrommarketplacesolana) | **POST** `/v3/blockchain/marketplace/withdraw/treasury` | Withdraw funds from the marketplace treasury account on Solana
@@ -438,172 +438,12 @@ CancelSellAssetOnMarketplaceSolanaKMS operation
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate()`
+## `blockchainMarketplaceListingFeeUpdateFee()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate(
-    \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_celo_kms** | [**\Tatum\Model\UpdateFeeCeloKMS**](../Model/UpdateFeeCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeCeloKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeCeloKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeCeloUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeCeloUpdate(
-    \Tatum\Model\UpdateFeeCelo $update_fee_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_celo** | [**\Tatum\Model\UpdateFeeCelo**](../Model/UpdateFeeCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeCelo operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeCeloUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeCeloUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeKMSUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeKMSUpdate(
-    \Tatum\Model\UpdateFeeKMS $update_fee_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_kms** | [**\Tatum\Model\UpdateFeeKMS**](../Model/UpdateFeeKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeKMSUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate(
-    \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_solana_kms** | [**\Tatum\Model\UpdateFeeSolanaKMS**](../Model/UpdateFeeSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeSolanaKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate(
-    \Tatum\Model\UpdateFeeSolana $update_fee_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_solana** | [**\Tatum\Model\UpdateFeeSolana**](../Model/UpdateFeeSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeSolana operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeSolanaUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeUpdate(
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFee(
     \Tatum\Model\UpdateFee $update_fee
 ): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
@@ -626,7 +466,167 @@ Update the NFT marketplace fee
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeUpdate.php)
+[✨ View "blockchainMarketplaceListingFeeUpdateFee.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFee.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingFeeUpdateFeeCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeCelo(
+    \Tatum\Model\UpdateFeeCelo $update_fee_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_celo** | [**\Tatum\Model\UpdateFeeCelo**](../Model/UpdateFeeCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeCelo operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingFeeUpdateFeeCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingFeeUpdateFeeCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeCeloKMS(
+    \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_celo_kms** | [**\Tatum\Model\UpdateFeeCeloKMS**](../Model/UpdateFeeCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeCeloKMS operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingFeeUpdateFeeCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingFeeUpdateFeeKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeKMS(
+    \Tatum\Model\UpdateFeeKMS $update_fee_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_kms** | [**\Tatum\Model\UpdateFeeKMS**](../Model/UpdateFeeKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeKMS operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingFeeUpdateFeeKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingFeeUpdateFeeSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeSolana(
+    \Tatum\Model\UpdateFeeSolana $update_fee_solana
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_solana** | [**\Tatum\Model\UpdateFeeSolana**](../Model/UpdateFeeSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeSolana operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingFeeUpdateFeeSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingFeeUpdateFeeSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeSolanaKMS(
+    \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_solana_kms** | [**\Tatum\Model\UpdateFeeSolanaKMS**](../Model/UpdateFeeSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeSolanaKMS operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingFeeUpdateFeeSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -822,172 +822,12 @@ GenerateMarketplaceSolanaKMS operation
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate()`
+## `blockchainMarketplaceListingRecipientUpdateFeeRecipient()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate(
-    \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientCeloKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate(
-    \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientCelo operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate(
-    \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate(
-    \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_solana_kms** | [**\Tatum\Model\UpdateFeeRecipientSolanaKMS**](../Model/UpdateFeeRecipientSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate(
-    \Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_solana** | [**\Tatum\Model\UpdateFeeRecipientSolana**](../Model/UpdateFeeRecipientSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientSolana operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate(
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipient(
     \Tatum\Model\UpdateFeeRecipient $update_fee_recipient
 ): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
@@ -1010,7 +850,167 @@ Update the recipient of the NFT marketplace fee
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientUpdate.php)
+[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipient.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipient.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo(
+    \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientCelo operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS(
+    \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientCeloKMS operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS(
+    \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientKMS operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana(
+    \Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_solana** | [**\Tatum\Model\UpdateFeeRecipientSolana**](../Model/UpdateFeeRecipientSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientSolana operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS(
+    \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_solana_kms** | [**\Tatum\Model\UpdateFeeRecipientSolanaKMS**](../Model/UpdateFeeRecipientSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientSolanaKMS operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1206,44 +1206,12 @@ SellAssetOnMarketplaceSolanaKMS operation
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate()`
+## `blockchainMarketplaceListingUpdateMarketplaceSolana()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate(
-    \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_marketplace_solana_kms** | [**\Tatum\Model\UpdateMarketplaceSolanaKMS**](../Model/UpdateMarketplaceSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update an NFT marketplace on Solana
-
-UpdateMarketplaceSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingUpdateMarketplaceSolanaKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate(
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolana(
     \Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana
 ): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
@@ -1266,7 +1234,39 @@ Update an NFT marketplace on Solana
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingUpdateMarketplaceSolanaUpdate.php)
+[✨ View "blockchainMarketplaceListingUpdateMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingUpdateMarketplaceSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainMarketplaceListingUpdateMarketplaceSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaKMS(
+    \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_marketplace_solana_kms** | [**\Tatum\Model\UpdateMarketplaceSolanaKMS**](../Model/UpdateMarketplaceSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update an NFT marketplace on Solana
+
+UpdateMarketplaceSolanaKMS operation
+
+### Example
+
+[✨ View "blockchainMarketplaceListingUpdateMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingUpdateMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

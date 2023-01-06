@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography;
+!defined("TATUM-SDK") && exit();
 
 use Exception;
 use function mb_strlen;

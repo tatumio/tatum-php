@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\FG\ASN1\Universal;
+!defined("TATUM-SDK") && exit();
 
 use Exception;
 use Tatum\Cryptography\FG\ASN1\Exception\ParserException;

@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\FG\X509\SAN;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\ASN1\Universal\GeneralString;
 

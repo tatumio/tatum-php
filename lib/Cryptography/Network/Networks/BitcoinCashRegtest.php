@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Network\Networks;
+!defined("TATUM-SDK") && exit();
 
 class BitcoinCashRegtest extends BitcoinCashTestnet {
     /**

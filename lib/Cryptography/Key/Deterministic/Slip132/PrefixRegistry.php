@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Key\Deterministic\Slip132;
+!defined("TATUM-SDK") && exit();
 
 class PrefixRegistry {
     /**

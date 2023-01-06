@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3\RequestManagers;
+!defined("TATUM-SDK") && exit();
 
 class RequestManager {
     /**

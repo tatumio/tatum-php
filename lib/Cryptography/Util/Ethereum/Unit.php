@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Util\Ethereum;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Ethereum units convertion utility

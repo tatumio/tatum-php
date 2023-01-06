@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3\Contracts;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Web3\Utils;
 use Tatum\Cryptography\Web3\Formatters\IntegerFormatter;

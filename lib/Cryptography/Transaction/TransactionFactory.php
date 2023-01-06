@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Transaction;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Serializer\Transaction\TransactionSerializer;
 use Tatum\Cryptography\Transaction\Factory\TxBuilder;

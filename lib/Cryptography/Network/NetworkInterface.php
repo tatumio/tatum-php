@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Network;
+!defined("TATUM-SDK") && exit();
 
 interface NetworkInterface {
     /**

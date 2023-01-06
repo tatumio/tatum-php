@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Transaction\Mutator;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\ScriptWitnessInterface;
 use Tatum\Cryptography\Transaction\Transaction;

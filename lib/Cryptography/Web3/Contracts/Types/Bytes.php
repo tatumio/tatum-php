@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3\Contracts\Types;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException;
 use Tatum\Cryptography\Web3\Utils;

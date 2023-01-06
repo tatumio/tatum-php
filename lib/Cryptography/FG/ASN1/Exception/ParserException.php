@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\FG\ASN1\Exception;
+!defined("TATUM-SDK") && exit();
 
 class ParserException extends \Exception {
     private $errorMessage;

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Serializer\Block;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Block\Block;
 use Tatum\Cryptography\Block\BlockInterface;

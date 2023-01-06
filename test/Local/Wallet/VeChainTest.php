@@ -9,6 +9,7 @@
  */
 
 namespace Tatum\Test\Local\Wallet;
+!class_exists("\Tatum\Sdk") && exit();
 
 use Tatum\Sdk;
 

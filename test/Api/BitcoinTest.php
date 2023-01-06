@@ -9,6 +9,7 @@
  */
 
 namespace Tatum\Test\Local\Api;
+!class_exists("\Tatum\Sdk") && exit();
 
 use Tatum\Sdk;
 use Tatum\Model;

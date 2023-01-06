@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Address\BitcoinCash;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Address\Base58Address;
 use Tatum\Cryptography\Address\Base58AddressInterface;

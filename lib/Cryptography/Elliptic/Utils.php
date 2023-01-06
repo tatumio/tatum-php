@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Elliptic;
+!defined("TATUM-SDK") && exit();
 
 use \Exception;
 use Tatum\Cryptography\Util\BN\BigNumber;

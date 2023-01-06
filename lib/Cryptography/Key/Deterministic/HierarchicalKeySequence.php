@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Key\Deterministic;
+!defined("TATUM-SDK") && exit();
 
 class HierarchicalKeySequence {
     private static $filterBip32Index = [

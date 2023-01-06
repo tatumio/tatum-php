@@ -12,6 +12,7 @@ declare(strict_types=1);
  */
 
 namespace Tatum\Local\Transaction;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Caller;
 

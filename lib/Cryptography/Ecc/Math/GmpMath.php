@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Ecc\Math;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Util\BinaryString;
 use Tatum\Cryptography\Ecc\Util\NumberSize;

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Transaction\Factory\ScriptInfo;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Locktime;
 use Tatum\Cryptography\Script\Interpreter\Number;

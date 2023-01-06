@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Serializer\Point;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Primitives\PointInterface;
 use Tatum\Cryptography\Ecc\Primitives\CurveFpInterface;

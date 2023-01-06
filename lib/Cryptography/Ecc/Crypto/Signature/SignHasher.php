@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Ecc\Crypto\Signature;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\EccFactory;
 use Tatum\Cryptography\Ecc\Math\GmpMathInterface;

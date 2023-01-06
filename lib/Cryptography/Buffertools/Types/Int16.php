@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Buffertools\Types;
+!defined("TATUM-SDK") && exit();
 
 class Int16 extends AbstractSignedInt {
     /**

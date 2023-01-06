@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Ecc\Math;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Copyright (C) 2012 Matyas Danter

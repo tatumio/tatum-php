@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Key;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Bitcoin;
 use Tatum\Cryptography\Crypto\EcAdapter\Impl\PhpEcc\Adapter\EcAdapter;

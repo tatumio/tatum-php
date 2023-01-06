@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Crypto\EcDH;
+!defined("TATUM-SDK") && exit();
 
 /**
  * *********************************************************************

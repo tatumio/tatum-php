@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Serializer;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Buffertools\CachingTypeFactory;
 use Tatum\Cryptography\Buffertools\Types\ByteString;

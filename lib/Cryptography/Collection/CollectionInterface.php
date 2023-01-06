@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Collection;
+!defined("TATUM-SDK") && exit();
 
 /**
  * @deprecated

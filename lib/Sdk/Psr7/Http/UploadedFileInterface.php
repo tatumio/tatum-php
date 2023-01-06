@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Sdk\Psr7\Http;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Value object representing a file uploaded through an HTTP request.

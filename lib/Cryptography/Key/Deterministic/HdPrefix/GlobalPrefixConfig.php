@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Key\Deterministic\HdPrefix;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Network\NetworkInterface;
 

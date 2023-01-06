@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\FG\ASN1;
+!defined("TATUM-SDK") && exit();
 
 class UnknownObject extends ASNObject {
     /** @var string */

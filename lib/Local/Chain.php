@@ -10,6 +10,7 @@
  */
 
 namespace Tatum\Local;
+!defined("TATUM-SDK") && exit();
 
 class Chain {
     /**

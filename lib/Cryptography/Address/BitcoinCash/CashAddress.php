@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Address\BitcoinCash;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Exceptions\Base32Exception;
 use Tatum\Cryptography\Exceptions\BitcoinCashAddressException;

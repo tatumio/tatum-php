@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Serializer\Transaction;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Transaction\TransactionInterface;
 use Tatum\Cryptography\Buffertools\BufferInterface;

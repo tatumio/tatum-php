@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Util\BN;
+!defined("TATUM-SDK") && exit();
 
 if (!defined("S_MATH_BIGINTEGER_MODE")) {
     if (extension_loaded("gmp")) {

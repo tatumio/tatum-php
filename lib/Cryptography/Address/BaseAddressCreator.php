@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Address;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Network\NetworkInterface;
 use Tatum\Cryptography\Script\ScriptInterface;

@@ -13,6 +13,7 @@
  */
 
 namespace Tatum\Api;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException as IAE;
 use Tatum\Sdk\Serializer as S;

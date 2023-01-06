@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Serializer\PublicKey\Der;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\ASN1\Universal\Sequence;
 use Tatum\Cryptography\FG\ASN1\Universal\ObjectIdentifier;

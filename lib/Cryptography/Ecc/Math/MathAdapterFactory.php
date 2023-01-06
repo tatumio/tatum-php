@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Ecc\Math;
+!defined("TATUM-SDK") && exit();
 
 class MathAdapterFactory {
     /**

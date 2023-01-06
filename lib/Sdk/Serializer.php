@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Sdk;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException;
 use RuntimeException;

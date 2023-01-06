@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script\Consensus;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\Consensus\Exception\BitcoinConsensusException;
 use Tatum\Cryptography\Script\Interpreter\InterpreterInterface;

@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * MultiTokenGetAddressBalance_200_response_inner_metadata_inner Model

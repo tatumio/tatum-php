@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Key\KeyToScript\Decorator;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Exceptions\DisallowedScriptDataFactoryException;
 use Tatum\Cryptography\Key\KeyToScript\Factory\KeyToScriptDataFactory;

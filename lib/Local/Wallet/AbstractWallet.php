@@ -12,6 +12,7 @@ declare(strict_types=1);
  */
 
 namespace Tatum\Local\Wallet;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Sdk\Caller;
 use Tatum\Local\Chain;

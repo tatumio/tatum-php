@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Address\SegwitAddress;
 use Tatum\Cryptography\Exceptions\WitnessScriptException;

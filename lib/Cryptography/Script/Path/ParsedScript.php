@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Script\Path;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\ScriptInterface;
 

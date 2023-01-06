@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Semver\Constraint;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Defines the absence of a constraint.

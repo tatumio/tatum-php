@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Web3;
+!defined("TATUM-SDK") && exit();
 
 use InvalidArgumentException;
 use stdClass;

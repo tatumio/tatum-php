@@ -1,5 +1,6 @@
 <?php
 namespace Tatum\Cryptography\Elliptic\EdDSA;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Elliptic\Utils;
 

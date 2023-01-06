@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Transaction\Bip69;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\ScriptWitnessInterface;
 use Tatum\Cryptography\Transaction\Mutator\TxMutator;

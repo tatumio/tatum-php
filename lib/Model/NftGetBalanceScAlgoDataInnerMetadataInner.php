@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * NftGetBalanceScAlgo_data_inner_metadata_inner Model

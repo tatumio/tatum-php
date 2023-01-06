@@ -7,6 +7,7 @@ declare(strict_types=1);
  */
 
 namespace Tatum\Cryptography\Ecc\Primitives;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Exception\PointRecoveryException;
 use Tatum\Cryptography\Ecc\Exception\SquareRootException;

@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\Merkle;
+!defined("TATUM-SDK") && exit();
 
 /**
  * Acts like a TwoChildrenNode but accepts one data item and duplicates it

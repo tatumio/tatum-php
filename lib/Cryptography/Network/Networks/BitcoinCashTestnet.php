@@ -1,6 +1,7 @@
 <?php
 
 namespace Tatum\Cryptography\Network\Networks;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Script\ScriptType;
 

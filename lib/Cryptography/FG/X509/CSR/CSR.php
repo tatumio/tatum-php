@@ -6,6 +6,7 @@
  */
 
 namespace Tatum\Cryptography\FG\X509\CSR;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\FG\ASN1\OID;
 use Tatum\Cryptography\FG\ASN1\Universal\Integer;

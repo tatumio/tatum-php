@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Ecc\Random;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Ecc\Crypto\Key\PrivateKeyInterface;
 

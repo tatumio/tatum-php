@@ -7,6 +7,7 @@
  */
 
 namespace Tatum\Cryptography\Transaction\Ethereum;
+!defined("TATUM-SDK") && exit();
 
 use ArrayAccess;
 use RuntimeException;

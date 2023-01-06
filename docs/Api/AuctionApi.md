@@ -17,18 +17,18 @@ Method | HTTP request | Description
 [**blockchainAuctionCancelAuctionCelo()**](#blockchainauctioncancelauctioncelo) | **POST** `/v3/blockchain/auction/cancel` | Cancel the selling of an asset at the NFT auction
 [**blockchainAuctionCancelAuctionCeloKMS()**](#blockchainauctioncancelauctioncelokms) | **POST** `/v3/blockchain/auction/cancel` | Cancel the selling of an asset at the NFT auction
 [**blockchainAuctionCancelAuctionKMS()**](#blockchainauctioncancelauctionkms) | **POST** `/v3/blockchain/auction/cancel` | Cancel the selling of an asset at the NFT auction
-[**blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate()**](#blockchainauctionfeeupdatefeeauctioncelokmsupdate) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
-[**blockchainAuctionFeeUpdateFeeAuctionCeloUpdate()**](#blockchainauctionfeeupdatefeeauctionceloupdate) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
-[**blockchainAuctionFeeUpdateFeeAuctionKMSUpdate()**](#blockchainauctionfeeupdatefeeauctionkmsupdate) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
-[**blockchainAuctionFeeUpdateFeeAuctionUpdate()**](#blockchainauctionfeeupdatefeeauctionupdate) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
+[**blockchainAuctionFeeUpdateFeeAuction()**](#blockchainauctionfeeupdatefeeauction) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
+[**blockchainAuctionFeeUpdateFeeAuctionCelo()**](#blockchainauctionfeeupdatefeeauctioncelo) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
+[**blockchainAuctionFeeUpdateFeeAuctionCeloKMS()**](#blockchainauctionfeeupdatefeeauctioncelokms) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
+[**blockchainAuctionFeeUpdateFeeAuctionKMS()**](#blockchainauctionfeeupdatefeeauctionkms) | **PUT** `/v3/blockchain/auction/fee` | Update the NFT auction fee
 [**blockchainAuctionGenerateAuction()**](#blockchainauctiongenerateauction) | **POST** `/v3/blockchain/auction` | Create an NFT auction
 [**blockchainAuctionGenerateAuctionCelo()**](#blockchainauctiongenerateauctioncelo) | **POST** `/v3/blockchain/auction` | Create an NFT auction
 [**blockchainAuctionGenerateAuctionCeloKMS()**](#blockchainauctiongenerateauctioncelokms) | **POST** `/v3/blockchain/auction` | Create an NFT auction
 [**blockchainAuctionGenerateAuctionKMS()**](#blockchainauctiongenerateauctionkms) | **POST** `/v3/blockchain/auction` | Create an NFT auction
-[**blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate()**](#blockchainauctionrecipientupdatefeerecipientcelokmsupdate) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
-[**blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate()**](#blockchainauctionrecipientupdatefeerecipientceloupdate) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
-[**blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate()**](#blockchainauctionrecipientupdatefeerecipientkmsupdate) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
-[**blockchainAuctionRecipientUpdateFeeRecipientUpdate()**](#blockchainauctionrecipientupdatefeerecipientupdate) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
+[**blockchainAuctionRecipientUpdateFeeRecipient()**](#blockchainauctionrecipientupdatefeerecipient) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
+[**blockchainAuctionRecipientUpdateFeeRecipientCelo()**](#blockchainauctionrecipientupdatefeerecipientcelo) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
+[**blockchainAuctionRecipientUpdateFeeRecipientCeloKMS()**](#blockchainauctionrecipientupdatefeerecipientcelokms) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
+[**blockchainAuctionRecipientUpdateFeeRecipientKMS()**](#blockchainauctionrecipientupdatefeerecipientkms) | **PUT** `/v3/blockchain/auction/recipient` | Update the recipient of the NFT auction fee
 [**blockchainAuctionSellCreateAuction()**](#blockchainauctionsellcreateauction) | **POST** `/v3/blockchain/auction/sell` | Sell an asset at the NFT auction
 [**blockchainAuctionSellCreateAuctionCelo()**](#blockchainauctionsellcreateauctioncelo) | **POST** `/v3/blockchain/auction/sell` | Sell an asset at the NFT auction
 [**blockchainAuctionSellCreateAuctionCeloKMS()**](#blockchainauctionsellcreateauctioncelokms) | **POST** `/v3/blockchain/auction/sell` | Sell an asset at the NFT auction
@@ -426,108 +426,12 @@ CancelAuctionKMS operation
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate()`
+## `blockchainAuctionFeeUpdateFeeAuction()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate(
-    \Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_auction_celo_kms** | [**\Tatum\Model\UpdateFeeAuctionCeloKMS**](../Model/UpdateFeeAuctionCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT auction fee
-
-UpdateFeeAuctionCeloKMS operation
-
-### Example
-
-[✨ View "blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionCeloKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainAuctionFeeUpdateFeeAuctionCeloUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionCeloUpdate(
-    \Tatum\Model\UpdateFeeAuctionCelo $update_fee_auction_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_auction_celo** | [**\Tatum\Model\UpdateFeeAuctionCelo**](../Model/UpdateFeeAuctionCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT auction fee
-
-UpdateFeeAuctionCelo operation
-
-### Example
-
-[✨ View "blockchainAuctionFeeUpdateFeeAuctionCeloUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionCeloUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainAuctionFeeUpdateFeeAuctionKMSUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionKMSUpdate(
-    \Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_auction_kms** | [**\Tatum\Model\UpdateFeeAuctionKMS**](../Model/UpdateFeeAuctionKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT auction fee
-
-UpdateFeeAuctionKMS operation
-
-### Example
-
-[✨ View "blockchainAuctionFeeUpdateFeeAuctionKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainAuctionFeeUpdateFeeAuctionUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionUpdate(
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuction(
     \Tatum\Model\UpdateFeeAuction $update_fee_auction
 ): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
@@ -550,7 +454,103 @@ Update the NFT auction fee
 
 ### Example
 
-[✨ View "blockchainAuctionFeeUpdateFeeAuctionUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionUpdate.php)
+[✨ View "blockchainAuctionFeeUpdateFeeAuction.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuction.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionFeeUpdateFeeAuctionCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionCelo(
+    \Tatum\Model\UpdateFeeAuctionCelo $update_fee_auction_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_auction_celo** | [**\Tatum\Model\UpdateFeeAuctionCelo**](../Model/UpdateFeeAuctionCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT auction fee
+
+UpdateFeeAuctionCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionFeeUpdateFeeAuctionCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionFeeUpdateFeeAuctionCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionCeloKMS(
+    \Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_auction_celo_kms** | [**\Tatum\Model\UpdateFeeAuctionCeloKMS**](../Model/UpdateFeeAuctionCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT auction fee
+
+UpdateFeeAuctionCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionFeeUpdateFeeAuctionCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionFeeUpdateFeeAuctionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionFeeUpdateFeeAuctionKMS(
+    \Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_auction_kms** | [**\Tatum\Model\UpdateFeeAuctionKMS**](../Model/UpdateFeeAuctionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the NFT auction fee
+
+UpdateFeeAuctionKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionFeeUpdateFeeAuctionKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionFeeUpdateFeeAuctionKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -682,108 +682,12 @@ GenerateAuctionKMS operation
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate()`
+## `blockchainAuctionRecipientUpdateFeeRecipient()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate(
-    \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT auction fee
-
-UpdateFeeRecipientCeloKMS operation
-
-### Example
-
-[✨ View "blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientCeloKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate(
-    \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT auction fee
-
-UpdateFeeRecipientCelo operation
-
-### Example
-
-[✨ View "blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientCeloUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate(
-    \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT auction fee
-
-UpdateFeeRecipientKMS operation
-
-### Example
-
-[✨ View "blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainAuctionRecipientUpdateFeeRecipientUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientUpdate(
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipient(
     \Tatum\Model\UpdateFeeRecipient $update_fee_recipient
 ): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
 ```
@@ -806,7 +710,103 @@ Update the recipient of the NFT auction fee
 
 ### Example
 
-[✨ View "blockchainAuctionRecipientUpdateFeeRecipientUpdate.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientUpdate.php)
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipient.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipient.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionRecipientUpdateFeeRecipientCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCelo(
+    \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT auction fee
+
+UpdateFeeRecipientCelo operation
+
+### Example
+
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipientCelo.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionRecipientUpdateFeeRecipientCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientCeloKMS(
+    \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT auction fee
+
+UpdateFeeRecipientCeloKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipientCeloKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `blockchainAuctionRecipientUpdateFeeRecipientKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->auction()->blockchainAuctionRecipientUpdateFeeRecipientKMS(
+    \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update the recipient of the NFT auction fee
+
+UpdateFeeRecipientKMS operation
+
+### Example
+
+[✨ View "blockchainAuctionRecipientUpdateFeeRecipientKMS.php"](../../examples/Api/AuctionApi/blockchainAuctionRecipientUpdateFeeRecipientKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

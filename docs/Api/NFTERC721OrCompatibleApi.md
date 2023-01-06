@@ -63,12 +63,12 @@ Method | HTTP request | Description
 [**nftMintNftSolana()**](#nftmintnftsolana) | **POST** `/v3/nft/mint` | Mint an NFT
 [**nftMintNftSolanaKMS()**](#nftmintnftsolanakms) | **POST** `/v3/nft/mint` | Mint an NFT
 [**nftMintNftTron()**](#nftmintnfttron) | **POST** `/v3/nft/mint` | Mint an NFT
-[**nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftceloupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsceloupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmstronupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftkmsupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate()**](#nftroyaltyupdatecashbackvalueforauthornfttronupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
-[**nftRoyaltyUpdateCashbackValueForAuthorNftUpdate()**](#nftroyaltyupdatecashbackvalueforauthornftupdate) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNft()**](#nftroyaltyupdatecashbackvalueforauthornft) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftCelo()**](#nftroyaltyupdatecashbackvalueforauthornftcelo) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMS()**](#nftroyaltyupdatecashbackvalueforauthornftkms) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSCelo()**](#nftroyaltyupdatecashbackvalueforauthornftkmscelo) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftKMSTron()**](#nftroyaltyupdatecashbackvalueforauthornftkmstron) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
+[**nftRoyaltyUpdateCashbackValueForAuthorNftTron()**](#nftroyaltyupdatecashbackvalueforauthornfttron) | **PUT** `/v3/nft/royalty` | Update NFT royalty information
 [**nftTransactionTransferNft()**](#nfttransactiontransfernft) | **POST** `/v3/nft/transaction` | Transfer an NFT
 [**nftTransactionTransferNftAlgo()**](#nfttransactiontransfernftalgo) | **POST** `/v3/nft/transaction` | Transfer an NFT
 [**nftTransactionTransferNftAlgoExpress()**](#nfttransactiontransfernftalgoexpress) | **POST** `/v3/nft/transaction` | Transfer an NFT
@@ -2105,182 +2105,12 @@ Mint an NFT
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate()`
+## `nftRoyaltyUpdateCashbackValueForAuthorNft()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate(
-    \Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftCelo**](../Model/UpdateCashbackValueForAuthorNftCelo.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update NFT royalty information
-
-UpdateCashbackValueForAuthorNftCelo operation
-
-### Example
-
-[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftCeloUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate(
-    \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_kms_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo**](../Model/UpdateCashbackValueForAuthorNftKMSCelo.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update NFT royalty information
-
-UpdateCashbackValueForAuthorNftKMSCelo operation
-
-### Example
-
-[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSCeloUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate(
-    \Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_kms_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron**](../Model/UpdateCashbackValueForAuthorNftKMSTron.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update NFT royalty information
-
-UpdateCashbackValueForAuthorNftKMSTron operation
-
-### Example
-
-[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSTronUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate(
-    \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_kms** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMS**](../Model/UpdateCashbackValueForAuthorNftKMS.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update NFT royalty information
-
-UpdateCashbackValueForAuthorNftKMS operation
-
-### Example
-
-[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate(
-    \Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftTron**](../Model/UpdateCashbackValueForAuthorNftTron.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update NFT royalty information
-
-UpdateCashbackValueForAuthorNftTron operation
-
-### Example
-
-[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftTronUpdate.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `nftRoyaltyUpdateCashbackValueForAuthorNftUpdate()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftUpdate(
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNft(
     \Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
@@ -2305,7 +2135,177 @@ Update NFT royalty information
 
 ### Example
 
-[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftUpdate.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftUpdate.php)
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNft.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNft.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftCelo(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftCelo**](../Model/UpdateCashbackValueForAuthorNftCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftCelo operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMS(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_kms** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMS**](../Model/UpdateCashbackValueForAuthorNftKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftKMS operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMS.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSCelo(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_kms_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo**](../Model/UpdateCashbackValueForAuthorNftKMSCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftKMSCelo operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSCelo.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftKMSTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftKMSTron(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_kms_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron**](../Model/UpdateCashbackValueForAuthorNftKMSTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftKMSTron operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftKMSTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftKMSTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `nftRoyaltyUpdateCashbackValueForAuthorNftTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftRoyaltyUpdateCashbackValueForAuthorNftTron(
+    \Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_cashback_value_for_author_nft_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftTron**](../Model/UpdateCashbackValueForAuthorNftTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+
+### Description
+
+Update NFT royalty information
+
+UpdateCashbackValueForAuthorNftTron operation
+
+### Example
+
+[✨ View "nftRoyaltyUpdateCashbackValueForAuthorNftTron.php"](../../examples/Api/NFTERC721OrCompatibleApi/nftRoyaltyUpdateCashbackValueForAuthorNftTron.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

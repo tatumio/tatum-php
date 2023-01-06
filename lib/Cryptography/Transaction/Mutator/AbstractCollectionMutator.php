@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Transaction\Mutator;
+!defined("TATUM-SDK") && exit();
 
 abstract class AbstractCollectionMutator implements \Iterator, \ArrayAccess, \Countable {
     /**

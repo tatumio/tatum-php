@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Mnemonic;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Buffertools\BufferInterface;
 

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tatum\Cryptography\Block;
+!defined("TATUM-SDK") && exit();
 
 use Tatum\Cryptography\Exceptions\MerkleTreeEmpty;
 use Tatum\Cryptography\Math\Math;

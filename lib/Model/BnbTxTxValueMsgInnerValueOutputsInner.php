@@ -14,6 +14,7 @@
  */
 
 namespace Tatum\Model;
+!defined("TATUM-SDK") && exit();
 
 /**
  * BnbTx_tx_value_msg_inner_value_outputs_inner Model
