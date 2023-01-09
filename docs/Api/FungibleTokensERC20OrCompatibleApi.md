@@ -5,58 +5,58 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blockchainTokenApproveCeloErc20()**](#blockchaintokenapproveceloerc20) | **POST** `/v3/blockchain/token/approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**blockchainTokenApproveCeloErc20KMS()**](#blockchaintokenapproveceloerc20kms) | **POST** `/v3/blockchain/token/approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**blockchainTokenApproveErc20()**](#blockchaintokenapproveerc20) | **POST** `/v3/blockchain/token/approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**blockchainTokenApproveErc20KMS()**](#blockchaintokenapproveerc20kms) | **POST** `/v3/blockchain/token/approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**blockchainTokenBurnChainBurnCeloErc20()**](#blockchaintokenburnchainburnceloerc20) | **POST** `/v3/blockchain/token/burn` | Burn fungible tokens
-[**blockchainTokenBurnChainBurnCeloErc20KMS()**](#blockchaintokenburnchainburnceloerc20kms) | **POST** `/v3/blockchain/token/burn` | Burn fungible tokens
-[**blockchainTokenBurnChainBurnErc20()**](#blockchaintokenburnchainburnerc20) | **POST** `/v3/blockchain/token/burn` | Burn fungible tokens
-[**blockchainTokenBurnChainBurnErc20KMS()**](#blockchaintokenburnchainburnerc20kms) | **POST** `/v3/blockchain/token/burn` | Burn fungible tokens
-[**blockchainTokenBurnChainBurnKcsErc20()**](#blockchaintokenburnchainburnkcserc20) | **POST** `/v3/blockchain/token/burn` | Burn fungible tokens
-[**blockchainTokenBurnChainBurnKcsErc20KMS()**](#blockchaintokenburnchainburnkcserc20kms) | **POST** `/v3/blockchain/token/burn` | Burn fungible tokens
-[**blockchainTokenDeployChainDeployAlgoErc20()**](#blockchaintokendeploychaindeployalgoerc20) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeployAlgoErc20KMS()**](#blockchaintokendeploychaindeployalgoerc20kms) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeployCeloErc20()**](#blockchaintokendeploychaindeployceloerc20) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeployCeloErc20KMS()**](#blockchaintokendeploychaindeployceloerc20kms) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeployErc20()**](#blockchaintokendeploychaindeployerc20) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeployErc20KMS()**](#blockchaintokendeploychaindeployerc20kms) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeployKcsErc20()**](#blockchaintokendeploychaindeploykcserc20) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeployKcsErc20KMS()**](#blockchaintokendeploychaindeploykcserc20kms) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeploySolanaSpl()**](#blockchaintokendeploychaindeploysolanaspl) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenDeployChainDeploySolanaSplKMS()**](#blockchaintokendeploychaindeploysolanasplkms) | **POST** `/v3/blockchain/token/deploy` | Deploy a fungible token smart contract
-[**blockchainTokenMintChainMintCeloErc20()**](#blockchaintokenmintchainmintceloerc20) | **POST** `/v3/blockchain/token/mint` | Mint fungible tokens
-[**blockchainTokenMintChainMintCeloErc20KMS()**](#blockchaintokenmintchainmintceloerc20kms) | **POST** `/v3/blockchain/token/mint` | Mint fungible tokens
-[**blockchainTokenMintChainMintErc20()**](#blockchaintokenmintchainminterc20) | **POST** `/v3/blockchain/token/mint` | Mint fungible tokens
-[**blockchainTokenMintChainMintErc20KMS()**](#blockchaintokenmintchainminterc20kms) | **POST** `/v3/blockchain/token/mint` | Mint fungible tokens
-[**blockchainTokenMintChainMintKcsErc20()**](#blockchaintokenmintchainmintkcserc20) | **POST** `/v3/blockchain/token/mint` | Mint fungible tokens
-[**blockchainTokenMintChainMintKcsErc20KMS()**](#blockchaintokenmintchainmintkcserc20kms) | **POST** `/v3/blockchain/token/mint` | Mint fungible tokens
-[**blockchainTokenTransactionChainTransferAlgoErc20()**](#blockchaintokentransactionchaintransferalgoerc20) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferAlgoErc20KMS()**](#blockchaintokentransactionchaintransferalgoerc20kms) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferBscBep20()**](#blockchaintokentransactionchaintransferbscbep20) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferBscBep20KMS()**](#blockchaintokentransactionchaintransferbscbep20kms) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferCeloErc20Token()**](#blockchaintokentransactionchaintransferceloerc20token) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferCeloErc20TokenKMS()**](#blockchaintokentransactionchaintransferceloerc20tokenkms) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferEthErc20()**](#blockchaintokentransactionchaintransferetherc20) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferEthErc20KMS()**](#blockchaintokentransactionchaintransferetherc20kms) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferKcsEthErc20()**](#blockchaintokentransactionchaintransferkcsetherc20) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferKcsEthErc20KMS()**](#blockchaintokentransactionchaintransferkcsetherc20kms) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferSolanaSpl()**](#blockchaintokentransactionchaintransfersolanaspl) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**blockchainTokenTransactionChainTransferSolanaSplKMS()**](#blockchaintokentransactionchaintransfersolanasplkms) | **POST** `/v3/blockchain/token/transaction` | Transfer fungible tokens
-[**erc20GetBalance()**](#erc20getbalance) | **GET** `/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}` | Get the number of fungible tokens that a blockchain address holds in a smart contract
-[**erc20GetBalanceAddress()**](#erc20getbalanceaddress) | **GET** `/v3/blockchain/token/address/{chain}/{address}` | Get the total number of fungible tokens that a blockchain address holds
-[**erc20GetTransactionByAddress()**](#erc20gettransactionbyaddress) | **GET** `/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}` | Get fungible token transactions on a blockchain address
+[**approve Celo Erc20()**](#approveceloerc20) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
+[**approve Celo Erc20 KMS()**](#approveceloerc20kms) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
+[**approve Erc20()**](#approveerc20) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
+[**approve Erc20 KMS()**](#approveerc20kms) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
+[**chain Burn Celo Erc20()**](#chainburnceloerc20) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
+[**chain Burn Celo Erc20 KMS()**](#chainburnceloerc20kms) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
+[**chain Burn Erc20()**](#chainburnerc20) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
+[**chain Burn Erc20 KMS()**](#chainburnerc20kms) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
+[**chain Burn Kcs Erc20()**](#chainburnkcserc20) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
+[**chain Burn Kcs Erc20 KMS()**](#chainburnkcserc20kms) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
+[**chain Deploy Algo Erc20()**](#chaindeployalgoerc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Algo Erc20 KMS()**](#chaindeployalgoerc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Celo Erc20()**](#chaindeployceloerc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Celo Erc20 KMS()**](#chaindeployceloerc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Erc20()**](#chaindeployerc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Erc20 KMS()**](#chaindeployerc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Kcs Erc20()**](#chaindeploykcserc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Kcs Erc20 KMS()**](#chaindeploykcserc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Solana Spl()**](#chaindeploysolanaspl) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Deploy Solana Spl KMS()**](#chaindeploysolanasplkms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
+[**chain Mint Celo Erc20()**](#chainmintceloerc20) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
+[**chain Mint Celo Erc20 KMS()**](#chainmintceloerc20kms) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
+[**chain Mint Erc20()**](#chainminterc20) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
+[**chain Mint Erc20 KMS()**](#chainminterc20kms) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
+[**chain Mint Kcs Erc20()**](#chainmintkcserc20) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
+[**chain Mint Kcs Erc20 KMS()**](#chainmintkcserc20kms) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
+[**chain Transfer Algo Erc20()**](#chaintransferalgoerc20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Algo Erc20 KMS()**](#chaintransferalgoerc20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Bsc Bep20()**](#chaintransferbscbep20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Bsc Bep20 KMS()**](#chaintransferbscbep20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Celo Erc20 Token()**](#chaintransferceloerc20token) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Celo Erc20 Token KMS()**](#chaintransferceloerc20tokenkms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Eth Erc20()**](#chaintransferetherc20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Eth Erc20 KMS()**](#chaintransferetherc20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Kcs Eth Erc20()**](#chaintransferkcsetherc20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Kcs Eth Erc20 KMS()**](#chaintransferkcsetherc20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Solana Spl()**](#chaintransfersolanaspl) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**chain Transfer Solana Spl KMS()**](#chaintransfersolanasplkms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
+[**erc20 Get Balance()**](#erc20getbalance) | **GET** `/v3 /blockchain /token /balance /{chain} /{contractAddress} /{address}` | Get the number of fungible tokens that a blockchain address holds in a smart contract
+[**erc20 Get Balance Address()**](#erc20getbalanceaddress) | **GET** `/v3 /blockchain /token /address /{chain} /{address}` | Get the total number of fungible tokens that a blockchain address holds
+[**erc20 Get Transaction By Address()**](#erc20gettransactionbyaddress) | **GET** `/v3 /blockchain /token /transaction /{chain} /{address} /{tokenAddress}` | Get fungible token transactions on a blockchain address
 
 
-## `blockchainTokenApproveCeloErc20()`
+## `approveCeloErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenApproveCeloErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCeloErc20(
     \Tatum\Model\ApproveCeloErc20 $approve_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -78,19 +78,19 @@ ApproveCeloErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenApproveCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenApproveCeloErc20.php)
+[✨ View "approveCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenApproveCeloErc20KMS()`
+## `approveCeloErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenApproveCeloErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCeloErc20KMS(
     \Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -112,19 +112,19 @@ ApproveCeloErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenApproveCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenApproveCeloErc20KMS.php)
+[✨ View "approveCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenApproveErc20()`
+## `approveErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenApproveErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc20(
     \Tatum\Model\ApproveErc20 $approve_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -146,19 +146,19 @@ Allow a blockchain address to transfer and burn fungible tokens
 
 ### Example
 
-[✨ View "blockchainTokenApproveErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenApproveErc20.php)
+[✨ View "approveErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenApproveErc20KMS()`
+## `approveErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenApproveErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc20KMS(
     \Tatum\Model\ApproveErc20KMS $approve_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -180,19 +180,19 @@ ApproveErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenApproveErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenApproveErc20KMS.php)
+[✨ View "approveErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenBurnChainBurnCeloErc20()`
+## `chainBurnCeloErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenBurnChainBurnCeloErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCeloErc20(
     \Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -214,19 +214,19 @@ ChainBurnCeloErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenBurnChainBurnCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenBurnChainBurnCeloErc20.php)
+[✨ View "chainBurnCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenBurnChainBurnCeloErc20KMS()`
+## `chainBurnCeloErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenBurnChainBurnCeloErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCeloErc20KMS(
     \Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -248,19 +248,19 @@ ChainBurnCeloErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenBurnChainBurnCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenBurnChainBurnCeloErc20KMS.php)
+[✨ View "chainBurnCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenBurnChainBurnErc20()`
+## `chainBurnErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenBurnChainBurnErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnErc20(
     \Tatum\Model\ChainBurnErc20 $chain_burn_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -282,19 +282,19 @@ Burn fungible tokens
 
 ### Example
 
-[✨ View "blockchainTokenBurnChainBurnErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenBurnChainBurnErc20.php)
+[✨ View "chainBurnErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenBurnChainBurnErc20KMS()`
+## `chainBurnErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenBurnChainBurnErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnErc20KMS(
     \Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -316,19 +316,19 @@ ChainBurnErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenBurnChainBurnErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenBurnChainBurnErc20KMS.php)
+[✨ View "chainBurnErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenBurnChainBurnKcsErc20()`
+## `chainBurnKcsErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenBurnChainBurnKcsErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKcsErc20(
     \Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -350,19 +350,19 @@ ChainBurnKcsErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenBurnChainBurnKcsErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenBurnChainBurnKcsErc20.php)
+[✨ View "chainBurnKcsErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenBurnChainBurnKcsErc20KMS()`
+## `chainBurnKcsErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenBurnChainBurnKcsErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKcsErc20KMS(
     \Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -384,19 +384,19 @@ ChainBurnKcsErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenBurnChainBurnKcsErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenBurnChainBurnKcsErc20KMS.php)
+[✨ View "chainBurnKcsErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployAlgoErc20()`
+## `chainDeployAlgoErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployAlgoErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployAlgoErc20(
     \Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -418,19 +418,19 @@ ChainDeployAlgoErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployAlgoErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployAlgoErc20.php)
+[✨ View "chainDeployAlgoErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployAlgoErc20KMS()`
+## `chainDeployAlgoErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployAlgoErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployAlgoErc20KMS(
     \Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -452,19 +452,19 @@ ChainDeployAlgoErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployAlgoErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployAlgoErc20KMS.php)
+[✨ View "chainDeployAlgoErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployCeloErc20()`
+## `chainDeployCeloErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployCeloErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployCeloErc20(
     \Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -486,19 +486,19 @@ ChainDeployCeloErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployCeloErc20.php)
+[✨ View "chainDeployCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployCeloErc20KMS()`
+## `chainDeployCeloErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployCeloErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployCeloErc20KMS(
     \Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -520,19 +520,19 @@ ChainDeployCeloErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployCeloErc20KMS.php)
+[✨ View "chainDeployCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployErc20()`
+## `chainDeployErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployErc20(
     \Tatum\Model\ChainDeployErc20 $chain_deploy_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -554,19 +554,19 @@ Deploy a fungible token smart contract
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployErc20.php)
+[✨ View "chainDeployErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployErc20KMS()`
+## `chainDeployErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployErc20KMS(
     \Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -588,19 +588,19 @@ ChainDeployErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployErc20KMS.php)
+[✨ View "chainDeployErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployKcsErc20()`
+## `chainDeployKcsErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployKcsErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20(
     \Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -622,19 +622,19 @@ ChainDeployKcsErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployKcsErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployKcsErc20.php)
+[✨ View "chainDeployKcsErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeployKcsErc20KMS()`
+## `chainDeployKcsErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeployKcsErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20KMS(
     \Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -656,19 +656,19 @@ ChainDeployKcsErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeployKcsErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeployKcsErc20KMS.php)
+[✨ View "chainDeployKcsErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeploySolanaSpl()`
+## `chainDeploySolanaSpl()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeploySolanaSpl(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploySolanaSpl(
     \Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -680,7 +680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -690,19 +690,19 @@ ChainDeploySolanaSpl operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeploySolanaSpl.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeploySolanaSpl.php)
+[✨ View "chainDeploySolanaSpl.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSpl.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenDeployChainDeploySolanaSplKMS()`
+## `chainDeploySolanaSplKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenDeployChainDeploySolanaSplKMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploySolanaSplKMS(
     \Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -724,19 +724,19 @@ ChainDeploySolanaSplKMS operation
 
 ### Example
 
-[✨ View "blockchainTokenDeployChainDeploySolanaSplKMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenDeployChainDeploySolanaSplKMS.php)
+[✨ View "chainDeploySolanaSplKMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSplKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenMintChainMintCeloErc20()`
+## `chainMintCeloErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenMintChainMintCeloErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCeloErc20(
     \Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -748,7 +748,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -758,19 +758,19 @@ ChainMintCeloErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenMintChainMintCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenMintChainMintCeloErc20.php)
+[✨ View "chainMintCeloErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenMintChainMintCeloErc20KMS()`
+## `chainMintCeloErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenMintChainMintCeloErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCeloErc20KMS(
     \Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -782,7 +782,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -792,19 +792,19 @@ ChainMintCeloErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenMintChainMintCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenMintChainMintCeloErc20KMS.php)
+[✨ View "chainMintCeloErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenMintChainMintErc20()`
+## `chainMintErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenMintChainMintErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintErc20(
     \Tatum\Model\ChainMintErc20 $chain_mint_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -816,7 +816,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -826,19 +826,19 @@ Mint fungible tokens
 
 ### Example
 
-[✨ View "blockchainTokenMintChainMintErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenMintChainMintErc20.php)
+[✨ View "chainMintErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenMintChainMintErc20KMS()`
+## `chainMintErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenMintChainMintErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintErc20KMS(
     \Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -850,7 +850,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -860,19 +860,19 @@ ChainMintErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenMintChainMintErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenMintChainMintErc20KMS.php)
+[✨ View "chainMintErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenMintChainMintKcsErc20()`
+## `chainMintKcsErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenMintChainMintKcsErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKcsErc20(
     \Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -894,19 +894,19 @@ ChainMintKcsErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenMintChainMintKcsErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenMintChainMintKcsErc20.php)
+[✨ View "chainMintKcsErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenMintChainMintKcsErc20KMS()`
+## `chainMintKcsErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenMintChainMintKcsErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKcsErc20KMS(
     \Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -928,19 +928,19 @@ ChainMintKcsErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenMintChainMintKcsErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenMintChainMintKcsErc20KMS.php)
+[✨ View "chainMintKcsErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferAlgoErc20()`
+## `chainTransferAlgoErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferAlgoErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferAlgoErc20(
     \Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -962,19 +962,19 @@ ChainTransferAlgoErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferAlgoErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferAlgoErc20.php)
+[✨ View "chainTransferAlgoErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferAlgoErc20KMS()`
+## `chainTransferAlgoErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferAlgoErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferAlgoErc20KMS(
     \Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -986,7 +986,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -996,19 +996,19 @@ ChainTransferAlgoErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferAlgoErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferAlgoErc20KMS.php)
+[✨ View "chainTransferAlgoErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferBscBep20()`
+## `chainTransferBscBep20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferBscBep20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferBscBep20(
     \Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1020,7 +1020,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1030,19 +1030,19 @@ ChainTransferBscBep20 operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferBscBep20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferBscBep20.php)
+[✨ View "chainTransferBscBep20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferBscBep20KMS()`
+## `chainTransferBscBep20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferBscBep20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferBscBep20KMS(
     \Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1054,7 +1054,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1064,19 +1064,19 @@ ChainTransferBscBep20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferBscBep20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferBscBep20KMS.php)
+[✨ View "chainTransferBscBep20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferCeloErc20Token()`
+## `chainTransferCeloErc20Token()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferCeloErc20Token(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferCeloErc20Token(
     \Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1088,7 +1088,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1098,19 +1098,19 @@ ChainTransferCeloErc20Token operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferCeloErc20Token.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferCeloErc20Token.php)
+[✨ View "chainTransferCeloErc20Token.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20Token.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferCeloErc20TokenKMS()`
+## `chainTransferCeloErc20TokenKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferCeloErc20TokenKMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferCeloErc20TokenKMS(
     \Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1122,7 +1122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1132,19 +1132,19 @@ ChainTransferCeloErc20TokenKMS operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferCeloErc20TokenKMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferCeloErc20TokenKMS.php)
+[✨ View "chainTransferCeloErc20TokenKMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20TokenKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferEthErc20()`
+## `chainTransferEthErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferEthErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20(
     \Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1156,7 +1156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1166,19 +1166,19 @@ Transfer fungible tokens
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferEthErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferEthErc20.php)
+[✨ View "chainTransferEthErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferEthErc20KMS()`
+## `chainTransferEthErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferEthErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20KMS(
     \Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1190,7 +1190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1200,19 +1200,19 @@ ChainTransferEthErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferEthErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferEthErc20KMS.php)
+[✨ View "chainTransferEthErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferKcsEthErc20()`
+## `chainTransferKcsEthErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferKcsEthErc20(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferKcsEthErc20(
     \Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1224,7 +1224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1234,19 +1234,19 @@ ChainTransferKcsEthErc20 operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferKcsEthErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferKcsEthErc20.php)
+[✨ View "chainTransferKcsEthErc20.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferKcsEthErc20KMS()`
+## `chainTransferKcsEthErc20KMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferKcsEthErc20KMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferKcsEthErc20KMS(
     \Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1258,7 +1258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1268,19 +1268,19 @@ ChainTransferKcsEthErc20KMS operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferKcsEthErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferKcsEthErc20KMS.php)
+[✨ View "chainTransferKcsEthErc20KMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferSolanaSpl()`
+## `chainTransferSolanaSpl()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferSolanaSpl(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSpl(
     \Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1292,7 +1292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1302,19 +1302,19 @@ ChainTransferSolanaSpl operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferSolanaSpl.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferSolanaSpl.php)
+[✨ View "chainTransferSolanaSpl.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSpl.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainTokenTransactionChainTransferSolanaSplKMS()`
+## `chainTransferSolanaSplKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->blockchainTokenTransactionChainTransferSolanaSplKMS(
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSplKMS(
     \Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -1326,7 +1326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -1336,7 +1336,7 @@ ChainTransferSolanaSplKMS operation
 
 ### Example
 
-[✨ View "blockchainTokenTransactionChainTransferSolanaSplKMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/blockchainTokenTransactionChainTransferSolanaSplKMS.php)
+[✨ View "chainTransferSolanaSplKMS.php"](../../examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSplKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

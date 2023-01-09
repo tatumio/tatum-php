@@ -23,6 +23,52 @@ use Tatum\Sdk\Serializer as S;
  */
 class VeChainApi extends AbstractApi {
     /**
+     * Send VeChain from account to account
+     *
+     * @param \Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionHash
+     */
+    public function transferVetBlockchain(\Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionHash $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/vet/transaction", [], $rHeaders, [], $transfer_vet_blockchain
+            ), 
+            "\Tatum\Model\TransactionHash"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send VeChain from account to account
+     *
+     * @param \Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionHash
+     */
+    public function transferVetBlockchainKMS(\Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionHash $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/vet/transaction", [], $rHeaders, [], $transfer_vet_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionHash"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast signed VeChain transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -252,52 +298,6 @@ class VeChainApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/vet/transaction/{hash}/receipt", ["hash" => $hash]), [], $rHeaders, []
             ), 
             "\Tatum\Model\VetTxReceipt"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send VeChain from account to account
-     *
-     * @param \Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\TransactionHash
-     */
-    public function vetTransactionTransferVetBlockchain(\Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionHash $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/vet/transaction", [], $rHeaders, [], $transfer_vet_blockchain
-            ), 
-            "\Tatum\Model\TransactionHash"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send VeChain from account to account
-     *
-     * @param \Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\TransactionHash
-     */
-    public function vetTransactionTransferVetBlockchainKMS(\Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionHash $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/vet/transaction", [], $rHeaders, [], $transfer_vet_blockchain_kms
-            ), 
-            "\Tatum\Model\TransactionHash"
         );
             
         return $result;

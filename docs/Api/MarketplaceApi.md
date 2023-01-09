@@ -5,63 +5,127 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blockchainMarketplaceListingBuyAssetOnMarketplace()**](#blockchainmarketplacelistingbuyassetonmarketplace) | **POST** `/v3/blockchain/marketplace/listing/buy` | Buy an asset on the NFT marketplace
-[**blockchainMarketplaceListingBuyAssetOnMarketplaceCelo()**](#blockchainmarketplacelistingbuyassetonmarketplacecelo) | **POST** `/v3/blockchain/marketplace/listing/buy` | Buy an asset on the NFT marketplace
-[**blockchainMarketplaceListingBuyAssetOnMarketplaceCeloKMS()**](#blockchainmarketplacelistingbuyassetonmarketplacecelokms) | **POST** `/v3/blockchain/marketplace/listing/buy` | Buy an asset on the NFT marketplace
-[**blockchainMarketplaceListingBuyAssetOnMarketplaceKMS()**](#blockchainmarketplacelistingbuyassetonmarketplacekms) | **POST** `/v3/blockchain/marketplace/listing/buy` | Buy an asset on the NFT marketplace
-[**blockchainMarketplaceListingBuyAssetOnMarketplaceSolana()**](#blockchainmarketplacelistingbuyassetonmarketplacesolana) | **POST** `/v3/blockchain/marketplace/listing/buy` | Buy an asset on the NFT marketplace
-[**blockchainMarketplaceListingBuyAssetOnMarketplaceSolanaKMS()**](#blockchainmarketplacelistingbuyassetonmarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/listing/buy` | Buy an asset on the NFT marketplace
-[**blockchainMarketplaceListingCancelSellAssetOnMarketplace()**](#blockchainmarketplacelistingcancelsellassetonmarketplace) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
-[**blockchainMarketplaceListingCancelSellAssetOnMarketplaceCelo()**](#blockchainmarketplacelistingcancelsellassetonmarketplacecelo) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
-[**blockchainMarketplaceListingCancelSellAssetOnMarketplaceCeloKMS()**](#blockchainmarketplacelistingcancelsellassetonmarketplacecelokms) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
-[**blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS()**](#blockchainmarketplacelistingcancelsellassetonmarketplacekms) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
-[**blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana()**](#blockchainmarketplacelistingcancelsellassetonmarketplacesolana) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
-[**blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS()**](#blockchainmarketplacelistingcancelsellassetonmarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/listing/cancel` | Cancel the selling of an asset on the NFT marketplace
-[**blockchainMarketplaceListingFeeUpdateFee()**](#blockchainmarketplacelistingfeeupdatefee) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeCelo()**](#blockchainmarketplacelistingfeeupdatefeecelo) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeCeloKMS()**](#blockchainmarketplacelistingfeeupdatefeecelokms) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeKMS()**](#blockchainmarketplacelistingfeeupdatefeekms) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeSolana()**](#blockchainmarketplacelistingfeeupdatefeesolana) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingFeeUpdateFeeSolanaKMS()**](#blockchainmarketplacelistingfeeupdatefeesolanakms) | **PUT** `/v3/blockchain/marketplace/listing/fee` | Update the NFT marketplace fee
-[**blockchainMarketplaceListingGenerateMarketplace()**](#blockchainmarketplacelistinggeneratemarketplace) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
-[**blockchainMarketplaceListingGenerateMarketplaceCelo()**](#blockchainmarketplacelistinggeneratemarketplacecelo) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
-[**blockchainMarketplaceListingGenerateMarketplaceCeloKMS()**](#blockchainmarketplacelistinggeneratemarketplacecelokms) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
-[**blockchainMarketplaceListingGenerateMarketplaceKMS()**](#blockchainmarketplacelistinggeneratemarketplacekms) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
-[**blockchainMarketplaceListingGenerateMarketplaceSolana()**](#blockchainmarketplacelistinggeneratemarketplacesolana) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
-[**blockchainMarketplaceListingGenerateMarketplaceSolanaKMS()**](#blockchainmarketplacelistinggeneratemarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/listing` | Create an NFT marketplace
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipient()**](#blockchainmarketplacelistingrecipientupdatefeerecipient) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo()**](#blockchainmarketplacelistingrecipientupdatefeerecipientcelo) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS()**](#blockchainmarketplacelistingrecipientupdatefeerecipientcelokms) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS()**](#blockchainmarketplacelistingrecipientupdatefeerecipientkms) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana()**](#blockchainmarketplacelistingrecipientupdatefeerecipientsolana) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS()**](#blockchainmarketplacelistingrecipientupdatefeerecipientsolanakms) | **PUT** `/v3/blockchain/marketplace/listing/recipient` | Update the recipient of the NFT marketplace fee
-[**blockchainMarketplaceListingSellAssetOnMarketplace()**](#blockchainmarketplacelistingsellassetonmarketplace) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
-[**blockchainMarketplaceListingSellAssetOnMarketplaceCelo()**](#blockchainmarketplacelistingsellassetonmarketplacecelo) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
-[**blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS()**](#blockchainmarketplacelistingsellassetonmarketplacecelokms) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
-[**blockchainMarketplaceListingSellAssetOnMarketplaceKMS()**](#blockchainmarketplacelistingsellassetonmarketplacekms) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
-[**blockchainMarketplaceListingSellAssetOnMarketplaceSolana()**](#blockchainmarketplacelistingsellassetonmarketplacesolana) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
-[**blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS()**](#blockchainmarketplacelistingsellassetonmarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/listing/sell` | Sell an asset on the NFT marketplace
-[**blockchainMarketplaceListingUpdateMarketplaceSolana()**](#blockchainmarketplacelistingupdatemarketplacesolana) | **PUT** `/v3/blockchain/marketplace/listing` | Update an NFT marketplace on Solana
-[**blockchainMarketplaceListingUpdateMarketplaceSolanaKMS()**](#blockchainmarketplacelistingupdatemarketplacesolanakms) | **PUT** `/v3/blockchain/marketplace/listing` | Update an NFT marketplace on Solana
-[**blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana()**](#blockchainmarketplacewithdrawfeewithdrawfrommarketplacesolana) | **POST** `/v3/blockchain/marketplace/withdraw/fee` | Withdraw funds from the marketplace fee account on Solana
-[**blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS()**](#blockchainmarketplacewithdrawfeewithdrawfrommarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/withdraw/fee` | Withdraw funds from the marketplace fee account on Solana
-[**blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana()**](#blockchainmarketplacewithdrawtreasurywithdrawfrommarketplacesolana) | **POST** `/v3/blockchain/marketplace/withdraw/treasury` | Withdraw funds from the marketplace treasury account on Solana
-[**blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolanaKMS()**](#blockchainmarketplacewithdrawtreasurywithdrawfrommarketplacesolanakms) | **POST** `/v3/blockchain/marketplace/withdraw/treasury` | Withdraw funds from the marketplace treasury account on Solana
-[**getMarketplaceFee()**](#getmarketplacefee) | **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee` | Get the NFT marketplace fee
-[**getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) | **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient` | Get the recipient of the NFT marketplace fee
-[**getMarketplaceInfo()**](#getmarketplaceinfo) | **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}` | Get information about an NFT marketplace on Solana
-[**getMarketplaceListing()**](#getmarketplacelisting) | **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}` | Get information about a listing on the NFT marketplace
-[**getMarketplaceListings()**](#getmarketplacelistings) | **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}` | Get the listings of a certain type from the NFT marketplace
+[**blo Mar Withdraw From Marketplace Solana()**](#blomarwithdrawfrommarketplacesolana) | **POST** `/v3 /blockchain /marketplace /withdraw /treasury` | Withdraw funds from the marketplace treasury account on Solana
+[**blo Mar Withdraw From Marketplace Solana KMS()**](#blomarwithdrawfrommarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /withdraw /treasury` | Withdraw funds from the marketplace treasury account on Solana
+[**buy Asset On Marketplace()**](#buyassetonmarketplace) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
+[**buy Asset On Marketplace Celo()**](#buyassetonmarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
+[**buy Asset On Marketplace Celo KMS()**](#buyassetonmarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
+[**buy Asset On Marketplace KMS()**](#buyassetonmarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
+[**buy Asset On Marketplace Solana()**](#buyassetonmarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
+[**buy Asset On Marketplace Solana KMS()**](#buyassetonmarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
+[**cancel Sell Asset On Marketplace()**](#cancelsellassetonmarketplace) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
+[**cancel Sell Asset On Marketplace Celo()**](#cancelsellassetonmarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
+[**cancel Sell Asset On Marketplace Celo KMS()**](#cancelsellassetonmarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
+[**cancel Sell Asset On Marketplace KMS()**](#cancelsellassetonmarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
+[**cancel Sell Asset On Marketplace Solana()**](#cancelsellassetonmarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
+[**cancel Sell Asset On Marketplace Solana KMS()**](#cancelsellassetonmarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
+[**generate Marketplace()**](#generatemarketplace) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
+[**generate Marketplace Celo()**](#generatemarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
+[**generate Marketplace Celo KMS()**](#generatemarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
+[**generate Marketplace KMS()**](#generatemarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
+[**generate Marketplace Solana()**](#generatemarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
+[**generate Marketplace Solana KMS()**](#generatemarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
+[**get Marketplace Fee()**](#getmarketplacefee) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /fee` | Get the NFT marketplace fee
+[**get Marketplace Fee Recipient()**](#getmarketplacefeerecipient) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /recipient` | Get the recipient of the NFT marketplace fee
+[**get Marketplace Info()**](#getmarketplaceinfo) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress}` | Get information about an NFT marketplace on Solana
+[**get Marketplace Listing()**](#getmarketplacelisting) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /listing /{id}` | Get information about a listing on the NFT marketplace
+[**get Marketplace Listings()**](#getmarketplacelistings) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /{type}` | Get the listings of a certain type from the NFT marketplace
+[**sell Asset On Marketplace()**](#sellassetonmarketplace) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
+[**sell Asset On Marketplace Celo()**](#sellassetonmarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
+[**sell Asset On Marketplace Celo KMS()**](#sellassetonmarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
+[**sell Asset On Marketplace KMS()**](#sellassetonmarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
+[**sell Asset On Marketplace Solana()**](#sellassetonmarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
+[**sell Asset On Marketplace Solana KMS()**](#sellassetonmarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
+[**update Fee()**](#updatefee) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
+[**update Fee Celo()**](#updatefeecelo) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
+[**update Fee Celo KMS()**](#updatefeecelokms) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
+[**update Fee KMS()**](#updatefeekms) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
+[**update Fee Recipient()**](#updatefeerecipient) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
+[**update Fee Recipient Celo()**](#updatefeerecipientcelo) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
+[**update Fee Recipient Celo KMS()**](#updatefeerecipientcelokms) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
+[**update Fee Recipient KMS()**](#updatefeerecipientkms) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
+[**update Fee Recipient Solana()**](#updatefeerecipientsolana) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
+[**update Fee Recipient Solana KMS()**](#updatefeerecipientsolanakms) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
+[**update Fee Solana()**](#updatefeesolana) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
+[**update Fee Solana KMS()**](#updatefeesolanakms) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
+[**update Marketplace Solana()**](#updatemarketplacesolana) | **PUT** `/v3 /blockchain /marketplace /listing` | Update an NFT marketplace on Solana
+[**update Marketplace Solana KMS()**](#updatemarketplacesolanakms) | **PUT** `/v3 /blockchain /marketplace /listing` | Update an NFT marketplace on Solana
+[**withdraw From Marketplace Solana()**](#withdrawfrommarketplacesolana) | **POST** `/v3 /blockchain /marketplace /withdraw /fee` | Withdraw funds from the marketplace fee account on Solana
+[**withdraw From Marketplace Solana KMS()**](#withdrawfrommarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /withdraw /fee` | Withdraw funds from the marketplace fee account on Solana
 
 
-## `blockchainMarketplaceListingBuyAssetOnMarketplace()`
+## `bloMarWithdrawFromMarketplaceSolana()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingBuyAssetOnMarketplace(
+$sdk->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSolana(
+    \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../Model/WithdrawFromMarketplaceSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Withdraw funds from the marketplace treasury account on Solana
+
+<p><b>2 credits per API call</b></p> <p>Withdraw funds from the NFT marketplace treasury account on Solana.</p> <p>You can withdraw the funds only if you are the marketplace fee recipient.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "bloMarWithdrawFromMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `bloMarWithdrawFromMarketplaceSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSolanaKMS(
+    \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../Model/WithdrawFromMarketplaceSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Withdraw funds from the marketplace treasury account on Solana
+
+WithdrawFromMarketplaceSolanaKMS operation
+
+### Example
+
+[✨ View "bloMarWithdrawFromMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `buyAssetOnMarketplace()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplace(
     \Tatum\Model\BuyAssetOnMarketplace $buy_asset_on_marketplace
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -72,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -82,18 +146,18 @@ Buy an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingBuyAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingBuyAssetOnMarketplace.php)
+[✨ View "buyAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingBuyAssetOnMarketplaceCelo()`
+## `buyAssetOnMarketplaceCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingBuyAssetOnMarketplaceCelo(
+$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCelo(
     \Tatum\Model\BuyAssetOnMarketplaceCelo $buy_asset_on_marketplace_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -104,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -114,18 +178,18 @@ BuyAssetOnMarketplaceCelo operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingBuyAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingBuyAssetOnMarketplaceCelo.php)
+[✨ View "buyAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingBuyAssetOnMarketplaceCeloKMS()`
+## `buyAssetOnMarketplaceCeloKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingBuyAssetOnMarketplaceCeloKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCeloKMS(
     \Tatum\Model\BuyAssetOnMarketplaceCeloKMS $buy_asset_on_marketplace_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -136,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -146,18 +210,18 @@ BuyAssetOnMarketplaceCeloKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingBuyAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingBuyAssetOnMarketplaceCeloKMS.php)
+[✨ View "buyAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingBuyAssetOnMarketplaceKMS()`
+## `buyAssetOnMarketplaceKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingBuyAssetOnMarketplaceKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceKMS(
     \Tatum\Model\BuyAssetOnMarketplaceKMS $buy_asset_on_marketplace_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -168,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -178,18 +242,18 @@ BuyAssetOnMarketplaceKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingBuyAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingBuyAssetOnMarketplaceKMS.php)
+[✨ View "buyAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingBuyAssetOnMarketplaceSolana()`
+## `buyAssetOnMarketplaceSolana()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingBuyAssetOnMarketplaceSolana(
+$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolana(
     \Tatum\Model\BuyAssetOnMarketplaceSolana $buy_asset_on_marketplace_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -200,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -210,18 +274,18 @@ BuyAssetOnMarketplaceSolana operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingBuyAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingBuyAssetOnMarketplaceSolana.php)
+[✨ View "buyAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingBuyAssetOnMarketplaceSolanaKMS()`
+## `buyAssetOnMarketplaceSolanaKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingBuyAssetOnMarketplaceSolanaKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(
     \Tatum\Model\BuyAssetOnMarketplaceSolanaKMS $buy_asset_on_marketplace_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -232,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -242,18 +306,18 @@ BuyAssetOnMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingBuyAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingBuyAssetOnMarketplaceSolanaKMS.php)
+[✨ View "buyAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingCancelSellAssetOnMarketplace()`
+## `cancelSellAssetOnMarketplace()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingCancelSellAssetOnMarketplace(
+$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplace(
     \Tatum\Model\CancelSellAssetOnMarketplace $cancel_sell_asset_on_marketplace
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -264,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -274,18 +338,18 @@ Cancel the selling of an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingCancelSellAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingCancelSellAssetOnMarketplace.php)
+[✨ View "cancelSellAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingCancelSellAssetOnMarketplaceCelo()`
+## `cancelSellAssetOnMarketplaceCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingCancelSellAssetOnMarketplaceCelo(
+$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCelo(
     \Tatum\Model\CancelSellAssetOnMarketplaceCelo $cancel_sell_asset_on_marketplace_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -296,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -306,18 +370,18 @@ CancelSellAssetOnMarketplaceCelo operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingCancelSellAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingCancelSellAssetOnMarketplaceCelo.php)
+[✨ View "cancelSellAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingCancelSellAssetOnMarketplaceCeloKMS()`
+## `cancelSellAssetOnMarketplaceCeloKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingCancelSellAssetOnMarketplaceCeloKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCeloKMS(
     \Tatum\Model\CancelSellAssetOnMarketplaceCeloKMS $cancel_sell_asset_on_marketplace_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -328,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -338,18 +402,18 @@ CancelSellAssetOnMarketplaceCeloKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingCancelSellAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingCancelSellAssetOnMarketplaceCeloKMS.php)
+[✨ View "cancelSellAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS()`
+## `cancelSellAssetOnMarketplaceKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceKMS(
     \Tatum\Model\CancelSellAssetOnMarketplaceKMS $cancel_sell_asset_on_marketplace_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -360,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -370,18 +434,18 @@ CancelSellAssetOnMarketplaceKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingCancelSellAssetOnMarketplaceKMS.php)
+[✨ View "cancelSellAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana()`
+## `cancelSellAssetOnMarketplaceSolana()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana(
+$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSolana(
     \Tatum\Model\CancelSellAssetOnMarketplaceSolana $cancel_sell_asset_on_marketplace_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -392,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -402,18 +466,18 @@ CancelSellAssetOnMarketplaceSolana operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolana.php)
+[✨ View "cancelSellAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS()`
+## `cancelSellAssetOnMarketplaceSolanaKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSolanaKMS(
     \Tatum\Model\CancelSellAssetOnMarketplaceSolanaKMS $cancel_sell_asset_on_marketplace_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -424,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -434,210 +498,18 @@ CancelSellAssetOnMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingCancelSellAssetOnMarketplaceSolanaKMS.php)
+[✨ View "cancelSellAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingFeeUpdateFee()`
+## `generateMarketplace()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFee(
-    \Tatum\Model\UpdateFee $update_fee
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee** | [**\Tatum\Model\UpdateFee**](../Model/UpdateFee.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-<p><b>2 credits per API call</b></p> <p>Update the NFT marketplace fee.</p> <p>You can update the marketplace fee only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>Signing a transaction</b><br/> When updating the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFee.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFee.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeCelo(
-    \Tatum\Model\UpdateFeeCelo $update_fee_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_celo** | [**\Tatum\Model\UpdateFeeCelo**](../Model/UpdateFeeCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeCelo operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeCeloKMS(
-    \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_celo_kms** | [**\Tatum\Model\UpdateFeeCeloKMS**](../Model/UpdateFeeCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeCeloKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeKMS(
-    \Tatum\Model\UpdateFeeKMS $update_fee_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_kms** | [**\Tatum\Model\UpdateFeeKMS**](../Model/UpdateFeeKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeSolana()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeSolana(
-    \Tatum\Model\UpdateFeeSolana $update_fee_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_solana** | [**\Tatum\Model\UpdateFeeSolana**](../Model/UpdateFeeSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeSolana operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeSolana.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingFeeUpdateFeeSolanaKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingFeeUpdateFeeSolanaKMS(
-    \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_solana_kms** | [**\Tatum\Model\UpdateFeeSolanaKMS**](../Model/UpdateFeeSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the NFT marketplace fee
-
-UpdateFeeSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingFeeUpdateFeeSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingFeeUpdateFeeSolanaKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingGenerateMarketplace()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingGenerateMarketplace(
+$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplace(
     \Tatum\Model\GenerateMarketplace $generate_marketplace
-): \Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response
+): \Tatum\Model\GenerateMarketplace200Response
 ```
 
 ### Parameters
@@ -648,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response**](../Model/BlockchainMarketplaceListingGenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
 ### Description
 
@@ -658,18 +530,18 @@ Create an NFT marketplace
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingGenerateMarketplace.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingGenerateMarketplace.php)
+[✨ View "generateMarketplace.php"](../../examples/Api/MarketplaceApi/generateMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingGenerateMarketplaceCelo()`
+## `generateMarketplaceCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingGenerateMarketplaceCelo(
+$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCelo(
     \Tatum\Model\GenerateMarketplaceCelo $generate_marketplace_celo
-): \Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response
+): \Tatum\Model\GenerateMarketplace200Response
 ```
 
 ### Parameters
@@ -680,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response**](../Model/BlockchainMarketplaceListingGenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
 ### Description
 
@@ -690,18 +562,18 @@ GenerateMarketplaceCelo operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingGenerateMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingGenerateMarketplaceCelo.php)
+[✨ View "generateMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingGenerateMarketplaceCeloKMS()`
+## `generateMarketplaceCeloKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingGenerateMarketplaceCeloKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCeloKMS(
     \Tatum\Model\GenerateMarketplaceCeloKMS $generate_marketplace_celo_kms
-): \Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response
+): \Tatum\Model\GenerateMarketplace200Response
 ```
 
 ### Parameters
@@ -712,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response**](../Model/BlockchainMarketplaceListingGenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
 ### Description
 
@@ -722,18 +594,18 @@ GenerateMarketplaceCeloKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingGenerateMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingGenerateMarketplaceCeloKMS.php)
+[✨ View "generateMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingGenerateMarketplaceKMS()`
+## `generateMarketplaceKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingGenerateMarketplaceKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceKMS(
     \Tatum\Model\GenerateMarketplaceKMS $generate_marketplace_kms
-): \Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response
+): \Tatum\Model\GenerateMarketplace200Response
 ```
 
 ### Parameters
@@ -744,7 +616,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response**](../Model/BlockchainMarketplaceListingGenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
 ### Description
 
@@ -754,18 +626,18 @@ GenerateMarketplaceKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingGenerateMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingGenerateMarketplaceKMS.php)
+[✨ View "generateMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingGenerateMarketplaceSolana()`
+## `generateMarketplaceSolana()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingGenerateMarketplaceSolana(
+$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolana(
     \Tatum\Model\GenerateMarketplaceSolana $generate_marketplace_solana
-): \Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response
+): \Tatum\Model\GenerateMarketplace200Response
 ```
 
 ### Parameters
@@ -776,7 +648,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response**](../Model/BlockchainMarketplaceListingGenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
 ### Description
 
@@ -786,18 +658,18 @@ GenerateMarketplaceSolana operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingGenerateMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingGenerateMarketplaceSolana.php)
+[✨ View "generateMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainMarketplaceListingGenerateMarketplaceSolanaKMS()`
+## `generateMarketplaceSolanaKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingGenerateMarketplaceSolanaKMS(
+$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolanaKMS(
     \Tatum\Model\GenerateMarketplaceSolanaKMS $generate_marketplace_solana_kms
-): \Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response
+): \Tatum\Model\GenerateMarketplace200Response
 ```
 
 ### Parameters
@@ -808,7 +680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BlockchainMarketplaceListingGenerateMarketplace200Response**](../Model/BlockchainMarketplaceListingGenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
 
 ### Description
 
@@ -818,583 +690,7 @@ GenerateMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "blockchainMarketplaceListingGenerateMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingGenerateMarketplaceSolanaKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipient()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipient(
-    \Tatum\Model\UpdateFeeRecipient $update_fee_recipient
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient** | [**\Tatum\Model\UpdateFeeRecipient**](../Model/UpdateFeeRecipient.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-<p><b>2 credits per API call</b></p> <p>Update the recipient of the NFT marketplace fee.</p> <p>You can update the fee recipient only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>Signing a transaction</b><br/> When updating the recipient of the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipient.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipient.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo(
-    \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientCelo operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS(
-    \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientCeloKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS(
-    \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana(
-    \Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_solana** | [**\Tatum\Model\UpdateFeeRecipientSolana**](../Model/UpdateFeeRecipientSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientSolana operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolana.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS(
-    \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_solana_kms** | [**\Tatum\Model\UpdateFeeRecipientSolanaKMS**](../Model/UpdateFeeRecipientSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update the recipient of the NFT marketplace fee
-
-UpdateFeeRecipientSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingRecipientUpdateFeeRecipientSolanaKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingSellAssetOnMarketplace()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingSellAssetOnMarketplace(
-    \Tatum\Model\SellAssetOnMarketplace $sell_asset_on_marketplace
-): \Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace** | [**\Tatum\Model\SellAssetOnMarketplace**](../Model/SellAssetOnMarketplace.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response**](../Model/BlockchainMarketplaceListingSellAssetOnMarketplace200Response.md)
-
-### Description
-
-Sell an asset on the NFT marketplace
-
-<p><b>2 credits per API call</b></p> <p>Create a new listing for an asset on the NFT marketplace. The listing can be offered for the native blockchain assets (for example, ETH, MATIC, and so on) or for any fungible tokens.</p> <p>After the listing is created, <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allow the marketplace smart contract to transfer the asset that you are selling</a>.</p> <p>You can create a listing only for an existing asset that you own (you must be the owner of the asset).</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When creating a new listing on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainMarketplaceListingSellAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingSellAssetOnMarketplace.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingSellAssetOnMarketplaceCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingSellAssetOnMarketplaceCelo(
-    \Tatum\Model\SellAssetOnMarketplaceCelo $sell_asset_on_marketplace_celo
-): \Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_celo** | [**\Tatum\Model\SellAssetOnMarketplaceCelo**](../Model/SellAssetOnMarketplaceCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response**](../Model/BlockchainMarketplaceListingSellAssetOnMarketplace200Response.md)
-
-### Description
-
-Sell an asset on the NFT marketplace
-
-SellAssetOnMarketplaceCelo operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingSellAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingSellAssetOnMarketplaceCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS(
-    \Tatum\Model\SellAssetOnMarketplaceCeloKMS $sell_asset_on_marketplace_celo_kms
-): \Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_celo_kms** | [**\Tatum\Model\SellAssetOnMarketplaceCeloKMS**](../Model/SellAssetOnMarketplaceCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response**](../Model/BlockchainMarketplaceListingSellAssetOnMarketplace200Response.md)
-
-### Description
-
-Sell an asset on the NFT marketplace
-
-SellAssetOnMarketplaceCeloKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingSellAssetOnMarketplaceCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingSellAssetOnMarketplaceKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingSellAssetOnMarketplaceKMS(
-    \Tatum\Model\SellAssetOnMarketplaceKMS $sell_asset_on_marketplace_kms
-): \Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_kms** | [**\Tatum\Model\SellAssetOnMarketplaceKMS**](../Model/SellAssetOnMarketplaceKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response**](../Model/BlockchainMarketplaceListingSellAssetOnMarketplace200Response.md)
-
-### Description
-
-Sell an asset on the NFT marketplace
-
-SellAssetOnMarketplaceKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingSellAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingSellAssetOnMarketplaceKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingSellAssetOnMarketplaceSolana()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingSellAssetOnMarketplaceSolana(
-    \Tatum\Model\SellAssetOnMarketplaceSolana $sell_asset_on_marketplace_solana
-): \Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_solana** | [**\Tatum\Model\SellAssetOnMarketplaceSolana**](../Model/SellAssetOnMarketplaceSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response**](../Model/BlockchainMarketplaceListingSellAssetOnMarketplace200Response.md)
-
-### Description
-
-Sell an asset on the NFT marketplace
-
-SellAssetOnMarketplaceSolana operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingSellAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingSellAssetOnMarketplaceSolana.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS(
-    \Tatum\Model\SellAssetOnMarketplaceSolanaKMS $sell_asset_on_marketplace_solana_kms
-): \Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_solana_kms** | [**\Tatum\Model\SellAssetOnMarketplaceSolanaKMS**](../Model/SellAssetOnMarketplaceSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainMarketplaceListingSellAssetOnMarketplace200Response**](../Model/BlockchainMarketplaceListingSellAssetOnMarketplace200Response.md)
-
-### Description
-
-Sell an asset on the NFT marketplace
-
-SellAssetOnMarketplaceSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingSellAssetOnMarketplaceSolanaKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingUpdateMarketplaceSolana()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolana(
-    \Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_marketplace_solana** | [**\Tatum\Model\UpdateMarketplaceSolana**](../Model/UpdateMarketplaceSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update an NFT marketplace on Solana
-
-<p><b>2 credits per API call</b></p> <p>Update an NFT marketplace on Solana.</p> <p>You can update it only if you are the marketplace operator.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When updating an NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainMarketplaceListingUpdateMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingUpdateMarketplaceSolana.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceListingUpdateMarketplaceSolanaKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceListingUpdateMarketplaceSolanaKMS(
-    \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$update_marketplace_solana_kms** | [**\Tatum\Model\UpdateMarketplaceSolanaKMS**](../Model/UpdateMarketplaceSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Update an NFT marketplace on Solana
-
-UpdateMarketplaceSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceListingUpdateMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceListingUpdateMarketplaceSolanaKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana(
-    \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../Model/WithdrawFromMarketplaceSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Withdraw funds from the marketplace fee account on Solana
-
-<p><b>2 credits per API call</b></p> <p>Withdraw funds from the NFT marketplace fee account on Solana.</p> <p>You can withdraw the funds only if you are the marketplace fee recipient.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolana.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS(
-    \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../Model/WithdrawFromMarketplaceSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Withdraw funds from the marketplace fee account on Solana
-
-WithdrawFromMarketplaceSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceWithdrawFeeWithdrawFromMarketplaceSolanaKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana(
-    \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../Model/WithdrawFromMarketplaceSolana.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Withdraw funds from the marketplace treasury account on Solana
-
-<p><b>2 credits per API call</b></p> <p>Withdraw funds from the NFT marketplace treasury account on Solana.</p> <p>You can withdraw the funds only if you are the marketplace fee recipient.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolana.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolanaKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolanaKMS(
-    \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../Model/WithdrawFromMarketplaceSolanaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Withdraw funds from the marketplace treasury account on Solana
-
-WithdrawFromMarketplaceSolanaKMS operation
-
-### Example
-
-[✨ View "blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/blockchainMarketplaceWithdrawTreasuryWithdrawFromMarketplaceSolanaKMS.php)
+[✨ View "generateMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1569,5 +865,709 @@ Get the listings of a certain type from the NFT marketplace
 ### Example
 
 [✨ View "getMarketplaceListings.php"](../../examples/Api/MarketplaceApi/getMarketplaceListings.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sellAssetOnMarketplace()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplace(
+    \Tatum\Model\SellAssetOnMarketplace $sell_asset_on_marketplace
+): \Tatum\Model\SellAssetOnMarketplace200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$sell_asset_on_marketplace** | [**\Tatum\Model\SellAssetOnMarketplace**](../Model/SellAssetOnMarketplace.md) |  |
+
+### Return type
+
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+
+### Description
+
+Sell an asset on the NFT marketplace
+
+<p><b>2 credits per API call</b></p> <p>Create a new listing for an asset on the NFT marketplace. The listing can be offered for the native blockchain assets (for example, ETH, MATIC, and so on) or for any fungible tokens.</p> <p>After the listing is created, <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allow the marketplace smart contract to transfer the asset that you are selling</a>.</p> <p>You can create a listing only for an existing asset that you own (you must be the owner of the asset).</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>NOTE:</b> When making this API call, you may get the following message:<br/> <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code><br/> This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.</p> <p><b>Signing a transaction</b><br/> When creating a new listing on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "sellAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sellAssetOnMarketplaceCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCelo(
+    \Tatum\Model\SellAssetOnMarketplaceCelo $sell_asset_on_marketplace_celo
+): \Tatum\Model\SellAssetOnMarketplace200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$sell_asset_on_marketplace_celo** | [**\Tatum\Model\SellAssetOnMarketplaceCelo**](../Model/SellAssetOnMarketplaceCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+
+### Description
+
+Sell an asset on the NFT marketplace
+
+SellAssetOnMarketplaceCelo operation
+
+### Example
+
+[✨ View "sellAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sellAssetOnMarketplaceCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCeloKMS(
+    \Tatum\Model\SellAssetOnMarketplaceCeloKMS $sell_asset_on_marketplace_celo_kms
+): \Tatum\Model\SellAssetOnMarketplace200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$sell_asset_on_marketplace_celo_kms** | [**\Tatum\Model\SellAssetOnMarketplaceCeloKMS**](../Model/SellAssetOnMarketplaceCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+
+### Description
+
+Sell an asset on the NFT marketplace
+
+SellAssetOnMarketplaceCeloKMS operation
+
+### Example
+
+[✨ View "sellAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sellAssetOnMarketplaceKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceKMS(
+    \Tatum\Model\SellAssetOnMarketplaceKMS $sell_asset_on_marketplace_kms
+): \Tatum\Model\SellAssetOnMarketplace200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$sell_asset_on_marketplace_kms** | [**\Tatum\Model\SellAssetOnMarketplaceKMS**](../Model/SellAssetOnMarketplaceKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+
+### Description
+
+Sell an asset on the NFT marketplace
+
+SellAssetOnMarketplaceKMS operation
+
+### Example
+
+[✨ View "sellAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sellAssetOnMarketplaceSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolana(
+    \Tatum\Model\SellAssetOnMarketplaceSolana $sell_asset_on_marketplace_solana
+): \Tatum\Model\SellAssetOnMarketplace200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$sell_asset_on_marketplace_solana** | [**\Tatum\Model\SellAssetOnMarketplaceSolana**](../Model/SellAssetOnMarketplaceSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+
+### Description
+
+Sell an asset on the NFT marketplace
+
+SellAssetOnMarketplaceSolana operation
+
+### Example
+
+[✨ View "sellAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `sellAssetOnMarketplaceSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolanaKMS(
+    \Tatum\Model\SellAssetOnMarketplaceSolanaKMS $sell_asset_on_marketplace_solana_kms
+): \Tatum\Model\SellAssetOnMarketplace200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$sell_asset_on_marketplace_solana_kms** | [**\Tatum\Model\SellAssetOnMarketplaceSolanaKMS**](../Model/SellAssetOnMarketplaceSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+
+### Description
+
+Sell an asset on the NFT marketplace
+
+SellAssetOnMarketplaceSolanaKMS operation
+
+### Example
+
+[✨ View "sellAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFee()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFee(
+    \Tatum\Model\UpdateFee $update_fee
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee** | [**\Tatum\Model\UpdateFee**](../Model/UpdateFee.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+<p><b>2 credits per API call</b></p> <p>Update the NFT marketplace fee.</p> <p>You can update the marketplace fee only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>Signing a transaction</b><br/> When updating the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "updateFee.php"](../../examples/Api/MarketplaceApi/updateFee.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeCelo(
+    \Tatum\Model\UpdateFeeCelo $update_fee_celo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_celo** | [**\Tatum\Model\UpdateFeeCelo**](../Model/UpdateFeeCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeCelo operation
+
+### Example
+
+[✨ View "updateFeeCelo.php"](../../examples/Api/MarketplaceApi/updateFeeCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeCeloKMS(
+    \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_celo_kms** | [**\Tatum\Model\UpdateFeeCeloKMS**](../Model/UpdateFeeCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeCeloKMS operation
+
+### Example
+
+[✨ View "updateFeeCeloKMS.php"](../../examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeKMS(
+    \Tatum\Model\UpdateFeeKMS $update_fee_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_kms** | [**\Tatum\Model\UpdateFeeKMS**](../Model/UpdateFeeKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeKMS operation
+
+### Example
+
+[✨ View "updateFeeKMS.php"](../../examples/Api/MarketplaceApi/updateFeeKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeRecipient()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipient(
+    \Tatum\Model\UpdateFeeRecipient $update_fee_recipient
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient** | [**\Tatum\Model\UpdateFeeRecipient**](../Model/UpdateFeeRecipient.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+<p><b>2 credits per API call</b></p> <p>Update the recipient of the NFT marketplace fee.</p> <p>You can update the fee recipient only if you are the marketplace operator.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in <b>alpha</b>)</li> </ul> <p><b>Signing a transaction</b><br/> When updating the recipient of the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "updateFeeRecipient.php"](../../examples/Api/MarketplaceApi/updateFeeRecipient.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeRecipientCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCelo(
+    \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientCelo operation
+
+### Example
+
+[✨ View "updateFeeRecipientCelo.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeRecipientCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCeloKMS(
+    \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientCeloKMS operation
+
+### Example
+
+[✨ View "updateFeeRecipientCeloKMS.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeRecipientKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientKMS(
+    \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientKMS operation
+
+### Example
+
+[✨ View "updateFeeRecipientKMS.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeRecipientSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolana(
+    \Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_solana** | [**\Tatum\Model\UpdateFeeRecipientSolana**](../Model/UpdateFeeRecipientSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientSolana operation
+
+### Example
+
+[✨ View "updateFeeRecipientSolana.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeRecipientSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolanaKMS(
+    \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_recipient_solana_kms** | [**\Tatum\Model\UpdateFeeRecipientSolanaKMS**](../Model/UpdateFeeRecipientSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the recipient of the NFT marketplace fee
+
+UpdateFeeRecipientSolanaKMS operation
+
+### Example
+
+[✨ View "updateFeeRecipientSolanaKMS.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeSolana(
+    \Tatum\Model\UpdateFeeSolana $update_fee_solana
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_solana** | [**\Tatum\Model\UpdateFeeSolana**](../Model/UpdateFeeSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeSolana operation
+
+### Example
+
+[✨ View "updateFeeSolana.php"](../../examples/Api/MarketplaceApi/updateFeeSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateFeeSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeSolanaKMS(
+    \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_fee_solana_kms** | [**\Tatum\Model\UpdateFeeSolanaKMS**](../Model/UpdateFeeSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update the NFT marketplace fee
+
+UpdateFeeSolanaKMS operation
+
+### Example
+
+[✨ View "updateFeeSolanaKMS.php"](../../examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateMarketplaceSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolana(
+    \Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_marketplace_solana** | [**\Tatum\Model\UpdateMarketplaceSolana**](../Model/UpdateMarketplaceSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update an NFT marketplace on Solana
+
+<p><b>2 credits per API call</b></p> <p>Update an NFT marketplace on Solana.</p> <p>You can update it only if you are the marketplace operator.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When updating an NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "updateMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `updateMarketplaceSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolanaKMS(
+    \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$update_marketplace_solana_kms** | [**\Tatum\Model\UpdateMarketplaceSolanaKMS**](../Model/UpdateMarketplaceSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Update an NFT marketplace on Solana
+
+UpdateMarketplaceSolanaKMS operation
+
+### Example
+
+[✨ View "updateMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `withdrawFromMarketplaceSolana()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolana(
+    \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../Model/WithdrawFromMarketplaceSolana.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Withdraw funds from the marketplace fee account on Solana
+
+<p><b>2 credits per API call</b></p> <p>Withdraw funds from the NFT marketplace fee account on Solana.</p> <p>You can withdraw the funds only if you are the marketplace fee recipient.</p> <p>This API is in <b>alpha</b> and is supported only for the mainnet on Solana.</p> <p><b>Signing a transaction</b><br/> When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "withdrawFromMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `withdrawFromMarketplaceSolanaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolanaKMS(
+    \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../Model/WithdrawFromMarketplaceSolanaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Withdraw funds from the marketplace fee account on Solana
+
+WithdrawFromMarketplaceSolanaKMS operation
+
+### Example
+
+[✨ View "withdrawFromMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

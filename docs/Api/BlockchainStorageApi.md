@@ -5,10 +5,74 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLog()**](#getlog) | **GET** `/v3/record` | Get a log record
-[**recordCreateRecord()**](#recordcreaterecord) | **POST** `/v3/record` | Store a log record
-[**recordCreateRecordCelo()**](#recordcreaterecordcelo) | **POST** `/v3/record` | Store a log record
+[**create Record()**](#createrecord) | **POST** `/v3 /record` | Store a log record
+[**create Record Celo()**](#createrecordcelo) | **POST** `/v3 /record` | Store a log record
+[**get Log()**](#getlog) | **GET** `/v3 /record` | Get a log record
 
+
+## `createRecord()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecord(
+    \Tatum\Model\CreateRecord $create_record
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_record** | [**\Tatum\Model\CreateRecord**](../Model/CreateRecord.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Store a log record
+
+<p><b>2 credits per API call + additional credits based on the size of the stored data and the type of the blockchain</b></p> <p>Store data on the blockchain.</p> <p>The total cost of a transaction on Ethereum (in credits) depends on the size of the data. The data is stored as a string in the hexadecimal format, and the maximum size of the data is approximately 130 kB on the mainnet and 30 kB on testnet. Every 5 characters cost 1 credit.<br/> Therefore, one API call with 1 kB of data (1024 characters) would cost 205 credits.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum (only the mainnet or the Sepolia testnet)</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
+
+### Example
+
+[✨ View "createRecord.php"](../../examples/Api/BlockchainStorageApi/createRecord.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createRecordCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecordCelo(
+    \Tatum\Model\CreateRecordCelo $create_record_celo
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_record_celo** | [**\Tatum\Model\CreateRecordCelo**](../Model/CreateRecordCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Store a log record
+
+CreateRecordCelo operation
+
+### Example
+
+[✨ View "createRecordCelo.php"](../../examples/Api/BlockchainStorageApi/createRecordCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getLog()`
 
@@ -41,69 +105,5 @@ Get a log record
 ### Example
 
 [✨ View "getLog.php"](../../examples/Api/BlockchainStorageApi/getLog.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `recordCreateRecord()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()->recordCreateRecord(
-    \Tatum\Model\CreateRecord $create_record
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_record** | [**\Tatum\Model\CreateRecord**](../Model/CreateRecord.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Store a log record
-
-<p><b>2 credits per API call + additional credits based on the size of the stored data and the type of the blockchain</b></p> <p>Store data on the blockchain.</p> <p>The total cost of a transaction on Ethereum (in credits) depends on the size of the data. The data is stored as a string in the hexadecimal format, and the maximum size of the data is approximately 130 kB on the mainnet and 30 kB on testnet. Every 5 characters cost 1 credit.<br/> Therefore, one API call with 1 kB of data (1024 characters) would cost 205 credits.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum (only the mainnet or the Sepolia testnet)</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
-### Example
-
-[✨ View "recordCreateRecord.php"](../../examples/Api/BlockchainStorageApi/recordCreateRecord.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `recordCreateRecordCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()->recordCreateRecordCelo(
-    \Tatum\Model\CreateRecordCelo $create_record_celo
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_record_celo** | [**\Tatum\Model\CreateRecordCelo**](../Model/CreateRecordCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Store a log record
-
-CreateRecordCelo operation
-
-### Example
-
-[✨ View "recordCreateRecordCelo.php"](../../examples/Api/BlockchainStorageApi/recordCreateRecordCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

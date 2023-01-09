@@ -5,20 +5,20 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adaBroadcast()**](#adabroadcast) | **POST** `/v3/ada/broadcast` | Broadcast signed Ada transaction
-[**adaGenerateAddress()**](#adagenerateaddress) | **GET** `/v3/ada/address/{xpub}/{index}` | Generate Ada deposit address from Extended public key
-[**adaGenerateAddressPrivateKey()**](#adagenerateaddressprivatekey) | **POST** `/v3/ada/wallet/priv` | Generate Ada private key
-[**adaGenerateWallet()**](#adageneratewallet) | **GET** `/v3/ada/wallet` | Generate Ada wallet
-[**adaGetAccount()**](#adagetaccount) | **GET** `/v3/ada/account/{address}` | Gets a Ada account by address
-[**adaGetBlock()**](#adagetblock) | **GET** `/v3/ada/block/{hash}` | Get Block by hash or height
-[**adaGetBlockChainInfo()**](#adagetblockchaininfo) | **GET** `/v3/ada/info` | Get Blockchain information
-[**adaGetRawTransaction()**](#adagetrawtransaction) | **GET** `/v3/ada/transaction/{hash}` | Get transaction by hash
-[**adaGetTxByAddress()**](#adagettxbyaddress) | **GET** `/v3/ada/transaction/address/{address}` | Get transactions by address
-[**adaGetUTXOByAddress()**](#adagetutxobyaddress) | **GET** `/v3/ada/{address}/utxos` | Get UTXOs by address
-[**adaTransactionAdaTransactionFromAddress()**](#adatransactionadatransactionfromaddress) | **POST** `/v3/ada/transaction` | Send ADA to Cardano addresses
-[**adaTransactionAdaTransactionFromAddressKMS()**](#adatransactionadatransactionfromaddresskms) | **POST** `/v3/ada/transaction` | Send ADA to Cardano addresses
-[**adaTransactionAdaTransactionFromUTXO()**](#adatransactionadatransactionfromutxo) | **POST** `/v3/ada/transaction` | Send ADA to Cardano addresses
-[**adaTransactionAdaTransactionFromUTXOKMS()**](#adatransactionadatransactionfromutxokms) | **POST** `/v3/ada/transaction` | Send ADA to Cardano addresses
+[**ada Broadcast()**](#adabroadcast) | **POST** `/v3 /ada /broadcast` | Broadcast signed Ada transaction
+[**ada Generate Address()**](#adagenerateaddress) | **GET** `/v3 /ada /address /{xpub} /{index}` | Generate Ada deposit address from Extended public key
+[**ada Generate Address Private Key()**](#adagenerateaddressprivatekey) | **POST** `/v3 /ada /wallet /priv` | Generate Ada private key
+[**ada Generate Wallet()**](#adageneratewallet) | **GET** `/v3 /ada /wallet` | Generate Ada wallet
+[**ada Get Account()**](#adagetaccount) | **GET** `/v3 /ada /account /{address}` | Gets a Ada account by address
+[**ada Get Block()**](#adagetblock) | **GET** `/v3 /ada /block /{hash}` | Get Block by hash or height
+[**ada Get Block Chain Info()**](#adagetblockchaininfo) | **GET** `/v3 /ada /info` | Get Blockchain information
+[**ada Get Raw Transaction()**](#adagetrawtransaction) | **GET** `/v3 /ada /transaction /{hash}` | Get transaction by hash
+[**ada Get Tx By Address()**](#adagettxbyaddress) | **GET** `/v3 /ada /transaction /address /{address}` | Get transactions by address
+[**ada Get UTXOBy Address()**](#adagetutxobyaddress) | **GET** `/v3 /ada /{address} /utxos` | Get UTXOs by address
+[**ada Transaction From Address()**](#adatransactionfromaddress) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
+[**ada Transaction From Address KMS()**](#adatransactionfromaddresskms) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
+[**ada Transaction From UTXO()**](#adatransactionfromutxo) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
+[**ada Transaction From UTXOKMS()**](#adatransactionfromutxokms) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
 
 
 ## `adaBroadcast()`
@@ -344,14 +344,14 @@ Get UTXOs by address
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `adaTransactionAdaTransactionFromAddress()`
+## `adaTransactionFromAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionAdaTransactionFromAddress(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddress(
     \Tatum\Model\AdaTransactionFromAddress $ada_transaction_from_address
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -372,18 +372,18 @@ Send ADA to Cardano addresses
 
 ### Example
 
-[✨ View "adaTransactionAdaTransactionFromAddress.php"](../../examples/Api/CardanoApi/adaTransactionAdaTransactionFromAddress.php)
+[✨ View "adaTransactionFromAddress.php"](../../examples/Api/CardanoApi/adaTransactionFromAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `adaTransactionAdaTransactionFromAddressKMS()`
+## `adaTransactionFromAddressKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionAdaTransactionFromAddressKMS(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddressKMS(
     \Tatum\Model\AdaTransactionFromAddressKMS $ada_transaction_from_address_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -404,18 +404,18 @@ AdaTransactionFromAddressKMS operation
 
 ### Example
 
-[✨ View "adaTransactionAdaTransactionFromAddressKMS.php"](../../examples/Api/CardanoApi/adaTransactionAdaTransactionFromAddressKMS.php)
+[✨ View "adaTransactionFromAddressKMS.php"](../../examples/Api/CardanoApi/adaTransactionFromAddressKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `adaTransactionAdaTransactionFromUTXO()`
+## `adaTransactionFromUTXO()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionAdaTransactionFromUTXO(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXO(
     \Tatum\Model\AdaTransactionFromUTXO $ada_transaction_from_utxo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -436,18 +436,18 @@ AdaTransactionFromUTXO operation
 
 ### Example
 
-[✨ View "adaTransactionAdaTransactionFromUTXO.php"](../../examples/Api/CardanoApi/adaTransactionAdaTransactionFromUTXO.php)
+[✨ View "adaTransactionFromUTXO.php"](../../examples/Api/CardanoApi/adaTransactionFromUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `adaTransactionAdaTransactionFromUTXOKMS()`
+## `adaTransactionFromUTXOKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionAdaTransactionFromUTXOKMS(
+$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXOKMS(
     \Tatum\Model\AdaTransactionFromUTXOKMS $ada_transaction_from_utxokms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -468,6 +468,6 @@ AdaTransactionFromUTXOKMS operation
 
 ### Example
 
-[✨ View "adaTransactionAdaTransactionFromUTXOKMS.php"](../../examples/Api/CardanoApi/adaTransactionAdaTransactionFromUTXOKMS.php)
+[✨ View "adaTransactionFromUTXOKMS.php"](../../examples/Api/CardanoApi/adaTransactionFromUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

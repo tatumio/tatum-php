@@ -23,6 +23,84 @@ use Tatum\Sdk\Serializer as S;
  */
 class HarmonyApi extends AbstractApi {
     /**
+     * Invoke a method in a smart contract on Harmony
+     *
+     * @param \Tatum\Model\CallOneReadSmartContractMethod $call_one_read_smart_contract_method 
+     * @param float|0 $shard_id Shard to read data from
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callOneReadSmartContractMethod(\Tatum\Model\CallOneReadSmartContractMethod $call_one_read_smart_contract_method, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/one/smartcontract", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $call_one_read_smart_contract_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Harmony
+     *
+     * @param \Tatum\Model\CallOneSmartContractMethod $call_one_smart_contract_method 
+     * @param float|0 $shard_id Shard to read data from
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callOneSmartContractMethod(\Tatum\Model\CallOneSmartContractMethod $call_one_smart_contract_method, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/one/smartcontract", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $call_one_smart_contract_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Harmony
+     *
+     * @param \Tatum\Model\CallOneSmartContractMethodKMS $call_one_smart_contract_method_kms 
+     * @param float|0 $shard_id Shard to read data from
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callOneSmartContractMethodKMS(\Tatum\Model\CallOneSmartContractMethodKMS $call_one_smart_contract_method_kms, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/one/smartcontract", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $call_one_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast signed ONE transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -281,136 +359,6 @@ class HarmonyApi extends AbstractApi {
     }
     
     /**
-     * Invoke a method in a smart contract on Harmony
-     *
-     * @param \Tatum\Model\CallOneReadSmartContractMethod $call_one_read_smart_contract_method 
-     * @param float|0 $shard_id Shard to read data from
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function oneSmartcontractCallOneReadSmartContractMethod(\Tatum\Model\CallOneReadSmartContractMethod $call_one_read_smart_contract_method, float $shard_id = 0) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/one/smartcontract", [
-                    "shardID" => S::toQueryValue($shard_id),
-                ], $rHeaders, [], $call_one_read_smart_contract_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on Harmony
-     *
-     * @param \Tatum\Model\CallOneSmartContractMethod $call_one_smart_contract_method 
-     * @param float|0 $shard_id Shard to read data from
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function oneSmartcontractCallOneSmartContractMethod(\Tatum\Model\CallOneSmartContractMethod $call_one_smart_contract_method, float $shard_id = 0) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/one/smartcontract", [
-                    "shardID" => S::toQueryValue($shard_id),
-                ], $rHeaders, [], $call_one_smart_contract_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on Harmony
-     *
-     * @param \Tatum\Model\CallOneSmartContractMethodKMS $call_one_smart_contract_method_kms 
-     * @param float|0 $shard_id Shard to read data from
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function oneSmartcontractCallOneSmartContractMethodKMS(\Tatum\Model\CallOneSmartContractMethodKMS $call_one_smart_contract_method_kms, float $shard_id = 0) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/one/smartcontract", [
-                    "shardID" => S::toQueryValue($shard_id),
-                ], $rHeaders, [], $call_one_smart_contract_method_kms
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send ONE / HRM20 from account to account
-     *
-     * @param \Tatum\Model\TransferOneBlockchain $transfer_one_blockchain 
-     * @param float|0 $shard_id Shard to read data from
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function oneTransactionTransferOneBlockchain(\Tatum\Model\TransferOneBlockchain $transfer_one_blockchain, float $shard_id = 0) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/one/transaction", [
-                    "shardID" => S::toQueryValue($shard_id),
-                ], $rHeaders, [], $transfer_one_blockchain
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send ONE / HRM20 from account to account
-     *
-     * @param \Tatum\Model\TransferOneBlockchainKMS $transfer_one_blockchain_kms 
-     * @param float|0 $shard_id Shard to read data from
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function oneTransactionTransferOneBlockchainKMS(\Tatum\Model\TransferOneBlockchainKMS $transfer_one_blockchain_kms, float $shard_id = 0) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/one/transaction", [
-                    "shardID" => S::toQueryValue($shard_id),
-                ], $rHeaders, [], $transfer_one_blockchain_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Web3 HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
@@ -432,6 +380,58 @@ class HarmonyApi extends AbstractApi {
                 ], $rHeaders, [], $body
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ONE / HRM20 from account to account
+     *
+     * @param \Tatum\Model\TransferOneBlockchain $transfer_one_blockchain 
+     * @param float|0 $shard_id Shard to read data from
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferOneBlockchain(\Tatum\Model\TransferOneBlockchain $transfer_one_blockchain, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/one/transaction", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $transfer_one_blockchain
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send ONE / HRM20 from account to account
+     *
+     * @param \Tatum\Model\TransferOneBlockchainKMS $transfer_one_blockchain_kms 
+     * @param float|0 $shard_id Shard to read data from
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferOneBlockchainKMS(\Tatum\Model\TransferOneBlockchainKMS $transfer_one_blockchain_kms, float $shard_id = 0) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/one/transaction", [
+                    "shardID" => S::toQueryValue($shard_id),
+                ], $rHeaders, [], $transfer_one_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

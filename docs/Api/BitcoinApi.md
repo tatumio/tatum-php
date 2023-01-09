@@ -5,152 +5,24 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bitcoinTransactionBtcTransactionFromAddress()**](#bitcointransactionbtctransactionfromaddress) | **POST** `/v3/bitcoin/transaction` | Send BTC to Bitcoin addresses
-[**bitcoinTransactionBtcTransactionFromAddressKMS()**](#bitcointransactionbtctransactionfromaddresskms) | **POST** `/v3/bitcoin/transaction` | Send BTC to Bitcoin addresses
-[**bitcoinTransactionBtcTransactionFromUTXO()**](#bitcointransactionbtctransactionfromutxo) | **POST** `/v3/bitcoin/transaction` | Send BTC to Bitcoin addresses
-[**bitcoinTransactionBtcTransactionFromUTXOKMS()**](#bitcointransactionbtctransactionfromutxokms) | **POST** `/v3/bitcoin/transaction` | Send BTC to Bitcoin addresses
-[**btcBroadcast()**](#btcbroadcast) | **POST** `/v3/bitcoin/broadcast` | Broadcast a signed Bitcoin transaction
-[**btcGenerateAddress()**](#btcgenerateaddress) | **GET** `/v3/bitcoin/address/{xpub}/{index}` | Generate a Bitcoin address from the wallet's extended public key
-[**btcGenerateAddressPrivateKey()**](#btcgenerateaddressprivatekey) | **POST** `/v3/bitcoin/wallet/priv` | Generate the private key for a Bitcoin address
-[**btcGenerateWallet()**](#btcgeneratewallet) | **GET** `/v3/bitcoin/wallet` | Generate a Bitcoin wallet
-[**btcGetBalanceOfAddress()**](#btcgetbalanceofaddress) | **GET** `/v3/bitcoin/address/balance/{address}` | Get the balance of a Bitcoin address
-[**btcGetBlock()**](#btcgetblock) | **GET** `/v3/bitcoin/block/{hash}` | Get a Bitcoin block by its hash or height
-[**btcGetBlockChainInfo()**](#btcgetblockchaininfo) | **GET** `/v3/bitcoin/info` | Get Bitcoin blockchain information
-[**btcGetBlockHash()**](#btcgetblockhash) | **GET** `/v3/bitcoin/block/hash/{i}` | Get the hash of a Bitcoin block
-[**btcGetMempool()**](#btcgetmempool) | **GET** `/v3/bitcoin/mempool` | Get transactions from the Bitcoin mempool
-[**btcGetRawTransaction()**](#btcgetrawtransaction) | **GET** `/v3/bitcoin/transaction/{hash}` | Get a Bitcoin transaction by its hash
-[**btcGetTxByAddress()**](#btcgettxbyaddress) | **GET** `/v3/bitcoin/transaction/address/{address}` | Get all transactions for a Bitcoin address
-[**btcGetUTXO()**](#btcgetutxo) | **GET** `/v3/bitcoin/utxo/{hash}/{index}` | Get information about a transaction output (UTXO) in a Bitcoin transaction
-[**btcRpcDriver()**](#btcrpcdriver) | **POST** `/v3/bitcoin/node` | Connect to a Bitcoin node through an RPC driver
+[**btc Broadcast()**](#btcbroadcast) | **POST** `/v3 /bitcoin /broadcast` | Broadcast a signed Bitcoin transaction
+[**btc Generate Address()**](#btcgenerateaddress) | **GET** `/v3 /bitcoin /address /{xpub} /{index}` | Generate a Bitcoin address from the wallet's extended public key
+[**btc Generate Address Private Key()**](#btcgenerateaddressprivatekey) | **POST** `/v3 /bitcoin /wallet /priv` | Generate the private key for a Bitcoin address
+[**btc Generate Wallet()**](#btcgeneratewallet) | **GET** `/v3 /bitcoin /wallet` | Generate a Bitcoin wallet
+[**btc Get Balance Of Address()**](#btcgetbalanceofaddress) | **GET** `/v3 /bitcoin /address /balance /{address}` | Get the balance of a Bitcoin address
+[**btc Get Block()**](#btcgetblock) | **GET** `/v3 /bitcoin /block /{hash}` | Get a Bitcoin block by its hash or height
+[**btc Get Block Chain Info()**](#btcgetblockchaininfo) | **GET** `/v3 /bitcoin /info` | Get Bitcoin blockchain information
+[**btc Get Block Hash()**](#btcgetblockhash) | **GET** `/v3 /bitcoin /block /hash /{i}` | Get the hash of a Bitcoin block
+[**btc Get Mempool()**](#btcgetmempool) | **GET** `/v3 /bitcoin /mempool` | Get transactions from the Bitcoin mempool
+[**btc Get Raw Transaction()**](#btcgetrawtransaction) | **GET** `/v3 /bitcoin /transaction /{hash}` | Get a Bitcoin transaction by its hash
+[**btc Get Tx By Address()**](#btcgettxbyaddress) | **GET** `/v3 /bitcoin /transaction /address /{address}` | Get all transactions for a Bitcoin address
+[**btc Get UTXO()**](#btcgetutxo) | **GET** `/v3 /bitcoin /utxo /{hash} /{index}` | Get information about a transaction output (UTXO) in a Bitcoin transaction
+[**btc Rpc Driver()**](#btcrpcdriver) | **POST** `/v3 /bitcoin /node` | Connect to a Bitcoin node through an RPC driver
+[**btc Transaction From Address()**](#btctransactionfromaddress) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
+[**btc Transaction From Address KMS()**](#btctransactionfromaddresskms) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
+[**btc Transaction From UTXO()**](#btctransactionfromutxo) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
+[**btc Transaction From UTXOKMS()**](#btctransactionfromutxokms) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
 
-
-## `bitcoinTransactionBtcTransactionFromAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->bitcoinTransactionBtcTransactionFromAddress(
-    \Tatum\Model\BtcTransactionFromAddress $btc_transaction_from_address
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_address** | [**\Tatum\Model\BtcTransactionFromAddress**](../Model/BtcTransactionFromAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send BTC to Bitcoin addresses
-
-<p><b>2 credits per API call</b></p> <p>Send BTC to blockchain addresses.</p> <p>Bitcoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of BTC/satoshis that remains at a Bitcoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about Bitcoin transactions and UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#operation/BtcGetUTXO">API for getting information about a transaction output (UTXO) in a Bitcoin transaction</a>.</p> <p>You can build a BTC transaction by one of the following methods:</p> <ul> <li><b>Sending BTC from blockchain addresses</b><br/>The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.<br/> To use this method, use the <code>BtcTransactionFromAddress</code> or <code>BtcTransactionFromAddressKMS</code> schema of the request body.</li> <li><b>Sending BTC from UTXOs</b><br/>The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.<br/> To use this method, use the <code>BtcTransactionFromUTXO</code> or <code>BtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul> <p>When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 BTC and T2 with 2 BTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 BTC to spend:<br/><code>1 BTC (from T1) + 2 BTC (from T2) = 3 BTC (to spend in total)</code></p> <p>You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.</p> <p><b>Paying the gas fee and receiving the change</b><br/> When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).</p> <p><b>Signing a transaction</b><br/> When sending BTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "bitcoinTransactionBtcTransactionFromAddress.php"](../../examples/Api/BitcoinApi/bitcoinTransactionBtcTransactionFromAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `bitcoinTransactionBtcTransactionFromAddressKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->bitcoinTransactionBtcTransactionFromAddressKMS(
-    \Tatum\Model\BtcTransactionFromAddressKMS $btc_transaction_from_address_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_address_kms** | [**\Tatum\Model\BtcTransactionFromAddressKMS**](../Model/BtcTransactionFromAddressKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send BTC to Bitcoin addresses
-
-BtcTransactionFromAddressKMS operation
-
-### Example
-
-[✨ View "bitcoinTransactionBtcTransactionFromAddressKMS.php"](../../examples/Api/BitcoinApi/bitcoinTransactionBtcTransactionFromAddressKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `bitcoinTransactionBtcTransactionFromUTXO()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->bitcoinTransactionBtcTransactionFromUTXO(
-    \Tatum\Model\BtcTransactionFromUTXO $btc_transaction_from_utxo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_utxo** | [**\Tatum\Model\BtcTransactionFromUTXO**](../Model/BtcTransactionFromUTXO.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send BTC to Bitcoin addresses
-
-BtcTransactionFromUTXO operation
-
-### Example
-
-[✨ View "bitcoinTransactionBtcTransactionFromUTXO.php"](../../examples/Api/BitcoinApi/bitcoinTransactionBtcTransactionFromUTXO.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `bitcoinTransactionBtcTransactionFromUTXOKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->bitcoinTransactionBtcTransactionFromUTXOKMS(
-    \Tatum\Model\BtcTransactionFromUTXOKMS $btc_transaction_from_utxokms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_utxokms** | [**\Tatum\Model\BtcTransactionFromUTXOKMS**](../Model/BtcTransactionFromUTXOKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send BTC to Bitcoin addresses
-
-BtcTransactionFromUTXOKMS operation
-
-### Example
-
-[✨ View "bitcoinTransactionBtcTransactionFromUTXOKMS.php"](../../examples/Api/BitcoinApi/bitcoinTransactionBtcTransactionFromUTXOKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcBroadcast()`
 
@@ -567,5 +439,133 @@ Connect to a Bitcoin node through an RPC driver
 ### Example
 
 [✨ View "btcRpcDriver.php"](../../examples/Api/BitcoinApi/btcRpcDriver.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcTransactionFromAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddress(
+    \Tatum\Model\BtcTransactionFromAddress $btc_transaction_from_address
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$btc_transaction_from_address** | [**\Tatum\Model\BtcTransactionFromAddress**](../Model/BtcTransactionFromAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send BTC to Bitcoin addresses
+
+<p><b>2 credits per API call</b></p> <p>Send BTC to blockchain addresses.</p> <p>Bitcoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of BTC/satoshis that remains at a Bitcoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about Bitcoin transactions and UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#operation/BtcGetUTXO">API for getting information about a transaction output (UTXO) in a Bitcoin transaction</a>.</p> <p>You can build a BTC transaction by one of the following methods:</p> <ul> <li><b>Sending BTC from blockchain addresses</b><br/>The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.<br/> To use this method, use the <code>BtcTransactionFromAddress</code> or <code>BtcTransactionFromAddressKMS</code> schema of the request body.</li> <li><b>Sending BTC from UTXOs</b><br/>The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.<br/> To use this method, use the <code>BtcTransactionFromUTXO</code> or <code>BtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul> <p>When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 BTC and T2 with 2 BTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 BTC to spend:<br/><code>1 BTC (from T1) + 2 BTC (from T2) = 3 BTC (to spend in total)</code></p> <p>You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.</p> <p><b>Paying the gas fee and receiving the change</b><br/> When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).</p> <p><b>Signing a transaction</b><br/> When sending BTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "btcTransactionFromAddress.php"](../../examples/Api/BitcoinApi/btcTransactionFromAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcTransactionFromAddressKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddressKMS(
+    \Tatum\Model\BtcTransactionFromAddressKMS $btc_transaction_from_address_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$btc_transaction_from_address_kms** | [**\Tatum\Model\BtcTransactionFromAddressKMS**](../Model/BtcTransactionFromAddressKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send BTC to Bitcoin addresses
+
+BtcTransactionFromAddressKMS operation
+
+### Example
+
+[✨ View "btcTransactionFromAddressKMS.php"](../../examples/Api/BitcoinApi/btcTransactionFromAddressKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcTransactionFromUTXO()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXO(
+    \Tatum\Model\BtcTransactionFromUTXO $btc_transaction_from_utxo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$btc_transaction_from_utxo** | [**\Tatum\Model\BtcTransactionFromUTXO**](../Model/BtcTransactionFromUTXO.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send BTC to Bitcoin addresses
+
+BtcTransactionFromUTXO operation
+
+### Example
+
+[✨ View "btcTransactionFromUTXO.php"](../../examples/Api/BitcoinApi/btcTransactionFromUTXO.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `btcTransactionFromUTXOKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXOKMS(
+    \Tatum\Model\BtcTransactionFromUTXOKMS $btc_transaction_from_utxokms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$btc_transaction_from_utxokms** | [**\Tatum\Model\BtcTransactionFromUTXOKMS**](../Model/BtcTransactionFromUTXOKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send BTC to Bitcoin addresses
+
+BtcTransactionFromUTXOKMS operation
+
+### Example
+
+[✨ View "btcTransactionFromUTXOKMS.php"](../../examples/Api/BitcoinApi/btcTransactionFromUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -23,6 +23,75 @@ use Tatum\Sdk\Serializer as S;
  */
 class KuCoinApi extends AbstractApi {
     /**
+     * Invoke a method in a smart contract on KuCoin Community Chain
+     *
+     * @param \Tatum\Model\CallKcsSmartContractMethod $call_kcs_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callKcsSmartContractMethod(\Tatum\Model\CallKcsSmartContractMethod $call_kcs_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on KuCoin Community Chain
+     *
+     * @param \Tatum\Model\CallKcsSmartContractMethodKMS $call_kcs_smart_contract_method_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callKcsSmartContractMethodKMS(\Tatum\Model\CallKcsSmartContractMethodKMS $call_kcs_smart_contract_method_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on KuCoin Community Chain
+     *
+     * @param \Tatum\Model\CallKcsSmartContractReadMethod $call_kcs_smart_contract_read_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callKcsSmartContractReadMethod(\Tatum\Model\CallKcsSmartContractReadMethod $call_kcs_smart_contract_read_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_read_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast signed Kcs transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -243,121 +312,6 @@ class KuCoinApi extends AbstractApi {
     }
     
     /**
-     * Invoke a method in a smart contract on KuCoin Community Chain
-     *
-     * @param \Tatum\Model\CallKcsSmartContractMethod $call_kcs_smart_contract_method 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function kcsSmartcontractCallKcsSmartContractMethod(\Tatum\Model\CallKcsSmartContractMethod $call_kcs_smart_contract_method) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on KuCoin Community Chain
-     *
-     * @param \Tatum\Model\CallKcsSmartContractMethodKMS $call_kcs_smart_contract_method_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function kcsSmartcontractCallKcsSmartContractMethodKMS(\Tatum\Model\CallKcsSmartContractMethodKMS $call_kcs_smart_contract_method_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_method_kms
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on KuCoin Community Chain
-     *
-     * @param \Tatum\Model\CallKcsSmartContractReadMethod $call_kcs_smart_contract_read_method 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function kcsSmartcontractCallKcsSmartContractReadMethod(\Tatum\Model\CallKcsSmartContractReadMethod $call_kcs_smart_contract_read_method) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_read_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send KCS from account to account
-     *
-     * @param \Tatum\Model\TransferKcsBlockchain $transfer_kcs_blockchain 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function kcsTransactionTransferKcsBlockchain(\Tatum\Model\TransferKcsBlockchain $transfer_kcs_blockchain) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/transaction", [], $rHeaders, [], $transfer_kcs_blockchain
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send KCS from account to account
-     *
-     * @param \Tatum\Model\TransferKcsBlockchainKMS $transfer_kcs_blockchain_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function kcsTransactionTransferKcsBlockchainKMS(\Tatum\Model\TransferKcsBlockchainKMS $transfer_kcs_blockchain_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/transaction", [], $rHeaders, [], $transfer_kcs_blockchain_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Web3 HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
@@ -376,6 +330,52 @@ class KuCoinApi extends AbstractApi {
                 $this->_caller->config(), "POST", S::parse("/v3/kcs/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KCS from account to account
+     *
+     * @param \Tatum\Model\TransferKcsBlockchain $transfer_kcs_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferKcsBlockchain(\Tatum\Model\TransferKcsBlockchain $transfer_kcs_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/kcs/transaction", [], $rHeaders, [], $transfer_kcs_blockchain
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KCS from account to account
+     *
+     * @param \Tatum\Model\TransferKcsBlockchainKMS $transfer_kcs_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferKcsBlockchainKMS(\Tatum\Model\TransferKcsBlockchainKMS $transfer_kcs_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/kcs/transaction", [], $rHeaders, [], $transfer_kcs_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

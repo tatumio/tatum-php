@@ -160,52 +160,6 @@ class SolanaApi extends AbstractApi {
     }
     
     /**
-     * Send SOL from account to account
-     *
-     * @param \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function solanaTransactionTransferSolanaBlockchain(\Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/solana/transaction", [], $rHeaders, [], $transfer_solana_blockchain
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send SOL from account to account
-     *
-     * @param \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function solanaTransactionTransferSolanaBlockchainKMS(\Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/solana/transaction", [], $rHeaders, [], $transfer_solana_blockchain_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * JSON RPC HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
@@ -224,6 +178,52 @@ class SolanaApi extends AbstractApi {
                 $this->_caller->config(), "POST", S::parse("/v3/solana/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send SOL from account to account
+     *
+     * @param \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferSolanaBlockchain(\Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/solana/transaction", [], $rHeaders, [], $transfer_solana_blockchain
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send SOL from account to account
+     *
+     * @param \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferSolanaBlockchainKMS(\Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/solana/transaction", [], $rHeaders, [], $transfer_solana_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

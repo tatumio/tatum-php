@@ -5,15 +5,15 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**solanaBroadcastConfirm()**](#solanabroadcastconfirm) | **POST** `/v3/solana/broadcast/confirm` | Broadcast and confirm signed Solana transaction
-[**solanaGenerateWallet()**](#solanageneratewallet) | **GET** `/v3/solana/wallet` | Generate Solana wallet
-[**solanaGetBalance()**](#solanagetbalance) | **GET** `/v3/solana/account/balance/{address}` | Get Solana Account balance
-[**solanaGetBlock()**](#solanagetblock) | **GET** `/v3/solana/block/{height}` | Get Solana block by number
-[**solanaGetCurrentBlock()**](#solanagetcurrentblock) | **GET** `/v3/solana/block/current` | Get current block number
-[**solanaGetTransaction()**](#solanagettransaction) | **GET** `/v3/solana/transaction/{hash}` | Get Solana Transaction
-[**solanaTransactionTransferSolanaBlockchain()**](#solanatransactiontransfersolanablockchain) | **POST** `/v3/solana/transaction` | Send SOL from account to account
-[**solanaTransactionTransferSolanaBlockchainKMS()**](#solanatransactiontransfersolanablockchainkms) | **POST** `/v3/solana/transaction` | Send SOL from account to account
-[**solanaWeb3Driver()**](#solanaweb3driver) | **POST** `/v3/solana/web3/{xApiKey}` | JSON RPC HTTP driver
+[**solana Broadcast Confirm()**](#solanabroadcastconfirm) | **POST** `/v3 /solana /broadcast /confirm` | Broadcast and confirm signed Solana transaction
+[**solana Generate Wallet()**](#solanageneratewallet) | **GET** `/v3 /solana /wallet` | Generate Solana wallet
+[**solana Get Balance()**](#solanagetbalance) | **GET** `/v3 /solana /account /balance /{address}` | Get Solana Account balance
+[**solana Get Block()**](#solanagetblock) | **GET** `/v3 /solana /block /{height}` | Get Solana block by number
+[**solana Get Current Block()**](#solanagetcurrentblock) | **GET** `/v3 /solana /block /current` | Get current block number
+[**solana Get Transaction()**](#solanagettransaction) | **GET** `/v3 /solana /transaction /{hash}` | Get Solana Transaction
+[**solana Web3 Driver()**](#solanaweb3driver) | **POST** `/v3 /solana /web3 /{xApiKey}` | JSON RPC HTTP driver
+[**transfer Solana Blockchain()**](#transfersolanablockchain) | **POST** `/v3 /solana /transaction` | Send SOL from account to account
+[**transfer Solana Blockchain KMS()**](#transfersolanablockchainkms) | **POST** `/v3 /solana /transaction` | Send SOL from account to account
 
 
 ## `solanaBroadcastConfirm()`
@@ -204,70 +204,6 @@ Get Solana Transaction
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `solanaTransactionTransferSolanaBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaTransactionTransferSolanaBlockchain(
-    \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_solana_blockchain** | [**\Tatum\Model\TransferSolanaBlockchain**](../Model/TransferSolanaBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send SOL from account to account
-
-<h4>2 credits per API call.</h4><br/> <p>Send SOL from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "solanaTransactionTransferSolanaBlockchain.php"](../../examples/Api/SolanaApi/solanaTransactionTransferSolanaBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `solanaTransactionTransferSolanaBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaTransactionTransferSolanaBlockchainKMS(
-    \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_solana_blockchain_kms** | [**\Tatum\Model\TransferSolanaBlockchainKMS**](../Model/TransferSolanaBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send SOL from account to account
-
-TransferSolanaBlockchainKMS operation
-
-### Example
-
-[✨ View "solanaTransactionTransferSolanaBlockchainKMS.php"](../../examples/Api/SolanaApi/solanaTransactionTransferSolanaBlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
 ## `solanaWeb3Driver()`
 
 ### Type signature
@@ -299,5 +235,69 @@ JSON RPC HTTP driver
 ### Example
 
 [✨ View "solanaWeb3Driver.php"](../../examples/Api/SolanaApi/solanaWeb3Driver.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferSolanaBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchain(
+    \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_solana_blockchain** | [**\Tatum\Model\TransferSolanaBlockchain**](../Model/TransferSolanaBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send SOL from account to account
+
+<h4>2 credits per API call.</h4><br/> <p>Send SOL from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferSolanaBlockchain.php"](../../examples/Api/SolanaApi/transferSolanaBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferSolanaBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchainKMS(
+    \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_solana_blockchain_kms** | [**\Tatum\Model\TransferSolanaBlockchainKMS**](../Model/TransferSolanaBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send SOL from account to account
+
+TransferSolanaBlockchainKMS operation
+
+### Example
+
+[✨ View "transferSolanaBlockchainKMS.php"](../../examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

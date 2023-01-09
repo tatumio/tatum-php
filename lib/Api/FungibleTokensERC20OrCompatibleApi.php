@@ -30,9 +30,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenApproveCeloErc20(\Tatum\Model\ApproveCeloErc20 $approve_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveCeloErc20(\Tatum\Model\ApproveCeloErc20 $approve_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -41,12 +41,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_celo_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -60,9 +60,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenApproveCeloErc20KMS(\Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveCeloErc20KMS(\Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -71,12 +71,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_celo_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -90,9 +90,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenApproveErc20(\Tatum\Model\ApproveErc20 $approve_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveErc20(\Tatum\Model\ApproveErc20 $approve_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -101,12 +101,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -120,9 +120,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenApproveErc20KMS(\Tatum\Model\ApproveErc20KMS $approve_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveErc20KMS(\Tatum\Model\ApproveErc20KMS $approve_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -131,12 +131,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -150,9 +150,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenBurnChainBurnCeloErc20(\Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnCeloErc20(\Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -161,12 +161,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_celo_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -180,9 +180,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenBurnChainBurnCeloErc20KMS(\Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnCeloErc20KMS(\Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -191,12 +191,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_celo_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -210,9 +210,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenBurnChainBurnErc20(\Tatum\Model\ChainBurnErc20 $chain_burn_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnErc20(\Tatum\Model\ChainBurnErc20 $chain_burn_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -221,12 +221,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -240,9 +240,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenBurnChainBurnErc20KMS(\Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnErc20KMS(\Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -251,12 +251,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -270,9 +270,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenBurnChainBurnKcsErc20(\Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnKcsErc20(\Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -281,12 +281,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_kcs_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -300,9 +300,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenBurnChainBurnKcsErc20KMS(\Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnKcsErc20KMS(\Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -311,12 +311,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_kcs_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -330,9 +330,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployAlgoErc20(\Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployAlgoErc20(\Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -341,12 +341,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_algo_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -360,9 +360,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployAlgoErc20KMS(\Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployAlgoErc20KMS(\Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -371,12 +371,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_algo_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -390,9 +390,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployCeloErc20(\Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployCeloErc20(\Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -401,12 +401,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_celo_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -420,9 +420,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployCeloErc20KMS(\Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployCeloErc20KMS(\Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -431,12 +431,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_celo_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -450,9 +450,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployErc20(\Tatum\Model\ChainDeployErc20 $chain_deploy_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployErc20(\Tatum\Model\ChainDeployErc20 $chain_deploy_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -461,12 +461,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -480,9 +480,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployErc20KMS(\Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployErc20KMS(\Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -491,12 +491,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -510,9 +510,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployKcsErc20(\Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployKcsErc20(\Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -521,12 +521,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_kcs_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -540,9 +540,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeployKcsErc20KMS(\Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployKcsErc20KMS(\Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -551,12 +551,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_kcs_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -570,9 +570,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeploySolanaSpl(\Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeploySolanaSpl(\Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -581,12 +581,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_solana_spl
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -600,9 +600,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenDeployChainDeploySolanaSplKMS(\Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeploySolanaSplKMS(\Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -611,12 +611,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_solana_spl_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -630,9 +630,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenMintChainMintCeloErc20(\Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintCeloErc20(\Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -641,12 +641,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_celo_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -660,9 +660,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenMintChainMintCeloErc20KMS(\Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintCeloErc20KMS(\Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -671,12 +671,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_celo_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -690,9 +690,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenMintChainMintErc20(\Tatum\Model\ChainMintErc20 $chain_mint_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintErc20(\Tatum\Model\ChainMintErc20 $chain_mint_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -701,12 +701,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -720,9 +720,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenMintChainMintErc20KMS(\Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintErc20KMS(\Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -731,12 +731,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -750,9 +750,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenMintChainMintKcsErc20(\Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintKcsErc20(\Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -761,12 +761,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_kcs_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -780,9 +780,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenMintChainMintKcsErc20KMS(\Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintKcsErc20KMS(\Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -791,12 +791,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_kcs_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -810,9 +810,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferAlgoErc20(\Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferAlgoErc20(\Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -821,12 +821,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_algo_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -840,9 +840,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferAlgoErc20KMS(\Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferAlgoErc20KMS(\Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -851,12 +851,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_algo_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -870,9 +870,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferBscBep20(\Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferBscBep20(\Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -881,12 +881,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_bsc_bep20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -900,9 +900,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferBscBep20KMS(\Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferBscBep20KMS(\Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -911,12 +911,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_bsc_bep20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -930,9 +930,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferCeloErc20Token(\Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferCeloErc20Token(\Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -941,12 +941,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_celo_erc20_token
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -960,9 +960,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferCeloErc20TokenKMS(\Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferCeloErc20TokenKMS(\Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -971,12 +971,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_celo_erc20_token_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -990,9 +990,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferEthErc20(\Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferEthErc20(\Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1001,12 +1001,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_eth_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -1020,9 +1020,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferEthErc20KMS(\Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferEthErc20KMS(\Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1031,12 +1031,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_eth_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -1050,9 +1050,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferKcsEthErc20(\Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferKcsEthErc20(\Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1061,12 +1061,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -1080,9 +1080,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferKcsEthErc20KMS(\Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferKcsEthErc20KMS(\Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1091,12 +1091,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -1110,9 +1110,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferSolanaSpl(\Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferSolanaSpl(\Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1121,12 +1121,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_solana_spl
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -1140,9 +1140,9 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainTokenTransactionChainTransferSolanaSplKMS(\Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferSolanaSplKMS(\Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1151,12 +1151,12 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_solana_spl_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

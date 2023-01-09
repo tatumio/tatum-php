@@ -5,19 +5,19 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**dogeBroadcast()**](#dogebroadcast) | **POST** `/v3/dogecoin/broadcast` | Broadcast signed Dogecoin transaction
-[**dogeGenerateAddress()**](#dogegenerateaddress) | **GET** `/v3/dogecoin/address/{xpub}/{index}` | Generate Dogecoin deposit address from Extended public key
-[**dogeGenerateAddressPrivateKey()**](#dogegenerateaddressprivatekey) | **POST** `/v3/dogecoin/wallet/priv` | Generate Dogecoin private key
-[**dogeGenerateWallet()**](#dogegeneratewallet) | **GET** `/v3/dogecoin/wallet` | Generate Dogecoin wallet
-[**dogeGetBlock()**](#dogegetblock) | **GET** `/v3/dogecoin/block/{hash}` | Get Dogecoin Block by hash or height
-[**dogeGetBlockChainInfo()**](#dogegetblockchaininfo) | **GET** `/v3/dogecoin/info` | Get Dogecoin Blockchain Information
-[**dogeGetBlockHash()**](#dogegetblockhash) | **GET** `/v3/dogecoin/block/hash/{i}` | Get Dogecoin Block hash
-[**dogeGetMempool()**](#dogegetmempool) | **GET** `/v3/dogecoin/mempool` | Get Mempool Transactions
-[**dogeGetRawTransaction()**](#dogegetrawtransaction) | **GET** `/v3/dogecoin/transaction/{hash}` | Get Dogecoin Transaction by hash
-[**dogeGetUTXO()**](#dogegetutxo) | **GET** `/v3/dogecoin/utxo/{hash}/{index}` | Get information about a transaction output (UTXO) in a Dogecoin transaction
-[**dogeRpcDriver()**](#dogerpcdriver) | **POST** `/v3/dogecoin/node` | JSON RPC HTTP driver
-[**dogecoinTransactionDogeTransactionUTXO()**](#dogecointransactiondogetransactionutxo) | **POST** `/v3/dogecoin/transaction` | Send DOGE to Dogecoin addresses
-[**dogecoinTransactionDogeTransactionUTXOKMS()**](#dogecointransactiondogetransactionutxokms) | **POST** `/v3/dogecoin/transaction` | Send DOGE to Dogecoin addresses
+[**doge Broadcast()**](#dogebroadcast) | **POST** `/v3 /dogecoin /broadcast` | Broadcast signed Dogecoin transaction
+[**doge Generate Address()**](#dogegenerateaddress) | **GET** `/v3 /dogecoin /address /{xpub} /{index}` | Generate Dogecoin deposit address from Extended public key
+[**doge Generate Address Private Key()**](#dogegenerateaddressprivatekey) | **POST** `/v3 /dogecoin /wallet /priv` | Generate Dogecoin private key
+[**doge Generate Wallet()**](#dogegeneratewallet) | **GET** `/v3 /dogecoin /wallet` | Generate Dogecoin wallet
+[**doge Get Block()**](#dogegetblock) | **GET** `/v3 /dogecoin /block /{hash}` | Get Dogecoin Block by hash or height
+[**doge Get Block Chain Info()**](#dogegetblockchaininfo) | **GET** `/v3 /dogecoin /info` | Get Dogecoin Blockchain Information
+[**doge Get Block Hash()**](#dogegetblockhash) | **GET** `/v3 /dogecoin /block /hash /{i}` | Get Dogecoin Block hash
+[**doge Get Mempool()**](#dogegetmempool) | **GET** `/v3 /dogecoin /mempool` | Get Mempool Transactions
+[**doge Get Raw Transaction()**](#dogegetrawtransaction) | **GET** `/v3 /dogecoin /transaction /{hash}` | Get Dogecoin Transaction by hash
+[**doge Get UTXO()**](#dogegetutxo) | **GET** `/v3 /dogecoin /utxo /{hash} /{index}` | Get information about a transaction output (UTXO) in a Dogecoin transaction
+[**doge Rpc Driver()**](#dogerpcdriver) | **POST** `/v3 /dogecoin /node` | JSON RPC HTTP driver
+[**doge Transaction UTXO()**](#dogetransactionutxo) | **POST** `/v3 /dogecoin /transaction` | Send DOGE to Dogecoin addresses
+[**doge Transaction UTXOKMS()**](#dogetransactionutxokms) | **POST** `/v3 /dogecoin /transaction` | Send DOGE to Dogecoin addresses
 
 
 ## `dogeBroadcast()`
@@ -370,14 +370,14 @@ JSON RPC HTTP driver
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `dogecoinTransactionDogeTransactionUTXO()`
+## `dogeTransactionUTXO()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogecoinTransactionDogeTransactionUTXO(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXO(
     \Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -398,18 +398,18 @@ Send DOGE to Dogecoin addresses
 
 ### Example
 
-[✨ View "dogecoinTransactionDogeTransactionUTXO.php"](../../examples/Api/DogecoinApi/dogecoinTransactionDogeTransactionUTXO.php)
+[✨ View "dogeTransactionUTXO.php"](../../examples/Api/DogecoinApi/dogeTransactionUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `dogecoinTransactionDogeTransactionUTXOKMS()`
+## `dogeTransactionUTXOKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogecoinTransactionDogeTransactionUTXOKMS(
+$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXOKMS(
     \Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -430,6 +430,6 @@ DogeTransactionUTXOKMS operation
 
 ### Example
 
-[✨ View "dogecoinTransactionDogeTransactionUTXOKMS.php"](../../examples/Api/DogecoinApi/dogecoinTransactionDogeTransactionUTXOKMS.php)
+[✨ View "dogeTransactionUTXOKMS.php"](../../examples/Api/DogecoinApi/dogeTransactionUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

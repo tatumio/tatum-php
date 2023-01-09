@@ -5,24 +5,152 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**polygonBroadcast()**](#polygonbroadcast) | **POST** `/v3/polygon/broadcast` | Broadcast signed Polygon transaction
-[**polygonGenerateAddress()**](#polygongenerateaddress) | **GET** `/v3/polygon/address/{xpub}/{index}` | Generate Polygon account address from Extended public key
-[**polygonGenerateAddressPrivateKey()**](#polygongenerateaddressprivatekey) | **POST** `/v3/polygon/wallet/priv` | Generate Polygon private key
-[**polygonGenerateWallet()**](#polygongeneratewallet) | **GET** `/v3/polygon/wallet` | Generate Polygon wallet
-[**polygonGetBalance()**](#polygongetbalance) | **GET** `/v3/polygon/account/balance/{address}` | Get Polygon Account balance
-[**polygonGetBlock()**](#polygongetblock) | **GET** `/v3/polygon/block/{hash}` | Get Polygon block by hash
-[**polygonGetCurrentBlock()**](#polygongetcurrentblock) | **GET** `/v3/polygon/block/current` | Get current block number
-[**polygonGetTransaction()**](#polygongettransaction) | **GET** `/v3/polygon/transaction/{hash}` | Get Polygon Transaction
-[**polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) | **GET** `/v3/polygon/account/transaction/{address}` | Get Polygon transactions by address
-[**polygonGetTransactionCount()**](#polygongettransactioncount) | **GET** `/v3/polygon/transaction/count/{address}` | Get count of outgoing Polygon transactions
-[**polygonSmartcontractCallPolygonSmartContractMethod()**](#polygonsmartcontractcallpolygonsmartcontractmethod) | **POST** `/v3/polygon/smartcontract` | Invoke a method in a smart contract on Polygon
-[**polygonSmartcontractCallPolygonSmartContractMethodCaller()**](#polygonsmartcontractcallpolygonsmartcontractmethodcaller) | **POST** `/v3/polygon/smartcontract` | Invoke a method in a smart contract on Polygon
-[**polygonSmartcontractCallPolygonSmartContractMethodKMS()**](#polygonsmartcontractcallpolygonsmartcontractmethodkms) | **POST** `/v3/polygon/smartcontract` | Invoke a method in a smart contract on Polygon
-[**polygonSmartcontractCallPolygonSmartContractReadMethod()**](#polygonsmartcontractcallpolygonsmartcontractreadmethod) | **POST** `/v3/polygon/smartcontract` | Invoke a method in a smart contract on Polygon
-[**polygonTransactionTransferPolygonBlockchain()**](#polygontransactiontransferpolygonblockchain) | **POST** `/v3/polygon/transaction` | Send MATIC from account to account
-[**polygonTransactionTransferPolygonBlockchainKMS()**](#polygontransactiontransferpolygonblockchainkms) | **POST** `/v3/polygon/transaction` | Send MATIC from account to account
-[**polygonWeb3Driver()**](#polygonweb3driver) | **POST** `/v3/polygon/web3/{xApiKey}` | Web3 HTTP driver
+[**call Polygon Smart Contract Method()**](#callpolygonsmartcontractmethod) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
+[**call Polygon Smart Contract Method Caller()**](#callpolygonsmartcontractmethodcaller) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
+[**call Polygon Smart Contract Method KMS()**](#callpolygonsmartcontractmethodkms) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
+[**call Polygon Smart Contract Read Method()**](#callpolygonsmartcontractreadmethod) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
+[**polygon Broadcast()**](#polygonbroadcast) | **POST** `/v3 /polygon /broadcast` | Broadcast signed Polygon transaction
+[**polygon Generate Address()**](#polygongenerateaddress) | **GET** `/v3 /polygon /address /{xpub} /{index}` | Generate Polygon account address from Extended public key
+[**polygon Generate Address Private Key()**](#polygongenerateaddressprivatekey) | **POST** `/v3 /polygon /wallet /priv` | Generate Polygon private key
+[**polygon Generate Wallet()**](#polygongeneratewallet) | **GET** `/v3 /polygon /wallet` | Generate Polygon wallet
+[**polygon Get Balance()**](#polygongetbalance) | **GET** `/v3 /polygon /account /balance /{address}` | Get Polygon Account balance
+[**polygon Get Block()**](#polygongetblock) | **GET** `/v3 /polygon /block /{hash}` | Get Polygon block by hash
+[**polygon Get Current Block()**](#polygongetcurrentblock) | **GET** `/v3 /polygon /block /current` | Get current block number
+[**polygon Get Transaction()**](#polygongettransaction) | **GET** `/v3 /polygon /transaction /{hash}` | Get Polygon Transaction
+[**polygon Get Transaction By Address()**](#polygongettransactionbyaddress) | **GET** `/v3 /polygon /account /transaction /{address}` | Get Polygon transactions by address
+[**polygon Get Transaction Count()**](#polygongettransactioncount) | **GET** `/v3 /polygon /transaction /count /{address}` | Get count of outgoing Polygon transactions
+[**polygon Web3 Driver()**](#polygonweb3driver) | **POST** `/v3 /polygon /web3 /{xApiKey}` | Web3 HTTP driver
+[**transfer Polygon Blockchain()**](#transferpolygonblockchain) | **POST** `/v3 /polygon /transaction` | Send MATIC from account to account
+[**transfer Polygon Blockchain KMS()**](#transferpolygonblockchainkms) | **POST** `/v3 /polygon /transaction` | Send MATIC from account to account
 
+
+## `callPolygonSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethod(
+    \Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method
+): \Tatum\Model\CallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_polygon_smart_contract_method** | [**\Tatum\Model\CallPolygonSmartContractMethod**](../Model/CallPolygonSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Polygon
+
+CallPolygonSmartContractMethod operation
+
+### Example
+
+[✨ View "callPolygonSmartContractMethod.php"](../../examples/Api/PolygonApi/callPolygonSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `callPolygonSmartContractMethodCaller()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodCaller(
+    \Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller
+): \Tatum\Model\CallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_polygon_smart_contract_method_caller** | [**\Tatum\Model\CallPolygonSmartContractMethodCaller**](../Model/CallPolygonSmartContractMethodCaller.md) |  |
+
+### Return type
+
+[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Polygon
+
+CallPolygonSmartContractMethodCaller operation
+
+### Example
+
+[✨ View "callPolygonSmartContractMethodCaller.php"](../../examples/Api/PolygonApi/callPolygonSmartContractMethodCaller.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `callPolygonSmartContractMethodKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodKMS(
+    \Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms
+): \Tatum\Model\CallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_polygon_smart_contract_method_kms** | [**\Tatum\Model\CallPolygonSmartContractMethodKMS**](../Model/CallPolygonSmartContractMethodKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Polygon
+
+CallPolygonSmartContractMethodKMS operation
+
+### Example
+
+[✨ View "callPolygonSmartContractMethodKMS.php"](../../examples/Api/PolygonApi/callPolygonSmartContractMethodKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `callPolygonSmartContractReadMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractReadMethod(
+    \Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method
+): \Tatum\Model\CallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_polygon_smart_contract_read_method** | [**\Tatum\Model\CallPolygonSmartContractReadMethod**](../Model/CallPolygonSmartContractReadMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Polygon
+
+<b><p>2 credits per API call</p></b> <p>Invoke a method in an existing smart contract on Polygon.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>If <b>caller</b> field is present instead of the private key, Tatum will sign the transaction with the managed private key connected to the caller address. This is applicable only for paid mainnet plans and all testnet plans. Keep in mind that the caller address must have enough access right to perform the action in the smart contract method.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "callPolygonSmartContractReadMethod.php"](../../examples/Api/PolygonApi/callPolygonSmartContractReadMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `polygonBroadcast()`
 
@@ -353,198 +481,6 @@ Get count of outgoing Polygon transactions
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `polygonSmartcontractCallPolygonSmartContractMethod()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonSmartcontractCallPolygonSmartContractMethod(
-    \Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method
-): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_method** | [**\Tatum\Model\CallPolygonSmartContractMethod**](../Model/CallPolygonSmartContractMethod.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Polygon
-
-CallPolygonSmartContractMethod operation
-
-### Example
-
-[✨ View "polygonSmartcontractCallPolygonSmartContractMethod.php"](../../examples/Api/PolygonApi/polygonSmartcontractCallPolygonSmartContractMethod.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `polygonSmartcontractCallPolygonSmartContractMethodCaller()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonSmartcontractCallPolygonSmartContractMethodCaller(
-    \Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller
-): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_method_caller** | [**\Tatum\Model\CallPolygonSmartContractMethodCaller**](../Model/CallPolygonSmartContractMethodCaller.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Polygon
-
-CallPolygonSmartContractMethodCaller operation
-
-### Example
-
-[✨ View "polygonSmartcontractCallPolygonSmartContractMethodCaller.php"](../../examples/Api/PolygonApi/polygonSmartcontractCallPolygonSmartContractMethodCaller.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `polygonSmartcontractCallPolygonSmartContractMethodKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonSmartcontractCallPolygonSmartContractMethodKMS(
-    \Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms
-): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_method_kms** | [**\Tatum\Model\CallPolygonSmartContractMethodKMS**](../Model/CallPolygonSmartContractMethodKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Polygon
-
-CallPolygonSmartContractMethodKMS operation
-
-### Example
-
-[✨ View "polygonSmartcontractCallPolygonSmartContractMethodKMS.php"](../../examples/Api/PolygonApi/polygonSmartcontractCallPolygonSmartContractMethodKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `polygonSmartcontractCallPolygonSmartContractReadMethod()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonSmartcontractCallPolygonSmartContractReadMethod(
-    \Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method
-): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_read_method** | [**\Tatum\Model\CallPolygonSmartContractReadMethod**](../Model/CallPolygonSmartContractReadMethod.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Polygon
-
-<b><p>2 credits per API call</p></b> <p>Invoke a method in an existing smart contract on Polygon.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>If <b>caller</b> field is present instead of the private key, Tatum will sign the transaction with the managed private key connected to the caller address. This is applicable only for paid mainnet plans and all testnet plans. Keep in mind that the caller address must have enough access right to perform the action in the smart contract method.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "polygonSmartcontractCallPolygonSmartContractReadMethod.php"](../../examples/Api/PolygonApi/polygonSmartcontractCallPolygonSmartContractReadMethod.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `polygonTransactionTransferPolygonBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonTransactionTransferPolygonBlockchain(
-    \Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_polygon_blockchain** | [**\Tatum\Model\TransferPolygonBlockchain**](../Model/TransferPolygonBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send MATIC from account to account
-
-<b><p>2 credits per API call</p></b> <p>Send MATIC from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending MATIC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "polygonTransactionTransferPolygonBlockchain.php"](../../examples/Api/PolygonApi/polygonTransactionTransferPolygonBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `polygonTransactionTransferPolygonBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonTransactionTransferPolygonBlockchainKMS(
-    \Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_polygon_blockchain_kms** | [**\Tatum\Model\TransferPolygonBlockchainKMS**](../Model/TransferPolygonBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send MATIC from account to account
-
-TransferPolygonBlockchainKMS operation
-
-### Example
-
-[✨ View "polygonTransactionTransferPolygonBlockchainKMS.php"](../../examples/Api/PolygonApi/polygonTransactionTransferPolygonBlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
 ## `polygonWeb3Driver()`
 
 ### Type signature
@@ -576,5 +512,69 @@ Web3 HTTP driver
 ### Example
 
 [✨ View "polygonWeb3Driver.php"](../../examples/Api/PolygonApi/polygonWeb3Driver.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferPolygonBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchain(
+    \Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_polygon_blockchain** | [**\Tatum\Model\TransferPolygonBlockchain**](../Model/TransferPolygonBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send MATIC from account to account
+
+<b><p>2 credits per API call</p></b> <p>Send MATIC from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending MATIC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferPolygonBlockchain.php"](../../examples/Api/PolygonApi/transferPolygonBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferPolygonBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchainKMS(
+    \Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_polygon_blockchain_kms** | [**\Tatum\Model\TransferPolygonBlockchainKMS**](../Model/TransferPolygonBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send MATIC from account to account
+
+TransferPolygonBlockchainKMS operation
+
+### Example
+
+[✨ View "transferPolygonBlockchainKMS.php"](../../examples/Api/PolygonApi/transferPolygonBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

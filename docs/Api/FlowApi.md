@@ -5,37 +5,37 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**flowAccountFlowAddPubKeyMnemonic()**](#flowaccountflowaddpubkeymnemonic) | **PUT** `/v3/flow/account` | Add public key to Flow address
-[**flowAccountFlowAddPubKeySecret()**](#flowaccountflowaddpubkeysecret) | **PUT** `/v3/flow/account` | Add public key to Flow address
-[**flowAccountFlowAddPubKeySecretKMS()**](#flowaccountflowaddpubkeysecretkms) | **PUT** `/v3/flow/account` | Add public key to Flow address
-[**flowAccountFlowCreateAddressFromPubKeyKMS()**](#flowaccountflowcreateaddressfrompubkeykms) | **POST** `/v3/flow/account` | Create Flow address from public key
-[**flowAccountFlowCreateAddressFromPubKeyMnemonic()**](#flowaccountflowcreateaddressfrompubkeymnemonic) | **POST** `/v3/flow/account` | Create Flow address from public key
-[**flowAccountFlowCreateAddressFromPubKeySecret()**](#flowaccountflowcreateaddressfrompubkeysecret) | **POST** `/v3/flow/account` | Create Flow address from public key
-[**flowGenerateAddress()**](#flowgenerateaddress) | **GET** `/v3/flow/address/{xpub}/{index}` | Generate Flow address from Extended public key
-[**flowGeneratePubKey()**](#flowgeneratepubkey) | **GET** `/v3/flow/pubkey/{xpub}/{index}` | Generate Flow public key from Extended public key
-[**flowGeneratePubKeyPrivateKey()**](#flowgeneratepubkeyprivatekey) | **POST** `/v3/flow/wallet/priv` | Generate Flow private key
-[**flowGenerateWallet()**](#flowgeneratewallet) | **GET** `/v3/flow/wallet` | Generate Flow wallet
-[**flowGetAccount()**](#flowgetaccount) | **GET** `/v3/flow/account/{address}` | Get the balance of a Flow account
-[**flowGetBlock()**](#flowgetblock) | **GET** `/v3/flow/block/{hash}` | Get Flow Block by hash or height
-[**flowGetBlockChainInfo()**](#flowgetblockchaininfo) | **GET** `/v3/flow/block/current` | Get Flow current block number
-[**flowGetBlockEvents()**](#flowgetblockevents) | **GET** `/v3/flow/block/events` | Get Flow events from blocks
-[**flowGetRawTransaction()**](#flowgetrawtransaction) | **GET** `/v3/flow/transaction/{hash}` | Get Flow Transaction by hash
-[**flowTransactionCustomFlowCustomTransactionKMS()**](#flowtransactioncustomflowcustomtransactionkms) | **POST** `/v3/flow/transaction/custom` | Send arbitrary transaction to blockchain
-[**flowTransactionCustomFlowCustomTransactionMnemonic()**](#flowtransactioncustomflowcustomtransactionmnemonic) | **POST** `/v3/flow/transaction/custom` | Send arbitrary transaction to blockchain
-[**flowTransactionCustomFlowCustomTransactionPK()**](#flowtransactioncustomflowcustomtransactionpk) | **POST** `/v3/flow/transaction/custom` | Send arbitrary transaction to blockchain
-[**flowTransactionFlowTransactionKMS()**](#flowtransactionflowtransactionkms) | **POST** `/v3/flow/transaction` | Send Flow to blockchain addresses
-[**flowTransactionFlowTransactionMnemonic()**](#flowtransactionflowtransactionmnemonic) | **POST** `/v3/flow/transaction` | Send Flow to blockchain addresses
-[**flowTransactionFlowTransactionPK()**](#flowtransactionflowtransactionpk) | **POST** `/v3/flow/transaction` | Send Flow to blockchain addresses
+[**flow Add Pub Key Mnemonic()**](#flowaddpubkeymnemonic) | **PUT** `/v3 /flow /account` | Add public key to Flow address
+[**flow Add Pub Key Secret()**](#flowaddpubkeysecret) | **PUT** `/v3 /flow /account` | Add public key to Flow address
+[**flow Add Pub Key Secret KMS()**](#flowaddpubkeysecretkms) | **PUT** `/v3 /flow /account` | Add public key to Flow address
+[**flow Create Address From Pub Key KMS()**](#flowcreateaddressfrompubkeykms) | **POST** `/v3 /flow /account` | Create Flow address from public key
+[**flow Create Address From Pub Key Mnemonic()**](#flowcreateaddressfrompubkeymnemonic) | **POST** `/v3 /flow /account` | Create Flow address from public key
+[**flow Create Address From Pub Key Secret()**](#flowcreateaddressfrompubkeysecret) | **POST** `/v3 /flow /account` | Create Flow address from public key
+[**flow Custom Transaction KMS()**](#flowcustomtransactionkms) | **POST** `/v3 /flow /transaction /custom` | Send arbitrary transaction to blockchain
+[**flow Custom Transaction Mnemonic()**](#flowcustomtransactionmnemonic) | **POST** `/v3 /flow /transaction /custom` | Send arbitrary transaction to blockchain
+[**flow Custom Transaction PK()**](#flowcustomtransactionpk) | **POST** `/v3 /flow /transaction /custom` | Send arbitrary transaction to blockchain
+[**flow Generate Address()**](#flowgenerateaddress) | **GET** `/v3 /flow /address /{xpub} /{index}` | Generate Flow address from Extended public key
+[**flow Generate Pub Key()**](#flowgeneratepubkey) | **GET** `/v3 /flow /pubkey /{xpub} /{index}` | Generate Flow public key from Extended public key
+[**flow Generate Pub Key Private Key()**](#flowgeneratepubkeyprivatekey) | **POST** `/v3 /flow /wallet /priv` | Generate Flow private key
+[**flow Generate Wallet()**](#flowgeneratewallet) | **GET** `/v3 /flow /wallet` | Generate Flow wallet
+[**flow Get Account()**](#flowgetaccount) | **GET** `/v3 /flow /account /{address}` | Get the balance of a Flow account
+[**flow Get Block()**](#flowgetblock) | **GET** `/v3 /flow /block /{hash}` | Get Flow Block by hash or height
+[**flow Get Block Chain Info()**](#flowgetblockchaininfo) | **GET** `/v3 /flow /block /current` | Get Flow current block number
+[**flow Get Block Events()**](#flowgetblockevents) | **GET** `/v3 /flow /block /events` | Get Flow events from blocks
+[**flow Get Raw Transaction()**](#flowgetrawtransaction) | **GET** `/v3 /flow /transaction /{hash}` | Get Flow Transaction by hash
+[**flow Transaction KMS()**](#flowtransactionkms) | **POST** `/v3 /flow /transaction` | Send Flow to blockchain addresses
+[**flow Transaction Mnemonic()**](#flowtransactionmnemonic) | **POST** `/v3 /flow /transaction` | Send Flow to blockchain addresses
+[**flow Transaction PK()**](#flowtransactionpk) | **POST** `/v3 /flow /transaction` | Send Flow to blockchain addresses
 
 
-## `flowAccountFlowAddPubKeyMnemonic()`
+## `flowAddPubKeyMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowAddPubKeyMnemonic(
+$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeyMnemonic(
     \Tatum\Model\FlowAddPubKeyMnemonic $flow_add_pub_key_mnemonic
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -56,18 +56,18 @@ Add public key to Flow address
 
 ### Example
 
-[✨ View "flowAccountFlowAddPubKeyMnemonic.php"](../../examples/Api/FlowApi/flowAccountFlowAddPubKeyMnemonic.php)
+[✨ View "flowAddPubKeyMnemonic.php"](../../examples/Api/FlowApi/flowAddPubKeyMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowAccountFlowAddPubKeySecret()`
+## `flowAddPubKeySecret()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowAddPubKeySecret(
+$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecret(
     \Tatum\Model\FlowAddPubKeySecret $flow_add_pub_key_secret
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -88,18 +88,18 @@ FlowAddPubKeySecret operation
 
 ### Example
 
-[✨ View "flowAccountFlowAddPubKeySecret.php"](../../examples/Api/FlowApi/flowAccountFlowAddPubKeySecret.php)
+[✨ View "flowAddPubKeySecret.php"](../../examples/Api/FlowApi/flowAddPubKeySecret.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowAccountFlowAddPubKeySecretKMS()`
+## `flowAddPubKeySecretKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowAddPubKeySecretKMS(
+$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecretKMS(
     \Tatum\Model\FlowAddPubKeySecretKMS $flow_add_pub_key_secret_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -120,18 +120,18 @@ FlowAddPubKeySecretKMS operation
 
 ### Example
 
-[✨ View "flowAccountFlowAddPubKeySecretKMS.php"](../../examples/Api/FlowApi/flowAccountFlowAddPubKeySecretKMS.php)
+[✨ View "flowAddPubKeySecretKMS.php"](../../examples/Api/FlowApi/flowAddPubKeySecretKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowAccountFlowCreateAddressFromPubKeyKMS()`
+## `flowCreateAddressFromPubKeyKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowCreateAddressFromPubKeyKMS(
+$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyKMS(
     \Tatum\Model\FlowCreateAddressFromPubKeyKMS $flow_create_address_from_pub_key_kms
-): \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+): \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
 ```
 
 ### Parameters
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response.md)
+[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowCreateAddressFromPubKeyMnemonic200Response.md)
 
 ### Description
 
@@ -152,18 +152,18 @@ FlowCreateAddressFromPubKeyKMS operation
 
 ### Example
 
-[✨ View "flowAccountFlowCreateAddressFromPubKeyKMS.php"](../../examples/Api/FlowApi/flowAccountFlowCreateAddressFromPubKeyKMS.php)
+[✨ View "flowCreateAddressFromPubKeyKMS.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowAccountFlowCreateAddressFromPubKeyMnemonic()`
+## `flowCreateAddressFromPubKeyMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowCreateAddressFromPubKeyMnemonic(
+$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyMnemonic(
     \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic $flow_create_address_from_pub_key_mnemonic
-): \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+): \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
 ```
 
 ### Parameters
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response.md)
+[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowCreateAddressFromPubKeyMnemonic200Response.md)
 
 ### Description
 
@@ -184,18 +184,18 @@ Create Flow address from public key
 
 ### Example
 
-[✨ View "flowAccountFlowCreateAddressFromPubKeyMnemonic.php"](../../examples/Api/FlowApi/flowAccountFlowCreateAddressFromPubKeyMnemonic.php)
+[✨ View "flowCreateAddressFromPubKeyMnemonic.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowAccountFlowCreateAddressFromPubKeySecret()`
+## `flowCreateAddressFromPubKeySecret()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAccountFlowCreateAddressFromPubKeySecret(
+$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeySecret(
     \Tatum\Model\FlowCreateAddressFromPubKeySecret $flow_create_address_from_pub_key_secret
-): \Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response
+): \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
 ```
 
 ### Parameters
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowAccountFlowCreateAddressFromPubKeyMnemonic200Response.md)
+[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowCreateAddressFromPubKeyMnemonic200Response.md)
 
 ### Description
 
@@ -216,7 +216,103 @@ FlowCreateAddressFromPubKeySecret operation
 
 ### Example
 
-[✨ View "flowAccountFlowCreateAddressFromPubKeySecret.php"](../../examples/Api/FlowApi/flowAccountFlowCreateAddressFromPubKeySecret.php)
+[✨ View "flowCreateAddressFromPubKeySecret.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowCustomTransactionKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionKMS(
+    \Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_custom_transaction_kms** | [**\Tatum\Model\FlowCustomTransactionKMS**](../Model/FlowCustomTransactionKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send arbitrary transaction to blockchain
+
+FlowCustomTransactionKMS operation
+
+### Example
+
+[✨ View "flowCustomTransactionKMS.php"](../../examples/Api/FlowApi/flowCustomTransactionKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowCustomTransactionMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionMnemonic(
+    \Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_custom_transaction_mnemonic** | [**\Tatum\Model\FlowCustomTransactionMnemonic**](../Model/FlowCustomTransactionMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send arbitrary transaction to blockchain
+
+<h4>100 credits per API call.</h4><br/> <p>Send arbitrary blockchain transaction to FLOW blockchain. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.<br/> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul><br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "flowCustomTransactionMnemonic.php"](../../examples/Api/FlowApi/flowCustomTransactionMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `flowCustomTransactionPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionPK(
+    \Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$flow_custom_transaction_pk** | [**\Tatum\Model\FlowCustomTransactionPK**](../Model/FlowCustomTransactionPK.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send arbitrary transaction to blockchain
+
+FlowCustomTransactionPK operation
+
+### Example
+
+[✨ View "flowCustomTransactionPK.php"](../../examples/Api/FlowApi/flowCustomTransactionPK.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -513,110 +609,14 @@ Get Flow Transaction by hash
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowTransactionCustomFlowCustomTransactionKMS()`
+## `flowTransactionKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionCustomFlowCustomTransactionKMS(
-    \Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$flow_custom_transaction_kms** | [**\Tatum\Model\FlowCustomTransactionKMS**](../Model/FlowCustomTransactionKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send arbitrary transaction to blockchain
-
-FlowCustomTransactionKMS operation
-
-### Example
-
-[✨ View "flowTransactionCustomFlowCustomTransactionKMS.php"](../../examples/Api/FlowApi/flowTransactionCustomFlowCustomTransactionKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `flowTransactionCustomFlowCustomTransactionMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionCustomFlowCustomTransactionMnemonic(
-    \Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$flow_custom_transaction_mnemonic** | [**\Tatum\Model\FlowCustomTransactionMnemonic**](../Model/FlowCustomTransactionMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send arbitrary transaction to blockchain
-
-<h4>100 credits per API call.</h4><br/> <p>Send arbitrary blockchain transaction to FLOW blockchain. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.<br/> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul><br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "flowTransactionCustomFlowCustomTransactionMnemonic.php"](../../examples/Api/FlowApi/flowTransactionCustomFlowCustomTransactionMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `flowTransactionCustomFlowCustomTransactionPK()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionCustomFlowCustomTransactionPK(
-    \Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$flow_custom_transaction_pk** | [**\Tatum\Model\FlowCustomTransactionPK**](../Model/FlowCustomTransactionPK.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send arbitrary transaction to blockchain
-
-FlowCustomTransactionPK operation
-
-### Example
-
-[✨ View "flowTransactionCustomFlowCustomTransactionPK.php"](../../examples/Api/FlowApi/flowTransactionCustomFlowCustomTransactionPK.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `flowTransactionFlowTransactionKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionFlowTransactionKMS(
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionKMS(
     \Tatum\Model\FlowTransactionKMS $flow_transaction_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -637,18 +637,18 @@ FlowTransactionKMS operation
 
 ### Example
 
-[✨ View "flowTransactionFlowTransactionKMS.php"](../../examples/Api/FlowApi/flowTransactionFlowTransactionKMS.php)
+[✨ View "flowTransactionKMS.php"](../../examples/Api/FlowApi/flowTransactionKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowTransactionFlowTransactionMnemonic()`
+## `flowTransactionMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionFlowTransactionMnemonic(
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionMnemonic(
     \Tatum\Model\FlowTransactionMnemonic $flow_transaction_mnemonic
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -669,18 +669,18 @@ Send Flow to blockchain addresses
 
 ### Example
 
-[✨ View "flowTransactionFlowTransactionMnemonic.php"](../../examples/Api/FlowApi/flowTransactionFlowTransactionMnemonic.php)
+[✨ View "flowTransactionMnemonic.php"](../../examples/Api/FlowApi/flowTransactionMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `flowTransactionFlowTransactionPK()`
+## `flowTransactionPK()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionFlowTransactionPK(
+$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionPK(
     \Tatum\Model\FlowTransactionPK $flow_transaction_pk
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -701,6 +701,6 @@ FlowTransactionPK operation
 
 ### Example
 
-[✨ View "flowTransactionFlowTransactionPK.php"](../../examples/Api/FlowApi/flowTransactionFlowTransactionPK.php)
+[✨ View "flowTransactionPK.php"](../../examples/Api/FlowApi/flowTransactionPK.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -5,8 +5,8 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDeposits()**](#getdeposits) | **GET** `/v3/ledger/deposits` | List all deposits for product
-[**getDepositsCount()**](#getdepositscount) | **GET** `/v3/ledger/deposits/count` | Count of found entities for get deposits request
+[**get Deposits()**](#getdeposits) | **GET** `/v3 /ledger /deposits` | List all deposits for product
+[**get Deposits Count()**](#getdepositscount) | **GET** `/v3 /ledger /deposits /count` | Count of found entities for get deposits request
 
 
 ## `getDeposits()`

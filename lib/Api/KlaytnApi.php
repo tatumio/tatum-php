@@ -23,6 +23,75 @@ use Tatum\Sdk\Serializer as S;
  */
 class KlaytnApi extends AbstractApi {
     /**
+     * Invoke a method in a smart contract on Klaytn
+     *
+     * @param \Tatum\Model\CallKlaytnSmartContractMethod $call_klaytn_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callKlaytnSmartContractMethod(\Tatum\Model\CallKlaytnSmartContractMethod $call_klaytn_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/klaytn/smartcontract", [], $rHeaders, [], $call_klaytn_smart_contract_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Klaytn
+     *
+     * @param \Tatum\Model\CallKlaytnSmartContractMethodKMS $call_klaytn_smart_contract_method_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callKlaytnSmartContractMethodKMS(\Tatum\Model\CallKlaytnSmartContractMethodKMS $call_klaytn_smart_contract_method_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/klaytn/smartcontract", [], $rHeaders, [], $call_klaytn_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Klaytn
+     *
+     * @param \Tatum\Model\CallKlaytnSmartContractReadMethod $call_klaytn_smart_contract_read_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callKlaytnSmartContractReadMethod(\Tatum\Model\CallKlaytnSmartContractReadMethod $call_klaytn_smart_contract_read_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/klaytn/smartcontract", [], $rHeaders, [], $call_klaytn_smart_contract_read_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast signed Klaytn transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -243,121 +312,6 @@ class KlaytnApi extends AbstractApi {
     }
     
     /**
-     * Invoke a method in a smart contract on Klaytn
-     *
-     * @param \Tatum\Model\CallKlaytnSmartContractMethod $call_klaytn_smart_contract_method 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function klaytnSmartcontractCallKlaytnSmartContractMethod(\Tatum\Model\CallKlaytnSmartContractMethod $call_klaytn_smart_contract_method) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/klaytn/smartcontract", [], $rHeaders, [], $call_klaytn_smart_contract_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on Klaytn
-     *
-     * @param \Tatum\Model\CallKlaytnSmartContractMethodKMS $call_klaytn_smart_contract_method_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function klaytnSmartcontractCallKlaytnSmartContractMethodKMS(\Tatum\Model\CallKlaytnSmartContractMethodKMS $call_klaytn_smart_contract_method_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/klaytn/smartcontract", [], $rHeaders, [], $call_klaytn_smart_contract_method_kms
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on Klaytn
-     *
-     * @param \Tatum\Model\CallKlaytnSmartContractReadMethod $call_klaytn_smart_contract_read_method 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function klaytnSmartcontractCallKlaytnSmartContractReadMethod(\Tatum\Model\CallKlaytnSmartContractReadMethod $call_klaytn_smart_contract_read_method) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/klaytn/smartcontract", [], $rHeaders, [], $call_klaytn_smart_contract_read_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send KLAY from account to account
-     *
-     * @param \Tatum\Model\TransferKlaytnBlockchain $transfer_klaytn_blockchain 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function klaytnTransactionTransferKlaytnBlockchain(\Tatum\Model\TransferKlaytnBlockchain $transfer_klaytn_blockchain) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/klaytn/transaction", [], $rHeaders, [], $transfer_klaytn_blockchain
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send KLAY from account to account
-     *
-     * @param \Tatum\Model\TransferKlaytnBlockchainKMS $transfer_klaytn_blockchain_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function klaytnTransactionTransferKlaytnBlockchainKMS(\Tatum\Model\TransferKlaytnBlockchainKMS $transfer_klaytn_blockchain_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/klaytn/transaction", [], $rHeaders, [], $transfer_klaytn_blockchain_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Web3 HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
@@ -376,6 +330,52 @@ class KlaytnApi extends AbstractApi {
                 $this->_caller->config(), "POST", S::parse("/v3/klaytn/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KLAY from account to account
+     *
+     * @param \Tatum\Model\TransferKlaytnBlockchain $transfer_klaytn_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferKlaytnBlockchain(\Tatum\Model\TransferKlaytnBlockchain $transfer_klaytn_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/klaytn/transaction", [], $rHeaders, [], $transfer_klaytn_blockchain
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send KLAY from account to account
+     *
+     * @param \Tatum\Model\TransferKlaytnBlockchainKMS $transfer_klaytn_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferKlaytnBlockchainKMS(\Tatum\Model\TransferKlaytnBlockchainKMS $transfer_klaytn_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/klaytn/transaction", [], $rHeaders, [], $transfer_klaytn_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

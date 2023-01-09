@@ -5,152 +5,24 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**litecoinTransactionLtcTransactionAddress()**](#litecointransactionltctransactionaddress) | **POST** `/v3/litecoin/transaction` | Send LTC to Litecoin addresses
-[**litecoinTransactionLtcTransactionAddressKMS()**](#litecointransactionltctransactionaddresskms) | **POST** `/v3/litecoin/transaction` | Send LTC to Litecoin addresses
-[**litecoinTransactionLtcTransactionUTXO()**](#litecointransactionltctransactionutxo) | **POST** `/v3/litecoin/transaction` | Send LTC to Litecoin addresses
-[**litecoinTransactionLtcTransactionUTXOKMS()**](#litecointransactionltctransactionutxokms) | **POST** `/v3/litecoin/transaction` | Send LTC to Litecoin addresses
-[**ltcBroadcast()**](#ltcbroadcast) | **POST** `/v3/litecoin/broadcast` | Broadcast signed Litecoin transaction
-[**ltcGenerateAddress()**](#ltcgenerateaddress) | **GET** `/v3/litecoin/address/{xpub}/{index}` | Generate Litecoin deposit address from Extended public key
-[**ltcGenerateAddressPrivateKey()**](#ltcgenerateaddressprivatekey) | **POST** `/v3/litecoin/wallet/priv` | Generate Litecoin private key
-[**ltcGenerateWallet()**](#ltcgeneratewallet) | **GET** `/v3/litecoin/wallet` | Generate Litecoin wallet
-[**ltcGetBalanceOfAddress()**](#ltcgetbalanceofaddress) | **GET** `/v3/litecoin/address/balance/{address}` | Get the balance of a Litecoin address
-[**ltcGetBlock()**](#ltcgetblock) | **GET** `/v3/litecoin/block/{hash}` | Get Litecoin Block by hash or height
-[**ltcGetBlockChainInfo()**](#ltcgetblockchaininfo) | **GET** `/v3/litecoin/info` | Get Litecoin Blockchain Information
-[**ltcGetBlockHash()**](#ltcgetblockhash) | **GET** `/v3/litecoin/block/hash/{i}` | Get Litecoin Block hash
-[**ltcGetMempool()**](#ltcgetmempool) | **GET** `/v3/litecoin/mempool` | Get Mempool Transactions
-[**ltcGetRawTransaction()**](#ltcgetrawtransaction) | **GET** `/v3/litecoin/transaction/{hash}` | Get Litecoin Transaction by hash
-[**ltcGetTxByAddress()**](#ltcgettxbyaddress) | **GET** `/v3/litecoin/transaction/address/{address}` | Get Litecoin Transactions by address
-[**ltcGetUTXO()**](#ltcgetutxo) | **GET** `/v3/litecoin/utxo/{hash}/{index}` | Get information about a transaction output (UTXO) in a Litecoin transaction
-[**ltcRpcDriver()**](#ltcrpcdriver) | **POST** `/v3/litecoin/node` | JSON RPC HTTP driver
+[**ltc Broadcast()**](#ltcbroadcast) | **POST** `/v3 /litecoin /broadcast` | Broadcast signed Litecoin transaction
+[**ltc Generate Address()**](#ltcgenerateaddress) | **GET** `/v3 /litecoin /address /{xpub} /{index}` | Generate Litecoin deposit address from Extended public key
+[**ltc Generate Address Private Key()**](#ltcgenerateaddressprivatekey) | **POST** `/v3 /litecoin /wallet /priv` | Generate Litecoin private key
+[**ltc Generate Wallet()**](#ltcgeneratewallet) | **GET** `/v3 /litecoin /wallet` | Generate Litecoin wallet
+[**ltc Get Balance Of Address()**](#ltcgetbalanceofaddress) | **GET** `/v3 /litecoin /address /balance /{address}` | Get the balance of a Litecoin address
+[**ltc Get Block()**](#ltcgetblock) | **GET** `/v3 /litecoin /block /{hash}` | Get Litecoin Block by hash or height
+[**ltc Get Block Chain Info()**](#ltcgetblockchaininfo) | **GET** `/v3 /litecoin /info` | Get Litecoin Blockchain Information
+[**ltc Get Block Hash()**](#ltcgetblockhash) | **GET** `/v3 /litecoin /block /hash /{i}` | Get Litecoin Block hash
+[**ltc Get Mempool()**](#ltcgetmempool) | **GET** `/v3 /litecoin /mempool` | Get Mempool Transactions
+[**ltc Get Raw Transaction()**](#ltcgetrawtransaction) | **GET** `/v3 /litecoin /transaction /{hash}` | Get Litecoin Transaction by hash
+[**ltc Get Tx By Address()**](#ltcgettxbyaddress) | **GET** `/v3 /litecoin /transaction /address /{address}` | Get Litecoin Transactions by address
+[**ltc Get UTXO()**](#ltcgetutxo) | **GET** `/v3 /litecoin /utxo /{hash} /{index}` | Get information about a transaction output (UTXO) in a Litecoin transaction
+[**ltc Rpc Driver()**](#ltcrpcdriver) | **POST** `/v3 /litecoin /node` | JSON RPC HTTP driver
+[**ltc Transaction Address()**](#ltctransactionaddress) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
+[**ltc Transaction Address KMS()**](#ltctransactionaddresskms) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
+[**ltc Transaction UTXO()**](#ltctransactionutxo) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
+[**ltc Transaction UTXOKMS()**](#ltctransactionutxokms) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
 
-
-## `litecoinTransactionLtcTransactionAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->litecoinTransactionLtcTransactionAddress(
-    \Tatum\Model\LtcTransactionAddress $ltc_transaction_address
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$ltc_transaction_address** | [**\Tatum\Model\LtcTransactionAddress**](../Model/LtcTransactionAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send LTC to Litecoin addresses
-
-<p><b>10 credits per API call</b></p> <p>Send LTC to blockchain addresses.</p> <p>Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#operation/LtcGetUTXO">API for getting information about a transaction output (UTXO) in a Litecoin transaction</a>.</p> <p>You can build a LTC transaction by one of the following methods:</p> <ul> <li><b>Sending LTC from blockchain addresses</b><br/>The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.<br/> To use this method, use the <code>LtcTransactionAddress</code> or <code>LtcTransactionAddressKMS</code> schema of the request body.</li> <li><b>Sending LTC from UTXOs</b><br/>The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.<br/> To use this method, use the <code>LtcTransactionFromUTXO</code> or <code>LtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul> <p>When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 LTC and T2 with 2 LTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 LTC to spend:<br/><code>1 LTC (from T1) + 2 LTC (from T2) = 3 LTC (to spend in total)</code></p> <p>You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.</p> <p><b>Paying the gas fee and receiving the change</b><br/> When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).</p> <p><b>Signing a transaction</b><br/> When sending LTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "litecoinTransactionLtcTransactionAddress.php"](../../examples/Api/LitecoinApi/litecoinTransactionLtcTransactionAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `litecoinTransactionLtcTransactionAddressKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->litecoinTransactionLtcTransactionAddressKMS(
-    \Tatum\Model\LtcTransactionAddressKMS $ltc_transaction_address_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$ltc_transaction_address_kms** | [**\Tatum\Model\LtcTransactionAddressKMS**](../Model/LtcTransactionAddressKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send LTC to Litecoin addresses
-
-LtcTransactionAddressKMS operation
-
-### Example
-
-[✨ View "litecoinTransactionLtcTransactionAddressKMS.php"](../../examples/Api/LitecoinApi/litecoinTransactionLtcTransactionAddressKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `litecoinTransactionLtcTransactionUTXO()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->litecoinTransactionLtcTransactionUTXO(
-    \Tatum\Model\LtcTransactionUTXO $ltc_transaction_utxo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$ltc_transaction_utxo** | [**\Tatum\Model\LtcTransactionUTXO**](../Model/LtcTransactionUTXO.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send LTC to Litecoin addresses
-
-LtcTransactionUTXO operation
-
-### Example
-
-[✨ View "litecoinTransactionLtcTransactionUTXO.php"](../../examples/Api/LitecoinApi/litecoinTransactionLtcTransactionUTXO.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `litecoinTransactionLtcTransactionUTXOKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->litecoinTransactionLtcTransactionUTXOKMS(
-    \Tatum\Model\LtcTransactionUTXOKMS $ltc_transaction_utxokms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$ltc_transaction_utxokms** | [**\Tatum\Model\LtcTransactionUTXOKMS**](../Model/LtcTransactionUTXOKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send LTC to Litecoin addresses
-
-LtcTransactionUTXOKMS operation
-
-### Example
-
-[✨ View "litecoinTransactionLtcTransactionUTXOKMS.php"](../../examples/Api/LitecoinApi/litecoinTransactionLtcTransactionUTXOKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ltcBroadcast()`
 
@@ -567,5 +439,133 @@ JSON RPC HTTP driver
 ### Example
 
 [✨ View "ltcRpcDriver.php"](../../examples/Api/LitecoinApi/ltcRpcDriver.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcTransactionAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddress(
+    \Tatum\Model\LtcTransactionAddress $ltc_transaction_address
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$ltc_transaction_address** | [**\Tatum\Model\LtcTransactionAddress**](../Model/LtcTransactionAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send LTC to Litecoin addresses
+
+<p><b>10 credits per API call</b></p> <p>Send LTC to blockchain addresses.</p> <p>Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#operation/LtcGetUTXO">API for getting information about a transaction output (UTXO) in a Litecoin transaction</a>.</p> <p>You can build a LTC transaction by one of the following methods:</p> <ul> <li><b>Sending LTC from blockchain addresses</b><br/>The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.<br/> To use this method, use the <code>LtcTransactionAddress</code> or <code>LtcTransactionAddressKMS</code> schema of the request body.</li> <li><b>Sending LTC from UTXOs</b><br/>The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.<br/> To use this method, use the <code>LtcTransactionFromUTXO</code> or <code>LtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul> <p>When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 LTC and T2 with 2 LTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 LTC to spend:<br/><code>1 LTC (from T1) + 2 LTC (from T2) = 3 LTC (to spend in total)</code></p> <p>You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.</p> <p><b>Paying the gas fee and receiving the change</b><br/> When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).</p> <p><b>Signing a transaction</b><br/> When sending LTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "ltcTransactionAddress.php"](../../examples/Api/LitecoinApi/ltcTransactionAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcTransactionAddressKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddressKMS(
+    \Tatum\Model\LtcTransactionAddressKMS $ltc_transaction_address_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$ltc_transaction_address_kms** | [**\Tatum\Model\LtcTransactionAddressKMS**](../Model/LtcTransactionAddressKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send LTC to Litecoin addresses
+
+LtcTransactionAddressKMS operation
+
+### Example
+
+[✨ View "ltcTransactionAddressKMS.php"](../../examples/Api/LitecoinApi/ltcTransactionAddressKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcTransactionUTXO()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXO(
+    \Tatum\Model\LtcTransactionUTXO $ltc_transaction_utxo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$ltc_transaction_utxo** | [**\Tatum\Model\LtcTransactionUTXO**](../Model/LtcTransactionUTXO.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send LTC to Litecoin addresses
+
+LtcTransactionUTXO operation
+
+### Example
+
+[✨ View "ltcTransactionUTXO.php"](../../examples/Api/LitecoinApi/ltcTransactionUTXO.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `ltcTransactionUTXOKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXOKMS(
+    \Tatum\Model\LtcTransactionUTXOKMS $ltc_transaction_utxokms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$ltc_transaction_utxokms** | [**\Tatum\Model\LtcTransactionUTXOKMS**](../Model/LtcTransactionUTXOKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send LTC to Litecoin addresses
+
+LtcTransactionUTXOKMS operation
+
+### Example
+
+[✨ View "ltcTransactionUTXOKMS.php"](../../examples/Api/LitecoinApi/ltcTransactionUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

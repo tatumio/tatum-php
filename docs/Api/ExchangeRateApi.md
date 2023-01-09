@@ -5,7 +5,7 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getExchangeRate()**](#getexchangerate) | **GET** `/v3/tatum/rate/{currency}` | Get the current exchange rate for exchanging fiat/crypto assets
+[**get Exchange Rate()**](#getexchangerate) | **GET** `/v3 /tatum /rate /{currency}` | Get the current exchange rate for exchanging fiat/crypto assets
 
 
 ## `getExchangeRate()`

@@ -5,20 +5,20 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eGldGetCurrentBlock()**](#egldgetcurrentblock) | **GET** `/v3/egld/block/current` | Get current block number
-[**egldBroadcast()**](#egldbroadcast) | **POST** `/v3/egld/broadcast` | Broadcast signed EGLD transaction
-[**egldGenerateAddress()**](#egldgenerateaddress) | **GET** `/v3/egld/address/{mnemonic}/{index}` | Generate EGLD account address from mnemonic
-[**egldGenerateAddressPrivateKey()**](#egldgenerateaddressprivatekey) | **POST** `/v3/egld/wallet/priv` | Generate EGLD private key
-[**egldGenerateWallet()**](#egldgeneratewallet) | **GET** `/v3/egld/wallet` | Generate EGLD wallet
-[**egldGetBalance()**](#egldgetbalance) | **GET** `/v3/egld/account/balance/{address}` | Get EGLD Account balance
-[**egldGetBlock()**](#egldgetblock) | **GET** `/v3/egld/block/{hash}` | Get EGLD block by hash
-[**egldGetTransaction()**](#egldgettransaction) | **GET** `/v3/egld/transaction/{hash}` | Get EGLD Transaction
-[**egldGetTransactionAddress()**](#egldgettransactionaddress) | **GET** `/v3/egld/transaction/address/{address}` | Get count of outgoing EGLD transactions
-[**egldGetTransactionCount()**](#egldgettransactioncount) | **GET** `/v3/egld/transaction/count/{address}` | Get count of outgoing EGLD transactions
-[**egldNodeGet()**](#egldnodeget) | **GET** `/v3/egld/node/{xApiKey}/*` | Node HTTP driver
-[**egldNodePost()**](#egldnodepost) | **POST** `/v3/egld/node/{xApiKey}/*` | Node HTTP driver
-[**egldTransactionTransferEgldBlockchain()**](#egldtransactiontransferegldblockchain) | **POST** `/v3/egld/transaction` | Send EGLD from account to account
-[**egldTransactionTransferEgldBlockchainKMS()**](#egldtransactiontransferegldblockchainkms) | **POST** `/v3/egld/transaction` | Send EGLD from account to account
+[**e Gld Get Current Block()**](#egldgetcurrentblock) | **GET** `/v3 /egld /block /current` | Get current block number
+[**egld Broadcast()**](#egldbroadcast) | **POST** `/v3 /egld /broadcast` | Broadcast signed EGLD transaction
+[**egld Generate Address()**](#egldgenerateaddress) | **GET** `/v3 /egld /address /{mnemonic} /{index}` | Generate EGLD account address from mnemonic
+[**egld Generate Address Private Key()**](#egldgenerateaddressprivatekey) | **POST** `/v3 /egld /wallet /priv` | Generate EGLD private key
+[**egld Generate Wallet()**](#egldgeneratewallet) | **GET** `/v3 /egld /wallet` | Generate EGLD wallet
+[**egld Get Balance()**](#egldgetbalance) | **GET** `/v3 /egld /account /balance /{address}` | Get EGLD Account balance
+[**egld Get Block()**](#egldgetblock) | **GET** `/v3 /egld /block /{hash}` | Get EGLD block by hash
+[**egld Get Transaction()**](#egldgettransaction) | **GET** `/v3 /egld /transaction /{hash}` | Get EGLD Transaction
+[**egld Get Transaction Address()**](#egldgettransactionaddress) | **GET** `/v3 /egld /transaction /address /{address}` | Get count of outgoing EGLD transactions
+[**egld Get Transaction Count()**](#egldgettransactioncount) | **GET** `/v3 /egld /transaction /count /{address}` | Get count of outgoing EGLD transactions
+[**egld Node Get()**](#egldnodeget) | **GET** `/v3 /egld /node /{xApiKey} /*` | Node HTTP driver
+[**egld Node Post()**](#egldnodepost) | **POST** `/v3 /egld /node /{xApiKey} /*` | Node HTTP driver
+[**transfer Egld Blockchain()**](#transferegldblockchain) | **POST** `/v3 /egld /transaction` | Send EGLD from account to account
+[**transfer Egld Blockchain KMS()**](#transferegldblockchainkms) | **POST** `/v3 /egld /transaction` | Send EGLD from account to account
 
 
 ## `eGldGetCurrentBlock()`
@@ -406,14 +406,14 @@ Node HTTP driver
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `egldTransactionTransferEgldBlockchain()`
+## `transferEgldBlockchain()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldTransactionTransferEgldBlockchain(
+$sdk->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchain(
     \Tatum\Model\TransferEgldBlockchain $transfer_egld_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -434,18 +434,18 @@ Send EGLD from account to account
 
 ### Example
 
-[✨ View "egldTransactionTransferEgldBlockchain.php"](../../examples/Api/ElrondApi/egldTransactionTransferEgldBlockchain.php)
+[✨ View "transferEgldBlockchain.php"](../../examples/Api/ElrondApi/transferEgldBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `egldTransactionTransferEgldBlockchainKMS()`
+## `transferEgldBlockchainKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldTransactionTransferEgldBlockchainKMS(
+$sdk->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchainKMS(
     \Tatum\Model\TransferEgldBlockchainKMS $transfer_egld_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -466,6 +466,6 @@ TransferEgldBlockchainKMS operation
 
 ### Example
 
-[✨ View "egldTransactionTransferEgldBlockchainKMS.php"](../../examples/Api/ElrondApi/egldTransactionTransferEgldBlockchainKMS.php)
+[✨ View "transferEgldBlockchainKMS.php"](../../examples/Api/ElrondApi/transferEgldBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -23,6 +23,98 @@ use Tatum\Sdk\Serializer as S;
  */
 class PolygonApi extends AbstractApi {
     /**
+     * Invoke a method in a smart contract on Polygon
+     *
+     * @param \Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callPolygonSmartContractMethod(\Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Polygon
+     *
+     * @param \Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callPolygonSmartContractMethodCaller(\Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method_caller
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Polygon
+     *
+     * @param \Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callPolygonSmartContractMethodKMS(\Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method_kms
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Invoke a method in a smart contract on Polygon
+     *
+     * @param \Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\CallSmartContractMethod200Response
+     */
+    public function callPolygonSmartContractReadMethod(\Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_read_method
+            ), 
+            "\Tatum\Model\CallSmartContractMethod200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast signed Polygon transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -293,144 +385,6 @@ class PolygonApi extends AbstractApi {
     }
     
     /**
-     * Invoke a method in a smart contract on Polygon
-     *
-     * @param \Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function polygonSmartcontractCallPolygonSmartContractMethod(\Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on Polygon
-     *
-     * @param \Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function polygonSmartcontractCallPolygonSmartContractMethodCaller(\Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method_caller
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on Polygon
-     *
-     * @param \Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function polygonSmartcontractCallPolygonSmartContractMethodKMS(\Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method_kms
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Invoke a method in a smart contract on Polygon
-     *
-     * @param \Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-     */
-    public function polygonSmartcontractCallPolygonSmartContractReadMethod(\Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_read_method
-            ), 
-            "\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send MATIC from account to account
-     *
-     * @param \Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function polygonTransactionTransferPolygonBlockchain(\Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/transaction", [], $rHeaders, [], $transfer_polygon_blockchain
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send MATIC from account to account
-     *
-     * @param \Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function polygonTransactionTransferPolygonBlockchainKMS(\Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/transaction", [], $rHeaders, [], $transfer_polygon_blockchain_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Web3 HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
@@ -449,6 +403,52 @@ class PolygonApi extends AbstractApi {
                 $this->_caller->config(), "POST", S::parse("/v3/polygon/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send MATIC from account to account
+     *
+     * @param \Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferPolygonBlockchain(\Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/polygon/transaction", [], $rHeaders, [], $transfer_polygon_blockchain
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send MATIC from account to account
+     *
+     * @param \Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferPolygonBlockchainKMS(\Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/polygon/transaction", [], $rHeaders, [], $transfer_polygon_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

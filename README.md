@@ -16,6 +16,7 @@
   - [Documentation](#documentation)
   - [Examples](#examples)
   - [Tests](#tests)
+  - [Configuration](#configuration)
   - [Debugging](#debugging)
     - [Enable debugging](#enable-debugging)
     - [Change output location](#change-output-location)
@@ -151,6 +152,34 @@ To run the unit tests, use:
 composer install
 vendor/bin/phpunit
 ```
+
+### Configuration
+
+MainNet and TestNet operations have their own configuration object:
+
+```php
+$sdk->mainnet()->config()
+$sdk->testnet()->config()
+```
+
+You can fetch the following:
+
+  * [Debugging](#debugger) tools
+  * `getApiKey()`: Your [Tatum API key](https://dashboard.tatum.com)
+  * `getTempFolderPath()`: Path for storing downloaded files
+  * `getUserAgent()`: Request header for API calls
+  * `getHost()`: API server domain
+  * `getVersions()` - array containing:
+    * Operating System version
+    * PHP version
+    * OpenAPI specification version
+    * SDK version
+
+You can change the following:
+
+  * [Debugging](#debugger) tools
+  * `setApiKey()`: Note - set the API key for the current network type!
+  * `setTempFolderPath()`
 
 ### Debugging
 

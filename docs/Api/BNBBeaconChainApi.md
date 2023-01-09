@@ -5,15 +5,15 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bnbBroadcast()**](#bnbbroadcast) | **POST** `/v3/bnb/broadcast` | Broadcast signed BNB transaction
-[**bnbGenerateWallet()**](#bnbgeneratewallet) | **GET** `/v3/bnb/account` | Generate Binance wallet
-[**bnbGetAccount()**](#bnbgetaccount) | **GET** `/v3/bnb/account/{address}` | Get Binance Account
-[**bnbGetBlock()**](#bnbgetblock) | **GET** `/v3/bnb/block/{height}` | Get Binance Transactions in Block
-[**bnbGetCurrentBlock()**](#bnbgetcurrentblock) | **GET** `/v3/bnb/block/current` | Get Binance current block
-[**bnbGetTransaction()**](#bnbgettransaction) | **GET** `/v3/bnb/transaction/{hash}` | Get Binance Transaction
-[**bnbGetTxByAccount()**](#bnbgettxbyaccount) | **GET** `/v3/bnb/account/transaction/{address}` | Get Binance Transactions By Address
-[**bnbTransactionTransferBnbBlockchain()**](#bnbtransactiontransferbnbblockchain) | **POST** `/v3/bnb/transaction` | Send Binance / Binance Token from account to account
-[**bnbTransactionTransferBnbBlockchainKMS()**](#bnbtransactiontransferbnbblockchainkms) | **POST** `/v3/bnb/transaction` | Send Binance / Binance Token from account to account
+[**bnb Broadcast()**](#bnbbroadcast) | **POST** `/v3 /bnb /broadcast` | Broadcast signed BNB transaction
+[**bnb Generate Wallet()**](#bnbgeneratewallet) | **GET** `/v3 /bnb /account` | Generate Binance wallet
+[**bnb Get Account()**](#bnbgetaccount) | **GET** `/v3 /bnb /account /{address}` | Get Binance Account
+[**bnb Get Block()**](#bnbgetblock) | **GET** `/v3 /bnb /block /{height}` | Get Binance Transactions in Block
+[**bnb Get Current Block()**](#bnbgetcurrentblock) | **GET** `/v3 /bnb /block /current` | Get Binance current block
+[**bnb Get Transaction()**](#bnbgettransaction) | **GET** `/v3 /bnb /transaction /{hash}` | Get Binance Transaction
+[**bnb Get Tx By Account()**](#bnbgettxbyaccount) | **GET** `/v3 /bnb /account /transaction /{address}` | Get Binance Transactions By Address
+[**transfer Bnb Blockchain()**](#transferbnbblockchain) | **POST** `/v3 /bnb /transaction` | Send Binance / Binance Token from account to account
+[**transfer Bnb Blockchain KMS()**](#transferbnbblockchainkms) | **POST** `/v3 /bnb /transaction` | Send Binance / Binance Token from account to account
 
 
 ## `bnbBroadcast()`
@@ -246,12 +246,12 @@ Get Binance Transactions By Address
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `bnbTransactionTransferBnbBlockchain()`
+## `transferBnbBlockchain()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbTransactionTransferBnbBlockchain(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchain(
     \Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -274,16 +274,16 @@ Send Binance / Binance Token from account to account
 
 ### Example
 
-[✨ View "bnbTransactionTransferBnbBlockchain.php"](../../examples/Api/BNBBeaconChainApi/bnbTransactionTransferBnbBlockchain.php)
+[✨ View "transferBnbBlockchain.php"](../../examples/Api/BNBBeaconChainApi/transferBnbBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `bnbTransactionTransferBnbBlockchainKMS()`
+## `transferBnbBlockchainKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbTransactionTransferBnbBlockchainKMS(
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchainKMS(
     \Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -306,6 +306,6 @@ TransferBnbBlockchainKMS operation
 
 ### Example
 
-[✨ View "bnbTransactionTransferBnbBlockchainKMS.php"](../../examples/Api/BNBBeaconChainApi/bnbTransactionTransferBnbBlockchainKMS.php)
+[✨ View "transferBnbBlockchainKMS.php"](../../examples/Api/BNBBeaconChainApi/transferBnbBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

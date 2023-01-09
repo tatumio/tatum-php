@@ -5,30 +5,222 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateTronwallet()**](#generatetronwallet) | **GET** `/v3/tron/wallet` | Generate a TRON wallet
-[**tronAccountTx()**](#tronaccounttx) | **GET** `/v3/tron/transaction/account/{address}` | Get all transactions for a TRON account
-[**tronAccountTx20()**](#tronaccounttx20) | **GET** `/v3/tron/transaction/account/{address}/trc20` | Get TRC-20 transactions for a TRON account
-[**tronBroadcast()**](#tronbroadcast) | **POST** `/v3/tron/broadcast` | Broadcast a TRON transaction
-[**tronFreezeBalanceFreezeTron()**](#tronfreezebalancefreezetron) | **POST** `/v3/tron/freezeBalance` | Freeze the balance of a TRON account
-[**tronFreezeBalanceFreezeTronKMS()**](#tronfreezebalancefreezetronkms) | **POST** `/v3/tron/freezeBalance` | Freeze the balance of a TRON account
-[**tronGenerateAddress()**](#trongenerateaddress) | **GET** `/v3/tron/address/{xpub}/{index}` | Generate a TRON address from the wallet's extended public key
-[**tronGenerateAddressPrivateKey()**](#trongenerateaddressprivatekey) | **POST** `/v3/tron/wallet/priv` | Generate the private key for a TRON address
-[**tronGetAccount()**](#trongetaccount) | **GET** `/v3/tron/account/{address}` | Get the TRON account by its address
-[**tronGetBlock()**](#trongetblock) | **GET** `/v3/tron/block/{hash}` | Get a TRON block by its hash or height
-[**tronGetCurrentBlock()**](#trongetcurrentblock) | **GET** `/v3/tron/info` | Get the current TRON block
-[**tronGetTransaction()**](#trongettransaction) | **GET** `/v3/tron/transaction/{hash}` | Get a TRON transaction by its hash
-[**tronTransactionTransferTronBlockchain()**](#trontransactiontransfertronblockchain) | **POST** `/v3/tron/transaction` | Send TRX to a TRON account
-[**tronTransactionTransferTronBlockchainKMS()**](#trontransactiontransfertronblockchainkms) | **POST** `/v3/tron/transaction` | Send TRX to a TRON account
-[**tronTrc10DeployCreateTronTrc10Blockchain()**](#trontrc10deploycreatetrontrc10blockchain) | **POST** `/v3/tron/trc10/deploy` | Create a TRC-10 token
-[**tronTrc10DeployCreateTronTrc10BlockchainKMS()**](#trontrc10deploycreatetrontrc10blockchainkms) | **POST** `/v3/tron/trc10/deploy` | Create a TRC-10 token
-[**tronTrc10Detail()**](#trontrc10detail) | **GET** `/v3/tron/trc10/detail/{idOrOwnerAddress}` | Get information about a TRC-10 token
-[**tronTrc10TransactionTransferTronTrc10Blockchain()**](#trontrc10transactiontransfertrontrc10blockchain) | **POST** `/v3/tron/trc10/transaction` | Send TRC-10 tokens to a TRON account
-[**tronTrc10TransactionTransferTronTrc10BlockchainKMS()**](#trontrc10transactiontransfertrontrc10blockchainkms) | **POST** `/v3/tron/trc10/transaction` | Send TRC-10 tokens to a TRON account
-[**tronTrc20DeployCreateTronTrc20Blockchain()**](#trontrc20deploycreatetrontrc20blockchain) | **POST** `/v3/tron/trc20/deploy` | Create a TRC-20 token
-[**tronTrc20DeployCreateTronTrc20BlockchainKMS()**](#trontrc20deploycreatetrontrc20blockchainkms) | **POST** `/v3/tron/trc20/deploy` | Create a TRC-20 token
-[**tronTrc20TransactionTransferTronTrc20Blockchain()**](#trontrc20transactiontransfertrontrc20blockchain) | **POST** `/v3/tron/trc20/transaction` | Send TRC-20 tokens to a TRON account
-[**tronTrc20TransactionTransferTronTrc20BlockchainKMS()**](#trontrc20transactiontransfertrontrc20blockchainkms) | **POST** `/v3/tron/trc20/transaction` | Send TRC-20 tokens to a TRON account
+[**create Tron Trc10 Blockchain()**](#createtrontrc10blockchain) | **POST** `/v3 /tron /trc10 /deploy` | Create a TRC-10 token
+[**create Tron Trc10 Blockchain KMS()**](#createtrontrc10blockchainkms) | **POST** `/v3 /tron /trc10 /deploy` | Create a TRC-10 token
+[**create Tron Trc20 Blockchain()**](#createtrontrc20blockchain) | **POST** `/v3 /tron /trc20 /deploy` | Create a TRC-20 token
+[**create Tron Trc20 Blockchain KMS()**](#createtrontrc20blockchainkms) | **POST** `/v3 /tron /trc20 /deploy` | Create a TRC-20 token
+[**freeze Tron()**](#freezetron) | **POST** `/v3 /tron /freezeBalance` | Freeze the balance of a TRON account
+[**freeze Tron KMS()**](#freezetronkms) | **POST** `/v3 /tron /freezeBalance` | Freeze the balance of a TRON account
+[**generate Tronwallet()**](#generatetronwallet) | **GET** `/v3 /tron /wallet` | Generate a TRON wallet
+[**transfer Tron Blockchain()**](#transfertronblockchain) | **POST** `/v3 /tron /transaction` | Send TRX to a TRON account
+[**transfer Tron Blockchain KMS()**](#transfertronblockchainkms) | **POST** `/v3 /tron /transaction` | Send TRX to a TRON account
+[**transfer Tron Trc10 Blockchain()**](#transfertrontrc10blockchain) | **POST** `/v3 /tron /trc10 /transaction` | Send TRC-10 tokens to a TRON account
+[**transfer Tron Trc10 Blockchain KMS()**](#transfertrontrc10blockchainkms) | **POST** `/v3 /tron /trc10 /transaction` | Send TRC-10 tokens to a TRON account
+[**transfer Tron Trc20 Blockchain()**](#transfertrontrc20blockchain) | **POST** `/v3 /tron /trc20 /transaction` | Send TRC-20 tokens to a TRON account
+[**transfer Tron Trc20 Blockchain KMS()**](#transfertrontrc20blockchainkms) | **POST** `/v3 /tron /trc20 /transaction` | Send TRC-20 tokens to a TRON account
+[**tron Account Tx()**](#tronaccounttx) | **GET** `/v3 /tron /transaction /account /{address}` | Get all transactions for a TRON account
+[**tron Account Tx20()**](#tronaccounttx20) | **GET** `/v3 /tron /transaction /account /{address} /trc20` | Get TRC-20 transactions for a TRON account
+[**tron Broadcast()**](#tronbroadcast) | **POST** `/v3 /tron /broadcast` | Broadcast a TRON transaction
+[**tron Generate Address()**](#trongenerateaddress) | **GET** `/v3 /tron /address /{xpub} /{index}` | Generate a TRON address from the wallet's extended public key
+[**tron Generate Address Private Key()**](#trongenerateaddressprivatekey) | **POST** `/v3 /tron /wallet /priv` | Generate the private key for a TRON address
+[**tron Get Account()**](#trongetaccount) | **GET** `/v3 /tron /account /{address}` | Get the TRON account by its address
+[**tron Get Block()**](#trongetblock) | **GET** `/v3 /tron /block /{hash}` | Get a TRON block by its hash or height
+[**tron Get Current Block()**](#trongetcurrentblock) | **GET** `/v3 /tron /info` | Get the current TRON block
+[**tron Get Transaction()**](#trongettransaction) | **GET** `/v3 /tron /transaction /{hash}` | Get a TRON transaction by its hash
+[**tron Trc10 Detail()**](#trontrc10detail) | **GET** `/v3 /tron /trc10 /detail /{idOrOwnerAddress}` | Get information about a TRC-10 token
 
+
+## `createTronTrc10Blockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc10Blockchain(
+    \Tatum\Model\CreateTronTrc10Blockchain $create_tron_trc10_blockchain
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_tron_trc10_blockchain** | [**\Tatum\Model\CreateTronTrc10Blockchain**](../Model/CreateTronTrc10Blockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Create a TRC-10 token
+
+<p><b>10 credits per API call</b></p> <p>Create a TRON TRC-10 token.</p> <p>One TRON account can create only one TRC-10 token. The whole supply of the token is transferred to the issuer's account 100 seconds after the token has been created.</p> <p><b>Signing a transaction</b><br/> When creating a TRC-10 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "createTronTrc10Blockchain.php"](../../examples/Api/TronApi/createTronTrc10Blockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createTronTrc10BlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc10BlockchainKMS(
+    \Tatum\Model\CreateTronTrc10BlockchainKMS $create_tron_trc10_blockchain_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_tron_trc10_blockchain_kms** | [**\Tatum\Model\CreateTronTrc10BlockchainKMS**](../Model/CreateTronTrc10BlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Create a TRC-10 token
+
+CreateTronTrc10BlockchainKMS operation
+
+### Example
+
+[✨ View "createTronTrc10BlockchainKMS.php"](../../examples/Api/TronApi/createTronTrc10BlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createTronTrc20Blockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc20Blockchain(
+    \Tatum\Model\CreateTronTrc20Blockchain $create_tron_trc20_blockchain
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_tron_trc20_blockchain** | [**\Tatum\Model\CreateTronTrc20Blockchain**](../Model/CreateTronTrc20Blockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Create a TRC-20 token
+
+<p><b>10 credits per API call</b></p> <p>Create a TRON TRC-20 token.</p> <p><b>Signing a transaction</b><br/> When creating a TRC-20 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "createTronTrc20Blockchain.php"](../../examples/Api/TronApi/createTronTrc20Blockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createTronTrc20BlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc20BlockchainKMS(
+    \Tatum\Model\CreateTronTrc20BlockchainKMS $create_tron_trc20_blockchain_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_tron_trc20_blockchain_kms** | [**\Tatum\Model\CreateTronTrc20BlockchainKMS**](../Model/CreateTronTrc20BlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Create a TRC-20 token
+
+CreateTronTrc20BlockchainKMS operation
+
+### Example
+
+[✨ View "createTronTrc20BlockchainKMS.php"](../../examples/Api/TronApi/createTronTrc20BlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `freezeTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->freezeTron(
+    \Tatum\Model\FreezeTron $freeze_tron
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$freeze_tron** | [**\Tatum\Model\FreezeTron**](../Model/FreezeTron.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Freeze the balance of a TRON account
+
+<p><b>10 credits per API call</b></p> <p>Freeze Tron assets on the address. By freezing assets, you can obtain energy or bandwidth to perform transactions.</p> <p><b>Signing a transaction</b></p> <p>When freezing the balance, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "freezeTron.php"](../../examples/Api/TronApi/freezeTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `freezeTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->freezeTronKMS(
+    \Tatum\Model\FreezeTronKMS $freeze_tron_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$freeze_tron_kms** | [**\Tatum\Model\FreezeTronKMS**](../Model/FreezeTronKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Freeze the balance of a TRON account
+
+FreezeTronKMS operation
+
+### Example
+
+[✨ View "freezeTronKMS.php"](../../examples/Api/TronApi/freezeTronKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateTronwallet()`
 
@@ -59,6 +251,198 @@ Generate a TRON wallet
 ### Example
 
 [✨ View "generateTronwallet.php"](../../examples/Api/TronApi/generateTronwallet.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->transferTronBlockchain(
+    \Tatum\Model\TransferTronBlockchain $transfer_tron_blockchain
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_blockchain** | [**\Tatum\Model\TransferTronBlockchain**](../Model/TransferTronBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send TRX to a TRON account
+
+<p><b>10 credits per API call</b></p> <p>Send an amount in TRX from address to address.</p> <p><b>Signing a transaction</b></p> <p>When sending TRX to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferTronBlockchain.php"](../../examples/Api/TronApi/transferTronBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->transferTronBlockchainKMS(
+    \Tatum\Model\TransferTronBlockchainKMS $transfer_tron_blockchain_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_blockchain_kms** | [**\Tatum\Model\TransferTronBlockchainKMS**](../Model/TransferTronBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send TRX to a TRON account
+
+TransferTronBlockchainKMS operation
+
+### Example
+
+[✨ View "transferTronBlockchainKMS.php"](../../examples/Api/TronApi/transferTronBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronTrc10Blockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc10Blockchain(
+    \Tatum\Model\TransferTronTrc10Blockchain $transfer_tron_trc10_blockchain
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_trc10_blockchain** | [**\Tatum\Model\TransferTronTrc10Blockchain**](../Model/TransferTronTrc10Blockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send TRC-10 tokens to a TRON account
+
+<p><b>10 credits per API call</b></p> <p>Send TRC-10 tokens from address to address.</p> <p><b>Signing a transaction</b></p> <p>When sending TRC-10 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferTronTrc10Blockchain.php"](../../examples/Api/TronApi/transferTronTrc10Blockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronTrc10BlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc10BlockchainKMS(
+    \Tatum\Model\TransferTronTrc10BlockchainKMS $transfer_tron_trc10_blockchain_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_trc10_blockchain_kms** | [**\Tatum\Model\TransferTronTrc10BlockchainKMS**](../Model/TransferTronTrc10BlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send TRC-10 tokens to a TRON account
+
+TransferTronTrc10BlockchainKMS operation
+
+### Example
+
+[✨ View "transferTronTrc10BlockchainKMS.php"](../../examples/Api/TronApi/transferTronTrc10BlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronTrc20Blockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc20Blockchain(
+    \Tatum\Model\TransferTronTrc20Blockchain $transfer_tron_trc20_blockchain
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_trc20_blockchain** | [**\Tatum\Model\TransferTronTrc20Blockchain**](../Model/TransferTronTrc20Blockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send TRC-20 tokens to a TRON account
+
+<p><b>10 credits per API call</b></p> <p>Send TRC-20 tokens from address to address.</p> <p><b>Signing a transaction</b></p> <p>When sending TRC-20 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferTronTrc20Blockchain.php"](../../examples/Api/TronApi/transferTronTrc20Blockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronTrc20BlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc20BlockchainKMS(
+    \Tatum\Model\TransferTronTrc20BlockchainKMS $transfer_tron_trc20_blockchain_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_trc20_blockchain_kms** | [**\Tatum\Model\TransferTronTrc20BlockchainKMS**](../Model/TransferTronTrc20BlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send TRC-20 tokens to a TRON account
+
+TransferTronTrc20BlockchainKMS operation
+
+### Example
+
+[✨ View "transferTronTrc20BlockchainKMS.php"](../../examples/Api/TronApi/transferTronTrc20BlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -159,70 +543,6 @@ Broadcast a TRON transaction
 ### Example
 
 [✨ View "tronBroadcast.php"](../../examples/Api/TronApi/tronBroadcast.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronFreezeBalanceFreezeTron()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronFreezeBalanceFreezeTron(
-    \Tatum\Model\FreezeTron $freeze_tron
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$freeze_tron** | [**\Tatum\Model\FreezeTron**](../Model/FreezeTron.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Freeze the balance of a TRON account
-
-<p><b>10 credits per API call</b></p> <p>Freeze Tron assets on the address. By freezing assets, you can obtain energy or bandwidth to perform transactions.</p> <p><b>Signing a transaction</b></p> <p>When freezing the balance, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "tronFreezeBalanceFreezeTron.php"](../../examples/Api/TronApi/tronFreezeBalanceFreezeTron.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronFreezeBalanceFreezeTronKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronFreezeBalanceFreezeTronKMS(
-    \Tatum\Model\FreezeTronKMS $freeze_tron_kms
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$freeze_tron_kms** | [**\Tatum\Model\FreezeTronKMS**](../Model/FreezeTronKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Freeze the balance of a TRON account
-
-FreezeTronKMS operation
-
-### Example
-
-[✨ View "tronFreezeBalanceFreezeTronKMS.php"](../../examples/Api/TronApi/tronFreezeBalanceFreezeTronKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -417,134 +737,6 @@ Get a TRON transaction by its hash
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `tronTransactionTransferTronBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTransactionTransferTronBlockchain(
-    \Tatum\Model\TransferTronBlockchain $transfer_tron_blockchain
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_tron_blockchain** | [**\Tatum\Model\TransferTronBlockchain**](../Model/TransferTronBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send TRX to a TRON account
-
-<p><b>10 credits per API call</b></p> <p>Send an amount in TRX from address to address.</p> <p><b>Signing a transaction</b></p> <p>When sending TRX to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "tronTransactionTransferTronBlockchain.php"](../../examples/Api/TronApi/tronTransactionTransferTronBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTransactionTransferTronBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTransactionTransferTronBlockchainKMS(
-    \Tatum\Model\TransferTronBlockchainKMS $transfer_tron_blockchain_kms
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_tron_blockchain_kms** | [**\Tatum\Model\TransferTronBlockchainKMS**](../Model/TransferTronBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send TRX to a TRON account
-
-TransferTronBlockchainKMS operation
-
-### Example
-
-[✨ View "tronTransactionTransferTronBlockchainKMS.php"](../../examples/Api/TronApi/tronTransactionTransferTronBlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc10DeployCreateTronTrc10Blockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc10DeployCreateTronTrc10Blockchain(
-    \Tatum\Model\CreateTronTrc10Blockchain $create_tron_trc10_blockchain
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_tron_trc10_blockchain** | [**\Tatum\Model\CreateTronTrc10Blockchain**](../Model/CreateTronTrc10Blockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Create a TRC-10 token
-
-<p><b>10 credits per API call</b></p> <p>Create a TRON TRC-10 token.</p> <p>One TRON account can create only one TRC-10 token. The whole supply of the token is transferred to the issuer's account 100 seconds after the token has been created.</p> <p><b>Signing a transaction</b><br/> When creating a TRC-10 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "tronTrc10DeployCreateTronTrc10Blockchain.php"](../../examples/Api/TronApi/tronTrc10DeployCreateTronTrc10Blockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc10DeployCreateTronTrc10BlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc10DeployCreateTronTrc10BlockchainKMS(
-    \Tatum\Model\CreateTronTrc10BlockchainKMS $create_tron_trc10_blockchain_kms
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_tron_trc10_blockchain_kms** | [**\Tatum\Model\CreateTronTrc10BlockchainKMS**](../Model/CreateTronTrc10BlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Create a TRC-10 token
-
-CreateTronTrc10BlockchainKMS operation
-
-### Example
-
-[✨ View "tronTrc10DeployCreateTronTrc10BlockchainKMS.php"](../../examples/Api/TronApi/tronTrc10DeployCreateTronTrc10BlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
 ## `tronTrc10Detail()`
 
 ### Type signature
@@ -574,197 +766,5 @@ Get information about a TRC-10 token
 ### Example
 
 [✨ View "tronTrc10Detail.php"](../../examples/Api/TronApi/tronTrc10Detail.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc10TransactionTransferTronTrc10Blockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc10TransactionTransferTronTrc10Blockchain(
-    \Tatum\Model\TransferTronTrc10Blockchain $transfer_tron_trc10_blockchain
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc10_blockchain** | [**\Tatum\Model\TransferTronTrc10Blockchain**](../Model/TransferTronTrc10Blockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send TRC-10 tokens to a TRON account
-
-<p><b>10 credits per API call</b></p> <p>Send TRC-10 tokens from address to address.</p> <p><b>Signing a transaction</b></p> <p>When sending TRC-10 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "tronTrc10TransactionTransferTronTrc10Blockchain.php"](../../examples/Api/TronApi/tronTrc10TransactionTransferTronTrc10Blockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc10TransactionTransferTronTrc10BlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc10TransactionTransferTronTrc10BlockchainKMS(
-    \Tatum\Model\TransferTronTrc10BlockchainKMS $transfer_tron_trc10_blockchain_kms
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc10_blockchain_kms** | [**\Tatum\Model\TransferTronTrc10BlockchainKMS**](../Model/TransferTronTrc10BlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send TRC-10 tokens to a TRON account
-
-TransferTronTrc10BlockchainKMS operation
-
-### Example
-
-[✨ View "tronTrc10TransactionTransferTronTrc10BlockchainKMS.php"](../../examples/Api/TronApi/tronTrc10TransactionTransferTronTrc10BlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc20DeployCreateTronTrc20Blockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc20DeployCreateTronTrc20Blockchain(
-    \Tatum\Model\CreateTronTrc20Blockchain $create_tron_trc20_blockchain
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_tron_trc20_blockchain** | [**\Tatum\Model\CreateTronTrc20Blockchain**](../Model/CreateTronTrc20Blockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Create a TRC-20 token
-
-<p><b>10 credits per API call</b></p> <p>Create a TRON TRC-20 token.</p> <p><b>Signing a transaction</b><br/> When creating a TRC-20 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "tronTrc20DeployCreateTronTrc20Blockchain.php"](../../examples/Api/TronApi/tronTrc20DeployCreateTronTrc20Blockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc20DeployCreateTronTrc20BlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc20DeployCreateTronTrc20BlockchainKMS(
-    \Tatum\Model\CreateTronTrc20BlockchainKMS $create_tron_trc20_blockchain_kms
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_tron_trc20_blockchain_kms** | [**\Tatum\Model\CreateTronTrc20BlockchainKMS**](../Model/CreateTronTrc20BlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Create a TRC-20 token
-
-CreateTronTrc20BlockchainKMS operation
-
-### Example
-
-[✨ View "tronTrc20DeployCreateTronTrc20BlockchainKMS.php"](../../examples/Api/TronApi/tronTrc20DeployCreateTronTrc20BlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc20TransactionTransferTronTrc20Blockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc20TransactionTransferTronTrc20Blockchain(
-    \Tatum\Model\TransferTronTrc20Blockchain $transfer_tron_trc20_blockchain
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc20_blockchain** | [**\Tatum\Model\TransferTronTrc20Blockchain**](../Model/TransferTronTrc20Blockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send TRC-20 tokens to a TRON account
-
-<p><b>10 credits per API call</b></p> <p>Send TRC-20 tokens from address to address.</p> <p><b>Signing a transaction</b></p> <p>When sending TRC-20 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "tronTrc20TransactionTransferTronTrc20Blockchain.php"](../../examples/Api/TronApi/tronTrc20TransactionTransferTronTrc20Blockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tronTrc20TransactionTransferTronTrc20BlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc20TransactionTransferTronTrc20BlockchainKMS(
-    \Tatum\Model\TransferTronTrc20BlockchainKMS $transfer_tron_trc20_blockchain_kms
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc20_blockchain_kms** | [**\Tatum\Model\TransferTronTrc20BlockchainKMS**](../Model/TransferTronTrc20BlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send TRC-20 tokens to a TRON account
-
-TransferTronTrc20BlockchainKMS operation
-
-### Example
-
-[✨ View "tronTrc20TransactionTransferTronTrc20BlockchainKMS.php"](../../examples/Api/TronApi/tronTrc20TransactionTransferTronTrc20BlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -23,6 +23,344 @@ use Tatum\Sdk\Serializer as S;
  */
 class NotificationSubscriptionsApi extends AbstractApi {
     /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionBalance $create_subscription_balance 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionBalance(\Tatum\Model\CreateSubscriptionBalance $create_subscription_balance, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_balance
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionContractLogEvent $create_subscription_contract_log_event 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionContractLogEvent(\Tatum\Model\CreateSubscriptionContractLogEvent $create_subscription_contract_log_event, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_contract_log_event
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionIncoming $create_subscription_incoming 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionIncoming(\Tatum\Model\CreateSubscriptionIncoming $create_subscription_incoming, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_incoming
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionInterval $create_subscription_interval 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionInterval(\Tatum\Model\CreateSubscriptionInterval $create_subscription_interval, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_interval
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionKMSError $create_subscription_kms_error 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionKMSError(\Tatum\Model\CreateSubscriptionKMSError $create_subscription_kms_error, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_kms_error
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionKMSSuccess $create_subscription_kms_success 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionKMSSuccess(\Tatum\Model\CreateSubscriptionKMSSuccess $create_subscription_kms_success, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_kms_success
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionMultiTokenTransferEvent $create_subscription_multi_token_transfer_event 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionMultiTokenTransferEvent(\Tatum\Model\CreateSubscriptionMultiTokenTransferEvent $create_subscription_multi_token_transfer_event, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_multi_token_transfer_event
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionNftTransferEvent $create_subscription_nft_transfer_event 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionNftTransferEvent(\Tatum\Model\CreateSubscriptionNftTransferEvent $create_subscription_nft_transfer_event, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_nft_transfer_event
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionNotification $create_subscription_notification 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionNotification(\Tatum\Model\CreateSubscriptionNotification $create_subscription_notification, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_notification
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionPartialTradeMatch $create_subscription_partial_trade_match 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionPartialTradeMatch(\Tatum\Model\CreateSubscriptionPartialTradeMatch $create_subscription_partial_trade_match, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_partial_trade_match
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionPending $create_subscription_pending 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionPending(\Tatum\Model\CreateSubscriptionPending $create_subscription_pending, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_pending
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionTradeMatch $create_subscription_trade_match 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionTradeMatch(\Tatum\Model\CreateSubscriptionTradeMatch $create_subscription_trade_match, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_trade_match
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create a subscription
+     *
+     * @param \Tatum\Model\CreateSubscriptionTxInTheBlock $create_subscription_tx_in_the_block 
+     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Id
+     */
+    public function createSubscriptionTxInTheBlock(\Tatum\Model\CreateSubscriptionTxInTheBlock $create_subscription_tx_in_the_block, string $testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\Id $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/subscription", [
+                    "testnetType" => S::toQueryValue($testnet_type),
+                ], $rHeaders, [], $create_subscription_tx_in_the_block
+            ), 
+            "\Tatum\Model\Id"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Cancel existing subscription
      *
      * @param string $id Subscription ID
@@ -247,344 +585,6 @@ class NotificationSubscriptionsApi extends AbstractApi {
                 ], $rHeaders, []
             ), 
             "\Tatum\Model\EntitiesCount"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionBalance $create_subscription_balance 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionBalance(\Tatum\Model\CreateSubscriptionBalance $create_subscription_balance, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_balance
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionContractLogEvent $create_subscription_contract_log_event 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionContractLogEvent(\Tatum\Model\CreateSubscriptionContractLogEvent $create_subscription_contract_log_event, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_contract_log_event
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionIncoming $create_subscription_incoming 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionIncoming(\Tatum\Model\CreateSubscriptionIncoming $create_subscription_incoming, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_incoming
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionInterval $create_subscription_interval 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionInterval(\Tatum\Model\CreateSubscriptionInterval $create_subscription_interval, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_interval
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionKMSError $create_subscription_kms_error 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionKMSError(\Tatum\Model\CreateSubscriptionKMSError $create_subscription_kms_error, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_kms_error
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionKMSSuccess $create_subscription_kms_success 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionKMSSuccess(\Tatum\Model\CreateSubscriptionKMSSuccess $create_subscription_kms_success, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_kms_success
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionMultiTokenTransferEvent $create_subscription_multi_token_transfer_event 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionMultiTokenTransferEvent(\Tatum\Model\CreateSubscriptionMultiTokenTransferEvent $create_subscription_multi_token_transfer_event, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_multi_token_transfer_event
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionNftTransferEvent $create_subscription_nft_transfer_event 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionNftTransferEvent(\Tatum\Model\CreateSubscriptionNftTransferEvent $create_subscription_nft_transfer_event, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_nft_transfer_event
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionNotification $create_subscription_notification 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionNotification(\Tatum\Model\CreateSubscriptionNotification $create_subscription_notification, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_notification
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionPartialTradeMatch $create_subscription_partial_trade_match 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionPartialTradeMatch(\Tatum\Model\CreateSubscriptionPartialTradeMatch $create_subscription_partial_trade_match, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_partial_trade_match
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionPending $create_subscription_pending 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionPending(\Tatum\Model\CreateSubscriptionPending $create_subscription_pending, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_pending
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionTradeMatch $create_subscription_trade_match 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionTradeMatch(\Tatum\Model\CreateSubscriptionTradeMatch $create_subscription_trade_match, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_trade_match
-            ), 
-            "\Tatum\Model\Id"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create a subscription
-     *
-     * @param \Tatum\Model\CreateSubscriptionTxInTheBlock $create_subscription_tx_in_the_block 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Id
-     */
-    public function subscriptionCreateSubscriptionTxInTheBlock(\Tatum\Model\CreateSubscriptionTxInTheBlock $create_subscription_tx_in_the_block, string $testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\Id $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", [
-                    "testnetType" => S::toQueryValue($testnet_type),
-                ], $rHeaders, [], $create_subscription_tx_in_the_block
-            ), 
-            "\Tatum\Model\Id"
         );
             
         return $result;

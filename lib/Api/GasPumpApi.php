@@ -23,6 +23,167 @@ use Tatum\Sdk\Serializer as S;
  */
 class GasPumpApi extends AbstractApi {
     /**
+     * Activate gas pump addresses
+     *
+     * @param \Tatum\Model\ActivateGasPump $activate_gas_pump 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function activateGasPump(\Tatum\Model\ActivateGasPump $activate_gas_pump) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Activate gas pump addresses
+     *
+     * @param \Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function activateGasPumpCelo(\Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Activate gas pump addresses
+     *
+     * @param \Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function activateGasPumpCeloKMS(\Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Activate gas pump addresses
+     *
+     * @param \Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function activateGasPumpKMS(\Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Activate gas pump addresses
+     *
+     * @param \Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function activateGasPumpTatum(\Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tatum
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Activate gas pump addresses
+     *
+     * @param \Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function activateGasPumpTron(\Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Activate gas pump addresses
+     *
+     * @param \Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function activateGasPumpTronKMS(\Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Get the results of the address activation transaction
      *
      * @param string $chain The blockchain to work with
@@ -61,17 +222,17 @@ class GasPumpApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainScCustodialApproveTransferCustodialWallet(\Tatum\Model\ApproveTransferCustodialWallet $approve_transfer_custodial_wallet) {
+    public function approveTransferCustodialWallet(\Tatum\Model\ApproveTransferCustodialWallet $approve_transfer_custodial_wallet) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -84,17 +245,17 @@ class GasPumpApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainScCustodialApproveTransferCustodialWalletCelo(\Tatum\Model\ApproveTransferCustodialWalletCelo $approve_transfer_custodial_wallet_celo) {
+    public function approveTransferCustodialWalletCelo(\Tatum\Model\ApproveTransferCustodialWalletCelo $approve_transfer_custodial_wallet_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_celo
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -107,17 +268,17 @@ class GasPumpApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainScCustodialApproveTransferCustodialWalletCeloKMS(\Tatum\Model\ApproveTransferCustodialWalletCeloKMS $approve_transfer_custodial_wallet_celo_kms) {
+    public function approveTransferCustodialWalletCeloKMS(\Tatum\Model\ApproveTransferCustodialWalletCeloKMS $approve_transfer_custodial_wallet_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_celo_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -130,802 +291,17 @@ class GasPumpApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function blockchainScCustodialApproveTransferCustodialWalletKMS(\Tatum\Model\ApproveTransferCustodialWalletKMS $approve_transfer_custodial_wallet_kms) {
+    public function approveTransferCustodialWalletKMS(\Tatum\Model\ApproveTransferCustodialWalletKMS $approve_transfer_custodial_wallet_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_kms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialBatchGenerateCustodialWalletBatch(\Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialBatchGenerateCustodialWalletBatchCelo(\Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialBatchGenerateCustodialWalletBatchCeloKMS(\Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialBatchGenerateCustodialWalletBatchKMS(\Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialBatchGenerateCustodialWalletBatchPayer(\Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_payer
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialBatchGenerateCustodialWalletBatchTron(\Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialBatchGenerateCustodialWalletBatchTronKMS(\Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms, string $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialGenerateCustodialWallet(\Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialGenerateCustodialWalletCelo(\Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialGenerateCustodialWalletCeloKMS(\Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialGenerateCustodialWalletKMS(\Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialGenerateCustodialWalletTron(\Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialGenerateCustodialWalletTronKMS(\Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer multiple assets from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferBatchTransferCustodialWalletBatch(\Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer multiple assets from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferBatchTransferCustodialWalletBatchCelo(\Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer multiple assets from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferBatchTransferCustodialWalletBatchCeloKMS(\Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer multiple assets from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferBatchTransferCustodialWalletBatchKMS(\Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer multiple assets from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferBatchTransferCustodialWalletBatchTron(\Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer multiple assets from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferBatchTransferCustodialWalletBatchTronKMS(\Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer an asset from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferCustodialWallet(\Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer an asset from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferCustodialWalletCelo(\Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer an asset from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferCustodialWalletCeloKMS(\Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer an asset from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferCustodialWalletKMS(\Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer an asset from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferCustodialWalletTron(\Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Transfer an asset from a gas pump address
-     *
-     * @param \Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function blockchainScCustodialTransferCustodialWalletTronKMS(\Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Activate gas pump addresses
-     *
-     * @param \Tatum\Model\ActivateGasPump $activate_gas_pump 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function gasPumpActivateGasPump(\Tatum\Model\ActivateGasPump $activate_gas_pump) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Activate gas pump addresses
-     *
-     * @param \Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function gasPumpActivateGasPumpCelo(\Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Activate gas pump addresses
-     *
-     * @param \Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function gasPumpActivateGasPumpCeloKMS(\Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Activate gas pump addresses
-     *
-     * @param \Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function gasPumpActivateGasPumpKMS(\Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Activate gas pump addresses
-     *
-     * @param \Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function gasPumpActivateGasPumpTatum(\Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tatum
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Activate gas pump addresses
-     *
-     * @param \Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function gasPumpActivateGasPumpTron(\Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Activate gas pump addresses
-     *
-     * @param \Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function gasPumpActivateGasPumpTronKMS(\Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -951,6 +327,354 @@ class GasPumpApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/gas-pump/activated/{chain}/{owner}/{index}", ["chain" => $chain, "owner" => $owner, "index" => $index]), [], $rHeaders, []
             ), 
             "\Tatum\Model\Activated"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a custodial wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWallet(\Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a gas pump wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletBatch(\Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a gas pump wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletBatchCelo(\Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a gas pump wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletBatchCeloKMS(\Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a gas pump wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletBatchKMS(\Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a gas pump wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletBatchPayer(\Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_payer
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a gas pump wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletBatchTron(\Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a gas pump wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms 
+     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletBatchTronKMS(\Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms, string $x_testnet_type = 'ethereum-sepolia') {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+        $rHeaders = array_merge(
+            [
+                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
+            ], 
+            $rHeaders
+        );
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a custodial wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletCelo(\Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a custodial wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletCeloKMS(\Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a custodial wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletKMS(\Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a custodial wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletTron(\Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Generate a custodial wallet address
+     *
+     * @param \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function generateCustodialWalletTronKMS(\Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -998,6 +722,282 @@ class GasPumpApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/blockchain/sc/custodial/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), [], $rHeaders, []
             ), 
             "string[]"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an asset from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWallet(\Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple assets from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletBatch(\Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple assets from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletBatchCelo(\Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple assets from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletBatchCeloKMS(\Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple assets from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletBatchKMS(\Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple assets from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletBatchTron(\Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer multiple assets from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletBatchTronKMS(\Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an asset from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletCelo(\Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an asset from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletCeloKMS(\Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an asset from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletKMS(\Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an asset from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletTron(\Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Transfer an asset from a gas pump address
+     *
+     * @param \Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferCustodialWalletTronKMS(\Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

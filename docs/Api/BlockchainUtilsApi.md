@@ -5,8 +5,8 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAuctionEstimatedTime()**](#getauctionestimatedtime) | **GET** `/v3/blockchain/auction/time/{chain}/{date}` | Estimate the block height for a future point in time
-[**sCGetContractAddress()**](#scgetcontractaddress) | **GET** `/v3/blockchain/sc/address/{chain}/{hash}` | Get the blockchain address of a smart contract by the deployment transaction ID
+[**get Auction Estimated Time()**](#getauctionestimatedtime) | **GET** `/v3 /blockchain /auction /time /{chain} /{date}` | Estimate the block height for a future point in time
+[**s CGet Contract Address()**](#scgetcontractaddress) | **GET** `/v3 /blockchain /sc /address /{chain} /{hash}` | Get the blockchain address of a smart contract by the deployment transaction ID
 
 
 ## `getAuctionEstimatedTime()`

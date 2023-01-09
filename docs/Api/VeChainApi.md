@@ -5,19 +5,83 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**vetBroadcast()**](#vetbroadcast) | **POST** `/v3/vet/broadcast` | Broadcast signed VeChain transaction
-[**vetGenerateAddress()**](#vetgenerateaddress) | **GET** `/v3/vet/address/{xpub}/{index}` | Generate VeChain account address from Extended public key
-[**vetGenerateAddressPrivateKey()**](#vetgenerateaddressprivatekey) | **POST** `/v3/vet/wallet/priv` | Generate VeChain private key
-[**vetGenerateWallet()**](#vetgeneratewallet) | **GET** `/v3/vet/wallet` | Generate VeChain wallet
-[**vetGetBalance()**](#vetgetbalance) | **GET** `/v3/vet/account/balance/{address}` | Get VeChain Account balance
-[**vetGetBlock()**](#vetgetblock) | **GET** `/v3/vet/block/{hash}` | Get VeChain Block by hash
-[**vetGetCurrentBlock()**](#vetgetcurrentblock) | **GET** `/v3/vet/block/current` | Get VeChain current block
-[**vetGetEnergy()**](#vetgetenergy) | **GET** `/v3/vet/account/energy/{address}` | Get VeChain Account energy (VTHO)
-[**vetGetTransaction()**](#vetgettransaction) | **GET** `/v3/vet/transaction/{hash}` | Get VeChain Transaction
-[**vetGetTransactionReceipt()**](#vetgettransactionreceipt) | **GET** `/v3/vet/transaction/{hash}/receipt` | Get VeChain Transaction Receipt
-[**vetTransactionTransferVetBlockchain()**](#vettransactiontransfervetblockchain) | **POST** `/v3/vet/transaction` | Send VeChain from account to account
-[**vetTransactionTransferVetBlockchainKMS()**](#vettransactiontransfervetblockchainkms) | **POST** `/v3/vet/transaction` | Send VeChain from account to account
+[**transfer Vet Blockchain()**](#transfervetblockchain) | **POST** `/v3 /vet /transaction` | Send VeChain from account to account
+[**transfer Vet Blockchain KMS()**](#transfervetblockchainkms) | **POST** `/v3 /vet /transaction` | Send VeChain from account to account
+[**vet Broadcast()**](#vetbroadcast) | **POST** `/v3 /vet /broadcast` | Broadcast signed VeChain transaction
+[**vet Generate Address()**](#vetgenerateaddress) | **GET** `/v3 /vet /address /{xpub} /{index}` | Generate VeChain account address from Extended public key
+[**vet Generate Address Private Key()**](#vetgenerateaddressprivatekey) | **POST** `/v3 /vet /wallet /priv` | Generate VeChain private key
+[**vet Generate Wallet()**](#vetgeneratewallet) | **GET** `/v3 /vet /wallet` | Generate VeChain wallet
+[**vet Get Balance()**](#vetgetbalance) | **GET** `/v3 /vet /account /balance /{address}` | Get VeChain Account balance
+[**vet Get Block()**](#vetgetblock) | **GET** `/v3 /vet /block /{hash}` | Get VeChain Block by hash
+[**vet Get Current Block()**](#vetgetcurrentblock) | **GET** `/v3 /vet /block /current` | Get VeChain current block
+[**vet Get Energy()**](#vetgetenergy) | **GET** `/v3 /vet /account /energy /{address}` | Get VeChain Account energy (VTHO)
+[**vet Get Transaction()**](#vetgettransaction) | **GET** `/v3 /vet /transaction /{hash}` | Get VeChain Transaction
+[**vet Get Transaction Receipt()**](#vetgettransactionreceipt) | **GET** `/v3 /vet /transaction /{hash} /receipt` | Get VeChain Transaction Receipt
 
+
+## `transferVetBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->transferVetBlockchain(
+    \Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_vet_blockchain** | [**\Tatum\Model\TransferVetBlockchain**](../Model/TransferVetBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send VeChain from account to account
+
+<h4>10 credits per API call.</h4><br/> <p>Send VET from account to account. Fee for the transaction is paid in VTHO.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferVetBlockchain.php"](../../examples/Api/VeChainApi/transferVetBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferVetBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()->transferVetBlockchainKMS(
+    \Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms
+): \Tatum\Model\TransactionHash
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_vet_blockchain_kms** | [**\Tatum\Model\TransferVetBlockchainKMS**](../Model/TransferVetBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+
+### Description
+
+Send VeChain from account to account
+
+TransferVetBlockchainKMS operation
+
+### Example
+
+[✨ View "transferVetBlockchainKMS.php"](../../examples/Api/VeChainApi/transferVetBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetBroadcast()`
 
@@ -335,69 +399,5 @@ Get VeChain Transaction Receipt
 ### Example
 
 [✨ View "vetGetTransactionReceipt.php"](../../examples/Api/VeChainApi/vetGetTransactionReceipt.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `vetTransactionTransferVetBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetTransactionTransferVetBlockchain(
-    \Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_vet_blockchain** | [**\Tatum\Model\TransferVetBlockchain**](../Model/TransferVetBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send VeChain from account to account
-
-<h4>10 credits per API call.</h4><br/> <p>Send VET from account to account. Fee for the transaction is paid in VTHO.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "vetTransactionTransferVetBlockchain.php"](../../examples/Api/VeChainApi/vetTransactionTransferVetBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `vetTransactionTransferVetBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetTransactionTransferVetBlockchainKMS(
-    \Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms
-): \Tatum\Model\TransactionHash
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_vet_blockchain_kms** | [**\Tatum\Model\TransferVetBlockchainKMS**](../Model/TransferVetBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
-
-### Description
-
-Send VeChain from account to account
-
-TransferVetBlockchainKMS operation
-
-### Example
-
-[✨ View "vetTransactionTransferVetBlockchainKMS.php"](../../examples/Api/VeChainApi/vetTransactionTransferVetBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

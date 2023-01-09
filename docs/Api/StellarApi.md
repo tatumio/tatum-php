@@ -5,22 +5,214 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xlmBroadcast()**](#xlmbroadcast) | **POST** `/v3/xlm/broadcast` | Broadcast signed XLM transaction
-[**xlmGetAccountInfo()**](#xlmgetaccountinfo) | **GET** `/v3/xlm/account/{account}` | Get XLM Account info
-[**xlmGetAccountTx()**](#xlmgetaccounttx) | **GET** `/v3/xlm/account/tx/{account}` | Get XLM Account transactions
-[**xlmGetFee()**](#xlmgetfee) | **GET** `/v3/xlm/fee` | Get actual XLM fee
-[**xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) | **GET** `/v3/xlm/info` | Get XLM Blockchain Information
-[**xlmGetLedger()**](#xlmgetledger) | **GET** `/v3/xlm/ledger/{sequence}` | Get XLM Blockchain Ledger by sequence
-[**xlmGetLedgerTx()**](#xlmgetledgertx) | **GET** `/v3/xlm/ledger/{sequence}/transaction` | Get XLM Blockchain Transactions in Ledger
-[**xlmGetTransaction()**](#xlmgettransaction) | **GET** `/v3/xlm/transaction/{hash}` | Get XLM Transaction by hash
-[**xlmTransactionTransferXlmBlockchain()**](#xlmtransactiontransferxlmblockchain) | **POST** `/v3/xlm/transaction` | Send XLM from address to address
-[**xlmTransactionTransferXlmBlockchainAsset()**](#xlmtransactiontransferxlmblockchainasset) | **POST** `/v3/xlm/transaction` | Send XLM from address to address
-[**xlmTransactionTransferXlmBlockchainKMS()**](#xlmtransactiontransferxlmblockchainkms) | **POST** `/v3/xlm/transaction` | Send XLM from address to address
-[**xlmTransactionTransferXlmBlockchainKMSAsset()**](#xlmtransactiontransferxlmblockchainkmsasset) | **POST** `/v3/xlm/transaction` | Send XLM from address to address
-[**xlmTrustLineXlmBlockchain()**](#xlmtrustlinexlmblockchain) | **POST** `/v3/xlm/trust` | Create / Update / Delete XLM trust line
-[**xlmTrustLineXlmBlockchainKMS()**](#xlmtrustlinexlmblockchainkms) | **POST** `/v3/xlm/trust` | Create / Update / Delete XLM trust line
-[**xlmWallet()**](#xlmwallet) | **GET** `/v3/xlm/account` | Generate XLM account
+[**transfer Xlm Blockchain()**](#transferxlmblockchain) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
+[**transfer Xlm Blockchain Asset()**](#transferxlmblockchainasset) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
+[**transfer Xlm Blockchain KMS()**](#transferxlmblockchainkms) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
+[**transfer Xlm Blockchain KMSAsset()**](#transferxlmblockchainkmsasset) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
+[**trust Line Xlm Blockchain()**](#trustlinexlmblockchain) | **POST** `/v3 /xlm /trust` | Create / Update / Delete XLM trust line
+[**trust Line Xlm Blockchain KMS()**](#trustlinexlmblockchainkms) | **POST** `/v3 /xlm /trust` | Create / Update / Delete XLM trust line
+[**xlm Broadcast()**](#xlmbroadcast) | **POST** `/v3 /xlm /broadcast` | Broadcast signed XLM transaction
+[**xlm Get Account Info()**](#xlmgetaccountinfo) | **GET** `/v3 /xlm /account /{account}` | Get XLM Account info
+[**xlm Get Account Tx()**](#xlmgetaccounttx) | **GET** `/v3 /xlm /account /tx /{account}` | Get XLM Account transactions
+[**xlm Get Fee()**](#xlmgetfee) | **GET** `/v3 /xlm /fee` | Get actual XLM fee
+[**xlm Get Last Closed Ledger()**](#xlmgetlastclosedledger) | **GET** `/v3 /xlm /info` | Get XLM Blockchain Information
+[**xlm Get Ledger()**](#xlmgetledger) | **GET** `/v3 /xlm /ledger /{sequence}` | Get XLM Blockchain Ledger by sequence
+[**xlm Get Ledger Tx()**](#xlmgetledgertx) | **GET** `/v3 /xlm /ledger /{sequence} /transaction` | Get XLM Blockchain Transactions in Ledger
+[**xlm Get Transaction()**](#xlmgettransaction) | **GET** `/v3 /xlm /transaction /{hash}` | Get XLM Transaction by hash
+[**xlm Wallet()**](#xlmwallet) | **GET** `/v3 /xlm /account` | Generate XLM account
 
+
+## `transferXlmBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchain(
+    \Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm_blockchain** | [**\Tatum\Model\TransferXlmBlockchain**](../Model/TransferXlmBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XLM from address to address
+
+<h4>10 credits per API call.</h4><br/> <p>Send XLM from account to account. It is possbile to send native XLM asset, or any other custom asset present on the network.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferXlmBlockchain.php"](../../examples/Api/StellarApi/transferXlmBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXlmBlockchainAsset()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainAsset(
+    \Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm_blockchain_asset** | [**\Tatum\Model\TransferXlmBlockchainAsset**](../Model/TransferXlmBlockchainAsset.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XLM from address to address
+
+TransferXlmBlockchainAsset operation
+
+### Example
+
+[✨ View "transferXlmBlockchainAsset.php"](../../examples/Api/StellarApi/transferXlmBlockchainAsset.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXlmBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMS(
+    \Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm_blockchain_kms** | [**\Tatum\Model\TransferXlmBlockchainKMS**](../Model/TransferXlmBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XLM from address to address
+
+TransferXlmBlockchainKMS operation
+
+### Example
+
+[✨ View "transferXlmBlockchainKMS.php"](../../examples/Api/StellarApi/transferXlmBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXlmBlockchainKMSAsset()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMSAsset(
+    \Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm_blockchain_kms_asset** | [**\Tatum\Model\TransferXlmBlockchainKMSAsset**](../Model/TransferXlmBlockchainKMSAsset.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XLM from address to address
+
+TransferXlmBlockchainKMSAsset operation
+
+### Example
+
+[✨ View "transferXlmBlockchainKMSAsset.php"](../../examples/Api/StellarApi/transferXlmBlockchainKMSAsset.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `trustLineXlmBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchain(
+    \Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xlm_blockchain** | [**\Tatum\Model\TrustLineXlmBlockchain**](../Model/TrustLineXlmBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Create / Update / Delete XLM trust line
+
+<h4>10 credits per API call.</h4><br/><p> <p>Create / Update / Delete XLM trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "trustLineXlmBlockchain.php"](../../examples/Api/StellarApi/trustLineXlmBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `trustLineXlmBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchainKMS(
+    \Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xlm_blockchain_kms** | [**\Tatum\Model\TrustLineXlmBlockchainKMS**](../Model/TrustLineXlmBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Create / Update / Delete XLM trust line
+
+TrustLineXlmBlockchainKMS operation
+
+### Example
+
+[✨ View "trustLineXlmBlockchainKMS.php"](../../examples/Api/StellarApi/trustLineXlmBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmBroadcast()`
 
@@ -271,198 +463,6 @@ Get XLM Transaction by hash
 ### Example
 
 [✨ View "xlmGetTransaction.php"](../../examples/Api/StellarApi/xlmGetTransaction.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xlmTransactionTransferXlmBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchain(
-    \Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain** | [**\Tatum\Model\TransferXlmBlockchain**](../Model/TransferXlmBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XLM from address to address
-
-<h4>10 credits per API call.</h4><br/> <p>Send XLM from account to account. It is possbile to send native XLM asset, or any other custom asset present on the network.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "xlmTransactionTransferXlmBlockchain.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xlmTransactionTransferXlmBlockchainAsset()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchainAsset(
-    \Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain_asset** | [**\Tatum\Model\TransferXlmBlockchainAsset**](../Model/TransferXlmBlockchainAsset.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XLM from address to address
-
-TransferXlmBlockchainAsset operation
-
-### Example
-
-[✨ View "xlmTransactionTransferXlmBlockchainAsset.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchainAsset.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xlmTransactionTransferXlmBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchainKMS(
-    \Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain_kms** | [**\Tatum\Model\TransferXlmBlockchainKMS**](../Model/TransferXlmBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XLM from address to address
-
-TransferXlmBlockchainKMS operation
-
-### Example
-
-[✨ View "xlmTransactionTransferXlmBlockchainKMS.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xlmTransactionTransferXlmBlockchainKMSAsset()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTransactionTransferXlmBlockchainKMSAsset(
-    \Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain_kms_asset** | [**\Tatum\Model\TransferXlmBlockchainKMSAsset**](../Model/TransferXlmBlockchainKMSAsset.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XLM from address to address
-
-TransferXlmBlockchainKMSAsset operation
-
-### Example
-
-[✨ View "xlmTransactionTransferXlmBlockchainKMSAsset.php"](../../examples/Api/StellarApi/xlmTransactionTransferXlmBlockchainKMSAsset.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xlmTrustLineXlmBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineXlmBlockchain(
-    \Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$trust_line_xlm_blockchain** | [**\Tatum\Model\TrustLineXlmBlockchain**](../Model/TrustLineXlmBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Create / Update / Delete XLM trust line
-
-<h4>10 credits per API call.</h4><br/><p> <p>Create / Update / Delete XLM trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "xlmTrustLineXlmBlockchain.php"](../../examples/Api/StellarApi/xlmTrustLineXlmBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xlmTrustLineXlmBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmTrustLineXlmBlockchainKMS(
-    \Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$trust_line_xlm_blockchain_kms** | [**\Tatum\Model\TrustLineXlmBlockchainKMS**](../Model/TrustLineXlmBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Create / Update / Delete XLM trust line
-
-TrustLineXlmBlockchainKMS operation
-
-### Example
-
-[✨ View "xlmTrustLineXlmBlockchainKMS.php"](../../examples/Api/StellarApi/xlmTrustLineXlmBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

@@ -23,52 +23,6 @@ use Tatum\Sdk\Serializer as S;
  */
 class BitcoinCashApi extends AbstractApi {
     /**
-     * Send BCH to Bitcoin Cash addresses
-     *
-     * @param \Tatum\Model\BchTransaction $bch_transaction 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function bcashTransactionBchTransaction(\Tatum\Model\BchTransaction $bch_transaction) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send BCH to Bitcoin Cash addresses
-     *
-     * @param \Tatum\Model\BchTransactionKMS $bch_transaction_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function bcashTransactionBchTransactionKMS(\Tatum\Model\BchTransactionKMS $bch_transaction_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Broadcast signed Bitcoin Cash transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -301,6 +255,52 @@ class BitcoinCashApi extends AbstractApi {
                 $this->_caller->config(), "POST", "/v3/bcash/node", [], $rHeaders, [], $bch_rpc_driver_request
             ), 
             "object"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BCH to Bitcoin Cash addresses
+     *
+     * @param \Tatum\Model\BchTransaction $bch_transaction 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function bchTransaction(\Tatum\Model\BchTransaction $bch_transaction) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send BCH to Bitcoin Cash addresses
+     *
+     * @param \Tatum\Model\BchTransactionKMS $bch_transaction_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function bchTransactionKMS(\Tatum\Model\BchTransactionKMS $bch_transaction_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

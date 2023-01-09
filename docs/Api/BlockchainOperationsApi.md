@@ -5,139 +5,139 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bnbAssetOffchain()**](#bnbassetoffchain) | **POST** `/v3/offchain/bnb/asset` | Create a BNB-based asset
-[**offchainAdaTransferAdaKMS()**](#offchainadatransferadakms) | **POST** `/v3/offchain/ada/transfer` | Send ADA from a virtual account to the blockchain
-[**offchainAdaTransferAdaKeyPair()**](#offchainadatransferadakeypair) | **POST** `/v3/offchain/ada/transfer` | Send ADA from a virtual account to the blockchain
-[**offchainAdaTransferAdaMnemonic()**](#offchainadatransferadamnemonic) | **POST** `/v3/offchain/ada/transfer` | Send ADA from a virtual account to the blockchain
-[**offchainAlgoErc20DeployAlgoErc20OffchainKMSAddress()**](#offchainalgoerc20deployalgoerc20offchainkmsaddress) | **POST** `/v3/offchain/algo/erc20/deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress()**](#offchainalgoerc20deployalgoerc20offchainmnemonicaddress) | **POST** `/v3/offchain/algo/erc20/deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainAlgoErc20DeployAlgoErc20OffchainPKAddress()**](#offchainalgoerc20deployalgoerc20offchainpkaddress) | **POST** `/v3/offchain/algo/erc20/deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainAlgorandTransferAlgo()**](#offchainalgorandtransferalgo) | **POST** `/v3/offchain/algorand/transfer` | Send ALGO from a virtual account to the blockchain
-[**offchainAlgorandTransferAlgoErc20()**](#offchainalgorandtransferalgoerc20) | **POST** `/v3/offchain/algorand/transfer` | Send ALGO from a virtual account to the blockchain
-[**offchainAlgorandTransferAlgoKMS()**](#offchainalgorandtransferalgokms) | **POST** `/v3/offchain/algorand/transfer` | Send ALGO from a virtual account to the blockchain
-[**offchainBcashTransferBchKMS()**](#offchainbcashtransferbchkms) | **POST** `/v3/offchain/bcash/transfer` | Send BCH from a virtual account to the blockchain
-[**offchainBcashTransferBchKeyPair()**](#offchainbcashtransferbchkeypair) | **POST** `/v3/offchain/bcash/transfer` | Send BCH from a virtual account to the blockchain
-[**offchainBcashTransferBchMnemonic()**](#offchainbcashtransferbchmnemonic) | **POST** `/v3/offchain/bcash/transfer` | Send BCH from a virtual account to the blockchain
-[**offchainBitcoinTransferBtcKMS()**](#offchainbitcointransferbtckms) | **POST** `/v3/offchain/bitcoin/transfer` | Send BTC from a virtual account to the blockchain
-[**offchainBitcoinTransferBtcKeyPair()**](#offchainbitcointransferbtckeypair) | **POST** `/v3/offchain/bitcoin/transfer` | Send BTC from a virtual account to the blockchain
-[**offchainBitcoinTransferBtcMnemonic()**](#offchainbitcointransferbtcmnemonic) | **POST** `/v3/offchain/bitcoin/transfer` | Send BTC from a virtual account to the blockchain
-[**offchainBnbTransferBnb()**](#offchainbnbtransferbnb) | **POST** `/v3/offchain/bnb/transfer` | Send BNB from a virtual account to the blockchain
-[**offchainBnbTransferBnbKMS()**](#offchainbnbtransferbnbkms) | **POST** `/v3/offchain/bnb/transfer` | Send BNB from a virtual account to the blockchain
-[**offchainBscBep20DeployErc20OffchainKMSAddress()**](#offchainbscbep20deployerc20offchainkmsaddress) | **POST** `/v3/offchain/bsc/bep20/deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**offchainBscBep20DeployErc20OffchainKMSXpub()**](#offchainbscbep20deployerc20offchainkmsxpub) | **POST** `/v3/offchain/bsc/bep20/deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**offchainBscBep20DeployErc20OffchainMnemXpub()**](#offchainbscbep20deployerc20offchainmnemxpub) | **POST** `/v3/offchain/bsc/bep20/deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**offchainBscBep20DeployErc20OffchainMnemonicAddress()**](#offchainbscbep20deployerc20offchainmnemonicaddress) | **POST** `/v3/offchain/bsc/bep20/deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**offchainBscBep20DeployErc20OffchainPKAddress()**](#offchainbscbep20deployerc20offchainpkaddress) | **POST** `/v3/offchain/bsc/bep20/deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**offchainBscBep20DeployErc20OffchainPKXpub()**](#offchainbscbep20deployerc20offchainpkxpub) | **POST** `/v3/offchain/bsc/bep20/deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**offchainBscBep20Erc20()**](#offchainbscbep20erc20) | **POST** `/v3/offchain/bsc/bep20` | Register a new BNB Smart Chain BEP-20 token in the virtual account
-[**offchainBscBep20Erc20Address()**](#offchainbscbep20erc20address) | **POST** `/v3/offchain/bsc/bep20` | Register a new BNB Smart Chain BEP-20 token in the virtual account
-[**offchainBscTransferBsc()**](#offchainbsctransferbsc) | **POST** `/v3/offchain/bsc/transfer` | Send BSC from a virtual account to the blockchain
-[**offchainBscTransferBscKMS()**](#offchainbsctransferbsckms) | **POST** `/v3/offchain/bsc/transfer` | Send BSC from a virtual account to the blockchain
-[**offchainBscTransferBscMnemonic()**](#offchainbsctransferbscmnemonic) | **POST** `/v3/offchain/bsc/transfer` | Send BSC from a virtual account to the blockchain
-[**offchainCeloErc20()**](#offchainceloerc20) | **POST** `/v3/offchain/celo/erc20` | Register a new Celo ERC-20-equivalent token in the virtual account
-[**offchainCeloErc20Address()**](#offchainceloerc20address) | **POST** `/v3/offchain/celo/erc20` | Register a new Celo ERC-20-equivalent token in the virtual account
-[**offchainCeloErc20DeployCeloErc20OffchainKMSAddress()**](#offchainceloerc20deployceloerc20offchainkmsaddress) | **POST** `/v3/offchain/celo/erc20/deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainCeloErc20DeployCeloErc20OffchainKMSXpub()**](#offchainceloerc20deployceloerc20offchainkmsxpub) | **POST** `/v3/offchain/celo/erc20/deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainCeloErc20DeployCeloErc20OffchainMnemXpub()**](#offchainceloerc20deployceloerc20offchainmnemxpub) | **POST** `/v3/offchain/celo/erc20/deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainCeloErc20DeployCeloErc20OffchainMnemonicAddress()**](#offchainceloerc20deployceloerc20offchainmnemonicaddress) | **POST** `/v3/offchain/celo/erc20/deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainCeloErc20DeployCeloErc20OffchainPKAddress()**](#offchainceloerc20deployceloerc20offchainpkaddress) | **POST** `/v3/offchain/celo/erc20/deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainCeloErc20DeployCeloErc20OffchainPKXpub()**](#offchainceloerc20deployceloerc20offchainpkxpub) | **POST** `/v3/offchain/celo/erc20/deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainCeloTransferCelo()**](#offchaincelotransfercelo) | **POST** `/v3/offchain/celo/transfer` | Send CELO from a virtual account to the blockchain
-[**offchainCeloTransferCeloKMS()**](#offchaincelotransfercelokms) | **POST** `/v3/offchain/celo/transfer` | Send CELO from a virtual account to the blockchain
-[**offchainCeloTransferCeloMnemonic()**](#offchaincelotransfercelomnemonic) | **POST** `/v3/offchain/celo/transfer` | Send CELO from a virtual account to the blockchain
-[**offchainDogecoinTransferDogeKMS()**](#offchaindogecointransferdogekms) | **POST** `/v3/offchain/dogecoin/transfer` | Send DOGE from a virtual account to the blockchain
-[**offchainDogecoinTransferDogeKeyPair()**](#offchaindogecointransferdogekeypair) | **POST** `/v3/offchain/dogecoin/transfer` | Send DOGE from a virtual account to the blockchain
-[**offchainDogecoinTransferDogeMnemonic()**](#offchaindogecointransferdogemnemonic) | **POST** `/v3/offchain/dogecoin/transfer` | Send DOGE from a virtual account to the blockchain
-[**offchainEgldTransferEth()**](#offchainegldtransfereth) | **POST** `/v3/offchain/egld/transfer` | Send EGLD from a virtual account to the blockchain
-[**offchainEgldTransferEthKMS()**](#offchainegldtransferethkms) | **POST** `/v3/offchain/egld/transfer` | Send EGLD from a virtual account to the blockchain
-[**offchainEgldTransferEthMnemonic()**](#offchainegldtransferethmnemonic) | **POST** `/v3/offchain/egld/transfer` | Send EGLD from a virtual account to the blockchain
-[**offchainEthereumErc20()**](#offchainethereumerc20) | **POST** `/v3/offchain/ethereum/erc20` | Register a new Ethereum ERC-20 token in the virtual account
-[**offchainEthereumErc20Address()**](#offchainethereumerc20address) | **POST** `/v3/offchain/ethereum/erc20` | Register a new Ethereum ERC-20 token in the virtual account
-[**offchainEthereumErc20DeployErc20OffchainKMSAddress()**](#offchainethereumerc20deployerc20offchainkmsaddress) | **POST** `/v3/offchain/ethereum/erc20/deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**offchainEthereumErc20DeployErc20OffchainKMSXpub()**](#offchainethereumerc20deployerc20offchainkmsxpub) | **POST** `/v3/offchain/ethereum/erc20/deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**offchainEthereumErc20DeployErc20OffchainMnemXpub()**](#offchainethereumerc20deployerc20offchainmnemxpub) | **POST** `/v3/offchain/ethereum/erc20/deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**offchainEthereumErc20DeployErc20OffchainMnemonicAddress()**](#offchainethereumerc20deployerc20offchainmnemonicaddress) | **POST** `/v3/offchain/ethereum/erc20/deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**offchainEthereumErc20DeployErc20OffchainPKAddress()**](#offchainethereumerc20deployerc20offchainpkaddress) | **POST** `/v3/offchain/ethereum/erc20/deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**offchainEthereumErc20DeployErc20OffchainPKXpub()**](#offchainethereumerc20deployerc20offchainpkxpub) | **POST** `/v3/offchain/ethereum/erc20/deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**offchainEthereumErc20TransferErc20()**](#offchainethereumerc20transfererc20) | **POST** `/v3/offchain/ethereum/erc20/transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**offchainEthereumErc20TransferErc20KMS()**](#offchainethereumerc20transfererc20kms) | **POST** `/v3/offchain/ethereum/erc20/transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**offchainEthereumErc20TransferErc20Mnemonic()**](#offchainethereumerc20transfererc20mnemonic) | **POST** `/v3/offchain/ethereum/erc20/transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**offchainEthereumTransferEth()**](#offchainethereumtransfereth) | **POST** `/v3/offchain/ethereum/transfer` | Send ETH from a virtual account to the blockchain
-[**offchainEthereumTransferEthKMS()**](#offchainethereumtransferethkms) | **POST** `/v3/offchain/ethereum/transfer` | Send ETH from a virtual account to the blockchain
-[**offchainEthereumTransferEthMnemonic()**](#offchainethereumtransferethmnemonic) | **POST** `/v3/offchain/ethereum/transfer` | Send ETH from a virtual account to the blockchain
-[**offchainFlowTransferFlowKMS()**](#offchainflowtransferflowkms) | **POST** `/v3/offchain/flow/transfer` | Send FLOW from a virtual account to the blockchain
-[**offchainFlowTransferFlowMnemonic()**](#offchainflowtransferflowmnemonic) | **POST** `/v3/offchain/flow/transfer` | Send FLOW from a virtual account to the blockchain
-[**offchainFlowTransferFlowPK()**](#offchainflowtransferflowpk) | **POST** `/v3/offchain/flow/transfer` | Send FLOW from a virtual account to the blockchain
-[**offchainKcsErc20DeployKCSErc20OffchainKMSAddress()**](#offchainkcserc20deploykcserc20offchainkmsaddress) | **POST** `/v3/offchain/kcs/erc20/deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKcsErc20DeployKCSErc20OffchainKMSXpub()**](#offchainkcserc20deploykcserc20offchainkmsxpub) | **POST** `/v3/offchain/kcs/erc20/deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKcsErc20DeployKCSErc20OffchainMnemXpub()**](#offchainkcserc20deploykcserc20offchainmnemxpub) | **POST** `/v3/offchain/kcs/erc20/deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKcsErc20DeployKCSErc20OffchainMnemonicAddress()**](#offchainkcserc20deploykcserc20offchainmnemonicaddress) | **POST** `/v3/offchain/kcs/erc20/deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKcsErc20DeployKCSErc20OffchainPKAddress()**](#offchainkcserc20deploykcserc20offchainpkaddress) | **POST** `/v3/offchain/kcs/erc20/deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKcsErc20DeployKCSErc20OffchainPKXpub()**](#offchainkcserc20deploykcserc20offchainpkxpub) | **POST** `/v3/offchain/kcs/erc20/deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKcsTransferKCS()**](#offchainkcstransferkcs) | **POST** `/v3/offchain/kcs/transfer` | Send KCS from a virtual account to the blockchain
-[**offchainKcsTransferKCSKMS()**](#offchainkcstransferkcskms) | **POST** `/v3/offchain/kcs/transfer` | Send KCS from a virtual account to the blockchain
-[**offchainKcsTransferKCSMnemonic()**](#offchainkcstransferkcsmnemonic) | **POST** `/v3/offchain/kcs/transfer` | Send KCS from a virtual account to the blockchain
-[**offchainKlaytnErc20DeployErc20OffchainKMSAddress()**](#offchainklaytnerc20deployerc20offchainkmsaddress) | **POST** `/v3/offchain/klaytn/erc20/deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKlaytnErc20DeployErc20OffchainKMSXpub()**](#offchainklaytnerc20deployerc20offchainkmsxpub) | **POST** `/v3/offchain/klaytn/erc20/deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKlaytnErc20DeployErc20OffchainMnemXpub()**](#offchainklaytnerc20deployerc20offchainmnemxpub) | **POST** `/v3/offchain/klaytn/erc20/deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKlaytnErc20DeployErc20OffchainMnemonicAddress()**](#offchainklaytnerc20deployerc20offchainmnemonicaddress) | **POST** `/v3/offchain/klaytn/erc20/deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKlaytnErc20DeployErc20OffchainPKAddress()**](#offchainklaytnerc20deployerc20offchainpkaddress) | **POST** `/v3/offchain/klaytn/erc20/deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKlaytnErc20DeployErc20OffchainPKXpub()**](#offchainklaytnerc20deployerc20offchainpkxpub) | **POST** `/v3/offchain/klaytn/erc20/deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainKlaytnTransferEth()**](#offchainklaytntransfereth) | **POST** `/v3/offchain/klaytn/transfer` | Send KLAY from a virtual account to the blockchain
-[**offchainKlaytnTransferEthKMS()**](#offchainklaytntransferethkms) | **POST** `/v3/offchain/klaytn/transfer` | Send KLAY from a virtual account to the blockchain
-[**offchainKlaytnTransferEthMnemonic()**](#offchainklaytntransferethmnemonic) | **POST** `/v3/offchain/klaytn/transfer` | Send KLAY from a virtual account to the blockchain
-[**offchainLitecoinTransferLtcKMS()**](#offchainlitecointransferltckms) | **POST** `/v3/offchain/litecoin/transfer` | Send LTC from a virtual account to the blockchain
-[**offchainLitecoinTransferLtcKeyPair()**](#offchainlitecointransferltckeypair) | **POST** `/v3/offchain/litecoin/transfer` | Send LTC from a virtual account to the blockchain
-[**offchainLitecoinTransferLtcMnemonic()**](#offchainlitecointransferltcmnemonic) | **POST** `/v3/offchain/litecoin/transfer` | Send LTC from a virtual account to the blockchain
-[**offchainOneHrm20DeployErc20OffchainKMSAddress()**](#offchainonehrm20deployerc20offchainkmsaddress) | **POST** `/v3/offchain/one/hrm20/deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**offchainOneHrm20DeployErc20OffchainKMSXpub()**](#offchainonehrm20deployerc20offchainkmsxpub) | **POST** `/v3/offchain/one/hrm20/deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**offchainOneHrm20DeployErc20OffchainMnemXpub()**](#offchainonehrm20deployerc20offchainmnemxpub) | **POST** `/v3/offchain/one/hrm20/deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**offchainOneHrm20DeployErc20OffchainMnemonicAddress()**](#offchainonehrm20deployerc20offchainmnemonicaddress) | **POST** `/v3/offchain/one/hrm20/deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**offchainOneHrm20DeployErc20OffchainPKAddress()**](#offchainonehrm20deployerc20offchainpkaddress) | **POST** `/v3/offchain/one/hrm20/deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**offchainOneHrm20DeployErc20OffchainPKXpub()**](#offchainonehrm20deployerc20offchainpkxpub) | **POST** `/v3/offchain/one/hrm20/deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**offchainOneHrm20Erc20()**](#offchainonehrm20erc20) | **POST** `/v3/offchain/one/hrm20` | Register a new Harmony HRM-20 token in the virtual account
-[**offchainOneHrm20Erc20Address()**](#offchainonehrm20erc20address) | **POST** `/v3/offchain/one/hrm20` | Register a new Harmony HRM-20 token in the virtual account
-[**offchainOneTransferEth()**](#offchainonetransfereth) | **POST** `/v3/offchain/one/transfer` | Send ONE from a virtual account to the blockchain
-[**offchainOneTransferEthKMS()**](#offchainonetransferethkms) | **POST** `/v3/offchain/one/transfer` | Send ONE from a virtual account to the blockchain
-[**offchainOneTransferEthMnemonic()**](#offchainonetransferethmnemonic) | **POST** `/v3/offchain/one/transfer` | Send ONE from a virtual account to the blockchain
-[**offchainPolygonTransferEth()**](#offchainpolygontransfereth) | **POST** `/v3/offchain/polygon/transfer` | Send MATIC from a virtual account to the blockchain
-[**offchainPolygonTransferEthKMS()**](#offchainpolygontransferethkms) | **POST** `/v3/offchain/polygon/transfer` | Send MATIC from a virtual account to the blockchain
-[**offchainPolygonTransferEthMnemonic()**](#offchainpolygontransferethmnemonic) | **POST** `/v3/offchain/polygon/transfer` | Send MATIC from a virtual account to the blockchain
-[**offchainSolanaTransferSol()**](#offchainsolanatransfersol) | **POST** `/v3/offchain/solana/transfer` | Send SOL from a virtual account to the blockchain
-[**offchainSolanaTransferSolKMS()**](#offchainsolanatransfersolkms) | **POST** `/v3/offchain/solana/transfer` | Send SOL from a virtual account to the blockchain
-[**offchainTokenchainErc20()**](#offchaintokenchainerc20) | **POST** `/v3/offchain/token/{chain}` | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-[**offchainTokenchainErc20Address()**](#offchaintokenchainerc20address) | **POST** `/v3/offchain/token/{chain}` | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-[**offchainTronTransferTron()**](#offchaintrontransfertron) | **POST** `/v3/offchain/tron/transfer` | Send TRON from a virtual account to the blockchain
-[**offchainTronTransferTronKMS()**](#offchaintrontransfertronkms) | **POST** `/v3/offchain/tron/transfer` | Send TRON from a virtual account to the blockchain
-[**offchainTronTransferTronMnemonic()**](#offchaintrontransfertronmnemonic) | **POST** `/v3/offchain/tron/transfer` | Send TRON from a virtual account to the blockchain
-[**offchainTronTrcAddress()**](#offchaintrontrcaddress) | **POST** `/v3/offchain/tron/trc` | Register a new TRON TRC-10 or TRC-20 token in the virtual account
-[**offchainTronTrcDeployTrcOffchainKMSAddress()**](#offchaintrontrcdeploytrcoffchainkmsaddress) | **POST** `/v3/offchain/tron/trc/deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**offchainTronTrcDeployTrcOffchainKMSXpub()**](#offchaintrontrcdeploytrcoffchainkmsxpub) | **POST** `/v3/offchain/tron/trc/deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**offchainTronTrcDeployTrcOffchainMnemXpub()**](#offchaintrontrcdeploytrcoffchainmnemxpub) | **POST** `/v3/offchain/tron/trc/deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**offchainTronTrcDeployTrcOffchainMnemonicAddress()**](#offchaintrontrcdeploytrcoffchainmnemonicaddress) | **POST** `/v3/offchain/tron/trc/deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**offchainTronTrcDeployTrcOffchainPKAddress()**](#offchaintrontrcdeploytrcoffchainpkaddress) | **POST** `/v3/offchain/tron/trc/deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**offchainTronTrcDeployTrcOffchainPKXpub()**](#offchaintrontrcdeploytrcoffchainpkxpub) | **POST** `/v3/offchain/tron/trc/deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**offchainTronTrcXpub()**](#offchaintrontrcxpub) | **POST** `/v3/offchain/tron/trc` | Register a new TRON TRC-10 or TRC-20 token in the virtual account
-[**offchainXdcErc20()**](#offchainxdcerc20) | **POST** `/v3/offchain/xdc/erc20` | Register a new XinFin ERC-20-equivalent token in the virtual account
-[**offchainXdcErc20Address()**](#offchainxdcerc20address) | **POST** `/v3/offchain/xdc/erc20` | Register a new XinFin ERC-20-equivalent token in the virtual account
-[**offchainXdcErc20DeployErc20OffchainKMSAddress()**](#offchainxdcerc20deployerc20offchainkmsaddress) | **POST** `/v3/offchain/xdc/erc20/deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainXdcErc20DeployErc20OffchainKMSXpub()**](#offchainxdcerc20deployerc20offchainkmsxpub) | **POST** `/v3/offchain/xdc/erc20/deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainXdcErc20DeployErc20OffchainMnemXpub()**](#offchainxdcerc20deployerc20offchainmnemxpub) | **POST** `/v3/offchain/xdc/erc20/deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainXdcErc20DeployErc20OffchainMnemonicAddress()**](#offchainxdcerc20deployerc20offchainmnemonicaddress) | **POST** `/v3/offchain/xdc/erc20/deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainXdcErc20DeployErc20OffchainPKAddress()**](#offchainxdcerc20deployerc20offchainpkaddress) | **POST** `/v3/offchain/xdc/erc20/deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainXdcErc20DeployErc20OffchainPKXpub()**](#offchainxdcerc20deployerc20offchainpkxpub) | **POST** `/v3/offchain/xdc/erc20/deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**offchainXdcTransferEth()**](#offchainxdctransfereth) | **POST** `/v3/offchain/xdc/transfer` | Send XDC from a virtual account to the blockchain
-[**offchainXdcTransferEthKMS()**](#offchainxdctransferethkms) | **POST** `/v3/offchain/xdc/transfer` | Send XDC from a virtual account to the blockchain
-[**offchainXdcTransferEthMnemonic()**](#offchainxdctransferethmnemonic) | **POST** `/v3/offchain/xdc/transfer` | Send XDC from a virtual account to the blockchain
-[**offchainXlmTransferXlm()**](#offchainxlmtransferxlm) | **POST** `/v3/offchain/xlm/transfer` | Send XLM from a virtual account to the blockchain
-[**offchainXlmTransferXlmKMS()**](#offchainxlmtransferxlmkms) | **POST** `/v3/offchain/xlm/transfer` | Send XLM from a virtual account to the blockchain
-[**offchainXrpTransferXrp()**](#offchainxrptransferxrp) | **POST** `/v3/offchain/xrp/transfer` | Send XRP from a virtual account to the blockchain
-[**offchainXrpTransferXrpKMS()**](#offchainxrptransferxrpkms) | **POST** `/v3/offchain/xrp/transfer` | Send XRP from a virtual account to the blockchain
-[**storeCeloErc20Address()**](#storeceloerc20address) | **POST** `/v3/offchain/celo/erc20/{name}/{address}` | Set the contract address of a Celo ERC-20-equivalent token
-[**storeTokenAddress()**](#storetokenaddress) | **POST** `/v3/offchain/token/{name}/{address}` | Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
-[**storeTrcAddress()**](#storetrcaddress) | **POST** `/v3/offchain/tron/trc/{name}/{address}` | Set the contract address of a TRC-10 or TRC-20 token
-[**xlmAssetOffchain()**](#xlmassetoffchain) | **POST** `/v3/offchain/xlm/asset` | Create an XLM-based asset
-[**xrpAssetOffchain()**](#xrpassetoffchain) | **POST** `/v3/offchain/xrp/asset` | Create XRP based Asset
+[**bnb Asset Offchain()**](#bnbassetoffchain) | **POST** `/v3 /offchain /bnb /asset` | Create a BNB-based asset
+[**deploy Algo Erc20 Offchain KMSAddress()**](#deployalgoerc20offchainkmsaddress) | **POST** `/v3 /offchain /algo /erc20 /deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Algo Erc20 Offchain Mnemonic Address()**](#deployalgoerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /algo /erc20 /deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Algo Erc20 Offchain PKAddress()**](#deployalgoerc20offchainpkaddress) | **POST** `/v3 /offchain /algo /erc20 /deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Celo Erc20 Offchain KMSAddress()**](#deployceloerc20offchainkmsaddress) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Celo Erc20 Offchain KMSXpub()**](#deployceloerc20offchainkmsxpub) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Celo Erc20 Offchain Mnem Xpub()**](#deployceloerc20offchainmnemxpub) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Celo Erc20 Offchain Mnemonic Address()**](#deployceloerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Celo Erc20 Offchain PKAddress()**](#deployceloerc20offchainpkaddress) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Celo Erc20 Offchain PKXpub()**](#deployceloerc20offchainpkxpub) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Erc20 Offchain KMSAddress()**](#deployerc20offchainkmsaddress) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**deploy Erc20 Offchain KMSXpub()**](#deployerc20offchainkmsxpub) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**deploy Erc20 Offchain Mnem Xpub()**](#deployerc20offchainmnemxpub) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**deploy Erc20 Offchain Mnemonic Address()**](#deployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**deploy Erc20 Offchain PKAddress()**](#deployerc20offchainpkaddress) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**deploy Erc20 Offchain PKXpub()**](#deployerc20offchainpkxpub) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+[**deploy KCSErc20 Offchain KMSAddress()**](#deploykcserc20offchainkmsaddress) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy KCSErc20 Offchain KMSXpub()**](#deploykcserc20offchainkmsxpub) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy KCSErc20 Offchain Mnem Xpub()**](#deploykcserc20offchainmnemxpub) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy KCSErc20 Offchain Mnemonic Address()**](#deploykcserc20offchainmnemonicaddress) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy KCSErc20 Offchain PKAddress()**](#deploykcserc20offchainpkaddress) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy KCSErc20 Offchain PKXpub()**](#deploykcserc20offchainpkxpub) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**deploy Trc Offchain KMSAddress()**](#deploytrcoffchainkmsaddress) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**deploy Trc Offchain KMSXpub()**](#deploytrcoffchainkmsxpub) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**deploy Trc Offchain Mnem Xpub()**](#deploytrcoffchainmnemxpub) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**deploy Trc Offchain Mnemonic Address()**](#deploytrcoffchainmnemonicaddress) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**deploy Trc Offchain PKAddress()**](#deploytrcoffchainpkaddress) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**deploy Trc Offchain PKXpub()**](#deploytrcoffchainpkxpub) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**erc20()**](#erc20) | **POST** `/v3 /offchain /ethereum /erc20` | Register a new Ethereum ERC-20 token in the virtual account
+[**erc20 Address()**](#erc20address) | **POST** `/v3 /offchain /ethereum /erc20` | Register a new Ethereum ERC-20 token in the virtual account
+[**off Bsc Deploy Erc20 Offchain KMSAddress()**](#offbscdeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**off Bsc Deploy Erc20 Offchain KMSXpub()**](#offbscdeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**off Bsc Deploy Erc20 Offchain Mnem Xpub()**](#offbscdeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**off Bsc Deploy Erc20 Offchain Mnemonic Address()**](#offbscdeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**off Bsc Deploy Erc20 Offchain PKAddress()**](#offbscdeployerc20offchainpkaddress) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**off Bsc Deploy Erc20 Offchain PKXpub()**](#offbscdeployerc20offchainpkxpub) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+[**off Bsc Erc20()**](#offbscerc20) | **POST** `/v3 /offchain /bsc /bep20` | Register a new BNB Smart Chain BEP-20 token in the virtual account
+[**off Bsc Erc20 Address()**](#offbscerc20address) | **POST** `/v3 /offchain /bsc /bep20` | Register a new BNB Smart Chain BEP-20 token in the virtual account
+[**off Cel Erc20()**](#offcelerc20) | **POST** `/v3 /offchain /celo /erc20` | Register a new Celo ERC-20-equivalent token in the virtual account
+[**off Cel Erc20 Address()**](#offcelerc20address) | **POST** `/v3 /offchain /celo /erc20` | Register a new Celo ERC-20-equivalent token in the virtual account
+[**off Egl Transfer Eth()**](#offegltransfereth) | **POST** `/v3 /offchain /egld /transfer` | Send EGLD from a virtual account to the blockchain
+[**off Egl Transfer Eth KMS()**](#offegltransferethkms) | **POST** `/v3 /offchain /egld /transfer` | Send EGLD from a virtual account to the blockchain
+[**off Egl Transfer Eth Mnemonic()**](#offegltransferethmnemonic) | **POST** `/v3 /offchain /egld /transfer` | Send EGLD from a virtual account to the blockchain
+[**off Kla Deploy Erc20 Offchain KMSAddress()**](#offkladeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Kla Deploy Erc20 Offchain KMSXpub()**](#offkladeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Kla Deploy Erc20 Offchain Mnem Xpub()**](#offkladeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Kla Deploy Erc20 Offchain Mnemonic Address()**](#offkladeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Kla Deploy Erc20 Offchain PKAddress()**](#offkladeployerc20offchainpkaddress) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Kla Deploy Erc20 Offchain PKXpub()**](#offkladeployerc20offchainpkxpub) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Kla Transfer Eth()**](#offklatransfereth) | **POST** `/v3 /offchain /klaytn /transfer` | Send KLAY from a virtual account to the blockchain
+[**off Kla Transfer Eth KMS()**](#offklatransferethkms) | **POST** `/v3 /offchain /klaytn /transfer` | Send KLAY from a virtual account to the blockchain
+[**off Kla Transfer Eth Mnemonic()**](#offklatransferethmnemonic) | **POST** `/v3 /offchain /klaytn /transfer` | Send KLAY from a virtual account to the blockchain
+[**off One Deploy Erc20 Offchain KMSAddress()**](#offonedeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**off One Deploy Erc20 Offchain KMSXpub()**](#offonedeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**off One Deploy Erc20 Offchain Mnem Xpub()**](#offonedeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**off One Deploy Erc20 Offchain Mnemonic Address()**](#offonedeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**off One Deploy Erc20 Offchain PKAddress()**](#offonedeployerc20offchainpkaddress) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**off One Deploy Erc20 Offchain PKXpub()**](#offonedeployerc20offchainpkxpub) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+[**off One Erc20()**](#offoneerc20) | **POST** `/v3 /offchain /one /hrm20` | Register a new Harmony HRM-20 token in the virtual account
+[**off One Erc20 Address()**](#offoneerc20address) | **POST** `/v3 /offchain /one /hrm20` | Register a new Harmony HRM-20 token in the virtual account
+[**off One Transfer Eth()**](#offonetransfereth) | **POST** `/v3 /offchain /one /transfer` | Send ONE from a virtual account to the blockchain
+[**off One Transfer Eth KMS()**](#offonetransferethkms) | **POST** `/v3 /offchain /one /transfer` | Send ONE from a virtual account to the blockchain
+[**off One Transfer Eth Mnemonic()**](#offonetransferethmnemonic) | **POST** `/v3 /offchain /one /transfer` | Send ONE from a virtual account to the blockchain
+[**off Pol Transfer Eth()**](#offpoltransfereth) | **POST** `/v3 /offchain /polygon /transfer` | Send MATIC from a virtual account to the blockchain
+[**off Pol Transfer Eth KMS()**](#offpoltransferethkms) | **POST** `/v3 /offchain /polygon /transfer` | Send MATIC from a virtual account to the blockchain
+[**off Pol Transfer Eth Mnemonic()**](#offpoltransferethmnemonic) | **POST** `/v3 /offchain /polygon /transfer` | Send MATIC from a virtual account to the blockchain
+[**off Tok Erc20()**](#offtokerc20) | **POST** `/v3 /offchain /token /{chain}` | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+[**off Tok Erc20 Address()**](#offtokerc20address) | **POST** `/v3 /offchain /token /{chain}` | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+[**off Xdc Deploy Erc20 Offchain KMSAddress()**](#offxdcdeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Xdc Deploy Erc20 Offchain KMSXpub()**](#offxdcdeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Xdc Deploy Erc20 Offchain Mnem Xpub()**](#offxdcdeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Xdc Deploy Erc20 Offchain Mnemonic Address()**](#offxdcdeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Xdc Deploy Erc20 Offchain PKAddress()**](#offxdcdeployerc20offchainpkaddress) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Xdc Deploy Erc20 Offchain PKXpub()**](#offxdcdeployerc20offchainpkxpub) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+[**off Xdc Erc20()**](#offxdcerc20) | **POST** `/v3 /offchain /xdc /erc20` | Register a new XinFin ERC-20-equivalent token in the virtual account
+[**off Xdc Erc20 Address()**](#offxdcerc20address) | **POST** `/v3 /offchain /xdc /erc20` | Register a new XinFin ERC-20-equivalent token in the virtual account
+[**off Xdc Transfer Eth()**](#offxdctransfereth) | **POST** `/v3 /offchain /xdc /transfer` | Send XDC from a virtual account to the blockchain
+[**off Xdc Transfer Eth KMS()**](#offxdctransferethkms) | **POST** `/v3 /offchain /xdc /transfer` | Send XDC from a virtual account to the blockchain
+[**off Xdc Transfer Eth Mnemonic()**](#offxdctransferethmnemonic) | **POST** `/v3 /offchain /xdc /transfer` | Send XDC from a virtual account to the blockchain
+[**store Celo Erc20 Address()**](#storeceloerc20address) | **POST** `/v3 /offchain /celo /erc20 /{name} /{address}` | Set the contract address of a Celo ERC-20-equivalent token
+[**store Token Address()**](#storetokenaddress) | **POST** `/v3 /offchain /token /{name} /{address}` | Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
+[**store Trc Address()**](#storetrcaddress) | **POST** `/v3 /offchain /tron /trc /{name} /{address}` | Set the contract address of a TRC-10 or TRC-20 token
+[**transfer Ada KMS()**](#transferadakms) | **POST** `/v3 /offchain /ada /transfer` | Send ADA from a virtual account to the blockchain
+[**transfer Ada Key Pair()**](#transferadakeypair) | **POST** `/v3 /offchain /ada /transfer` | Send ADA from a virtual account to the blockchain
+[**transfer Ada Mnemonic()**](#transferadamnemonic) | **POST** `/v3 /offchain /ada /transfer` | Send ADA from a virtual account to the blockchain
+[**transfer Algo()**](#transferalgo) | **POST** `/v3 /offchain /algorand /transfer` | Send ALGO from a virtual account to the blockchain
+[**transfer Algo Erc20()**](#transferalgoerc20) | **POST** `/v3 /offchain /algorand /transfer` | Send ALGO from a virtual account to the blockchain
+[**transfer Algo KMS()**](#transferalgokms) | **POST** `/v3 /offchain /algorand /transfer` | Send ALGO from a virtual account to the blockchain
+[**transfer Bch KMS()**](#transferbchkms) | **POST** `/v3 /offchain /bcash /transfer` | Send BCH from a virtual account to the blockchain
+[**transfer Bch Key Pair()**](#transferbchkeypair) | **POST** `/v3 /offchain /bcash /transfer` | Send BCH from a virtual account to the blockchain
+[**transfer Bch Mnemonic()**](#transferbchmnemonic) | **POST** `/v3 /offchain /bcash /transfer` | Send BCH from a virtual account to the blockchain
+[**transfer Bnb()**](#transferbnb) | **POST** `/v3 /offchain /bnb /transfer` | Send BNB from a virtual account to the blockchain
+[**transfer Bnb KMS()**](#transferbnbkms) | **POST** `/v3 /offchain /bnb /transfer` | Send BNB from a virtual account to the blockchain
+[**transfer Bsc()**](#transferbsc) | **POST** `/v3 /offchain /bsc /transfer` | Send BSC from a virtual account to the blockchain
+[**transfer Bsc KMS()**](#transferbsckms) | **POST** `/v3 /offchain /bsc /transfer` | Send BSC from a virtual account to the blockchain
+[**transfer Bsc Mnemonic()**](#transferbscmnemonic) | **POST** `/v3 /offchain /bsc /transfer` | Send BSC from a virtual account to the blockchain
+[**transfer Btc KMS()**](#transferbtckms) | **POST** `/v3 /offchain /bitcoin /transfer` | Send BTC from a virtual account to the blockchain
+[**transfer Btc Key Pair()**](#transferbtckeypair) | **POST** `/v3 /offchain /bitcoin /transfer` | Send BTC from a virtual account to the blockchain
+[**transfer Btc Mnemonic()**](#transferbtcmnemonic) | **POST** `/v3 /offchain /bitcoin /transfer` | Send BTC from a virtual account to the blockchain
+[**transfer Celo()**](#transfercelo) | **POST** `/v3 /offchain /celo /transfer` | Send CELO from a virtual account to the blockchain
+[**transfer Celo KMS()**](#transfercelokms) | **POST** `/v3 /offchain /celo /transfer` | Send CELO from a virtual account to the blockchain
+[**transfer Celo Mnemonic()**](#transfercelomnemonic) | **POST** `/v3 /offchain /celo /transfer` | Send CELO from a virtual account to the blockchain
+[**transfer Doge KMS()**](#transferdogekms) | **POST** `/v3 /offchain /dogecoin /transfer` | Send DOGE from a virtual account to the blockchain
+[**transfer Doge Key Pair()**](#transferdogekeypair) | **POST** `/v3 /offchain /dogecoin /transfer` | Send DOGE from a virtual account to the blockchain
+[**transfer Doge Mnemonic()**](#transferdogemnemonic) | **POST** `/v3 /offchain /dogecoin /transfer` | Send DOGE from a virtual account to the blockchain
+[**transfer Erc20()**](#transfererc20) | **POST** `/v3 /offchain /ethereum /erc20 /transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+[**transfer Erc20 KMS()**](#transfererc20kms) | **POST** `/v3 /offchain /ethereum /erc20 /transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+[**transfer Erc20 Mnemonic()**](#transfererc20mnemonic) | **POST** `/v3 /offchain /ethereum /erc20 /transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+[**transfer Eth()**](#transfereth) | **POST** `/v3 /offchain /ethereum /transfer` | Send ETH from a virtual account to the blockchain
+[**transfer Eth KMS()**](#transferethkms) | **POST** `/v3 /offchain /ethereum /transfer` | Send ETH from a virtual account to the blockchain
+[**transfer Eth Mnemonic()**](#transferethmnemonic) | **POST** `/v3 /offchain /ethereum /transfer` | Send ETH from a virtual account to the blockchain
+[**transfer Flow KMS()**](#transferflowkms) | **POST** `/v3 /offchain /flow /transfer` | Send FLOW from a virtual account to the blockchain
+[**transfer Flow Mnemonic()**](#transferflowmnemonic) | **POST** `/v3 /offchain /flow /transfer` | Send FLOW from a virtual account to the blockchain
+[**transfer Flow PK()**](#transferflowpk) | **POST** `/v3 /offchain /flow /transfer` | Send FLOW from a virtual account to the blockchain
+[**transfer KCS()**](#transferkcs) | **POST** `/v3 /offchain /kcs /transfer` | Send KCS from a virtual account to the blockchain
+[**transfer KCSKMS()**](#transferkcskms) | **POST** `/v3 /offchain /kcs /transfer` | Send KCS from a virtual account to the blockchain
+[**transfer KCSMnemonic()**](#transferkcsmnemonic) | **POST** `/v3 /offchain /kcs /transfer` | Send KCS from a virtual account to the blockchain
+[**transfer Ltc KMS()**](#transferltckms) | **POST** `/v3 /offchain /litecoin /transfer` | Send LTC from a virtual account to the blockchain
+[**transfer Ltc Key Pair()**](#transferltckeypair) | **POST** `/v3 /offchain /litecoin /transfer` | Send LTC from a virtual account to the blockchain
+[**transfer Ltc Mnemonic()**](#transferltcmnemonic) | **POST** `/v3 /offchain /litecoin /transfer` | Send LTC from a virtual account to the blockchain
+[**transfer Sol()**](#transfersol) | **POST** `/v3 /offchain /solana /transfer` | Send SOL from a virtual account to the blockchain
+[**transfer Sol KMS()**](#transfersolkms) | **POST** `/v3 /offchain /solana /transfer` | Send SOL from a virtual account to the blockchain
+[**transfer Tron()**](#transfertron) | **POST** `/v3 /offchain /tron /transfer` | Send TRON from a virtual account to the blockchain
+[**transfer Tron KMS()**](#transfertronkms) | **POST** `/v3 /offchain /tron /transfer` | Send TRON from a virtual account to the blockchain
+[**transfer Tron Mnemonic()**](#transfertronmnemonic) | **POST** `/v3 /offchain /tron /transfer` | Send TRON from a virtual account to the blockchain
+[**transfer Xlm()**](#transferxlm) | **POST** `/v3 /offchain /xlm /transfer` | Send XLM from a virtual account to the blockchain
+[**transfer Xlm KMS()**](#transferxlmkms) | **POST** `/v3 /offchain /xlm /transfer` | Send XLM from a virtual account to the blockchain
+[**transfer Xrp()**](#transferxrp) | **POST** `/v3 /offchain /xrp /transfer` | Send XRP from a virtual account to the blockchain
+[**transfer Xrp KMS()**](#transferxrpkms) | **POST** `/v3 /offchain /xrp /transfer` | Send XRP from a virtual account to the blockchain
+[**trc Address()**](#trcaddress) | **POST** `/v3 /offchain /tron /trc` | Register a new TRON TRC-10 or TRC-20 token in the virtual account
+[**trc Xpub()**](#trcxpub) | **POST** `/v3 /offchain /tron /trc` | Register a new TRON TRC-10 or TRC-20 token in the virtual account
+[**xlm Asset Offchain()**](#xlmassetoffchain) | **POST** `/v3 /offchain /xlm /asset` | Create an XLM-based asset
+[**xrp Asset Offchain()**](#xrpassetoffchain) | **POST** `/v3 /offchain /xrp /asset` | Create XRP based Asset
 
 
 ## `bnbAssetOffchain()`
@@ -172,110 +172,14 @@ Create a BNB-based asset
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainAdaTransferAdaKMS()`
+## `deployAlgoErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAdaTransferAdaKMS(
-    \Tatum\Model\TransferAdaKMS $transfer_ada_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_ada_kms** | [**\Tatum\Model\TransferAdaKMS**](../Model/TransferAdaKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send ADA from a virtual account to the blockchain
-
-TransferAdaKMS operation
-
-### Example
-
-[✨ View "offchainAdaTransferAdaKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainAdaTransferAdaKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainAdaTransferAdaKeyPair()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAdaTransferAdaKeyPair(
-    \Tatum\Model\TransferAdaKeyPair $transfer_ada_key_pair
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_ada_key_pair** | [**\Tatum\Model\TransferAdaKeyPair**](../Model/TransferAdaKeyPair.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send ADA from a virtual account to the blockchain
-
-<p><b>Support for Cardano is deprecated.</b></p><br/> <h4>10 credits per API call.</h4><p>Send ADA (Cardano) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If ADA server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainAdaTransferAdaKeyPair.php"](../../examples/Api/BlockchainOperationsApi/offchainAdaTransferAdaKeyPair.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainAdaTransferAdaMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAdaTransferAdaMnemonic(
-    \Tatum\Model\TransferAdaMnemonic $transfer_ada_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_ada_mnemonic** | [**\Tatum\Model\TransferAdaMnemonic**](../Model/TransferAdaMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send ADA from a virtual account to the blockchain
-
-TransferAdaMnemonic operation
-
-### Example
-
-[✨ View "offchainAdaTransferAdaMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainAdaTransferAdaMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainAlgoErc20DeployAlgoErc20OffchainKMSAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAlgoErc20DeployAlgoErc20OffchainKMSAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainKMSAddress(
     \Tatum\Model\DeployAlgoErc20OffchainKMSAddress $deploy_algo_erc20_offchain_kms_address
-): \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -286,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/DeployAlgoErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -296,18 +200,18 @@ DeployAlgoErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainAlgoErc20DeployAlgoErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainAlgoErc20DeployAlgoErc20OffchainKMSAddress.php)
+[✨ View "deployAlgoErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress()`
+## `deployAlgoErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress $deploy_algo_erc20_offchain_mnemonic_address
-): \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -318,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/DeployAlgoErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -328,18 +232,18 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 
 ### Example
 
-[✨ View "offchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress.php)
+[✨ View "deployAlgoErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainAlgoErc20DeployAlgoErc20OffchainPKAddress()`
+## `deployAlgoErc20OffchainPKAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAlgoErc20DeployAlgoErc20OffchainPKAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainPKAddress(
     \Tatum\Model\DeployAlgoErc20OffchainPKAddress $deploy_algo_erc20_offchain_pk_address
-): \Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -350,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/OffchainAlgoErc20DeployAlgoErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/DeployAlgoErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -360,786 +264,18 @@ DeployAlgoErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offchainAlgoErc20DeployAlgoErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainAlgoErc20DeployAlgoErc20OffchainPKAddress.php)
+[✨ View "deployAlgoErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainAlgorandTransferAlgo()`
+## `deployCeloErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAlgorandTransferAlgo(
-    \Tatum\Model\TransferAlgo $transfer_algo
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_algo** | [**\Tatum\Model\TransferAlgo**](../Model/TransferAlgo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send ALGO from a virtual account to the blockchain
-
-<p><b>4 credits per API call</b></p> <p>Send Algos or ERC-20-equivalent Algorand tokens from a virtual account (even from a virtual account without deposit addresses adssigned) to the Algorand blockchain.</p> <p>The recipient has to agree in advance to receive assets because Algorand charges users for storing assets on their addresses, and an Algorand blockchain address by default does not receive assets unless explicitly agreed. Before sending any asset from a virtual account to the blockchain, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the assets</a> to their address.</p> <p>Sending Algorand assets creates an internal Tatum withdrawal request with an ID. If everything works as expected, the withdrawal request is marked as complete and a transaction ID is assigned to it.</p> <ul> <li>If a server connection is unavailable, the withdrawal request is cancelled.</li> <li>If the transfer to the blockchain is successful, but the Tatum infrastructure cannot be accesses, the ID of the blockchain transaction is returned and you have to <a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal" target="_blank">complete the withdrawal request manually</a>. Otherwise, all other withdrawals will be pending.</li> </ul> <p><b>Signing a transaction</b><br/> When sending Algos or ERC-20-equivalent Algorand tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "offchainAlgorandTransferAlgo.php"](../../examples/Api/BlockchainOperationsApi/offchainAlgorandTransferAlgo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainAlgorandTransferAlgoErc20()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAlgorandTransferAlgoErc20(
-    \Tatum\Model\TransferAlgoErc20 $transfer_algo_erc20
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_algo_erc20** | [**\Tatum\Model\TransferAlgoErc20**](../Model/TransferAlgoErc20.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send ALGO from a virtual account to the blockchain
-
-TransferAlgoErc20 operation
-
-### Example
-
-[✨ View "offchainAlgorandTransferAlgoErc20.php"](../../examples/Api/BlockchainOperationsApi/offchainAlgorandTransferAlgoErc20.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainAlgorandTransferAlgoKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainAlgorandTransferAlgoKMS(
-    \Tatum\Model\TransferAlgoKMS $transfer_algo_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_algo_kms** | [**\Tatum\Model\TransferAlgoKMS**](../Model/TransferAlgoKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send ALGO from a virtual account to the blockchain
-
-TransferAlgoKMS operation
-
-### Example
-
-[✨ View "offchainAlgorandTransferAlgoKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainAlgorandTransferAlgoKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBcashTransferBchKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBcashTransferBchKMS(
-    \Tatum\Model\TransferBchKMS $transfer_bch_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bch_kms** | [**\Tatum\Model\TransferBchKMS**](../Model/TransferBchKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BCH from a virtual account to the blockchain
-
-TransferBchKMS operation
-
-### Example
-
-[✨ View "offchainBcashTransferBchKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainBcashTransferBchKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBcashTransferBchKeyPair()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBcashTransferBchKeyPair(
-    \Tatum\Model\TransferBchKeyPair $transfer_bch_key_pair
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bch_key_pair** | [**\Tatum\Model\TransferBchKeyPair**](../Model/TransferBchKeyPair.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BCH from a virtual account to the blockchain
-
-TransferBchKeyPair operation
-
-### Example
-
-[✨ View "offchainBcashTransferBchKeyPair.php"](../../examples/Api/BlockchainOperationsApi/offchainBcashTransferBchKeyPair.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBcashTransferBchMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBcashTransferBchMnemonic(
-    \Tatum\Model\TransferBchMnemonic $transfer_bch_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bch_mnemonic** | [**\Tatum\Model\TransferBchMnemonic**](../Model/TransferBchMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BCH from a virtual account to the blockchain
-
-<h4>10 credits per API call.</h4><br/> <p>Send BCH (Bitcoin Cash) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Bitcoin Cash server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Bitcoin-Cash#operation/BchTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
-
-### Example
-
-[✨ View "offchainBcashTransferBchMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainBcashTransferBchMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBitcoinTransferBtcKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBitcoinTransferBtcKMS(
-    \Tatum\Model\TransferBtcKMS $transfer_btc_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_btc_kms** | [**\Tatum\Model\TransferBtcKMS**](../Model/TransferBtcKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BTC from a virtual account to the blockchain
-
-TransferBtcKMS operation
-
-### Example
-
-[✨ View "offchainBitcoinTransferBtcKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainBitcoinTransferBtcKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBitcoinTransferBtcKeyPair()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBitcoinTransferBtcKeyPair(
-    \Tatum\Model\TransferBtcKeyPair $transfer_btc_key_pair
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_btc_key_pair** | [**\Tatum\Model\TransferBtcKeyPair**](../Model/TransferBtcKeyPair.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BTC from a virtual account to the blockchain
-
-TransferBtcKeyPair operation
-
-### Example
-
-[✨ View "offchainBitcoinTransferBtcKeyPair.php"](../../examples/Api/BlockchainOperationsApi/offchainBitcoinTransferBtcKeyPair.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBitcoinTransferBtcMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBitcoinTransferBtcMnemonic(
-    \Tatum\Model\TransferBtcMnemonic $transfer_btc_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_btc_mnemonic** | [**\Tatum\Model\TransferBtcMnemonic**](../Model/TransferBtcMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BTC from a virtual account to the blockchain
-
-<h4>2 credits per API call.</h4><br/> <p>Send BTC (Bitcoin) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Bitcoin server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Bitcoin#operation/BtcTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> When some of the steps fails, <a href="https://apidoc.tatum.io/tag/Withdrawal#operation/cancelInProgressWithdrawal">Cancel withdrawal</a> operation is used, which cancels withdrawal and creates refund transaction to the sender account.</li> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
-
-### Example
-
-[✨ View "offchainBitcoinTransferBtcMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainBitcoinTransferBtcMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBnbTransferBnb()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBnbTransferBnb(
-    \Tatum\Model\TransferBnb $transfer_bnb
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bnb** | [**\Tatum\Model\TransferBnb**](../Model/TransferBnb.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BNB from a virtual account to the blockchain
-
-<h4>10 credits per API call.</h4><br/><p> <p>Send BNB (BNB Beacon Chain) or BNB assets from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If BNB server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainBnbTransferBnb.php"](../../examples/Api/BlockchainOperationsApi/offchainBnbTransferBnb.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBnbTransferBnbKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBnbTransferBnbKMS(
-    \Tatum\Model\TransferBnbKMS $transfer_bnb_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bnb_kms** | [**\Tatum\Model\TransferBnbKMS**](../Model/TransferBnbKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BNB from a virtual account to the blockchain
-
-TransferBnbKMS operation
-
-### Example
-
-[✨ View "offchainBnbTransferBnbKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainBnbTransferBnbKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20DeployErc20OffchainKMSAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20DeployErc20OffchainKMSAddress(
-    \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainKMSAddress operation
-
-### Example
-
-[✨ View "offchainBscBep20DeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20DeployErc20OffchainKMSAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20DeployErc20OffchainKMSXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20DeployErc20OffchainKMSXpub(
-    \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainKMSXpub operation
-
-### Example
-
-[✨ View "offchainBscBep20DeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20DeployErc20OffchainKMSXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20DeployErc20OffchainMnemXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20DeployErc20OffchainMnemXpub(
-    \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainMnemXpub operation
-
-### Example
-
-[✨ View "offchainBscBep20DeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20DeployErc20OffchainMnemXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20DeployErc20OffchainMnemonicAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20DeployErc20OffchainMnemonicAddress(
-    \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-
-<h4>4 credits per API call.</h4><br/> <p>Deploy a BNB Smart Chain BEP-20 smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new BEP20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> <br/> <br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainBscBep20DeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20DeployErc20OffchainMnemonicAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20DeployErc20OffchainPKAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20DeployErc20OffchainPKAddress(
-    \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainPKAddress operation
-
-### Example
-
-[✨ View "offchainBscBep20DeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20DeployErc20OffchainPKAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20DeployErc20OffchainPKXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20DeployErc20OffchainPKXpub(
-    \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainPKXpub operation
-
-### Example
-
-[✨ View "offchainBscBep20DeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20DeployErc20OffchainPKXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20Erc20()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20Erc20(
-    \Tatum\Model\Erc20 $erc20
-): \Tatum\Model\Erc20Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
-
-### Return type
-
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
-
-### Description
-
-Register a new BNB Smart Chain BEP-20 token in the virtual account
-
-<p><b>This method is deprecated.<br/>Use <a href="#operation/registerErc20Token">this method</a> instead.</b></p><br/> <h4>2 credits per API call.</h4> <p>First step to create new BEP20 token with given supply on BSC blockchain with support of Tatum's private ledger.<br/> <br/> <br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of BEP20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with BEP20 token name as account's currency.<br/> Newly created account is frozen until the specific BEP20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create BEP20 smart contract with Tatum private ledger support: <ol> <li><a href="#operation/registerErc20Token">Register BEP20 token</a> - creates a virtual currency within Tatum</li> <li><a href="#operation/BscDeployErc20Blockchain">Deploy BEP20 smart contract</a> - create new BEP20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store BEP20 smart contract address</a> - link newly created BEP20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for BEP20 Tatum accounts</li> </ol> There is a helper method <a href="#operation/EthDeployErc20">Deploy BSC BEP20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub. </p>
-
-### Example
-
-[✨ View "offchainBscBep20Erc20.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20Erc20.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscBep20Erc20Address()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscBep20Erc20Address(
-    \Tatum\Model\Erc20Address $erc20_address
-): \Tatum\Model\Erc20Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
-
-### Return type
-
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
-
-### Description
-
-Register a new BNB Smart Chain BEP-20 token in the virtual account
-
-Erc20Address operation
-
-### Example
-
-[✨ View "offchainBscBep20Erc20Address.php"](../../examples/Api/BlockchainOperationsApi/offchainBscBep20Erc20Address.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscTransferBsc()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscTransferBsc(
-    \Tatum\Model\TransferBsc $transfer_bsc
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bsc** | [**\Tatum\Model\TransferBsc**](../Model/TransferBsc.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BSC from a virtual account to the blockchain
-
-<h4>4 credits per API call.</h4><br/> <p>Send BSC (BNB Smart Chain) or BEP-20 tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <br/> <br/> <ul> <li>If BSC server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainBscTransferBsc.php"](../../examples/Api/BlockchainOperationsApi/offchainBscTransferBsc.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscTransferBscKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscTransferBscKMS(
-    \Tatum\Model\TransferBscKMS $transfer_bsc_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bsc_kms** | [**\Tatum\Model\TransferBscKMS**](../Model/TransferBscKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BSC from a virtual account to the blockchain
-
-TransferBscKMS operation
-
-### Example
-
-[✨ View "offchainBscTransferBscKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainBscTransferBscKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainBscTransferBscMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainBscTransferBscMnemonic(
-    \Tatum\Model\TransferBscMnemonic $transfer_bsc_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_bsc_mnemonic** | [**\Tatum\Model\TransferBscMnemonic**](../Model/TransferBscMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send BSC from a virtual account to the blockchain
-
-TransferBscMnemonic operation
-
-### Example
-
-[✨ View "offchainBscTransferBscMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainBscTransferBscMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainCeloErc20()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20(
-    \Tatum\Model\Erc20 $erc20
-): \Tatum\Model\Erc20Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
-
-### Return type
-
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
-
-### Description
-
-Register a new Celo ERC-20-equivalent token in the virtual account
-
-<p><b>This method is deprecated.<br/>Use <a href="#operation/registerErc20Token">this method</a> instead.</b></p><br/> <h4>2 credits per API call.</h4> <p>First step to create new ERC-20 token with given supply on Celo blockchain with support of Tatum's private ledger.<br/> <br/> <br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of ERC-20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with ERC-20 token name as account's currency.<br/> Newly created account is frozen until the specific ERC-20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create ERC-20 smart contract with Tatum private ledger support: <ol> <li><a href="#operation/registerErc20Token">Register Celo ERC-20 token</a> - creates a virtual currency within Tatum</li> <li><a href="#operation/CeloDeployErc20">Deploy Celo ERC-20 smart contract</a> - create new ERC-20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store Celo ERC-20 smart contract address</a> - link newly created ERC-20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for ERC-20 Tatum accounts</li> </ol> There is a helper method <a href="#operation/CeloDeployErc20Ledger">Deploy Celo ERC-20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub. </p>
-
-### Example
-
-[✨ View "offchainCeloErc20.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainCeloErc20Address()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20Address(
-    \Tatum\Model\Erc20Address $erc20_address
-): \Tatum\Model\Erc20Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
-
-### Return type
-
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
-
-### Description
-
-Register a new Celo ERC-20-equivalent token in the virtual account
-
-Erc20Address operation
-
-### Example
-
-[✨ View "offchainCeloErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20Address.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainCeloErc20DeployCeloErc20OffchainKMSAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20DeployCeloErc20OffchainKMSAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainKMSAddress(
     \Tatum\Model\DeployCeloErc20OffchainKMSAddress $deploy_celo_erc20_offchain_kms_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1150,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -1160,18 +296,18 @@ DeployCeloErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainCeloErc20DeployCeloErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20DeployCeloErc20OffchainKMSAddress.php)
+[✨ View "deployCeloErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloErc20DeployCeloErc20OffchainKMSXpub()`
+## `deployCeloErc20OffchainKMSXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20DeployCeloErc20OffchainKMSXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainKMSXpub(
     \Tatum\Model\DeployCeloErc20OffchainKMSXpub $deploy_celo_erc20_offchain_kms_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1182,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -1192,18 +328,18 @@ DeployCeloErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offchainCeloErc20DeployCeloErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20DeployCeloErc20OffchainKMSXpub.php)
+[✨ View "deployCeloErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloErc20DeployCeloErc20OffchainMnemXpub()`
+## `deployCeloErc20OffchainMnemXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20DeployCeloErc20OffchainMnemXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainMnemXpub(
     \Tatum\Model\DeployCeloErc20OffchainMnemXpub $deploy_celo_erc20_offchain_mnem_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1214,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -1224,18 +360,18 @@ DeployCeloErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offchainCeloErc20DeployCeloErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20DeployCeloErc20OffchainMnemXpub.php)
+[✨ View "deployCeloErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloErc20DeployCeloErc20OffchainMnemonicAddress()`
+## `deployCeloErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20DeployCeloErc20OffchainMnemonicAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployCeloErc20OffchainMnemonicAddress $deploy_celo_erc20_offchain_mnemonic_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1246,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -1256,18 +392,18 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 
 ### Example
 
-[✨ View "offchainCeloErc20DeployCeloErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20DeployCeloErc20OffchainMnemonicAddress.php)
+[✨ View "deployCeloErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloErc20DeployCeloErc20OffchainPKAddress()`
+## `deployCeloErc20OffchainPKAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20DeployCeloErc20OffchainPKAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainPKAddress(
     \Tatum\Model\DeployCeloErc20OffchainPKAddress $deploy_celo_erc20_offchain_pk_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1278,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -1288,18 +424,18 @@ DeployCeloErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offchainCeloErc20DeployCeloErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20DeployCeloErc20OffchainPKAddress.php)
+[✨ View "deployCeloErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloErc20DeployCeloErc20OffchainPKXpub()`
+## `deployCeloErc20OffchainPKXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloErc20DeployCeloErc20OffchainPKXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainPKXpub(
     \Tatum\Model\DeployCeloErc20OffchainPKXpub $deploy_celo_erc20_offchain_pk_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1310,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -1320,304 +456,592 @@ DeployCeloErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offchainCeloErc20DeployCeloErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloErc20DeployCeloErc20OffchainPKXpub.php)
+[✨ View "deployCeloErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloTransferCelo()`
+## `deployErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloTransferCelo(
-    \Tatum\Model\TransferCelo $transfer_celo
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMSAddress(
+    \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo** | [**\Tatum\Model\TransferCelo**](../Model/TransferCelo.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send CELO from a virtual account to the blockchain
+Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4><br/> <p>Send CELO (Celo), ERC-20-equivalent Celo tokens, cUSD, or cEUR from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <br/> <br/> <ul> <li>If Celo server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainCeloTransferCelo.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloTransferCelo.php)
+[✨ View "deployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloTransferCeloKMS()`
+## `deployErc20OffchainKMSXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloTransferCeloKMS(
-    \Tatum\Model\TransferCeloKMS $transfer_celo_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMSXpub(
+    \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo_kms** | [**\Tatum\Model\TransferCeloKMS**](../Model/TransferCeloKMS.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send CELO from a virtual account to the blockchain
+Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
-TransferCeloKMS operation
+DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offchainCeloTransferCeloKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloTransferCeloKMS.php)
+[✨ View "deployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainCeloTransferCeloMnemonic()`
+## `deployErc20OffchainMnemXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainCeloTransferCeloMnemonic(
-    \Tatum\Model\TransferCeloMnemonic $transfer_celo_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMnemXpub(
+    \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo_mnemonic** | [**\Tatum\Model\TransferCeloMnemonic**](../Model/TransferCeloMnemonic.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send CELO from a virtual account to the blockchain
+Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
-TransferCeloMnemonic operation
+DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offchainCeloTransferCeloMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainCeloTransferCeloMnemonic.php)
+[✨ View "deployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainDogecoinTransferDogeKMS()`
+## `deployErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainDogecoinTransferDogeKMS(
-    \Tatum\Model\TransferDogeKMS $transfer_doge_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMnemonicAddress(
+    \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_doge_kms** | [**\Tatum\Model\TransferDogeKMS**](../Model/TransferDogeKMS.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send DOGE from a virtual account to the blockchain
+Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
-TransferDogeKMS operation
+<h4>4 credits per API call.</h4><br/> <p>Deploy an Ethereum ERC-20 smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
 
 ### Example
 
-[✨ View "offchainDogecoinTransferDogeKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainDogecoinTransferDogeKMS.php)
+[✨ View "deployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainDogecoinTransferDogeKeyPair()`
+## `deployErc20OffchainPKAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainDogecoinTransferDogeKeyPair(
-    \Tatum\Model\TransferDogeKeyPair $transfer_doge_key_pair
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKAddress(
+    \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_doge_key_pair** | [**\Tatum\Model\TransferDogeKeyPair**](../Model/TransferDogeKeyPair.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send DOGE from a virtual account to the blockchain
+Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
-TransferDogeKeyPair operation
+DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offchainDogecoinTransferDogeKeyPair.php"](../../examples/Api/BlockchainOperationsApi/offchainDogecoinTransferDogeKeyPair.php)
+[✨ View "deployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainDogecoinTransferDogeMnemonic()`
+## `deployErc20OffchainPKXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainDogecoinTransferDogeMnemonic(
-    \Tatum\Model\TransferDogeMnemonic $transfer_doge_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKXpub(
+    \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_doge_mnemonic** | [**\Tatum\Model\TransferDogeMnemonic**](../Model/TransferDogeMnemonic.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send DOGE from a virtual account to the blockchain
+Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4><br/> <p>Send DOGE (Dogecoin) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Dogecoin server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Dogecoin#operation/DogeTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
+DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offchainDogecoinTransferDogeMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainDogecoinTransferDogeMnemonic.php)
+[✨ View "deployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEgldTransferEth()`
+## `deployKCSErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEgldTransferEth(
-    \Tatum\Model\TransferEth $transfer_eth
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainKMSAddress(
+    \Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+ **$deploy_kcs_erc20_offchain_kms_address** | [**\Tatum\Model\DeployKCSErc20OffchainKMSAddress**](../Model/DeployKCSErc20OffchainKMSAddress.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send EGLD from a virtual account to the blockchain
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4><br/> <p>Send EGLD from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <br/> <br/> <ul> <li>If server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+DeployKCSErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainEgldTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offchainEgldTransferEth.php)
+[✨ View "deployKCSErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEgldTransferEthKMS()`
+## `deployKCSErc20OffchainKMSXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEgldTransferEthKMS(
-    \Tatum\Model\TransferEthKMS $transfer_eth_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainKMSXpub(
+    \Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+ **$deploy_kcs_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainKMSXpub**](../Model/DeployKCSErc20OffchainKMSXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send EGLD from a virtual account to the blockchain
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-TransferEthKMS operation
+DeployKCSErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offchainEgldTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainEgldTransferEthKMS.php)
+[✨ View "deployKCSErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEgldTransferEthMnemonic()`
+## `deployKCSErc20OffchainMnemXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEgldTransferEthMnemonic(
-    \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainMnemXpub(
+    \Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+ **$deploy_kcs_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainMnemXpub**](../Model/DeployKCSErc20OffchainMnemXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send EGLD from a virtual account to the blockchain
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-TransferEthMnemonic operation
+DeployKCSErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offchainEgldTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainEgldTransferEthMnemonic.php)
+[✨ View "deployKCSErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20()`
+## `deployKCSErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainMnemonicAddress(
+    \Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_kcs_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployKCSErc20OffchainMnemonicAddress**](../Model/DeployKCSErc20OffchainMnemonicAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+<h4>4 credits per API call.</h4><br/> <p>Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new Kcs ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> <br/> <br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "deployKCSErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemonicAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployKCSErc20OffchainPKAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainPKAddress(
+    \Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_kcs_erc20_offchain_pk_address** | [**\Tatum\Model\DeployKCSErc20OffchainPKAddress**](../Model/DeployKCSErc20OffchainPKAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+DeployKCSErc20OffchainPKAddress operation
+
+### Example
+
+[✨ View "deployKCSErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployKCSErc20OffchainPKXpub()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainPKXpub(
+    \Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_kcs_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainPKXpub**](../Model/DeployKCSErc20OffchainPKXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+DeployKCSErc20OffchainPKXpub operation
+
+### Example
+
+[✨ View "deployKCSErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKXpub.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployTrcOffchainKMSAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSAddress(
+    \Tatum\Model\DeployTrcOffchainKMSAddress $deploy_trc_offchain_kms_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_trc_offchain_kms_address** | [**\Tatum\Model\DeployTrcOffchainKMSAddress**](../Model/DeployTrcOffchainKMSAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+DeployTrcOffchainKMSAddress operation
+
+### Example
+
+[✨ View "deployTrcOffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainKMSAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployTrcOffchainKMSXpub()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSXpub(
+    \Tatum\Model\DeployTrcOffchainKMSXpub $deploy_trc_offchain_kms_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_trc_offchain_kms_xpub** | [**\Tatum\Model\DeployTrcOffchainKMSXpub**](../Model/DeployTrcOffchainKMSXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+DeployTrcOffchainKMSXpub operation
+
+### Example
+
+[✨ View "deployTrcOffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainKMSXpub.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployTrcOffchainMnemXpub()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemXpub(
+    \Tatum\Model\DeployTrcOffchainMnemXpub $deploy_trc_offchain_mnem_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_trc_offchain_mnem_xpub** | [**\Tatum\Model\DeployTrcOffchainMnemXpub**](../Model/DeployTrcOffchainMnemXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+DeployTrcOffchainMnemXpub operation
+
+### Example
+
+[✨ View "deployTrcOffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainMnemXpub.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployTrcOffchainMnemonicAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemonicAddress(
+    \Tatum\Model\DeployTrcOffchainMnemonicAddress $deploy_trc_offchain_mnemonic_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_trc_offchain_mnemonic_address** | [**\Tatum\Model\DeployTrcOffchainMnemonicAddress**](../Model/DeployTrcOffchainMnemonicAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+<h4>10 credits per API call.</h4><br/> <p>Deploy a TRON TRC-10 or TRC-20 smart contract. This is a helper method, which is combination of <a href="#operation/createTrc">Register new TRC-10/20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">Deploy blockchain TRC20</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy blockchain TRC10</a>.<br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "deployTrcOffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainMnemonicAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployTrcOffchainPKAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKAddress(
+    \Tatum\Model\DeployTrcOffchainPKAddress $deploy_trc_offchain_pk_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_trc_offchain_pk_address** | [**\Tatum\Model\DeployTrcOffchainPKAddress**](../Model/DeployTrcOffchainPKAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+DeployTrcOffchainPKAddress operation
+
+### Example
+
+[✨ View "deployTrcOffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainPKAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `deployTrcOffchainPKXpub()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKXpub(
+    \Tatum\Model\DeployTrcOffchainPKXpub $deploy_trc_offchain_pk_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_trc_offchain_pk_xpub** | [**\Tatum\Model\DeployTrcOffchainPKXpub**](../Model/DeployTrcOffchainPKXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+DeployTrcOffchainPKXpub operation
+
+### Example
+
+[✨ View "deployTrcOffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainPKXpub.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `erc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->erc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -1640,16 +1064,16 @@ Register a new Ethereum ERC-20 token in the virtual account
 
 ### Example
 
-[✨ View "offchainEthereumErc20.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20.php)
+[✨ View "erc20.php"](../../examples/Api/BlockchainOperationsApi/erc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20Address()`
+## `erc20Address()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20Address(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->erc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -1672,18 +1096,18 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offchainEthereumErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20Address.php)
+[✨ View "erc20Address.php"](../../examples/Api/BlockchainOperationsApi/erc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20DeployErc20OffchainKMSAddress()`
+## `offBscDeployErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20DeployErc20OffchainKMSAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1694,28 +1118,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
 DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainEthereumErc20DeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20DeployErc20OffchainKMSAddress.php)
+[✨ View "offBscDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20DeployErc20OffchainKMSXpub()`
+## `offBscDeployErc20OffchainKMSXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20DeployErc20OffchainKMSXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1726,28 +1150,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
 DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offchainEthereumErc20DeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20DeployErc20OffchainKMSXpub.php)
+[✨ View "offBscDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20DeployErc20OffchainMnemXpub()`
+## `offBscDeployErc20OffchainMnemXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20DeployErc20OffchainMnemXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1758,28 +1182,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
 DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offchainEthereumErc20DeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20DeployErc20OffchainMnemXpub.php)
+[✨ View "offBscDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20DeployErc20OffchainMnemonicAddress()`
+## `offBscDeployErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20DeployErc20OffchainMnemonicAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1790,28 +1214,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4><br/> <p>Deploy an Ethereum ERC-20 smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+<h4>4 credits per API call.</h4><br/> <p>Deploy a BNB Smart Chain BEP-20 smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new BEP20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> <br/> <br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
 
 ### Example
 
-[✨ View "offchainEthereumErc20DeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20DeployErc20OffchainMnemonicAddress.php)
+[✨ View "offBscDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20DeployErc20OffchainPKAddress()`
+## `offBscDeployErc20OffchainPKAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20DeployErc20OffchainPKAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1822,28 +1246,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
 DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offchainEthereumErc20DeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20DeployErc20OffchainPKAddress.php)
+[✨ View "offBscDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20DeployErc20OffchainPKXpub()`
+## `offBscDeployErc20OffchainPKXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20DeployErc20OffchainPKXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -1854,124 +1278,156 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
 DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offchainEthereumErc20DeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20DeployErc20OffchainPKXpub.php)
+[✨ View "offBscDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20TransferErc20()`
+## `offBscErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20TransferErc20(
-    \Tatum\Model\TransferErc20 $transfer_erc20
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20(
+    \Tatum\Model\Erc20 $erc20
+): \Tatum\Model\Erc20Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_erc20** | [**\Tatum\Model\TransferErc20**](../Model/TransferErc20.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
 ### Description
 
-Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+Register a new BNB Smart Chain BEP-20 token in the virtual account
 
-<h4>4 credits per API call.</h4><br/> <p>Send Ethereum ERC-20 tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Ethereum server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+<p><b>This method is deprecated.<br/>Use <a href="#operation/registerErc20Token">this method</a> instead.</b></p><br/> <h4>2 credits per API call.</h4> <p>First step to create new BEP20 token with given supply on BSC blockchain with support of Tatum's private ledger.<br/> <br/> <br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of BEP20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with BEP20 token name as account's currency.<br/> Newly created account is frozen until the specific BEP20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create BEP20 smart contract with Tatum private ledger support: <ol> <li><a href="#operation/registerErc20Token">Register BEP20 token</a> - creates a virtual currency within Tatum</li> <li><a href="#operation/BscDeployErc20Blockchain">Deploy BEP20 smart contract</a> - create new BEP20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store BEP20 smart contract address</a> - link newly created BEP20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for BEP20 Tatum accounts</li> </ol> There is a helper method <a href="#operation/EthDeployErc20">Deploy BSC BEP20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub. </p>
 
 ### Example
 
-[✨ View "offchainEthereumErc20TransferErc20.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20TransferErc20.php)
+[✨ View "offBscErc20.php"](../../examples/Api/BlockchainOperationsApi/offBscErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20TransferErc20KMS()`
+## `offBscErc20Address()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20TransferErc20KMS(
-    \Tatum\Model\TransferErc20KMS $transfer_erc20_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20Address(
+    \Tatum\Model\Erc20Address $erc20_address
+): \Tatum\Model\Erc20Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_erc20_kms** | [**\Tatum\Model\TransferErc20KMS**](../Model/TransferErc20KMS.md) |  |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
 ### Description
 
-Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+Register a new BNB Smart Chain BEP-20 token in the virtual account
 
-TransferErc20KMS operation
+Erc20Address operation
 
 ### Example
 
-[✨ View "offchainEthereumErc20TransferErc20KMS.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20TransferErc20KMS.php)
+[✨ View "offBscErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offBscErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumErc20TransferErc20Mnemonic()`
+## `offCelErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumErc20TransferErc20Mnemonic(
-    \Tatum\Model\TransferErc20Mnemonic $transfer_erc20_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20(
+    \Tatum\Model\Erc20 $erc20
+): \Tatum\Model\Erc20Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_erc20_mnemonic** | [**\Tatum\Model\TransferErc20Mnemonic**](../Model/TransferErc20Mnemonic.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
 
 ### Description
 
-Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+Register a new Celo ERC-20-equivalent token in the virtual account
 
-TransferErc20Mnemonic operation
+<p><b>This method is deprecated.<br/>Use <a href="#operation/registerErc20Token">this method</a> instead.</b></p><br/> <h4>2 credits per API call.</h4> <p>First step to create new ERC-20 token with given supply on Celo blockchain with support of Tatum's private ledger.<br/> <br/> <br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of ERC-20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with ERC-20 token name as account's currency.<br/> Newly created account is frozen until the specific ERC-20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create ERC-20 smart contract with Tatum private ledger support: <ol> <li><a href="#operation/registerErc20Token">Register Celo ERC-20 token</a> - creates a virtual currency within Tatum</li> <li><a href="#operation/CeloDeployErc20">Deploy Celo ERC-20 smart contract</a> - create new ERC-20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store Celo ERC-20 smart contract address</a> - link newly created ERC-20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for ERC-20 Tatum accounts</li> </ol> There is a helper method <a href="#operation/CeloDeployErc20Ledger">Deploy Celo ERC-20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub. </p>
 
 ### Example
 
-[✨ View "offchainEthereumErc20TransferErc20Mnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumErc20TransferErc20Mnemonic.php)
+[✨ View "offCelErc20.php"](../../examples/Api/BlockchainOperationsApi/offCelErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumTransferEth()`
+## `offCelErc20Address()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumTransferEth(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20Address(
+    \Tatum\Model\Erc20Address $erc20_address
+): \Tatum\Model\Erc20Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
+
+### Return type
+
+[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+
+### Description
+
+Register a new Celo ERC-20-equivalent token in the virtual account
+
+Erc20Address operation
+
+### Example
+
+[✨ View "offCelErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offCelErc20Address.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `offEglTransferEth()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -1982,28 +1438,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
-Send ETH from a virtual account to the blockchain
+Send EGLD from a virtual account to the blockchain
 
-<h4>4 credits per API call.</h4><br/> <p>Send ETH (Ethereum) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Ethereum server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+<h4>4 credits per API call.</h4><br/> <p>Send EGLD from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <br/> <br/> <ul> <li>If server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
 
 ### Example
 
-[✨ View "offchainEthereumTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumTransferEth.php)
+[✨ View "offEglTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offEglTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumTransferEthKMS()`
+## `offEglTransferEthKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumTransferEthKMS(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -2014,28 +1470,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
-Send ETH from a virtual account to the blockchain
+Send EGLD from a virtual account to the blockchain
 
 TransferEthKMS operation
 
 ### Example
 
-[✨ View "offchainEthereumTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumTransferEthKMS.php)
+[✨ View "offEglTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offEglTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainEthereumTransferEthMnemonic()`
+## `offEglTransferEthMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainEthereumTransferEthMnemonic(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -2046,412 +1502,28 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
-Send ETH from a virtual account to the blockchain
+Send EGLD from a virtual account to the blockchain
 
 TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offchainEthereumTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainEthereumTransferEthMnemonic.php)
+[✨ View "offEglTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offEglTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainFlowTransferFlowKMS()`
+## `offKlaDeployErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainFlowTransferFlowKMS(
-    \Tatum\Model\TransferFlowKMS $transfer_flow_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_flow_kms** | [**\Tatum\Model\TransferFlowKMS**](../Model/TransferFlowKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send FLOW from a virtual account to the blockchain
-
-TransferFlowKMS operation
-
-### Example
-
-[✨ View "offchainFlowTransferFlowKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainFlowTransferFlowKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainFlowTransferFlowMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainFlowTransferFlowMnemonic(
-    \Tatum\Model\TransferFlowMnemonic $transfer_flow_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_flow_mnemonic** | [**\Tatum\Model\TransferFlowMnemonic**](../Model/TransferFlowMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send FLOW from a virtual account to the blockchain
-
-<h4>100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.</h4><br/> <p>Send FLOW (Flow) or FUSD from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Flow server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Flow#operation/FlowTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
-
-### Example
-
-[✨ View "offchainFlowTransferFlowMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainFlowTransferFlowMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainFlowTransferFlowPK()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainFlowTransferFlowPK(
-    \Tatum\Model\TransferFlowPK $transfer_flow_pk
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_flow_pk** | [**\Tatum\Model\TransferFlowPK**](../Model/TransferFlowPK.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send FLOW from a virtual account to the blockchain
-
-TransferFlowPK operation
-
-### Example
-
-[✨ View "offchainFlowTransferFlowPK.php"](../../examples/Api/BlockchainOperationsApi/offchainFlowTransferFlowPK.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsErc20DeployKCSErc20OffchainKMSAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsErc20DeployKCSErc20OffchainKMSAddress(
-    \Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_kms_address** | [**\Tatum\Model\DeployKCSErc20OffchainKMSAddress**](../Model/DeployKCSErc20OffchainKMSAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainKMSAddress operation
-
-### Example
-
-[✨ View "offchainKcsErc20DeployKCSErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsErc20DeployKCSErc20OffchainKMSAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsErc20DeployKCSErc20OffchainKMSXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsErc20DeployKCSErc20OffchainKMSXpub(
-    \Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainKMSXpub**](../Model/DeployKCSErc20OffchainKMSXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainKMSXpub operation
-
-### Example
-
-[✨ View "offchainKcsErc20DeployKCSErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsErc20DeployKCSErc20OffchainKMSXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsErc20DeployKCSErc20OffchainMnemXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsErc20DeployKCSErc20OffchainMnemXpub(
-    \Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainMnemXpub**](../Model/DeployKCSErc20OffchainMnemXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainMnemXpub operation
-
-### Example
-
-[✨ View "offchainKcsErc20DeployKCSErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsErc20DeployKCSErc20OffchainMnemXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsErc20DeployKCSErc20OffchainMnemonicAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsErc20DeployKCSErc20OffchainMnemonicAddress(
-    \Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployKCSErc20OffchainMnemonicAddress**](../Model/DeployKCSErc20OffchainMnemonicAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-<h4>4 credits per API call.</h4><br/> <p>Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new Kcs ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> <br/> <br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainKcsErc20DeployKCSErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsErc20DeployKCSErc20OffchainMnemonicAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsErc20DeployKCSErc20OffchainPKAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsErc20DeployKCSErc20OffchainPKAddress(
-    \Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_pk_address** | [**\Tatum\Model\DeployKCSErc20OffchainPKAddress**](../Model/DeployKCSErc20OffchainPKAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainPKAddress operation
-
-### Example
-
-[✨ View "offchainKcsErc20DeployKCSErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsErc20DeployKCSErc20OffchainPKAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsErc20DeployKCSErc20OffchainPKXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsErc20DeployKCSErc20OffchainPKXpub(
-    \Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainPKXpub**](../Model/DeployKCSErc20OffchainPKXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainPKXpub operation
-
-### Example
-
-[✨ View "offchainKcsErc20DeployKCSErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsErc20DeployKCSErc20OffchainPKXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsTransferKCS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsTransferKCS(
-    \Tatum\Model\TransferKCS $transfer_kcs
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_kcs** | [**\Tatum\Model\TransferKCS**](../Model/TransferKCS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send KCS from a virtual account to the blockchain
-
-<h4>4 credits per API call.</h4><br/> <p>Send KCS (KuCoin Community Chain (KCC)) or ERC-20-equivalent KCC tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If KCS server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainKcsTransferKCS.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsTransferKCS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsTransferKCSKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsTransferKCSKMS(
-    \Tatum\Model\TransferKCSKMS $transfer_kcskms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_kcskms** | [**\Tatum\Model\TransferKCSKMS**](../Model/TransferKCSKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send KCS from a virtual account to the blockchain
-
-TransferKCSKMS operation
-
-### Example
-
-[✨ View "offchainKcsTransferKCSKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsTransferKCSKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKcsTransferKCSMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKcsTransferKCSMnemonic(
-    \Tatum\Model\TransferKCSMnemonic $transfer_kcs_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_kcs_mnemonic** | [**\Tatum\Model\TransferKCSMnemonic**](../Model/TransferKCSMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send KCS from a virtual account to the blockchain
-
-TransferKCSMnemonic operation
-
-### Example
-
-[✨ View "offchainKcsTransferKCSMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainKcsTransferKCSMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainKlaytnErc20DeployErc20OffchainKMSAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnErc20DeployErc20OffchainKMSAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2462,7 +1534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2472,18 +1544,18 @@ DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainKlaytnErc20DeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnErc20DeployErc20OffchainKMSAddress.php)
+[✨ View "offKlaDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnErc20DeployErc20OffchainKMSXpub()`
+## `offKlaDeployErc20OffchainKMSXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnErc20DeployErc20OffchainKMSXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2494,7 +1566,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2504,18 +1576,18 @@ DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offchainKlaytnErc20DeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnErc20DeployErc20OffchainKMSXpub.php)
+[✨ View "offKlaDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnErc20DeployErc20OffchainMnemXpub()`
+## `offKlaDeployErc20OffchainMnemXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnErc20DeployErc20OffchainMnemXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2526,7 +1598,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2536,18 +1608,18 @@ DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offchainKlaytnErc20DeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnErc20DeployErc20OffchainMnemXpub.php)
+[✨ View "offKlaDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnErc20DeployErc20OffchainMnemonicAddress()`
+## `offKlaDeployErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnErc20DeployErc20OffchainMnemonicAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2558,7 +1630,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2568,18 +1640,18 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ### Example
 
-[✨ View "offchainKlaytnErc20DeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnErc20DeployErc20OffchainMnemonicAddress.php)
+[✨ View "offKlaDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnErc20DeployErc20OffchainPKAddress()`
+## `offKlaDeployErc20OffchainPKAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnErc20DeployErc20OffchainPKAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2590,7 +1662,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2600,18 +1672,18 @@ DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offchainKlaytnErc20DeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnErc20DeployErc20OffchainPKAddress.php)
+[✨ View "offKlaDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnErc20DeployErc20OffchainPKXpub()`
+## `offKlaDeployErc20OffchainPKXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnErc20DeployErc20OffchainPKXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2622,7 +1694,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2632,18 +1704,18 @@ DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offchainKlaytnErc20DeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnErc20DeployErc20OffchainPKXpub.php)
+[✨ View "offKlaDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnTransferEth()`
+## `offKlaTransferEth()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnTransferEth(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -2654,7 +1726,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -2664,18 +1736,18 @@ Send KLAY from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offchainKlaytnTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnTransferEth.php)
+[✨ View "offKlaTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offKlaTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnTransferEthKMS()`
+## `offKlaTransferEthKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnTransferEthKMS(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -2686,7 +1758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -2696,18 +1768,18 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offchainKlaytnTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnTransferEthKMS.php)
+[✨ View "offKlaTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offKlaTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainKlaytnTransferEthMnemonic()`
+## `offKlaTransferEthMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainKlaytnTransferEthMnemonic(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -2718,7 +1790,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -2728,115 +1800,19 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offchainKlaytnTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainKlaytnTransferEthMnemonic.php)
+[✨ View "offKlaTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offKlaTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainLitecoinTransferLtcKMS()`
+## `offOneDeployErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainLitecoinTransferLtcKMS(
-    \Tatum\Model\TransferLtcKMS $transfer_ltc_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_ltc_kms** | [**\Tatum\Model\TransferLtcKMS**](../Model/TransferLtcKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send LTC from a virtual account to the blockchain
-
-TransferLtcKMS operation
-
-### Example
-
-[✨ View "offchainLitecoinTransferLtcKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainLitecoinTransferLtcKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainLitecoinTransferLtcKeyPair()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainLitecoinTransferLtcKeyPair(
-    \Tatum\Model\TransferLtcKeyPair $transfer_ltc_key_pair
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_ltc_key_pair** | [**\Tatum\Model\TransferLtcKeyPair**](../Model/TransferLtcKeyPair.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send LTC from a virtual account to the blockchain
-
-TransferLtcKeyPair operation
-
-### Example
-
-[✨ View "offchainLitecoinTransferLtcKeyPair.php"](../../examples/Api/BlockchainOperationsApi/offchainLitecoinTransferLtcKeyPair.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainLitecoinTransferLtcMnemonic()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainLitecoinTransferLtcMnemonic(
-    \Tatum\Model\TransferLtcMnemonic $transfer_ltc_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_ltc_mnemonic** | [**\Tatum\Model\TransferLtcMnemonic**](../Model/TransferLtcMnemonic.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send LTC from a virtual account to the blockchain
-
-<h4>10 credits per API call.</h4><br/> <p>Send LTC (Litecoin) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Litecoin server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Litecoin#operation/LtcTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
-
-### Example
-
-[✨ View "offchainLitecoinTransferLtcMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainLitecoinTransferLtcMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainOneHrm20DeployErc20OffchainKMSAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20DeployErc20OffchainKMSAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2848,7 +1824,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2858,19 +1834,19 @@ DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainOneHrm20DeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20DeployErc20OffchainKMSAddress.php)
+[✨ View "offOneDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneHrm20DeployErc20OffchainKMSXpub()`
+## `offOneDeployErc20OffchainKMSXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20DeployErc20OffchainKMSXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2882,7 +1858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2892,19 +1868,19 @@ DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offchainOneHrm20DeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20DeployErc20OffchainKMSXpub.php)
+[✨ View "offOneDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneHrm20DeployErc20OffchainMnemXpub()`
+## `offOneDeployErc20OffchainMnemXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20DeployErc20OffchainMnemXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2916,7 +1892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2926,19 +1902,19 @@ DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offchainOneHrm20DeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20DeployErc20OffchainMnemXpub.php)
+[✨ View "offOneDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneHrm20DeployErc20OffchainMnemonicAddress()`
+## `offOneDeployErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20DeployErc20OffchainMnemonicAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2950,7 +1926,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2960,19 +1936,19 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
 ### Example
 
-[✨ View "offchainOneHrm20DeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20DeployErc20OffchainMnemonicAddress.php)
+[✨ View "offOneDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneHrm20DeployErc20OffchainPKAddress()`
+## `offOneDeployErc20OffchainPKAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20DeployErc20OffchainPKAddress(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -2984,7 +1960,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -2994,19 +1970,19 @@ DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offchainOneHrm20DeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20DeployErc20OffchainPKAddress.php)
+[✨ View "offOneDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneHrm20DeployErc20OffchainPKXpub()`
+## `offOneDeployErc20OffchainPKXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20DeployErc20OffchainPKXpub(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
@@ -3018,7 +1994,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
@@ -3028,16 +2004,16 @@ DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offchainOneHrm20DeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20DeployErc20OffchainPKXpub.php)
+[✨ View "offOneDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneHrm20Erc20()`
+## `offOneErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20Erc20(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -3060,16 +2036,16 @@ Register a new Harmony HRM-20 token in the virtual account
 
 ### Example
 
-[✨ View "offchainOneHrm20Erc20.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20Erc20.php)
+[✨ View "offOneErc20.php"](../../examples/Api/BlockchainOperationsApi/offOneErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneHrm20Erc20Address()`
+## `offOneErc20Address()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneHrm20Erc20Address(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -3092,19 +2068,19 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offchainOneHrm20Erc20Address.php"](../../examples/Api/BlockchainOperationsApi/offchainOneHrm20Erc20Address.php)
+[✨ View "offOneErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offOneErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneTransferEth()`
+## `offOneTransferEth()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneTransferEth(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEth(
     \Tatum\Model\TransferEth $transfer_eth,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -3116,7 +2092,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -3126,19 +2102,19 @@ Send ONE from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offchainOneTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offchainOneTransferEth.php)
+[✨ View "offOneTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offOneTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneTransferEthKMS()`
+## `offOneTransferEthKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneTransferEthKMS(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -3150,7 +2126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -3160,19 +2136,19 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offchainOneTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainOneTransferEthKMS.php)
+[✨ View "offOneTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offOneTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainOneTransferEthMnemonic()`
+## `offOneTransferEthMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainOneTransferEthMnemonic(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic,
     [ float $shard_id = 0 ]
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -3184,7 +2160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -3194,18 +2170,18 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offchainOneTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainOneTransferEthMnemonic.php)
+[✨ View "offOneTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offOneTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainPolygonTransferEth()`
+## `offPolTransferEth()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainPolygonTransferEth(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -3216,7 +2192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -3226,18 +2202,18 @@ Send MATIC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offchainPolygonTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offchainPolygonTransferEth.php)
+[✨ View "offPolTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offPolTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainPolygonTransferEthKMS()`
+## `offPolTransferEthKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainPolygonTransferEthKMS(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -3248,7 +2224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -3258,18 +2234,18 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offchainPolygonTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainPolygonTransferEthKMS.php)
+[✨ View "offPolTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offPolTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainPolygonTransferEthMnemonic()`
+## `offPolTransferEthMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainPolygonTransferEthMnemonic(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -3280,7 +2256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -3290,80 +2266,16 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offchainPolygonTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainPolygonTransferEthMnemonic.php)
+[✨ View "offPolTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offPolTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainSolanaTransferSol()`
+## `offTokErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainSolanaTransferSol(
-    \Tatum\Model\TransferSol $transfer_sol
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_sol** | [**\Tatum\Model\TransferSol**](../Model/TransferSol.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send SOL from a virtual account to the blockchain
-
-<h4>10 credits per API call.</h4><br/><p> <p>Send SOL (Solana), USDC_SOL, or custom SPL tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If SOL server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainSolanaTransferSol.php"](../../examples/Api/BlockchainOperationsApi/offchainSolanaTransferSol.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainSolanaTransferSolKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainSolanaTransferSolKMS(
-    \Tatum\Model\TransferSolKMS $transfer_sol_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_sol_kms** | [**\Tatum\Model\TransferSolKMS**](../Model/TransferSolKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send SOL from a virtual account to the blockchain
-
-TransferSolKMS operation
-
-### Example
-
-[✨ View "offchainSolanaTransferSolKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainSolanaTransferSolKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainTokenchainErc20()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTokenchainErc20(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20(
     string $chain,
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
@@ -3388,16 +2300,16 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "offchainTokenchainErc20.php"](../../examples/Api/BlockchainOperationsApi/offchainTokenchainErc20.php)
+[✨ View "offTokErc20.php"](../../examples/Api/BlockchainOperationsApi/offTokErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTokenchainErc20Address()`
+## `offTokErc20Address()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTokenchainErc20Address(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20Address(
     string $chain,
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
@@ -3422,368 +2334,208 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offchainTokenchainErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offchainTokenchainErc20Address.php)
+[✨ View "offTokErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offTokErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTronTransferTron()`
+## `offXdcDeployErc20OffchainKMSAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTransferTron(
-    \Tatum\Model\TransferTron $transfer_tron
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainKMSAddress(
+    \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron** | [**\Tatum\Model\TransferTron**](../Model/TransferTron.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send TRON from a virtual account to the blockchain
+Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-<h4>10 credits per API call.</h4><br/><p>Send TRON or TRX assets from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Tron server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offchainTronTransferTron.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTransferTron.php)
+[✨ View "offXdcDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTronTransferTronKMS()`
+## `offXdcDeployErc20OffchainKMSXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTransferTronKMS(
-    \Tatum\Model\TransferTronKMS $transfer_tron_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainKMSXpub(
+    \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_kms** | [**\Tatum\Model\TransferTronKMS**](../Model/TransferTronKMS.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send TRON from a virtual account to the blockchain
+Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-TransferTronKMS operation
+DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offchainTronTransferTronKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTransferTronKMS.php)
+[✨ View "offXdcDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTronTransferTronMnemonic()`
+## `offXdcDeployErc20OffchainMnemXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTransferTronMnemonic(
-    \Tatum\Model\TransferTronMnemonic $transfer_tron_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainMnemXpub(
+    \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_mnemonic** | [**\Tatum\Model\TransferTronMnemonic**](../Model/TransferTronMnemonic.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Send TRON from a virtual account to the blockchain
+Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-TransferTronMnemonic operation
+DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offchainTronTransferTronMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTransferTronMnemonic.php)
+[✨ View "offXdcDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTronTrcAddress()`
+## `offXdcDeployErc20OffchainMnemonicAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcAddress(
-    \Tatum\Model\TrcAddress $trc_address
-): \Tatum\Model\Trc20Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainMnemonicAddress(
+    \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$trc_address** | [**\Tatum\Model\TrcAddress**](../Model/TrcAddress.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Register a new TRON TRC-10 or TRC-20 token in the virtual account
+Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-<h4>10 credits per API call.</h4><br/> <p>First step to create new TRC 10/20 token with given supply on the Tron blockchain with support of Tatum's private ledger.<br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of TRC 10/20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with TRC 10/20 token name as account's currency.<br/> Newly created account is frozen until the specific TRC 10/20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create TRC 10/20 smart contract with Tatum private ledger support: <ol> <li>Create TRC 10/20 token (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy TRC 10</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">TRC 20 smart contract</a> - create new TRC 10/20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store TRC 10/20 smart contract address</a> - link newly created TRC 10/20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for TRC 10/20 Tatum accounts</li> </ol> Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex. There is a helper method <a href="#operation/TronDeployTrc">Deploy TRC 10/20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> </p>
+<h4>4 credits per API call.</h4><br/> <p>Deploy a XinFin ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> <br/> <br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
 
 ### Example
 
-[✨ View "offchainTronTrcAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcAddress.php)
+[✨ View "offXdcDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTronTrcDeployTrcOffchainKMSAddress()`
+## `offXdcDeployErc20OffchainPKAddress()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcDeployTrcOffchainKMSAddress(
-    \Tatum\Model\DeployTrcOffchainKMSAddress $deploy_trc_offchain_kms_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainPKAddress(
+    \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_kms_address** | [**\Tatum\Model\DeployTrcOffchainKMSAddress**](../Model/DeployTrcOffchainKMSAddress.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-DeployTrcOffchainKMSAddress operation
+DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offchainTronTrcDeployTrcOffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcDeployTrcOffchainKMSAddress.php)
+[✨ View "offXdcDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTronTrcDeployTrcOffchainKMSXpub()`
+## `offXdcDeployErc20OffchainPKXpub()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcDeployTrcOffchainKMSXpub(
-    \Tatum\Model\DeployTrcOffchainKMSXpub $deploy_trc_offchain_kms_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainPKXpub(
+    \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_kms_xpub** | [**\Tatum\Model\DeployTrcOffchainKMSXpub**](../Model/DeployTrcOffchainKMSXpub.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
 
 ### Return type
 
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
 
 ### Description
 
-Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-DeployTrcOffchainKMSXpub operation
+DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offchainTronTrcDeployTrcOffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcDeployTrcOffchainKMSXpub.php)
+[✨ View "offXdcDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainTronTrcDeployTrcOffchainMnemXpub()`
+## `offXdcErc20()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcDeployTrcOffchainMnemXpub(
-    \Tatum\Model\DeployTrcOffchainMnemXpub $deploy_trc_offchain_mnem_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_mnem_xpub** | [**\Tatum\Model\DeployTrcOffchainMnemXpub**](../Model/DeployTrcOffchainMnemXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-
-DeployTrcOffchainMnemXpub operation
-
-### Example
-
-[✨ View "offchainTronTrcDeployTrcOffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcDeployTrcOffchainMnemXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainTronTrcDeployTrcOffchainMnemonicAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcDeployTrcOffchainMnemonicAddress(
-    \Tatum\Model\DeployTrcOffchainMnemonicAddress $deploy_trc_offchain_mnemonic_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_mnemonic_address** | [**\Tatum\Model\DeployTrcOffchainMnemonicAddress**](../Model/DeployTrcOffchainMnemonicAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-
-<h4>10 credits per API call.</h4><br/> <p>Deploy a TRON TRC-10 or TRC-20 smart contract. This is a helper method, which is combination of <a href="#operation/createTrc">Register new TRC-10/20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">Deploy blockchain TRC20</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy blockchain TRC10</a>.<br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainTronTrcDeployTrcOffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcDeployTrcOffchainMnemonicAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainTronTrcDeployTrcOffchainPKAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcDeployTrcOffchainPKAddress(
-    \Tatum\Model\DeployTrcOffchainPKAddress $deploy_trc_offchain_pk_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_pk_address** | [**\Tatum\Model\DeployTrcOffchainPKAddress**](../Model/DeployTrcOffchainPKAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-
-DeployTrcOffchainPKAddress operation
-
-### Example
-
-[✨ View "offchainTronTrcDeployTrcOffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcDeployTrcOffchainPKAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainTronTrcDeployTrcOffchainPKXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcDeployTrcOffchainPKXpub(
-    \Tatum\Model\DeployTrcOffchainPKXpub $deploy_trc_offchain_pk_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_pk_xpub** | [**\Tatum\Model\DeployTrcOffchainPKXpub**](../Model/DeployTrcOffchainPKXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-
-DeployTrcOffchainPKXpub operation
-
-### Example
-
-[✨ View "offchainTronTrcDeployTrcOffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcDeployTrcOffchainPKXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainTronTrcXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainTronTrcXpub(
-    \Tatum\Model\TrcXpub $trc_xpub
-): \Tatum\Model\Trc20Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$trc_xpub** | [**\Tatum\Model\TrcXpub**](../Model/TrcXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
-
-### Description
-
-Register a new TRON TRC-10 or TRC-20 token in the virtual account
-
-TrcXpub operation
-
-### Example
-
-[✨ View "offchainTronTrcXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainTronTrcXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXdcErc20()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -3806,16 +2558,16 @@ Register a new XinFin ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "offchainXdcErc20.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20.php)
+[✨ View "offXdcErc20.php"](../../examples/Api/BlockchainOperationsApi/offXdcErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainXdcErc20Address()`
+## `offXdcErc20Address()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20Address(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -3838,210 +2590,18 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offchainXdcErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20Address.php)
+[✨ View "offXdcErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offXdcErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainXdcErc20DeployErc20OffchainKMSAddress()`
+## `offXdcTransferEth()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20DeployErc20OffchainKMSAddress(
-    \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainKMSAddress operation
-
-### Example
-
-[✨ View "offchainXdcErc20DeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20DeployErc20OffchainKMSAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXdcErc20DeployErc20OffchainKMSXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20DeployErc20OffchainKMSXpub(
-    \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainKMSXpub operation
-
-### Example
-
-[✨ View "offchainXdcErc20DeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20DeployErc20OffchainKMSXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXdcErc20DeployErc20OffchainMnemXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20DeployErc20OffchainMnemXpub(
-    \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainMnemXpub operation
-
-### Example
-
-[✨ View "offchainXdcErc20DeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20DeployErc20OffchainMnemXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXdcErc20DeployErc20OffchainMnemonicAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20DeployErc20OffchainMnemonicAddress(
-    \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-<h4>4 credits per API call.</h4><br/> <p>Deploy a XinFin ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#operation/registerErc20Token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.<br/> <br/> <br/> After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainXdcErc20DeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20DeployErc20OffchainMnemonicAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXdcErc20DeployErc20OffchainPKAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20DeployErc20OffchainPKAddress(
-    \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainPKAddress operation
-
-### Example
-
-[✨ View "offchainXdcErc20DeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20DeployErc20OffchainPKAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXdcErc20DeployErc20OffchainPKXpub()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcErc20DeployErc20OffchainPKXpub(
-    \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
-): \Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response**](../Model/OffchainEthereumErc20DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployErc20OffchainPKXpub operation
-
-### Example
-
-[✨ View "offchainXdcErc20DeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcErc20DeployErc20OffchainPKXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXdcTransferEth()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcTransferEth(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -4052,7 +2612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -4062,18 +2622,18 @@ Send XDC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offchainXdcTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcTransferEth.php)
+[✨ View "offXdcTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offXdcTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainXdcTransferEthKMS()`
+## `offXdcTransferEthKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcTransferEthKMS(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -4084,7 +2644,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -4094,18 +2654,18 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offchainXdcTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcTransferEthKMS.php)
+[✨ View "offXdcTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offXdcTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `offchainXdcTransferEthMnemonic()`
+## `offXdcTransferEthMnemonic()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXdcTransferEthMnemonic(
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
+): \Tatum\Model\TransferBtcMnemonic200Response
 ```
 
 ### Parameters
@@ -4116,7 +2676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
 
 ### Description
 
@@ -4126,135 +2686,7 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offchainXdcTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offchainXdcTransferEthMnemonic.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXlmTransferXlm()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXlmTransferXlm(
-    \Tatum\Model\TransferXlm $transfer_xlm
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xlm** | [**\Tatum\Model\TransferXlm**](../Model/TransferXlm.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send XLM from a virtual account to the blockchain
-
-<h4>10 credits per API call.</h4><br/><p> <p>Send XLM (Stellar) or XLM-based assets from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If XLM server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainXlmTransferXlm.php"](../../examples/Api/BlockchainOperationsApi/offchainXlmTransferXlm.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXlmTransferXlmKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXlmTransferXlmKMS(
-    \Tatum\Model\TransferXlmKMS $transfer_xlm_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xlm_kms** | [**\Tatum\Model\TransferXlmKMS**](../Model/TransferXlmKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send XLM from a virtual account to the blockchain
-
-TransferXlmKMS operation
-
-### Example
-
-[✨ View "offchainXlmTransferXlmKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainXlmTransferXlmKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXrpTransferXrp()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXrpTransferXrp(
-    \Tatum\Model\TransferXrp $transfer_xrp
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xrp** | [**\Tatum\Model\TransferXrp**](../Model/TransferXrp.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send XRP from a virtual account to the blockchain
-
-<h4>10 credits per API call.</h4><br/><p> <p>Send XRP (Ripple) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If XRP server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "offchainXrpTransferXrp.php"](../../examples/Api/BlockchainOperationsApi/offchainXrpTransferXrp.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `offchainXrpTransferXrpKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offchainXrpTransferXrpKMS(
-    \Tatum\Model\TransferXrpKMS $transfer_xrp_kms
-): \Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xrp_kms** | [**\Tatum\Model\TransferXrpKMS**](../Model/TransferXrpKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\OffchainBitcoinTransferBtcMnemonic200Response**](../Model/OffchainBitcoinTransferBtcMnemonic200Response.md)
-
-### Description
-
-Send XRP from a virtual account to the blockchain
-
-TransferXrpKMS operation
-
-### Example
-
-[✨ View "offchainXrpTransferXrpKMS.php"](../../examples/Api/BlockchainOperationsApi/offchainXrpTransferXrpKMS.php)
+[✨ View "offXdcTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offXdcTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -4357,6 +2789,1574 @@ Set the contract address of a TRC-10 or TRC-20 token
 ### Example
 
 [✨ View "storeTrcAddress.php"](../../examples/Api/BlockchainOperationsApi/storeTrcAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferAdaKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKMS(
+    \Tatum\Model\TransferAdaKMS $transfer_ada_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_ada_kms** | [**\Tatum\Model\TransferAdaKMS**](../Model/TransferAdaKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ADA from a virtual account to the blockchain
+
+TransferAdaKMS operation
+
+### Example
+
+[✨ View "transferAdaKMS.php"](../../examples/Api/BlockchainOperationsApi/transferAdaKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferAdaKeyPair()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKeyPair(
+    \Tatum\Model\TransferAdaKeyPair $transfer_ada_key_pair
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_ada_key_pair** | [**\Tatum\Model\TransferAdaKeyPair**](../Model/TransferAdaKeyPair.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ADA from a virtual account to the blockchain
+
+<p><b>Support for Cardano is deprecated.</b></p><br/> <h4>10 credits per API call.</h4><p>Send ADA (Cardano) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If ADA server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferAdaKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferAdaKeyPair.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferAdaMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaMnemonic(
+    \Tatum\Model\TransferAdaMnemonic $transfer_ada_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_ada_mnemonic** | [**\Tatum\Model\TransferAdaMnemonic**](../Model/TransferAdaMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ADA from a virtual account to the blockchain
+
+TransferAdaMnemonic operation
+
+### Example
+
+[✨ View "transferAdaMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferAdaMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferAlgo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgo(
+    \Tatum\Model\TransferAlgo $transfer_algo
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_algo** | [**\Tatum\Model\TransferAlgo**](../Model/TransferAlgo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ALGO from a virtual account to the blockchain
+
+<p><b>4 credits per API call</b></p> <p>Send Algos or ERC-20-equivalent Algorand tokens from a virtual account (even from a virtual account without deposit addresses adssigned) to the Algorand blockchain.</p> <p>The recipient has to agree in advance to receive assets because Algorand charges users for storing assets on their addresses, and an Algorand blockchain address by default does not receive assets unless explicitly agreed. Before sending any asset from a virtual account to the blockchain, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the assets</a> to their address.</p> <p>Sending Algorand assets creates an internal Tatum withdrawal request with an ID. If everything works as expected, the withdrawal request is marked as complete and a transaction ID is assigned to it.</p> <ul> <li>If a server connection is unavailable, the withdrawal request is cancelled.</li> <li>If the transfer to the blockchain is successful, but the Tatum infrastructure cannot be accesses, the ID of the blockchain transaction is returned and you have to <a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal" target="_blank">complete the withdrawal request manually</a>. Otherwise, all other withdrawals will be pending.</li> </ul> <p><b>Signing a transaction</b><br/> When sending Algos or ERC-20-equivalent Algorand tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferAlgo.php"](../../examples/Api/BlockchainOperationsApi/transferAlgo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferAlgoErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoErc20(
+    \Tatum\Model\TransferAlgoErc20 $transfer_algo_erc20
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_algo_erc20** | [**\Tatum\Model\TransferAlgoErc20**](../Model/TransferAlgoErc20.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ALGO from a virtual account to the blockchain
+
+TransferAlgoErc20 operation
+
+### Example
+
+[✨ View "transferAlgoErc20.php"](../../examples/Api/BlockchainOperationsApi/transferAlgoErc20.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferAlgoKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoKMS(
+    \Tatum\Model\TransferAlgoKMS $transfer_algo_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_algo_kms** | [**\Tatum\Model\TransferAlgoKMS**](../Model/TransferAlgoKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ALGO from a virtual account to the blockchain
+
+TransferAlgoKMS operation
+
+### Example
+
+[✨ View "transferAlgoKMS.php"](../../examples/Api/BlockchainOperationsApi/transferAlgoKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBchKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKMS(
+    \Tatum\Model\TransferBchKMS $transfer_bch_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bch_kms** | [**\Tatum\Model\TransferBchKMS**](../Model/TransferBchKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BCH from a virtual account to the blockchain
+
+TransferBchKMS operation
+
+### Example
+
+[✨ View "transferBchKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBchKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBchKeyPair()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKeyPair(
+    \Tatum\Model\TransferBchKeyPair $transfer_bch_key_pair
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bch_key_pair** | [**\Tatum\Model\TransferBchKeyPair**](../Model/TransferBchKeyPair.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BCH from a virtual account to the blockchain
+
+TransferBchKeyPair operation
+
+### Example
+
+[✨ View "transferBchKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferBchKeyPair.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBchMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchMnemonic(
+    \Tatum\Model\TransferBchMnemonic $transfer_bch_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bch_mnemonic** | [**\Tatum\Model\TransferBchMnemonic**](../Model/TransferBchMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BCH from a virtual account to the blockchain
+
+<h4>10 credits per API call.</h4><br/> <p>Send BCH (Bitcoin Cash) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Bitcoin Cash server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Bitcoin-Cash#operation/BchTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "transferBchMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferBchMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBnb()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBnb(
+    \Tatum\Model\TransferBnb $transfer_bnb
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bnb** | [**\Tatum\Model\TransferBnb**](../Model/TransferBnb.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BNB from a virtual account to the blockchain
+
+<h4>10 credits per API call.</h4><br/><p> <p>Send BNB (BNB Beacon Chain) or BNB assets from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If BNB server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferBnb.php"](../../examples/Api/BlockchainOperationsApi/transferBnb.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBnbKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBnbKMS(
+    \Tatum\Model\TransferBnbKMS $transfer_bnb_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bnb_kms** | [**\Tatum\Model\TransferBnbKMS**](../Model/TransferBnbKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BNB from a virtual account to the blockchain
+
+TransferBnbKMS operation
+
+### Example
+
+[✨ View "transferBnbKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBnbKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBsc()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBsc(
+    \Tatum\Model\TransferBsc $transfer_bsc
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bsc** | [**\Tatum\Model\TransferBsc**](../Model/TransferBsc.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BSC from a virtual account to the blockchain
+
+<h4>4 credits per API call.</h4><br/> <p>Send BSC (BNB Smart Chain) or BEP-20 tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <br/> <br/> <ul> <li>If BSC server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferBsc.php"](../../examples/Api/BlockchainOperationsApi/transferBsc.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBscKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBscKMS(
+    \Tatum\Model\TransferBscKMS $transfer_bsc_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bsc_kms** | [**\Tatum\Model\TransferBscKMS**](../Model/TransferBscKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BSC from a virtual account to the blockchain
+
+TransferBscKMS operation
+
+### Example
+
+[✨ View "transferBscKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBscKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBscMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBscMnemonic(
+    \Tatum\Model\TransferBscMnemonic $transfer_bsc_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_bsc_mnemonic** | [**\Tatum\Model\TransferBscMnemonic**](../Model/TransferBscMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BSC from a virtual account to the blockchain
+
+TransferBscMnemonic operation
+
+### Example
+
+[✨ View "transferBscMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferBscMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBtcKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKMS(
+    \Tatum\Model\TransferBtcKMS $transfer_btc_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_btc_kms** | [**\Tatum\Model\TransferBtcKMS**](../Model/TransferBtcKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BTC from a virtual account to the blockchain
+
+TransferBtcKMS operation
+
+### Example
+
+[✨ View "transferBtcKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBtcKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBtcKeyPair()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKeyPair(
+    \Tatum\Model\TransferBtcKeyPair $transfer_btc_key_pair
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_btc_key_pair** | [**\Tatum\Model\TransferBtcKeyPair**](../Model/TransferBtcKeyPair.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BTC from a virtual account to the blockchain
+
+TransferBtcKeyPair operation
+
+### Example
+
+[✨ View "transferBtcKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferBtcKeyPair.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferBtcMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcMnemonic(
+    \Tatum\Model\TransferBtcMnemonic $transfer_btc_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_btc_mnemonic** | [**\Tatum\Model\TransferBtcMnemonic**](../Model/TransferBtcMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send BTC from a virtual account to the blockchain
+
+<h4>2 credits per API call.</h4><br/> <p>Send BTC (Bitcoin) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Bitcoin server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Bitcoin#operation/BtcTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> When some of the steps fails, <a href="https://apidoc.tatum.io/tag/Withdrawal#operation/cancelInProgressWithdrawal">Cancel withdrawal</a> operation is used, which cancels withdrawal and creates refund transaction to the sender account.</li> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "transferBtcMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferBtcMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCelo(
+    \Tatum\Model\TransferCelo $transfer_celo
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_celo** | [**\Tatum\Model\TransferCelo**](../Model/TransferCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send CELO from a virtual account to the blockchain
+
+<h4>4 credits per API call.</h4><br/> <p>Send CELO (Celo), ERC-20-equivalent Celo tokens, cUSD, or cEUR from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <br/> <br/> <ul> <li>If Celo server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferCelo.php"](../../examples/Api/BlockchainOperationsApi/transferCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloKMS(
+    \Tatum\Model\TransferCeloKMS $transfer_celo_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_celo_kms** | [**\Tatum\Model\TransferCeloKMS**](../Model/TransferCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send CELO from a virtual account to the blockchain
+
+TransferCeloKMS operation
+
+### Example
+
+[✨ View "transferCeloKMS.php"](../../examples/Api/BlockchainOperationsApi/transferCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCeloMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloMnemonic(
+    \Tatum\Model\TransferCeloMnemonic $transfer_celo_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_celo_mnemonic** | [**\Tatum\Model\TransferCeloMnemonic**](../Model/TransferCeloMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send CELO from a virtual account to the blockchain
+
+TransferCeloMnemonic operation
+
+### Example
+
+[✨ View "transferCeloMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferCeloMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferDogeKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKMS(
+    \Tatum\Model\TransferDogeKMS $transfer_doge_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_doge_kms** | [**\Tatum\Model\TransferDogeKMS**](../Model/TransferDogeKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send DOGE from a virtual account to the blockchain
+
+TransferDogeKMS operation
+
+### Example
+
+[✨ View "transferDogeKMS.php"](../../examples/Api/BlockchainOperationsApi/transferDogeKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferDogeKeyPair()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKeyPair(
+    \Tatum\Model\TransferDogeKeyPair $transfer_doge_key_pair
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_doge_key_pair** | [**\Tatum\Model\TransferDogeKeyPair**](../Model/TransferDogeKeyPair.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send DOGE from a virtual account to the blockchain
+
+TransferDogeKeyPair operation
+
+### Example
+
+[✨ View "transferDogeKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferDogeKeyPair.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferDogeMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeMnemonic(
+    \Tatum\Model\TransferDogeMnemonic $transfer_doge_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_doge_mnemonic** | [**\Tatum\Model\TransferDogeMnemonic**](../Model/TransferDogeMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send DOGE from a virtual account to the blockchain
+
+<h4>4 credits per API call.</h4><br/> <p>Send DOGE (Dogecoin) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Dogecoin server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Dogecoin#operation/DogeTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "transferDogeMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferDogeMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferErc20()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20(
+    \Tatum\Model\TransferErc20 $transfer_erc20
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_erc20** | [**\Tatum\Model\TransferErc20**](../Model/TransferErc20.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+
+<h4>4 credits per API call.</h4><br/> <p>Send Ethereum ERC-20 tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Ethereum server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferErc20.php"](../../examples/Api/BlockchainOperationsApi/transferErc20.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferErc20KMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20KMS(
+    \Tatum\Model\TransferErc20KMS $transfer_erc20_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_erc20_kms** | [**\Tatum\Model\TransferErc20KMS**](../Model/TransferErc20KMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+
+TransferErc20KMS operation
+
+### Example
+
+[✨ View "transferErc20KMS.php"](../../examples/Api/BlockchainOperationsApi/transferErc20KMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferErc20Mnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20Mnemonic(
+    \Tatum\Model\TransferErc20Mnemonic $transfer_erc20_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_erc20_mnemonic** | [**\Tatum\Model\TransferErc20Mnemonic**](../Model/TransferErc20Mnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+
+TransferErc20Mnemonic operation
+
+### Example
+
+[✨ View "transferErc20Mnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferErc20Mnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferEth()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEth(
+    \Tatum\Model\TransferEth $transfer_eth
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ETH from a virtual account to the blockchain
+
+<h4>4 credits per API call.</h4><br/> <p>Send ETH (Ethereum) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Ethereum server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferEth.php"](../../examples/Api/BlockchainOperationsApi/transferEth.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferEthKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEthKMS(
+    \Tatum\Model\TransferEthKMS $transfer_eth_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ETH from a virtual account to the blockchain
+
+TransferEthKMS operation
+
+### Example
+
+[✨ View "transferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/transferEthKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferEthMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEthMnemonic(
+    \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send ETH from a virtual account to the blockchain
+
+TransferEthMnemonic operation
+
+### Example
+
+[✨ View "transferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferEthMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferFlowKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowKMS(
+    \Tatum\Model\TransferFlowKMS $transfer_flow_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_flow_kms** | [**\Tatum\Model\TransferFlowKMS**](../Model/TransferFlowKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send FLOW from a virtual account to the blockchain
+
+TransferFlowKMS operation
+
+### Example
+
+[✨ View "transferFlowKMS.php"](../../examples/Api/BlockchainOperationsApi/transferFlowKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferFlowMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowMnemonic(
+    \Tatum\Model\TransferFlowMnemonic $transfer_flow_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_flow_mnemonic** | [**\Tatum\Model\TransferFlowMnemonic**](../Model/TransferFlowMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send FLOW from a virtual account to the blockchain
+
+<h4>100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.</h4><br/> <p>Send FLOW (Flow) or FUSD from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Flow server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Flow#operation/FlowTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "transferFlowMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferFlowMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferFlowPK()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowPK(
+    \Tatum\Model\TransferFlowPK $transfer_flow_pk
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_flow_pk** | [**\Tatum\Model\TransferFlowPK**](../Model/TransferFlowPK.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send FLOW from a virtual account to the blockchain
+
+TransferFlowPK operation
+
+### Example
+
+[✨ View "transferFlowPK.php"](../../examples/Api/BlockchainOperationsApi/transferFlowPK.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferKCS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCS(
+    \Tatum\Model\TransferKCS $transfer_kcs
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_kcs** | [**\Tatum\Model\TransferKCS**](../Model/TransferKCS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send KCS from a virtual account to the blockchain
+
+<h4>4 credits per API call.</h4><br/> <p>Send KCS (KuCoin Community Chain (KCC)) or ERC-20-equivalent KCC tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If KCS server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferKCS.php"](../../examples/Api/BlockchainOperationsApi/transferKCS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferKCSKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSKMS(
+    \Tatum\Model\TransferKCSKMS $transfer_kcskms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_kcskms** | [**\Tatum\Model\TransferKCSKMS**](../Model/TransferKCSKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send KCS from a virtual account to the blockchain
+
+TransferKCSKMS operation
+
+### Example
+
+[✨ View "transferKCSKMS.php"](../../examples/Api/BlockchainOperationsApi/transferKCSKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferKCSMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSMnemonic(
+    \Tatum\Model\TransferKCSMnemonic $transfer_kcs_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_kcs_mnemonic** | [**\Tatum\Model\TransferKCSMnemonic**](../Model/TransferKCSMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send KCS from a virtual account to the blockchain
+
+TransferKCSMnemonic operation
+
+### Example
+
+[✨ View "transferKCSMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferKCSMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferLtcKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKMS(
+    \Tatum\Model\TransferLtcKMS $transfer_ltc_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_ltc_kms** | [**\Tatum\Model\TransferLtcKMS**](../Model/TransferLtcKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send LTC from a virtual account to the blockchain
+
+TransferLtcKMS operation
+
+### Example
+
+[✨ View "transferLtcKMS.php"](../../examples/Api/BlockchainOperationsApi/transferLtcKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferLtcKeyPair()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKeyPair(
+    \Tatum\Model\TransferLtcKeyPair $transfer_ltc_key_pair
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_ltc_key_pair** | [**\Tatum\Model\TransferLtcKeyPair**](../Model/TransferLtcKeyPair.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send LTC from a virtual account to the blockchain
+
+TransferLtcKeyPair operation
+
+### Example
+
+[✨ View "transferLtcKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferLtcKeyPair.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferLtcMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcMnemonic(
+    \Tatum\Model\TransferLtcMnemonic $transfer_ltc_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_ltc_mnemonic** | [**\Tatum\Model\TransferLtcMnemonic**](../Model/TransferLtcMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send LTC from a virtual account to the blockchain
+
+<h4>10 credits per API call.</h4><br/> <p>Send LTC (Litecoin) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Litecoin server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> There are two possibilites how the transaction on the blockchain can be created: <ul> <li>Using mnemonic - all of the addresses, that are generated from the mnemonic are scanned for the incoming deposits which are used as a source of the transaction. Assets, which are not used in a transaction are moved to the system address wih the derivation index 0. Address with index 0 cannot be assigned automatically to any account and is used for custodial wallet use cases. For non-custodial wallets, field <b>attr</b> should be present and it should be address with the index 1 of the connected wallet.</li> <li>Using keyPair - addresses which are used as a source of the transaction are entered manually</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This method is a helper method, which internally wraps these steps: <ol> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/storeWithdrawal">Store withdrawal</a> - create a ledger transaction, which debits the assets on the sender account.</li> <li><a href="https://apidoc.tatum.io/tag/Litecoin#operation/LtcTransferBlockchain">Perform blockchain transaction</a></li> <li><a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal">Complete withdrawal</a> - move the withdrawal to the completed state, when all of the previous steps were successful.</li> </ol> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "transferLtcMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferLtcMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferSol()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferSol(
+    \Tatum\Model\TransferSol $transfer_sol
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_sol** | [**\Tatum\Model\TransferSol**](../Model/TransferSol.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send SOL from a virtual account to the blockchain
+
+<h4>10 credits per API call.</h4><br/><p> <p>Send SOL (Solana), USDC_SOL, or custom SPL tokens from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If SOL server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferSol.php"](../../examples/Api/BlockchainOperationsApi/transferSol.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferSolKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferSolKMS(
+    \Tatum\Model\TransferSolKMS $transfer_sol_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_sol_kms** | [**\Tatum\Model\TransferSolKMS**](../Model/TransferSolKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send SOL from a virtual account to the blockchain
+
+TransferSolKMS operation
+
+### Example
+
+[✨ View "transferSolKMS.php"](../../examples/Api/BlockchainOperationsApi/transferSolKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTron(
+    \Tatum\Model\TransferTron $transfer_tron
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron** | [**\Tatum\Model\TransferTron**](../Model/TransferTron.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send TRON from a virtual account to the blockchain
+
+<h4>10 credits per API call.</h4><br/><p>Send TRON or TRX assets from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If Tron server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferTron.php"](../../examples/Api/BlockchainOperationsApi/transferTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTronKMS(
+    \Tatum\Model\TransferTronKMS $transfer_tron_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_kms** | [**\Tatum\Model\TransferTronKMS**](../Model/TransferTronKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send TRON from a virtual account to the blockchain
+
+TransferTronKMS operation
+
+### Example
+
+[✨ View "transferTronKMS.php"](../../examples/Api/BlockchainOperationsApi/transferTronKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferTronMnemonic()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTronMnemonic(
+    \Tatum\Model\TransferTronMnemonic $transfer_tron_mnemonic
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_tron_mnemonic** | [**\Tatum\Model\TransferTronMnemonic**](../Model/TransferTronMnemonic.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send TRON from a virtual account to the blockchain
+
+TransferTronMnemonic operation
+
+### Example
+
+[✨ View "transferTronMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferTronMnemonic.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXlm()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXlm(
+    \Tatum\Model\TransferXlm $transfer_xlm
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm** | [**\Tatum\Model\TransferXlm**](../Model/TransferXlm.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send XLM from a virtual account to the blockchain
+
+<h4>10 credits per API call.</h4><br/><p> <p>Send XLM (Stellar) or XLM-based assets from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If XLM server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferXlm.php"](../../examples/Api/BlockchainOperationsApi/transferXlm.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXlmKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXlmKMS(
+    \Tatum\Model\TransferXlmKMS $transfer_xlm_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xlm_kms** | [**\Tatum\Model\TransferXlmKMS**](../Model/TransferXlmKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send XLM from a virtual account to the blockchain
+
+TransferXlmKMS operation
+
+### Example
+
+[✨ View "transferXlmKMS.php"](../../examples/Api/BlockchainOperationsApi/transferXlmKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXrp()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXrp(
+    \Tatum\Model\TransferXrp $transfer_xrp
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp** | [**\Tatum\Model\TransferXrp**](../Model/TransferXrp.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send XRP from a virtual account to the blockchain
+
+<h4>10 credits per API call.</h4><br/><p> <p>Send XRP (Ripple) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. <ul> <li>If XRP server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul> It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.<br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferXrp.php"](../../examples/Api/BlockchainOperationsApi/transferXrp.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXrpKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXrpKMS(
+    \Tatum\Model\TransferXrpKMS $transfer_xrp_kms
+): \Tatum\Model\TransferBtcMnemonic200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp_kms** | [**\Tatum\Model\TransferXrpKMS**](../Model/TransferXrpKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+
+### Description
+
+Send XRP from a virtual account to the blockchain
+
+TransferXrpKMS operation
+
+### Example
+
+[✨ View "transferXrpKMS.php"](../../examples/Api/BlockchainOperationsApi/transferXrpKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `trcAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->trcAddress(
+    \Tatum\Model\TrcAddress $trc_address
+): \Tatum\Model\Trc20Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trc_address** | [**\Tatum\Model\TrcAddress**](../Model/TrcAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
+
+### Description
+
+Register a new TRON TRC-10 or TRC-20 token in the virtual account
+
+<h4>10 credits per API call.</h4><br/> <p>First step to create new TRC 10/20 token with given supply on the Tron blockchain with support of Tatum's private ledger.<br/> This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.<br/> The whole supply of TRC 10/20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with TRC 10/20 token name as account's currency.<br/> Newly created account is frozen until the specific TRC 10/20 smart contract address is linked with the Tatum virtual currency, representing the token.<br/> Order of the steps to create TRC 10/20 smart contract with Tatum private ledger support: <ol> <li>Create TRC 10/20 token (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy TRC 10</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">TRC 20 smart contract</a> - create new TRC 10/20 smart contract on the blockchain</li> <li><a href="#operation/storeTokenAddress">Store TRC 10/20 smart contract address</a> - link newly created TRC 10/20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for TRC 10/20 Tatum accounts</li> </ol> Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex. There is a helper method <a href="#operation/TronDeployTrc">Deploy TRC 10/20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/> </p>
+
+### Example
+
+[✨ View "trcAddress.php"](../../examples/Api/BlockchainOperationsApi/trcAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `trcXpub()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->trcXpub(
+    \Tatum\Model\TrcXpub $trc_xpub
+): \Tatum\Model\Trc20Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trc_xpub** | [**\Tatum\Model\TrcXpub**](../Model/TrcXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
+
+### Description
+
+Register a new TRON TRC-10 or TRC-20 token in the virtual account
+
+TrcXpub operation
+
+### Example
+
+[✨ View "trcXpub.php"](../../examples/Api/BlockchainOperationsApi/trcXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

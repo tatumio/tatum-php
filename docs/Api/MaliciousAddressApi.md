@@ -5,7 +5,7 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkMalicousAddress()**](#checkmalicousaddress) | **GET** `/v3/security/address/{address}` | Check malicous address
+[**check Malicous Address()**](#checkmalicousaddress) | **GET** `/v3 /security /address /{address}` | Check malicous address
 
 
 ## `checkMalicousAddress()`

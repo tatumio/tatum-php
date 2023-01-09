@@ -119,7 +119,7 @@ class Debugger {
                 if (preg_match("%x-api-key%i", $key)) {
                     $result =
                         strlen($string) >= 10
-                            ? preg_replace('%^(\w{3}).*(\w{3}(?:_\d+)?)$%', '$1******$2', $string)
+                            ? preg_replace('%^(\w{3}).*(\w{3}(?:_\w+)?)$%', '$1******$2', $string)
                             : str_repeat("*", 6);
                     break;
                 }

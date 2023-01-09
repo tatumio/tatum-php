@@ -5,11 +5,11 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCurrency()**](#createcurrency) | **POST** `/v3/ledger/virtualCurrency` | Create new virtual currency
-[**getCurrency()**](#getcurrency) | **GET** `/v3/ledger/virtualCurrency/{name}` | Get virtual currency
-[**mintCurrency()**](#mintcurrency) | **PUT** `/v3/ledger/virtualCurrency/mint` | Create new supply of virtual currency
-[**revokeCurrency()**](#revokecurrency) | **PUT** `/v3/ledger/virtualCurrency/revoke` | Destroy supply of virtual currency
-[**updateCurrency()**](#updatecurrency) | **PUT** `/v3/ledger/virtualCurrency` | Update virtual currency
+[**create Currency()**](#createcurrency) | **POST** `/v3 /ledger /virtualCurrency` | Create new virtual currency
+[**get Currency()**](#getcurrency) | **GET** `/v3 /ledger /virtualCurrency /{name}` | Get virtual currency
+[**mint Currency()**](#mintcurrency) | **PUT** `/v3 /ledger /virtualCurrency /mint` | Create new supply of virtual currency
+[**revoke Currency()**](#revokecurrency) | **PUT** `/v3 /ledger /virtualCurrency /revoke` | Destroy supply of virtual currency
+[**update Currency()**](#updatecurrency) | **PUT** `/v3 /ledger /virtualCurrency` | Update virtual currency
 
 
 ## `createCurrency()`

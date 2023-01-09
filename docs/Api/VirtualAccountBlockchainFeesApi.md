@@ -5,7 +5,7 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**offchainEstimateFee()**](#offchainestimatefee) | **POST** `/v3/offchain/blockchain/estimate` | Estimate ledger to blockchain transaction fee
+[**offchain Estimate Fee()**](#offchainestimatefee) | **POST** `/v3 /offchain /blockchain /estimate` | Estimate ledger to blockchain transaction fee
 
 
 ## `offchainEstimateFee()`

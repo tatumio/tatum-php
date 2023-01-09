@@ -5,10 +5,10 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**freezeApiKey()**](#freezeapikey) | **PUT** `/v3/tatum/freeze` | Freeze API Key
-[**getCredits()**](#getcredits) | **GET** `/v3/tatum/usage` | Get information about your credit consumption for the last month
-[**getVersion()**](#getversion) | **GET** `/v3/tatum/version` | Get API version
-[**unfreezeApiKey()**](#unfreezeapikey) | **DELETE** `/v3/tatum/freeze` | Unfreeze API Key
+[**freeze Api Key()**](#freezeapikey) | **PUT** `/v3 /tatum /freeze` | Freeze API Key
+[**get Credits()**](#getcredits) | **GET** `/v3 /tatum /usage` | Get information about your credit consumption for the last month
+[**get Version()**](#getversion) | **GET** `/v3 /tatum /version` | Get API version
+[**unfreeze Api Key()**](#unfreezeapikey) | **DELETE** `/v3 /tatum /freeze` | Unfreeze API Key
 
 
 ## `freezeApiKey()`

@@ -5,9 +5,9 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) | **POST** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}` | Connect to the blockchain node through an RPC driver
-[**nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) | **GET** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}` | Connect to the blockchain node through an RPC driver
-[**nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) | **PUT** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}` | Connect to the blockchain node through an RPC driver
+[**node Json Post Rpc Driver()**](#nodejsonpostrpcdriver) | **POST** `/v3 /blockchain /node /{chain} /{xApiKey} /{rpcPath}` | Connect to the blockchain node through an RPC driver
+[**node Json Rpc Get Driver()**](#nodejsonrpcgetdriver) | **GET** `/v3 /blockchain /node /{chain} /{xApiKey} /{rpcPath}` | Connect to the blockchain node through an RPC driver
+[**node Json Rpc Put Driver()**](#nodejsonrpcputdriver) | **PUT** `/v3 /blockchain /node /{chain} /{xApiKey} /{rpcPath}` | Connect to the blockchain node through an RPC driver
 
 
 ## `nodeJsonPostRpcDriver()`

@@ -23,6 +23,52 @@ use Tatum\Sdk\Serializer as S;
  */
 class BlockchainStorageApi extends AbstractApi {
     /**
+     * Store a log record
+     *
+     * @param \Tatum\Model\CreateRecord $create_record 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionHash
+     */
+    public function createRecord(\Tatum\Model\CreateRecord $create_record) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionHash $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/record", [], $rHeaders, [], $create_record
+            ), 
+            "\Tatum\Model\TransactionHash"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Store a log record
+     *
+     * @param \Tatum\Model\CreateRecordCelo $create_record_celo 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionHash
+     */
+    public function createRecordCelo(\Tatum\Model\CreateRecordCelo $create_record_celo) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionHash $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/record", [], $rHeaders, [], $create_record_celo
+            ), 
+            "\Tatum\Model\TransactionHash"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Get a log record
      *
      * @param string $chain The blockchain to get the log record from
@@ -52,52 +98,6 @@ class BlockchainStorageApi extends AbstractApi {
                 ], $rHeaders, []
             ), 
             "\Tatum\Model\GetLog200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Store a log record
-     *
-     * @param \Tatum\Model\CreateRecord $create_record 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\TransactionHash
-     */
-    public function recordCreateRecord(\Tatum\Model\CreateRecord $create_record) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionHash $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/record", [], $rHeaders, [], $create_record
-            ), 
-            "\Tatum\Model\TransactionHash"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Store a log record
-     *
-     * @param \Tatum\Model\CreateRecordCelo $create_record_celo 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\TransactionHash
-     */
-    public function recordCreateRecordCelo(\Tatum\Model\CreateRecordCelo $create_record_celo) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionHash $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/record", [], $rHeaders, [], $create_record_celo
-            ), 
-            "\Tatum\Model\TransactionHash"
         );
             
         return $result;

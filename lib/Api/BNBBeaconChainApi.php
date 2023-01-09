@@ -221,7 +221,7 @@ class BNBBeaconChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function bnbTransactionTransferBnbBlockchain(\Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain) {
+    public function transferBnbBlockchain(\Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
@@ -244,7 +244,7 @@ class BNBBeaconChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function bnbTransactionTransferBnbBlockchainKMS(\Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms) {
+    public function transferBnbBlockchainKMS(\Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */

@@ -5,47 +5,271 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activatedNotActivatedGasPumpAddresses()**](#activatednotactivatedgaspumpaddresses) | **GET** `/v3/gas-pump/address/{chain}/{txId}` | Get the results of the address activation transaction
-[**blockchainScCustodialApproveTransferCustodialWallet()**](#blockchainsccustodialapprovetransfercustodialwallet) | **POST** `/v3/blockchain/sc/custodial/approve` | Approve the transfer of an asset from a gas pump address
-[**blockchainScCustodialApproveTransferCustodialWalletCelo()**](#blockchainsccustodialapprovetransfercustodialwalletcelo) | **POST** `/v3/blockchain/sc/custodial/approve` | Approve the transfer of an asset from a gas pump address
-[**blockchainScCustodialApproveTransferCustodialWalletCeloKMS()**](#blockchainsccustodialapprovetransfercustodialwalletcelokms) | **POST** `/v3/blockchain/sc/custodial/approve` | Approve the transfer of an asset from a gas pump address
-[**blockchainScCustodialApproveTransferCustodialWalletKMS()**](#blockchainsccustodialapprovetransfercustodialwalletkms) | **POST** `/v3/blockchain/sc/custodial/approve` | Approve the transfer of an asset from a gas pump address
-[**blockchainScCustodialBatchGenerateCustodialWalletBatch()**](#blockchainsccustodialbatchgeneratecustodialwalletbatch) | **POST** `/v3/blockchain/sc/custodial/batch` | Generate a gas pump wallet address
-[**blockchainScCustodialBatchGenerateCustodialWalletBatchCelo()**](#blockchainsccustodialbatchgeneratecustodialwalletbatchcelo) | **POST** `/v3/blockchain/sc/custodial/batch` | Generate a gas pump wallet address
-[**blockchainScCustodialBatchGenerateCustodialWalletBatchCeloKMS()**](#blockchainsccustodialbatchgeneratecustodialwalletbatchcelokms) | **POST** `/v3/blockchain/sc/custodial/batch` | Generate a gas pump wallet address
-[**blockchainScCustodialBatchGenerateCustodialWalletBatchKMS()**](#blockchainsccustodialbatchgeneratecustodialwalletbatchkms) | **POST** `/v3/blockchain/sc/custodial/batch` | Generate a gas pump wallet address
-[**blockchainScCustodialBatchGenerateCustodialWalletBatchPayer()**](#blockchainsccustodialbatchgeneratecustodialwalletbatchpayer) | **POST** `/v3/blockchain/sc/custodial/batch` | Generate a gas pump wallet address
-[**blockchainScCustodialBatchGenerateCustodialWalletBatchTron()**](#blockchainsccustodialbatchgeneratecustodialwalletbatchtron) | **POST** `/v3/blockchain/sc/custodial/batch` | Generate a gas pump wallet address
-[**blockchainScCustodialBatchGenerateCustodialWalletBatchTronKMS()**](#blockchainsccustodialbatchgeneratecustodialwalletbatchtronkms) | **POST** `/v3/blockchain/sc/custodial/batch` | Generate a gas pump wallet address
-[**blockchainScCustodialGenerateCustodialWallet()**](#blockchainsccustodialgeneratecustodialwallet) | **POST** `/v3/blockchain/sc/custodial` | Generate a custodial wallet address
-[**blockchainScCustodialGenerateCustodialWalletCelo()**](#blockchainsccustodialgeneratecustodialwalletcelo) | **POST** `/v3/blockchain/sc/custodial` | Generate a custodial wallet address
-[**blockchainScCustodialGenerateCustodialWalletCeloKMS()**](#blockchainsccustodialgeneratecustodialwalletcelokms) | **POST** `/v3/blockchain/sc/custodial` | Generate a custodial wallet address
-[**blockchainScCustodialGenerateCustodialWalletKMS()**](#blockchainsccustodialgeneratecustodialwalletkms) | **POST** `/v3/blockchain/sc/custodial` | Generate a custodial wallet address
-[**blockchainScCustodialGenerateCustodialWalletTron()**](#blockchainsccustodialgeneratecustodialwallettron) | **POST** `/v3/blockchain/sc/custodial` | Generate a custodial wallet address
-[**blockchainScCustodialGenerateCustodialWalletTronKMS()**](#blockchainsccustodialgeneratecustodialwallettronkms) | **POST** `/v3/blockchain/sc/custodial` | Generate a custodial wallet address
-[**blockchainScCustodialTransferBatchTransferCustodialWalletBatch()**](#blockchainsccustodialtransferbatchtransfercustodialwalletbatch) | **POST** `/v3/blockchain/sc/custodial/transfer/batch` | Transfer multiple assets from a gas pump address
-[**blockchainScCustodialTransferBatchTransferCustodialWalletBatchCelo()**](#blockchainsccustodialtransferbatchtransfercustodialwalletbatchcelo) | **POST** `/v3/blockchain/sc/custodial/transfer/batch` | Transfer multiple assets from a gas pump address
-[**blockchainScCustodialTransferBatchTransferCustodialWalletBatchCeloKMS()**](#blockchainsccustodialtransferbatchtransfercustodialwalletbatchcelokms) | **POST** `/v3/blockchain/sc/custodial/transfer/batch` | Transfer multiple assets from a gas pump address
-[**blockchainScCustodialTransferBatchTransferCustodialWalletBatchKMS()**](#blockchainsccustodialtransferbatchtransfercustodialwalletbatchkms) | **POST** `/v3/blockchain/sc/custodial/transfer/batch` | Transfer multiple assets from a gas pump address
-[**blockchainScCustodialTransferBatchTransferCustodialWalletBatchTron()**](#blockchainsccustodialtransferbatchtransfercustodialwalletbatchtron) | **POST** `/v3/blockchain/sc/custodial/transfer/batch` | Transfer multiple assets from a gas pump address
-[**blockchainScCustodialTransferBatchTransferCustodialWalletBatchTronKMS()**](#blockchainsccustodialtransferbatchtransfercustodialwalletbatchtronkms) | **POST** `/v3/blockchain/sc/custodial/transfer/batch` | Transfer multiple assets from a gas pump address
-[**blockchainScCustodialTransferCustodialWallet()**](#blockchainsccustodialtransfercustodialwallet) | **POST** `/v3/blockchain/sc/custodial/transfer` | Transfer an asset from a gas pump address
-[**blockchainScCustodialTransferCustodialWalletCelo()**](#blockchainsccustodialtransfercustodialwalletcelo) | **POST** `/v3/blockchain/sc/custodial/transfer` | Transfer an asset from a gas pump address
-[**blockchainScCustodialTransferCustodialWalletCeloKMS()**](#blockchainsccustodialtransfercustodialwalletcelokms) | **POST** `/v3/blockchain/sc/custodial/transfer` | Transfer an asset from a gas pump address
-[**blockchainScCustodialTransferCustodialWalletKMS()**](#blockchainsccustodialtransfercustodialwalletkms) | **POST** `/v3/blockchain/sc/custodial/transfer` | Transfer an asset from a gas pump address
-[**blockchainScCustodialTransferCustodialWalletTron()**](#blockchainsccustodialtransfercustodialwallettron) | **POST** `/v3/blockchain/sc/custodial/transfer` | Transfer an asset from a gas pump address
-[**blockchainScCustodialTransferCustodialWalletTronKMS()**](#blockchainsccustodialtransfercustodialwallettronkms) | **POST** `/v3/blockchain/sc/custodial/transfer` | Transfer an asset from a gas pump address
-[**gasPumpActivateGasPump()**](#gaspumpactivategaspump) | **POST** `/v3/gas-pump/activate` | Activate gas pump addresses
-[**gasPumpActivateGasPumpCelo()**](#gaspumpactivategaspumpcelo) | **POST** `/v3/gas-pump/activate` | Activate gas pump addresses
-[**gasPumpActivateGasPumpCeloKMS()**](#gaspumpactivategaspumpcelokms) | **POST** `/v3/gas-pump/activate` | Activate gas pump addresses
-[**gasPumpActivateGasPumpKMS()**](#gaspumpactivategaspumpkms) | **POST** `/v3/gas-pump/activate` | Activate gas pump addresses
-[**gasPumpActivateGasPumpTatum()**](#gaspumpactivategaspumptatum) | **POST** `/v3/gas-pump/activate` | Activate gas pump addresses
-[**gasPumpActivateGasPumpTron()**](#gaspumpactivategaspumptron) | **POST** `/v3/gas-pump/activate` | Activate gas pump addresses
-[**gasPumpActivateGasPumpTronKMS()**](#gaspumpactivategaspumptronkms) | **POST** `/v3/gas-pump/activate` | Activate gas pump addresses
-[**gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) | **GET** `/v3/gas-pump/activated/{chain}/{owner}/{index}` | Check whether the gas pump address with a specified index is activated
-[**precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) | **POST** `/v3/gas-pump` | Precalculate gas pump addresses
-[**sCGetCustodialAddresses()**](#scgetcustodialaddresses) | **GET** `/v3/blockchain/sc/custodial/{chain}/{hash}` | Get the custodial wallet address from the transaction
+[**activate Gas Pump()**](#activategaspump) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
+[**activate Gas Pump Celo()**](#activategaspumpcelo) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
+[**activate Gas Pump Celo KMS()**](#activategaspumpcelokms) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
+[**activate Gas Pump KMS()**](#activategaspumpkms) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
+[**activate Gas Pump Tatum()**](#activategaspumptatum) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
+[**activate Gas Pump Tron()**](#activategaspumptron) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
+[**activate Gas Pump Tron KMS()**](#activategaspumptronkms) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
+[**activated Not Activated Gas Pump Addresses()**](#activatednotactivatedgaspumpaddresses) | **GET** `/v3 /gas-pump /address /{chain} /{txId}` | Get the results of the address activation transaction
+[**approve Transfer Custodial Wallet()**](#approvetransfercustodialwallet) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
+[**approve Transfer Custodial Wallet Celo()**](#approvetransfercustodialwalletcelo) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
+[**approve Transfer Custodial Wallet Celo KMS()**](#approvetransfercustodialwalletcelokms) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
+[**approve Transfer Custodial Wallet KMS()**](#approvetransfercustodialwalletkms) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
+[**gas Pump Addresses Activated Or Not()**](#gaspumpaddressesactivatedornot) | **GET** `/v3 /gas-pump /activated /{chain} /{owner} /{index}` | Check whether the gas pump address with a specified index is activated
+[**generate Custodial Wallet()**](#generatecustodialwallet) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
+[**generate Custodial Wallet Batch()**](#generatecustodialwalletbatch) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
+[**generate Custodial Wallet Batch Celo()**](#generatecustodialwalletbatchcelo) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
+[**generate Custodial Wallet Batch Celo KMS()**](#generatecustodialwalletbatchcelokms) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
+[**generate Custodial Wallet Batch KMS()**](#generatecustodialwalletbatchkms) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
+[**generate Custodial Wallet Batch Payer()**](#generatecustodialwalletbatchpayer) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
+[**generate Custodial Wallet Batch Tron()**](#generatecustodialwalletbatchtron) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
+[**generate Custodial Wallet Batch Tron KMS()**](#generatecustodialwalletbatchtronkms) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
+[**generate Custodial Wallet Celo()**](#generatecustodialwalletcelo) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
+[**generate Custodial Wallet Celo KMS()**](#generatecustodialwalletcelokms) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
+[**generate Custodial Wallet KMS()**](#generatecustodialwalletkms) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
+[**generate Custodial Wallet Tron()**](#generatecustodialwallettron) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
+[**generate Custodial Wallet Tron KMS()**](#generatecustodialwallettronkms) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
+[**precalculate Gas Pump Addresses()**](#precalculategaspumpaddresses) | **POST** `/v3 /gas-pump` | Precalculate gas pump addresses
+[**s CGet Custodial Addresses()**](#scgetcustodialaddresses) | **GET** `/v3 /blockchain /sc /custodial /{chain} /{hash}` | Get the custodial wallet address from the transaction
+[**transfer Custodial Wallet()**](#transfercustodialwallet) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
+[**transfer Custodial Wallet Batch()**](#transfercustodialwalletbatch) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
+[**transfer Custodial Wallet Batch Celo()**](#transfercustodialwalletbatchcelo) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
+[**transfer Custodial Wallet Batch Celo KMS()**](#transfercustodialwalletbatchcelokms) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
+[**transfer Custodial Wallet Batch KMS()**](#transfercustodialwalletbatchkms) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
+[**transfer Custodial Wallet Batch Tron()**](#transfercustodialwalletbatchtron) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
+[**transfer Custodial Wallet Batch Tron KMS()**](#transfercustodialwalletbatchtronkms) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
+[**transfer Custodial Wallet Celo()**](#transfercustodialwalletcelo) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
+[**transfer Custodial Wallet Celo KMS()**](#transfercustodialwalletcelokms) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
+[**transfer Custodial Wallet KMS()**](#transfercustodialwalletkms) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
+[**transfer Custodial Wallet Tron()**](#transfercustodialwallettron) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
+[**transfer Custodial Wallet Tron KMS()**](#transfercustodialwallettronkms) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
 
+
+## `activateGasPump()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPump(
+    \Tatum\Model\ActivateGasPump $activate_gas_pump
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump** | [**\Tatum\Model\ActivateGasPump**](../Model/ActivateGasPump.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Activate gas pump addresses
+
+ActivateGasPump operation
+
+### Example
+
+[✨ View "activateGasPump.php"](../../examples/Api/GasPumpApi/activateGasPump.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `activateGasPumpCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCelo(
+    \Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump_celo** | [**\Tatum\Model\ActivateGasPumpCelo**](../Model/ActivateGasPumpCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Activate gas pump addresses
+
+ActivateGasPumpCelo operation
+
+### Example
+
+[✨ View "activateGasPumpCelo.php"](../../examples/Api/GasPumpApi/activateGasPumpCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `activateGasPumpCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCeloKMS(
+    \Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump_celo_kms** | [**\Tatum\Model\ActivateGasPumpCeloKMS**](../Model/ActivateGasPumpCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Activate gas pump addresses
+
+ActivateGasPumpCeloKMS operation
+
+### Example
+
+[✨ View "activateGasPumpCeloKMS.php"](../../examples/Api/GasPumpApi/activateGasPumpCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `activateGasPumpKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpKMS(
+    \Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump_kms** | [**\Tatum\Model\ActivateGasPumpKMS**](../Model/ActivateGasPumpKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Activate gas pump addresses
+
+ActivateGasPumpKMS operation
+
+### Example
+
+[✨ View "activateGasPumpKMS.php"](../../examples/Api/GasPumpApi/activateGasPumpKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `activateGasPumpTatum()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTatum(
+    \Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump_tatum** | [**\Tatum\Model\ActivateGasPumpTatum**](../Model/ActivateGasPumpTatum.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Activate gas pump addresses
+
+<p><b>2 credits per API call</b></p> <p>Activate the <a href="#operation/PrecalculateGasPumpAddresses">precalulated gas pump addresses</a>. Activating a gas pump address allows this address to send funds to other addresses.</p> <p>You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the <code>from</code> and <code>to</code> request body parameters) and then make another API call with the remaining 230 addresses.</p> <p><b>When to activate a gas pump address</b><br/> Because activating a gas pump address costs some amount of gas on a blockchain, you want to activate only those addresses that will be used for sending funds to other addresses. If you know that a gas pump address will not be used for sending funds, you can leave this address not activated. The customer who uses this address will still be able to receive funds.</p> <p>Depending on your business needs and requirements, you can choose when to activate the gas pump addresses. If you know for sure that all the precalculated addresses will be sending funds, you can activate all the addresses right after they have been precalculated.</p> <p>Alternatively, you can set up the activation in such a way so that a gas pump address gets activated only when a specific event is triggered. For example, you can activate a gas pump address:</p> <ul> <li>When it receives an asset for the first time</li> <li>When the customer tries to send an asset from this address for the first time</li> </ul> <p>After you make an API call to activate gas pump addresses, use the <a href="#operation/ActivatedNotActivatedGasPumpAddresses">API for getting the results of the address activation transaction</a>.</p> <p><b>Paying the gas fee for activating gas pump addresses</b><br/> You can pay the gas fees for each activation transaction yourself, or Tatum can cover it for you.</p> <ul> <li>When <b>paying the gas fees yourself</b>, you must sign the transaction with either the private key of the blockchain address from which you want to pay the fees or the signature ID of that private key (if you use <a href="https://apidoc.tatum.io/tag/Key-Management-System" target="_blank">Key Management System</a>, KMS).<br/> To pay the fees yourself, use this API with any schema of the request body except for <code>ActivateGasPumpTatum</code>. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the <code>ActivateGasPumpKMS</code> schema. </li> <li>If you want <b>Tatum to cover the fees</b>, use this API with the <code>ActivateGasPumpTatum</code> schema of the request body. <ul> <li>On the <b>mainnet</b>, you have to have a <a href="https://tatum.io/pricing" target="_blank">paid pricing plan</a>.<br/> Tatum pays the fees from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. The transaction fees and the corresponding numbers of credits deducted from your allowance vary depending on what blockchain you activate the addresses.</li> <li>On the <b>testnet</b>, no credits are deducted from the monthly credit allowance. You can activate gas pump addresses regardless of your pricing plan.</li> </ul> </li> </ul> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
+
+### Example
+
+[✨ View "activateGasPumpTatum.php"](../../examples/Api/GasPumpApi/activateGasPumpTatum.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `activateGasPumpTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTron(
+    \Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump_tron** | [**\Tatum\Model\ActivateGasPumpTron**](../Model/ActivateGasPumpTron.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Activate gas pump addresses
+
+ActivateGasPumpTron operation
+
+### Example
+
+[✨ View "activateGasPumpTron.php"](../../examples/Api/GasPumpApi/activateGasPumpTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `activateGasPumpTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTronKMS(
+    \Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$activate_gas_pump_tron_kms** | [**\Tatum\Model\ActivateGasPumpTronKMS**](../Model/ActivateGasPumpTronKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Activate gas pump addresses
+
+ActivateGasPumpTronKMS operation
+
+### Example
+
+[✨ View "activateGasPumpTronKMS.php"](../../examples/Api/GasPumpApi/activateGasPumpTronKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `activatedNotActivatedGasPumpAddresses()`
 
@@ -81,14 +305,14 @@ Get the results of the address activation transaction
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainScCustodialApproveTransferCustodialWallet()`
+## `approveTransferCustodialWallet()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialApproveTransferCustodialWallet(
+$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWallet(
     \Tatum\Model\ApproveTransferCustodialWallet $approve_transfer_custodial_wallet
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -99,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -109,18 +333,18 @@ Approve the transfer of an asset from a gas pump address
 
 ### Example
 
-[✨ View "blockchainScCustodialApproveTransferCustodialWallet.php"](../../examples/Api/GasPumpApi/blockchainScCustodialApproveTransferCustodialWallet.php)
+[✨ View "approveTransferCustodialWallet.php"](../../examples/Api/GasPumpApi/approveTransferCustodialWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainScCustodialApproveTransferCustodialWalletCelo()`
+## `approveTransferCustodialWalletCelo()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialApproveTransferCustodialWalletCelo(
+$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCelo(
     \Tatum\Model\ApproveTransferCustodialWalletCelo $approve_transfer_custodial_wallet_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -131,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -141,18 +365,18 @@ ApproveTransferCustodialWalletCelo operation
 
 ### Example
 
-[✨ View "blockchainScCustodialApproveTransferCustodialWalletCelo.php"](../../examples/Api/GasPumpApi/blockchainScCustodialApproveTransferCustodialWalletCelo.php)
+[✨ View "approveTransferCustodialWalletCelo.php"](../../examples/Api/GasPumpApi/approveTransferCustodialWalletCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainScCustodialApproveTransferCustodialWalletCeloKMS()`
+## `approveTransferCustodialWalletCeloKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialApproveTransferCustodialWalletCeloKMS(
+$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCeloKMS(
     \Tatum\Model\ApproveTransferCustodialWalletCeloKMS $approve_transfer_custodial_wallet_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -163,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -173,18 +397,18 @@ ApproveTransferCustodialWalletCeloKMS operation
 
 ### Example
 
-[✨ View "blockchainScCustodialApproveTransferCustodialWalletCeloKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialApproveTransferCustodialWalletCeloKMS.php)
+[✨ View "approveTransferCustodialWalletCeloKMS.php"](../../examples/Api/GasPumpApi/approveTransferCustodialWalletCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `blockchainScCustodialApproveTransferCustodialWalletKMS()`
+## `approveTransferCustodialWalletKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialApproveTransferCustodialWalletKMS(
+$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletKMS(
     \Tatum\Model\ApproveTransferCustodialWalletKMS $approve_transfer_custodial_wallet_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -195,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -205,1045 +429,7 @@ ApproveTransferCustodialWalletKMS operation
 
 ### Example
 
-[✨ View "blockchainScCustodialApproveTransferCustodialWalletKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialApproveTransferCustodialWalletKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialBatchGenerateCustodialWalletBatch()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialBatchGenerateCustodialWalletBatch(
-    \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch** | [**\Tatum\Model\GenerateCustodialWalletBatch**](../Model/GenerateCustodialWalletBatch.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatch operation
-
-### Example
-
-[✨ View "blockchainScCustodialBatchGenerateCustodialWalletBatch.php"](../../examples/Api/GasPumpApi/blockchainScCustodialBatchGenerateCustodialWalletBatch.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialBatchGenerateCustodialWalletBatchCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialBatchGenerateCustodialWalletBatchCelo(
-    \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_celo** | [**\Tatum\Model\GenerateCustodialWalletBatchCelo**](../Model/GenerateCustodialWalletBatchCelo.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchCelo operation
-
-### Example
-
-[✨ View "blockchainScCustodialBatchGenerateCustodialWalletBatchCelo.php"](../../examples/Api/GasPumpApi/blockchainScCustodialBatchGenerateCustodialWalletBatchCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialBatchGenerateCustodialWalletBatchCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialBatchGenerateCustodialWalletBatchCeloKMS(
-    \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchCeloKMS**](../Model/GenerateCustodialWalletBatchCeloKMS.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchCeloKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialBatchGenerateCustodialWalletBatchCeloKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialBatchGenerateCustodialWalletBatchCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialBatchGenerateCustodialWalletBatchKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialBatchGenerateCustodialWalletBatchKMS(
-    \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchKMS**](../Model/GenerateCustodialWalletBatchKMS.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialBatchGenerateCustodialWalletBatchKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialBatchGenerateCustodialWalletBatchKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialBatchGenerateCustodialWalletBatchPayer()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialBatchGenerateCustodialWalletBatchPayer(
-    \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_payer** | [**\Tatum\Model\GenerateCustodialWalletBatchPayer**](../Model/GenerateCustodialWalletBatchPayer.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a gas pump wallet address
-
-<p><b>This API is deprecated.<br/>To start with the gas pump, use the <a href="#operation/PrecalculateGasPumpAddresses">API for precalculating the gas pump addresses</a>.</b></p><br/> <p><b>2 credits per API call</b></p> <p>Generate new gas pump smart contract address on the blockchain. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away. Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.<br/> This operation deploys a smart contract on the blockchain.<br/> For paid plans, it is possible to pay for the gas costs - you don't have to provide private key or signatureId. Blockchain fees will be covered by your credits. <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
-
-### Example
-
-[✨ View "blockchainScCustodialBatchGenerateCustodialWalletBatchPayer.php"](../../examples/Api/GasPumpApi/blockchainScCustodialBatchGenerateCustodialWalletBatchPayer.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialBatchGenerateCustodialWalletBatchTron()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialBatchGenerateCustodialWalletBatchTron(
-    \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_tron** | [**\Tatum\Model\GenerateCustodialWalletBatchTron**](../Model/GenerateCustodialWalletBatchTron.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchTron operation
-
-### Example
-
-[✨ View "blockchainScCustodialBatchGenerateCustodialWalletBatchTron.php"](../../examples/Api/GasPumpApi/blockchainScCustodialBatchGenerateCustodialWalletBatchTron.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialBatchGenerateCustodialWalletBatchTronKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialBatchGenerateCustodialWalletBatchTronKMS(
-    \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchTronKMS**](../Model/GenerateCustodialWalletBatchTronKMS.md) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchTronKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialBatchGenerateCustodialWalletBatchTronKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialBatchGenerateCustodialWalletBatchTronKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialGenerateCustodialWallet()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialGenerateCustodialWallet(
-    \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet** | [**\Tatum\Model\GenerateCustodialWallet**](../Model/GenerateCustodialWallet.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a custodial wallet address
-
-<p><b>This API is deprecated.<br/>To start with the gas pump, use the <a href="#operation/PrecalculateGasPumpAddresses">API for precalculating the gas pump addresses</a>.</b></p> <p><b>If you built your gas pump solution using this API and the <a href="#operation/GenerateCustodialWalletBatch">API for generating a gas pump wallet address</a>, you can still use this API for creating more custodial addresses for your solution. However, we recommend that you switch to the <a href="#operation/PrecalculateGasPumpAddresses">API for precalculating the gas pump addresses</a></b>.</p><br/> <p><b>2 credits per API call</b></p> <p>Generate new gas pump smart contract address on the blockchain. It's possible to enable tokens, which should be detected and supported on that address. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away.</p> <p>Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.</p> <p>There are multiple options, how this address can be setup - it cannot be changed in the future:</p> <ul> <li>Native assets only - ETH, BSC, CELO, MATIC, ONE, TRX</li> <li>Native assets + ERC20 tokens</li> <li>Native assets + ERC721 tokens</li> <li>Native assets + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 tokens</li> <li>Native assets + ERC20 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> </ul> <p>All of these options could be enabled with a batch mode as well - in 1 transaction, it is possible to transfer multiple different assets from that address, e.g. ETH + USDC + ERC721 token. Without batch mode, 3 separate transaction must have been performed.</p> <p>This operation deploys a smart contract on the blockchain. More assets you will support, more intial gas will be used for address creation. Batch mode adds more gas for every type.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> <li>TRON (except for Multi Tokens)</li> </ul>
-
-### Example
-
-[✨ View "blockchainScCustodialGenerateCustodialWallet.php"](../../examples/Api/GasPumpApi/blockchainScCustodialGenerateCustodialWallet.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialGenerateCustodialWalletCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialGenerateCustodialWalletCelo(
-    \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_celo** | [**\Tatum\Model\GenerateCustodialWalletCelo**](../Model/GenerateCustodialWalletCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletCelo operation
-
-### Example
-
-[✨ View "blockchainScCustodialGenerateCustodialWalletCelo.php"](../../examples/Api/GasPumpApi/blockchainScCustodialGenerateCustodialWalletCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialGenerateCustodialWalletCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialGenerateCustodialWalletCeloKMS(
-    \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletCeloKMS**](../Model/GenerateCustodialWalletCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletCeloKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialGenerateCustodialWalletCeloKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialGenerateCustodialWalletCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialGenerateCustodialWalletKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialGenerateCustodialWalletKMS(
-    \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_kms** | [**\Tatum\Model\GenerateCustodialWalletKMS**](../Model/GenerateCustodialWalletKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialGenerateCustodialWalletKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialGenerateCustodialWalletKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialGenerateCustodialWalletTron()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialGenerateCustodialWalletTron(
-    \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_tron** | [**\Tatum\Model\GenerateCustodialWalletTron**](../Model/GenerateCustodialWalletTron.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletTron operation
-
-### Example
-
-[✨ View "blockchainScCustodialGenerateCustodialWalletTron.php"](../../examples/Api/GasPumpApi/blockchainScCustodialGenerateCustodialWalletTron.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialGenerateCustodialWalletTronKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialGenerateCustodialWalletTronKMS(
-    \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletTronKMS**](../Model/GenerateCustodialWalletTronKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletTronKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialGenerateCustodialWalletTronKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialGenerateCustodialWalletTronKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferBatchTransferCustodialWalletBatch()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferBatchTransferCustodialWalletBatch(
-    \Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch** | [**\Tatum\Model\TransferCustodialWalletBatch**](../Model/TransferCustodialWalletBatch.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer multiple assets from a gas pump address
-
-<p><b>2 credits per API call</b></p> <p>Transfer (send) multiple assets from a gas pump address to one or more addresses.</p> <p>This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer multiple assets to one or more addresses on the blockchain.</p> <p>The gas fee for sending the assets will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.</p> <p>To be able to send the assets:</p> <ul> <li>The gas pump address must be <a href="#operation/ActivateGasPumpAddresses">activated</a>.<br/>To check whether the gas pump address is activated, use <a href="#operation/GasPumpAddressesActivatedOrNot">this API</a>.</li> <li>The gas pump address must be the owner of the assets.</li> </ul> <p>If you want to send only one asset, you can also use the <a href="#operation/TransferCustodialWallet">API for transferring an asset from a gas pump account</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul> <p><b>Signing a transaction</b><br/> When transferring assets, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainScCustodialTransferBatchTransferCustodialWalletBatch.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferBatchTransferCustodialWalletBatch.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferBatchTransferCustodialWalletBatchCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferBatchTransferCustodialWalletBatchCelo(
-    \Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_celo** | [**\Tatum\Model\TransferCustodialWalletBatchCelo**](../Model/TransferCustodialWalletBatchCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer multiple assets from a gas pump address
-
-TransferCustodialWalletBatchCelo operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferBatchTransferCustodialWalletBatchCelo.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferBatchTransferCustodialWalletBatchCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferBatchTransferCustodialWalletBatchCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferBatchTransferCustodialWalletBatchCeloKMS(
-    \Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\TransferCustodialWalletBatchCeloKMS**](../Model/TransferCustodialWalletBatchCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer multiple assets from a gas pump address
-
-TransferCustodialWalletBatchCeloKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferBatchTransferCustodialWalletBatchCeloKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferBatchTransferCustodialWalletBatchCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferBatchTransferCustodialWalletBatchKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferBatchTransferCustodialWalletBatchKMS(
-    \Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_kms** | [**\Tatum\Model\TransferCustodialWalletBatchKMS**](../Model/TransferCustodialWalletBatchKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer multiple assets from a gas pump address
-
-TransferCustodialWalletBatchKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferBatchTransferCustodialWalletBatchKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferBatchTransferCustodialWalletBatchKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferBatchTransferCustodialWalletBatchTron()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferBatchTransferCustodialWalletBatchTron(
-    \Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_tron** | [**\Tatum\Model\TransferCustodialWalletBatchTron**](../Model/TransferCustodialWalletBatchTron.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer multiple assets from a gas pump address
-
-TransferCustodialWalletBatchTron operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferBatchTransferCustodialWalletBatchTron.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferBatchTransferCustodialWalletBatchTron.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferBatchTransferCustodialWalletBatchTronKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferBatchTransferCustodialWalletBatchTronKMS(
-    \Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\TransferCustodialWalletBatchTronKMS**](../Model/TransferCustodialWalletBatchTronKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer multiple assets from a gas pump address
-
-TransferCustodialWalletBatchTronKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferBatchTransferCustodialWalletBatchTronKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferBatchTransferCustodialWalletBatchTronKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferCustodialWallet()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferCustodialWallet(
-    \Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet** | [**\Tatum\Model\TransferCustodialWallet**](../Model/TransferCustodialWallet.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer an asset from a gas pump address
-
-<p><b>2 credits per API call</b></p> <p>Transfer (send) an asset from a gas pump address to the other address.</p> <p>This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer an asset to some address on the blockchain.</p> <p>The gas fee for sending the asset will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.</p> <p>To be able to send the asset:</p> <ul> <li>The gas pump address must be <a href="#operation/ActivateGasPumpAddresses">activated</a>.<br/>To check whether the gas pump address is activated, use <a href="#operation/GasPumpAddressesActivatedOrNot">this API</a>.</li> <li>The gas pump address must be the owner of the asset.</li> </ul> <p>With this API, you can send only one asset per API call. If you want to send multiple assets, use the <a href="#operation/TransferCustodialWalletBatch">API for transferring multiple assets from a gas pump account</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul> <p><b>Signing a transaction</b><br/> When transferring an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "blockchainScCustodialTransferCustodialWallet.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferCustodialWallet.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferCustodialWalletCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferCustodialWalletCelo(
-    \Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_celo** | [**\Tatum\Model\TransferCustodialWalletCelo**](../Model/TransferCustodialWalletCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer an asset from a gas pump address
-
-TransferCustodialWalletCelo operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferCustodialWalletCelo.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferCustodialWalletCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferCustodialWalletCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferCustodialWalletCeloKMS(
-    \Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_celo_kms** | [**\Tatum\Model\TransferCustodialWalletCeloKMS**](../Model/TransferCustodialWalletCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer an asset from a gas pump address
-
-TransferCustodialWalletCeloKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferCustodialWalletCeloKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferCustodialWalletCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferCustodialWalletKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferCustodialWalletKMS(
-    \Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_kms** | [**\Tatum\Model\TransferCustodialWalletKMS**](../Model/TransferCustodialWalletKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer an asset from a gas pump address
-
-TransferCustodialWalletKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferCustodialWalletKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferCustodialWalletKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferCustodialWalletTron()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferCustodialWalletTron(
-    \Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_tron** | [**\Tatum\Model\TransferCustodialWalletTron**](../Model/TransferCustodialWalletTron.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer an asset from a gas pump address
-
-TransferCustodialWalletTron operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferCustodialWalletTron.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferCustodialWalletTron.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainScCustodialTransferCustodialWalletTronKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->blockchainScCustodialTransferCustodialWalletTronKMS(
-    \Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_tron_kms** | [**\Tatum\Model\TransferCustodialWalletTronKMS**](../Model/TransferCustodialWalletTronKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Transfer an asset from a gas pump address
-
-TransferCustodialWalletTronKMS operation
-
-### Example
-
-[✨ View "blockchainScCustodialTransferCustodialWalletTronKMS.php"](../../examples/Api/GasPumpApi/blockchainScCustodialTransferCustodialWalletTronKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `gasPumpActivateGasPump()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpActivateGasPump(
-    \Tatum\Model\ActivateGasPump $activate_gas_pump
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump** | [**\Tatum\Model\ActivateGasPump**](../Model/ActivateGasPump.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Activate gas pump addresses
-
-ActivateGasPump operation
-
-### Example
-
-[✨ View "gasPumpActivateGasPump.php"](../../examples/Api/GasPumpApi/gasPumpActivateGasPump.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `gasPumpActivateGasPumpCelo()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpActivateGasPumpCelo(
-    \Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_celo** | [**\Tatum\Model\ActivateGasPumpCelo**](../Model/ActivateGasPumpCelo.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Activate gas pump addresses
-
-ActivateGasPumpCelo operation
-
-### Example
-
-[✨ View "gasPumpActivateGasPumpCelo.php"](../../examples/Api/GasPumpApi/gasPumpActivateGasPumpCelo.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `gasPumpActivateGasPumpCeloKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpActivateGasPumpCeloKMS(
-    \Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_celo_kms** | [**\Tatum\Model\ActivateGasPumpCeloKMS**](../Model/ActivateGasPumpCeloKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Activate gas pump addresses
-
-ActivateGasPumpCeloKMS operation
-
-### Example
-
-[✨ View "gasPumpActivateGasPumpCeloKMS.php"](../../examples/Api/GasPumpApi/gasPumpActivateGasPumpCeloKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `gasPumpActivateGasPumpKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpActivateGasPumpKMS(
-    \Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_kms** | [**\Tatum\Model\ActivateGasPumpKMS**](../Model/ActivateGasPumpKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Activate gas pump addresses
-
-ActivateGasPumpKMS operation
-
-### Example
-
-[✨ View "gasPumpActivateGasPumpKMS.php"](../../examples/Api/GasPumpApi/gasPumpActivateGasPumpKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `gasPumpActivateGasPumpTatum()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpActivateGasPumpTatum(
-    \Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_tatum** | [**\Tatum\Model\ActivateGasPumpTatum**](../Model/ActivateGasPumpTatum.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Activate gas pump addresses
-
-<p><b>2 credits per API call</b></p> <p>Activate the <a href="#operation/PrecalculateGasPumpAddresses">precalulated gas pump addresses</a>. Activating a gas pump address allows this address to send funds to other addresses.</p> <p>You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the <code>from</code> and <code>to</code> request body parameters) and then make another API call with the remaining 230 addresses.</p> <p><b>When to activate a gas pump address</b><br/> Because activating a gas pump address costs some amount of gas on a blockchain, you want to activate only those addresses that will be used for sending funds to other addresses. If you know that a gas pump address will not be used for sending funds, you can leave this address not activated. The customer who uses this address will still be able to receive funds.</p> <p>Depending on your business needs and requirements, you can choose when to activate the gas pump addresses. If you know for sure that all the precalculated addresses will be sending funds, you can activate all the addresses right after they have been precalculated.</p> <p>Alternatively, you can set up the activation in such a way so that a gas pump address gets activated only when a specific event is triggered. For example, you can activate a gas pump address:</p> <ul> <li>When it receives an asset for the first time</li> <li>When the customer tries to send an asset from this address for the first time</li> </ul> <p>After you make an API call to activate gas pump addresses, use the <a href="#operation/ActivatedNotActivatedGasPumpAddresses">API for getting the results of the address activation transaction</a>.</p> <p><b>Paying the gas fee for activating gas pump addresses</b><br/> You can pay the gas fees for each activation transaction yourself, or Tatum can cover it for you.</p> <ul> <li>When <b>paying the gas fees yourself</b>, you must sign the transaction with either the private key of the blockchain address from which you want to pay the fees or the signature ID of that private key (if you use <a href="https://apidoc.tatum.io/tag/Key-Management-System" target="_blank">Key Management System</a>, KMS).<br/> To pay the fees yourself, use this API with any schema of the request body except for <code>ActivateGasPumpTatum</code>. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the <code>ActivateGasPumpKMS</code> schema. </li> <li>If you want <b>Tatum to cover the fees</b>, use this API with the <code>ActivateGasPumpTatum</code> schema of the request body. <ul> <li>On the <b>mainnet</b>, you have to have a <a href="https://tatum.io/pricing" target="_blank">paid pricing plan</a>.<br/> Tatum pays the fees from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. The transaction fees and the corresponding numbers of credits deducted from your allowance vary depending on what blockchain you activate the addresses.</li> <li>On the <b>testnet</b>, no credits are deducted from the monthly credit allowance. You can activate gas pump addresses regardless of your pricing plan.</li> </ul> </li> </ul> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
-
-### Example
-
-[✨ View "gasPumpActivateGasPumpTatum.php"](../../examples/Api/GasPumpApi/gasPumpActivateGasPumpTatum.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `gasPumpActivateGasPumpTron()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpActivateGasPumpTron(
-    \Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_tron** | [**\Tatum\Model\ActivateGasPumpTron**](../Model/ActivateGasPumpTron.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Activate gas pump addresses
-
-ActivateGasPumpTron operation
-
-### Example
-
-[✨ View "gasPumpActivateGasPumpTron.php"](../../examples/Api/GasPumpApi/gasPumpActivateGasPumpTron.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `gasPumpActivateGasPumpTronKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpActivateGasPumpTronKMS(
-    \Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_tron_kms** | [**\Tatum\Model\ActivateGasPumpTronKMS**](../Model/ActivateGasPumpTronKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Activate gas pump addresses
-
-ActivateGasPumpTronKMS operation
-
-### Example
-
-[✨ View "gasPumpActivateGasPumpTronKMS.php"](../../examples/Api/GasPumpApi/gasPumpActivateGasPumpTronKMS.php)
+[✨ View "approveTransferCustodialWalletKMS.php"](../../examples/Api/GasPumpApi/approveTransferCustodialWalletKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1280,6 +466,436 @@ Check whether the gas pump address with a specified index is activated
 ### Example
 
 [✨ View "gasPumpAddressesActivatedOrNot.php"](../../examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWallet(
+    \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet** | [**\Tatum\Model\GenerateCustodialWallet**](../Model/GenerateCustodialWallet.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a custodial wallet address
+
+<p><b>This API is deprecated.<br/>To start with the gas pump, use the <a href="#operation/PrecalculateGasPumpAddresses">API for precalculating the gas pump addresses</a>.</b></p> <p><b>If you built your gas pump solution using this API and the <a href="#operation/GenerateCustodialWalletBatch">API for generating a gas pump wallet address</a>, you can still use this API for creating more custodial addresses for your solution. However, we recommend that you switch to the <a href="#operation/PrecalculateGasPumpAddresses">API for precalculating the gas pump addresses</a></b>.</p><br/> <p><b>2 credits per API call</b></p> <p>Generate new gas pump smart contract address on the blockchain. It's possible to enable tokens, which should be detected and supported on that address. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away.</p> <p>Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.</p> <p>There are multiple options, how this address can be setup - it cannot be changed in the future:</p> <ul> <li>Native assets only - ETH, BSC, CELO, MATIC, ONE, TRX</li> <li>Native assets + ERC20 tokens</li> <li>Native assets + ERC721 tokens</li> <li>Native assets + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 tokens</li> <li>Native assets + ERC20 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> </ul> <p>All of these options could be enabled with a batch mode as well - in 1 transaction, it is possible to transfer multiple different assets from that address, e.g. ETH + USDC + ERC721 token. Without batch mode, 3 separate transaction must have been performed.</p> <p>This operation deploys a smart contract on the blockchain. More assets you will support, more intial gas will be used for address creation. Batch mode adds more gas for every type.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> <li>TRON (except for Multi Tokens)</li> </ul>
+
+### Example
+
+[✨ View "generateCustodialWallet.php"](../../examples/Api/GasPumpApi/generateCustodialWallet.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
+    \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_batch** | [**\Tatum\Model\GenerateCustodialWalletBatch**](../Model/GenerateCustodialWalletBatch.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a gas pump wallet address
+
+GenerateCustodialWalletBatch operation
+
+### Example
+
+[✨ View "generateCustodialWalletBatch.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatch.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatchCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCelo(
+    \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_batch_celo** | [**\Tatum\Model\GenerateCustodialWalletBatchCelo**](../Model/GenerateCustodialWalletBatchCelo.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a gas pump wallet address
+
+GenerateCustodialWalletBatchCelo operation
+
+### Example
+
+[✨ View "generateCustodialWalletBatchCelo.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatchCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatchCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCeloKMS(
+    \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchCeloKMS**](../Model/GenerateCustodialWalletBatchCeloKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a gas pump wallet address
+
+GenerateCustodialWalletBatchCeloKMS operation
+
+### Example
+
+[✨ View "generateCustodialWalletBatchCeloKMS.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatchCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatchKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchKMS(
+    \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_batch_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchKMS**](../Model/GenerateCustodialWalletBatchKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a gas pump wallet address
+
+GenerateCustodialWalletBatchKMS operation
+
+### Example
+
+[✨ View "generateCustodialWalletBatchKMS.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatchKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatchPayer()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchPayer(
+    \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_batch_payer** | [**\Tatum\Model\GenerateCustodialWalletBatchPayer**](../Model/GenerateCustodialWalletBatchPayer.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a gas pump wallet address
+
+<p><b>This API is deprecated.<br/>To start with the gas pump, use the <a href="#operation/PrecalculateGasPumpAddresses">API for precalculating the gas pump addresses</a>.</b></p><br/> <p><b>2 credits per API call</b></p> <p>Generate new gas pump smart contract address on the blockchain. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away. Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.<br/> This operation deploys a smart contract on the blockchain.<br/> For paid plans, it is possible to pay for the gas costs - you don't have to provide private key or signatureId. Blockchain fees will be covered by your credits. <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
+
+### Example
+
+[✨ View "generateCustodialWalletBatchPayer.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatchPayer.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatchTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTron(
+    \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_batch_tron** | [**\Tatum\Model\GenerateCustodialWalletBatchTron**](../Model/GenerateCustodialWalletBatchTron.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a gas pump wallet address
+
+GenerateCustodialWalletBatchTron operation
+
+### Example
+
+[✨ View "generateCustodialWalletBatchTron.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatchTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletBatchTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTronKMS(
+    \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms,
+    [ string $x_testnet_type = 'ethereum-sepolia' ]
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchTronKMS**](../Model/GenerateCustodialWalletBatchTronKMS.md) |  |
+ **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a gas pump wallet address
+
+GenerateCustodialWalletBatchTronKMS operation
+
+### Example
+
+[✨ View "generateCustodialWalletBatchTronKMS.php"](../../examples/Api/GasPumpApi/generateCustodialWalletBatchTronKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCelo(
+    \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_celo** | [**\Tatum\Model\GenerateCustodialWalletCelo**](../Model/GenerateCustodialWalletCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a custodial wallet address
+
+GenerateCustodialWalletCelo operation
+
+### Example
+
+[✨ View "generateCustodialWalletCelo.php"](../../examples/Api/GasPumpApi/generateCustodialWalletCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCeloKMS(
+    \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletCeloKMS**](../Model/GenerateCustodialWalletCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a custodial wallet address
+
+GenerateCustodialWalletCeloKMS operation
+
+### Example
+
+[✨ View "generateCustodialWalletCeloKMS.php"](../../examples/Api/GasPumpApi/generateCustodialWalletCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletKMS(
+    \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_kms** | [**\Tatum\Model\GenerateCustodialWalletKMS**](../Model/GenerateCustodialWalletKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a custodial wallet address
+
+GenerateCustodialWalletKMS operation
+
+### Example
+
+[✨ View "generateCustodialWalletKMS.php"](../../examples/Api/GasPumpApi/generateCustodialWalletKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTron(
+    \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_tron** | [**\Tatum\Model\GenerateCustodialWalletTron**](../Model/GenerateCustodialWalletTron.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a custodial wallet address
+
+GenerateCustodialWalletTron operation
+
+### Example
+
+[✨ View "generateCustodialWalletTron.php"](../../examples/Api/GasPumpApi/generateCustodialWalletTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `generateCustodialWalletTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTronKMS(
+    \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$generate_custodial_wallet_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletTronKMS**](../Model/GenerateCustodialWalletTronKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Generate a custodial wallet address
+
+GenerateCustodialWalletTronKMS operation
+
+### Example
+
+[✨ View "generateCustodialWalletTronKMS.php"](../../examples/Api/GasPumpApi/generateCustodialWalletTronKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1346,5 +962,389 @@ Get the custodial wallet address from the transaction
 ### Example
 
 [✨ View "sCGetCustodialAddresses.php"](../../examples/Api/GasPumpApi/sCGetCustodialAddresses.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWallet(
+    \Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet** | [**\Tatum\Model\TransferCustodialWallet**](../Model/TransferCustodialWallet.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer an asset from a gas pump address
+
+<p><b>2 credits per API call</b></p> <p>Transfer (send) an asset from a gas pump address to the other address.</p> <p>This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer an asset to some address on the blockchain.</p> <p>The gas fee for sending the asset will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.</p> <p>To be able to send the asset:</p> <ul> <li>The gas pump address must be <a href="#operation/ActivateGasPumpAddresses">activated</a>.<br/>To check whether the gas pump address is activated, use <a href="#operation/GasPumpAddressesActivatedOrNot">this API</a>.</li> <li>The gas pump address must be the owner of the asset.</li> </ul> <p>With this API, you can send only one asset per API call. If you want to send multiple assets, use the <a href="#operation/TransferCustodialWalletBatch">API for transferring multiple assets from a gas pump account</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul> <p><b>Signing a transaction</b><br/> When transferring an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferCustodialWallet.php"](../../examples/Api/GasPumpApi/transferCustodialWallet.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletBatch()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatch(
+    \Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_batch** | [**\Tatum\Model\TransferCustodialWalletBatch**](../Model/TransferCustodialWalletBatch.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer multiple assets from a gas pump address
+
+<p><b>2 credits per API call</b></p> <p>Transfer (send) multiple assets from a gas pump address to one or more addresses.</p> <p>This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer multiple assets to one or more addresses on the blockchain.</p> <p>The gas fee for sending the assets will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.</p> <p>To be able to send the assets:</p> <ul> <li>The gas pump address must be <a href="#operation/ActivateGasPumpAddresses">activated</a>.<br/>To check whether the gas pump address is activated, use <a href="#operation/GasPumpAddressesActivatedOrNot">this API</a>.</li> <li>The gas pump address must be the owner of the assets.</li> </ul> <p>If you want to send only one asset, you can also use the <a href="#operation/TransferCustodialWallet">API for transferring an asset from a gas pump account</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul> <p><b>Signing a transaction</b><br/> When transferring assets, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferCustodialWalletBatch.php"](../../examples/Api/GasPumpApi/transferCustodialWalletBatch.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletBatchCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCelo(
+    \Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_batch_celo** | [**\Tatum\Model\TransferCustodialWalletBatchCelo**](../Model/TransferCustodialWalletBatchCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer multiple assets from a gas pump address
+
+TransferCustodialWalletBatchCelo operation
+
+### Example
+
+[✨ View "transferCustodialWalletBatchCelo.php"](../../examples/Api/GasPumpApi/transferCustodialWalletBatchCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletBatchCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCeloKMS(
+    \Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\TransferCustodialWalletBatchCeloKMS**](../Model/TransferCustodialWalletBatchCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer multiple assets from a gas pump address
+
+TransferCustodialWalletBatchCeloKMS operation
+
+### Example
+
+[✨ View "transferCustodialWalletBatchCeloKMS.php"](../../examples/Api/GasPumpApi/transferCustodialWalletBatchCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletBatchKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchKMS(
+    \Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_batch_kms** | [**\Tatum\Model\TransferCustodialWalletBatchKMS**](../Model/TransferCustodialWalletBatchKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer multiple assets from a gas pump address
+
+TransferCustodialWalletBatchKMS operation
+
+### Example
+
+[✨ View "transferCustodialWalletBatchKMS.php"](../../examples/Api/GasPumpApi/transferCustodialWalletBatchKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletBatchTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTron(
+    \Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_batch_tron** | [**\Tatum\Model\TransferCustodialWalletBatchTron**](../Model/TransferCustodialWalletBatchTron.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer multiple assets from a gas pump address
+
+TransferCustodialWalletBatchTron operation
+
+### Example
+
+[✨ View "transferCustodialWalletBatchTron.php"](../../examples/Api/GasPumpApi/transferCustodialWalletBatchTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletBatchTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTronKMS(
+    \Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\TransferCustodialWalletBatchTronKMS**](../Model/TransferCustodialWalletBatchTronKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer multiple assets from a gas pump address
+
+TransferCustodialWalletBatchTronKMS operation
+
+### Example
+
+[✨ View "transferCustodialWalletBatchTronKMS.php"](../../examples/Api/GasPumpApi/transferCustodialWalletBatchTronKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletCelo()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCelo(
+    \Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_celo** | [**\Tatum\Model\TransferCustodialWalletCelo**](../Model/TransferCustodialWalletCelo.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer an asset from a gas pump address
+
+TransferCustodialWalletCelo operation
+
+### Example
+
+[✨ View "transferCustodialWalletCelo.php"](../../examples/Api/GasPumpApi/transferCustodialWalletCelo.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletCeloKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCeloKMS(
+    \Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_celo_kms** | [**\Tatum\Model\TransferCustodialWalletCeloKMS**](../Model/TransferCustodialWalletCeloKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer an asset from a gas pump address
+
+TransferCustodialWalletCeloKMS operation
+
+### Example
+
+[✨ View "transferCustodialWalletCeloKMS.php"](../../examples/Api/GasPumpApi/transferCustodialWalletCeloKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletKMS(
+    \Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_kms** | [**\Tatum\Model\TransferCustodialWalletKMS**](../Model/TransferCustodialWalletKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer an asset from a gas pump address
+
+TransferCustodialWalletKMS operation
+
+### Example
+
+[✨ View "transferCustodialWalletKMS.php"](../../examples/Api/GasPumpApi/transferCustodialWalletKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletTron()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTron(
+    \Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_tron** | [**\Tatum\Model\TransferCustodialWalletTron**](../Model/TransferCustodialWalletTron.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer an asset from a gas pump address
+
+TransferCustodialWalletTron operation
+
+### Example
+
+[✨ View "transferCustodialWalletTron.php"](../../examples/Api/GasPumpApi/transferCustodialWalletTron.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCustodialWalletTronKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTronKMS(
+    \Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_custodial_wallet_tron_kms** | [**\Tatum\Model\TransferCustodialWalletTronKMS**](../Model/TransferCustodialWalletTronKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Transfer an asset from a gas pump address
+
+TransferCustodialWalletTronKMS operation
+
+### Example
+
+[✨ View "transferCustodialWalletTronKMS.php"](../../examples/Api/GasPumpApi/transferCustodialWalletTronKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

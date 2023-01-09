@@ -5,23 +5,119 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**celoBroadcast()**](#celobroadcast) | **POST** `/v3/celo/broadcast` | Broadcast signed Celo transaction
-[**celoGenerateAddress()**](#celogenerateaddress) | **GET** `/v3/celo/address/{xpub}/{index}` | Generate Celo account address from Extended public key
-[**celoGenerateAddressPrivateKey()**](#celogenerateaddressprivatekey) | **POST** `/v3/celo/wallet/priv` | Generate Celo private key
-[**celoGenerateWallet()**](#celogeneratewallet) | **GET** `/v3/celo/wallet` | Generate Celo wallet
-[**celoGetBalance()**](#celogetbalance) | **GET** `/v3/celo/account/balance/{address}` | Get Celo Account balance
-[**celoGetBlock()**](#celogetblock) | **GET** `/v3/celo/block/{hash}` | Get Celo block by hash
-[**celoGetCurrentBlock()**](#celogetcurrentblock) | **GET** `/v3/celo/block/current` | Get current block number
-[**celoGetTransaction()**](#celogettransaction) | **GET** `/v3/celo/transaction/{hash}` | Get Celo Transaction
-[**celoGetTransactionByAddress()**](#celogettransactionbyaddress) | **GET** `/v3/celo/account/transaction/{address}` | Get Celo transactions by address
-[**celoGetTransactionCount()**](#celogettransactioncount) | **GET** `/v3/celo/transaction/count/{address}` | Get count of outgoing Celo transactions
-[**celoSmartcontractCallCeloReadSmartContractMethod()**](#celosmartcontractcallceloreadsmartcontractmethod) | **POST** `/v3/celo/smartcontract` | Invoke a method in a smart contract on Celo
-[**celoSmartcontractCallCeloSmartContractMethod()**](#celosmartcontractcallcelosmartcontractmethod) | **POST** `/v3/celo/smartcontract` | Invoke a method in a smart contract on Celo
-[**celoSmartcontractCallCeloSmartContractMethodKMS()**](#celosmartcontractcallcelosmartcontractmethodkms) | **POST** `/v3/celo/smartcontract` | Invoke a method in a smart contract on Celo
-[**celoTransactionTransferCeloBlockchain()**](#celotransactiontransferceloblockchain) | **POST** `/v3/celo/transaction` | Send Celo / ERC20 from account to account
-[**celoTransactionTransferCeloBlockchainKMS()**](#celotransactiontransferceloblockchainkms) | **POST** `/v3/celo/transaction` | Send Celo / ERC20 from account to account
-[**celoWeb3Driver()**](#celoweb3driver) | **POST** `/v3/celo/web3/{xApiKey}` | Web3 HTTP driver
+[**call Celo Read Smart Contract Method()**](#callceloreadsmartcontractmethod) | **POST** `/v3 /celo /smartcontract` | Invoke a method in a smart contract on Celo
+[**call Celo Smart Contract Method()**](#callcelosmartcontractmethod) | **POST** `/v3 /celo /smartcontract` | Invoke a method in a smart contract on Celo
+[**call Celo Smart Contract Method KMS()**](#callcelosmartcontractmethodkms) | **POST** `/v3 /celo /smartcontract` | Invoke a method in a smart contract on Celo
+[**celo Broadcast()**](#celobroadcast) | **POST** `/v3 /celo /broadcast` | Broadcast signed Celo transaction
+[**celo Generate Address()**](#celogenerateaddress) | **GET** `/v3 /celo /address /{xpub} /{index}` | Generate Celo account address from Extended public key
+[**celo Generate Address Private Key()**](#celogenerateaddressprivatekey) | **POST** `/v3 /celo /wallet /priv` | Generate Celo private key
+[**celo Generate Wallet()**](#celogeneratewallet) | **GET** `/v3 /celo /wallet` | Generate Celo wallet
+[**celo Get Balance()**](#celogetbalance) | **GET** `/v3 /celo /account /balance /{address}` | Get Celo Account balance
+[**celo Get Block()**](#celogetblock) | **GET** `/v3 /celo /block /{hash}` | Get Celo block by hash
+[**celo Get Current Block()**](#celogetcurrentblock) | **GET** `/v3 /celo /block /current` | Get current block number
+[**celo Get Transaction()**](#celogettransaction) | **GET** `/v3 /celo /transaction /{hash}` | Get Celo Transaction
+[**celo Get Transaction By Address()**](#celogettransactionbyaddress) | **GET** `/v3 /celo /account /transaction /{address}` | Get Celo transactions by address
+[**celo Get Transaction Count()**](#celogettransactioncount) | **GET** `/v3 /celo /transaction /count /{address}` | Get count of outgoing Celo transactions
+[**celo Web3 Driver()**](#celoweb3driver) | **POST** `/v3 /celo /web3 /{xApiKey}` | Web3 HTTP driver
+[**transfer Celo Blockchain()**](#transferceloblockchain) | **POST** `/v3 /celo /transaction` | Send Celo / ERC20 from account to account
+[**transfer Celo Blockchain KMS()**](#transferceloblockchainkms) | **POST** `/v3 /celo /transaction` | Send Celo / ERC20 from account to account
 
+
+## `callCeloReadSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->callCeloReadSmartContractMethod(
+    \Tatum\Model\CallCeloReadSmartContractMethod $call_celo_read_smart_contract_method
+): \Tatum\Model\CallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_celo_read_smart_contract_method** | [**\Tatum\Model\CallCeloReadSmartContractMethod**](../Model/CallCeloReadSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Celo
+
+<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Celo.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "callCeloReadSmartContractMethod.php"](../../examples/Api/CeloApi/callCeloReadSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `callCeloSmartContractMethod()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethod(
+    \Tatum\Model\CallCeloSmartContractMethod $call_celo_smart_contract_method
+): \Tatum\Model\CallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_celo_smart_contract_method** | [**\Tatum\Model\CallCeloSmartContractMethod**](../Model/CallCeloSmartContractMethod.md) |  |
+
+### Return type
+
+[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Celo
+
+CallCeloSmartContractMethod operation
+
+### Example
+
+[✨ View "callCeloSmartContractMethod.php"](../../examples/Api/CeloApi/callCeloSmartContractMethod.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `callCeloSmartContractMethodKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethodKMS(
+    \Tatum\Model\CallCeloSmartContractMethodKMS $call_celo_smart_contract_method_kms
+): \Tatum\Model\CallSmartContractMethod200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$call_celo_smart_contract_method_kms** | [**\Tatum\Model\CallCeloSmartContractMethodKMS**](../Model/CallCeloSmartContractMethodKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+
+### Description
+
+Invoke a method in a smart contract on Celo
+
+CallCeloSmartContractMethodKMS operation
+
+### Example
+
+[✨ View "callCeloSmartContractMethodKMS.php"](../../examples/Api/CeloApi/callCeloSmartContractMethodKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoBroadcast()`
 
@@ -352,166 +448,6 @@ Get count of outgoing Celo transactions
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `celoSmartcontractCallCeloReadSmartContractMethod()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoSmartcontractCallCeloReadSmartContractMethod(
-    \Tatum\Model\CallCeloReadSmartContractMethod $call_celo_read_smart_contract_method
-): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$call_celo_read_smart_contract_method** | [**\Tatum\Model\CallCeloReadSmartContractMethod**](../Model/CallCeloReadSmartContractMethod.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Celo
-
-<p><b>2 credits per API call</b></p> <p>Invoke a method in an existing smart contract on Celo.</p> <p>You can call a read-only or write method.</p> <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b><br/> Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).<br/>However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p> <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p> <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p> <p><b>Signing a transaction</b><br/> When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "celoSmartcontractCallCeloReadSmartContractMethod.php"](../../examples/Api/CeloApi/celoSmartcontractCallCeloReadSmartContractMethod.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `celoSmartcontractCallCeloSmartContractMethod()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoSmartcontractCallCeloSmartContractMethod(
-    \Tatum\Model\CallCeloSmartContractMethod $call_celo_smart_contract_method
-): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$call_celo_smart_contract_method** | [**\Tatum\Model\CallCeloSmartContractMethod**](../Model/CallCeloSmartContractMethod.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Celo
-
-CallCeloSmartContractMethod operation
-
-### Example
-
-[✨ View "celoSmartcontractCallCeloSmartContractMethod.php"](../../examples/Api/CeloApi/celoSmartcontractCallCeloSmartContractMethod.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `celoSmartcontractCallCeloSmartContractMethodKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoSmartcontractCallCeloSmartContractMethodKMS(
-    \Tatum\Model\CallCeloSmartContractMethodKMS $call_celo_smart_contract_method_kms
-): \Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$call_celo_smart_contract_method_kms** | [**\Tatum\Model\CallCeloSmartContractMethodKMS**](../Model/CallCeloSmartContractMethodKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\EthereumSmartcontractCallSmartContractMethod200Response**](../Model/EthereumSmartcontractCallSmartContractMethod200Response.md)
-
-### Description
-
-Invoke a method in a smart contract on Celo
-
-CallCeloSmartContractMethodKMS operation
-
-### Example
-
-[✨ View "celoSmartcontractCallCeloSmartContractMethodKMS.php"](../../examples/Api/CeloApi/celoSmartcontractCallCeloSmartContractMethodKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `celoTransactionTransferCeloBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoTransactionTransferCeloBlockchain(
-    \Tatum\Model\TransferCeloBlockchain $transfer_celo_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_celo_blockchain** | [**\Tatum\Model\TransferCeloBlockchain**](../Model/TransferCeloBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send Celo / ERC20 from account to account
-
-<p><b>2 credits per API call</b></p> <p>Send Celo, cUSD or Tatum supported ERC20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending CELO, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
-
-### Example
-
-[✨ View "celoTransactionTransferCeloBlockchain.php"](../../examples/Api/CeloApi/celoTransactionTransferCeloBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `celoTransactionTransferCeloBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoTransactionTransferCeloBlockchainKMS(
-    \Tatum\Model\TransferCeloBlockchainKMS $transfer_celo_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_celo_blockchain_kms** | [**\Tatum\Model\TransferCeloBlockchainKMS**](../Model/TransferCeloBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send Celo / ERC20 from account to account
-
-TransferCeloBlockchainKMS operation
-
-### Example
-
-[✨ View "celoTransactionTransferCeloBlockchainKMS.php"](../../examples/Api/CeloApi/celoTransactionTransferCeloBlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
 ## `celoWeb3Driver()`
 
 ### Type signature
@@ -543,5 +479,69 @@ Web3 HTTP driver
 ### Example
 
 [✨ View "celoWeb3Driver.php"](../../examples/Api/CeloApi/celoWeb3Driver.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCeloBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->transferCeloBlockchain(
+    \Tatum\Model\TransferCeloBlockchain $transfer_celo_blockchain
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_celo_blockchain** | [**\Tatum\Model\TransferCeloBlockchain**](../Model/TransferCeloBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send Celo / ERC20 from account to account
+
+<p><b>2 credits per API call</b></p> <p>Send Celo, cUSD or Tatum supported ERC20 token from account to account.<br/><br/> <p><b>Signing a transaction</b></p> <p>When sending CELO, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+
+### Example
+
+[✨ View "transferCeloBlockchain.php"](../../examples/Api/CeloApi/transferCeloBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferCeloBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->celo()->transferCeloBlockchainKMS(
+    \Tatum\Model\TransferCeloBlockchainKMS $transfer_celo_blockchain_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_celo_blockchain_kms** | [**\Tatum\Model\TransferCeloBlockchainKMS**](../Model/TransferCeloBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send Celo / ERC20 from account to account
+
+TransferCeloBlockchainKMS operation
+
+### Example
+
+[✨ View "transferCeloBlockchainKMS.php"](../../examples/Api/CeloApi/transferCeloBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

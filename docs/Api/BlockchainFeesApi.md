@@ -5,216 +5,24 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blockchainEstimateFee()**](#blockchainestimatefee) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
-[**blockchainEstimateFeeBatchMintNft()**](#blockchainestimatefeebatchmintnft) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
-[**blockchainEstimateFeeDeployCustodialWallet()**](#blockchainestimatefeedeploycustodialwallet) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
-[**blockchainEstimateFeeFromAddress()**](#blockchainestimatefeefromaddress) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
-[**blockchainEstimateFeeFromUTXO()**](#blockchainestimatefeefromutxo) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
-[**blockchainEstimateFeeTransferFromCustodial()**](#blockchainestimatefeetransferfromcustodial) | **POST** `/v3/blockchain/estimate` | Estimate the fee for a transaction
-[**bscEstimateGas()**](#bscestimategas) | **POST** `/v3/bsc/gas` | Estimate BNB Smart Chain transaction fees
-[**celoEstimateGas()**](#celoestimategas) | **POST** `/v3/celo/gas` | Estimate Celo Chain transaction fees
-[**egldEstimateGas()**](#egldestimategas) | **POST** `/v3/egld/gas` | Estimate EGLD transaction fees
-[**ethEstimateGas()**](#ethestimategas) | **POST** `/v3/ethereum/gas` | Estimate Ethereum transaction fees
-[**ethEstimateGasBatch()**](#ethestimategasbatch) | **POST** `/v3/ethereum/gas/batch` | Estimate multiple Ethereum transaction fees
-[**getBlockchainFee()**](#getblockchainfee) | **GET** `/v3/blockchain/fee/{chain}` | Get recommended blockchain fee / gas price
-[**kcsEstimateGas()**](#kcsestimategas) | **POST** `/v3/kcs/gas` | Estimate KuCoin Community Chain transaction fees
-[**klaytnEstimateGas()**](#klaytnestimategas) | **POST** `/v3/klaytn/gas` | Estimate Klaytn transaction fees
-[**polygonEstimateGas()**](#polygonestimategas) | **POST** `/v3/polygon/gas` | Estimate Polygon transaction fees
-[**vetEstimateGas()**](#vetestimategas) | **POST** `/v3/vet/transaction/gas` | Estimate VeChain Gas for transaction
-[**xdcEstimateGas()**](#xdcestimategas) | **POST** `/v3/xdc/gas` | Estimate XinFin transaction fees
+[**bsc Estimate Gas()**](#bscestimategas) | **POST** `/v3 /bsc /gas` | Estimate BNB Smart Chain transaction fees
+[**celo Estimate Gas()**](#celoestimategas) | **POST** `/v3 /celo /gas` | Estimate Celo Chain transaction fees
+[**egld Estimate Gas()**](#egldestimategas) | **POST** `/v3 /egld /gas` | Estimate EGLD transaction fees
+[**estimate Fee()**](#estimatefee) | **POST** `/v3 /blockchain /estimate` | Estimate the fee for a transaction
+[**estimate Fee Batch Mint Nft()**](#estimatefeebatchmintnft) | **POST** `/v3 /blockchain /estimate` | Estimate the fee for a transaction
+[**estimate Fee Deploy Custodial Wallet()**](#estimatefeedeploycustodialwallet) | **POST** `/v3 /blockchain /estimate` | Estimate the fee for a transaction
+[**estimate Fee From Address()**](#estimatefeefromaddress) | **POST** `/v3 /blockchain /estimate` | Estimate the fee for a transaction
+[**estimate Fee From UTXO()**](#estimatefeefromutxo) | **POST** `/v3 /blockchain /estimate` | Estimate the fee for a transaction
+[**estimate Fee Transfer From Custodial()**](#estimatefeetransferfromcustodial) | **POST** `/v3 /blockchain /estimate` | Estimate the fee for a transaction
+[**eth Estimate Gas()**](#ethestimategas) | **POST** `/v3 /ethereum /gas` | Estimate Ethereum transaction fees
+[**eth Estimate Gas Batch()**](#ethestimategasbatch) | **POST** `/v3 /ethereum /gas /batch` | Estimate multiple Ethereum transaction fees
+[**get Blockchain Fee()**](#getblockchainfee) | **GET** `/v3 /blockchain /fee /{chain}` | Get recommended blockchain fee / gas price
+[**kcs Estimate Gas()**](#kcsestimategas) | **POST** `/v3 /kcs /gas` | Estimate KuCoin Community Chain transaction fees
+[**klaytn Estimate Gas()**](#klaytnestimategas) | **POST** `/v3 /klaytn /gas` | Estimate Klaytn transaction fees
+[**polygon Estimate Gas()**](#polygonestimategas) | **POST** `/v3 /polygon /gas` | Estimate Polygon transaction fees
+[**vet Estimate Gas()**](#vetestimategas) | **POST** `/v3 /vet /transaction /gas` | Estimate VeChain Gas for transaction
+[**xdc Estimate Gas()**](#xdcestimategas) | **POST** `/v3 /xdc /gas` | Estimate XinFin transaction fees
 
-
-## `blockchainEstimateFee()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFee(
-    \Tatum\Model\EstimateFee $estimate_fee
-): \Tatum\Model\BlockchainEstimateFee200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee** | [**\Tatum\Model\EstimateFee**](../Model/EstimateFee.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
-
-### Description
-
-Estimate the fee for a transaction
-
-<h4>10 credits per API call.</h4><br/> <p>Estimate current transaction fee for different operations.<br/> Supported blockchains: <ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Harmony.ONE</li> <li>The XDC Network</li> <li>Ethereum</li> <li>Celo</li> <li>Klaytn</li> <li>Binance Smart Chain</li> <li>Polygon</li> </ul> </p>
-
-### Example
-
-[✨ View "blockchainEstimateFee.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFee.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainEstimateFeeBatchMintNft()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeBatchMintNft(
-    \Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft
-): \Tatum\Model\BlockchainEstimateFee200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee_batch_mint_nft** | [**\Tatum\Model\EstimateFeeBatchMintNft**](../Model/EstimateFeeBatchMintNft.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
-
-### Description
-
-Estimate the fee for a transaction
-
-EstimateFeeBatchMintNft operation
-
-### Example
-
-[✨ View "blockchainEstimateFeeBatchMintNft.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeBatchMintNft.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainEstimateFeeDeployCustodialWallet()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeDeployCustodialWallet(
-    \Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet
-): \Tatum\Model\BlockchainEstimateFee200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee_deploy_custodial_wallet** | [**\Tatum\Model\EstimateFeeDeployCustodialWallet**](../Model/EstimateFeeDeployCustodialWallet.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
-
-### Description
-
-Estimate the fee for a transaction
-
-EstimateFeeDeployCustodialWallet operation
-
-### Example
-
-[✨ View "blockchainEstimateFeeDeployCustodialWallet.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeDeployCustodialWallet.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainEstimateFeeFromAddress()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeFromAddress(
-    \Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address
-): \Tatum\Model\BlockchainEstimateFee200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee_from_address** | [**\Tatum\Model\EstimateFeeFromAddress**](../Model/EstimateFeeFromAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
-
-### Description
-
-Estimate the fee for a transaction
-
-EstimateFeeFromAddress operation
-
-### Example
-
-[✨ View "blockchainEstimateFeeFromAddress.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeFromAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainEstimateFeeFromUTXO()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeFromUTXO(
-    \Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo
-): \Tatum\Model\BlockchainEstimateFee200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee_from_utxo** | [**\Tatum\Model\EstimateFeeFromUTXO**](../Model/EstimateFeeFromUTXO.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
-
-### Description
-
-Estimate the fee for a transaction
-
-EstimateFeeFromUTXO operation
-
-### Example
-
-[✨ View "blockchainEstimateFeeFromUTXO.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeFromUTXO.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `blockchainEstimateFeeTransferFromCustodial()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->blockchainEstimateFeeTransferFromCustodial(
-    \Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial
-): \Tatum\Model\BlockchainEstimateFee200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$estimate_fee_transfer_from_custodial** | [**\Tatum\Model\EstimateFeeTransferFromCustodial**](../Model/EstimateFeeTransferFromCustodial.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BlockchainEstimateFee200Response**](../Model/BlockchainEstimateFee200Response.md)
-
-### Description
-
-Estimate the fee for a transaction
-
-EstimateFeeTransferFromCustodial operation
-
-### Example
-
-[✨ View "blockchainEstimateFeeTransferFromCustodial.php"](../../examples/Api/BlockchainFeesApi/blockchainEstimateFeeTransferFromCustodial.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bscEstimateGas()`
 
@@ -309,6 +117,198 @@ Estimate EGLD transaction fees
 ### Example
 
 [✨ View "egldEstimateGas.php"](../../examples/Api/BlockchainFeesApi/egldEstimateGas.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `estimateFee()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFee(
+    \Tatum\Model\EstimateFee $estimate_fee
+): \Tatum\Model\EstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee** | [**\Tatum\Model\EstimateFee**](../Model/EstimateFee.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+<h4>10 credits per API call.</h4><br/> <p>Estimate current transaction fee for different operations.<br/> Supported blockchains: <ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Harmony.ONE</li> <li>The XDC Network</li> <li>Ethereum</li> <li>Celo</li> <li>Klaytn</li> <li>Binance Smart Chain</li> <li>Polygon</li> </ul> </p>
+
+### Example
+
+[✨ View "estimateFee.php"](../../examples/Api/BlockchainFeesApi/estimateFee.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `estimateFeeBatchMintNft()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBatchMintNft(
+    \Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft
+): \Tatum\Model\EstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_batch_mint_nft** | [**\Tatum\Model\EstimateFeeBatchMintNft**](../Model/EstimateFeeBatchMintNft.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeBatchMintNft operation
+
+### Example
+
+[✨ View "estimateFeeBatchMintNft.php"](../../examples/Api/BlockchainFeesApi/estimateFeeBatchMintNft.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `estimateFeeDeployCustodialWallet()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeDeployCustodialWallet(
+    \Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet
+): \Tatum\Model\EstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_deploy_custodial_wallet** | [**\Tatum\Model\EstimateFeeDeployCustodialWallet**](../Model/EstimateFeeDeployCustodialWallet.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeDeployCustodialWallet operation
+
+### Example
+
+[✨ View "estimateFeeDeployCustodialWallet.php"](../../examples/Api/BlockchainFeesApi/estimateFeeDeployCustodialWallet.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `estimateFeeFromAddress()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromAddress(
+    \Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address
+): \Tatum\Model\EstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_from_address** | [**\Tatum\Model\EstimateFeeFromAddress**](../Model/EstimateFeeFromAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeFromAddress operation
+
+### Example
+
+[✨ View "estimateFeeFromAddress.php"](../../examples/Api/BlockchainFeesApi/estimateFeeFromAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `estimateFeeFromUTXO()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromUTXO(
+    \Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo
+): \Tatum\Model\EstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_from_utxo** | [**\Tatum\Model\EstimateFeeFromUTXO**](../Model/EstimateFeeFromUTXO.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeFromUTXO operation
+
+### Example
+
+[✨ View "estimateFeeFromUTXO.php"](../../examples/Api/BlockchainFeesApi/estimateFeeFromUTXO.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `estimateFeeTransferFromCustodial()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeTransferFromCustodial(
+    \Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial
+): \Tatum\Model\EstimateFee200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$estimate_fee_transfer_from_custodial** | [**\Tatum\Model\EstimateFeeTransferFromCustodial**](../Model/EstimateFeeTransferFromCustodial.md) |  |
+
+### Return type
+
+[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+
+### Description
+
+Estimate the fee for a transaction
+
+EstimateFeeTransferFromCustodial operation
+
+### Example
+
+[✨ View "estimateFeeTransferFromCustodial.php"](../../examples/Api/BlockchainFeesApi/estimateFeeTransferFromCustodial.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

@@ -5,19 +5,19 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chartRequest()**](#chartrequest) | **POST** `/v3/trade/chart` | Obtain chart data from historical closed trades
-[**deleteAccountTrades()**](#deleteaccounttrades) | **DELETE** `/v3/trade/account/{id}` | Cancel all existing trades for account
-[**deleteTrade()**](#deletetrade) | **DELETE** `/v3/trade/{id}` | Cancel existing trade
-[**getBuyTrades()**](#getbuytrades) | **GET** `/v3/trade/buy` | List all active buy trades
-[**getBuyTradesBody()**](#getbuytradesbody) | **POST** `/v3/trade/buy` | List all active buy trades
-[**getHistoricalTrades()**](#gethistoricaltrades) | **GET** `/v3/trade/history` | List all historical trades
-[**getHistoricalTradesBody()**](#gethistoricaltradesbody) | **POST** `/v3/trade/history` | List all historical trades
-[**getMatchedTrades()**](#getmatchedtrades) | **POST** `/v3/trade/matched` | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-[**getSellTrades()**](#getselltrades) | **GET** `/v3/trade/sell` | List all active sell trades
-[**getSellTradesBody()**](#getselltradesbody) | **POST** `/v3/trade/sell` | List all active sell trades
-[**getTradeById()**](#gettradebyid) | **GET** `/v3/trade/{id}` | Get existing trade
-[**tradeCreateFutureTrade()**](#tradecreatefuturetrade) | **POST** `/v3/trade` | Store buy / sell trade
-[**tradeCreateTrade()**](#tradecreatetrade) | **POST** `/v3/trade` | Store buy / sell trade
+[**chart Request()**](#chartrequest) | **POST** `/v3 /trade /chart` | Obtain chart data from historical closed trades
+[**create Future Trade()**](#createfuturetrade) | **POST** `/v3 /trade` | Store buy / sell trade
+[**create Trade()**](#createtrade) | **POST** `/v3 /trade` | Store buy / sell trade
+[**delete Account Trades()**](#deleteaccounttrades) | **DELETE** `/v3 /trade /account /{id}` | Cancel all existing trades for account
+[**delete Trade()**](#deletetrade) | **DELETE** `/v3 /trade /{id}` | Cancel existing trade
+[**get Buy Trades()**](#getbuytrades) | **GET** `/v3 /trade /buy` | List all active buy trades
+[**get Buy Trades Body()**](#getbuytradesbody) | **POST** `/v3 /trade /buy` | List all active buy trades
+[**get Historical Trades()**](#gethistoricaltrades) | **GET** `/v3 /trade /history` | List all historical trades
+[**get Historical Trades Body()**](#gethistoricaltradesbody) | **POST** `/v3 /trade /history` | List all historical trades
+[**get Matched Trades()**](#getmatchedtrades) | **POST** `/v3 /trade /matched` | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
+[**get Sell Trades()**](#getselltrades) | **GET** `/v3 /trade /sell` | List all active sell trades
+[**get Sell Trades Body()**](#getselltradesbody) | **POST** `/v3 /trade /sell` | List all active sell trades
+[**get Trade By Id()**](#gettradebyid) | **GET** `/v3 /trade /{id}` | Get existing trade
 
 
 ## `chartRequest()`
@@ -49,6 +49,70 @@ Obtain chart data from historical closed trades
 ### Example
 
 [✨ View "chartRequest.php"](../../examples/Api/OrderBookApi/chartRequest.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createFutureTrade()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->createFutureTrade(
+    \Tatum\Model\CreateFutureTrade $create_future_trade
+): \Tatum\Model\Id
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_future_trade** | [**\Tatum\Model\CreateFutureTrade**](../Model/CreateFutureTrade.md) |  |
+
+### Return type
+
+[**\Tatum\Model\Id**](../Model/Id.md)
+
+### Description
+
+Store buy / sell trade
+
+CreateFutureTrade operation
+
+### Example
+
+[✨ View "createFutureTrade.php"](../../examples/Api/OrderBookApi/createFutureTrade.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `createTrade()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()->createTrade(
+    \Tatum\Model\CreateTrade $create_trade
+): \Tatum\Model\Id
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$create_trade** | [**\Tatum\Model\CreateTrade**](../Model/CreateTrade.md) |  |
+
+### Return type
+
+[**\Tatum\Model\Id**](../Model/Id.md)
+
+### Description
+
+Store buy / sell trade
+
+<h4>2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills  = 6 credits.</h4><br/> <p>Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible.<br/> It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC </p>  <p> If you fill type of the trade with FUTURE_BUY or FUTURE_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. </p> <p>Futures can also penalize contracting parties if they don’t have the agreed balance available in their accounts. The penalty is calculated in the following way: Penalty amount = (Percentage of incomplete deal amount because of shortage from user) × (Maximum Penalty percentage of futures deal based on blocked amount and time interval) × (total blocked value). </p> <p>Example of the BTC/USDT trade future:</p> <p>The maker creates a sell with the following properties: 1 BTC at a price of 60000 USDT, with a blocking percentage of 22%, a penalty percentage of 45%, a system commision of 1% and with an expiration time of within 12 hours.</p> <pre> {   "type": "FUTURE_SELL",   "price": "60000",   "amount": "1",   "pair": "BTC/USDT",   "currency1AccountId": "60a236db1b57f60d62612bf3",   "currency2AccountId": "609d0696bf835c241ac2920f",   "fee": 1,   "feeAccountId": "609d0696bf835c251ac2920a",   "attr": {     "sealDate": 1621990960631,     "percentBlock": 22,     "percentPenalty": 45   } } </pre>  The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. <pre> {   "type": "FUTURE_BUY",   "price": "60000",   "amount": "1",   "pair": "BTC/USDT",   "currency1AccountId": "60a236db1b57f60d62612bf2",   "currency2AccountId": "609d0696bf835c241ac2920a",   "attr": {     "sealDate": 1621990960631,     "percentBlock": 22,     "percentPenalty": 45   } } </pre> <p>At the time of the trade, the maker and taker have the following conditions. The maker has 0.65 BTC (35% deficit) in their account and the taker has 49200 USDT (18% deficit) in their account. </p>  <p> The maker penalty is equal to 0.35 × 0.22 × (0.45 × 1 BTC) = 0.03465 BTC. The taker penalty is equal to 0.18 × 0.22 × (0.45 × 60000 USDT) = 1069.2 USDT. </p> <p> The system commission for the maker is 1 BTC × 1% = 0.01 BTC. The system commission for the taker is 60000 USDT × 1% = 600 USDT. </p> <p> The maker’s assets after deducting penalties and commissions equals 0.65 - 0.03465 - 0.01 = 0.60535 BTC. The taker’s assets after deducting penalties and commissions equals 49200 - 1069.2 - 600 = 47530.8 USDT. </p> <p> The amount received by the maker after the trade is (0.60535 × 60000) + 1069.2 = 37390.2 USDT and the taker receives 0.60535 + 0.03465 = 0.64 BTC. </p>
+
+### Example
+
+[✨ View "createTrade.php"](../../examples/Api/OrderBookApi/createTrade.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -403,69 +467,5 @@ Get existing trade
 ### Example
 
 [✨ View "getTradeById.php"](../../examples/Api/OrderBookApi/getTradeById.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tradeCreateFutureTrade()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->tradeCreateFutureTrade(
-    \Tatum\Model\CreateFutureTrade $create_future_trade
-): \Tatum\Model\Id
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_future_trade** | [**\Tatum\Model\CreateFutureTrade**](../Model/CreateFutureTrade.md) |  |
-
-### Return type
-
-[**\Tatum\Model\Id**](../Model/Id.md)
-
-### Description
-
-Store buy / sell trade
-
-CreateFutureTrade operation
-
-### Example
-
-[✨ View "tradeCreateFutureTrade.php"](../../examples/Api/OrderBookApi/tradeCreateFutureTrade.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `tradeCreateTrade()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->tradeCreateTrade(
-    \Tatum\Model\CreateTrade $create_trade
-): \Tatum\Model\Id
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$create_trade** | [**\Tatum\Model\CreateTrade**](../Model/CreateTrade.md) |  |
-
-### Return type
-
-[**\Tatum\Model\Id**](../Model/Id.md)
-
-### Description
-
-Store buy / sell trade
-
-<h4>2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills  = 6 credits.</h4><br/> <p>Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible.<br/> It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC </p>  <p> If you fill type of the trade with FUTURE_BUY or FUTURE_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. </p> <p>Futures can also penalize contracting parties if they don’t have the agreed balance available in their accounts. The penalty is calculated in the following way: Penalty amount = (Percentage of incomplete deal amount because of shortage from user) × (Maximum Penalty percentage of futures deal based on blocked amount and time interval) × (total blocked value). </p> <p>Example of the BTC/USDT trade future:</p> <p>The maker creates a sell with the following properties: 1 BTC at a price of 60000 USDT, with a blocking percentage of 22%, a penalty percentage of 45%, a system commision of 1% and with an expiration time of within 12 hours.</p> <pre> {   "type": "FUTURE_SELL",   "price": "60000",   "amount": "1",   "pair": "BTC/USDT",   "currency1AccountId": "60a236db1b57f60d62612bf3",   "currency2AccountId": "609d0696bf835c241ac2920f",   "fee": 1,   "feeAccountId": "609d0696bf835c251ac2920a",   "attr": {     "sealDate": 1621990960631,     "percentBlock": 22,     "percentPenalty": 45   } } </pre>  The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. <pre> {   "type": "FUTURE_BUY",   "price": "60000",   "amount": "1",   "pair": "BTC/USDT",   "currency1AccountId": "60a236db1b57f60d62612bf2",   "currency2AccountId": "609d0696bf835c241ac2920a",   "attr": {     "sealDate": 1621990960631,     "percentBlock": 22,     "percentPenalty": 45   } } </pre> <p>At the time of the trade, the maker and taker have the following conditions. The maker has 0.65 BTC (35% deficit) in their account and the taker has 49200 USDT (18% deficit) in their account. </p>  <p> The maker penalty is equal to 0.35 × 0.22 × (0.45 × 1 BTC) = 0.03465 BTC. The taker penalty is equal to 0.18 × 0.22 × (0.45 × 60000 USDT) = 1069.2 USDT. </p> <p> The system commission for the maker is 1 BTC × 1% = 0.01 BTC. The system commission for the taker is 60000 USDT × 1% = 600 USDT. </p> <p> The maker’s assets after deducting penalties and commissions equals 0.65 - 0.03465 - 0.01 = 0.60535 BTC. The taker’s assets after deducting penalties and commissions equals 49200 - 1069.2 - 600 = 47530.8 USDT. </p> <p> The amount received by the maker after the trade is (0.60535 × 60000) + 1069.2 = 37390.2 USDT and the taker receives 0.60535 + 0.03465 = 0.64 BTC. </p>
-
-### Example
-
-[✨ View "tradeCreateTrade.php"](../../examples/Api/OrderBookApi/tradeCreateTrade.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

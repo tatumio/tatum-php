@@ -298,17 +298,17 @@ class DogecoinApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function dogecoinTransactionDogeTransactionUTXO(\Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo) {
+    public function dogeTransactionUTXO(\Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/dogecoin/transaction", [], $rHeaders, [], $doge_transaction_utxo
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
@@ -321,17 +321,17 @@ class DogecoinApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+     * @return \Tatum\Model\TransactionSigned
      */
-    public function dogecoinTransactionDogeTransactionUTXOKMS(\Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms) {
+    public function dogeTransactionUTXOKMS(\Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
+        /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/dogecoin/transaction", [], $rHeaders, [], $doge_transaction_utxokms
             ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
+            "\Tatum\Model\TransactionSigned"
         );
             
         return $result;

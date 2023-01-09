@@ -5,11 +5,11 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**custodialCreateWallet()**](#custodialcreatewallet) | **POST** `/v3/custodial/wallet` | Create managed address
-[**custodialDeleteWallet()**](#custodialdeletewallet) | **DELETE** `/v3/custodial/wallet/{id}` | Delete managed address
-[**custodialGetWallet()**](#custodialgetwallet) | **GET** `/v3/custodial/wallet/{id}` | Get managed address
-[**custodialGetWallets()**](#custodialgetwallets) | **GET** `/v3/custodial/wallet` | Get managed addresses
-[**custodialTransferManagedAddress()**](#custodialtransfermanagedaddress) | **POST** `/v3/custodial/transaction` | Sign and transfer using managed address
+[**custodial Create Wallet()**](#custodialcreatewallet) | **POST** `/v3 /custodial /wallet` | Create managed address
+[**custodial Delete Wallet()**](#custodialdeletewallet) | **DELETE** `/v3 /custodial /wallet /{id}` | Delete managed address
+[**custodial Get Wallet()**](#custodialgetwallet) | **GET** `/v3 /custodial /wallet /{id}` | Get managed address
+[**custodial Get Wallets()**](#custodialgetwallets) | **GET** `/v3 /custodial /wallet` | Get managed addresses
+[**custodial Transfer Managed Address()**](#custodialtransfermanagedaddress) | **POST** `/v3 /custodial /transaction` | Sign and transfer using managed address
 
 
 ## `custodialCreateWallet()`

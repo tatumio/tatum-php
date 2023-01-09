@@ -5,11 +5,11 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**broadcastBlockchainTransaction()**](#broadcastblockchaintransaction) | **POST** `/v3/offchain/withdrawal/broadcast` | Broadcast signed transaction and complete withdrawal
-[**cancelInProgressWithdrawal()**](#cancelinprogresswithdrawal) | **DELETE** `/v3/offchain/withdrawal/{id}` | Cancel withdrawal
-[**completeWithdrawal()**](#completewithdrawal) | **PUT** `/v3/offchain/withdrawal/{id}/{txId}` | Complete withdrawal
-[**getWithdrawals()**](#getwithdrawals) | **GET** `/v3/offchain/withdrawal` | Get withdrawals
-[**storeWithdrawal()**](#storewithdrawal) | **POST** `/v3/offchain/withdrawal` | Store withdrawal
+[**broadcast Blockchain Transaction()**](#broadcastblockchaintransaction) | **POST** `/v3 /offchain /withdrawal /broadcast` | Broadcast signed transaction and complete withdrawal
+[**cancel In Progress Withdrawal()**](#cancelinprogresswithdrawal) | **DELETE** `/v3 /offchain /withdrawal /{id}` | Cancel withdrawal
+[**complete Withdrawal()**](#completewithdrawal) | **PUT** `/v3 /offchain /withdrawal /{id} /{txId}` | Complete withdrawal
+[**get Withdrawals()**](#getwithdrawals) | **GET** `/v3 /offchain /withdrawal` | Get withdrawals
+[**store Withdrawal()**](#storewithdrawal) | **POST** `/v3 /offchain /withdrawal` | Store withdrawal
 
 
 ## `broadcastBlockchainTransaction()`

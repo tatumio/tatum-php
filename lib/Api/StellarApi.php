@@ -23,6 +23,144 @@ use Tatum\Sdk\Serializer as S;
  */
 class StellarApi extends AbstractApi {
     /**
+     * Send XLM from address to address
+     *
+     * @param \Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferXlmBlockchain(\Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XLM from address to address
+     *
+     * @param \Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferXlmBlockchainAsset(\Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_asset
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XLM from address to address
+     *
+     * @param \Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferXlmBlockchainKMS(\Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Send XLM from address to address
+     *
+     * @param \Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function transferXlmBlockchainKMSAsset(\Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_kms_asset
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create / Update / Delete XLM trust line
+     *
+     * @param \Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function trustLineXlmBlockchain(\Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xlm/trust", [], $rHeaders, [], $trust_line_xlm_blockchain
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Create / Update / Delete XLM trust line
+     *
+     * @param \Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionSigned
+     */
+    public function trustLineXlmBlockchainKMS(\Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionSigned $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/xlm/trust", [], $rHeaders, [], $trust_line_xlm_blockchain_kms
+            ), 
+            "\Tatum\Model\TransactionSigned"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Broadcast signed XLM transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
@@ -200,144 +338,6 @@ class StellarApi extends AbstractApi {
                 $this->_caller->config(), "GET", S::parse("/v3/xlm/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmTx"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send XLM from address to address
-     *
-     * @param \Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function xlmTransactionTransferXlmBlockchain(\Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send XLM from address to address
-     *
-     * @param \Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function xlmTransactionTransferXlmBlockchainAsset(\Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_asset
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send XLM from address to address
-     *
-     * @param \Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function xlmTransactionTransferXlmBlockchainKMS(\Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Send XLM from address to address
-     *
-     * @param \Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function xlmTransactionTransferXlmBlockchainKMSAsset(\Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_kms_asset
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create / Update / Delete XLM trust line
-     *
-     * @param \Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function xlmTrustLineXlmBlockchain(\Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/trust", [], $rHeaders, [], $trust_line_xlm_blockchain
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Create / Update / Delete XLM trust line
-     *
-     * @param \Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-     */
-    public function xlmTrustLineXlmBlockchainKMS(\Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/trust", [], $rHeaders, [], $trust_line_xlm_blockchain_kms
-            ), 
-            "\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response"
         );
             
         return $result;

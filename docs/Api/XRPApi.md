@@ -5,33 +5,33 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xrpAccountSettingsAccountSettingsXrpBlockchain()**](#xrpaccountsettingsaccountsettingsxrpblockchain) | **POST** `/v3/xrp/account/settings` | Modify XRP account
-[**xrpAccountSettingsAccountSettingsXrpBlockchainKMS()**](#xrpaccountsettingsaccountsettingsxrpblockchainkms) | **POST** `/v3/xrp/account/settings` | Modify XRP account
-[**xrpBroadcast()**](#xrpbroadcast) | **POST** `/v3/xrp/broadcast` | Broadcast signed XRP transaction
-[**xrpGetAccountBalance()**](#xrpgetaccountbalance) | **GET** `/v3/xrp/account/{account}/balance` | Get Account Balance
-[**xrpGetAccountInfo()**](#xrpgetaccountinfo) | **GET** `/v3/xrp/account/{account}` | Get Account info
-[**xrpGetAccountTx()**](#xrpgetaccounttx) | **GET** `/v3/xrp/account/tx/{account}` | Get Account transactions
-[**xrpGetFee()**](#xrpgetfee) | **GET** `/v3/xrp/fee` | Get actual Blockchain fee
-[**xrpGetLastClosedLedger()**](#xrpgetlastclosedledger) | **GET** `/v3/xrp/info` | Get XRP Blockchain Information
-[**xrpGetLedger()**](#xrpgetledger) | **GET** `/v3/xrp/ledger/{i}` | Get Ledger
-[**xrpGetTransaction()**](#xrpgettransaction) | **GET** `/v3/xrp/transaction/{hash}` | Get XRP Transaction by hash
-[**xrpTransactionTransferXrpBlockchain()**](#xrptransactiontransferxrpblockchain) | **POST** `/v3/xrp/transaction` | Send XRP from address to address
-[**xrpTransactionTransferXrpBlockchainAsset()**](#xrptransactiontransferxrpblockchainasset) | **POST** `/v3/xrp/transaction` | Send XRP from address to address
-[**xrpTransactionTransferXrpBlockchainAssetKMS()**](#xrptransactiontransferxrpblockchainassetkms) | **POST** `/v3/xrp/transaction` | Send XRP from address to address
-[**xrpTransactionTransferXrpBlockchainKMS()**](#xrptransactiontransferxrpblockchainkms) | **POST** `/v3/xrp/transaction` | Send XRP from address to address
-[**xrpTrustLineXrpBlockchain()**](#xrptrustlinexrpblockchain) | **POST** `/v3/xrp/trust` | Create / Update / Delete XRP trust line
-[**xrpTrustLineXrpBlockchainKMS()**](#xrptrustlinexrpblockchainkms) | **POST** `/v3/xrp/trust` | Create / Update / Delete XRP trust line
-[**xrpWallet()**](#xrpwallet) | **GET** `/v3/xrp/account` | Generate XRP account
+[**account Settings Xrp Blockchain()**](#accountsettingsxrpblockchain) | **POST** `/v3 /xrp /account /settings` | Modify XRP account
+[**account Settings Xrp Blockchain KMS()**](#accountsettingsxrpblockchainkms) | **POST** `/v3 /xrp /account /settings` | Modify XRP account
+[**transfer Xrp Blockchain()**](#transferxrpblockchain) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
+[**transfer Xrp Blockchain Asset()**](#transferxrpblockchainasset) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
+[**transfer Xrp Blockchain Asset KMS()**](#transferxrpblockchainassetkms) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
+[**transfer Xrp Blockchain KMS()**](#transferxrpblockchainkms) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
+[**trust Line Xrp Blockchain()**](#trustlinexrpblockchain) | **POST** `/v3 /xrp /trust` | Create / Update / Delete XRP trust line
+[**trust Line Xrp Blockchain KMS()**](#trustlinexrpblockchainkms) | **POST** `/v3 /xrp /trust` | Create / Update / Delete XRP trust line
+[**xrp Broadcast()**](#xrpbroadcast) | **POST** `/v3 /xrp /broadcast` | Broadcast signed XRP transaction
+[**xrp Get Account Balance()**](#xrpgetaccountbalance) | **GET** `/v3 /xrp /account /{account} /balance` | Get Account Balance
+[**xrp Get Account Info()**](#xrpgetaccountinfo) | **GET** `/v3 /xrp /account /{account}` | Get Account info
+[**xrp Get Account Tx()**](#xrpgetaccounttx) | **GET** `/v3 /xrp /account /tx /{account}` | Get Account transactions
+[**xrp Get Fee()**](#xrpgetfee) | **GET** `/v3 /xrp /fee` | Get actual Blockchain fee
+[**xrp Get Last Closed Ledger()**](#xrpgetlastclosedledger) | **GET** `/v3 /xrp /info` | Get XRP Blockchain Information
+[**xrp Get Ledger()**](#xrpgetledger) | **GET** `/v3 /xrp /ledger /{i}` | Get Ledger
+[**xrp Get Transaction()**](#xrpgettransaction) | **GET** `/v3 /xrp /transaction /{hash}` | Get XRP Transaction by hash
+[**xrp Wallet()**](#xrpwallet) | **GET** `/v3 /xrp /account` | Generate XRP account
 
 
-## `xrpAccountSettingsAccountSettingsXrpBlockchain()`
+## `accountSettingsXrpBlockchain()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettingsAccountSettingsXrpBlockchain(
+$sdk->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchain(
     \Tatum\Model\AccountSettingsXrpBlockchain $account_settings_xrp_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -52,18 +52,18 @@ Modify XRP account
 
 ### Example
 
-[✨ View "xrpAccountSettingsAccountSettingsXrpBlockchain.php"](../../examples/Api/XRPApi/xrpAccountSettingsAccountSettingsXrpBlockchain.php)
+[✨ View "accountSettingsXrpBlockchain.php"](../../examples/Api/XRPApi/accountSettingsXrpBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
-## `xrpAccountSettingsAccountSettingsXrpBlockchainKMS()`
+## `accountSettingsXrpBlockchainKMS()`
 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpAccountSettingsAccountSettingsXrpBlockchainKMS(
+$sdk->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchainKMS(
     \Tatum\Model\AccountSettingsXrpBlockchainKMS $account_settings_xrp_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
+): \Tatum\Model\TransactionSigned
 ```
 
 ### Parameters
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
 
 ### Description
 
@@ -84,7 +84,199 @@ AccountSettingsXrpBlockchainKMS operation
 
 ### Example
 
-[✨ View "xrpAccountSettingsAccountSettingsXrpBlockchainKMS.php"](../../examples/Api/XRPApi/xrpAccountSettingsAccountSettingsXrpBlockchainKMS.php)
+[✨ View "accountSettingsXrpBlockchainKMS.php"](../../examples/Api/XRPApi/accountSettingsXrpBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXrpBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchain(
+    \Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp_blockchain** | [**\Tatum\Model\TransferXrpBlockchain**](../Model/TransferXrpBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XRP from address to address
+
+<h4>10 credits per API call.</h4><br/> <p>Send XRP from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
+
+### Example
+
+[✨ View "transferXrpBlockchain.php"](../../examples/Api/XRPApi/transferXrpBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXrpBlockchainAsset()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAsset(
+    \Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp_blockchain_asset** | [**\Tatum\Model\TransferXrpBlockchainAsset**](../Model/TransferXrpBlockchainAsset.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XRP from address to address
+
+TransferXrpBlockchainAsset operation
+
+### Example
+
+[✨ View "transferXrpBlockchainAsset.php"](../../examples/Api/XRPApi/transferXrpBlockchainAsset.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXrpBlockchainAssetKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAssetKMS(
+    \Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp_blockchain_asset_kms** | [**\Tatum\Model\TransferXrpBlockchainAssetKMS**](../Model/TransferXrpBlockchainAssetKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XRP from address to address
+
+TransferXrpBlockchainAssetKMS operation
+
+### Example
+
+[✨ View "transferXrpBlockchainAssetKMS.php"](../../examples/Api/XRPApi/transferXrpBlockchainAssetKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `transferXrpBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainKMS(
+    \Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$transfer_xrp_blockchain_kms** | [**\Tatum\Model\TransferXrpBlockchainKMS**](../Model/TransferXrpBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Send XRP from address to address
+
+TransferXrpBlockchainKMS operation
+
+### Example
+
+[✨ View "transferXrpBlockchainKMS.php"](../../examples/Api/XRPApi/transferXrpBlockchainKMS.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `trustLineXrpBlockchain()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchain(
+    \Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xrp_blockchain** | [**\Tatum\Model\TrustLineXrpBlockchain**](../Model/TrustLineXrpBlockchain.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Create / Update / Delete XRP trust line
+
+<h4>10 credits per API call.</h4><br/><p> <p>Create / Update / Delete XRP trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions.<br/> Account setting rippling must be enabled on the issuer account before the trust line creation to asset work correctly. Creating a trust line will cause an additional 5 XRP to be blocked on the account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
+
+### Example
+
+[✨ View "trustLineXrpBlockchain.php"](../../examples/Api/XRPApi/trustLineXrpBlockchain.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `trustLineXrpBlockchainKMS()`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchainKMS(
+    \Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms
+): \Tatum\Model\TransactionSigned
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$trust_line_xrp_blockchain_kms** | [**\Tatum\Model\TrustLineXrpBlockchainKMS**](../Model/TrustLineXrpBlockchainKMS.md) |  |
+
+### Return type
+
+[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+
+### Description
+
+Create / Update / Delete XRP trust line
+
+TrustLineXrpBlockchainKMS operation
+
+### Example
+
+[✨ View "trustLineXrpBlockchainKMS.php"](../../examples/Api/XRPApi/trustLineXrpBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -339,198 +531,6 @@ Get XRP Transaction by hash
 ### Example
 
 [✨ View "xrpGetTransaction.php"](../../examples/Api/XRPApi/xrpGetTransaction.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xrpTransactionTransferXrpBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchain(
-    \Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain** | [**\Tatum\Model\TransferXrpBlockchain**](../Model/TransferXrpBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XRP from address to address
-
-<h4>10 credits per API call.</h4><br/> <p>Send XRP from account to account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
-### Example
-
-[✨ View "xrpTransactionTransferXrpBlockchain.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xrpTransactionTransferXrpBlockchainAsset()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchainAsset(
-    \Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain_asset** | [**\Tatum\Model\TransferXrpBlockchainAsset**](../Model/TransferXrpBlockchainAsset.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XRP from address to address
-
-TransferXrpBlockchainAsset operation
-
-### Example
-
-[✨ View "xrpTransactionTransferXrpBlockchainAsset.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchainAsset.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xrpTransactionTransferXrpBlockchainAssetKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchainAssetKMS(
-    \Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain_asset_kms** | [**\Tatum\Model\TransferXrpBlockchainAssetKMS**](../Model/TransferXrpBlockchainAssetKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XRP from address to address
-
-TransferXrpBlockchainAssetKMS operation
-
-### Example
-
-[✨ View "xrpTransactionTransferXrpBlockchainAssetKMS.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchainAssetKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xrpTransactionTransferXrpBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTransactionTransferXrpBlockchainKMS(
-    \Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain_kms** | [**\Tatum\Model\TransferXrpBlockchainKMS**](../Model/TransferXrpBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Send XRP from address to address
-
-TransferXrpBlockchainKMS operation
-
-### Example
-
-[✨ View "xrpTransactionTransferXrpBlockchainKMS.php"](../../examples/Api/XRPApi/xrpTransactionTransferXrpBlockchainKMS.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xrpTrustLineXrpBlockchain()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineXrpBlockchain(
-    \Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$trust_line_xrp_blockchain** | [**\Tatum\Model\TrustLineXrpBlockchain**](../Model/TrustLineXrpBlockchain.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Create / Update / Delete XRP trust line
-
-<h4>10 credits per API call.</h4><br/><p> <p>Create / Update / Delete XRP trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions.<br/> Account setting rippling must be enabled on the issuer account before the trust line creation to asset work correctly. Creating a trust line will cause an additional 5 XRP to be blocked on the account.<br/><br/> This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
-
-### Example
-
-[✨ View "xrpTrustLineXrpBlockchain.php"](../../examples/Api/XRPApi/xrpTrustLineXrpBlockchain.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `xrpTrustLineXrpBlockchainKMS()`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpTrustLineXrpBlockchainKMS(
-    \Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms
-): \Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$trust_line_xrp_blockchain_kms** | [**\Tatum\Model\TrustLineXrpBlockchainKMS**](../Model/TrustLineXrpBlockchainKMS.md) |  |
-
-### Return type
-
-[**\Tatum\Model\BitcoinTransactionBtcTransactionFromAddress200Response**](../Model/BitcoinTransactionBtcTransactionFromAddress200Response.md)
-
-### Description
-
-Create / Update / Delete XRP trust line
-
-TrustLineXrpBlockchainKMS operation
-
-### Example
-
-[✨ View "xrpTrustLineXrpBlockchainKMS.php"](../../examples/Api/XRPApi/xrpTrustLineXrpBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 

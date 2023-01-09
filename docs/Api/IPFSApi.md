@@ -5,8 +5,8 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getIPFSData()**](#getipfsdata) | **GET** `/v3/ipfs/{id}` | Get file from IPFS
-[**storeIPFS()**](#storeipfs) | **POST** `/v3/ipfs` | Store data to IPFS
+[**get IPFSData()**](#getipfsdata) | **GET** `/v3 /ipfs /{id}` | Get file from IPFS
+[**store IPFS()**](#storeipfs) | **POST** `/v3 /ipfs` | Store data to IPFS
 
 
 ## `getIPFSData()`
