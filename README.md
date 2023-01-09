@@ -158,13 +158,13 @@ vendor/bin/phpunit
 MainNet and TestNet operations have their own configuration object:
 
 ```php
-$sdk->mainnet()->config()
-$sdk->testnet()->config()
+$sdk->mainnet()->config();
+$sdk->testnet()->config();
 ```
 
 You can fetch the following:
 
-  * [Debugging](#debugger) tools
+  * [Debugging](#debugging) tools
   * `getApiKey()`: Your [Tatum API key](https://dashboard.tatum.com)
   * `getTempFolderPath()`: Path for storing downloaded files
   * `getUserAgent()`: Request header for API calls
@@ -177,7 +177,7 @@ You can fetch the following:
 
 You can change the following:
 
-  * [Debugging](#debugger) tools
+  * [Debugging](#debugging) tools
   * `setApiKey()`: Note - set the API key for the current network type!
   * `setTempFolderPath()`
 
