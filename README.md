@@ -165,7 +165,7 @@ $sdk->testnet()->config();
 You can fetch the following:
 
   * [Debugging](#debugging) tools
-  * `getApiKey()`: Your [Tatum API key](https://dashboard.tatum.com)
+  * `getApiKey()`: Your [Tatum API key](https://dashboard.tatum.io)
   * `getTempFolderPath()`: Path for storing downloaded files
   * `getUserAgent()`: Request header for API calls
   * `getHost()`: API server domain
