@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Stellar#operation/TransferXlmBlockchainAsset
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/StellarApi.md#transferxlmblockchainasset
  * 
  * SECURITY WARNING

@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/BlockchainOperations#operation/OffBscErc20
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainOperationsApi.md#offbscerc20
  * 
  * SECURITY WARNING

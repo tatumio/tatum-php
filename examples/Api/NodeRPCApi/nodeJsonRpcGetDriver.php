@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/NodeRPC#operation/NodeJsonRpcGetDriver
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/NodeRPCApi.md#nodejsonrpcgetdriver
  * 
  * SECURITY WARNING

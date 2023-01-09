@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Tron#operation/CreateTronTrc10Blockchain
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/TronApi.md#createtrontrc10blockchain
  * 
  * SECURITY WARNING

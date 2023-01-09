@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Harmony#operation/CallOneReadSmartContractMethod
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/HarmonyApi.md#callonereadsmartcontractmethod
  * 
  * SECURITY WARNING

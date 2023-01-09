@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/MaliciousAddress#operation/CheckMalicousAddress
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/MaliciousAddressApi.md#checkmalicousaddress
  * 
  * SECURITY WARNING

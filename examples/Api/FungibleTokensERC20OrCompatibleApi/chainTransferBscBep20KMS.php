@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/FungibleTokensERC20OrCompatible#operation/ChainTransferBscBep20KMS
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/FungibleTokensERC20OrCompatibleApi.md#chaintransferbscbep20kms
  * 
  * SECURITY WARNING

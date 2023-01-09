@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Customer#operation/getCustomerByExternalOrInternalId
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/CustomerApi.md#getcustomerbyexternalorinternalid
  * 
  * SECURITY WARNING

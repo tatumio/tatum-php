@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/BlockchainOperations#operation/OffKlaDeployErc20OffchainPKAddress
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainOperationsApi.md#offkladeployerc20offchainpkaddress
  * 
  * SECURITY WARNING

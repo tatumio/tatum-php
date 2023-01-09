@@ -4,7 +4,6 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     API docs: https://apidoc.tatum.io/tag/Deposit#operation/getDepositsCount
  * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/DepositApi.md#getdepositscount
  * 
  * SECURITY WARNING
