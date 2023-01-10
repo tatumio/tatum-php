@@ -1,7 +1,7 @@
 {
     "name": "tatumio/tatum-php",
     "type": "library",
-    "description": "Tatum offers a flexible framework to build, run, and scale blockchain apps fast with PHP.",
+    "description": "Tatum offers a flexible framework to build, run, and scale blockchain apps fast with PHP. Perform local wallet operations - wallet from mnemonic, address from xpub, address from private key, private key from mnemonic - for Bitcoin, Bitcoin Cash, BSC, Litecoin, Celo, Dogecoin, Ethereum, Harmony.ONE, KCS, Klaytn, Polygon, Tron, VeChain and XDC.",
     "keywords": [
         "web3", "openapi", "php", "sdk", "tatum", "tatum.io", "kcs", "klaytn", "polygon", "vechain", "xdc",
         "blockchain", "bitcoin", "bitcoin-cash", "litecoin", "dogecoin", "bsc", "celo", "harmony", "harmony.one",

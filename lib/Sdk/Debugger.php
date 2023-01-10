@@ -132,7 +132,7 @@ class Debugger {
 
         // Go throught the data
         foreach ($data as $key => &$value) {
-            if (preg_match("%^(?:mnemonic|x-api-key|.*?private.*?)$%i", $key)) {
+            if (preg_match("%^(?:mnemonic|x-api-key|key|.*?(?:private|secret).*?)$%i", $key)) {
                 if (self::SANITIZE_HEADERS === $source || is_array($value)) {
                     foreach ($value as $vKey => $vData) {
                         $value[$vKey] = $cleanUp($key, $vData);
@@ -265,7 +265,15 @@ class Debugger {
             if (null !== $bodyJson) {
                 if ($this->_config->getDebugSanitizer() && is_array($bodyJson)) {
                     $this->_sanitize($bodyJson, self::SANITIZE_BODY);
+
+                    // Sanitize utxo and address
+                    foreach (["fromAddress", "fromUTXO"] as $sKey) {
+                        if (isset($bodyJson[$sKey]) && is_array($bodyJson[$sKey])) {
+                            $this->_sanitize($bodyJson[$sKey], self::SANITIZE_BODY);
+                        }
+                    }
                 }
+
                 $responseBody = json_encode($bodyJson, JSON_PRETTY_PRINT);
             } else {
                 $responseBody = $body;
