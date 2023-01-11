@@ -100,6 +100,24 @@ class Debugger {
     }
 
     /**
+     * Sanitize URLs
+     *
+     * @param string $url URL
+     * @return string
+     */
+    protected function _sanitizeUrl($url) {
+        // Hide private key and mnemonic for egld and algorand
+        $regExes = ["(?<=\/v3\/egld\/address\/)(.*?)(?=\/|$)", "(?<=\/v3\/algorand\/address\/)(.*?)(?=\/|$)"];
+        foreach ($regExes as $regEx) {
+            if (preg_match("%{$regEx}%i", $url)) {
+                $url = preg_replace("%{$regEx}%i", str_repeat("*", 6), $url);
+            }
+        }
+
+        return $url;
+    }
+
+    /**
      * Sanitize data
      *
      * @param array  $data   Associative array
@@ -164,21 +182,24 @@ class Debugger {
     protected function _getLogRequest(Request $request) {
         $eof = " \\\n";
 
-        // Prepare the uri
-        $uri = "{$request->getUri()}";
+        // Prepare the url
+        $url = "{$request->getUri()}";
 
-        // Sanitize GET arguments
+        // Sanitize URL
         if ($this->_config->getDebugSanitizer()) {
-            parse_str($request->getUri()->getQuery(), $queryData);
+            // Filter-out sensitive data in paths
+            $url = $this->_sanitizeUrl($url);
 
+            // Clean-up query arguments
+            parse_str($request->getUri()->getQuery(), $queryData);
             if (count($queryData)) {
                 $this->_sanitize($queryData, self::SANITIZE_QUERY);
-                $uri = preg_replace('%\?.*$%', "?" . urldecode(http_build_query($queryData)), $uri);
+                $url = preg_replace('%\?.*$%', "?" . urldecode(http_build_query($queryData)), $url);
             }
         }
 
         $curl = "curl -i -X {$request->getMethod()}$eof";
-        $curl .= "  '{$uri}'$eof";
+        $curl .= "  '{$url}'$eof";
 
         // Prepare the headers
         $headers = $request->getHeaders();

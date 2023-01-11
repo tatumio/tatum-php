@@ -312,7 +312,7 @@ Headers:
 * CF-RAY: 78559f380aa6bba4-FRA
 Body:
 {
-    "key": "cTPGqe6hkwVY6JNHJUZ4wSUvPo8GNMe2cDFTsFV1jSqCBMDKpfSU"
+    "key": "******"
 }
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
 ```
