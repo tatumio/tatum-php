@@ -76,7 +76,7 @@ class OffchainEstimateFee extends AbstractModel {
     /**
      * Set address
      * 
-     * @param string $address Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
+     * @param string $address Blockchain address to send assets to. For BTC, LTC, and DOGE, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -116,7 +116,7 @@ class OffchainEstimateFee extends AbstractModel {
     /**
      * Set multiple_amounts
      * 
-     * @param string[]|null $multiple_amounts For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+     * @param string[]|null $multiple_amounts For BTC, LTC, and DOGE, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
      * @throws \InvalidArgumentException
      * @return $this
      */

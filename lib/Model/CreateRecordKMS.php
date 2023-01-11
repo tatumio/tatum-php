@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CreateRecord Model
+ * CreateRecordKMS Model
  *
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
@@ -17,33 +17,25 @@ namespace Tatum\Model;
 !defined("TATUM-SDK") && exit();
 
 /**
- * CreateRecord Model
+ * CreateRecordKMS Model
  */
-class CreateRecord extends AbstractModel {
+class CreateRecordKMS extends AbstractModel {
 
     public const _D = null;
-    public const CHAIN_BSC = 'BSC';
-    public const CHAIN_EGLD = 'EGLD';
     public const CHAIN_ETH = 'ETH';
-    public const CHAIN_KLAY = 'KLAY';
-    public const CHAIN_MATIC = 'MATIC';
-    public const CHAIN_ONE = 'ONE';
-    public const CHAIN_XDC = 'XDC';
-    protected static $_name = "CreateRecord";
+    protected static $_name = "CreateRecordKMS";
     protected static $_definition = [
         "data" => ["data", "string", null, "getData", "setData", null, ["r" => 1, "nl" => 1, "xl" => 130000]], 
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
-        "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 0, "nl" => 42, "xl" => 62]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "int", null, "getIndex", "setIndex", null, ["r" => 0, "x" => [2147483647]]], 
         "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 0, "nl" => 42, "xl" => 42]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
-        "from_shard_id" => ["fromShardID", "float", null, "getFromShardId", "setFromShardId", null, ["r" => 0, "n" => [0], "x" => [4]]], 
-        "to_shard_id" => ["toShardID", "float", null, "getToShardId", "setToShardId", null, ["r" => 0, "n" => [0], "x" => [4]]], 
-        "eth_fee" => ["ethFee", "\Tatum\Model\CustomFee", null, "getEthFee", "setEthFee", null, ["r" => 0]]
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
 
     /**
-     * CreateRecord
+     * CreateRecordKMS
      *
      * @param mixed[] $data Model data
      */
@@ -60,13 +52,7 @@ class CreateRecord extends AbstractModel {
      */
     public function getChainAllowableValues(): array {
         return [
-            self::CHAIN_BSC,
-            self::CHAIN_EGLD,
             self::CHAIN_ETH,
-            self::CHAIN_KLAY,
-            self::CHAIN_MATIC,
-            self::CHAIN_ONE,
-            self::CHAIN_XDC,
         ];
     }
 
@@ -111,43 +97,43 @@ class CreateRecord extends AbstractModel {
     }
 
     /**
-     * Get from_private_key
+     * Get signature_id
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
-        return $this->_data["from_private_key"];
+    public function getSignatureId(): string {
+        return $this->_data["signature_id"];
     }
 
     /**
-     * Set from_private_key
+     * Set signature_id
      * 
-     * @param string $from_private_key The private key of the blockchain address from which the transaction will be made and the transaction fee will be deducted
+     * @param string $signature_id Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from.
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFromPrivateKey(string $from_private_key) {
-        return $this->_set("from_private_key", $from_private_key);
+    public function setSignatureId(string $signature_id) {
+        return $this->_set("signature_id", $signature_id);
     }
 
     /**
-     * Get from
+     * Get index
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getFrom(): ?string {
-        return $this->_data["from"];
+    public function getIndex(): ?int {
+        return $this->_data["index"];
     }
 
     /**
-     * Set from
+     * Set index
      * 
-     * @param string|null $from (Elrond only; required) The blockchain address from which the transaction will be made<br/>This is a mandatory parameter for Elrond. Do not use it with any other blockchain.
+     * @param int|null $index Derivation index of sender address.
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFrom(?string $from) {
-        return $this->_set("from", $from);
+    public function setIndex(?int $index) {
+        return $this->_set("index", $index);
     }
 
     /**
@@ -191,62 +177,22 @@ class CreateRecord extends AbstractModel {
     }
 
     /**
-     * Get from_shard_id
-     *
-     * @return float|null
-     */
-    public function getFromShardId(): ?float {
-        return $this->_data["from_shard_id"];
-    }
-
-    /**
-     * Set from_shard_id
-     * 
-     * @param float|null $from_shard_id (Harmony only) The ID of the shard from which the data should be read
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setFromShardId(?float $from_shard_id) {
-        return $this->_set("from_shard_id", $from_shard_id);
-    }
-
-    /**
-     * Get to_shard_id
-     *
-     * @return float|null
-     */
-    public function getToShardId(): ?float {
-        return $this->_data["to_shard_id"];
-    }
-
-    /**
-     * Set to_shard_id
-     * 
-     * @param float|null $to_shard_id (Harmony only) The ID of the shard to which the data should be recorded
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setToShardId(?float $to_shard_id) {
-        return $this->_set("to_shard_id", $to_shard_id);
-    }
-
-    /**
-     * Get eth_fee
+     * Get fee
      *
      * @return \Tatum\Model\CustomFee|null
      */
-    public function getEthFee(): ?\Tatum\Model\CustomFee {
-        return $this->_data["eth_fee"];
+    public function getFee(): ?\Tatum\Model\CustomFee {
+        return $this->_data["fee"];
     }
 
     /**
-     * Set eth_fee
+     * Set fee
      * 
-     * @param \Tatum\Model\CustomFee|null $eth_fee eth_fee
+     * @param \Tatum\Model\CustomFee|null $fee fee
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setEthFee(?\Tatum\Model\CustomFee $eth_fee) {
-        return $this->_set("eth_fee", $eth_fee);
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
+        return $this->_set("fee", $fee);
     }
 }

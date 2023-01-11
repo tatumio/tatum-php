@@ -35,6 +35,7 @@ class TransferCeloBlockchain extends AbstractModel {
         "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
         "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "e" => 1]], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]]
     ];
@@ -173,6 +174,26 @@ class TransferCeloBlockchain extends AbstractModel {
      */
     public function setFeeCurrency(string $fee_currency) {
         return $this->_set("fee_currency", $fee_currency);
+    }
+
+    /**
+     * Get fee
+     *
+     * @return \Tatum\Model\CustomFee|null
+     */
+    public function getFee(): ?\Tatum\Model\CustomFee {
+        return $this->_data["fee"];
+    }
+
+    /**
+     * Set fee
+     * 
+     * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
+        return $this->_set("fee", $fee);
     }
 
     /**

@@ -52,7 +52,7 @@ class CeloEstimateGas200Response extends AbstractModel {
     /**
      * Set gas_limit
      * 
-     * @param float $gas_limit Gas limit for transaction in gas price.
+     * @param float $gas_limit The number of the gas units needed to process the transaction at the estimated gas price
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -72,7 +72,7 @@ class CeloEstimateGas200Response extends AbstractModel {
     /**
      * Set gas_price
      * 
-     * @param string $gas_price Gas price in wei.
+     * @param string $gas_price The estimated price for one gas unit (in wei)
      * @throws \InvalidArgumentException
      * @return $this
      */

@@ -33,6 +33,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
         "data" => ["data", "string", null, "getData", "setData", null, ["r" => 0, "xl" => 50000]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
         "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 1, "e" => 1]], 
+        "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]], 
         "to" => ["to", "string", null, "getTo", "setTo", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
         "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
@@ -134,6 +135,26 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      */
     public function setCurrency(string $currency) {
         return $this->_set("currency", $currency);
+    }
+
+    /**
+     * Get fee
+     *
+     * @return \Tatum\Model\CustomFee|null
+     */
+    public function getFee(): ?\Tatum\Model\CustomFee {
+        return $this->_data["fee"];
+    }
+
+    /**
+     * Set fee
+     * 
+     * @param \Tatum\Model\CustomFee|null $fee fee
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setFee(?\Tatum\Model\CustomFee $fee) {
+        return $this->_set("fee", $fee);
     }
 
     /**

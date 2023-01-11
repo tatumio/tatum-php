@@ -411,17 +411,17 @@ class BlockchainFeesApi extends AbstractApi {
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\XdcEstimateGas200Response
+     * @return \Tatum\Model\PolygonEstimateGas200Response
      */
     public function xdcEstimateGas(\Tatum\Model\XdcEstimateGas $xdc_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
-        /** @var \Tatum\Model\XdcEstimateGas200Response $result */
+        /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", "/v3/xdc/gas", [], $rHeaders, [], $xdc_estimate_gas
             ), 
-            "\Tatum\Model\XdcEstimateGas200Response"
+            "\Tatum\Model\PolygonEstimateGas200Response"
         );
             
         return $result;

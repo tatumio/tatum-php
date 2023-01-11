@@ -4,10 +4,10 @@
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getId()** | **string** | ID of the blockage. | [optional]
-**getAccountId()** | **string** | ID of the account this blockage is for. | [optional]
-**getAmount()** | **string** | Amount blocked on account. | [optional]
-**getType()** | **string** | Type of blockage. | [optional]
-**getDescription()** | **string** | Description of blockage. | [optional]
+**getId()** | **string** | The ID of the blockage | [optional]
+**getAccountId()** | **string** | The ID of the account where the amount is blocked | [optional]
+**getAmount()** | **string** | The amount blocked on the account | [optional]
+**getType()** | **string** | The type of the blockage | [optional]
+**getDescription()** | **string** | The description of the blockage | [optional]
 
 [[Back to Index]](../index.md)

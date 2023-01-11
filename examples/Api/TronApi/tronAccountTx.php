@@ -20,7 +20,7 @@ $sdk = new \Tatum\Sdk();
 // The address of the TRON account to get all transactions for
 $arg_address = 'TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8';
 
-// The ID of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
+// The fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
 $arg_next = '81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991';
 
 try {

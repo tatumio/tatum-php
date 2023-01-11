@@ -12,13 +12,13 @@ HTTP requests are relative to https://api.tatum.io
 
 > **POST** `/v3/nft/mint/add`
 > 
-> Add an NFT minter to an NFT smart contract
+> Add a blockchain address as an NFT minter to an NFT smart contract
 
 [🔹 **addNftMinterKMS()**](#addnftminterkms) 
 
 > **POST** `/v3/nft/mint/add`
 > 
-> Add an NFT minter to an NFT smart contract
+> Add a blockchain address as an NFT minter to an NFT smart contract
 
 [🔹 **burnNft()**](#burnnft) 
 
@@ -514,9 +514,9 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add an NFT minter to an NFT smart contract
+Add a blockchain address as an NFT minter to an NFT smart contract
 
-<p><b>2 credits per API call</b></p> <p>Allow a blockchain address (the <code>minter</code> parameter in the request body) to mint NFTs on the NFT smart contract (the <code>contractAddress</code> parameter in the request body). </br>Use this API when you are using NFT Express with your own smart contract to mint NFTs and need to add the Tatum NFT minter's address as an NFT minter to your smart contract. For more information about the Tatum NFT minter, see "Use your own smart contract to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When adding an NFT minter, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<p><b>2 credits per API call</b></p> <p>Allow a blockchain address (the <code>minter</code> parameter in the request body) to mint NFTs on your NFT smart contract (the <code>contractAddress</code> parameter in the request body).</p> <p><b>NOTE:</b> Use this API <b>only</b> when you are using NFT Express with your own smart contract. For more information, see "Use your own smart contract to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.<br/> Do not use this API in any other case.</p> <p>This API is supported for the following blockchains:</p> <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul> <p><b>Signing a transaction</b><br/> When allowing a blockchain address to mint NFTs, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p> <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p> <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
 
 ### Example
 
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add an NFT minter to an NFT smart contract
+Add a blockchain address as an NFT minter to an NFT smart contract
 
 AddNftMinterKMS operation
 

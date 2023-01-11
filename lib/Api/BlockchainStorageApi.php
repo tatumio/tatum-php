@@ -69,6 +69,29 @@ class BlockchainStorageApi extends AbstractApi {
     }
     
     /**
+     * Store a log record
+     *
+     * @param \Tatum\Model\CreateRecordKMS $create_record_kms 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\TransactionHash
+     */
+    public function createRecordKMS(\Tatum\Model\CreateRecordKMS $create_record_kms) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\TransactionHash $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/record", [], $rHeaders, [], $create_record_kms
+            ), 
+            "\Tatum\Model\TransactionHash"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Get a log record
      *
      * @param string $chain The blockchain to get the log record from

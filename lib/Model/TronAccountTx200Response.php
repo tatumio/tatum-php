@@ -52,7 +52,7 @@ class TronAccountTx200Response extends AbstractModel {
     /**
      * Set next
      * 
-     * @param string|null $next If present, there are more transactions for the TRON account than the 200 transactions returned in the response, and this parameter specifies the ID of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
+     * @param string|null $next If present, there are more transactions for the TRON account than the 200 transactions returned in the response, and this parameter specifies the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
      * @throws \InvalidArgumentException
      * @return $this
      */

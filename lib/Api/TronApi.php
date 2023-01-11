@@ -331,7 +331,7 @@ class TronApi extends AbstractApi {
      * Get all transactions for a TRON account
      *
      * @param string $address The address of the TRON account to get all transactions for
-     * @param string|null $next The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
+     * @param string|null $next The fingerprint of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -357,7 +357,7 @@ class TronApi extends AbstractApi {
      * Get TRC-20 transactions for a TRON account
      *
      * @param string $address The address of the TRON account to get TRC-20 transactions for
-     * @param string|null $next The ID of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
+     * @param string|null $next The fingerprint of the transaction that follows the last (200&lt;sup&gt;th&lt;/sup&gt;) transaction in the returned list of transactions. Use it to get the next 200 transactions for the specified account (for more information, see the description of this API).
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 

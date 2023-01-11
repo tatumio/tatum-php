@@ -4,7 +4,7 @@
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasLimit()** | **string** | Gas limit for transaction in gas price. |
-**getGasPrice()** | **string** | Gas price in wei. |
+**getGasLimit()** | **string** | The number of the gas units needed to process the transaction at the estimated gas price |
+**getGasPrice()** | **string** | The estimated price for one gas unit (in wei) |
 
 [[Back to Index]](../index.md)

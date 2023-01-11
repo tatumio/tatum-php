@@ -2098,6 +2098,12 @@ You can access any of the API endpoints with the following syntax:
 > 
 > Store a log record
 
+[🔹 **createRecordKMS()**](./Api/BlockchainStorageApi.md#createrecordkms)
+
+> **POST** `/v3/record`
+> 
+> Store a log record
+
 [🔹 **getLog()**](./Api/BlockchainStorageApi.md#getlog)
 
 > **GET** `/v3/record`
@@ -4265,13 +4271,13 @@ You can access any of the API endpoints with the following syntax:
 
 > **POST** `/v3/nft/mint/add`
 > 
-> Add an NFT minter to an NFT smart contract
+> Add a blockchain address as an NFT minter to an NFT smart contract
 
 [🔹 **addNftMinterKMS()**](./Api/NFTERC721OrCompatibleApi.md#addnftminterkms)
 
 > **POST** `/v3/nft/mint/add`
 > 
-> Add an NFT minter to an NFT smart contract
+> Add a blockchain address as an NFT minter to an NFT smart contract
 
 [🔹 **burnNft()**](./Api/NFTERC721OrCompatibleApi.md#burnnft)
 

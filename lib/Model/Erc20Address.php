@@ -817,7 +817,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Set symbol
      * 
-     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
+     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain<br/>The token name that you specify here must be the same as the token name in the <code>symbol</code> parameter of the smart contract that you <a href=\"https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy\" target=\"_blank\">are going to deploy or have already deployed</a> for this token.
      * @throws \InvalidArgumentException
      * @return $this
      */

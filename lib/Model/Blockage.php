@@ -55,7 +55,7 @@ class Blockage extends AbstractModel {
     /**
      * Set id
      * 
-     * @param string|null $id ID of the blockage.
+     * @param string|null $id The ID of the blockage
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -75,7 +75,7 @@ class Blockage extends AbstractModel {
     /**
      * Set account_id
      * 
-     * @param string|null $account_id ID of the account this blockage is for.
+     * @param string|null $account_id The ID of the account where the amount is blocked
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -95,7 +95,7 @@ class Blockage extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param string|null $amount Amount blocked on account.
+     * @param string|null $amount The amount blocked on the account
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -115,7 +115,7 @@ class Blockage extends AbstractModel {
     /**
      * Set type
      * 
-     * @param string|null $type Type of blockage.
+     * @param string|null $type The type of the blockage
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -135,7 +135,7 @@ class Blockage extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string|null $description Description of blockage.
+     * @param string|null $description The description of the blockage
      * @throws \InvalidArgumentException
      * @return $this
      */

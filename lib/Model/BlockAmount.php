@@ -53,7 +53,7 @@ class BlockAmount extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param string $amount Amount to be blocked on account.
+     * @param string $amount The amount to be blocked on the account
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -73,7 +73,7 @@ class BlockAmount extends AbstractModel {
     /**
      * Set type
      * 
-     * @param string $type Type of blockage.
+     * @param string $type The type of the blockage that you are applying; can be a code or an identifier from an external system or a short description of the blockage
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -93,7 +93,7 @@ class BlockAmount extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string|null $description Description of blockage.
+     * @param string|null $description The description of the blockage that you are applying
      * @throws \InvalidArgumentException
      * @return $this
      */

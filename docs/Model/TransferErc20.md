@@ -8,7 +8,6 @@ Method name | Return type | Description | Notes
 **getAddress()** | **string** | Blockchain address to send ERC20 token to |
 **getAmount()** | **string** | Amount to be sent. |
 **getCompliant()** | **bool** | Compliance check, if withdrawal is not compliant, it will not be processed. | [optional]
-**getCurrency()** | **string** | ERC20 symbol. Required only for calls. | [optional]
 **getGasLimit()** | **string** | Gas limit for transaction in gas price. If not set, automatic calculation will be used. | [optional]
 **getGasPrice()** | **string** | Gas price in Gwei. If not set, automatic calculation will be used. | [optional]
 **getPrivateKey()** | **string** | Private key of sender address. Either mnemonic and index, privateKey or signature Id must be present - depends on the type of account and xpub. |

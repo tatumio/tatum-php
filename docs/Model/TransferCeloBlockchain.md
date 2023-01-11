@@ -9,6 +9,7 @@ Method name | Return type | Description | Notes
 **getTo()** | **string** | Blockchain address to send assets |
 **getCurrency()** | **string** | Currency of the transaction |
 **getFeeCurrency()** | **string** | Currency to pay for transaction gas |
+**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 **getAmount()** | **string** | Amount to be sent. |
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 

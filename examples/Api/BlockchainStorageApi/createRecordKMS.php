@@ -4,7 +4,7 @@
  * 
  * @license MIT
  * @author  Mark Jivko
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainFeesApi.md#xdcestimategas
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainStorageApi.md#createrecordkms
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!
@@ -17,21 +17,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_xdc_estimate_gas = new \Tatum\Model\XdcEstimateGas();
+$arg_create_record_kms = new \Tatum\Model\CreateRecordKMS();
 
 try {
-    /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
+    /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
-        ->blockchainFees()
-        ->xdcEstimateGas($arg_xdc_estimate_gas);
+        ->blockchainStorage()
+        ->createRecordKMS($arg_create_record_kms);
     
     var_dump($response);
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->xdcEstimateGas(): ", 
+    echo "API Exception when calling api()->blockchainStorage()->createRecordKMS(): ", 
         var_export($apiExc->getResponseObject(), true), 
         PHP_EOL;
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->xdcEstimateGas(): " . $exc->getMessage() . PHP_EOL;
+    echo "Exception when calling api()->blockchainStorage()->createRecordKMS(): " . $exc->getMessage() . PHP_EOL;
 }

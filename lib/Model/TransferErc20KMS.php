@@ -28,7 +28,6 @@ class TransferErc20KMS extends AbstractModel {
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
         "compliant" => ["compliant", "bool", null, "getCompliant", "setCompliant", null, ["r" => 0]], 
-        "currency" => ["currency", "string", null, "getCurrency", "setCurrency", null, ["r" => 0, "nl" => 1, "xl" => 30]], 
         "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 0, "p" => "/^[+]?\\d+$/"]], 
         "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 0, "p" => "/^[+]?\\d+$/"]], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
@@ -128,26 +127,6 @@ class TransferErc20KMS extends AbstractModel {
      */
     public function setCompliant(?bool $compliant) {
         return $this->_set("compliant", $compliant);
-    }
-
-    /**
-     * Get currency
-     *
-     * @return string|null
-     */
-    public function getCurrency(): ?string {
-        return $this->_data["currency"];
-    }
-
-    /**
-     * Set currency
-     * 
-     * @param string|null $currency ERC20 symbol. Required only for calls.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setCurrency(?string $currency) {
-        return $this->_set("currency", $currency);
     }
 
     /**

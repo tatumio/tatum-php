@@ -23,7 +23,7 @@ use Tatum\Sdk\Serializer as S;
  */
 class NFTERC721OrCompatibleApi extends AbstractApi {
     /**
-     * Add an NFT minter to an NFT smart contract
+     * Add a blockchain address as an NFT minter to an NFT smart contract
      *
      * @param \Tatum\Model\AddNftMinter $add_nft_minter 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -53,7 +53,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
     }
     
     /**
-     * Add an NFT minter to an NFT smart contract
+     * Add a blockchain address as an NFT minter to an NFT smart contract
      *
      * @param \Tatum\Model\AddNftMinterKMS $add_nft_minter_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
